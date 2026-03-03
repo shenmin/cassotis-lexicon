@@ -1,0 +1,16 @@
+# text<TAB>pinyin
+# Word-level overrides for clean_permissive profile.
+# Used before character-level Unihan fallback.
+文件	wenjian
+人工智能	rengongzhineng
+智能	zhineng
+我们	women
+我們	women
+中国	zhongguo
+中國	zhongguo
+输入	shuru
+輸入	shuru
+拼音	pinyin
+你好	nihao
+您好	ninhao
+世界	shijie

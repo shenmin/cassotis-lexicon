@@ -1,0 +1,137 @@
+# External Build Report
+
+- profile: external_broad
+- generated_at_utc: 2026-03-03T13:28:25+00:00
+- min_hanzi: 2
+- max_entries: unlimited
+
+## Sources
+- cc-cedict: CC-CEDICT
+  - license: CC BY-SA 4.0
+  - risk_level: medium
+  - redistribution_class: copyleft_sharealike
+  - url: https://www.mdbg.net/chinese/export/cedict/cedict_1_0_ts_utf-8_mdbg.txt.gz
+- thuocl: THUOCL (Tsinghua Open Chinese Lexicon)
+  - license: THUOCL custom open terms
+  - risk_level: medium
+  - redistribution_class: attribution_required
+  - url: https://github.com/thunlp/THUOCL/archive/refs/heads/master.zip
+- opencc-stphrases: OpenCC STPhrases
+  - license: Apache-2.0
+  - risk_level: low
+  - redistribution_class: permissive
+  - url: https://raw.githubusercontent.com/BYVoid/OpenCC/master/data/dictionary/STPhrases.txt
+- jieba-dict: jieba dict.txt
+  - license: MIT
+  - risk_level: low
+  - redistribution_class: permissive
+  - url: https://raw.githubusercontent.com/fxsjy/jieba/master/jieba/dict.txt
+- unicode-unihan-readings: Unicode Unihan_Readings
+  - license: Unicode-3.0
+  - risk_level: low
+  - redistribution_class: permissive
+  - url: https://www.unicode.org/Public/UCD/latest/ucd/Unihan.zip
+- zhwiki-titles-ns0: Wikipedia zh titles (ns0)
+  - license: CC BY-SA 4.0
+  - risk_level: medium
+  - redistribution_class: copyleft_sharealike
+  - url: https://dumps.wikimedia.org/zhwiki/latest/zhwiki-latest-all-titles-in-ns0.gz
+- wikimedia-pageviews-top: Wikimedia Pageviews Top (zh.wikipedia)
+  - license: CC BY-SA 4.0
+  - risk_level: medium
+  - redistribution_class: copyleft_sharealike
+  - url: https://wikimedia.org/api/rest_v1/metrics/pageviews/top/zh.wikipedia/all-access
+
+## Parse stats
+- char_frequency_prior_terms: 6945
+- filtered_short: 2
+- freqlex_existing_pinyin_hits: 78048
+- freqlex_opencc_tc_hits: 11560
+- freqlex_skipped_no_pinyin: 0
+- freqlex_skipped_non_cjk: 0
+- freqlex_skipped_short: 0
+- freqlex_skipped_weak_fallback: 253332
+- freqlex_terms_added_sc: 7973
+- freqlex_terms_added_tc: 1087
+- freqlex_terms_boosted_sc: 20
+- freqlex_terms_boosted_tc: 0
+- freqlex_terms_total: 339341
+- freqlex_unihan_fallback_hits: 7961
+- invalid_format: 0
+- invalid_pinyin: 0
+- jieba_direct_score_terms: 337394
+- jieba_filtered_non_cjk: 72
+- jieba_filtered_short: 11580
+- jieba_frequency_terms: 337394
+- jieba_invalid_format: 0
+- jieba_parsed_lines: 337394
+- jieba_pos_terms: 337394
+- jieba_total_lines: 349046
+- jieba_unique_terms: 337394
+- pageviews_articles_kept: 4396
+- pageviews_articles_rank_filtered: 0
+- pageviews_articles_title_filtered: 1604
+- pageviews_articles_total: 6000
+- pageviews_cache_hits: 6
+- pageviews_frequency_terms: 2114
+- pageviews_http_failures: 0
+- pageviews_http_fetches: 0
+- pageviews_months_loaded: 6
+- pageviews_months_requested: 6
+- pageviews_sc_normalized_terms: 2112
+- pageviews_unique_terms: 2114
+- parsed_lines: 49179
+- sc_core_multi_source_hits: 661
+- sc_core_pageviews_hits: 431
+- sc_core_rescored: 109446
+- sc_core_usage_hits: 78027
+- sc_core_wiki_hits: 46374
+- sc_filtered_non_windows_cjk: 697
+- sc_homophone_buckets: 13691
+- sc_homophone_entries_adjusted: 36812
+- sc_homophone_entries_boosted: 17184
+- sc_homophone_entries_damped: 19628
+- sc_homophone_sparse_penalized: 3061
+- sc_normalized_converted_entries: 3229
+- sc_normalized_total_entries: 117401
+- tc_char_frequency_prior_terms: 6945
+- tc_core_multi_source_hits: 294
+- tc_core_pageviews_hits: 198
+- tc_core_rescored: 109749
+- tc_core_usage_hits: 35687
+- tc_core_wiki_hits: 44287
+- tc_filtered_non_windows_cjk: 729
+- tc_homophone_buckets: 14302
+- tc_homophone_entries_adjusted: 37561
+- tc_homophone_entries_boosted: 17037
+- tc_homophone_entries_damped: 20524
+- tc_homophone_sparse_penalized: 8411
+- tc_jieba_direct_score_terms: 357858
+- tc_jieba_pos_terms: 400365
+- tc_pageviews_score_terms: 2181
+- tc_to_sc_map_terms: 111199
+- tc_usage_score_terms: 359829
+- thuocl_frequency_terms: 876
+- thuocl_invalid_format: 4
+- thuocl_parsed_lines: 157168
+- thuocl_total_files: 11
+- thuocl_total_lines: 157173
+- thuocl_unique_terms: 142552
+- total_lines: 49188
+- unihan_map_size: 26711
+- usage_score_terms: 339341
+- wiki_deduplicated: 209267
+- wiki_kept_titles: 1790775
+- wiki_skipped_colon: 9843
+- wiki_skipped_empty: 4
+- wiki_skipped_long: 147487
+- wiki_skipped_non_cjk: 780259
+- wiki_skipped_short: 6848
+- wiki_title_set_size: 1790775
+- wiki_total_lines: 2944483
+
+## Output
+- sc_file: D:\cassotis_lexicon_public\data\generated\dict_clean_sc.txt
+- tc_file: D:\cassotis_lexicon_public\data\generated\dict_clean_tc.txt
+- sc_entries: 116704
+- tc_entries: 110109

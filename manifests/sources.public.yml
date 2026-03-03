@@ -1,0 +1,74 @@
+version: 1
+generated_at: "2026-03-03T15:56:25+00:00"
+profile: external_broad
+sources:
+  - id: cc-cedict
+    name: CC-CEDICT
+    download_url: https://www.mdbg.net/chinese/export/cedict/cedict_1_0_ts_utf-8_mdbg.txt.gz
+    homepage: https://www.mdbg.net/chinese/dictionary?page=cc-cedict
+    license: CC BY-SA 4.0
+    risk_level: medium
+    redistribution_class: copyleft_sharealike
+    attribution_required: true
+    raw_committed: false
+    notes: 'Core dictionary entries with word-level pinyin.'
+  - id: thuocl
+    name: THUOCL (Tsinghua Open Chinese Lexicon)
+    download_url: https://github.com/thunlp/THUOCL/archive/refs/heads/master.zip
+    homepage: https://github.com/thunlp/THUOCL
+    license: THUOCL custom open terms
+    risk_level: medium
+    redistribution_class: attribution_required
+    attribution_required: true
+    raw_committed: false
+    notes: 'Domain/common words with DF statistics, used for broad coverage.'
+  - id: opencc-stphrases
+    name: OpenCC STPhrases
+    download_url: https://raw.githubusercontent.com/BYVoid/OpenCC/master/data/dictionary/STPhrases.txt
+    homepage: https://github.com/BYVoid/OpenCC
+    license: Apache-2.0
+    risk_level: low
+    redistribution_class: permissive
+    attribution_required: true
+    raw_committed: false
+    notes: 'SC->TC phrase mapping for broad-profile TC expansion.'
+  - id: jieba-dict
+    name: jieba dict.txt
+    download_url: https://raw.githubusercontent.com/fxsjy/jieba/master/jieba/dict.txt
+    homepage: https://github.com/fxsjy/jieba
+    license: MIT
+    risk_level: low
+    redistribution_class: permissive
+    attribution_required: true
+    raw_committed: false
+    notes: 'Word-frequency dictionary used as ranking signal.'
+  - id: unicode-unihan-readings
+    name: Unicode Unihan_Readings
+    download_url: https://www.unicode.org/Public/UCD/latest/ucd/Unihan.zip
+    homepage: https://www.unicode.org/ucd/
+    license: Unicode-3.0
+    risk_level: low
+    redistribution_class: permissive
+    attribution_required: true
+    raw_committed: false
+    notes: 'Character-level Mandarin readings for pinyin fallback.'
+  - id: zhwiki-titles-ns0
+    name: Wikipedia zh titles (ns0)
+    download_url: https://dumps.wikimedia.org/zhwiki/latest/zhwiki-latest-all-titles-in-ns0.gz
+    homepage: https://dumps.wikimedia.org/zhwiki/latest/
+    license: CC BY-SA 4.0
+    risk_level: medium
+    redistribution_class: copyleft_sharealike
+    attribution_required: true
+    raw_committed: false
+    notes: 'Used as broad coverage and ranking signal for common named terms.'
+  - id: wikimedia-pageviews-top
+    name: Wikimedia Pageviews Top (zh.wikipedia)
+    download_url: https://wikimedia.org/api/rest_v1/metrics/pageviews/top/zh.wikipedia/all-access
+    homepage: https://wikitech.wikimedia.org/wiki/Analytics/AQS/Pageviews
+    license: CC BY-SA 4.0
+    risk_level: medium
+    redistribution_class: copyleft_sharealike
+    attribution_required: true
+    raw_committed: false
+    notes: 'Monthly top pageviews are aggregated as real-world usage heat signal.'

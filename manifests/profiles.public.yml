@@ -1,0 +1,42 @@
+version: 1
+profiles:
+  - id: external_cedict
+    status: active
+    description: "Bootstrap profile based on CC-CEDICT."
+    expected_license_class: copyleft_sharealike
+    risk_level: medium
+    attribution_required: true
+    parser_format: cedict
+
+  - id: external_broad
+    status: active
+    description: "Broad external profile: CC-CEDICT + THUOCL + jieba + OpenCC + Unihan + zhwiki titles + Wikimedia pageviews-top."
+    expected_license_class: mixed_external
+    risk_level: medium
+    attribution_required: true
+    parser_format: cedict_thuocl_jieba_opencc_unihan_wiki
+    default_sources:
+      - cc-cedict
+      - thuocl
+      - jieba-dict
+      - opencc-stphrases
+      - unicode-unihan-readings
+      - zhwiki-titles-ns0
+      - wikimedia-pageviews-top
+    constraints:
+      - "All sources must remain publicly documented with explicit attribution."
+      - "No private corpora and no unknown-license source files."
+
+  - id: clean_permissive
+    status: active
+    description: "Permissive-only profile based on OpenCC STPhrases + Unicode Unihan."
+    expected_license_class: permissive
+    risk_level: low
+    attribution_required: true
+    parser_format: opencc_unihan
+    default_sources:
+      - opencc-stphrases
+      - unicode-unihan-readings
+    constraints:
+      - "Must not use copyleft/share-alike licenses."
+      - "Must set redistribution_class=permissive in source manifest."
