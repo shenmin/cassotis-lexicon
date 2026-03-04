@@ -12,13 +12,13 @@ English | [简体中文](README.CN.md)
 
 Open-source lexicon artifacts and build pipeline for Cassotis IME.
 
-## Dictionaries (2026-03-03 build)
+## Dictionaries (2026-03-04 build)
 
 | File | Variant | Entries |
 |------|---------|---------|
-| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 116,646 |
-| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 109,354 |
-| `data/generated/dict_unihan_sc.txt` | Simplified single-char (Unihan) | 30,379 |
+| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 105,058 |
+| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 88,656 |
+| `data/generated/dict_unihan_sc.txt` | Simplified single-char (Unihan) | 30,384 |
 | `data/generated/dict_unihan_tc.txt` | Traditional single-char (Unihan) | 30,949 |
 
 ## Format
@@ -65,6 +65,13 @@ Defined in `manifests/profiles.public.yml`:
 See details in:
 - `manifests/sources.public.yml`
 - `attribution/ATTRIBUTION.md`
+
+## Post-import optimization and filtering
+- Normalize and de-duplicate imported entries from heterogeneous external sources.
+- Build ranking weights from combined signals (base frequency, DF/frequency side signals, and pageview heat) with balanced scaling.
+- Dampen low-signal named entities and long-tail noise so rare proper nouns do not crowd common terms.
+- Apply IME-oriented validity filters (for example renderability and script constraints) to keep candidates practical on mainstream Windows clients.
+- Stabilize ranking behavior through rule-based corrections plus regression sample checks.
 
 ## Build
 

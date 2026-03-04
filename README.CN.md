@@ -12,13 +12,13 @@
 
 Cassotis IME 词库产物与构建流程的开源仓库。
 
-## 词库文件（2026-03-03 构建）
+## 词库文件（2026-03-04 构建）
 
 | 文件 | 类型 | 词条数 |
 |------|------|--------|
-| `data/generated/dict_clean_sc.txt` | 简体中文主词库 | 116,646 |
-| `data/generated/dict_clean_tc.txt` | 繁体中文主词库 | 109,354 |
-| `data/generated/dict_unihan_sc.txt` | 简体单字（Unihan） | 30,379 |
+| `data/generated/dict_clean_sc.txt` | 简体中文主词库 | 105,058 |
+| `data/generated/dict_clean_tc.txt` | 繁体中文主词库 | 88,656 |
+| `data/generated/dict_unihan_sc.txt` | 简体单字（Unihan） | 30,384 |
 | `data/generated/dict_unihan_tc.txt` | 繁体单字（Unihan） | 30,949 |
 
 ## 文件格式
@@ -65,6 +65,13 @@ rengongzhineng	人工智能	590
 来源细节见：
 - `manifests/sources.public.yml`
 - `attribution/ATTRIBUTION.md`
+
+## 外部词库导入后的优化与过滤思路
+- 对多来源词条做格式归一、去重合并，统一拼音与文本键。
+- `weight` 由多类信号共同构成（基础频率、DF/词频侧信号、访问热度），并做平衡缩放。
+- 对低信号命名实体和长尾噪声做抑制，减少生僻专名挤占常用词排序。
+- 应用面向输入法场景的有效性过滤（如可渲染性、字形脚本约束），提升 Windows 场景可用性。
+- 通过规则修正和回归样本校验，保持同音竞争与整体排序稳定。
 
 ## 构建方式
 

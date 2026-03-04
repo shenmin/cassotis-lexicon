@@ -434,6 +434,24 @@ def _is_noun_pos(pos_tag: str) -> bool:
     return pos_tag.startswith("n")
 
 
+def _is_named_entity_pos(pos_tag: str) -> bool:
+    return pos_tag.startswith(("nr", "ns", "nt", "nz", "nw"))
+
+
+def _has_effective_wiki_support(
+    text: str,
+    wiki_titles: Set[str],
+    pageview_score: float,
+    source_hits: int,
+) -> bool:
+    if text not in wiki_titles:
+        return False
+    # Full zhwiki title dump includes a large long tail. Treat wiki as an
+    # effective positive signal only when real popularity or multi-source
+    # consensus exists.
+    return pageview_score >= 0.08 or source_hits >= 2
+
+
 def _compute_effective_pos_bias(
     pos_tag: str,
     text_len: int,
@@ -526,6 +544,26 @@ def _rerank_homophone_buckets(
     if char_frequency_prior:
         char_prior: Dict[str, float] = {}
         for ch in set(mapping_char_prior.keys()) | set(char_frequency_prior.keys()):
+            char_prior[ch] = max(
+                mapping_char_prior.get(ch, 0.0),
+                char_frequency_prior.get(ch, 0.0),
+            )
+    else:
+        char_prior = mapping_char_prior
+    mapping_char_prior = _build_single_char_weight_prior(mapping)
+    if char_frequency_prior:
+        char_prior: Dict[str, float] = {}
+        for ch in set(mapping_char_prior.keys()) | set(char_frequency_prior.keys()):
+            char_prior[ch] = max(
+                mapping_char_prior.get(ch, 0.0),
+                char_frequency_prior.get(ch, 0.0),
+            )
+    else:
+        char_prior = mapping_char_prior
+    mapping_char_prior = _build_single_char_weight_prior(mapping)
+    if char_frequency_prior:
+        char_prior: Dict[str, float] = {}
+        for ch in set(mapping_char_prior.keys()) | set(char_frequency_prior.keys()):
             char_prior[ch] = (
                 0.22 * mapping_char_prior.get(ch, 0.0)
                 + 0.78 * char_frequency_prior.get(ch, 0.0)
@@ -549,7 +587,12 @@ def _rerank_homophone_buckets(
             usage_score = min(1.0, max(0.0, usage_score_map.get(text, 0.0)))
             source_hits = max(0, source_hits_map.get(text, 0))
             pageview_score = min(1.0, max(0.0, pageviews_signal_map.get(text, 0.0)))
-            wiki_hit = 1.0 if text in wiki_titles else 0.0
+            wiki_hit = 1.0 if _has_effective_wiki_support(
+                text,
+                wiki_titles,
+                pageview_score=pageview_score,
+                source_hits=source_hits,
+            ) else 0.0
             jieba_direct_score = min(1.0, max(0.0, jieba_direct_signal_map.get(text, 0.0)))
             char_score = _compute_text_single_char_prior(text, char_prior)
             pos_tag = jieba_pos_map.get(text, "")
@@ -618,6 +661,12 @@ def _rerank_homophone_buckets(
             source_hits = max(0, source_hits_map.get(text, 0))
             pageview_score = min(1.0, max(0.0, pageviews_signal_map.get(text, 0.0)))
             jieba_direct_score = min(1.0, max(0.0, jieba_direct_signal_map.get(text, 0.0)))
+            wiki_support = _has_effective_wiki_support(
+                text,
+                wiki_titles,
+                pageview_score=pageview_score,
+                source_hits=source_hits,
+            )
             char_score = _compute_text_single_char_prior(text, char_prior)
             pos_tag = jieba_pos_map.get(text, "")
             pos_bias = _compute_effective_pos_bias(
@@ -639,7 +688,7 @@ def _rerank_homophone_buckets(
                 and jieba_direct_score < 0.04
                 and source_hits <= 0
                 and pageview_score <= 0.0
-                and text not in wiki_titles
+                and not wiki_support
             ):
                 delta -= c_sparse_penalty
                 stats[f"{stats_prefix}_homophone_sparse_penalized"] += 1
@@ -649,7 +698,7 @@ def _rerank_homophone_buckets(
                 and jieba_direct_score < 0.10
                 and source_hits <= 1
                 and pageview_score <= 0.02
-                and text not in wiki_titles
+                and not wiki_support
             ):
                 delta -= c_weak_signal_penalty
 
@@ -660,7 +709,7 @@ def _rerank_homophone_buckets(
                 and jieba_direct_score < 0.02
                 and source_hits <= 1
                 and pageview_score <= 0.01
-                and text not in wiki_titles
+                and not wiki_support
                 and min_char_prior < 0.16
             ):
                 delta -= c_rare_form_penalty
@@ -675,6 +724,17 @@ def _rerank_homophone_buckets(
                 and source_hits <= 1
             ):
                 delta -= c_named_entity_penalty
+            elif (
+                bucket_has_strong_term
+                and text_len <= 3
+                and _is_named_entity_pos(pos_tag)
+                and source_hits <= 2
+                and pageview_score < 0.08
+                and jieba_direct_score < 0.10
+                and usage_score < 0.48
+            ):
+                # Suppress low-traffic short names/places in homophone buckets.
+                delta -= 96
             elif (
                 bucket_has_strong_term
                 and text_len <= 2
@@ -698,7 +758,7 @@ def _rerank_homophone_buckets(
                         and jieba_direct_score < 0.08
                         and source_hits <= 1
                         and pageview_score <= 0.02
-                        and text not in wiki_titles
+                        and not wiki_support
                     ):
                         delta -= 36
                     elif (
@@ -706,7 +766,7 @@ def _rerank_homophone_buckets(
                         and jieba_direct_score < 0.65
                         and source_hits <= 1
                         and pageview_score <= 0.02
-                        and text not in wiki_titles
+                        and not wiki_support
                     ):
                         delta -= 48
 
@@ -754,6 +814,7 @@ def _filter_low_signal_rare_entries(
     pageviews_signal_map: Dict[str, float],
     wiki_titles: Set[str],
     jieba_direct_signal_map: Dict[str, float] | None,
+    jieba_pos_map: Dict[str, str] | None,
     char_frequency_prior: Dict[str, float] | None,
     stats_prefix: str,
 ) -> Dict[str, int]:
@@ -764,6 +825,7 @@ def _filter_low_signal_rare_entries(
     stats = {
         f"{stats_prefix}_low_signal_rare_buckets": 0,
         f"{stats_prefix}_low_signal_rare_removed": 0,
+        f"{stats_prefix}_low_signal_named_removed": 0,
     }
     if not mapping:
         return stats
@@ -776,7 +838,18 @@ def _filter_low_signal_rare_entries(
         return stats
 
     jieba_direct_signal_map = jieba_direct_signal_map or {}
+    jieba_pos_map = jieba_pos_map or {}
     char_frequency_prior = char_frequency_prior or {}
+    mapping_char_prior = _build_single_char_weight_prior(mapping)
+    if char_frequency_prior:
+        char_prior: Dict[str, float] = {}
+        for ch in set(mapping_char_prior.keys()) | set(char_frequency_prior.keys()):
+            char_prior[ch] = max(
+                mapping_char_prior.get(ch, 0.0),
+                char_frequency_prior.get(ch, 0.0),
+            )
+    else:
+        char_prior = mapping_char_prior
 
     buckets: Dict[str, List[str]] = {}
     for (pinyin, text) in mapping.keys():
@@ -797,7 +870,12 @@ def _filter_low_signal_rare_entries(
                 or jieba_direct_score >= 0.08
                 or source_hits >= 2
                 or pageview_score >= 0.08
-                or text in wiki_titles
+                or _has_effective_wiki_support(
+                    text,
+                    wiki_titles,
+                    pageview_score=pageview_score,
+                    source_hits=source_hits,
+                )
             ):
                 bucket_has_strong = True
                 break
@@ -807,10 +885,18 @@ def _filter_low_signal_rare_entries(
 
         to_drop: List[Tuple[str, str]] = []
         for text in texts:
+            text_len = _cjk_len(text)
             usage_score = min(1.0, max(0.0, usage_score_map.get(text, 0.0)))
             source_hits = max(0, source_hits_map.get(text, 0))
             pageview_score = min(1.0, max(0.0, pageviews_signal_map.get(text, 0.0)))
             jieba_direct_score = min(1.0, max(0.0, jieba_direct_signal_map.get(text, 0.0)))
+            pos_tag = jieba_pos_map.get(text, "")
+            wiki_support = _has_effective_wiki_support(
+                text,
+                wiki_titles,
+                pageview_score=pageview_score,
+                source_hits=source_hits,
+            )
 
             min_char_prior = 1.0
             has_cjk_char = False
@@ -818,26 +904,168 @@ def _filter_low_signal_rare_entries(
                 if not CJK_FULL_RE.fullmatch(ch):
                     continue
                 has_cjk_char = True
-                value = min(1.0, max(0.0, char_frequency_prior.get(ch, 0.0)))
+                value = min(1.0, max(0.0, char_prior.get(ch, 0.0)))
                 if value < min_char_prior:
                     min_char_prior = value
             if not has_cjk_char:
                 min_char_prior = 0.0
 
+            char_score = _compute_text_single_char_prior(text, char_prior)
+            # Protect common modern 2-char words even when cross-source signals
+            # are incomplete (notably in TC conversion paths).
+            if text_len <= 2 and char_score >= 0.62:
+                continue
+
             if (
-                usage_score < 0.06
-                and jieba_direct_score < 0.02
+                usage_score < 0.10
+                and jieba_direct_score < 0.04
                 and source_hits <= 1
-                and pageview_score <= 0.01
-                and text not in wiki_titles
-                and min_char_prior < 0.03
+                and pageview_score <= 0.02
+                and not wiki_support
+                and min_char_prior < 0.08
             ):
                 to_drop.append((pinyin, text))
+                continue
+
+            if (
+                _is_named_entity_pos(pos_tag)
+                and usage_score < 0.34
+                and jieba_direct_score < 0.10
+                and source_hits <= 2
+                and pageview_score < 0.06
+                and not wiki_support
+            ):
+                to_drop.append((pinyin, text))
+                stats[f"{stats_prefix}_low_signal_named_removed"] += 1
 
         for key in to_drop:
             if key in mapping:
                 del mapping[key]
                 stats[f"{stats_prefix}_low_signal_rare_removed"] += 1
+
+    return stats
+
+
+def _filter_global_tail_entries(
+    mapping: Dict[Tuple[str, str], int],
+    usage_score_map: Dict[str, float],
+    source_hits_map: Dict[str, int],
+    pageviews_signal_map: Dict[str, float],
+    wiki_titles: Set[str],
+    jieba_direct_signal_map: Dict[str, float] | None,
+    jieba_pos_map: Dict[str, str] | None,
+    char_frequency_prior: Dict[str, float] | None,
+    stats_prefix: str,
+) -> Dict[str, int]:
+    """
+    Global tail trimming (independent of homophone buckets).
+
+    This catches low-signal singleton entries that bucket-based filtering
+    cannot see, especially weak named entities and rare-form leftovers.
+    """
+    stats = {
+        f"{stats_prefix}_global_tail_removed": 0,
+        f"{stats_prefix}_global_tail_named_removed": 0,
+        f"{stats_prefix}_global_tail_rare_char_removed": 0,
+    }
+    if not mapping:
+        return stats
+    if (
+        not usage_score_map
+        and not source_hits_map
+        and not pageviews_signal_map
+        and not wiki_titles
+    ):
+        return stats
+
+    jieba_direct_signal_map = jieba_direct_signal_map or {}
+    jieba_pos_map = jieba_pos_map or {}
+    char_frequency_prior = char_frequency_prior or {}
+    mapping_char_prior = _build_single_char_weight_prior(mapping)
+    if char_frequency_prior:
+        char_prior: Dict[str, float] = {}
+        for ch in set(mapping_char_prior.keys()) | set(char_frequency_prior.keys()):
+            char_prior[ch] = max(
+                mapping_char_prior.get(ch, 0.0),
+                char_frequency_prior.get(ch, 0.0),
+            )
+    else:
+        char_prior = mapping_char_prior
+    to_drop: List[Tuple[str, str]] = []
+    bucket_counts: Dict[str, int] = {}
+    for pinyin, _text in mapping.keys():
+        bucket_counts[pinyin] = bucket_counts.get(pinyin, 0) + 1
+
+    for key in list(mapping.keys()):
+        pinyin, text = key
+        text_len = _cjk_len(text)
+        if text_len < 2:
+            continue
+
+        usage_score = min(1.0, max(0.0, usage_score_map.get(text, 0.0)))
+        source_hits = max(0, source_hits_map.get(text, 0))
+        pageview_score = min(1.0, max(0.0, pageviews_signal_map.get(text, 0.0)))
+        jieba_direct_score = min(1.0, max(0.0, jieba_direct_signal_map.get(text, 0.0)))
+        pos_tag = jieba_pos_map.get(text, "")
+        wiki_support = _has_effective_wiki_support(
+            text,
+            wiki_titles,
+            pageview_score=pageview_score,
+            source_hits=source_hits,
+        )
+
+        # Keep at least one candidate per pinyin bucket to avoid hard holes.
+        if bucket_counts.get(pinyin, 0) < 2:
+            continue
+
+        min_char_prior = 1.0
+        has_cjk_char = False
+        for ch in text:
+            if not CJK_FULL_RE.fullmatch(ch):
+                continue
+            has_cjk_char = True
+            value = min(1.0, max(0.0, char_prior.get(ch, 0.0)))
+            if value < min_char_prior:
+                min_char_prior = value
+        if not has_cjk_char:
+            min_char_prior = 0.0
+
+        char_score = _compute_text_single_char_prior(text, char_prior)
+        # Protect common modern 2-char words even when TC-side signal mapping
+        # misses some entries.
+        if text_len <= 2 and char_score >= 0.62:
+            continue
+
+        if (
+            _is_named_entity_pos(pos_tag)
+            and text_len <= 4
+            and not wiki_support
+            and source_hits <= 2
+            and pageview_score < 0.08
+            and jieba_direct_score < 0.12
+            and usage_score < 0.34
+        ):
+            to_drop.append(key)
+            stats[f"{stats_prefix}_global_tail_named_removed"] += 1
+            continue
+
+        if (
+            text_len <= 4
+            and usage_score < 0.06
+            and jieba_direct_score < 0.02
+            and source_hits <= 1
+            and pageview_score <= 0.01
+            and not wiki_support
+            and min_char_prior < 0.04
+        ):
+            to_drop.append(key)
+            stats[f"{stats_prefix}_global_tail_rare_char_removed"] += 1
+            continue
+
+    for key in to_drop:
+        if key in mapping:
+            del mapping[key]
+            stats[f"{stats_prefix}_global_tail_removed"] += 1
 
     return stats
 
@@ -2466,6 +2694,8 @@ def _build_usage_signal_map(
     thuocl_signal_map: Dict[str, float],
     jieba_signal_map: Dict[str, float],
     pageviews_signal_map: Dict[str, float],
+    jieba_pos_map: Dict[str, str] | None = None,
+    jieba_direct_signal_map: Dict[str, float] | None = None,
 ) -> Tuple[Dict[str, float], Dict[str, int]]:
     # Source weights reflect relative robustness of the signals:
     # THUOCL consensus DF, jieba lexical frequency, and Wikipedia usage heat.
@@ -2478,6 +2708,8 @@ def _build_usage_signal_map(
 
     usage_score_map: Dict[str, float] = {}
     source_hits_map: Dict[str, int] = {}
+    jieba_pos_map = jieba_pos_map or {}
+    jieba_direct_signal_map = jieba_direct_signal_map or {}
 
     all_terms = set(thuocl_signal_map.keys())
     all_terms.update(jieba_signal_map.keys())
@@ -2519,6 +2751,39 @@ def _build_usage_signal_map(
         else:
             score *= 1.00
 
+        pos_tag = jieba_pos_map.get(term, "")
+        if _is_named_entity_pos(pos_tag):
+            jieba_direct_score = min(1.0, max(0.0, jieba_direct_signal_map.get(term, 0.0)))
+            # Named entities are useful, but web/wiki popularity alone can
+            # over-promote proper nouns for IME general typing.
+            # Use strict direct-frequency gates to keep only high-utility names
+            # near the top by default.
+            if jieba_direct_score < 0.02:
+                score *= 0.22
+            elif jieba_direct_score < 0.05:
+                score *= 0.32
+            elif jieba_direct_score < 0.10:
+                score *= 0.46
+            elif jieba_direct_score < 0.18:
+                score *= 0.62
+            else:
+                score *= 0.80
+
+            if (
+                pageviews_score >= 0.30
+                and source_hits >= 2
+                and jieba_direct_score >= 0.12
+            ):
+                score *= 1.08
+            elif (
+                pageviews_score >= 0.20
+                and source_hits >= 2
+                and jieba_direct_score >= 0.08
+            ):
+                score *= 1.00
+            else:
+                score *= 0.96
+
         usage_score_map[term] = min(1.0, max(0.0, score))
         source_hits_map[term] = source_hits
 
@@ -2527,10 +2792,9 @@ def _build_usage_signal_map(
 
 def _build_tc_signal_map(
     source_signal_map: Dict[str, float],
-    opencc_entries: List[Tuple[str, str]],
+    tc_to_sc_map: Dict[str, Set[str]],
 ) -> Dict[str, float]:
     tc_signal: Dict[str, float] = {}
-    opencc_sc_to_tc = _build_opencc_sc_to_tc_map(opencc_entries)
 
     for sc_word, signal in source_signal_map.items():
         if signal <= 0.0:
@@ -2539,20 +2803,23 @@ def _build_tc_signal_map(
         if signal > previous_sc:
             tc_signal[sc_word] = signal
 
-        for tc_word in opencc_sc_to_tc.get(sc_word, set()):
-            previous_tc = tc_signal.get(tc_word, 0.0)
-            if signal > previous_tc:
-                tc_signal[tc_word] = signal
+    for tc_word, sc_words in tc_to_sc_map.items():
+        best = tc_signal.get(tc_word, 0.0)
+        for sc_word in sc_words:
+            signal = source_signal_map.get(sc_word, 0.0)
+            if signal > best:
+                best = signal
+        if best > 0.0:
+            tc_signal[tc_word] = best
 
     return tc_signal
 
 
 def _build_tc_source_hits_map(
     source_hits_map: Dict[str, int],
-    opencc_entries: List[Tuple[str, str]],
+    tc_to_sc_map: Dict[str, Set[str]],
 ) -> Dict[str, int]:
     tc_hits: Dict[str, int] = {}
-    opencc_sc_to_tc = _build_opencc_sc_to_tc_map(opencc_entries)
 
     for sc_word, hits in source_hits_map.items():
         if hits <= 0:
@@ -2561,10 +2828,14 @@ def _build_tc_source_hits_map(
         if hits > previous_sc:
             tc_hits[sc_word] = hits
 
-        for tc_word in opencc_sc_to_tc.get(sc_word, set()):
-            previous_tc = tc_hits.get(tc_word, 0)
-            if hits > previous_tc:
-                tc_hits[tc_word] = hits
+    for tc_word, sc_words in tc_to_sc_map.items():
+        best = tc_hits.get(tc_word, 0)
+        for sc_word in sc_words:
+            hits = source_hits_map.get(sc_word, 0)
+            if hits > best:
+                best = hits
+        if best > 0:
+            tc_hits[tc_word] = best
 
     return tc_hits
 
@@ -2601,6 +2872,8 @@ def _rescore_mapping_with_signals(
     source_hits_map: Dict[str, int],
     pageviews_signal_map: Dict[str, float],
     wiki_titles: Set[str],
+    jieba_direct_signal_map: Dict[str, float] | None,
+    jieba_pos_map: Dict[str, str] | None,
     core_entry: bool,
     stats_prefix: str,
 ) -> Dict[str, int]:
@@ -2610,13 +2883,23 @@ def _rescore_mapping_with_signals(
         f"{stats_prefix}_multi_source_hits": 0,
         f"{stats_prefix}_pageviews_hits": 0,
         f"{stats_prefix}_wiki_hits": 0,
+        f"{stats_prefix}_named_entity_penalized": 0,
     }
+    jieba_direct_signal_map = jieba_direct_signal_map or {}
+    jieba_pos_map = jieba_pos_map or {}
     for key in list(mapping.keys()):
         _pinyin, text = key
         usage_score = usage_score_map.get(text, 0.0)
         source_hits = source_hits_map.get(text, 0)
         pageviews_score = pageviews_signal_map.get(text, 0.0)
-        wiki_hit = text in wiki_titles
+        wiki_hit = _has_effective_wiki_support(
+            text,
+            wiki_titles,
+            pageview_score=pageviews_score,
+            source_hits=source_hits,
+        )
+        jieba_direct_score = min(1.0, max(0.0, jieba_direct_signal_map.get(text, 0.0)))
+        pos_tag = jieba_pos_map.get(text, "")
         weight = _compute_weight_with_signals(
             text,
             usage_score=usage_score,
@@ -2625,6 +2908,13 @@ def _rescore_mapping_with_signals(
             wiki_hit=wiki_hit,
             core_entry=core_entry,
         )
+        if _is_named_entity_pos(pos_tag):
+            text_len = _cjk_len(text)
+            if source_hits <= 2 and pageviews_score < 0.08 and jieba_direct_score < 0.12:
+                penalty = 68 if text_len <= 2 else (44 if text_len <= 4 else 28)
+                weight = max(1, weight - penalty)
+                stats[f"{stats_prefix}_named_entity_penalized"] += 1
+
         if mapping[key] != weight:
             stats[f"{stats_prefix}_rescored"] += 1
             mapping[key] = weight
@@ -2712,12 +3002,19 @@ def _augment_with_frequency_lexicon(
             pinyin_candidates = [fallback]
             stats["freqlex_unihan_fallback_hits"] += 1
 
+        source_hits = source_hits_map.get(word, 0)
+        pageview_score = pageviews_signal_map.get(word, 0.0)
         weight = _compute_weight_with_signals(
             word,
             usage_score=usage_score,
-            source_hits=source_hits_map.get(word, 0),
-            pageview_score=pageviews_signal_map.get(word, 0.0),
-            wiki_hit=(word in wiki_titles),
+            source_hits=source_hits,
+            pageview_score=pageview_score,
+            wiki_hit=_has_effective_wiki_support(
+                word,
+                wiki_titles,
+                pageview_score=pageview_score,
+                source_hits=source_hits,
+            ),
             core_entry=False,
         )
         sc_words = tc_to_sc_map.get(word, set())
@@ -2756,9 +3053,14 @@ def _augment_with_frequency_lexicon(
             tc_weight = _compute_weight_with_signals(
                 tc_word,
                 usage_score=usage_score,
-                source_hits=source_hits_map.get(word, 0),
-                pageview_score=pageviews_signal_map.get(word, 0.0),
-                wiki_hit=(tc_word in wiki_titles),
+                source_hits=source_hits,
+                pageview_score=pageview_score,
+                wiki_hit=_has_effective_wiki_support(
+                    tc_word,
+                    wiki_titles,
+                    pageview_score=pageview_score,
+                    source_hits=source_hits,
+                ),
                 core_entry=False,
             )
             for pinyin in pinyin_candidates:
@@ -3241,17 +3543,19 @@ def main() -> int:
             thuocl_signal_map,
             jieba_signal_map,
             pageviews_signal_map,
+            jieba_pos_map=jieba_pos_map,
+            jieba_direct_signal_map=jieba_direct_signal_map,
         )
         unihan_map = _load_unihan_mandarin_map(unihan_payload)
         wiki_titles, wiki_stats = _parse_wiki_titles_entries(
             wiki_titles_payload, min_hanzi=args.min_hanzi
         )
-        tc_usage_score_map = _build_tc_signal_map(usage_score_map, opencc_entries)
-        tc_source_hits_map = _build_tc_source_hits_map(source_hits_map, opencc_entries)
-        tc_jieba_direct_signal_map = _build_tc_signal_map(jieba_direct_signal_map, opencc_entries)
+        tc_usage_score_map = _build_tc_signal_map(usage_score_map, tc_to_sc_map)
+        tc_source_hits_map = _build_tc_source_hits_map(source_hits_map, tc_to_sc_map)
+        tc_jieba_direct_signal_map = _build_tc_signal_map(jieba_direct_signal_map, tc_to_sc_map)
         tc_jieba_pos_map = _build_tc_pos_map(jieba_pos_map, tc_to_sc_map)
-        tc_char_frequency_prior = _build_tc_signal_map(char_frequency_prior, opencc_entries)
-        tc_pageviews_signal_map = _build_tc_signal_map(pageviews_signal_map, opencc_entries)
+        tc_char_frequency_prior = _build_tc_signal_map(char_frequency_prior, tc_to_sc_map)
+        tc_pageviews_signal_map = _build_tc_signal_map(pageviews_signal_map, tc_to_sc_map)
         (
             trad_to_simp_char_map,
             simp_to_trad_char_map,
@@ -3276,6 +3580,8 @@ def main() -> int:
             source_hits_map=source_hits_map,
             pageviews_signal_map=pageviews_signal_map,
             wiki_titles=wiki_titles,
+            jieba_direct_signal_map=jieba_direct_signal_map,
+            jieba_pos_map=jieba_pos_map,
             core_entry=True,
             stats_prefix="sc_core",
         )
@@ -3285,6 +3591,8 @@ def main() -> int:
             source_hits_map=tc_source_hits_map,
             pageviews_signal_map=tc_pageviews_signal_map,
             wiki_titles=wiki_titles,
+            jieba_direct_signal_map=tc_jieba_direct_signal_map,
+            jieba_pos_map=tc_jieba_pos_map,
             core_entry=True,
             stats_prefix="tc_core",
         )
@@ -3479,10 +3787,23 @@ def main() -> int:
         pageviews_signal_map=pageviews_signal_map,
         wiki_titles=wiki_titles,
         jieba_direct_signal_map=jieba_direct_signal_map,
+        jieba_pos_map=jieba_pos_map,
         char_frequency_prior=char_frequency_prior,
         stats_prefix="sc",
     )
     stats.update(sc_low_signal_stats)
+    sc_global_tail_stats = _filter_global_tail_entries(
+        sc_map,
+        usage_score_map=usage_score_map,
+        source_hits_map=source_hits_map,
+        pageviews_signal_map=pageviews_signal_map,
+        wiki_titles=wiki_titles,
+        jieba_direct_signal_map=jieba_direct_signal_map,
+        jieba_pos_map=jieba_pos_map,
+        char_frequency_prior=char_frequency_prior,
+        stats_prefix="sc",
+    )
+    stats.update(sc_global_tail_stats)
 
     tc_homophone_stats = _rerank_homophone_buckets(
         tc_map,
@@ -3503,10 +3824,23 @@ def main() -> int:
         pageviews_signal_map=tc_pageviews_signal_map,
         wiki_titles=wiki_titles,
         jieba_direct_signal_map=tc_jieba_direct_signal_map,
+        jieba_pos_map=tc_jieba_pos_map,
         char_frequency_prior=tc_char_frequency_prior,
         stats_prefix="tc",
     )
     stats.update(tc_low_signal_stats)
+    tc_global_tail_stats = _filter_global_tail_entries(
+        tc_map,
+        usage_score_map=tc_usage_score_map,
+        source_hits_map=tc_source_hits_map,
+        pageviews_signal_map=tc_pageviews_signal_map,
+        wiki_titles=wiki_titles,
+        jieba_direct_signal_map=tc_jieba_direct_signal_map,
+        jieba_pos_map=tc_jieba_pos_map,
+        char_frequency_prior=tc_char_frequency_prior,
+        stats_prefix="tc",
+    )
+    stats.update(tc_global_tail_stats)
 
     sc_map = _apply_limit(sc_map, args.max_entries)
     tc_map = _apply_limit(tc_map, args.max_entries)
