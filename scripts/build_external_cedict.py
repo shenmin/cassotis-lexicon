@@ -544,26 +544,6 @@ def _rerank_homophone_buckets(
     if char_frequency_prior:
         char_prior: Dict[str, float] = {}
         for ch in set(mapping_char_prior.keys()) | set(char_frequency_prior.keys()):
-            char_prior[ch] = max(
-                mapping_char_prior.get(ch, 0.0),
-                char_frequency_prior.get(ch, 0.0),
-            )
-    else:
-        char_prior = mapping_char_prior
-    mapping_char_prior = _build_single_char_weight_prior(mapping)
-    if char_frequency_prior:
-        char_prior: Dict[str, float] = {}
-        for ch in set(mapping_char_prior.keys()) | set(char_frequency_prior.keys()):
-            char_prior[ch] = max(
-                mapping_char_prior.get(ch, 0.0),
-                char_frequency_prior.get(ch, 0.0),
-            )
-    else:
-        char_prior = mapping_char_prior
-    mapping_char_prior = _build_single_char_weight_prior(mapping)
-    if char_frequency_prior:
-        char_prior: Dict[str, float] = {}
-        for ch in set(mapping_char_prior.keys()) | set(char_frequency_prior.keys()):
             char_prior[ch] = (
                 0.22 * mapping_char_prior.get(ch, 0.0)
                 + 0.78 * char_frequency_prior.get(ch, 0.0)
