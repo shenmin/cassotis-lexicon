@@ -458,6 +458,7 @@ def _rerank_homophone_buckets(
     c_sparse_penalty = 120
     c_weak_signal_penalty = 64
     c_named_entity_penalty = 84
+    c_rare_form_penalty = 140
 
     stats = {
         f"{stats_prefix}_homophone_buckets": 0,
@@ -465,6 +466,7 @@ def _rerank_homophone_buckets(
         f"{stats_prefix}_homophone_entries_boosted": 0,
         f"{stats_prefix}_homophone_entries_damped": 0,
         f"{stats_prefix}_homophone_sparse_penalized": 0,
+        f"{stats_prefix}_homophone_rare_form_penalized": 0,
     }
     if not mapping:
         return stats
@@ -511,6 +513,17 @@ def _rerank_homophone_buckets(
             wiki_hit = 1.0 if text in wiki_titles else 0.0
             jieba_direct_score = min(1.0, max(0.0, jieba_direct_signal_map.get(text, 0.0)))
             char_score = _compute_text_single_char_prior(text, char_prior)
+            min_char_prior = 1.0
+            has_cjk_char = False
+            for ch in text:
+                if not CJK_FULL_RE.fullmatch(ch):
+                    continue
+                has_cjk_char = True
+                value = min(1.0, max(0.0, char_prior.get(ch, 0.0)))
+                if value < min_char_prior:
+                    min_char_prior = value
+            if not has_cjk_char:
+                min_char_prior = 0.0
             pos_bias = _compute_jieba_pos_bias(jieba_pos_map.get(text, ""), text_len)
             if text_len <= 2:
                 char_weight = 220.0
@@ -584,6 +597,19 @@ def _rerank_homophone_buckets(
                 and text not in wiki_titles
             ):
                 delta -= c_weak_signal_penalty
+
+            if (
+                bucket_has_strong_term
+                and text_len <= 3
+                and usage_score < 0.08
+                and jieba_direct_score < 0.02
+                and source_hits <= 1
+                and pageview_score <= 0.01
+                and text not in wiki_titles
+                and min_char_prior < 0.16
+            ):
+                delta -= c_rare_form_penalty
+                stats[f"{stats_prefix}_homophone_rare_form_penalized"] += 1
 
             if (
                 bucket_has_strong_term
@@ -662,6 +688,101 @@ def _rerank_homophone_buckets(
                 stats[f"{stats_prefix}_homophone_entries_boosted"] += 1
             else:
                 stats[f"{stats_prefix}_homophone_entries_damped"] += 1
+
+    return stats
+
+
+def _filter_low_signal_rare_entries(
+    mapping: Dict[Tuple[str, str], int],
+    usage_score_map: Dict[str, float],
+    source_hits_map: Dict[str, int],
+    pageviews_signal_map: Dict[str, float],
+    wiki_titles: Set[str],
+    jieba_direct_signal_map: Dict[str, float] | None,
+    char_frequency_prior: Dict[str, float] | None,
+    stats_prefix: str,
+) -> Dict[str, int]:
+    """
+    Remove extremely low-signal rare forms when the same pinyin bucket already
+    has stronger mainstream candidates.
+    """
+    stats = {
+        f"{stats_prefix}_low_signal_rare_buckets": 0,
+        f"{stats_prefix}_low_signal_rare_removed": 0,
+    }
+    if not mapping:
+        return stats
+    if (
+        not usage_score_map
+        and not source_hits_map
+        and not pageviews_signal_map
+        and not wiki_titles
+    ):
+        return stats
+
+    jieba_direct_signal_map = jieba_direct_signal_map or {}
+    char_frequency_prior = char_frequency_prior or {}
+
+    buckets: Dict[str, List[str]] = {}
+    for (pinyin, text) in mapping.keys():
+        buckets.setdefault(pinyin, []).append(text)
+
+    for pinyin, texts in buckets.items():
+        if len(texts) < 2:
+            continue
+
+        bucket_has_strong = False
+        for text in texts:
+            usage_score = min(1.0, max(0.0, usage_score_map.get(text, 0.0)))
+            source_hits = max(0, source_hits_map.get(text, 0))
+            pageview_score = min(1.0, max(0.0, pageviews_signal_map.get(text, 0.0)))
+            jieba_direct_score = min(1.0, max(0.0, jieba_direct_signal_map.get(text, 0.0)))
+            if (
+                usage_score >= 0.12
+                or jieba_direct_score >= 0.08
+                or source_hits >= 2
+                or pageview_score >= 0.08
+                or text in wiki_titles
+            ):
+                bucket_has_strong = True
+                break
+        if not bucket_has_strong:
+            continue
+        stats[f"{stats_prefix}_low_signal_rare_buckets"] += 1
+
+        to_drop: List[Tuple[str, str]] = []
+        for text in texts:
+            usage_score = min(1.0, max(0.0, usage_score_map.get(text, 0.0)))
+            source_hits = max(0, source_hits_map.get(text, 0))
+            pageview_score = min(1.0, max(0.0, pageviews_signal_map.get(text, 0.0)))
+            jieba_direct_score = min(1.0, max(0.0, jieba_direct_signal_map.get(text, 0.0)))
+
+            min_char_prior = 1.0
+            has_cjk_char = False
+            for ch in text:
+                if not CJK_FULL_RE.fullmatch(ch):
+                    continue
+                has_cjk_char = True
+                value = min(1.0, max(0.0, char_frequency_prior.get(ch, 0.0)))
+                if value < min_char_prior:
+                    min_char_prior = value
+            if not has_cjk_char:
+                min_char_prior = 0.0
+
+            if (
+                usage_score < 0.06
+                and jieba_direct_score < 0.02
+                and source_hits <= 1
+                and pageview_score <= 0.01
+                and text not in wiki_titles
+                and min_char_prior < 0.03
+            ):
+                to_drop.append((pinyin, text))
+
+        for key in to_drop:
+            if key in mapping:
+                del mapping[key]
+                stats[f"{stats_prefix}_low_signal_rare_removed"] += 1
 
     return stats
 
@@ -1841,7 +1962,9 @@ def _build_from_unihan_only(
         stats["override_hits"] += 1
 
     if trad_to_simp_char_map:
-        sc, normalize_stats = _normalize_sc_mapping_with_char_map(sc, trad_to_simp_char_map)
+        sc, normalize_stats = _normalize_sc_mapping_with_char_map(
+            sc, trad_to_simp_char_map, simp_to_trad_char_map
+        )
         stats.update(normalize_stats)
     if simp_to_trad_char_map:
         tc, normalize_stats = _normalize_tc_mapping_with_char_map(tc, simp_to_trad_char_map)
@@ -1970,21 +2093,30 @@ def _build_char_variant_hints(
 def _normalize_sc_mapping_with_char_map(
     mapping: Dict[Tuple[str, str], int],
     trad_to_simp_char_map: Dict[str, str],
+    simp_to_trad_char_map: Dict[str, str] | None = None,
 ) -> Tuple[Dict[Tuple[str, str], int], Dict[str, int]]:
+    simp_to_trad_char_map = simp_to_trad_char_map or {}
     if not trad_to_simp_char_map:
         return mapping, {
             "sc_char_normalized_converted_entries": 0,
             "sc_char_normalized_total_entries": len(mapping),
+            "sc_char_normalized_blocked_reverse_entries": 0,
         }
 
     normalized: Dict[Tuple[str, str], int] = {}
     converted_entries = 0
+    blocked_reverse_entries = 0
 
     for (pinyin, text), weight in mapping.items():
         converted_chars: List[str] = []
         changed = False
         for ch in text:
             replacement = trad_to_simp_char_map.get(ch, ch)
+            # Guardrail: do not rewrite a known simplified form into a
+            # traditional/variant form (for example 么 -> 幺).
+            if replacement != ch and ch in simp_to_trad_char_map:
+                replacement = ch
+                blocked_reverse_entries += 1
             if replacement != ch:
                 changed = True
             converted_chars.append(replacement)
@@ -2000,6 +2132,7 @@ def _normalize_sc_mapping_with_char_map(
     stats = {
         "sc_char_normalized_converted_entries": converted_entries,
         "sc_char_normalized_total_entries": len(normalized),
+        "sc_char_normalized_blocked_reverse_entries": blocked_reverse_entries,
     }
     return normalized, stats
 
@@ -3114,7 +3247,7 @@ def main() -> int:
         )
         sc_map, sc_normalize_stats = _normalize_sc_mapping_with_opencc(sc_map, tc_to_sc_map)
         sc_map, sc_char_normalize_stats = _normalize_sc_mapping_with_char_map(
-            sc_map, trad_to_simp_char_map
+            sc_map, trad_to_simp_char_map, simp_to_trad_char_map
         )
         sc_map, sc_script_filter_stats = _filter_sc_mapping_with_script_hints(
             sc_map, sc_script_chars, tc_script_chars
@@ -3200,7 +3333,7 @@ def main() -> int:
             if trad_ch not in trad_to_simp_char_map:
                 trad_to_simp_char_map[trad_ch] = simp_ch
         sc_map, sc_char_normalize_stats = _normalize_sc_mapping_with_char_map(
-            sc_map, trad_to_simp_char_map
+            sc_map, trad_to_simp_char_map, simp_to_trad_char_map
         )
         sc_map, sc_script_filter_stats = _filter_sc_mapping_with_script_hints(
             sc_map, sc_script_chars, tc_script_chars
@@ -3284,6 +3417,17 @@ def main() -> int:
         stats_prefix="sc",
     )
     stats.update(sc_homophone_stats)
+    sc_low_signal_stats = _filter_low_signal_rare_entries(
+        sc_map,
+        usage_score_map=usage_score_map,
+        source_hits_map=source_hits_map,
+        pageviews_signal_map=pageviews_signal_map,
+        wiki_titles=wiki_titles,
+        jieba_direct_signal_map=jieba_direct_signal_map,
+        char_frequency_prior=char_frequency_prior,
+        stats_prefix="sc",
+    )
+    stats.update(sc_low_signal_stats)
 
     tc_homophone_stats = _rerank_homophone_buckets(
         tc_map,
@@ -3297,6 +3441,17 @@ def main() -> int:
         stats_prefix="tc",
     )
     stats.update(tc_homophone_stats)
+    tc_low_signal_stats = _filter_low_signal_rare_entries(
+        tc_map,
+        usage_score_map=tc_usage_score_map,
+        source_hits_map=tc_source_hits_map,
+        pageviews_signal_map=tc_pageviews_signal_map,
+        wiki_titles=wiki_titles,
+        jieba_direct_signal_map=tc_jieba_direct_signal_map,
+        char_frequency_prior=tc_char_frequency_prior,
+        stats_prefix="tc",
+    )
+    stats.update(tc_low_signal_stats)
 
     sc_map = _apply_limit(sc_map, args.max_entries)
     tc_map = _apply_limit(tc_map, args.max_entries)
