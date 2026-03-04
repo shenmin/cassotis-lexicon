@@ -936,6 +936,7 @@ bi	崥	70
 bi	币	256
 bi	幅	160
 bi	幤	103
+bi	庇	139
 bi	庳	115
 bi	廦	111
 bi	弊	145
@@ -2526,6 +2527,7 @@ cheng	洆	103
 cheng	浈	119
 cheng	浧	70
 cheng	浾	111
+cheng	淨	160
 cheng	溗	111
 cheng	澄	145
 cheng	瀓	94
@@ -3834,7 +3836,7 @@ dai	代	389
 dai	侢	103
 dai	傣	115
 dai	叇	115
-dai	呆	338
+dai	呆	295
 dai	呔	115
 dai	嘚	70
 dai	垈	119
@@ -3846,6 +3848,7 @@ dai	帒	103
 dai	带	355
 dai	帯	103
 dai	廗	111
+dai	待	338
 dai	怠	139
 dai	懛	94
 dai	戴	306
@@ -5537,6 +5540,7 @@ fan	梵	127
 fan	棥	94
 fan	樊	127
 fan	橎	111
+fan	氾	127
 fan	沨	111
 fan	泛	300
 fan	滼	111
@@ -9928,7 +9932,8 @@ jiao	搅	245
 jiao	摎	70
 jiao	摷	111
 jiao	撹	103
-jiao	敎	380
+jiao	敎	107
+jiao	教	380
 jiao	敥	70
 jiao	敫	107
 jiao	敽	94
@@ -10395,7 +10400,7 @@ jing	倞	123
 jing	傹	94
 jing	儆	123
 jing	兢	169
-jing	净	313
+jing	净	286
 jing	刭	115
 jing	坓	94
 jing	坕	94
@@ -10432,6 +10437,7 @@ jing	汫	115
 jing	汬	94
 jing	泾	119
 jing	浄	103
+jing	淨	313
 jing	瀞	115
 jing	燝	103
 jing	犷	70
@@ -10682,6 +10688,7 @@ ju	乬	94
 ju	仇	160
 ju	伡	70
 ju	佝	70
+ju	俱	238
 ju	倨	127
 ju	倶	103
 ju	僪	111
@@ -11149,6 +11156,7 @@ jun	桾	115
 jun	棞	111
 jun	汮	103
 jun	浚	127
+jun	濬	123
 jun	焌	123
 jun	焞	70
 jun	燇	111
@@ -15639,7 +15647,7 @@ nie	䳖	94
 nie	乜	70
 nie	倪	70
 nie	哪	160
-nie	啮	123
+nie	啮	115
 nie	喦	111
 nie	嗫	103
 nie	噛	103
@@ -15699,6 +15707,7 @@ nie	镍	103
 nie	闑	111
 nie	陧	111
 nie	颞	115
+nie	齧	123
 nie	鿭	111
 nin	㤛	94
 nin	䌾	103
@@ -16452,6 +16461,7 @@ pi	崥	111
 pi	嶏	70
 pi	帔	70
 pi	庀	115
+pi	庇	70
 pi	庳	70
 pi	怶	70
 pi	悂	94
@@ -16516,7 +16526,6 @@ pi	芘	115
 pi	苉	103
 pi	苤	70
 pi	萆	70
-pi	蔽	70
 pi	蕃	70
 pi	薜	70
 pi	蚌	70
@@ -20350,7 +20359,7 @@ si	䦙	94
 si	䫢	94
 si	䲉	94
 si	䴘	70
-si	丝	292
+si	丝	313
 si	亖	94
 si	以	160
 si	伺	141
@@ -20414,7 +20423,6 @@ si	笥	119
 si	簛	70
 si	籭	103
 si	糸	70
-si	絲	313
 si	纟	107
 si	缌	111
 si	罳	111
@@ -22841,6 +22849,7 @@ weng	攚	94
 weng	暡	111
 weng	滃	115
 weng	瓮	127
+weng	甕	123
 weng	瞈	111
 weng	罋	111
 weng	翁	243
@@ -22868,7 +22877,7 @@ wo	䰀	94
 wo	仴	111
 wo	倭	127
 wo	偓	115
-wo	卧	266
+wo	卧	258
 wo	呙	70
 wo	唩	94
 wo	喔	160
@@ -22909,6 +22918,7 @@ wo	窝	286
 wo	肟	107
 wo	腛	111
 wo	臒	111
+wo	臥	266
 wo	艧	70
 wo	莴	115
 wo	蒦	70
@@ -23034,8 +23044,9 @@ wu	歍	111
 wu	武	329
 wu	毋	127
 wu	母	160
-wu	汙	289
+wu	汙	111
 wu	汚	115
+wu	污	289
 wu	沕	70
 wu	洖	111
 wu	洿	115
@@ -23445,7 +23456,7 @@ xi	郗	115
 xi	郤	119
 xi	鄎	111
 xi	酅	115
-xi	酰	127
+xi	醯	127
 xi	釳	111
 xi	釸	111
 xi	鈢	94
@@ -25094,6 +25105,7 @@ xun	浔	115
 xun	浚	70
 xun	潠	111
 xun	潭	136
+xun	濬	70
 xun	灥	111
 xun	焄	119
 xun	煇	70
@@ -30351,6 +30363,7 @@ zuo	坐	375
 zuo	岝	111
 zuo	岞	107
 zuo	左	356
+zuo	座	342
 zuo	怍	115
 zuo	挫	148
 zuo	捽	115

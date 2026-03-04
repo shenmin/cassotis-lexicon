@@ -39,6 +39,7 @@ ai	凒	103
 ai	剴	70
 ai	厓	70
 ai	呃	108
+ai	呆	160
 ai	哀	274
 ai	哎	314
 ai	唉	141
@@ -56,11 +57,11 @@ ai	娭	111
 ai	娾	111
 ai	嬡	111
 ai	嵦	70
-ai	待	160
 ai	愛	377
 ai	懓	103
 ai	懝	94
-ai	捱	290
+ai	挨	290
+ai	捱	141
 ai	敱	94
 ai	敳	111
 ai	昹	111
@@ -150,11 +151,13 @@ an	安	355
 an	屽	70
 an	岸	332
 an	峖	111
+an	庵	127
 an	廠	160
 an	廣	160
 an	按	340
 an	揞	107
 an	晻	111
+an	暗	337
 an	案	322
 an	桉	115
 an	氨	232
@@ -170,7 +173,7 @@ an	罯	94
 an	胺	115
 an	腤	111
 an	荌	111
-an	菴	127
+an	菴	123
 an	萻	111
 an	葊	103
 an	蓭	94
@@ -183,7 +186,7 @@ an	遃	70
 an	鉗	118
 an	銨	111
 an	錌	111
-an	闇	337
+an	闇	123
 an	陰	160
 an	隌	94
 an	雸	111
@@ -600,6 +603,7 @@ bao	刨	118
 bao	勹	115
 bao	勽	94
 bao	包	364
+bao	呆	160
 bao	嘐	70
 bao	嚗	70
 bao	堡	248
@@ -612,7 +616,6 @@ bao	宲	94
 bao	寚	94
 bao	寳	107
 bao	寶	328
-bao	待	160
 bao	忁	111
 bao	怉	111
 bao	抱	336
@@ -712,9 +715,10 @@ bei	悲	303
 bei	愂	94
 bei	憊	123
 bei	拔	160
-bei	揹	342
+bei	揹	111
 bei	昁	94
 bei	杮	70
+bei	杯	308
 bei	柸	70
 bei	桮	111
 bei	梖	111
@@ -728,12 +732,13 @@ bei	犕	111
 bei	狽	224
 bei	珼	111
 bei	琲	119
-bei	盃	308
+bei	盃	175
 bei	碑	284
 bei	碚	119
 bei	禙	103
 bei	箄	70
 bei	糒	119
+bei	背	342
 bei	臂	283
 bei	苝	94
 bei	茀	70
@@ -921,6 +926,7 @@ bi	䵗	70
 bi	仳	70
 bi	佊	94
 bi	佖	115
+bi	佛	160
 bi	俾	119
 bi	偪	111
 bi	匕	127
@@ -947,7 +953,7 @@ bi	崥	70
 bi	幅	160
 bi	幣	266
 bi	幤	103
-bi	庇	276
+bi	庇	139
 bi	庳	115
 bi	廦	111
 bi	弊	145
@@ -955,7 +961,6 @@ bi	弻	103
 bi	弼	127
 bi	彃	111
 bi	彼	273
-bi	彿	160
 bi	必	375
 bi	怭	111
 bi	怶	94
@@ -1047,6 +1052,7 @@ bi	萆	115
 bi	萞	94
 bi	蓖	119
 bi	蓽	111
+bi	蔽	276
 bi	薜	119
 bi	蘗	70
 bi	蜌	111
@@ -1282,7 +1288,6 @@ bie	䭱	94
 bie	䳤	94
 bie	別	393
 bie	咇	70
-bie	庇	160
 bie	彆	111
 bie	徶	111
 bie	憋	227
@@ -1297,6 +1302,7 @@ bie	癿	115
 bie	穪	70
 bie	苾	70
 bie	莂	94
+bie	蔽	160
 bie	虌	111
 bie	蛂	111
 bie	蟞	111
@@ -1464,6 +1470,7 @@ bo	䶈	94
 bo	亳	119
 bo	仢	94
 bo	伯	309
+bo	佛	160
 bo	侼	94
 bo	僠	111
 bo	僰	115
@@ -1483,7 +1490,6 @@ bo	嶓	115
 bo	帗	111
 bo	帛	127
 bo	彴	70
-bo	彿	160
 bo	怕	160
 bo	愽	107
 bo	懪	111
@@ -1628,7 +1634,7 @@ bu	䬏	94
 bu	䳝	70
 bu	䴺	94
 bu	不	475
-bu	佈	365
+bu	佈	153
 bu	僕	70
 bu	勏	94
 bu	卟	107
@@ -1643,6 +1649,7 @@ bu	堡	138
 bu	婄	70
 bu	尃	70
 bu	峬	111
+bu	布	365
 bu	庯	94
 bu	廍	103
 bu	怖	257
@@ -1720,6 +1727,7 @@ cai	啋	111
 cai	埰	119
 cai	婇	111
 cai	寀	119
+cai	彩	310
 cai	扐	70
 cai	採	336
 cai	揌	70
@@ -1728,7 +1736,7 @@ cai	棌	111
 cai	毝	94
 cai	猜	298
 cai	睬	115
-cai	綵	310
+cai	綵	123
 cai	縩	111
 cai	纔	399
 cai	菜	342
@@ -2560,6 +2568,7 @@ cheng	晟	127
 cheng	朾	111
 cheng	棖	111
 cheng	棦	111
+cheng	棱	70
 cheng	椉	103
 cheng	槍	160
 cheng	樘	70
@@ -2576,7 +2585,8 @@ cheng	浾	111
 cheng	淨	160
 cheng	湞	119
 cheng	溗	111
-cheng	澂	145
+cheng	澂	119
+cheng	澄	145
 cheng	瀓	94
 cheng	爯	94
 cheng	牚	115
@@ -2594,7 +2604,6 @@ cheng	矃	70
 cheng	碀	111
 cheng	秤	226
 cheng	程	363
-cheng	稜	70
 cheng	稱	330
 cheng	穪	94
 cheng	窚	94
@@ -2937,6 +2946,7 @@ chou	䪮	94
 chou	䱔	70
 chou	䲖	94
 chou	丒	94
+chou	仇	282
 chou	侴	107
 chou	偢	111
 chou	儔	115
@@ -2992,7 +3002,7 @@ chou	裯	111
 chou	詶	70
 chou	謅	70
 chou	譸	70
-chou	讎	282
+chou	讎	115
 chou	讐	115
 chou	跾	70
 chou	躊	242
@@ -3596,8 +3606,8 @@ cu	娖	70
 cu	媨	94
 cu	徂	119
 cu	怚	70
-cu	慼	160
 cu	憱	111
+cu	戚	160
 cu	捽	70
 cu	槭	119
 cu	殂	115
@@ -3746,8 +3756,8 @@ cun	忖	127
 cun	拵	115
 cun	村	365
 cun	洊	70
+cun	浚	70
 cun	澊	103
-cun	濬	70
 cun	皴	119
 cun	竴	94
 cun	籿	111
@@ -3903,6 +3913,7 @@ dai	䲦	94
 dai	代	389
 dai	侢	103
 dai	傣	115
+dai	呆	295
 dai	呔	115
 dai	嘚	70
 dai	垈	119
@@ -4274,7 +4285,7 @@ deng	戥	115
 deng	朩	94
 deng	橙	71
 deng	櫈	103
-deng	澂	70
+deng	澄	70
 deng	燈	350
 deng	璒	115
 deng	登	309
@@ -4368,6 +4379,7 @@ di	彽	111
 di	怟	94
 di	慸	94
 di	扚	70
+di	抵	297
 di	拞	94
 di	掋	103
 di	提	160
@@ -4391,7 +4403,7 @@ di	渧	111
 di	滌	240
 di	滴	299
 di	焍	111
-di	牴	297
+di	牴	115
 di	狄	127
 di	玓	115
 di	珶	111
@@ -4579,11 +4591,12 @@ diao	刀	160
 diao	刁	115
 diao	刟	103
 diao	叼	222
+diao	吊	274
 diao	啁	70
 diao	奝	94
 diao	嬥	70
 diao	屌	111
-diao	弔	274
+diao	弔	141
 diao	弴	103
 diao	彫	123
 diao	扚	111
@@ -4627,6 +4640,7 @@ diao	銱	103
 diao	鋽	103
 diao	錭	70
 diao	鑃	103
+diao	雕	263
 diao	雿	111
 diao	魡	111
 diao	鮉	94
@@ -4634,7 +4648,7 @@ diao	鯛	115
 diao	鳥	160
 diao	鳭	111
 diao	鵃	70
-diao	鵰	263
+diao	鵰	111
 diao	鼦	103
 die	㑙	94
 die	㗧	70
@@ -5115,7 +5129,7 @@ dun	䔻	103
 dun	䤜	94
 dun	䪃	94
 dun	伅	111
-dun	儁	70
+dun	俊	70
 dun	噸	293
 dun	囤	115
 dun	坉	70
@@ -5358,6 +5372,7 @@ e	峉	111
 e	峨	220
 e	峩	107
 e	崿	115
+e	庵	70
 e	廅	111
 e	悪	103
 e	惡	308
@@ -5397,7 +5412,6 @@ e	礘	94
 e	胺	70
 e	苊	107
 e	莪	127
-e	菴	70
 e	萼	119
 e	蒍	70
 e	蕚	107
@@ -5558,10 +5572,10 @@ fa	拔	160
 fa	撥	160
 fa	栰	94
 fa	橃	103
-fa	氾	160
 fa	汎	70
 fa	沷	111
 fa	法	398
+fa	泛	160
 fa	浌	94
 fa	灋	103
 fa	琺	123
@@ -5643,8 +5657,9 @@ fan	棥	94
 fan	楓	70
 fan	樊	127
 fan	橎	111
-fan	氾	300
+fan	氾	127
 fan	汎	123
+fan	泛	300
 fan	渢	111
 fan	滼	111
 fan	潘	70
@@ -5708,13 +5723,14 @@ fang	䄱	103
 fang	䢍	94
 fang	䰃	70
 fang	䲱	94
+fang	仿	322
 fang	倣	157
 fang	匚	119
 fang	坊	225
 fang	埅	94
 fang	堏	94
 fang	妨	244
-fang	彷	322
+fang	彷	145
 fang	房	364
 fang	放	395
 fang	方	407
@@ -5996,7 +6012,7 @@ feng	方	160
 feng	桻	111
 feng	楓	123
 feng	檒	111
-feng	氾	160
+feng	泛	160
 feng	浲	107
 feng	渢	103
 feng	湗	103
@@ -6053,8 +6069,8 @@ feng	麷	111
 fiao	覅	111
 fo	仏	103
 fo	仸	70
+fo	佛	160
 fo	坲	111
-fo	彿	160
 fo	梻	94
 fou	䬏	70
 fou	不	160
@@ -6148,7 +6164,8 @@ fu	乀	94
 fu	乶	107
 fu	付	287
 fu	伏	299
-fu	伕	342
+fu	伕	111
+fu	佛	322
 fu	俌	103
 fu	俘	248
 fu	俛	115
@@ -6172,6 +6189,7 @@ fu	坿	107
 fu	垘	111
 fu	垺	115
 fu	報	160
+fu	夫	342
 fu	妋	94
 fu	姇	111
 fu	娐	94
@@ -6195,7 +6213,7 @@ fu	府	342
 fu	弗	127
 fu	弣	111
 fu	彳	70
-fu	彿	322
+fu	彿	141
 fu	復	157
 fu	怤	111
 fu	怫	119
@@ -6427,6 +6445,7 @@ gai	摡	111
 gai	改	375
 gai	晐	103
 gai	杚	111
+gai	核	160
 gai	概	322
 gai	槩	103
 gai	槪	107
@@ -6444,7 +6463,6 @@ gai	芥	70
 gai	荄	115
 gai	葢	107
 gai	蓋	317
-gai	覈	160
 gai	該	375
 gai	豥	111
 gai	賅	111
@@ -7174,9 +7192,10 @@ guai	噲	70
 guai	夬	119
 guai	怪	343
 guai	恠	103
+guai	拐	240
 guai	摑	115
 guai	枴	115
-guai	柺	240
+guai	柺	111
 guai	箉	94
 guai	罫	70
 guan	㮡	103
@@ -7962,6 +7981,7 @@ he	揭	160
 he	敆	111
 he	曷	127
 he	柇	94
+he	核	281
 he	格	160
 he	楁	111
 he	欱	111
@@ -8011,7 +8031,7 @@ he	螛	111
 he	蠚	94
 he	袔	94
 he	褐	220
-he	覈	281
+he	覈	115
 he	訶	123
 he	訸	103
 he	詥	94
@@ -8129,6 +8149,7 @@ hong	叿	94
 hong	吰	111
 hong	吽	119
 hong	呍	103
+hong	哄	249
 hong	哅	70
 hong	嗊	111
 hong	嚝	111
@@ -8205,7 +8226,7 @@ hong	闂	94
 hong	霐	111
 hong	霟	111
 hong	鞃	111
-hong	鬨	249
+hong	鬨	115
 hong	魟	111
 hong	鴻	123
 hong	黌	115
@@ -8406,6 +8427,7 @@ hu	箎	70
 hu	箶	94
 hu	簄	94
 hu	粐	103
+hu	糊	288
 hu	絗	94
 hu	綔	111
 hu	縎	70
@@ -8428,7 +8450,7 @@ hu	虖	111
 hu	虝	94
 hu	蝴	269
 hu	螜	111
-hu	衚	111
+hu	衚	317
 hu	觳	115
 hu	觷	70
 hu	許	160
@@ -8449,8 +8471,8 @@ hu	雽	111
 hu	韄	111
 hu	頀	119
 hu	頶	94
-hu	餬	288
-hu	鬍	317
+hu	餬	115
+hu	鬍	115
 hu	魱	111
 hu	鯱	107
 hu	鰗	111
@@ -9992,6 +10014,7 @@ jiang	䜫	94
 jiang	䞪	94
 jiang	䥒	94
 jiang	傋	111
+jiang	僵	251
 jiang	勥	94
 jiang	匞	94
 jiang	匠	285
@@ -10009,7 +10032,7 @@ jiang	摾	94
 jiang	槳	220
 jiang	橿	115
 jiang	櫤	94
-jiang	殭	251
+jiang	殭	111
 jiang	江	325
 jiang	洚	115
 jiang	滰	94
@@ -10880,13 +10903,15 @@ ju	䶙	94
 ju	䶥	70
 ju	且	160
 ju	乬	94
+ju	仇	160
 ju	佝	70
-ju	侷	347
+ju	侷	111
 ju	俥	70
-ju	俱	361
+ju	俱	238
 ju	倨	127
 ju	倶	103
 ju	僪	111
+ju	具	361
 ju	冣	94
 ju	凥	94
 ju	剧	297
@@ -10908,6 +10933,7 @@ ju	娶	152
 ju	婅	103
 ju	婮	103
 ju	寠	111
+ju	局	347
 ju	居	318
 ju	屈	148
 ju	屨	111
@@ -10944,7 +10970,7 @@ ju	梮	111
 ju	椇	111
 ju	椈	115
 ju	椐	115
-ju	榘	254
+ju	榘	107
 ju	橘	281
 ju	檋	94
 ju	櫃	160
@@ -10977,6 +11003,7 @@ ju	疽	127
 ju	痀	111
 ju	眗	94
 ju	瞿	70
+ju	矩	254
 ju	砠	119
 ju	租	160
 ju	秬	119
@@ -11018,7 +11045,6 @@ ju	裾	119
 ju	襷	107
 ju	詎	111
 ju	諊	94
-ju	讎	160
 ju	豦	111
 ju	貗	111
 ju	趄	115
@@ -11339,7 +11365,8 @@ jun	䐃	103
 jun	䕑	103
 jun	䜭	94
 jun	䝍	94
-jun	儁	139
+jun	俊	139
+jun	儁	115
 jun	君	257
 jun	呁	111
 jun	均	307
@@ -11357,7 +11384,8 @@ jun	晙	123
 jun	桾	115
 jun	棞	111
 jun	汮	103
-jun	濬	127
+jun	浚	127
+jun	濬	123
 jun	焌	123
 jun	焞	70
 jun	燇	111
@@ -11442,6 +11470,7 @@ kai	愾	123
 kai	慨	256
 kai	揩	224
 kai	暟	111
+kai	核	160
 kai	楷	153
 kai	欬	111
 kai	欯	70
@@ -11452,7 +11481,6 @@ kai	炌	103
 kai	炏	103
 kai	烗	111
 kai	蒈	107
-kai	覈	160
 kai	豈	156
 kai	輆	111
 kai	鍇	111
@@ -11788,6 +11816,7 @@ kou	寇	233
 kou	彀	70
 kou	彄	111
 kou	怐	70
+kou	扣	277
 kou	挎	112
 kou	摳	111
 kou	敂	94
@@ -11805,7 +11834,7 @@ kou	芤	115
 kou	茠	70
 kou	蔲	94
 kou	蔻	115
-kou	釦	277
+kou	釦	115
 kou	鏂	70
 kou	鷇	111
 ku	㗄	94
@@ -12694,6 +12723,7 @@ leng	堎	115
 leng	塄	107
 leng	崚	119
 leng	愣	262
+leng	棱	115
 leng	楞	127
 leng	睖	111
 leng	碐	94
@@ -13169,8 +13199,9 @@ liang	墚	107
 liang	悢	115
 liang	掚	94
 liang	晾	214
+liang	梁	283
 liang	椋	119
-liang	樑	283
+liang	樑	131
 liang	涼	306
 liang	湸	111
 liang	煷	103
@@ -13511,6 +13542,7 @@ ling	掕	94
 ling	昤	115
 ling	朎	103
 ling	柃	115
+ling	棱	70
 ling	櫺	115
 ling	欞	111
 ling	泠	115
@@ -13529,7 +13561,6 @@ ling	砱	111
 ling	磷	128
 ling	祾	107
 ling	秢	103
-ling	稜	70
 ling	竛	103
 ling	笭	119
 ling	紷	94
@@ -14753,7 +14784,7 @@ meng	尨	70
 meng	幪	115
 meng	庬	70
 meng	懜	94
-meng	懞	111
+meng	懞	270
 meng	懵	115
 meng	掹	103
 meng	擝	103
@@ -14766,7 +14797,7 @@ meng	檬	119
 meng	氋	111
 meng	氓	132
 meng	溕	94
-meng	濛	270
+meng	濛	115
 meng	猛	326
 meng	獴	107
 meng	瓾	111
@@ -15012,9 +15043,9 @@ mian	蠠	70
 mian	靣	94
 mian	靦	94
 mian	鮸	111
-mian	麪	412
+mian	麪	141
 mian	麫	103
-mian	麵	123
+mian	麵	412
 mian	麺	103
 mian	黽	115
 miao	㑤	103
@@ -15845,11 +15876,12 @@ nian	䬯	94
 nian	䴴	70
 nian	卄	107
 nian	哖	111
-nian	唸	346
+nian	唸	115
 nian	埝	107
 nian	姩	111
 nian	年	429
 nian	廿	210
+nian	念	346
 nian	拈	127
 nian	捵	70
 nian	捻	217
@@ -15880,8 +15912,9 @@ nian	鯰	115
 nian	鵇	94
 nian	黏	255
 niang	䖆	94
+niang	娘	340
 niang	嬢	103
-niang	孃	340
+niang	孃	123
 niang	醸	103
 niang	釀	220
 niao	㒟	94
@@ -15932,7 +15965,6 @@ nie	䯀	103
 nie	䯵	94
 nie	䳖	94
 nie	乜	70
-nie	倖	160
 nie	倪	70
 nie	哪	160
 nie	喦	111
@@ -15952,6 +15984,7 @@ nie	嵲	115
 nie	嶭	111
 nie	巕	111
 nie	帇	94
+nie	幸	160
 nie	惗	103
 nie	捏	286
 nie	捻	107
@@ -16421,13 +16454,14 @@ pang	䒍	94
 pang	䠙	94
 pang	䨦	94
 pang	乓	254
+pang	仿	160
 pang	傍	160
 pang	嗙	111
 pang	夆	70
 pang	嫎	103
 pang	尨	70
 pang	彭	70
-pang	彷	160
+pang	彷	145
 pang	徬	111
 pang	房	160
 pang	方	160
@@ -16963,7 +16997,6 @@ piao	麃	70
 pie	䥕	94
 pie	丿	111
 pie	嫳	111
-pie	庇	160
 pie	撆	94
 pie	撇	133
 pie	暼	103
@@ -16971,6 +17004,7 @@ pie	氕	115
 pie	潎	70
 pie	瞥	228
 pie	苤	115
+pie	蔽	160
 pie	覕	70
 pie	鐅	94
 pin	㡦	94
@@ -17405,15 +17439,17 @@ qi	悽	123
 qi	愒	70
 qi	愭	103
 qi	愾	70
-qi	慼	275
+qi	慼	111
 qi	慽	111
 qi	憇	107
 qi	憩	127
 qi	懠	111
+qi	戚	275
 qi	扢	70
 qi	扱	70
 qi	扺	70
 qi	技	160
+qi	抵	160
 qi	挈	70
 qi	捿	111
 qi	掑	111
@@ -17460,6 +17496,7 @@ qi	淇	127
 qi	淒	228
 qi	湆	111
 qi	湇	111
+qi	溪	154
 qi	滊	70
 qi	漆	285
 qi	漬	70
@@ -17467,7 +17504,6 @@ qi	濝	111
 qi	濟	160
 qi	炁	103
 qi	焏	70
-qi	牴	160
 qi	猉	94
 qi	玂	111
 qi	玘	115
@@ -17555,7 +17591,6 @@ qi	訖	123
 qi	諆	111
 qi	諬	94
 qi	諿	111
-qi	谿	154
 qi	豈	266
 qi	起	430
 qi	趞	70
@@ -18415,6 +18450,7 @@ qiu	䨂	94
 qiu	䱸	70
 qiu	丘	268
 qiu	丠	94
+qiu	仇	160
 qiu	俅	115
 qiu	區	160
 qiu	厹	70
@@ -18480,7 +18516,6 @@ qiu	觓	111
 qiu	觩	111
 qiu	訄	115
 qiu	訅	94
-qiu	讎	160
 qiu	賕	111
 qiu	趜	70
 qiu	趥	111
@@ -18668,8 +18703,8 @@ qu	鴝	111
 qu	鶌	70
 qu	鸜	103
 qu	麮	111
-qu	麯	103
-qu	麴	304
+qu	麯	304
+qu	麴	127
 qu	黢	107
 qu	鼁	111
 qu	鼩	115
@@ -19818,6 +19853,7 @@ shao	少	380
 shao	弰	111
 shao	招	160
 shao	捎	227
+shao	搜	160
 shao	旓	111
 shao	杓	127
 shao	柖	107
@@ -19840,7 +19876,6 @@ shao	芍	127
 shao	苕	123
 shao	莦	111
 shao	萷	70
-shao	蒐	160
 shao	蕱	111
 shao	蛸	119
 shao	袑	111
@@ -20064,6 +20099,7 @@ sheng	冼	70
 sheng	剩	321
 sheng	剰	103
 sheng	勝	363
+sheng	升	323
 sheng	呏	111
 sheng	墭	94
 sheng	姓	160
@@ -20072,7 +20108,7 @@ sheng	媵	70
 sheng	嵊	115
 sheng	憴	111
 sheng	斘	94
-sheng	昇	323
+sheng	昇	127
 sheng	晟	70
 sheng	晠	103
 sheng	曻	94
@@ -20650,7 +20686,7 @@ shun	䀵	94
 shun	䐏	70
 shun	䑞	94
 shun	䴄	94
-shun	儁	70
+shun	俊	70
 shun	吮	161
 shun	巛	70
 shun	巡	121
@@ -20727,7 +20763,6 @@ si	䡳	94
 si	䦙	94
 si	䫢	94
 si	䲉	94
-si	丝	313
 si	亖	94
 si	以	160
 si	伺	141
@@ -20736,7 +20771,7 @@ si	佀	94
 si	佁	70
 si	価	103
 si	俟	70
-si	俬	300
+si	俬	111
 si	偲	70
 si	傂	70
 si	儩	111
@@ -20786,13 +20821,14 @@ si	祠	70
 si	禗	111
 si	禠	111
 si	禩	103
+si	私	300
 si	竢	107
 si	笥	119
 si	簛	70
 si	籭	103
 si	糸	70
 si	糹	107
-si	絲	292
+si	絲	313
 si	緦	111
 si	罳	111
 si	耜	119
@@ -20920,6 +20956,7 @@ sou	廀	94
 sou	廋	115
 sou	捒	70
 sou	捜	103
+sou	搜	280
 sou	摉	94
 sou	摗	94
 sou	撨	70
@@ -20937,7 +20974,7 @@ sou	瘶	94
 sou	瞍	115
 sou	籔	115
 sou	艘	251
-sou	蒐	280
+sou	蒐	127
 sou	蓃	94
 sou	藪	123
 sou	螋	107
@@ -21056,7 +21093,7 @@ suan	䝜	94
 suan	匴	111
 suan	撰	70
 suan	狻	115
-suan	痠	293
+suan	痠	111
 suan	祘	103
 suan	笇	94
 suan	筭	111
@@ -21064,6 +21101,7 @@ suan	算	373
 suan	篹	70
 suan	蒜	211
 suan	選	160
+suan	酸	293
 sui	㒸	94
 sui	㞸	94
 sui	㥞	94
@@ -21120,13 +21158,14 @@ sui	碎	329
 sui	祟	131
 sui	禭	111
 sui	穂	103
+sui	穗	235
 sui	穟	115
 sui	篲	70
 sui	粹	120
 sui	綏	123
 sui	縗	70
 sui	繀	111
-sui	繐	235
+sui	繐	111
 sui	繸	111
 sui	脺	70
 sui	膸	103
@@ -22575,6 +22614,7 @@ tuo	岮	111
 tuo	庹	115
 tuo	彵	94
 tuo	惰	71
+tuo	托	291
 tuo	扡	111
 tuo	拓	70
 tuo	拕	103
@@ -22618,7 +22658,7 @@ tuo	袉	111
 tuo	袘	70
 tuo	袥	94
 tuo	訑	70
-tuo	託	291
+tuo	託	149
 tuo	詑	70
 tuo	説	70
 tuo	跅	111
@@ -22788,6 +22828,7 @@ wan	潫	111
 wan	澫	111
 wan	灣	239
 wan	烷	115
+wan	玩	327
 wan	琓	107
 wan	琬	123
 wan	畹	115
@@ -22803,7 +22844,7 @@ wan	絻	70
 wan	綄	70
 wan	綩	111
 wan	綰	115
-wan	翫	327
+wan	翫	123
 wan	脕	111
 wan	脘	123
 wan	腕	127
@@ -23689,6 +23730,7 @@ xi	嶲	115
 xi	巂	70
 xi	巇	115
 xi	希	336
+xi	席	359
 xi	徆	111
 xi	徙	153
 xi	徯	111
@@ -23746,6 +23788,7 @@ xi	洗	335
 xi	浠	115
 xi	淅	127
 xi	渓	103
+xi	溪	264
 xi	滊	111
 xi	漇	111
 xi	漝	94
@@ -23829,7 +23872,7 @@ xi	葈	103
 xi	葸	115
 xi	蒠	111
 xi	蒵	94
-xi	蓆	359
+xi	蓆	123
 xi	蓰	115
 xi	蔇	70
 xi	蕮	111
@@ -23864,7 +23907,7 @@ xi	謑	111
 xi	謚	70
 xi	謵	111
 xi	譆	111
-xi	谿	264
+xi	谿	127
 xi	豀	94
 xi	豨	115
 xi	豯	111
@@ -24165,6 +24208,7 @@ xian	峴	119
 xian	嶮	115
 xian	幰	111
 xian	廯	111
+xian	弦	228
 xian	彡	70
 xian	忺	115
 xian	慊	70
@@ -24236,7 +24280,7 @@ xian	筧	70
 xian	箲	103
 xian	粯	111
 xian	糮	111
-xian	絃	228
+xian	絃	123
 xian	絤	94
 xian	綅	70
 xian	綖	70
@@ -24500,6 +24544,7 @@ xiao	恷	107
 xiao	憢	111
 xiao	捎	117
 xiao	揱	111
+xiao	搜	160
 xiao	撓	70
 xiao	撨	70
 xiao	效	329
@@ -24566,7 +24611,6 @@ xiao	芍	70
 xiao	茭	70
 xiao	莦	70
 xiao	萷	111
-xiao	蒐	160
 xiao	蕭	123
 xiao	薂	70
 xiao	藃	111
@@ -24925,7 +24969,7 @@ xing	䤯	103
 xing	䰢	94
 xing	䳙	94
 xing	侀	111
-xing	倖	326
+xing	倖	149
 xing	刑	297
 xing	勝	160
 xing	哘	103
@@ -24938,6 +24982,7 @@ xing	婞	115
 xing	嫈	70
 xing	嬹	94
 xing	巠	70
+xing	幸	326
 xing	形	372
 xing	性	379
 xing	悻	115
@@ -25028,6 +25073,7 @@ xiu	䗛	103
 xiu	䡭	94
 xiu	休	320
 xiu	俢	94
+xiu	修	344
 xiu	咻	115
 xiu	嗅	235
 xiu	嚊	70
@@ -25055,7 +25101,7 @@ xiu	繍	103
 xiu	繡	242
 xiu	羞	161
 xiu	脙	111
-xiu	脩	344
+xiu	脩	127
 xiu	臭	160
 xiu	臹	111
 xiu	苬	111
@@ -25565,6 +25611,7 @@ xun	殾	94
 xun	毥	94
 xun	汛	214
 xun	洵	127
+xun	浚	70
 xun	潠	111
 xun	潭	136
 xun	潯	115
@@ -25572,10 +25619,11 @@ xun	濬	70
 xun	灥	111
 xun	焄	119
 xun	煇	70
+xun	熏	233
 xun	燂	70
 xun	燅	111
 xun	燖	111
-xun	燻	233
+xun	燻	123
 xun	爋	94
 xun	爓	70
 xun	狥	94
@@ -25855,6 +25903,7 @@ yan	嬿	115
 yan	孍	111
 yan	宴	259
 yan	屵	70
+yan	岩	280
 yan	崦	115
 yan	嵃	111
 yan	嵒	115
@@ -25862,11 +25911,12 @@ yan	嵓	94
 yan	嶖	94
 yan	嶮	70
 yan	巌	103
-yan	巖	280
+yan	巖	141
 yan	巗	103
 yan	巘	111
 yan	巚	94
 yan	巡	121
+yan	庵	70
 yan	廠	160
 yan	廣	160
 yan	延	272
@@ -27803,7 +27853,7 @@ yu	惌	70
 yu	惐	94
 yu	愉	286
 yu	愚	219
-yu	慾	258
+yu	慾	135
 yu	懊	70
 yu	懙	94
 yu	或	160
@@ -27839,6 +27889,7 @@ yu	櫲	94
 yu	欎	94
 yu	欝	107
 yu	欥	70
+yu	欲	258
 yu	歈	111
 yu	歟	123
 yu	歶	111
@@ -28223,7 +28274,8 @@ yue	妁	70
 yue	妜	94
 yue	嬳	94
 yue	岄	94
-yue	嶽	127
+yue	岳	127
+yue	嶽	123
 yue	彠	103
 yue	恱	94
 yue	悅	235
@@ -28416,6 +28468,7 @@ za	囃	70
 za	囋	111
 za	囐	94
 za	帀	94
+za	扎	160
 za	拶	119
 za	沞	94
 za	沯	103
@@ -28424,7 +28477,7 @@ za	砸	247
 za	磼	111
 za	糴	70
 za	紥	129
-za	紮	160
+za	紮	149
 za	臢	111
 za	襍	107
 za	迊	103
@@ -28558,6 +28611,7 @@ zao	傮	111
 zao	唕	94
 zao	唣	107
 zao	喿	111
+zao	噪	230
 zao	慥	119
 zao	早	376
 zao	栆	94
@@ -28569,7 +28623,8 @@ zao	煰	111
 zao	燥	257
 zao	璅	70
 zao	璪	123
-zao	皁	260
+zao	皁	111
+zao	皂	260
 zao	窖	112
 zao	竃	107
 zao	竈	107
@@ -28583,7 +28638,7 @@ zao	薻	94
 zao	藻	127
 zao	蚤	139
 zao	謲	70
-zao	譟	230
+zao	譟	115
 zao	趮	111
 zao	蹧	111
 zao	躁	258
@@ -28751,6 +28806,7 @@ zha	囃	70
 zha	奓	115
 zha	宱	94
 zha	怍	70
+zha	扎	286
 zha	扠	70
 zha	抯	111
 zha	拃	107
@@ -28786,7 +28842,7 @@ zha	砟	115
 zha	笮	70
 zha	箑	70
 zha	箚	115
-zha	紮	286
+zha	紮	70
 zha	耫	94
 zha	膪	70
 zha	苲	111
@@ -29582,10 +29638,11 @@ zhi	慹	111
 zhi	憄	94
 zhi	懥	111
 zhi	懫	111
-zhi	戠	111
+zhi	戠	411
 zhi	扺	115
 zhi	扻	111
 zhi	抧	94
+zhi	抵	160
 zhi	拓	70
 zhi	挃	111
 zhi	指	382
@@ -29648,7 +29705,6 @@ zhi	潪	70
 zhi	瀄	111
 zhi	炙	127
 zhi	熫	94
-zhi	牴	160
 zhi	犆	111
 zhi	狾	111
 zhi	猘	111
@@ -29776,7 +29832,7 @@ zhi	阯	115
 zhi	陁	70
 zhi	陟	127
 zhi	隲	103
-zhi	隻	411
+zhi	隻	175
 zhi	雉	127
 zhi	馶	94
 zhi	馽	111
@@ -29902,7 +29958,8 @@ zhou	侏	70
 zhou	侜	111
 zhou	倜	70
 zhou	僽	111
-zhou	冑	127
+zhou	冑	115
+zhou	周	339
 zhou	呪	115
 zhou	咒	217
 zhou	咮	111
@@ -29951,6 +30008,7 @@ zhou	繇	70
 zhou	翢	70
 zhou	肘	119
 zhou	育	160
+zhou	胄	127
 zhou	胕	70
 zhou	舟	222
 zhou	舳	70
@@ -29969,7 +30027,7 @@ zhou	軸	253
 zhou	輈	111
 zhou	輖	111
 zhou	逐	160
-zhou	週	339
+zhou	週	175
 zhou	郮	94
 zhou	酎	127
 zhou	鈾	108
@@ -30497,6 +30555,7 @@ zi	吇	111
 zi	吱	70
 zi	呰	115
 zi	呲	70
+zi	咨	127
 zi	啙	94
 zi	嗞	107
 zi	姉	115
@@ -30568,7 +30627,7 @@ zi	虸	103
 zi	觜	119
 zi	訾	115
 zi	訿	111
-zi	諮	127
+zi	諮	123
 zi	貲	115
 zi	資	376
 zi	赼	94
@@ -30911,10 +30970,11 @@ zuo	做	399
 zuo	咗	107
 zuo	唑	115
 zuo	嘬	115
+zuo	坐	375
 zuo	岝	111
 zuo	岞	107
 zuo	左	356
-zuo	座	375
+zuo	座	342
 zuo	怍	115
 zuo	挫	148
 zuo	捽	115

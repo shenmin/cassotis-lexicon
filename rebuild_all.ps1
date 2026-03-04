@@ -170,7 +170,7 @@ if ($LASTEXITCODE -ne 0) {
 # independent Unihan transform chain.
 $unihanBuildArgs = @{
     Root = $Root
-    Profile = "clean_permissive"
+    Profile = "unihan_single"
     MinHanzi = 1
     MaxEntries = 0
     OutputSc = "data/generated/dict_unihan_sc.txt"

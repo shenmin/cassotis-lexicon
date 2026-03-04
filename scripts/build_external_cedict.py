@@ -2331,6 +2331,8 @@ def _build_char_variant_hints(
     # 1) script split in unihan_single generation
     # 2) SC-side cleanup in broad profile.
     pair_counts: Dict[Tuple[str, str], int] = {}
+    tc_identity_counts: Dict[str, int] = {}
+    sc_identity_counts: Dict[str, int] = {}
     sc_chars: Set[str] = set()
     tc_chars: Set[str] = set()
 
@@ -2344,9 +2346,12 @@ def _build_char_variant_hints(
                 continue
             tc_chars.add(tc_ch)
             sc_chars.add(sc_ch)
-            if tc_ch != sc_ch:
-                key = (tc_ch, sc_ch)
-                pair_counts[key] = pair_counts.get(key, 0) + 1
+            if tc_ch == sc_ch:
+                tc_identity_counts[tc_ch] = tc_identity_counts.get(tc_ch, 0) + 1
+                sc_identity_counts[sc_ch] = sc_identity_counts.get(sc_ch, 0) + 1
+                continue
+            key = (tc_ch, sc_ch)
+            pair_counts[key] = pair_counts.get(key, 0) + 1
 
     for sc_word, tc_word in opencc_entries:
         add_pair(tc_word, sc_word)
@@ -2360,7 +2365,18 @@ def _build_char_variant_hints(
         per_tc.setdefault(tc_ch, []).append((count, sc_ch))
     for tc_ch, candidates in per_tc.items():
         candidates.sort(key=lambda item: (-item[0], item[1]))
-        trad_to_simp[tc_ch] = candidates[0][1]
+        best_count, best_sc = candidates[0]
+        second_count = candidates[1][0] if len(candidates) > 1 else 0
+        same_count = tc_identity_counts.get(tc_ch, 0)
+        # Avoid overfitting lexicalized phrase-level replacements (for example 待->呆 in 待著->呆着).
+        # Only keep a TC->SC char hint when evidence is strong enough.
+        if best_count < 2:
+            continue
+        if best_count <= same_count:
+            continue
+        if best_count <= second_count:
+            continue
+        trad_to_simp[tc_ch] = best_sc
 
     simp_to_trad: Dict[str, str] = {}
     per_sc: Dict[str, List[Tuple[int, str]]] = {}
@@ -2368,7 +2384,16 @@ def _build_char_variant_hints(
         per_sc.setdefault(sc_ch, []).append((count, tc_ch))
     for sc_ch, candidates in per_sc.items():
         candidates.sort(key=lambda item: (-item[0], item[1]))
-        simp_to_trad[sc_ch] = candidates[0][1]
+        best_count, best_tc = candidates[0]
+        second_count = candidates[1][0] if len(candidates) > 1 else 0
+        same_count = sc_identity_counts.get(sc_ch, 0)
+        if best_count < 2:
+            continue
+        if best_count <= same_count:
+            continue
+        if best_count <= second_count:
+            continue
+        simp_to_trad[sc_ch] = best_tc
 
     return trad_to_simp, simp_to_trad, sc_chars, tc_chars
 
