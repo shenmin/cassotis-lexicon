@@ -434,6 +434,45 @@ def _is_noun_pos(pos_tag: str) -> bool:
     return pos_tag.startswith("n")
 
 
+def _compute_effective_pos_bias(
+    pos_tag: str,
+    text_len: int,
+    usage_score: float,
+    jieba_direct_score: float,
+    source_hits: int,
+    pageview_score: float,
+    char_score: float,
+) -> float:
+    """
+    Scale POS bias by signal confidence.
+
+    jieba POS can mislabel common words (for example tagging regular words as 'nr').
+    Use multi-signal confidence so POS is a tiebreaker, not a hard override.
+    """
+    base_bias = _compute_jieba_pos_bias(pos_tag, text_len)
+    if abs(base_bias) <= 1e-9:
+        return 0.0
+
+    confidence = max(
+        0.0,
+        min(1.0, usage_score),
+        min(1.0, jieba_direct_score),
+        min(1.0, pageview_score * 1.3),
+    )
+
+    if source_hits >= 2:
+        confidence = max(confidence, 0.42)
+    elif source_hits == 1:
+        confidence = max(confidence, 0.24)
+
+    if text_len <= 2:
+        confidence = max(confidence, min(1.0, char_score * 0.45))
+
+    # Keep a small floor to preserve deterministic ordering, while avoiding over-penalization.
+    confidence = min(1.0, max(0.08, confidence))
+    return base_bias * confidence
+
+
 def _rerank_homophone_buckets(
     mapping: Dict[Tuple[str, str], int],
     usage_score_map: Dict[str, float],
@@ -513,6 +552,16 @@ def _rerank_homophone_buckets(
             wiki_hit = 1.0 if text in wiki_titles else 0.0
             jieba_direct_score = min(1.0, max(0.0, jieba_direct_signal_map.get(text, 0.0)))
             char_score = _compute_text_single_char_prior(text, char_prior)
+            pos_tag = jieba_pos_map.get(text, "")
+            pos_bias = _compute_effective_pos_bias(
+                pos_tag=pos_tag,
+                text_len=text_len,
+                usage_score=usage_score,
+                jieba_direct_score=jieba_direct_score,
+                source_hits=source_hits,
+                pageview_score=pageview_score,
+                char_score=char_score,
+            )
             min_char_prior = 1.0
             has_cjk_char = False
             for ch in text:
@@ -524,14 +573,12 @@ def _rerank_homophone_buckets(
                     min_char_prior = value
             if not has_cjk_char:
                 min_char_prior = 0.0
-            pos_bias = _compute_jieba_pos_bias(jieba_pos_map.get(text, ""), text_len)
             if text_len <= 2:
                 char_weight = 220.0
             elif text_len <= 4:
                 char_weight = 72.0
             else:
                 char_weight = 28.0
-            pos_tag = jieba_pos_map.get(text, "")
             if text_len <= 2 and _is_conversational_pos(pos_tag):
                 bucket_has_conversational_short_term = True
 
@@ -541,7 +588,7 @@ def _rerank_homophone_buckets(
                 or source_hits >= 2
                 or pageview_score >= 0.22
                 or wiki_hit > 0.0
-                or (pos_bias >= 0.18 and jieba_direct_score >= 0.16)
+                or (pos_bias >= 0.08 and jieba_direct_score >= 0.16)
             ):
                 bucket_has_strong_term = True
 
@@ -573,7 +620,15 @@ def _rerank_homophone_buckets(
             jieba_direct_score = min(1.0, max(0.0, jieba_direct_signal_map.get(text, 0.0)))
             char_score = _compute_text_single_char_prior(text, char_prior)
             pos_tag = jieba_pos_map.get(text, "")
-            pos_bias = _compute_jieba_pos_bias(jieba_pos_map.get(text, ""), text_len)
+            pos_bias = _compute_effective_pos_bias(
+                pos_tag=pos_tag,
+                text_len=text_len,
+                usage_score=usage_score,
+                jieba_direct_score=jieba_direct_score,
+                source_hits=source_hits,
+                pageview_score=pageview_score,
+                char_score=char_score,
+            )
             normalized = (raw_scores[text] - min_raw) / spread
             delta_cap = c_max_delta
             delta = int(round((normalized - 0.5) * (2 * delta_cap) * spread_factor))
@@ -614,7 +669,7 @@ def _rerank_homophone_buckets(
             if (
                 bucket_has_strong_term
                 and text_len <= 2
-                and pos_bias <= -0.24
+                and pos_bias <= -0.12
                 and usage_score < 0.30
                 and jieba_direct_score < 0.32
                 and source_hits <= 1
@@ -623,7 +678,7 @@ def _rerank_homophone_buckets(
             elif (
                 bucket_has_strong_term
                 and text_len <= 2
-                and pos_bias >= 0.18
+                and pos_bias >= 0.10
                 and (usage_score >= 0.10 or jieba_direct_score >= 0.14 or char_score >= 0.62)
             ):
                 delta += 34
