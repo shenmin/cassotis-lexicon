@@ -16,10 +16,10 @@ Open-source lexicon artifacts and build pipeline for Cassotis IME.
 
 | File | Variant | Entries |
 |------|---------|---------|
-| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 105,058 |
-| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 88,656 |
-| `data/generated/dict_unihan_sc.txt` | Simplified single-char (Unihan) | 30,384 |
-| `data/generated/dict_unihan_tc.txt` | Traditional single-char (Unihan) | 30,949 |
+| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 105,202 |
+| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 89,387 |
+| `data/generated/dict_unihan_sc.txt` | Simplified single-char (Unihan) | 30,397 |
+| `data/generated/dict_unihan_tc.txt` | Traditional single-char (Unihan) | 31,009 |
 
 ## Format
 
