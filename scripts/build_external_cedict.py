@@ -975,6 +975,16 @@ def _filter_global_tail_entries(
     bucket_counts: Dict[str, int] = {}
     for pinyin, _text in mapping.keys():
         bucket_counts[pinyin] = bucket_counts.get(pinyin, 0) + 1
+    remaining_bucket_counts: Dict[str, int] = dict(bucket_counts)
+
+    def schedule_drop(entry_key: Tuple[str, str]) -> bool:
+        entry_pinyin, _ = entry_key
+        remaining = remaining_bucket_counts.get(entry_pinyin, 0)
+        if remaining <= 1:
+            return False
+        to_drop.append(entry_key)
+        remaining_bucket_counts[entry_pinyin] = remaining - 1
+        return True
 
     for key in list(mapping.keys()):
         pinyin, text = key
@@ -1025,8 +1035,8 @@ def _filter_global_tail_entries(
             and jieba_direct_score < 0.12
             and usage_score < 0.34
         ):
-            to_drop.append(key)
-            stats[f"{stats_prefix}_global_tail_named_removed"] += 1
+            if schedule_drop(key):
+                stats[f"{stats_prefix}_global_tail_named_removed"] += 1
             continue
 
         if (
@@ -1038,8 +1048,8 @@ def _filter_global_tail_entries(
             and not wiki_support
             and min_char_prior < 0.04
         ):
-            to_drop.append(key)
-            stats[f"{stats_prefix}_global_tail_rare_char_removed"] += 1
+            if schedule_drop(key):
+                stats[f"{stats_prefix}_global_tail_rare_char_removed"] += 1
             continue
 
     for key in to_drop:
