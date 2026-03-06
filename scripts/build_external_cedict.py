@@ -976,9 +976,44 @@ def _filter_global_tail_entries(
     for pinyin, _text in mapping.keys():
         bucket_counts[pinyin] = bucket_counts.get(pinyin, 0) + 1
     remaining_bucket_counts: Dict[str, int] = dict(bucket_counts)
+    bucket_keepers: Dict[str, Tuple[str, str]] = {}
+    bucket_keeper_scores: Dict[str, Tuple[float, float, float, float, float, float, int, str]] = {}
+
+    def build_bucket_keeper_score(entry_key: Tuple[str, str]) -> Tuple[float, float, float, float, float, float, int, str]:
+        _entry_pinyin, entry_text = entry_key
+        entry_usage_score = min(1.0, max(0.0, usage_score_map.get(entry_text, 0.0)))
+        entry_source_hits = float(max(0, source_hits_map.get(entry_text, 0)))
+        entry_pageview_score = min(1.0, max(0.0, pageviews_signal_map.get(entry_text, 0.0)))
+        entry_jieba_direct_score = min(1.0, max(0.0, jieba_direct_signal_map.get(entry_text, 0.0)))
+        entry_char_score = _compute_text_single_char_prior(entry_text, char_prior)
+        return (
+            float(mapping.get(entry_key, 0)),
+            entry_usage_score,
+            entry_jieba_direct_score,
+            entry_pageview_score,
+            entry_source_hits,
+            entry_char_score,
+            -_cjk_len(entry_text),
+            entry_text,
+        )
+
+    # When trimming a low-signal tail, preserve the strongest remaining
+    # candidate in each pinyin bucket instead of whichever entry happens to be
+    # visited last in dict order.
+    for key in mapping.keys():
+        entry_pinyin, _entry_text = key
+        keeper_score = build_bucket_keeper_score(key)
+        if (
+            entry_pinyin not in bucket_keeper_scores
+            or keeper_score > bucket_keeper_scores[entry_pinyin]
+        ):
+            bucket_keeper_scores[entry_pinyin] = keeper_score
+            bucket_keepers[entry_pinyin] = key
 
     def schedule_drop(entry_key: Tuple[str, str]) -> bool:
         entry_pinyin, _ = entry_key
+        if bucket_keepers.get(entry_pinyin) == entry_key:
+            return False
         remaining = remaining_bucket_counts.get(entry_pinyin, 0)
         if remaining <= 1:
             return False
