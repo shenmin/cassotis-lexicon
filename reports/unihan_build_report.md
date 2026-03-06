@@ -1,7 +1,7 @@
 # External Build Report
 
 - profile: unihan_single
-- generated_at_utc: 2026-03-04T07:57:29+00:00
+- generated_at_utc: 2026-03-06T07:44:14+00:00
 - min_hanzi: 1
 - max_entries: unlimited
 
@@ -23,7 +23,7 @@
 - override_entries: 13
 - override_hits: 0
 - override_injected: 0
-- parsed_lines: 49181
+- parsed_lines: 49180
 - sc_char_normalized_blocked_reverse_entries: 13
 - sc_char_normalized_converted_entries: 1802
 - sc_char_normalized_total_entries: 30397
@@ -59,7 +59,7 @@
 - tc_low_signal_rare_removed: 0
 - tc_script_filtered_entries: 0
 - tc_script_filtered_total_entries: 31009
-- total_lines: 49188
+- total_lines: 49187
 - unihan_core_size: 18816
 - unihan_frequency_size: 0
 - unihan_grade_size: 2632
@@ -73,7 +73,7 @@
 - unihan_tc_only_chars: 2185
 
 ## Output
-- sc_file: D:\cassotis_lexicon_public\data\generated\dict_unihan_sc.txt
-- tc_file: D:\cassotis_lexicon_public\data\generated\dict_unihan_tc.txt
+- sc_file: D:\cassotis_lexicon\data\generated\dict_unihan_sc.txt
+- tc_file: D:\cassotis_lexicon\data\generated\dict_unihan_tc.txt
 - sc_entries: 30397
 - tc_entries: 31009

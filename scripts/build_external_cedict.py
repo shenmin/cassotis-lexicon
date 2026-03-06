@@ -306,6 +306,9 @@ def _compute_weight_with_signals(
     pageview_score: float = 0.0,
     wiki_hit: bool = False,
     core_entry: bool = False,
+    jieba_direct_score: float = 0.0,
+    pos_tag: str = "",
+    char_score: float = 0.0,
 ) -> int:
     """
     Weight model for broad profile.
@@ -317,7 +320,68 @@ def _compute_weight_with_signals(
     - pageview popularity score
     - wiki title hit (named/common term prior)
     - core entry bonus (keep core dictionary terms generally ahead)
+    - POS / term-class shaping (daily words vs. named entities / rare tails)
+    - single-character commonness prior
     """
+    def _compute_term_class_bias() -> float:
+        bias = 0.0
+
+        if length == 1:
+            if char_score >= 0.90:
+                bias += 0.36
+            elif char_score >= 0.78:
+                bias += 0.24
+            elif char_score >= 0.66:
+                bias += 0.12
+            elif (
+                char_score <= 0.06
+                and bounded_usage < 0.04
+                and jieba_direct_score < 0.03
+                and source_hits <= 1
+                and bounded_pageviews < 0.02
+            ):
+                bias -= 0.42
+            elif (
+                char_score <= 0.12
+                and bounded_usage < 0.06
+                and jieba_direct_score < 0.05
+                and source_hits <= 1
+                and bounded_pageviews < 0.03
+            ):
+                bias -= 0.24
+
+        if _is_named_entity_pos(pos_tag):
+            if source_hits <= 1 and bounded_pageviews < 0.08 and jieba_direct_score < 0.10:
+                bias -= 0.30 if length <= 3 else 0.20
+            elif source_hits <= 2 and bounded_pageviews < 0.18 and jieba_direct_score < 0.16:
+                bias -= 0.12
+        elif _is_conversational_pos(pos_tag):
+            if length <= 4 and (bounded_usage >= 0.05 or jieba_direct_score >= 0.08):
+                bias += 0.18
+            elif length <= 4:
+                bias += 0.08
+        elif _is_noun_pos(pos_tag):
+            if length <= 3 and (bounded_usage >= 0.12 or jieba_direct_score >= 0.12 or source_hits >= 2):
+                bias += 0.08
+            elif length <= 4 and bounded_usage >= 0.06 and jieba_direct_score >= 0.06:
+                bias += 0.04
+
+        if (
+            length <= 4
+            and bounded_usage < 0.03
+            and jieba_direct_score < 0.03
+            and source_hits <= 0
+            and bounded_pageviews <= 0.0
+            and char_score < 0.10
+            and not wiki_hit
+        ):
+            bias -= 0.18
+
+        if length <= 2 and char_score >= 0.74 and not _is_named_entity_pos(pos_tag):
+            bias += 0.08
+
+        return max(-0.55, min(0.45, bias))
+
     length = max(1, _cjk_len(text))
     base = 120 + min(length, 8) * 30
     bounded_usage = min(1.0, max(0.0, usage_score))
@@ -329,13 +393,14 @@ def _compute_weight_with_signals(
     pageview_bonus = int(round(92.0 * math.sqrt(bounded_pageviews))) if bounded_pageviews > 0 else 0
     wiki_bonus = 20 if wiki_hit else 0
     core_bonus = 18 if core_entry else 0
+    class_bonus = int(round(_compute_term_class_bias() * 180.0))
     # Keep a global cap for compatibility with downstream consumers.
     # The current formula generally peaks below 1000 for realistic inputs.
     return min(
         1000,
         max(
             1,
-            base + usage_bonus + consensus_bonus + pageview_bonus + wiki_bonus + core_bonus,
+            base + usage_bonus + consensus_bonus + pageview_bonus + wiki_bonus + core_bonus + class_bonus,
         ),
     )
 
@@ -491,6 +556,24 @@ def _compute_effective_pos_bias(
     return base_bias * confidence
 
 
+def _build_effective_char_prior(
+    mapping: Dict[Tuple[str, str], int],
+    char_frequency_prior: Dict[str, float] | None,
+) -> Dict[str, float]:
+    char_frequency_prior = char_frequency_prior or {}
+    mapping_char_prior = _build_single_char_weight_prior(mapping)
+    if not char_frequency_prior:
+        return mapping_char_prior
+
+    char_prior: Dict[str, float] = {}
+    for ch in set(mapping_char_prior.keys()) | set(char_frequency_prior.keys()):
+        char_prior[ch] = (
+            0.22 * mapping_char_prior.get(ch, 0.0)
+            + 0.78 * char_frequency_prior.get(ch, 0.0)
+        )
+    return char_prior
+
+
 def _rerank_homophone_buckets(
     mapping: Dict[Tuple[str, str], int],
     usage_score_map: Dict[str, float],
@@ -539,17 +622,7 @@ def _rerank_homophone_buckets(
 
     jieba_direct_signal_map = jieba_direct_signal_map or {}
     jieba_pos_map = jieba_pos_map or {}
-    char_frequency_prior = char_frequency_prior or {}
-    mapping_char_prior = _build_single_char_weight_prior(mapping)
-    if char_frequency_prior:
-        char_prior: Dict[str, float] = {}
-        for ch in set(mapping_char_prior.keys()) | set(char_frequency_prior.keys()):
-            char_prior[ch] = (
-                0.22 * mapping_char_prior.get(ch, 0.0)
-                + 0.78 * char_frequency_prior.get(ch, 0.0)
-            )
-    else:
-        char_prior = mapping_char_prior
+    char_prior = _build_effective_char_prior(mapping, char_frequency_prior)
     buckets: Dict[str, List[Tuple[str, int]]] = {}
     for (pinyin, text), weight in mapping.items():
         buckets.setdefault(pinyin, []).append((text, weight))
@@ -819,17 +892,7 @@ def _filter_low_signal_rare_entries(
 
     jieba_direct_signal_map = jieba_direct_signal_map or {}
     jieba_pos_map = jieba_pos_map or {}
-    char_frequency_prior = char_frequency_prior or {}
-    mapping_char_prior = _build_single_char_weight_prior(mapping)
-    if char_frequency_prior:
-        char_prior: Dict[str, float] = {}
-        for ch in set(mapping_char_prior.keys()) | set(char_frequency_prior.keys()):
-            char_prior[ch] = max(
-                mapping_char_prior.get(ch, 0.0),
-                char_frequency_prior.get(ch, 0.0),
-            )
-    else:
-        char_prior = mapping_char_prior
+    char_prior = _build_effective_char_prior(mapping, char_frequency_prior)
 
     buckets: Dict[str, List[str]] = {}
     for (pinyin, text) in mapping.keys():
@@ -960,17 +1023,7 @@ def _filter_global_tail_entries(
 
     jieba_direct_signal_map = jieba_direct_signal_map or {}
     jieba_pos_map = jieba_pos_map or {}
-    char_frequency_prior = char_frequency_prior or {}
-    mapping_char_prior = _build_single_char_weight_prior(mapping)
-    if char_frequency_prior:
-        char_prior: Dict[str, float] = {}
-        for ch in set(mapping_char_prior.keys()) | set(char_frequency_prior.keys()):
-            char_prior[ch] = max(
-                mapping_char_prior.get(ch, 0.0),
-                char_frequency_prior.get(ch, 0.0),
-            )
-    else:
-        char_prior = mapping_char_prior
+    char_prior = _build_effective_char_prior(mapping, char_frequency_prior)
     to_drop: List[Tuple[str, str]] = []
     bucket_counts: Dict[str, int] = {}
     for pinyin, _text in mapping.keys():
@@ -1938,12 +1991,12 @@ def _compute_unihan_single_char_weight(
     grade_level: int,
     core_coverage: int,
 ) -> int:
-    weight = 72
+    weight = 56
     if pinlu_freq > 0:
         weight += _unihan_weight_from_pinlu(pinlu_freq)
     else:
         # Keep non-pinlu characters available with conservative baseline.
-        weight += 16
+        weight += 8
     if freq > 0:
         weight += _unihan_weight_from_frequency(freq)
     if grade_level > 0:
@@ -1957,10 +2010,10 @@ def _compute_unihan_single_char_weight(
             core_bonus = core_bonus // 2
         weight += core_bonus
 
-    if weight < 72:
-        return 72
-    if weight > 620:
-        return 620
+    if weight < 56:
+        return 56
+    if weight > 540:
+        return 540
     return weight
 
 
@@ -2924,6 +2977,7 @@ def _rescore_mapping_with_signals(
     wiki_titles: Set[str],
     jieba_direct_signal_map: Dict[str, float] | None,
     jieba_pos_map: Dict[str, str] | None,
+    char_frequency_prior: Dict[str, float] | None,
     core_entry: bool,
     stats_prefix: str,
 ) -> Dict[str, int]:
@@ -2934,9 +2988,11 @@ def _rescore_mapping_with_signals(
         f"{stats_prefix}_pageviews_hits": 0,
         f"{stats_prefix}_wiki_hits": 0,
         f"{stats_prefix}_named_entity_penalized": 0,
+        f"{stats_prefix}_single_char_adjusted": 0,
     }
     jieba_direct_signal_map = jieba_direct_signal_map or {}
     jieba_pos_map = jieba_pos_map or {}
+    char_prior = _build_effective_char_prior(mapping, char_frequency_prior)
     for key in list(mapping.keys()):
         _pinyin, text = key
         usage_score = usage_score_map.get(text, 0.0)
@@ -2950,6 +3006,7 @@ def _rescore_mapping_with_signals(
         )
         jieba_direct_score = min(1.0, max(0.0, jieba_direct_signal_map.get(text, 0.0)))
         pos_tag = jieba_pos_map.get(text, "")
+        char_score = _compute_text_single_char_prior(text, char_prior)
         weight = _compute_weight_with_signals(
             text,
             usage_score=usage_score,
@@ -2957,9 +3014,37 @@ def _rescore_mapping_with_signals(
             pageview_score=pageviews_score,
             wiki_hit=wiki_hit,
             core_entry=core_entry,
+            jieba_direct_score=jieba_direct_score,
+            pos_tag=pos_tag,
+            char_score=char_score,
         )
+        text_len = _cjk_len(text)
+        if text_len == 1:
+            if char_score >= 0.88:
+                weight = min(1000, weight + 180)
+                stats[f"{stats_prefix}_single_char_adjusted"] += 1
+            elif char_score >= 0.76:
+                weight = min(1000, weight + 110)
+                stats[f"{stats_prefix}_single_char_adjusted"] += 1
+            elif (
+                char_score <= 0.06
+                and usage_score < 0.03
+                and jieba_direct_score < 0.03
+                and source_hits <= 1
+                and pageviews_score < 0.02
+            ):
+                weight = max(1, weight - 240)
+                stats[f"{stats_prefix}_single_char_adjusted"] += 1
+            elif (
+                char_score <= 0.12
+                and usage_score < 0.05
+                and jieba_direct_score < 0.05
+                and source_hits <= 1
+                and pageviews_score < 0.03
+            ):
+                weight = max(1, weight - 140)
+                stats[f"{stats_prefix}_single_char_adjusted"] += 1
         if _is_named_entity_pos(pos_tag):
-            text_len = _cjk_len(text)
             if source_hits <= 2 and pageviews_score < 0.08 and jieba_direct_score < 0.12:
                 penalty = 68 if text_len <= 2 else (44 if text_len <= 4 else 28)
                 weight = max(1, weight - penalty)
@@ -2986,6 +3071,9 @@ def _augment_with_frequency_lexicon(
     usage_score_map: Dict[str, float],
     source_hits_map: Dict[str, int],
     pageviews_signal_map: Dict[str, float],
+    jieba_direct_signal_map: Dict[str, float],
+    jieba_pos_map: Dict[str, str],
+    char_frequency_prior: Dict[str, float],
     opencc_entries: List[Tuple[str, str]],
     tc_to_sc_map: Dict[str, Set[str]],
     unihan_map: Dict[str, str],
@@ -3010,6 +3098,7 @@ def _augment_with_frequency_lexicon(
     opencc_sc_to_tc = _build_opencc_sc_to_tc_map(opencc_entries)
     pinyin_index = _build_text_pinyin_index(sc, tc)
     tc_existing_texts = {text for _pinyin, text in tc.keys()}
+    char_prior = _build_effective_char_prior(sc, char_frequency_prior)
 
     for word, usage_score in usage_score_map.items():
         stats["freqlex_terms_total"] += 1
@@ -3054,6 +3143,9 @@ def _augment_with_frequency_lexicon(
 
         source_hits = source_hits_map.get(word, 0)
         pageview_score = pageviews_signal_map.get(word, 0.0)
+        jieba_direct_score = min(1.0, max(0.0, jieba_direct_signal_map.get(word, 0.0)))
+        pos_tag = jieba_pos_map.get(word, "")
+        char_score = _compute_text_single_char_prior(word, char_prior)
         weight = _compute_weight_with_signals(
             word,
             usage_score=usage_score,
@@ -3066,6 +3158,9 @@ def _augment_with_frequency_lexicon(
                 source_hits=source_hits,
             ),
             core_entry=False,
+            jieba_direct_score=jieba_direct_score,
+            pos_tag=pos_tag,
+            char_score=char_score,
         )
         sc_words = tc_to_sc_map.get(word, set())
         if not sc_words:
@@ -3100,6 +3195,7 @@ def _augment_with_frequency_lexicon(
         for tc_word in tc_words:
             if _cjk_len(tc_word) < min_hanzi:
                 continue
+            tc_char_score = _compute_text_single_char_prior(tc_word, char_prior)
             tc_weight = _compute_weight_with_signals(
                 tc_word,
                 usage_score=usage_score,
@@ -3112,6 +3208,9 @@ def _augment_with_frequency_lexicon(
                     source_hits=source_hits,
                 ),
                 core_entry=False,
+                jieba_direct_score=jieba_direct_score,
+                pos_tag=pos_tag,
+                char_score=tc_char_score,
             )
             for pinyin in pinyin_candidates:
                 key = (pinyin, tc_word)
@@ -3632,6 +3731,7 @@ def main() -> int:
             wiki_titles=wiki_titles,
             jieba_direct_signal_map=jieba_direct_signal_map,
             jieba_pos_map=jieba_pos_map,
+            char_frequency_prior=char_frequency_prior,
             core_entry=True,
             stats_prefix="sc_core",
         )
@@ -3643,6 +3743,7 @@ def main() -> int:
             wiki_titles=wiki_titles,
             jieba_direct_signal_map=tc_jieba_direct_signal_map,
             jieba_pos_map=tc_jieba_pos_map,
+            char_frequency_prior=tc_char_frequency_prior,
             core_entry=True,
             stats_prefix="tc_core",
         )
@@ -3652,6 +3753,9 @@ def main() -> int:
             usage_score_map,
             source_hits_map,
             pageviews_signal_map,
+            jieba_direct_signal_map,
+            jieba_pos_map,
+            char_frequency_prior,
             opencc_entries,
             tc_to_sc_map,
             unihan_map,
