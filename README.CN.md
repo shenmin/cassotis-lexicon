@@ -12,12 +12,12 @@
 
 Cassotis IME 词库产物与构建流程的开源仓库。
 
-## 词库文件（2026-03-05 构建）
+## 词库文件（2026-03-06 构建）
 
 | 文件 | 类型 | 词条数 |
 |------|------|--------|
-| `data/generated/dict_clean_sc.txt` | 简体中文主词库 | 113,559 |
-| `data/generated/dict_clean_tc.txt` | 繁体中文主词库 | 97,532 |
+| `data/generated/dict_clean_sc.txt` | 简体中文主词库 | 112,606 |
+| `data/generated/dict_clean_tc.txt` | 繁体中文主词库 | 97,248 |
 | `data/generated/dict_unihan_sc.txt` | 简体单字（Unihan） | 30,397 |
 | `data/generated/dict_unihan_tc.txt` | 繁体单字（Unihan） | 31,009 |
 

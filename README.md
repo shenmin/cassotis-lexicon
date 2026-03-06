@@ -12,12 +12,12 @@ English | [简体中文](README.CN.md)
 
 Open-source lexicon artifacts and build pipeline for Cassotis IME.
 
-## Dictionaries (2026-03-05 build)
+## Dictionaries (2026-03-06 build)
 
 | File | Variant | Entries |
 |------|---------|---------|
-| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 113,559 |
-| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 97,532 |
+| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 112,606 |
+| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 97,248 |
 | `data/generated/dict_unihan_sc.txt` | Simplified single-char (Unihan) | 30,397 |
 | `data/generated/dict_unihan_tc.txt` | Traditional single-char (Unihan) | 31,009 |
 
