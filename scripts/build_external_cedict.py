@@ -129,6 +129,21 @@ LOW_SIGNAL_LITERARY_SUFFIXES = (
     "\u8033",
 )
 
+LOW_SIGNAL_WRITTEN_TAIL_SUFFIXES = (
+    "\u8005",
+    "\u4e5f",
+    "\u7109",
+    "\u77e3",
+    "\u54c9",
+    "\u8033",
+    "\u4e4e",
+    "\u516e",
+)
+
+LOW_SIGNAL_WRITTEN_TAIL_HEADS = set(
+    "\u5176\u4e8e\u4e43\u65af\u4ee5\u56e0\u6545\u8bfa\u65bc\u4e8c"
+)
+
 COPYLEFT_LICENSE_TOKENS = (
     "by-sa",
     "gpl",
@@ -759,6 +774,44 @@ def _looks_like_low_signal_literary_term(
     )
 
 
+def _looks_like_low_signal_written_tail_term(
+    text: str,
+    usage_score: float,
+    source_hits: int,
+    pageview_score: float,
+    jieba_direct_score: float,
+    wiki_support: bool,
+    pos_tag: str = "",
+    char_score: float = 0.0,
+) -> bool:
+    text_len = _cjk_len(text)
+    if text_len < 2 or text_len > 4:
+        return False
+    if not CJK_WINDOWS_FULL_RE.fullmatch(text):
+        return False
+    if wiki_support:
+        return False
+    if _is_named_entity_pos(pos_tag):
+        return False
+    if (
+        usage_score >= 0.08
+        or jieba_direct_score >= 0.08
+        or source_hits >= 2
+        or pageview_score >= 0.04
+    ):
+        return False
+    if char_score >= 0.68:
+        return False
+    if not text.endswith(LOW_SIGNAL_WRITTEN_TAIL_SUFFIXES):
+        return False
+
+    head = text[:-1]
+    return any(
+        (ch in LOW_SIGNAL_LITERARY_CHARS) or (ch in LOW_SIGNAL_WRITTEN_TAIL_HEADS)
+        for ch in head
+    )
+
+
 def _has_effective_wiki_support(
     text: str,
     wiki_titles: Set[str],
@@ -864,6 +917,7 @@ def _rerank_homophone_buckets(
         f"{stats_prefix}_homophone_entries_damped": 0,
         f"{stats_prefix}_homophone_sparse_penalized": 0,
         f"{stats_prefix}_homophone_literary_penalized": 0,
+        f"{stats_prefix}_homophone_written_tail_penalized": 0,
         f"{stats_prefix}_homophone_rare_form_penalized": 0,
     }
     if not mapping:
@@ -1008,6 +1062,16 @@ def _rerank_homophone_buckets(
                 pos_tag=pos_tag,
                 char_score=char_score,
             )
+            looks_like_written_tail_term = _looks_like_low_signal_written_tail_term(
+                text,
+                usage_score=usage_score,
+                source_hits=source_hits,
+                pageview_score=pageview_score,
+                jieba_direct_score=jieba_direct_score,
+                wiki_support=wiki_support,
+                pos_tag=pos_tag,
+                char_score=char_score,
+            )
             pos_bias = _compute_effective_pos_bias(
                 pos_tag=pos_tag,
                 text_len=text_len,
@@ -1079,6 +1143,9 @@ def _rerank_homophone_buckets(
             elif looks_like_literary_term:
                 delta -= c_literary_penalty
                 stats[f"{stats_prefix}_homophone_literary_penalized"] += 1
+            elif looks_like_written_tail_term:
+                delta -= 68
+                stats[f"{stats_prefix}_homophone_written_tail_penalized"] += 1
             elif (
                 bucket_has_strong_term
                 and text_len <= 2
@@ -1221,6 +1288,7 @@ def _filter_low_signal_rare_entries(
         f"{stats_prefix}_low_signal_rare_removed": 0,
         f"{stats_prefix}_low_signal_named_removed": 0,
         f"{stats_prefix}_low_signal_literary_removed": 0,
+        f"{stats_prefix}_low_signal_written_removed": 0,
     }
     if not mapping:
         return stats
@@ -1324,6 +1392,16 @@ def _filter_low_signal_rare_entries(
                 pos_tag=pos_tag,
                 char_score=char_score,
             )
+            looks_like_written_tail_term = _looks_like_low_signal_written_tail_term(
+                text,
+                usage_score=usage_score,
+                source_hits=source_hits,
+                pageview_score=pageview_score,
+                jieba_direct_score=jieba_direct_score,
+                wiki_support=wiki_support,
+                pos_tag=pos_tag,
+                char_score=char_score,
+            )
             # Protect common modern 2-char words even when cross-source signals
             # are incomplete (notably in TC conversion paths).
             if text_len <= 2 and char_score >= 0.58:
@@ -1377,6 +1455,11 @@ def _filter_low_signal_rare_entries(
             if looks_like_literary_term:
                 to_drop.append((pinyin, text))
                 stats[f"{stats_prefix}_low_signal_literary_removed"] += 1
+                continue
+
+            if looks_like_written_tail_term:
+                to_drop.append((pinyin, text))
+                stats[f"{stats_prefix}_low_signal_written_removed"] += 1
 
         for key in to_drop:
             if key in mapping:
@@ -1407,6 +1490,7 @@ def _filter_global_tail_entries(
         f"{stats_prefix}_global_tail_removed": 0,
         f"{stats_prefix}_global_tail_named_removed": 0,
         f"{stats_prefix}_global_tail_literary_removed": 0,
+        f"{stats_prefix}_global_tail_written_removed": 0,
         f"{stats_prefix}_global_tail_rare_char_removed": 0,
     }
     if not mapping:
@@ -1535,6 +1619,26 @@ def _filter_global_tail_entries(
             pos_tag=pos_tag,
             char_score=char_score,
         )
+        looks_like_written_tail_term = _looks_like_low_signal_written_tail_term(
+            text,
+            usage_score=usage_score,
+            source_hits=source_hits,
+            pageview_score=pageview_score,
+            jieba_direct_score=jieba_direct_score,
+            wiki_support=wiki_support,
+            pos_tag=pos_tag,
+            char_score=char_score,
+        )
+        looks_like_written_tail_term = _looks_like_low_signal_written_tail_term(
+            text,
+            usage_score=usage_score,
+            source_hits=source_hits,
+            pageview_score=pageview_score,
+            jieba_direct_score=jieba_direct_score,
+            wiki_support=wiki_support,
+            pos_tag=pos_tag,
+            char_score=char_score,
+        )
         # Protect common modern 2-char words even when TC-side signal mapping
         # misses some entries.
         if text_len <= 2 and char_score >= 0.58:
@@ -1578,6 +1682,11 @@ def _filter_global_tail_entries(
         if looks_like_literary_term:
             if schedule_drop(key):
                 stats[f"{stats_prefix}_global_tail_literary_removed"] += 1
+            continue
+
+        if looks_like_written_tail_term:
+            if schedule_drop(key):
+                stats[f"{stats_prefix}_global_tail_written_removed"] += 1
             continue
 
         if (
@@ -1665,6 +1774,16 @@ def _collect_suspicious_high_weight_entries(
             pos_tag=pos_tag,
             char_score=char_score,
         )
+        looks_like_written_tail_term = _looks_like_low_signal_written_tail_term(
+            text,
+            usage_score=usage_score,
+            source_hits=source_hits,
+            pageview_score=pageview_score,
+            jieba_direct_score=jieba_direct_score,
+            wiki_support=wiki_support,
+            pos_tag=pos_tag,
+            char_score=char_score,
+        )
 
         reasons: List[str] = []
         if (
@@ -1682,6 +1801,8 @@ def _collect_suspicious_high_weight_entries(
             reasons.append("likely-place-name")
         if looks_like_literary_term:
             reasons.append("likely-literary")
+        if looks_like_written_tail_term:
+            reasons.append("written-tail")
         if (
             text_len <= 2
             and char_score < 0.20
@@ -3904,6 +4025,7 @@ def _write_report(
     max_entries: int,
     suspicious_sc: List[Dict[str, object]] | None = None,
 ) -> None:
+    reason_counts: Dict[str, int] = {}
     path.parent.mkdir(parents=True, exist_ok=True)
     lines = [
         "# External Build Report",
@@ -3945,6 +4067,24 @@ def _write_report(
 
     suspicious_sc = suspicious_sc or []
     if suspicious_sc:
+        for item in suspicious_sc:
+            for reason in str(item.get("reasons", "")).split(","):
+                reason = reason.strip()
+                if not reason:
+                    continue
+                reason_counts[reason] = reason_counts.get(reason, 0) + 1
+
+        if reason_counts:
+            lines.append("## Suspicious SC Reason Summary")
+            lines.append("")
+            for reason, count in sorted(
+                reason_counts.items(),
+                key=lambda item: (item[1], item[0]),
+                reverse=True,
+            ):
+                lines.append(f"- {reason}: {count}")
+            lines.append("")
+
         lines.append("## Suspicious High-Weight SC Entries")
         lines.append("")
         lines.append(
