@@ -13,8 +13,8 @@ Lexicon build and release repository for Cassotis IME.
 
 | File | Variant | Entries |
 |------|---------|---------|
-| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 104,539 |
-| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 90,413 |
+| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 103,915 |
+| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 90,209 |
 | `data/generated/dict_unihan_sc.txt` | Simplified single-char (Unihan) | 30,397 |
 | `data/generated/dict_unihan_tc.txt` | Traditional single-char (Unihan) | 31,009 |
 
@@ -37,7 +37,7 @@ See:
 ## Post-import optimization and filtering (external sources)
 - Normalize and de-duplicate imported entries across heterogeneous source formats.
 - Build weights from multiple signals (base frequency, DF/frequency side signals, and pageview heat) with balanced scaling.
-- Damp low-signal named entities and long-tail noise to reduce rare proper nouns crowding common phrases.
+- Damp low-signal named entities, likely personal names, and long-tail noise to reduce rare proper nouns crowding common phrases.
 - Apply IME-oriented validity filters (for example renderability and script constraints) to keep outputs practical on mainstream Windows clients.
 - Keep ranking behavior stable through rule-based corrections and regression sample checks.
 

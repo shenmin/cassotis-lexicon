@@ -13,8 +13,8 @@ Cassotis IME 词库构建与发布仓库。
 
 | 文件 | 字体变体 | 词条数 |
 |------|---------|--------|
-| `data/generated/dict_clean_sc.txt` | 简体中文主词库 | 104,539 |
-| `data/generated/dict_clean_tc.txt` | 繁体中文主词库 | 90,413 |
+| `data/generated/dict_clean_sc.txt` | 简体中文主词库 | 103,915 |
+| `data/generated/dict_clean_tc.txt` | 繁体中文主词库 | 90,209 |
 | `data/generated/dict_unihan_sc.txt` | 简体单字（Unihan） | 30,397 |
 | `data/generated/dict_unihan_tc.txt` | 繁体单字（Unihan） | 31,009 |
 
@@ -37,7 +37,7 @@ Cassotis IME 词库构建与发布仓库。
 ## 外部词库导入后的优化与过滤思路
 - 对多来源词条做格式归一、去重合并，统一拼音与文本键。
 - `weight` 由多类信号共同构成（基础频率、DF/词频侧信号、访问热度），并做平衡缩放。
-- 对低信号命名实体和长尾噪声做抑制，减少生僻专名挤占常用词排序。
+- 对低信号命名实体、疑似人名和长尾噪声做抑制，减少生僻专名挤占常用词排序。
 - 应用面向输入法场景的有效性过滤（如可渲染性、字形脚本约束），提升 Windows 场景可用性。
 - 通过规则修正和回归样本校验，保持同音竞争与整体排序稳定。
 

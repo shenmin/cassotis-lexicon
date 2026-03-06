@@ -57,6 +57,39 @@ UNIHAN_SOURCE_HANYU_EXTRA = 1
 UNIHAN_SOURCE_MANDARIN = 2
 UNIHAN_SOURCE_PINLU = 3
 UNIHAN_HANYU_EXTRA_WEIGHT_CAP = 160
+COMMON_SURNAMES = set(
+    "赵钱孙李周吴郑王冯陈褚卫蒋沈韩杨朱秦许何吕施张孔曹严华金魏陶姜"
+    "戚谢邹喻柏水窦章云苏潘葛奚范彭郎鲁韦马苗凤花方俞任袁柳鲍史唐费廉岑薛"
+    "雷贺倪汤滕殷罗毕郝邬安常乐于傅皮卞齐康伍余元顾孟平黄和穆萧尹姚邵湛汪"
+    "祁毛禹狄米贝明臧计伏成戴谈宋茅庞熊纪舒屈项祝董梁杜阮蓝闵席季麻强贾路"
+    "娄危江童颜郭梅盛林钟徐邱骆高夏蔡田樊胡凌霍虞万柯卢莫房解应宗丁宣贲邓"
+    "郁单杭洪包诸左石崔吉钮龚程嵇邢滑裴陆荣翁荀羊於惠甄曲家封芮羿储靳汲邴"
+    "糜松井段富巫乌焦巴弓牧隗山谷车侯宓蓬全郗班仰秋仲伊宫宁仇栾暴甘斜厉戎"
+    "祖武符刘景詹束龙叶幸司韶郜黎蓟薄印宿白怀蒲邰从鄂索咸籍赖卓蔺屠蒙池乔"
+    "阴郁胥能苍双闻莘党翟谭贡劳逄姬申扶堵冉宰郦雍郤璩桑桂濮牛寿通边扈燕冀"
+    "郏浦尚农温别庄晏柴瞿阎充慕连茹习宦艾鱼容向古易慎戈廖庾终暨居衡步都耿"
+    "满弘匡国文寇广禄阙东殴殳沃利蔚越夔隆师巩厍聂晁勾敖融冷訾辛阚那简饶空"
+    "曾毋沙乜养鞠须丰巢关蒯相查后荆红游竺权逯盖益桓公"
+)
+COMMON_COMPOUND_SURNAMES = {
+    "欧阳",
+    "司马",
+    "上官",
+    "诸葛",
+    "夏侯",
+    "东方",
+    "皇甫",
+    "尉迟",
+    "公孙",
+    "慕容",
+    "司徒",
+    "司空",
+    "令狐",
+    "宇文",
+    "长孙",
+    "独孤",
+    "南宫",
+}
 
 COPYLEFT_LICENSE_TOKENS = (
     "by-sa",
@@ -325,6 +358,15 @@ def _compute_weight_with_signals(
     """
     def _compute_term_class_bias() -> float:
         bias = 0.0
+        looks_like_person_name = _looks_like_low_signal_person_name(
+            text,
+            usage_score=bounded_usage,
+            source_hits=source_hits,
+            pageview_score=bounded_pageviews,
+            jieba_direct_score=jieba_direct_score,
+            wiki_support=wiki_hit,
+            pos_tag=pos_tag,
+        )
 
         if length == 1:
             if char_score >= 0.94:
@@ -363,6 +405,11 @@ def _compute_weight_with_signals(
                 and jieba_direct_score < 0.10
             ):
                 bias -= 0.10
+        elif looks_like_person_name:
+            if length <= 3:
+                bias -= 0.34
+            else:
+                bias -= 0.22
         elif _is_conversational_pos(pos_tag):
             if length <= 4 and (bounded_usage >= 0.05 or jieba_direct_score >= 0.08):
                 bias += 0.22
@@ -541,6 +588,37 @@ def _is_noun_pos(pos_tag: str) -> bool:
 
 def _is_named_entity_pos(pos_tag: str) -> bool:
     return pos_tag.startswith(("nr", "ns", "nt", "nz", "nw"))
+
+
+def _looks_like_low_signal_person_name(
+    text: str,
+    usage_score: float,
+    source_hits: int,
+    pageview_score: float,
+    jieba_direct_score: float,
+    wiki_support: bool,
+    pos_tag: str = "",
+) -> bool:
+    text_len = _cjk_len(text)
+    if text_len < 2 or text_len > 4:
+        return False
+    if not CJK_WINDOWS_FULL_RE.fullmatch(text):
+        return False
+    if wiki_support:
+        return False
+    if (
+        usage_score >= 0.03
+        or jieba_direct_score >= 0.03
+        or source_hits >= 2
+        or pageview_score >= 0.03
+    ):
+        return False
+    if pos_tag and not _is_named_entity_pos(pos_tag):
+        return False
+
+    if text[:2] in COMMON_COMPOUND_SURNAMES:
+        return text_len >= 3
+    return text[0] in COMMON_SURNAMES
 
 
 def _has_effective_wiki_support(
@@ -759,6 +837,15 @@ def _rerank_homophone_buckets(
                 wiki_titles,
                 pageview_score=pageview_score,
                 source_hits=source_hits,
+            )
+            looks_like_person_name = _looks_like_low_signal_person_name(
+                text,
+                usage_score=usage_score,
+                source_hits=source_hits,
+                pageview_score=pageview_score,
+                jieba_direct_score=jieba_direct_score,
+                wiki_support=wiki_support,
+                pos_tag=pos_tag,
             )
             char_score = _compute_text_single_char_prior(text, char_prior)
             pos_tag = jieba_pos_map.get(text, "")
@@ -1030,6 +1117,15 @@ def _filter_low_signal_rare_entries(
                 pageview_score=pageview_score,
                 source_hits=source_hits,
             )
+            looks_like_person_name = _looks_like_low_signal_person_name(
+                text,
+                usage_score=usage_score,
+                source_hits=source_hits,
+                pageview_score=pageview_score,
+                jieba_direct_score=jieba_direct_score,
+                wiki_support=wiki_support,
+                pos_tag=pos_tag,
+            )
 
             min_char_prior = 1.0
             has_cjk_char = False
@@ -1085,6 +1181,11 @@ def _filter_low_signal_rare_entries(
                 and pageview_score < 0.08
                 and not wiki_support
             ):
+                to_drop.append((pinyin, text))
+                stats[f"{stats_prefix}_low_signal_named_removed"] += 1
+                continue
+
+            if looks_like_person_name:
                 to_drop.append((pinyin, text))
                 stats[f"{stats_prefix}_low_signal_named_removed"] += 1
 
@@ -1198,6 +1299,15 @@ def _filter_global_tail_entries(
             pageview_score=pageview_score,
             source_hits=source_hits,
         )
+        looks_like_person_name = _looks_like_low_signal_person_name(
+            text,
+            usage_score=usage_score,
+            source_hits=source_hits,
+            pageview_score=pageview_score,
+            jieba_direct_score=jieba_direct_score,
+            wiki_support=wiki_support,
+            pos_tag=pos_tag,
+        )
 
         # Keep at least one candidate per pinyin bucket to avoid hard holes.
         if bucket_counts.get(pinyin, 0) < 2:
@@ -1247,6 +1357,11 @@ def _filter_global_tail_entries(
             and jieba_direct_score < 0.14
             and usage_score < 0.38
         ):
+            if schedule_drop(key):
+                stats[f"{stats_prefix}_global_tail_named_removed"] += 1
+            continue
+
+        if looks_like_person_name:
             if schedule_drop(key):
                 stats[f"{stats_prefix}_global_tail_named_removed"] += 1
             continue
@@ -1308,6 +1423,15 @@ def _collect_suspicious_high_weight_entries(
             pageview_score=pageview_score,
             source_hits=source_hits,
         )
+        looks_like_person_name = _looks_like_low_signal_person_name(
+            text,
+            usage_score=usage_score,
+            source_hits=source_hits,
+            pageview_score=pageview_score,
+            jieba_direct_score=jieba_direct_score,
+            wiki_support=wiki_support,
+            pos_tag=pos_tag,
+        )
 
         reasons: List[str] = []
         if (
@@ -1319,6 +1443,8 @@ def _collect_suspicious_high_weight_entries(
             and not wiki_support
         ):
             reasons.append("low-signal-named")
+        if looks_like_person_name:
+            reasons.append("likely-person-name")
         if (
             text_len <= 2
             and char_score < 0.20
