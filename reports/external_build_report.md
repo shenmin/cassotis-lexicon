@@ -1,7 +1,7 @@
 # External Build Report
 
 - profile: external_broad
-- generated_at_utc: 2026-03-06T08:44:20+00:00
+- generated_at_utc: 2026-03-06T09:44:58+00:00
 - min_hanzi: 2
 - max_entries: unlimited
 
@@ -53,8 +53,8 @@
 - freqlex_skipped_weak_fallback: 258102
 - freqlex_terms_added_sc: 7953
 - freqlex_terms_added_tc: 1166
-- freqlex_terms_boosted_sc: 15320
-- freqlex_terms_boosted_tc: 6409
+- freqlex_terms_boosted_sc: 15322
+- freqlex_terms_boosted_tc: 6411
 - freqlex_terms_total: 339346
 - freqlex_unihan_fallback_hits: 7941
 - invalid_format: 0
@@ -92,18 +92,18 @@
 - sc_core_usage_hits: 73286
 - sc_core_wiki_hits: 615
 - sc_filtered_non_windows_cjk: 640
-- sc_global_tail_named_removed: 1140
+- sc_global_tail_named_removed: 1071
 - sc_global_tail_rare_char_removed: 164
-- sc_global_tail_removed: 1304
+- sc_global_tail_removed: 1235
 - sc_homophone_buckets: 12249
-- sc_homophone_entries_adjusted: 32873
-- sc_homophone_entries_boosted: 16325
-- sc_homophone_entries_damped: 16548
-- sc_homophone_rare_form_penalized: 70
+- sc_homophone_entries_adjusted: 32914
+- sc_homophone_entries_boosted: 16247
+- sc_homophone_entries_damped: 16667
+- sc_homophone_rare_form_penalized: 69
 - sc_homophone_sparse_penalized: 308
-- sc_low_signal_named_removed: 1959
+- sc_low_signal_named_removed: 2038
 - sc_low_signal_rare_buckets: 8728
-- sc_low_signal_rare_removed: 2403
+- sc_low_signal_rare_removed: 2482
 - sc_normalized_converted_entries: 3129
 - sc_normalized_total_entries: 108930
 - sc_script_filtered_entries: 1
@@ -114,25 +114,25 @@
 - tc_core_multi_source_hits: 644
 - tc_core_named_entity_penalized: 15340
 - tc_core_pageviews_hits: 406
-- tc_core_rescored: 101224
+- tc_core_rescored: 101223
 - tc_core_single_char_adjusted: 0
 - tc_core_usage_hits: 73510
 - tc_core_wiki_hits: 606
 - tc_filtered_non_windows_cjk: 687
-- tc_global_tail_named_removed: 1234
-- tc_global_tail_rare_char_removed: 2439
-- tc_global_tail_removed: 3673
+- tc_global_tail_named_removed: 1179
+- tc_global_tail_rare_char_removed: 2448
+- tc_global_tail_removed: 3627
 - tc_homophone_buckets: 12619
-- tc_homophone_entries_adjusted: 33360
-- tc_homophone_entries_boosted: 16404
-- tc_homophone_entries_damped: 16956
+- tc_homophone_entries_adjusted: 33375
+- tc_homophone_entries_boosted: 16281
+- tc_homophone_entries_damped: 17094
 - tc_homophone_rare_form_penalized: 513
 - tc_homophone_sparse_penalized: 330
 - tc_jieba_direct_score_terms: 397858
 - tc_jieba_pos_terms: 397858
-- tc_low_signal_named_removed: 1128
+- tc_low_signal_named_removed: 1244
 - tc_low_signal_rare_buckets: 8486
-- tc_low_signal_rare_removed: 7050
+- tc_low_signal_rare_removed: 7166
 - tc_pageviews_score_terms: 2397
 - tc_script_filtered_entries: 0
 - tc_script_filtered_total_entries: 101893
@@ -160,5 +160,35 @@
 ## Output
 - sc_file: D:\cassotis_lexicon\data\generated\dict_clean_sc.txt
 - tc_file: D:\cassotis_lexicon\data\generated\dict_clean_tc.txt
-- sc_entries: 104549
-- tc_entries: 90483
+- sc_entries: 104539
+- tc_entries: 90413
+
+## Suspicious High-Weight SC Entries
+
+| text | pinyin | weight | usage | jieba | pageviews | source_hits | char_score | pos | reasons |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- | --- |
+| 琅玡榜 | langyabang | 490 | 0.000 | 0.000 | 0.000 | 0 | 0.181 | - | weak-usage |
+| 可岚 | kelan | 523 | 0.000 | 0.000 | 0.000 | 0 | 0.433 | - | weak-usage |
+| 贾永婕 | guyongjie | 502 | 0.000 | 0.000 | 0.000 | 0 | 0.292 | - | weak-usage |
+| 陈姸霏 | chenyanfei | 488 | 0.000 | 0.000 | 0.000 | 0 | 0.197 | - | weak-usage |
+| 曾恺玹 | cengkaixuan | 485 | 0.000 | 0.000 | 0.000 | 0 | 0.198 | - | weak-usage |
+| 谭旻萱 | tanminxuan | 477 | 0.000 | 0.000 | 0.000 | 0 | 0.140 | - | weak-usage |
+| 谷娅溦 | guyawei | 483 | 0.000 | 0.000 | 0.000 | 0 | 0.192 | - | weak-usage |
+| 卢昱晓 | luyuxiao | 496 | 0.000 | 0.000 | 0.000 | 0 | 0.295 | - | weak-usage |
+| 剀剀案 | kaikaian | 480 | 0.000 | 0.000 | 0.000 | 0 | 0.179 | - | weak-usage |
+| 许玮宁 | xuweining | 505 | 0.000 | 0.000 | 0.000 | 0 | 0.375 | - | weak-usage |
+| 曾敬骅 | cengjinghua | 501 | 0.000 | 0.000 | 0.000 | 0 | 0.340 | - | weak-usage |
+| 陈伟霆 | chenweiting | 502 | 0.000 | 0.000 | 0.000 | 0 | 0.360 | - | weak-usage |
+| 郑敬淏 | zhengjinghao | 489 | 0.000 | 0.000 | 0.000 | 0 | 0.261 | - | weak-usage |
+| 赵雨凡 | zhaoyufan | 507 | 0.000 | 0.000 | 0.000 | 0 | 0.406 | - | weak-usage |
+| 吴亦凡 | wuyifan | 501 | 0.000 | 0.000 | 0.000 | 0 | 0.372 | - | weak-usage |
+| 孙淑媚 | sunshumei | 492 | 0.000 | 0.000 | 0.000 | 0 | 0.316 | - | weak-usage |
+| 何鸿燊 | hehongshen | 492 | 0.000 | 0.000 | 0.000 | 0 | 0.313 | - | weak-usage |
+| 高胤祯 | gaoyinzhen | 501 | 0.000 | 0.000 | 0.000 | 0 | 0.384 | - | weak-usage |
+| 黄瀞怡 | huangjingyi | 485 | 0.000 | 0.000 | 0.000 | 0 | 0.272 | - | weak-usage |
+| 宋芸桦 | songyunhua | 485 | 0.000 | 0.000 | 0.000 | 0 | 0.271 | - | weak-usage |
+| 链锯人 | lianjuren | 507 | 0.000 | 0.000 | 0.000 | 0 | 0.436 | - | weak-usage |
+| 王鹤棣 | wanghedi | 493 | 0.000 | 0.000 | 0.000 | 0 | 0.336 | - | weak-usage |
+| 谢侑芯 | xieyouxin | 485 | 0.000 | 0.000 | 0.000 | 0 | 0.276 | - | weak-usage |
+| 倪海厦 | nihaisha | 499 | 0.000 | 0.000 | 0.000 | 0 | 0.388 | - | weak-usage |
+| 李昀锐 | liyunrui | 489 | 0.000 | 0.000 | 0.000 | 0 | 0.313 | - | weak-usage |

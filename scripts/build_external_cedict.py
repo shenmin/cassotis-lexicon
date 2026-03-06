@@ -327,12 +327,12 @@ def _compute_weight_with_signals(
         bias = 0.0
 
         if length == 1:
-            if char_score >= 0.90:
-                bias += 0.36
-            elif char_score >= 0.78:
-                bias += 0.24
-            elif char_score >= 0.66:
-                bias += 0.12
+            if char_score >= 0.94:
+                bias += 0.44
+            elif char_score >= 0.84:
+                bias += 0.30
+            elif char_score >= 0.74:
+                bias += 0.16
             elif (
                 char_score <= 0.06
                 and bounded_usage < 0.04
@@ -340,7 +340,7 @@ def _compute_weight_with_signals(
                 and source_hits <= 1
                 and bounded_pageviews < 0.02
             ):
-                bias -= 0.42
+                bias -= 0.48
             elif (
                 char_score <= 0.12
                 and bounded_usage < 0.06
@@ -348,23 +348,52 @@ def _compute_weight_with_signals(
                 and source_hits <= 1
                 and bounded_pageviews < 0.03
             ):
-                bias -= 0.24
+                bias -= 0.28
 
         if _is_named_entity_pos(pos_tag):
             if source_hits <= 1 and bounded_pageviews < 0.08 and jieba_direct_score < 0.10:
-                bias -= 0.30 if length <= 3 else 0.20
+                bias -= 0.34 if length <= 3 else 0.22
             elif source_hits <= 2 and bounded_pageviews < 0.18 and jieba_direct_score < 0.16:
-                bias -= 0.12
+                bias -= 0.16
+            elif (
+                length <= 3
+                and source_hits <= 1
+                and bounded_pageviews < 0.04
+                and bounded_usage < 0.20
+                and jieba_direct_score < 0.10
+            ):
+                bias -= 0.10
         elif _is_conversational_pos(pos_tag):
             if length <= 4 and (bounded_usage >= 0.05 or jieba_direct_score >= 0.08):
-                bias += 0.18
+                bias += 0.22
             elif length <= 4:
-                bias += 0.08
+                bias += 0.10
         elif _is_noun_pos(pos_tag):
-            if length <= 3 and (bounded_usage >= 0.12 or jieba_direct_score >= 0.12 or source_hits >= 2):
+            if length <= 2 and (
+                bounded_usage >= 0.14
+                or jieba_direct_score >= 0.14
+                or source_hits >= 2
+                or char_score >= 0.70
+            ):
+                bias += 0.14
+            elif length <= 2 and (
+                bounded_usage >= 0.08
+                or jieba_direct_score >= 0.08
+                or char_score >= 0.58
+            ):
                 bias += 0.08
+            elif length <= 3 and (bounded_usage >= 0.12 or jieba_direct_score >= 0.12 or source_hits >= 2):
+                bias += 0.10
             elif length <= 4 and bounded_usage >= 0.06 and jieba_direct_score >= 0.06:
-                bias += 0.04
+                bias += 0.06
+
+        if length <= 3 and not _is_named_entity_pos(pos_tag):
+            if bounded_usage >= 0.22 or jieba_direct_score >= 0.20:
+                bias += 0.10
+            elif length <= 2 and char_score >= 0.62 and (
+                bounded_usage >= 0.08 or jieba_direct_score >= 0.08 or source_hits >= 2
+            ):
+                bias += 0.06
 
         if (
             length <= 4
@@ -375,12 +404,23 @@ def _compute_weight_with_signals(
             and char_score < 0.10
             and not wiki_hit
         ):
-            bias -= 0.18
+            bias -= 0.22
+
+        if (
+            length <= 2
+            and bounded_usage < 0.06
+            and jieba_direct_score < 0.06
+            and source_hits <= 1
+            and bounded_pageviews < 0.02
+            and char_score < 0.18
+            and not wiki_hit
+        ):
+            bias -= 0.12
 
         if length <= 2 and char_score >= 0.74 and not _is_named_entity_pos(pos_tag):
-            bias += 0.08
+            bias += 0.10
 
-        return max(-0.55, min(0.45, bias))
+        return max(-0.65, min(0.52, bias))
 
     length = max(1, _cjk_len(text))
     base = 120 + min(length, 8) * 30
@@ -594,11 +634,11 @@ def _rerank_homophone_buckets(
     - normalized single-character prior from the same mapping
     - a small original-weight prior for stability
     """
-    c_max_delta = 280
-    c_sparse_penalty = 120
-    c_weak_signal_penalty = 64
-    c_named_entity_penalty = 84
-    c_rare_form_penalty = 140
+    c_max_delta = 320
+    c_sparse_penalty = 132
+    c_weak_signal_penalty = 78
+    c_named_entity_penalty = 108
+    c_rare_form_penalty = 168
 
     stats = {
         f"{stats_prefix}_homophone_buckets": 0,
@@ -795,6 +835,26 @@ def _rerank_homophone_buckets(
                 and (usage_score >= 0.10 or jieba_direct_score >= 0.14 or char_score >= 0.62)
             ):
                 delta += 34
+            elif (
+                bucket_has_strong_term
+                and text_len <= 2
+                and not _is_named_entity_pos(pos_tag)
+                and char_score >= 0.56
+                and (usage_score >= 0.08 or jieba_direct_score >= 0.10 or source_hits >= 2)
+            ):
+                delta += 30
+
+            if (
+                bucket_has_strong_term
+                and text_len <= 3
+                and pos_bias <= -0.20
+                and usage_score < 0.18
+                and jieba_direct_score < 0.12
+                and source_hits <= 1
+                and pageview_score <= 0.04
+                and not wiki_support
+            ):
+                delta -= 42
 
             if (
                 bucket_has_strong_term
@@ -838,7 +898,7 @@ def _rerank_homophone_buckets(
                         and pageview_score <= 0.02
                         and not wiki_support
                     ):
-                        delta -= 36
+                        delta -= 44
                     elif (
                         usage_score < 0.28
                         and jieba_direct_score < 0.65
@@ -846,7 +906,12 @@ def _rerank_homophone_buckets(
                         and pageview_score <= 0.02
                         and not wiki_support
                     ):
-                        delta -= 48
+                        delta -= 56
+                    elif (
+                        char_score >= 0.58
+                        and (usage_score >= 0.08 or jieba_direct_score >= 0.10 or source_hits >= 2)
+                    ):
+                        delta += 20
 
             if (
                 text_len <= 2
@@ -981,7 +1046,7 @@ def _filter_low_signal_rare_entries(
             char_score = _compute_text_single_char_prior(text, char_prior)
             # Protect common modern 2-char words even when cross-source signals
             # are incomplete (notably in TC conversion paths).
-            if text_len <= 2 and char_score >= 0.62:
+            if text_len <= 2 and char_score >= 0.58:
                 continue
             if (
                 text_len <= 2
@@ -994,8 +1059,8 @@ def _filter_low_signal_rare_entries(
                     )
                     or (
                         _is_noun_pos(pos_tag)
-                        and char_score >= 0.52
-                        and (usage_score >= 0.08 or jieba_direct_score >= 0.10 or source_hits >= 2)
+                        and char_score >= 0.48
+                        and (usage_score >= 0.06 or jieba_direct_score >= 0.08 or source_hits >= 2)
                     )
                 )
             ):
@@ -1014,10 +1079,10 @@ def _filter_low_signal_rare_entries(
 
             if (
                 _is_named_entity_pos(pos_tag)
-                and usage_score < 0.34
-                and jieba_direct_score < 0.10
+                and usage_score < 0.38
+                and jieba_direct_score < 0.12
                 and source_hits <= 2
-                and pageview_score < 0.06
+                and pageview_score < 0.08
                 and not wiki_support
             ):
                 to_drop.append((pinyin, text))
@@ -1153,7 +1218,7 @@ def _filter_global_tail_entries(
         char_score = _compute_text_single_char_prior(text, char_prior)
         # Protect common modern 2-char words even when TC-side signal mapping
         # misses some entries.
-        if text_len <= 2 and char_score >= 0.62:
+        if text_len <= 2 and char_score >= 0.58:
             continue
         if (
             text_len <= 2
@@ -1166,8 +1231,8 @@ def _filter_global_tail_entries(
                 )
                 or (
                     _is_noun_pos(pos_tag)
-                    and char_score >= 0.52
-                    and (usage_score >= 0.08 or jieba_direct_score >= 0.10 or source_hits >= 2)
+                    and char_score >= 0.48
+                    and (usage_score >= 0.06 or jieba_direct_score >= 0.08 or source_hits >= 2)
                 )
             )
         ):
@@ -1178,9 +1243,9 @@ def _filter_global_tail_entries(
             and text_len <= 4
             and not wiki_support
             and source_hits <= 2
-            and pageview_score < 0.08
-            and jieba_direct_score < 0.12
-            and usage_score < 0.34
+            and pageview_score < 0.10
+            and jieba_direct_score < 0.14
+            and usage_score < 0.38
         ):
             if schedule_drop(key):
                 stats[f"{stats_prefix}_global_tail_named_removed"] += 1
@@ -1205,6 +1270,113 @@ def _filter_global_tail_entries(
             stats[f"{stats_prefix}_global_tail_removed"] += 1
 
     return stats
+
+
+def _collect_suspicious_high_weight_entries(
+    mapping: Dict[Tuple[str, str], int],
+    usage_score_map: Dict[str, float],
+    source_hits_map: Dict[str, int],
+    pageviews_signal_map: Dict[str, float],
+    wiki_titles: Set[str],
+    jieba_direct_signal_map: Dict[str, float] | None,
+    jieba_pos_map: Dict[str, str] | None,
+    char_frequency_prior: Dict[str, float] | None,
+    limit: int = 25,
+) -> List[Dict[str, object]]:
+    if not mapping:
+        return []
+
+    jieba_direct_signal_map = jieba_direct_signal_map or {}
+    jieba_pos_map = jieba_pos_map or {}
+    char_prior = _build_effective_char_prior(mapping, char_frequency_prior)
+    suspicious: List[Dict[str, object]] = []
+
+    for (pinyin, text), weight in mapping.items():
+        text_len = _cjk_len(text)
+        if text_len <= 0 or text_len > 3 or weight < 420:
+            continue
+
+        usage_score = min(1.0, max(0.0, usage_score_map.get(text, 0.0)))
+        source_hits = max(0, source_hits_map.get(text, 0))
+        pageview_score = min(1.0, max(0.0, pageviews_signal_map.get(text, 0.0)))
+        jieba_direct_score = min(1.0, max(0.0, jieba_direct_signal_map.get(text, 0.0)))
+        pos_tag = jieba_pos_map.get(text, "")
+        char_score = _compute_text_single_char_prior(text, char_prior)
+        wiki_support = _has_effective_wiki_support(
+            text,
+            wiki_titles,
+            pageview_score=pageview_score,
+            source_hits=source_hits,
+        )
+
+        reasons: List[str] = []
+        if (
+            _is_named_entity_pos(pos_tag)
+            and source_hits <= 2
+            and pageview_score < 0.10
+            and jieba_direct_score < 0.14
+            and usage_score < 0.38
+            and not wiki_support
+        ):
+            reasons.append("low-signal-named")
+        if (
+            text_len <= 2
+            and char_score < 0.20
+            and usage_score < 0.08
+            and jieba_direct_score < 0.08
+            and source_hits <= 1
+            and pageview_score < 0.02
+            and not wiki_support
+        ):
+            reasons.append("rare-char")
+        if (
+            usage_score < 0.04
+            and jieba_direct_score < 0.04
+            and source_hits <= 1
+            and pageview_score < 0.02
+            and not wiki_support
+        ):
+            reasons.append("weak-usage")
+
+        if not reasons:
+            continue
+
+        risk_score = weight - int(
+            round(
+                usage_score * 220.0
+                + jieba_direct_score * 220.0
+                + pageview_score * 80.0
+                + source_hits * 28.0
+                + char_score * 140.0
+                + (40.0 if wiki_support else 0.0)
+            )
+        )
+        suspicious.append(
+            {
+                "pinyin": pinyin,
+                "text": text,
+                "weight": weight,
+                "usage": usage_score,
+                "jieba": jieba_direct_score,
+                "pageviews": pageview_score,
+                "source_hits": source_hits,
+                "char_score": char_score,
+                "pos": pos_tag or "-",
+                "reasons": ",".join(reasons),
+                "risk_score": risk_score,
+            }
+        )
+
+    suspicious.sort(
+        key=lambda item: (
+            int(item["risk_score"]),
+            int(item["weight"]),
+            -_cjk_len(str(item["text"])),
+            str(item["text"]),
+        ),
+        reverse=True,
+    )
+    return suspicious[:limit]
 
 
 def _download_bytes(url: str) -> bytes:
@@ -3367,6 +3539,7 @@ def _write_report(
     count_tc: int,
     min_hanzi: int,
     max_entries: int,
+    suspicious_sc: List[Dict[str, object]] | None = None,
 ) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     lines = [
@@ -3406,6 +3579,23 @@ def _write_report(
             "",
         ]
     )
+
+    suspicious_sc = suspicious_sc or []
+    if suspicious_sc:
+        lines.append("## Suspicious High-Weight SC Entries")
+        lines.append("")
+        lines.append(
+            "| text | pinyin | weight | usage | jieba | pageviews | source_hits | char_score | pos | reasons |"
+        )
+        lines.append(
+            "| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- | --- |"
+        )
+        for item in suspicious_sc:
+            lines.append(
+                "| {text} | {pinyin} | {weight} | {usage:.3f} | {jieba:.3f} | {pageviews:.3f} |"
+                " {source_hits} | {char_score:.3f} | {pos} | {reasons} |".format(**item)
+            )
+        lines.append("")
     path.write_text("\n".join(lines), encoding="utf-8", newline="\n")
 
 
@@ -4057,6 +4247,16 @@ def main() -> int:
 
     sc_map = _apply_limit(sc_map, args.max_entries)
     tc_map = _apply_limit(tc_map, args.max_entries)
+    suspicious_sc_entries = _collect_suspicious_high_weight_entries(
+        sc_map,
+        usage_score_map=usage_score_map,
+        source_hits_map=source_hits_map,
+        pageviews_signal_map=pageviews_signal_map,
+        wiki_titles=wiki_titles,
+        jieba_direct_signal_map=jieba_direct_signal_map,
+        jieba_pos_map=jieba_pos_map,
+        char_frequency_prior=char_frequency_prior,
+    )
 
     _write_dict(output_sc, sc_map)
     _write_dict(output_tc, tc_map)
@@ -4072,6 +4272,7 @@ def main() -> int:
         len(tc_map),
         args.min_hanzi,
         args.max_entries,
+        suspicious_sc_entries,
     )
 
     print(f"Build completed: profile={args.profile} sc={len(sc_map)} tc={len(tc_map)}")
