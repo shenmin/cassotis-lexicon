@@ -114,6 +114,21 @@ LOW_SIGNAL_PLACE_SUFFIXES = (
     "\u8857",
 )
 
+LOW_SIGNAL_LITERARY_CHARS = set(
+    "\u516e\u77e3\u7109\u6b24\u54c9\u4e4e\u5b70\u76cd\u532a\u6bcb\u5f17\u5c82"
+    "\u76d6\u4e43\u9042\u65af\u5176\u82e5\u592b"
+)
+
+LOW_SIGNAL_LITERARY_SUFFIXES = (
+    "\u4e4b",
+    "\u4e4e",
+    "\u7109",
+    "\u77e3",
+    "\u6b24",
+    "\u54c9",
+    "\u8033",
+)
+
 COPYLEFT_LICENSE_TOKENS = (
     "by-sa",
     "gpl",
@@ -399,6 +414,16 @@ def _compute_weight_with_signals(
             wiki_support=wiki_hit,
             pos_tag=pos_tag,
         )
+        looks_like_literary_term = _looks_like_low_signal_literary_term(
+            text,
+            usage_score=bounded_usage,
+            source_hits=source_hits,
+            pageview_score=bounded_pageviews,
+            jieba_direct_score=jieba_direct_score,
+            wiki_support=wiki_hit,
+            pos_tag=pos_tag,
+            char_score=char_score,
+        )
 
         if length == 1:
             if char_score >= 0.94:
@@ -447,6 +472,11 @@ def _compute_weight_with_signals(
         elif looks_like_place_name:
             if length <= 3:
                 bias -= 0.30
+            else:
+                bias -= 0.18
+        elif looks_like_literary_term:
+            if length <= 2:
+                bias -= 0.28
             else:
                 bias -= 0.18
         elif _is_conversational_pos(pos_tag):
@@ -692,6 +722,43 @@ def _looks_like_low_signal_place_name(
     return text.endswith(LOW_SIGNAL_PLACE_SUFFIXES)
 
 
+def _looks_like_low_signal_literary_term(
+    text: str,
+    usage_score: float,
+    source_hits: int,
+    pageview_score: float,
+    jieba_direct_score: float,
+    wiki_support: bool,
+    pos_tag: str = "",
+    char_score: float = 0.0,
+) -> bool:
+    text_len = _cjk_len(text)
+    if text_len < 2 or text_len > 4:
+        return False
+    if not CJK_WINDOWS_FULL_RE.fullmatch(text):
+        return False
+    if wiki_support:
+        return False
+    if _is_named_entity_pos(pos_tag):
+        return False
+    if (
+        usage_score >= 0.06
+        or jieba_direct_score >= 0.06
+        or source_hits >= 2
+        or pageview_score >= 0.03
+    ):
+        return False
+    if char_score >= 0.72:
+        return False
+
+    if any(ch in LOW_SIGNAL_LITERARY_CHARS for ch in text):
+        return True
+
+    return text.endswith(LOW_SIGNAL_LITERARY_SUFFIXES) and any(
+        ch in LOW_SIGNAL_LITERARY_CHARS for ch in text[:-1]
+    )
+
+
 def _has_effective_wiki_support(
     text: str,
     wiki_titles: Set[str],
@@ -787,6 +854,7 @@ def _rerank_homophone_buckets(
     c_sparse_penalty = 132
     c_weak_signal_penalty = 78
     c_named_entity_penalty = 108
+    c_literary_penalty = 86
     c_rare_form_penalty = 168
 
     stats = {
@@ -795,6 +863,7 @@ def _rerank_homophone_buckets(
         f"{stats_prefix}_homophone_entries_boosted": 0,
         f"{stats_prefix}_homophone_entries_damped": 0,
         f"{stats_prefix}_homophone_sparse_penalized": 0,
+        f"{stats_prefix}_homophone_literary_penalized": 0,
         f"{stats_prefix}_homophone_rare_form_penalized": 0,
     }
     if not mapping:
@@ -928,7 +997,8 @@ def _rerank_homophone_buckets(
                 wiki_support=wiki_support,
                 pos_tag=pos_tag,
             )
-            looks_like_place_name = _looks_like_low_signal_place_name(
+            char_score = _compute_text_single_char_prior(text, char_prior)
+            looks_like_literary_term = _looks_like_low_signal_literary_term(
                 text,
                 usage_score=usage_score,
                 source_hits=source_hits,
@@ -936,8 +1006,8 @@ def _rerank_homophone_buckets(
                 jieba_direct_score=jieba_direct_score,
                 wiki_support=wiki_support,
                 pos_tag=pos_tag,
+                char_score=char_score,
             )
-            char_score = _compute_text_single_char_prior(text, char_prior)
             pos_bias = _compute_effective_pos_bias(
                 pos_tag=pos_tag,
                 text_len=text_len,
@@ -1006,6 +1076,9 @@ def _rerank_homophone_buckets(
                 delta -= 96
             if looks_like_place_name:
                 delta -= 84
+            elif looks_like_literary_term:
+                delta -= c_literary_penalty
+                stats[f"{stats_prefix}_homophone_literary_penalized"] += 1
             elif (
                 bucket_has_strong_term
                 and text_len <= 2
@@ -1147,6 +1220,7 @@ def _filter_low_signal_rare_entries(
         f"{stats_prefix}_low_signal_rare_buckets": 0,
         f"{stats_prefix}_low_signal_rare_removed": 0,
         f"{stats_prefix}_low_signal_named_removed": 0,
+        f"{stats_prefix}_low_signal_literary_removed": 0,
     }
     if not mapping:
         return stats
@@ -1240,6 +1314,16 @@ def _filter_low_signal_rare_entries(
                 min_char_prior = 0.0
 
             char_score = _compute_text_single_char_prior(text, char_prior)
+            looks_like_literary_term = _looks_like_low_signal_literary_term(
+                text,
+                usage_score=usage_score,
+                source_hits=source_hits,
+                pageview_score=pageview_score,
+                jieba_direct_score=jieba_direct_score,
+                wiki_support=wiki_support,
+                pos_tag=pos_tag,
+                char_score=char_score,
+            )
             # Protect common modern 2-char words even when cross-source signals
             # are incomplete (notably in TC conversion paths).
             if text_len <= 2 and char_score >= 0.58:
@@ -1288,6 +1372,11 @@ def _filter_low_signal_rare_entries(
             if looks_like_person_name or looks_like_place_name:
                 to_drop.append((pinyin, text))
                 stats[f"{stats_prefix}_low_signal_named_removed"] += 1
+                continue
+
+            if looks_like_literary_term:
+                to_drop.append((pinyin, text))
+                stats[f"{stats_prefix}_low_signal_literary_removed"] += 1
 
         for key in to_drop:
             if key in mapping:
@@ -1317,6 +1406,7 @@ def _filter_global_tail_entries(
     stats = {
         f"{stats_prefix}_global_tail_removed": 0,
         f"{stats_prefix}_global_tail_named_removed": 0,
+        f"{stats_prefix}_global_tail_literary_removed": 0,
         f"{stats_prefix}_global_tail_rare_char_removed": 0,
     }
     if not mapping:
@@ -1435,6 +1525,16 @@ def _filter_global_tail_entries(
             min_char_prior = 0.0
 
         char_score = _compute_text_single_char_prior(text, char_prior)
+        looks_like_literary_term = _looks_like_low_signal_literary_term(
+            text,
+            usage_score=usage_score,
+            source_hits=source_hits,
+            pageview_score=pageview_score,
+            jieba_direct_score=jieba_direct_score,
+            wiki_support=wiki_support,
+            pos_tag=pos_tag,
+            char_score=char_score,
+        )
         # Protect common modern 2-char words even when TC-side signal mapping
         # misses some entries.
         if text_len <= 2 and char_score >= 0.58:
@@ -1473,6 +1573,11 @@ def _filter_global_tail_entries(
         if looks_like_person_name or looks_like_place_name:
             if schedule_drop(key):
                 stats[f"{stats_prefix}_global_tail_named_removed"] += 1
+            continue
+
+        if looks_like_literary_term:
+            if schedule_drop(key):
+                stats[f"{stats_prefix}_global_tail_literary_removed"] += 1
             continue
 
         if (
@@ -1550,6 +1655,16 @@ def _collect_suspicious_high_weight_entries(
             wiki_support=wiki_support,
             pos_tag=pos_tag,
         )
+        looks_like_literary_term = _looks_like_low_signal_literary_term(
+            text,
+            usage_score=usage_score,
+            source_hits=source_hits,
+            pageview_score=pageview_score,
+            jieba_direct_score=jieba_direct_score,
+            wiki_support=wiki_support,
+            pos_tag=pos_tag,
+            char_score=char_score,
+        )
 
         reasons: List[str] = []
         if (
@@ -1565,6 +1680,8 @@ def _collect_suspicious_high_weight_entries(
             reasons.append("likely-person-name")
         if looks_like_place_name:
             reasons.append("likely-place-name")
+        if looks_like_literary_term:
+            reasons.append("likely-literary")
         if (
             text_len <= 2
             and char_score < 0.20

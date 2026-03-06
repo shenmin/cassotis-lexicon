@@ -1,7 +1,7 @@
 # External Build Report
 
 - profile: external_broad
-- generated_at_utc: 2026-03-06T10:42:40+00:00
+- generated_at_utc: 2026-03-06T11:16:09+00:00
 - min_hanzi: 2
 - max_entries: unlimited
 
@@ -53,8 +53,8 @@
 - freqlex_skipped_weak_fallback: 258102
 - freqlex_terms_added_sc: 7953
 - freqlex_terms_added_tc: 1166
-- freqlex_terms_boosted_sc: 15323
-- freqlex_terms_boosted_tc: 6412
+- freqlex_terms_boosted_sc: 15321
+- freqlex_terms_boosted_tc: 6411
 - freqlex_terms_total: 339346
 - freqlex_unihan_fallback_hits: 7941
 - invalid_format: 0
@@ -92,18 +92,21 @@
 - sc_core_usage_hits: 73286
 - sc_core_wiki_hits: 615
 - sc_filtered_non_windows_cjk: 640
-- sc_global_tail_named_removed: 1451
+- sc_global_tail_literary_removed: 31
+- sc_global_tail_named_removed: 1448
 - sc_global_tail_rare_char_removed: 148
-- sc_global_tail_removed: 1599
+- sc_global_tail_removed: 1627
 - sc_homophone_buckets: 12249
-- sc_homophone_entries_adjusted: 32930
-- sc_homophone_entries_boosted: 15952
-- sc_homophone_entries_damped: 16978
-- sc_homophone_rare_form_penalized: 70
+- sc_homophone_entries_adjusted: 32929
+- sc_homophone_entries_boosted: 15939
+- sc_homophone_entries_damped: 16990
+- sc_homophone_literary_penalized: 66
+- sc_homophone_rare_form_penalized: 69
 - sc_homophone_sparse_penalized: 308
+- sc_low_signal_literary_removed: 17
 - sc_low_signal_named_removed: 2418
 - sc_low_signal_rare_buckets: 8728
-- sc_low_signal_rare_removed: 2862
+- sc_low_signal_rare_removed: 2879
 - sc_normalized_converted_entries: 3129
 - sc_normalized_total_entries: 108930
 - sc_script_filtered_entries: 1
@@ -119,20 +122,23 @@
 - tc_core_usage_hits: 73510
 - tc_core_wiki_hits: 606
 - tc_filtered_non_windows_cjk: 687
-- tc_global_tail_named_removed: 1456
-- tc_global_tail_rare_char_removed: 2281
-- tc_global_tail_removed: 3737
+- tc_global_tail_literary_removed: 38
+- tc_global_tail_named_removed: 1452
+- tc_global_tail_rare_char_removed: 2260
+- tc_global_tail_removed: 3750
 - tc_homophone_buckets: 12619
-- tc_homophone_entries_adjusted: 33383
-- tc_homophone_entries_boosted: 15968
-- tc_homophone_entries_damped: 17415
+- tc_homophone_entries_adjusted: 33384
+- tc_homophone_entries_boosted: 15943
+- tc_homophone_entries_damped: 17441
+- tc_homophone_literary_penalized: 77
 - tc_homophone_rare_form_penalized: 513
 - tc_homophone_sparse_penalized: 330
 - tc_jieba_direct_score_terms: 397858
 - tc_jieba_pos_terms: 397858
+- tc_low_signal_literary_removed: 12
 - tc_low_signal_named_removed: 1375
 - tc_low_signal_rare_buckets: 8486
-- tc_low_signal_rare_removed: 7297
+- tc_low_signal_rare_removed: 7309
 - tc_pageviews_score_terms: 2397
 - tc_script_filtered_entries: 0
 - tc_script_filtered_total_entries: 101893
@@ -160,8 +166,8 @@
 ## Output
 - sc_file: D:\cassotis_lexicon\data\generated\dict_clean_sc.txt
 - tc_file: D:\cassotis_lexicon\data\generated\dict_clean_tc.txt
-- sc_entries: 103795
-- tc_entries: 90172
+- sc_entries: 103750
+- tc_entries: 90147
 
 ## Suspicious High-Weight SC Entries
 
