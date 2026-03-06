@@ -796,6 +796,31 @@ def _rerank_homophone_buckets(
             ):
                 delta += 34
 
+            if (
+                bucket_has_strong_term
+                and text_len <= 2
+                and not _is_named_entity_pos(pos_tag)
+                and _is_conversational_pos(pos_tag)
+                and char_score >= 0.38
+                and (usage_score >= 0.06 or jieba_direct_score >= 0.08 or source_hits >= 2)
+            ):
+                # Favor short modern verb/adj/functional terms over literary or
+                # low-signal homophones when the bucket already has a strong term.
+                delta += 28
+            elif (
+                bucket_has_strong_term
+                and text_len <= 2
+                and _is_noun_pos(pos_tag)
+                and not _is_named_entity_pos(pos_tag)
+                and char_score < 0.46
+                and usage_score < 0.10
+                and jieba_direct_score < 0.08
+                and source_hits <= 1
+                and pageview_score <= 0.02
+                and not wiki_support
+            ):
+                delta -= 24
+
             if bucket_has_conversational_short_term and text_len <= 2:
                 # Keep conversational preference as a mild tiebreaker only.
                 # The old ±300~400 forcing was too aggressive and could demote
@@ -958,6 +983,23 @@ def _filter_low_signal_rare_entries(
             # are incomplete (notably in TC conversion paths).
             if text_len <= 2 and char_score >= 0.62:
                 continue
+            if (
+                text_len <= 2
+                and not _is_named_entity_pos(pos_tag)
+                and (
+                    (
+                        _is_conversational_pos(pos_tag)
+                        and char_score >= 0.36
+                        and (usage_score >= 0.05 or jieba_direct_score >= 0.07 or source_hits >= 2)
+                    )
+                    or (
+                        _is_noun_pos(pos_tag)
+                        and char_score >= 0.52
+                        and (usage_score >= 0.08 or jieba_direct_score >= 0.10 or source_hits >= 2)
+                    )
+                )
+            ):
+                continue
 
             if (
                 usage_score < 0.10
@@ -1112,6 +1154,23 @@ def _filter_global_tail_entries(
         # Protect common modern 2-char words even when TC-side signal mapping
         # misses some entries.
         if text_len <= 2 and char_score >= 0.62:
+            continue
+        if (
+            text_len <= 2
+            and not _is_named_entity_pos(pos_tag)
+            and (
+                (
+                    _is_conversational_pos(pos_tag)
+                    and char_score >= 0.36
+                    and (usage_score >= 0.05 or jieba_direct_score >= 0.07 or source_hits >= 2)
+                )
+                or (
+                    _is_noun_pos(pos_tag)
+                    and char_score >= 0.52
+                    and (usage_score >= 0.08 or jieba_direct_score >= 0.10 or source_hits >= 2)
+                )
+            )
+        ):
             continue
 
         if (

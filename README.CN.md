@@ -1,68 +1,36 @@
 ﻿# Cassotis Lexicon
 
-<p align="center">
-  <img src="cassotis_ime_yanquan.png" alt="Cassotis IME logo" width="280">
-</p>
-
-<p align="center">
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-CC%20BY--SA%204.0-blue" alt="License: CC BY-SA 4.0"></a>
-</p>
-
 [English](README.md) | 简体中文
 
-Cassotis IME 词库产物与构建流程的开源仓库。
+Cassotis IME 词库构建与发布仓库。
 
-## 词库文件（2026-03-06 构建）
+## 仓库定位
+- 维护词库构建脚本、来源清单与生成产物。
+- 支持“外部公开来源启动”与“私有语料融合”的构建流程。
+- 维护归因与发布规范，确保与外部发布产物一致。
 
-| 文件 | 类型 | 词条数 |
-|------|------|--------|
-| `data/generated/dict_clean_sc.txt` | 简体中文主词库 | 112,606 |
-| `data/generated/dict_clean_tc.txt` | 繁体中文主词库 | 97,248 |
+## 当前词库快照（2026-03-06 构建）
+
+| 文件 | 字体变体 | 词条数 |
+|------|---------|--------|
+| `data/generated/dict_clean_sc.txt` | 简体中文主词库 | 104,549 |
+| `data/generated/dict_clean_tc.txt` | 繁体中文主词库 | 90,483 |
 | `data/generated/dict_unihan_sc.txt` | 简体单字（Unihan） | 30,397 |
 | `data/generated/dict_unihan_tc.txt` | 繁体单字（Unihan） | 31,009 |
 
-## 文件格式
-
-词库文件为 UTF-8 编码 TSV（无表头）：
-
-```text
-pinyin<TAB>text<TAB>weight
-```
-
-示例：
-
-```text
-zhongguo	中国	666
-rengongzhineng	人工智能	590
-```
-
-- `pinyin`：去声调、无分隔符的 ASCII 拼音键
-- `text`：候选中文词（单字或多字）
-- `weight`：排序权重（越高优先级越高）
-
-## 构建配置（Profiles）
-
-定义于 `manifests/profiles.public.yml`：
-
-| 配置 | 说明 |
-|------|------|
-| `external_broad`（默认） | CC-CEDICT + THUOCL + OpenCC + jieba + Unihan + 中文维基标题 + 维基访问热度 |
-| `external_cedict` | 仅使用 CC-CEDICT |
-| `clean_permissive` | 仅使用 OpenCC STPhrases + Unihan |
-
-## 数据来源（`external_broad`）
+## 外部来源（`external_broad` 配置）
 
 | 来源 | 许可证 | 用途 |
 |------|--------|------|
 | CC-CEDICT | CC BY-SA 4.0 | 核心词条与拼音 |
-| THUOCL | THUOCL 自定义开放条款 | 覆盖扩展与 DF 信号 |
+| THUOCL | THUOCL 自定义开放条款 | 扩展覆盖与 DF 统计 |
 | OpenCC STPhrases | Apache-2.0 | 简繁短语映射 |
-| jieba `dict.txt` | MIT | 词频信号 |
-| Unicode Unihan | Unicode-3.0 | 单字读音兜底 |
+| jieba `dict.txt` | MIT | 频率排序信号 |
+| Unicode Unihan | Unicode-3.0 | 单字读音兜底与单字词库 |
 | 中文维基标题（ns0） | CC BY-SA 4.0 | 命名实体覆盖 |
 | Wikimedia Pageviews Top（zh.wikipedia） | CC BY-SA 4.0 | 真实热度信号 |
 
-来源细节见：
+详见：
 - `manifests/sources.public.yml`
 - `attribution/ATTRIBUTION.md`
 
@@ -73,20 +41,23 @@ rengongzhineng	人工智能	590
 - 应用面向输入法场景的有效性过滤（如可渲染性、字形脚本约束），提升 Windows 场景可用性。
 - 通过规则修正和回归样本校验，保持同音竞争与整体排序稳定。
 
-## 构建方式
+## 目录结构
+- `data/generated/`：生成词库文件。
+- `manifests/`：来源/许可证清单与回归样本。
+- `scripts/`：构建、校验、导出辅助脚本。
+- `reports/`：构建报告。
+- `rules/`：导出与发布规则。
 
-前置要求：Python 3.8+、PowerShell 7+
+## 构建与校验
 
 ```powershell
 # 全量重建（external_broad + unihan_single + 回归校验）
 .\rebuild_all.ps1
 
-# 或按单个 profile 构建
+# 直接按单个 profile 构建
 .\scripts\build_external_seed.ps1 -Profile external_broad
-.\scripts\build_external_seed.ps1 -Profile external_cedict
-.\scripts\build_external_seed.ps1 -Profile clean_permissive
 ```
 
-## 许可证
-
-本仓库采用 **CC BY-SA 4.0** 许可证，详见 [LICENSE](LICENSE)。
+## 约束
+- 外部仓库的 commit message 必须使用英文。
+- 禁止提交私有原始语料、草稿与作者文稿。
