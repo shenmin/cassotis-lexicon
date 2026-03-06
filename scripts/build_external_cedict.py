@@ -91,6 +91,29 @@ COMMON_COMPOUND_SURNAMES = {
     "南宫",
 }
 
+LOW_SIGNAL_PLACE_SUFFIXES = (
+    "\u5e02",
+    "\u53bf",
+    "\u533a",
+    "\u9547",
+    "\u6751",
+    "\u4e61",
+    "\u5dde",
+    "\u90e1",
+    "\u5821",
+    "\u6e7e",
+    "\u5cad",
+    "\u5c9b",
+    "\u6c5f",
+    "\u6cb3",
+    "\u6e56",
+    "\u5c71",
+    "\u6865",
+    "\u7ad9",
+    "\u8def",
+    "\u8857",
+)
+
 COPYLEFT_LICENSE_TOKENS = (
     "by-sa",
     "gpl",
@@ -367,6 +390,15 @@ def _compute_weight_with_signals(
             wiki_support=wiki_hit,
             pos_tag=pos_tag,
         )
+        looks_like_place_name = _looks_like_low_signal_place_name(
+            text,
+            usage_score=bounded_usage,
+            source_hits=source_hits,
+            pageview_score=bounded_pageviews,
+            jieba_direct_score=jieba_direct_score,
+            wiki_support=wiki_hit,
+            pos_tag=pos_tag,
+        )
 
         if length == 1:
             if char_score >= 0.94:
@@ -405,11 +437,18 @@ def _compute_weight_with_signals(
                 and jieba_direct_score < 0.10
             ):
                 bias -= 0.10
+            if looks_like_place_name:
+                bias -= 0.18 if length <= 3 else 0.12
         elif looks_like_person_name:
             if length <= 3:
                 bias -= 0.34
             else:
                 bias -= 0.22
+        elif looks_like_place_name:
+            if length <= 3:
+                bias -= 0.30
+            else:
+                bias -= 0.18
         elif _is_conversational_pos(pos_tag):
             if length <= 4 and (bounded_usage >= 0.05 or jieba_direct_score >= 0.08):
                 bias += 0.22
@@ -619,6 +658,38 @@ def _looks_like_low_signal_person_name(
     if text[:2] in COMMON_COMPOUND_SURNAMES:
         return text_len >= 3
     return text[0] in COMMON_SURNAMES
+
+
+def _looks_like_low_signal_place_name(
+    text: str,
+    usage_score: float,
+    source_hits: int,
+    pageview_score: float,
+    jieba_direct_score: float,
+    wiki_support: bool,
+    pos_tag: str = "",
+) -> bool:
+    text_len = _cjk_len(text)
+    if text_len < 2 or text_len > 5:
+        return False
+    if not CJK_WINDOWS_FULL_RE.fullmatch(text):
+        return False
+    if wiki_support:
+        return False
+    if (
+        usage_score >= 0.04
+        or jieba_direct_score >= 0.04
+        or source_hits >= 2
+        or pageview_score >= 0.03
+    ):
+        return False
+
+    if pos_tag.startswith("ns"):
+        return True
+    if pos_tag and not _is_named_entity_pos(pos_tag):
+        return False
+
+    return text.endswith(LOW_SIGNAL_PLACE_SUFFIXES)
 
 
 def _has_effective_wiki_support(
@@ -832,6 +903,7 @@ def _rerank_homophone_buckets(
             source_hits = max(0, source_hits_map.get(text, 0))
             pageview_score = min(1.0, max(0.0, pageviews_signal_map.get(text, 0.0)))
             jieba_direct_score = min(1.0, max(0.0, jieba_direct_signal_map.get(text, 0.0)))
+            pos_tag = jieba_pos_map.get(text, "")
             wiki_support = _has_effective_wiki_support(
                 text,
                 wiki_titles,
@@ -847,8 +919,25 @@ def _rerank_homophone_buckets(
                 wiki_support=wiki_support,
                 pos_tag=pos_tag,
             )
+            looks_like_place_name = _looks_like_low_signal_place_name(
+                text,
+                usage_score=usage_score,
+                source_hits=source_hits,
+                pageview_score=pageview_score,
+                jieba_direct_score=jieba_direct_score,
+                wiki_support=wiki_support,
+                pos_tag=pos_tag,
+            )
+            looks_like_place_name = _looks_like_low_signal_place_name(
+                text,
+                usage_score=usage_score,
+                source_hits=source_hits,
+                pageview_score=pageview_score,
+                jieba_direct_score=jieba_direct_score,
+                wiki_support=wiki_support,
+                pos_tag=pos_tag,
+            )
             char_score = _compute_text_single_char_prior(text, char_prior)
-            pos_tag = jieba_pos_map.get(text, "")
             pos_bias = _compute_effective_pos_bias(
                 pos_tag=pos_tag,
                 text_len=text_len,
@@ -915,6 +1004,8 @@ def _rerank_homophone_buckets(
             ):
                 # Suppress low-traffic short names/places in homophone buckets.
                 delta -= 96
+            if looks_like_place_name:
+                delta -= 84
             elif (
                 bucket_has_strong_term
                 and text_len <= 2
@@ -1126,6 +1217,15 @@ def _filter_low_signal_rare_entries(
                 wiki_support=wiki_support,
                 pos_tag=pos_tag,
             )
+            looks_like_place_name = _looks_like_low_signal_place_name(
+                text,
+                usage_score=usage_score,
+                source_hits=source_hits,
+                pageview_score=pageview_score,
+                jieba_direct_score=jieba_direct_score,
+                wiki_support=wiki_support,
+                pos_tag=pos_tag,
+            )
 
             min_char_prior = 1.0
             has_cjk_char = False
@@ -1185,7 +1285,7 @@ def _filter_low_signal_rare_entries(
                 stats[f"{stats_prefix}_low_signal_named_removed"] += 1
                 continue
 
-            if looks_like_person_name:
+            if looks_like_person_name or looks_like_place_name:
                 to_drop.append((pinyin, text))
                 stats[f"{stats_prefix}_low_signal_named_removed"] += 1
 
@@ -1308,6 +1408,15 @@ def _filter_global_tail_entries(
             wiki_support=wiki_support,
             pos_tag=pos_tag,
         )
+        looks_like_place_name = _looks_like_low_signal_place_name(
+            text,
+            usage_score=usage_score,
+            source_hits=source_hits,
+            pageview_score=pageview_score,
+            jieba_direct_score=jieba_direct_score,
+            wiki_support=wiki_support,
+            pos_tag=pos_tag,
+        )
 
         # Keep at least one candidate per pinyin bucket to avoid hard holes.
         if bucket_counts.get(pinyin, 0) < 2:
@@ -1361,7 +1470,7 @@ def _filter_global_tail_entries(
                 stats[f"{stats_prefix}_global_tail_named_removed"] += 1
             continue
 
-        if looks_like_person_name:
+        if looks_like_person_name or looks_like_place_name:
             if schedule_drop(key):
                 stats[f"{stats_prefix}_global_tail_named_removed"] += 1
             continue
@@ -1432,6 +1541,15 @@ def _collect_suspicious_high_weight_entries(
             wiki_support=wiki_support,
             pos_tag=pos_tag,
         )
+        looks_like_place_name = _looks_like_low_signal_place_name(
+            text,
+            usage_score=usage_score,
+            source_hits=source_hits,
+            pageview_score=pageview_score,
+            jieba_direct_score=jieba_direct_score,
+            wiki_support=wiki_support,
+            pos_tag=pos_tag,
+        )
 
         reasons: List[str] = []
         if (
@@ -1445,6 +1563,8 @@ def _collect_suspicious_high_weight_entries(
             reasons.append("low-signal-named")
         if looks_like_person_name:
             reasons.append("likely-person-name")
+        if looks_like_place_name:
+            reasons.append("likely-place-name")
         if (
             text_len <= 2
             and char_score < 0.20
