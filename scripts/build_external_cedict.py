@@ -141,7 +141,7 @@ LOW_SIGNAL_WRITTEN_TAIL_SUFFIXES = (
 )
 
 LOW_SIGNAL_WRITTEN_TAIL_HEADS = set(
-    "\u5176\u4e8e\u4e43\u65af\u4ee5\u56e0\u6545\u8bfa\u65bc\u4e8c"
+    "\u5176\u4e8e\u4e43\u65af\u4ee5\u56e0\u6545\u8bfa\u65bc\u4e8c\u82e5\u592b\u51e1\u76d6\u9042\u83ab\u5f17\u672a\u5179\u8bf8"
 )
 
 COPYLEFT_LICENSE_TOKENS = (
@@ -1610,16 +1610,6 @@ def _filter_global_tail_entries(
 
         char_score = _compute_text_single_char_prior(text, char_prior)
         looks_like_literary_term = _looks_like_low_signal_literary_term(
-            text,
-            usage_score=usage_score,
-            source_hits=source_hits,
-            pageview_score=pageview_score,
-            jieba_direct_score=jieba_direct_score,
-            wiki_support=wiki_support,
-            pos_tag=pos_tag,
-            char_score=char_score,
-        )
-        looks_like_written_tail_term = _looks_like_low_signal_written_tail_term(
             text,
             usage_score=usage_score,
             source_hits=source_hits,
@@ -4071,6 +4061,7 @@ def _write_report(
     suspicious_sc: List[Dict[str, object]] | None = None,
 ) -> None:
     reason_counts: Dict[str, int] = {}
+    suspicious_sc = suspicious_sc or []
     path.parent.mkdir(parents=True, exist_ok=True)
     lines = [
         "# External Build Report",
@@ -4106,11 +4097,11 @@ def _write_report(
             f"- tc_file: {output_tc}",
             f"- sc_entries: {count_sc}",
             f"- tc_entries: {count_tc}",
+            f"- suspicious_sc_entries: {len(suspicious_sc)}",
             "",
         ]
     )
 
-    suspicious_sc = suspicious_sc or []
     if suspicious_sc:
         for item in suspicious_sc:
             for reason in str(item.get("reasons", "")).split(","):
@@ -4133,15 +4124,15 @@ def _write_report(
         lines.append("## Suspicious High-Weight SC Entries")
         lines.append("")
         lines.append(
-            "| text | pinyin | weight | usage | jieba | pageviews | source_hits | char_score | pos | reasons |"
+            "| text | pinyin | weight | risk_score | usage | jieba | pageviews | source_hits | char_score | pos | reasons |"
         )
         lines.append(
-            "| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- | --- |"
+            "| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- | --- |"
         )
         for item in suspicious_sc:
             lines.append(
-                "| {text} | {pinyin} | {weight} | {usage:.3f} | {jieba:.3f} | {pageviews:.3f} |"
-                " {source_hits} | {char_score:.3f} | {pos} | {reasons} |".format(**item)
+                "| {text} | {pinyin} | {weight} | {risk_score} | {usage:.3f} | {jieba:.3f} |"
+                " {pageviews:.3f} | {source_hits} | {char_score:.3f} | {pos} | {reasons} |".format(**item)
             )
         lines.append("")
     path.write_text("\n".join(lines), encoding="utf-8", newline="\n")
