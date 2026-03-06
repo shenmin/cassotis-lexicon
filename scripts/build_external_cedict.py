@@ -2454,6 +2454,39 @@ def _load_unihan_mandarin_map(payload: bytes) -> Dict[str, str]:
     return mandarin_map
 
 
+def _select_unihan_output_readings(
+    ch: str,
+    pinyin_set: Set[str],
+    source_rank_map: Dict[Tuple[str, str], int],
+    mandarin_map: Dict[str, str],
+) -> List[str]:
+    if not pinyin_set:
+        return []
+
+    # Only inject mainstream single-character readings into final dictionaries.
+    # Keep Mandarin / Pinlu-backed readings first; HanyuPinyin extras are used
+    # only as a last-resort fallback to preserve minimal coverage.
+    preferred = sorted(
+        pinyin
+        for pinyin in pinyin_set
+        if source_rank_map.get((ch, pinyin), 0) >= UNIHAN_SOURCE_MANDARIN
+    )
+    if preferred:
+        return preferred
+
+    mandarin = mandarin_map.get(ch, "")
+    if mandarin and mandarin in pinyin_set:
+        return [mandarin]
+
+    highest_rank = max(source_rank_map.get((ch, pinyin), 0) for pinyin in pinyin_set)
+    fallback = sorted(
+        pinyin for pinyin in pinyin_set if source_rank_map.get((ch, pinyin), 0) == highest_rank
+    )
+    if not fallback:
+        return []
+    return [fallback[0]]
+
+
 def _parse_unihan_pinlu_count(value: str) -> int:
     max_count = 0
     for matched in re.finditer(r"\((\d+)\)", value):
@@ -2902,7 +2935,13 @@ def _build_from_opencc_unihan(
             else:
                 target_buckets = (sc, tc)
 
-            for pinyin in sorted(pinyin_set):
+            output_pinyin_set = _select_unihan_output_readings(
+                ch,
+                pinyin_set,
+                unihan_reading_source_map,
+                unihan_map,
+            )
+            for pinyin in output_pinyin_set:
                 key = (pinyin, ch)
                 source_rank = unihan_reading_source_map.get((ch, pinyin), UNIHAN_SOURCE_MANDARIN)
                 output_weight = _adjust_unihan_weight_for_source(base_weight, source_rank)
@@ -2931,7 +2970,7 @@ def _build_from_unihan_only(
     sc: Dict[Tuple[str, str], int] = {}
     tc: Dict[Tuple[str, str], int] = {}
     (
-        _unihan_map,
+        unihan_map,
         unihan_readings_map,
         unihan_reading_source_map,
         unihan_pinlu_map,
@@ -2972,7 +3011,13 @@ def _build_from_unihan_only(
                 core_coverage=unihan_core_map.get(ch, 0),
             )
 
-            for pinyin in sorted(pinyin_set):
+            output_pinyin_set = _select_unihan_output_readings(
+                ch,
+                pinyin_set,
+                unihan_reading_source_map,
+                unihan_map,
+            )
+            for pinyin in output_pinyin_set:
                 source_rank = unihan_reading_source_map.get((ch, pinyin), UNIHAN_SOURCE_MANDARIN)
                 output_weight = _adjust_unihan_weight_for_source(base_weight, source_rank)
                 key = (pinyin, ch)
