@@ -3249,7 +3249,7 @@ baozha	爆炸	502
 baozhai	堡寨	464
 baozhali	爆炸力	395
 baozhan	飽綻	137
-baozhang	保長	455
+baozhang	保長	16
 baozhang	保障	822
 baozhang	暴漲	420
 baozhangjiandu	保障監督	258
@@ -4077,7 +4077,7 @@ benri	本日	385
 bensan	奔三	198
 bensang	奔喪	422
 bense	本色	437
-benshai	本色	437
+benshai	本色	191
 benshen	本身	502
 benshengdeng	本生燈	368
 benshengren	本省人	228
@@ -4160,7 +4160,7 @@ bianbankaoshi	編班考試	258
 bianbaxi	變把戲	228
 bianbenjiali	變本加厲	456
 bianbi	便閉	270
-bianbian	便便	198
+bianbian	便便	1
 bianbie	辨別	690
 bianbieli	辨別力	389
 bianbing	變兵	198
@@ -4420,12 +4420,12 @@ bianyan	邊沿	413
 bianyang	變樣	369
 bianyangr	變樣兒	188
 bianyaqi	變壓器	458
-bianyi	便宜	822
-bianyi	便衣	657
-bianyi	編譯	406
-bianyi	變異	298
-bianyi	貶抑	349
-bianyi	貶義	248
+bianyi	便宜	369
+bianyi	便衣	662
+bianyi	編譯	411
+bianyi	變異	303
+bianyi	貶抑	355
+bianyi	貶義	253
 bianyijia	編譯傢	228
 bianyijingcha	便衣警察	365
 bianyin	編印	514
@@ -6452,7 +6452,7 @@ bulaoerhuo	不勞而獲	417
 bulasashi	布拉薩市	226
 bulasuofu	布拉索夫	258
 bulatisilawa	布拉提斯拉瓦	318
-bule	不瞭	502
+bule	不瞭	222
 bulei	部類	597
 buleidunsenlin	布雷頓森林	288
 buleijian	佈雷艦	222
@@ -8845,8 +8845,8 @@ chashao	查哨	519
 chashaobao	叉燒包	335
 chasheng	差生	380
 chashengwenjuduo	差生文具多	288
-chashi	差事	554
-chashi	查實	484
+chashi	差事	45
+chashi	查實	490
 chashou	插手	551
 chashou	查收	350
 chashu	差數	356
@@ -8948,7 +8948,7 @@ chegao	撤稿	198
 chegong	車工	361
 chegu	徹骨	388
 cheguansuo	車管所	362
-chehang	車行	399
+chehang	車行	1
 chehao	車號	367
 chehoutui	扯後腿	394
 chehouxiang	車後箱	228
@@ -9412,7 +9412,7 @@ chengzhongcun	城中村	165
 chengzhongqu	城中區	148
 chengzhongsun	承重孫	228
 chengzhuan	承轉	311
-chengzhuang	盛裝	434
+chengzhuang	盛裝	297
 chengzhuzaixiong	成竹在胸	439
 chengzi	橙子	662
 chengzihe	城子河	174
@@ -9986,8 +9986,8 @@ chongdang	充當	475
 chongdao	重蹈	393
 chongdaofuzhe	重蹈覆轍	434
 chongdi	充抵	137
-chongdian	充電	364
-chongdian	重點	585
+chongdian	充電	369
+chongdian	重點	106
 chongdianbao	充電寶	167
 chongdianqi	充電器	373
 chongdianzhan	充電站	335
@@ -10135,7 +10135,7 @@ chongtianwu	充填物	167
 chongtianyinshu	充填因數	218
 chongtiao	沖調	137
 chongtijiushi	重提舊事	365
-chongtou	重頭	386
+chongtou	重頭	1
 chongtu	衝突	502
 chongwan	重玩	198
 chongwei	重圍	435
@@ -10575,7 +10575,7 @@ chuangzizhisi	床笫之私	383
 chuangzuo	創作	502
 chuangzuoli	創作力	365
 chuangzuozhe	創作者	435
-chuanhang	串行	407
+chuanhang	串行	1
 chuanhao	串號	283
 chuanhetoushanque	川褐頭山雀	288
 chuanhu	傳呼	585
@@ -10982,7 +10982,7 @@ chujiugengxin	除舊更新	373
 chujixiaoxue	初級小學	384
 chujizhongxue	初級中學	405
 chuju	齣具	472
-chujuan	齣圈	305
+chujuan	齣圈	25
 chujue	處決	517
 chujue	觸覺	339
 chujuguimo	初具規模	461
@@ -12359,9 +12359,9 @@ dadonggange	大動乾戈	436
 dadongmai	大動脈	440
 dadongqu	大東區	139
 dadongyagongrongquan	大東亞共榮圈	318
-dadou	大豆	477
-dadou	大都	488
-dadou	打鬥	349
+dadou	大豆	482
+dadou	大都	1
+dadou	打鬥	354
 dadu	大度	398
 dadu	大都	488
 dadu	打賭	350
@@ -12753,7 +12753,7 @@ daitouren	帶頭人	454
 daitu	歹徒	426
 daiwa	帶娃	176
 daiwai	帶歪	176
-daiwang	大王	405
+daiwang	大王	1
 daiwei	代為	684
 daiweisi	戴維斯	251
 daiweisibei	戴維斯盃	247
@@ -14505,7 +14505,7 @@ delaise	德萊塞	186
 delaisu	得來速	228
 delakeluowa	德拉剋羅瓦	288
 delamen	德拉門	228
-dele	得瞭	198
+dele	得瞭	1
 delebake	德勒巴剋	258
 deleier	德雷爾	172
 deleifusi	德雷福斯	226
@@ -14623,7 +14623,7 @@ dengluyueqiu	登陸月球	258
 dengmen	登門	206
 dengmi	燈謎	386
 dengpao	燈泡	421
-dengqing	澄清	460
+dengqing	澄清	1
 dengru	登入	198
 dengrui	燈蕊	283
 dengshan	登山	344
@@ -14958,7 +14958,7 @@ dianjiu	奠酒	393
 dianjiwu	澱積物	228
 dianjizhe	奠基者	431
 dianju	電鋸	380
-dianjuan	墊圈	372
+dianjuan	墊圈	1
 dianjun	殿軍	442
 dianjunqu	點軍區	459
 diankai	點開	137
@@ -22113,7 +22113,7 @@ ganen	感恩	445
 ganendaide	感恩戴德	427
 ganenjie	感恩節	700
 ganentubao	感恩圖報	427
-ganer	乾兒	176
+ganer	乾兒	1
 ganerzi	乾兒子	406
 ganfa	感發	323
 ganfan	乾飯	417
@@ -25165,7 +25165,7 @@ gugong	故宮	547
 gugong	股肱	324
 gugongbowuyuan	故宮博物院	434
 gugou	股溝	198
-gugu	呱呱	211
+gugu	呱呱	39
 gugu	姑姑	661
 gugu	汩汩	220
 gugu	股骨	338
@@ -28776,7 +28776,7 @@ houban	後半	305
 houbanchang	後半場	335
 houbansheng	後半生	418
 houbanye	後半葉	228
-houbao	厚薄	634
+houbao	厚薄	165
 houbei	後備	428
 houbei	後背	520
 houbei	後輩	348
@@ -28820,7 +28820,7 @@ houdou	猴痘	198
 houdu	厚度	454
 houduan	後段	313
 houdun	後盾	421
-houer	猴兒	434
+houer	猴兒	197
 houfang	後方	428
 houfanjindou	後翻筋鬥	258
 houfazuo	後髮座	167
@@ -29104,7 +29104,7 @@ huaduo	花朵	447
 huaduobutian	話多不甜	258
 huaduqu	花都區	146
 huae	花萼	404
-huaer	花兒	438
+huaer	花兒	1
 huaerbushi	華而不實	434
 huaerjie	華爾街	258
 huaerjieribao	華爾街日報	346
@@ -39388,8 +39388,8 @@ koujiao	口角	628
 koujiaojiu	口嚼酒	228
 koujiaozhan	口角戰	228
 koujing	口徑	487
-koujue	口角	484
-koujue	口訣	376
+koujue	口角	1
+koujue	口訣	380
 kouke	口渴	428
 koukou	扣扣	467
 koukoushengsheng	口口聲聲	467
@@ -40420,7 +40420,7 @@ lakaixumu	拉開序幕	223
 lake	拉客	384
 lakeluniya	拉科魯尼亞	288
 laketichun	拉剋替醇	258
-lakong	落空	425
+lakong	落空	1
 lakuila	拉奎拉	228
 lala	拉拉	254
 lalacheche	拉拉扯扯	435
@@ -40901,7 +40901,7 @@ laokang	落炕	198
 laokao	牢靠	425
 laoke	老客	581
 laoker	老客兒	228
-laokong	落空	425
+laokong	落空	1
 laokou	老摳	198
 laoku	勞苦	442
 laokuangkuang	老框框	335
@@ -41098,7 +41098,7 @@ laozhuang	老莊	366
 laozhuo	老拙	168
 laozi	勞資	238
 laozi	老子	679
-laozi	落子	325
+laozi	落子	143
 laozige	老資格	400
 laoziguanxi	勞資關係	365
 laozihao	老字號	437
@@ -42833,7 +42833,7 @@ lingbixian	靈璧縣	139
 lingbowu	淩波舞	167
 lingbujian	零部件	491
 lingce	另冊	387
-lingchang	領唱	445
+lingchang	領唱	451
 lingche	靈車	371
 lingchen	淩晨	430
 lingchi	零喫	383
@@ -44526,7 +44526,7 @@ luguoren	魯國人	228
 luguxiang	鹿穀鄉	193
 luhaikongjun	陸海空軍	274
 luhaikongsanjun	陸海空三軍	288
-luhe	六閤	406
+luhe	六閤	242
 luhequ	六閤區	335
 luhexian	陸河縣	139
 luhu	路虎	279
@@ -48035,7 +48035,7 @@ mingzao	明早	395
 mingzaoyishi	名噪一時	429
 mingzha	榠楂	137
 mingzhang	明杖	137
-mingzhao	明朝	741
+mingzhao	明朝	587
 mingzhebaoshen	明哲保身	294
 mingzheng	明證	435
 mingzhengandou	明爭暗鬥	436
@@ -48143,7 +48143,7 @@ minyu	閩語	1
 minyuan	民怨	380
 minyuandingfei	民怨鼎沸	258
 minyuanfeiteng	民怨沸騰	425
-minyue	民樂	579
+minyue	民樂	370
 minyun	民運	369
 minzeidufu	民賊獨夫	333
 minzhai	民宅	396
@@ -50096,7 +50096,7 @@ nianlao	年老	439
 nianlaolishuai	年老力衰	365
 nianlaotiruo	年老體弱	431
 nianli	年曆	395
-nianlian	粘連	435
+nianlian	粘連	281
 nianling	年齡	487
 nianlingduan	年齡段	444
 nianlingzu	年齡組	395
@@ -51476,7 +51476,7 @@ paizu	牌組	198
 pajinsen	帕金森	251
 pajinsenbing	帕金森病	249
 pajinsenshizheng	帕金森氏癥	300
-pala	扒拉	422
+pala	扒拉	299
 palamalibo	帕拉馬裏博	278
 palanka	帕蘭卡	228
 palao	帕勞	110
@@ -53024,7 +53024,7 @@ pinsha	拼殺	424
 pinshu	聘書	548
 pinshu	頻數	201
 pinshufenbu	頻數分佈	258
-pinshuo	頻數	205
+pinshuo	頻數	1
 pinsi	拼死	447
 pinsipinhuo	拼死拼活	416
 pinti	品題	338
@@ -62166,7 +62166,7 @@ shidian	事典	468
 shidian	試點	456
 shidianxian	施甸縣	139
 shidiao	失掉	635
-shidiao	失調	633
+shidiao	失調	160
 shidiao	時調	129
 shidiao	石雕	577
 shidiaobai	石刁柏	335
@@ -66528,7 +66528,7 @@ suoyue	鎖鑰	436
 suoyuhe	蓑羽鶴	228
 suozai	所在	462
 suozaidi	所在地	510
-suozhang	所長	487
+suozhang	所長	5
 suozhi	所指	583
 suozhi	所知	805
 suozi	梭子	400
@@ -67513,7 +67513,7 @@ tanzhiyihuijian	彈指一揮間	422
 tanzhizhijian	彈指之間	353
 tanzhong	檀中	198
 tanzhonghe	碳中和	228
-tanzi	彈子	359
+tanzi	彈子	1
 tanzi	探子	542
 tanzi	攤子	473
 tanzi	毯子	487
@@ -68484,7 +68484,7 @@ tiaoma	跳馬	518
 tiaomaobing	挑毛病	368
 tiaomaotici	挑毛剔刺	365
 tiaomaoticir	挑毛剔刺兒	288
-tiaomen	調門	402
+tiaomen	調門	1
 tiaoming	挑明	428
 tiaomu	條目	426
 tiaonong	挑弄	385
@@ -69288,7 +69288,7 @@ tonggusi	通古斯	279
 tongguxian	銅鼓縣	139
 tonghai	通海	182
 tonghaixian	通海縣	146
-tonghang	通航	678
+tonghang	通航	683
 tonghanzi	統漢字	228
 tonghao	茼蒿	339
 tonghao	衕好	402
@@ -70565,7 +70565,7 @@ tuoqing	脫氫	427
 tuoqingmei	脫氫酶	181
 tuoqiu	橢球	406
 tuoqu	脫去	323
-tuor	托兒	243
+tuor	坨兒	78
 tuoran	脫然	198
 tuorenxiashui	拖人下水	365
 tuorong	脫溶	198
@@ -72631,8 +72631,8 @@ wenhuashuiping	文化水平	218
 wenhuayichan	文化遺產	365
 wenhuazhangai	文化障礙	218
 wenhuibao	文匯報	277
-wenhuo	文火	472
-wenhuo	溫和	733
+wenhuo	文火	477
+wenhuo	溫和	266
 wenji	文集	654
 wenjiabao	溫傢寶	649
 wenjian	文件	711
@@ -74059,7 +74059,7 @@ xiadaoliecheshou	俠盜獵車手	288
 xiadefadou	嚇得發抖	258
 xiadi	下地	445
 xiadian	瑕玷	176
-xiadiao	下調	463
+xiadiao	下調	304
 xiadie	下跌	475
 xiadingdan	下訂單	228
 xiadingjuexin	下定決心	466
@@ -75610,7 +75610,7 @@ xiaoquanmazhilao	效犬馬之勞	288
 xiaoquanzuo	小犬座	228
 xiaoquexing	小確幸	228
 xiaoquguangbo	小區廣播	258
-xiaor	小兒	452
+xiaor	小兒	1
 xiaoran	蕭然	160
 xiaorangzhibie	霄壤之別	373
 xiaoren	小人	487
@@ -77118,7 +77118,7 @@ xingshi	幸事	298
 xingshi	形勢	520
 xingshi	形式	797
 xingshi	性事	194
-xingshi	省事	83
+xingshi	省事	1
 xingshi	興師	65
 xingshi	行事	652
 xingshi	行使	725
@@ -79040,7 +79040,7 @@ xueyuanguanxi	血緣關係	365
 xueyuanpai	學院派	407
 xueyue	血月	198
 xueyueshan	雪嶽山	174
-xueyun	血暈	401
+xueyun	血暈	239
 xuezha	學渣	176
 xuezhai	血債	387
 xuezhaileilei	血債纍纍	365
@@ -87358,7 +87358,7 @@ zhangliang	丈量	573
 zhangluo	漲落	588
 zhangman	長滿	573
 zhangmanyu	張曼玉	496
-zhangmao	長毛	421
+zhangmao	長毛	1
 zhangmian	賬麵	404
 zhangming	彰明	135
 zhangmingjiaozhu	彰明較著	383
@@ -87895,7 +87895,7 @@ zhaoxue	昭雪	223
 zhaoxun	找尋	459
 zhaoya	爪牙	245
 zhaoyan	照眼	323
-zhaoyang	朝陽	386
+zhaoyang	朝陽	1
 zhaoyang	照樣	689
 zhaoyangchanye	朝陽產業	365
 zhaoyangqu	昭陽區	139
@@ -90568,8 +90568,8 @@ zhongzhiti	種植體	335
 zhongzhiya	種植牙	228
 zhongzhiye	種植業	461
 zhongzhiyuan	種植園	453
-zhongzhong	種種	309
-zhongzhong	重重	677
+zhongzhong	種種	314
+zhongzhong	重重	192
 zhongzhongkugu	塚中枯骨	353
 zhongzhongzhizhong	重中之重	454
 zhongzhou	中軸	173
@@ -91896,8 +91896,8 @@ zhuxie	祝謝	115
 zhuxiegao	豬血糕	228
 zhuxiguo	主席國	393
 zhuxin	誅心	198
-zhuxing	助興	319
-zhuxing	逐行	466
+zhuxing	助興	324
+zhuxing	逐行	1
 zhuxinggang	蛛形綱	388
 zhuxingtu	柱型圖	228
 zhuxingu	主心骨	394
@@ -92697,7 +92697,7 @@ zongcai	總裁	487
 zongcanmoubu	總參謀部	470
 zongcanmouzhang	總參謀長	488
 zongcaomei	棕草鶥	228
-zongchang	總長	459
+zongchang	總長	1
 zongchanliang	總產量	510
 zongchanzhi	總產值	510
 zongcheng	總稱	450
@@ -93389,8 +93389,8 @@ zuobi	作弊	432
 zuobian	左邊	431
 zuobianqi	坐便器	335
 zuobianr	左邊兒	167
-zuobiao	坐標	517
-zuobiao	座標	521
+zuobiao	坐標	532
+zuobiao	座標	387
 zuobiaofa	座標法	228
 zuobiaokongjian	座標空間	258
 zuobiaoxi	座標係	453
@@ -93509,7 +93509,7 @@ zuomei	做媒	400
 zuomeizuoyan	做眉做眼	383
 zuomeng	做夢	463
 zuomian	左麵	377
-zuomo	琢磨	474
+zuomo	琢磨	194
 zuoniaoshousan	作鳥獸散	420
 zuonie	作孽	419
 zuoniuzuoma	做牛做馬	383

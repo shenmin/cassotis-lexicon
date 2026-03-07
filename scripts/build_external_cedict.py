@@ -920,8 +920,27 @@ def _compute_low_signal_modernity_risk(
         and char_score < 0.38
     ):
         risk += 32
+    if (
+        text_len <= 2
+        and source_hits <= 1
+        and pageview_score < 0.015
+        and usage_score < 0.025
+        and jieba_direct_score < 0.025
+        and char_score < 0.24
+    ):
+        risk += 26
     if looks_like_person_name or looks_like_place_name:
         risk += 78
+        if text_len <= 2 and char_score < 0.32 and min_char_prior < 0.12:
+            risk += 18
+        if (
+            text_len <= 2
+            and usage_score < 0.035
+            and jieba_direct_score < 0.03
+            and pageview_score < 0.015
+            and source_hits <= 1
+        ):
+            risk += 28
     if looks_like_literary_term:
         risk += 48
     if looks_like_written_tail_term:
@@ -937,6 +956,27 @@ def _compute_low_signal_modernity_risk(
             and char_score < 0.34
         ):
             risk += 22
+    if (
+        text_len == 2
+        and (looks_like_written_tail_term or looks_like_literary_term)
+        and usage_score < 0.04
+        and jieba_direct_score < 0.04
+        and pageview_score < 0.02
+        and source_hits <= 1
+        and char_score < 0.30
+    ):
+        risk += 24
+    if (
+        text_len == 3
+        and source_hits <= 1
+        and not wiki_support
+        and pageview_score < 0.015
+        and usage_score < 0.025
+        and jieba_direct_score < 0.025
+        and char_score < 0.30
+        and (looks_like_written_tail_term or looks_like_literary_term)
+    ):
+        risk += 20
     if text_len <= 2 and source_hits <= 1 and not wiki_support:
         if usage_score < 0.04 and jieba_direct_score < 0.04:
             risk += 44
@@ -960,6 +1000,15 @@ def _compute_low_signal_modernity_risk(
             and min_char_prior < 0.10
         ):
             risk += 18
+        if (
+            (_is_noun_pos(pos_tag) or _is_conversational_pos(pos_tag))
+            and usage_score < 0.025
+            and jieba_direct_score < 0.025
+            and pageview_score < 0.015
+            and char_score < 0.24
+            and min_char_prior < 0.12
+        ):
+            risk += 16
     if (
         text_len == 3
         and usage_score < 0.03
@@ -1056,6 +1105,259 @@ def _build_effective_char_prior(
             + 0.78 * char_frequency_prior.get(ch, 0.0)
         )
     return char_prior
+
+
+def _rerank_multi_pronunciation_terms(
+    mapping: Dict[Tuple[str, str], int],
+    usage_score_map: Dict[str, float],
+    source_hits_map: Dict[str, int],
+    pageviews_signal_map: Dict[str, float],
+    jieba_direct_signal_map: Dict[str, float] | None,
+    stats_prefix: str,
+) -> Dict[str, int]:
+    """
+    Re-rank same-text multi-pronunciation entries using family support.
+
+    Usage/pageview signals are mostly text-level, so rare alternate readings of
+    a very common word can incorrectly inherit the mainstream word's weight.
+    Use longer terms that contain the same text as a conservative proxy for
+    which reading is actually productive in modern usage.
+    """
+    stats = {
+        f"{stats_prefix}_multi_pronunciation_terms": 0,
+        f"{stats_prefix}_multi_pronunciation_damped": 0,
+        f"{stats_prefix}_multi_pronunciation_penalty_total": 0,
+    }
+    if not mapping:
+        return stats
+
+    jieba_direct_signal_map = jieba_direct_signal_map or {}
+
+    ambiguous_terms: Dict[str, List[Tuple[str, int]]] = {}
+    ambiguous_by_len: Dict[int, Set[str]] = {}
+    for (pinyin, text), weight in mapping.items():
+        text_len = _cjk_len(text)
+        if text_len < 2 or text_len > 4:
+            continue
+        ambiguous_terms.setdefault(text, []).append((pinyin, weight))
+
+    ambiguous_terms = {
+        text: items for text, items in ambiguous_terms.items() if len(items) >= 2
+    }
+    if not ambiguous_terms:
+        return stats
+
+    for text in ambiguous_terms.keys():
+        ambiguous_by_len.setdefault(_cjk_len(text), set()).add(text)
+
+    family_support: Dict[str, Dict[str, float]] = {
+        text: {pinyin: 0.0 for pinyin, _weight in items}
+        for text, items in ambiguous_terms.items()
+    }
+
+    def _matches_variant(
+        term_pinyin: str,
+        sub_pinyin: str,
+        start_index: int,
+        sub_len: int,
+        term_len: int,
+    ) -> bool:
+        if not sub_pinyin or sub_pinyin not in term_pinyin:
+            return False
+        if start_index == 0:
+            return term_pinyin.startswith(sub_pinyin)
+        if start_index + sub_len == term_len:
+            return term_pinyin.endswith(sub_pinyin)
+        return sub_pinyin in term_pinyin
+
+    for (term_pinyin, term_text), weight in mapping.items():
+        term_len = _cjk_len(term_text)
+        if term_len <= 2:
+            continue
+
+        usage_score = min(1.0, max(0.0, usage_score_map.get(term_text, 0.0)))
+        source_hits = max(0, source_hits_map.get(term_text, 0))
+        pageview_score = min(1.0, max(0.0, pageviews_signal_map.get(term_text, 0.0)))
+        jieba_direct_score = min(
+            1.0, max(0.0, jieba_direct_signal_map.get(term_text, 0.0))
+        )
+        term_support = min(420.0, float(weight)) + (
+            usage_score * 180.0
+            + jieba_direct_score * 180.0
+            + pageview_score * 64.0
+            + min(source_hits, 4) * 24.0
+        )
+
+        max_sub_len = min(4, term_len - 1)
+        seen_subtexts: Set[str] = set()
+        for sub_len in range(2, max_sub_len + 1):
+            candidates = ambiguous_by_len.get(sub_len, set())
+            if not candidates:
+                continue
+            for start_idx in range(0, term_len - sub_len + 1):
+                subtext = term_text[start_idx : start_idx + sub_len]
+                if subtext not in candidates or subtext in seen_subtexts:
+                    continue
+                seen_subtexts.add(subtext)
+
+                edge_factor = 1.0
+                if start_idx != 0 and start_idx + sub_len != term_len:
+                    edge_factor = 0.72
+
+                for sub_pinyin, _variant_weight in ambiguous_terms[subtext]:
+                    if not _matches_variant(
+                        term_pinyin,
+                        sub_pinyin,
+                        start_idx,
+                        sub_len,
+                        term_len,
+                    ):
+                        continue
+                    family_support[subtext][sub_pinyin] += term_support * edge_factor
+
+    for text, items in ambiguous_terms.items():
+        supports: List[Tuple[float, str, int]] = []
+        usage_score = min(1.0, max(0.0, usage_score_map.get(text, 0.0)))
+        source_hits = max(0, source_hits_map.get(text, 0))
+        pageview_score = min(1.0, max(0.0, pageviews_signal_map.get(text, 0.0)))
+        jieba_direct_score = min(1.0, max(0.0, jieba_direct_signal_map.get(text, 0.0)))
+        own_signal_support = (
+            usage_score * 120.0
+            + jieba_direct_score * 120.0
+            + pageview_score * 40.0
+            + min(source_hits, 4) * 18.0
+        )
+
+        for pinyin, weight in items:
+            support = float(weight) + own_signal_support + family_support[text].get(
+                pinyin, 0.0
+            )
+            supports.append((support, pinyin, weight))
+
+        supports.sort(key=lambda item: (-item[0], item[1]))
+        if len(supports) < 2:
+            continue
+
+        best_support, best_pinyin, _best_weight = supports[0]
+        second_support = supports[1][0]
+        if best_support < 520.0:
+            continue
+        if best_support < second_support * 1.35:
+            continue
+
+        stats[f"{stats_prefix}_multi_pronunciation_terms"] += 1
+        best_family_support = family_support[text].get(best_pinyin, 0.0)
+        gap = best_support - second_support
+        for support, pinyin, weight in supports[1:]:
+            penalty = 36 + int(gap // 4)
+            if support <= best_support * 0.70:
+                penalty += 40
+            if support <= best_support * 0.55:
+                penalty += 56
+            if usage_score >= 0.20 and source_hits >= 2 and support <= best_support * 0.82:
+                penalty += 120
+            if own_signal_support >= 110.0 and support <= best_support * 0.72:
+                penalty += 72
+            if family_support[text].get(pinyin, 0.0) <= best_family_support * 0.35:
+                penalty += 56
+            if family_support[text].get(pinyin, 0.0) <= best_family_support * 0.22:
+                penalty += 72
+            penalty = min(min(460, max(280, int(weight * 0.55))), penalty)
+            if penalty <= 0:
+                continue
+
+            key = (pinyin, text)
+            new_weight = max(1, weight - penalty)
+            if new_weight >= weight:
+                continue
+            mapping[key] = new_weight
+            stats[f"{stats_prefix}_multi_pronunciation_damped"] += 1
+            stats[f"{stats_prefix}_multi_pronunciation_penalty_total"] += penalty
+
+    return stats
+
+
+def _propagate_tc_multi_pronunciation_preference_from_sc(
+    sc_map: Dict[Tuple[str, str], int],
+    tc_map: Dict[Tuple[str, str], int],
+    tc_to_sc_map: Dict[str, Set[str]] | None,
+    stats_prefix: str,
+) -> Dict[str, int]:
+    stats = {
+        f"{stats_prefix}_multi_pronunciation_sc_guided_terms": 0,
+        f"{stats_prefix}_multi_pronunciation_sc_guided_damped": 0,
+        f"{stats_prefix}_multi_pronunciation_sc_guided_penalty_total": 0,
+    }
+    if not sc_map or not tc_map or not tc_to_sc_map:
+        return stats
+
+    sc_variants_by_text: Dict[str, Dict[str, int]] = {}
+    for (pinyin, text), weight in sc_map.items():
+        if _cjk_len(text) < 2:
+            continue
+        sc_variants_by_text.setdefault(text, {})[pinyin] = weight
+    sc_variants_by_text = {
+        text: variants
+        for text, variants in sc_variants_by_text.items()
+        if len(variants) >= 2
+    }
+    if not sc_variants_by_text:
+        return stats
+
+    tc_variants_by_text: Dict[str, List[Tuple[str, int]]] = {}
+    for (pinyin, text), weight in tc_map.items():
+        if _cjk_len(text) < 2:
+            continue
+        tc_variants_by_text.setdefault(text, []).append((pinyin, weight))
+
+    for tc_text, tc_items in tc_variants_by_text.items():
+        if len(tc_items) < 2:
+            continue
+        candidate_sc_texts: Set[str] = set()
+        if tc_text in sc_variants_by_text:
+            candidate_sc_texts.add(tc_text)
+        candidate_sc_texts.update(tc_to_sc_map.get(tc_text, set()))
+        if not candidate_sc_texts:
+            continue
+
+        sc_variants: Dict[str, int] = {}
+        for sc_text in candidate_sc_texts:
+            variants = sc_variants_by_text.get(sc_text)
+            if not variants:
+                continue
+            for pinyin, weight in variants.items():
+                current = sc_variants.get(pinyin, 0)
+                if weight > current:
+                    sc_variants[pinyin] = weight
+        if len(sc_variants) < 2:
+            continue
+
+        best_sc_weight = max(sc_variants.values())
+        if best_sc_weight <= 0:
+            continue
+
+        stats[f"{stats_prefix}_multi_pronunciation_sc_guided_terms"] += 1
+        for pinyin, tc_weight in tc_items:
+            sc_weight = sc_variants.get(pinyin, 0)
+            if sc_weight <= 0 or sc_weight >= best_sc_weight:
+                continue
+            ratio_gap = 1.0 - min(1.0, float(sc_weight) / float(best_sc_weight))
+            if ratio_gap < 0.24:
+                continue
+
+            penalty = 64 + int(round(ratio_gap * 240.0))
+            if sc_weight <= best_sc_weight * 0.75 and tc_weight >= best_sc_weight * 0.70:
+                penalty += 28
+            penalty = min(260, penalty)
+            key = (pinyin, tc_text)
+            new_weight = max(1, tc_weight - penalty)
+            if new_weight >= tc_weight:
+                continue
+            tc_map[key] = new_weight
+            stats[f"{stats_prefix}_multi_pronunciation_sc_guided_damped"] += 1
+            stats[f"{stats_prefix}_multi_pronunciation_sc_guided_penalty_total"] += penalty
+
+    return stats
 
 
 def _rerank_homophone_buckets(
@@ -4763,6 +5065,7 @@ def main() -> int:
     tc_jieba_pos_map: Dict[str, str] = {}
     tc_char_frequency_prior: Dict[str, float] = {}
     tc_pageviews_signal_map: Dict[str, float] = {}
+    tc_to_sc_map: Dict[str, Set[str]] = {}
     cedict_style_penalty_map: Dict[Tuple[str, str], int] = {}
     primary_cache = repo_root / args.cache_file if args.cache_file else None
     cache_source_id = ""
@@ -5102,6 +5405,15 @@ def main() -> int:
     stats["sc_filtered_non_windows_cjk"] = dropped_sc_non_windows
     stats["tc_filtered_non_windows_cjk"] = dropped_tc_non_windows
 
+    sc_multi_pronunciation_stats = _rerank_multi_pronunciation_terms(
+        sc_map,
+        usage_score_map=usage_score_map,
+        source_hits_map=source_hits_map,
+        pageviews_signal_map=pageviews_signal_map,
+        jieba_direct_signal_map=jieba_direct_signal_map,
+        stats_prefix="sc",
+    )
+    stats.update(sc_multi_pronunciation_stats)
     sc_homophone_stats = _rerank_homophone_buckets(
         sc_map,
         usage_score_map=usage_score_map,
@@ -5142,6 +5454,15 @@ def main() -> int:
     )
     stats.update(sc_global_tail_stats)
 
+    tc_multi_pronunciation_stats = _rerank_multi_pronunciation_terms(
+        tc_map,
+        usage_score_map=tc_usage_score_map,
+        source_hits_map=tc_source_hits_map,
+        pageviews_signal_map=tc_pageviews_signal_map,
+        jieba_direct_signal_map=tc_jieba_direct_signal_map,
+        stats_prefix="tc",
+    )
+    stats.update(tc_multi_pronunciation_stats)
     tc_homophone_stats = _rerank_homophone_buckets(
         tc_map,
         usage_score_map=tc_usage_score_map,
@@ -5181,6 +5502,13 @@ def main() -> int:
         stats_prefix="tc",
     )
     stats.update(tc_global_tail_stats)
+    tc_sc_guided_multi_pronunciation_stats = _propagate_tc_multi_pronunciation_preference_from_sc(
+        sc_map,
+        tc_map,
+        tc_to_sc_map,
+        stats_prefix="tc",
+    )
+    stats.update(tc_sc_guided_multi_pronunciation_stats)
 
     sc_map = _apply_limit(sc_map, args.max_entries)
     tc_map = _apply_limit(tc_map, args.max_entries)
