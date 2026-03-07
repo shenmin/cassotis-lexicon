@@ -910,6 +910,16 @@ def _compute_low_signal_modernity_risk(
 
     if _is_named_entity_pos(pos_tag) and source_hits <= 1 and pageview_score < 0.03:
         risk += 34
+    if (
+        text_len <= 2
+        and _is_named_entity_pos(pos_tag)
+        and usage_score < 0.10
+        and jieba_direct_score < 0.06
+        and source_hits <= 1
+        and pageview_score < 0.03
+        and char_score < 0.38
+    ):
+        risk += 32
     if looks_like_person_name or looks_like_place_name:
         risk += 78
     if looks_like_literary_term:
@@ -918,6 +928,15 @@ def _compute_low_signal_modernity_risk(
         risk += 60
         if text_len == 3 and usage_score < 0.05 and jieba_direct_score < 0.05:
             risk += 34
+        if (
+            text_len == 3
+            and usage_score < 0.08
+            and jieba_direct_score < 0.06
+            and source_hits <= 1
+            and pageview_score < 0.03
+            and char_score < 0.34
+        ):
+            risk += 22
     if text_len <= 2 and source_hits <= 1 and not wiki_support:
         if usage_score < 0.04 and jieba_direct_score < 0.04:
             risk += 44
