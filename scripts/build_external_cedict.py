@@ -916,6 +916,24 @@ def _compute_low_signal_modernity_risk(
         risk += 48
     if looks_like_written_tail_term:
         risk += 60
+    if text_len <= 2 and source_hits <= 1 and not wiki_support:
+        if usage_score < 0.04 and jieba_direct_score < 0.04:
+            risk += 44
+        elif usage_score < 0.08 and jieba_direct_score < 0.06:
+            risk += 20
+
+        if (_is_noun_pos(pos_tag) or _is_conversational_pos(pos_tag)) and char_score < 0.28:
+            risk += 22
+        elif char_score < 0.22:
+            risk += 14
+    if (
+        text_len == 3
+        and usage_score < 0.03
+        and jieba_direct_score < 0.03
+        and source_hits <= 1
+        and not wiki_support
+    ):
+        risk += 18
 
     return risk
 
@@ -1277,6 +1295,18 @@ def _rerank_homophone_buckets(
                 and not wiki_support
             ):
                 delta -= min(132, 28 + modernity_risk // 3)
+                stats[f"{stats_prefix}_homophone_modernity_risk_penalized"] += 1
+            elif (
+                bucket_has_strong_term
+                and text_len <= 2
+                and modernity_risk >= 120
+                and usage_score < 0.12
+                and jieba_direct_score < 0.08
+                and source_hits <= 1
+                and pageview_score < 0.03
+                and not wiki_support
+            ):
+                delta -= min(86, 18 + modernity_risk // 4)
                 stats[f"{stats_prefix}_homophone_modernity_risk_penalized"] += 1
 
             style_penalty = term_style_penalty_map.get((pinyin, text), 0)
@@ -1869,6 +1899,19 @@ def _filter_global_tail_entries(
             if schedule_drop(key):
                 stats[f"{stats_prefix}_global_tail_modernity_risk_removed"] += 1
             continue
+        if (
+            bucket_counts.get(pinyin, 0) >= 3
+            and text_len <= 2
+            and modernity_risk >= 170
+            and usage_score < 0.10
+            and jieba_direct_score < 0.08
+            and source_hits <= 1
+            and pageview_score < 0.03
+            and not wiki_support
+        ):
+            if schedule_drop(key):
+                stats[f"{stats_prefix}_global_tail_modernity_risk_removed"] += 1
+            continue
 
         # Keep at least one candidate per pinyin bucket to avoid hard holes.
         if bucket_counts.get(pinyin, 0) < 2:
@@ -2092,6 +2135,7 @@ def _collect_suspicious_high_weight_entries(
                 + (40.0 if wiki_support else 0.0)
             )
         )
+        risk_score += modernity_risk // 2
         suspicious.append(
             {
                 "pinyin": pinyin,
