@@ -948,7 +948,7 @@ def _rerank_homophone_buckets(
     jieba_direct_signal_map: Dict[str, float] | None,
     jieba_pos_map: Dict[str, str] | None,
     char_frequency_prior: Dict[str, float] | None,
-    term_style_penalty_map: Dict[str, int] | None,
+    term_style_penalty_map: Dict[Tuple[str, str], int] | None,
     stats_prefix: str,
 ) -> Dict[str, int]:
     """
@@ -1058,7 +1058,7 @@ def _rerank_homophone_buckets(
                 + char_score * char_weight
                 + pos_bias * 190.0
                 + (weight / 1000.0) * 14.0
-                - float(term_style_penalty_map.get(text, 0))
+                - float(term_style_penalty_map.get((pinyin, text), 0))
             )
 
         raw_values = list(raw_scores.values())
@@ -1184,7 +1184,7 @@ def _rerank_homophone_buckets(
                 delta -= inflated_short_penalty
                 stats[f"{stats_prefix}_homophone_inflated_short_penalized"] += 1
 
-            style_penalty = term_style_penalty_map.get(text, 0)
+            style_penalty = term_style_penalty_map.get((pinyin, text), 0)
             if style_penalty > 0:
                 delta -= style_penalty
 
@@ -1347,7 +1347,7 @@ def _filter_low_signal_rare_entries(
     jieba_direct_signal_map: Dict[str, float] | None,
     jieba_pos_map: Dict[str, str] | None,
     char_frequency_prior: Dict[str, float] | None,
-    term_style_penalty_map: Dict[str, int] | None,
+    term_style_penalty_map: Dict[Tuple[str, str], int] | None,
     stats_prefix: str,
 ) -> Dict[str, int]:
     """
@@ -1535,7 +1535,7 @@ def _filter_low_signal_rare_entries(
                 stats[f"{stats_prefix}_low_signal_written_removed"] += 1
                 continue
 
-            style_penalty = term_style_penalty_map.get(text, 0)
+            style_penalty = term_style_penalty_map.get((pinyin, text), 0)
             if style_penalty >= 160 and usage_score < 0.12 and jieba_direct_score < 0.10:
                 to_drop.append((pinyin, text))
                 stats[f"{stats_prefix}_low_signal_written_removed"] += 1
@@ -1562,7 +1562,7 @@ def _filter_global_tail_entries(
     jieba_direct_signal_map: Dict[str, float] | None,
     jieba_pos_map: Dict[str, str] | None,
     char_frequency_prior: Dict[str, float] | None,
-    term_style_penalty_map: Dict[str, int] | None,
+    term_style_penalty_map: Dict[Tuple[str, str], int] | None,
     stats_prefix: str,
 ) -> Dict[str, int]:
     """
@@ -1731,10 +1731,10 @@ def _filter_global_tail_entries(
             char_score=char_score,
             min_char_prior=min_char_prior,
         )
-        style_penalty = term_style_penalty_map.get(text, 0)
+        style_penalty = term_style_penalty_map.get(key, 0)
         if style_penalty >= 160 and usage_score < 0.12 and jieba_direct_score < 0.10:
-            to_drop.append(key)
-            stats[f"{stats_prefix}_global_tail_written_removed"] += 1
+            if schedule_drop(key):
+                stats[f"{stats_prefix}_global_tail_written_removed"] += 1
             continue
         if (
             inflated_short_penalty >= 112
@@ -1744,8 +1744,8 @@ def _filter_global_tail_entries(
             and pageview_score <= 0.01
             and not wiki_support
         ):
-            to_drop.append(key)
-            stats[f"{stats_prefix}_global_tail_written_removed"] += 1
+            if schedule_drop(key):
+                stats[f"{stats_prefix}_global_tail_written_removed"] += 1
             continue
 
         # Keep at least one candidate per pinyin bucket to avoid hard holes.
@@ -2022,11 +2022,11 @@ def _parse_cedict_entries(
     Dict[Tuple[str, str], int],
     Dict[Tuple[str, str], int],
     Dict[str, int],
-    Dict[str, int],
+    Dict[Tuple[str, str], int],
 ]:
     sc: Dict[Tuple[str, str], int] = {}
     tc: Dict[Tuple[str, str], int] = {}
-    term_style_penalty_map: Dict[str, int] = {}
+    term_style_penalty_map: Dict[Tuple[str, str], int] = {}
     stats = {
         "total_lines": 0,
         "parsed_lines": 0,
@@ -2064,8 +2064,8 @@ def _parse_cedict_entries(
             previous = bucket.get(key, 0)
             if weight > previous:
                 bucket[key] = weight
-            if style_penalty > term_style_penalty_map.get(text, 0):
-                term_style_penalty_map[text] = style_penalty
+            if style_penalty > term_style_penalty_map.get(key, 0):
+                term_style_penalty_map[key] = style_penalty
 
     return sc, tc, stats, term_style_penalty_map
 
@@ -3876,7 +3876,7 @@ def _rescore_mapping_with_signals(
     jieba_direct_signal_map: Dict[str, float] | None,
     jieba_pos_map: Dict[str, str] | None,
     char_frequency_prior: Dict[str, float] | None,
-    term_style_penalty_map: Dict[str, int] | None,
+    term_style_penalty_map: Dict[Tuple[str, str], int] | None,
     core_entry: bool,
     stats_prefix: str,
 ) -> Dict[str, int]:
@@ -3950,7 +3950,7 @@ def _rescore_mapping_with_signals(
                 weight = max(1, weight - penalty)
                 stats[f"{stats_prefix}_named_entity_penalized"] += 1
 
-        style_penalty = term_style_penalty_map.get(text, 0)
+        style_penalty = term_style_penalty_map.get(key, 0)
         if style_penalty > 0:
             weight = max(1, weight - style_penalty)
 
@@ -4532,7 +4532,7 @@ def main() -> int:
     tc_jieba_pos_map: Dict[str, str] = {}
     tc_char_frequency_prior: Dict[str, float] = {}
     tc_pageviews_signal_map: Dict[str, float] = {}
-    cedict_style_penalty_map: Dict[str, int] = {}
+    cedict_style_penalty_map: Dict[Tuple[str, str], int] = {}
     primary_cache = repo_root / args.cache_file if args.cache_file else None
     cache_source_id = ""
     if primary_cache is not None:
