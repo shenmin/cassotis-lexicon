@@ -1168,7 +1168,11 @@ def _rerank_multi_pronunciation_terms(
             return term_pinyin.startswith(sub_pinyin)
         if start_index + sub_len == term_len:
             return term_pinyin.endswith(sub_pinyin)
-        return sub_pinyin in term_pinyin
+        # Internal compact-pinyin substring matches are too noisy here: character
+        # offsets are not syllable offsets, so a raw `in` check can spuriously
+        # boost the wrong pronunciation family. Keep family support conservative
+        # and only trust prefix/suffix matches that stay aligned to the term edge.
+        return False
 
     for (term_pinyin, term_text), weight in mapping.items():
         term_len = _cjk_len(term_text)
