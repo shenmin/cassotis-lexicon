@@ -853,6 +853,73 @@ def _compute_low_signal_inflated_short_term_penalty(
     return 72 + int(round(rarity_component * 92.0 + gap_component * 68.0))
 
 
+def _compute_low_signal_modernity_risk(
+    text: str,
+    usage_score: float,
+    source_hits: int,
+    pageview_score: float,
+    jieba_direct_score: float,
+    wiki_support: bool,
+    pos_tag: str = "",
+    char_score: float = 0.0,
+    min_char_prior: float = 0.0,
+    looks_like_person_name: bool = False,
+    looks_like_place_name: bool = False,
+    looks_like_literary_term: bool = False,
+    looks_like_written_tail_term: bool = False,
+) -> int:
+    text_len = _cjk_len(text)
+    if text_len <= 0 or text_len > 3:
+        return 0
+    if not CJK_WINDOWS_FULL_RE.fullmatch(text):
+        return 0
+    if wiki_support:
+        return 0
+
+    risk = 0
+    if usage_score < 0.02:
+        risk += 112
+    elif usage_score < 0.05:
+        risk += 68
+    elif usage_score < 0.08:
+        risk += 24
+
+    if jieba_direct_score < 0.02:
+        risk += 96
+    elif jieba_direct_score < 0.05:
+        risk += 52
+    elif jieba_direct_score < 0.08:
+        risk += 20
+
+    if source_hits <= 0:
+        risk += 38
+    elif source_hits == 1:
+        risk += 16
+
+    if pageview_score < 0.01:
+        risk += 22
+    elif pageview_score < 0.03:
+        risk += 10
+
+    if text_len <= 2 and char_score < 0.20:
+        risk += 34
+    if min_char_prior < 0.08:
+        risk += 34
+    elif min_char_prior < 0.14:
+        risk += 16
+
+    if _is_named_entity_pos(pos_tag) and source_hits <= 1 and pageview_score < 0.03:
+        risk += 34
+    if looks_like_person_name or looks_like_place_name:
+        risk += 78
+    if looks_like_literary_term:
+        risk += 48
+    if looks_like_written_tail_term:
+        risk += 60
+
+    return risk
+
+
 def _compute_min_char_prior(text: str, char_prior: Dict[str, float]) -> float:
     min_char_prior = 1.0
     has_cjk_char = False
@@ -977,6 +1044,7 @@ def _rerank_homophone_buckets(
         f"{stats_prefix}_homophone_written_tail_penalized": 0,
         f"{stats_prefix}_homophone_rare_form_penalized": 0,
         f"{stats_prefix}_homophone_inflated_short_penalized": 0,
+        f"{stats_prefix}_homophone_modernity_risk_penalized": 0,
     }
     if not mapping:
         return stats
@@ -1183,6 +1251,33 @@ def _rerank_homophone_buckets(
             if inflated_short_penalty > 0:
                 delta -= inflated_short_penalty
                 stats[f"{stats_prefix}_homophone_inflated_short_penalized"] += 1
+
+            modernity_risk = _compute_low_signal_modernity_risk(
+                text,
+                usage_score=usage_score,
+                source_hits=source_hits,
+                pageview_score=pageview_score,
+                jieba_direct_score=jieba_direct_score,
+                wiki_support=wiki_support,
+                pos_tag=pos_tag,
+                char_score=char_score,
+                min_char_prior=min_char_prior,
+                looks_like_person_name=looks_like_person_name,
+                looks_like_place_name=looks_like_place_name,
+                looks_like_literary_term=looks_like_literary_term,
+                looks_like_written_tail_term=looks_like_written_tail_term,
+            )
+            if (
+                bucket_has_strong_term
+                and modernity_risk >= 150
+                and usage_score < 0.18
+                and jieba_direct_score < 0.14
+                and source_hits <= 1
+                and pageview_score < 0.04
+                and not wiki_support
+            ):
+                delta -= min(132, 28 + modernity_risk // 3)
+                stats[f"{stats_prefix}_homophone_modernity_risk_penalized"] += 1
 
             style_penalty = term_style_penalty_map.get((pinyin, text), 0)
             if style_penalty > 0:
@@ -1577,6 +1672,7 @@ def _filter_global_tail_entries(
         f"{stats_prefix}_global_tail_literary_removed": 0,
         f"{stats_prefix}_global_tail_written_removed": 0,
         f"{stats_prefix}_global_tail_rare_char_removed": 0,
+        f"{stats_prefix}_global_tail_modernity_risk_removed": 0,
     }
     if not mapping:
         return stats
@@ -1731,6 +1827,21 @@ def _filter_global_tail_entries(
             char_score=char_score,
             min_char_prior=min_char_prior,
         )
+        modernity_risk = _compute_low_signal_modernity_risk(
+            text,
+            usage_score=usage_score,
+            source_hits=source_hits,
+            pageview_score=pageview_score,
+            jieba_direct_score=jieba_direct_score,
+            wiki_support=wiki_support,
+            pos_tag=pos_tag,
+            char_score=char_score,
+            min_char_prior=min_char_prior,
+            looks_like_person_name=looks_like_person_name,
+            looks_like_place_name=looks_like_place_name,
+            looks_like_literary_term=looks_like_literary_term,
+            looks_like_written_tail_term=looks_like_written_tail_term,
+        )
         style_penalty = term_style_penalty_map.get(key, 0)
         if style_penalty >= 160 and usage_score < 0.12 and jieba_direct_score < 0.10:
             if schedule_drop(key):
@@ -1746,6 +1857,17 @@ def _filter_global_tail_entries(
         ):
             if schedule_drop(key):
                 stats[f"{stats_prefix}_global_tail_written_removed"] += 1
+            continue
+        if (
+            modernity_risk >= 230
+            and usage_score < 0.06
+            and jieba_direct_score < 0.04
+            and source_hits <= 1
+            and pageview_score < 0.03
+            and not wiki_support
+        ):
+            if schedule_drop(key):
+                stats[f"{stats_prefix}_global_tail_modernity_risk_removed"] += 1
             continue
 
         # Keep at least one candidate per pinyin bucket to avoid hard holes.
@@ -1902,6 +2024,21 @@ def _collect_suspicious_high_weight_entries(
             pos_tag=pos_tag,
             char_score=char_score,
         )
+        modernity_risk = _compute_low_signal_modernity_risk(
+            text,
+            usage_score=usage_score,
+            source_hits=source_hits,
+            pageview_score=pageview_score,
+            jieba_direct_score=jieba_direct_score,
+            wiki_support=wiki_support,
+            pos_tag=pos_tag,
+            char_score=char_score,
+            min_char_prior=_compute_min_char_prior(text, char_prior),
+            looks_like_person_name=looks_like_person_name,
+            looks_like_place_name=looks_like_place_name,
+            looks_like_literary_term=looks_like_literary_term,
+            looks_like_written_tail_term=looks_like_written_tail_term,
+        )
 
         reasons: List[str] = []
         if (
@@ -1939,6 +2076,8 @@ def _collect_suspicious_high_weight_entries(
             and not wiki_support
         ):
             reasons.append("weak-usage")
+        if modernity_risk >= 180:
+            reasons.append("high-modernity-risk")
 
         if not reasons:
             continue
