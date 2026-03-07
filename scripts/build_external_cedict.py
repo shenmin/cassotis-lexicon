@@ -916,6 +916,8 @@ def _compute_low_signal_modernity_risk(
         risk += 48
     if looks_like_written_tail_term:
         risk += 60
+        if text_len == 3 and usage_score < 0.05 and jieba_direct_score < 0.05:
+            risk += 34
     if text_len <= 2 and source_hits <= 1 and not wiki_support:
         if usage_score < 0.04 and jieba_direct_score < 0.04:
             risk += 44
@@ -926,6 +928,19 @@ def _compute_low_signal_modernity_risk(
             risk += 22
         elif char_score < 0.22:
             risk += 14
+        if (
+            usage_score < 0.03
+            and jieba_direct_score < 0.03
+            and pageview_score < 0.02
+            and char_score < 0.26
+        ):
+            risk += 30
+        if (
+            (_is_noun_pos(pos_tag) or _is_conversational_pos(pos_tag))
+            and char_score < 0.18
+            and min_char_prior < 0.10
+        ):
+            risk += 18
     if (
         text_len == 3
         and usage_score < 0.03
@@ -1900,6 +1915,19 @@ def _filter_global_tail_entries(
                 stats[f"{stats_prefix}_global_tail_modernity_risk_removed"] += 1
             continue
         if (
+            text_len == 3
+            and looks_like_written_tail_term
+            and modernity_risk >= 250
+            and usage_score < 0.08
+            and jieba_direct_score < 0.06
+            and source_hits <= 1
+            and pageview_score < 0.03
+            and not wiki_support
+        ):
+            if schedule_drop(key):
+                stats[f"{stats_prefix}_global_tail_written_removed"] += 1
+            continue
+        if (
             bucket_counts.get(pinyin, 0) >= 3
             and text_len <= 2
             and modernity_risk >= 170
@@ -2146,6 +2174,7 @@ def _collect_suspicious_high_weight_entries(
                 "pageviews": pageview_score,
                 "source_hits": source_hits,
                 "char_score": char_score,
+                "modernity_risk": modernity_risk,
                 "pos": pos_tag or "-",
                 "reasons": ",".join(reasons),
                 "risk_score": risk_score,
@@ -4461,14 +4490,14 @@ def _write_report(
         lines.append("## Suspicious High-Weight SC Entries")
         lines.append("")
         lines.append(
-            "| text | pinyin | weight | risk_score | usage | jieba | pageviews | source_hits | char_score | pos | reasons |"
+            "| text | pinyin | weight | risk_score | modernity_risk | usage | jieba | pageviews | source_hits | char_score | pos | reasons |"
         )
         lines.append(
-            "| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- | --- |"
+            "| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- | --- |"
         )
         for item in suspicious_sc:
             lines.append(
-                "| {text} | {pinyin} | {weight} | {risk_score} | {usage:.3f} | {jieba:.3f} |"
+                "| {text} | {pinyin} | {weight} | {risk_score} | {modernity_risk} | {usage:.3f} | {jieba:.3f} |"
                 " {pageviews:.3f} | {source_hits} | {char_score:.3f} | {pos} | {reasons} |".format(**item)
             )
         lines.append("")
