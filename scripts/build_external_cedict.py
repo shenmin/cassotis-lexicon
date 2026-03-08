@@ -1484,7 +1484,11 @@ def _rerank_homophone_buckets(
                 + char_score * char_weight
                 + pos_bias * 190.0
                 + (weight / 1000.0) * 14.0
-                - float(term_style_penalty_map.get((pinyin, text), 0))
+                - float(
+                    _compute_style_ranking_penalty(
+                        term_style_penalty_map.get((pinyin, text), 0)
+                    )
+                )
             )
 
         raw_values = list(raw_scores.values())
@@ -1651,7 +1655,7 @@ def _rerank_homophone_buckets(
 
             style_penalty = term_style_penalty_map.get((pinyin, text), 0)
             if style_penalty > 0:
-                delta -= style_penalty
+                delta -= _compute_style_ranking_penalty(style_penalty)
 
             if (
                 bucket_has_strong_term
@@ -2545,10 +2549,59 @@ def _compute_cedict_style_penalty(defs: str) -> int:
     defs_lower = defs.strip().lower()
     if not defs_lower:
         return 0
-    if "dialect" in defs_lower:
-        return 220
-    if ("literary" in defs_lower) or ("classical" in defs_lower) or ("archaic" in defs_lower):
-        return 140
+
+    senses = [sense.strip() for sense in defs_lower.split("/") if sense.strip()]
+    if not senses:
+        senses = [defs_lower]
+
+    dialect_senses = 0
+    literary_senses = 0
+    plain_senses = 0
+
+    for sense in senses:
+        is_dialect = "dialect" in sense
+        is_literary = (
+            ("literary" in sense)
+            or ("classical" in sense)
+            or ("archaic" in sense)
+        )
+        if is_dialect:
+            dialect_senses += 1
+        if is_literary:
+            literary_senses += 1
+        if (not is_dialect) and (not is_literary):
+            plain_senses += 1
+
+    total_senses = max(1, len(senses))
+    dialect_ratio = dialect_senses / total_senses
+    literary_ratio = literary_senses / total_senses
+
+    if dialect_senses > 0:
+        if plain_senses <= 0:
+            return 220 if dialect_ratio >= 0.5 else 180
+        if dialect_ratio >= 0.5:
+            return 120
+        return 64
+
+    if literary_senses > 0:
+        if plain_senses <= 0:
+            return 140 if literary_ratio >= 0.5 else 108
+        if literary_ratio >= 0.5:
+            return 72
+        return 28
+
+    return 0
+
+
+def _compute_style_ranking_penalty(style_penalty: int) -> int:
+    if style_penalty >= 200:
+        return 120
+    if style_penalty >= 140:
+        return 72
+    if style_penalty >= 80:
+        return 36
+    if style_penalty >= 40:
+        return 16
     return 0
 
 
@@ -3020,14 +3073,21 @@ def _parse_unihan_pinlu_token(token: str) -> Tuple[str, int]:
 
 def _load_unihan_readings_detail(
     payload: bytes,
-) -> Tuple[Dict[str, str], Dict[str, Set[str]], Dict[Tuple[str, str], int], Dict[str, int]]:
+) -> Tuple[
+    Dict[str, str],
+    Dict[str, Set[str]],
+    Dict[Tuple[str, str], int],
+    Dict[str, int],
+    Dict[Tuple[str, str], int],
+]:
     mandarin_map: Dict[str, str] = {}
     readings_map: Dict[str, Set[str]] = {}
     source_rank_map: Dict[Tuple[str, str], int] = {}
     pinlu_map: Dict[str, int] = {}
+    pinlu_detail_map: Dict[Tuple[str, str], int] = {}
     text = _read_unihan_readings_text(payload)
     if not text:
-        return mandarin_map, readings_map, source_rank_map, pinlu_map
+        return mandarin_map, readings_map, source_rank_map, pinlu_map, pinlu_detail_map
 
     pinlu_seen_chars: Set[str] = set()
     for raw_line in text.splitlines():
@@ -3107,6 +3167,10 @@ def _load_unihan_readings_detail(
                 previous = pinlu_map.get(ch, 0)
                 if pinlu_count > previous:
                     pinlu_map[ch] = pinlu_count
+                detail_key = (ch, normalized)
+                previous_detail = pinlu_detail_map.get(detail_key, 0)
+                if pinlu_count > previous_detail:
+                    pinlu_detail_map[detail_key] = pinlu_count
 
     # Keep pragmatic override from historical Unihan import behavior.
     _add_unihan_reading(
@@ -3119,11 +3183,11 @@ def _load_unihan_readings_detail(
     if "嗯" not in mandarin_map:
         mandarin_map["嗯"] = "en"
 
-    return mandarin_map, readings_map, source_rank_map, pinlu_map
+    return mandarin_map, readings_map, source_rank_map, pinlu_map, pinlu_detail_map
 
 
 def _load_unihan_mandarin_map(payload: bytes) -> Dict[str, str]:
-    mandarin_map, _readings_map, _source_rank_map, _pinlu_map = _load_unihan_readings_detail(
+    mandarin_map, _readings_map, _source_rank_map, _pinlu_map, _pinlu_detail_map = _load_unihan_readings_detail(
         payload
     )
     return mandarin_map
@@ -3134,7 +3198,16 @@ def _select_unihan_output_readings(
     pinyin_set: Set[str],
     source_rank_map: Dict[Tuple[str, str], int],
     mandarin_map: Dict[str, str],
+    pinlu_detail_map: Dict[Tuple[str, str], int],
 ) -> List[str]:
+    def reading_sort_key(pinyin: str) -> Tuple[int, int, int, str]:
+        return (
+            1 if pinyin == mandarin_map.get(ch, "") else 0,
+            pinlu_detail_map.get((ch, pinyin), 0),
+            source_rank_map.get((ch, pinyin), 0),
+            pinyin,
+        )
+
     if not pinyin_set:
         return []
 
@@ -3142,9 +3215,9 @@ def _select_unihan_output_readings(
     # Keep Mandarin / Pinlu-backed readings first; HanyuPinyin extras are used
     # only as a last-resort fallback to preserve minimal coverage.
     preferred = sorted(
-        pinyin
-        for pinyin in pinyin_set
-        if source_rank_map.get((ch, pinyin), 0) >= UNIHAN_SOURCE_MANDARIN
+        [pinyin for pinyin in pinyin_set if source_rank_map.get((ch, pinyin), 0) >= UNIHAN_SOURCE_MANDARIN],
+        key=reading_sort_key,
+        reverse=True,
     )
     if preferred:
         return preferred
@@ -3155,7 +3228,9 @@ def _select_unihan_output_readings(
 
     highest_rank = max(source_rank_map.get((ch, pinyin), 0) for pinyin in pinyin_set)
     fallback = sorted(
-        pinyin for pinyin in pinyin_set if source_rank_map.get((ch, pinyin), 0) == highest_rank
+        (pinyin for pinyin in pinyin_set if source_rank_map.get((ch, pinyin), 0) == highest_rank),
+        key=reading_sort_key,
+        reverse=True,
     )
     if not fallback:
         return []
@@ -3175,10 +3250,60 @@ def _parse_unihan_pinlu_count(value: str) -> int:
 
 
 def _load_unihan_pinlu_map(payload: bytes) -> Dict[str, int]:
-    _mandarin_map, _readings_map, _source_rank_map, pinlu_map = _load_unihan_readings_detail(
+    _mandarin_map, _readings_map, _source_rank_map, pinlu_map, _pinlu_detail_map = _load_unihan_readings_detail(
         payload
     )
     return pinlu_map
+
+
+def _adjust_unihan_weight_for_reading(
+    weight: int,
+    ch: str,
+    pinyin: str,
+    source_rank: int,
+    mandarin_map: Dict[str, str],
+    pinlu_detail_map: Dict[Tuple[str, str], int],
+    max_pinlu_freq: int,
+) -> int:
+    adjusted = _adjust_unihan_weight_for_source(weight, source_rank)
+    reading_pinlu = pinlu_detail_map.get((ch, pinyin), 0)
+    is_primary = mandarin_map.get(ch, "") == pinyin
+
+    if max_pinlu_freq > 0:
+        if reading_pinlu <= 0:
+            if not is_primary:
+                adjusted -= 110
+        else:
+            ratio = reading_pinlu / max_pinlu_freq
+            if ratio < 0.05:
+                adjusted -= 128
+            elif ratio < 0.15:
+                adjusted -= 92
+            elif ratio < 0.40:
+                adjusted -= 56
+            elif ratio < 0.75:
+                adjusted -= 24
+
+            if (not is_primary) and (reading_pinlu * 6 < max_pinlu_freq):
+                adjusted -= 36
+            if (not is_primary) and (reading_pinlu > 0):
+                dominance_ratio = max_pinlu_freq / reading_pinlu
+                if max_pinlu_freq >= 240 and dominance_ratio >= 10.0:
+                    adjusted -= 20
+                if max_pinlu_freq >= 600 and dominance_ratio >= 16.0:
+                    adjusted -= 20
+                if max_pinlu_freq >= 1000 and dominance_ratio >= 20.0:
+                    adjusted -= 24
+            if is_primary:
+                adjusted += 8
+    elif not is_primary:
+        adjusted -= 48
+
+    if adjusted < 70:
+        return 70
+    if adjusted > 620:
+        return 620
+    return adjusted
 
 
 def _load_unihan_dictlike_maps(
@@ -3527,6 +3652,7 @@ def _build_from_opencc_unihan(
         unihan_readings_map,
         unihan_reading_source_map,
         unihan_pinlu_map,
+        unihan_pinlu_detail_map,
     ) = _load_unihan_readings_detail(unihan_payload)
     unihan_freq_map, unihan_grade_map, unihan_core_map = _load_unihan_dictlike_maps(unihan_payload)
     stats["unihan_map_size"] = len(unihan_map)
@@ -3615,11 +3741,20 @@ def _build_from_opencc_unihan(
                 pinyin_set,
                 unihan_reading_source_map,
                 unihan_map,
+                unihan_pinlu_detail_map,
             )
             for pinyin in output_pinyin_set:
                 key = (pinyin, ch)
                 source_rank = unihan_reading_source_map.get((ch, pinyin), UNIHAN_SOURCE_MANDARIN)
-                output_weight = _adjust_unihan_weight_for_source(base_weight, source_rank)
+                output_weight = _adjust_unihan_weight_for_reading(
+                    base_weight,
+                    ch,
+                    pinyin,
+                    source_rank,
+                    unihan_map,
+                    unihan_pinlu_detail_map,
+                    unihan_pinlu_map.get(ch, 0),
+                )
 
                 for bucket in target_buckets:
                     previous = bucket.get(key, 0)
@@ -3649,6 +3784,7 @@ def _build_from_unihan_only(
         unihan_readings_map,
         unihan_reading_source_map,
         unihan_pinlu_map,
+        unihan_pinlu_detail_map,
     ) = _load_unihan_readings_detail(unihan_payload)
     unihan_freq_map, unihan_grade_map, unihan_core_map = _load_unihan_dictlike_maps(unihan_payload)
 
@@ -3691,10 +3827,19 @@ def _build_from_unihan_only(
                 pinyin_set,
                 unihan_reading_source_map,
                 unihan_map,
+                unihan_pinlu_detail_map,
             )
             for pinyin in output_pinyin_set:
                 source_rank = unihan_reading_source_map.get((ch, pinyin), UNIHAN_SOURCE_MANDARIN)
-                output_weight = _adjust_unihan_weight_for_source(base_weight, source_rank)
+                output_weight = _adjust_unihan_weight_for_reading(
+                    base_weight,
+                    ch,
+                    pinyin,
+                    source_rank,
+                    unihan_map,
+                    unihan_pinlu_detail_map,
+                    unihan_pinlu_map.get(ch, 0),
+                )
                 key = (pinyin, ch)
                 if ch in tc_only_chars:
                     previous_tc = tc.get(key, 0)

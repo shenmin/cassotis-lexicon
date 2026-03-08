@@ -13,7 +13,7 @@ from __future__ import annotations
 
 import argparse
 import pathlib
-from typing import Dict, List, Tuple
+from typing import Dict, Iterable, List, Tuple
 
 
 def load_dict(path: pathlib.Path) -> Dict[str, List[Tuple[str, int]]]:
@@ -46,6 +46,23 @@ def load_dict(path: pathlib.Path) -> Dict[str, List[Tuple[str, int]]]:
 
     finalized: Dict[str, List[Tuple[str, int]]] = {}
     for pinyin, mapping in bucket.items():
+        finalized[pinyin] = sorted(mapping.items(), key=lambda kv: (-kv[1], kv[0]))
+    return finalized
+
+
+def load_merged_dict(paths: Iterable[pathlib.Path]) -> Dict[str, List[Tuple[str, int]]]:
+    merged: Dict[str, Dict[str, int]] = {}
+    for path in paths:
+        current = load_dict(path)
+        for pinyin, items in current.items():
+            bucket = merged.setdefault(pinyin, {})
+            for text, weight in items:
+                previous = bucket.get(text, -10**9)
+                if weight > previous:
+                    bucket[text] = weight
+
+    finalized: Dict[str, List[Tuple[str, int]]] = {}
+    for pinyin, mapping in merged.items():
         finalized[pinyin] = sorted(mapping.items(), key=lambda kv: (-kv[1], kv[0]))
     return finalized
 
@@ -115,20 +132,21 @@ def validate(
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Validate lexicon regression samples.")
-    parser.add_argument("--dict", required=True, dest="dict_path")
+    parser.add_argument("--dict", required=True, action="append", dest="dict_paths")
     parser.add_argument("--samples", required=True, dest="samples_path")
     parser.add_argument("--default-rank", type=int, default=10)
     parser.add_argument("--preview-top", type=int, default=8)
     args = parser.parse_args()
 
-    dict_path = pathlib.Path(args.dict_path).resolve()
+    dict_paths = [pathlib.Path(raw_path).resolve() for raw_path in args.dict_paths]
     samples_path = pathlib.Path(args.samples_path).resolve()
-    if not dict_path.exists():
-        raise FileNotFoundError(f"dict file not found: {dict_path}")
+    for dict_path in dict_paths:
+        if not dict_path.exists():
+            raise FileNotFoundError(f"dict file not found: {dict_path}")
     if not samples_path.exists():
         raise FileNotFoundError(f"samples file not found: {samples_path}")
 
-    mapping = load_dict(dict_path)
+    mapping = load_merged_dict(dict_paths)
     samples = load_samples(samples_path, args.default_rank)
     errors = validate(mapping, samples, args.preview_top)
 
@@ -140,7 +158,7 @@ def main() -> int:
 
     print(
         f"Regression sample validation passed: samples={len(samples)} "
-        f"dict={dict_path.name}"
+        f"dicts={','.join(path.name for path in dict_paths)}"
     )
     return 0
 
