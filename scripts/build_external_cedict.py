@@ -18,6 +18,7 @@ import pathlib
 import re
 import sys
 import unicodedata
+import urllib.parse
 import urllib.request
 import zipfile
 from typing import Dict, List, Set, Tuple
@@ -1041,13 +1042,121 @@ def _has_effective_wiki_support(
     wiki_titles: Set[str],
     pageview_score: float,
     source_hits: int,
+    wiki_augmented_terms: Set[str] | None = None,
 ) -> bool:
+    wiki_augmented_terms = wiki_augmented_terms or set()
+    if text in wiki_augmented_terms:
+        return True
     if text not in wiki_titles:
         return False
     # Full zhwiki title dump includes a large long tail. Treat wiki as an
     # effective positive signal only when real popularity or multi-source
     # consensus exists.
     return pageview_score >= 0.08 or source_hits >= 2
+
+
+def _normalize_ascii_wiki_title_candidate(raw_title: str) -> str:
+    title = raw_title.strip()
+    if not title:
+        return ""
+    normalized = title.replace("_", "").replace(" ", "").strip().lower()
+    if not normalized:
+        return ""
+    if not re.fullmatch(r"[a-z]{2,32}", normalized):
+        return ""
+    return normalized
+
+
+def _collect_wiki_pinyin_alias_titles(
+    payload: bytes,
+    valid_pinyin_keys: Set[str],
+) -> Dict[str, Set[str]]:
+    candidates: Dict[str, Set[str]] = {}
+    text = _decode_text(payload)
+    for raw_line in text.splitlines():
+        title = raw_line.strip()
+        if not title:
+            continue
+        normalized = _normalize_ascii_wiki_title_candidate(title)
+        if not normalized or normalized not in valid_pinyin_keys:
+            continue
+        candidates.setdefault(normalized, set()).add(title)
+    return candidates
+
+
+def _load_wiki_redirect_alias_map(
+    repo_root: pathlib.Path,
+    alias_titles_by_pinyin: Dict[str, Set[str]],
+    min_hanzi: int,
+    max_hanzi: int = 8,
+    batch_size: int = 50,
+) -> Dict[str, Set[str]]:
+    if not alias_titles_by_pinyin:
+        return {}
+
+    cache_path = repo_root / "data" / "cache" / "wiki_redirect_aliases.json"
+    cache: Dict[str, List[str]] = {}
+    if cache_path.exists():
+        try:
+            cache = json.loads(cache_path.read_text(encoding="utf-8"))
+        except Exception:
+            cache = {}
+
+    raw_titles = sorted({title for titles in alias_titles_by_pinyin.values() for title in titles})
+    missing_titles = [title for title in raw_titles if title not in cache]
+    resolved_updates: Dict[str, List[str]] = {}
+
+    for start_idx in range(0, len(missing_titles), batch_size):
+        batch = missing_titles[start_idx : start_idx + batch_size]
+        params = urllib.parse.urlencode(
+            {
+                "action": "query",
+                "format": "json",
+                "redirects": "1",
+                "titles": "|".join(batch),
+            }
+        )
+        request = urllib.request.Request(
+            f"https://zh.wikipedia.org/w/api.php?{params}",
+            headers={"User-Agent": DEFAULT_HTTP_USER_AGENT},
+        )
+        batch_cache = {title: [] for title in batch}
+        with urllib.request.urlopen(request, timeout=60) as response:
+            payload = json.loads(response.read().decode("utf-8", errors="ignore"))
+
+        for redirect in payload.get("query", {}).get("redirects", []):
+            from_title = str(redirect.get("from", ""))
+            to_title = _normalize_wiki_title(
+                str(redirect.get("to", "")),
+                min_hanzi=min_hanzi,
+                max_hanzi=max_hanzi,
+            )
+            if not from_title or not to_title:
+                continue
+            batch_cache.setdefault(from_title, [])
+            if to_title not in batch_cache[from_title]:
+                batch_cache[from_title].append(to_title)
+
+        resolved_updates.update(batch_cache)
+
+    if resolved_updates:
+        cache.update(resolved_updates)
+        cache_path.parent.mkdir(parents=True, exist_ok=True)
+        cache_path.write_text(
+            json.dumps(cache, ensure_ascii=False, indent=2, sort_keys=True),
+            encoding="utf-8",
+        )
+
+    alias_map: Dict[str, Set[str]] = {}
+    for pinyin, raw_titles_for_pinyin in alias_titles_by_pinyin.items():
+        targets: Set[str] = set()
+        for raw_title in raw_titles_for_pinyin:
+            for target in cache.get(raw_title, []):
+                if _cjk_len(target) >= min_hanzi:
+                    targets.add(target)
+        if targets:
+            alias_map[pinyin] = targets
+    return alias_map
 
 
 def _compute_effective_pos_bias(
@@ -1370,6 +1479,7 @@ def _rerank_homophone_buckets(
     source_hits_map: Dict[str, int],
     pageviews_signal_map: Dict[str, float],
     wiki_titles: Set[str],
+    wiki_augmented_terms: Set[str] | None,
     jieba_direct_signal_map: Dict[str, float] | None,
     jieba_pos_map: Dict[str, str] | None,
     char_frequency_prior: Dict[str, float] | None,
@@ -1442,6 +1552,7 @@ def _rerank_homophone_buckets(
                 wiki_titles,
                 pageview_score=pageview_score,
                 source_hits=source_hits,
+                wiki_augmented_terms=wiki_augmented_terms,
             ) else 0.0
             jieba_direct_score = min(1.0, max(0.0, jieba_direct_signal_map.get(text, 0.0)))
             char_score = _compute_text_single_char_prior(text, char_prior)
@@ -1512,6 +1623,7 @@ def _rerank_homophone_buckets(
                 wiki_titles,
                 pageview_score=pageview_score,
                 source_hits=source_hits,
+                wiki_augmented_terms=wiki_augmented_terms,
             )
             looks_like_person_name = _looks_like_low_signal_person_name(
                 text,
@@ -1813,6 +1925,7 @@ def _filter_low_signal_rare_entries(
     source_hits_map: Dict[str, int],
     pageviews_signal_map: Dict[str, float],
     wiki_titles: Set[str],
+    wiki_augmented_terms: Set[str] | None,
     jieba_direct_signal_map: Dict[str, float] | None,
     jieba_pos_map: Dict[str, str] | None,
     char_frequency_prior: Dict[str, float] | None,
@@ -1869,6 +1982,7 @@ def _filter_low_signal_rare_entries(
                     wiki_titles,
                     pageview_score=pageview_score,
                     source_hits=source_hits,
+                    wiki_augmented_terms=wiki_augmented_terms,
                 )
             ):
                 bucket_has_strong = True
@@ -1890,6 +2004,7 @@ def _filter_low_signal_rare_entries(
                 wiki_titles,
                 pageview_score=pageview_score,
                 source_hits=source_hits,
+                wiki_augmented_terms=wiki_augmented_terms,
             )
             looks_like_person_name = _looks_like_low_signal_person_name(
                 text,
@@ -2028,6 +2143,7 @@ def _filter_global_tail_entries(
     source_hits_map: Dict[str, int],
     pageviews_signal_map: Dict[str, float],
     wiki_titles: Set[str],
+    wiki_augmented_terms: Set[str] | None,
     jieba_direct_signal_map: Dict[str, float] | None,
     jieba_pos_map: Dict[str, str] | None,
     char_frequency_prior: Dict[str, float] | None,
@@ -2084,6 +2200,7 @@ def _filter_global_tail_entries(
             wiki_titles,
             pageview_score=entry_pageview_score,
             source_hits=int(entry_source_hits),
+            wiki_augmented_terms=wiki_augmented_terms,
         )
         entry_inflated_short_penalty = _compute_low_signal_inflated_short_term_penalty(
             entry_text,
@@ -2147,6 +2264,7 @@ def _filter_global_tail_entries(
             wiki_titles,
             pageview_score=pageview_score,
             source_hits=source_hits,
+            wiki_augmented_terms=wiki_augmented_terms,
         )
         looks_like_person_name = _looks_like_low_signal_person_name(
             text,
@@ -2356,6 +2474,7 @@ def _collect_suspicious_high_weight_entries(
     source_hits_map: Dict[str, int],
     pageviews_signal_map: Dict[str, float],
     wiki_titles: Set[str],
+    wiki_augmented_terms: Set[str] | None,
     jieba_direct_signal_map: Dict[str, float] | None,
     jieba_pos_map: Dict[str, str] | None,
     char_frequency_prior: Dict[str, float] | None,
@@ -2385,6 +2504,7 @@ def _collect_suspicious_high_weight_entries(
             wiki_titles,
             pageview_score=pageview_score,
             source_hits=source_hits,
+            wiki_augmented_terms=wiki_augmented_terms,
         )
         looks_like_person_name = _looks_like_low_signal_person_name(
             text,
@@ -4664,8 +4784,9 @@ def _augment_with_frequency_lexicon(
     tc_to_sc_map: Dict[str, Set[str]],
     unihan_map: Dict[str, str],
     wiki_titles: Set[str],
+    wiki_pinyin_alias_map: Dict[str, Set[str]],
     min_hanzi: int,
-) -> Dict[str, int]:
+) -> Tuple[Dict[str, int], Set[str], Set[str]]:
     stats = {
         "freqlex_terms_total": 0,
         "freqlex_terms_added_sc": 0,
@@ -4679,12 +4800,16 @@ def _augment_with_frequency_lexicon(
         "freqlex_existing_pinyin_hits": 0,
         "freqlex_unihan_fallback_hits": 0,
         "freqlex_opencc_tc_hits": 0,
+        "freqlex_wiki_alias_added_sc": 0,
+        "freqlex_wiki_alias_added_tc": 0,
     }
 
     opencc_sc_to_tc = _build_opencc_sc_to_tc_map(opencc_entries)
     pinyin_index = _build_text_pinyin_index(sc, tc)
     tc_existing_texts = {text for _pinyin, text in tc.keys()}
     char_prior = _build_effective_char_prior(sc, char_frequency_prior)
+    wiki_alias_sc_terms: Set[str] = set()
+    wiki_alias_tc_terms: Set[str] = set()
 
     for word, usage_score in usage_score_map.items():
         stats["freqlex_terms_total"] += 1
@@ -4812,7 +4937,78 @@ def _augment_with_frequency_lexicon(
         if boosted_tc:
             stats["freqlex_terms_boosted_tc"] += 1
 
-    return stats
+    for pinyin, wiki_words in wiki_pinyin_alias_map.items():
+        for word in sorted(wiki_words):
+            if not CJK_FULL_RE.fullmatch(word):
+                continue
+            text_len = _cjk_len(word)
+            if text_len < min_hanzi or text_len > 8:
+                continue
+
+            synthetic_usage_score = 0.28 if text_len <= 2 else (0.18 if text_len <= 4 else 0.12)
+            pos_tag = jieba_pos_map.get(word, "")
+            char_score = _compute_text_single_char_prior(word, char_prior)
+            weight = _compute_weight_with_signals(
+                word,
+                usage_score=synthetic_usage_score,
+                source_hits=1,
+                pageview_score=0.0,
+                wiki_hit=True,
+                core_entry=False,
+                jieba_direct_score=0.0,
+                pos_tag=pos_tag,
+                char_score=char_score,
+            )
+
+            sc_words = tc_to_sc_map.get(word, set())
+            if not sc_words:
+                sc_words = {word}
+            added_sc = False
+            for sc_word in sc_words:
+                if _cjk_len(sc_word) < min_hanzi:
+                    continue
+                key = (pinyin, sc_word)
+                if key in sc:
+                    wiki_alias_sc_terms.add(sc_word)
+                    continue
+                sc[key] = weight
+                added_sc = True
+                wiki_alias_sc_terms.add(sc_word)
+            if added_sc:
+                stats["freqlex_wiki_alias_added_sc"] += 1
+
+            tc_words = opencc_sc_to_tc.get(word, set())
+            if tc_words:
+                stats["freqlex_opencc_tc_hits"] += 1
+            elif word in tc_existing_texts:
+                tc_words = {word}
+
+            added_tc = False
+            for tc_word in tc_words:
+                if _cjk_len(tc_word) < min_hanzi:
+                    continue
+                key = (pinyin, tc_word)
+                if key in tc:
+                    wiki_alias_tc_terms.add(tc_word)
+                    continue
+                tc_char_score = _compute_text_single_char_prior(tc_word, char_prior)
+                tc[key] = _compute_weight_with_signals(
+                    tc_word,
+                    usage_score=synthetic_usage_score,
+                    source_hits=1,
+                    pageview_score=0.0,
+                    wiki_hit=True,
+                    core_entry=False,
+                    jieba_direct_score=0.0,
+                    pos_tag=jieba_pos_map.get(tc_word, pos_tag),
+                    char_score=tc_char_score,
+                )
+                added_tc = True
+                wiki_alias_tc_terms.add(tc_word)
+            if added_tc:
+                stats["freqlex_wiki_alias_added_tc"] += 1
+
+    return stats, wiki_alias_sc_terms, wiki_alias_tc_terms
 
 
 def _apply_limit(
@@ -5208,6 +5404,8 @@ def main() -> int:
     char_frequency_prior: Dict[str, float] = {}
     pageviews_signal_map: Dict[str, float] = {}
     wiki_titles: Set[str] = set()
+    wiki_alias_sc_terms: Set[str] = set()
+    wiki_alias_tc_terms: Set[str] = set()
     tc_usage_score_map: Dict[str, float] = {}
     tc_source_hits_map: Dict[str, int] = {}
     tc_jieba_direct_signal_map: Dict[str, float] = {}
@@ -5329,6 +5527,15 @@ def main() -> int:
         wiki_titles, wiki_stats = _parse_wiki_titles_entries(
             wiki_titles_payload, min_hanzi=args.min_hanzi
         )
+        wiki_alias_titles_by_pinyin = _collect_wiki_pinyin_alias_titles(
+            wiki_titles_payload,
+            {pinyin for pinyin, _text in sc_map.keys()},
+        )
+        wiki_pinyin_alias_map = _load_wiki_redirect_alias_map(
+            repo_root,
+            wiki_alias_titles_by_pinyin,
+            min_hanzi=args.min_hanzi,
+        )
         tc_usage_score_map = _build_tc_signal_map(usage_score_map, tc_to_sc_map)
         tc_source_hits_map = _build_tc_source_hits_map(source_hits_map, tc_to_sc_map)
         tc_jieba_direct_signal_map = _build_tc_signal_map(jieba_direct_signal_map, tc_to_sc_map)
@@ -5379,7 +5586,7 @@ def main() -> int:
             core_entry=True,
             stats_prefix="tc_core",
         )
-        augment_stats = _augment_with_frequency_lexicon(
+        augment_stats, wiki_alias_sc_terms, wiki_alias_tc_terms = _augment_with_frequency_lexicon(
             sc_map,
             tc_map,
             usage_score_map,
@@ -5392,6 +5599,7 @@ def main() -> int:
             tc_to_sc_map,
             unihan_map,
             wiki_titles,
+            wiki_pinyin_alias_map,
             args.min_hanzi,
         )
         sc_map, sc_normalize_stats = _normalize_sc_mapping_with_opencc(sc_map, tc_to_sc_map)
@@ -5569,6 +5777,7 @@ def main() -> int:
         source_hits_map=source_hits_map,
         pageviews_signal_map=pageviews_signal_map,
         wiki_titles=wiki_titles,
+        wiki_augmented_terms=wiki_alias_sc_terms,
         jieba_direct_signal_map=jieba_direct_signal_map,
         jieba_pos_map=jieba_pos_map,
         char_frequency_prior=char_frequency_prior,
@@ -5582,6 +5791,7 @@ def main() -> int:
         source_hits_map=source_hits_map,
         pageviews_signal_map=pageviews_signal_map,
         wiki_titles=wiki_titles,
+        wiki_augmented_terms=wiki_alias_sc_terms,
         jieba_direct_signal_map=jieba_direct_signal_map,
         jieba_pos_map=jieba_pos_map,
         char_frequency_prior=char_frequency_prior,
@@ -5595,6 +5805,7 @@ def main() -> int:
         source_hits_map=source_hits_map,
         pageviews_signal_map=pageviews_signal_map,
         wiki_titles=wiki_titles,
+        wiki_augmented_terms=wiki_alias_sc_terms,
         jieba_direct_signal_map=jieba_direct_signal_map,
         jieba_pos_map=jieba_pos_map,
         char_frequency_prior=char_frequency_prior,
@@ -5618,6 +5829,7 @@ def main() -> int:
         source_hits_map=tc_source_hits_map,
         pageviews_signal_map=tc_pageviews_signal_map,
         wiki_titles=wiki_titles,
+        wiki_augmented_terms=wiki_alias_tc_terms,
         jieba_direct_signal_map=tc_jieba_direct_signal_map,
         jieba_pos_map=tc_jieba_pos_map,
         char_frequency_prior=tc_char_frequency_prior,
@@ -5631,6 +5843,7 @@ def main() -> int:
         source_hits_map=tc_source_hits_map,
         pageviews_signal_map=tc_pageviews_signal_map,
         wiki_titles=wiki_titles,
+        wiki_augmented_terms=wiki_alias_tc_terms,
         jieba_direct_signal_map=tc_jieba_direct_signal_map,
         jieba_pos_map=tc_jieba_pos_map,
         char_frequency_prior=tc_char_frequency_prior,
@@ -5644,6 +5857,7 @@ def main() -> int:
         source_hits_map=tc_source_hits_map,
         pageviews_signal_map=tc_pageviews_signal_map,
         wiki_titles=wiki_titles,
+        wiki_augmented_terms=wiki_alias_tc_terms,
         jieba_direct_signal_map=tc_jieba_direct_signal_map,
         jieba_pos_map=tc_jieba_pos_map,
         char_frequency_prior=tc_char_frequency_prior,
@@ -5667,6 +5881,7 @@ def main() -> int:
         source_hits_map=source_hits_map,
         pageviews_signal_map=pageviews_signal_map,
         wiki_titles=wiki_titles,
+        wiki_augmented_terms=wiki_alias_sc_terms,
         jieba_direct_signal_map=jieba_direct_signal_map,
         jieba_pos_map=jieba_pos_map,
         char_frequency_prior=char_frequency_prior,
