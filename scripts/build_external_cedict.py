@@ -1512,6 +1512,97 @@ def _propagate_tc_multi_pronunciation_preference_from_sc(
     return stats
 
 
+def _propagate_tc_homophone_preference_from_sc(
+    sc_map: Dict[Tuple[str, str], int],
+    tc_map: Dict[Tuple[str, str], int],
+    tc_to_sc_map: Dict[str, Set[str]] | None,
+    stats_prefix: str,
+) -> Dict[str, int]:
+    stats = {
+        f"{stats_prefix}_homophone_sc_guided_buckets": 0,
+        f"{stats_prefix}_homophone_sc_guided_boosted": 0,
+        f"{stats_prefix}_homophone_sc_guided_damped": 0,
+        f"{stats_prefix}_homophone_sc_guided_boost_total": 0,
+        f"{stats_prefix}_homophone_sc_guided_penalty_total": 0,
+    }
+    if not sc_map or not tc_map or not tc_to_sc_map:
+        return stats
+
+    sc_buckets: Dict[str, Dict[str, int]] = {}
+    for (pinyin, text), weight in sc_map.items():
+        if weight <= 0 or _cjk_len(text) < 2:
+            continue
+        sc_buckets.setdefault(pinyin, {})[text] = max(
+            weight, sc_buckets.get(pinyin, {}).get(text, 0)
+        )
+
+    tc_buckets: Dict[str, List[Tuple[str, int]]] = {}
+    for (pinyin, text), weight in tc_map.items():
+        if weight <= 0 or _cjk_len(text) < 2:
+            continue
+        tc_buckets.setdefault(pinyin, []).append((text, weight))
+
+    for pinyin, tc_items in tc_buckets.items():
+        if len(tc_items) < 2:
+            continue
+        sc_bucket = sc_buckets.get(pinyin)
+        if not sc_bucket:
+            continue
+
+        aligned_items: List[Tuple[str, int, int]] = []
+        best_sc_weight = 0
+        best_tc_weight = 0
+        for tc_text, tc_weight in tc_items:
+            candidate_sc_texts: Set[str] = set()
+            if tc_text in sc_bucket:
+                candidate_sc_texts.add(tc_text)
+            candidate_sc_texts.update(tc_to_sc_map.get(tc_text, set()))
+
+            sc_weight = 0
+            for sc_text in candidate_sc_texts:
+                sc_weight = max(sc_weight, sc_bucket.get(sc_text, 0))
+            if sc_weight <= 0:
+                continue
+
+            aligned_items.append((tc_text, tc_weight, sc_weight))
+            best_sc_weight = max(best_sc_weight, sc_weight)
+            best_tc_weight = max(best_tc_weight, tc_weight)
+
+        if len(aligned_items) < 2 or best_sc_weight <= 0 or best_tc_weight <= 0:
+            continue
+
+        stats[f"{stats_prefix}_homophone_sc_guided_buckets"] += 1
+        for tc_text, tc_weight, sc_weight in aligned_items:
+            sc_ratio = min(1.0, max(0.0, float(sc_weight) / float(best_sc_weight)))
+            target_weight = max(1, int(round(best_tc_weight * sc_ratio)))
+            gap = target_weight - tc_weight
+            key = (pinyin, tc_text)
+
+            if gap >= 56:
+                if sc_ratio >= 0.99:
+                    boost_factor = 0.68
+                elif sc_ratio >= 0.95:
+                    boost_factor = 0.55
+                else:
+                    boost_factor = 0.42
+                boost = min(220, max(24, int(round(gap * boost_factor))))
+                new_weight = tc_weight + boost
+                if new_weight > tc_weight:
+                    tc_map[key] = new_weight
+                    stats[f"{stats_prefix}_homophone_sc_guided_boosted"] += 1
+                    stats[f"{stats_prefix}_homophone_sc_guided_boost_total"] += boost
+            elif gap <= -72 and sc_ratio <= 0.92:
+                penalty_factor = 0.34 if sc_ratio <= 0.84 else 0.26
+                penalty = min(180, max(20, int(round(abs(gap) * penalty_factor))))
+                new_weight = max(1, tc_weight - penalty)
+                if new_weight < tc_weight:
+                    tc_map[key] = new_weight
+                    stats[f"{stats_prefix}_homophone_sc_guided_damped"] += 1
+                    stats[f"{stats_prefix}_homophone_sc_guided_penalty_total"] += penalty
+
+    return stats
+
+
 def _rerank_homophone_buckets(
     mapping: Dict[Tuple[str, str], int],
     usage_score_map: Dict[str, float],
@@ -1546,6 +1637,8 @@ def _rerank_homophone_buckets(
         f"{stats_prefix}_homophone_entries_adjusted": 0,
         f"{stats_prefix}_homophone_entries_boosted": 0,
         f"{stats_prefix}_homophone_entries_damped": 0,
+        f"{stats_prefix}_homophone_dominant_common_boosted": 0,
+        f"{stats_prefix}_homophone_dominant_common_damped": 0,
         f"{stats_prefix}_homophone_sparse_penalized": 0,
         f"{stats_prefix}_homophone_literary_penalized": 0,
         f"{stats_prefix}_homophone_written_tail_penalized": 0,
@@ -1579,8 +1672,12 @@ def _rerank_homophone_buckets(
         stats[f"{stats_prefix}_homophone_buckets"] += 1
 
         raw_scores: Dict[str, float] = {}
+        common_signal_scores: Dict[str, float] = {}
         bucket_has_strong_term = False
         bucket_has_conversational_short_term = False
+        bucket_dominant_common_text = ""
+        bucket_dominant_common_signal = -1.0
+        bucket_dominant_common_runner_up = -1.0
         strong_short_head_terms: Set[str] = set()
         for text, _weight in items:
             text_len = _cjk_len(text)
@@ -1649,6 +1746,41 @@ def _rerank_homophone_buckets(
             ):
                 bucket_has_strong_term = True
 
+            common_signal = 0.0
+            if text_len <= 3 and not _is_named_entity_pos(pos_tag):
+                common_signal = (
+                    usage_score * 320.0
+                    + jieba_direct_score * 360.0
+                    + pageview_score * 120.0
+                    + min(source_hits, 4) * 34.0
+                    + wiki_hit * 26.0
+                    + max(0.0, pos_bias) * 160.0
+                )
+                if text_len <= 2:
+                    common_signal += char_score * 60.0
+                    if _is_conversational_pos(pos_tag):
+                        common_signal += 68.0
+                        if text and text[0] in ("不", "没", "无", "非", "未"):
+                            common_signal += 46.0
+                    elif (
+                        _is_noun_pos(pos_tag)
+                        and usage_score < 0.20
+                        and jieba_direct_score < 0.18
+                        and source_hits < 3
+                    ):
+                        common_signal -= 18.0
+                elif _is_conversational_pos(pos_tag):
+                    common_signal += 28.0
+                elif char_score >= 0.50:
+                    common_signal += 16.0
+            common_signal_scores[text] = common_signal
+            if common_signal > bucket_dominant_common_signal:
+                bucket_dominant_common_runner_up = bucket_dominant_common_signal
+                bucket_dominant_common_signal = common_signal
+                bucket_dominant_common_text = text
+            elif common_signal > bucket_dominant_common_runner_up:
+                bucket_dominant_common_runner_up = common_signal
+
             raw_scores[text] = (
                 usage_score * 220.0
                 + jieba_direct_score * 220.0
@@ -1682,6 +1814,41 @@ def _rerank_homophone_buckets(
             continue
 
         spread_factor = min(1.0, spread / 240.0)
+        bucket_dominant_common_margin = 0.0
+        if bucket_dominant_common_text:
+            bucket_dominant_common_margin = max(
+                0.0, bucket_dominant_common_signal - max(0.0, bucket_dominant_common_runner_up)
+            )
+            dominant_usage_score = min(
+                1.0, max(0.0, usage_score_map.get(bucket_dominant_common_text, 0.0))
+            )
+            dominant_source_hits = max(0, source_hits_map.get(bucket_dominant_common_text, 0))
+            dominant_pageview_score = min(
+                1.0, max(0.0, pageviews_signal_map.get(bucket_dominant_common_text, 0.0))
+            )
+            dominant_jieba_direct_score = min(
+                1.0,
+                max(0.0, jieba_direct_signal_map.get(bucket_dominant_common_text, 0.0)),
+            )
+            dominant_wiki_support = _has_effective_wiki_support(
+                bucket_dominant_common_text,
+                wiki_titles,
+                pageview_score=dominant_pageview_score,
+                source_hits=dominant_source_hits,
+                wiki_augmented_terms=wiki_augmented_terms,
+            )
+            if (
+                bucket_dominant_common_margin < 42.0
+                or (
+                    dominant_usage_score < 0.08
+                    and dominant_jieba_direct_score < 0.08
+                    and dominant_source_hits < 2
+                    and dominant_pageview_score < 0.05
+                    and not dominant_wiki_support
+                )
+            ):
+                bucket_dominant_common_text = ""
+                bucket_dominant_common_margin = 0.0
 
         for text, weight in items:
             text_len = _cjk_len(text)
@@ -1748,7 +1915,43 @@ def _rerank_homophone_buckets(
             )
             normalized = (raw_scores[text] - min_raw) / spread
             delta_cap = c_max_delta
+            if bucket_dominant_common_text:
+                delta_cap += min(140, int(round(bucket_dominant_common_margin * 0.60)))
             delta = int(round((normalized - 0.5) * (2 * delta_cap) * spread_factor))
+
+            if text == bucket_dominant_common_text:
+                dominant_common_boost = min(
+                    168,
+                    28 + int(round(bucket_dominant_common_margin * 0.75)),
+                )
+                if text_len <= 2:
+                    dominant_common_boost += 22
+                if (
+                    usage_score >= 0.18
+                    or jieba_direct_score >= 0.18
+                    or pageview_score >= 0.10
+                    or source_hits >= 2
+                    or wiki_support
+                ):
+                    dominant_common_boost += 18
+                delta += dominant_common_boost
+                stats[f"{stats_prefix}_homophone_dominant_common_boosted"] += 1
+            elif (
+                bucket_dominant_common_text
+                and text_len <= 3
+                and not wiki_support
+                and common_signal_scores.get(text, 0.0) + 44.0 < bucket_dominant_common_signal
+                and usage_score < 0.14
+                and jieba_direct_score < 0.12
+                and source_hits <= 1
+                and pageview_score < 0.05
+            ):
+                dominant_common_damp = min(
+                    118,
+                    20 + int(round(bucket_dominant_common_margin * 0.55)),
+                )
+                delta -= dominant_common_damp
+                stats[f"{stats_prefix}_homophone_dominant_common_damped"] += 1
 
             if (
                 bucket_has_strong_term
@@ -1948,6 +2151,17 @@ def _rerank_homophone_buckets(
                         and not wiki_support
                     ):
                         delta -= 56
+                    elif (
+                        usage_score < 0.16
+                        and jieba_direct_score < 0.20
+                        and source_hits <= 2
+                        and pageview_score < 0.10
+                        and not (
+                            char_score >= 0.76
+                            and (usage_score >= 0.10 or jieba_direct_score >= 0.12)
+                        )
+                    ):
+                        delta -= 36
                     elif (
                         char_score >= 0.58
                         and (usage_score >= 0.08 or jieba_direct_score >= 0.10 or source_hits >= 2)
@@ -6063,6 +6277,13 @@ def main() -> int:
         stats_prefix="tc",
     )
     stats.update(tc_sc_guided_multi_pronunciation_stats)
+    tc_sc_guided_homophone_stats = _propagate_tc_homophone_preference_from_sc(
+        sc_map,
+        tc_map,
+        tc_to_sc_map,
+        stats_prefix="tc",
+    )
+    stats.update(tc_sc_guided_homophone_stats)
 
     sc_map = _apply_limit(sc_map, args.max_entries)
     tc_map = _apply_limit(tc_map, args.max_entries)

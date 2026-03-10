@@ -1,7 +1,7 @@
 # External Build Report
 
 - profile: unihan_single
-- generated_at_utc: 2026-03-10T02:37:18+00:00
+- generated_at_utc: 2026-03-10T07:56:49+00:00
 - min_hanzi: 1
 - max_entries: unlimited
 
@@ -35,6 +35,8 @@
 - sc_global_tail_removed: 0
 - sc_global_tail_written_removed: 0
 - sc_homophone_buckets: 0
+- sc_homophone_dominant_common_boosted: 0
+- sc_homophone_dominant_common_damped: 0
 - sc_homophone_entries_adjusted: 0
 - sc_homophone_entries_boosted: 0
 - sc_homophone_entries_damped: 0
@@ -64,6 +66,8 @@
 - tc_global_tail_removed: 0
 - tc_global_tail_written_removed: 0
 - tc_homophone_buckets: 0
+- tc_homophone_dominant_common_boosted: 0
+- tc_homophone_dominant_common_damped: 0
 - tc_homophone_entries_adjusted: 0
 - tc_homophone_entries_boosted: 0
 - tc_homophone_entries_damped: 0
@@ -71,6 +75,11 @@
 - tc_homophone_literary_penalized: 0
 - tc_homophone_modernity_risk_penalized: 0
 - tc_homophone_rare_form_penalized: 0
+- tc_homophone_sc_guided_boost_total: 0
+- tc_homophone_sc_guided_boosted: 0
+- tc_homophone_sc_guided_buckets: 0
+- tc_homophone_sc_guided_damped: 0
+- tc_homophone_sc_guided_penalty_total: 0
 - tc_homophone_sparse_penalized: 0
 - tc_homophone_written_tail_penalized: 0
 - tc_low_signal_literary_removed: 0
@@ -100,8 +109,8 @@
 - unihan_tc_only_chars: 1598
 
 ## Output
-- sc_file: data/generated/dict_unihan_sc.txt
-- tc_file: data/generated/dict_unihan_tc.txt
+- sc_file: D:\cassotis_lexicon_public\data\generated\dict_unihan_sc.txt
+- tc_file: D:\cassotis_lexicon_public\data\generated\dict_unihan_tc.txt
 - sc_entries: 23973
 - tc_entries: 24130
 - suspicious_sc_entries: 25

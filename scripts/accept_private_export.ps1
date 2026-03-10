@@ -160,12 +160,15 @@ function Assert-ManifestPolicy {
 $required = @(
     'data\generated\dict_clean_sc.txt',
     'data\generated\dict_clean_tc.txt',
+    'data\generated\dict_unihan_sc.txt',
+    'data\generated\dict_unihan_tc.txt',
     'manifests\sources.public.yml',
     'manifests\profiles.public.yml',
     'manifests\pinyin_overrides.clean_permissive.tsv',
     'manifests\regression_samples.sc.tsv',
     'manifests\regression_samples.tc.tsv',
-    'attribution\ATTRIBUTION.md'
+    'attribution\ATTRIBUTION.md',
+    'rebuild_all.ps1'
 )
 
 foreach ($rel in $required) {
@@ -191,6 +194,8 @@ Get-ChildItem -LiteralPath $Root -Recurse -File | ForEach-Object {
 
 Test-DictFile (Join-Path $Root 'data\generated\dict_clean_sc.txt')
 Test-DictFile (Join-Path $Root 'data\generated\dict_clean_tc.txt')
+Test-DictFile (Join-Path $Root 'data\generated\dict_unihan_sc.txt')
+Test-DictFile (Join-Path $Root 'data\generated\dict_unihan_tc.txt')
 Test-PinyinOverrideFile (Join-Path $Root 'manifests\pinyin_overrides.clean_permissive.tsv')
 Assert-ManifestPolicy (Join-Path $Root 'manifests\sources.public.yml')
 
@@ -200,6 +205,8 @@ Assert-File $regressionScript
 
 $scDict = Join-Path $Root 'data\generated\dict_clean_sc.txt'
 $tcDict = Join-Path $Root 'data\generated\dict_clean_tc.txt'
+$scUnihanDict = Join-Path $Root 'data\generated\dict_unihan_sc.txt'
+$tcUnihanDict = Join-Path $Root 'data\generated\dict_unihan_tc.txt'
 $scSamples = Join-Path $Root 'manifests\regression_samples.sc.tsv'
 $tcSamples = Join-Path $Root 'manifests\regression_samples.tc.tsv'
 
@@ -208,13 +215,13 @@ if ($pythonCmd.Count -gt 1) {
     $runArgsPrefix += $pythonCmd[1..($pythonCmd.Count - 1)]
 }
 
-$scArgs = @($regressionScript, '--dict', $scDict, '--samples', $scSamples)
+$scArgs = @($regressionScript, '--dict', $scDict, '--dict', $scUnihanDict, '--samples', $scSamples)
 & $pythonCmd[0] @runArgsPrefix @scArgs
 if ($LASTEXITCODE -ne 0) {
     throw "SC regression sample validation failed."
 }
 
-$tcArgs = @($regressionScript, '--dict', $tcDict, '--samples', $tcSamples)
+$tcArgs = @($regressionScript, '--dict', $tcDict, '--dict', $tcUnihanDict, '--samples', $tcSamples)
 & $pythonCmd[0] @runArgsPrefix @tcArgs
 if ($LASTEXITCODE -ne 0) {
     throw "TC regression sample validation failed."

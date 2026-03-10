@@ -189,17 +189,22 @@ if ($LASTEXITCODE -ne 0) {
 if (-not $SkipRegression) {
     $dictSc = Join-Path $Root "data\generated\dict_clean_sc.txt"
     $dictTc = Join-Path $Root "data\generated\dict_clean_tc.txt"
+    $dictUnihanSc = Join-Path $Root "data\generated\dict_unihan_sc.txt"
+    $dictUnihanTc = Join-Path $Root "data\generated\dict_unihan_tc.txt"
     $samplesSc = Join-Path $Root "manifests\regression_samples.sc.tsv"
     $samplesTc = Join-Path $Root "manifests\regression_samples.tc.tsv"
 
     if (-not (Test-Path -LiteralPath $dictSc)) { throw "Missing generated file: $dictSc" }
     if (-not (Test-Path -LiteralPath $dictTc)) { throw "Missing generated file: $dictTc" }
+    if (-not (Test-Path -LiteralPath $dictUnihanSc)) { throw "Missing generated file: $dictUnihanSc" }
+    if (-not (Test-Path -LiteralPath $dictUnihanTc)) { throw "Missing generated file: $dictUnihanTc" }
     if (-not (Test-Path -LiteralPath $samplesSc)) { throw "Missing sample file: $samplesSc" }
     if (-not (Test-Path -LiteralPath $samplesTc)) { throw "Missing sample file: $samplesTc" }
 
     Write-Host "Running regression validation (SC)..."
     Invoke-PythonScript -ScriptPath $validateScript -ScriptArgs @(
         "--dict", $dictSc,
+        "--dict", $dictUnihanSc,
         "--samples", $samplesSc,
         "--default-rank", "$DefaultRank",
         "--preview-top", "$PreviewTop"
@@ -208,6 +213,7 @@ if (-not $SkipRegression) {
     Write-Host "Running regression validation (TC)..."
     Invoke-PythonScript -ScriptPath $validateScript -ScriptArgs @(
         "--dict", $dictTc,
+        "--dict", $dictUnihanTc,
         "--samples", $samplesTc,
         "--default-rank", "$DefaultRank",
         "--preview-top", "$PreviewTop"
