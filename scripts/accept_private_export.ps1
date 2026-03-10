@@ -1,8 +1,12 @@
 ﻿param(
-    [string]$Root = 'D:\cassotis_lexicon'
+    [string]$Root = ''
 )
 
 $ErrorActionPreference = 'Stop'
+
+if ([string]::IsNullOrWhiteSpace($Root)) {
+    $Root = Split-Path -Parent $PSScriptRoot
+}
 
 function Assert-File {
     param([string]$Path)
