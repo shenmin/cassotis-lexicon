@@ -1159,6 +1159,45 @@ def _load_wiki_redirect_alias_map(
     return alias_map
 
 
+def _compute_wiki_alias_support_signal(
+    text: str,
+    wiki_titles: Set[str],
+) -> Tuple[float, int, float]:
+    """
+    Convert zhwiki Latin redirect aliases into a modest modern-usage prior.
+
+    These terms often miss THUOCL/jieba direct coverage, but a stable Latin
+    alias redirecting to a CJK title is still a useful popularity signal for
+    modern products/brands/common concepts. Keep the boost bounded so obscure
+    alias-only terms do not swamp stronger lexicon-backed words.
+    """
+    text_len = _cjk_len(text)
+    if text_len <= 0:
+        return 0.0, 0, 0.0
+
+    if text_len <= 2:
+        usage_score = 0.46
+        pageview_score = 0.12
+    elif text_len <= 4:
+        usage_score = 0.30
+        pageview_score = 0.08
+    else:
+        usage_score = 0.18
+        pageview_score = 0.04
+
+    source_hits = 1
+    if text in wiki_titles:
+        usage_score += 0.08 if text_len <= 2 else 0.05
+        pageview_score += 0.04 if text_len <= 2 else 0.02
+        source_hits = 2 if text_len <= 2 else 1
+
+    return (
+        min(1.0, max(0.0, usage_score)),
+        max(0, source_hits),
+        min(1.0, max(0.0, pageview_score)),
+    )
+
+
 def _compute_effective_pos_bias(
     pos_tag: str,
     text_len: int,
@@ -1542,6 +1581,31 @@ def _rerank_homophone_buckets(
         raw_scores: Dict[str, float] = {}
         bucket_has_strong_term = False
         bucket_has_conversational_short_term = False
+        strong_short_head_terms: Set[str] = set()
+        for text, _weight in items:
+            text_len = _cjk_len(text)
+            usage_score = min(1.0, max(0.0, usage_score_map.get(text, 0.0)))
+            source_hits = max(0, source_hits_map.get(text, 0))
+            pageview_score = min(1.0, max(0.0, pageviews_signal_map.get(text, 0.0)))
+            wiki_hit = 1.0 if _has_effective_wiki_support(
+                text,
+                wiki_titles,
+                pageview_score=pageview_score,
+                source_hits=source_hits,
+                wiki_augmented_terms=wiki_augmented_terms,
+            ) else 0.0
+            jieba_direct_score = min(1.0, max(0.0, jieba_direct_signal_map.get(text, 0.0)))
+            if (
+                text_len <= 2
+                and (
+                    usage_score >= 0.10
+                    or jieba_direct_score >= 0.06
+                    or source_hits >= 2
+                    or pageview_score >= 0.10
+                    or wiki_hit > 0.0
+                )
+            ):
+                strong_short_head_terms.add(text)
         for text, weight in items:
             text_len = _cjk_len(text)
             usage_score = min(1.0, max(0.0, usage_score_map.get(text, 0.0)))
@@ -1575,7 +1639,6 @@ def _rerank_homophone_buckets(
                 char_weight = 28.0
             if text_len <= 2 and _is_conversational_pos(pos_tag):
                 bucket_has_conversational_short_term = True
-
             if (
                 usage_score >= 0.28
                 or jieba_direct_score >= 0.42
@@ -1601,6 +1664,15 @@ def _rerank_homophone_buckets(
                     )
                 )
             )
+            if text_len >= 4 and pageview_score < 0.18:
+                contains_strong_head = any(
+                    shorter != text
+                    and (text.startswith(shorter) or text.endswith(shorter))
+                    and (_cjk_len(text) - _cjk_len(shorter) >= 2)
+                    for shorter in strong_short_head_terms
+                )
+                if contains_strong_head:
+                    raw_scores[text] -= 64.0
 
         raw_values = list(raw_scores.values())
         min_raw = min(raw_values)
@@ -4294,6 +4366,49 @@ def _normalize_tc_mapping_with_char_map(
     return normalized, stats
 
 
+def _convert_text_with_char_map(
+    text: str,
+    char_map: Dict[str, str],
+) -> str:
+    if not char_map:
+        return text
+    return "".join(char_map.get(ch, ch) for ch in text)
+
+
+def _backfill_tc_mapping_from_sc_with_char_map(
+    sc_mapping: Dict[Tuple[str, str], int],
+    tc_mapping: Dict[Tuple[str, str], int],
+    simp_to_trad_char_map: Dict[str, str],
+) -> Tuple[Dict[Tuple[str, str], int], Dict[str, int]]:
+    if not simp_to_trad_char_map:
+        return tc_mapping, {
+            "tc_backfill_from_sc_added": 0,
+            "tc_backfill_from_sc_boosted": 0,
+            "tc_backfill_from_sc_total": len(tc_mapping),
+        }
+
+    normalized = dict(tc_mapping)
+    added = 0
+    boosted = 0
+    for (pinyin, sc_text), weight in sc_mapping.items():
+        tc_text = _convert_text_with_char_map(sc_text, simp_to_trad_char_map)
+        key = (pinyin, tc_text)
+        previous = normalized.get(key)
+        if previous is None:
+            normalized[key] = weight
+            added += 1
+        elif weight > previous:
+            normalized[key] = weight
+            boosted += 1
+
+    stats = {
+        "tc_backfill_from_sc_added": added,
+        "tc_backfill_from_sc_boosted": boosted,
+        "tc_backfill_from_sc_total": len(normalized),
+    }
+    return normalized, stats
+
+
 def _filter_tc_mapping_with_script_hints(
     mapping: Dict[Tuple[str, str], int],
     sc_chars: Set[str],
@@ -4557,20 +4672,45 @@ def _build_usage_signal_map(
         pos_tag = jieba_pos_map.get(term, "")
         if _is_named_entity_pos(pos_tag):
             jieba_direct_score = min(1.0, max(0.0, jieba_direct_signal_map.get(term, 0.0)))
+            looks_like_person_name = _looks_like_low_signal_person_name(
+                term,
+                usage_score=score,
+                source_hits=source_hits,
+                pageview_score=pageviews_score,
+                jieba_direct_score=jieba_direct_score,
+                wiki_support=pageviews_score >= 0.08 or source_hits >= 2,
+                pos_tag=pos_tag,
+            )
+            looks_like_place_name = _looks_like_low_signal_place_name(
+                term,
+                usage_score=score,
+                source_hits=source_hits,
+                pageview_score=pageviews_score,
+                jieba_direct_score=jieba_direct_score,
+                wiki_support=pageviews_score >= 0.08 or source_hits >= 2,
+                pos_tag=pos_tag,
+            )
+            short_ambiguous_named_entity = (
+                _cjk_len(term) <= 2
+                and (not looks_like_person_name)
+                and (not looks_like_place_name)
+                and pageviews_score < 0.20
+                and source_hits <= 1
+            )
             # Named entities are useful, but web/wiki popularity alone can
             # over-promote proper nouns for IME general typing.
             # Use strict direct-frequency gates to keep only high-utility names
             # near the top by default.
             if jieba_direct_score < 0.02:
-                score *= 0.22
+                score *= 0.52 if short_ambiguous_named_entity else 0.22
             elif jieba_direct_score < 0.05:
-                score *= 0.32
+                score *= 0.64 if short_ambiguous_named_entity else 0.32
             elif jieba_direct_score < 0.10:
-                score *= 0.46
+                score *= 0.76 if short_ambiguous_named_entity else 0.46
             elif jieba_direct_score < 0.18:
-                score *= 0.62
+                score *= 0.88 if short_ambiguous_named_entity else 0.62
             else:
-                score *= 0.80
+                score *= 0.94 if short_ambiguous_named_entity else 0.80
 
             if (
                 pageviews_score >= 0.30
@@ -4777,11 +4917,15 @@ def _augment_with_frequency_lexicon(
     usage_score_map: Dict[str, float],
     source_hits_map: Dict[str, int],
     pageviews_signal_map: Dict[str, float],
+    tc_usage_score_map: Dict[str, float],
+    tc_source_hits_map: Dict[str, int],
+    tc_pageviews_signal_map: Dict[str, float],
     jieba_direct_signal_map: Dict[str, float],
     jieba_pos_map: Dict[str, str],
     char_frequency_prior: Dict[str, float],
     opencc_entries: List[Tuple[str, str]],
     tc_to_sc_map: Dict[str, Set[str]],
+    simp_to_trad_char_map: Dict[str, str],
     unihan_map: Dict[str, str],
     wiki_titles: Set[str],
     wiki_pinyin_alias_map: Dict[str, Set[str]],
@@ -4900,6 +5044,10 @@ def _augment_with_frequency_lexicon(
             stats["freqlex_opencc_tc_hits"] += 1
         elif word in tc_existing_texts:
             tc_words = {word}
+        else:
+            converted_word = _convert_text_with_char_map(word, simp_to_trad_char_map)
+            if converted_word != word:
+                tc_words = {converted_word}
 
         added_tc = False
         boosted_tc = False
@@ -4945,14 +5093,16 @@ def _augment_with_frequency_lexicon(
             if text_len < min_hanzi or text_len > 8:
                 continue
 
-            synthetic_usage_score = 0.28 if text_len <= 2 else (0.18 if text_len <= 4 else 0.12)
+            synthetic_usage_score, synthetic_source_hits, synthetic_pageview_score = (
+                _compute_wiki_alias_support_signal(word, wiki_titles)
+            )
             pos_tag = jieba_pos_map.get(word, "")
             char_score = _compute_text_single_char_prior(word, char_prior)
             weight = _compute_weight_with_signals(
                 word,
                 usage_score=synthetic_usage_score,
-                source_hits=1,
-                pageview_score=0.0,
+                source_hits=synthetic_source_hits,
+                pageview_score=synthetic_pageview_score,
                 wiki_hit=True,
                 core_entry=False,
                 jieba_direct_score=0.0,
@@ -4967,8 +5117,22 @@ def _augment_with_frequency_lexicon(
             for sc_word in sc_words:
                 if _cjk_len(sc_word) < min_hanzi:
                     continue
+                usage_score_map[sc_word] = max(
+                    synthetic_usage_score,
+                    usage_score_map.get(sc_word, 0.0),
+                )
+                source_hits_map[sc_word] = max(
+                    synthetic_source_hits,
+                    source_hits_map.get(sc_word, 0),
+                )
+                pageviews_signal_map[sc_word] = max(
+                    synthetic_pageview_score,
+                    pageviews_signal_map.get(sc_word, 0.0),
+                )
                 key = (pinyin, sc_word)
                 if key in sc:
+                    if weight > sc[key]:
+                        sc[key] = weight
                     wiki_alias_sc_terms.add(sc_word)
                     continue
                 sc[key] = weight
@@ -4982,27 +5146,46 @@ def _augment_with_frequency_lexicon(
                 stats["freqlex_opencc_tc_hits"] += 1
             elif word in tc_existing_texts:
                 tc_words = {word}
+            else:
+                converted_word = _convert_text_with_char_map(word, simp_to_trad_char_map)
+                if converted_word != word:
+                    tc_words = {converted_word}
 
             added_tc = False
             for tc_word in tc_words:
                 if _cjk_len(tc_word) < min_hanzi:
                     continue
-                key = (pinyin, tc_word)
-                if key in tc:
-                    wiki_alias_tc_terms.add(tc_word)
-                    continue
                 tc_char_score = _compute_text_single_char_prior(tc_word, char_prior)
-                tc[key] = _compute_weight_with_signals(
+                tc_weight = _compute_weight_with_signals(
                     tc_word,
                     usage_score=synthetic_usage_score,
-                    source_hits=1,
-                    pageview_score=0.0,
+                    source_hits=synthetic_source_hits,
+                    pageview_score=synthetic_pageview_score,
                     wiki_hit=True,
                     core_entry=False,
                     jieba_direct_score=0.0,
                     pos_tag=jieba_pos_map.get(tc_word, pos_tag),
                     char_score=tc_char_score,
                 )
+                tc_usage_score_map[tc_word] = max(
+                    synthetic_usage_score,
+                    tc_usage_score_map.get(tc_word, 0.0),
+                )
+                tc_source_hits_map[tc_word] = max(
+                    synthetic_source_hits,
+                    tc_source_hits_map.get(tc_word, 0),
+                )
+                tc_pageviews_signal_map[tc_word] = max(
+                    synthetic_pageview_score,
+                    tc_pageviews_signal_map.get(tc_word, 0.0),
+                )
+                key = (pinyin, tc_word)
+                if key in tc:
+                    if tc_weight > tc[key]:
+                        tc[key] = tc_weight
+                    wiki_alias_tc_terms.add(tc_word)
+                    continue
+                tc[key] = tc_weight
                 added_tc = True
                 wiki_alias_tc_terms.add(tc_word)
             if added_tc:
@@ -5592,11 +5775,15 @@ def main() -> int:
             usage_score_map,
             source_hits_map,
             pageviews_signal_map,
+            tc_usage_score_map,
+            tc_source_hits_map,
+            tc_pageviews_signal_map,
             jieba_direct_signal_map,
             jieba_pos_map,
             char_frequency_prior,
             opencc_entries,
             tc_to_sc_map,
+            simp_to_trad_char_map,
             unihan_map,
             wiki_titles,
             wiki_pinyin_alias_map,
@@ -5611,6 +5798,9 @@ def main() -> int:
         )
         tc_map, tc_char_normalize_stats = _normalize_tc_mapping_with_char_map(
             tc_map, simp_to_trad_char_map
+        )
+        tc_map, tc_backfill_stats = _backfill_tc_mapping_from_sc_with_char_map(
+            sc_map, tc_map, simp_to_trad_char_map
         )
         tc_map, tc_script_filter_stats = _filter_tc_mapping_with_script_hints(
             tc_map, sc_script_chars, tc_script_chars
@@ -5638,6 +5828,7 @@ def main() -> int:
         stats.update(sc_char_normalize_stats)
         stats.update(sc_script_filter_stats)
         stats.update(tc_char_normalize_stats)
+        stats.update(tc_backfill_stats)
         stats.update(tc_script_filter_stats)
         stats["unihan_map_size"] = len(unihan_map)
         stats["tc_usage_score_terms"] = len(tc_usage_score_map)
