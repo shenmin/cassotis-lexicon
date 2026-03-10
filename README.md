@@ -1,4 +1,12 @@
-﻿# Cassotis Lexicon
+# Cassotis Lexicon
+
+<p align="center">
+  <img src="cassotis_ime_yanquan.png" alt="Cassotis IME logo" width="280">
+</p>
+
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-CC%20BY--SA%204.0-blue" alt="License: CC BY-SA 4.0"></a>
+</p>
 
 English | [简体中文](README.CN.md)
 
