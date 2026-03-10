@@ -1,7 +1,7 @@
-# External Build Report
+﻿# External Build Report
 
 - profile: unihan_single
-- generated_at_utc: 2026-03-10T07:56:49+00:00
+- generated_at_utc: 2026-03-10T10:25:06+00:00
 - min_hanzi: 1
 - max_entries: unlimited
 
@@ -109,8 +109,8 @@
 - unihan_tc_only_chars: 1598
 
 ## Output
-- sc_file: D:\cassotis_lexicon_public\data\generated\dict_unihan_sc.txt
-- tc_file: D:\cassotis_lexicon_public\data\generated\dict_unihan_tc.txt
+- sc_file: data/generated/dict_unihan_sc.txt
+- tc_file: data/generated/dict_unihan_tc.txt
 - sc_entries: 23973
 - tc_entries: 24130
 - suspicious_sc_entries: 25
@@ -124,28 +124,29 @@
 
 | text | pinyin | weight | risk_score | modernity_risk | usage | jieba | pageviews | source_hits | char_score | pos | reasons |
 | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- | --- |
-| 的 | de | 475 | 491 | 312 | 0.000 | 0.000 | 0.000 | 0 | 1.000 | - | weak-usage,high-modernity-risk |
-| 了 | le | 475 | 491 | 312 | 0.000 | 0.000 | 0.000 | 0 | 1.000 | - | weak-usage,high-modernity-risk |
-| 一 | yi | 475 | 491 | 312 | 0.000 | 0.000 | 0.000 | 0 | 1.000 | - | weak-usage,high-modernity-risk |
-| 是 | shi | 472 | 489 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.993 | - | weak-usage,high-modernity-risk |
-| 我 | wo | 467 | 486 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.980 | - | weak-usage,high-modernity-risk |
-| 不 | bu | 467 | 486 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.980 | - | weak-usage,high-modernity-risk |
-| 在 | zai | 461 | 482 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.965 | - | weak-usage,high-modernity-risk |
-| 有 | you | 458 | 480 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.958 | - | weak-usage,high-modernity-risk |
-| 人 | ren | 457 | 479 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.956 | - | weak-usage,high-modernity-risk |
-| 他 | ta | 455 | 478 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.951 | - | weak-usage,high-modernity-risk |
-| 来 | lai | 450 | 475 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.938 | - | weak-usage,high-modernity-risk |
-| 上 | shang | 447 | 473 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.931 | - | weak-usage,high-modernity-risk |
-| 大 | da | 445 | 471 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.926 | - | weak-usage,high-modernity-risk |
-| 就 | jiu | 444 | 471 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.923 | - | weak-usage,high-modernity-risk |
-| 到 | dao | 441 | 469 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.916 | - | weak-usage,high-modernity-risk |
-| 着 | zhe | 440 | 468 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.914 | - | weak-usage,high-modernity-risk |
-| 你 | ni | 437 | 466 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.906 | - | weak-usage,high-modernity-risk |
-| 要 | yao | 435 | 465 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.901 | - | weak-usage,high-modernity-risk |
-| 那 | na | 430 | 462 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.889 | - | weak-usage,high-modernity-risk |
-| 去 | qu | 430 | 462 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.889 | - | weak-usage,high-modernity-risk |
-| 也 | ye | 430 | 462 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.889 | - | weak-usage,high-modernity-risk |
-| 子 | zi | 428 | 460 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.884 | - | weak-usage,high-modernity-risk |
-| 出 | chu | 428 | 460 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.884 | - | weak-usage,high-modernity-risk |
-| 这 | zhe | 427 | 460 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.881 | - | weak-usage,high-modernity-risk |
-| 会 | hui | 426 | 459 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.879 | - | weak-usage,high-modernity-risk |
+| 鐨?| de | 475 | 491 | 312 | 0.000 | 0.000 | 0.000 | 0 | 1.000 | - | weak-usage,high-modernity-risk |
+| 浜?| le | 475 | 491 | 312 | 0.000 | 0.000 | 0.000 | 0 | 1.000 | - | weak-usage,high-modernity-risk |
+| 涓€ | yi | 475 | 491 | 312 | 0.000 | 0.000 | 0.000 | 0 | 1.000 | - | weak-usage,high-modernity-risk |
+| 鏄?| shi | 472 | 489 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.993 | - | weak-usage,high-modernity-risk |
+| 鎴?| wo | 467 | 486 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.980 | - | weak-usage,high-modernity-risk |
+| 涓?| bu | 467 | 486 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.980 | - | weak-usage,high-modernity-risk |
+| 鍦?| zai | 461 | 482 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.965 | - | weak-usage,high-modernity-risk |
+| 鏈?| you | 458 | 480 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.958 | - | weak-usage,high-modernity-risk |
+| 浜?| ren | 457 | 479 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.956 | - | weak-usage,high-modernity-risk |
+| 浠?| ta | 455 | 478 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.951 | - | weak-usage,high-modernity-risk |
+| 鏉?| lai | 450 | 475 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.938 | - | weak-usage,high-modernity-risk |
+| 涓?| shang | 447 | 473 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.931 | - | weak-usage,high-modernity-risk |
+| 澶?| da | 445 | 471 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.926 | - | weak-usage,high-modernity-risk |
+| 灏?| jiu | 444 | 471 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.923 | - | weak-usage,high-modernity-risk |
+| 鍒?| dao | 441 | 469 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.916 | - | weak-usage,high-modernity-risk |
+| 鐫€ | zhe | 440 | 468 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.914 | - | weak-usage,high-modernity-risk |
+| 浣?| ni | 437 | 466 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.906 | - | weak-usage,high-modernity-risk |
+| 瑕?| yao | 435 | 465 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.901 | - | weak-usage,high-modernity-risk |
+| 閭?| na | 430 | 462 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.889 | - | weak-usage,high-modernity-risk |
+| 鍘?| qu | 430 | 462 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.889 | - | weak-usage,high-modernity-risk |
+| 涔?| ye | 430 | 462 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.889 | - | weak-usage,high-modernity-risk |
+| 瀛?| zi | 428 | 460 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.884 | - | weak-usage,high-modernity-risk |
+| 鍑?| chu | 428 | 460 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.884 | - | weak-usage,high-modernity-risk |
+| 杩?| zhe | 427 | 460 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.881 | - | weak-usage,high-modernity-risk |
+| 浼?| hui | 426 | 459 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.879 | - | weak-usage,high-modernity-risk |
+

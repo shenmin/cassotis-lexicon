@@ -565,6 +565,21 @@ def _compute_weight_with_signals(
     pageview_bonus = int(round(92.0 * math.sqrt(bounded_pageviews))) if bounded_pageviews > 0 else 0
     wiki_bonus = 20 if wiki_hit else 0
     core_bonus = 18 if core_entry else 0
+    phrase_bonus = int(
+        round(
+            _compute_common_phrase_confidence(
+                text,
+                usage_score=bounded_usage,
+                source_hits=source_hits,
+                pageview_score=bounded_pageviews,
+                jieba_direct_score=jieba_direct_score,
+                wiki_support=wiki_hit,
+                pos_tag=pos_tag,
+                char_score=char_score,
+            )
+            * 220.0
+        )
+    )
     class_bonus = int(round(_compute_term_class_bias() * 180.0))
     # Keep a global cap for compatibility with downstream consumers.
     # The current formula generally peaks below 1000 for realistic inputs.
@@ -572,7 +587,14 @@ def _compute_weight_with_signals(
         1000,
         max(
             1,
-            base + usage_bonus + consensus_bonus + pageview_bonus + wiki_bonus + core_bonus + class_bonus,
+            base
+            + usage_bonus
+            + consensus_bonus
+            + pageview_bonus
+            + wiki_bonus
+            + core_bonus
+            + phrase_bonus
+            + class_bonus,
         ),
     )
 
@@ -1235,6 +1257,98 @@ def _compute_effective_pos_bias(
     # Keep a small floor to preserve deterministic ordering, while avoiding over-penalization.
     confidence = min(1.0, max(0.08, confidence))
     return base_bias * confidence
+
+
+def _compute_common_phrase_confidence(
+    text: str,
+    usage_score: float,
+    source_hits: int,
+    pageview_score: float,
+    jieba_direct_score: float,
+    wiki_support: bool,
+    pos_tag: str,
+    char_score: float,
+) -> float:
+    """
+    Estimate cold-start confidence for common multi-syllable phrases.
+
+    The goal is to help 3-6 character daily phrases surface earlier without
+    turning wiki/pageview bursts into generic phrase boosts.
+    """
+    text_len = _cjk_len(text)
+    if text_len < 3 or text_len > 6:
+        return 0.0
+
+    bounded_usage = min(1.0, max(0.0, usage_score))
+    bounded_pageviews = min(1.0, max(0.0, pageview_score))
+    bounded_jieba = min(1.0, max(0.0, jieba_direct_score))
+    normalized_hits = min(1.0, max(0.0, float(source_hits) / 3.0))
+
+    looks_like_person_name = _looks_like_low_signal_person_name(
+        text,
+        usage_score=bounded_usage,
+        source_hits=source_hits,
+        pageview_score=bounded_pageviews,
+        jieba_direct_score=bounded_jieba,
+        wiki_support=wiki_support,
+        pos_tag=pos_tag,
+    )
+    looks_like_place_name = _looks_like_low_signal_place_name(
+        text,
+        usage_score=bounded_usage,
+        source_hits=source_hits,
+        pageview_score=bounded_pageviews,
+        jieba_direct_score=bounded_jieba,
+        wiki_support=wiki_support,
+        pos_tag=pos_tag,
+    )
+    looks_like_literary_term = _looks_like_low_signal_literary_term(
+        text,
+        usage_score=bounded_usage,
+        source_hits=source_hits,
+        pageview_score=bounded_pageviews,
+        jieba_direct_score=bounded_jieba,
+        wiki_support=wiki_support,
+        pos_tag=pos_tag,
+        char_score=char_score,
+    )
+    if looks_like_person_name or looks_like_place_name or looks_like_literary_term:
+        return 0.0
+    if _is_named_entity_pos(pos_tag) and source_hits < 3 and bounded_jieba < 0.18:
+        return 0.0
+
+    confidence = (
+        bounded_usage * 0.34
+        + bounded_jieba * 0.46
+        + bounded_pageviews * 0.12
+        + normalized_hits * 0.20
+    )
+
+    if _is_conversational_pos(pos_tag):
+        confidence += 0.12 if text_len <= 4 else 0.08
+    elif _is_noun_pos(pos_tag):
+        confidence += 0.08 if text_len <= 4 else 0.04
+
+    if text_len == 3 and char_score >= 0.52:
+        confidence += 0.04
+    elif text_len <= 5 and char_score >= 0.46:
+        confidence += 0.02
+
+    if bounded_jieba >= 0.18 and source_hits >= 2:
+        confidence += 0.12
+    elif bounded_jieba >= 0.12 and bounded_usage >= 0.12:
+        confidence += 0.08
+    elif bounded_jieba >= 0.08 and source_hits >= 2:
+        confidence += 0.04
+
+    if bounded_pageviews >= 0.20 and bounded_jieba < 0.05 and source_hits <= 1:
+        confidence -= 0.10
+    if bounded_usage < 0.04 and bounded_jieba < 0.04:
+        confidence *= 0.40
+    if text_len >= 5 and bounded_jieba < 0.06 and source_hits <= 1:
+        confidence *= 0.65
+
+    return min(1.0, max(0.0, confidence))
 
 
 def _build_effective_char_prior(
@@ -3260,6 +3374,33 @@ def _iter_recent_complete_months(month_count: int) -> List[Tuple[int, int]]:
     return months
 
 
+def _finalize_pageviews_aggregate(
+    aggregate_weighted_views: Dict[str, float],
+    aggregate_month_hits: Dict[str, int],
+    aggregate_peak_views: Dict[str, int],
+) -> Dict[str, int]:
+    finalized: Dict[str, int] = {}
+    for title, weighted_views in aggregate_weighted_views.items():
+        if weighted_views <= 0.0:
+            continue
+
+        month_hits = max(0, aggregate_month_hits.get(title, 0))
+        peak_views = max(0, aggregate_peak_views.get(title, 0))
+        persistence_factor = 1.0 + min(0.32, max(0, month_hits - 1) * 0.06)
+        if month_hits >= 4:
+            persistence_factor += 0.04
+
+        score = weighted_views * persistence_factor
+        if peak_views > 0:
+            if month_hits >= 2:
+                score += peak_views * 0.05
+            else:
+                score += peak_views * 0.02
+
+        finalized[title] = max(1, int(round(score)))
+    return finalized
+
+
 def _parse_wikimedia_pageviews_payload(
     payload: bytes,
     min_hanzi: int,
@@ -3318,11 +3459,16 @@ def _load_wikimedia_pageviews_entries(
         "pageviews_articles_title_filtered": 0,
         "pageviews_articles_kept": 0,
     }
-    aggregate: Dict[str, int] = {}
+    aggregate_weighted_views: Dict[str, float] = {}
+    aggregate_month_hits: Dict[str, int] = {}
+    aggregate_peak_views: Dict[str, int] = {}
     cache_dir = repo_root / "data" / "cache" / "wikimedia_pageviews"
     base_url = source_url.rstrip("/")
+    persistent_terms_2plus = 0
+    persistent_terms_4plus = 0
 
-    for year, month in _iter_recent_complete_months(months):
+    recent_months = _iter_recent_complete_months(months)
+    for month_index, (year, month) in enumerate(recent_months):
         cache_file = cache_dir / f"zhwiki_top_{year:04d}{month:02d}.json"
         payload: bytes
         if cache_file.exists():
@@ -3358,10 +3504,27 @@ def _load_wikimedia_pageviews_entries(
             "pageviews_articles_kept",
         ):
             stats[key] += int(month_stats.get(key, 0))
+        recency_weight = 0.88 ** month_index
         for title, views in month_entries.items():
-            aggregate[title] = aggregate.get(title, 0) + views
+            aggregate_weighted_views[title] = aggregate_weighted_views.get(title, 0.0) + (
+                float(views) * recency_weight
+            )
+            aggregate_month_hits[title] = aggregate_month_hits.get(title, 0) + 1
+            aggregate_peak_views[title] = max(aggregate_peak_views.get(title, 0), views)
 
+    aggregate = _finalize_pageviews_aggregate(
+        aggregate_weighted_views,
+        aggregate_month_hits,
+        aggregate_peak_views,
+    )
+    for count in aggregate_month_hits.values():
+        if count >= 2:
+            persistent_terms_2plus += 1
+        if count >= 4:
+            persistent_terms_4plus += 1
     stats["pageviews_unique_terms"] = len(aggregate)
+    stats["pageviews_persistent_terms_2plus"] = persistent_terms_2plus
+    stats["pageviews_persistent_terms_4plus"] = persistent_terms_4plus
     if months > 0 and stats["pageviews_months_loaded"] == 0:
         raise ValueError(
             "failed to load Wikimedia pageviews data for all requested months; "
