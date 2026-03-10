@@ -14,15 +14,15 @@ Cassotis IME 词库构建与发布仓库。
 
 ## 仓库定位
 - 维护词库构建脚本、来源清单与生成产物。
-- 支持外部来源启动与词库发布流程。
+- 支持外部公开来源启动与词库发布流程。
 - 维护归因与发布规范，确保与仓库产物一致。
 
 ## 当前词库快照（2026-03-10 构建）
 
 | 文件 | 字体变体 | 词条数 |
 |------|---------|--------|
-| `data/generated/dict_clean_sc.txt` | 简体中文主词库 | 103,743 |
-| `data/generated/dict_clean_tc.txt` | 繁体中文主词库 | 101,816 |
+| `data/generated/dict_clean_sc.txt` | 简体中文主词库 | 103,729 |
+| `data/generated/dict_clean_tc.txt` | 繁体中文主词库 | 101,798 |
 | `data/generated/dict_unihan_sc.txt` | 简体单字（Unihan） | 23,973 |
 | `data/generated/dict_unihan_tc.txt` | 繁体单字（Unihan） | 24,130 |
 
