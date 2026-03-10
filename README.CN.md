@@ -6,15 +6,15 @@ Cassotis IME 词库构建与发布仓库。
 
 ## 仓库定位
 - 维护词库构建脚本、来源清单与生成产物。
-- 支持“外部公开来源启动”与“私有语料融合”的构建流程。
-- 维护归因与发布规范，确保与外部发布产物一致。
+- 支持外部来源启动与词库发布流程。
+- 维护归因与发布规范，确保与仓库产物一致。
 
-## 当前词库快照（2026-03-07 构建）
+## 当前词库快照（2026-03-10 构建）
 
 | 文件 | 字体变体 | 词条数 |
 |------|---------|--------|
-| `data/generated/dict_clean_sc.txt` | 简体中文主词库 | 103,586 |
-| `data/generated/dict_clean_tc.txt` | 繁体中文主词库 | 93,746 |
+| `data/generated/dict_clean_sc.txt` | 简体中文主词库 | 103,743 |
+| `data/generated/dict_clean_tc.txt` | 繁体中文主词库 | 101,816 |
 | `data/generated/dict_unihan_sc.txt` | 简体单字（Unihan） | 23,973 |
 | `data/generated/dict_unihan_tc.txt` | 繁体单字（Unihan） | 24,130 |
 
@@ -31,8 +31,9 @@ Cassotis IME 词库构建与发布仓库。
 | Wikimedia Pageviews Top（zh.wikipedia） | CC BY-SA 4.0 | 真实热度信号 |
 
 详见：
-- `manifests/sources.public.yml`
 - `attribution/ATTRIBUTION.md`
+- `reports/external_build_report.md`
+- `reports/unihan_build_report.md`
 
 ## 外部词库导入后的优化与过滤思路
 - 对多来源词条做格式归一、去重合并，统一拼音与文本键。
@@ -48,7 +49,7 @@ Cassotis IME 词库构建与发布仓库。
 - `reports/`：构建报告。
 - `rules/`：导出与发布规则。
 
-## 构建与校验
+## 构建
 
 ```powershell
 # 全量重建（external_broad + unihan_single + 回归校验）
@@ -59,5 +60,4 @@ Cassotis IME 词库构建与发布仓库。
 ```
 
 ## 约束
-- 外部仓库的 commit message 必须使用英文。
-- 禁止提交私有原始语料、草稿与作者文稿。
+- 禁止提交原始语料文件、草稿与作者文稿。
