@@ -154,6 +154,8 @@ COPYLEFT_LICENSE_TOKENS = (
     "copyleft",
 )
 
+QUERY_PATH_FILE_SEPARATOR = "|"
+
 PROFILE_DEFAULTS: Dict[str, Dict[str, object]] = {
     "external_cedict": {
         "parser": "cedict",
@@ -372,6 +374,10 @@ def _normalize_pinyin(raw: str) -> str:
 
 def _cjk_len(text: str) -> int:
     return len(CJK_RE.findall(text))
+
+
+def _split_text_units(text: str) -> List[str]:
+    return [ch for ch in text if ch]
 
 
 def _is_windows_renderable_cjk_text(text: str) -> bool:
@@ -3447,7 +3453,7 @@ def _load_wikimedia_pageviews_entries(
     min_hanzi: int,
     months: int,
     max_rank: int,
-) -> Tuple[Dict[str, int], Dict[str, int]]:
+) -> Tuple[Dict[str, int], Dict[str, int], Dict[str, int], Dict[str, int]]:
     stats = {
         "pageviews_months_requested": months,
         "pageviews_months_loaded": 0,
@@ -3530,7 +3536,7 @@ def _load_wikimedia_pageviews_entries(
             "failed to load Wikimedia pageviews data for all requested months; "
             "check network connectivity or reduce --pageviews-months"
         )
-    return aggregate, stats
+    return aggregate, stats, aggregate_month_hits, aggregate_peak_views
 
 
 def _parse_jieba_frequency_entries(
@@ -4837,6 +4843,23 @@ def _normalize_pageviews_entries_to_sc(
     return normalized
 
 
+def _normalize_metric_map_to_sc(
+    metric_map: Dict[str, int],
+    tc_to_sc_map: Dict[str, Set[str]],
+) -> Dict[str, int]:
+    normalized: Dict[str, int] = {}
+    for word, value in metric_map.items():
+        if value <= 0:
+            continue
+        mapped_sc = tc_to_sc_map.get(word, set())
+        if mapped_sc:
+            for sc_word in mapped_sc:
+                normalized[sc_word] = max(normalized.get(sc_word, 0), value)
+        else:
+            normalized[word] = max(normalized.get(word, 0), value)
+    return normalized
+
+
 def _normalize_sc_mapping_with_opencc(
     sc_map: Dict[Tuple[str, str], int],
     tc_to_sc_map: Dict[str, Set[str]],
@@ -4914,6 +4937,35 @@ def _build_normalized_signal_map(
     return normalized
 
 
+def _build_pageviews_burst_signal_map(
+    aggregate_entries: Dict[str, int],
+    month_hits_map: Dict[str, int],
+    peak_views_map: Dict[str, int],
+) -> Dict[str, float]:
+    burst_signal: Dict[str, float] = {}
+    for word, total_views in aggregate_entries.items():
+        if total_views <= 0:
+            continue
+        month_hits = max(1, month_hits_map.get(word, 0))
+        peak_views = max(0, peak_views_map.get(word, 0))
+        if peak_views <= 0:
+            continue
+
+        average_views = max(1.0, float(total_views) / float(month_hits))
+        concentration = float(peak_views) / average_views
+        burst = min(1.0, max(0.0, (concentration - 1.15) / 2.75))
+        if month_hits >= 4:
+            burst *= 0.22
+        elif month_hits >= 3:
+            burst *= 0.45
+        elif month_hits == 2:
+            burst *= 0.72
+
+        if burst > 0.0:
+            burst_signal[word] = burst
+    return burst_signal
+
+
 def _build_direct_frequency_signal_map(
     source_frequency_map: Dict[str, int],
     power: float = 3.0,
@@ -4989,6 +5041,8 @@ def _build_usage_signal_map(
     thuocl_signal_map: Dict[str, float],
     jieba_signal_map: Dict[str, float],
     pageviews_signal_map: Dict[str, float],
+    pageviews_persistence_signal_map: Dict[str, float] | None = None,
+    pageviews_burst_signal_map: Dict[str, float] | None = None,
     jieba_pos_map: Dict[str, str] | None = None,
     jieba_direct_signal_map: Dict[str, float] | None = None,
 ) -> Tuple[Dict[str, float], Dict[str, int]]:
@@ -5003,6 +5057,8 @@ def _build_usage_signal_map(
 
     usage_score_map: Dict[str, float] = {}
     source_hits_map: Dict[str, int] = {}
+    pageviews_persistence_signal_map = pageviews_persistence_signal_map or {}
+    pageviews_burst_signal_map = pageviews_burst_signal_map or {}
     jieba_pos_map = jieba_pos_map or {}
     jieba_direct_signal_map = jieba_direct_signal_map or {}
 
@@ -5013,9 +5069,20 @@ def _build_usage_signal_map(
         thuocl_score = thuocl_signal_map.get(term, 0.0)
         jieba_score = jieba_signal_map.get(term, 0.0)
         pageviews_score = pageviews_signal_map.get(term, 0.0)
+        pageviews_persistence = pageviews_persistence_signal_map.get(term, 0.0)
+        pageviews_burst = pageviews_burst_signal_map.get(term, 0.0)
+        effective_pageviews_score = min(
+            1.0,
+            max(
+                0.0,
+                pageviews_score * 0.72
+                + pageviews_persistence * 0.28
+                - pageviews_burst * 0.14,
+            ),
+        )
         thuocl_hit = thuocl_score >= 0.10
         jieba_hit = jieba_score >= 0.06
-        pageviews_hit = pageviews_score >= 0.05
+        pageviews_hit = effective_pageviews_score >= 0.05
         source_hits = int(thuocl_hit) + int(jieba_hit) + int(pageviews_hit)
         if source_hits <= 0:
             continue
@@ -5023,7 +5090,7 @@ def _build_usage_signal_map(
         score = (
             source_weights["thuocl"] * thuocl_score
             + source_weights["jieba"] * jieba_score
-            + source_weights["pageviews"] * pageviews_score
+            + source_weights["pageviews"] * effective_pageviews_score
         )
         if source_hits > 1:
             score += consensus_step * (source_hits - 1)
@@ -5046,6 +5113,15 @@ def _build_usage_signal_map(
         else:
             score *= 1.00
 
+        if (pageviews_burst >= 0.40) and (pageviews_persistence < 0.16) and (source_hits <= 1):
+            score *= 0.72
+        elif (pageviews_burst >= 0.26) and (pageviews_persistence < 0.20) and (source_hits <= 1):
+            score *= 0.84
+        elif (pageviews_persistence >= 0.42) and (source_hits >= 2):
+            score *= 1.05
+        elif (pageviews_persistence >= 0.30) and (jieba_score >= 0.08):
+            score *= 1.03
+
         pos_tag = jieba_pos_map.get(term, "")
         if _is_named_entity_pos(pos_tag):
             jieba_direct_score = min(1.0, max(0.0, jieba_direct_signal_map.get(term, 0.0)))
@@ -5053,25 +5129,25 @@ def _build_usage_signal_map(
                 term,
                 usage_score=score,
                 source_hits=source_hits,
-                pageview_score=pageviews_score,
+                pageview_score=effective_pageviews_score,
                 jieba_direct_score=jieba_direct_score,
-                wiki_support=pageviews_score >= 0.08 or source_hits >= 2,
+                wiki_support=effective_pageviews_score >= 0.08 or source_hits >= 2,
                 pos_tag=pos_tag,
             )
             looks_like_place_name = _looks_like_low_signal_place_name(
                 term,
                 usage_score=score,
                 source_hits=source_hits,
-                pageview_score=pageviews_score,
+                pageview_score=effective_pageviews_score,
                 jieba_direct_score=jieba_direct_score,
-                wiki_support=pageviews_score >= 0.08 or source_hits >= 2,
+                wiki_support=effective_pageviews_score >= 0.08 or source_hits >= 2,
                 pos_tag=pos_tag,
             )
             short_ambiguous_named_entity = (
                 _cjk_len(term) <= 2
                 and (not looks_like_person_name)
                 and (not looks_like_place_name)
-                and pageviews_score < 0.20
+                and effective_pageviews_score < 0.20
                 and source_hits <= 1
             )
             # Named entities are useful, but web/wiki popularity alone can
@@ -5090,13 +5166,13 @@ def _build_usage_signal_map(
                 score *= 0.94 if short_ambiguous_named_entity else 0.80
 
             if (
-                pageviews_score >= 0.30
+                effective_pageviews_score >= 0.30
                 and source_hits >= 2
                 and jieba_direct_score >= 0.12
             ):
                 score *= 1.08
             elif (
-                pageviews_score >= 0.20
+                effective_pageviews_score >= 0.20
                 and source_hits >= 2
                 and jieba_direct_score >= 0.08
             ):
@@ -5608,6 +5684,258 @@ def _write_dict(path: pathlib.Path, mapping: Dict[Tuple[str, str], int]) -> None
             f.write(f"{pinyin}\t{text}\t{weight}\n")
 
 
+def _build_query_path_prior_map(
+    mapping: Dict[Tuple[str, str], int],
+    usage_score_map: Dict[str, float],
+    source_hits_map: Dict[str, int],
+    pageviews_signal_map: Dict[str, float],
+    jieba_direct_signal_map: Dict[str, float] | None,
+    jieba_pos_map: Dict[str, str] | None,
+    char_frequency_prior: Dict[str, float] | None,
+    stats_prefix: str,
+) -> Tuple[Dict[Tuple[str, str], int], Dict[str, int]]:
+    stats = {
+        f"{stats_prefix}_query_path_terms_considered": 0,
+        f"{stats_prefix}_query_path_terms_emitted": 0,
+        f"{stats_prefix}_query_path_full_entries": 0,
+        f"{stats_prefix}_query_path_prefix_entries": 0,
+    }
+    if not mapping:
+        return {}, stats
+
+    jieba_direct_signal_map = jieba_direct_signal_map or {}
+    jieba_pos_map = jieba_pos_map or {}
+    char_frequency_prior = char_frequency_prior or {}
+
+    entries_by_text: Dict[str, List[Tuple[str, int]]] = {}
+    for (pinyin, text), weight in mapping.items():
+        text_len = _cjk_len(text)
+        if weight <= 0 or text_len <= 0 or text_len > 6:
+            continue
+        entries_by_text.setdefault(text, []).append((pinyin, weight))
+
+    for text in entries_by_text.keys():
+        entries_by_text[text].sort(key=lambda item: (-item[1], len(item[0]), item[0]))
+
+    priors: Dict[Tuple[str, str], int] = {}
+
+    def _segment_confidence(text: str, weight: int) -> float:
+        usage_score = min(1.0, max(0.0, usage_score_map.get(text, 0.0)))
+        source_hits = source_hits_map.get(text, 0)
+        pageview_score = min(1.0, max(0.0, pageviews_signal_map.get(text, 0.0)))
+        jieba_direct_score = min(1.0, max(0.0, jieba_direct_signal_map.get(text, 0.0)))
+        pos_tag = jieba_pos_map.get(text, "")
+        char_score = _compute_text_single_char_prior(text, char_frequency_prior)
+        phrase_conf = _compute_common_phrase_confidence(
+            text,
+            usage_score=usage_score,
+            source_hits=source_hits,
+            pageview_score=pageview_score,
+            jieba_direct_score=jieba_direct_score,
+            wiki_support=pageview_score >= 0.08 or source_hits >= 2,
+            pos_tag=pos_tag,
+            char_score=char_score,
+        )
+        confidence = phrase_conf
+        if weight >= 620:
+            confidence += 0.12
+        elif weight >= 460:
+            confidence += 0.06
+        return min(1.0, max(0.0, confidence))
+
+    def _score_segment(
+        segment_text: str,
+        segment_weight: int,
+        segment_confidence: float,
+        is_first: bool,
+        is_last: bool,
+    ) -> int:
+        segment_len = _cjk_len(segment_text)
+        score = max(24, int(round(segment_weight * 0.44)))
+        score += int(round(segment_confidence * 220.0))
+        score += segment_len * 28
+        if segment_len >= 2:
+            score += 34
+        if segment_len >= 3 and segment_confidence >= 0.18:
+            score += 26
+        if segment_len == 1:
+            score -= 68
+            if not is_first and not is_last:
+                score -= 74
+            elif is_first:
+                score -= 28
+            elif is_last:
+                score -= 22
+        return score
+
+    def _score_path(segments: List[Tuple[str, str, int]]) -> int:
+        segment_count = len(segments)
+        if segment_count < 2:
+            return -10_000
+
+        score = 0
+        all_multi_char = True
+        has_middle_single_char = False
+        for idx, (segment_pinyin, segment_text, segment_weight) in enumerate(segments):
+            del segment_pinyin
+            segment_len = _cjk_len(segment_text)
+            if segment_len <= 1:
+                all_multi_char = False
+                if idx > 0 and idx < segment_count - 1:
+                    has_middle_single_char = True
+            score += _score_segment(
+                segment_text,
+                segment_weight,
+                _segment_confidence(segment_text, segment_weight),
+                is_first=(idx == 0),
+                is_last=(idx == segment_count - 1),
+            )
+
+        if segment_count == 2:
+            score += 152
+        elif segment_count == 3:
+            score += 96
+        else:
+            score += 48 - ((segment_count - 3) * 52)
+
+        if all_multi_char:
+            score += 84
+        if has_middle_single_char:
+            score -= 120
+
+        return score
+
+    def _maybe_add_prior(query_pinyin: str, path_segments: List[str], weight: int) -> bool:
+        if weight <= 0 or len(path_segments) < 2:
+            return False
+        path_text = QUERY_PATH_FILE_SEPARATOR.join(path_segments)
+        key = (query_pinyin, path_text)
+        previous = priors.get(key, 0)
+        if weight > previous:
+            priors[key] = weight
+            return True
+        return False
+
+    for (full_pinyin, full_text), full_weight in mapping.items():
+        text_units = _split_text_units(full_text)
+        text_len = len(text_units)
+        if full_weight <= 0 or text_len < 3 or text_len > 6:
+            continue
+
+        full_usage_score = min(1.0, max(0.0, usage_score_map.get(full_text, 0.0)))
+        full_source_hits = source_hits_map.get(full_text, 0)
+        full_pageview_score = min(1.0, max(0.0, pageviews_signal_map.get(full_text, 0.0)))
+        full_jieba_direct_score = min(1.0, max(0.0, jieba_direct_signal_map.get(full_text, 0.0)))
+        full_pos_tag = jieba_pos_map.get(full_text, "")
+        full_char_score = _compute_text_single_char_prior(full_text, char_frequency_prior)
+        full_phrase_confidence = _compute_common_phrase_confidence(
+            full_text,
+            usage_score=full_usage_score,
+            source_hits=full_source_hits,
+            pageview_score=full_pageview_score,
+            jieba_direct_score=full_jieba_direct_score,
+            wiki_support=full_pageview_score >= 0.08 or full_source_hits >= 2,
+            pos_tag=full_pos_tag,
+            char_score=full_char_score,
+        )
+        if (full_phrase_confidence < 0.16) and (full_weight < 560):
+            continue
+
+        stats[f"{stats_prefix}_query_path_terms_considered"] += 1
+        candidate_paths: Dict[str, Tuple[int, List[Tuple[str, str, int]]]] = {}
+
+        def _walk(
+            unit_index: int,
+            pinyin_index: int,
+            current_segments: List[Tuple[str, str, int]],
+        ) -> None:
+            if len(current_segments) > 4:
+                return
+            if unit_index == text_len and pinyin_index == len(full_pinyin):
+                if len(current_segments) >= 2:
+                    path_key = QUERY_PATH_FILE_SEPARATOR.join(seg_text for _seg_pinyin, seg_text, _seg_weight in current_segments)
+                    path_score = _score_path(current_segments)
+                    existing = candidate_paths.get(path_key)
+                    if existing is None or path_score > existing[0]:
+                        candidate_paths[path_key] = (path_score, list(current_segments))
+                return
+            if unit_index >= text_len or pinyin_index >= len(full_pinyin):
+                return
+
+            max_end = min(text_len, unit_index + 4)
+            for next_unit_index in range(unit_index + 1, max_end + 1):
+                segment_text = "".join(text_units[unit_index:next_unit_index])
+                for segment_pinyin, segment_weight in entries_by_text.get(segment_text, []):
+                    if not full_pinyin.startswith(segment_pinyin, pinyin_index):
+                        continue
+                    next_pinyin_index = pinyin_index + len(segment_pinyin)
+                    if next_pinyin_index > len(full_pinyin):
+                        continue
+                    if (next_unit_index == text_len) != (next_pinyin_index == len(full_pinyin)):
+                        continue
+                    current_segments.append((segment_pinyin, segment_text, segment_weight))
+                    _walk(next_unit_index, next_pinyin_index, current_segments)
+                    current_segments.pop()
+
+        _walk(0, 0, [])
+        if not candidate_paths:
+            continue
+
+        ranked_paths = sorted(
+            candidate_paths.values(),
+            key=lambda item: (
+                item[0],
+                -len(item[1]),
+                sum(_cjk_len(seg_text) for _seg_pinyin, seg_text, _seg_weight in item[1]),
+            ),
+            reverse=True,
+        )
+        best_score, best_segments = ranked_paths[0]
+        second_score = ranked_paths[1][0] if len(ranked_paths) > 1 else best_score - 180
+        score_margin = best_score - second_score
+        if len(ranked_paths) > 1 and score_margin < 24:
+            continue
+
+        path_weight = 76 + min(176, max(0, best_score // 6))
+        path_weight += int(round(full_phrase_confidence * 170.0))
+        path_weight += min(148, max(24, score_margin))
+        if all(_cjk_len(seg_text) >= 2 for _seg_pinyin, seg_text, _seg_weight in best_segments):
+            path_weight += 36
+        path_weight = max(72, min(520, path_weight))
+
+        best_query_pinyin = "".join(seg_pinyin for seg_pinyin, _seg_text, _seg_weight in best_segments)
+        best_path_segments = [seg_text for _seg_pinyin, seg_text, _seg_weight in best_segments]
+        if best_query_pinyin != full_pinyin:
+            continue
+
+        _maybe_add_prior(full_pinyin, best_path_segments, path_weight)
+        stats[f"{stats_prefix}_query_path_terms_emitted"] += 1
+        stats[f"{stats_prefix}_query_path_full_entries"] += 1
+
+        prefix_query = ""
+        prefix_segments: List[str] = []
+        for idx, (segment_pinyin, segment_text, _segment_weight) in enumerate(best_segments):
+            prefix_query += segment_pinyin
+            prefix_segments.append(segment_text)
+            if idx < 1 or idx >= len(best_segments) - 1:
+                continue
+            prefix_weight = path_weight - 44 - ((len(best_segments) - idx - 1) * 38)
+            prefix_weight = max(64, min(path_weight, prefix_weight))
+            if _maybe_add_prior(prefix_query, prefix_segments, prefix_weight):
+                stats[f"{stats_prefix}_query_path_prefix_entries"] += 1
+
+    return priors, stats
+
+
+def _write_query_path_prior(path: pathlib.Path, mapping: Dict[Tuple[str, str], int]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", encoding="utf-8", newline="\n") as f:
+        for (query_pinyin, path_text), weight in sorted(
+            mapping.items(), key=lambda kv: (kv[0][0], kv[0][1], -kv[1])
+        ):
+            f.write(f"{query_pinyin}\t{path_text}\t{weight}\n")
+
+
 def _write_manifest(path: pathlib.Path, profile: str, sources: List[Dict[str, object]]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     generated_at = dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat()
@@ -5639,12 +5967,22 @@ def _write_manifest(path: pathlib.Path, profile: str, sources: List[Dict[str, ob
     path.write_text("\n".join(lines), encoding="utf-8", newline="\n")
 
 
+def _format_report_path(path: pathlib.Path) -> str:
+    repo_root = pathlib.Path(__file__).resolve().parents[1]
+    try:
+        return str(path.relative_to(repo_root)).replace("\\", "/")
+    except ValueError:
+        return str(path)
+
+
 def _write_report(
     path: pathlib.Path,
     profile: str,
     sources: List[Dict[str, object]],
     output_sc: pathlib.Path,
     output_tc: pathlib.Path,
+    output_query_path_sc: pathlib.Path | None,
+    output_query_path_tc: pathlib.Path | None,
     stats: Dict[str, int],
     count_sc: int,
     count_tc: int,
@@ -5685,14 +6023,20 @@ def _write_report(
         [
             "",
             "## Output",
-            f"- sc_file: {output_sc}",
-            f"- tc_file: {output_tc}",
+            f"- sc_file: {_format_report_path(output_sc)}",
+            f"- tc_file: {_format_report_path(output_tc)}",
             f"- sc_entries: {count_sc}",
             f"- tc_entries: {count_tc}",
             f"- suspicious_sc_entries: {len(suspicious_sc)}",
             "",
         ]
     )
+    if output_query_path_sc is not None:
+        lines.append(f"- sc_query_path_file: {_format_report_path(output_query_path_sc)}")
+    if output_query_path_tc is not None:
+        lines.append(f"- tc_query_path_file: {_format_report_path(output_query_path_tc)}")
+    if (output_query_path_sc is not None) or (output_query_path_tc is not None):
+        lines.append("")
 
     if suspicious_sc:
         for item in suspicious_sc:
@@ -5914,6 +6258,8 @@ def main() -> int:
     )
     parser.add_argument("--output-sc", default="data/generated/dict_clean_sc.txt")
     parser.add_argument("--output-tc", default="data/generated/dict_clean_tc.txt")
+    parser.add_argument("--query-path-output-sc", default="")
+    parser.add_argument("--query-path-output-tc", default="")
     parser.add_argument("--manifest", default="manifests/sources.public.yml")
     parser.add_argument("--report", default="reports/external_build_report.md")
     parser.add_argument(
@@ -5945,6 +6291,12 @@ def main() -> int:
     repo_root = pathlib.Path(__file__).resolve().parents[1]
     output_sc = repo_root / args.output_sc
     output_tc = repo_root / args.output_tc
+    output_query_path_sc = (
+        repo_root / args.query_path_output_sc if args.query_path_output_sc else None
+    )
+    output_query_path_tc = (
+        repo_root / args.query_path_output_tc if args.query_path_output_tc else None
+    )
     manifest = repo_root / args.manifest
     report = repo_root / args.report
     if args.pageviews_months < 0:
@@ -5963,6 +6315,8 @@ def main() -> int:
     jieba_pos_map: Dict[str, str] = {}
     char_frequency_prior: Dict[str, float] = {}
     pageviews_signal_map: Dict[str, float] = {}
+    pageviews_persistence_signal_map: Dict[str, float] = {}
+    pageviews_burst_signal_map: Dict[str, float] = {}
     wiki_titles: Set[str] = set()
     wiki_alias_sc_terms: Set[str] = set()
     wiki_alias_tc_terms: Set[str] = set()
@@ -5972,6 +6326,8 @@ def main() -> int:
     tc_jieba_pos_map: Dict[str, str] = {}
     tc_char_frequency_prior: Dict[str, float] = {}
     tc_pageviews_signal_map: Dict[str, float] = {}
+    tc_pageviews_persistence_signal_map: Dict[str, float] = {}
+    tc_pageviews_burst_signal_map: Dict[str, float] = {}
     tc_to_sc_map: Dict[str, Set[str]] = {}
     cedict_style_penalty_map: Dict[Tuple[str, str], int] = {}
     primary_cache = repo_root / args.cache_file if args.cache_file else None
@@ -6060,7 +6416,12 @@ def main() -> int:
             source_id="wikimedia-pageviews-top",
             download_url=WIKIMEDIA_PAGEVIEWS_TOP_URL,
         )
-        pageviews_entries, pageviews_stats = _load_wikimedia_pageviews_entries(
+        (
+            pageviews_entries,
+            pageviews_stats,
+            pageviews_month_hits,
+            pageviews_peak_views,
+        ) = _load_wikimedia_pageviews_entries(
             repo_root=repo_root,
             source_url=str(pageviews_source["download_url"]),
             min_hanzi=args.min_hanzi,
@@ -6076,10 +6437,21 @@ def main() -> int:
         jieba_direct_signal_map = _build_direct_frequency_signal_map(jieba_entries)
         char_frequency_prior = _build_char_frequency_prior(jieba_entries)
         pageviews_signal_map = _build_normalized_signal_map(pageviews_entries_sc)
+        pageviews_persistence_signal_map = _build_normalized_signal_map(
+            _normalize_metric_map_to_sc(pageviews_month_hits, tc_to_sc_map),
+            percentile=100.0,
+        )
+        pageviews_burst_signal_map = _build_pageviews_burst_signal_map(
+            pageviews_entries_sc,
+            _normalize_metric_map_to_sc(pageviews_month_hits, tc_to_sc_map),
+            _normalize_metric_map_to_sc(pageviews_peak_views, tc_to_sc_map),
+        )
         usage_score_map, source_hits_map = _build_usage_signal_map(
             thuocl_signal_map,
             jieba_signal_map,
             pageviews_signal_map,
+            pageviews_persistence_signal_map=pageviews_persistence_signal_map,
+            pageviews_burst_signal_map=pageviews_burst_signal_map,
             jieba_pos_map=jieba_pos_map,
             jieba_direct_signal_map=jieba_direct_signal_map,
         )
@@ -6102,6 +6474,12 @@ def main() -> int:
         tc_jieba_pos_map = _build_tc_pos_map(jieba_pos_map, tc_to_sc_map)
         tc_char_frequency_prior = _build_tc_signal_map(char_frequency_prior, tc_to_sc_map)
         tc_pageviews_signal_map = _build_tc_signal_map(pageviews_signal_map, tc_to_sc_map)
+        tc_pageviews_persistence_signal_map = _build_tc_signal_map(
+            pageviews_persistence_signal_map, tc_to_sc_map
+        )
+        tc_pageviews_burst_signal_map = _build_tc_signal_map(
+            pageviews_burst_signal_map, tc_to_sc_map
+        )
         (
             trad_to_simp_char_map,
             simp_to_trad_char_map,
@@ -6197,6 +6575,8 @@ def main() -> int:
         stats["jieba_direct_score_terms"] = len(jieba_direct_signal_map)
         stats["jieba_pos_terms"] = len(jieba_pos_map)
         stats["char_frequency_prior_terms"] = len(char_frequency_prior)
+        stats["pageviews_persistence_terms"] = len(pageviews_persistence_signal_map)
+        stats["pageviews_burst_terms"] = len(pageviews_burst_signal_map)
         stats.update(wiki_stats)
         stats.update(sc_rescore_stats)
         stats.update(tc_rescore_stats)
@@ -6213,6 +6593,8 @@ def main() -> int:
         stats["tc_jieba_pos_terms"] = len(tc_jieba_pos_map)
         stats["tc_char_frequency_prior_terms"] = len(tc_char_frequency_prior)
         stats["tc_pageviews_score_terms"] = len(tc_pageviews_signal_map)
+        stats["tc_pageviews_persistence_terms"] = len(tc_pageviews_persistence_signal_map)
+        stats["tc_pageviews_burst_terms"] = len(tc_pageviews_burst_signal_map)
         stats["tc_to_sc_map_terms"] = len(tc_to_sc_map)
         stats["wiki_title_set_size"] = len(wiki_titles)
     elif parser_name == "opencc_unihan":
@@ -6450,6 +6832,34 @@ def main() -> int:
 
     sc_map = _apply_limit(sc_map, args.max_entries)
     tc_map = _apply_limit(tc_map, args.max_entries)
+    sc_query_path_priors: Dict[Tuple[str, str], int] = {}
+    tc_query_path_priors: Dict[Tuple[str, str], int] = {}
+    if output_query_path_sc is not None:
+        sc_query_path_priors, sc_query_path_stats = _build_query_path_prior_map(
+            sc_map,
+            usage_score_map=usage_score_map,
+            source_hits_map=source_hits_map,
+            pageviews_signal_map=pageviews_signal_map,
+            jieba_direct_signal_map=jieba_direct_signal_map,
+            jieba_pos_map=jieba_pos_map,
+            char_frequency_prior=char_frequency_prior,
+            stats_prefix="sc",
+        )
+        stats.update(sc_query_path_stats)
+        stats["sc_query_path_prior_rows"] = len(sc_query_path_priors)
+    if output_query_path_tc is not None:
+        tc_query_path_priors, tc_query_path_stats = _build_query_path_prior_map(
+            tc_map,
+            usage_score_map=tc_usage_score_map,
+            source_hits_map=tc_source_hits_map,
+            pageviews_signal_map=tc_pageviews_signal_map,
+            jieba_direct_signal_map=tc_jieba_direct_signal_map,
+            jieba_pos_map=tc_jieba_pos_map,
+            char_frequency_prior=tc_char_frequency_prior,
+            stats_prefix="tc",
+        )
+        stats.update(tc_query_path_stats)
+        stats["tc_query_path_prior_rows"] = len(tc_query_path_priors)
     suspicious_sc_entries = _collect_suspicious_high_weight_entries(
         sc_map,
         usage_score_map=usage_score_map,
@@ -6464,6 +6874,10 @@ def main() -> int:
 
     _write_dict(output_sc, sc_map)
     _write_dict(output_tc, tc_map)
+    if output_query_path_sc is not None:
+        _write_query_path_prior(output_query_path_sc, sc_query_path_priors)
+    if output_query_path_tc is not None:
+        _write_query_path_prior(output_query_path_tc, tc_query_path_priors)
     _write_manifest(manifest, args.profile, sources)
     _write_report(
         report,
@@ -6471,6 +6885,8 @@ def main() -> int:
         sources,
         output_sc,
         output_tc,
+        output_query_path_sc,
+        output_query_path_tc,
         stats,
         len(sc_map),
         len(tc_map),

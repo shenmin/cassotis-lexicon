@@ -19,6 +19,8 @@ param(
     [string]$PinyinOverrides = "",
     [string]$OutputSc = "",
     [string]$OutputTc = "",
+    [string]$OutputQueryPathSc = "",
+    [string]$OutputQueryPathTc = "",
     [string]$Manifest = "",
     [string]$Report = ""
 )
@@ -112,6 +114,8 @@ if ($SourceNotes -ne "") { $args += @("--source-notes", $SourceNotes) }
 if ($PinyinOverrides -ne "") { $args += @("--pinyin-overrides", $PinyinOverrides) }
 if ($OutputSc -ne "") { $args += @("--output-sc", $OutputSc) }
 if ($OutputTc -ne "") { $args += @("--output-tc", $OutputTc) }
+if ($OutputQueryPathSc -ne "") { $args += @("--query-path-output-sc", $OutputQueryPathSc) }
+if ($OutputQueryPathTc -ne "") { $args += @("--query-path-output-tc", $OutputQueryPathTc) }
 if ($Manifest -ne "") { $args += @("--manifest", $Manifest) }
 if ($Report -ne "") { $args += @("--report", $Report) }
 

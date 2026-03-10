@@ -146,6 +146,8 @@ $buildArgs = @{
     Profile = $Profile
     MinHanzi = $MinHanzi
     MaxEntries = $MaxEntries
+    OutputQueryPathSc = "data/generated/dict_query_path_prior_sc.txt"
+    OutputQueryPathTc = "data/generated/dict_query_path_prior_tc.txt"
 }
 if ($CacheFile -ne "") { $buildArgs["CacheFile"] = $CacheFile }
 if ($CacheSourceId -ne "") { $buildArgs["CacheSourceId"] = $CacheSourceId }

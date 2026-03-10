@@ -160,6 +160,8 @@ function Assert-ManifestPolicy {
 $required = @(
     'data\generated\dict_clean_sc.txt',
     'data\generated\dict_clean_tc.txt',
+    'data\generated\dict_query_path_prior_sc.txt',
+    'data\generated\dict_query_path_prior_tc.txt',
     'data\generated\dict_unihan_sc.txt',
     'data\generated\dict_unihan_tc.txt',
     'manifests\sources.public.yml',
@@ -194,6 +196,8 @@ Get-ChildItem -LiteralPath $Root -Recurse -File | ForEach-Object {
 
 Test-DictFile (Join-Path $Root 'data\generated\dict_clean_sc.txt')
 Test-DictFile (Join-Path $Root 'data\generated\dict_clean_tc.txt')
+Test-DictFile (Join-Path $Root 'data\generated\dict_query_path_prior_sc.txt')
+Test-DictFile (Join-Path $Root 'data\generated\dict_query_path_prior_tc.txt')
 Test-DictFile (Join-Path $Root 'data\generated\dict_unihan_sc.txt')
 Test-DictFile (Join-Path $Root 'data\generated\dict_unihan_tc.txt')
 Test-PinyinOverrideFile (Join-Path $Root 'manifests\pinyin_overrides.clean_permissive.tsv')
