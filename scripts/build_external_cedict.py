@@ -4631,6 +4631,36 @@ def _build_char_variant_hints(
     return trad_to_simp, simp_to_trad, sc_chars, tc_chars
 
 
+def _apply_explicit_script_pair(
+    trad_ch: str,
+    simp_ch: str,
+    trad_to_simp_char_map: Dict[str, str],
+    simp_to_trad_char_map: Dict[str, str],
+    sc_chars: Set[str],
+    tc_chars: Set[str],
+) -> None:
+    if (
+        trad_ch == simp_ch
+        or not CJK_FULL_RE.fullmatch(trad_ch)
+        or not CJK_FULL_RE.fullmatch(simp_ch)
+    ):
+        return
+
+    # Treat explicit Unihan/OpenCC single-character variant relations as
+    # authoritative. They should override noisy phrase-level hints that may
+    # otherwise let traditional chars leak into SC buckets (and vice versa).
+    trad_to_simp_char_map[trad_ch] = simp_ch
+    simp_to_trad_char_map[simp_ch] = trad_ch
+
+    trad_to_simp_char_map.pop(simp_ch, None)
+    simp_to_trad_char_map.pop(trad_ch, None)
+
+    sc_chars.add(simp_ch)
+    sc_chars.discard(trad_ch)
+    tc_chars.add(trad_ch)
+    tc_chars.discard(simp_ch)
+
+
 def _normalize_sc_mapping_with_char_map(
     mapping: Dict[Tuple[str, str], int],
     trad_to_simp_char_map: Dict[str, str],
@@ -6488,16 +6518,24 @@ def main() -> int:
         ) = _build_char_variant_hints(tc_to_sc_map, opencc_entries)
         unihan_simplified_variant_map = _load_unihan_simplified_variant_map(unihan_payload)
         for trad_ch, simp_ch in unihan_simplified_variant_map.items():
-            if trad_ch not in trad_to_simp_char_map:
-                trad_to_simp_char_map[trad_ch] = simp_ch
-            if simp_ch not in simp_to_trad_char_map:
-                simp_to_trad_char_map[simp_ch] = trad_ch
+            _apply_explicit_script_pair(
+                trad_ch,
+                simp_ch,
+                trad_to_simp_char_map,
+                simp_to_trad_char_map,
+                sc_script_chars,
+                tc_script_chars,
+            )
         unihan_traditional_variant_map = _load_unihan_traditional_variant_map(unihan_payload)
         for simp_ch, trad_ch in unihan_traditional_variant_map.items():
-            if simp_ch not in simp_to_trad_char_map:
-                simp_to_trad_char_map[simp_ch] = trad_ch
-            if trad_ch not in trad_to_simp_char_map:
-                trad_to_simp_char_map[trad_ch] = simp_ch
+            _apply_explicit_script_pair(
+                trad_ch,
+                simp_ch,
+                trad_to_simp_char_map,
+                simp_to_trad_char_map,
+                sc_script_chars,
+                tc_script_chars,
+            )
         sc_rescore_stats = _rescore_mapping_with_signals(
             sc_map,
             usage_score_map=usage_score_map,
@@ -6629,16 +6667,24 @@ def main() -> int:
         ) = _build_char_variant_hints(opencc_tc_to_sc_map, opencc_entries_for_hints)
         unihan_simplified_variant_map = _load_unihan_simplified_variant_map(unihan_payload)
         for trad_ch, simp_ch in unihan_simplified_variant_map.items():
-            if trad_ch not in trad_to_simp_char_map:
-                trad_to_simp_char_map[trad_ch] = simp_ch
-            if simp_ch not in simp_to_trad_char_map:
-                simp_to_trad_char_map[simp_ch] = trad_ch
+            _apply_explicit_script_pair(
+                trad_ch,
+                simp_ch,
+                trad_to_simp_char_map,
+                simp_to_trad_char_map,
+                sc_script_chars,
+                tc_script_chars,
+            )
         unihan_traditional_variant_map = _load_unihan_traditional_variant_map(unihan_payload)
         for simp_ch, trad_ch in unihan_traditional_variant_map.items():
-            if simp_ch not in simp_to_trad_char_map:
-                simp_to_trad_char_map[simp_ch] = trad_ch
-            if trad_ch not in trad_to_simp_char_map:
-                trad_to_simp_char_map[trad_ch] = simp_ch
+            _apply_explicit_script_pair(
+                trad_ch,
+                simp_ch,
+                trad_to_simp_char_map,
+                simp_to_trad_char_map,
+                sc_script_chars,
+                tc_script_chars,
+            )
         sc_map, sc_char_normalize_stats = _normalize_sc_mapping_with_char_map(
             sc_map, trad_to_simp_char_map, simp_to_trad_char_map
         )
@@ -6681,16 +6727,24 @@ def main() -> int:
         ) = _build_char_variant_hints(opencc_tc_to_sc_map, opencc_entries)
         unihan_simplified_variant_map = _load_unihan_simplified_variant_map(unihan_payload)
         for trad_ch, simp_ch in unihan_simplified_variant_map.items():
-            if trad_ch not in trad_to_simp_char_map:
-                trad_to_simp_char_map[trad_ch] = simp_ch
-            if simp_ch not in simp_to_trad_char_map:
-                simp_to_trad_char_map[simp_ch] = trad_ch
+            _apply_explicit_script_pair(
+                trad_ch,
+                simp_ch,
+                trad_to_simp_char_map,
+                simp_to_trad_char_map,
+                sc_script_chars,
+                tc_script_chars,
+            )
         unihan_traditional_variant_map = _load_unihan_traditional_variant_map(unihan_payload)
         for simp_ch, trad_ch in unihan_traditional_variant_map.items():
-            if simp_ch not in simp_to_trad_char_map:
-                simp_to_trad_char_map[simp_ch] = trad_ch
-            if trad_ch not in trad_to_simp_char_map:
-                trad_to_simp_char_map[trad_ch] = simp_ch
+            _apply_explicit_script_pair(
+                trad_ch,
+                simp_ch,
+                trad_to_simp_char_map,
+                simp_to_trad_char_map,
+                sc_script_chars,
+                tc_script_chars,
+            )
         overrides: Dict[str, str] = {}
         if args.pinyin_overrides:
             overrides = _load_pinyin_overrides(repo_root / args.pinyin_overrides)

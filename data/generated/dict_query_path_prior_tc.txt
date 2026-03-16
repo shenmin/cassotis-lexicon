@@ -22,8 +22,7 @@ baobanhunyin	包辦|婚姻	463
 baogaowenxue	報告|文學	474
 baohumoshi	保護|模式	467
 baohuzhuyi	保護|主義	473
-baoliujumu	保留|剧目	453
-baoliujumu	保留|劇目	448
+baoliujumu	保留|劇目	457
 baoshouzhuyi	保守|主義	475
 baoweizuguo	保衛|祖國	437
 baoxiangongsi	保險|公司	437
@@ -93,9 +92,9 @@ buzhanghuiyi	部長|會議	476
 buzhibujue	不知|不覺	489
 caifangjizhe	採訪|記者	463
 cailiaokexue	材料|科學	446
-caiquxingdong	採取|行動	434
+caiquxingdong	採取|行動	463
 caiwuguanli	財務|管理	436
-caiwuruanjian	財務|軟件	435
+caiwuruanjian	財務|軟件	433
 caiyuangungun	財源|滾滾	429
 caizhengbuzhang	財政|部長	474
 caizhengniandu	財政|年度	467
@@ -134,7 +133,7 @@ chijiaoyisheng	赤腳|醫生	442
 chixushijian	持續|時間	456
 chizhafengyun	叱吒|風雲	434
 chongfenkaolv	充分|考慮	440
-chongjipingyuan	沖積|平原	464
+chongjipingyuan	沖積|平原	459
 chongtijiushi	重提|舊事	408
 choushuimatong	抽水|馬桶	451
 chuandaoshouye	傳道|受業	411
@@ -174,8 +173,8 @@ denghuotongming	燈火|通明	456
 dengweijiyin	等位|基因	460
 dengxiaopinglilun	鄧小平|理論	494
 dianciganying	電磁|感應	435
-diancimaichong	電磁|脈衝	423
-diancizhendang	電磁|振盪	428
+diancimaichong	電磁|脈衝	453
+diancizhendang	電磁|振盪	430
 diancizhendang	電磁|振蕩	430
 diandonghulu	電動|葫蘆	449
 diandongwanju	電動|玩具	449
@@ -221,7 +220,7 @@ direziyuan	地熱|資源	444
 dixiatielu	地下|鐵路	459
 dixiatongdao	地下|通道	467
 dixinxili	地心|吸力	431
-dixinyinli	地心|引力	455
+dixinyinli	地心|引力	446
 diyichanye	第一|產業	475
 diyintiqin	低音|提琴	440
 dizhenliedu	地震|烈度	462
@@ -234,7 +233,7 @@ doukezhiwu	豆科|植物	450
 dourenxiai	逗人|喜愛	427
 duancengsaomiao	斷層|掃描	425
 duanlieqiangdu	斷裂|強度	430
-duanxianfengzheng	斷線|風箏	412
+duanxianfengzheng	斷線|風箏	416
 duihaoruzuo	對號|入座	409
 duiwaimaoyi	對外|貿易	483
 dulizizhu	獨立|自主	488
@@ -248,9 +247,10 @@ duzhewenzhai	讀者|文摘	428
 erdaofanzi	二道|販子	439
 erfenyinfu	二分|音符	431
 ertongleyuan	兒童|樂園	458
-exingzhongliu	惡性|腫瘤	429
-eyushangren	惡語|傷人	397
-eyuyanlei	鱷魚|眼淚	424
+exingxunhuan	惡性|循環	461
+exingzhongliu	惡性|腫瘤	441
+eyushangren	惡語|傷人	402
+eyuyanlei	鱷魚|眼淚	431
 fadaguojia	發達|國傢	404
 fadingrenshu	法定|人數	465
 falvzeren	法律|責任	436
@@ -305,6 +305,7 @@ gangqinyanzou	鋼琴|演奏	430
 gangtiegongye	鋼鐵|工業	463
 gangweijintie	崗位|津貼	426
 gangweipeixun	崗位|培訓	433
+ganjibujin	感激|不盡	463
 ganjingliluo	乾淨|利落	473
 gaodengjiaoyu	高等|教育	494
 gaodengxuexiao	高等|學校	490
@@ -452,7 +453,7 @@ huangdaoshiergong	黃道|十二宮	408
 huanghuaguinv	黃花|閨女	455
 huangrandawu	恍然|大悟	424
 huangseshukan	黃色|書刊	425
-huangsezhayao	黃色|炸藥	429
+huangsezhayao	黃色|炸藥	432
 huanjiedongwu	環節|動物	465
 huanjingbaohu	環境|保護	495
 huanjingweisheng	環境|衛生	463
@@ -466,6 +467,7 @@ huaxuefanying	化學|反應	467
 huaxuegongye	化學|工業	481
 huaxueliaofa	化學|療法	462
 huaxuewuqi	化學|武器	465
+huaxuexianwei	化學|纖維	459
 huaxuexingzhi	化學|性質	463
 huaxueyuansu	化學|元素	479
 huaxuezhiliao	化學|治療	463
@@ -520,6 +522,7 @@ jiaoxingxinli	僥倖|心理	470
 jiaoxuedagang	教學|大綱	448
 jiaoyishichang	交易|市場	468
 jiaoyubuzhang	教育|部長	472
+jiaqiaodongwu	甲殼|動物	459
 jiashoutaren	假手|他人	428
 jiawuzhanzheng	甲午|戰爭	430
 jiaxingganyan	甲型|肝炎	436
@@ -542,7 +545,7 @@ jiefangsilin	街坊|四鄰	415
 jiefangzhanzheng	解放|戰爭	499
 jiegouzhuyi	結構|主義	470
 jiejidouzheng	階級|鬥爭	471
-jiejinquanli	竭盡|全力	409
+jiejinquanli	竭盡|全力	416
 jiejuebanfa	解決|辦法	468
 jiejuefangan	解決|方案	436
 jielianbuduan	接連|不斷	481
@@ -588,8 +591,8 @@ jinrongjigou	金融|機構	468
 jinrongjiguan	金融|機關	463
 jinrongshichang	金融|市場	478
 jinrongweiji	金融|危機	456
-jinxinjieli	盡心|竭力	456
-jinyaoguantou	緊要|關頭	454
+jinxinjieli	盡心|竭力	464
+jinyaoguantou	緊要|關頭	448
 jinyuzhuyi	禁慾|主義	457
 jirouzuzhi	肌肉|組織	463
 jishubiaozhun	技術|標準	465
@@ -635,13 +638,13 @@ junshizhengbian	軍事|政變	463
 junzhuzhengti	君主|政體	465
 junzhuzhengzhi	君主|政治	466
 jushiwenming	舉世|聞名	466
-juxinxiane	居心|險惡	458
+juxinxiane	居心|險惡	463
 kaichudangji	開除|黨籍	457
 kaifangyuanma	開放|源碼	456
 kaifarenyuan	開發|人員	469
 kaifazhouqi	開發|周期	448
 kaiguogongchen	開國|功臣	423
-kaiguoyuanxun	開國|元勳	409
+kaiguoyuanxun	開國|元勛	409
 kaihuajieguo	開花|結果	451
 kailuxianfeng	開路|先鋒	467
 kaimudianli	開幕|典禮	428
@@ -717,7 +720,7 @@ lianzhencha	立案|偵查	436
 liaoyiziwei	聊以|自慰	465
 lieningzhuyi	列寧|主義	443
 lifaweiyuan	立法|委員	472
-lihaichongtu	利害|衝突	459
+lihaichongtu	利害|衝突	467
 lihaiguanxi	利害|關係	463
 lijizhuyi	利己|主義	432
 lilinzhidao	蒞臨|指導	434
@@ -729,6 +732,7 @@ lingxiandiwei	領先|地位	467
 lingxianzhuyan	領銜|主演	457
 lisanshuxue	離散|數學	432
 lishibeijing	歷史|背景	467
+lishibowuguan	歷史|博物館	456
 lishiweiwu	歷史|唯物	325
 lishiweiwuzhuyi	歷史|唯物|主義	407
 litaxingwei	利他|行為	445
@@ -736,10 +740,10 @@ litazhuyi	利他|主義	420
 litijiaocha	立體|交叉	456
 litizhaopian	立體|照片	467
 liudongrenkou	流動|人口	437
-liudongzijin	流動|資金	448
+liudongzijin	流動|資金	457
 liuganyimiao	流感|疫苗	447
 liumangjituan	流氓|集團	458
-liumangruanjian	流氓|软件	436
+liumangruanjian	流氓|軟件	427
 liusishijian	六四|事件	434
 liutilixue	流體|力學	464
 liuwangzhengfu	流亡|政府	467
@@ -748,7 +752,7 @@ lixiangzhuyi	理想|主義	475
 lixinggongshi	例行|公事	460
 lixingjieyue	厲行|節約	431
 lixingzhuyi	理性|主義	464
-liyichongtu	利益|衝突	466
+liyichongtu	利益|衝突	467
 liyijituan	利益|集團	467
 liyishusong	利益|輸送	467
 lizijiaohuan	離子|交換	470
@@ -782,8 +786,8 @@ maoyizuzhi	貿易|組織	463
 maozedongsixiang	毛澤東|思想	493
 maozhuxijiniantang	毛主席|紀念堂	403
 maozixifa	帽子|戲法	450
-mazuiyaopin	麻醉|藥品	419
-meiguozaixian	美國|在線	458
+mazuiyaopin	麻醉|藥品	454
+meiguozaixian	美國|在線	464
 meiguozongtong	美國|總統	354
 meiguozongtongliebiao	美國|總統|列錶	436
 meilidaoshijian	美麗島|事件	419
@@ -831,7 +835,7 @@ nannvlaoshao	男女|老少	423
 nanyirenshou	難以|忍受	463
 nanzilanqiu	男子|籃球	466
 naonaobuxiu	呶呶|不休	433
-napolunyishi	拿破崙|一世	437
+napolunyishi	拿破侖|一世	437
 neibushiwu	內部|事務	444
 neigezongli	內閣|總理	366
 neigezonglidachen	內閣|總理|大臣	448
@@ -872,7 +876,7 @@ pingjunshouming	平均|壽命	427
 pingjunshouru	平均|收入	467
 pingjunzhuyi	平均|主義	460
 pingpangqiupai	乒乓|球拍	413
-pingpangqiutai	乒乓|球檯	428
+pingpangqiutai	乒乓|球檯	414
 pofumajie	潑婦|罵街	413
 popomama	婆婆|媽媽	473
 pufuqianjin	匍匐|前進	463
@@ -886,9 +890,9 @@ qichelvguan	汽車|旅館	461
 qiepianjiancha	切片|檢查	449
 qieshikexing	切實|可行	464
 qihoubianhua	氣候|變化	463
-qijinweizhi	迄今|為止	466
+qijinweizhi	迄今|為止	459
 qinghuadaxue	清華|大學	494
-qingjingxiju	情景|喜剧	449
+qingjingxiju	情景|喜劇	457
 qingjizhixia	情急|之下	466
 qingquyongpin	情趣|用品	430
 qingtianbairi	青天|白日	441
@@ -901,7 +905,6 @@ qinshizuoyong	侵蝕|作用	463
 qinshouburu	禽獸|不如	454
 qinyanmudu	親眼|目睹	431
 qinzidongshou	親自|動手	463
-qinzijianding	親子|鑑定	413
 qixiangweixing	氣象|衛星	463
 quanfuwuzhuang	全副|武裝	481
 quanguorenda	全國|人大	486
@@ -920,7 +923,6 @@ quantouchanpin	拳頭|產品	434
 quanwenjiansuo	全文|檢索	493
 qubaohoushen	取保|候審	420
 qudongchengxu	驅動|程序	468
-qunzhongtuanti	羣衆|團體	432
 ququxiaoshi	區區|小事	430
 quzhikeshu	屈指|可數	413
 quzunfujiu	屈尊|俯就	417
@@ -936,7 +938,7 @@ rengongzhineng	人工|智能	500
 renhaizhanshu	人海|戰術	455
 renjiandiyu	人間|地獄	430
 renjiantiantang	人間|天堂	439
-renjianxiju	人間|喜劇	434
+renjianxiju	人間|喜劇	437
 renjiguanxi	人際|關係	481
 renkouchoumi	人口|稠密	431
 renkoumidu	人口|密度	465
@@ -980,9 +982,8 @@ rijingzhishu	日經|指數	455
 rijushidai	日據|時代	439
 riyuecuotuo	日月|蹉跎	427
 rongyujunren	榮譽|軍人	431
-ruanguyulei	軟骨|魚類	444
-ruanjianjishu	軟件|技術	463
-ruantidongwu	軟體|動物	453
+ruanguyulei	軟骨|魚類	443
+ruanjianjishu	軟件|技術	462
 rucizheban	如此|這般	464
 rujingqianzheng	入境|簽證	425
 ruyisuanpan	如意|算盤	440
@@ -1050,6 +1051,7 @@ shengzhigeli	生殖|隔離	467
 shengzhiqiguan	生殖|器官	467
 shengzhixibao	生殖|細胞	476
 shenjingwangluo	神經|網絡	497
+shenjingxianwei	神經|纖維	460
 shenjingxibao	神經|細胞	475
 shenqingkuankuan	深情|款款	414
 shenrurenxin	深入|人心	465
@@ -1089,7 +1091,7 @@ shiyongzhuyi	實用|主義	468
 shizhengzhuyi	實證|主義	458
 shizhuanxiaoshuo	史傳|小說	440
 shoudujichang	首都|機場	474
-shoudujuchang	首都|劇場	464
+shoudujuchang	首都|劇場	463
 shouhengdinglv	守恆|定律	428
 shounaohuiwu	首腦|會晤	453
 shounaohuiyi	首腦|會議	463
@@ -1116,7 +1118,7 @@ shujujiegou	數據|結構	471
 shujutongxin	數據|通信	470
 shujuwajue	數據|挖掘	465
 shujuwangluo	數據|網絡	463
-shujuzongxian	數據|總線	463
+shujuzongxian	數據|總線	469
 shukongjichuang	數控|機床	437
 shuliangongren	熟練|工人	462
 shuliluoji	數理|邏輯	455
@@ -1144,12 +1146,12 @@ suixingrenyuan	隨行|人員	467
 sujiaopaodao	塑膠|跑道	453
 suoshudanwei	所屬|單位	430
 suranqijing	肅然|起敬	434
-suweiaizhengfu	蘇維埃|政府	436
 suyankoubei	俗諺|口碑	418
 suzhijiaoyu	素質|教育	467
 taipinggongzhu	太平|公主	497
 taipingtianguo	太平|天國	381
 taipingyangzhanzheng	太平洋|戰爭	435
+taiwanguangfu	臺灣|光復	436
 taiyangfengbao	太陽|風暴	463
 taiyanghuodong	太陽|活動	449
 tanboyueqi	彈撥|樂器	466
@@ -1181,7 +1183,7 @@ tiaozaoshichang	跳蚤|市場	457
 tibuduiyuan	替補|隊員	429
 tieshixinchang	鐵石|心腸	457
 tiexuezaixiang	鐵血|宰相	421
-tingtailouge	亭臺|樓閣	422
+tingtailouge	亭臺|樓閣	435
 tiqigongsu	提起|公訴	470
 tishenyanyuan	替身|演員	468
 tiwaishoujing	體外|受精	451
@@ -1200,7 +1202,7 @@ tongyizhanxian	統一|戰線	489
 tongyongdianqi	通用|電氣	434
 toubaosaifen	頭孢|噻吩	388
 toufangshichang	投放|市場	464
-toujiquqiao	投機|取巧	438
+toujiquqiao	投機|取巧	444
 toushihuafa	透視|畫法	463
 toutiaoxinwen	頭條|新聞	422
 touziyinhang	投資|銀行	463
@@ -1247,9 +1249,9 @@ wangluoxieyi	網絡|協議	467
 wangluoyingyong	網絡|應用	469
 wanguoyinbiao	萬國|音標	406
 wanjiadenghuo	萬傢|燈火	407
-wannengyaoshi	萬能|鑰匙	390
+wannengyaoshi	萬能|鑰匙	399
 wanyaotuobei	彎腰|駝背	421
-wanyouyinli	萬有|引力	425
+wanyouyinli	萬有|引力	416
 wanzudongwu	腕足|動物	456
 weifaluanji	違法|亂紀	448
 weifenfangcheng	微分|方程	484
@@ -1283,7 +1285,8 @@ wulixingzhi	物理|性質	479
 wulunruhe	無論|如何	491
 wurenshoupiao	無人|售票	448
 wusiyundong	五四|運動	493
-wuxianwangluo	無線|網絡	454
+wuxiandianbo	無線|電波	426
+wuxianwangluo	無線|網絡	456
 wuyeguanli	物業|管理	467
 wuyeyoumin	無業|遊民	411
 wuzangliufu	五臟|六腑	445
@@ -1293,7 +1296,7 @@ wuzhuangchongtu	武裝|衝突	463
 wuzhuangliliang	武裝|力量	497
 wuzhudaici	物主|代詞	409
 xianchangbaodao	現場|報道	463
-xianchangcaifang	現場|採訪	433
+xianchangcaifang	現場|採訪	463
 xianchanghuiyi	現場|會議	463
 xianchangzhibo	現場|直播	463
 xiangbizhixia	相比|之下	470
@@ -1357,6 +1360,8 @@ xingshijingcha	刑事|警察	473
 xingshisusongfa	刑事|訴訟法	458
 xingshizhiquan	行使|職權	450
 xingshizhuyi	形式|主義	479
+xingweizhangai	行為|障礙	436
+xingweizhunze	行為|準則	463
 xingweizhuyi	行為|主義	463
 xingxiangdashi	形象|大使	467
 xingxiangyishu	形象|藝術	463
@@ -1384,7 +1389,7 @@ xinxiongxiaai	心胸|狹隘	421
 xinxiongxiazhai	心胸|狹窄	433
 xinxishidai	信息|時代	467
 xinyongdengji	信用|等級	439
-xinyongfengxian	信用|風險	446
+xinyongfengxian	信用|風險	448
 xinzhongyoushu	心中|有數	466
 xiongdijiemei	兄弟|姐妹	431
 xiongzhaizhuanmaidian	兇宅|專賣店	414
@@ -1426,7 +1431,7 @@ yanyuanzhenrong	演員|陣容	463
 yanzhongcuowu	嚴重|錯誤	436
 yaoyaolingxian	遙遙|領先	491
 yaoyaqiechi	咬牙|切齒	442
-yaoyongjiazhi	藥用|價值	447
+yaoyongjiazhi	藥用|價值	463
 yazhoumingxing	亞洲|明星	365
 yazhoumingxingshengdian	亞洲|明星|盛典	447
 yejingxianshi	液晶|顯示	469
@@ -1460,7 +1465,6 @@ yingyeshijian	營業|時間	453
 yingyezhizhao	營業|執照	406
 yingyongchengshi	應用|程式	457
 yingyongchengxu	應用|程序	467
-yingyongruanjian	應用|軟件	461
 yingzineige	影子|內閣	468
 yinjiuzuole	飲酒|作樂	416
 yinpinshebei	音頻|設備	426
@@ -1492,6 +1496,7 @@ youpaifenzi	右派|分子	433
 yousejinshu	有色|金屬	479
 youshishenfen	有失|身份	456
 yousuozuowei	有所|作為	469
+youxiandianshi	有線|電視	437
 youxiangongsi	有限|公司	520
 youyiwuyi	有意|無意	465
 youzhengbianma	郵政|編碼	492
@@ -1558,14 +1563,14 @@ zhengzhiqihou	政治|氣候	466
 zhengzhiquanli	政治|權利	427
 zhengzhiweiyuan	政治|委員	502
 zhengzhiwutai	政治|舞臺	467
-zhenxianhuor	針線|活兒	439
+zhenxianhuor	針線|活兒	447
 zhenzhugangshijian	珍珠港|事件	412
 zhenzhunaicha	珍珠|奶茶	426
 zhexueboshi	哲學|博士	460
 zheyangyilai	這樣|一來	483
 zhidaojiaoshou	指導|教授	457
 zhihuizhongxin	指揮|中心	467
-zhijiaozuobiao	直角|座標	452
+zhijiaozuobiao	直角|座標	455
 zhiliangjiancha	質量|檢查	451
 zhiliceyan	智力|測驗	434
 zhimalvdou	芝麻|綠豆	448
@@ -1579,7 +1584,7 @@ zhishifenzi	知識|分子	510
 zhishiqingnian	知識|青年	473
 zhishuhanshu	指數|函數	466
 zhishuzaolin	植樹|造林	446
-zhitichongtu	肢體|衝突	428
+zhitichongtu	肢體|衝突	463
 zhixingchengxu	執行|程序	437
 zhiyanbuhui	直言|不諱	425
 zhiyegaozhong	職業|高中	468
@@ -1594,12 +1599,13 @@ zhongguodalurenkou	中國|大陸|人口	436
 zhongguogongchandang	中國|共產黨	520
 zhongguoguomindang	中國|國民黨	436
 zhongguokexueyuan	中國|科學院	495
+zhongguolishi	中國|歷史	455
 zhonghuaminguo	中華|民國	520
 zhonghuaminguozongtong	中華民國|總統	439
 zhonghuaminzu	中華|民族	487
 zhongrilianhe	中日|聯閤	354
 zhongrilianheshengming	中日|聯閤|聲明	436
-zhongshangongyuan	中山|公園	475
+zhongshangongyuan	中山|公園	481
 zhongshendashi	終身|大事	476
 zhongxingenggeng	忠心|耿耿	400
 zhongyangjiquan	中央|集權	500
@@ -1623,7 +1629,7 @@ zhuankexuexiao	專科|學校	485
 zhuanmenjigou	專門|機構	463
 zhuantiditu	專題|地圖	456
 zhuanyerenshi	專業|人士	463
-zhuanyishixian	轉移|視線	446
+zhuanyishixian	轉移|視線	449
 zhuanyixulie	轉義|序列	407
 zhuanyizifu	轉義|字符	414
 zhucekuaijishi	註冊|會計師	453
@@ -1674,4 +1680,3 @@ zuihoutongdie	最後|通牒	426
 zuofengzhengpai	作風|正派	444
 zuopiezinvhai	左撇子|女孩	451
 zuoxishijian	作息|時間	457
-zuoyouweinan	左右|為難	442

@@ -1,4 +1,4 @@
-# Cassotis Lexicon
+﻿# Cassotis Lexicon
 
 <p align="center">
   <img src="cassotis_ime_yanquan.png" alt="Cassotis IME logo" width="280">
@@ -17,14 +17,14 @@ Cassotis IME 词库构建与发布仓库。
 - 支持“外部公开来源启动”与词库发布流程。
 - 维护归因与发布规范，确保与仓库产物一致。
 
-## 当前词库快照（2026-03-10 构建）
+## 当前词库快照（2026-03-16 构建）
 
 | 文件 | 字体变体 | 词条数 |
 |------|---------|--------|
 | `data/generated/dict_clean_sc.txt` | 简体中文主词库 | 103,728 |
-| `data/generated/dict_clean_tc.txt` | 繁体中文主词库 | 101,798 |
-| `data/generated/dict_unihan_sc.txt` | 简体单字（Unihan） | 23,973 |
-| `data/generated/dict_unihan_tc.txt` | 繁体单字（Unihan） | 24,130 |
+| `data/generated/dict_clean_tc.txt` | 繁体中文主词库 | 101,836 |
+| `data/generated/dict_unihan_sc.txt` | 简体单字（Unihan） | 23,898 |
+| `data/generated/dict_unihan_tc.txt` | 繁体单字（Unihan） | 24,058 |
 
 ## 外部来源（`external_broad` 配置）
 
@@ -52,7 +52,7 @@ Cassotis IME 词库构建与发布仓库。
 
 ## 目录结构
 - `data/generated/`：生成词库文件。
-- `manifests/`：来源/许可证清单与回归样本。
+- `manifests/`：来源、许可证清单与回归样本。
 - `scripts/`：构建、校验、导出辅助脚本。
 - `reports/`：构建报告。
 - `rules/`：导出与发布规则。
@@ -63,7 +63,7 @@ Cassotis IME 词库构建与发布仓库。
 # 全量重建（external_broad + unihan_single + 回归校验）
 .\rebuild_all.ps1
 
-# 直接按单个 profile 构建
+# 直接按单一 profile 构建
 .\scripts\build_external_seed.ps1 -Profile external_broad
 ```
 

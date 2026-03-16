@@ -7,6 +7,7 @@ Dictionary format:
 
 Sample format:
   pinyin<TAB>expected_text<TAB>max_rank(optional, default=10)
+  pinyin<TAB>!forbidden_text
 """
 
 from __future__ import annotations
@@ -105,6 +106,21 @@ def validate(
         candidates = mapping.get(pinyin, [])
         if not candidates:
             errors.append(f"{pinyin}: no candidates, expected '{expected_text}'")
+            continue
+
+        if expected_text.startswith("!"):
+            forbidden_text = expected_text[1:]
+            rank = -1
+            for idx, (text, _weight) in enumerate(candidates, start=1):
+                if text == forbidden_text:
+                    rank = idx
+                    break
+            if rank > 0:
+                preview = ", ".join(text for text, _ in candidates[:preview_n])
+                errors.append(
+                    f"{pinyin}: forbidden '{forbidden_text}' present rank={rank} "
+                    f"(top{preview_n}: {preview})"
+                )
             continue
 
         rank = -1

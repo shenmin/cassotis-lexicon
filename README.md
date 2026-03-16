@@ -1,4 +1,4 @@
-# Cassotis Lexicon
+﻿# Cassotis Lexicon
 
 <p align="center">
   <img src="cassotis_ime_yanquan.png" alt="Cassotis IME logo" width="280">
@@ -17,14 +17,14 @@ Lexicon build and release repository for Cassotis IME.
 - Supports external-source bootstrap and lexicon release workflows.
 - Keeps attribution and release policy files aligned with repository artifacts.
 
-## Current dictionary snapshot (2026-03-10 build)
+## Current dictionary snapshot (2026-03-16 build)
 
 | File | Variant | Entries |
 |------|---------|---------|
 | `data/generated/dict_clean_sc.txt` | Simplified Chinese | 103,728 |
-| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 101,798 |
-| `data/generated/dict_unihan_sc.txt` | Simplified single-char (Unihan) | 23,973 |
-| `data/generated/dict_unihan_tc.txt` | Traditional single-char (Unihan) | 24,130 |
+| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 101,836 |
+| `data/generated/dict_unihan_sc.txt` | Simplified single-char (Unihan) | 23,898 |
+| `data/generated/dict_unihan_tc.txt` | Traditional single-char (Unihan) | 24,058 |
 
 ## External bootstrap sources (`external_broad`)
 
