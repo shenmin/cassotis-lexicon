@@ -21,6 +21,8 @@ param(
     [string]$OutputTc = "",
     [string]$OutputQueryPathSc = "",
     [string]$OutputQueryPathTc = "",
+    [string]$SupportDictSc = "",
+    [string]$SupportDictTc = "",
     [string]$Manifest = "",
     [string]$Report = ""
 )
@@ -116,6 +118,8 @@ if ($OutputSc -ne "") { $args += @("--output-sc", $OutputSc) }
 if ($OutputTc -ne "") { $args += @("--output-tc", $OutputTc) }
 if ($OutputQueryPathSc -ne "") { $args += @("--query-path-output-sc", $OutputQueryPathSc) }
 if ($OutputQueryPathTc -ne "") { $args += @("--query-path-output-tc", $OutputQueryPathTc) }
+if ($SupportDictSc -ne "") { $args += @("--support-dict-sc", $SupportDictSc) }
+if ($SupportDictTc -ne "") { $args += @("--support-dict-tc", $SupportDictTc) }
 if ($Manifest -ne "") { $args += @("--manifest", $Manifest) }
 if ($Report -ne "") { $args += @("--report", $Report) }
 

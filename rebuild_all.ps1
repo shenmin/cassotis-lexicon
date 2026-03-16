@@ -177,6 +177,8 @@ $unihanBuildArgs = @{
     MaxEntries = 0
     OutputSc = "data/generated/dict_unihan_sc.txt"
     OutputTc = "data/generated/dict_unihan_tc.txt"
+    SupportDictSc = "data/generated/dict_clean_sc.txt"
+    SupportDictTc = "data/generated/dict_clean_tc.txt"
     Manifest = "manifests/sources.unihan.generated.yml"
     Report = "reports/unihan_build_report.md"
 }

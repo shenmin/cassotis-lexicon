@@ -4140,6 +4140,89 @@ def _compute_unihan_single_char_weight(
     return weight
 
 
+def _load_char_family_support_from_generated_dict(
+    path: pathlib.Path | None,
+) -> Tuple[Dict[str, int], Dict[str, float]]:
+    term_count_map: Dict[str, int] = {}
+    support_sum_map: Dict[str, float] = {}
+    if path is None or (not path.exists()):
+        return term_count_map, support_sum_map
+
+    with path.open("r", encoding="utf-8") as f:
+        for raw_line in f:
+            line = raw_line.strip()
+            if not line:
+                continue
+            parts = line.split("\t")
+            if len(parts) != 3:
+                continue
+
+            text = parts[1].strip()
+            if _cjk_len(text) < 2 or not CJK_FULL_RE.fullmatch(text):
+                continue
+
+            try:
+                weight = int(parts[2].strip())
+            except ValueError:
+                continue
+
+            unique_chars: Set[str] = set()
+            for ch in _split_text_units(text):
+                if _cjk_len(ch) != 1 or not CJK_FULL_RE.fullmatch(ch):
+                    continue
+                unique_chars.add(ch)
+            if not unique_chars:
+                continue
+
+            support = max(12.0, min(220.0, float(weight) * 0.16))
+            text_len = _cjk_len(text)
+            if text_len >= 4:
+                support *= 0.82
+            if text_len >= 6:
+                support *= 0.72
+
+            for ch in unique_chars:
+                term_count_map[ch] = term_count_map.get(ch, 0) + 1
+                support_sum_map[ch] = support_sum_map.get(ch, 0.0) + support
+
+    return term_count_map, support_sum_map
+
+
+def _compute_unihan_family_support_bonus(
+    ch: str,
+    *,
+    term_count_map: Dict[str, int] | None,
+    support_sum_map: Dict[str, float] | None,
+    base_weight: int,
+) -> int:
+    term_count = 0 if not term_count_map else term_count_map.get(ch, 0)
+    support_sum = 0.0 if not support_sum_map else support_sum_map.get(ch, 0.0)
+    if term_count < 2 and support_sum < 80.0:
+        return 0
+
+    count_bonus = min(72, int(round(math.log1p(term_count) * 16.0)))
+    if term_count >= 3:
+        count_bonus += 6
+    if term_count >= 8:
+        count_bonus += 8
+    if base_weight <= 90 and term_count >= 3:
+        count_bonus += 14
+    if base_weight <= 90 and term_count >= 8:
+        count_bonus += 10
+
+    support_bonus = min(48, int(round(math.sqrt(max(0.0, support_sum)) * 1.4)))
+    bonus = count_bonus + support_bonus
+
+    if base_weight >= 220:
+        bonus = int(round(bonus * 0.35))
+    elif base_weight >= 150:
+        bonus = int(round(bonus * 0.55))
+    elif base_weight >= 100:
+        bonus = int(round(bonus * 0.75))
+
+    return max(0, min(110, bonus))
+
+
 def _adjust_unihan_weight_for_source(weight: int, source_rank: int) -> int:
     adjusted = weight
     if source_rank >= UNIHAN_SOURCE_PINLU:
@@ -4351,6 +4434,10 @@ def _build_from_unihan_only(
     simp_to_trad_char_map: Dict[str, str],
     sc_chars: Set[str],
     tc_chars: Set[str],
+    sc_family_term_count_map: Dict[str, int] | None = None,
+    sc_family_support_sum_map: Dict[str, float] | None = None,
+    tc_family_term_count_map: Dict[str, int] | None = None,
+    tc_family_support_sum_map: Dict[str, float] | None = None,
 ) -> Tuple[Dict[Tuple[str, str], int], Dict[Tuple[str, str], int], Dict[str, int]]:
     sc: Dict[Tuple[str, str], int] = {}
     tc: Dict[Tuple[str, str], int] = {}
@@ -4378,6 +4465,8 @@ def _build_from_unihan_only(
         "unihan_single_char_injected_tc": 0,
         "unihan_tc_only_chars": 0,
         "unihan_sc_only_chars": 0,
+        "unihan_family_support_boosted_sc": 0,
+        "unihan_family_support_boosted_tc": 0,
     }
 
     tc_only_chars = tc_chars.difference(sc_chars)
@@ -4396,6 +4485,30 @@ def _build_from_unihan_only(
                 grade_level=unihan_grade_map.get(ch, 0),
                 core_coverage=unihan_core_map.get(ch, 0),
             )
+            sc_base_weight = min(
+                620,
+                base_weight
+                + _compute_unihan_family_support_bonus(
+                    ch,
+                    term_count_map=sc_family_term_count_map,
+                    support_sum_map=sc_family_support_sum_map,
+                    base_weight=base_weight,
+                ),
+            )
+            tc_base_weight = min(
+                620,
+                base_weight
+                + _compute_unihan_family_support_bonus(
+                    ch,
+                    term_count_map=tc_family_term_count_map,
+                    support_sum_map=tc_family_support_sum_map,
+                    base_weight=base_weight,
+                ),
+            )
+            if sc_base_weight > base_weight:
+                stats["unihan_family_support_boosted_sc"] += 1
+            if tc_base_weight > base_weight:
+                stats["unihan_family_support_boosted_tc"] += 1
 
             output_pinyin_set = _select_unihan_output_readings(
                 ch,
@@ -4406,8 +4519,17 @@ def _build_from_unihan_only(
             )
             for pinyin in output_pinyin_set:
                 source_rank = unihan_reading_source_map.get((ch, pinyin), UNIHAN_SOURCE_MANDARIN)
-                output_weight = _adjust_unihan_weight_for_reading(
-                    base_weight,
+                sc_output_weight = _adjust_unihan_weight_for_reading(
+                    sc_base_weight,
+                    ch,
+                    pinyin,
+                    source_rank,
+                    unihan_map,
+                    unihan_pinlu_detail_map,
+                    unihan_pinlu_map.get(ch, 0),
+                )
+                tc_output_weight = _adjust_unihan_weight_for_reading(
+                    tc_base_weight,
                     ch,
                     pinyin,
                     source_rank,
@@ -4418,25 +4540,25 @@ def _build_from_unihan_only(
                 key = (pinyin, ch)
                 if ch in tc_only_chars:
                     previous_tc = tc.get(key, 0)
-                    if output_weight > previous_tc:
-                        tc[key] = output_weight
+                    if tc_output_weight > previous_tc:
+                        tc[key] = tc_output_weight
                         stats["unihan_single_char_injected_tc"] += 1
                         stats["unihan_tc_only_chars"] += 1
                 elif ch in sc_only_chars:
                     previous_sc = sc.get(key, 0)
-                    if output_weight > previous_sc:
-                        sc[key] = output_weight
+                    if sc_output_weight > previous_sc:
+                        sc[key] = sc_output_weight
                         stats["unihan_single_char_injected_sc"] += 1
                         stats["unihan_sc_only_chars"] += 1
                 else:
                     previous_sc = sc.get(key, 0)
-                    if output_weight > previous_sc:
-                        sc[key] = output_weight
+                    if sc_output_weight > previous_sc:
+                        sc[key] = sc_output_weight
                         stats["unihan_single_char_injected_sc"] += 1
 
                     previous_tc = tc.get(key, 0)
-                    if output_weight > previous_tc:
-                        tc[key] = output_weight
+                    if tc_output_weight > previous_tc:
+                        tc[key] = tc_output_weight
                         stats["unihan_single_char_injected_tc"] += 1
 
     for text, pinyin in overrides.items():
@@ -6290,6 +6412,8 @@ def main() -> int:
     parser.add_argument("--output-tc", default="data/generated/dict_clean_tc.txt")
     parser.add_argument("--query-path-output-sc", default="")
     parser.add_argument("--query-path-output-tc", default="")
+    parser.add_argument("--support-dict-sc", default="")
+    parser.add_argument("--support-dict-tc", default="")
     parser.add_argument("--manifest", default="manifests/sources.public.yml")
     parser.add_argument("--report", default="reports/external_build_report.md")
     parser.add_argument(
@@ -6327,6 +6451,8 @@ def main() -> int:
     output_query_path_tc = (
         repo_root / args.query_path_output_tc if args.query_path_output_tc else None
     )
+    support_dict_sc = repo_root / args.support_dict_sc if args.support_dict_sc else None
+    support_dict_tc = repo_root / args.support_dict_tc if args.support_dict_tc else None
     manifest = repo_root / args.manifest
     report = repo_root / args.report
     if args.pageviews_months < 0:
@@ -6358,6 +6484,10 @@ def main() -> int:
     tc_pageviews_signal_map: Dict[str, float] = {}
     tc_pageviews_persistence_signal_map: Dict[str, float] = {}
     tc_pageviews_burst_signal_map: Dict[str, float] = {}
+    sc_family_term_count_map: Dict[str, int] = {}
+    sc_family_support_sum_map: Dict[str, float] = {}
+    tc_family_term_count_map: Dict[str, int] = {}
+    tc_family_support_sum_map: Dict[str, float] = {}
     tc_to_sc_map: Dict[str, Set[str]] = {}
     cedict_style_penalty_map: Dict[Tuple[str, str], int] = {}
     primary_cache = repo_root / args.cache_file if args.cache_file else None
@@ -6748,6 +6878,14 @@ def main() -> int:
         overrides: Dict[str, str] = {}
         if args.pinyin_overrides:
             overrides = _load_pinyin_overrides(repo_root / args.pinyin_overrides)
+        (
+            sc_family_term_count_map,
+            sc_family_support_sum_map,
+        ) = _load_char_family_support_from_generated_dict(support_dict_sc)
+        (
+            tc_family_term_count_map,
+            tc_family_support_sum_map,
+        ) = _load_char_family_support_from_generated_dict(support_dict_tc)
         sc_map, tc_map, stats = _build_from_unihan_only(
             unihan_payload,
             args.min_hanzi,
@@ -6756,8 +6894,14 @@ def main() -> int:
             simp_to_trad_char_map,
             sc_script_chars,
             tc_script_chars,
+            sc_family_term_count_map,
+            sc_family_support_sum_map,
+            tc_family_term_count_map,
+            tc_family_support_sum_map,
         )
         stats.update(opencc_stats)
+        stats["unihan_family_support_terms_sc"] = len(sc_family_term_count_map)
+        stats["unihan_family_support_terms_tc"] = len(tc_family_term_count_map)
     else:
         raise ValueError(f"unsupported parser: {parser_name}")
 
