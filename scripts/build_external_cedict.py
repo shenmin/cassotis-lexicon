@@ -384,6 +384,122 @@ def _is_windows_renderable_cjk_text(text: str) -> bool:
     return bool(CJK_WINDOWS_FULL_RE.fullmatch(text))
 
 
+def _collect_preferred_unihan_readings(
+    ch: str,
+    unihan_readings_map: Dict[str, Set[str]] | None,
+    unihan_source_rank_map: Dict[Tuple[str, str], int] | None,
+    unihan_mandarin_map: Dict[str, str] | None,
+    unihan_pinlu_detail_map: Dict[Tuple[str, str], int] | None,
+) -> List[str]:
+    if (
+        not unihan_readings_map
+        or not unihan_source_rank_map
+        or not unihan_mandarin_map
+        or not unihan_pinlu_detail_map
+    ):
+        return []
+
+    pinyin_set = unihan_readings_map.get(ch, set())
+    if not pinyin_set:
+        mandarin = unihan_mandarin_map.get(ch, "")
+        return [mandarin] if mandarin else []
+
+    mandarin = unihan_mandarin_map.get(ch, "")
+    preferred: Set[str] = set()
+    for pinyin in pinyin_set:
+        if (
+            pinyin == mandarin
+            or unihan_pinlu_detail_map.get((ch, pinyin), 0) > 0
+            or unihan_source_rank_map.get((ch, pinyin), 0) >= UNIHAN_SOURCE_MANDARIN
+        ):
+            preferred.add(pinyin)
+
+    if mandarin:
+        preferred.add(mandarin)
+
+    if not preferred:
+        preferred.update(
+            _select_unihan_output_readings(
+                ch,
+                pinyin_set,
+                unihan_source_rank_map,
+                unihan_mandarin_map,
+                unihan_pinlu_detail_map,
+            )
+        )
+
+    return sorted(
+        preferred,
+        key=lambda pinyin: (
+            1 if pinyin == mandarin else 0,
+            unihan_pinlu_detail_map.get((ch, pinyin), 0),
+            unihan_source_rank_map.get((ch, pinyin), 0),
+            len(pinyin),
+            pinyin,
+        ),
+        reverse=True,
+    )
+
+
+def _has_constituent_pinyin_alignment_mismatch(
+    text: str,
+    pinyin: str,
+    unihan_readings_map: Dict[str, Set[str]] | None,
+    unihan_source_rank_map: Dict[Tuple[str, str], int] | None,
+    unihan_mandarin_map: Dict[str, str] | None,
+    unihan_pinlu_detail_map: Dict[Tuple[str, str], int] | None,
+) -> bool:
+    if not PINYIN_RE.fullmatch(pinyin):
+        return False
+
+    units = _split_text_units(text)
+    if len(units) < 2 or len(units) > 4:
+        return False
+    if len(pinyin) < len(units):
+        return False
+
+    unit_readings: List[List[str]] = []
+    for ch in units:
+        readings = _collect_preferred_unihan_readings(
+            ch,
+            unihan_readings_map,
+            unihan_source_rank_map,
+            unihan_mandarin_map,
+            unihan_pinlu_detail_map,
+        )
+        if not readings:
+            return False
+        unit_readings.append(readings)
+
+    memo: Dict[Tuple[int, int], bool] = {}
+
+    def can_align(unit_idx: int, offset: int) -> bool:
+        key = (unit_idx, offset)
+        if key in memo:
+            return memo[key]
+        if unit_idx >= len(unit_readings):
+            result = offset == len(pinyin)
+            memo[key] = result
+            return result
+
+        if offset >= len(pinyin):
+            memo[key] = False
+            return False
+
+        result = False
+        for reading in unit_readings[unit_idx]:
+            if pinyin.startswith(reading, offset) and can_align(
+                unit_idx + 1, offset + len(reading)
+            ):
+                result = True
+                break
+
+        memo[key] = result
+        return result
+
+    return not can_align(0, 0)
+
+
 def _compute_weight(text: str) -> int:
     # Stable seed mapping: longer CJK terms get slightly larger base weight.
     length = _cjk_len(text)
@@ -2554,6 +2670,10 @@ def _filter_global_tail_entries(
     jieba_pos_map: Dict[str, str] | None,
     char_frequency_prior: Dict[str, float] | None,
     term_style_penalty_map: Dict[Tuple[str, str], int] | None,
+    unihan_readings_map: Dict[str, Set[str]] | None,
+    unihan_source_rank_map: Dict[Tuple[str, str], int] | None,
+    unihan_mandarin_map: Dict[str, str] | None,
+    unihan_pinlu_detail_map: Dict[Tuple[str, str], int] | None,
     stats_prefix: str,
 ) -> Dict[str, int]:
     """
@@ -2569,6 +2689,7 @@ def _filter_global_tail_entries(
         f"{stats_prefix}_global_tail_written_removed": 0,
         f"{stats_prefix}_global_tail_rare_char_removed": 0,
         f"{stats_prefix}_global_tail_modernity_risk_removed": 0,
+        f"{stats_prefix}_global_tail_constituent_mismatch_removed": 0,
     }
     if not mapping:
         return stats
@@ -2652,6 +2773,16 @@ def _filter_global_tail_entries(
             return False
         to_drop.append(entry_key)
         remaining_bucket_counts[entry_pinyin] = remaining - 1
+        return True
+
+    def force_drop(entry_key: Tuple[str, str]) -> bool:
+        if entry_key in to_drop:
+            return False
+        entry_pinyin, _ = entry_key
+        to_drop.append(entry_key)
+        remaining = remaining_bucket_counts.get(entry_pinyin, 0)
+        if remaining > 0:
+            remaining_bucket_counts[entry_pinyin] = remaining - 1
         return True
 
     for key in list(mapping.keys()):
@@ -2740,7 +2871,26 @@ def _filter_global_tail_entries(
             looks_like_literary_term=looks_like_literary_term,
             looks_like_written_tail_term=looks_like_written_tail_term,
         )
+        constituent_alignment_mismatch = _has_constituent_pinyin_alignment_mismatch(
+            text,
+            pinyin,
+            unihan_readings_map,
+            unihan_source_rank_map,
+            unihan_mandarin_map,
+            unihan_pinlu_detail_map,
+        )
         style_penalty = term_style_penalty_map.get(key, 0)
+        if (
+            constituent_alignment_mismatch
+            and usage_score < 0.08
+            and jieba_direct_score < 0.06
+            and source_hits <= 1
+            and pageview_score < 0.03
+            and not wiki_support
+        ):
+            if force_drop(key):
+                stats[f"{stats_prefix}_global_tail_constituent_mismatch_removed"] += 1
+            continue
         if style_penalty >= 160 and usage_score < 0.12 and jieba_direct_score < 0.10:
             if schedule_drop(key):
                 stats[f"{stats_prefix}_global_tail_written_removed"] += 1
@@ -6490,6 +6640,11 @@ def main() -> int:
     tc_family_support_sum_map: Dict[str, float] = {}
     tc_to_sc_map: Dict[str, Set[str]] = {}
     cedict_style_penalty_map: Dict[Tuple[str, str], int] = {}
+    unihan_map: Dict[str, str] = {}
+    unihan_readings_map: Dict[str, Set[str]] = {}
+    unihan_reading_source_map: Dict[Tuple[str, str], int] = {}
+    unihan_pinlu_map: Dict[str, int] = {}
+    unihan_pinlu_detail_map: Dict[Tuple[str, str], int] = {}
     primary_cache = repo_root / args.cache_file if args.cache_file else None
     cache_source_id = ""
     if primary_cache is not None:
@@ -6615,7 +6770,13 @@ def main() -> int:
             jieba_pos_map=jieba_pos_map,
             jieba_direct_signal_map=jieba_direct_signal_map,
         )
-        unihan_map = _load_unihan_mandarin_map(unihan_payload)
+        (
+            unihan_map,
+            unihan_readings_map,
+            unihan_reading_source_map,
+            unihan_pinlu_map,
+            unihan_pinlu_detail_map,
+        ) = _load_unihan_readings_detail(unihan_payload)
         wiki_titles, wiki_stats = _parse_wiki_titles_entries(
             wiki_titles_payload, min_hanzi=args.min_hanzi
         )
@@ -6958,6 +7119,10 @@ def main() -> int:
         jieba_pos_map=jieba_pos_map,
         char_frequency_prior=char_frequency_prior,
         term_style_penalty_map=cedict_style_penalty_map,
+        unihan_readings_map=unihan_readings_map,
+        unihan_source_rank_map=unihan_reading_source_map,
+        unihan_mandarin_map=unihan_map,
+        unihan_pinlu_detail_map=unihan_pinlu_detail_map,
         stats_prefix="sc",
     )
     stats.update(sc_global_tail_stats)
@@ -7010,6 +7175,10 @@ def main() -> int:
         jieba_pos_map=tc_jieba_pos_map,
         char_frequency_prior=tc_char_frequency_prior,
         term_style_penalty_map=cedict_style_penalty_map,
+        unihan_readings_map=unihan_readings_map,
+        unihan_source_rank_map=unihan_reading_source_map,
+        unihan_mandarin_map=unihan_map,
+        unihan_pinlu_detail_map=unihan_pinlu_detail_map,
         stats_prefix="tc",
     )
     stats.update(tc_global_tail_stats)
