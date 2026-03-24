@@ -21,10 +21,10 @@ Lexicon build and release repository for Cassotis IME.
 
 | File | Variant | Entries |
 |------|---------|---------|
-| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 103,048 |
-| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 100,907 |
+| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 113,984 |
+| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 111,550 |
 | `data/generated/dict_unihan_sc.txt` | Simplified single-char (Unihan) | 23,910 |
-| `data/generated/dict_unihan_tc.txt` | Traditional single-char (Unihan) | 24,064 |
+| `data/generated/dict_unihan_tc.txt` | Traditional single-char (Unihan) | 24,065 |
 
 ## External bootstrap sources (`external_broad`)
 
@@ -35,6 +35,7 @@ Lexicon build and release repository for Cassotis IME.
 | OpenCC STPhrases | Apache-2.0 | SC-TC phrase mapping |
 | jieba `dict.txt` | MIT | Frequency ranking signal |
 | Unicode Unihan | Unicode-3.0 | Character-level Mandarin fallback and single-char dictionaries |
+| Wiktionary zh titles (ns0) | CC BY-SA 4.0 | Daily wording, colloquial phrases, and chat-style lexical seeds |
 | Wikipedia zh titles (ns0) | CC BY-SA 4.0 | Named-entity coverage |
 | Wikimedia Pageviews Top (zh.wikipedia) | CC BY-SA 4.0 | Real-world usage heat signal |
 
@@ -46,9 +47,15 @@ See:
 ## Post-import optimization and filtering (external sources)
 - Normalize and de-duplicate imported entries across heterogeneous source formats.
 - Build weights from multiple signals (base frequency, DF/frequency side signals, and pageview heat) with balanced scaling.
+- Derive shorter daily/chat prefixes from already-supported longer colloquial expressions so phrases such as common sentence pivots surface earlier in IME use.
 - Damp low-signal named entities, likely personal names, and long-tail noise to reduce rare proper nouns crowding common phrases.
 - Apply IME-oriented validity filters (for example renderability and script constraints) to keep outputs practical on mainstream Windows clients.
 - Keep ranking behavior stable through rule-based corrections and regression sample checks.
+
+## Coverage focus
+- Prioritize everyday wording and conversational phrasing that improves fluent chat input, not only topical hotwords.
+- Use open lexical sources to recover common short expressions such as sentence pivots, mood particles, and colloquial transitions.
+- Keep named entities and bursty web terms as secondary signals instead of letting them dominate core daily typing paths.
 
 ## Directory layout
 - `data/generated/`: generated lexicon files.

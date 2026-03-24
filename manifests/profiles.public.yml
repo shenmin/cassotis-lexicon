@@ -10,7 +10,7 @@ profiles:
 
   - id: external_broad
     status: active
-    description: "Broad external profile: CC-CEDICT + THUOCL + jieba + OpenCC + Unihan + zhwiki titles + Wikimedia pageviews-top."
+    description: "Broad external profile: CC-CEDICT + THUOCL + jieba + OpenCC + Unihan + zhwiktionary titles + zhwiki titles + Wikimedia pageviews-top."
     expected_license_class: mixed_external
     risk_level: medium
     attribution_required: true
@@ -21,6 +21,7 @@ profiles:
       - jieba-dict
       - opencc-stphrases
       - unicode-unihan-readings
+      - zhwiktionary-titles-ns0
       - zhwiki-titles-ns0
       - wikimedia-pageviews-top
     constraints:

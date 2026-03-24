@@ -58,6 +58,19 @@ Notes:
 - License: Unicode-3.0
 - Copyright holder: Unicode Consortium
 
+## Wiktionary zh titles (ns0)
+
+- Name: Wikimedia zhwiktionary title dump (namespace 0)
+- Homepage: https://dumps.wikimedia.org/zhwiktionary/latest/
+- Download: https://dumps.wikimedia.org/zhwiktionary/latest/zhwiktionary-latest-all-titles-in-ns0.gz
+- License: CC BY-SA 4.0 (as part of Wikimedia content licensing)
+- Copyright holder: Wikimedia contributors
+
+Notes:
+
+- This repository uses titles as lexical seeds for daily wording, colloquial phrases, and chat-style expressions.
+- Raw dump files are not committed in this repository.
+
 ## Wikipedia zh titles (ns0)
 
 - Name: Wikimedia zhwiki title dump (namespace 0)

@@ -1,5 +1,5 @@
 version: 1
-generated_at: "2026-03-24T11:27:20+00:00"
+generated_at: "2026-03-24T13:15:19+00:00"
 profile: external_broad
 sources:
   - id: cc-cedict
@@ -52,6 +52,16 @@ sources:
     attribution_required: true
     raw_committed: false
     notes: 'Character-level Mandarin readings for pinyin fallback.'
+  - id: zhwiktionary-titles-ns0
+    name: Wiktionary zh titles (ns0)
+    download_url: https://dumps.wikimedia.org/zhwiktionary/latest/zhwiktionary-latest-all-titles-in-ns0.gz
+    homepage: https://dumps.wikimedia.org/zhwiktionary/latest/
+    license: CC BY-SA 4.0
+    risk_level: medium
+    redistribution_class: copyleft_sharealike
+    attribution_required: true
+    raw_committed: false
+    notes: 'Daily/colloquial lexical entries used as direct seed for modern chat phrasing.'
   - id: zhwiki-titles-ns0
     name: Wikipedia zh titles (ns0)
     download_url: https://dumps.wikimedia.org/zhwiki/latest/zhwiki-latest-all-titles-in-ns0.gz

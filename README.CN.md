@@ -21,10 +21,10 @@ Cassotis IME 词库构建与发布仓库。
 
 | 文件 | 字体变体 | 词条数 |
 |------|---------|--------|
-| `data/generated/dict_clean_sc.txt` | 简体中文主词库 | 103,048 |
-| `data/generated/dict_clean_tc.txt` | 繁体中文主词库 | 100,907 |
+| `data/generated/dict_clean_sc.txt` | 简体中文主词库 | 113,984 |
+| `data/generated/dict_clean_tc.txt` | 繁体中文主词库 | 111,550 |
 | `data/generated/dict_unihan_sc.txt` | 简体单字（Unihan） | 23,910 |
-| `data/generated/dict_unihan_tc.txt` | 繁体单字（Unihan） | 24,064 |
+| `data/generated/dict_unihan_tc.txt` | 繁体单字（Unihan） | 24,065 |
 
 ## 外部来源（`external_broad` 配置）
 
@@ -35,6 +35,7 @@ Cassotis IME 词库构建与发布仓库。
 | OpenCC STPhrases | Apache-2.0 | 简繁短语映射 |
 | jieba `dict.txt` | MIT | 频率排序信号 |
 | Unicode Unihan | Unicode-3.0 | 单字读音兜底与单字词库 |
+| 中文维基词典标题（ns0） | CC BY-SA 4.0 | 日常表达、口语说法与聊天短语种子 |
 | 中文维基标题（ns0） | CC BY-SA 4.0 | 命名实体覆盖 |
 | Wikimedia Pageviews Top（zh.wikipedia） | CC BY-SA 4.0 | 真实热度信号 |
 
@@ -46,9 +47,15 @@ Cassotis IME 词库构建与发布仓库。
 ## 外部词库导入后的优化与过滤思路
 - 对多来源词条做格式归一、去重合并，统一拼音与文本键。
 - `weight` 由多类信号共同构成（基础频率、DF/词频侧信号、访问热度），并做平衡缩放。
+- 从已经被公开来源支持的较长口语表达中，自动派生更短的日常/聊天前缀，让常见句式连接词更容易打出来。
 - 对低信号命名实体、疑似人名和长尾噪声做抑制，减少生僻专名挤占常用词排序。
 - 应用面向输入法场景的有效性过滤（如可渲染性、字形脚本约束），提升 Windows 场景可用性。
 - 通过规则修正和回归样本校验，保持同音竞争与整体排序稳定。
+
+## 覆盖重点
+- 重点补强能够显著提升日常聊天顺畅度的常用说法，而不只是追逐网络热词。
+- 优先恢复句式衔接词、语气相关短语、口语化表达等高频日常输入单元。
+- 将专名与短期热点视为辅助信号，避免挤占日常用语的核心排序空间。
 
 ## 目录结构
 - `data/generated/`：生成词库文件。
