@@ -21,12 +21,12 @@ Cassotis IME 词库构建与发布仓库。
 
 | 文件 | 字体变体 | 词条数 |
 |------|---------|--------|
-| `data/generated/dict_clean_sc.txt` | 简体中文主词库 | 113,984 |
-| `data/generated/dict_clean_tc.txt` | 繁体中文主词库 | 111,550 |
+| `data/generated/dict_clean_sc.txt` | 简体中文主词库 | 114,051 |
+| `data/generated/dict_clean_tc.txt` | 繁体中文主词库 | 111,612 |
 | `data/generated/dict_unihan_sc.txt` | 简体单字（Unihan） | 23,910 |
 | `data/generated/dict_unihan_tc.txt` | 繁体单字（Unihan） | 24,065 |
 
-## 外部来源（`external_broad` 配置）
+## 启动来源与项目内补充（`external_broad` 配置）
 
 | 来源 | 许可证 | 用途 |
 |------|--------|------|
@@ -36,6 +36,7 @@ Cassotis IME 词库构建与发布仓库。
 | jieba `dict.txt` | MIT | 频率排序信号 |
 | Unicode Unihan | Unicode-3.0 | 单字读音兜底与单字词库 |
 | 中文维基词典标题（ns0） | CC BY-SA 4.0 | 日常表达、口语说法与聊天短语种子 |
+| Cassotis 项目内日常/聊天词表 | 仓库许可证（项目自维护） | 补入公开来源仍容易漏掉、但对日常输入价值很高的常用说法 |
 | 中文维基标题（ns0） | CC BY-SA 4.0 | 命名实体覆盖 |
 | Wikimedia Pageviews Top（zh.wikipedia） | CC BY-SA 4.0 | 真实热度信号 |
 
@@ -55,6 +56,7 @@ Cassotis IME 词库构建与发布仓库。
 ## 覆盖重点
 - 重点补强能够显著提升日常聊天顺畅度的常用说法，而不只是追逐网络热词。
 - 优先恢复句式衔接词、语气相关短语、口语化表达等高频日常输入单元。
+- 对公开来源仍经常漏掉、但输入价值很高的日常短语，保留一小层项目内维护的补充词表。
 - 将专名与短期热点视为辅助信号，避免挤占日常用语的核心排序空间。
 
 ## 目录结构

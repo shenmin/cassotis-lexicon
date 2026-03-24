@@ -1,5 +1,5 @@
 version: 1
-generated_at: "2026-03-24T13:15:19+00:00"
+generated_at: "2026-03-24T13:39:00+00:00"
 profile: external_broad
 sources:
   - id: cc-cedict
@@ -62,6 +62,16 @@ sources:
     attribution_required: true
     raw_committed: false
     notes: 'Daily/colloquial lexical entries used as direct seed for modern chat phrasing.'
+  - id: project-curated-daily-phrases
+    name: Cassotis curated daily/chat phrases
+    download_url: repo://manifests/curated_daily_phrases.tsv
+    homepage: https://github.com/shenmin/cassotis-lexicon
+    license: Repository license (project-authored)
+    risk_level: low
+    redistribution_class: project_authored
+    attribution_required: false
+    raw_committed: true
+    notes: 'Project-maintained high-value daily/chat phrase whitelist for IME-friendly everyday input.'
   - id: zhwiki-titles-ns0
     name: Wikipedia zh titles (ns0)
     download_url: https://dumps.wikimedia.org/zhwiki/latest/zhwiki-latest-all-titles-in-ns0.gz

@@ -47,6 +47,8 @@ ZHWIKTIONARY_TITLES_URL = (
     "zhwiktionary-latest-all-titles-in-ns0.gz"
 )
 ZHWIKTIONARY_HOMEPAGE = "https://dumps.wikimedia.org/zhwiktionary/latest/"
+CURATED_DAILY_PHRASES_URL = "repo://manifests/curated_daily_phrases.tsv"
+CURATED_DAILY_PHRASES_HOMEPAGE = "https://github.com/shenmin/cassotis-lexicon"
 WIKIMEDIA_PAGEVIEWS_TOP_URL = "https://wikimedia.org/api/rest_v1/metrics/pageviews/top/zh.wikipedia/all-access"
 WIKIMEDIA_PAGEVIEWS_TOP_HOMEPAGE = "https://wikitech.wikimedia.org/wiki/Analytics/AQS/Pageviews"
 DEFAULT_PERMISSIVE_OVERRIDES = "manifests/pinyin_overrides.clean_permissive.tsv"
@@ -328,6 +330,18 @@ PROFILE_DEFAULTS: Dict[str, Dict[str, object]] = {
                 "attribution_required": True,
                 "raw_committed": False,
                 "notes": "Daily/colloquial lexical entries used as direct seed for modern chat phrasing.",
+            },
+            {
+                "id": "project-curated-daily-phrases",
+                "name": "Cassotis curated daily/chat phrases",
+                "download_url": CURATED_DAILY_PHRASES_URL,
+                "homepage": CURATED_DAILY_PHRASES_HOMEPAGE,
+                "license": "Repository license (project-authored)",
+                "risk_level": "low",
+                "redistribution_class": "project_authored",
+                "attribution_required": False,
+                "raw_committed": True,
+                "notes": "Project-maintained high-value daily/chat phrase whitelist for IME-friendly everyday input.",
             },
             {
                 "id": "zhwiki-titles-ns0",
@@ -3499,7 +3513,18 @@ def _download_bytes(url: str) -> bytes:
         return response.read()
 
 
-def _read_source_bytes(url: str, cache_file: pathlib.Path | None) -> bytes:
+def _read_source_bytes(
+    url: str,
+    cache_file: pathlib.Path | None,
+    repo_root: pathlib.Path | None = None,
+) -> bytes:
+    if url.startswith("repo://"):
+        if repo_root is None:
+            raise ValueError(f"repo:// source requires repo_root: {url}")
+        relative = pathlib.PurePosixPath(url[len("repo://") :].lstrip("/"))
+        resolved = repo_root.joinpath(*relative.parts)
+        return resolved.read_bytes()
+
     if cache_file and cache_file.exists():
         return cache_file.read_bytes()
 
@@ -3914,6 +3939,47 @@ def _build_wiktionary_daily_seed_signal_map(
                 stats["wiktionary_titles_derived_prefixes"] += 1
 
     return usage_score_map, stats
+
+
+def _parse_curated_daily_phrase_entries(
+    payload: bytes,
+    min_hanzi: int,
+) -> Tuple[List[Tuple[str, str, float]], Dict[str, int]]:
+    stats = {
+        "curated_daily_phrase_rows": 0,
+        "curated_daily_phrase_kept": 0,
+        "curated_daily_phrase_skipped_short": 0,
+        "curated_daily_phrase_skipped_non_cjk": 0,
+        "curated_daily_phrase_skipped_malformed": 0,
+    }
+    entries: List[Tuple[str, str, float]] = []
+    text = _decode_text(payload)
+    for raw_line in text.splitlines():
+        line = raw_line.strip()
+        if not line or line.startswith("#"):
+            continue
+        stats["curated_daily_phrase_rows"] += 1
+        parts = line.split("\t")
+        if len(parts) < 2:
+            stats["curated_daily_phrase_skipped_malformed"] += 1
+            continue
+        sc_word = parts[0].strip()
+        tc_word = parts[1].strip()
+        try:
+            usage_score = float(parts[2].strip()) if len(parts) >= 3 and parts[2].strip() else 0.82
+        except ValueError:
+            usage_score = 0.82
+        if (not sc_word) or (not CJK_FULL_RE.fullmatch(sc_word)):
+            stats["curated_daily_phrase_skipped_non_cjk"] += 1
+            continue
+        if _cjk_len(sc_word) < min_hanzi:
+            stats["curated_daily_phrase_skipped_short"] += 1
+            continue
+        if not tc_word:
+            tc_word = sc_word
+        entries.append((sc_word, tc_word, min(1.0, max(0.0, usage_score))))
+        stats["curated_daily_phrase_kept"] += 1
+    return entries, stats
 
 
 def _iter_recent_complete_months(month_count: int) -> List[Tuple[int, int]]:
@@ -6654,6 +6720,138 @@ def _augment_with_daily_prefix_derivation(
     return stats, sc_terms, tc_terms
 
 
+def _augment_with_curated_daily_phrases(
+    sc: Dict[Tuple[str, str], int],
+    tc: Dict[Tuple[str, str], int],
+    curated_entries: List[Tuple[str, str, float]],
+    usage_score_map: Dict[str, float],
+    source_hits_map: Dict[str, int],
+    tc_usage_score_map: Dict[str, float],
+    tc_source_hits_map: Dict[str, int],
+    jieba_direct_signal_map: Dict[str, float],
+    tc_jieba_direct_signal_map: Dict[str, float],
+    jieba_pos_map: Dict[str, str],
+    tc_jieba_pos_map: Dict[str, str],
+    char_frequency_prior: Dict[str, float],
+    tc_char_frequency_prior: Dict[str, float],
+    opencc_entries: List[Tuple[str, str]],
+    simp_to_trad_char_map: Dict[str, str],
+    unihan_map: Dict[str, str],
+    min_hanzi: int,
+) -> Tuple[Dict[str, int], Set[str], Set[str]]:
+    stats = {
+        "curated_daily_terms_total": 0,
+        "curated_daily_terms_added_sc": 0,
+        "curated_daily_terms_boosted_sc": 0,
+        "curated_daily_terms_added_tc": 0,
+        "curated_daily_terms_boosted_tc": 0,
+        "curated_daily_terms_skipped_short": 0,
+        "curated_daily_terms_skipped_no_pinyin": 0,
+    }
+    sc_terms: Set[str] = set()
+    tc_terms: Set[str] = set()
+    opencc_sc_to_tc = _build_opencc_sc_to_tc_map(opencc_entries)
+    tc_existing_texts = {text for _pinyin, text in tc.keys()}
+    sc_char_prior = _build_effective_char_prior(sc, char_frequency_prior)
+    tc_char_prior = _build_effective_char_prior(tc, tc_char_frequency_prior)
+
+    for sc_word, tc_word, usage_score in curated_entries:
+        stats["curated_daily_terms_total"] += 1
+        if _cjk_len(sc_word) < min_hanzi:
+            stats["curated_daily_terms_skipped_short"] += 1
+            continue
+
+        pinyin = _pinyin_from_unihan(sc_word, unihan_map)
+        if not pinyin:
+            stats["curated_daily_terms_skipped_no_pinyin"] += 1
+            continue
+
+        source_hits = 4
+        usage_score_map[sc_word] = max(usage_score_map.get(sc_word, 0.0), usage_score)
+        source_hits_map[sc_word] = max(source_hits_map.get(sc_word, 0), source_hits)
+
+        sc_jieba_direct = max(
+            jieba_direct_signal_map.get(sc_word, 0.0),
+            min(0.26, usage_score * 0.32),
+        )
+        sc_pos_tag = jieba_pos_map.get(sc_word, "")
+        sc_char_score = _compute_text_single_char_prior(sc_word, sc_char_prior)
+        sc_weight = _compute_weight_with_signals(
+            sc_word,
+            usage_score=usage_score,
+            source_hits=source_hits,
+            pageview_score=0.0,
+            wiki_hit=True,
+            core_entry=False,
+            jieba_direct_score=sc_jieba_direct,
+            pos_tag=sc_pos_tag,
+            char_score=sc_char_score,
+        )
+        sc_key = (pinyin, sc_word)
+        existing_sc_weight = sc.get(sc_key)
+        if existing_sc_weight is None:
+            sc[sc_key] = sc_weight
+            stats["curated_daily_terms_added_sc"] += 1
+            sc_terms.add(sc_word)
+        elif sc_weight > existing_sc_weight:
+            sc[sc_key] = sc_weight
+            stats["curated_daily_terms_boosted_sc"] += 1
+            sc_terms.add(sc_word)
+        else:
+            sc_terms.add(sc_word)
+
+        tc_candidate = tc_word
+        if not tc_candidate:
+            tc_words = opencc_sc_to_tc.get(sc_word, set())
+            if tc_words:
+                tc_candidate = sorted(tc_words)[0]
+            elif sc_word in tc_existing_texts:
+                tc_candidate = sc_word
+            else:
+                tc_candidate = _convert_sc_text_to_tc_with_phrase_hints(
+                    sc_word,
+                    opencc_sc_to_tc,
+                    simp_to_trad_char_map,
+                )
+        if _cjk_len(tc_candidate) < min_hanzi:
+            continue
+
+        tc_usage_score_map[tc_candidate] = max(tc_usage_score_map.get(tc_candidate, 0.0), usage_score)
+        tc_source_hits_map[tc_candidate] = max(tc_source_hits_map.get(tc_candidate, 0), source_hits)
+
+        tc_jieba_direct = max(
+            tc_jieba_direct_signal_map.get(tc_candidate, 0.0),
+            min(0.26, usage_score * 0.32),
+        )
+        tc_pos_tag = tc_jieba_pos_map.get(tc_candidate, sc_pos_tag)
+        tc_char_score = _compute_text_single_char_prior(tc_candidate, tc_char_prior)
+        tc_weight = _compute_weight_with_signals(
+            tc_candidate,
+            usage_score=usage_score,
+            source_hits=source_hits,
+            pageview_score=0.0,
+            wiki_hit=True,
+            core_entry=False,
+            jieba_direct_score=tc_jieba_direct,
+            pos_tag=tc_pos_tag,
+            char_score=tc_char_score,
+        )
+        tc_key = (pinyin, tc_candidate)
+        existing_tc_weight = tc.get(tc_key)
+        if existing_tc_weight is None:
+            tc[tc_key] = tc_weight
+            stats["curated_daily_terms_added_tc"] += 1
+            tc_terms.add(tc_candidate)
+        elif tc_weight > existing_tc_weight:
+            tc[tc_key] = tc_weight
+            stats["curated_daily_terms_boosted_tc"] += 1
+            tc_terms.add(tc_candidate)
+        else:
+            tc_terms.add(tc_candidate)
+
+    return stats, sc_terms, tc_terms
+
+
 def _apply_limit(
     mapping: Dict[Tuple[str, str], int],
     max_entries: int,
@@ -7365,7 +7563,7 @@ def main() -> int:
             # This source is fetched via monthly API calls with dedicated local cache files.
             continue
         cache_file = primary_cache if (primary_cache is not None and source_id == cache_source_id) else None
-        payload = _read_source_bytes(str(source["download_url"]), cache_file)
+        payload = _read_source_bytes(str(source["download_url"]), cache_file, repo_root=repo_root)
         payload_map[source_id] = payload
 
     if parser_name == "cedict":
@@ -7424,6 +7622,13 @@ def main() -> int:
             role="zhwiktionary-titles-ns0",
             source_id="zhwiktionary-titles-ns0",
             download_url=ZHWIKTIONARY_TITLES_URL,
+        )
+        curated_daily_payload = _require_source_payload(
+            payload_map,
+            sources,
+            role="project-curated-daily-phrases",
+            source_id="project-curated-daily-phrases",
+            download_url=CURATED_DAILY_PHRASES_URL,
         )
         cedict_text = _decode_text(cedict_payload)
         opencc_text = _decode_text(opencc_payload)
@@ -7505,9 +7710,16 @@ def main() -> int:
                 char_frequency_prior,
             )
         )
+        curated_daily_entries, curated_daily_parse_stats = _parse_curated_daily_phrase_entries(
+            curated_daily_payload,
+            args.min_hanzi,
+        )
         for word, score in wiktionary_usage_score_map.items():
             usage_score_map[word] = max(score, usage_score_map.get(word, 0.0))
             source_hits_map[word] = max(1, source_hits_map.get(word, 0))
+        for sc_word, _tc_word, score in curated_daily_entries:
+            usage_score_map[sc_word] = max(score, usage_score_map.get(sc_word, 0.0))
+            source_hits_map[sc_word] = max(4, source_hits_map.get(sc_word, 0))
         wiki_alias_titles_by_pinyin = _collect_wiki_pinyin_alias_titles(
             wiki_titles_payload,
             {pinyin for pinyin, _text in sc_map.keys()},
@@ -7634,6 +7846,31 @@ def main() -> int:
         )
         lexical_seed_sc_terms.update(daily_prefix_sc_terms)
         lexical_seed_tc_terms.update(daily_prefix_tc_terms)
+        (
+            curated_daily_stats,
+            curated_daily_sc_terms,
+            curated_daily_tc_terms,
+        ) = _augment_with_curated_daily_phrases(
+            sc_map,
+            tc_map,
+            curated_daily_entries,
+            usage_score_map,
+            source_hits_map,
+            tc_usage_score_map,
+            tc_source_hits_map,
+            jieba_direct_signal_map,
+            tc_jieba_direct_signal_map,
+            jieba_pos_map,
+            tc_jieba_pos_map,
+            char_frequency_prior,
+            tc_char_frequency_prior,
+            opencc_entries,
+            simp_to_trad_char_map,
+            unihan_map,
+            args.min_hanzi,
+        )
+        lexical_seed_sc_terms.update(curated_daily_sc_terms)
+        lexical_seed_tc_terms.update(curated_daily_tc_terms)
         sc_map, sc_normalize_stats = _normalize_sc_mapping_with_opencc(sc_map, tc_to_sc_map)
         sc_map, sc_char_normalize_stats = _normalize_sc_mapping_with_char_map(
             sc_map, trad_to_simp_char_map, simp_to_trad_char_map
@@ -7671,10 +7908,12 @@ def main() -> int:
         stats["wiktionary_title_set_size"] = len(wiktionary_titles)
         stats.update(wiktionary_stats)
         stats.update(wiktionary_seed_stats)
+        stats.update(curated_daily_parse_stats)
         stats.update(sc_rescore_stats)
         stats.update(tc_rescore_stats)
         stats.update(augment_stats)
         stats.update(daily_prefix_stats)
+        stats.update(curated_daily_stats)
         stats.update(sc_normalize_stats)
         stats.update(sc_char_normalize_stats)
         stats.update(sc_script_filter_stats)

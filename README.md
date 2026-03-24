@@ -21,12 +21,12 @@ Lexicon build and release repository for Cassotis IME.
 
 | File | Variant | Entries |
 |------|---------|---------|
-| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 113,984 |
-| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 111,550 |
+| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 114,051 |
+| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 111,612 |
 | `data/generated/dict_unihan_sc.txt` | Simplified single-char (Unihan) | 23,910 |
 | `data/generated/dict_unihan_tc.txt` | Traditional single-char (Unihan) | 24,065 |
 
-## External bootstrap sources (`external_broad`)
+## Bootstrap sources and curated supplements (`external_broad`)
 
 | Source | License | Usage |
 |--------|---------|-------|
@@ -36,6 +36,7 @@ Lexicon build and release repository for Cassotis IME.
 | jieba `dict.txt` | MIT | Frequency ranking signal |
 | Unicode Unihan | Unicode-3.0 | Character-level Mandarin fallback and single-char dictionaries |
 | Wiktionary zh titles (ns0) | CC BY-SA 4.0 | Daily wording, colloquial phrases, and chat-style lexical seeds |
+| Cassotis curated daily/chat phrases | Repository license (project-authored) | High-value everyday/chat phrasing that is worth keeping stable even when open sources miss it |
 | Wikipedia zh titles (ns0) | CC BY-SA 4.0 | Named-entity coverage |
 | Wikimedia Pageviews Top (zh.wikipedia) | CC BY-SA 4.0 | Real-world usage heat signal |
 
@@ -55,6 +56,7 @@ See:
 ## Coverage focus
 - Prioritize everyday wording and conversational phrasing that improves fluent chat input, not only topical hotwords.
 - Use open lexical sources to recover common short expressions such as sentence pivots, mood particles, and colloquial transitions.
+- Keep a small project-maintained whitelist for high-value daily phrases when open lexical sources still miss them.
 - Keep named entities and bursty web terms as secondary signals instead of letting them dominate core daily typing paths.
 
 ## Directory layout
