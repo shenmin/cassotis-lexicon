@@ -145,6 +145,26 @@ LOW_SIGNAL_WRITTEN_TAIL_HEADS = set(
     "\u5176\u4e8e\u4e43\u65af\u4ee5\u56e0\u6545\u8bfa\u65bc\u4e8c\u82e5\u592b\u51e1\u76d6\u9042\u83ab\u5f17\u672a\u5179\u8bf8"
 )
 
+# Some explicit TC<->SC single-character variant relations are not safe to
+# apply as a global char-for-char rewrite. These pairs remain shared for at
+# least one side in modern usage, so script filtering must be relaxed.
+#
+# Mapping value:
+#   (keep_trad_in_sc, keep_simp_in_tc)
+#
+# The list below is intentionally audited and conservative. It is derived from
+# CEDICT/OpenCC evidence, but excludes noisy mixed-script entries such as
+# 夥/伙 and 摺/折 that should not be surfaced in modern simplified output.
+SHARED_SCRIPT_VARIANT_BEHAVIOR: Dict[Tuple[str, str], Tuple[bool, bool]] = {
+    ("乾", "干"): (True, True),
+    ("徵", "征"): (True, True),
+    ("瞭", "了"): (True, True),
+    ("著", "着"): (True, False),
+    ("藉", "借"): (True, True),
+    ("覆", "复"): (True, False),
+    ("阪", "坂"): (True, True),
+}
+
 COPYLEFT_LICENSE_TOKENS = (
     "by-sa",
     "gpl",
@@ -4916,6 +4936,28 @@ def _apply_explicit_script_pair(
         or not CJK_FULL_RE.fullmatch(trad_ch)
         or not CJK_FULL_RE.fullmatch(simp_ch)
     ):
+        return
+
+    shared_behavior = SHARED_SCRIPT_VARIANT_BEHAVIOR.get((trad_ch, simp_ch))
+    if shared_behavior is not None:
+        keep_trad_in_sc, keep_simp_in_tc = shared_behavior
+
+        # Do not apply global char-for-char rewrites for audited shared pairs.
+        trad_to_simp_char_map.pop(trad_ch, None)
+        simp_to_trad_char_map.pop(simp_ch, None)
+        trad_to_simp_char_map.pop(simp_ch, None)
+        simp_to_trad_char_map.pop(trad_ch, None)
+
+        sc_chars.add(simp_ch)
+        tc_chars.add(trad_ch)
+        if keep_trad_in_sc:
+            sc_chars.add(trad_ch)
+        else:
+            sc_chars.discard(trad_ch)
+        if keep_simp_in_tc:
+            tc_chars.add(simp_ch)
+        else:
+            tc_chars.discard(simp_ch)
         return
 
     # Treat explicit Unihan/OpenCC single-character variant relations as

@@ -33,7 +33,7 @@ beijingkaoya	北京|烤鴨	432
 beijingyinyue	背景|音樂	468
 beijingyuanren	北京|猿人	449
 beiyangjunfa	北洋|軍閥	457
-beiyangzhengfu	北洋|政府	431
+beiyangzhengfu	北洋|政府	426
 beizizhiwu	被子|植物	465
 benbenzhuyi	本本|主義	445
 bendijishu	本底|計數	374
@@ -131,6 +131,7 @@ chengxusheji	程序|設計	469
 chenjizuoyong	沉積|作用	445
 chijiaoyisheng	赤腳|醫生	442
 chixushijian	持續|時間	456
+chizhafengyun	叱吒|風雲	434
 chongfenkaolv	充分|考慮	440
 chongjipingyuan	沖積|平原	459
 chongtijiushi	重提|舊事	408
@@ -199,7 +200,7 @@ dianziyoujian	電子|郵件	480
 dianziyouxi	電子|遊戲	469
 dianziyouxiang	電子|郵箱	452
 diaochaheshi	調查|核實	436
-diaochajieguo	調查|結果	454
+diaochajieguo	調查|結果	448
 diepoyanjing	跌破|眼鏡	427
 difangzhuyi	地方|主義	468
 diguozhuyi	帝國|主義	518
@@ -388,7 +389,6 @@ guijushengmo	規矩|繩墨	447
 gujinzhongwai	古今|中外	455
 guodushiqi	過渡|時期	463
 guofangbuzhang	國防|部長	500
-guogonghezuo	國共|閤作	400
 guohuiyiyuan	國會|議員	418
 guojijichang	國際|機場	463
 guojilianmeng	國際|聯盟	435
@@ -550,7 +550,6 @@ jiejuefangan	解決|方案	436
 jielianbuduan	接連|不斷	481
 jiepoumaque	解剖|麻雀	428
 jietijiaoshi	階梯|教室	425
-jifengjingcao	疾風|勁草	407
 jigongxuexiao	技工|學校	467
 jiguangchangpian	激光|唱片	467
 jihuajingji	計劃|經濟	480
@@ -560,7 +559,7 @@ jijifenzi	積極|分子	471
 jijinfenzi	激進|分子	445
 jijinzhuyi	激進|主義	454
 jijiuzhongxin	急救|中心	487
-jileshijie	極樂|世界	470
+jileshijie	極樂|世界	459
 jimiwenjian	機密|文件	467
 jingguansheji	景觀|設計	462
 jingjijichu	經濟|基礎	480
@@ -570,7 +569,8 @@ jingjiubuxi	經久|不息	452
 jingjixiaoyi	經濟|效益	436
 jingjizhouqi	經濟|週期	463
 jingjizuowu	經濟|作物	500
-jingmingnenggan	精明|能幹	474
+jingmingnenggan	精明|能干	474
+jingmingnenggan	精明|能幹	470
 jingshenjibing	精神|疾病	467
 jingshenlingxiu	精神|領袖	462
 jingshenwenming	精神|文明	493
@@ -644,7 +644,7 @@ kaifarenyuan	開發|人員	469
 kaifazhouqi	開發|周期	448
 kaiguogongchen	開國|功臣	423
 kaiguoyuanxun	開國|元勛	409
-kaihuajieguo	開花|結果	451
+kaihuajieguo	開花|結果	445
 kailuxianfeng	開路|先鋒	467
 kaimudianli	開幕|典禮	428
 kaishanzushi	開山|祖師	413
@@ -749,7 +749,7 @@ liuwangzhengfu	流亡|政府	467
 liuxingyinyue	流行|音樂	467
 lixiangzhuyi	理想|主義	475
 lixinggongshi	例行|公事	460
-lixingjieyue	厲行|節約	431
+lixingjieyue	厲行|節約	420
 lixingzhuyi	理性|主義	464
 liyichongtu	利益|衝突	467
 liyijituan	利益|集團	467
@@ -768,7 +768,7 @@ lvyoujingdian	旅遊|景點	463
 lvyoushengdi	旅遊|勝地	478
 maguantiaoyue	馬關|條約	385
 maifangshichang	買方|市場	457
-maitoukugan	埋頭|苦幹	452
+maitoukugan	埋頭|苦幹	451
 makesizhuyi	馬剋思|主義	424
 malaixiya	馬來|西亞	513
 maliezhuyi	馬列|主義	466
@@ -907,7 +907,7 @@ qinzidongshou	親自|動手	463
 qixiangweixing	氣象|衛星	463
 quanfuwuzhuang	全副|武裝	481
 quanguorenda	全國|人大	486
-quanjunfumo	全軍|覆沒	436
+quanjunfumo	全軍|覆沒	430
 quanlidouzheng	權力|鬥爭	438
 quanliyaoqiu	權利|要求	428
 quanmintoupiao	全民|投票	435
@@ -992,8 +992,6 @@ shaguaxiangji	傻瓜|相機	435
 shandianjiehun	閃電|結婚	466
 shangcanrenyuan	傷殘|人員	463
 shangcengjianzhu	上層|建築	461
-shanghaihezuo	上海|閤作	354
-shanghaihezuozuzhi	上海|閤作|組織	436
 shangjilingdao	上級|領導	463
 shangpinjingji	商品|經濟	497
 shangyefapiao	商業|發票	463
@@ -1003,7 +1001,6 @@ shangyexingwei	商業|行為	463
 shangyeyinhang	商業|銀行	436
 shaonvshidai	少女|時代	436
 shaoshuminzu	少數|民族	483
-shaoxiangbaifo	燒香|拜佛	410
 shapantuiyan	沙盤|推演	448
 shaqitengteng	殺氣|騰騰	417
 sharenanjian	殺人|案件	467
@@ -1406,7 +1403,7 @@ xuanchuangongshi	宣傳|攻勢	426
 xuduguangyin	虛度|光陰	416
 xueroumohu	血肉|模糊	463
 xueshixuewei	學士|學位	463
-xueweizhengshu	學位|證書	462
+xueweizhengshu	學位|證書	459
 xueyexunhuan	血液|循環	463
 xueyeyoucheng	學業|有成	405
 xujiuzishi	酗酒|滋事	453
@@ -1520,7 +1517,7 @@ yuenantufushijian	越南|屠夫|事件	448
 yuenanzhanzheng	越南|戰爭	423
 yueshutiaojian	約束|條件	470
 yufangcuoshi	預防|措施	463
-yufangjiezhong	預防|接種	439
+yufangjiezhong	預防|接種	429
 yulechangsuo	娛樂|場所	455
 yulezhongxin	娛樂|中心	463
 yumaoqiuchang	羽毛|球場	450
@@ -1549,8 +1546,8 @@ zhaoyangchanye	朝陽|產業	399
 zhaozedidai	沼澤|地帶	431
 zhenchanmabi	震顫|麻痺	459
 zhengfengyundong	整風|運動	436
-zhengfudianzi	正負|電子	447
-zhengfushounao	政府|首腦	467
+zhengfudianzi	正負|電子	446
+zhengfushounao	政府|首腦	464
 zhengmingwenjian	證明|文件	467
 zhengqijiche	蒸汽|機車	425
 zhengquangongsi	證券|公司	467
@@ -1602,8 +1599,6 @@ zhongguolishi	中國|歷史	455
 zhonghuaminguo	中華|民國	520
 zhonghuaminguozongtong	中華民國|總統	439
 zhonghuaminzu	中華|民族	487
-zhongrilianhe	中日|聯閤	354
-zhongrilianheshengming	中日|聯閤|聲明	436
 zhongshangongyuan	中山|公園	481
 zhongshendashi	終身|大事	476
 zhongxingenggeng	忠心|耿耿	400
