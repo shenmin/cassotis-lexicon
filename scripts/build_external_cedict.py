@@ -6607,6 +6607,17 @@ def _augment_with_daily_prefix_derivation(
                 continue
             prefix_char_score = _compute_text_single_char_prior(prefix, char_prior)
             prefix_min_char_prior = _compute_min_char_prior(prefix, char_prior)
+            prefix_usage_direct = min(1.0, max(0.0, usage_score_map.get(prefix, 0.0)))
+            prefix_source_hits_direct = max(0, source_hits_map.get(prefix, 0))
+            prefix_pageview_direct = min(
+                1.0,
+                max(0.0, pageviews_signal_map.get(prefix, 0.0)),
+            )
+            prefix_jieba_direct = min(
+                1.0,
+                max(0.0, jieba_direct_signal_map.get(prefix, 0.0)),
+            )
+            existing_prefix_weight = text_best_weight.get(prefix, 0)
             if prefix_len == 2:
                 if prefix_char_score < 0.14 or prefix_min_char_prior < 0.01:
                     continue
@@ -6620,6 +6631,18 @@ def _augment_with_daily_prefix_derivation(
                     continue
                 prefix_usage = max(0.18, usage_score - 0.06)
 
+            # Keep daily-chat prefix derivation conservative: the prefix must
+            # have some direct evidence of its own instead of inheriting the
+            # full strength of a longer phrase wholesale.
+            if (
+                prefix_usage_direct < 0.08
+                and prefix_jieba_direct < 0.05
+                and prefix_source_hits_direct < 1
+                and prefix_pageview_direct < 0.02
+                and existing_prefix_weight < 320
+            ):
+                continue
+
             pinyin_candidates = sorted(
                 _derive_prefix_pinyin_candidates_from_longer_terms(
                     prefix,
@@ -6631,20 +6654,31 @@ def _augment_with_daily_prefix_derivation(
                 )
             )
             if not pinyin_candidates:
-                fallback = _pinyin_from_unihan(prefix, unihan_map)
-                if not fallback:
-                    continue
-                pinyin_candidates = [fallback]
+                continue
             stats["daily_prefix_pinyin_hits"] += 1
+
+            blended_usage = max(prefix_usage_direct, min(prefix_usage, prefix_usage_direct + 0.10))
+            blended_pageview = max(
+                prefix_pageview_direct,
+                min(pageview_score * 0.40, prefix_pageview_direct + 0.04),
+            )
+            blended_source_hits = max(
+                prefix_source_hits_direct,
+                min(max(1, source_hits), prefix_source_hits_direct + 1),
+            )
+            blended_jieba_direct = max(
+                prefix_jieba_direct,
+                min(max(jieba_direct_score, prefix_usage * 0.50), prefix_jieba_direct + 0.10),
+            )
 
             weight = _compute_weight_with_signals(
                 prefix,
-                usage_score=prefix_usage,
-                source_hits=max(1, source_hits),
-                pageview_score=pageview_score * 0.60,
+                usage_score=blended_usage,
+                source_hits=blended_source_hits,
+                pageview_score=blended_pageview,
                 wiki_hit=True,
                 core_entry=False,
-                jieba_direct_score=max(jieba_direct_score, prefix_usage * 0.50),
+                jieba_direct_score=blended_jieba_direct,
                 pos_tag=pos_tag,
                 char_score=prefix_char_score,
             )
@@ -6692,12 +6726,12 @@ def _augment_with_daily_prefix_derivation(
                 tc_char_score = _compute_text_single_char_prior(tc_word, char_prior)
                 tc_weight = _compute_weight_with_signals(
                     tc_word,
-                    usage_score=prefix_usage,
-                    source_hits=max(1, source_hits),
-                    pageview_score=pageview_score * 0.60,
+                    usage_score=blended_usage,
+                    source_hits=blended_source_hits,
+                    pageview_score=blended_pageview,
                     wiki_hit=True,
                     core_entry=False,
-                    jieba_direct_score=max(jieba_direct_score, prefix_usage * 0.50),
+                    jieba_direct_score=blended_jieba_direct,
                     pos_tag=pos_tag,
                     char_score=tc_char_score,
                 )
