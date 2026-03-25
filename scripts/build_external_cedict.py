@@ -7046,6 +7046,12 @@ def _adjust_single_char_leading_preferences(
             leading_ratio = (
                 leading_support / family_support if family_support > 0.0 else 0.0
             )
+            meaningful_leading_presence = (
+                leading_support >= 260.0 and leading_term_count >= 3
+            )
+            strong_leading_presence = (
+                leading_support >= 520.0 and leading_term_count >= 6
+            )
 
             delta = 0
             if (
@@ -7079,6 +7085,15 @@ def _adjust_single_char_leading_preferences(
             ):
                 delta += 24
 
+            # Some high-frequency standalone characters are common even when
+            # they do not dominate as the first character of compounds.
+            # Give them a modest absolute-leading-support boost so characters
+            # like "是/里/还" are not buried behind less common homophones.
+            if reading_pinlu >= 6000 and strong_leading_presence:
+                delta += 72
+            elif reading_pinlu >= 3000 and meaningful_leading_presence:
+                delta += 36
+
             if bucket_best_leading_support >= 800.0 and reading_pinlu >= 3000:
                 if leading_support >= bucket_best_leading_support * 0.88:
                     delta += 36
@@ -7091,14 +7106,20 @@ def _adjust_single_char_leading_preferences(
                 and family_term_count >= 24
                 and leading_ratio < 0.18
             ):
-                delta -= 180
+                if not meaningful_leading_presence:
+                    delta -= 180
+                elif not strong_leading_presence:
+                    delta -= 60
             elif (
                 reading_pinlu >= 3000
                 and family_support >= 6000.0
                 and family_term_count >= 12
                 and leading_ratio < 0.22
             ):
-                delta -= 120
+                if not meaningful_leading_presence:
+                    delta -= 120
+                elif leading_support < 360.0 or leading_term_count < 4:
+                    delta -= 36
 
             if delta == 0:
                 continue

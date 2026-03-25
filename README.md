@@ -21,10 +21,10 @@ Lexicon build and release repository for Cassotis IME.
 
 | File | Variant | Entries |
 |------|---------|---------|
-| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 115,448 |
-| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 113,832 |
+| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 115,616 |
+| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 114,001 |
 | `data/generated/dict_unihan_sc.txt` | Simplified single-char (Unihan) | 23,909 |
-| `data/generated/dict_unihan_tc.txt` | Traditional single-char (Unihan) | 24,065 |
+| `data/generated/dict_unihan_tc.txt` | Traditional single-char (Unihan) | 24,064 |
 
 ## Bootstrap sources and curated supplements (`external_broad`)
 
