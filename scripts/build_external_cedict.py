@@ -7860,6 +7860,95 @@ def _augment_with_curated_daily_phrases(
     return stats, sc_terms, tc_terms
 
 
+def _reinforce_curated_daily_tc_phrases(
+    tc: Dict[Tuple[str, str], int],
+    curated_entries: List[Tuple[str, str, float]],
+    tc_usage_score_map: Dict[str, float],
+    tc_source_hits_map: Dict[str, int],
+    tc_jieba_direct_signal_map: Dict[str, float],
+    tc_jieba_pos_map: Dict[str, str],
+    tc_char_frequency_prior: Dict[str, float],
+    opencc_entries: List[Tuple[str, str]],
+    simp_to_trad_char_map: Dict[str, str],
+    unihan_map: Dict[str, str],
+    min_hanzi: int,
+) -> Dict[str, int]:
+    stats = {
+        "curated_daily_exact_tc_reinforced": 0,
+        "curated_daily_exact_tc_added": 0,
+    }
+    if not tc or not curated_entries:
+        return stats
+
+    opencc_sc_to_tc = _build_opencc_sc_to_tc_map(opencc_entries)
+    tc_existing_texts = {text for _pinyin, text in tc.keys()}
+    tc_char_prior = _build_effective_char_prior(tc, tc_char_frequency_prior)
+
+    for sc_word, tc_word, usage_score in curated_entries:
+        if _cjk_len(sc_word) < min_hanzi:
+            continue
+
+        pinyin = _pinyin_from_unihan(sc_word, unihan_map)
+        if not pinyin:
+            continue
+
+        tc_candidate = tc_word
+        if not tc_candidate:
+            tc_words = opencc_sc_to_tc.get(sc_word, set())
+            if tc_words:
+                tc_candidate = sorted(tc_words)[0]
+            elif sc_word in tc_existing_texts:
+                tc_candidate = sc_word
+            else:
+                tc_candidate = _convert_sc_text_to_tc_with_phrase_hints(
+                    sc_word,
+                    opencc_sc_to_tc,
+                    simp_to_trad_char_map,
+                )
+        if _cjk_len(tc_candidate) < min_hanzi:
+            continue
+
+        source_hits = max(4, tc_source_hits_map.get(tc_candidate, 0))
+        usage_score = max(usage_score, tc_usage_score_map.get(tc_candidate, 0.0))
+        tc_jieba_direct = max(
+            tc_jieba_direct_signal_map.get(tc_candidate, 0.0),
+            min(0.26, usage_score * 0.32),
+        )
+        tc_pos_tag = tc_jieba_pos_map.get(tc_candidate, "")
+        tc_char_score = _compute_text_single_char_prior(tc_candidate, tc_char_prior)
+        tc_daily_number_support = _is_daily_number_word_candidate(
+            tc_candidate,
+            text_len=_cjk_len(tc_candidate),
+            usage_score=usage_score,
+            source_hits=source_hits,
+            pos_tag=tc_pos_tag,
+        )
+        tc_weight = _compute_weight_with_signals(
+            tc_candidate,
+            usage_score=usage_score,
+            source_hits=source_hits,
+            pageview_score=0.0,
+            wiki_hit=True,
+            core_entry=False,
+            jieba_direct_score=tc_jieba_direct,
+            pos_tag=tc_pos_tag,
+            char_score=tc_char_score,
+        )
+        if tc_daily_number_support:
+            tc_weight = min(1000, tc_weight + (40 if _cjk_len(tc_candidate) <= 2 else 26))
+
+        tc_key = (pinyin, tc_candidate)
+        existing_tc_weight = tc.get(tc_key)
+        if existing_tc_weight is None:
+            tc[tc_key] = tc_weight
+            stats["curated_daily_exact_tc_added"] += 1
+        elif tc_weight > existing_tc_weight:
+            tc[tc_key] = tc_weight
+            stats["curated_daily_exact_tc_reinforced"] += 1
+
+    return stats
+
+
 def _augment_with_wiki_proper_noun_titles(
     sc: Dict[Tuple[str, str], int],
     tc: Dict[Tuple[str, str], int],
@@ -9241,6 +9330,19 @@ def main() -> int:
         tc_map, tc_script_filter_stats = _filter_tc_mapping_with_script_hints(
             tc_map, sc_script_chars, tc_script_chars
         )
+        curated_daily_tc_exact_stats = _reinforce_curated_daily_tc_phrases(
+            tc_map,
+            curated_daily_entries,
+            tc_usage_score_map,
+            tc_source_hits_map,
+            tc_jieba_direct_signal_map,
+            tc_jieba_pos_map,
+            tc_char_frequency_prior,
+            opencc_entries,
+            simp_to_trad_char_map,
+            unihan_map,
+            args.min_hanzi,
+        )
 
         stats = {}
         stats.update(cedict_stats)
@@ -9266,6 +9368,7 @@ def main() -> int:
         stats.update(sc_rescore_stats)
         stats.update(tc_rescore_stats)
         stats.update(augment_stats)
+        stats.update(curated_daily_tc_exact_stats)
         stats.update(daily_prefix_stats)
         stats.update(wiki_proper_stats)
         stats.update(curated_daily_stats)
