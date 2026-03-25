@@ -236,6 +236,11 @@ SHARED_SCRIPT_VARIANT_BEHAVIOR: Dict[Tuple[str, str], Tuple[bool, bool]] = {
 
 # Audited single-character reading overrides. Keep this hook available, but
 # prefer algorithmic phrase-support calibration before adding explicit entries.
+SINGLE_CHAR_READING_DROP_OVERRIDES: Set[Tuple[str, str]] = {
+    # `哦/e` exists as a marginal colloquial reading, but standalone `e` input
+    # should not surface it as a single-character candidate at all.
+    ("哦", "e"),
+}
 SINGLE_CHAR_READING_DELTA_OVERRIDES: Dict[Tuple[str, str], int] = {}
 
 COPYLEFT_LICENSE_TOKENS = (
@@ -2255,6 +2260,7 @@ def _rerank_homophone_buckets(
     jieba_pos_map: Dict[str, str] | None,
     char_frequency_prior: Dict[str, float] | None,
     term_style_penalty_map: Dict[Tuple[str, str], int] | None,
+    preferred_terms: Set[str] | None,
     stats_prefix: str,
 ) -> Dict[str, int]:
     """
@@ -2290,6 +2296,8 @@ def _rerank_homophone_buckets(
         f"{stats_prefix}_homophone_daily_phrase_damped": 0,
         f"{stats_prefix}_homophone_daily_number_boosted": 0,
         f"{stats_prefix}_homophone_daily_phrase_short_non_daily_damped": 0,
+        f"{stats_prefix}_homophone_preferred_term_boosted": 0,
+        f"{stats_prefix}_homophone_preferred_term_damped": 0,
     }
     if not mapping:
         return stats
@@ -2300,6 +2308,7 @@ def _rerank_homophone_buckets(
     jieba_direct_signal_map = jieba_direct_signal_map or {}
     jieba_pos_map = jieba_pos_map or {}
     term_style_penalty_map = term_style_penalty_map or {}
+    preferred_terms = preferred_terms or set()
     char_prior = _build_effective_char_prior(mapping, char_frequency_prior)
     edge_family_support = _build_edge_family_support_for_terms(mapping)
     buckets: Dict[str, List[Tuple[str, int]]] = {}
@@ -2318,6 +2327,7 @@ def _rerank_homophone_buckets(
         bucket_has_conversational_short_term = False
         bucket_has_daily_phrase_term = False
         bucket_has_daily_number_term = False
+        bucket_has_preferred_term = False
         bucket_dominant_common_text = ""
         bucket_dominant_common_signal = -1.0
         bucket_dominant_common_runner_up = -1.0
@@ -2376,6 +2386,8 @@ def _rerank_homophone_buckets(
                 pos_tag=pos_tag,
             ):
                 bucket_has_daily_number_term = True
+            if text in preferred_terms:
+                bucket_has_preferred_term = True
         for text, weight in items:
             text_len = _cjk_len(text)
             usage_score = min(1.0, max(0.0, usage_score_map.get(text, 0.0)))
@@ -2901,6 +2913,17 @@ def _rerank_homophone_buckets(
                 delta += 28 if text_len <= 2 else 18
                 stats[f"{stats_prefix}_homophone_daily_number_boosted"] += 1
 
+            if bucket_has_preferred_term:
+                if text in preferred_terms:
+                    delta += 24 if text_len <= 2 else 14
+                    stats[f"{stats_prefix}_homophone_preferred_term_boosted"] += 1
+                elif text_len <= 3:
+                    # Curated daily terms are an explicit product preference.
+                    # In the same homophone bucket, short non-curated terms
+                    # should yield unless they are also manually promoted.
+                    delta -= 96 if text_len <= 2 else 44
+                    stats[f"{stats_prefix}_homophone_preferred_term_damped"] += 1
+
             if bucket_has_conversational_short_term and text_len <= 2:
                 # Keep conversational preference as a mild tiebreaker only.
                 # The old ±300~400 forcing was too aggressive and could demote
@@ -2943,6 +2966,14 @@ def _rerank_homophone_buckets(
                         and (usage_score >= 0.08 or jieba_direct_score >= 0.10 or source_hits >= 2)
                     ):
                         delta += 20
+
+            if text_len == 1:
+                audited_reading_delta = SINGLE_CHAR_READING_DELTA_OVERRIDES.get((text, pinyin), 0)
+                if audited_reading_delta < 0:
+                    # Keep audited rare-reading penalties alive after homophone
+                    # reranking, so later conversational boosts cannot undo
+                    # earlier single-character reading correction.
+                    delta += int(round(audited_reading_delta * 0.55))
 
             if (
                 text_len <= 2
@@ -6875,6 +6906,7 @@ def _adjust_single_char_reading_preferences(
     stats = {
         f"{stats_prefix}_single_char_reading_preference_adjusted": 0,
         f"{stats_prefix}_single_char_reading_preference_delta_total": 0,
+        f"{stats_prefix}_single_char_reading_removed": 0,
     }
     if not mapping:
         return stats
@@ -6891,6 +6923,11 @@ def _adjust_single_char_reading_preferences(
     for key in list(mapping.keys()):
         pinyin, text = key
         if _cjk_len(text) != 1:
+            continue
+
+        if (text, pinyin) in SINGLE_CHAR_READING_DROP_OVERRIDES:
+            del mapping[key]
+            stats[f"{stats_prefix}_single_char_reading_removed"] += 1
             continue
 
         delta = _compute_unihan_single_char_reading_delta(
@@ -9142,6 +9179,7 @@ def main() -> int:
         jieba_pos_map=jieba_pos_map,
         char_frequency_prior=char_frequency_prior,
         term_style_penalty_map=cedict_style_penalty_map,
+        preferred_terms=curated_daily_sc_terms,
         stats_prefix="sc",
     )
     stats.update(sc_homophone_stats)
@@ -9198,6 +9236,7 @@ def main() -> int:
         jieba_pos_map=tc_jieba_pos_map,
         char_frequency_prior=tc_char_frequency_prior,
         term_style_penalty_map=cedict_style_penalty_map,
+        preferred_terms=curated_daily_tc_terms,
         stats_prefix="tc",
     )
     stats.update(tc_homophone_stats)
