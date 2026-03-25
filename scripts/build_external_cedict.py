@@ -928,6 +928,57 @@ def _build_single_char_weight_prior(mapping: Dict[Tuple[str, str], int]) -> Dict
     return {ch: (weight - min_weight) / spread for ch, weight in raw.items()}
 
 
+def _build_mapping_char_frequency_prior(
+    mapping: Dict[Tuple[str, str], int],
+) -> Dict[str, float]:
+    """
+    Build a coarse character prior from all current terms.
+
+    This is weaker than external frequency sources, but it gives cedict-only
+    builds a useful fallback: common characters that participate in many
+    productive compounds should outrank rare characters that only appear in a
+    handful of literary or archaic entries.
+    """
+    raw: Dict[str, float] = {}
+    for (_pinyin, text), weight in mapping.items():
+        text_len = _cjk_len(text)
+        if text_len <= 0:
+            continue
+        term_weight = min(420.0, float(weight))
+        if text_len == 1:
+            term_factor = 1.30
+        elif text_len == 2:
+            term_factor = 1.00
+        elif text_len <= 4:
+            term_factor = 0.62
+        else:
+            term_factor = 0.34
+        contribution = term_weight * term_factor
+        for ch in text:
+            if not CJK_FULL_RE.fullmatch(ch):
+                continue
+            raw[ch] = raw.get(ch, 0.0) + contribution
+
+    if not raw:
+        return {}
+
+    max_log = 0.0
+    for value in raw.values():
+        if value <= 0.0:
+            continue
+        log_value = math.log1p(value)
+        if log_value > max_log:
+            max_log = log_value
+    if max_log <= 0.0:
+        return {}
+
+    prior: Dict[str, float] = {}
+    for ch, value in raw.items():
+        ratio = min(1.0, max(0.0, math.log1p(value) / max_log))
+        prior[ch] = ratio**1.35
+    return prior
+
+
 def _compute_text_single_char_prior(text: str, char_prior: Dict[str, float]) -> float:
     if not text:
         return 0.0
@@ -1720,16 +1771,87 @@ def _build_effective_char_prior(
 ) -> Dict[str, float]:
     char_frequency_prior = char_frequency_prior or {}
     mapping_char_prior = _build_single_char_weight_prior(mapping)
+    mapping_frequency_prior = _build_mapping_char_frequency_prior(mapping)
     if not char_frequency_prior:
-        return mapping_char_prior
+        if not mapping_char_prior:
+            return mapping_frequency_prior
+        if not mapping_frequency_prior:
+            return mapping_char_prior
+
+        char_prior: Dict[str, float] = {}
+        for ch in set(mapping_char_prior.keys()) | set(mapping_frequency_prior.keys()):
+            char_prior[ch] = (
+                0.34 * mapping_char_prior.get(ch, 0.0)
+                + 0.66 * mapping_frequency_prior.get(ch, 0.0)
+            )
+        return char_prior
 
     char_prior: Dict[str, float] = {}
-    for ch in set(mapping_char_prior.keys()) | set(char_frequency_prior.keys()):
+    for ch in (
+        set(mapping_char_prior.keys())
+        | set(mapping_frequency_prior.keys())
+        | set(char_frequency_prior.keys())
+    ):
         char_prior[ch] = (
-            0.22 * mapping_char_prior.get(ch, 0.0)
-            + 0.78 * char_frequency_prior.get(ch, 0.0)
+            0.12 * mapping_char_prior.get(ch, 0.0)
+            + 0.16 * mapping_frequency_prior.get(ch, 0.0)
+            + 0.72 * char_frequency_prior.get(ch, 0.0)
         )
     return char_prior
+
+
+def _build_edge_family_support_for_terms(
+    mapping: Dict[Tuple[str, str], int],
+) -> Dict[Tuple[str, str], float]:
+    """
+    Build conservative family support for short terms from longer terms that
+    contain them at the edge with aligned compact pinyin.
+
+    This is intentionally weaker than broad-profile usage signals, but it gives
+    cedict-only buckets a useful fallback so rare variants do not stay tied with
+    mainstream forms simply because they share the same base length weight.
+    """
+    variants_by_text: Dict[str, List[str]] = {}
+    for pinyin, text in mapping.keys():
+        text_len = _cjk_len(text)
+        if text_len < 2 or text_len > 4:
+            continue
+        bucket = variants_by_text.setdefault(text, [])
+        if pinyin not in bucket:
+            bucket.append(pinyin)
+
+    if not variants_by_text:
+        return {}
+
+    family_support: Dict[Tuple[str, str], float] = {}
+    for (term_pinyin, term_text), weight in mapping.items():
+        term_len = _cjk_len(term_text)
+        if term_len <= 2:
+            continue
+
+        term_support = min(420.0, float(weight))
+        max_sub_len = min(4, term_len - 1)
+        seen_keys: Set[Tuple[str, str]] = set()
+        for sub_len in range(2, max_sub_len + 1):
+            prefix_text = term_text[:sub_len]
+            for sub_pinyin in variants_by_text.get(prefix_text, []):
+                key = (sub_pinyin, prefix_text)
+                if key in seen_keys:
+                    continue
+                if term_pinyin.startswith(sub_pinyin):
+                    family_support[key] = family_support.get(key, 0.0) + term_support
+                    seen_keys.add(key)
+
+            suffix_text = term_text[-sub_len:]
+            for sub_pinyin in variants_by_text.get(suffix_text, []):
+                key = (sub_pinyin, suffix_text)
+                if key in seen_keys:
+                    continue
+                if term_pinyin.endswith(sub_pinyin):
+                    family_support[key] = family_support.get(key, 0.0) + term_support
+                    seen_keys.add(key)
+
+    return family_support
 
 
 def _rerank_multi_pronunciation_terms(
@@ -2127,20 +2249,15 @@ def _rerank_homophone_buckets(
     }
     if not mapping:
         return stats
-    if (
-        not usage_score_map
-        and not source_hits_map
-        and not pageviews_signal_map
-        and not wiki_titles
-    ):
-        # No robust usage signals available (e.g. external_cedict profile):
-        # skip bucket reranking to avoid overfitting to shape-based priors only.
-        return stats
+    has_robust_usage = bool(
+        usage_score_map or source_hits_map or pageviews_signal_map or wiki_titles
+    )
 
     jieba_direct_signal_map = jieba_direct_signal_map or {}
     jieba_pos_map = jieba_pos_map or {}
     term_style_penalty_map = term_style_penalty_map or {}
     char_prior = _build_effective_char_prior(mapping, char_frequency_prior)
+    edge_family_support = _build_edge_family_support_for_terms(mapping)
     buckets: Dict[str, List[Tuple[str, int]]] = {}
     for (pinyin, text), weight in mapping.items():
         buckets.setdefault(pinyin, []).append((text, weight))
@@ -2153,6 +2270,7 @@ def _rerank_homophone_buckets(
         raw_scores: Dict[str, float] = {}
         common_signal_scores: Dict[str, float] = {}
         bucket_has_strong_term = False
+        bucket_has_family_term = False
         bucket_has_conversational_short_term = False
         bucket_has_daily_phrase_term = False
         bucket_dominant_common_text = ""
@@ -2164,6 +2282,10 @@ def _rerank_homophone_buckets(
             usage_score = min(1.0, max(0.0, usage_score_map.get(text, 0.0)))
             source_hits = max(0, source_hits_map.get(text, 0))
             pageview_score = min(1.0, max(0.0, pageviews_signal_map.get(text, 0.0)))
+            family_support_score = min(
+                1.0,
+                max(0.0, edge_family_support.get((pinyin, text), 0.0) / 900.0),
+            )
             wiki_support = _has_effective_wiki_support(
                 text,
                 wiki_titles,
@@ -2186,6 +2308,8 @@ def _rerank_homophone_buckets(
                 )
             ):
                 strong_short_head_terms.add(text)
+            if (not has_robust_usage) and family_support_score >= 0.20:
+                bucket_has_family_term = True
             if _is_daily_phrase_candidate(
                 text,
                 text_len=text_len,
@@ -2212,6 +2336,10 @@ def _rerank_homophone_buckets(
                 wiki_augmented_terms=wiki_augmented_terms,
             ) else 0.0
             jieba_direct_score = min(1.0, max(0.0, jieba_direct_signal_map.get(text, 0.0)))
+            family_support_score = min(
+                1.0,
+                max(0.0, edge_family_support.get((pinyin, text), 0.0) / 900.0),
+            )
             char_score = _compute_text_single_char_prior(text, char_prior)
             pos_tag = jieba_pos_map.get(text, "")
             daily_phrase_support = _is_daily_phrase_candidate(
@@ -2262,6 +2390,7 @@ def _rerank_homophone_buckets(
                     + pageview_score * 120.0
                     + min(source_hits, 4) * 34.0
                     + wiki_hit * 26.0
+                    + family_support_score * (148.0 if not has_robust_usage else 96.0)
                     + max(0.0, pos_bias) * 160.0
                 )
                 if text_len <= 2:
@@ -2299,6 +2428,7 @@ def _rerank_homophone_buckets(
                 + min(source_hits, 4) * 22.0
                 + pageview_score * 40.0
                 + wiki_hit * 12.0
+                + family_support_score * (104.0 if not has_robust_usage else 76.0)
                 + char_score * char_weight
                 + pos_bias * 190.0
                 + (weight / 1000.0) * 14.0
@@ -2369,6 +2499,10 @@ def _rerank_homophone_buckets(
             source_hits = max(0, source_hits_map.get(text, 0))
             pageview_score = min(1.0, max(0.0, pageviews_signal_map.get(text, 0.0)))
             jieba_direct_score = min(1.0, max(0.0, jieba_direct_signal_map.get(text, 0.0)))
+            family_support_score = min(
+                1.0,
+                max(0.0, edge_family_support.get((pinyin, text), 0.0) / 900.0),
+            )
             pos_tag = jieba_pos_map.get(text, "")
             wiki_support = _has_effective_wiki_support(
                 text,
@@ -2440,6 +2574,8 @@ def _rerank_homophone_buckets(
             )
             normalized = (raw_scores[text] - min_raw) / spread
             delta_cap = c_max_delta
+            if not has_robust_usage:
+                delta_cap = min(delta_cap, 96)
             if bucket_dominant_common_text:
                 delta_cap += min(140, int(round(bucket_dominant_common_margin * 0.60)))
             delta = int(round((normalized - 0.5) * (2 * delta_cap) * spread_factor))
@@ -2649,6 +2785,22 @@ def _rerank_homophone_buckets(
                 and not wiki_support
             ):
                 delta -= 24
+
+            if (
+                not has_robust_usage
+                and bucket_has_family_term
+                and text_len <= 3
+                and family_support_score < 0.10
+                and char_score < 0.58
+            ):
+                delta -= 36
+
+            if (
+                not has_robust_usage
+                and text_len <= 3
+                and family_support_score >= 0.34
+            ):
+                delta += 34
 
             if bucket_has_daily_phrase_term:
                 if daily_phrase_support:
@@ -3589,6 +3741,71 @@ def _compute_cedict_style_penalty(defs: str) -> int:
     return 0
 
 
+def _compute_cedict_ime_seed_adjustment(defs: str) -> int:
+    defs_lower = defs.strip().lower()
+    if not defs_lower:
+        return 0
+
+    senses = [sense.strip() for sense in defs_lower.split("/") if sense.strip()]
+    if not senses:
+        senses = [defs_lower]
+
+    total_senses = max(1, len(senses))
+    variant_senses = 0
+    place_senses = 0
+    verb_senses = 0
+    function_senses = 0
+    article_noun_senses = 0
+
+    function_clues = (
+        "due to",
+        "owing to",
+        "because of",
+        "because",
+        "thanks to",
+        "as a result of",
+        "since",
+    )
+    place_clues = (
+        "county in ",
+        "district in ",
+        "town in ",
+        "township in ",
+        "village in ",
+        "county of ",
+        "place name",
+    )
+
+    for sense in senses:
+        if sense.startswith(("variant of ", "old variant of ", "see also ")):
+            variant_senses += 1
+        if any(clue in sense for clue in place_clues):
+            place_senses += 1
+        if sense.startswith("to "):
+            verb_senses += 1
+        if sense.startswith(("a ", "an ", "the ")):
+            article_noun_senses += 1
+        if any(clue in sense for clue in function_clues):
+            function_senses += 1
+
+    if variant_senses == total_senses:
+        return -72
+
+    adjustment = 0
+    if place_senses * 2 >= total_senses:
+        adjustment -= 34
+    if function_senses > 0:
+        adjustment += 80
+    elif verb_senses > 0:
+        adjustment += 22
+    elif article_noun_senses == total_senses:
+        adjustment -= 44
+    elif article_noun_senses > 0:
+        adjustment -= 22
+
+    return adjustment
+
+
 def _compute_style_ranking_penalty(style_penalty: int) -> int:
     if style_penalty >= 200:
         return 120
@@ -3646,7 +3863,11 @@ def _parse_cedict_entries(
                 stats["filtered_short"] += 1
                 continue
             key = (pinyin, text)
-            weight = _compute_weight(text)
+            weight = _compute_weight(text) + _compute_cedict_ime_seed_adjustment(defs)
+            if weight < 1:
+                weight = 1
+            elif weight > 1000:
+                weight = 1000
             previous = bucket.get(key, 0)
             if weight > previous:
                 bucket[key] = weight
