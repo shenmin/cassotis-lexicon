@@ -107,6 +107,13 @@ DAILY_CHAT_SEED_SUFFIXES = (
     "去",
 )
 DAILY_CHAT_SEED_CHARS = set("的得地就也还才又都把被给跟让像向对从为在这那哪怎啥谁您你我他她它咱吗呢吧呀啊嘛哦呗啦了着过说看来去")
+DAILY_NUMBER_WORD_CHARS = set(
+    "\u4e00\u4e8c\u4e24\u5169\u4e09\u56db\u4e94\u516d\u4e03\u516b\u4e5d"
+    "\u5341\u767e\u5343\u4e07\u842c\u4ebf\u5104"
+)
+DAILY_NUMBER_WORD_UNIT_CHARS = set(
+    "\u5341\u767e\u5343\u4e07\u842c\u4ebf\u5104"
+)
 
 CEDICT_LINE_RE = re.compile(r"^(\S+)\s+(\S+)\s+\[([^\]]+)\]\s+/(.*)/$")
 CJK_RE = re.compile("[\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\U00020000-\U0002A6DF]")
@@ -1704,6 +1711,28 @@ def _compute_common_phrase_confidence(
     return min(1.0, max(0.0, confidence))
 
 
+def _is_daily_number_word_candidate(
+    text: str,
+    text_len: int,
+    usage_score: float,
+    source_hits: int,
+    pos_tag: str,
+) -> bool:
+    if text_len < 2 or text_len > 4:
+        return False
+    if _is_named_entity_pos(pos_tag):
+        return False
+    if not text:
+        return False
+    if any(ch not in DAILY_NUMBER_WORD_CHARS for ch in text):
+        return False
+    if not any(ch in DAILY_NUMBER_WORD_UNIT_CHARS for ch in text):
+        return False
+
+    bounded_usage = min(1.0, max(0.0, usage_score))
+    return bounded_usage >= 0.84 or source_hits >= 4
+
+
 def _is_daily_phrase_candidate(
     text: str,
     text_len: int,
@@ -1716,6 +1745,15 @@ def _is_daily_phrase_candidate(
     char_score: float,
     wiki_augmented_terms: Set[str] | None,
 ) -> bool:
+    if _is_daily_number_word_candidate(
+        text,
+        text_len=text_len,
+        usage_score=usage_score,
+        source_hits=source_hits,
+        pos_tag=pos_tag,
+    ):
+        return True
+
     wiki_augmented_terms = wiki_augmented_terms or set()
     if text not in wiki_augmented_terms:
         return False
@@ -2246,6 +2284,7 @@ def _rerank_homophone_buckets(
         f"{stats_prefix}_homophone_modernity_risk_penalized": 0,
         f"{stats_prefix}_homophone_daily_phrase_boosted": 0,
         f"{stats_prefix}_homophone_daily_phrase_damped": 0,
+        f"{stats_prefix}_homophone_daily_number_boosted": 0,
     }
     if not mapping:
         return stats
@@ -2273,6 +2312,7 @@ def _rerank_homophone_buckets(
         bucket_has_family_term = False
         bucket_has_conversational_short_term = False
         bucket_has_daily_phrase_term = False
+        bucket_has_daily_number_term = False
         bucket_dominant_common_text = ""
         bucket_dominant_common_signal = -1.0
         bucket_dominant_common_runner_up = -1.0
@@ -2323,6 +2363,14 @@ def _rerank_homophone_buckets(
                 wiki_augmented_terms=wiki_augmented_terms,
             ):
                 bucket_has_daily_phrase_term = True
+            if _is_daily_number_word_candidate(
+                text,
+                text_len=text_len,
+                usage_score=usage_score,
+                source_hits=source_hits,
+                pos_tag=pos_tag,
+            ):
+                bucket_has_daily_number_term = True
         for text, weight in items:
             text_len = _cjk_len(text)
             usage_score = min(1.0, max(0.0, usage_score_map.get(text, 0.0)))
@@ -2353,6 +2401,13 @@ def _rerank_homophone_buckets(
                 pos_tag=pos_tag,
                 char_score=char_score,
                 wiki_augmented_terms=wiki_augmented_terms,
+            )
+            daily_number_support = _is_daily_number_word_candidate(
+                text,
+                text_len=text_len,
+                usage_score=usage_score,
+                source_hits=source_hits,
+                pos_tag=pos_tag,
             )
             pos_bias = _compute_effective_pos_bias(
                 pos_tag=pos_tag,
@@ -2414,6 +2469,8 @@ def _rerank_homophone_buckets(
                     common_signal += 96.0 if text_len <= 2 else 40.0
                     if _is_conversational_pos(pos_tag):
                         common_signal += 36.0 if text_len <= 2 else 16.0
+                if daily_number_support:
+                    common_signal += 84.0 if text_len <= 2 else 52.0
             common_signal_scores[text] = common_signal
             if common_signal > bucket_dominant_common_signal:
                 bucket_dominant_common_runner_up = bucket_dominant_common_signal
@@ -2433,6 +2490,7 @@ def _rerank_homophone_buckets(
                 + pos_bias * 190.0
                 + (weight / 1000.0) * 14.0
                 + (76.0 if (daily_phrase_support and text_len <= 2) else 24.0 if daily_phrase_support else 0.0)
+                + (36.0 if (daily_number_support and text_len <= 2) else 22.0 if daily_number_support else 0.0)
                 - float(
                     _compute_style_ranking_penalty(
                         term_style_penalty_map.get((pinyin, text), 0)
@@ -2821,6 +2879,10 @@ def _rerank_homophone_buckets(
                 ):
                     delta -= 24 if text_len <= 2 else 16
                     stats[f"{stats_prefix}_homophone_daily_phrase_damped"] += 1
+
+            if bucket_has_daily_number_term and daily_number_support:
+                delta += 28 if text_len <= 2 else 18
+                stats[f"{stats_prefix}_homophone_daily_number_boosted"] += 1
 
             if bucket_has_conversational_short_term and text_len <= 2:
                 # Keep conversational preference as a mild tiebreaker only.
@@ -7000,6 +7062,8 @@ def _augment_with_curated_daily_phrases(
         "curated_daily_terms_boosted_sc": 0,
         "curated_daily_terms_added_tc": 0,
         "curated_daily_terms_boosted_tc": 0,
+        "curated_daily_number_terms_boosted_sc": 0,
+        "curated_daily_number_terms_boosted_tc": 0,
         "curated_daily_terms_skipped_short": 0,
         "curated_daily_terms_skipped_no_pinyin": 0,
     }
@@ -7031,6 +7095,13 @@ def _augment_with_curated_daily_phrases(
         )
         sc_pos_tag = jieba_pos_map.get(sc_word, "")
         sc_char_score = _compute_text_single_char_prior(sc_word, sc_char_prior)
+        sc_daily_number_support = _is_daily_number_word_candidate(
+            sc_word,
+            text_len=_cjk_len(sc_word),
+            usage_score=usage_score,
+            source_hits=source_hits,
+            pos_tag=sc_pos_tag,
+        )
         sc_weight = _compute_weight_with_signals(
             sc_word,
             usage_score=usage_score,
@@ -7042,6 +7113,9 @@ def _augment_with_curated_daily_phrases(
             pos_tag=sc_pos_tag,
             char_score=sc_char_score,
         )
+        if sc_daily_number_support:
+            sc_weight = min(1000, sc_weight + (40 if _cjk_len(sc_word) <= 2 else 26))
+            stats["curated_daily_number_terms_boosted_sc"] += 1
         sc_key = (pinyin, sc_word)
         existing_sc_weight = sc.get(sc_key)
         if existing_sc_weight is None:
@@ -7080,6 +7154,13 @@ def _augment_with_curated_daily_phrases(
         )
         tc_pos_tag = tc_jieba_pos_map.get(tc_candidate, sc_pos_tag)
         tc_char_score = _compute_text_single_char_prior(tc_candidate, tc_char_prior)
+        tc_daily_number_support = _is_daily_number_word_candidate(
+            tc_candidate,
+            text_len=_cjk_len(tc_candidate),
+            usage_score=usage_score,
+            source_hits=source_hits,
+            pos_tag=tc_pos_tag,
+        )
         tc_weight = _compute_weight_with_signals(
             tc_candidate,
             usage_score=usage_score,
@@ -7091,6 +7172,9 @@ def _augment_with_curated_daily_phrases(
             pos_tag=tc_pos_tag,
             char_score=tc_char_score,
         )
+        if tc_daily_number_support:
+            tc_weight = min(1000, tc_weight + (40 if _cjk_len(tc_candidate) <= 2 else 26))
+            stats["curated_daily_number_terms_boosted_tc"] += 1
         tc_key = (pinyin, tc_candidate)
         existing_tc_weight = tc.get(tc_key)
         if existing_tc_weight is None:
