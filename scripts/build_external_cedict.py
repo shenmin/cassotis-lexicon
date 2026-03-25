@@ -234,6 +234,10 @@ SHARED_SCRIPT_VARIANT_BEHAVIOR: Dict[Tuple[str, str], Tuple[bool, bool]] = {
     ("纔", "才"): (False, True),
 }
 
+# Audited single-character reading overrides. Keep this hook available, but
+# prefer algorithmic phrase-support calibration before adding explicit entries.
+SINGLE_CHAR_READING_DELTA_OVERRIDES: Dict[Tuple[str, str], int] = {}
+
 COPYLEFT_LICENSE_TOKENS = (
     "by-sa",
     "gpl",
@@ -2285,6 +2289,7 @@ def _rerank_homophone_buckets(
         f"{stats_prefix}_homophone_daily_phrase_boosted": 0,
         f"{stats_prefix}_homophone_daily_phrase_damped": 0,
         f"{stats_prefix}_homophone_daily_number_boosted": 0,
+        f"{stats_prefix}_homophone_daily_phrase_short_non_daily_damped": 0,
     }
     if not mapping:
         return stats
@@ -2879,6 +2884,18 @@ def _rerank_homophone_buckets(
                 ):
                     delta -= 24 if text_len <= 2 else 16
                     stats[f"{stats_prefix}_homophone_daily_phrase_damped"] += 1
+                elif (
+                    text_len <= 2
+                    and not _is_named_entity_pos(pos_tag)
+                    and not _is_conversational_pos(pos_tag)
+                    and not wiki_support
+                    and source_hits <= 1
+                    and usage_score < 0.18
+                    and jieba_direct_score < 0.14
+                    and pageview_score < 0.10
+                ):
+                    delta -= 96
+                    stats[f"{stats_prefix}_homophone_daily_phrase_short_non_daily_damped"] += 1
 
             if bucket_has_daily_number_term and daily_number_support:
                 delta += 28 if text_len <= 2 else 18
@@ -4778,6 +4795,158 @@ def _adjust_unihan_weight_for_reading(
     return adjusted
 
 
+def _compute_unihan_single_char_reading_delta(
+    ch: str,
+    pinyin: str,
+    readings_map: Dict[str, Set[str]] | None,
+    mandarin_map: Dict[str, str] | None,
+    pinlu_map: Dict[str, int] | None,
+    pinlu_detail_map: Dict[Tuple[str, str], int] | None,
+    phrase_term_count_map: Dict[Tuple[str, str], int] | None = None,
+    phrase_support_sum_map: Dict[Tuple[str, str], float] | None = None,
+    leading_term_count_map: Dict[Tuple[str, str], int] | None = None,
+    leading_support_sum_map: Dict[Tuple[str, str], float] | None = None,
+) -> int:
+    if (ch, pinyin) in SINGLE_CHAR_READING_DELTA_OVERRIDES:
+        return SINGLE_CHAR_READING_DELTA_OVERRIDES[(ch, pinyin)]
+
+    readings_map = readings_map or {}
+    mandarin_map = mandarin_map or {}
+    pinlu_map = pinlu_map or {}
+    pinlu_detail_map = pinlu_detail_map or {}
+    phrase_term_count_map = phrase_term_count_map or {}
+    phrase_support_sum_map = phrase_support_sum_map or {}
+    leading_term_count_map = leading_term_count_map or {}
+    leading_support_sum_map = leading_support_sum_map or {}
+
+    if not ch or _cjk_len(ch) != 1 or not pinyin:
+        return 0
+
+    if len(readings_map.get(ch, set())) < 2:
+        return 0
+
+    max_pinlu_freq = max(0, pinlu_map.get(ch, 0))
+    reading_pinlu = max(0, pinlu_detail_map.get((ch, pinyin), 0))
+    is_primary = mandarin_map.get(ch, "") == pinyin
+    phrase_term_count = max(0, phrase_term_count_map.get((ch, pinyin), 0))
+    phrase_support = max(0.0, phrase_support_sum_map.get((ch, pinyin), 0.0))
+    leading_term_count = max(0, leading_term_count_map.get((ch, pinyin), 0))
+    leading_support = max(0.0, leading_support_sum_map.get((ch, pinyin), 0.0))
+    leading_ratio = leading_support / max(1.0, phrase_support) if phrase_support > 0.0 else 0.0
+    best_phrase_reading = ""
+    best_phrase_term_count = 0
+    best_phrase_support = 0.0
+    second_phrase_term_count = 0
+    second_phrase_support = 0.0
+    for reading in readings_map.get(ch, set()):
+        current_term_count = max(0, phrase_term_count_map.get((ch, reading), 0))
+        current_support = max(0.0, phrase_support_sum_map.get((ch, reading), 0.0))
+        if (current_support > best_phrase_support) or (
+            current_support == best_phrase_support and current_term_count > best_phrase_term_count
+        ):
+            second_phrase_term_count = best_phrase_term_count
+            second_phrase_support = best_phrase_support
+            best_phrase_reading = reading
+            best_phrase_term_count = current_term_count
+            best_phrase_support = current_support
+        elif (current_support > second_phrase_support) or (
+            current_support == second_phrase_support and current_term_count > second_phrase_term_count
+        ):
+            second_phrase_term_count = current_term_count
+            second_phrase_support = current_support
+
+    phrase_preferred_reading = ""
+    if max_pinlu_freq > 0:
+        phrase_preferred_threshold_ok = (
+            best_phrase_support >= 320.0
+            and best_phrase_term_count >= 4
+            and (
+                best_phrase_support >= max(220.0, second_phrase_support * 1.6)
+                or best_phrase_term_count >= max(4, second_phrase_term_count + 4)
+            )
+        )
+    else:
+        phrase_preferred_threshold_ok = (
+            best_phrase_support >= 120.0
+            and best_phrase_term_count >= 3
+            and (
+                second_phrase_support <= 0.0
+                or (
+                    best_phrase_support >= second_phrase_support * 1.05
+                    and best_phrase_term_count >= second_phrase_term_count + 2
+                )
+                or best_phrase_support >= second_phrase_support + 36.0
+            )
+        )
+
+    if best_phrase_reading and phrase_preferred_threshold_ok:
+        phrase_preferred_reading = best_phrase_reading
+
+    if phrase_preferred_reading:
+        if max_pinlu_freq <= 0:
+            if pinyin == phrase_preferred_reading:
+                return 180 if not is_primary else 40
+            if phrase_support <= 0.0 or phrase_term_count <= 0:
+                return -140
+            return -96
+
+        if pinyin == phrase_preferred_reading:
+            return 260 if not is_primary else 40
+
+        if phrase_support <= 0.0 or phrase_term_count <= 0:
+            return -220
+
+        phrase_ratio = phrase_support / max(1.0, best_phrase_support)
+        if is_primary:
+            if (
+                leading_support >= 900.0
+                or (leading_ratio >= 0.45 and leading_term_count >= 6)
+                or (reading_pinlu >= 3000 and leading_term_count >= 10)
+            ):
+                if phrase_ratio >= 0.60:
+                    return -36
+                return -72
+            if phrase_ratio < 0.55:
+                return -380
+            if phrase_ratio < 0.70:
+                return -280
+            return -180
+        if phrase_ratio < 0.55:
+            return -180
+        return -96
+
+    if max_pinlu_freq <= 0:
+        return 0 if is_primary else -42
+
+    delta = 0
+
+    if is_primary:
+        return delta
+
+    if reading_pinlu <= 0:
+        return delta - 180
+
+    ratio = reading_pinlu / max_pinlu_freq
+    dominance_ratio = max_pinlu_freq / max(1, reading_pinlu)
+    if ratio < 0.05:
+        delta -= 180
+    elif ratio < 0.12:
+        delta -= 148
+    elif ratio < 0.25:
+        delta -= 112
+    elif ratio < 0.50:
+        delta -= 72
+    elif ratio < 0.75:
+        delta -= 36
+
+    if dominance_ratio >= 8.0:
+        delta -= 20
+    if dominance_ratio >= 16.0:
+        delta -= 20
+
+    return delta
+
+
 def _load_unihan_dictlike_maps(
     payload: bytes,
 ) -> Tuple[Dict[str, int], Dict[str, int], Dict[str, int]]:
@@ -5081,6 +5250,209 @@ def _load_char_family_support_from_generated_dict(
             for ch in unique_chars:
                 term_count_map[ch] = term_count_map.get(ch, 0) + 1
                 support_sum_map[ch] = support_sum_map.get(ch, 0.0) + support
+
+    return term_count_map, support_sum_map
+
+
+def _collect_unihan_constituent_reading_alignments(
+    text: str,
+    pinyin: str,
+    unihan_readings_map: Dict[str, Set[str]] | None,
+    unihan_source_rank_map: Dict[Tuple[str, str], int] | None,
+    unihan_mandarin_map: Dict[str, str] | None,
+    unihan_pinlu_detail_map: Dict[Tuple[str, str], int] | None,
+    max_alignments: int = 16,
+) -> List[Tuple[str, ...]]:
+    if not PINYIN_RE.fullmatch(pinyin):
+        return []
+
+    units = _split_text_units(text)
+    if len(units) < 2 or len(units) > 8:
+        return []
+    if len(pinyin) < len(units):
+        return []
+
+    unit_readings: List[List[str]] = []
+    for ch in units:
+        readings = _collect_preferred_unihan_readings(
+            ch,
+            unihan_readings_map,
+            unihan_source_rank_map,
+            unihan_mandarin_map,
+            unihan_pinlu_detail_map,
+        )
+        if not readings:
+            return []
+        unit_readings.append(readings[:4])
+
+    alignments: List[Tuple[str, ...]] = []
+    current: List[str] = []
+
+    def walk(unit_idx: int, offset: int) -> None:
+        if len(alignments) >= max_alignments:
+            return
+        if unit_idx >= len(unit_readings):
+            if offset == len(pinyin):
+                alignments.append(tuple(current))
+            return
+        if offset >= len(pinyin):
+            return
+
+        for reading in unit_readings[unit_idx]:
+            if not pinyin.startswith(reading, offset):
+                continue
+            current.append(reading)
+            walk(unit_idx + 1, offset + len(reading))
+            current.pop()
+            if len(alignments) >= max_alignments:
+                return
+
+    walk(0, 0)
+    return alignments
+
+
+def _load_char_reading_support_from_generated_dict(
+    path: pathlib.Path | None,
+    unihan_readings_map: Dict[str, Set[str]] | None,
+    unihan_source_rank_map: Dict[Tuple[str, str], int] | None,
+    unihan_mandarin_map: Dict[str, str] | None,
+    unihan_pinlu_detail_map: Dict[Tuple[str, str], int] | None,
+) -> Tuple[Dict[Tuple[str, str], int], Dict[Tuple[str, str], float]]:
+    term_count_map: Dict[Tuple[str, str], int] = {}
+    support_sum_map: Dict[Tuple[str, str], float] = {}
+    if path is None or (not path.exists()):
+        return term_count_map, support_sum_map
+
+    unihan_readings_map = unihan_readings_map or {}
+    if not unihan_readings_map:
+        return term_count_map, support_sum_map
+
+    with path.open("r", encoding="utf-8") as f:
+        for raw_line in f:
+            line = raw_line.strip()
+            if not line:
+                continue
+
+            parts = line.split("\t")
+            if len(parts) != 3:
+                continue
+
+            pinyin = parts[0].strip()
+            text = parts[1].strip()
+            if _cjk_len(text) < 2 or not CJK_FULL_RE.fullmatch(text):
+                continue
+
+            units = _split_text_units(text)
+            if not any(len(unihan_readings_map.get(ch, set())) >= 2 for ch in units):
+                continue
+
+            try:
+                weight = int(parts[2].strip())
+            except ValueError:
+                continue
+
+            alignments = _collect_unihan_constituent_reading_alignments(
+                text,
+                pinyin,
+                unihan_readings_map,
+                unihan_source_rank_map,
+                unihan_mandarin_map,
+                unihan_pinlu_detail_map,
+            )
+            if not alignments:
+                continue
+
+            support = max(12.0, min(220.0, float(weight) * 0.16))
+            text_len = _cjk_len(text)
+            if text_len >= 4:
+                support *= 0.82
+            if text_len >= 6:
+                support *= 0.72
+
+            seen_pairs: Set[Tuple[str, str]] = set()
+            for idx, ch in enumerate(units):
+                if len(unihan_readings_map.get(ch, set())) < 2:
+                    continue
+                aligned_readings = {alignment[idx] for alignment in alignments}
+                if len(aligned_readings) != 1:
+                    continue
+                reading = next(iter(aligned_readings))
+                pair = (ch, reading)
+                if pair in seen_pairs:
+                    continue
+                seen_pairs.add(pair)
+                term_count_map[pair] = term_count_map.get(pair, 0) + 1
+                support_sum_map[pair] = support_sum_map.get(pair, 0.0) + support
+
+    return term_count_map, support_sum_map
+
+
+def _load_char_leading_reading_support_from_generated_dict(
+    path: pathlib.Path | None,
+    unihan_readings_map: Dict[str, Set[str]] | None,
+    unihan_source_rank_map: Dict[Tuple[str, str], int] | None,
+    unihan_mandarin_map: Dict[str, str] | None,
+    unihan_pinlu_detail_map: Dict[Tuple[str, str], int] | None,
+) -> Tuple[Dict[Tuple[str, str], int], Dict[Tuple[str, str], float]]:
+    term_count_map: Dict[Tuple[str, str], int] = {}
+    support_sum_map: Dict[Tuple[str, str], float] = {}
+    if path is None or (not path.exists()):
+        return term_count_map, support_sum_map
+
+    unihan_readings_map = unihan_readings_map or {}
+    if not unihan_readings_map:
+        return term_count_map, support_sum_map
+
+    with path.open("r", encoding="utf-8") as f:
+        for raw_line in f:
+            line = raw_line.strip()
+            if not line:
+                continue
+
+            parts = line.split("\t")
+            if len(parts) != 3:
+                continue
+
+            pinyin = parts[0].strip()
+            text = parts[1].strip()
+            if _cjk_len(text) < 2 or not CJK_FULL_RE.fullmatch(text):
+                continue
+
+            first_char = text[0]
+            if len(unihan_readings_map.get(first_char, set())) < 1:
+                continue
+
+            try:
+                weight = int(parts[2].strip())
+            except ValueError:
+                continue
+
+            alignments = _collect_unihan_constituent_reading_alignments(
+                text,
+                pinyin,
+                unihan_readings_map,
+                unihan_source_rank_map,
+                unihan_mandarin_map,
+                unihan_pinlu_detail_map,
+            )
+            if not alignments:
+                continue
+
+            first_readings = {alignment[0] for alignment in alignments}
+            if len(first_readings) != 1:
+                continue
+            first_reading = next(iter(first_readings))
+
+            support = max(12.0, min(220.0, float(weight) * 0.16))
+            text_len = _cjk_len(text)
+            if text_len >= 4:
+                support *= 0.82
+            if text_len >= 6:
+                support *= 0.72
+
+            pair = (first_char, first_reading)
+            term_count_map[pair] = term_count_map.get(pair, 0) + 1
+            support_sum_map[pair] = support_sum_map.get(pair, 0.0) + support
 
     return term_count_map, support_sum_map
 
@@ -6376,6 +6748,10 @@ def _rescore_mapping_with_signals(
     jieba_pos_map: Dict[str, str] | None,
     char_frequency_prior: Dict[str, float] | None,
     term_style_penalty_map: Dict[Tuple[str, str], int] | None,
+    unihan_map: Dict[str, str] | None,
+    unihan_readings_map: Dict[str, Set[str]] | None,
+    unihan_pinlu_map: Dict[str, int] | None,
+    unihan_pinlu_detail_map: Dict[Tuple[str, str], int] | None,
     core_entry: bool,
     stats_prefix: str,
 ) -> Dict[str, int]:
@@ -6387,10 +6763,15 @@ def _rescore_mapping_with_signals(
         f"{stats_prefix}_wiki_hits": 0,
         f"{stats_prefix}_named_entity_penalized": 0,
         f"{stats_prefix}_single_char_adjusted": 0,
+        f"{stats_prefix}_single_char_reading_adjusted": 0,
     }
     jieba_direct_signal_map = jieba_direct_signal_map or {}
     jieba_pos_map = jieba_pos_map or {}
     term_style_penalty_map = term_style_penalty_map or {}
+    unihan_map = unihan_map or {}
+    unihan_readings_map = unihan_readings_map or {}
+    unihan_pinlu_map = unihan_pinlu_map or {}
+    unihan_pinlu_detail_map = unihan_pinlu_detail_map or {}
     char_prior = _build_effective_char_prior(mapping, char_frequency_prior)
     for key in list(mapping.keys()):
         _pinyin, text = key
@@ -6443,6 +6824,17 @@ def _rescore_mapping_with_signals(
             ):
                 weight = max(1, weight - 140)
                 stats[f"{stats_prefix}_single_char_adjusted"] += 1
+            reading_adjust = _compute_unihan_single_char_reading_delta(
+                ch=text,
+                pinyin=_pinyin,
+                readings_map=unihan_readings_map,
+                mandarin_map=unihan_map,
+                pinlu_map=unihan_pinlu_map,
+                pinlu_detail_map=unihan_pinlu_detail_map,
+            )
+            if reading_adjust != 0:
+                weight = max(1, min(1000, weight + reading_adjust))
+                stats[f"{stats_prefix}_single_char_reading_adjusted"] += 1
         if _is_named_entity_pos(pos_tag):
             if source_hits <= 2 and pageviews_score < 0.08 and jieba_direct_score < 0.12:
                 penalty = 68 if text_len <= 2 else (44 if text_len <= 4 else 28)
@@ -6464,6 +6856,190 @@ def _rescore_mapping_with_signals(
             stats[f"{stats_prefix}_pageviews_hits"] += 1
         if wiki_hit:
             stats[f"{stats_prefix}_wiki_hits"] += 1
+
+    return stats
+
+
+def _adjust_single_char_reading_preferences(
+    mapping: Dict[Tuple[str, str], int],
+    unihan_map: Dict[str, str] | None,
+    unihan_readings_map: Dict[str, Set[str]] | None,
+    unihan_pinlu_map: Dict[str, int] | None,
+    unihan_pinlu_detail_map: Dict[Tuple[str, str], int] | None,
+    phrase_term_count_map: Dict[Tuple[str, str], int] | None,
+    phrase_support_sum_map: Dict[Tuple[str, str], float] | None,
+    leading_term_count_map: Dict[Tuple[str, str], int] | None,
+    leading_support_sum_map: Dict[Tuple[str, str], float] | None,
+    stats_prefix: str,
+) -> Dict[str, int]:
+    stats = {
+        f"{stats_prefix}_single_char_reading_preference_adjusted": 0,
+        f"{stats_prefix}_single_char_reading_preference_delta_total": 0,
+    }
+    if not mapping:
+        return stats
+
+    unihan_map = unihan_map or {}
+    unihan_readings_map = unihan_readings_map or {}
+    unihan_pinlu_map = unihan_pinlu_map or {}
+    unihan_pinlu_detail_map = unihan_pinlu_detail_map or {}
+    phrase_term_count_map = phrase_term_count_map or {}
+    phrase_support_sum_map = phrase_support_sum_map or {}
+    leading_term_count_map = leading_term_count_map or {}
+    leading_support_sum_map = leading_support_sum_map or {}
+
+    for key in list(mapping.keys()):
+        pinyin, text = key
+        if _cjk_len(text) != 1:
+            continue
+
+        delta = _compute_unihan_single_char_reading_delta(
+            ch=text,
+            pinyin=pinyin,
+            readings_map=unihan_readings_map,
+            mandarin_map=unihan_map,
+            pinlu_map=unihan_pinlu_map,
+            pinlu_detail_map=unihan_pinlu_detail_map,
+            phrase_term_count_map=phrase_term_count_map,
+            phrase_support_sum_map=phrase_support_sum_map,
+            leading_term_count_map=leading_term_count_map,
+            leading_support_sum_map=leading_support_sum_map,
+        )
+        if delta == 0:
+            continue
+
+        current = mapping[key]
+        adjusted = max(1, min(1000, current + delta))
+        if adjusted == current:
+            continue
+
+        mapping[key] = adjusted
+        stats[f"{stats_prefix}_single_char_reading_preference_adjusted"] += 1
+        stats[f"{stats_prefix}_single_char_reading_preference_delta_total"] += (
+            adjusted - current
+        )
+
+    return stats
+
+
+def _adjust_single_char_leading_preferences(
+    mapping: Dict[Tuple[str, str], int],
+    leading_term_count_map: Dict[Tuple[str, str], int] | None,
+    leading_support_sum_map: Dict[Tuple[str, str], float] | None,
+    family_term_count_map: Dict[str, int] | None,
+    family_support_sum_map: Dict[str, float] | None,
+    unihan_pinlu_detail_map: Dict[Tuple[str, str], int] | None,
+    stats_prefix: str,
+) -> Dict[str, int]:
+    stats = {
+        f"{stats_prefix}_single_char_leading_adjusted": 0,
+        f"{stats_prefix}_single_char_leading_delta_total": 0,
+    }
+    if not mapping:
+        return stats
+
+    leading_term_count_map = leading_term_count_map or {}
+    leading_support_sum_map = leading_support_sum_map or {}
+    family_term_count_map = family_term_count_map or {}
+    family_support_sum_map = family_support_sum_map or {}
+    unihan_pinlu_detail_map = unihan_pinlu_detail_map or {}
+
+    buckets: Dict[str, List[Tuple[str, int]]] = {}
+    for key, weight in mapping.items():
+        pinyin, text = key
+        if _cjk_len(text) != 1:
+            continue
+        buckets.setdefault(pinyin, []).append((text, weight))
+
+    for pinyin, items in buckets.items():
+        if len(items) < 2:
+            continue
+
+        bucket_best_leading_support = 0.0
+        for text, _weight in items:
+            bucket_best_leading_support = max(
+                bucket_best_leading_support,
+                leading_support_sum_map.get((text, pinyin), 0.0),
+            )
+        if bucket_best_leading_support < 120.0:
+            continue
+
+        for text, current in items:
+            pair = (text, pinyin)
+            leading_support = max(0.0, leading_support_sum_map.get(pair, 0.0))
+            leading_term_count = max(0, leading_term_count_map.get(pair, 0))
+            family_support = max(0.0, family_support_sum_map.get(text, 0.0))
+            family_term_count = max(0, family_term_count_map.get(text, 0))
+            reading_pinlu = max(0, unihan_pinlu_detail_map.get(pair, 0))
+            leading_ratio = (
+                leading_support / family_support if family_support > 0.0 else 0.0
+            )
+
+            delta = 0
+            if (
+                reading_pinlu >= 3000
+                and leading_support >= 1200.0
+                and leading_ratio >= 0.70
+            ):
+                delta += 120
+            elif (
+                reading_pinlu >= 3000
+                and leading_support >= 1500.0
+                and leading_ratio >= 0.20
+            ):
+                delta += 72
+            elif (
+                reading_pinlu >= 1000
+                and leading_support >= 800.0
+                and leading_ratio >= 0.45
+            ):
+                delta += 60
+            elif (
+                reading_pinlu >= 3000
+                and leading_support >= 1500.0
+                and leading_ratio >= 0.20
+            ):
+                delta += 48
+            elif (
+                reading_pinlu >= 150
+                and leading_support >= 1500.0
+                and leading_ratio >= 0.45
+            ):
+                delta += 24
+
+            if bucket_best_leading_support >= 800.0 and reading_pinlu >= 3000:
+                if leading_support >= bucket_best_leading_support * 0.88:
+                    delta += 36
+                elif leading_support >= bucket_best_leading_support * 0.60:
+                    delta += 12
+
+            if (
+                reading_pinlu >= 3000
+                and family_support >= 10000.0
+                and family_term_count >= 24
+                and leading_ratio < 0.18
+            ):
+                delta -= 180
+            elif (
+                reading_pinlu >= 3000
+                and family_support >= 6000.0
+                and family_term_count >= 12
+                and leading_ratio < 0.22
+            ):
+                delta -= 120
+
+            if delta == 0:
+                continue
+
+            adjusted = max(1, min(1000, current + delta))
+            if adjusted == current:
+                continue
+
+            mapping[(pinyin, text)] = adjusted
+            stats[f"{stats_prefix}_single_char_leading_adjusted"] += 1
+            stats[f"{stats_prefix}_single_char_leading_delta_total"] += (
+                adjusted - current
+            )
 
     return stats
 
@@ -7219,11 +7795,22 @@ def _filter_windows_unrenderable_entries(
     return filtered, dropped
 
 
-def _write_dict(path: pathlib.Path, mapping: Dict[Tuple[str, str], int]) -> None:
+def _write_dict(
+    path: pathlib.Path,
+    mapping: Dict[Tuple[str, str], int],
+    preferred_terms: Set[str] | None = None,
+) -> None:
+    preferred_terms = preferred_terms or set()
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8", newline="\n") as f:
         for (pinyin, text), weight in sorted(
-            mapping.items(), key=lambda kv: (kv[0][0], kv[0][1], -kv[1])
+            mapping.items(),
+            key=lambda kv: (
+                kv[0][0],
+                -kv[1],
+                0 if kv[0][1] in preferred_terms else 1,
+                kv[0][1],
+            ),
         ):
             f.write(f"{pinyin}\t{text}\t{weight}\n")
 
@@ -7871,6 +8458,8 @@ def main() -> int:
     wiki_alias_tc_terms: Set[str] = set()
     lexical_seed_sc_terms: Set[str] = set()
     lexical_seed_tc_terms: Set[str] = set()
+    curated_daily_sc_terms: Set[str] = set()
+    curated_daily_tc_terms: Set[str] = set()
     tc_usage_score_map: Dict[str, float] = {}
     tc_source_hits_map: Dict[str, int] = {}
     tc_jieba_direct_signal_map: Dict[str, float] = {}
@@ -7883,6 +8472,14 @@ def main() -> int:
     sc_family_support_sum_map: Dict[str, float] = {}
     tc_family_term_count_map: Dict[str, int] = {}
     tc_family_support_sum_map: Dict[str, float] = {}
+    sc_reading_term_count_map: Dict[Tuple[str, str], int] = {}
+    sc_reading_support_sum_map: Dict[Tuple[str, str], float] = {}
+    tc_reading_term_count_map: Dict[Tuple[str, str], int] = {}
+    tc_reading_support_sum_map: Dict[Tuple[str, str], float] = {}
+    sc_leading_term_count_map: Dict[Tuple[str, str], int] = {}
+    sc_leading_support_sum_map: Dict[Tuple[str, str], float] = {}
+    tc_leading_term_count_map: Dict[Tuple[str, str], int] = {}
+    tc_leading_support_sum_map: Dict[Tuple[str, str], float] = {}
     tc_to_sc_map: Dict[str, Set[str]] = {}
     cedict_style_penalty_map: Dict[Tuple[str, str], int] = {}
     unihan_map: Dict[str, str] = {}
@@ -8116,6 +8713,10 @@ def main() -> int:
             jieba_pos_map=jieba_pos_map,
             char_frequency_prior=char_frequency_prior,
             term_style_penalty_map=cedict_style_penalty_map,
+            unihan_map=unihan_map,
+            unihan_readings_map=unihan_readings_map,
+            unihan_pinlu_map=unihan_pinlu_map,
+            unihan_pinlu_detail_map=unihan_pinlu_detail_map,
             core_entry=True,
             stats_prefix="sc_core",
         )
@@ -8129,6 +8730,10 @@ def main() -> int:
             jieba_pos_map=tc_jieba_pos_map,
             char_frequency_prior=tc_char_frequency_prior,
             term_style_penalty_map=cedict_style_penalty_map,
+            unihan_map=unihan_map,
+            unihan_readings_map=unihan_readings_map,
+            unihan_pinlu_map=unihan_pinlu_map,
+            unihan_pinlu_detail_map=unihan_pinlu_detail_map,
             core_entry=True,
             stats_prefix="tc_core",
         )
@@ -8383,6 +8988,13 @@ def main() -> int:
         if args.pinyin_overrides:
             overrides = _load_pinyin_overrides(repo_root / args.pinyin_overrides)
         (
+            unihan_map,
+            unihan_readings_map,
+            unihan_reading_source_map,
+            unihan_pinlu_map,
+            unihan_pinlu_detail_map,
+        ) = _load_unihan_readings_detail(unihan_payload)
+        (
             sc_family_term_count_map,
             sc_family_support_sum_map,
         ) = _load_char_family_support_from_generated_dict(support_dict_sc)
@@ -8390,6 +9002,46 @@ def main() -> int:
             tc_family_term_count_map,
             tc_family_support_sum_map,
         ) = _load_char_family_support_from_generated_dict(support_dict_tc)
+        (
+            sc_reading_term_count_map,
+            sc_reading_support_sum_map,
+        ) = _load_char_reading_support_from_generated_dict(
+            support_dict_sc,
+            unihan_readings_map,
+            unihan_reading_source_map,
+            unihan_map,
+            unihan_pinlu_detail_map,
+        )
+        (
+            tc_reading_term_count_map,
+            tc_reading_support_sum_map,
+        ) = _load_char_reading_support_from_generated_dict(
+            support_dict_tc,
+            unihan_readings_map,
+            unihan_reading_source_map,
+            unihan_map,
+            unihan_pinlu_detail_map,
+        )
+        (
+            sc_leading_term_count_map,
+            sc_leading_support_sum_map,
+        ) = _load_char_leading_reading_support_from_generated_dict(
+            support_dict_sc,
+            unihan_readings_map,
+            unihan_reading_source_map,
+            unihan_map,
+            unihan_pinlu_detail_map,
+        )
+        (
+            tc_leading_term_count_map,
+            tc_leading_support_sum_map,
+        ) = _load_char_leading_reading_support_from_generated_dict(
+            support_dict_tc,
+            unihan_readings_map,
+            unihan_reading_source_map,
+            unihan_map,
+            unihan_pinlu_detail_map,
+        )
         sc_map, tc_map, stats = _build_from_unihan_only(
             unihan_payload,
             args.min_hanzi,
@@ -8406,6 +9058,10 @@ def main() -> int:
         stats.update(opencc_stats)
         stats["unihan_family_support_terms_sc"] = len(sc_family_term_count_map)
         stats["unihan_family_support_terms_tc"] = len(tc_family_term_count_map)
+        stats["unihan_reading_support_terms_sc"] = len(sc_reading_term_count_map)
+        stats["unihan_reading_support_terms_tc"] = len(tc_reading_term_count_map)
+        stats["unihan_leading_support_terms_sc"] = len(sc_leading_term_count_map)
+        stats["unihan_leading_support_terms_tc"] = len(tc_leading_term_count_map)
     else:
         raise ValueError(f"unsupported parser: {parser_name}")
 
@@ -8413,6 +9069,52 @@ def main() -> int:
     tc_map, dropped_tc_non_windows = _filter_windows_unrenderable_entries(tc_map)
     stats["sc_filtered_non_windows_cjk"] = dropped_sc_non_windows
     stats["tc_filtered_non_windows_cjk"] = dropped_tc_non_windows
+    sc_single_char_reading_stats = _adjust_single_char_reading_preferences(
+        sc_map,
+        unihan_map=unihan_map,
+        unihan_readings_map=unihan_readings_map,
+        unihan_pinlu_map=unihan_pinlu_map,
+        unihan_pinlu_detail_map=unihan_pinlu_detail_map,
+        phrase_term_count_map=sc_reading_term_count_map,
+        phrase_support_sum_map=sc_reading_support_sum_map,
+        leading_term_count_map=sc_leading_term_count_map,
+        leading_support_sum_map=sc_leading_support_sum_map,
+        stats_prefix="sc",
+    )
+    stats.update(sc_single_char_reading_stats)
+    sc_single_char_leading_stats = _adjust_single_char_leading_preferences(
+        sc_map,
+        leading_term_count_map=sc_leading_term_count_map,
+        leading_support_sum_map=sc_leading_support_sum_map,
+        family_term_count_map=sc_family_term_count_map,
+        family_support_sum_map=sc_family_support_sum_map,
+        unihan_pinlu_detail_map=unihan_pinlu_detail_map,
+        stats_prefix="sc",
+    )
+    stats.update(sc_single_char_leading_stats)
+    tc_single_char_reading_stats = _adjust_single_char_reading_preferences(
+        tc_map,
+        unihan_map=unihan_map,
+        unihan_readings_map=unihan_readings_map,
+        unihan_pinlu_map=unihan_pinlu_map,
+        unihan_pinlu_detail_map=unihan_pinlu_detail_map,
+        phrase_term_count_map=tc_reading_term_count_map,
+        phrase_support_sum_map=tc_reading_support_sum_map,
+        leading_term_count_map=tc_leading_term_count_map,
+        leading_support_sum_map=tc_leading_support_sum_map,
+        stats_prefix="tc",
+    )
+    stats.update(tc_single_char_reading_stats)
+    tc_single_char_leading_stats = _adjust_single_char_leading_preferences(
+        tc_map,
+        leading_term_count_map=tc_leading_term_count_map,
+        leading_support_sum_map=tc_leading_support_sum_map,
+        family_term_count_map=tc_family_term_count_map,
+        family_support_sum_map=tc_family_support_sum_map,
+        unihan_pinlu_detail_map=unihan_pinlu_detail_map,
+        stats_prefix="tc",
+    )
+    stats.update(tc_single_char_leading_stats)
     sc_augmented_terms = set(wiki_alias_sc_terms)
     sc_augmented_terms.update(lexical_seed_sc_terms)
     tc_augmented_terms = set(wiki_alias_tc_terms)
@@ -8588,8 +9290,8 @@ def main() -> int:
         char_frequency_prior=char_frequency_prior,
     )
 
-    _write_dict(output_sc, sc_map)
-    _write_dict(output_tc, tc_map)
+    _write_dict(output_sc, sc_map, preferred_terms=curated_daily_sc_terms)
+    _write_dict(output_tc, tc_map, preferred_terms=curated_daily_tc_terms)
     if output_query_path_sc is not None:
         _write_query_path_prior(output_query_path_sc, sc_query_path_priors)
     if output_query_path_tc is not None:
