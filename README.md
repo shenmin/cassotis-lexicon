@@ -21,8 +21,8 @@ Lexicon build and release repository for Cassotis IME.
 
 | File | Variant | Entries |
 |------|---------|---------|
-| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 112,887 |
-| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 111,523 |
+| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 115,448 |
+| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 113,832 |
 | `data/generated/dict_unihan_sc.txt` | Simplified single-char (Unihan) | 23,909 |
 | `data/generated/dict_unihan_tc.txt` | Traditional single-char (Unihan) | 24,065 |
 
@@ -37,7 +37,7 @@ Lexicon build and release repository for Cassotis IME.
 | Unicode Unihan | Unicode-3.0 | Character-level Mandarin fallback and single-char dictionaries |
 | Wiktionary zh titles (ns0) | CC BY-SA 4.0 | Daily wording, colloquial phrases, and chat-style lexical seeds |
 | Cassotis curated daily/chat phrases | Repository license (project-authored) | High-value everyday/chat phrasing that is worth keeping stable even when open sources miss it |
-| Wikipedia zh titles (ns0) | CC BY-SA 4.0 | Named-entity coverage |
+| Wikipedia zh titles (ns0) | CC BY-SA 4.0 | Named-entity coverage and high-confidence proper-noun seeds |
 | Wikimedia Pageviews Top (zh.wikipedia) | CC BY-SA 4.0 | Real-world usage heat signal |
 
 See:

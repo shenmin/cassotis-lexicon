@@ -21,8 +21,8 @@ Cassotis IME 词库构建与发布仓库。
 
 | 文件 | 字体变体 | 词条数 |
 |------|---------|--------|
-| `data/generated/dict_clean_sc.txt` | 简体中文主词库 | 112,887 |
-| `data/generated/dict_clean_tc.txt` | 繁体中文主词库 | 111,523 |
+| `data/generated/dict_clean_sc.txt` | 简体中文主词库 | 115,448 |
+| `data/generated/dict_clean_tc.txt` | 繁体中文主词库 | 113,832 |
 | `data/generated/dict_unihan_sc.txt` | 简体单字（Unihan） | 23,909 |
 | `data/generated/dict_unihan_tc.txt` | 繁体单字（Unihan） | 24,065 |
 
@@ -37,7 +37,7 @@ Cassotis IME 词库构建与发布仓库。
 | Unicode Unihan | Unicode-3.0 | 单字读音兜底与单字词库 |
 | 中文维基词典标题（ns0） | CC BY-SA 4.0 | 日常表达、口语说法与聊天短语种子 |
 | Cassotis 项目内日常/聊天词表 | 仓库许可证（项目自维护） | 补入公开来源仍容易漏掉、但对日常输入价值很高的常用说法 |
-| 中文维基标题（ns0） | CC BY-SA 4.0 | 命名实体覆盖 |
+| 中文维基标题（ns0） | CC BY-SA 4.0 | 命名实体覆盖与高可信专名种子 |
 | Wikimedia Pageviews Top（zh.wikipedia） | CC BY-SA 4.0 | 真实热度信号 |
 
 详见：

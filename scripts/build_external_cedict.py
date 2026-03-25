@@ -241,7 +241,11 @@ SINGLE_CHAR_READING_DROP_OVERRIDES: Set[Tuple[str, str]] = {
     # should not surface it as a single-character candidate at all.
     ("哦", "e"),
 }
-SINGLE_CHAR_READING_DELTA_OVERRIDES: Dict[Tuple[str, str], int] = {}
+SINGLE_CHAR_READING_DELTA_OVERRIDES: Dict[Tuple[str, str], int] = {
+    # Keep 阮 visible as a common surname and standalone lexical target without
+    # overriding 软 as the dominant everyday ruan reading.
+    ("阮", "ruan"): 320,
+}
 
 COPYLEFT_LICENSE_TOKENS = (
     "by-sa",
@@ -4169,6 +4173,37 @@ def _parse_wiki_titles_entries(
     return titles, stats
 
 
+def _build_text_best_weight_map(
+    mapping: Dict[Tuple[str, str], int],
+) -> Dict[str, int]:
+    text_best_weight: Dict[str, int] = {}
+    for (_pinyin, text), weight in mapping.items():
+        current = text_best_weight.get(text, 0)
+        if weight > current:
+            text_best_weight[text] = weight
+    return text_best_weight
+
+
+def _build_text_prefix_support_from_best_weight(
+    text_best_weight: Dict[str, int],
+    min_prefix_len: int = 2,
+    max_prefix_len: int = 6,
+) -> Tuple[Dict[str, int], Dict[str, float]]:
+    term_count_map: Dict[str, int] = {}
+    support_sum_map: Dict[str, float] = {}
+    for text, weight in text_best_weight.items():
+        if not CJK_FULL_RE.fullmatch(text):
+            continue
+        text_len = _cjk_len(text)
+        if text_len <= min_prefix_len:
+            continue
+        for prefix_len in range(min_prefix_len, min(max_prefix_len, text_len - 1) + 1):
+            prefix = text[:prefix_len]
+            term_count_map[prefix] = term_count_map.get(prefix, 0) + 1
+            support_sum_map[prefix] = support_sum_map.get(prefix, 0.0) + float(weight)
+    return term_count_map, support_sum_map
+
+
 def _looks_like_daily_chat_seed(text: str) -> bool:
     if not text:
         return False
@@ -7804,6 +7839,277 @@ def _augment_with_curated_daily_phrases(
     return stats, sc_terms, tc_terms
 
 
+def _augment_with_wiki_proper_noun_titles(
+    sc: Dict[Tuple[str, str], int],
+    tc: Dict[Tuple[str, str], int],
+    usage_score_map: Dict[str, float],
+    source_hits_map: Dict[str, int],
+    pageviews_signal_map: Dict[str, float],
+    tc_usage_score_map: Dict[str, float],
+    tc_source_hits_map: Dict[str, int],
+    tc_pageviews_signal_map: Dict[str, float],
+    jieba_direct_signal_map: Dict[str, float],
+    tc_jieba_direct_signal_map: Dict[str, float],
+    jieba_pos_map: Dict[str, str],
+    tc_jieba_pos_map: Dict[str, str],
+    char_frequency_prior: Dict[str, float],
+    tc_char_frequency_prior: Dict[str, float],
+    opencc_entries: List[Tuple[str, str]],
+    tc_to_sc_map: Dict[str, Set[str]],
+    simp_to_trad_char_map: Dict[str, str],
+    unihan_map: Dict[str, str],
+    unihan_readings_map: Dict[str, Set[str]] | None,
+    unihan_source_rank_map: Dict[Tuple[str, str], int] | None,
+    unihan_pinlu_detail_map: Dict[Tuple[str, str], int] | None,
+    wiki_titles: Set[str],
+    min_hanzi: int,
+) -> Tuple[Dict[str, int], Set[str], Set[str]]:
+    stats = {
+        "wiki_proper_titles_total": 0,
+        "wiki_proper_titles_candidates_sc": 0,
+        "wiki_proper_titles_skipped_daily_like": 0,
+        "wiki_proper_titles_skipped_weak_signal": 0,
+        "wiki_proper_titles_skipped_no_pinyin": 0,
+        "wiki_proper_titles_pageview_backed": 0,
+        "wiki_proper_titles_prefix_backed": 0,
+        "wiki_proper_titles_added_sc": 0,
+        "wiki_proper_titles_boosted_sc": 0,
+        "wiki_proper_titles_added_tc": 0,
+        "wiki_proper_titles_boosted_tc": 0,
+    }
+    if not wiki_titles:
+        return stats, set(), set()
+
+    opencc_sc_to_tc = _build_opencc_sc_to_tc_map(opencc_entries)
+    pinyin_index = _build_text_pinyin_index(sc, tc)
+    tc_existing_texts = {text for _pinyin, text in tc.keys()}
+    sc_char_prior = _build_effective_char_prior(sc, char_frequency_prior)
+    tc_char_prior = _build_effective_char_prior(tc, tc_char_frequency_prior)
+    sc_text_best_weight = _build_text_best_weight_map(sc)
+    tc_text_best_weight = _build_text_best_weight_map(tc)
+    sc_prefix_term_count_map, sc_prefix_support_sum_map = _build_text_prefix_support_from_best_weight(
+        sc_text_best_weight
+    )
+    tc_prefix_term_count_map, tc_prefix_support_sum_map = _build_text_prefix_support_from_best_weight(
+        tc_text_best_weight
+    )
+
+    sc_candidates: Set[str] = set()
+    for title in wiki_titles:
+        stats["wiki_proper_titles_total"] += 1
+        if _looks_like_daily_chat_seed(title):
+            stats["wiki_proper_titles_skipped_daily_like"] += 1
+            continue
+        if not CJK_FULL_RE.fullmatch(title):
+            continue
+        title_len = _cjk_len(title)
+        if title_len < min_hanzi or title_len > 6:
+            continue
+        sc_words = tc_to_sc_map.get(title, set())
+        if sc_words:
+            sc_candidates.update(sc_words)
+        else:
+            sc_candidates.add(title)
+
+    sc_terms: Set[str] = set()
+    tc_terms: Set[str] = set()
+
+    for sc_word in sorted(sc_candidates):
+        if not CJK_FULL_RE.fullmatch(sc_word):
+            continue
+        if _looks_like_daily_chat_seed(sc_word):
+            continue
+        text_len = _cjk_len(sc_word)
+        if text_len < min_hanzi or text_len > 6:
+            continue
+
+        stats["wiki_proper_titles_candidates_sc"] += 1
+        direct_usage = min(1.0, max(0.0, usage_score_map.get(sc_word, 0.0)))
+        direct_source_hits = max(0, source_hits_map.get(sc_word, 0))
+        direct_pageview = min(1.0, max(0.0, pageviews_signal_map.get(sc_word, 0.0)))
+        direct_jieba = min(1.0, max(0.0, jieba_direct_signal_map.get(sc_word, 0.0)))
+        pos_tag = jieba_pos_map.get(sc_word, "")
+        char_score = _compute_text_single_char_prior(sc_word, sc_char_prior)
+        min_char_prior = _compute_min_char_prior(sc_word, sc_char_prior)
+        prefix_term_count = max(0, sc_prefix_term_count_map.get(sc_word, 0))
+        prefix_support = max(0.0, sc_prefix_support_sum_map.get(sc_word, 0.0))
+
+        pageview_backed = direct_pageview >= 0.08
+        source_backed = direct_source_hits >= 2
+        prefix_backed = (
+            text_len <= 4
+            and (
+                (prefix_term_count >= 1 and prefix_support >= 320.0)
+                or (prefix_term_count >= 2 and prefix_support >= 220.0)
+            )
+        )
+        if not (pageview_backed or source_backed or prefix_backed):
+            stats["wiki_proper_titles_skipped_weak_signal"] += 1
+            continue
+
+        if text_len == 2:
+            if char_score < 0.06 and min_char_prior < 0.01 and not (pageview_backed or source_backed):
+                stats["wiki_proper_titles_skipped_weak_signal"] += 1
+                continue
+        elif text_len == 3:
+            if char_score < 0.05 and min_char_prior < 0.008 and not (pageview_backed or source_backed):
+                stats["wiki_proper_titles_skipped_weak_signal"] += 1
+                continue
+        elif char_score < 0.04 and min_char_prior < 0.006 and not pageview_backed:
+            stats["wiki_proper_titles_skipped_weak_signal"] += 1
+            continue
+
+        pinyin_candidates = sorted(pinyin_index.get(sc_word, set()))
+        if not pinyin_candidates:
+            pinyin_candidates = sorted(
+                _derive_prefix_pinyin_candidates_from_longer_terms(
+                    sc_word,
+                    pinyin_index,
+                    unihan_readings_map,
+                    unihan_source_rank_map,
+                    unihan_map,
+                    unihan_pinlu_detail_map,
+                )
+            )
+        if not pinyin_candidates:
+            fallback = _pinyin_from_unihan(sc_word, unihan_map)
+            if fallback and (pageview_backed or source_backed or prefix_support >= 420.0):
+                pinyin_candidates = [fallback]
+        if not pinyin_candidates:
+            stats["wiki_proper_titles_skipped_no_pinyin"] += 1
+            continue
+
+        synthetic_usage = direct_usage
+        if pageview_backed:
+            if direct_pageview >= 0.16:
+                synthetic_usage = max(synthetic_usage, 0.32)
+            elif direct_pageview >= 0.12:
+                synthetic_usage = max(synthetic_usage, 0.28)
+            else:
+                synthetic_usage = max(synthetic_usage, 0.24)
+            stats["wiki_proper_titles_pageview_backed"] += 1
+        elif prefix_backed:
+            if prefix_support >= 700.0 or prefix_term_count >= 2:
+                synthetic_usage = max(synthetic_usage, 0.24)
+            else:
+                synthetic_usage = max(synthetic_usage, 0.20)
+            stats["wiki_proper_titles_prefix_backed"] += 1
+        else:
+            synthetic_usage = max(synthetic_usage, 0.22)
+
+        synthetic_source_hits = direct_source_hits
+        if pageview_backed and direct_pageview >= 0.16:
+            synthetic_source_hits = max(synthetic_source_hits, 3)
+        elif prefix_backed and (prefix_support >= 700.0 or prefix_term_count >= 2):
+            synthetic_source_hits = max(synthetic_source_hits, 3)
+        elif pageview_backed or source_backed or prefix_backed:
+            synthetic_source_hits = max(synthetic_source_hits, 2)
+
+        synthetic_jieba_direct = max(
+            direct_jieba,
+            min(0.16, synthetic_usage * 0.36),
+        )
+        weight = _compute_weight_with_signals(
+            sc_word,
+            usage_score=synthetic_usage,
+            source_hits=synthetic_source_hits,
+            pageview_score=direct_pageview,
+            wiki_hit=True,
+            core_entry=False,
+            jieba_direct_score=synthetic_jieba_direct,
+            pos_tag=pos_tag,
+            char_score=char_score,
+        )
+
+        usage_score_map[sc_word] = max(usage_score_map.get(sc_word, 0.0), synthetic_usage)
+        source_hits_map[sc_word] = max(source_hits_map.get(sc_word, 0), synthetic_source_hits)
+        pageviews_signal_map[sc_word] = max(pageviews_signal_map.get(sc_word, 0.0), direct_pageview)
+
+        added_sc = False
+        boosted_sc = False
+        for pinyin in pinyin_candidates:
+            key = (pinyin, sc_word)
+            existing_sc_weight = sc.get(key)
+            if existing_sc_weight is None:
+                sc[key] = weight
+                added_sc = True
+                sc_terms.add(sc_word)
+            elif weight > existing_sc_weight:
+                sc[key] = weight
+                boosted_sc = True
+                sc_terms.add(sc_word)
+            else:
+                sc_terms.add(sc_word)
+        if added_sc:
+            stats["wiki_proper_titles_added_sc"] += 1
+        if boosted_sc:
+            stats["wiki_proper_titles_boosted_sc"] += 1
+
+        tc_words = opencc_sc_to_tc.get(sc_word, set())
+        if not tc_words:
+            if sc_word in tc_existing_texts:
+                tc_words = {sc_word}
+            else:
+                converted = _convert_sc_text_to_tc_with_phrase_hints(
+                    sc_word,
+                    opencc_sc_to_tc,
+                    simp_to_trad_char_map,
+                )
+                if converted != sc_word:
+                    tc_words = {converted}
+
+        added_tc = False
+        boosted_tc = False
+        for tc_word in tc_words:
+            if _cjk_len(tc_word) < min_hanzi or _cjk_len(tc_word) > 6:
+                continue
+            tc_char_score = _compute_text_single_char_prior(tc_word, tc_char_prior)
+            tc_direct_pageview = min(1.0, max(0.0, tc_pageviews_signal_map.get(tc_word, direct_pageview)))
+            tc_direct_jieba = min(
+                1.0,
+                max(0.0, tc_jieba_direct_signal_map.get(tc_word, synthetic_jieba_direct)),
+            )
+            tc_pos_tag = tc_jieba_pos_map.get(tc_word, pos_tag)
+            tc_prefix_term_count = max(0, tc_prefix_term_count_map.get(tc_word, prefix_term_count))
+            tc_prefix_support = max(0.0, tc_prefix_support_sum_map.get(tc_word, prefix_support))
+            tc_source_hits = max(tc_source_hits_map.get(tc_word, 0), synthetic_source_hits)
+            if tc_prefix_support >= 700.0 or tc_prefix_term_count >= 2:
+                tc_source_hits = max(tc_source_hits, 3)
+            tc_weight = _compute_weight_with_signals(
+                tc_word,
+                usage_score=synthetic_usage,
+                source_hits=tc_source_hits,
+                pageview_score=tc_direct_pageview,
+                wiki_hit=True,
+                core_entry=False,
+                jieba_direct_score=tc_direct_jieba,
+                pos_tag=tc_pos_tag,
+                char_score=tc_char_score,
+            )
+            tc_usage_score_map[tc_word] = max(tc_usage_score_map.get(tc_word, 0.0), synthetic_usage)
+            tc_source_hits_map[tc_word] = max(tc_source_hits_map.get(tc_word, 0), tc_source_hits)
+            tc_pageviews_signal_map[tc_word] = max(tc_pageviews_signal_map.get(tc_word, 0.0), tc_direct_pageview)
+            for pinyin in pinyin_candidates:
+                key = (pinyin, tc_word)
+                existing_tc_weight = tc.get(key)
+                if existing_tc_weight is None:
+                    tc[key] = tc_weight
+                    added_tc = True
+                    tc_terms.add(tc_word)
+                elif tc_weight > existing_tc_weight:
+                    tc[key] = tc_weight
+                    boosted_tc = True
+                    tc_terms.add(tc_word)
+                else:
+                    tc_terms.add(tc_word)
+        if added_tc:
+            stats["wiki_proper_titles_added_tc"] += 1
+        if boosted_tc:
+            stats["wiki_proper_titles_boosted_tc"] += 1
+
+    return stats, sc_terms, tc_terms
+
+
 def _apply_limit(
     mapping: Dict[Tuple[str, str], int],
     max_entries: int,
@@ -8495,6 +8801,8 @@ def main() -> int:
     wiki_alias_tc_terms: Set[str] = set()
     lexical_seed_sc_terms: Set[str] = set()
     lexical_seed_tc_terms: Set[str] = set()
+    wiki_proper_sc_terms: Set[str] = set()
+    wiki_proper_tc_terms: Set[str] = set()
     curated_daily_sc_terms: Set[str] = set()
     curated_daily_tc_terms: Set[str] = set()
     tc_usage_score_map: Dict[str, float] = {}
@@ -8827,6 +9135,50 @@ def main() -> int:
         )
         lexical_seed_sc_terms.update(daily_prefix_sc_terms)
         lexical_seed_tc_terms.update(daily_prefix_tc_terms)
+        if args.min_hanzi >= 2:
+            (
+                wiki_proper_stats,
+                wiki_proper_sc_terms,
+                wiki_proper_tc_terms,
+            ) = _augment_with_wiki_proper_noun_titles(
+                sc_map,
+                tc_map,
+                usage_score_map,
+                source_hits_map,
+                pageviews_signal_map,
+                tc_usage_score_map,
+                tc_source_hits_map,
+                tc_pageviews_signal_map,
+                jieba_direct_signal_map,
+                tc_jieba_direct_signal_map,
+                jieba_pos_map,
+                tc_jieba_pos_map,
+                char_frequency_prior,
+                tc_char_frequency_prior,
+                opencc_entries,
+                tc_to_sc_map,
+                simp_to_trad_char_map,
+                unihan_map,
+                unihan_readings_map,
+                unihan_reading_source_map,
+                unihan_pinlu_detail_map,
+                wiki_titles,
+                args.min_hanzi,
+            )
+        else:
+            wiki_proper_stats = {
+                "wiki_proper_titles_total": 0,
+                "wiki_proper_titles_candidates_sc": 0,
+                "wiki_proper_titles_skipped_daily_like": 0,
+                "wiki_proper_titles_skipped_weak_signal": 0,
+                "wiki_proper_titles_skipped_no_pinyin": 0,
+                "wiki_proper_titles_pageview_backed": 0,
+                "wiki_proper_titles_prefix_backed": 0,
+                "wiki_proper_titles_added_sc": 0,
+                "wiki_proper_titles_boosted_sc": 0,
+                "wiki_proper_titles_added_tc": 0,
+                "wiki_proper_titles_boosted_tc": 0,
+            }
         (
             curated_daily_stats,
             curated_daily_sc_terms,
@@ -8894,6 +9246,7 @@ def main() -> int:
         stats.update(tc_rescore_stats)
         stats.update(augment_stats)
         stats.update(daily_prefix_stats)
+        stats.update(wiki_proper_stats)
         stats.update(curated_daily_stats)
         stats.update(sc_normalize_stats)
         stats.update(sc_char_normalize_stats)
@@ -9154,10 +9507,14 @@ def main() -> int:
     stats.update(tc_single_char_leading_stats)
     sc_augmented_terms = set(wiki_alias_sc_terms)
     sc_augmented_terms.update(lexical_seed_sc_terms)
+    sc_augmented_terms.update(wiki_proper_sc_terms)
     tc_augmented_terms = set(wiki_alias_tc_terms)
     tc_augmented_terms.update(lexical_seed_tc_terms)
+    tc_augmented_terms.update(wiki_proper_tc_terms)
     stats["lexical_seed_augmented_sc_terms"] = len(lexical_seed_sc_terms)
     stats["lexical_seed_augmented_tc_terms"] = len(lexical_seed_tc_terms)
+    stats["wiki_proper_augmented_sc_terms"] = len(wiki_proper_sc_terms)
+    stats["wiki_proper_augmented_tc_terms"] = len(wiki_proper_tc_terms)
 
     sc_multi_pronunciation_stats = _rerank_multi_pronunciation_terms(
         sc_map,
