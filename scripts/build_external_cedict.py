@@ -273,7 +273,31 @@ PROFILE_DEFAULTS: Dict[str, Dict[str, object]] = {
                 "attribution_required": True,
                 "raw_committed": False,
                 "notes": "Parsed to pinyin<TAB>text<TAB>weight format.",
-            }
+            },
+            {
+                "id": "unicode-unihan-readings",
+                "name": "Unicode Unihan_Readings",
+                "download_url": UNICODE_UNIHAN_URL,
+                "homepage": UNICODE_HOMEPAGE,
+                "license": "Unicode-3.0",
+                "risk_level": "low",
+                "redistribution_class": "permissive",
+                "attribution_required": True,
+                "raw_committed": False,
+                "notes": "Character-level Mandarin readings for curated daily phrase pinyin generation.",
+            },
+            {
+                "id": "project-curated-daily-phrases",
+                "name": "Cassotis curated daily/chat phrases",
+                "download_url": CURATED_DAILY_PHRASES_URL,
+                "homepage": CURATED_DAILY_PHRASES_HOMEPAGE,
+                "license": "Repository license (project-authored)",
+                "risk_level": "low",
+                "redistribution_class": "project_authored",
+                "attribution_required": False,
+                "raw_committed": True,
+                "notes": "Project-maintained daily/chat phrase whitelist layered on top of CEDICT.",
+            },
         ],
     },
     "external_broad": {
@@ -8964,6 +8988,59 @@ def main() -> int:
         sc_map, tc_map, stats, cedict_style_penalty_map = _parse_cedict_entries(
             source_text, args.min_hanzi
         )
+        source_ids = {str(source.get("id", "")) for source in sources}
+        if (
+            "project-curated-daily-phrases" in source_ids
+            and "unicode-unihan-readings" in source_ids
+        ):
+            curated_daily_payload = _require_source_payload(
+                payload_map,
+                sources,
+                role="project-curated-daily-phrases",
+                source_id="project-curated-daily-phrases",
+                download_url=CURATED_DAILY_PHRASES_URL,
+            )
+            unihan_payload = _require_source_payload(
+                payload_map,
+                sources,
+                role="unicode-unihan-readings",
+                source_id="unicode-unihan-readings",
+                download_url=UNICODE_UNIHAN_URL,
+            )
+            curated_daily_entries, curated_daily_parse_stats = _parse_curated_daily_phrase_entries(
+                curated_daily_payload,
+                args.min_hanzi,
+            )
+            curated_unihan_map = _load_unihan_mandarin_map(unihan_payload)
+            curated_usage_score_map: Dict[str, float] = {}
+            curated_source_hits_map: Dict[str, int] = {}
+            curated_tc_usage_score_map: Dict[str, float] = {}
+            curated_tc_source_hits_map: Dict[str, int] = {}
+            (
+                curated_daily_stats,
+                curated_daily_sc_terms,
+                curated_daily_tc_terms,
+            ) = _augment_with_curated_daily_phrases(
+                sc_map,
+                tc_map,
+                curated_daily_entries,
+                curated_usage_score_map,
+                curated_source_hits_map,
+                curated_tc_usage_score_map,
+                curated_tc_source_hits_map,
+                jieba_direct_signal_map,
+                tc_jieba_direct_signal_map,
+                jieba_pos_map,
+                tc_jieba_pos_map,
+                char_frequency_prior,
+                tc_char_frequency_prior,
+                [],
+                {},
+                curated_unihan_map,
+                args.min_hanzi,
+            )
+            stats.update(curated_daily_parse_stats)
+            stats.update(curated_daily_stats)
     elif parser_name == "cedict_thuocl_jieba_opencc_unihan_wiki":
         cedict_payload = _require_source_payload(
             payload_map,

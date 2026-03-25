@@ -1,6 +1,6 @@
 version: 1
-generated_at: "2026-03-25T14:13:32+00:00"
-profile: external_broad
+generated_at: "2026-03-25T15:43:48+00:00"
+profile: external_cedict
 sources:
   - id: cc-cedict
     name: CC-CEDICT
@@ -11,37 +11,7 @@ sources:
     redistribution_class: copyleft_sharealike
     attribution_required: true
     raw_committed: false
-    notes: 'Core dictionary entries with word-level pinyin.'
-  - id: thuocl
-    name: THUOCL (Tsinghua Open Chinese Lexicon)
-    download_url: https://github.com/thunlp/THUOCL/archive/refs/heads/master.zip
-    homepage: https://github.com/thunlp/THUOCL
-    license: THUOCL custom open terms
-    risk_level: medium
-    redistribution_class: attribution_required
-    attribution_required: true
-    raw_committed: false
-    notes: 'Domain/common words with DF statistics, used for broad coverage.'
-  - id: opencc-stphrases
-    name: OpenCC STPhrases
-    download_url: https://raw.githubusercontent.com/BYVoid/OpenCC/master/data/dictionary/STPhrases.txt
-    homepage: https://github.com/BYVoid/OpenCC
-    license: Apache-2.0
-    risk_level: low
-    redistribution_class: permissive
-    attribution_required: true
-    raw_committed: false
-    notes: 'SC->TC phrase mapping for broad-profile TC expansion.'
-  - id: jieba-dict
-    name: jieba dict.txt
-    download_url: https://raw.githubusercontent.com/fxsjy/jieba/master/jieba/dict.txt
-    homepage: https://github.com/fxsjy/jieba
-    license: MIT
-    risk_level: low
-    redistribution_class: permissive
-    attribution_required: true
-    raw_committed: false
-    notes: 'Word-frequency dictionary used as ranking signal.'
+    notes: 'Parsed to pinyin<TAB>text<TAB>weight format.'
   - id: unicode-unihan-readings
     name: Unicode Unihan_Readings
     download_url: https://www.unicode.org/Public/UCD/latest/ucd/Unihan.zip
@@ -51,17 +21,7 @@ sources:
     redistribution_class: permissive
     attribution_required: true
     raw_committed: false
-    notes: 'Character-level Mandarin readings for pinyin fallback.'
-  - id: zhwiktionary-titles-ns0
-    name: Wiktionary zh titles (ns0)
-    download_url: https://dumps.wikimedia.org/zhwiktionary/latest/zhwiktionary-latest-all-titles-in-ns0.gz
-    homepage: https://dumps.wikimedia.org/zhwiktionary/latest/
-    license: CC BY-SA 4.0
-    risk_level: medium
-    redistribution_class: copyleft_sharealike
-    attribution_required: true
-    raw_committed: false
-    notes: 'Daily/colloquial lexical entries used as direct seed for modern chat phrasing.'
+    notes: 'Character-level Mandarin readings for curated daily phrase pinyin generation.'
   - id: project-curated-daily-phrases
     name: Cassotis curated daily/chat phrases
     download_url: repo://manifests/curated_daily_phrases.tsv
@@ -71,24 +31,4 @@ sources:
     redistribution_class: project_authored
     attribution_required: false
     raw_committed: true
-    notes: 'Project-maintained high-value daily/chat phrase whitelist for IME-friendly everyday input.'
-  - id: zhwiki-titles-ns0
-    name: Wikipedia zh titles (ns0)
-    download_url: https://dumps.wikimedia.org/zhwiki/latest/zhwiki-latest-all-titles-in-ns0.gz
-    homepage: https://dumps.wikimedia.org/zhwiki/latest/
-    license: CC BY-SA 4.0
-    risk_level: medium
-    redistribution_class: copyleft_sharealike
-    attribution_required: true
-    raw_committed: false
-    notes: 'Used as broad coverage and ranking signal for common named terms.'
-  - id: wikimedia-pageviews-top
-    name: Wikimedia Pageviews Top (zh.wikipedia)
-    download_url: https://wikimedia.org/api/rest_v1/metrics/pageviews/top/zh.wikipedia/all-access
-    homepage: https://wikitech.wikimedia.org/wiki/Analytics/AQS/Pageviews
-    license: CC BY-SA 4.0
-    risk_level: medium
-    redistribution_class: copyleft_sharealike
-    attribution_required: true
-    raw_committed: false
-    notes: 'Monthly top pageviews are aggregated as real-world usage heat signal.'
+    notes: 'Project-maintained daily/chat phrase whitelist layered on top of CEDICT.'
