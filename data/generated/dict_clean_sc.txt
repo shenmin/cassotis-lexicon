@@ -43855,7 +43855,7 @@ jingshenzhizhu	精神支柱	387
 jingshenzhuangtai	精神状态	420
 jingshi	竟是	1000
 jingshi	京师	398
-jingshi	警示	81
+jingshi	警示	82
 jingshi	经世	1
 jingshidaxuetang	京师大学堂	330
 jingshidaxuetangshifanguan	京师大学堂师范馆	364
@@ -51094,8 +51094,8 @@ laopu	老圃	1000
 laoqi	老契	685
 laoqi	老气	493
 laoqian	老乾	792
-laoqian	老千	730
-laoqian	捞钱	251
+laoqian	老千	731
+laoqian	捞钱	250
 laoqiang	老枪	569
 laoqiang	老腔	560
 laoqianggu	老枪谷	640
@@ -67079,7 +67079,8 @@ qianxiyidai	千禧一代	260
 qianxu	谦虚	454
 qianxue	浅学	319
 qianxuesen	钱学森	780
-qianxun	谦逊	451
+qianxun	千寻	1000
+qianxun	谦逊	1
 qianyan	前沿	744
 qianyan	前言	679
 qianyan	迁延	417
@@ -67122,6 +67123,7 @@ qianyubing	签语饼	230
 qianyue	签约	461
 qianyuejiangjin	签约奖金	260
 qianyupingfanggongli	千余平方公里	399
+qianyuqianxun	千与千寻	973
 qianyutu	潜育土	232
 qianzai	潜在	600
 qianzaimeijie	潜在媒介	260
@@ -68986,12 +68988,12 @@ qishenggen	气生根	232
 qishengyinjie	七声音阶	260
 qishi	七十	1000
 qishi	其实	1000
-qishi	启示	506
+qishi	启示	532
 qishi	骑士	396
 qishi	歧视	291
 qishi	气势	273
 qishi	起始	268
-qishi	启事	77
+qishi	启事	121
 qishi	弃市	62
 qishi	起誓	8
 qishi	奇事	2
@@ -77921,8 +77923,8 @@ shizhong	始终	1000
 shizhong	市中	737
 shizhong	适中	354
 shizhong	时钟	126
+shizhong	示众	46
 shizhong	失重	45
-shizhong	示众	45
 shizhong	试种	1
 shizhongbuyu	始终不渝	467
 shizhonggui	石重贵	783
@@ -88001,7 +88003,7 @@ wanshengye	万圣夜	786
 wanshenme	玩什么	938
 wanshi	万事	935
 wanshi	完事	400
-wanshi	万世	177
+wanshi	万世	176
 wanshibugong	玩世不恭	467
 wanshibuqiuren	万事不求人	392
 wanshida	万事达	458
@@ -89665,7 +89667,7 @@ wuanshi	武安市	165
 wuba	武把	954
 wubabituona	戊巴比妥钠	288
 wubai	五百	1000
-wubai	伍佰	233
+wubai	伍佰	261
 wubaibashierjuan	五百八十二卷	399
 wubaibashiwu	五百八十五	371
 wubaidi	乌拜迪	167
@@ -97313,7 +97315,7 @@ xunhangdaodan	巡航导弹	584
 xunhanji	驯悍记	228
 xunhao	讯号	381
 xunhua	循化	867
-xunhua	训话	490
+xunhua	训话	489
 xunhua	驯化	441
 xunhuan	循环	1000
 xunhuan	寻欢	1
@@ -97348,8 +97350,8 @@ xunixianshizhibiaoyuyan	虚拟现实置标语言	378
 xuniyuqi	虚拟语气	405
 xunizhuanyongwangluo	虚拟专用网络	318
 xunji	迅即	894
-xunji	寻机	251
-xunji	迅疾	28
+xunji	寻机	253
+xunji	迅疾	29
 xunji	勋绩	1
 xunjia	询价	411
 xunjiao	殉教	323
@@ -97374,7 +97376,8 @@ xunliang	驯良	401
 xunlianying	训练营	449
 xunlianzhe	训练者	379
 xunling	训令	388
-xunlu	驯鹿	446
+xunlu	寻路	1000
+xunlu	驯鹿	1
 xunluo	巡逻	551
 xunluoche	巡逻车	416
 xunluochuan	巡逻船	228
@@ -97402,6 +97405,9 @@ xunqinji	寻秦记	787
 xunqiu	寻求	499
 xunran	熏染	421
 xunrao	驯扰	198
+xunren	寻人	734
+xunrenqishi	寻人启事	1000
+xunrenqishi	寻人启示	952
 xunri	旬日	287
 xunrou	熏肉	371
 xunse	逊色	430
@@ -97417,7 +97423,7 @@ xunshun	驯顺	722
 xunshuo	旬朔	198
 xunshuyuesong	旬输月送	405
 xunsi	寻死	855
-xunsi	寻思	596
+xunsi	寻思	597
 xunsiwangfa	徇私枉法	416
 xunsiwubi	徇私舞弊	464
 xunsu	迅速	502
@@ -97921,6 +97927,7 @@ yanchuang	岩床	400
 yanchuanshenjiao	言传身教	476
 yanchuanxian	延川县	165
 yanchudidian	演出地点	260
+yanchufasui	言出法随	953
 yanchuzhe	演出者	415
 yanci	言词	784
 yancong	烟囱	431
@@ -103867,7 +103874,7 @@ youfude	有服的	640
 youfumi	幽浮迷	228
 youfutong	有福同	566
 youfutongxiang	有福同享	599
-youfuzhifu	有妇之夫	333
+youfuzhifu	有夫之妇	333
 yougan	有感	453
 youganerfa	有感而发	448
 youganlan	油橄榄	445
@@ -108320,7 +108327,8 @@ zhaoqinmuchu	朝秦暮楚	412
 zhaoqipengbo	朝气蓬勃	472
 zhaoranruojie	昭然若揭	437
 zhaore	招惹	443
-zhaoren	招认	690
+zhaoren	找人	1000
+zhaoren	招认	1
 zhaorenxihuan	招人喜欢	260
 zhaori	朝日	536
 zhaorixinwen	朝日新闻	249
@@ -109970,7 +109978,7 @@ zhiduoxing	智多星	240
 zhienbubao	知恩不报	260
 zhier	侄儿	453
 zhifa	执法	983
-zhifa	指法	121
+zhifa	指法	122
 zhifaban	直发板	232
 zhifafanfa	知法犯法	387
 zhifang	脂肪	986
