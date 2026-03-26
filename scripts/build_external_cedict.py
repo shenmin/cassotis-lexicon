@@ -2147,6 +2147,96 @@ def _compute_wiki_alias_support_signal(
     )
 
 
+def _has_meaningful_direct_support_for_wiki_alias(
+    text: str,
+    usage_score: float,
+    source_hits: int,
+    pageview_score: float,
+    jieba_direct_score: float,
+    char_score: float,
+    wiki_titles: Set[str],
+) -> bool:
+    """
+    Only keep ASCII wiki redirect aliases when the CJK target already has
+    meaningful independent support.
+
+    This blocks cases like Latin taxon names whose ASCII spelling happens to
+    look like a valid pinyin key (for example "Lema" -> "lema"), while
+    preserving common products/brands/concepts such as "知乎/微信/百度" that
+    already show up in real usage or pageview signals.
+    """
+    text_len = _cjk_len(text)
+    if text_len <= 0:
+        return False
+
+    bounded_usage = min(1.0, max(0.0, usage_score))
+    bounded_pageviews = min(1.0, max(0.0, pageview_score))
+    bounded_jieba = min(1.0, max(0.0, jieba_direct_score))
+    bounded_char = min(1.0, max(0.0, char_score))
+
+    if source_hits >= 2:
+        return True
+
+    def _looks_like_specialized_alias_target() -> bool:
+        if text.endswith(("属", "疗法", "治疗法")):
+            return True
+        if text_len >= 5 and text.endswith(
+            ("亚科", "总科", "亚目", "亚纲", "亚族", "学派", "学说")
+        ):
+            return True
+        return False
+
+    if _looks_like_specialized_alias_target():
+        return (
+            source_hits >= 2
+            or bounded_usage >= 0.10
+            or bounded_jieba >= 0.08
+            or bounded_pageviews >= 0.06
+        )
+
+    if text_len <= 4:
+        return True
+
+    if bounded_usage >= 0.14 or bounded_jieba >= 0.10 or bounded_pageviews >= 0.08:
+        return True
+    if text in wiki_titles and (
+        bounded_usage >= 0.10 or bounded_jieba >= 0.08 or bounded_pageviews >= 0.06
+    ):
+        return True
+    return False
+
+
+def _wiki_alias_target_matches_pinyin(
+    alias_pinyin: str,
+    text: str,
+    pinyin_index: Dict[str, Set[str]],
+    unihan_readings_map: Dict[str, Set[str]] | None,
+    unihan_source_rank_map: Dict[Tuple[str, str], int] | None,
+    unihan_mandarin_map: Dict[str, str] | None,
+    unihan_pinlu_detail_map: Dict[Tuple[str, str], int] | None,
+) -> bool:
+    """
+    Keep ASCII wiki redirect aliases only when the alias itself is a valid
+    pinyin for the redirected CJK target.
+    """
+    normalized_alias = _normalize_pinyin(alias_pinyin)
+    if not normalized_alias or not text:
+        return False
+
+    direct_pinyins = pinyin_index.get(text, set())
+    if normalized_alias in direct_pinyins:
+        return True
+
+    derived_variants = _collect_unihan_phrase_pinyin_variants(
+        text,
+        unihan_readings_map,
+        unihan_source_rank_map,
+        unihan_mandarin_map,
+        unihan_pinlu_detail_map,
+    )
+    return normalized_alias in derived_variants
+
+
 def _compute_effective_pos_bias(
     pos_tag: str,
     text_len: int,
@@ -8015,6 +8105,7 @@ def _augment_with_frequency_lexicon(
         "freqlex_opencc_tc_hits": 0,
         "freqlex_wiki_alias_added_sc": 0,
         "freqlex_wiki_alias_added_tc": 0,
+        "freqlex_wiki_alias_skipped_pinyin_mismatch": 0,
     }
 
     opencc_sc_to_tc = _build_opencc_sc_to_tc_map(opencc_entries)
@@ -8206,6 +8297,18 @@ def _augment_with_frequency_lexicon(
                 continue
             text_len = _cjk_len(word)
             if text_len < min_hanzi or text_len > 8:
+                continue
+
+            if not _wiki_alias_target_matches_pinyin(
+                pinyin,
+                word,
+                pinyin_index,
+                unihan_readings_map,
+                unihan_source_rank_map,
+                unihan_map,
+                unihan_pinlu_detail_map,
+            ):
+                stats["freqlex_wiki_alias_skipped_pinyin_mismatch"] += 1
                 continue
 
             synthetic_usage_score, synthetic_source_hits, synthetic_pageview_score = (
