@@ -8837,7 +8837,7 @@ def main() -> int:
     )
     parser.add_argument(
         "--profile",
-        default="external_cedict",
+        default="external_broad",
         choices=sorted(PROFILE_DEFAULTS.keys()),
     )
     parser.add_argument("--source-url", default="")

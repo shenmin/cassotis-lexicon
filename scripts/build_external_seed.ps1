@@ -1,6 +1,6 @@
 param(
     [string]$Root = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path,
-    [string]$Profile = "external_cedict",
+    [string]$Profile = "external_broad",
     [int]$MinHanzi = 2,
     [int]$MaxEntries = 0,
     [int]$PageviewsMonths = 6,
