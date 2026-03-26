@@ -26,7 +26,9 @@ Lexicon build and release repository for Cassotis IME.
 | `data/generated/dict_unihan_sc.txt` | Simplified single-char (Unihan) | 23,909 |
 | `data/generated/dict_unihan_tc.txt` | Traditional single-char (Unihan) | 24,064 |
 
-## Bootstrap sources and curated supplements (`external_broad`)
+## External sources and project-maintained supplements (`external_broad`)
+
+### External sources
 
 | Source | License | Usage |
 |--------|---------|-------|
@@ -36,11 +38,16 @@ Lexicon build and release repository for Cassotis IME.
 | THUOCL | THUOCL custom open terms | Broad coverage and DF statistics |
 | jieba `dict.txt` | MIT | Frequency ranking signal |
 | Wiktionary zh titles (ns0) | CC BY-SA 4.0 | Daily wording, colloquial phrases, and chat-style lexical seeds |
-| Cassotis curated daily/chat phrases | Repository license (project-authored) | High-value everyday/chat phrasing that is worth keeping stable even when open sources miss it |
 | Wikipedia zh titles (ns0) | CC BY-SA 4.0 | Named-entity coverage and high-confidence proper-noun seeds |
 | Wikimedia Pageviews Top (zh.wikipedia) | CC BY-SA 4.0 | Real-world usage heat signal |
 | Filtered `THUOCL_IT` subset | THUOCL custom open terms | Computing vertical-layer candidate source, filtered before import so it does not behave like the everyday/chat phrase layer |
-| Cassotis curated computing terms | Repository license (project-authored) | Isolated vertical terminology layer for computing/domain vocabulary; does not share the daily/chat preferred-term path |
+
+### Project-maintained supplements
+
+| Supplement | License | Usage |
+|-----------|---------|-------|
+| Cassotis curated daily/chat phrases | Repository license (project-authored) | High-value everyday/chat phrasing that is worth keeping stable even when open sources miss it |
+| Cassotis curated computing terms | Repository license (project-authored) | Project-maintained computing/domain term list used by the isolated computing vertical layer; does not share the daily/chat preferred-term path |
 
 See:
 - `attribution/ATTRIBUTION.md`

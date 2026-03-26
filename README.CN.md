@@ -26,7 +26,9 @@ Cassotis IME 词库构建与发布仓库。
 | `data/generated/dict_unihan_sc.txt` | 简体单字（Unihan） | 23,909 |
 | `data/generated/dict_unihan_tc.txt` | 繁体单字（Unihan） | 24,064 |
 
-## 启动来源与项目内补充（`external_broad` 配置）
+## 外部来源与项目内补充（`external_broad` 配置）
+
+### 外部来源
 
 | 来源 | 许可证 | 用途 |
 |------|--------|------|
@@ -36,11 +38,16 @@ Cassotis IME 词库构建与发布仓库。
 | THUOCL | THUOCL 自定义开放条款 | 扩展覆盖与 DF 统计 |
 | jieba `dict.txt` | MIT | 频率排序信号 |
 | 中文维基词典标题（ns0） | CC BY-SA 4.0 | 日常表达、口语说法与聊天短语种子 |
-| Cassotis 项目内日常/聊天词表 | 仓库许可证（项目自维护） | 补入公开来源仍容易漏掉、但对日常输入价值很高的常用说法 |
 | 中文维基标题（ns0） | CC BY-SA 4.0 | 命名实体覆盖与高可信专名种子 |
 | Wikimedia Pageviews Top（zh.wikipedia） | CC BY-SA 4.0 | 真实热度信号 |
 | 经过筛选的 `THUOCL_IT` 子集 | THUOCL 自定义开放条款 | 作为计算机垂直词库候选来源；导入前会先过滤，不按日常聊天词层处理 |
-| Cassotis 项目内计算机词表 | 仓库许可证（项目自维护） | 独立的垂直术语层，用于计算机/专业词汇；不走日常聊天词的 preferred-term 排序链 |
+
+### 项目内补充
+
+| 补充层 | 许可证 | 用途 |
+|--------|--------|------|
+| Cassotis 项目内日常/聊天词表 | 仓库许可证（项目自维护） | 补入公开来源仍容易漏掉、但对日常输入价值很高的常用说法 |
+| Cassotis 项目内计算机词表 | 仓库许可证（项目自维护） | 项目内维护的计算机/专业术语词表，供独立的计算机垂直层使用；不走日常聊天词的 preferred-term 排序链 |
 
 详见：
 - `attribution/ATTRIBUTION.md`
