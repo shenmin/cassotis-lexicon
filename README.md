@@ -1,28 +1,20 @@
 ﻿# Cassotis Lexicon
 
-<p align="center">
-  <img src="cassotis_ime_yanquan.png" alt="Cassotis IME logo" width="280">
-</p>
-
-<p align="center">
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-CC%20BY--SA%204.0-blue" alt="License: CC BY-SA 4.0"></a>
-</p>
-
 English | [简体中文](README.CN.md)
 
 Lexicon build and release repository for Cassotis IME.
 
 ## Repository role
 - Maintains lexicon build scripts, manifests, and generated outputs.
-- Supports external-source bootstrap and lexicon release workflows.
-- Keeps attribution and release policy files aligned with repository artifacts.
+- Supports external-source bootstrap and private-corpus integration workflows.
+- Keeps attribution and release policy files aligned with exported public artifacts.
 
 ## Current dictionary snapshot (2026-03-26 build)
 
 | File | Variant | Entries |
 |------|---------|---------|
-| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 117,859 |
-| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 118,013 |
+| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 117,892 |
+| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 118,047 |
 | `data/generated/dict_unihan_sc.txt` | Simplified single-char (Unihan) | 23,909 |
 | `data/generated/dict_unihan_tc.txt` | Traditional single-char (Unihan) | 24,064 |
 
@@ -47,12 +39,12 @@ Lexicon build and release repository for Cassotis IME.
 | Supplement | License | Usage |
 |-----------|---------|-------|
 | Cassotis curated daily/chat phrases | Repository license (project-authored) | High-value everyday/chat phrasing that is worth keeping stable even when open sources miss it |
+| Cassotis curated proper nouns | Repository license (project-authored) | Project-maintained proper-noun list for names, titles, organizations, and other specific entities that should not share the daily/chat preferred-term path |
 | Cassotis curated computing terms | Repository license (project-authored) | Project-maintained computing/domain term list used by the isolated computing vertical layer; does not share the daily/chat preferred-term path |
 
 See:
+- `manifests/sources.public.yml`
 - `attribution/ATTRIBUTION.md`
-- `reports/external_build_report.md`
-- `reports/unihan_build_report.md`
 
 ## Post-import optimization and filtering (external sources)
 - Normalize and de-duplicate imported entries across heterogeneous source formats.
@@ -71,9 +63,10 @@ See:
 ## Layering policy
 - `manifests/curated_daily_phrases.tsv` is reserved for everyday/chat phrasing that should receive daily-use preference treatment.
 - `manifests/vertical_layers.public.json` declares isolated vertical terminology layers.
-- `manifests/vertical/*.tsv` stores project-authored vertical term lists such as computing vocabulary.
+- `manifests/vertical/*.tsv` stores project-authored vertical term lists such as proper nouns and computing vocabulary.
 - Vertical layers can add domain vocabulary without inheriting the same preferred-term bias used for daily/chat phrases.
-- The first active computing layer currently combines a filtered `THUOCL_IT` subset with project-curated computing terminology.
+- The active project-maintained proper-noun layer keeps names, titles, and in-world entities separate from everyday/chat phrasing.
+- The computing layer currently combines a filtered `THUOCL_IT` subset with project-curated computing terminology.
 
 ## Directory layout
 - `data/generated/`: generated lexicon files.
@@ -83,7 +76,7 @@ See:
 - `reports/`: generated build reports.
 - `rules/`: export/release rules.
 
-## Build
+## Build and validation
 
 ```powershell
 # Full rebuild (external_broad + unihan_single + regression checks)
@@ -93,5 +86,9 @@ See:
 .\scripts\build_external_seed.ps1 -Profile external_broad
 ```
 
+`external_broad` and `external_cedict` automatically load
+`manifests/vertical_layers.public.json` when present.
+
 ## Constraints
-- Do not commit raw corpus files, drafts, or author manuscripts.
+- Public repository commit messages must be in English.
+- Do not commit private raw corpus, drafts, or author manuscripts.

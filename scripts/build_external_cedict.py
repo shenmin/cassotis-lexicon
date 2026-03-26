@@ -4731,7 +4731,7 @@ def _parse_vertical_term_entries(
     payload: bytes,
     min_hanzi: int,
     default_usage_score: float,
-) -> Tuple[List[Tuple[str, str, float]], Dict[str, int]]:
+) -> Tuple[List[Tuple[str, str, float, str]], Dict[str, int]]:
     stats = {
         "vertical_term_rows": 0,
         "vertical_term_kept": 0,
@@ -4739,7 +4739,7 @@ def _parse_vertical_term_entries(
         "vertical_term_skipped_non_cjk": 0,
         "vertical_term_skipped_malformed": 0,
     }
-    entries: List[Tuple[str, str, float]] = []
+    entries: List[Tuple[str, str, float, str]] = []
     text = _decode_text(payload)
     default_usage_score = min(1.0, max(0.0, default_usage_score))
     for raw_line in text.splitlines():
@@ -4761,6 +4761,11 @@ def _parse_vertical_term_entries(
             )
         except ValueError:
             usage_score = default_usage_score
+        explicit_pinyin = (
+            _normalize_pinyin(parts[3].strip())
+            if len(parts) >= 4 and parts[3].strip()
+            else ""
+        )
         if (not sc_word) or (not CJK_FULL_RE.fullmatch(sc_word)):
             stats["vertical_term_skipped_non_cjk"] += 1
             continue
@@ -4769,7 +4774,7 @@ def _parse_vertical_term_entries(
             continue
         if not tc_word:
             tc_word = sc_word
-        entries.append((sc_word, tc_word, min(1.0, max(0.0, usage_score))))
+        entries.append((sc_word, tc_word, min(1.0, max(0.0, usage_score)), explicit_pinyin))
         stats["vertical_term_kept"] += 1
     return entries, stats
 
@@ -4780,7 +4785,7 @@ def _parse_vertical_thuocl_member_entries(
     min_hanzi: int,
     default_usage_score: float,
     filter_id: str,
-) -> Tuple[List[Tuple[str, str, float]], Dict[str, int]]:
+) -> Tuple[List[Tuple[str, str, float, str]], Dict[str, int]]:
     stats = {
         "vertical_thuocl_files_matched": 0,
         "vertical_thuocl_rows": 0,
@@ -4791,7 +4796,7 @@ def _parse_vertical_thuocl_member_entries(
         "vertical_thuocl_invalid_format": 0,
         "vertical_thuocl_missing_member": 0,
     }
-    entries: List[Tuple[str, str, float]] = []
+    entries: List[Tuple[str, str, float, str]] = []
     if not payload.startswith(b"PK"):
         stats["vertical_thuocl_invalid_format"] += 1
         return entries, stats
@@ -4851,7 +4856,7 @@ def _parse_vertical_thuocl_member_entries(
         for word, df_value in parsed_rows:
             df_signal = math.log1p(df_value) / max_df_log if max_df_log > 0 else 0.0
             usage_score = min(0.86, max(default_usage_score, default_usage_score + df_signal * 0.18))
-            entries.append((word, word, usage_score))
+            entries.append((word, word, usage_score, ""))
             stats["vertical_thuocl_kept"] += 1
 
     return entries, stats
@@ -8469,7 +8474,7 @@ def _reinforce_curated_daily_tc_phrases(
 
 def _reinforce_vertical_tc_terms(
     tc: Dict[Tuple[str, str], int],
-    vertical_entries: List[Tuple[str, str, float]],
+    vertical_entries: List[Tuple[str, str, float, str]],
     tc_usage_score_map: Dict[str, float],
     tc_source_hits_map: Dict[str, int],
     tc_jieba_direct_signal_map: Dict[str, float],
@@ -8491,11 +8496,11 @@ def _reinforce_vertical_tc_terms(
     tc_existing_texts = {text for _pinyin, text in tc.keys()}
     tc_char_prior = _build_effective_char_prior(tc, tc_char_frequency_prior)
 
-    for sc_word, tc_word, usage_score in vertical_entries:
+    for sc_word, tc_word, usage_score, explicit_pinyin in vertical_entries:
         if _cjk_len(sc_word) < min_hanzi:
             continue
 
-        pinyin = _pinyin_from_unihan(sc_word, unihan_map)
+        pinyin = explicit_pinyin or _pinyin_from_unihan(sc_word, unihan_map)
         if not pinyin:
             continue
 
@@ -8551,7 +8556,7 @@ def _reinforce_vertical_tc_terms(
 def _augment_with_vertical_terms(
     sc: Dict[Tuple[str, str], int],
     tc: Dict[Tuple[str, str], int],
-    vertical_entries: List[Tuple[str, str, float]],
+    vertical_entries: List[Tuple[str, str, float, str]],
     usage_score_map: Dict[str, float],
     source_hits_map: Dict[str, int],
     tc_usage_score_map: Dict[str, float],
@@ -8583,13 +8588,13 @@ def _augment_with_vertical_terms(
     sc_char_prior = _build_effective_char_prior(sc, char_frequency_prior)
     tc_char_prior = _build_effective_char_prior(tc, tc_char_frequency_prior)
 
-    for sc_word, tc_word, usage_score in vertical_entries:
+    for sc_word, tc_word, usage_score, explicit_pinyin in vertical_entries:
         stats["vertical_terms_total"] += 1
         if _cjk_len(sc_word) < min_hanzi:
             stats["vertical_terms_skipped_short"] += 1
             continue
 
-        pinyin = _pinyin_from_unihan(sc_word, unihan_map)
+        pinyin = explicit_pinyin or _pinyin_from_unihan(sc_word, unihan_map)
         if not pinyin:
             stats["vertical_terms_skipped_no_pinyin"] += 1
             continue
@@ -9545,7 +9550,7 @@ def _load_vertical_source_entries(
     payload_map: Dict[str, bytes],
     min_hanzi: int,
     repo_root: pathlib.Path,
-) -> Tuple[List[Tuple[str, str, float]], Dict[str, int]]:
+) -> Tuple[List[Tuple[str, str, float, str]], Dict[str, int]]:
     source_type = str(source.get("vertical_source_type", "repo_tsv")).strip().lower()
     default_usage_score = float(source.get("vertical_default_usage_score", 0.72))
     source_url = str(source.get("download_url", "")).strip()
@@ -9579,11 +9584,11 @@ def _load_vertical_source_entries(
 
 
 def _collect_vertical_term_sets(
-    entries: List[Tuple[str, str, float]]
+    entries: List[Tuple[str, str, float, str]]
 ) -> Tuple[Set[str], Set[str]]:
     sc_terms: Set[str] = set()
     tc_terms: Set[str] = set()
-    for sc_text, tc_text, _usage_score in entries:
+    for sc_text, tc_text, _usage_score, _explicit_pinyin in entries:
         if _cjk_len(sc_text) >= 2 and CJK_FULL_RE.fullmatch(sc_text):
             sc_terms.add(sc_text)
         if _cjk_len(tc_text) >= 2 and CJK_FULL_RE.fullmatch(tc_text):
@@ -9828,7 +9833,7 @@ def main() -> int:
             stats.update(curated_daily_stats)
         stats.update(vertical_manifest_stats)
         if vertical_source_configs:
-            vertical_entries: List[Tuple[str, str, float]] = []
+            vertical_entries: List[Tuple[str, str, float, str]] = []
             vertical_parse_stats = {
                 "vertical_term_rows": 0,
                 "vertical_term_kept": 0,
@@ -10255,7 +10260,7 @@ def main() -> int:
             "vertical_terms_skipped_short": 0,
             "vertical_terms_skipped_no_pinyin": 0,
         }
-        vertical_entries: List[Tuple[str, str, float]] = []
+        vertical_entries: List[Tuple[str, str, float, str]] = []
         if vertical_source_configs:
             for vertical_source in vertical_source_configs:
                 entries, parse_stats = _load_vertical_source_entries(
@@ -10513,7 +10518,7 @@ def main() -> int:
         vertical_sc_support_excludes: Set[str] = set()
         vertical_tc_support_excludes: Set[str] = set()
         if vertical_source_configs:
-            vertical_entries: List[Tuple[str, str, float]] = []
+            vertical_entries: List[Tuple[str, str, float, str]] = []
             for vertical_source in vertical_source_configs:
                 entries, parse_stats = _load_vertical_source_entries(
                     vertical_source,

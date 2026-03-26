@@ -1,28 +1,20 @@
 ﻿# Cassotis Lexicon
 
-<p align="center">
-  <img src="cassotis_ime_yanquan.png" alt="Cassotis IME logo" width="280">
-</p>
-
-<p align="center">
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-CC%20BY--SA%204.0-blue" alt="License: CC BY-SA 4.0"></a>
-</p>
-
 [English](README.md) | 简体中文
 
 Cassotis IME 词库构建与发布仓库。
 
 ## 仓库定位
 - 维护词库构建脚本、来源清单与生成产物。
-- 支持“外部公开来源启动”与词库发布流程。
-- 维护归因与发布规范，确保与仓库产物一致。
+- 支持“外部公开来源启动”与“私有语料融合”的构建流程。
+- 维护归因与发布规范，确保与外部发布产物一致。
 
 ## 当前词库快照（2026-03-26 构建）
 
 | 文件 | 字体变体 | 词条数 |
 |------|---------|--------|
-| `data/generated/dict_clean_sc.txt` | 简体中文主词库 | 117,859 |
-| `data/generated/dict_clean_tc.txt` | 繁体中文主词库 | 118,013 |
+| `data/generated/dict_clean_sc.txt` | 简体中文主词库 | 117,892 |
+| `data/generated/dict_clean_tc.txt` | 繁体中文主词库 | 118,047 |
 | `data/generated/dict_unihan_sc.txt` | 简体单字（Unihan） | 23,909 |
 | `data/generated/dict_unihan_tc.txt` | 繁体单字（Unihan） | 24,064 |
 
@@ -47,12 +39,12 @@ Cassotis IME 词库构建与发布仓库。
 | 补充层 | 许可证 | 用途 |
 |--------|--------|------|
 | Cassotis 项目内日常/聊天词表 | 仓库许可证（项目自维护） | 补入公开来源仍容易漏掉、但对日常输入价值很高的常用说法 |
+| Cassotis 项目内专名词表 | 仓库许可证（项目自维护） | 项目内维护的人名、作品名、组织名等专名词表；不走日常聊天词的 preferred-term 排序链 |
 | Cassotis 项目内计算机词表 | 仓库许可证（项目自维护） | 项目内维护的计算机/专业术语词表，供独立的计算机垂直层使用；不走日常聊天词的 preferred-term 排序链 |
 
 详见：
+- `manifests/sources.public.yml`
 - `attribution/ATTRIBUTION.md`
-- `reports/external_build_report.md`
-- `reports/unihan_build_report.md`
 
 ## 外部词库导入后的优化与过滤思路
 - 对多来源词条做格式归一、去重合并，统一拼音与文本键。
@@ -71,27 +63,32 @@ Cassotis IME 词库构建与发布仓库。
 ## 分层原则
 - `manifests/curated_daily_phrases.tsv` 只用于日常/聊天表达，这一层会参与日常输入的 preferred-term 偏置。
 - `manifests/vertical_layers.public.json` 用来声明独立的垂直术语层。
-- `manifests/vertical/*.tsv` 用来存放项目内维护的垂直词表，例如计算机专业词汇。
+- `manifests/vertical/*.tsv` 用来存放项目内维护的垂直词表，例如专名词表和计算机专业词汇。
 - 垂直层可以补入专业词，但不会继承日常/聊天词那套 preferred-term 排序偏置，从而避免污染现有日常输入路径。
-- 当前第一层计算机词库由经过筛选的 `THUOCL_IT` 子集和项目内维护的计算机词表共同组成。
+- 当前启用的项目内专名层会把人名、作品名、组织名等词和日常聊天词层分开处理。
+- 当前计算机词库由经过筛选的 `THUOCL_IT` 子集和项目内维护的计算机词表共同组成。
 
 ## 目录结构
 - `data/generated/`：生成词库文件。
-- `manifests/`：来源、许可证清单与回归样本。
+- `manifests/`：来源/许可证清单与回归样本。
 - `manifests/vertical/`：项目内维护的独立垂直词表。
 - `scripts/`：构建、校验、导出辅助脚本。
 - `reports/`：构建报告。
 - `rules/`：导出与发布规则。
 
-## 构建
+## 构建与校验
 
 ```powershell
 # 全量重建（external_broad + unihan_single + 回归校验）
 .\rebuild_all.ps1
 
-# 直接按单一 profile 构建
+# 直接按单个 profile 构建
 .\scripts\build_external_seed.ps1 -Profile external_broad
 ```
 
+`external_broad` 和 `external_cedict` 在构建时会自动读取
+`manifests/vertical_layers.public.json`（如果该文件存在）。
+
 ## 约束
-- 禁止提交原始语料文件、草稿与作者文稿。
+- 外部仓库的 commit message 必须使用英文。
+- 禁止提交私有原始语料、草稿与作者文稿。

@@ -1,7 +1,7 @@
 # External Build Report
 
 - profile: unihan_single
-- generated_at_utc: 2026-03-26T12:35:40+00:00
+- generated_at_utc: 2026-03-26T13:19:58+00:00
 - min_hanzi: 1
 - max_entries: unlimited
 
@@ -147,17 +147,17 @@
 - unihan_single_char_injected_sc: 23932
 - unihan_single_char_injected_tc: 24082
 - unihan_tc_only_chars: 2916
-- vertical_layer_sources_loaded: 2
+- vertical_layer_sources_loaded: 3
 - vertical_layer_sources_skipped_inactive: 0
 - vertical_layer_sources_skipped_unsupported: 0
-- vertical_layer_sources_total: 2
-- vertical_layers_active: 1
-- vertical_layers_declared: 1
+- vertical_layer_sources_total: 3
+- vertical_layers_active: 2
+- vertical_layers_declared: 2
 - vertical_layers_manifest_present: 1
-- vertical_support_excluded_sc: 2155
-- vertical_support_excluded_tc: 2202
-- vertical_term_kept: 78
-- vertical_term_rows: 78
+- vertical_support_excluded_sc: 2188
+- vertical_support_excluded_tc: 2235
+- vertical_term_kept: 111
+- vertical_term_rows: 111
 - vertical_term_skipped_malformed: 0
 - vertical_term_skipped_non_cjk: 0
 - vertical_term_skipped_short: 0

@@ -2,6 +2,28 @@
   "version": 1,
   "layers": [
     {
+      "id": "proper_nouns",
+      "status": "active",
+      "title": "Project-maintained proper noun layer",
+      "notes": "Dedicated proper-noun layer kept separate from everyday/chat phrase seeds and from domain-specific vertical terminology.",
+      "sources": [
+        {
+          "id": "project-curated-proper-nouns",
+          "type": "repo_tsv",
+          "name": "Cassotis curated proper nouns",
+          "download_url": "repo://manifests/vertical/proper_nouns.tsv",
+          "homepage": "https://github.com/shenmin/cassotis-lexicon",
+          "license": "Repository license (project-authored)",
+          "risk_level": "low",
+          "redistribution_class": "project_authored",
+          "attribution_required": false,
+          "raw_committed": true,
+          "default_usage_score": 0.78,
+          "notes": "Project-maintained proper nouns for names, titles, organizations, and in-world entities that should not share the everyday/chat preferred-term path."
+        }
+      ]
+    },
+    {
       "id": "computing",
       "status": "active",
       "title": "Computing vertical layer",
