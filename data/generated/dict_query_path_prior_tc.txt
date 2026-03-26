@@ -1,5 +1,4 @@
 abidiyu	阿鼻|地獄	452
-adeleide	阿得|雷德	445
 adoudejiangshan	阿鬥的|江山	412
 aidadewugui	捱打的|烏龜	401
 aidaodeyazi	挨刀的|鴨子	437
@@ -485,8 +484,8 @@ cuozongfuza	錯綜|複雜	464
 dabaideshibing	打敗的|士兵	437
 dachaidexiashan	打柴的|下山	450
 dadaxiaoxiao	大大|小小	486
-dadedikang	大地|抵抗	469
-dadedingshu	大地|定數	437
+dadedikang	大地|抵抗	455
+dadedingshu	大地|定數	415
 dadubaorong	大度|包容	430
 daerwenshibian	達爾文|事變	447
 dahaidechaoshui	大海的|潮水	455
@@ -1458,7 +1457,7 @@ jijiuzhongxin	急救|中心	487
 jileshijie	極樂|世界	470
 jiliangjingji	計量|經濟	470
 jimiwenjian	機密|文件	467
-jindedezhen	近地|地震	469
+jindedezhen	近地|地震	463
 jingangguohe	金剛|過河	401
 jingdeanding	靜的|安定	437
 jingdehuilu	靜的|迴路	436
@@ -1964,7 +1963,7 @@ malaixiya	馬來|西亞	520
 maliezhuyi	馬列|主義	474
 malingshuni	馬鈴|薯泥	409
 mandelikaohuo	漫地裏|烤火	404
-mandezhuzi	滿地|竹子	422
+mandezhuzi	滿地|竹子	399
 mangrendeguaigun	盲人的|拐棍	434
 mangrenkansanguo	盲人看|三國	422
 mangshankanhuanghe	邙山看|黃河	436
@@ -2111,7 +2110,7 @@ mujiangdezhechi	木匠的|摺尺	406
 mumabingdu	木馬|病毒	467
 muruweiyang	母乳|餵養	444
 muzhudeweiba	母豬的|尾巴	408
-nabutiande	那步|天地	465
+nabutiande	那步|天地	455
 nacuizhuyi	納粹|主義	446
 nafutalin	那夫|塔林	453
 nageyangzi	那個|樣子	519
@@ -2173,6 +2172,7 @@ nifangxiangtexing	逆方嚮|特性	424
 nilaorenjia	你老|人傢	420
 nilaoxiansheng	你老|先生	469
 nimenbixu	你們|必須	516
+nimenshuode	你們|說的	520
 nimenyiding	你們|一定	518
 ningxuemeiyuan	凝血|酶原	408
 niniedeyongshi	泥捏的|勇士	455
@@ -2182,6 +2182,7 @@ niqiuguoyuwang	泥鰍過|魚網	397
 niujiaoduilingjiao	牛角對|菱角	402
 niulangzhinv	牛郎|織女	446
 niuyankanren	牛眼|看人	442
+nixingnishang	你行|你上	520
 nizhengdemantou	泥蒸的|饅頭	417
 nongminjieji	農民|階級	463
 nongminqiyi	農民|起義	457
@@ -2741,10 +2742,10 @@ shumaxiangji	數碼|相機	463
 shunshuirenqing	順水|人情	452
 shunxucunchu	順序|存儲	354
 shunxucunchujiegou	順序|存儲|結構	436
-shuodetantian	說地|談天	384
+shuodetantian	說地|談天	351
 shuoniumaxiadan	說牛馬|下蛋	436
 shuoshixuewei	碩士|學位	463
-shuotianshuode	說天|說地	403
+shuotianshuode	說天|說地	370
 shurushuchu	輸入|輸齣	354
 shurushuchuhanshu	輸入|輸齣|函數	436
 shurushuchujiekou	輸入|輸齣|接口	436
@@ -2822,6 +2823,7 @@ taiwanguangfu	臺灣|光復	517
 taiyangfengbao	太陽|風暴	463
 taiyanghuodong	太陽|活動	463
 taizitaibao	太子|太保	469
+tamenshuode	他們|說的	520
 tanboyueqi	彈撥|樂器	466
 tangchaodechabei	唐朝的|茶杯	436
 tangdaodekushu	躺倒的|枯樹	407
@@ -3067,6 +3069,7 @@ wodeyingxiongxueyuan	我的|英雄|學院	450
 wodigaozhong	臥底|高中	452
 wolidemafeng	窩裏的|馬蜂	436
 womenbixu	我們|必須	517
+womenshuode	我們|說的	520
 womenyiding	我們|一定	520
 woniudefangzi	蝸牛的|房子	437
 wotianyinshui	我田|引水	460
@@ -3660,6 +3663,7 @@ zhaoyangchanye	朝陽|產業	430
 zhaozedidai	沼澤|地帶	435
 zhegeyangzi	這個|樣子	519
 zhenchanmabi	震顫|麻痺	463
+zhendejiade	真的|假的	520
 zhengfengyundong	整風|運動	466
 zhengfudianzi	正負|電子	470
 zhengfushounao	政府|首腦	467

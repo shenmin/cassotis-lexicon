@@ -1,7 +1,7 @@
 # External Build Report
 
 - profile: unihan_single
-- generated_at_utc: 2026-03-26T11:59:51+00:00
+- generated_at_utc: 2026-03-26T12:35:40+00:00
 - min_hanzi: 1
 - max_entries: unlimited
 
@@ -69,7 +69,7 @@
 - sc_script_filtered_entries: 0
 - sc_script_filtered_total_entries: 23910
 - sc_single_char_leading_adjusted: 400
-- sc_single_char_leading_delta_total: 21840
+- sc_single_char_leading_delta_total: 21780
 - sc_single_char_reading_preference_adjusted: 1513
 - sc_single_char_reading_preference_delta_total: 22734
 - sc_single_char_reading_removed: 1
@@ -123,20 +123,20 @@
 - tc_script_filtered_entries: 0
 - tc_script_filtered_total_entries: 24065
 - tc_single_char_leading_adjusted: 382
-- tc_single_char_leading_delta_total: 19980
+- tc_single_char_leading_delta_total: 19992
 - tc_single_char_reading_preference_adjusted: 1842
 - tc_single_char_reading_preference_delta_total: 37773
 - tc_single_char_reading_removed: 1
 - total_lines: 49189
 - unihan_core_size: 18816
 - unihan_family_support_boosted_sc: 5072
-- unihan_family_support_boosted_tc: 5227
+- unihan_family_support_boosted_tc: 5228
 - unihan_family_support_terms_sc: 5880
-- unihan_family_support_terms_tc: 6070
+- unihan_family_support_terms_tc: 6071
 - unihan_frequency_size: 0
 - unihan_grade_size: 2632
 - unihan_leading_support_terms_sc: 4837
-- unihan_leading_support_terms_tc: 4937
+- unihan_leading_support_terms_tc: 4938
 - unihan_map_size: 26711
 - unihan_pinlu_size: 3799
 - unihan_reading_support_terms_sc: 1554

@@ -235,8 +235,9 @@ aidaodeya	挨刀的鸭	536
 aidaodeyazi	挨刀的鸭子	569
 aidashouma	挨打受骂	387
 aidashouqi	挨打受气	260
-aide	爱德	506
-aide	埃德	480
+aide	矮的	1000
+aide	埃德	33
+aide	爱德	33
 aidehua	爱德华	629
 aidehuadao	爱德华岛	226
 aidehuawangzidao	爱德华王子岛	318
@@ -860,10 +861,11 @@ andaoercheng	安道尔城	218
 andaoergongguo	安道尔公国	265
 andaoergongheguo	安道尔共和国	318
 andashi	安达仕	131
-ande	暗地	766
-ande	安得	751
-ande	安德	553
-ande	安的	387
+ande	暗的	1000
+ande	暗地	523
+ande	安得	384
+ande	安德	306
+ande	安的	134
 andehai	安德海	198
 andela	安得拉	434
 andelabang	安得拉邦	514
@@ -1097,7 +1099,7 @@ anna	安娜	1000
 anna	安纳	872
 anna	安那	863
 anna	安哪	722
-anna	按捺	246
+anna	按捺	247
 annabolisi	安纳波利斯	265
 annabuzhu	按捺不住	515
 annadelaweida	安纳德拉维达	320
@@ -1268,7 +1270,7 @@ anwen	安稳	895
 anwutianri	暗无天日	461
 anwuzhi	暗物质	436
 anxi	安息	1000
-anxi	暗喜	236
+anxi	暗喜	237
 anxia	按下	198
 anxiahulufuqipiao	按下葫芦浮起瓢	348
 anxian	安闲	282
@@ -5737,12 +5739,12 @@ bianyan	便宴	132
 bianyang	变样	380
 bianyangr	变样儿	232
 bianyaqi	变压器	521
-bianyi	编译	911
-bianyi	变异	896
+bianyi	编译	906
+bianyi	变异	891
+bianyi	便宜	831
 bianyi	便衣	557
-bianyi	便宜	451
-bianyi	贬抑	262
-bianyi	贬义	247
+bianyi	贬抑	269
+bianyi	贬义	255
 bianyianzhuang	编译安装	866
 bianyibaocuo	编译报错	858
 bianyicanshu	编译参数	860
@@ -5751,6 +5753,7 @@ bianyichucuo	编译出错	862
 bianyichuli	编译处理	839
 bianyicuowu	编译错误	867
 bianyidabao	编译打包	857
+bianyide	便宜的	945
 bianyidiaoshi	编译调试	852
 bianyigongju	编译工具	862
 bianyiguocheng	编译过程	867
@@ -10676,8 +10679,9 @@ chacuo	差错	435
 chadai	茶袋	305
 chadao	岔道	535
 chadao	茶道	405
-chade	查得	999
-chade	差得	806
+chade	差的	1000
+chade	查得	622
+chade	差得	455
 chadeduo	差得多	640
 chadeyuan	差得远	706
 chadi	茬地	578
@@ -10922,7 +10926,7 @@ changdao	倡导	940
 changdao	肠道	481
 changdaobingcha	长岛冰茶	260
 changdaozhe	倡导者	496
-changde	唱的	607
+changde	唱的	608
 changde	敞地	566
 changde	常德	365
 changdeng	长凳	406
@@ -11044,8 +11048,8 @@ changlequ	长乐区	174
 changleweiyang	长乐未央	405
 changlexian	昌乐县	160
 changli	常理	819
-changliang	常量	480
-changliang	敞亮	356
+changliang	常量	479
+changliang	敞亮	357
 changlibai	厂礼拜	230
 changling	长岭	439
 changlingxian	长岭县	165
@@ -12600,8 +12604,8 @@ chenku	衬裤	363
 chenkuang	嗔狂	198
 chenlan	陈岚	633
 chenlei	沉雷	381
-chenli	陈丽	781
-chenli	衬里	135
+chenli	陈丽	782
+chenli	衬里	134
 chenlian	晨练	379
 chenliang	陈良	457
 chenliangyu	陈良宇	774
@@ -12677,7 +12681,7 @@ chenshushu	陈述书	167
 chensi	沉思	471
 chensong	陈松	457
 chensongling	陈松伶	770
-chensu	尘俗	507
+chensu	尘俗	508
 chensui	沉邃	198
 chentan	沉潭	198
 chentao	陈套	137
@@ -12698,8 +12702,8 @@ chenwu	尘雾	364
 chenxi	晨曦	414
 chenxia	臣下	198
 chenxian	沉陷	697
-chenxiang	沉香	815
-chenxiang	沉箱	30
+chenxiang	沉香	816
+chenxiang	沉箱	29
 chenxiangmei	陈香梅	213
 chenxiao	陈晓	1000
 chenxiao	尘嚣	1
@@ -13543,7 +13547,7 @@ chouchang	愁肠	406
 chouchangbaijie	愁肠百结	437
 chouchangruoshi	惆怅若失	226
 chouchong	臭虫	400
-chouchou	臭臭	473
+chouchou	臭臭	474
 chouchouguo	臭臭锅	228
 chouchouyeye	抽抽噎噎	383
 chouchu	抽出	786
@@ -13557,7 +13561,9 @@ chouda	抽打	570
 chouda	酬答	464
 choudai	抽贷	198
 choudan	臭弹	198
-choude	抽地	600
+choude	丑的	1000
+choude	臭的	1000
+choude	抽地	303
 choudi	仇敌	747
 choudiao	抽调	452
 choudong	抽动	497
@@ -15662,7 +15668,8 @@ cuoci	措词	369
 cuociqiangying	措辞强硬	260
 cuoda	措大	327
 cuodao	锉刀	363
-cuode	厝地	578
+cuode	错的	1000
+cuode	厝地	118
 cuodong	错动	319
 cuodu	错读	323
 cuoe	错愕	430
@@ -15980,8 +15987,9 @@ dadaoli	大道理	453
 dadaoyouzi	大岛优子	782
 dadaren	鞑靼人	165
 dadaxiaoxiao	大大小小	548
-dade	大地	1000
-dade	打得	6
+dade	大的	1000
+dade	大地	667
+dade	打得	1
 dadedi	大地抵	566
 dadedikang	大地抵抗	597
 dadeding	大地定	566
@@ -15995,7 +16003,7 @@ dadeng	大灯	388
 dadezhen	大地震	640
 dadi	大地	652
 dadi	打底	547
-dadi	大抵	450
+dadi	大抵	449
 dadi	打的	383
 dadi	大帝	83
 dadian	打点	765
@@ -18905,7 +18913,7 @@ dengshi	等式	1
 dengshichang	邓世昌	251
 dengsi	灯丝	363
 dengta	等他	1000
-dengta	等她	978
+dengta	等她	979
 dengta	灯塔	185
 dengtai	灯台	482
 dengtaibiaoyan	登台表演	260
@@ -19140,7 +19148,7 @@ dexiahai	地下海	640
 dexiahe	地下河	676
 dexiahu	地下湖	640
 dexiahuo	地下火	676
-dexian	得闲	855
+dexian	得闲	856
 dexian	地陷	722
 dexian	地仙	583
 dexiang	地向	521
@@ -20123,7 +20131,7 @@ didi	低地	906
 didi	地底	871
 didi	地地	775
 didi	滴滴	684
-didi	的的	634
+didi	的的	635
 didi	弟弟	630
 didian	地点	1000
 didian	滴点	1
@@ -20491,7 +20499,7 @@ dili	地利	900
 dili	地力	824
 dili	地理	694
 dili	的黎	433
-dili	的里	259
+dili	的里	260
 dili	砥砺	1
 dilian	低廉	454
 diliao	底料	307
@@ -21138,8 +21146,8 @@ dishasi	敌杀死	362
 disheng	低声	823
 disheng	递升	101
 dishengxiyu	低声细语	408
-dishi	的士	991
-dishi	地史	848
+dishi	的士	992
+dishi	地史	849
 dishi	地势	625
 dishi	敌视	290
 dishiba	第十八	959
@@ -22350,6 +22358,7 @@ duandang	断档	352
 duandaoduan	端到端	232
 duandaoduanceshi	端到端测试	923
 duandaoduanjiami	端到端加密	289
+duande	短的	747
 duandi	端的	600
 duandian	断点	1000
 duandian	断电	1
@@ -22402,7 +22411,7 @@ duanlieqiangdu	断裂强度	405
 duanlimei	端粒酶	198
 duanliu	断流	417
 duanlu	断路	893
-duanlu	短路	405
+duanlu	短路	406
 duanluo	段落	431
 duanluqi	断路器	447
 duanma	断码	198
@@ -23571,7 +23580,7 @@ duxie	读写	445
 duxienengli	读写能力	405
 duxin	笃信	857
 duxing	独行	958
-duxing	毒性	598
+duxing	毒性	597
 duxing	杜兴	379
 duxing	毒刑	1
 duxingqishi	独行其是	417
@@ -24834,8 +24843,8 @@ fancheyu	翻车鱼	379
 fanchidaoliu	反赤道流	260
 fanchong	反冲	497
 fanchongli	反冲力	379
-fanchou	犯愁	566
-fanchou	范畴	465
+fanchou	犯愁	565
+fanchou	范畴	466
 fanchoulun	范畴论	167
 fanchu	反刍	926
 fanchuan	翻船	617
@@ -25685,7 +25694,7 @@ fanshizhen	反时针	232
 fanshizhifang	反式脂肪	260
 fanshizhifangsuan	反式脂肪酸	289
 fanshou	反手	865
-fanshou	贩售	67
+fanshou	贩售	68
 fanshouweiyunfushoubianyu	翻手为云覆手变雨	378
 fanshu	藩属	440
 fanshu	番薯	236
@@ -28169,8 +28178,8 @@ fusongxian	抚松县	180
 fusu	复苏	461
 fusui	扶绥	241
 fusuixian	扶绥县	165
-futa	扶他	835
-futa	扶她	464
+futa	扶他	834
+futa	扶她	465
 futai	富态	550
 futalin	扶他林	640
 futaling	服他灵	232
@@ -29080,7 +29089,7 @@ ganshenme	干什么	959
 gansheyi	干涉仪	252
 ganshi	敢是	962
 ganshi	干事	642
-ganshi	干尸	257
+ganshi	干尸	258
 ganshijian	赶时间	406
 ganshimao	赶时髦	488
 ganshizhang	干事长	440
@@ -29256,8 +29265,9 @@ gaodang	高档	430
 gaodangfuzhuang	高档服装	218
 gaodao	高蹈	137
 gaodashang	高大上	167
-gaode	高地	1000
-gaode	高得	434
+gaode	高的	1000
+gaode	高地	592
+gaode	高得	190
 gaodena	高德纳	167
 gaodeng	高等	462
 gaodengdaishu	高等代数	218
@@ -30504,7 +30514,7 @@ gongdu	工读	975
 gongdu	攻读	472
 gongduan	公断	378
 gongduigong	公对公	167
-gongdun	公吨	616
+gongdun	公吨	615
 gongduola	贡多拉	193
 gongdusheng	工读生	404
 gongduxuexiao	工读学校	405
@@ -32451,7 +32461,8 @@ guidao	跪倒	474
 guidaocang	轨道舱	408
 guidaojiaotong	轨道交通	438
 guidaokongjianzhan	轨道空间站	256
-guide	贵地	665
+guide	贵的	1000
+guide	贵地	261
 guidexian	贵德县	165
 guiding	规定	947
 guiding	贵定	1
@@ -32647,7 +32658,7 @@ guitu	归途	394
 guiwei	归位	697
 guiweishi	龟尾市	174
 guiwu	鬼屋	370
-guixi	贵溪	577
+guixi	贵溪	578
 guixi	归西	1
 guixia	跪下	502
 guixian	圭贤	628
@@ -35075,7 +35086,8 @@ haojiutanbei	好酒贪杯	412
 haojixingburulanbitou	好记性不如烂笔头	378
 haojue	好爵	578
 haojuhaosan	好聚好散	387
-haokan	好看	640
+haokan	好看	658
+haokande	好看的	959
 haokang	好康	600
 haoke	好客	922
 haoke	毫克	335
@@ -37512,6 +37524,7 @@ huaichangzi	坏肠子	232
 huaichu	坏处	405
 huaichun	怀春	227
 huaidan	坏蛋	421
+huaide	坏的	758
 huaidiao	坏掉	323
 huaidongxi	坏东西	434
 huaieming	怀俄明	216
@@ -40457,10 +40470,11 @@ jiadaohuanying	夹道欢迎	444
 jiadaozhongluo	家道中落	439
 jiadayeda	家大业大	269
 jiadayoumen	加大油门	260
-jiade	家的	712
-jiade	加的	600
-jiade	加德	519
-jiade	架得	509
+jiade	假的	1000
+jiade	家的	308
+jiade	加的	182
+jiade	架得	101
+jiade	加德	91
 jiadefu	加的福	913
 jiadefu	加的夫	341
 jiadele	佳得乐	232
@@ -40636,7 +40650,7 @@ jiakongsuodao	架空索道	260
 jiakuai	加快	502
 jiakuan	加宽	599
 jiakuan	价款	263
-jiala	加拉	775
+jiala	加拉	774
 jialabage	加拉巴哥	637
 jialabagesi	加拉巴哥斯	289
 jialabagesiqundao	加拉巴哥斯群岛	348
@@ -41656,7 +41670,7 @@ jianxin	坚信	673
 jianxin	艰辛	534
 jianxing	建兴	843
 jianxing	碱性	775
-jianxing	践行	308
+jianxing	践行	309
 jianxing	饯行	292
 jianxing	减刑	256
 jianxingdianchi	碱性电池	260
@@ -42606,7 +42620,7 @@ jiawuzhanzheng	甲午战争	801
 jiaxi	加息	464
 jiaxian	夹馅	273
 jiaxiang	家乡	938
-jiaxiang	假像	584
+jiaxiang	假像	585
 jiaxiang	假象	538
 jiaxiang	假想	394
 jiaxiangcai	家乡菜	167
@@ -44215,8 +44229,9 @@ jindao	筋道	382
 jindaoruoquan	进道若蜷	226
 jindaoruotui	进道若退	333
 jindazhong	金大中	279
-jinde	近地	992
-jinde	金的	475
+jinde	近的	1000
+jinde	近地	659
+jinde	金的	254
 jindede	近地地	566
 jindedezhen	近地地震	597
 jindedian	近地点	652
@@ -46019,7 +46034,7 @@ jiubie	久别	413
 jiubiechongfeng	久别重逢	473
 jiubing	久病	747
 jiubing	救兵	273
-jiubing	旧病	112
+jiubing	旧病	113
 jiubingchengliangyi	久病成良医	289
 jiubingchengyi	久病成医	408
 jiubingfufa	旧病复发	437
@@ -46062,7 +46077,8 @@ jiudalu	旧大陆	208
 jiudan	酒单	198
 jiudaneizhiduixiang	九大内置对象	884
 jiudao	就道	600
-jiude	就得	1000
+jiude	旧的	1000
+jiude	就得	498
 jiudeng	久等	418
 jiudi	就地	980
 jiudi	就第	565
@@ -46393,7 +46409,7 @@ jiuweihu	九尾狐	202
 jiuwen	旧闻	438
 jiuwendaming	久闻大名	444
 jiuwo	就我	893
-jiuwo	酒窝	99
+jiuwo	酒窝	98
 jiuwosuo	就我所	566
 jiuwosuozhi	就我所知	597
 jiuwu	旧物	361
@@ -46488,7 +46504,7 @@ jiuzheyang	就这样	966
 jiuzheyangba	就这样吧	967
 jiuzhi	九只	1000
 jiuzhi	就职	798
-jiuzhi	久之	364
+jiuzhi	久之	363
 jiuzhi	救治	229
 jiuzhi	旧址	98
 jiuzhi	旧制	54
@@ -48616,7 +48632,7 @@ kanzi	坎子	343
 kanzouyan	看走眼	484
 kanzu	看租	600
 kanzuo	看作	994
-kanzuo	看做	755
+kanzuo	看做	756
 kanzuo	看座	395
 kanzuode	看座的	640
 kaoan	靠岸	404
@@ -48787,8 +48803,9 @@ kazhai	卡债	198
 kazhi	卡纸	186
 kazhu	卡住	283
 kazuo	卡座	260
-keai	可爱	787
-keai	可哀	713
+keai	可爱	990
+keai	可哀	653
+keaide	可爱的	952
 keaixiang	可哀相	659
 keaixiang	可哀想	657
 keba	可巴	521
@@ -50138,6 +50155,7 @@ kuaichuan	快船	439
 kuaidang	快当	400
 kuaidaoduanluanma	快刀断乱麻	289
 kuaidaozhanluanma	快刀斩乱麻	471
+kuaide	快的	747
 kuaidi	快递	432
 kuaidian	快点	461
 kuaidianr	快点儿	495
@@ -50477,7 +50495,7 @@ kudachoushen	苦大仇深	444
 kudai	裤带	717
 kudan	苦胆	332
 kudang	裤裆	400
-kude	库德	198
+kude	苦的	1000
 kudesiquhuolai	哭得死去活来	318
 kudesitan	库德斯坦	226
 kudieda	苦迭打	230
@@ -50651,6 +50669,7 @@ kunbao	坤包	335
 kunbu	昆布	228
 kunchong	昆虫	510
 kunchongxue	昆虫学	421
+kunde	困的	741
 kundian	坤甸	198
 kundoushi	昆都士	506
 kundu	昆都	521
@@ -50879,7 +50898,8 @@ ladake	拉达克	213
 ladao	拉倒	432
 ladaqizuohupi	拉大旗作虎皮	465
 ladatiao	拉大条	232
-lade	拉地	998
+lade	辣的	1000
+lade	拉地	342
 ladeng	拉登	262
 ladike	拉狄克	198
 lading	拉丁	493
@@ -52566,7 +52586,7 @@ layue	腊月	511
 laza	拉杂	359
 lazalu	拉匝禄	228
 lazhi	拉制	546
-lazhi	蜡质	401
+lazhi	蜡质	400
 lazhi	蜡纸	322
 lazhu	蜡烛	536
 lazhubudianbuliang	蜡烛不点不亮	318
@@ -52633,7 +52653,7 @@ leidabudong	雷打不动	457
 leidade	雷打的	640
 leidatianxian	雷达天线	218
 leidayuxiao	雷大雨小	218
-leide	雷德	255
+leide	累的	1000
 leidi	泪滴	361
 leidian	雷电	726
 leidiandi	泪点低	232
@@ -52827,7 +52847,8 @@ lengcui	冷萃	137
 lengcuikafei	冷萃咖啡	218
 lengdan	冷淡	459
 lengdanguanxi	冷淡关系	218
-lengde	冷地	521
+lengde	冷的	1000
+lengde	冷地	73
 lengdeli	冷地里	640
 lengdong	冷冻	1000
 lengdonggui	冷冻柜	198
@@ -53083,7 +53104,7 @@ liangbulu	两步路	174
 liangbuwu	两不误	362
 liangbuxiangqian	两不相欠	260
 liangcai	量才	973
-liangcai	良才	789
+liangcai	良才	788
 liangcai	良材	1
 liangcailuyong	量才录用	408
 liangcang	粮仓	425
@@ -53111,8 +53132,9 @@ liangdangxian	两当县	165
 liangdangzhi	两党制	432
 liangdanyixing	两弹一星	268
 liangdao	粮道	319
-liangde	量地	911
-liangde	量的	868
+liangde	亮的	1000
+liangde	量地	580
+liangde	量的	541
 liangdechi	量地尺	640
 liangdeng	亮灯	293
 liangdian	亮点	652
@@ -56008,10 +56030,10 @@ lixilv	利息率	561
 lixin	离心	994
 lixin	李心	563
 lixinfenliji	离心分离机	289
-lixing	理性	922
-lixing	例行	498
-lixing	厉行	146
-lixing	力行	7
+lixing	理性	921
+lixing	例行	499
+lixing	厉行	147
+lixing	力行	8
 lixingde	理性的	640
 lixinggongshi	例行公事	491
 lixingjieyue	厉行节约	476
@@ -58278,8 +58300,8 @@ manbazhangde	满巴掌的	536
 manbazhangdejian	满巴掌的茧	569
 manbo	曼波	198
 manboyu	曼波鱼	232
-manbu	漫步	538
-manbu	慢步	462
+manbu	漫步	537
+manbu	慢步	463
 manbuguo	瞒不过	406
 manbujiangli	蛮不讲理	474
 manbujingxin	漫不经心	498
@@ -58310,9 +58332,10 @@ mandai	慢待	372
 mandamansuan	满打满算	439
 mandangdang	满当当	415
 mandao	曼岛	144
-mande	满地	942
-mande	曼德	399
-mande	漫地	318
+mande	慢的	1000
+mande	满地	514
+mande	曼德	73
+mande	漫地	24
 mandela	曼德拉	279
 mandeli	漫地里	512
 mandelikao	漫地里烤	536
@@ -58351,6 +58374,7 @@ mangcong	盲从	395
 mangda	盲打	293
 mangdao	盲道	198
 mangdaozhuan	盲道砖	230
+mangde	忙的	747
 mangdian	盲点	390
 mangduan	盲端	198
 mange	满格	137
@@ -58643,7 +58667,7 @@ maodian	锚点	198
 maodie	耄耋	338
 maodiezhinian	耄耋之年	412
 maoding	锚定	673
-maoding	铆钉	531
+maoding	铆钉	532
 maodingqiang	铆钉枪	371
 maodou	毛豆	338
 maodu	冒渎	545
@@ -59106,7 +59130,7 @@ meidetiaoti	没得挑剔	260
 meideweijiefu	梅德韦杰夫	289
 meidi	没底	886
 meidi	美帝	612
-meidi	美的	466
+meidi	美的	467
 meidian	没电	305
 meidide	没底的	512
 meidideguan	没底的棺	536
@@ -59385,7 +59409,8 @@ meilianr	没脸儿	640
 meilianshe	美联社	289
 meilidao	美丽岛	547
 meilidaoshijian	美丽岛事件	823
-meilide	魅力的	640
+meilide	美丽的	1000
+meilide	魅力的	306
 meilie	梅列	457
 meilierikefusiji	梅列日科夫斯基	334
 meiliguo	美粒果	232
@@ -61887,7 +61912,7 @@ mudege	目的格	640
 mudengkoudai	目瞪口呆	545
 mudewu	目的物	676
 mudexing	目的性	679
-mudi	墓地	864
+mudi	墓地	863
 mudi	牧地	701
 mudi	目的	687
 mudidi	目的地	717
@@ -62671,8 +62696,9 @@ nankaiqu	南开区	187
 nankaishuxueyanjiusuo	南开数学研究所	334
 nankaluolaina	南卡罗来纳	277
 nankaluolainazhou	南卡罗来纳州	320
-nankan	难看	556
-nankan	难堪	468
+nankan	难看	870
+nankan	难堪	416
+nankande	难看的	945
 nankeyimeng	南柯一梦	273
 nanlan	男篮	428
 nanle	南乐	190
@@ -63797,6 +63823,7 @@ niboerjiaomei	尼泊尔鹪鹛	288
 niboerwangguo	尼泊尔王国	281
 nibuchutiaoyue	尼布楚条约	289
 nibujianisa	尼布甲尼撒	289
+nibuxing	你不行	966
 nicai	尼采	262
 nicha	逆差	422
 nichan	逆产	402
@@ -63896,6 +63923,7 @@ nifawoxiao	你法我笑	597
 nifeng	逆风	415
 nifeng	泥封	316
 nifuji	泥敷剂	228
+nigande	你干的	959
 nigao	拟稿	381
 nige	尼哥	198
 nigedimu	尼哥底母	260
@@ -63950,7 +63978,9 @@ nikesong	尼克松	281
 nikexiya	尼科西亚	245
 nikuang	倪匡	194
 nilai	你来	752
+nilaigan	你来干	966
 nilaishunshou	逆来顺受	469
+nilaizuo	你来做	966
 nilao	你老	640
 nilaomu	你老母	640
 nilaoren	你老人	566
@@ -63984,6 +64014,7 @@ nimenhui	你们会	938
 nimenlai	你们来	930
 nimenneng	你们能	938
 nimenqu	你们去	930
+nimenshuode	你们说的	959
 nimenxiang	你们想	938
 nimenyao	你们要	945
 nimenyiding	你们一定	929
@@ -64165,7 +64196,7 @@ nisanyue	尼散月	232
 nisha	匿杀	1000
 nisha	泥沙	414
 nishajuxia	泥沙俱下	433
-nishang	逆商	198
+nishang	你上	1000
 nisheng	拟声	323
 nishengchangfa	拟声唱法	260
 nishengci	拟声词	379
@@ -64183,6 +64214,7 @@ nishui	逆水	37
 nishuijiang	泥水匠	434
 nishuile	你睡了	966
 nishuixingzhou	逆水行舟	442
+nishuode	你说的	966
 nisi	你死	807
 nisi	溺死	253
 nisi	尼斯	172
@@ -64402,9 +64434,11 @@ nixianggu	逆向谷	635
 nixie	逆斜	198
 niximiji	尼希米记	260
 nixin	逆心	198
-nixing	逆行	497
+nixing	你行	1000
+nixing	逆行	51
 nixingdaoshi	逆行倒施	387
 nixingle	你醒了	966
+nixingnishang	你行你上	981
 nixu	逆序	319
 niya	尼雅	233
 niyahe	尼雅河	169
@@ -64452,6 +64486,7 @@ nizi	妮子	118
 niziji	你自己	640
 nizui	泥醉	311
 nizuo	拟作	372
+nizuode	你做的	966
 nongan	农安	227
 nonganxian	农安县	174
 nongbao	脓包	423
@@ -65284,7 +65319,7 @@ pangchou	滂臭	1
 pangci	胖次	198
 pangda	庞大	502
 pangdahai	胖大海	400
-pangde	庞德	290
+pangde	胖的	1000
 pangdejie	庞德街	167
 pangdudu	胖嘟嘟	382
 pangdundun	胖墩墩	389
@@ -66223,7 +66258,7 @@ piaodong	飘动	440
 piaofang	票房	419
 piaofanzi	票贩子	442
 piaofeng	飘风	393
-piaofu	漂浮	574
+piaofu	漂浮	575
 piaofu	飘浮	557
 piaofu	飘拂	345
 piaogen	票根	305
@@ -66245,7 +66280,8 @@ piaoke	嫖客	398
 piaole	漂了	578
 piaolei	漂雷	198
 piaoli	漂砾	332
-piaoliang	漂亮	502
+piaoliang	漂亮	551
+piaoliangde	漂亮的	947
 piaoling	飘零	494
 piaoling	嘌呤	323
 piaoliu	漂流	1000
@@ -67818,6 +67854,7 @@ qiangdaodeyu	强盗的欲	536
 qiangdaodeyuwang	强盗的欲望	569
 qiangdaozhongrentui	墙倒众人推	441
 qiangdaqi	抢答器	379
+qiangde	强的	747
 qiangdi	强敌	886
 qiangdi	羌笛	1
 qiangdiao	强调	962
@@ -69287,7 +69324,8 @@ qingdaopijiujituan	青岛啤酒集团	304
 qingdaoshi	青岛市	735
 qingdaoshilvyouju	青岛市旅游局	309
 qingdaoshizhengfu	青岛市政府	279
-qingde	罄地	578
+qingde	轻的	1000
+qingde	罄地	118
 qingdi	轻敌	448
 qingdi	情敌	380
 qingdian	清点	833
@@ -69653,7 +69691,7 @@ qingtanjiemu	清谈节目	260
 qingtanshu	青檀树	230
 qingtian	青天	872
 qingtian	晴天	696
-qingtian	清甜	16
+qingtian	清甜	17
 qingtianbairi	青天白日	496
 qingtiandalaoye	青天大老爷	289
 qingtianpili	晴天霹雳	505
@@ -70549,7 +70587,7 @@ qiwawa	奇瓦瓦	202
 qiwei	气味	506
 qiwei	奇伟	350
 qiwen	气温	891
-qiwen	奇闻	269
+qiwen	奇闻	268
 qiwengongshang	奇文共赏	387
 qiwu	器物	522
 qiwu	欺侮	501
@@ -71678,11 +71716,15 @@ rangrang	攘攘	335
 rangrangxixi	攘攘熙熙	249
 rangrenxianmu	让人羡慕	260
 rangshan	攘善	198
-rangta	让他	1000
-rangta	让她	739
+rangta	让他	900
+rangta	让她	788
+rangtagan	让他干	1000
+rangtagan	让她干	965
 rangtamen	让他们	930
 rangtang	壤塘	305
 rangtangxian	壤塘县	160
+rangtazuo	让他做	1000
+rangtazuo	让她做	965
 rangtu	壤土	385
 rangwai	攘外	305
 rangwaiannei	攘外安内	387
@@ -71839,7 +71881,8 @@ redaiyulin	热带雨林	549
 redao	热导	198
 redaolv	热导率	451
 redaoxiaoying	热岛效应	260
-rede	惹得	521
+rede	热的	1000
+rede	惹得	61
 redekuai	热得快	406
 redeqi	惹得起	640
 redian	热点	563
@@ -73400,6 +73443,7 @@ ruoce	弱侧	198
 ruochong	若虫	259
 ruoda	偌大	414
 ruodanna	若旦那	640
+ruode	弱的	735
 ruodian	弱点	453
 ruodiantongyi	弱电统一	260
 ruoer	若尔	511
@@ -74948,9 +74992,9 @@ shanbenwushiliu	山本五十六	289
 shanbenyoushen	山本由伸	795
 shanbenzhi	山本拓	780
 shanbi	闪避	470
-shanbian	善辩	544
+shanbian	善辩	543
 shanbian	善变	484
-shanbian	嬗变	336
+shanbian	嬗变	337
 shanbuzhuanluzhuan	山不转路转	424
 shanbuzhuanshuizhuan	山不转水转	289
 shancai	善才	662
@@ -75426,7 +75470,7 @@ shangshigongsi	上市公司	499
 shangshou	上手	510
 shangshou	上首	455
 shangshu	尚书	1000
-shangshu	上书	500
+shangshu	上书	501
 shangshu	上述	469
 shangshui	商水	383
 shangshui	上水	310
@@ -75517,7 +75561,7 @@ shangxin	伤心	987
 shangxin	上心	105
 shangxincanmu	伤心惨目	387
 shangxing	上行	885
-shangxing	上星	731
+shangxing	上星	730
 shangxingju	上星剧	232
 shangxingqi	上星期	415
 shangxingxiaxiao	上行下效	467
@@ -75883,8 +75927,8 @@ shaocai	少才	1000
 shaocai	烧菜	1
 shaocha	烧茶	323
 shaodao	烧到	198
-shaode	少的	644
-shaode	稍地	616
+shaode	少的	645
+shaode	稍地	615
 shaodeng	稍等	752
 shaodengyixia	稍等一下	967
 shaodi	哨笛	198
@@ -77934,14 +77978,14 @@ shidashi	实打实	442
 shidashixiao	时大时小	260
 shide	是的	1000
 shide	似的	875
-shide	使得	767
+shide	使得	766
 shide	拾得	556
 shide	似地	467
 shide	十地	403
 shide	石地	398
 shide	食地	381
 shide	士的	362
-shide	史的	360
+shide	史的	361
 shide	适得	249
 shideha	是的哈	945
 shidejulebu	实德俱乐部	326
@@ -79168,7 +79212,7 @@ shiyi	十亿	1000
 shiyi	示意	440
 shiyi	拾遗	394
 shiyi	失忆	339
-shiyi	适宜	309
+shiyi	适宜	310
 shiyi	失意	240
 shiyi	施以	166
 shiyi	事宜	146
@@ -79492,7 +79536,8 @@ shoudaokui	手嶌葵	228
 shoudaoli	手倒立	362
 shoudaonianlai	手到拈来	387
 shoudaoqinlai	手到擒来	475
-shoude	瘦地	600
+shoude	瘦的	1000
+shoude	瘦地	162
 shoudeliao	受得了	453
 shoudi	守敌	691
 shoudian	手电	493
@@ -79887,8 +79932,8 @@ shouxiang	受降	749
 shouxiang	手相	9
 shouxiangguan	受像管	640
 shouxiangyishi	受降仪式	405
-shouxiao	瘦小	430
-shouxiao	守孝	427
+shouxiao	瘦小	431
+shouxiao	守孝	426
 shouxiao	收效	379
 shouxicaiwuguan	首席财务官	289
 shouxidafaguan	首席大法官	289
@@ -80054,6 +80099,7 @@ shuaiche	甩车	198
 shuaida	摔打	426
 shuaidaile	帅呆了	198
 shuaidao	摔倒	468
+shuaide	帅的	741
 shuaidiao	甩掉	439
 shuaidie	摔跌	323
 shuaidong	甩动	323
@@ -80605,6 +80651,7 @@ shuifei	税费	432
 shuifen	水分	470
 shuifu	税负	387
 shuifu	税赋	369
+shuigande	谁干的	966
 shuigang	水缸	425
 shuigengfa	水耕法	167
 shuigou	水沟	624
@@ -80808,6 +80855,7 @@ shuishi	水师	446
 shuishou	水手	496
 shuishou	税收	446
 shuishu	睡鼠	305
+shuishuode	谁说的	966
 shuishuxingdemofashi	水属性的魔法师	577
 shuisi	水丝	137
 shuita	水塔	414
@@ -80914,6 +80962,7 @@ shuizi	水渍	376
 shuizi	睡姿	359
 shuizu	水族	536
 shuizuguan	水族馆	447
+shuizuode	谁做的	961
 shuizuxiang	水族箱	415
 shuji	书记	959
 shuji	书籍	294
@@ -81285,7 +81334,8 @@ shuodaodi	说到底	914
 shuodaozuodao	说到做到	457
 shuodawubi	硕大无比	436
 shuodawupeng	硕大无朋	420
-shuode	说地	473
+shuode	说的	1000
+shuode	说地	13
 shuodeguoqu	说得过去	458
 shuodeshang	说得上	362
 shuodetan	说地谈	566
@@ -82703,7 +82753,8 @@ suancai	酸菜	406
 suancheng	酸橙	434
 suanchu	酸楚	575
 suanchu	算出	297
-suande	算得	640
+suande	酸的	1000
+suande	算得	444
 suandeshang	算得上	640
 suandou	酸豆	305
 suanerlanv	酸儿辣女	260
@@ -82819,7 +82870,7 @@ sudangongheguo	苏丹共和国	277
 sudanneizhan	苏丹内战	782
 sudashui	苏打水	198
 sude	素的	820
-sude	素地	589
+sude	素地	588
 sude	宿地	569
 sude	簌地	525
 sudi	速递	582
@@ -83539,6 +83590,8 @@ tabi	它比	600
 tabixu	他必须	930
 tabu	踏步	434
 tabubuqian	踏步不前	260
+tabuxing	他不行	999
+tabuxing	她不行	983
 tacha	踏查	437
 tache	踏车	198
 tacheng	他称	877
@@ -83559,6 +83612,8 @@ taersi	塔尔寺	243
 tafang	他方	984
 tafang	塌方	164
 tafuchou	塔夫绸	193
+tagande	他干的	992
+tagande	她干的	976
 tage	踏歌	372
 tagong	塔公	198
 tagongsi	塔公寺	232
@@ -83877,8 +83932,8 @@ taishiji	台式机	583
 taishijichuliqi	台式机处理器	469
 taishiling	太史令	677
 taishiyi	太师椅	506
-taishou	太守	882
-taishou	太瘦	424
+taishou	太守	881
+taishou	太瘦	425
 taishousheng	太瘦生	640
 taishu	太叔	578
 taishui	泰水	161
@@ -84092,7 +84147,7 @@ taleile	他累了	992
 taleile	她累了	971
 tali	他力	979
 tali	塔里	518
-tali	他励	497
+tali	他励	498
 tali	塔利	108
 taliban	塔利班	562
 talielang	塔列朗	207
@@ -84112,8 +84167,9 @@ tamade	他妈的	676
 tamaer	塔玛尔	230
 tamei	他每	600
 tamen	他们	1000
-tamen	它们	909
+tamen	它们	908
 tamen	她们	390
+tamenshuode	他们说的	959
 tamian	他面	600
 tamiaode	他喵的	228
 tamudejing	塔木德经	260
@@ -84793,8 +84849,8 @@ taoquan	套圈	319
 taoqun	套裙	338
 taor	套儿	305
 taoran	陶然	229
-taorao	讨饶	488
-taorao	叨扰	434
+taorao	讨饶	489
+taorao	叨扰	433
 taoren	桃仁	331
 taorenxian	讨人嫌	398
 taorenxihuan	讨人喜欢	466
@@ -84853,6 +84909,7 @@ taoxuan	淘选	323
 taoxue	逃学	419
 taoxun	桃汛	305
 taoyan	讨厌	931
+taoyande	讨厌的	941
 taoyangui	讨厌鬼	382
 taoyaobao	掏腰包	517
 taoye	陶冶	292
@@ -84922,6 +84979,8 @@ tashikuergantajikezizhixian	塔什库尔干塔吉克自治县	383
 tashikuerganzizhixian	塔什库尔干自治县	378
 tashuile	他睡了	992
 tashuile	她睡了	971
+tashuode	他说的	999
+tashuode	她说的	983
 tasiman	塔斯曼	629
 tasimanian	塔斯马尼安	274
 tasimaniya	塔斯马尼亚	301
@@ -84932,7 +84991,7 @@ tasimanniyadao	塔斯曼尼亚岛	318
 tasishe	塔斯社	277
 tasuo	他所	600
 tata	他他	731
-tata	塔塔	596
+tata	塔塔	595
 tata	踏踏	506
 tata	它它	494
 tataer	塔塔尔	222
@@ -84985,6 +85044,8 @@ tazhou	塔州	144
 tazi	他自	521
 taziji	他自己	640
 tazu	踏足	403
+tazuode	他做的	999
+tazuode	她做的	983
 teaohui	特奥会	198
 tebie	特别	551
 tebiedaiyu	特别待遇	260
@@ -85239,7 +85300,8 @@ tianda	天大	410
 tiandan	恬淡	801
 tiandao	天道	493
 tiandaochouqin	天道酬勤	438
-tiande	天地	643
+tiande	甜的	982
+tiande	天地	548
 tiandebu	天地不	566
 tiandeburong	天地不容	597
 tiandefani	甜得发腻	260
@@ -85553,7 +85615,7 @@ tianshengyidui	天生一对	387
 tianshi	天使	856
 tianshi	天时	751
 tianshi	恬适	208
-tianshi	甜食	100
+tianshi	甜食	101
 tianshibaoxijie	天使报喜节	289
 tianshiburudeli	天时不如地利	485
 tianshidilirenhe	天时地利人和	326
@@ -85595,8 +85657,8 @@ tiantiwulixuejia	天体物理学家	318
 tiantiyanhuaxue	天体演化学	289
 tiantizhuyi	天体主义	260
 tiantong	甜筒	305
-tiantou	甜头	396
-tiantou	天头	363
+tiantou	甜头	397
+tiantou	天头	362
 tiantu	田土	372
 tiantui	恬退	198
 tiantuzuo	天兔座	232
@@ -85673,7 +85735,7 @@ tianyadejiao	天涯地角	514
 tianyagongcishi	天涯共此时	400
 tianyahaijiao	天涯海角	332
 tianyahechuwufangcao	天涯何处无芳草	348
-tianyan	天眼	632
+tianyan	天眼	631
 tianyan	天演	602
 tianyang	田阳	194
 tianyangqu	田阳区	167
@@ -85934,8 +85996,8 @@ tiaoyaodao	调药刀	232
 tiaoyin	调音	400
 tiaoyizhijiao	跳一只脚	260
 tiaoyuan	跳远	427
-tiaoyue	条约	854
-tiaoyue	跳跃	249
+tiaoyue	条约	853
+tiaoyue	跳跃	250
 tiaoyun	调匀	436
 tiaozao	跳蚤	536
 tiaozaodingbei	跳蚤顶被	532
@@ -88443,7 +88505,7 @@ tusu	吐诉	323
 tusui	吐穗	186
 tusun	徒孙	698
 tutan	图坦	730
-tutan	涂炭	399
+tutan	涂炭	400
 tutankamen	图坦卡门	260
 tutankameng	图坦卡蒙	260
 tutechan	土特产	564
@@ -89868,7 +89930,7 @@ weidayijian	未达一间	260
 weide	危地	975
 weide	位地	789
 weide	委地	786
-weide	委的	735
+weide	委的	736
 weide	为德	655
 weidebu	为德不	566
 weidebuzhong	为德不终	387
@@ -90655,7 +90717,8 @@ wendangshujuku	文档数据库	872
 wendao	问道	855
 wendao	闻到	609
 wendaoyumang	问道于盲	405
-wende	温得	473
+wende	稳的	1000
+wende	温得	54
 wendehe	温得和	556
 wendeheke	温得和克	514
 wendie	文牒	338
@@ -91065,6 +91128,7 @@ wobuan	卧不安	382
 wobuguan	我不管	640
 wobushi	我不是	945
 wobuxin	我不信	566
+wobuxing	我不行	966
 wobuxinjiao	我不信教	597
 wobuzhidao	我不知道	967
 woca	我擦	578
@@ -91116,6 +91180,7 @@ wofang	我方	1000
 wofang	卧房	1
 wofu	窝夫	148
 wogan	蜗杆	343
+wogande	我干的	959
 woganfu	蜗杆副	228
 woganjue	我感觉	952
 wogennishuo	我跟你说	953
@@ -91153,6 +91218,8 @@ woku	我苦	600
 wokuotai	窝阔台	375
 wokuotaihan	窝阔台汗	260
 wolai	我来	763
+wolaigan	我来干	966
+wolaizuo	我来做	966
 woleile	我累了	973
 woli	握力	194
 woliao	窝料	198
@@ -91189,6 +91256,7 @@ womenlai	我们来	938
 womenliuge	我们六个	557
 womenneng	我们能	945
 womenqu	我们去	938
+womenshuode	我们说的	959
 womenxiang	我们想	945
 womenyao	我们要	952
 womenyiding	我们一定	945
@@ -91216,6 +91284,7 @@ woren	我人	1000
 worensi	我人四	566
 worensixiang	我人四相	597
 woshan	涡扇	397
+woshang	我上	752
 woshi	卧室	588
 woshi	卧式	309
 woshiguo	我试过	966
@@ -91225,6 +91294,7 @@ woshishi	我试试	959
 woshou	握手	459
 woshui	沃水	137
 woshuile	我睡了	973
+woshuode	我说的	973
 wosi	我司	198
 wosun	我孙	956
 wosun	莴笋	1
@@ -91290,6 +91360,7 @@ wozi	窝子	394
 wozui	我醉	473
 wozuiyu	我醉欲	562
 wozuiyumian	我醉欲眠	597
+wozuode	我做的	966
 wuai	无碍	866
 wuai	雾霭	86
 wuan	武安	325
@@ -91297,7 +91368,7 @@ wuanshi	武安市	165
 wuba	武把	954
 wubabituona	戊巴比妥钠	288
 wubai	五百	1000
-wubai	伍佰	233
+wubai	伍佰	261
 wubaibashierjuan	五百八十二卷	399
 wubaibashiwu	五百八十五	371
 wubaidi	乌拜迪	167
@@ -91456,7 +91527,7 @@ wudawuzhuang	误打误撞	469
 wudayi	五打一	232
 wudazhou	五大洲	165
 wude	物的	969
-wude	兀的	659
+wude	兀的	660
 wude	兀得	574
 wudehaosi	伍德豪斯	218
 wudeliu	物的流	566
@@ -92166,7 +92237,7 @@ wushamao	乌纱帽	491
 wushan	巫山	768
 wushan	武山	747
 wushang	无上	1000
-wushang	无伤	908
+wushang	无伤	907
 wushang	误伤	95
 wushangdaya	无伤大雅	457
 wushangzeichuan	误上贼船	387
@@ -93062,10 +93133,11 @@ xiandao	先道	883
 xiandao	先到	759
 xiandaoxian	先到先	566
 xiandaoxiande	先到先得	597
-xiande	显得	792
-xiande	仙的	725
-xiande	先德	665
-xiande	暹地	483
+xiande	闲的	1000
+xiande	仙的	360
+xiande	显得	321
+xiande	先德	286
+xiande	暹地	145
 xiandeng	先登	600
 xiandi	先帝	1000
 xiandi	贤弟	286
@@ -93117,7 +93189,7 @@ xianfu	先付	999
 xianfu	先父	926
 xianfu	先夫	897
 xianfu	先府	778
-xianfu	县府	455
+xianfu	县府	454
 xianfujun	先府君	676
 xiangai	相爱	447
 xiangaixiangsha	相爱相杀	218
@@ -93215,9 +93287,10 @@ xiangdao	向导	692
 xiangdao	向道	430
 xiangdao	想倒	254
 xiangdaomei	想倒美	640
-xiangde	相得	1000
-xiangde	想得	738
-xiangde	象地	469
+xiangde	香的	1000
+xiangde	相得	621
+xiangde	想得	440
+xiangde	象地	191
 xiangdedao	想得到	715
 xiangdeershuaizheng	相地而衰征	392
 xiangdekai	想得开	708
@@ -93455,7 +93528,7 @@ xianglian	相联	350
 xianglian	相恋	1
 xianglian	项链	1
 xiangliang	向量	1000
-xiangliang	响亮	417
+xiangliang	响亮	418
 xiangliangdaishu	向量代数	218
 xiangliangji	向量积	167
 xiangliangkongjian	向量空间	218
@@ -93534,7 +93607,7 @@ xiangpiqiu	橡皮球	390
 xiangpiting	橡皮艇	435
 xiangpituzhang	橡皮图章	420
 xiangpixian	橡皮线	375
-xiangpu	相扑	809
+xiangpu	相扑	808
 xiangqi	想起	1000
 xiangqi	象棋	704
 xiangqi	响起	586
@@ -93849,7 +93922,7 @@ xianhoushunxu	先后顺序	387
 xianhouzuo	仙后座	439
 xianhua	鲜花	762
 xianhua	闲话	761
-xianhua	献花	312
+xianhua	献花	311
 xianhuachazainiufenshang	鲜花插在牛粪上	348
 xianhuai	显怀	198
 xianhuajiachang	闲话家常	387
@@ -93932,8 +94005,8 @@ xiankong	闲空	305
 xiankou	闲口	198
 xiankuan	现款	389
 xiankuang	现况	392
-xianlai	闲来	522
-xianlai	先来	426
+xianlai	闲来	523
+xianlai	先来	425
 xianlaihoudao	先来后到	408
 xianlaiwushi	闲来无事	466
 xianlan	线缆	324
@@ -94254,8 +94327,8 @@ xianxue	鲜血	690
 xianxuelinli	鲜血淋漓	492
 xianxuexianyong	现学现用	405
 xianxuezhe	献血者	419
-xianya	闲雅	480
-xianya	娴雅	397
+xianya	闲雅	481
+xianya	娴雅	396
 xianyadan	咸鸭蛋	396
 xianyan	先验	795
 xianyan	显眼	554
@@ -94295,7 +94368,7 @@ xianyouxian	仙游县	180
 xianyu	献鱼	955
 xianyu	限于	804
 xianyu	陷于	724
-xianyu	县域	426
+xianyu	县域	425
 xianyu	咸鱼	269
 xianyuan	嫌怨	319
 xianyue	先月	845
@@ -94473,8 +94546,8 @@ xiaodaoju	小道具	232
 xiaodaoxiaoxi	小道消息	479
 xiaodaoxinwen	小道新闻	260
 xiaodaxiaonao	小打小闹	463
-xiaode	小的	710
-xiaode	晓得	525
+xiaode	小的	1000
+xiaode	晓得	49
 xiaodeng	小登	198
 xiaodi	校地	836
 xiaodi	小弟	621
@@ -96234,9 +96307,10 @@ xindanjulie	心胆俱裂	464
 xindao	信道	447
 xindazhou	新大洲	469
 xindazichanguanligongsi	信达资产管理公司	364
-xinde	心得	1000
-xinde	心的	779
-xinde	信得	161
+xinde	新的	1000
+xinde	心得	790
+xinde	心的	538
+xinde	信得	72
 xindean	心得安	640
 xindeguo	信得过	535
 xindeli	新德里	286
@@ -96355,7 +96429,7 @@ xingche	行车	444
 xingchejiluyi	行车记录仪	289
 xingchen	星辰	420
 xingcheng	形成	962
-xingcheng	行程	325
+xingcheng	行程	326
 xingcheng	兴城	1
 xingchengceng	形成层	480
 xingchengdan	行程单	232
@@ -96377,7 +96451,7 @@ xingdao	星岛	105
 xingdaoribao	星岛日报	249
 xingdaoshu	行道树	452
 xingde	行的	1000
-xingde	幸得	714
+xingde	幸得	713
 xingde	性的	438
 xingde	星的	390
 xingde	行得	200
@@ -96467,7 +96541,7 @@ xinghuanxiang	性幻想	379
 xinghuashi	兴化市	178
 xinghui	行贿	561
 xinghui	行会	439
-xinghui	幸会	308
+xinghui	幸会	307
 xinghui	兴会	225
 xinghuilu	性贿赂	455
 xinghun	形婚	198
@@ -96650,7 +96724,7 @@ xingshengzi	形声字	442
 xingshenzhizai	幸甚至哉	218
 xingshi	形式	926
 xingshi	刑事	724
-xingshi	行事	547
+xingshi	行事	548
 xingshi	幸是	532
 xingshi	行使	508
 xingshi	形势	464
@@ -97233,7 +97307,7 @@ xintangshu	新唐书	198
 xintaohuanjiufu	新桃换旧符	397
 xinteng	心疼	467
 xintian	新天	871
-xintian	心田	226
+xintian	心田	225
 xintian	新田	1
 xintiandi	新天地	506
 xintianweng	信天翁	243
@@ -100675,7 +100749,7 @@ yanxigonglve	延禧攻略	792
 yanxigonglvejiaoseliebiao	延禧攻略角色列表	597
 yanxijuan	筵席捐	371
 yanxin	唁信	198
-yanxing	言行	607
+yanxing	言行	608
 yanxing	严刑	524
 yanxingbufu	言行不符	387
 yanxingbuyi	言行不一	439
@@ -102182,7 +102256,7 @@ yichu	益处	86
 yichu	役畜	78
 yichu	衣橱	43
 yichuan	遗传	1000
-yichuan	驿传	119
+yichuan	驿传	118
 yichuangongcheng	遗传工程	602
 yichuangongchengxue	遗传工程学	397
 yichuanlv	遗传率	232
@@ -102231,7 +102305,7 @@ yicunjiegou	依存结构	819
 yicunzhide	一寸之地	597
 yicuozaicuo	一错再错	387
 yida	一大	1000
-yida	一打	25
+yida	一打	24
 yida	医大	1
 yidai	一代	757
 yidai	一带	744
@@ -102256,7 +102330,7 @@ yidaliyu	义大利语	209
 yidalizhengfu	意大利政府	298
 yidalizhimian	意大利直面	289
 yidan	一旦	502
-yidang	一党	354
+yidang	一党	353
 yidangzhuanzhi	一党专制	260
 yidanshibo	衣单食薄	387
 yidao	一道	840
@@ -102874,7 +102948,7 @@ yilakealabofuxingshehuidang	伊拉克阿拉伯复兴社会党	364
 yilakegongheguo	伊拉克共和国	322
 yilakezhengfu	伊拉克政府	279
 yilan	一览	854
-yilan	宜兰	642
+yilan	宜兰	643
 yilanbiao	一览表	456
 yilang	伊朗	1000
 yilang	艺廊	1
@@ -105554,7 +105628,7 @@ yongyeyayu	永野芽郁	779
 yongyi	用以	819
 yongyi	用意	795
 yongyi	庸医	235
-yongyong	雍雍	319
+yongyong	雍雍	318
 yongyonglulu	庸庸碌碌	436
 yongyongyuanyuan	永永远远	249
 yongyou	拥有	528
@@ -105883,7 +105957,7 @@ youjingwuxian	有惊无险	472
 youjiti	有机体	646
 youjitu	有机土	232
 youjiu	有救	820
-youjiu	有旧	589
+youjiu	有旧	590
 youjiu	悠久	508
 youjiwu	有机物	651
 youjizhan	游击战	524
@@ -106696,6 +106770,7 @@ yuandan	元旦	422
 yuandao	原道	198
 yuandaoerlai	远道而来	467
 yuandatou	冤大头	459
+yuande	远的	747
 yuandi	原地	1000
 yuandi	园地	804
 yuandian	原点	474
@@ -109217,7 +109292,7 @@ zema	责骂	439
 zemeng	舴艋	253
 zenan	责难	433
 zende	怎地	1000
-zende	怎的	424
+zende	怎的	425
 zende	怎得	318
 zengbaiji	增白剂	462
 zengbing	增兵	416
@@ -109585,7 +109660,8 @@ zhangdan	账单	614
 zhangdan	帐单	195
 zhangdao	涨到	323
 zhangdaqian	张大千	243
-zhangde	丈地	1000
+zhangde	长的	1000
+zhangde	丈地	419
 zhangdejiang	张德江	172
 zhangdeng	掌灯	396
 zhangdengjiecai	张灯结彩	467
@@ -110463,8 +110539,8 @@ zhayoubing	炸油饼	375
 zhayu	炸鱼	366
 zhayu	诈语	280
 zhazha	扎扎	194
-zhazhade	喳喳地	613
-zhazhade	乍乍的	605
+zhazhade	喳喳地	612
+zhazhade	乍乍的	606
 zhazhai	扎寨	161
 zhazhashishi	扎扎实实	502
 zhazhen	扎针	250
@@ -111101,8 +111177,8 @@ zhengushuojin	震古烁今	412
 zhengwaibuxing	正外部性	260
 zhengwei	政委	871
 zhengwei	证伪	1
-zhengwen	正文	553
-zhengwen	征文	452
+zhengwen	正文	554
+zhengwen	征文	451
 zhengwu	正午	621
 zhengwu	政务	580
 zhengwu	正误	168
@@ -111891,7 +111967,7 @@ zhidaozhe	指导者	438
 zhide	值得	1000
 zhide	只得	943
 zhide	知的	679
-zhide	质的	634
+zhide	质的	635
 zhide	知得	611
 zhide	拓地	609
 zhide	止得	579
@@ -112860,6 +112936,7 @@ zhongdao	中岛	1
 zhongdaogaige	中道改革	573
 zhongdaogaigelianhe	中道改革联合	843
 zhongdaxiyangji	中大西洋脊	289
+zhongde	重的	747
 zhongdeng	中等	462
 zhongdengjiaoyu	中等教育	484
 zhongdengjishuxuexiao	中等技术学校	318
@@ -117405,7 +117482,7 @@ zuochu	做出	532
 zuochuo	作辍	198
 zuoci	座次	383
 zuocuo	做错	198
-zuoda	作答	836
+zuoda	作答	835
 zuodannu	佐丹奴	198
 zuodao	做到	502
 zuodaogao	做祷告	230
@@ -117422,8 +117499,8 @@ zuodian	座垫	359
 zuodianti	坐电梯	379
 zuodiao	做掉	323
 zuoding	坐定	467
-zuodong	作东	427
-zuodong	做东	355
+zuodong	作东	426
+zuodong	做东	356
 zuodui	作对	463
 zuoduiqi	左对齐	167
 zuodun	坐墩	335
@@ -117559,7 +117636,7 @@ zuosangzi	左嗓子	379
 zuose	作色	319
 zuosha	做啥	752
 zuoshang	左上	731
-zuoshang	坐商	141
+zuoshang	坐商	140
 zuoshangbin	座上宾	400
 zuoshangke	座上客	429
 zuoshanguanhudou	坐山观虎斗	460

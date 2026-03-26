@@ -1,5 +1,4 @@
 abidiyu	阿鼻|地狱	452
-adeleide	阿得|雷德	436
 adoudejiangshan	阿斗的|江山	441
 aidadewugui	挨打的|乌龟	443
 aidaodeyazi	挨刀的|鸭子	455
@@ -183,7 +182,7 @@ biantilinshang	遍体|鳞伤	413
 bianxiedaima	编写|代码	515
 bianxingjingang	变形|金刚	467
 bianyianzhuang	编译|安装	514
-bianyibaocuo	编译|报错	501
+bianyibaocuo	编译|报错	500
 bianyicanshu	编译|参数	513
 bianyichengxu	编译|程序	520
 bianyichucuo	编译|出错	511
@@ -771,8 +770,8 @@ cuozongfuza	错综|复杂	436
 dabaideshibing	打败的|士兵	455
 dachaidexiashan	打柴的|下山	450
 dadaxiaoxiao	大大|小小	486
-dadedikang	大地|抵抗	469
-dadedingshu	大地|定数	469
+dadedikang	大地|抵抗	454
+dadedingshu	大地|定数	446
 dadiceliang	大地|测量	455
 dadubaorong	大度|包容	425
 daerwenshibian	达尔文|事变	437
@@ -1915,7 +1914,7 @@ huliweiba	狐狸|尾巴	448
 hunhedeyu	混合|地域	469
 hunhejiegou	混合|结构	520
 hunmibuxing	昏迷|不醒	426
-hunxiaobianyi	混淆|编译	509
+hunxiaobianyi	混淆|编译	508
 hunxiaodaima	混淆|代码	481
 huobahuandenglong	火把换|灯笼	445
 huobibianzhi	货币|贬值	447
@@ -2135,7 +2134,7 @@ jiliangjingji	计量|经济	474
 jilijizhi	激励|机制	467
 jimiwenjian	机密|文件	467
 jinchengneicun	进程|内存	502
-jindedezhen	近地|地震	469
+jindedezhen	近地|地震	465
 jingangguohe	金刚|过河	469
 jingdeanding	静的|安定	469
 jingdebuanding	静的|不安定	362
@@ -2704,7 +2703,7 @@ lixianghundan	理想|混蛋	507
 lixiangzhuyi	理想|主义	491
 lixianhuancun	离线|缓存	466
 lixinggongshi	例行|公事	457
-lixingjieyue	厉行|节约	436
+lixingjieyue	厉行|节约	437
 lixingzhuyi	理性|主义	475
 liyichongtu	利益|冲突	467
 liyidezu	力役|地租	451
@@ -2767,7 +2766,7 @@ malaixiya	马来|西亚	520
 maliezhuyi	马列|主义	478
 malingshuni	马铃|薯泥	413
 mandelikaohuo	漫地里|烤火	433
-mandezhuzi	满地|竹子	469
+mandezhuzi	满地|竹子	448
 mangrendeguaigun	盲人的|拐棍	431
 mangrenkansanguo	盲人看|三国	377
 mangshankanhuanghe	邙山看|黄河	455
@@ -2945,7 +2944,7 @@ mumabingdu	木马|病毒	467
 muruweiyang	母乳|喂养	451
 muxishehui	母系|社会	467
 muzhudeweiba	母猪的|尾巴	436
-nabutiande	那步|天地	465
+nabutiande	那步|天地	456
 nacuizhuyi	纳粹|主义	449
 nafutalin	那夫|塔林	453
 nageyangzi	那个|样子	520
@@ -3048,6 +3047,7 @@ nifangxiangtexing	逆方向|特性	455
 nilaorenjia	你老|人家	452
 nilaoxiansheng	你老|先生	469
 nimenbixu	你们|必须	520
+nimenshuode	你们|说的	520
 nimenyiding	你们|一定	518
 nimingduixiang	匿名|对象	488
 niminghanshu	匿名|函数	506
@@ -3060,6 +3060,7 @@ niqiuguoyuwang	泥鳅过|鱼网	441
 niujiaoduilingjiao	牛角对|菱角	429
 niulangzhinv	牛郎|织女	457
 niuyankanren	牛眼|看人	442
+nixingnishang	你行|你上	520
 nizhengdemantou	泥蒸的|馒头	436
 nongminjieji	农民|阶级	467
 nongminqiyi	农民|起义	461
@@ -3833,10 +3834,10 @@ shunxucunchujiegou	顺序|存储|结构	460
 shunxujiegou	顺序|结构	513
 shunxurongqi	顺序|容器	513
 shunxusuoyin	顺序|索引	512
-shuodetantian	说地|谈天	417
+shuodetantian	说地|谈天	384
 shuoniumaxiadan	说牛马|下蛋	455
 shuoshixuewei	硕士|学位	467
-shuotianshuode	说天|说地	436
+shuotianshuode	说天|说地	403
 shurenjunzi	淑人|君子	467
 shurushuchu	输入|输出	427
 shurushuchuhanshu	输入|输出|函数	509
@@ -3957,6 +3958,7 @@ taiwanzhapianjituan	台湾|诈骗|集团	436
 taiyangfengbao	太阳|风暴	467
 taiyanghuodong	太阳|活动	467
 taizitaibao	太子|太保	469
+tamenshuode	他们|说的	520
 tanboyueqi	弹拨|乐器	470
 tangchaodechabei	唐朝的|茶杯	436
 tangdaodekushu	躺倒的|枯树	428
@@ -4274,6 +4276,7 @@ wodeyingxiongxueyuan	我的|英雄|学院	436
 wodigaozhong	卧底|高中	436
 wolidemafeng	窝里的|马蜂	455
 womenbixu	我们|必须	520
+womenshuode	我们|说的	520
 womenyiding	我们|一定	520
 woniudefangzi	蜗牛的|房子	455
 wotianyinshui	我田|引水	460
@@ -5099,6 +5102,7 @@ zhegeyangzi	这个|样子	520
 zhehetongzhi	着荷|通知	469
 zhehuoaibanzi	着火挨|板子	389
 zhenchanmabi	震颤|麻痹	463
+zhendejiade	真的|假的	520
 zhenduanceshi	诊断|测试	510
 zhenduanchengxu	诊断|程序	511
 zhengfengyundong	整风|运动	469
