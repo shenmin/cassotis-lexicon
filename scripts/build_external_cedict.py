@@ -21,6 +21,7 @@ import sys
 import unicodedata
 import urllib.parse
 import urllib.request
+import xml.etree.ElementTree as ET
 import zipfile
 from typing import Dict, List, Set, Tuple
 
@@ -53,6 +54,10 @@ CURATED_DAILY_PHRASES_HOMEPAGE = "https://github.com/shenmin/cassotis-lexicon"
 VERTICAL_LAYERS_MANIFEST_DEFAULT = "manifests/vertical_layers.public.json"
 WIKIMEDIA_PAGEVIEWS_TOP_URL = "https://wikimedia.org/api/rest_v1/metrics/pageviews/top/zh.wikipedia/all-access"
 WIKIMEDIA_PAGEVIEWS_TOP_HOMEPAGE = "https://wikitech.wikimedia.org/wiki/Analytics/AQS/Pageviews"
+MESH_DESCRIPTOR_XML_URL = f"https://nlmpubs.nlm.nih.gov/projects/mesh/MESH_FILES/xmlmesh/desc{dt.date.today().year}.xml"
+MESH_HOMEPAGE = "https://www.nlm.nih.gov/mesh/meshhome.html"
+WIKIDATA_SPARQL_URL = "https://query.wikidata.org/sparql"
+WIKIDATA_HOMEPAGE = "https://www.wikidata.org/wiki/Wikidata:Main_Page"
 DEFAULT_PERMISSIVE_OVERRIDES = "manifests/pinyin_overrides.clean_permissive.tsv"
 DEFAULT_HTTP_USER_AGENT = "cassotis-lexicon/1.0 (+https://github.com/shenmin/cassotis-lexicon)"
 COMPUTING_VERTICAL_FILTER_KEYWORDS = (
@@ -130,6 +135,35 @@ COMPUTING_VERTICAL_FILTER_KEYWORDS = (
     "负载",
     "垃圾回收",
 )
+MEDICAL_MESH_TREE_PREFIXES = ("A", "C", "D", "E", "F", "G", "N")
+MEDICAL_SHORT_TERM_HINTS = (
+    "癌", "病", "症", "炎", "瘤", "菌", "毒", "药", "藥", "疗", "療", "诊", "診",
+    "术", "術", "血", "肝", "肺", "肾", "腎", "胃", "胆", "膽", "胰", "腺", "脉",
+    "脈", "痛", "热", "熱", "寒", "液", "針", "针", "酸", "素", "酶", "醇", "胺",
+    "糖", "尿", "疫", "苗", "咳", "喘", "泻", "瀉", "疹", "疮", "瘡", "瘫", "癱",
+    "栓", "醉", "麻", "痰", "疡", "疣", "癣", "癬", "膜", "骨", "脑", "腦", "心",
+)
+VerticalEntry = Tuple[str, str, float, str, str, str]
+WIKIDATA_MEDICAL_MESH_QUERY = """
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+SELECT ?term ?mesh WHERE {
+  {
+    ?item wdt:P486 ?mesh ;
+          rdfs:label ?label .
+    FILTER(LANG(?label) = "zh")
+    BIND(STR(?label) AS ?term)
+  }
+  UNION
+  {
+    ?item wdt:P486 ?mesh ;
+          skos:altLabel ?alt .
+    FILTER(LANG(?alt) = "zh")
+    BIND(STR(?alt) AS ?term)
+  }
+  __MESH_PREFIX_FILTER__
+}
+"""
 COMPUTING_VERTICAL_FILTER_EXACT = {
     "字符串",
     "数组",
@@ -364,6 +398,9 @@ SINGLE_CHAR_READING_DELTA_OVERRIDES: Dict[Tuple[str, str], int] = {
     # Keep 阮 visible as a common surname and standalone lexical target without
     # overriding 软 as the dominant everyday ruan reading.
     ("阮", "ruan"): 320,
+    # Keep 朊 visible for medical contexts after vertical medical terms are
+    # isolated from single-character support derivation.
+    ("朊", "ruan"): 220,
 }
 
 COPYLEFT_LICENSE_TOKENS = (
@@ -652,7 +689,12 @@ def _load_vertical_layer_sources(
                 stats["vertical_layer_sources_skipped_inactive"] += 1
                 continue
             source_type = str(source.get("type", "repo_tsv")).strip().lower()
-            if source_type not in {"repo_tsv", "thuocl_zip_member"}:
+            if source_type not in {
+                "repo_tsv",
+                "thuocl_zip_member",
+                "mesh_descriptor_catalog",
+                "wikidata_mesh_query",
+            }:
                 stats["vertical_layer_sources_skipped_unsupported"] += 1
                 continue
 
@@ -690,6 +732,10 @@ def _load_vertical_layer_sources(
                     "vertical_payload_source_id": str(source.get("payload_source_id", "")).strip(),
                     "vertical_member_name": str(source.get("member_name", "")).strip(),
                     "vertical_filter_id": str(source.get("filter_id", "")).strip(),
+                    "vertical_cache_file": str(source.get("cache_file", "")).strip(),
+                    "vertical_query": str(source.get("query", "")).strip(),
+                    "vertical_mesh_source_id": str(source.get("mesh_source_id", "")).strip(),
+                    "vertical_mesh_tree_prefixes": str(source.get("mesh_tree_prefixes", "")).strip(),
                 }
             )
             stats["vertical_layer_sources_loaded"] += 1
@@ -747,6 +793,275 @@ def _matches_vertical_filter(text: str, filter_id: str) -> bool:
             return True
         return any(keyword in text for keyword in COMPUTING_VERTICAL_FILTER_KEYWORDS)
     return True
+
+
+def _resolve_optional_repo_path(
+    repo_root: pathlib.Path,
+    relative_path: str,
+) -> pathlib.Path | None:
+    relative_path = relative_path.strip()
+    if not relative_path:
+        return None
+    relative = pathlib.PurePosixPath(relative_path.replace("\\", "/"))
+    return repo_root.joinpath(*relative.parts)
+
+
+def _build_vertical_source_request_url(source: Dict[str, object]) -> str:
+    source_url = str(source.get("download_url", "")).strip()
+    source_type = str(source.get("vertical_source_type", "repo_tsv")).strip().lower()
+    if source_type != "wikidata_mesh_query":
+        return source_url
+
+    parsed = urllib.parse.urlparse(source_url)
+    existing = urllib.parse.parse_qsl(parsed.query, keep_blank_values=True)
+    filtered = [(key, value) for key, value in existing if key.lower() not in {"query", "format"}]
+    filtered.append(("format", "json"))
+    rebuilt = parsed._replace(query=urllib.parse.urlencode(filtered))
+    return urllib.parse.urlunparse(rebuilt)
+
+
+def _download_wikidata_sparql_bytes(url: str, query: str) -> bytes:
+    post_data = urllib.parse.urlencode({"query": query}).encode("utf-8")
+    request = urllib.request.Request(
+        url,
+        data=post_data,
+        headers={
+            "User-Agent": DEFAULT_HTTP_USER_AGENT,
+            "Accept": "application/sparql-results+json",
+            "Content-Type": "application/x-www-form-urlencoded; charset=utf-8",
+        },
+        method="POST",
+    )
+    with urllib.request.urlopen(request, timeout=180) as response:
+        return response.read()
+
+
+def _iter_wikidata_mesh_prefix_queries(query: str) -> Iterator[str]:
+    if "__MESH_PREFIX_FILTER__" not in query:
+        yield query
+        return
+    for suffix in range(10):
+        prefix_filter = f'FILTER(STRSTARTS(?mesh, "D0{suffix}"))'
+        yield query.replace("__MESH_PREFIX_FILTER__", prefix_filter)
+
+
+def _download_wikidata_mesh_query_payload(url: str, query: str) -> bytes:
+    combined_bindings: List[Dict[str, object]] = []
+    vars_list: List[str] = ["term", "mesh"]
+    for chunk_query in _iter_wikidata_mesh_prefix_queries(query):
+        chunk_payload = _download_wikidata_sparql_bytes(url, chunk_query)
+        chunk_text = chunk_payload.decode("utf-8", errors="ignore").strip()
+        chunk_data = json.loads(chunk_text)
+        head_vars = chunk_data.get("head", {}).get("vars")
+        if isinstance(head_vars, list) and head_vars:
+            vars_list = [str(value) for value in head_vars]
+        results = chunk_data.get("results", {}).get("bindings", [])
+        if isinstance(results, list):
+            combined_bindings.extend(results)
+    combined_payload = {
+        "head": {"vars": vars_list},
+        "results": {"bindings": combined_bindings},
+    }
+    return json.dumps(combined_payload, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
+
+
+def _prefetch_vertical_source_payloads(
+    vertical_sources: List[Dict[str, object]],
+    repo_root: pathlib.Path,
+) -> Dict[str, bytes]:
+    payloads: Dict[str, bytes] = {}
+    for source in vertical_sources:
+        source_type = str(source.get("vertical_source_type", "repo_tsv")).strip().lower()
+        if source_type == "thuocl_zip_member":
+            continue
+        source_id = str(source.get("id", "")).strip()
+        if not source_id:
+            continue
+        cache_file = _resolve_optional_repo_path(repo_root, str(source.get("vertical_cache_file", "")))
+        if source_type == "wikidata_mesh_query":
+            if cache_file and cache_file.exists():
+                payloads[source_id] = cache_file.read_bytes()
+                continue
+            url = _build_vertical_source_request_url(source)
+            query = str(source.get("vertical_query", "")).strip()
+            payload = _download_wikidata_mesh_query_payload(url, query)
+            if cache_file:
+                cache_file.parent.mkdir(parents=True, exist_ok=True)
+                cache_file.write_bytes(payload)
+            payloads[source_id] = payload
+            continue
+        url = _build_vertical_source_request_url(source)
+        payloads[source_id] = _read_source_bytes(url, cache_file, repo_root=repo_root)
+    return payloads
+
+
+def _parse_mesh_descriptor_allowed_ids(
+    payload: bytes,
+    *,
+    allowed_prefixes: Tuple[str, ...] = MEDICAL_MESH_TREE_PREFIXES,
+) -> Tuple[Set[str], Dict[str, int]]:
+    stats = {
+        "vertical_mesh_descriptors_total": 0,
+        "vertical_mesh_descriptors_medical": 0,
+        "vertical_mesh_descriptors_nonmedical": 0,
+    }
+    allowed_ids: Set[str] = set()
+    prefix_set = tuple(prefix.strip().upper() for prefix in allowed_prefixes if prefix.strip())
+    stream = io.BytesIO(payload)
+    for _event, elem in ET.iterparse(stream, events=("end",)):
+        if not elem.tag.endswith("DescriptorRecord"):
+            continue
+        stats["vertical_mesh_descriptors_total"] += 1
+        descriptor_ui = ""
+        tree_numbers: List[str] = []
+        for child in elem.iter():
+            if child.tag.endswith("DescriptorUI"):
+                descriptor_ui = (child.text or "").strip().upper()
+            elif child.tag.endswith("TreeNumber"):
+                value = (child.text or "").strip().upper()
+                if value:
+                    tree_numbers.append(value)
+        if descriptor_ui and any(number.startswith(prefix_set) for number in tree_numbers):
+            allowed_ids.add(descriptor_ui)
+            stats["vertical_mesh_descriptors_medical"] += 1
+        else:
+            stats["vertical_mesh_descriptors_nonmedical"] += 1
+        elem.clear()
+    return allowed_ids, stats
+
+
+def _parse_wikidata_bindings(payload: bytes) -> List[Tuple[str, str]]:
+    stripped = payload.lstrip()
+    results: List[Tuple[str, str]] = []
+    if stripped.startswith(b"{"):
+        data = json.loads(stripped.decode("utf-8", errors="ignore"))
+        for item in data.get("results", {}).get("bindings", []):
+            if not isinstance(item, dict):
+                continue
+            term = str(item.get("term", {}).get("value", "")).strip()
+            mesh_id = str(item.get("mesh", {}).get("value", "")).strip().upper()
+            if term and mesh_id:
+                results.append((term, mesh_id))
+        return results
+
+    root = ET.fromstring(payload)
+    ns = {"sr": "http://www.w3.org/2005/sparql-results#"}
+    for result in root.findall(".//sr:result", ns):
+        term = ""
+        mesh_id = ""
+        for binding in result.findall("sr:binding", ns):
+            name = binding.get("name", "")
+            literal = binding.find("sr:literal", ns)
+            value = (literal.text or "").strip() if literal is not None else ""
+            if name == "term":
+                term = value
+            elif name == "mesh":
+                mesh_id = value.upper()
+        if term and mesh_id:
+            results.append((term, mesh_id))
+    return results
+
+
+def _parse_wikidata_mesh_query_entries(
+    payload: bytes,
+    mesh_payload: bytes | None,
+    opencc_payload: bytes | None,
+    min_hanzi: int,
+    default_usage_score: float,
+    mesh_tree_prefixes: Tuple[str, ...],
+) -> Tuple[List[Tuple[str, str, float, str]], Dict[str, int]]:
+    stats = {
+        "vertical_wikidata_rows": 0,
+        "vertical_wikidata_kept": 0,
+        "vertical_wikidata_skipped_nonmedical_mesh": 0,
+        "vertical_wikidata_skipped_non_cjk": 0,
+        "vertical_wikidata_skipped_short": 0,
+        "vertical_wikidata_skipped_duplicate": 0,
+        "vertical_wikidata_missing_mesh_payload": 0,
+    }
+    if mesh_payload is None:
+        stats["vertical_wikidata_missing_mesh_payload"] += 1
+        return [], stats
+
+    allowed_mesh_ids, mesh_stats = _parse_mesh_descriptor_allowed_ids(
+        mesh_payload,
+        allowed_prefixes=mesh_tree_prefixes,
+    )
+    for key, value in mesh_stats.items():
+        stats[key] = stats.get(key, 0) + value
+
+    opencc_entries: List[Tuple[str, str]] = []
+    opencc_sc_to_tc: Dict[str, Set[str]] = {}
+    opencc_tc_to_sc: Dict[str, Set[str]] = {}
+    trad_to_simp_char_map: Dict[str, str] = {}
+    simp_to_trad_char_map: Dict[str, str] = {}
+    if opencc_payload:
+        opencc_entries, _ = _parse_opencc_entries(_decode_text(opencc_payload), 1)
+        opencc_sc_to_tc = _build_opencc_sc_to_tc_map(opencc_entries)
+        opencc_tc_to_sc = _build_opencc_tc_to_sc_map(opencc_entries)
+        trad_to_simp_char_map, simp_to_trad_char_map, _sc_chars, _tc_chars = _build_char_variant_hints(
+            opencc_tc_to_sc,
+            opencc_entries,
+        )
+
+    default_usage_score = min(1.0, max(0.0, default_usage_score))
+    entries: List[Tuple[str, str, float, str]] = []
+    seen_pairs: Set[Tuple[str, str]] = set()
+    for term, mesh_id in _parse_wikidata_bindings(payload):
+        stats["vertical_wikidata_rows"] += 1
+        if mesh_id not in allowed_mesh_ids:
+            stats["vertical_wikidata_skipped_nonmedical_mesh"] += 1
+            continue
+        if not CJK_FULL_RE.fullmatch(term):
+            stats["vertical_wikidata_skipped_non_cjk"] += 1
+            continue
+        if _cjk_len(term) < min_hanzi:
+            stats["vertical_wikidata_skipped_short"] += 1
+            continue
+
+        sc_candidate = term
+        tc_candidate = term
+        mapped_sc_words = opencc_tc_to_sc.get(term, set())
+        mapped_tc_words = opencc_sc_to_tc.get(term, set())
+        if mapped_sc_words:
+            sc_candidate = sorted(mapped_sc_words)[0]
+            tc_candidate = term
+        elif mapped_tc_words:
+            sc_candidate = term
+            tc_candidate = sorted(mapped_tc_words)[0]
+        elif trad_to_simp_char_map:
+            sc_candidate = _convert_text_with_char_map(term, trad_to_simp_char_map)
+            tc_candidate = _convert_sc_text_to_tc_with_phrase_hints(
+                sc_candidate,
+                opencc_sc_to_tc,
+                simp_to_trad_char_map,
+            )
+        pair_key = (sc_candidate, tc_candidate)
+        if pair_key in seen_pairs:
+            stats["vertical_wikidata_skipped_duplicate"] += 1
+            continue
+        seen_pairs.add(pair_key)
+        entries.append((sc_candidate, tc_candidate, default_usage_score, ""))
+        stats["vertical_wikidata_kept"] += 1
+    return entries, stats
+
+
+def _is_medical_specific_term(text: str) -> bool:
+    if not text or not CJK_FULL_RE.fullmatch(text):
+        return False
+    return any(token in text for token in MEDICAL_SHORT_TERM_HINTS)
+
+
+def _wrap_vertical_entries(
+    entries: List[Tuple[str, str, float, str]],
+    source: Dict[str, object],
+) -> List[VerticalEntry]:
+    layer_id = str(source.get("vertical_layer_id", "")).strip()
+    source_id = str(source.get("id", "")).strip()
+    return [
+        (sc_word, tc_word, usage_score, explicit_pinyin, layer_id, source_id)
+        for sc_word, tc_word, usage_score, explicit_pinyin in entries
+    ]
 
 
 def _collect_preferred_unihan_readings(
@@ -8474,7 +8789,7 @@ def _reinforce_curated_daily_tc_phrases(
 
 def _reinforce_vertical_tc_terms(
     tc: Dict[Tuple[str, str], int],
-    vertical_entries: List[Tuple[str, str, float, str]],
+    vertical_entries: List[VerticalEntry],
     tc_usage_score_map: Dict[str, float],
     tc_source_hits_map: Dict[str, int],
     tc_jieba_direct_signal_map: Dict[str, float],
@@ -8496,7 +8811,7 @@ def _reinforce_vertical_tc_terms(
     tc_existing_texts = {text for _pinyin, text in tc.keys()}
     tc_char_prior = _build_effective_char_prior(tc, tc_char_frequency_prior)
 
-    for sc_word, tc_word, usage_score, explicit_pinyin in vertical_entries:
+    for sc_word, tc_word, usage_score, explicit_pinyin, layer_id, source_id in vertical_entries:
         if _cjk_len(sc_word) < min_hanzi:
             continue
 
@@ -8519,8 +8834,19 @@ def _reinforce_vertical_tc_terms(
                 )
         if _cjk_len(tc_candidate) < min_hanzi:
             continue
+        if layer_id == "medicine" and _cjk_len(tc_candidate) <= 2 and not _is_medical_specific_term(tc_candidate):
+            continue
 
-        source_hits = max(3, tc_source_hits_map.get(tc_candidate, 0))
+        if layer_id == "medicine":
+            base_source_hits = 2 if source_id == "wikidata-medical-mesh-zh" else 1
+            extra_bonus = 0 if _cjk_len(tc_candidate) <= 4 else 4
+            allow_existing_boost = _cjk_len(tc_candidate) >= 4 or _is_medical_specific_term(tc_candidate)
+        else:
+            base_source_hits = 3
+            extra_bonus = 18 if _cjk_len(tc_candidate) <= 4 else 10
+            allow_existing_boost = True
+
+        source_hits = max(base_source_hits, tc_source_hits_map.get(tc_candidate, 0))
         usage_score = max(usage_score, tc_usage_score_map.get(tc_candidate, 0.0))
         tc_jieba_direct = max(
             tc_jieba_direct_signal_map.get(tc_candidate, 0.0),
@@ -8539,14 +8865,14 @@ def _reinforce_vertical_tc_terms(
             pos_tag=tc_pos_tag,
             char_score=tc_char_score,
         )
-        tc_weight = min(1000, tc_weight + (18 if _cjk_len(tc_candidate) <= 4 else 10))
+        tc_weight = min(1000, tc_weight + extra_bonus)
 
         tc_key = (pinyin, tc_candidate)
         existing_tc_weight = tc.get(tc_key)
         if existing_tc_weight is None:
             tc[tc_key] = tc_weight
             stats["vertical_exact_tc_added"] += 1
-        elif tc_weight > existing_tc_weight:
+        elif allow_existing_boost and tc_weight > existing_tc_weight:
             tc[tc_key] = tc_weight
             stats["vertical_exact_tc_reinforced"] += 1
 
@@ -8556,7 +8882,7 @@ def _reinforce_vertical_tc_terms(
 def _augment_with_vertical_terms(
     sc: Dict[Tuple[str, str], int],
     tc: Dict[Tuple[str, str], int],
-    vertical_entries: List[Tuple[str, str, float, str]],
+    vertical_entries: List[VerticalEntry],
     usage_score_map: Dict[str, float],
     source_hits_map: Dict[str, int],
     tc_usage_score_map: Dict[str, float],
@@ -8588,9 +8914,13 @@ def _augment_with_vertical_terms(
     sc_char_prior = _build_effective_char_prior(sc, char_frequency_prior)
     tc_char_prior = _build_effective_char_prior(tc, tc_char_frequency_prior)
 
-    for sc_word, tc_word, usage_score, explicit_pinyin in vertical_entries:
+    for sc_word, tc_word, usage_score, explicit_pinyin, layer_id, source_id in vertical_entries:
         stats["vertical_terms_total"] += 1
         if _cjk_len(sc_word) < min_hanzi:
+            stats["vertical_terms_skipped_short"] += 1
+            continue
+
+        if layer_id == "medicine" and _cjk_len(sc_word) <= 2 and not _is_medical_specific_term(sc_word):
             stats["vertical_terms_skipped_short"] += 1
             continue
 
@@ -8599,7 +8929,16 @@ def _augment_with_vertical_terms(
             stats["vertical_terms_skipped_no_pinyin"] += 1
             continue
 
-        source_hits = 3
+        if layer_id == "medicine":
+            source_hits = 2 if source_id == "wikidata-medical-mesh-zh" else 1
+            short_bonus = 0
+            long_bonus = 4
+            allow_existing_boost = _cjk_len(sc_word) >= 4 or _is_medical_specific_term(sc_word)
+        else:
+            source_hits = 3
+            short_bonus = 18
+            long_bonus = 10
+            allow_existing_boost = True
         usage_score_map[sc_word] = max(usage_score_map.get(sc_word, 0.0), usage_score)
         source_hits_map[sc_word] = max(source_hits_map.get(sc_word, 0), source_hits)
 
@@ -8620,14 +8959,14 @@ def _augment_with_vertical_terms(
             pos_tag=sc_pos_tag,
             char_score=sc_char_score,
         )
-        sc_weight = min(1000, sc_weight + (18 if _cjk_len(sc_word) <= 4 else 10))
+        sc_weight = min(1000, sc_weight + (short_bonus if _cjk_len(sc_word) <= 4 else long_bonus))
         sc_key = (pinyin, sc_word)
         existing_sc_weight = sc.get(sc_key)
         if existing_sc_weight is None:
             sc[sc_key] = sc_weight
             stats["vertical_terms_added_sc"] += 1
             sc_terms.add(sc_word)
-        elif sc_weight > existing_sc_weight:
+        elif allow_existing_boost and sc_weight > existing_sc_weight:
             sc[sc_key] = sc_weight
             stats["vertical_terms_boosted_sc"] += 1
             sc_terms.add(sc_word)
@@ -8670,14 +9009,14 @@ def _augment_with_vertical_terms(
             pos_tag=tc_pos_tag,
             char_score=tc_char_score,
         )
-        tc_weight = min(1000, tc_weight + (18 if _cjk_len(tc_candidate) <= 4 else 10))
+        tc_weight = min(1000, tc_weight + (short_bonus if _cjk_len(tc_candidate) <= 4 else long_bonus))
         tc_key = (pinyin, tc_candidate)
         existing_tc_weight = tc.get(tc_key)
         if existing_tc_weight is None:
             tc[tc_key] = tc_weight
             stats["vertical_terms_added_tc"] += 1
             tc_terms.add(tc_candidate)
-        elif tc_weight > existing_tc_weight:
+        elif allow_existing_boost and tc_weight > existing_tc_weight:
             tc[tc_key] = tc_weight
             stats["vertical_terms_boosted_tc"] += 1
             tc_terms.add(tc_candidate)
@@ -9548,17 +9887,22 @@ def _require_source_config(
 def _load_vertical_source_entries(
     source: Dict[str, object],
     payload_map: Dict[str, bytes],
+    vertical_payload_map: Dict[str, bytes],
     min_hanzi: int,
     repo_root: pathlib.Path,
-) -> Tuple[List[Tuple[str, str, float, str]], Dict[str, int]]:
+) -> Tuple[List[VerticalEntry], Dict[str, int]]:
     source_type = str(source.get("vertical_source_type", "repo_tsv")).strip().lower()
     default_usage_score = float(source.get("vertical_default_usage_score", 0.72))
-    source_url = str(source.get("download_url", "")).strip()
     if source_type == "repo_tsv":
-        payload = payload_map.get(str(source.get("id", "")).strip())
+        payload = vertical_payload_map.get(str(source.get("id", "")).strip())
         if payload is None:
-            payload = _read_source_bytes(source_url, None, repo_root=repo_root)
-        return _parse_vertical_term_entries(payload, min_hanzi, default_usage_score)
+            payload = _read_source_bytes(
+                _build_vertical_source_request_url(source),
+                _resolve_optional_repo_path(repo_root, str(source.get("vertical_cache_file", ""))),
+                repo_root=repo_root,
+            )
+        entries, stats = _parse_vertical_term_entries(payload, min_hanzi, default_usage_score)
+        return _wrap_vertical_entries(entries, source), stats
     if source_type == "thuocl_zip_member":
         payload_source_id = str(source.get("vertical_payload_source_id", "")).strip()
         stats = {
@@ -9567,28 +9911,64 @@ def _load_vertical_source_entries(
         }
         payload = payload_map.get(payload_source_id) if payload_source_id else None
         if payload is None:
-            base_url = urllib.parse.urldefrag(source_url)[0]
+            base_url = urllib.parse.urldefrag(str(source.get("download_url", "")).strip())[0]
             if not base_url:
                 stats["vertical_terms_missing_payload_source"] += 1
                 return [], stats
             payload = _read_source_bytes(base_url, None, repo_root=repo_root)
             stats["vertical_terms_fallback_downloads"] += 1
-        return _parse_vertical_thuocl_member_entries(
+        entries, parse_stats = _parse_vertical_thuocl_member_entries(
             payload,
             str(source.get("vertical_member_name", "")),
             min_hanzi,
             default_usage_score,
             str(source.get("vertical_filter_id", "")),
         )
+        return _wrap_vertical_entries(entries, source), parse_stats
+    if source_type == "mesh_descriptor_catalog":
+        payload = vertical_payload_map.get(str(source.get("id", "")).strip())
+        if payload is None:
+            return [], {"vertical_mesh_missing_payload": 1}
+        _allowed_ids, stats = _parse_mesh_descriptor_allowed_ids(
+            payload,
+            allowed_prefixes=tuple(
+                part.strip().upper()
+                for part in str(source.get("vertical_mesh_tree_prefixes", "")).split(",")
+                if part.strip()
+            )
+            or MEDICAL_MESH_TREE_PREFIXES,
+        )
+        return [], stats
+    if source_type == "wikidata_mesh_query":
+        payload = vertical_payload_map.get(str(source.get("id", "")).strip())
+        mesh_source_id = str(source.get("vertical_mesh_source_id", "")).strip()
+        mesh_payload = vertical_payload_map.get(mesh_source_id) if mesh_source_id else None
+        opencc_payload = payload_map.get("opencc-stphrases")
+        if payload is None:
+            return [], {"vertical_wikidata_missing_payload": 1}
+        entries, parse_stats = _parse_wikidata_mesh_query_entries(
+            payload,
+            mesh_payload,
+            opencc_payload,
+            min_hanzi,
+            default_usage_score,
+            tuple(
+                part.strip().upper()
+                for part in str(source.get("vertical_mesh_tree_prefixes", "")).split(",")
+                if part.strip()
+            )
+            or MEDICAL_MESH_TREE_PREFIXES,
+        )
+        return _wrap_vertical_entries(entries, source), parse_stats
     return [], {"vertical_terms_unsupported_source_type": 1}
 
 
 def _collect_vertical_term_sets(
-    entries: List[Tuple[str, str, float, str]]
+    entries: List[VerticalEntry]
 ) -> Tuple[Set[str], Set[str]]:
     sc_terms: Set[str] = set()
     tc_terms: Set[str] = set()
-    for sc_text, tc_text, _usage_score, _explicit_pinyin in entries:
+    for sc_text, tc_text, _usage_score, _explicit_pinyin, _layer_id, _source_id in entries:
         if _cjk_len(sc_text) >= 2 and CJK_FULL_RE.fullmatch(sc_text):
             sc_terms.add(sc_text)
         if _cjk_len(tc_text) >= 2 and CJK_FULL_RE.fullmatch(tc_text):
@@ -9692,6 +10072,7 @@ def main() -> int:
     sources: List[Dict[str, object]] = profile_config["sources"]  # type: ignore[assignment]
     vertical_manifest_stats: Dict[str, int] = {}
     vertical_source_configs: List[Dict[str, object]] = []
+    vertical_payload_map: Dict[str, bytes] = {}
     if (
         vertical_manifest is not None
         and parser_name in {"cedict", "cedict_thuocl_jieba_opencc_unihan_wiki", "unihan_only"}
@@ -9699,6 +10080,7 @@ def main() -> int:
         vertical_source_configs, vertical_manifest_stats = _load_vertical_layer_sources(
             vertical_manifest
         )
+        vertical_payload_map = _prefetch_vertical_source_payloads(vertical_source_configs, repo_root)
         if parser_name in {"cedict", "cedict_thuocl_jieba_opencc_unihan_wiki"}:
             sources.extend(
                 [
@@ -9850,11 +10232,24 @@ def main() -> int:
                 "vertical_thuocl_missing_member": 0,
                 "vertical_terms_missing_payload_source": 0,
                 "vertical_terms_unsupported_source_type": 0,
+                "vertical_mesh_descriptors_total": 0,
+                "vertical_mesh_descriptors_medical": 0,
+                "vertical_mesh_descriptors_nonmedical": 0,
+                "vertical_mesh_missing_payload": 0,
+                "vertical_wikidata_rows": 0,
+                "vertical_wikidata_kept": 0,
+                "vertical_wikidata_skipped_nonmedical_mesh": 0,
+                "vertical_wikidata_skipped_non_cjk": 0,
+                "vertical_wikidata_skipped_short": 0,
+                "vertical_wikidata_skipped_duplicate": 0,
+                "vertical_wikidata_missing_mesh_payload": 0,
+                "vertical_wikidata_missing_payload": 0,
             }
             for vertical_source in vertical_source_configs:
                 entries, parse_stats = _load_vertical_source_entries(
                     vertical_source,
                     payload_map,
+                    vertical_payload_map,
                     args.min_hanzi,
                     repo_root,
                 )
@@ -10250,6 +10645,18 @@ def main() -> int:
             "vertical_thuocl_missing_member": 0,
             "vertical_terms_missing_payload_source": 0,
             "vertical_terms_unsupported_source_type": 0,
+            "vertical_mesh_descriptors_total": 0,
+            "vertical_mesh_descriptors_medical": 0,
+            "vertical_mesh_descriptors_nonmedical": 0,
+            "vertical_mesh_missing_payload": 0,
+            "vertical_wikidata_rows": 0,
+            "vertical_wikidata_kept": 0,
+            "vertical_wikidata_skipped_nonmedical_mesh": 0,
+            "vertical_wikidata_skipped_non_cjk": 0,
+            "vertical_wikidata_skipped_short": 0,
+            "vertical_wikidata_skipped_duplicate": 0,
+            "vertical_wikidata_missing_mesh_payload": 0,
+            "vertical_wikidata_missing_payload": 0,
         }
         vertical_stats = {
             "vertical_terms_total": 0,
@@ -10266,6 +10673,7 @@ def main() -> int:
                 entries, parse_stats = _load_vertical_source_entries(
                     vertical_source,
                     payload_map,
+                    vertical_payload_map,
                     args.min_hanzi,
                     repo_root,
                 )
@@ -10514,6 +10922,18 @@ def main() -> int:
             "vertical_terms_missing_payload_source": 0,
             "vertical_terms_unsupported_source_type": 0,
             "vertical_terms_fallback_downloads": 0,
+            "vertical_mesh_descriptors_total": 0,
+            "vertical_mesh_descriptors_medical": 0,
+            "vertical_mesh_descriptors_nonmedical": 0,
+            "vertical_mesh_missing_payload": 0,
+            "vertical_wikidata_rows": 0,
+            "vertical_wikidata_kept": 0,
+            "vertical_wikidata_skipped_nonmedical_mesh": 0,
+            "vertical_wikidata_skipped_non_cjk": 0,
+            "vertical_wikidata_skipped_short": 0,
+            "vertical_wikidata_skipped_duplicate": 0,
+            "vertical_wikidata_missing_mesh_payload": 0,
+            "vertical_wikidata_missing_payload": 0,
         }
         vertical_sc_support_excludes: Set[str] = set()
         vertical_tc_support_excludes: Set[str] = set()
@@ -10523,6 +10943,7 @@ def main() -> int:
                 entries, parse_stats = _load_vertical_source_entries(
                     vertical_source,
                     payload_map,
+                    vertical_payload_map,
                     args.min_hanzi,
                     repo_root,
                 )
@@ -10862,11 +11283,19 @@ def main() -> int:
         _write_query_path_prior(output_query_path_sc, sc_query_path_priors)
     if output_query_path_tc is not None:
         _write_query_path_prior(output_query_path_tc, tc_query_path_priors)
-    _write_manifest(manifest, args.profile, sources)
+    manifest_sources = list(sources)
+    manifest_source_ids = {str(source.get("id", "")).strip() for source in manifest_sources}
+    for vertical_source in vertical_source_configs:
+        source_id = str(vertical_source.get("id", "")).strip()
+        if source_id and source_id not in manifest_source_ids:
+            manifest_sources.append(vertical_source)
+            manifest_source_ids.add(source_id)
+
+    _write_manifest(manifest, args.profile, manifest_sources)
     _write_report(
         report,
         args.profile,
-        sources,
+        manifest_sources,
         output_sc,
         output_tc,
         output_query_path_sc,

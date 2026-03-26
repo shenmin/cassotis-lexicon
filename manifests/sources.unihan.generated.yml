@@ -1,5 +1,5 @@
 version: 1
-generated_at: "2026-03-26T13:38:49+00:00"
+generated_at: "2026-03-26T15:08:12+00:00"
 profile: unihan_single
 sources:
   - id: opencc-stphrases
@@ -22,3 +22,63 @@ sources:
     attribution_required: true
     raw_committed: false
     notes: 'Single-character Mandarin readings with frequency/rank metadata.'
+  - id: project-curated-proper-nouns
+    name: Cassotis curated proper nouns
+    download_url: repo://manifests/vertical/proper_nouns.tsv
+    homepage: https://github.com/shenmin/cassotis-lexicon
+    license: Repository license (project-authored)
+    risk_level: low
+    redistribution_class: project_authored
+    attribution_required: false
+    raw_committed: true
+    notes: 'Project-maintained proper nouns for names, titles, organizations, and in-world entities that should not share the everyday/chat preferred-term path.'
+  - id: thuocl-it-vertical
+    name: THUOCL IT subset
+    download_url: https://github.com/thunlp/THUOCL/archive/refs/heads/master.zip#THUOCL_IT.txt
+    homepage: https://github.com/thunlp/THUOCL
+    license: THUOCL custom open terms
+    risk_level: medium
+    redistribution_class: attribution_required
+    attribution_required: true
+    raw_committed: false
+    notes: 'THUOCL IT subset used as a computing/domain terminology candidate layer.'
+  - id: project-curated-vertical-computing
+    name: Cassotis curated computing terms
+    download_url: repo://manifests/vertical/computing.tsv
+    homepage: https://github.com/shenmin/cassotis-lexicon
+    license: Repository license (project-authored)
+    risk_level: low
+    redistribution_class: project_authored
+    attribution_required: false
+    raw_committed: true
+    notes: 'Project-maintained computing/domain terminology layer isolated from daily/chat phrase ranking.'
+  - id: mesh-descriptor-catalog
+    name: MeSH descriptor catalog
+    download_url: https://nlmpubs.nlm.nih.gov/projects/mesh/MESH_FILES/xmlmesh/desc2026.xml
+    homepage: https://www.nlm.nih.gov/mesh/meshhome.html
+    license: NLM MeSH terms and conditions
+    risk_level: low
+    redistribution_class: attribution_required
+    attribution_required: true
+    raw_committed: false
+    notes: 'Official MeSH descriptor catalog used as the medical concept whitelist for vertical medical import.'
+  - id: wikidata-medical-mesh-zh
+    name: Wikidata zh medical entities (MeSH-linked)
+    download_url: https://query.wikidata.org/sparql
+    homepage: https://www.wikidata.org/wiki/Wikidata:Main_Page
+    license: CC0-1.0
+    risk_level: low
+    redistribution_class: public_domain
+    attribution_required: false
+    raw_committed: false
+    notes: 'Chinese medical labels and aliases from Wikidata Query Service, kept only when the linked MeSH descriptor stays inside medical MeSH tree categories.'
+  - id: thuocl-medical-vertical
+    name: THUOCL medical subset
+    download_url: https://github.com/thunlp/THUOCL/archive/refs/heads/master.zip#THUOCL_medical.txt
+    homepage: https://github.com/thunlp/THUOCL
+    license: THUOCL custom open terms
+    risk_level: medium
+    redistribution_class: attribution_required
+    attribution_required: true
+    raw_committed: false
+    notes: 'Medical-domain candidate layer from THUOCL, kept separate from daily/chat phrase ranking and weighted more conservatively than the MeSH-validated medical entities.'

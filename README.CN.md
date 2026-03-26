@@ -13,8 +13,8 @@ Cassotis IME 词库构建与发布仓库。
 
 | 文件 | 字体变体 | 词条数 |
 |------|---------|--------|
-| `data/generated/dict_clean_sc.txt` | 简体中文主词库 | 117,905 |
-| `data/generated/dict_clean_tc.txt` | 繁体中文主词库 | 118,061 |
+| `data/generated/dict_clean_sc.txt` | 简体中文主词库 | 143,807 |
+| `data/generated/dict_clean_tc.txt` | 繁体中文主词库 | 156,984 |
 | `data/generated/dict_unihan_sc.txt` | 简体单字（Unihan） | 23,909 |
 | `data/generated/dict_unihan_tc.txt` | 繁体单字（Unihan） | 24,064 |
 
@@ -33,6 +33,9 @@ Cassotis IME 词库构建与发布仓库。
 | 中文维基标题（ns0） | CC BY-SA 4.0 | 命名实体覆盖与高可信专名种子 |
 | Wikimedia Pageviews Top（zh.wikipedia） | CC BY-SA 4.0 | 真实热度信号 |
 | 经过筛选的 `THUOCL_IT` 子集 | THUOCL 自定义开放条款 | 作为计算机垂直词库候选来源；导入前会先过滤，不按日常聊天词层处理 |
+| MeSH descriptor catalog | NLM MeSH 条款 | 作为医学垂直词库的官方概念白名单，用来把医学层绑定到可识别的 MeSH 术语 |
+| Wikidata 中文医学实体（MeSH 关联） | CC0-1.0 | 提供与 MeSH 描述符关联的中文医学名称与别名，作为医学实体主层 |
+| 经过筛选的 `THUOCL_medical` 子集 | THUOCL 自定义开放条款 | 作为医学垂直词库候选来源；导入前会过滤并采用比 MeSH 关联医学层更保守的权重 |
 
 ### 项目内补充
 
@@ -67,6 +70,7 @@ Cassotis IME 词库构建与发布仓库。
 - 垂直层可以补入专业词，但不会继承日常/聊天词那套 preferred-term 排序偏置，从而避免污染现有日常输入路径。
 - 当前启用的项目内专名层会把人名、作品名、组织名等词和日常聊天词层分开处理。
 - 当前计算机词库由经过筛选的 `THUOCL_IT` 子集和项目内维护的计算机词表共同组成。
+- 当前医学词库由 MeSH descriptor catalog、与 MeSH 关联的 Wikidata 中文医学实体，以及经过筛选的 `THUOCL_medical` 子集共同组成，并与日常聊天词层隔离。
 
 ## 目录结构
 - `data/generated/`：生成词库文件。

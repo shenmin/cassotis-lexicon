@@ -1,7 +1,7 @@
 # External Build Report
 
 - profile: unihan_single
-- generated_at_utc: 2026-03-26T13:38:49+00:00
+- generated_at_utc: 2026-03-26T15:08:12+00:00
 - min_hanzi: 1
 - max_entries: unlimited
 
@@ -16,6 +16,36 @@
   - risk_level: low
   - redistribution_class: permissive
   - url: https://www.unicode.org/Public/UCD/latest/ucd/Unihan.zip
+- project-curated-proper-nouns: Cassotis curated proper nouns
+  - license: Repository license (project-authored)
+  - risk_level: low
+  - redistribution_class: project_authored
+  - url: repo://manifests/vertical/proper_nouns.tsv
+- thuocl-it-vertical: THUOCL IT subset
+  - license: THUOCL custom open terms
+  - risk_level: medium
+  - redistribution_class: attribution_required
+  - url: https://github.com/thunlp/THUOCL/archive/refs/heads/master.zip#THUOCL_IT.txt
+- project-curated-vertical-computing: Cassotis curated computing terms
+  - license: Repository license (project-authored)
+  - risk_level: low
+  - redistribution_class: project_authored
+  - url: repo://manifests/vertical/computing.tsv
+- mesh-descriptor-catalog: MeSH descriptor catalog
+  - license: NLM MeSH terms and conditions
+  - risk_level: low
+  - redistribution_class: attribution_required
+  - url: https://nlmpubs.nlm.nih.gov/projects/mesh/MESH_FILES/xmlmesh/desc2026.xml
+- wikidata-medical-mesh-zh: Wikidata zh medical entities (MeSH-linked)
+  - license: CC0-1.0
+  - risk_level: low
+  - redistribution_class: public_domain
+  - url: https://query.wikidata.org/sparql
+- thuocl-medical-vertical: THUOCL medical subset
+  - license: THUOCL custom open terms
+  - risk_level: medium
+  - redistribution_class: attribution_required
+  - url: https://github.com/thunlp/THUOCL/archive/refs/heads/master.zip#THUOCL_medical.txt
 
 ## Parse stats
 - filtered_short: 0
@@ -44,9 +74,9 @@
 - sc_homophone_daily_phrase_short_non_daily_damped: 0
 - sc_homophone_dominant_common_boosted: 0
 - sc_homophone_dominant_common_damped: 0
-- sc_homophone_entries_adjusted: 23808
-- sc_homophone_entries_boosted: 3701
-- sc_homophone_entries_damped: 20107
+- sc_homophone_entries_adjusted: 23811
+- sc_homophone_entries_boosted: 3682
+- sc_homophone_entries_damped: 20129
 - sc_homophone_inflated_short_penalized: 0
 - sc_homophone_literary_penalized: 0
 - sc_homophone_modernity_risk_penalized: 0
@@ -68,10 +98,10 @@
 - sc_multi_pronunciation_terms: 0
 - sc_script_filtered_entries: 0
 - sc_script_filtered_total_entries: 23910
-- sc_single_char_leading_adjusted: 400
-- sc_single_char_leading_delta_total: 21780
-- sc_single_char_reading_preference_adjusted: 1513
-- sc_single_char_reading_preference_delta_total: 22734
+- sc_single_char_leading_adjusted: 390
+- sc_single_char_leading_delta_total: 21300
+- sc_single_char_reading_preference_adjusted: 1500
+- sc_single_char_reading_preference_delta_total: 21326
 - sc_single_char_reading_removed: 1
 - tc_char_normalized_converted_entries: 18
 - tc_char_normalized_total_entries: 24065
@@ -90,9 +120,9 @@
 - tc_homophone_daily_phrase_short_non_daily_damped: 0
 - tc_homophone_dominant_common_boosted: 0
 - tc_homophone_dominant_common_damped: 0
-- tc_homophone_entries_adjusted: 23944
-- tc_homophone_entries_boosted: 3809
-- tc_homophone_entries_damped: 20135
+- tc_homophone_entries_adjusted: 23929
+- tc_homophone_entries_boosted: 4002
+- tc_homophone_entries_damped: 19927
 - tc_homophone_inflated_short_penalized: 0
 - tc_homophone_literary_penalized: 0
 - tc_homophone_modernity_risk_penalized: 0
@@ -122,40 +152,44 @@
 - tc_multi_pronunciation_terms: 0
 - tc_script_filtered_entries: 0
 - tc_script_filtered_total_entries: 24065
-- tc_single_char_leading_adjusted: 382
-- tc_single_char_leading_delta_total: 19992
-- tc_single_char_reading_preference_adjusted: 1842
-- tc_single_char_reading_preference_delta_total: 37773
+- tc_single_char_leading_adjusted: 347
+- tc_single_char_leading_delta_total: 19188
+- tc_single_char_reading_preference_adjusted: 1856
+- tc_single_char_reading_preference_delta_total: 35020
 - tc_single_char_reading_removed: 1
 - total_lines: 49189
 - unihan_core_size: 18816
-- unihan_family_support_boosted_sc: 5072
-- unihan_family_support_boosted_tc: 5228
-- unihan_family_support_terms_sc: 5880
-- unihan_family_support_terms_tc: 6071
+- unihan_family_support_boosted_sc: 5027
+- unihan_family_support_boosted_tc: 5246
+- unihan_family_support_terms_sc: 5842
+- unihan_family_support_terms_tc: 6076
 - unihan_frequency_size: 0
 - unihan_grade_size: 2632
-- unihan_leading_support_terms_sc: 4837
-- unihan_leading_support_terms_tc: 4938
+- unihan_leading_support_terms_sc: 4775
+- unihan_leading_support_terms_tc: 4933
 - unihan_map_size: 26711
 - unihan_pinlu_size: 3799
-- unihan_reading_support_terms_sc: 1554
-- unihan_reading_support_terms_tc: 1974
+- unihan_reading_support_terms_sc: 1542
+- unihan_reading_support_terms_tc: 1987
 - unihan_readings_chars: 26711
 - unihan_readings_pairs: 33908
 - unihan_sc_only_chars: 2766
 - unihan_single_char_injected_sc: 23932
 - unihan_single_char_injected_tc: 24082
 - unihan_tc_only_chars: 2916
-- vertical_layer_sources_loaded: 3
+- vertical_layer_sources_loaded: 6
 - vertical_layer_sources_skipped_inactive: 0
 - vertical_layer_sources_skipped_unsupported: 0
-- vertical_layer_sources_total: 3
-- vertical_layers_active: 2
-- vertical_layers_declared: 2
+- vertical_layer_sources_total: 6
+- vertical_layers_active: 3
+- vertical_layers_declared: 3
 - vertical_layers_manifest_present: 1
-- vertical_support_excluded_sc: 2199
-- vertical_support_excluded_tc: 2246
+- vertical_mesh_descriptors_medical: 50066
+- vertical_mesh_descriptors_nonmedical: 12154
+- vertical_mesh_descriptors_total: 62220
+- vertical_mesh_missing_payload: 0
+- vertical_support_excluded_sc: 34829
+- vertical_support_excluded_tc: 36351
 - vertical_term_kept: 122
 - vertical_term_rows: 122
 - vertical_term_skipped_malformed: 0
@@ -164,14 +198,22 @@
 - vertical_terms_fallback_downloads: 0
 - vertical_terms_missing_payload_source: 0
 - vertical_terms_unsupported_source_type: 0
-- vertical_thuocl_files_matched: 1
+- vertical_thuocl_files_matched: 2
 - vertical_thuocl_invalid_format: 0
-- vertical_thuocl_kept: 2128
+- vertical_thuocl_kept: 20877
 - vertical_thuocl_missing_member: 0
-- vertical_thuocl_rows: 16000
+- vertical_thuocl_rows: 34749
 - vertical_thuocl_skipped_filter: 10727
 - vertical_thuocl_skipped_non_cjk: 3145
 - vertical_thuocl_skipped_short: 0
+- vertical_wikidata_kept: 16412
+- vertical_wikidata_missing_mesh_payload: 0
+- vertical_wikidata_missing_payload: 0
+- vertical_wikidata_rows: 37607
+- vertical_wikidata_skipped_duplicate: 1663
+- vertical_wikidata_skipped_non_cjk: 1573
+- vertical_wikidata_skipped_nonmedical_mesh: 17959
+- vertical_wikidata_skipped_short: 0
 - wiki_proper_augmented_sc_terms: 0
 - wiki_proper_augmented_tc_terms: 0
 
@@ -201,7 +243,6 @@
 | 我 | wo | 750 | 783 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.879 | - | weak-usage,high-modernity-risk |
 | 可 | ke | 747 | 780 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.878 | - | weak-usage,high-modernity-risk |
 | 在 | zai | 744 | 777 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.877 | - | weak-usage,high-modernity-risk |
-| 人 | ren | 737 | 771 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.874 | - | weak-usage,high-modernity-risk |
 | 上 | shang | 729 | 763 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.871 | - | weak-usage,high-modernity-risk |
 | 也 | ye | 728 | 762 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.870 | - | weak-usage,high-modernity-risk |
 | 没 | mei | 730 | 761 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.892 | - | weak-usage,high-modernity-risk |
@@ -216,3 +257,4 @@
 | 以 | yi | 707 | 742 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.862 | - | weak-usage,high-modernity-risk |
 | 都 | dou | 709 | 741 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.888 | - | weak-usage,high-modernity-risk |
 | 好 | hao | 705 | 740 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.861 | - | weak-usage,high-modernity-risk |
+| 能 | neng | 697 | 733 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.858 | - | weak-usage,high-modernity-risk |

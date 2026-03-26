@@ -13,8 +13,8 @@ Lexicon build and release repository for Cassotis IME.
 
 | File | Variant | Entries |
 |------|---------|---------|
-| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 117,905 |
-| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 118,061 |
+| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 143,807 |
+| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 156,984 |
 | `data/generated/dict_unihan_sc.txt` | Simplified single-char (Unihan) | 23,909 |
 | `data/generated/dict_unihan_tc.txt` | Traditional single-char (Unihan) | 24,064 |
 
@@ -33,6 +33,9 @@ Lexicon build and release repository for Cassotis IME.
 | Wikipedia zh titles (ns0) | CC BY-SA 4.0 | Named-entity coverage and high-confidence proper-noun seeds |
 | Wikimedia Pageviews Top (zh.wikipedia) | CC BY-SA 4.0 | Real-world usage heat signal |
 | Filtered `THUOCL_IT` subset | THUOCL custom open terms | Computing vertical-layer candidate source, filtered before import so it does not behave like the everyday/chat phrase layer |
+| MeSH descriptor catalog | NLM MeSH terms and conditions | Medical descriptor whitelist used to keep the medical vertical layer tied to recognized MeSH concepts |
+| Wikidata zh medical entities (MeSH-linked) | CC0-1.0 | Chinese medical labels and aliases linked to MeSH descriptors, imported as the main medical-entity layer |
+| Filtered `THUOCL_medical` subset | THUOCL custom open terms | Medical vertical-layer candidate source, filtered and weighted more conservatively than the MeSH-linked medical layer |
 
 ### Project-maintained supplements
 
@@ -67,6 +70,7 @@ See:
 - Vertical layers can add domain vocabulary without inheriting the same preferred-term bias used for daily/chat phrases.
 - The active project-maintained proper-noun layer keeps names, titles, and in-world entities separate from everyday/chat phrasing.
 - The computing layer currently combines a filtered `THUOCL_IT` subset with project-curated computing terminology.
+- The medicine layer currently combines the MeSH descriptor catalog, MeSH-linked Wikidata entities, and a filtered `THUOCL_medical` subset while staying isolated from the daily/chat preferred-term path.
 
 ## Directory layout
 - `data/generated/`: generated lexicon files.

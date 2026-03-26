@@ -27,6 +27,8 @@ Notes:
 Notes:
 
 - THUOCL is used as an external broad-coverage word list with DF statistics.
+- Filtered `THUOCL_IT` and `THUOCL_medical` subsets are also used as isolated
+  vertical-layer candidate sources.
 - The raw source archive is not committed in this repository.
 
 ## jieba dict.txt
@@ -83,3 +85,48 @@ Notes:
 
 - This repository uses titles as external ranking/coverage signals only.
 - Raw dump files are not committed in this repository.
+
+## Wikimedia Pageviews Top (zh.wikipedia)
+
+- Name: Wikimedia REST Pageviews Top API (zh.wikipedia)
+- Homepage: https://wikitech.wikimedia.org/wiki/Analytics/AQS/Pageviews
+- Endpoint: https://wikimedia.org/api/rest_v1/metrics/pageviews/top/zh.wikipedia/all-access/{year}/{month}/all-days
+- License: CC BY-SA 4.0 (as part of Wikimedia content licensing)
+- Copyright holder: Wikimedia contributors
+
+Notes:
+
+- This repository uses aggregated monthly top-pageview counts as ranking signal only.
+- API responses are cached locally during build and are not committed as raw source dumps.
+
+## MeSH descriptor catalog
+
+- Name: Medical Subject Headings (MeSH) descriptor catalog
+- Homepage: https://www.nlm.nih.gov/mesh/meshhome.html
+- Download: https://nlmpubs.nlm.nih.gov/projects/mesh/MESH_FILES/xmlmesh/desc2026.xml
+- License: NLM MeSH terms and conditions
+- Copyright holder: U.S. National Library of Medicine
+
+Notes:
+
+- This repository uses MeSH descriptor records as the medical concept whitelist
+  for the isolated medicine vertical layer.
+- The raw XML catalog is cached locally during build and is not committed in
+  this repository.
+
+## Wikidata zh medical entities (MeSH-linked)
+
+- Name: Wikidata Query Service medical entities (Chinese labels/aliases linked to MeSH)
+- Homepage: https://www.wikidata.org/wiki/Wikidata:Main_Page
+- Endpoint: https://query.wikidata.org/sparql
+- License: CC0-1.0
+- Copyright holder: Wikidata contributors
+
+Notes:
+
+- This repository queries Chinese labels and aliases for Wikidata items that
+  expose a linked MeSH descriptor ID.
+- Query results are filtered against the imported MeSH descriptor catalog before
+  they are used in the isolated medicine vertical layer.
+- Query responses are cached locally during build and are not committed as raw
+  source dumps.

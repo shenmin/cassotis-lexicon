@@ -61,6 +61,63 @@
           "notes": "Project-maintained computing/domain terminology layer isolated from daily/chat phrase ranking."
         }
       ]
+    },
+    {
+      "id": "medicine",
+      "status": "active",
+      "title": "Medicine vertical layer",
+      "notes": "Dedicated medical terminology layer built from MeSH-validated Wikidata entities plus a filtered THUOCL medical candidate source.",
+      "sources": [
+        {
+          "id": "mesh-descriptor-catalog",
+          "type": "mesh_descriptor_catalog",
+          "name": "MeSH descriptor catalog",
+          "download_url": "https://nlmpubs.nlm.nih.gov/projects/mesh/MESH_FILES/xmlmesh/desc2026.xml",
+          "homepage": "https://www.nlm.nih.gov/mesh/meshhome.html",
+          "license": "NLM MeSH terms and conditions",
+          "risk_level": "low",
+          "redistribution_class": "attribution_required",
+          "attribution_required": true,
+          "raw_committed": false,
+          "cache_file": "data/cache/mesh_desc2026.xml",
+          "mesh_tree_prefixes": "A,C,D,E,F,G,N",
+          "notes": "Official MeSH descriptor catalog used as the medical concept whitelist for vertical medical import."
+        },
+        {
+          "id": "wikidata-medical-mesh-zh",
+          "type": "wikidata_mesh_query",
+          "name": "Wikidata zh medical entities (MeSH-linked)",
+          "download_url": "https://query.wikidata.org/sparql",
+          "homepage": "https://www.wikidata.org/wiki/Wikidata:Main_Page",
+          "license": "CC0-1.0",
+          "risk_level": "low",
+          "redistribution_class": "public_domain",
+          "attribution_required": false,
+          "raw_committed": false,
+          "cache_file": "data/cache/wikidata_medical_mesh_zh.json",
+          "mesh_source_id": "mesh-descriptor-catalog",
+          "mesh_tree_prefixes": "A,C,D,E,F,G,N",
+          "query": "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nSELECT ?term ?mesh WHERE {\n  {\n    ?item wdt:P486 ?mesh ;\n          rdfs:label ?label .\n    FILTER(LANG(?label) = \"zh\")\n    BIND(STR(?label) AS ?term)\n  }\n  UNION\n  {\n    ?item wdt:P486 ?mesh ;\n          skos:altLabel ?alt .\n    FILTER(LANG(?alt) = \"zh\")\n    BIND(STR(?alt) AS ?term)\n  }\n  __MESH_PREFIX_FILTER__\n}",
+          "default_usage_score": 0.66,
+          "notes": "Chinese medical labels and aliases from Wikidata Query Service, kept only when the linked MeSH descriptor stays inside medical MeSH tree categories."
+        },
+        {
+          "id": "thuocl-medical-vertical",
+          "type": "thuocl_zip_member",
+          "name": "THUOCL medical subset",
+          "download_url": "https://github.com/thunlp/THUOCL/archive/refs/heads/master.zip#THUOCL_medical.txt",
+          "homepage": "https://github.com/thunlp/THUOCL",
+          "license": "THUOCL custom open terms",
+          "risk_level": "medium",
+          "redistribution_class": "attribution_required",
+          "attribution_required": true,
+          "raw_committed": false,
+          "payload_source_id": "thuocl",
+          "member_name": "THUOCL_medical.txt",
+          "default_usage_score": 0.54,
+          "notes": "Medical-domain candidate layer from THUOCL, kept separate from daily/chat phrase ranking and weighted more conservatively than the MeSH-validated medical entities."
+        }
+      ]
     }
   ]
 }
