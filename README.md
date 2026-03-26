@@ -21,8 +21,8 @@ Lexicon build and release repository for Cassotis IME.
 
 | File | Variant | Entries |
 |------|---------|---------|
-| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 115,733 |
-| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 114,138 |
+| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 117,782 |
+| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 117,934 |
 | `data/generated/dict_unihan_sc.txt` | Simplified single-char (Unihan) | 23,909 |
 | `data/generated/dict_unihan_tc.txt` | Traditional single-char (Unihan) | 24,064 |
 
@@ -59,9 +59,17 @@ See:
 - Keep a small project-maintained whitelist for high-value daily phrases when open lexical sources still miss them.
 - Keep named entities and bursty web terms as secondary signals instead of letting them dominate core daily typing paths.
 
+## Layering policy
+- `manifests/curated_daily_phrases.tsv` is reserved for everyday/chat phrasing that should receive daily-use preference treatment.
+- `manifests/vertical_layers.public.json` declares isolated vertical terminology layers.
+- `manifests/vertical/*.tsv` stores project-authored vertical term lists such as computing vocabulary.
+- Vertical layers can add domain vocabulary without inheriting the same preferred-term bias used for daily/chat phrases.
+- The first active computing layer currently combines a filtered `THUOCL_IT` subset with project-curated computing terminology.
+
 ## Directory layout
 - `data/generated/`: generated lexicon files.
 - `manifests/`: source/license manifests and regression samples.
+- `manifests/vertical/`: project-authored isolated vertical term lists.
 - `scripts/`: build/validation/export helper scripts.
 - `reports/`: generated build reports.
 - `rules/`: export/release rules.

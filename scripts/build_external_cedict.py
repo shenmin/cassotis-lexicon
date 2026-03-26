@@ -14,6 +14,7 @@ import gzip
 import io
 import json
 import math
+import fnmatch
 import pathlib
 import re
 import sys
@@ -49,10 +50,128 @@ ZHWIKTIONARY_TITLES_URL = (
 ZHWIKTIONARY_HOMEPAGE = "https://dumps.wikimedia.org/zhwiktionary/latest/"
 CURATED_DAILY_PHRASES_URL = "repo://manifests/curated_daily_phrases.tsv"
 CURATED_DAILY_PHRASES_HOMEPAGE = "https://github.com/shenmin/cassotis-lexicon"
+VERTICAL_LAYERS_MANIFEST_DEFAULT = "manifests/vertical_layers.public.json"
 WIKIMEDIA_PAGEVIEWS_TOP_URL = "https://wikimedia.org/api/rest_v1/metrics/pageviews/top/zh.wikipedia/all-access"
 WIKIMEDIA_PAGEVIEWS_TOP_HOMEPAGE = "https://wikitech.wikimedia.org/wiki/Analytics/AQS/Pageviews"
 DEFAULT_PERMISSIVE_OVERRIDES = "manifests/pinyin_overrides.clean_permissive.tsv"
 DEFAULT_HTTP_USER_AGENT = "cassotis-lexicon/1.0 (+https://github.com/shenmin/cassotis-lexicon)"
+COMPUTING_VERTICAL_FILTER_KEYWORDS = (
+    "程序",
+    "代码",
+    "源码",
+    "编译",
+    "解释",
+    "变量",
+    "函数",
+    "字段",
+    "类型",
+    "结构",
+    "构造",
+    "命令",
+    "配置",
+    "封装",
+    "实例",
+    "递归",
+    "线程",
+    "协程",
+    "并发",
+    "异步",
+    "回调",
+    "事件",
+    "内存",
+    "缓存",
+    "环境",
+    "虚拟",
+    "容器",
+    "镜像",
+    "网关",
+    "协议",
+    "中间件",
+    "数据库",
+    "索引",
+    "主键",
+    "外键",
+    "查询",
+    "事务",
+    "序列",
+    "插件",
+    "扩展",
+    "驱动",
+    "调试",
+    "断点",
+    "测试",
+    "回归",
+    "集成",
+    "单元",
+    "部署",
+    "持续",
+    "版本",
+    "依赖",
+    "开发者",
+    "类名",
+    "父类",
+    "子类",
+    "对象",
+    "接口",
+    "组件",
+    "服务端",
+    "客户端",
+    "应用程序",
+    "数据结构",
+    "数据类型",
+    "命令行",
+    "生命周期",
+    "成员变量",
+    "头文件",
+    "构造函数",
+    "环境变量",
+    "配置文件",
+    "包管理",
+    "负载",
+    "垃圾回收",
+)
+COMPUTING_VERTICAL_FILTER_EXACT = {
+    "字符串",
+    "数组",
+    "初始化",
+    "字段",
+    "控件",
+    "文件名",
+    "递归",
+    "多线程",
+    "迭代",
+    "数组",
+    "接口",
+    "指针",
+    "节点",
+    "线程",
+    "进程",
+    "编程",
+    "编码",
+    "解码",
+    "算法",
+    "脚本",
+    "组件",
+    "模块",
+    "插件",
+    "框架",
+    "内核",
+    "终端",
+    "日志",
+    "异常",
+    "调试",
+    "部署",
+    "容器",
+    "镜像",
+    "缓存",
+    "索引",
+    "事务",
+    "数据库",
+    "协议",
+    "网关",
+    "控件",
+    "实例化",
+}
 DAILY_CHAT_SEED_PREFIXES = (
     "不",
     "没",
@@ -493,6 +612,91 @@ def _yaml_single_quote(value: object) -> str:
     return "'" + text.replace("'", "''") + "'"
 
 
+def _load_vertical_layer_sources(
+    manifest_path: pathlib.Path,
+) -> Tuple[List[Dict[str, object]], Dict[str, int]]:
+    stats = {
+        "vertical_layers_manifest_present": 0,
+        "vertical_layers_declared": 0,
+        "vertical_layers_active": 0,
+        "vertical_layer_sources_total": 0,
+        "vertical_layer_sources_loaded": 0,
+        "vertical_layer_sources_skipped_inactive": 0,
+        "vertical_layer_sources_skipped_unsupported": 0,
+    }
+    if not manifest_path.exists():
+        return [], stats
+    data = json.loads(manifest_path.read_text(encoding="utf-8"))
+    stats["vertical_layers_manifest_present"] = 1
+
+    loaded_sources: List[Dict[str, object]] = []
+    for layer in data.get("layers", []):
+        if not isinstance(layer, dict):
+            continue
+        stats["vertical_layers_declared"] += 1
+        layer_id = str(layer.get("id", "")).strip()
+        if not layer_id:
+            continue
+        layer_status = str(layer.get("status", "active")).strip().lower()
+        if layer_status != "active":
+            continue
+        stats["vertical_layers_active"] += 1
+        layer_title = str(layer.get("title", layer_id)).strip() or layer_id
+        layer_notes = str(layer.get("notes", "")).strip()
+        for source in layer.get("sources", []):
+            if not isinstance(source, dict):
+                continue
+            stats["vertical_layer_sources_total"] += 1
+            source_status = str(source.get("status", "active")).strip().lower()
+            if source_status != "active":
+                stats["vertical_layer_sources_skipped_inactive"] += 1
+                continue
+            source_type = str(source.get("type", "repo_tsv")).strip().lower()
+            if source_type not in {"repo_tsv", "thuocl_zip_member"}:
+                stats["vertical_layer_sources_skipped_unsupported"] += 1
+                continue
+
+            source_id = str(source.get("id", "")).strip()
+            source_name = str(source.get("name", "")).strip()
+            download_url = str(source.get("download_url", "")).strip()
+            if not source_id or not source_name or not download_url:
+                continue
+
+            default_usage_score = source.get("default_usage_score", 0.72)
+            try:
+                default_usage_score = float(default_usage_score)
+            except (TypeError, ValueError):
+                default_usage_score = 0.72
+
+            loaded_sources.append(
+                {
+                    "id": source_id,
+                    "name": source_name,
+                    "download_url": download_url,
+                    "homepage": str(source.get("homepage", CURATED_DAILY_PHRASES_HOMEPAGE)).strip()
+                    or CURATED_DAILY_PHRASES_HOMEPAGE,
+                    "license": str(source.get("license", "Repository license (project-authored)")).strip()
+                    or "Repository license (project-authored)",
+                    "risk_level": str(source.get("risk_level", "low")).strip() or "low",
+                    "redistribution_class": str(source.get("redistribution_class", "project_authored")).strip()
+                    or "project_authored",
+                    "attribution_required": bool(source.get("attribution_required", False)),
+                    "raw_committed": bool(source.get("raw_committed", True)),
+                    "notes": str(source.get("notes", layer_notes)).strip() or layer_notes,
+                    "vertical_layer_id": layer_id,
+                    "vertical_layer_title": layer_title,
+                    "vertical_source_type": source_type,
+                    "vertical_default_usage_score": min(1.0, max(0.0, default_usage_score)),
+                    "vertical_payload_source_id": str(source.get("payload_source_id", "")).strip(),
+                    "vertical_member_name": str(source.get("member_name", "")).strip(),
+                    "vertical_filter_id": str(source.get("filter_id", "")).strip(),
+                }
+            )
+            stats["vertical_layer_sources_loaded"] += 1
+
+    return loaded_sources, stats
+
+
 def _normalize_pinyin_token(token: str) -> str:
     value = token.strip().lower()
     value = value.replace("u:", "v").replace("v:", "v")
@@ -532,6 +736,17 @@ def _split_text_units(text: str) -> List[str]:
 
 def _is_windows_renderable_cjk_text(text: str) -> bool:
     return bool(CJK_WINDOWS_FULL_RE.fullmatch(text))
+
+
+def _matches_vertical_filter(text: str, filter_id: str) -> bool:
+    filter_id = filter_id.strip().lower()
+    if not filter_id:
+        return True
+    if filter_id == "computing_heuristic":
+        if text in COMPUTING_VERTICAL_FILTER_EXACT:
+            return True
+        return any(keyword in text for keyword in COMPUTING_VERTICAL_FILTER_KEYWORDS)
+    return True
 
 
 def _collect_preferred_unihan_readings(
@@ -4512,6 +4727,136 @@ def _parse_curated_daily_phrase_entries(
     return entries, stats
 
 
+def _parse_vertical_term_entries(
+    payload: bytes,
+    min_hanzi: int,
+    default_usage_score: float,
+) -> Tuple[List[Tuple[str, str, float]], Dict[str, int]]:
+    stats = {
+        "vertical_term_rows": 0,
+        "vertical_term_kept": 0,
+        "vertical_term_skipped_short": 0,
+        "vertical_term_skipped_non_cjk": 0,
+        "vertical_term_skipped_malformed": 0,
+    }
+    entries: List[Tuple[str, str, float]] = []
+    text = _decode_text(payload)
+    default_usage_score = min(1.0, max(0.0, default_usage_score))
+    for raw_line in text.splitlines():
+        line = raw_line.strip()
+        if not line or line.startswith("#"):
+            continue
+        stats["vertical_term_rows"] += 1
+        parts = line.split("\t")
+        if len(parts) < 2:
+            stats["vertical_term_skipped_malformed"] += 1
+            continue
+        sc_word = parts[0].strip()
+        tc_word = parts[1].strip()
+        try:
+            usage_score = (
+                float(parts[2].strip())
+                if len(parts) >= 3 and parts[2].strip()
+                else default_usage_score
+            )
+        except ValueError:
+            usage_score = default_usage_score
+        if (not sc_word) or (not CJK_FULL_RE.fullmatch(sc_word)):
+            stats["vertical_term_skipped_non_cjk"] += 1
+            continue
+        if _cjk_len(sc_word) < min_hanzi:
+            stats["vertical_term_skipped_short"] += 1
+            continue
+        if not tc_word:
+            tc_word = sc_word
+        entries.append((sc_word, tc_word, min(1.0, max(0.0, usage_score))))
+        stats["vertical_term_kept"] += 1
+    return entries, stats
+
+
+def _parse_vertical_thuocl_member_entries(
+    payload: bytes,
+    member_name: str,
+    min_hanzi: int,
+    default_usage_score: float,
+    filter_id: str,
+) -> Tuple[List[Tuple[str, str, float]], Dict[str, int]]:
+    stats = {
+        "vertical_thuocl_files_matched": 0,
+        "vertical_thuocl_rows": 0,
+        "vertical_thuocl_kept": 0,
+        "vertical_thuocl_skipped_short": 0,
+        "vertical_thuocl_skipped_non_cjk": 0,
+        "vertical_thuocl_skipped_filter": 0,
+        "vertical_thuocl_invalid_format": 0,
+        "vertical_thuocl_missing_member": 0,
+    }
+    entries: List[Tuple[str, str, float]] = []
+    if not payload.startswith(b"PK"):
+        stats["vertical_thuocl_invalid_format"] += 1
+        return entries, stats
+
+    member_name = member_name.strip()
+    if not member_name:
+        stats["vertical_thuocl_missing_member"] += 1
+        return entries, stats
+
+    with zipfile.ZipFile(io.BytesIO(payload)) as zf:
+        file_names = [
+            name
+            for name in zf.namelist()
+            if fnmatch.fnmatch(pathlib.PurePosixPath(name).name, member_name)
+        ]
+        stats["vertical_thuocl_files_matched"] = len(file_names)
+        if not file_names:
+            stats["vertical_thuocl_missing_member"] += 1
+            return entries, stats
+
+        parsed_rows: List[Tuple[str, int]] = []
+        max_df = 1
+        seen_words: Set[str] = set()
+        for name in file_names:
+            text = zf.read(name).decode("utf-8", errors="ignore")
+            for raw_line in text.splitlines():
+                line = raw_line.strip()
+                if not line:
+                    continue
+                stats["vertical_thuocl_rows"] += 1
+                matched = re.match(r"^(.+?)\s+(\d+)\s*$", line)
+                if not matched:
+                    stats["vertical_thuocl_invalid_format"] += 1
+                    continue
+                word = matched.group(1).strip()
+                try:
+                    df_value = int(matched.group(2))
+                except ValueError:
+                    stats["vertical_thuocl_invalid_format"] += 1
+                    continue
+                if not word or word in seen_words:
+                    continue
+                if not CJK_FULL_RE.fullmatch(word):
+                    stats["vertical_thuocl_skipped_non_cjk"] += 1
+                    continue
+                if _cjk_len(word) < min_hanzi:
+                    stats["vertical_thuocl_skipped_short"] += 1
+                    continue
+                if not _matches_vertical_filter(word, filter_id):
+                    stats["vertical_thuocl_skipped_filter"] += 1
+                    continue
+                seen_words.add(word)
+                parsed_rows.append((word, df_value))
+                max_df = max(max_df, df_value)
+
+        max_df_log = math.log1p(max_df)
+        for word, df_value in parsed_rows:
+            df_signal = math.log1p(df_value) / max_df_log if max_df_log > 0 else 0.0
+            usage_score = min(0.86, max(default_usage_score, default_usage_score + df_signal * 0.18))
+            entries.append((word, word, usage_score))
+            stats["vertical_thuocl_kept"] += 1
+
+    return entries, stats
+
+
 def _iter_recent_complete_months(month_count: int) -> List[Tuple[int, int]]:
     if month_count <= 0:
         return []
@@ -5438,6 +5783,7 @@ def _compute_unihan_single_char_weight(
 
 def _load_char_family_support_from_generated_dict(
     path: pathlib.Path | None,
+    exclude_texts: Set[str] | None = None,
 ) -> Tuple[Dict[str, int], Dict[str, float]]:
     term_count_map: Dict[str, int] = {}
     support_sum_map: Dict[str, float] = {}
@@ -5455,6 +5801,8 @@ def _load_char_family_support_from_generated_dict(
 
             text = parts[1].strip()
             if _cjk_len(text) < 2 or not CJK_FULL_RE.fullmatch(text):
+                continue
+            if exclude_texts and text in exclude_texts:
                 continue
 
             try:
@@ -5547,6 +5895,7 @@ def _load_char_reading_support_from_generated_dict(
     unihan_source_rank_map: Dict[Tuple[str, str], int] | None,
     unihan_mandarin_map: Dict[str, str] | None,
     unihan_pinlu_detail_map: Dict[Tuple[str, str], int] | None,
+    exclude_texts: Set[str] | None = None,
 ) -> Tuple[Dict[Tuple[str, str], int], Dict[Tuple[str, str], float]]:
     term_count_map: Dict[Tuple[str, str], int] = {}
     support_sum_map: Dict[Tuple[str, str], float] = {}
@@ -5570,6 +5919,8 @@ def _load_char_reading_support_from_generated_dict(
             pinyin = parts[0].strip()
             text = parts[1].strip()
             if _cjk_len(text) < 2 or not CJK_FULL_RE.fullmatch(text):
+                continue
+            if exclude_texts and text in exclude_texts:
                 continue
 
             units = _split_text_units(text)
@@ -5623,6 +5974,7 @@ def _load_char_leading_reading_support_from_generated_dict(
     unihan_source_rank_map: Dict[Tuple[str, str], int] | None,
     unihan_mandarin_map: Dict[str, str] | None,
     unihan_pinlu_detail_map: Dict[Tuple[str, str], int] | None,
+    exclude_texts: Set[str] | None = None,
 ) -> Tuple[Dict[Tuple[str, str], int], Dict[Tuple[str, str], float]]:
     term_count_map: Dict[Tuple[str, str], int] = {}
     support_sum_map: Dict[Tuple[str, str], float] = {}
@@ -5646,6 +5998,8 @@ def _load_char_leading_reading_support_from_generated_dict(
             pinyin = parts[0].strip()
             text = parts[1].strip()
             if _cjk_len(text) < 2 or not CJK_FULL_RE.fullmatch(text):
+                continue
+            if exclude_texts and text in exclude_texts:
                 continue
 
             first_char = text[0]
@@ -8113,6 +8467,221 @@ def _reinforce_curated_daily_tc_phrases(
     return stats
 
 
+def _reinforce_vertical_tc_terms(
+    tc: Dict[Tuple[str, str], int],
+    vertical_entries: List[Tuple[str, str, float]],
+    tc_usage_score_map: Dict[str, float],
+    tc_source_hits_map: Dict[str, int],
+    tc_jieba_direct_signal_map: Dict[str, float],
+    tc_jieba_pos_map: Dict[str, str],
+    tc_char_frequency_prior: Dict[str, float],
+    opencc_entries: List[Tuple[str, str]],
+    simp_to_trad_char_map: Dict[str, str],
+    unihan_map: Dict[str, str],
+    min_hanzi: int,
+) -> Dict[str, int]:
+    stats = {
+        "vertical_exact_tc_reinforced": 0,
+        "vertical_exact_tc_added": 0,
+    }
+    if not tc or not vertical_entries:
+        return stats
+
+    opencc_sc_to_tc = _build_opencc_sc_to_tc_map(opencc_entries)
+    tc_existing_texts = {text for _pinyin, text in tc.keys()}
+    tc_char_prior = _build_effective_char_prior(tc, tc_char_frequency_prior)
+
+    for sc_word, tc_word, usage_score in vertical_entries:
+        if _cjk_len(sc_word) < min_hanzi:
+            continue
+
+        pinyin = _pinyin_from_unihan(sc_word, unihan_map)
+        if not pinyin:
+            continue
+
+        tc_candidate = tc_word
+        if not tc_candidate:
+            tc_words = opencc_sc_to_tc.get(sc_word, set())
+            if tc_words:
+                tc_candidate = sorted(tc_words)[0]
+            elif sc_word in tc_existing_texts:
+                tc_candidate = sc_word
+            else:
+                tc_candidate = _convert_sc_text_to_tc_with_phrase_hints(
+                    sc_word,
+                    opencc_sc_to_tc,
+                    simp_to_trad_char_map,
+                )
+        if _cjk_len(tc_candidate) < min_hanzi:
+            continue
+
+        source_hits = max(3, tc_source_hits_map.get(tc_candidate, 0))
+        usage_score = max(usage_score, tc_usage_score_map.get(tc_candidate, 0.0))
+        tc_jieba_direct = max(
+            tc_jieba_direct_signal_map.get(tc_candidate, 0.0),
+            min(0.18, usage_score * 0.18),
+        )
+        tc_pos_tag = tc_jieba_pos_map.get(tc_candidate, "")
+        tc_char_score = _compute_text_single_char_prior(tc_candidate, tc_char_prior)
+        tc_weight = _compute_weight_with_signals(
+            tc_candidate,
+            usage_score=usage_score,
+            source_hits=source_hits,
+            pageview_score=0.0,
+            wiki_hit=True,
+            core_entry=False,
+            jieba_direct_score=tc_jieba_direct,
+            pos_tag=tc_pos_tag,
+            char_score=tc_char_score,
+        )
+        tc_weight = min(1000, tc_weight + (18 if _cjk_len(tc_candidate) <= 4 else 10))
+
+        tc_key = (pinyin, tc_candidate)
+        existing_tc_weight = tc.get(tc_key)
+        if existing_tc_weight is None:
+            tc[tc_key] = tc_weight
+            stats["vertical_exact_tc_added"] += 1
+        elif tc_weight > existing_tc_weight:
+            tc[tc_key] = tc_weight
+            stats["vertical_exact_tc_reinforced"] += 1
+
+    return stats
+
+
+def _augment_with_vertical_terms(
+    sc: Dict[Tuple[str, str], int],
+    tc: Dict[Tuple[str, str], int],
+    vertical_entries: List[Tuple[str, str, float]],
+    usage_score_map: Dict[str, float],
+    source_hits_map: Dict[str, int],
+    tc_usage_score_map: Dict[str, float],
+    tc_source_hits_map: Dict[str, int],
+    jieba_direct_signal_map: Dict[str, float],
+    tc_jieba_direct_signal_map: Dict[str, float],
+    jieba_pos_map: Dict[str, str],
+    tc_jieba_pos_map: Dict[str, str],
+    char_frequency_prior: Dict[str, float],
+    tc_char_frequency_prior: Dict[str, float],
+    opencc_entries: List[Tuple[str, str]],
+    simp_to_trad_char_map: Dict[str, str],
+    unihan_map: Dict[str, str],
+    min_hanzi: int,
+) -> Tuple[Dict[str, int], Set[str], Set[str]]:
+    stats = {
+        "vertical_terms_total": 0,
+        "vertical_terms_added_sc": 0,
+        "vertical_terms_boosted_sc": 0,
+        "vertical_terms_added_tc": 0,
+        "vertical_terms_boosted_tc": 0,
+        "vertical_terms_skipped_short": 0,
+        "vertical_terms_skipped_no_pinyin": 0,
+    }
+    sc_terms: Set[str] = set()
+    tc_terms: Set[str] = set()
+    opencc_sc_to_tc = _build_opencc_sc_to_tc_map(opencc_entries)
+    tc_existing_texts = {text for _pinyin, text in tc.keys()}
+    sc_char_prior = _build_effective_char_prior(sc, char_frequency_prior)
+    tc_char_prior = _build_effective_char_prior(tc, tc_char_frequency_prior)
+
+    for sc_word, tc_word, usage_score in vertical_entries:
+        stats["vertical_terms_total"] += 1
+        if _cjk_len(sc_word) < min_hanzi:
+            stats["vertical_terms_skipped_short"] += 1
+            continue
+
+        pinyin = _pinyin_from_unihan(sc_word, unihan_map)
+        if not pinyin:
+            stats["vertical_terms_skipped_no_pinyin"] += 1
+            continue
+
+        source_hits = 3
+        usage_score_map[sc_word] = max(usage_score_map.get(sc_word, 0.0), usage_score)
+        source_hits_map[sc_word] = max(source_hits_map.get(sc_word, 0), source_hits)
+
+        sc_jieba_direct = max(
+            jieba_direct_signal_map.get(sc_word, 0.0),
+            min(0.18, usage_score * 0.18),
+        )
+        sc_pos_tag = jieba_pos_map.get(sc_word, "")
+        sc_char_score = _compute_text_single_char_prior(sc_word, sc_char_prior)
+        sc_weight = _compute_weight_with_signals(
+            sc_word,
+            usage_score=usage_score,
+            source_hits=source_hits,
+            pageview_score=0.0,
+            wiki_hit=False,
+            core_entry=False,
+            jieba_direct_score=sc_jieba_direct,
+            pos_tag=sc_pos_tag,
+            char_score=sc_char_score,
+        )
+        sc_weight = min(1000, sc_weight + (18 if _cjk_len(sc_word) <= 4 else 10))
+        sc_key = (pinyin, sc_word)
+        existing_sc_weight = sc.get(sc_key)
+        if existing_sc_weight is None:
+            sc[sc_key] = sc_weight
+            stats["vertical_terms_added_sc"] += 1
+            sc_terms.add(sc_word)
+        elif sc_weight > existing_sc_weight:
+            sc[sc_key] = sc_weight
+            stats["vertical_terms_boosted_sc"] += 1
+            sc_terms.add(sc_word)
+        else:
+            sc_terms.add(sc_word)
+
+        tc_candidate = tc_word
+        if not tc_candidate:
+            tc_words = opencc_sc_to_tc.get(sc_word, set())
+            if tc_words:
+                tc_candidate = sorted(tc_words)[0]
+            elif sc_word in tc_existing_texts:
+                tc_candidate = sc_word
+            else:
+                tc_candidate = _convert_sc_text_to_tc_with_phrase_hints(
+                    sc_word,
+                    opencc_sc_to_tc,
+                    simp_to_trad_char_map,
+                )
+        if _cjk_len(tc_candidate) < min_hanzi:
+            continue
+
+        tc_usage_score_map[tc_candidate] = max(tc_usage_score_map.get(tc_candidate, 0.0), usage_score)
+        tc_source_hits_map[tc_candidate] = max(tc_source_hits_map.get(tc_candidate, 0), source_hits)
+
+        tc_jieba_direct = max(
+            tc_jieba_direct_signal_map.get(tc_candidate, 0.0),
+            min(0.18, usage_score * 0.18),
+        )
+        tc_pos_tag = tc_jieba_pos_map.get(tc_candidate, sc_pos_tag)
+        tc_char_score = _compute_text_single_char_prior(tc_candidate, tc_char_prior)
+        tc_weight = _compute_weight_with_signals(
+            tc_candidate,
+            usage_score=usage_score,
+            source_hits=source_hits,
+            pageview_score=0.0,
+            wiki_hit=False,
+            core_entry=False,
+            jieba_direct_score=tc_jieba_direct,
+            pos_tag=tc_pos_tag,
+            char_score=tc_char_score,
+        )
+        tc_weight = min(1000, tc_weight + (18 if _cjk_len(tc_candidate) <= 4 else 10))
+        tc_key = (pinyin, tc_candidate)
+        existing_tc_weight = tc.get(tc_key)
+        if existing_tc_weight is None:
+            tc[tc_key] = tc_weight
+            stats["vertical_terms_added_tc"] += 1
+            tc_terms.add(tc_candidate)
+        elif tc_weight > existing_tc_weight:
+            tc[tc_key] = tc_weight
+            stats["vertical_terms_boosted_tc"] += 1
+            tc_terms.add(tc_candidate)
+        else:
+            tc_terms.add(tc_candidate)
+
+    return stats, sc_terms, tc_terms
+
+
 def _augment_with_wiki_proper_noun_titles(
     sc: Dict[Tuple[str, str], int],
     tc: Dict[Tuple[str, str], int],
@@ -8971,6 +9540,57 @@ def _require_source_config(
     )
 
 
+def _load_vertical_source_entries(
+    source: Dict[str, object],
+    payload_map: Dict[str, bytes],
+    min_hanzi: int,
+    repo_root: pathlib.Path,
+) -> Tuple[List[Tuple[str, str, float]], Dict[str, int]]:
+    source_type = str(source.get("vertical_source_type", "repo_tsv")).strip().lower()
+    default_usage_score = float(source.get("vertical_default_usage_score", 0.72))
+    source_url = str(source.get("download_url", "")).strip()
+    if source_type == "repo_tsv":
+        payload = payload_map.get(str(source.get("id", "")).strip())
+        if payload is None:
+            payload = _read_source_bytes(source_url, None, repo_root=repo_root)
+        return _parse_vertical_term_entries(payload, min_hanzi, default_usage_score)
+    if source_type == "thuocl_zip_member":
+        payload_source_id = str(source.get("vertical_payload_source_id", "")).strip()
+        stats = {
+            "vertical_terms_missing_payload_source": 0,
+            "vertical_terms_fallback_downloads": 0,
+        }
+        payload = payload_map.get(payload_source_id) if payload_source_id else None
+        if payload is None:
+            base_url = urllib.parse.urldefrag(source_url)[0]
+            if not base_url:
+                stats["vertical_terms_missing_payload_source"] += 1
+                return [], stats
+            payload = _read_source_bytes(base_url, None, repo_root=repo_root)
+            stats["vertical_terms_fallback_downloads"] += 1
+        return _parse_vertical_thuocl_member_entries(
+            payload,
+            str(source.get("vertical_member_name", "")),
+            min_hanzi,
+            default_usage_score,
+            str(source.get("vertical_filter_id", "")),
+        )
+    return [], {"vertical_terms_unsupported_source_type": 1}
+
+
+def _collect_vertical_term_sets(
+    entries: List[Tuple[str, str, float]]
+) -> Tuple[Set[str], Set[str]]:
+    sc_terms: Set[str] = set()
+    tc_terms: Set[str] = set()
+    for sc_text, tc_text, _usage_score in entries:
+        if _cjk_len(sc_text) >= 2 and CJK_FULL_RE.fullmatch(sc_text):
+            sc_terms.add(sc_text)
+        if _cjk_len(tc_text) >= 2 and CJK_FULL_RE.fullmatch(tc_text):
+            tc_terms.add(tc_text)
+    return sc_terms, tc_terms
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(
         description="Build dictionary seed files from external data sources."
@@ -9013,6 +9633,11 @@ def main() -> int:
     parser.add_argument("--manifest", default="manifests/sources.public.yml")
     parser.add_argument("--report", default="reports/external_build_report.md")
     parser.add_argument(
+        "--vertical-manifest",
+        default=VERTICAL_LAYERS_MANIFEST_DEFAULT,
+        help="Optional JSON manifest that defines isolated vertical terminology layers.",
+    )
+    parser.add_argument(
         "--pinyin-overrides",
         default=DEFAULT_PERMISSIVE_OVERRIDES,
         help="Optional override TSV for clean_permissive/unihan_single profile: text<TAB>pinyin",
@@ -9051,6 +9676,7 @@ def main() -> int:
     support_dict_tc = repo_root / args.support_dict_tc if args.support_dict_tc else None
     manifest = repo_root / args.manifest
     report = repo_root / args.report
+    vertical_manifest = repo_root / args.vertical_manifest if args.vertical_manifest else None
     if args.pageviews_months < 0:
         raise ValueError("--pageviews-months must be >= 0")
     if args.pageviews_max_rank <= 0:
@@ -9059,6 +9685,23 @@ def main() -> int:
     profile_config = _resolve_profile_config(args)
     parser_name = str(profile_config["parser"])
     sources: List[Dict[str, object]] = profile_config["sources"]  # type: ignore[assignment]
+    vertical_manifest_stats: Dict[str, int] = {}
+    vertical_source_configs: List[Dict[str, object]] = []
+    if (
+        vertical_manifest is not None
+        and parser_name in {"cedict", "cedict_thuocl_jieba_opencc_unihan_wiki", "unihan_only"}
+    ):
+        vertical_source_configs, vertical_manifest_stats = _load_vertical_layer_sources(
+            vertical_manifest
+        )
+        if parser_name in {"cedict", "cedict_thuocl_jieba_opencc_unihan_wiki"}:
+            sources.extend(
+                [
+                    source
+                    for source in vertical_source_configs
+                    if str(source.get("vertical_source_type", "repo_tsv")).strip().lower() == "repo_tsv"
+                ]
+            )
 
     payload_map: Dict[str, bytes] = {}
     usage_score_map: Dict[str, float] = {}
@@ -9079,6 +9722,8 @@ def main() -> int:
     wiki_proper_tc_terms: Set[str] = set()
     curated_daily_sc_terms: Set[str] = set()
     curated_daily_tc_terms: Set[str] = set()
+    vertical_sc_terms: Set[str] = set()
+    vertical_tc_terms: Set[str] = set()
     tc_usage_score_map: Dict[str, float] = {}
     tc_source_hits_map: Dict[str, int] = {}
     tc_jieba_direct_signal_map: Dict[str, float] = {}
@@ -9181,6 +9826,59 @@ def main() -> int:
             )
             stats.update(curated_daily_parse_stats)
             stats.update(curated_daily_stats)
+        stats.update(vertical_manifest_stats)
+        if vertical_source_configs:
+            vertical_entries: List[Tuple[str, str, float]] = []
+            vertical_parse_stats = {
+                "vertical_term_rows": 0,
+                "vertical_term_kept": 0,
+                "vertical_term_skipped_short": 0,
+                "vertical_term_skipped_non_cjk": 0,
+                "vertical_term_skipped_malformed": 0,
+                "vertical_thuocl_files_matched": 0,
+                "vertical_thuocl_rows": 0,
+                "vertical_thuocl_kept": 0,
+                "vertical_thuocl_skipped_short": 0,
+                "vertical_thuocl_skipped_non_cjk": 0,
+                "vertical_thuocl_skipped_filter": 0,
+                "vertical_thuocl_invalid_format": 0,
+                "vertical_thuocl_missing_member": 0,
+                "vertical_terms_missing_payload_source": 0,
+                "vertical_terms_unsupported_source_type": 0,
+            }
+            for vertical_source in vertical_source_configs:
+                entries, parse_stats = _load_vertical_source_entries(
+                    vertical_source,
+                    payload_map,
+                    args.min_hanzi,
+                    repo_root,
+                )
+                vertical_entries.extend(entries)
+                for key, value in parse_stats.items():
+                    vertical_parse_stats[key] = vertical_parse_stats.get(key, 0) + value
+            vertical_stats, vertical_sc_terms, vertical_tc_terms = _augment_with_vertical_terms(
+                sc_map,
+                tc_map,
+                vertical_entries,
+                usage_score_map,
+                source_hits_map,
+                tc_usage_score_map,
+                tc_source_hits_map,
+                jieba_direct_signal_map,
+                tc_jieba_direct_signal_map,
+                jieba_pos_map,
+                tc_jieba_pos_map,
+                char_frequency_prior,
+                tc_char_frequency_prior,
+                [],
+                {},
+                curated_unihan_map,
+                args.min_hanzi,
+            )
+            lexical_seed_sc_terms.update(vertical_sc_terms)
+            lexical_seed_tc_terms.update(vertical_tc_terms)
+            stats.update(vertical_parse_stats)
+            stats.update(vertical_stats)
     elif parser_name == "cedict_thuocl_jieba_opencc_unihan_wiki":
         cedict_payload = _require_source_payload(
             payload_map,
@@ -9531,6 +10229,65 @@ def main() -> int:
         )
         lexical_seed_sc_terms.update(curated_daily_sc_terms)
         lexical_seed_tc_terms.update(curated_daily_tc_terms)
+        vertical_parse_stats = {
+            "vertical_term_rows": 0,
+            "vertical_term_kept": 0,
+            "vertical_term_skipped_short": 0,
+            "vertical_term_skipped_non_cjk": 0,
+            "vertical_term_skipped_malformed": 0,
+            "vertical_thuocl_files_matched": 0,
+            "vertical_thuocl_rows": 0,
+            "vertical_thuocl_kept": 0,
+            "vertical_thuocl_skipped_short": 0,
+            "vertical_thuocl_skipped_non_cjk": 0,
+            "vertical_thuocl_skipped_filter": 0,
+            "vertical_thuocl_invalid_format": 0,
+            "vertical_thuocl_missing_member": 0,
+            "vertical_terms_missing_payload_source": 0,
+            "vertical_terms_unsupported_source_type": 0,
+        }
+        vertical_stats = {
+            "vertical_terms_total": 0,
+            "vertical_terms_added_sc": 0,
+            "vertical_terms_boosted_sc": 0,
+            "vertical_terms_added_tc": 0,
+            "vertical_terms_boosted_tc": 0,
+            "vertical_terms_skipped_short": 0,
+            "vertical_terms_skipped_no_pinyin": 0,
+        }
+        vertical_entries: List[Tuple[str, str, float]] = []
+        if vertical_source_configs:
+            for vertical_source in vertical_source_configs:
+                entries, parse_stats = _load_vertical_source_entries(
+                    vertical_source,
+                    payload_map,
+                    args.min_hanzi,
+                    repo_root,
+                )
+                vertical_entries.extend(entries)
+                for key, value in parse_stats.items():
+                    vertical_parse_stats[key] = vertical_parse_stats.get(key, 0) + value
+            vertical_stats, vertical_sc_terms, vertical_tc_terms = _augment_with_vertical_terms(
+                sc_map,
+                tc_map,
+                vertical_entries,
+                usage_score_map,
+                source_hits_map,
+                tc_usage_score_map,
+                tc_source_hits_map,
+                jieba_direct_signal_map,
+                tc_jieba_direct_signal_map,
+                jieba_pos_map,
+                tc_jieba_pos_map,
+                char_frequency_prior,
+                tc_char_frequency_prior,
+                opencc_entries,
+                simp_to_trad_char_map,
+                unihan_map,
+                args.min_hanzi,
+            )
+            lexical_seed_sc_terms.update(vertical_sc_terms)
+            lexical_seed_tc_terms.update(vertical_tc_terms)
         sc_map, sc_normalize_stats = _normalize_sc_mapping_with_opencc(sc_map, tc_to_sc_map)
         sc_map, sc_char_normalize_stats = _normalize_sc_mapping_with_char_map(
             sc_map, trad_to_simp_char_map, simp_to_trad_char_map
@@ -9546,6 +10303,19 @@ def main() -> int:
         )
         tc_map, tc_script_filter_stats = _filter_tc_mapping_with_script_hints(
             tc_map, sc_script_chars, tc_script_chars
+        )
+        vertical_tc_exact_stats = _reinforce_vertical_tc_terms(
+            tc_map,
+            vertical_entries,
+            tc_usage_score_map,
+            tc_source_hits_map,
+            tc_jieba_direct_signal_map,
+            tc_jieba_pos_map,
+            tc_char_frequency_prior,
+            opencc_entries,
+            simp_to_trad_char_map,
+            unihan_map,
+            args.min_hanzi,
         )
         curated_daily_tc_exact_stats = _reinforce_curated_daily_tc_phrases(
             tc_map,
@@ -9589,6 +10359,10 @@ def main() -> int:
         stats.update(daily_prefix_stats)
         stats.update(wiki_proper_stats)
         stats.update(curated_daily_stats)
+        stats.update(vertical_manifest_stats)
+        stats.update(vertical_parse_stats)
+        stats.update(vertical_stats)
+        stats.update(vertical_tc_exact_stats)
         stats.update(sc_normalize_stats)
         stats.update(sc_char_normalize_stats)
         stats.update(sc_script_filter_stats)
@@ -9718,6 +10492,42 @@ def main() -> int:
         overrides: Dict[str, str] = {}
         if args.pinyin_overrides:
             overrides = _load_pinyin_overrides(repo_root / args.pinyin_overrides)
+        vertical_parse_stats = {
+            "vertical_term_rows": 0,
+            "vertical_term_kept": 0,
+            "vertical_term_skipped_short": 0,
+            "vertical_term_skipped_non_cjk": 0,
+            "vertical_term_skipped_malformed": 0,
+            "vertical_thuocl_files_matched": 0,
+            "vertical_thuocl_rows": 0,
+            "vertical_thuocl_kept": 0,
+            "vertical_thuocl_skipped_short": 0,
+            "vertical_thuocl_skipped_non_cjk": 0,
+            "vertical_thuocl_skipped_filter": 0,
+            "vertical_thuocl_invalid_format": 0,
+            "vertical_thuocl_missing_member": 0,
+            "vertical_terms_missing_payload_source": 0,
+            "vertical_terms_unsupported_source_type": 0,
+            "vertical_terms_fallback_downloads": 0,
+        }
+        vertical_sc_support_excludes: Set[str] = set()
+        vertical_tc_support_excludes: Set[str] = set()
+        if vertical_source_configs:
+            vertical_entries: List[Tuple[str, str, float]] = []
+            for vertical_source in vertical_source_configs:
+                entries, parse_stats = _load_vertical_source_entries(
+                    vertical_source,
+                    payload_map,
+                    args.min_hanzi,
+                    repo_root,
+                )
+                vertical_entries.extend(entries)
+                for key, value in parse_stats.items():
+                    vertical_parse_stats[key] = vertical_parse_stats.get(key, 0) + value
+            (
+                vertical_sc_support_excludes,
+                vertical_tc_support_excludes,
+            ) = _collect_vertical_term_sets(vertical_entries)
         (
             unihan_map,
             unihan_readings_map,
@@ -9728,11 +10538,17 @@ def main() -> int:
         (
             sc_family_term_count_map,
             sc_family_support_sum_map,
-        ) = _load_char_family_support_from_generated_dict(support_dict_sc)
+        ) = _load_char_family_support_from_generated_dict(
+            support_dict_sc,
+            exclude_texts=vertical_sc_support_excludes,
+        )
         (
             tc_family_term_count_map,
             tc_family_support_sum_map,
-        ) = _load_char_family_support_from_generated_dict(support_dict_tc)
+        ) = _load_char_family_support_from_generated_dict(
+            support_dict_tc,
+            exclude_texts=vertical_tc_support_excludes,
+        )
         (
             sc_reading_term_count_map,
             sc_reading_support_sum_map,
@@ -9742,6 +10558,7 @@ def main() -> int:
             unihan_reading_source_map,
             unihan_map,
             unihan_pinlu_detail_map,
+            exclude_texts=vertical_sc_support_excludes,
         )
         (
             tc_reading_term_count_map,
@@ -9752,6 +10569,7 @@ def main() -> int:
             unihan_reading_source_map,
             unihan_map,
             unihan_pinlu_detail_map,
+            exclude_texts=vertical_tc_support_excludes,
         )
         (
             sc_leading_term_count_map,
@@ -9762,6 +10580,7 @@ def main() -> int:
             unihan_reading_source_map,
             unihan_map,
             unihan_pinlu_detail_map,
+            exclude_texts=vertical_sc_support_excludes,
         )
         (
             tc_leading_term_count_map,
@@ -9772,6 +10591,7 @@ def main() -> int:
             unihan_reading_source_map,
             unihan_map,
             unihan_pinlu_detail_map,
+            exclude_texts=vertical_tc_support_excludes,
         )
         sc_map, tc_map, stats = _build_from_unihan_only(
             unihan_payload,
@@ -9787,12 +10607,16 @@ def main() -> int:
             tc_family_support_sum_map,
         )
         stats.update(opencc_stats)
+        stats.update(vertical_manifest_stats)
+        stats.update(vertical_parse_stats)
         stats["unihan_family_support_terms_sc"] = len(sc_family_term_count_map)
         stats["unihan_family_support_terms_tc"] = len(tc_family_term_count_map)
         stats["unihan_reading_support_terms_sc"] = len(sc_reading_term_count_map)
         stats["unihan_reading_support_terms_tc"] = len(tc_reading_term_count_map)
         stats["unihan_leading_support_terms_sc"] = len(sc_leading_term_count_map)
         stats["unihan_leading_support_terms_tc"] = len(tc_leading_term_count_map)
+        stats["vertical_support_excluded_sc"] = len(vertical_sc_support_excludes)
+        stats["vertical_support_excluded_tc"] = len(vertical_tc_support_excludes)
     else:
         raise ValueError(f"unsupported parser: {parser_name}")
 

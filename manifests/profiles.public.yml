@@ -10,7 +10,7 @@ profiles:
 
   - id: external_broad
     status: active
-    description: "Broad external profile: CC-CEDICT + THUOCL + jieba + OpenCC + Unihan + zhwiktionary titles + zhwiki titles + Wikimedia pageviews-top."
+    description: "Broad external profile: CC-CEDICT + THUOCL + jieba + OpenCC + Unihan + zhwiktionary titles + zhwiki titles + Wikimedia pageviews-top, plus isolated project-authored vertical layers."
     expected_license_class: mixed_external
     risk_level: medium
     attribution_required: true
@@ -27,6 +27,7 @@ profiles:
     constraints:
       - "All sources must remain publicly documented with explicit attribution."
       - "No private corpora and no unknown-license source files."
+      - "Vertical terminology layers must remain isolated from daily/chat preferred-term ranking."
 
   - id: clean_permissive
     status: active

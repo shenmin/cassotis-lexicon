@@ -21,8 +21,8 @@ Cassotis IME 词库构建与发布仓库。
 
 | 文件 | 字体变体 | 词条数 |
 |------|---------|--------|
-| `data/generated/dict_clean_sc.txt` | 简体中文主词库 | 115,733 |
-| `data/generated/dict_clean_tc.txt` | 繁体中文主词库 | 114,138 |
+| `data/generated/dict_clean_sc.txt` | 简体中文主词库 | 117,782 |
+| `data/generated/dict_clean_tc.txt` | 繁体中文主词库 | 117,934 |
 | `data/generated/dict_unihan_sc.txt` | 简体单字（Unihan） | 23,909 |
 | `data/generated/dict_unihan_tc.txt` | 繁体单字（Unihan） | 24,064 |
 
@@ -59,9 +59,17 @@ Cassotis IME 词库构建与发布仓库。
 - 对公开来源仍经常漏掉、但输入价值很高的日常短语，保留一小层项目内维护的补充词表。
 - 将专名与短期热点视为辅助信号，避免挤占日常用语的核心排序空间。
 
+## 分层原则
+- `manifests/curated_daily_phrases.tsv` 只用于日常/聊天表达，这一层会参与日常输入的 preferred-term 偏置。
+- `manifests/vertical_layers.public.json` 用来声明独立的垂直术语层。
+- `manifests/vertical/*.tsv` 用来存放项目内维护的垂直词表，例如计算机专业词汇。
+- 垂直层可以补入专业词，但不会继承日常/聊天词那套 preferred-term 排序偏置，从而避免污染现有日常输入路径。
+- 当前第一层计算机词库由经过筛选的 `THUOCL_IT` 子集和项目内维护的计算机词表共同组成。
+
 ## 目录结构
 - `data/generated/`：生成词库文件。
 - `manifests/`：来源、许可证清单与回归样本。
+- `manifests/vertical/`：项目内维护的独立垂直词表。
 - `scripts/`：构建、校验、导出辅助脚本。
 - `reports/`：构建报告。
 - `rules/`：导出与发布规则。

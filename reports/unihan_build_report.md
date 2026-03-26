@@ -1,7 +1,7 @@
 # External Build Report
 
 - profile: unihan_single
-- generated_at_utc: 2026-03-26T10:32:33+00:00
+- generated_at_utc: 2026-03-26T11:59:51+00:00
 - min_hanzi: 1
 - max_entries: unlimited
 
@@ -91,8 +91,8 @@
 - tc_homophone_dominant_common_boosted: 0
 - tc_homophone_dominant_common_damped: 0
 - tc_homophone_entries_adjusted: 23944
-- tc_homophone_entries_boosted: 3808
-- tc_homophone_entries_damped: 20136
+- tc_homophone_entries_boosted: 3809
+- tc_homophone_entries_damped: 20135
 - tc_homophone_inflated_short_penalized: 0
 - tc_homophone_literary_penalized: 0
 - tc_homophone_modernity_risk_penalized: 0
@@ -122,16 +122,16 @@
 - tc_multi_pronunciation_terms: 0
 - tc_script_filtered_entries: 0
 - tc_script_filtered_total_entries: 24065
-- tc_single_char_leading_adjusted: 388
-- tc_single_char_leading_delta_total: 20304
+- tc_single_char_leading_adjusted: 382
+- tc_single_char_leading_delta_total: 19980
 - tc_single_char_reading_preference_adjusted: 1842
-- tc_single_char_reading_preference_delta_total: 37857
+- tc_single_char_reading_preference_delta_total: 37773
 - tc_single_char_reading_removed: 1
 - total_lines: 49189
 - unihan_core_size: 18816
 - unihan_family_support_boosted_sc: 5072
 - unihan_family_support_boosted_tc: 5227
-- unihan_family_support_terms_sc: 5881
+- unihan_family_support_terms_sc: 5880
 - unihan_family_support_terms_tc: 6070
 - unihan_frequency_size: 0
 - unihan_grade_size: 2632
@@ -147,6 +147,31 @@
 - unihan_single_char_injected_sc: 23932
 - unihan_single_char_injected_tc: 24082
 - unihan_tc_only_chars: 2916
+- vertical_layer_sources_loaded: 2
+- vertical_layer_sources_skipped_inactive: 0
+- vertical_layer_sources_skipped_unsupported: 0
+- vertical_layer_sources_total: 2
+- vertical_layers_active: 1
+- vertical_layers_declared: 1
+- vertical_layers_manifest_present: 1
+- vertical_support_excluded_sc: 2155
+- vertical_support_excluded_tc: 2202
+- vertical_term_kept: 78
+- vertical_term_rows: 78
+- vertical_term_skipped_malformed: 0
+- vertical_term_skipped_non_cjk: 0
+- vertical_term_skipped_short: 0
+- vertical_terms_fallback_downloads: 0
+- vertical_terms_missing_payload_source: 0
+- vertical_terms_unsupported_source_type: 0
+- vertical_thuocl_files_matched: 1
+- vertical_thuocl_invalid_format: 0
+- vertical_thuocl_kept: 2128
+- vertical_thuocl_missing_member: 0
+- vertical_thuocl_rows: 16000
+- vertical_thuocl_skipped_filter: 10727
+- vertical_thuocl_skipped_non_cjk: 3145
+- vertical_thuocl_skipped_short: 0
 - wiki_proper_augmented_sc_terms: 0
 - wiki_proper_augmented_tc_terms: 0
 
