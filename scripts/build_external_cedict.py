@@ -1770,6 +1770,48 @@ def _is_daily_number_word_candidate(
     return bounded_usage >= 0.84 or source_hits >= 4
 
 
+def _is_short_everyday_term_candidate(
+    text: str,
+    text_len: int,
+    usage_score: float,
+    source_hits: int,
+    pageview_score: float,
+    jieba_direct_score: float,
+    pos_tag: str,
+    char_score: float,
+) -> bool:
+    """
+    Identify 2-character high-frequency everyday terms that should behave
+    like daily phrases in homophone buckets even without wiki-augmentation.
+
+    The key gap this covers is short functional / localizer / conversational
+    terms such as "还是" or "里面": they are common input targets, but they
+    are often absent from the explicit daily seed layers, so requiring
+    wiki-augmented membership is too strict.
+    """
+    if text_len != 2:
+        return False
+    if _is_named_entity_pos(pos_tag):
+        return False
+
+    bounded_usage = min(1.0, max(0.0, usage_score))
+    bounded_pageviews = min(1.0, max(0.0, pageview_score))
+    bounded_jieba = min(1.0, max(0.0, jieba_direct_score))
+
+    if (
+        bounded_usage < 0.08
+        and bounded_jieba < 0.08
+        and source_hits < 2
+        and bounded_pageviews < 0.04
+    ):
+        return False
+
+    if pos_tag.startswith(("d", "r", "p", "u", "c", "f", "s", "t")):
+        return char_score >= 0.40 or bounded_usage >= 0.10 or bounded_jieba >= 0.10
+
+    return False
+
+
 def _is_daily_phrase_candidate(
     text: str,
     text_len: int,
@@ -1781,6 +1823,7 @@ def _is_daily_phrase_candidate(
     pos_tag: str,
     char_score: float,
     wiki_augmented_terms: Set[str] | None,
+    preferred_terms: Set[str] | None = None,
 ) -> bool:
     if _is_daily_number_word_candidate(
         text,
@@ -1791,12 +1834,35 @@ def _is_daily_phrase_candidate(
     ):
         return True
 
+    if _is_short_everyday_term_candidate(
+        text,
+        text_len=text_len,
+        usage_score=usage_score,
+        source_hits=source_hits,
+        pageview_score=pageview_score,
+        jieba_direct_score=jieba_direct_score,
+        pos_tag=pos_tag,
+        char_score=char_score,
+    ):
+        return True
+
+    preferred_terms = preferred_terms or set()
+    if text in preferred_terms:
+        return True
+
     wiki_augmented_terms = wiki_augmented_terms or set()
     if text not in wiki_augmented_terms:
         return False
     if _is_named_entity_pos(pos_tag):
         return False
     if text_len < 2 or text_len > 4:
+        return False
+
+    if text_len <= 2:
+        # Two-character augmented terms have a long noisy tail of domain nouns
+        # and historical labels (for example "海事", "维新", "简易"). Treat them
+        # as daily-phrase candidates only when they are explicit preferred terms
+        # or when short-term POS/signal heuristics already classified them above.
         return False
 
     bounded_usage = min(1.0, max(0.0, usage_score))
@@ -2323,6 +2389,9 @@ def _rerank_homophone_buckets(
         f"{stats_prefix}_homophone_daily_phrase_boosted": 0,
         f"{stats_prefix}_homophone_daily_phrase_damped": 0,
         f"{stats_prefix}_homophone_daily_number_boosted": 0,
+        f"{stats_prefix}_homophone_short_everyday_boosted": 0,
+        f"{stats_prefix}_homophone_short_everyday_non_daily_damped": 0,
+        f"{stats_prefix}_homophone_short_popular_wiki_boosted": 0,
         f"{stats_prefix}_homophone_daily_phrase_short_non_daily_damped": 0,
         f"{stats_prefix}_homophone_preferred_term_boosted": 0,
         f"{stats_prefix}_homophone_preferred_term_damped": 0,
@@ -2355,6 +2424,7 @@ def _rerank_homophone_buckets(
         bucket_has_conversational_short_term = False
         bucket_has_daily_phrase_term = False
         bucket_has_daily_number_term = False
+        bucket_has_short_everyday_term = False
         bucket_has_preferred_term = False
         bucket_dominant_common_text = ""
         bucket_dominant_common_signal = -1.0
@@ -2393,6 +2463,18 @@ def _rerank_homophone_buckets(
                 strong_short_head_terms.add(text)
             if (not has_robust_usage) and family_support_score >= 0.20:
                 bucket_has_family_term = True
+            short_everyday_support = _is_short_everyday_term_candidate(
+                text,
+                text_len=text_len,
+                usage_score=usage_score,
+                source_hits=source_hits,
+                pageview_score=pageview_score,
+                jieba_direct_score=jieba_direct_score,
+                pos_tag=pos_tag,
+                char_score=char_score,
+            )
+            if short_everyday_support:
+                bucket_has_short_everyday_term = True
             if _is_daily_phrase_candidate(
                 text,
                 text_len=text_len,
@@ -2404,6 +2486,7 @@ def _rerank_homophone_buckets(
                 pos_tag=pos_tag,
                 char_score=char_score,
                 wiki_augmented_terms=wiki_augmented_terms,
+                preferred_terms=preferred_terms,
             ):
                 bucket_has_daily_phrase_term = True
             if _is_daily_number_word_candidate(
@@ -2446,6 +2529,17 @@ def _rerank_homophone_buckets(
                 pos_tag=pos_tag,
                 char_score=char_score,
                 wiki_augmented_terms=wiki_augmented_terms,
+                preferred_terms=preferred_terms,
+            )
+            short_everyday_support = _is_short_everyday_term_candidate(
+                text,
+                text_len=text_len,
+                usage_score=usage_score,
+                source_hits=source_hits,
+                pageview_score=pageview_score,
+                jieba_direct_score=jieba_direct_score,
+                pos_tag=pos_tag,
+                char_score=char_score,
             )
             daily_number_support = _is_daily_number_word_candidate(
                 text,
@@ -2645,6 +2739,7 @@ def _rerank_homophone_buckets(
                 pos_tag=pos_tag,
                 char_score=char_score,
                 wiki_augmented_terms=wiki_augmented_terms,
+                preferred_terms=preferred_terms,
             )
             looks_like_literary_term = _looks_like_low_signal_literary_term(
                 text,
@@ -2682,6 +2777,7 @@ def _rerank_homophone_buckets(
             if bucket_dominant_common_text:
                 delta_cap += min(140, int(round(bucket_dominant_common_margin * 0.60)))
             delta = int(round((normalized - 0.5) * (2 * delta_cap) * spread_factor))
+            post_cap_bonus = 0
 
             if text == bucket_dominant_common_text:
                 dominant_common_boost = min(
@@ -2699,6 +2795,16 @@ def _rerank_homophone_buckets(
                 ):
                     dominant_common_boost += 18
                 delta += dominant_common_boost
+                if (
+                    text_len <= 2
+                    and daily_phrase_support
+                    and bucket_dominant_common_margin >= 96.0
+                ):
+                    post_cap_bonus += 44
+                    if short_everyday_support:
+                        post_cap_bonus += 40 + min(
+                            24, int(round(jieba_direct_score * 42.0))
+                        )
                 stats[f"{stats_prefix}_homophone_dominant_common_boosted"] += 1
             elif (
                 bucket_dominant_common_text
@@ -2911,6 +3017,15 @@ def _rerank_homophone_buckets(
                         delta += 76 if _is_conversational_pos(pos_tag) else 58
                     else:
                         delta += 28 if _is_conversational_pos(pos_tag) else 18
+                    if short_everyday_support:
+                        short_everyday_boost = (
+                            128 if _is_conversational_pos(pos_tag) else 96
+                        )
+                        short_everyday_boost += min(
+                            64, int(round(jieba_direct_score * 96.0))
+                        )
+                        delta += short_everyday_boost
+                        stats[f"{stats_prefix}_homophone_short_everyday_boosted"] += 1
                     stats[f"{stats_prefix}_homophone_daily_phrase_boosted"] += 1
                 elif (
                     text_len <= 3
@@ -2936,6 +3051,30 @@ def _rerank_homophone_buckets(
                 ):
                     delta -= 96
                     stats[f"{stats_prefix}_homophone_daily_phrase_short_non_daily_damped"] += 1
+
+            if (
+                bucket_has_short_everyday_term
+                and not short_everyday_support
+                and text_len <= 2
+                and _is_noun_pos(pos_tag)
+                and not _is_named_entity_pos(pos_tag)
+                and not daily_phrase_support
+                and usage_score < 0.30
+                and jieba_direct_score < 0.12
+                and source_hits <= 3
+                and pageview_score < 0.10
+            ):
+                delta -= 84
+                stats[f"{stats_prefix}_homophone_short_everyday_non_daily_damped"] += 1
+
+            if (
+                text_len <= 2
+                and wiki_support
+                and pageview_score >= 0.12
+                and usage_score >= 0.30
+            ):
+                delta += 160
+                stats[f"{stats_prefix}_homophone_short_popular_wiki_boosted"] += 1
 
             if bucket_has_daily_number_term and daily_number_support:
                 delta += 28 if text_len <= 2 else 18
@@ -3022,6 +3161,7 @@ def _rerank_homophone_buckets(
                 delta = delta_cap
             elif delta < -delta_cap:
                 delta = -delta_cap
+            delta += post_cap_bonus
 
             if delta == 0:
                 continue
