@@ -95,7 +95,3 @@ See:
 
 `external_broad` and `external_cedict` automatically load
 `manifests/vertical_layers.public.json` when present.
-
-## Constraints
-- Public repository commit messages must be in English.
-- Do not commit private raw corpus, drafts, or author manuscripts.

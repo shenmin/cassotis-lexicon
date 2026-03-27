@@ -95,7 +95,3 @@ Cassotis IME 词库构建与发布仓库。
 
 `external_broad` 和 `external_cedict` 在构建时会自动读取
 `manifests/vertical_layers.public.json`（如果该文件存在）。
-
-## 约束
-- 外部仓库的 commit message 必须使用英文。
-- 禁止提交私有原始语料、草稿与作者文稿。
