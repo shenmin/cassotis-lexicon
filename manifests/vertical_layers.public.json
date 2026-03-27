@@ -2,10 +2,32 @@
   "version": 1,
   "layers": [
     {
+      "id": "fiction_entities",
+      "status": "active",
+      "title": "Fiction entity layer",
+      "notes": "Dedicated fiction-entity layer for novel characters, titles, and in-world named entities, kept separate from everyday/chat phrase seeds and general proper nouns.",
+      "sources": [
+        {
+          "id": "project-curated-fiction-entities",
+          "type": "repo_tsv",
+          "name": "Cassotis curated fiction entities",
+          "download_url": "repo://manifests/vertical/fiction_entities.tsv",
+          "homepage": "https://github.com/shenmin/cassotis-lexicon",
+          "license": "Repository license (project-authored)",
+          "risk_level": "low",
+          "redistribution_class": "project_authored",
+          "attribution_required": false,
+          "raw_committed": true,
+          "default_usage_score": 0.80,
+          "notes": "Project-maintained fiction entity list for novel characters, titles, and in-world named entities, isolated from the daily/chat preferred-term path and from general proper nouns."
+        }
+      ]
+    },
+    {
       "id": "proper_nouns",
       "status": "active",
       "title": "Project-maintained proper noun layer",
-      "notes": "Dedicated proper-noun layer kept separate from everyday/chat phrase seeds and from domain-specific vertical terminology.",
+      "notes": "Dedicated general proper-noun layer kept separate from everyday/chat phrase seeds, fiction-specific names, and domain-specific vertical terminology.",
       "sources": [
         {
           "id": "project-curated-proper-nouns",
@@ -19,7 +41,7 @@
           "attribution_required": false,
           "raw_committed": true,
           "default_usage_score": 0.78,
-          "notes": "Project-maintained proper nouns for names, titles, organizations, and in-world entities that should not share the everyday/chat preferred-term path."
+          "notes": "Project-maintained general proper nouns for names, titles, organizations, brands, and other real-world named entities that should not share the everyday/chat preferred-term path."
         }
       ]
     },

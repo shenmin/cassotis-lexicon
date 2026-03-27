@@ -13,8 +13,8 @@ Lexicon build and release repository for Cassotis IME.
 
 | File | Variant | Entries |
 |------|---------|---------|
-| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 143,779 |
-| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 156,966 |
+| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 143,831 |
+| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 157,016 |
 | `data/generated/dict_unihan_sc.txt` | Simplified single-char (Unihan) | 23,909 |
 | `data/generated/dict_unihan_tc.txt` | Traditional single-char (Unihan) | 24,064 |
 
@@ -42,7 +42,8 @@ Lexicon build and release repository for Cassotis IME.
 | Supplement | License | Usage |
 |-----------|---------|-------|
 | Cassotis curated daily/chat phrases | Repository license (project-authored) | High-value everyday/chat phrasing that is worth keeping stable even when open sources miss it |
-| Cassotis curated proper nouns | Repository license (project-authored) | Project-maintained proper-noun list for names, titles, organizations, and other specific entities that should not share the daily/chat preferred-term path |
+| Cassotis curated fiction entities | Repository license (project-authored) | Project-maintained fiction entity list for novel characters, titles, and in-world named entities, kept separate from daily/chat phrasing and from general proper nouns |
+| Cassotis curated proper nouns | Repository license (project-authored) | Project-maintained general proper-noun list for names, titles, organizations, brands, and other real-world named entities that should not share the daily/chat preferred-term path |
 | Cassotis curated computing terms | Repository license (project-authored) | Project-maintained computing/domain term list used by the isolated computing vertical layer; does not share the daily/chat preferred-term path |
 | Cassotis curated medical terms | Repository license (project-authored) | Project-maintained medical supplement used for high-value medical terms and explicit pinyin corrections that should remain isolated from the daily/chat preferred-term path |
 
@@ -67,9 +68,10 @@ See:
 ## Layering policy
 - `manifests/curated_daily_phrases.tsv` is reserved for everyday/chat phrasing that should receive daily-use preference treatment.
 - `manifests/vertical_layers.public.json` declares isolated vertical terminology layers.
-- `manifests/vertical/*.tsv` stores project-authored vertical term lists such as proper nouns and computing vocabulary.
+- `manifests/vertical/*.tsv` stores project-authored vertical term lists such as fiction entities, proper nouns, and computing vocabulary.
 - Vertical layers can add domain vocabulary without inheriting the same preferred-term bias used for daily/chat phrases.
-- The active project-maintained proper-noun layer keeps names, titles, and in-world entities separate from everyday/chat phrasing.
+- The fiction layer keeps novel characters, titles, and in-world named entities separate from everyday/chat phrasing and from general proper nouns.
+- The active project-maintained proper-noun layer keeps names, titles, and general real-world named entities separate from everyday/chat phrasing.
 - The computing layer currently combines a filtered `THUOCL_IT` subset with project-curated computing terminology.
 - The medicine layer currently combines project-curated medical terms, the MeSH descriptor catalog, MeSH-linked Wikidata entities, and a filtered `THUOCL_medical` subset while staying isolated from the daily/chat preferred-term path.
 

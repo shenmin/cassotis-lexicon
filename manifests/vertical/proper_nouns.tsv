@@ -1,40 +1,8 @@
 # sc	tc	usage_score	pinyin(optional)
 # Project-maintained proper nouns kept separate from everyday/chat phrase seeds.
-# Use this file for names, titles, in-world organizations, and other specific named entities
-# that should remain inputable without inheriting the everyday/chat preferred-term path.
-沈语熙	沈語熙	0.84	shenyuxi
-林浩	林浩	0.82	linhao
-优雅	優雅	0.72	youya
-林毅	林毅	0.82	linyi
-陆雅婷	陸雅婷	0.84	luyating
-陈天宇	陳天宇	0.84	chentianyu
-王骁	王驍	0.82	wangxiao
-沈蔚	沈蔚	0.82	shenwei
-张晓峰	張曉峰	0.84	zhangxiaofeng
-艾利斯	艾利斯	0.80	ailisi
-布莱克	布萊克	0.82	bulaike
-孟凡	孟凡	0.78	mengfan
-李洪涛	李洪濤	0.82	lihongtao
-赵明轩	趙明軒	0.84	zhaomingxuan
-谢伟林	謝偉林	0.84	xieweilin
-何思婕	何思婕	0.82	hesijie
-顾海森	顧海森	0.84	guhaisen
-宋志明	宋志明	0.82	songzhiming
-王云飞	王雲飛	0.82	wangyunfei
-王思涵	王思涵	0.82	wangsihan
-朱迅	朱迅	0.80	zhuxun
-韩东	韓東	0.80	handong
-徐青松	徐青松	0.80	xuqingsong
-埃里克	埃里克	0.80	ailike
-约翰逊	約翰遜	0.82	yuehanxun
-张明磊	張明磊	0.84	zhangminglei
-陈泽辉	陳澤輝	0.84	chenzehui
-银河之光	銀河之光	0.86	yinhezhiguang
-金蜂	金蜂	0.78	jinfeng
-银燕	銀燕	0.78	yinyan
-灵笔	靈筆	0.80	lingbi
-永恒智能	永恆智能	0.84	yonghengzhineng
-华瑞银行	華瑞銀行	0.88	huaruiyinxing
+# Use this file for general proper nouns such as product names, organizations,
+# platforms, and other real-world named entities that should remain inputable
+# without inheriting the everyday/chat preferred-term path.
 抖音	抖音	0.92	douyin
 火山引擎	火山引擎	0.86	huoshanyinqing
 飞书	飛書	0.88	feishu
@@ -43,6 +11,4 @@
 大众点评	大眾點評	0.88	dazhongdianping
 京东	京東	0.92	jingdong
 闲鱼	閒魚	0.88	xianyu
-招商银行	招商銀行	0.90	zhaoshangyinxing
-李自然	李自然	0.84	liziran
-申旻	申旻	0.84	shenmin
+招商银行	招商銀行	0.90	zhaoshangyinhang
