@@ -1,7 +1,7 @@
 # External Build Report
 
 - profile: external_broad
-- generated_at_utc: 2026-03-27T08:27:48+00:00
+- generated_at_utc: 2026-03-27T13:44:59+00:00
 - min_hanzi: 2
 - max_entries: unlimited
 
@@ -105,31 +105,32 @@
 - curated_daily_phrase_skipped_short: 0
 - curated_daily_terms_added_sc: 2
 - curated_daily_terms_added_tc: 522
-- curated_daily_terms_boosted_sc: 1038
-- curated_daily_terms_boosted_tc: 558
+- curated_daily_terms_boosted_sc: 1098
+- curated_daily_terms_boosted_tc: 592
 - curated_daily_terms_skipped_no_pinyin: 0
 - curated_daily_terms_skipped_short: 0
 - curated_daily_terms_total: 1154
-- daily_prefix_added_sc: 1350
-- daily_prefix_added_tc: 393
-- daily_prefix_boosted_sc: 2900
-- daily_prefix_boosted_tc: 1520
-- daily_prefix_pinyin_hits: 11407
-- daily_prefix_source_terms: 13157
+- daily_prefix_added_sc: 0
+- daily_prefix_added_tc: 0
+- daily_prefix_boosted_sc: 0
+- daily_prefix_boosted_tc: 0
+- daily_prefix_disabled: 1
+- daily_prefix_pinyin_hits: 0
+- daily_prefix_source_terms: 0
 - filtered_short: 2
-- freqlex_existing_pinyin_hits: 78669
-- freqlex_opencc_tc_hits: 11956
-- freqlex_prefix_seed_pinyin_hits: 1062
+- freqlex_existing_pinyin_hits: 78416
+- freqlex_opencc_tc_hits: 11809
+- freqlex_prefix_seed_pinyin_hits: 1003
 - freqlex_skipped_no_pinyin: 0
 - freqlex_skipped_non_cjk: 0
 - freqlex_skipped_short: 0
-- freqlex_skipped_weak_fallback: 252543
-- freqlex_terms_added_sc: 16999
-- freqlex_terms_added_tc: 11412
-- freqlex_terms_boosted_sc: 18917
-- freqlex_terms_boosted_tc: 18363
-- freqlex_terms_total: 348200
-- freqlex_unihan_fallback_hits: 15926
+- freqlex_skipped_weak_fallback: 253071
+- freqlex_terms_added_sc: 14953
+- freqlex_terms_added_tc: 10982
+- freqlex_terms_boosted_sc: 17738
+- freqlex_terms_boosted_tc: 17236
+- freqlex_terms_total: 346429
+- freqlex_unihan_fallback_hits: 13939
 - freqlex_wiki_alias_added_sc: 15
 - freqlex_wiki_alias_added_tc: 3
 - freqlex_wiki_alias_skipped_pinyin_mismatch: 192
@@ -144,8 +145,8 @@
 - jieba_pos_terms: 337394
 - jieba_total_lines: 349046
 - jieba_unique_terms: 337394
-- lexical_seed_augmented_sc_terms: 44648
-- lexical_seed_augmented_tc_terms: 40034
+- lexical_seed_augmented_sc_terms: 40011
+- lexical_seed_augmented_tc_terms: 37961
 - pageviews_articles_kept: 4396
 - pageviews_articles_rank_filtered: 0
 - pageviews_articles_title_filtered: 1604
@@ -164,157 +165,163 @@
 - pageviews_unique_terms: 2114
 - parsed_lines: 49182
 - sc_char_normalized_blocked_reverse_entries: 2
-- sc_char_normalized_converted_entries: 1968
-- sc_char_normalized_total_entries: 157586
+- sc_char_normalized_converted_entries: 1412
+- sc_char_normalized_total_entries: 153581
 - sc_core_multi_source_hits: 771
 - sc_core_named_entity_penalized: 15438
 - sc_core_pageviews_hits: 431
 - sc_core_rescored: 109390
 - sc_core_single_char_adjusted: 0
 - sc_core_single_char_reading_adjusted: 0
-- sc_core_usage_hits: 78630
+- sc_core_usage_hits: 78385
 - sc_core_wiki_hits: 679
 - sc_curated_daily_explicit_pinyin_override_terms_merged: 2
 - sc_curated_daily_explicit_pinyin_override_terms_rekeyed: 2
-- sc_curated_daily_explicit_pinyin_override_terms_total: 157584
-- sc_explicit_pinyin_override_terms_merged: 5
-- sc_explicit_pinyin_override_terms_rekeyed: 5
-- sc_explicit_pinyin_override_terms_total: 157582
+- sc_curated_daily_explicit_pinyin_override_terms_total: 153579
+- sc_explicit_multi_char_drop_rows: 0
+- sc_explicit_pinyin_override_terms_merged: 4
+- sc_explicit_pinyin_override_terms_rekeyed: 4
+- sc_explicit_pinyin_override_terms_total: 153577
 - sc_filtered_non_windows_cjk: 697
-- sc_global_tail_constituent_mismatch_removed: 808
+- sc_global_tail_constituent_mismatch_removed: 818
+- sc_global_tail_fragment_removed: 4
 - sc_global_tail_literary_removed: 15
-- sc_global_tail_modernity_risk_removed: 9255
-- sc_global_tail_named_removed: 231
+- sc_global_tail_modernity_risk_removed: 9401
+- sc_global_tail_named_removed: 242
 - sc_global_tail_rare_char_removed: 0
-- sc_global_tail_removed: 10425
-- sc_global_tail_written_removed: 116
-- sc_homophone_buckets: 15602
-- sc_homophone_daily_number_boosted: 69
-- sc_homophone_daily_phrase_boosted: 2258
-- sc_homophone_daily_phrase_damped: 1050
-- sc_homophone_daily_phrase_short_non_daily_damped: 522
-- sc_homophone_dominant_common_boosted: 9832
-- sc_homophone_dominant_common_damped: 12638
-- sc_homophone_entries_adjusted: 43000
-- sc_homophone_entries_boosted: 20463
-- sc_homophone_entries_damped: 22537
-- sc_homophone_inflated_short_penalized: 352
-- sc_homophone_literary_penalized: 65
-- sc_homophone_modernity_risk_penalized: 5954
-- sc_homophone_preferred_term_boosted: 308
-- sc_homophone_preferred_term_damped: 687
-- sc_homophone_rare_form_penalized: 373
-- sc_homophone_short_everyday_boosted: 444
-- sc_homophone_short_everyday_non_daily_damped: 673
-- sc_homophone_short_popular_wiki_boosted: 177
-- sc_homophone_sparse_penalized: 2394
+- sc_global_tail_removed: 10610
+- sc_global_tail_written_removed: 130
+- sc_homophone_buckets: 14618
+- sc_homophone_daily_number_boosted: 73
+- sc_homophone_daily_phrase_boosted: 2125
+- sc_homophone_daily_phrase_damped: 1066
+- sc_homophone_daily_phrase_short_non_daily_damped: 521
+- sc_homophone_dominant_common_boosted: 8983
+- sc_homophone_dominant_common_damped: 12269
+- sc_homophone_entries_adjusted: 39710
+- sc_homophone_entries_boosted: 18433
+- sc_homophone_entries_damped: 21277
+- sc_homophone_inflated_short_penalized: 357
+- sc_homophone_literary_penalized: 66
+- sc_homophone_modernity_risk_penalized: 4764
+- sc_homophone_preferred_term_boosted: 284
+- sc_homophone_preferred_term_damped: 587
+- sc_homophone_rare_form_penalized: 281
+- sc_homophone_short_everyday_boosted: 441
+- sc_homophone_short_everyday_non_daily_damped: 645
+- sc_homophone_short_popular_wiki_boosted: 171
+- sc_homophone_sparse_penalized: 1861
 - sc_homophone_written_tail_penalized: 3
+- sc_low_signal_fragment_removed: 3
 - sc_low_signal_literary_removed: 15
-- sc_low_signal_named_removed: 1991
-- sc_low_signal_rare_buckets: 12158
-- sc_low_signal_rare_removed: 2539
-- sc_low_signal_written_removed: 117
-- sc_multi_pronunciation_damped: 242
-- sc_multi_pronunciation_penalty_total: 71309
-- sc_multi_pronunciation_terms: 238
-- sc_normalized_converted_entries: 3706
-- sc_normalized_total_entries: 158158
-- sc_query_path_full_entries: 13047
-- sc_query_path_prefix_entries: 929
-- sc_query_path_prior_rows: 13908
-- sc_query_path_terms_considered: 44246
-- sc_query_path_terms_emitted: 13047
+- sc_low_signal_named_removed: 1882
+- sc_low_signal_rare_buckets: 10856
+- sc_low_signal_rare_removed: 2403
+- sc_low_signal_written_removed: 114
+- sc_multi_pronunciation_damped: 150
+- sc_multi_pronunciation_penalty_total: 42425
+- sc_multi_pronunciation_terms: 148
+- sc_normalized_converted_entries: 3413
+- sc_normalized_total_entries: 153717
+- sc_query_path_full_entries: 12595
+- sc_query_path_prefix_entries: 894
+- sc_query_path_prior_rows: 13423
+- sc_query_path_terms_considered: 44183
+- sc_query_path_terms_emitted: 12595
 - sc_script_filtered_entries: 2
-- sc_script_filtered_total_entries: 157584
+- sc_script_filtered_total_entries: 153579
 - sc_single_char_leading_adjusted: 0
 - sc_single_char_leading_delta_total: 0
 - sc_single_char_reading_preference_adjusted: 0
 - sc_single_char_reading_preference_delta_total: 0
 - sc_single_char_reading_removed: 0
-- tc_backfill_from_sc_added: 13236
-- tc_backfill_from_sc_boosted: 33613
-- tc_backfill_from_sc_total: 163814
+- tc_backfill_from_sc_added: 10455
+- tc_backfill_from_sc_boosted: 33725
+- tc_backfill_from_sc_total: 159779
 - tc_char_frequency_prior_terms: 6945
-- tc_char_normalized_converted_entries: 26673
-- tc_char_normalized_total_entries: 150578
+- tc_char_normalized_converted_entries: 26603
+- tc_char_normalized_total_entries: 149324
 - tc_core_multi_source_hits: 778
 - tc_core_named_entity_penalized: 15463
 - tc_core_pageviews_hits: 434
 - tc_core_rescored: 109690
 - tc_core_single_char_adjusted: 0
 - tc_core_single_char_reading_adjusted: 0
-- tc_core_usage_hits: 78907
+- tc_core_usage_hits: 78660
 - tc_core_wiki_hits: 673
 - tc_curated_daily_explicit_pinyin_override_terms_merged: 0
 - tc_curated_daily_explicit_pinyin_override_terms_rekeyed: 0
-- tc_curated_daily_explicit_pinyin_override_terms_total: 163338
-- tc_explicit_pinyin_override_terms_merged: 5
-- tc_explicit_pinyin_override_terms_rekeyed: 5
-- tc_explicit_pinyin_override_terms_total: 163338
-- tc_filtered_non_windows_cjk: 823
-- tc_global_tail_constituent_mismatch_removed: 1710
+- tc_curated_daily_explicit_pinyin_override_terms_total: 159401
+- tc_explicit_multi_char_drop_rows: 0
+- tc_explicit_pinyin_override_terms_merged: 4
+- tc_explicit_pinyin_override_terms_rekeyed: 4
+- tc_explicit_pinyin_override_terms_total: 159401
+- tc_filtered_non_windows_cjk: 822
+- tc_global_tail_constituent_mismatch_removed: 1719
+- tc_global_tail_fragment_removed: 4
 - tc_global_tail_literary_removed: 26
-- tc_global_tail_modernity_risk_removed: 13522
-- tc_global_tail_named_removed: 348
+- tc_global_tail_modernity_risk_removed: 13395
+- tc_global_tail_named_removed: 343
 - tc_global_tail_rare_char_removed: 0
-- tc_global_tail_removed: 16368
-- tc_global_tail_written_removed: 762
-- tc_homophone_buckets: 36312
-- tc_homophone_daily_number_boosted: 101
-- tc_homophone_daily_phrase_boosted: 11212
-- tc_homophone_daily_phrase_damped: 3841
-- tc_homophone_daily_phrase_short_non_daily_damped: 483
-- tc_homophone_dominant_common_boosted: 12905
-- tc_homophone_dominant_common_damped: 16656
-- tc_homophone_entries_adjusted: 85725
-- tc_homophone_entries_boosted: 40487
-- tc_homophone_entries_damped: 45238
-- tc_homophone_inflated_short_penalized: 3795
-- tc_homophone_literary_penalized: 122
-- tc_homophone_modernity_risk_penalized: 10030
-- tc_homophone_preferred_term_boosted: 425
-- tc_homophone_preferred_term_damped: 849
-- tc_homophone_rare_form_penalized: 6623
-- tc_homophone_sc_guided_boost_total: 379766
-- tc_homophone_sc_guided_boosted: 4032
-- tc_homophone_sc_guided_buckets: 8993
-- tc_homophone_sc_guided_damped: 2470
-- tc_homophone_sc_guided_penalty_total: 124503
-- tc_homophone_short_everyday_boosted: 435
-- tc_homophone_short_everyday_non_daily_damped: 595
-- tc_homophone_short_popular_wiki_boosted: 131
-- tc_homophone_sparse_penalized: 19868
+- tc_global_tail_removed: 16301
+- tc_global_tail_written_removed: 814
+- tc_homophone_buckets: 35386
+- tc_homophone_daily_number_boosted: 105
+- tc_homophone_daily_phrase_boosted: 11100
+- tc_homophone_daily_phrase_damped: 3808
+- tc_homophone_daily_phrase_short_non_daily_damped: 480
+- tc_homophone_dominant_common_boosted: 12137
+- tc_homophone_dominant_common_damped: 16073
+- tc_homophone_entries_adjusted: 82507
+- tc_homophone_entries_boosted: 38775
+- tc_homophone_entries_damped: 43732
+- tc_homophone_inflated_short_penalized: 3780
+- tc_homophone_literary_penalized: 114
+- tc_homophone_modernity_risk_penalized: 8515
+- tc_homophone_preferred_term_boosted: 403
+- tc_homophone_preferred_term_damped: 751
+- tc_homophone_rare_form_penalized: 5764
+- tc_homophone_sc_guided_boost_total: 364098
+- tc_homophone_sc_guided_boosted: 3781
+- tc_homophone_sc_guided_buckets: 8218
+- tc_homophone_sc_guided_damped: 2191
+- tc_homophone_sc_guided_penalty_total: 108826
+- tc_homophone_short_everyday_boosted: 441
+- tc_homophone_short_everyday_non_daily_damped: 576
+- tc_homophone_short_popular_wiki_boosted: 126
+- tc_homophone_sparse_penalized: 19045
 - tc_homophone_written_tail_penalized: 3
 - tc_jieba_direct_score_terms: 400363
 - tc_jieba_pos_terms: 400363
-- tc_low_signal_literary_removed: 43
-- tc_low_signal_named_removed: 2915
-- tc_low_signal_rare_buckets: 30020
-- tc_low_signal_rare_removed: 6531
-- tc_low_signal_written_removed: 1985
-- tc_multi_pronunciation_damped: 253
-- tc_multi_pronunciation_penalty_total: 74055
-- tc_multi_pronunciation_sc_guided_damped: 176
-- tc_multi_pronunciation_sc_guided_penalty_total: 37050
-- tc_multi_pronunciation_sc_guided_terms: 285
-- tc_multi_pronunciation_terms: 249
+- tc_low_signal_fragment_removed: 3
+- tc_low_signal_literary_removed: 38
+- tc_low_signal_named_removed: 2767
+- tc_low_signal_rare_buckets: 28848
+- tc_low_signal_rare_removed: 6201
+- tc_low_signal_written_removed: 1915
+- tc_multi_pronunciation_damped: 173
+- tc_multi_pronunciation_penalty_total: 48936
+- tc_multi_pronunciation_sc_guided_damped: 114
+- tc_multi_pronunciation_sc_guided_penalty_total: 25303
+- tc_multi_pronunciation_sc_guided_terms: 172
+- tc_multi_pronunciation_terms: 170
 - tc_pageviews_burst_terms: 1818
 - tc_pageviews_persistence_terms: 2417
-- tc_pageviews_score_terms: 10650
-- tc_query_path_full_entries: 9034
-- tc_query_path_prefix_entries: 614
-- tc_query_path_prior_rows: 9610
-- tc_query_path_terms_considered: 45537
-- tc_query_path_terms_emitted: 9034
-- tc_script_filtered_entries: 476
-- tc_script_filtered_total_entries: 163338
+- tc_pageviews_score_terms: 9627
+- tc_query_path_full_entries: 8706
+- tc_query_path_prefix_entries: 596
+- tc_query_path_prior_rows: 9266
+- tc_query_path_terms_considered: 45162
+- tc_query_path_terms_emitted: 8706
+- tc_script_filtered_entries: 378
+- tc_script_filtered_total_entries: 159401
 - tc_single_char_leading_adjusted: 0
 - tc_single_char_leading_delta_total: 0
 - tc_single_char_reading_preference_adjusted: 0
 - tc_single_char_reading_preference_delta_total: 0
 - tc_single_char_reading_removed: 0
 - tc_to_sc_map_terms: 111199
-- tc_usage_score_terms: 441141
+- tc_usage_score_terms: 438726
 - thuocl_frequency_terms: 876
 - thuocl_invalid_format: 4
 - thuocl_parsed_lines: 157168
@@ -323,9 +330,9 @@
 - thuocl_unique_terms: 142552
 - total_lines: 49191
 - unihan_map_size: 26711
-- usage_score_terms: 375629
+- usage_score_terms: 372803
 - vertical_exact_tc_added: 17422
-- vertical_exact_tc_reinforced: 12478
+- vertical_exact_tc_reinforced: 12482
 - vertical_layer_sources_loaded: 8
 - vertical_layer_sources_skipped_inactive: 0
 - vertical_layer_sources_skipped_unsupported: 0
@@ -341,19 +348,19 @@
 - vertical_mesh_descriptors_nonmedical: 12154
 - vertical_mesh_descriptors_total: 62220
 - vertical_mesh_missing_payload: 0
-- vertical_term_kept: 234
-- vertical_term_rows: 234
+- vertical_term_kept: 235
+- vertical_term_rows: 235
 - vertical_term_skipped_malformed: 0
 - vertical_term_skipped_non_cjk: 0
 - vertical_term_skipped_short: 0
-- vertical_terms_added_sc: 28194
-- vertical_terms_added_tc: 30572
+- vertical_terms_added_sc: 28202
+- vertical_terms_added_tc: 30574
 - vertical_terms_boosted_sc: 2047
-- vertical_terms_boosted_tc: 1360
+- vertical_terms_boosted_tc: 1361
 - vertical_terms_missing_payload_source: 0
 - vertical_terms_skipped_no_pinyin: 0
 - vertical_terms_skipped_short: 4083
-- vertical_terms_total: 37233
+- vertical_terms_total: 37234
 - vertical_terms_unsupported_source_type: 0
 - vertical_thuocl_files_matched: 2
 - vertical_thuocl_invalid_format: 0
@@ -373,18 +380,18 @@
 - vertical_wikidata_skipped_short: 307
 - wiki_deduplicated: 0
 - wiki_kept_titles: 307784
-- wiki_proper_augmented_sc_terms: 11143
-- wiki_proper_augmented_tc_terms: 8659
-- wiki_proper_titles_added_sc: 2318
-- wiki_proper_titles_added_tc: 1058
-- wiki_proper_titles_boosted_sc: 8567
-- wiki_proper_titles_boosted_tc: 7335
+- wiki_proper_augmented_sc_terms: 9359
+- wiki_proper_augmented_tc_terms: 7635
+- wiki_proper_titles_added_sc: 1123
+- wiki_proper_titles_added_tc: 623
+- wiki_proper_titles_boosted_sc: 7978
+- wiki_proper_titles_boosted_tc: 6747
 - wiki_proper_titles_candidates_sc: 1527914
 - wiki_proper_titles_pageview_backed: 1902
-- wiki_proper_titles_prefix_backed: 8883
+- wiki_proper_titles_prefix_backed: 7099
 - wiki_proper_titles_skipped_daily_like: 83877
-- wiki_proper_titles_skipped_no_pinyin: 6
-- wiki_proper_titles_skipped_weak_signal: 1516765
+- wiki_proper_titles_skipped_no_pinyin: 4
+- wiki_proper_titles_skipped_weak_signal: 1518551
 - wiki_proper_titles_total: 1796071
 - wiki_skipped_colon: 156
 - wiki_skipped_empty: 1
@@ -394,18 +401,19 @@
 - wiki_title_set_size: 1796071
 - wiki_total_lines: 2612069
 - wiktionary_title_set_size: 307784
-- wiktionary_titles_derived_prefixes: 3344
-- wiktionary_titles_kept: 8254
-- wiktionary_titles_skipped_char_prior: 6761
+- wiktionary_titles_derived_prefixes: 4148
+- wiktionary_titles_kept: 4402
+- wiktionary_titles_skipped_char_prior: 4837
 - wiktionary_titles_skipped_length: 6536
 - wiktionary_titles_skipped_non_chat: 286233
+- wiktionary_titles_skipped_two_char_weak_daily: 5776
 - wiktionary_titles_total: 307784
 
 ## Output
 - sc_file: data/generated/dict_clean_sc.txt
 - tc_file: data/generated/dict_clean_tc.txt
-- sc_entries: 143916
-- tc_entries: 157107
+- sc_entries: 139863
+- tc_entries: 153569
 - suspicious_sc_entries: 25
 
 - sc_query_path_file: data/generated/dict_query_path_prior_sc.txt
@@ -421,28 +429,28 @@
 
 | text | pinyin | weight | risk_score | modernity_risk | usage | jieba | pageviews | source_hits | char_score | pos | reasons |
 | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- | --- |
-| 谭旻萱 | tanminxuan | 772 | 943 | 398 | 0.000 | 0.000 | 0.000 | 0 | 0.200 | - | likely-person-name,weak-usage,high-modernity-risk |
+| 谭旻萱 | tanminxuan | 772 | 943 | 398 | 0.000 | 0.000 | 0.000 | 0 | 0.201 | - | likely-person-name,weak-usage,high-modernity-risk |
 | 陈姸霏 | chenyanfei | 778 | 941 | 398 | 0.000 | 0.000 | 0.000 | 0 | 0.255 | - | likely-person-name,weak-usage,high-modernity-risk |
 | 曾恺玹 | cengkaixuan | 776 | 940 | 398 | 0.000 | 0.000 | 0.000 | 0 | 0.252 | - | likely-person-name,weak-usage,high-modernity-risk |
 | 谷娅溦 | guyawei | 773 | 937 | 398 | 0.000 | 0.000 | 0.000 | 0 | 0.253 | - | likely-person-name,weak-usage,high-modernity-risk |
-| 郑敬淏 | zhengjinghao | 778 | 932 | 398 | 0.000 | 0.000 | 0.000 | 0 | 0.322 | - | likely-person-name,weak-usage,high-modernity-risk |
-| 黄瀞怡 | huangjingyi | 776 | 928 | 398 | 0.000 | 0.000 | 0.000 | 0 | 0.338 | - | likely-person-name,weak-usage,high-modernity-risk |
-| 何鸿燊 | hehongshen | 779 | 926 | 398 | 0.000 | 0.000 | 0.000 | 0 | 0.372 | - | likely-person-name,weak-usage,high-modernity-risk |
+| 郑敬淏 | zhengjinghao | 778 | 932 | 398 | 0.000 | 0.000 | 0.000 | 0 | 0.323 | - | likely-person-name,weak-usage,high-modernity-risk |
+| 黄瀞怡 | huangjingyi | 776 | 928 | 398 | 0.000 | 0.000 | 0.000 | 0 | 0.339 | - | likely-person-name,weak-usage,high-modernity-risk |
+| 何鸿燊 | hehongshen | 779 | 926 | 398 | 0.000 | 0.000 | 0.000 | 0 | 0.373 | - | likely-person-name,weak-usage,high-modernity-risk |
 | 杨偲泳 | yangcaiyong | 771 | 926 | 398 | 0.000 | 0.000 | 0.000 | 0 | 0.315 | - | likely-person-name,weak-usage,high-modernity-risk |
-| 钱弘倧 | qianhongzong | 769 | 926 | 398 | 0.000 | 0.000 | 0.000 | 0 | 0.298 | - | likely-person-name,weak-usage,high-modernity-risk |
+| 钱弘倧 | qianhongzong | 769 | 926 | 398 | 0.000 | 0.000 | 0.000 | 0 | 0.299 | - | likely-person-name,weak-usage,high-modernity-risk |
 | 刘佩玥 | liupeiyue | 770 | 922 | 398 | 0.000 | 0.000 | 0.000 | 0 | 0.334 | - | likely-person-name,weak-usage,high-modernity-risk |
-| 谢衣鳯 | xieyifeng | 771 | 919 | 398 | 0.000 | 0.000 | 0.000 | 0 | 0.364 | - | likely-person-name,weak-usage,high-modernity-risk |
-| 黄旼炫 | huangminxuan | 764 | 919 | 398 | 0.000 | 0.000 | 0.000 | 0 | 0.318 | - | likely-person-name,weak-usage,high-modernity-risk |
-| 吴函峮 | wuhanqun | 765 | 918 | 398 | 0.000 | 0.000 | 0.000 | 0 | 0.328 | - | likely-person-name,weak-usage,high-modernity-risk |
-| 严成玹 | yanchengxuan | 782 | 917 | 398 | 0.000 | 0.000 | 0.000 | 0 | 0.456 | - | likely-person-name,weak-usage,high-modernity-risk |
-| 姜珮瑶 | jiangpeiyao | 767 | 917 | 380 | 0.000 | 0.000 | 0.000 | 0 | 0.285 | - | likely-person-name,weak-usage,high-modernity-risk |
-| 叶蒨文 | yeqianwen | 778 | 916 | 398 | 0.000 | 0.000 | 0.000 | 0 | 0.433 | - | likely-person-name,weak-usage,high-modernity-risk |
+| 谢衣鳯 | xieyifeng | 771 | 919 | 398 | 0.000 | 0.000 | 0.000 | 0 | 0.365 | - | likely-person-name,weak-usage,high-modernity-risk |
+| 吴函峮 | wuhanqun | 765 | 918 | 398 | 0.000 | 0.000 | 0.000 | 0 | 0.329 | - | likely-person-name,weak-usage,high-modernity-risk |
+| 黄旼炫 | huangminxuan | 764 | 918 | 398 | 0.000 | 0.000 | 0.000 | 0 | 0.318 | - | likely-person-name,weak-usage,high-modernity-risk |
+| 严成玹 | yanchengxuan | 782 | 917 | 398 | 0.000 | 0.000 | 0.000 | 0 | 0.457 | - | likely-person-name,weak-usage,high-modernity-risk |
+| 姜珮瑶 | jiangpeiyao | 767 | 917 | 380 | 0.000 | 0.000 | 0.000 | 0 | 0.286 | - | likely-person-name,weak-usage,high-modernity-risk |
+| 叶蒨文 | yeqianwen | 778 | 916 | 398 | 0.000 | 0.000 | 0.000 | 0 | 0.434 | - | likely-person-name,weak-usage,high-modernity-risk |
+| 徐琨华 | xukunhua | 773 | 916 | 398 | 0.000 | 0.000 | 0.000 | 0 | 0.400 | - | likely-person-name,weak-usage,high-modernity-risk |
 | 卢昱晓 | luyuxiao | 782 | 915 | 364 | 0.000 | 0.000 | 0.000 | 0 | 0.353 | - | likely-person-name,weak-usage,high-modernity-risk |
-| 李昀锐 | liyunrui | 778 | 915 | 380 | 0.000 | 0.000 | 0.000 | 0 | 0.379 | - | likely-person-name,weak-usage,high-modernity-risk |
-| 林暐恒 | linweiheng | 768 | 915 | 398 | 0.000 | 0.000 | 0.000 | 0 | 0.375 | - | likely-person-name,weak-usage,high-modernity-risk |
-| 毕雯珺 | biwenjun | 765 | 915 | 380 | 0.000 | 0.000 | 0.000 | 0 | 0.284 | - | likely-person-name,weak-usage,high-modernity-risk |
+| 李昀锐 | liyunrui | 778 | 915 | 380 | 0.000 | 0.000 | 0.000 | 0 | 0.375 | - | likely-person-name,weak-usage,high-modernity-risk |
+| 林暐恒 | linweiheng | 768 | 915 | 398 | 0.000 | 0.000 | 0.000 | 0 | 0.371 | - | likely-person-name,weak-usage,high-modernity-risk |
+| 毕雯珺 | biwenjun | 765 | 915 | 380 | 0.000 | 0.000 | 0.000 | 0 | 0.285 | - | likely-person-name,weak-usage,high-modernity-risk |
 | 张惇涵 | zhangdunhan | 776 | 914 | 380 | 0.000 | 0.000 | 0.000 | 0 | 0.374 | - | likely-person-name,weak-usage,high-modernity-risk |
-| 崔祐齐 | cuiyouqi | 767 | 914 | 380 | 0.000 | 0.000 | 0.000 | 0 | 0.310 | - | likely-person-name,weak-usage,high-modernity-risk |
-| 邱梓铨 | qiuziquan | 767 | 913 | 364 | 0.000 | 0.000 | 0.000 | 0 | 0.259 | - | likely-person-name,weak-usage,high-modernity-risk |
+| 崔祐齐 | cuiyouqi | 767 | 914 | 380 | 0.000 | 0.000 | 0.000 | 0 | 0.309 | - | likely-person-name,weak-usage,high-modernity-risk |
+| 邱梓铨 | qiuziquan | 767 | 913 | 364 | 0.000 | 0.000 | 0.000 | 0 | 0.258 | - | likely-person-name,weak-usage,high-modernity-risk |
 | 谢琼煖 | xieqiongnuan | 767 | 913 | 380 | 0.000 | 0.000 | 0.000 | 0 | 0.317 | - | likely-person-name,weak-usage,high-modernity-risk |
-| 杨祐宁 | yangyouning | 776 | 912 | 380 | 0.000 | 0.000 | 0.000 | 0 | 0.386 | - | likely-person-name,weak-usage,high-modernity-risk |

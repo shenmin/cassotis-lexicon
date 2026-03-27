@@ -260,6 +260,23 @@ DAILY_CHAT_SEED_SUFFIXES = (
     "去",
 )
 DAILY_CHAT_SEED_CHARS = set("的得地就也还才又都把被给跟让像向对从为在这那哪怎啥谁您你我他她它咱吗呢吧呀啊嘛哦呗啦了着过说看来去")
+STRONG_TWO_CHAR_DAILY_HEAD_CHARS = set(
+    "\u4e0d\u6ca1\u522b\u8fd9\u90a3\u54ea\u600e\u5565\u8c01\u60a8\u4f60\u6211\u4ed6\u5979\u5b83\u54b1"
+    "\u6709\u65e0\u53ef\u80fd\u4f1a\u8981\u60f3\u8be5\u771f\u633a\u592a\u597d\u5148\u518d\u8fd8\u4e5f"
+    "\u5c31\u624d\u53c8\u90fd\u8001\u603b"
+)
+STRONG_TWO_CHAR_DAILY_TAIL_CHARS = set(
+    "\u5417\u5462\u5427\u5440\u554a\u561b\u54e6\u5457\u5566\u4e86\u7740\u8fc7"
+    "\u662f\u7684\u5f97\u6765\u53bb\u770b\u8bf4\u505a\u641e\u5f04\u95ee\u67e5\u542c\u8bd5\u6539"
+    "\u7ed9\u8981\u4f1a\u80fd\u884c\u597d\u5bf9\u9519\u5fd9\u7d2f\u723d\u75bc\u75db"
+)
+LOW_SIGNAL_FRAGMENT_HEAD_CHARS = set(
+    "\u6765\u4f86\u53bb\u770b\u8bf4\u8aaa\u505a\u641e\u5f04\u542c\u807d\u95ee\u554f\u8bd5\u8a66\u60f3"
+    "\u8981\u80fd\u4f1a\u6703\u7ed9\u7d66\u5e2e\u53eb\u627e\u7b49\u8ba9\u8b93\u5e26\u5e36\u966a"
+)
+LOW_SIGNAL_FRAGMENT_TAIL_SUFFIXES = (
+    "\u5f97",
+)
 DAILY_NUMBER_WORD_CHARS = set(
     "\u4e00\u4e8c\u4e24\u5169\u4e09\u56db\u4e94\u516d\u4e03\u516b\u4e5d"
     "\u5341\u767e\u5343\u4e07\u842c\u4ebf\u5104"
@@ -401,6 +418,11 @@ SINGLE_CHAR_READING_DELTA_OVERRIDES: Dict[Tuple[str, str], int] = {
     # Keep 朊 visible for medical contexts after vertical medical terms are
     # isolated from single-character support derivation.
     ("朊", "ruan"): 220,
+}
+
+MULTI_CHAR_TERM_DROP_OVERRIDES: Set[str] = {
+    # Keep this escape hatch empty by default. Short-term filtering should come
+    # from general build rules instead of an ever-growing denylist.
 }
 
 COPYLEFT_LICENSE_TOKENS = (
@@ -1853,6 +1875,29 @@ def _looks_like_low_signal_written_tail_term(
         (ch in LOW_SIGNAL_LITERARY_CHARS) or (ch in LOW_SIGNAL_WRITTEN_TAIL_HEADS)
         for ch in head
     )
+
+
+def _looks_like_low_signal_fragment_term(
+    text: str,
+    usage_score: float,
+    source_hits: int,
+    pageview_score: float,
+    jieba_direct_score: float,
+    wiki_support: bool,
+    pos_tag: str = "",
+) -> bool:
+    text_len = _cjk_len(text)
+    if text_len != 2:
+        return False
+    if not CJK_WINDOWS_FULL_RE.fullmatch(text):
+        return False
+    if _is_named_entity_pos(pos_tag):
+        return False
+    if text[0] not in LOW_SIGNAL_FRAGMENT_HEAD_CHARS:
+        return False
+    if text[1] not in LOW_SIGNAL_FRAGMENT_TAIL_SUFFIXES:
+        return False
+    return True
 
 
 def _compute_low_signal_inflated_short_term_penalty(
@@ -3916,6 +3961,7 @@ def _filter_low_signal_rare_entries(
         f"{stats_prefix}_low_signal_named_removed": 0,
         f"{stats_prefix}_low_signal_literary_removed": 0,
         f"{stats_prefix}_low_signal_written_removed": 0,
+        f"{stats_prefix}_low_signal_fragment_removed": 0,
     }
     if not mapping:
         return stats
@@ -4022,6 +4068,15 @@ def _filter_low_signal_rare_entries(
                 pos_tag=pos_tag,
                 char_score=char_score,
             )
+            looks_like_fragment_term = _looks_like_low_signal_fragment_term(
+                text,
+                usage_score=usage_score,
+                source_hits=source_hits,
+                pageview_score=pageview_score,
+                jieba_direct_score=jieba_direct_score,
+                wiki_support=wiki_support,
+                pos_tag=pos_tag,
+            )
             inflated_short_penalty = _compute_low_signal_inflated_short_term_penalty(
                 text,
                 usage_score=usage_score,
@@ -4033,6 +4088,10 @@ def _filter_low_signal_rare_entries(
                 char_score=char_score,
                 min_char_prior=min_char_prior,
             )
+            if looks_like_fragment_term:
+                to_drop.append((pinyin, text))
+                stats[f"{stats_prefix}_low_signal_fragment_removed"] += 1
+                continue
             # Protect common modern 2-char words even when cross-source signals
             # are incomplete (notably in TC conversion paths).
             if text_len <= 2 and char_score >= 0.58:
@@ -4139,6 +4198,7 @@ def _filter_global_tail_entries(
         f"{stats_prefix}_global_tail_named_removed": 0,
         f"{stats_prefix}_global_tail_literary_removed": 0,
         f"{stats_prefix}_global_tail_written_removed": 0,
+        f"{stats_prefix}_global_tail_fragment_removed": 0,
         f"{stats_prefix}_global_tail_rare_char_removed": 0,
         f"{stats_prefix}_global_tail_modernity_risk_removed": 0,
         f"{stats_prefix}_global_tail_constituent_mismatch_removed": 0,
@@ -4297,6 +4357,15 @@ def _filter_global_tail_entries(
             pos_tag=pos_tag,
             char_score=char_score,
         )
+        looks_like_fragment_term = _looks_like_low_signal_fragment_term(
+            text,
+            usage_score=usage_score,
+            source_hits=source_hits,
+            pageview_score=pageview_score,
+            jieba_direct_score=jieba_direct_score,
+            wiki_support=wiki_support,
+            pos_tag=pos_tag,
+        )
         inflated_short_penalty = _compute_low_signal_inflated_short_term_penalty(
             text,
             usage_score=usage_score,
@@ -4394,6 +4463,10 @@ def _filter_global_tail_entries(
         ):
             if schedule_drop(key):
                 stats[f"{stats_prefix}_global_tail_modernity_risk_removed"] += 1
+            continue
+        if looks_like_fragment_term:
+            if force_drop(key):
+                stats[f"{stats_prefix}_global_tail_fragment_removed"] += 1
             continue
 
         # Keep at least one candidate per pinyin bucket to avoid hard holes.
@@ -5094,6 +5167,16 @@ def _looks_like_daily_chat_seed(text: str) -> bool:
     return False
 
 
+def _looks_like_strong_two_char_daily_seed(text: str) -> bool:
+    if _cjk_len(text) != 2:
+        return False
+    if not CJK_FULL_RE.fullmatch(text):
+        return False
+    head = text[0]
+    tail = text[1]
+    return head in STRONG_TWO_CHAR_DAILY_HEAD_CHARS and tail in STRONG_TWO_CHAR_DAILY_TAIL_CHARS
+
+
 def _build_wiktionary_daily_seed_signal_map(
     titles: Set[str],
     char_frequency_prior: Dict[str, float],
@@ -5111,6 +5194,7 @@ def _build_wiktionary_daily_seed_signal_map(
         "wiktionary_titles_derived_prefixes": 0,
         "wiktionary_titles_skipped_length": 0,
         "wiktionary_titles_skipped_non_chat": 0,
+        "wiktionary_titles_skipped_two_char_weak_daily": 0,
         "wiktionary_titles_skipped_char_prior": 0,
     }
     usage_score_map: Dict[str, float] = {}
@@ -5125,6 +5209,9 @@ def _build_wiktionary_daily_seed_signal_map(
             continue
         if not _looks_like_daily_chat_seed(text):
             stats["wiktionary_titles_skipped_non_chat"] += 1
+            continue
+        if text_len == 2 and not _looks_like_strong_two_char_daily_seed(text):
+            stats["wiktionary_titles_skipped_two_char_weak_daily"] += 1
             continue
 
         char_score = _compute_text_single_char_prior(text, char_frequency_prior)
@@ -9388,7 +9475,13 @@ def _augment_with_wiki_proper_noun_titles(
                 or (prefix_term_count >= 2 and prefix_support >= 220.0)
             )
         )
-        if not (pageview_backed or source_backed or prefix_backed):
+        if text_len == 2:
+            has_admissible_support = pageview_backed or source_backed or (
+                prefix_backed and (direct_jieba >= 0.06 or direct_usage >= 0.06)
+            )
+        else:
+            has_admissible_support = pageview_backed or source_backed or prefix_backed
+        if not has_admissible_support:
             stats["wiki_proper_titles_skipped_weak_signal"] += 1
             continue
 
@@ -9567,6 +9660,24 @@ def _apply_limit(
         key=lambda kv: (-kv[1], kv[0][0], kv[0][1]),
     )[:max_entries]
     return dict(items)
+
+
+def _drop_explicit_multi_char_terms(
+    mapping: Dict[Tuple[str, str], int],
+    drop_terms: Set[str],
+) -> Tuple[Dict[Tuple[str, str], int], int]:
+    if not drop_terms:
+        return mapping, 0
+
+    filtered: Dict[Tuple[str, str], int] = {}
+    dropped = 0
+    for key, weight in mapping.items():
+        _pinyin, text = key
+        if len(text) > 1 and text in drop_terms:
+            dropped += 1
+            continue
+        filtered[key] = weight
+    return filtered, dropped
 
 
 def _filter_windows_unrenderable_entries(
@@ -10795,29 +10906,17 @@ def main() -> int:
             set(wiktionary_usage_score_map.keys()),
             args.min_hanzi,
         )
-        (
-            daily_prefix_stats,
-            daily_prefix_sc_terms,
-            daily_prefix_tc_terms,
-        ) = _augment_with_daily_prefix_derivation(
-            sc_map,
-            tc_map,
-            usage_score_map,
-            source_hits_map,
-            pageviews_signal_map,
-            jieba_direct_signal_map,
-            jieba_pos_map,
-            char_frequency_prior,
-            opencc_entries,
-            simp_to_trad_char_map,
-            unihan_map,
-            unihan_readings_map,
-            unihan_reading_source_map,
-            unihan_pinlu_detail_map,
-            args.min_hanzi,
-        )
-        lexical_seed_sc_terms.update(daily_prefix_sc_terms)
-        lexical_seed_tc_terms.update(daily_prefix_tc_terms)
+        daily_prefix_stats = {
+            "daily_prefix_source_terms": 0,
+            "daily_prefix_pinyin_hits": 0,
+            "daily_prefix_added_sc": 0,
+            "daily_prefix_boosted_sc": 0,
+            "daily_prefix_added_tc": 0,
+            "daily_prefix_boosted_tc": 0,
+            "daily_prefix_disabled": 1,
+        }
+        daily_prefix_sc_terms = set()
+        daily_prefix_tc_terms = set()
         if args.min_hanzi >= 2:
             (
                 wiki_proper_stats,
@@ -11520,6 +11619,17 @@ def main() -> int:
         stats_prefix="tc",
     )
     stats.update(tc_sc_guided_homophone_stats)
+
+    sc_map, sc_explicit_drop_rows = _drop_explicit_multi_char_terms(
+        sc_map,
+        MULTI_CHAR_TERM_DROP_OVERRIDES,
+    )
+    tc_map, tc_explicit_drop_rows = _drop_explicit_multi_char_terms(
+        tc_map,
+        MULTI_CHAR_TERM_DROP_OVERRIDES,
+    )
+    stats["sc_explicit_multi_char_drop_rows"] = sc_explicit_drop_rows
+    stats["tc_explicit_multi_char_drop_rows"] = tc_explicit_drop_rows
 
     sc_map = _apply_limit(sc_map, args.max_entries)
     tc_map = _apply_limit(tc_map, args.max_entries)

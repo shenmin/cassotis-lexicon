@@ -1,7 +1,7 @@
 # External Build Report
 
 - profile: unihan_single
-- generated_at_utc: 2026-03-27T08:28:21+00:00
+- generated_at_utc: 2026-03-27T13:45:30+00:00
 - min_hanzi: 1
 - max_entries: unlimited
 
@@ -69,8 +69,10 @@
 - sc_char_normalized_blocked_reverse_entries: 0
 - sc_char_normalized_converted_entries: 23
 - sc_char_normalized_total_entries: 23910
+- sc_explicit_multi_char_drop_rows: 0
 - sc_filtered_non_windows_cjk: 0
 - sc_global_tail_constituent_mismatch_removed: 0
+- sc_global_tail_fragment_removed: 0
 - sc_global_tail_literary_removed: 0
 - sc_global_tail_modernity_risk_removed: 0
 - sc_global_tail_named_removed: 0
@@ -84,9 +86,9 @@
 - sc_homophone_daily_phrase_short_non_daily_damped: 0
 - sc_homophone_dominant_common_boosted: 0
 - sc_homophone_dominant_common_damped: 0
-- sc_homophone_entries_adjusted: 23817
-- sc_homophone_entries_boosted: 3659
-- sc_homophone_entries_damped: 20158
+- sc_homophone_entries_adjusted: 23814
+- sc_homophone_entries_boosted: 3649
+- sc_homophone_entries_damped: 20165
 - sc_homophone_inflated_short_penalized: 0
 - sc_homophone_literary_penalized: 0
 - sc_homophone_modernity_risk_penalized: 0
@@ -98,6 +100,7 @@
 - sc_homophone_short_popular_wiki_boosted: 0
 - sc_homophone_sparse_penalized: 0
 - sc_homophone_written_tail_penalized: 0
+- sc_low_signal_fragment_removed: 0
 - sc_low_signal_literary_removed: 0
 - sc_low_signal_named_removed: 0
 - sc_low_signal_rare_buckets: 0
@@ -109,14 +112,16 @@
 - sc_script_filtered_entries: 0
 - sc_script_filtered_total_entries: 23910
 - sc_single_char_leading_adjusted: 395
-- sc_single_char_leading_delta_total: 21360
-- sc_single_char_reading_preference_adjusted: 1500
-- sc_single_char_reading_preference_delta_total: 21326
+- sc_single_char_leading_delta_total: 20688
+- sc_single_char_reading_preference_adjusted: 1490
+- sc_single_char_reading_preference_delta_total: 20861
 - sc_single_char_reading_removed: 1
 - tc_char_normalized_converted_entries: 18
 - tc_char_normalized_total_entries: 24065
+- tc_explicit_multi_char_drop_rows: 0
 - tc_filtered_non_windows_cjk: 0
 - tc_global_tail_constituent_mismatch_removed: 0
+- tc_global_tail_fragment_removed: 0
 - tc_global_tail_literary_removed: 0
 - tc_global_tail_modernity_risk_removed: 0
 - tc_global_tail_named_removed: 0
@@ -130,9 +135,9 @@
 - tc_homophone_daily_phrase_short_non_daily_damped: 0
 - tc_homophone_dominant_common_boosted: 0
 - tc_homophone_dominant_common_damped: 0
-- tc_homophone_entries_adjusted: 23906
-- tc_homophone_entries_boosted: 4039
-- tc_homophone_entries_damped: 19867
+- tc_homophone_entries_adjusted: 23937
+- tc_homophone_entries_boosted: 4010
+- tc_homophone_entries_damped: 19927
 - tc_homophone_inflated_short_penalized: 0
 - tc_homophone_literary_penalized: 0
 - tc_homophone_modernity_risk_penalized: 0
@@ -149,6 +154,7 @@
 - tc_homophone_short_popular_wiki_boosted: 0
 - tc_homophone_sparse_penalized: 0
 - tc_homophone_written_tail_penalized: 0
+- tc_low_signal_fragment_removed: 0
 - tc_low_signal_literary_removed: 0
 - tc_low_signal_named_removed: 0
 - tc_low_signal_rare_buckets: 0
@@ -162,25 +168,25 @@
 - tc_multi_pronunciation_terms: 0
 - tc_script_filtered_entries: 0
 - tc_script_filtered_total_entries: 24065
-- tc_single_char_leading_adjusted: 349
-- tc_single_char_leading_delta_total: 19224
-- tc_single_char_reading_preference_adjusted: 1855
-- tc_single_char_reading_preference_delta_total: 34276
+- tc_single_char_leading_adjusted: 357
+- tc_single_char_leading_delta_total: 18864
+- tc_single_char_reading_preference_adjusted: 1849
+- tc_single_char_reading_preference_delta_total: 34469
 - tc_single_char_reading_removed: 1
 - total_lines: 49191
 - unihan_core_size: 18816
-- unihan_family_support_boosted_sc: 5024
-- unihan_family_support_boosted_tc: 5244
-- unihan_family_support_terms_sc: 5842
-- unihan_family_support_terms_tc: 6075
+- unihan_family_support_boosted_sc: 5011
+- unihan_family_support_boosted_tc: 5227
+- unihan_family_support_terms_sc: 5849
+- unihan_family_support_terms_tc: 6084
 - unihan_frequency_size: 0
 - unihan_grade_size: 2632
-- unihan_leading_support_terms_sc: 4780
-- unihan_leading_support_terms_tc: 4935
+- unihan_leading_support_terms_sc: 4774
+- unihan_leading_support_terms_tc: 4932
 - unihan_map_size: 26711
 - unihan_pinlu_size: 3799
-- unihan_reading_support_terms_sc: 1543
-- unihan_reading_support_terms_tc: 1986
+- unihan_reading_support_terms_sc: 1542
+- unihan_reading_support_terms_tc: 1983
 - unihan_readings_chars: 26711
 - unihan_readings_pairs: 33908
 - unihan_sc_only_chars: 2766
@@ -198,10 +204,10 @@
 - vertical_mesh_descriptors_nonmedical: 12154
 - vertical_mesh_descriptors_total: 62220
 - vertical_mesh_missing_payload: 0
-- vertical_support_excluded_sc: 34902
-- vertical_support_excluded_tc: 36454
-- vertical_term_kept: 234
-- vertical_term_rows: 234
+- vertical_support_excluded_sc: 34903
+- vertical_support_excluded_tc: 36455
+- vertical_term_kept: 235
+- vertical_term_rows: 235
 - vertical_term_skipped_malformed: 0
 - vertical_term_skipped_non_cjk: 0
 - vertical_term_skipped_short: 0
@@ -246,25 +252,25 @@
 | 不 | bu | 793 | 821 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.913 | - | weak-usage,high-modernity-risk |
 | 有 | you | 784 | 813 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.910 | - | weak-usage,high-modernity-risk |
 | 他 | ta | 781 | 810 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.908 | - | weak-usage,high-modernity-risk |
-| 大 | da | 774 | 799 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.937 | - | weak-usage,high-modernity-risk |
+| 大 | da | 772 | 797 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.936 | - | weak-usage,high-modernity-risk |
 | 这 | zhe | 760 | 790 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.899 | - | weak-usage,high-modernity-risk |
 | 一 | yi | 760 | 790 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.899 | - | weak-usage,high-modernity-risk |
 | 那 | na | 755 | 785 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.897 | - | weak-usage,high-modernity-risk |
 | 我 | wo | 751 | 782 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.895 | - | weak-usage,high-modernity-risk |
 | 可 | ke | 748 | 779 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.894 | - | weak-usage,high-modernity-risk |
-| 在 | zai | 745 | 776 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.893 | - | weak-usage,high-modernity-risk |
 | 上 | shang | 731 | 763 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.887 | - | weak-usage,high-modernity-risk |
-| 也 | ye | 730 | 762 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.886 | - | weak-usage,high-modernity-risk |
 | 没 | mei | 731 | 760 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.908 | - | weak-usage,high-modernity-risk |
-| 就 | jiu | 727 | 759 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.885 | - | weak-usage,high-modernity-risk |
+| 在 | zai | 720 | 753 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.882 | - | weak-usage,high-modernity-risk |
 | 和 | he | 721 | 750 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.910 | - | weak-usage,high-modernity-risk |
-| 会 | hui | 717 | 747 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.902 | - | weak-usage,high-modernity-risk |
-| 了 | le | 719 | 746 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.922 | - | weak-usage,high-modernity-risk |
+| 也 | ye | 714 | 747 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.879 | - | weak-usage,high-modernity-risk |
 | 去 | qu | 713 | 746 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.879 | - | weak-usage,high-modernity-risk |
 | 出 | chu | 711 | 744 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.878 | - | weak-usage,high-modernity-risk |
 | 你 | ni | 710 | 743 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.878 | - | weak-usage,high-modernity-risk |
 | 以 | yi | 709 | 742 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.877 | - | weak-usage,high-modernity-risk |
 | 要 | yao | 708 | 741 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.877 | - | weak-usage,high-modernity-risk |
-| 都 | dou | 710 | 740 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.903 | - | weak-usage,high-modernity-risk |
 | 好 | hao | 707 | 740 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.876 | - | weak-usage,high-modernity-risk |
 | 能 | neng | 698 | 732 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.873 | - | weak-usage,high-modernity-risk |
+| 下 | xia | 698 | 732 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.873 | - | weak-usage,high-modernity-risk |
+| 主 | zhu | 697 | 731 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.872 | - | weak-usage,high-modernity-risk |
+| 看 | kan | 696 | 730 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.872 | - | weak-usage,high-modernity-risk |
+| 前 | qian | 694 | 728 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.871 | - | weak-usage,high-modernity-risk |
