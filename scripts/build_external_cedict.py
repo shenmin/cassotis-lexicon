@@ -1091,6 +1091,20 @@ def _build_explicit_term_pinyin_override_map(
     return overrides
 
 
+def _build_curated_daily_explicit_pinyin_override_map(
+    entries: List[Tuple[str, str, float, str]],
+) -> Dict[str, str]:
+    overrides: Dict[str, str] = {}
+    for sc_word, tc_word, _usage_score, explicit_pinyin in entries:
+        if not explicit_pinyin:
+            continue
+        if sc_word and sc_word not in overrides:
+            overrides[sc_word] = explicit_pinyin
+        if tc_word and tc_word not in overrides:
+            overrides[tc_word] = explicit_pinyin
+    return overrides
+
+
 def _compute_medicine_vertical_penalty(text: str, source_id: str) -> int:
     text_len = _cjk_len(text)
     if text_len <= 2:
@@ -5173,7 +5187,7 @@ def _build_wiktionary_daily_seed_signal_map(
 def _parse_curated_daily_phrase_entries(
     payload: bytes,
     min_hanzi: int,
-) -> Tuple[List[Tuple[str, str, float]], Dict[str, int]]:
+) -> Tuple[List[Tuple[str, str, float, str]], Dict[str, int]]:
     stats = {
         "curated_daily_phrase_rows": 0,
         "curated_daily_phrase_kept": 0,
@@ -5181,7 +5195,7 @@ def _parse_curated_daily_phrase_entries(
         "curated_daily_phrase_skipped_non_cjk": 0,
         "curated_daily_phrase_skipped_malformed": 0,
     }
-    entries: List[Tuple[str, str, float]] = []
+    entries: List[Tuple[str, str, float, str]] = []
     text = _decode_text(payload)
     for raw_line in text.splitlines():
         line = raw_line.strip()
@@ -5206,7 +5220,17 @@ def _parse_curated_daily_phrase_entries(
             continue
         if not tc_word:
             tc_word = sc_word
-        entries.append((sc_word, tc_word, min(1.0, max(0.0, usage_score))))
+        explicit_pinyin = parts[3].strip().lower() if len(parts) >= 4 else ""
+        if explicit_pinyin and not PINYIN_RE.fullmatch(explicit_pinyin):
+            explicit_pinyin = ""
+        entries.append(
+            (
+                sc_word,
+                tc_word,
+                min(1.0, max(0.0, usage_score)),
+                explicit_pinyin,
+            )
+        )
         stats["curated_daily_phrase_kept"] += 1
     return entries, stats
 
@@ -8729,7 +8753,7 @@ def _augment_with_daily_prefix_derivation(
 def _augment_with_curated_daily_phrases(
     sc: Dict[Tuple[str, str], int],
     tc: Dict[Tuple[str, str], int],
-    curated_entries: List[Tuple[str, str, float]],
+    curated_entries: List[Tuple[str, str, float, str]],
     usage_score_map: Dict[str, float],
     source_hits_map: Dict[str, int],
     tc_usage_score_map: Dict[str, float],
@@ -8763,13 +8787,13 @@ def _augment_with_curated_daily_phrases(
     sc_char_prior = _build_effective_char_prior(sc, char_frequency_prior)
     tc_char_prior = _build_effective_char_prior(tc, tc_char_frequency_prior)
 
-    for sc_word, tc_word, usage_score in curated_entries:
+    for sc_word, tc_word, usage_score, explicit_pinyin in curated_entries:
         stats["curated_daily_terms_total"] += 1
         if _cjk_len(sc_word) < min_hanzi:
             stats["curated_daily_terms_skipped_short"] += 1
             continue
 
-        pinyin = _pinyin_from_unihan(sc_word, unihan_map)
+        pinyin = explicit_pinyin or _pinyin_from_unihan(sc_word, unihan_map)
         if not pinyin:
             stats["curated_daily_terms_skipped_no_pinyin"] += 1
             continue
@@ -8882,7 +8906,7 @@ def _augment_with_curated_daily_phrases(
 
 def _reinforce_curated_daily_tc_phrases(
     tc: Dict[Tuple[str, str], int],
-    curated_entries: List[Tuple[str, str, float]],
+    curated_entries: List[Tuple[str, str, float, str]],
     tc_usage_score_map: Dict[str, float],
     tc_source_hits_map: Dict[str, int],
     tc_jieba_direct_signal_map: Dict[str, float],
@@ -8904,11 +8928,11 @@ def _reinforce_curated_daily_tc_phrases(
     tc_existing_texts = {text for _pinyin, text in tc.keys()}
     tc_char_prior = _build_effective_char_prior(tc, tc_char_frequency_prior)
 
-    for sc_word, tc_word, usage_score in curated_entries:
+    for sc_word, tc_word, usage_score, explicit_pinyin in curated_entries:
         if _cjk_len(sc_word) < min_hanzi:
             continue
 
-        pinyin = _pinyin_from_unihan(sc_word, unihan_map)
+        pinyin = explicit_pinyin or _pinyin_from_unihan(sc_word, unihan_map)
         if not pinyin:
             continue
 
@@ -10657,7 +10681,7 @@ def main() -> int:
         for word, score in wiktionary_usage_score_map.items():
             usage_score_map[word] = max(score, usage_score_map.get(word, 0.0))
             source_hits_map[word] = max(1, source_hits_map.get(word, 0))
-        for sc_word, _tc_word, score in curated_daily_entries:
+        for sc_word, _tc_word, score, _explicit_pinyin in curated_daily_entries:
             usage_score_map[sc_word] = max(score, usage_score_map.get(sc_word, 0.0))
             source_hits_map[sc_word] = max(4, source_hits_map.get(sc_word, 0))
         wiki_alias_titles_by_pinyin = _collect_wiki_pinyin_alias_titles(
@@ -10951,6 +10975,19 @@ def main() -> int:
         tc_map, tc_script_filter_stats = _filter_tc_mapping_with_script_hints(
             tc_map, sc_script_chars, tc_script_chars
         )
+        curated_daily_explicit_pinyin_overrides = _build_curated_daily_explicit_pinyin_override_map(
+            curated_daily_entries
+        )
+        sc_map, sc_curated_daily_pinyin_override_stats = _apply_explicit_term_pinyin_overrides(
+            sc_map,
+            curated_daily_explicit_pinyin_overrides,
+            "sc_curated_daily_explicit_pinyin_override",
+        )
+        tc_map, tc_curated_daily_pinyin_override_stats = _apply_explicit_term_pinyin_overrides(
+            tc_map,
+            curated_daily_explicit_pinyin_overrides,
+            "tc_curated_daily_explicit_pinyin_override",
+        )
         explicit_term_pinyin_overrides = _build_explicit_term_pinyin_override_map(vertical_entries)
         sc_map, sc_pinyin_override_stats = _apply_explicit_term_pinyin_overrides(
             sc_map,
@@ -11010,6 +11047,8 @@ def main() -> int:
         stats.update(wiktionary_stats)
         stats.update(wiktionary_seed_stats)
         stats.update(curated_daily_parse_stats)
+        stats.update(sc_curated_daily_pinyin_override_stats)
+        stats.update(tc_curated_daily_pinyin_override_stats)
         stats.update(sc_rescore_stats)
         stats.update(tc_rescore_stats)
         stats.update(augment_stats)

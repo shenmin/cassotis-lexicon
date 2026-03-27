@@ -1,7 +1,7 @@
 # External Build Report
 
 - profile: unihan_single
-- generated_at_utc: 2026-03-27T07:25:48+00:00
+- generated_at_utc: 2026-03-27T08:28:21+00:00
 - min_hanzi: 1
 - max_entries: unlimited
 
@@ -108,8 +108,8 @@
 - sc_multi_pronunciation_terms: 0
 - sc_script_filtered_entries: 0
 - sc_script_filtered_total_entries: 23910
-- sc_single_char_leading_adjusted: 394
-- sc_single_char_leading_delta_total: 21336
+- sc_single_char_leading_adjusted: 395
+- sc_single_char_leading_delta_total: 21360
 - sc_single_char_reading_preference_adjusted: 1500
 - sc_single_char_reading_preference_delta_total: 21326
 - sc_single_char_reading_removed: 1
@@ -130,9 +130,9 @@
 - tc_homophone_daily_phrase_short_non_daily_damped: 0
 - tc_homophone_dominant_common_boosted: 0
 - tc_homophone_dominant_common_damped: 0
-- tc_homophone_entries_adjusted: 23905
+- tc_homophone_entries_adjusted: 23906
 - tc_homophone_entries_boosted: 4039
-- tc_homophone_entries_damped: 19866
+- tc_homophone_entries_damped: 19867
 - tc_homophone_inflated_short_penalized: 0
 - tc_homophone_literary_penalized: 0
 - tc_homophone_modernity_risk_penalized: 0
@@ -162,8 +162,8 @@
 - tc_multi_pronunciation_terms: 0
 - tc_script_filtered_entries: 0
 - tc_script_filtered_total_entries: 24065
-- tc_single_char_leading_adjusted: 346
-- tc_single_char_leading_delta_total: 19116
+- tc_single_char_leading_adjusted: 349
+- tc_single_char_leading_delta_total: 19224
 - tc_single_char_reading_preference_adjusted: 1855
 - tc_single_char_reading_preference_delta_total: 34276
 - tc_single_char_reading_removed: 1

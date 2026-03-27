@@ -6059,7 +6059,7 @@ lifawaike	理发|外科	415
 lifawaikeyisheng	理发|外科|医生	497
 lifaweiyuan	立法|委员	472
 lifupingdiyanye	利福平|滴眼液	447
-lihaichongtu	利害|冲突	467
+lihaichongtu	利害|冲突	460
 lihaiguanxi	利害|关系	467
 lijizhixing	立即|执行	426
 lijizhixinghanshu	立即|执行|函数	508
@@ -9674,6 +9674,7 @@ tefaxinggaoxueya	特发性|高血压	497
 tefaxingshishuizheng	特发性|嗜睡症	497
 tefaxingzhenchan	特发性|震颤	453
 tejihuli	特级|护理	486
+tengdelihai	疼得|厉害	520
 tengtongmenzhen	疼痛|门诊	462
 tengtongyuzhi	疼痛|阈值	457
 tequanmingling	特权|命令	510
@@ -9847,6 +9848,7 @@ tongchaiyali	同侪|压力	500
 tongdaojiekou	通道|接口	510
 tongdaomingling	通道|命令	510
 tongdaozhongren	同道|中人	383
+tongdelihai	痛得|厉害	520
 tonggoupaigou	统购|派购	448
 tongguanyueqi	铜管|乐器	470
 tonghefenxi	统合|分析	500
@@ -10334,7 +10336,10 @@ wenyigongzuozhe	文艺|工作者	473
 wenyizuopin	文艺|作品	466
 wenzhiwugong	文治|武功	470
 wenzidenaodai	蚊子的|脑袋	441
+wobuqingchu	我不|清楚	520
+wobuxiaode	我不|晓得	472
 wobuxinjiao	我不|信教	412
+wobuzhaoji	我不|着急	520
 wobuzhidao	我不|知道	520
 wochuangxiuxi	卧床|休息	437
 woderenjian	我的|人间	364
@@ -10344,12 +10349,14 @@ wodetiana	我的|天啊	469
 wodeyingxiong	我的|英雄	354
 wodeyingxiongxueyuan	我的|英雄|学院	436
 wodigaozhong	卧底|高中	436
+wolaibangni	我来|帮你	520
 wolidemafeng	窝里的|马蜂	455
 womenbixu	我们|必须	520
 womenshuode	我们|说的	520
 womenyiding	我们|一定	520
 woniudefangzi	蜗牛的|房子	455
 wotianyinshui	我田|引水	460
+wozhexingqi	我这|星期	520
 wubeizidanningsuan	五倍子|单宁酸	497
 wubiandedahai	无边的|大海	441
 wubianwuji	无边|无际	459

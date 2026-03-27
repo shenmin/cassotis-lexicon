@@ -2265,7 +2265,7 @@ bagu	八股	631
 bagu	巴古	311
 bagua	八卦	536
 baguan	拔罐	758
-baguan	罢官	432
+baguan	罢官	433
 baguan	把关	418
 baguanfa	拔罐法	232
 baguanliaofa	拔罐疗法	657
@@ -3726,7 +3726,9 @@ bangmang	帮忙	476
 bangmoji	棒磨机	379
 bangnazhenghouqun	邦纳症候群	800
 bangni	帮你	758
+bangnigao	帮你搞	955
 bangnimen	帮你们	938
+bangninong	帮你弄	961
 bangong	办公	996
 bangongbandu	半工半读	471
 bangongdalou	办公大楼	405
@@ -3801,10 +3803,10 @@ bangzhuang	绑桩	198
 bangzhuangganjun	棒状杆菌	638
 bangzhuchengxu	帮助程序	839
 bangzhumingling	帮助命令	853
-bangzi	棒子	821
+bangzi	棒子	820
 bangzi	梆子	506
 bangzi	膀子	392
-bangzi	帮子	308
+bangzi	帮子	309
 bangziguo	棒子国	232
 bangzimian	棒子面	340
 bangzimianr	棒子面儿	260
@@ -4606,7 +4608,7 @@ baomiding	胞嘧啶	419
 baomihua	爆米花	598
 baomin	暴民	359
 baoming	报名	939
-baoming	保命	321
+baoming	保命	320
 baomingbiao	报名表	459
 baomingfei	报名费	438
 baomixieyi	保密协议	260
@@ -7366,7 +7368,7 @@ bihun	毕婚	137
 bihuodu	比活度	648
 bihusuo	庇护所	412
 biji	笔记	963
-biji	比基	671
+biji	比基	672
 biji	比及	322
 biji	笔迹	186
 biji	哔叽	1
@@ -7401,6 +7403,9 @@ bijiaonan	比较难	973
 bijiaoqiang	比较强	973
 bijiaoruo	比较弱	973
 bijiaoshao	比较少	973
+bijiaoshuang	比较爽	966
+bijiaoteng	比较疼	966
+bijiaotong	比较痛	966
 bijiaowenxue	比较文学	467
 bijiaoxiao	比较小	980
 bijiaoxiaoyiyanjiu	比较效益研究	842
@@ -8508,7 +8513,7 @@ bodao	波导	536
 bodao	驳倒	394
 bodao	博导	323
 bode	博得	1000
-bode	博地	798
+bode	博地	797
 bode	波德	673
 bodegelicha	波德戈里察	289
 bodelicha	波德里查	260
@@ -9138,7 +9143,7 @@ budabuxiangshi	不打不相识	444
 budabuxiao	不大不小	602
 budaga	不搭嘎	635
 budai	不待	1000
-budai	布袋	807
+budai	布袋	806
 budai	不逮	767
 budaibutequan	不逮捕特权	289
 budaidan	布袋弹	232
@@ -9391,7 +9396,7 @@ bugai	不该	502
 bugan	不敢	1000
 bugan	不甘	896
 bugan	不干	400
-bugan	布干	312
+bugan	布干	311
 bugan	不感	286
 bugan	不乾	1
 buganbujing	不干不净	472
@@ -9525,8 +9530,8 @@ buhuanguaerhuanbujun	不患寡而患不均	348
 buhuanjinzhengqisan	不换金正气散	743
 buhuasuan	不划算	640
 buhui	不会	1000
-buhui	不慧	537
-buhui	不灰	452
+buhui	不慧	519
+buhui	不灰	434
 buhuiba	不会吧	938
 buhuimu	不灰木	640
 buhuo	不惑	1000
@@ -10510,7 +10515,7 @@ butixitong	补体系统	642
 butiyeba	不提也罢	249
 butong	不同	1000
 butong	不通	811
-butong	不痛	466
+butong	不痛	467
 butongbanben	不同版本	867
 butongbuyang	不痛不痒	447
 butongchen	不同沈	566
@@ -10930,15 +10935,15 @@ buzhangyanjing	不长眼睛	260
 buzhao	不着	1000
 buzhao	不照	285
 buzhao	不召	141
+buzhaoji	不着急	959
 buzhaozhi	不召之	566
 buzhaozhichen	不召之臣	597
 buzhaye	布渣叶	487
-buzhe	不着	841
-buzhe	不折	394
-buzhe	不者	340
+buzhe	不着	819
+buzhe	不折	473
+buzhe	不者	420
 buzhebu	不折不	566
 buzhebukou	不折不扣	605
-buzheji	不着急	945
 buzhen	不振	1000
 buzhen	不斟	343
 buzheng	不正	1000
@@ -11991,7 +11996,7 @@ caomuxi	草木犀	632
 caoni	操你	764
 caoni	草拟	264
 caonima	操你妈	943
-caonima	草泥马	579
+caonima	草泥马	578
 caonimabi	操你妈逼	597
 caonong	操弄	395
 caopa	草耙	198
@@ -12785,8 +12790,8 @@ changlequ	长乐区	174
 changleweiyang	长乐未央	405
 changlexian	昌乐县	160
 changli	常理	821
-changliang	常量	480
-changliang	敞亮	356
+changliang	常量	481
+changliang	敞亮	355
 changlibai	厂礼拜	230
 changling	长岭	439
 changlingxian	长岭县	165
@@ -18304,8 +18309,8 @@ daban	大半	721
 dabancheng	达坂城	185
 dabanchengqu	达坂城区	228
 dabanfu	大阪府	198
-dabang	大棒	420
-dabang	搭帮	277
+dabang	大棒	419
+dabang	搭帮	278
 dabanjiling	大斑鹡鸰	258
 dabanniepanjing	大般涅槃经	289
 dabanshao	大阪烧	232
@@ -18440,7 +18445,7 @@ dache	搭车	419
 dachedawu	大彻大悟	458
 dachen	大臣	487
 dacheng	大城	773
-dacheng	达成	709
+dacheng	达成	708
 dacheng	打成	684
 dacheng	搭乘	257
 dachengpingshou	打成平手	387
@@ -19778,7 +19783,7 @@ danfangzhiji	单方制剂	218
 danfanji	单反机	167
 danfanxiangji	单反相机	405
 danfei	单非	488
-danfei	单飞	223
+danfei	单飞	222
 danfeng	丹凤	522
 danfeng	单峰	303
 danfengtuo	单峰驼	390
@@ -20983,10 +20988,10 @@ dashe	打蛇	453
 dashedaqicun	打蛇打七寸	371
 dasheguoji	大赦国际	260
 dashen	大神	442
-dasheng	大声	955
-dasheng	大圣	345
+dasheng	大声	937
+dasheng	大圣	346
 dasheng	大生	296
-dasheng	大胜	69
+dasheng	大胜	70
 dasheng	大乘	1
 dashengjihu	大声疾呼	506
 dashengyiren	大生意人	800
@@ -21266,8 +21271,8 @@ daxueyingyukouyu	大学英语口语	746
 daxueyiyuan	大学医院	754
 daxueyuke	大学预科	405
 daxuezhang	打雪仗	444
-daya	打压	673
-daya	大雅	82
+daya	打压	672
+daya	大雅	83
 dayaji	打牙祭	406
 dayami	打哑谜	444
 dayan	大烟	940
@@ -21454,8 +21459,10 @@ dazhongxiaoxuesheng	大中小学生	412
 dazhongxiaoxuexiao	大中小学校	392
 dazhongxuesheng	大中学生	438
 dazhongyunshu	大众运输	260
-dazhou	大洲	326
-dazhou	达州	221
+dazhou	大周	939
+dazhou	大洲	1
+dazhou	达州	1
+dazhoumo	大周末	945
 dazhoushi	达州市	182
 dazhouxi	大轴戏	232
 dazhu	打住	560
@@ -22131,8 +22138,8 @@ deran	的然	600
 deraorenchuqieraoren	得饶人处且饶人	506
 dere	地热	551
 derefadian	地热发电	754
-deren	得人	780
-deren	德仁	659
+deren	得人	781
+deren	德仁	658
 dereneng	地热能	748
 derenteng	得人疼	640
 derentong	得人痛	640
@@ -24009,8 +24016,8 @@ dingdang	叮当	949
 dingdangsheng	叮当声	406
 dingdangxiang	叮当响	406
 dingdanhao	订单号	379
-dingde	定的	863
-dingde	定得	531
+dingde	定的	862
+dingde	定得	532
 dingdeng	顶灯	361
 dingdian	丁典	938
 dingdian	定点	800
@@ -29079,7 +29086,7 @@ fandaoxitong	反导系统	260
 fandayang	泛大洋	232
 fande	翻地	982
 fande	范德	585
-fande	犯得	562
+fande	犯得	563
 fande	番地	432
 fandegelafu	范德格拉夫	289
 fandegelafuqidianji	范德格拉夫起电机	378
@@ -30578,7 +30585,7 @@ feibuqiechushoushu	肺部切除手术	842
 feibuxianweihua	肺部纤维化	800
 feibuyiwuxiru	肺部异物吸入	842
 feibuzhang	肺不张	712
-feicai	非才	865
+feicai	非才	866
 feicai	菲才	725
 feicanshujianyan	非参数检验	702
 feicefurendai	腓侧副韧带	697
@@ -30594,6 +30601,9 @@ feichangjiankongguan	非常检控观	827
 feichangjinjideqingkuang	非常紧急的情况	772
 feichangshenjing	腓肠神经	754
 feichangshouduan	非常手段	260
+feichangshuang	非常爽	966
+feichangteng	非常疼	966
+feichangtong	非常痛	966
 feichao	匪巢	255
 feichaobaimai	肺朝百脉	643
 feiche	飞车	382
@@ -31279,6 +31289,7 @@ feizhoujinronggongtongtifalang	非洲金融共同体法郎	382
 feizhoukaifayinhang	非洲开发银行	309
 feizhoulianmeng	非洲联盟	621
 feizhoumabing	非洲马病	754
+feizhoumo	非周末	930
 feizhouren	非洲人	583
 feizhourenguomindahui	非洲人国民大会	348
 feizhoutongyizuzhi	非洲统一组织	334
@@ -33325,8 +33336,8 @@ funingjiaonang	妇宁胶囊	642
 funingqu	抚宁区	174
 funingxian	富宁县	84
 funiushan	伏牛山	283
-funong	抚弄	593
-funong	富农	345
+funong	抚弄	595
+funong	富农	344
 funv	妇女	996
 funv	父女	304
 funvdaixia	妇女带下	650
@@ -35201,6 +35212,7 @@ gaogangqu	高港区	174
 gaoganyousanzhixuezheng	高甘油三酯血症	719
 gaogao	高高	551
 gaogaodidi	高高低低	451
+gaogaokan	搞搞看	941
 gaogaoshou	高高手	379
 gaogaoshour	高高手儿	218
 gaogaoxingxing	高高兴兴	332
@@ -35245,8 +35257,8 @@ gaohuluobosuxuezheng	高胡萝卜素血症	714
 gaohun	搞混	323
 gaohuo	搞活	439
 gaoji	高级	868
-gaoji	高技	641
-gaoji	告急	422
+gaoji	高技	640
+gaoji	告急	421
 gaojia	高架	905
 gaojia	高甲	432
 gaojia	高价	286
@@ -35321,6 +35333,7 @@ gaoli	高丽	914
 gaoliang	高梁	761
 gaoliang	高粱	705
 gaoliangchuan	高梁川	167
+gaoliangge	搞两个	952
 gaoliangjiang	高良姜	198
 gaoliangshi	高梁市	167
 gaoliansuanxuezheng	高离氨酸血症	842
@@ -35519,8 +35532,8 @@ gaotiexuehongdanbai	高铁血红蛋白	318
 gaotiexuehongdanbaihaiyuanmei	高铁血红蛋白还原酶	802
 gaotiexuehongdanbaixuezheng	高铁血红蛋白血症	749
 gaotipangpi	高体鳑鲏	218
-gaotong	搞通	333
-gaotong	睾酮	275
+gaotong	搞通	334
+gaotong	睾酮	274
 gaotonggongsi	高通公司	304
 gaotongxingbanguangansuanxuezheng	高同型半胱氨酸血症	802
 gaotongxue	高筒靴	198
@@ -35580,7 +35593,7 @@ gaoxianting	高贤廷	771
 gaoxianwei	高纤维	167
 gaoxianzhi	高仙芝	167
 gaoxiao	高效	676
-gaoxiao	搞笑	593
+gaoxiao	搞笑	594
 gaoxiao	高校	387
 gaoxiaolv	高效率	440
 gaoxiaoneng	高效能	379
@@ -35661,11 +35674,13 @@ gaoyazhengqimiejun	高压蒸汽灭菌	753
 gaoyi	高邑	220
 gaoyidaosuxuezheng	高胰岛素血症	763
 gaoyiduanluo	告一段落	489
+gaoyige	搞一个	952
 gaoyin	高音	536
 gaoyinbu	高音部	198
 gaoyingsha	锆英砂	228
 gaoyinlaba	高音喇叭	405
 gaoyinzhen	高胤祯	784
+gaoyixia	搞一下	959
 gaoyixian	高邑县	165
 gaoyongwen	高永文	635
 gaoyou	高邮	428
@@ -35867,7 +35882,9 @@ geiliao	给料	600
 geimianzi	给面子	444
 geini	给你	758
 geinidianyansekankan	给你点颜色看看	348
+geinigao	给你搞	955
 geinimen	给你们	945
+geininong	给你弄	961
 geiniyuzhou	给你宇宙	529
 geishen	给神	462
 geishenzhu	给神主	512
@@ -37187,8 +37204,8 @@ gongxinzu	工薪族	404
 gongxiu	公休	385
 gongxiuhong	汞溴红	73
 gongxiuri	公休日	362
-gongxu	工序	638
-gongxu	供需	359
+gongxu	工序	637
+gongxu	供需	360
 gongxue	工学	1000
 gongxue	公学	17
 gongxuede	工学地	512
@@ -41051,7 +41068,7 @@ haifengxian	海丰县	179
 haifushi	海浮石	478
 haigang	海港	373
 haigangqu	海港区	160
-haigou	海狗	479
+haigou	海狗	478
 haigoushen	海狗肾	637
 haigu	骸骨	423
 haiguan	海关	493
@@ -43556,11 +43573,14 @@ henren	恨人	198
 hense	很色	717
 henshenqi	很神奇	952
 henshi	很是	1000
-henshi	恨事	97
+henshi	恨事	96
+henshuang	很爽	803
+henteng	很疼	763
 hentiangao	恨天高	232
 hentianyuande	恨天怨地	597
 hentiebuchenggang	恨铁不成钢	461
 hentinghua	很听话	945
+hentong	很痛	763
 hentou	恨透	323
 henuan	和暖	285
 henwu	恨恶	186
@@ -45835,7 +45855,7 @@ huangyou	黄油	681
 huangyou	黄鼬	146
 huangyou	晃悠	135
 huangyu	黄鱼	815
-huangyuan	黄原	837
+huangyuan	黄原	836
 huangyuan	荒原	774
 huangyuandequ	荒原地区	754
 huangyuanhua	黄芫花	597
@@ -46462,7 +46482,7 @@ huaxuezhese	化学着色	536
 huaxuezhesefa	化学着色法	569
 huaxuezhiliao	化学治疗	405
 huaxuezhuoshang	化学灼伤	754
-huaxuzhou	花序轴	712
+huaxuzhou	花序轴	708
 huaya	画押	497
 huaya	花押	467
 huayan	化验	948
@@ -50257,7 +50277,7 @@ jiaobei	脚背	699
 jiaobeijiu	交杯酒	446
 jiaoben	脚本	814
 jiaoben	教本	140
-jiaobi	交臂	428
+jiaobi	交臂	427
 jiaobian	交变	581
 jiaobian	狡辩	357
 jiaobian	教鞭	246
@@ -50368,7 +50388,9 @@ jiaoganshenjingyizhiji	交感神经抑制剂	772
 jiaoganxingyanyan	交感性眼炎	800
 jiaogao	较高	758
 jiaoge	交割	436
-jiaogei	交给	502
+jiaogei	交给	538
+jiaogeini	交给你	966
+jiaogeiwo	交给我	973
 jiaogen	脚跟	939
 jiaogenchao	脚跟朝	512
 jiaogenchaoqian	脚跟朝前	536
@@ -50485,7 +50507,7 @@ jiaojing	交警	413
 jiaojingcheguansuo	交警车管所	279
 jiaojinnaozhi	绞尽脑汁	473
 jiaojinr	较劲儿	528
-jiaojiu	交九	226
+jiaojiu	交九	227
 jiaojiwu	交际舞	379
 jiaojixing	交集性	712
 jiaoju	教具	434
@@ -50940,7 +50962,7 @@ jiaozhang	脚掌	398
 jiaozhanji	胶粘剂	739
 jiaozhao	脚爪	549
 jiaozhebibai	骄者必败	387
-jiaozhen	较真	749
+jiaozhen	较真	750
 jiaozhen	叫阵	489
 jiaozheng	校正	568
 jiaozhengbupaxiewai	脚正不怕鞋歪	318
@@ -51072,8 +51094,8 @@ jiarenjiayi	假仁假义	453
 jiarenxiang	假人像	640
 jiarenyideng	加人一等	387
 jiari	假日	416
-jiaru	假如	665
-jiaru	加入	624
+jiaru	加入	1000
+jiaru	假如	125
 jiaruo	假若	456
 jiasai	加赛	402
 jiasair	夹塞儿	391
@@ -52528,7 +52550,7 @@ jieshouyuchengnuozhiliao	接受与承诺治疗	772
 jieshouzhe	接受者	444
 jieshouzhecaozuotezheng	接收者操作特征	772
 jieshu	结束	953
-jieshu	劫数	442
+jieshu	劫数	443
 jieshuang	结霜	305
 jieshudan	借书单	379
 jieshui	节水	417
@@ -52629,7 +52651,7 @@ jiexixue	解溪穴	594
 jiexu	接续	430
 jiexuan	节选	400
 jiexun	结训	319
-jieya	解压	766
+jieya	解压	765
 jieyan	戒严	975
 jieyan	戒烟	65
 jieyang	揭阳	333
@@ -53194,7 +53216,7 @@ jimalikebing	鸡马立克病	800
 jiman	挤满	447
 jimang	急忙	502
 jimao	鸡毛	753
-jimao	集贸	171
+jimao	集贸	170
 jimaodian	鸡毛店	230
 jimaosuanpi	鸡毛蒜皮	464
 jimei	激酶	947
@@ -53303,7 +53325,7 @@ jinchantuoqiao	金蝉脱壳	291
 jinchao	金朝	1000
 jinchao	晋朝	207
 jinchen	金晨	1000
-jinchen	今晨	415
+jinchen	今晨	416
 jinchen	近臣	1
 jincheng	进城	768
 jincheng	进程	721
@@ -55033,7 +55055,7 @@ jinxionggequ	金胸歌鸲	218
 jinxiongjiang	金熊奖	202
 jinxiongquemei	金胸雀鹛	218
 jinxiu	金秀	684
-jinxiu	进修	565
+jinxiu	进修	564
 jinxiu	锦绣	230
 jinxiuqiancheng	锦绣前程	437
 jinxiuxian	金秀县	167
@@ -55159,7 +55181,7 @@ jinzhenkoufuye	金振口服液	702
 jinzhenying	金珍映	779
 jinzhi	禁止	904
 jinzhi	尽职	414
-jinzhi	禁制	245
+jinzhi	禁制	244
 jinzhidiaocha	尽职调查	260
 jinzhijieyinhanshuye	金栀洁龈含漱液	705
 jinzhijinze	尽职尽责	461
@@ -55455,7 +55477,7 @@ jishuguanliao	技术官僚	260
 jishuguifan	技术规范	426
 jishuguzhang	技术故障	260
 jishui	给水	1000
-jishui	积水	684
+jishui	积水	683
 jishuiqu	集水区	748
 jishuixian	吉水县	160
 jishukaifaqu	技术开发区	575
@@ -56802,7 +56824,7 @@ jizhu	脊柱	892
 jizhu	记住	809
 jizhu	寄主	748
 jizhu	集注	527
-jizhu	济助	516
+jizhu	济助	515
 jizhuan	急转	893
 jizhuang	基桩	198
 jizhuangbianxingchongjiaomoyan	棘状变形虫角膜炎	802
@@ -57426,7 +57448,7 @@ juminlou	居民楼	431
 juminqu	居民区	508
 juminshenfenzheng	居民身份证	397
 juminxiaofeijiagezhishu	居民消费价格指数	378
-jumo	锯末	365
+jumo	锯末	366
 jumoxiangjing	巨抹香鲸	750
 jumu	剧目	788
 jumu	举目	518
@@ -57499,8 +57521,8 @@ junjie	俊杰	303
 junjing	军警	487
 junke	均可	198
 junlei	菌类	397
-junli	军力	538
-junli	峻厉	202
+junli	军力	537
+junli	峻厉	203
 junliang	军粮	429
 junlie	皲裂	467
 junlie	龟裂	444
@@ -61375,7 +61397,7 @@ kuise	愧色	415
 kuishan	葵扇	380
 kuishe	蝰蛇	324
 kuisheke	蝰蛇科	592
-kuishi	窥视	860
+kuishi	窥视	859
 kuishilan	喹唑啉	704
 kuishilantong	喹唑啉酮	750
 kuishou	魁首	258
@@ -65562,9 +65584,9 @@ liguochao	李国超	771
 liguohao	李国豪	247
 liguolimin	利国利民	444
 liguozhang	李国章	618
-lihai	利害	865
-lihai	厉害	522
-lihai	里海	102
+lihai	利害	775
+lihai	厉害	718
+lihai	里海	124
 lihaichongtu	利害冲突	405
 lihaidiya	里海地鸦	260
 lihaiguanxi	利害关系	405
@@ -71088,7 +71110,7 @@ maomaode	毛毛的	167
 maomaoshishi	冒冒失失	461
 maomaoyangnaoxueguanjibing	毛毛样脑血管疾病	802
 maomaoyu	毛毛雨	217
-maomei	冒昧	612
+maomei	冒昧	613
 maomei	貌美	260
 maomeibing	毛霉病	599
 maomeijunbing	毛霉菌病	645
@@ -74272,7 +74294,7 @@ mocayin	摩擦音	400
 mocazheng	摩擦症	592
 mocegaoshen	莫测高深	459
 moceng	磨蹭	386
-mocha	末茶	219
+mocha	末茶	220
 moche	末车	198
 mocheng	摩城	198
 mochi	没齿	396
@@ -74521,7 +74543,7 @@ monei	莫内	130
 moni	模拟	1000
 moni	摹拟	1
 monian	末年	894
-monian	默念	47
+monian	默念	46
 monichengxu	模拟程序	879
 monifangdaqi	模拟放大器	289
 monijiao	摩尼教	276
@@ -74794,8 +74816,8 @@ mozi	磨子	422
 mozu	模组	359
 mozui	磨嘴	323
 mozuipizi	磨嘴皮子	260
-mozuo	默坐	555
-mozuo	末座	227
+mozuo	默坐	554
+mozuo	末座	228
 msha	呒啥	283
 muai	暮霭	418
 muaiboduo	母爱剥夺	754
@@ -77143,7 +77165,8 @@ nianzhexiaodai	黏着小带	754
 nianzhi	拈指	208
 nianzhijiu	年之久	232
 nianzhixing	黏滞性	228
-nianzhong	年终	957
+nianzhong	年中	1000
+nianzhong	年终	109
 nianzhongjiang	年终奖	483
 nianzhou	念咒	430
 nianzhu	念珠	667
@@ -77586,6 +77609,7 @@ nimingduixiang	匿名对象	859
 niminghanshu	匿名函数	865
 nimingjiejiuhui	匿名戒酒会	800
 nimingleixing	匿名类型	839
+nimingtian	你明天	966
 nimizi	尼米兹	251
 nimizihao	尼米兹号	260
 nimodeping	尼莫地平	551
@@ -78142,6 +78166,7 @@ nizui	泥醉	311
 nizuo	拟作	372
 nizuoba	你做吧	969
 nizuode	你做的	966
+nizuotian	你昨天	966
 nongan	农安	227
 nonganxian	农安县	174
 nongbao	脓包	423
@@ -78254,8 +78279,14 @@ nongsuokafei	浓缩咖啡	258
 nongsuowan	浓缩丸	607
 nongsuoyou	浓缩铀	451
 nongtang	浓汤	324
+nongteng	弄疼	747
+nongtengwo	弄疼我	955
+nongtengwole	弄疼我了	973
 nongtian	农田	452
-nongtong	弄通	323
+nongtong	弄痛	1000
+nongtong	弄通	1
+nongtongwo	弄痛我	959
+nongtongwole	弄痛我了	973
 nongwa	弄瓦	287
 nongwai	弄歪	198
 nongweilintangjiang	浓维磷糖浆	695
@@ -91797,6 +91828,7 @@ shangzhizhang	上肢长	603
 shangzhong	上钟	198
 shangzhou	上周	941
 shangzhou	商州	1
+shangzhoumo	上周末	1000
 shangzhouqu	商州区	165
 shangzhouwang	商纣王	230
 shangzhuang	上装	441
@@ -92995,7 +93027,7 @@ shengchongdeguaizhang	生虫的拐杖	569
 shengchou	生抽	200
 shengchu	生出	862
 shengchu	胜出	508
-shengchu	牲畜	249
+shengchu	牲畜	250
 shengchuan	盛传	423
 shengci	生词	788
 shengci	剩磁	158
@@ -94909,7 +94941,7 @@ shichamona	式叉摩那	536
 shichamonani	式叉摩那尼	569
 shichan	室颤	305
 shichang	市场	946
-shichang	时常	715
+shichang	时常	716
 shichang	失常	532
 shichang	时长	20
 shichangdiaocha	市场调查	260
@@ -95026,12 +95058,12 @@ shide	似的	875
 shide	使得	767
 shide	拾得	555
 shide	似地	467
-shide	士的	420
+shide	士的	419
 shide	十地	403
 shide	石地	398
 shide	食地	382
 shide	史的	360
-shide	适得	249
+shide	适得	250
 shideha	是的哈	945
 shidejulebu	实德俱乐部	326
 shidekeji	是德科技	260
@@ -97928,6 +97960,9 @@ shuangshou	双手	487
 shuangshu	双数	650
 shuangshuang	双双	419
 shuangshuangkuaikuai	爽爽快快	539
+shuangsi	爽死	787
+shuangsile	爽死了	973
+shuangsiwole	爽死我了	987
 shuangsuoniao	双缩脲	704
 shuangsuoniaoshiji	双缩脲试剂	796
 shuangsushuangfei	双宿双飞	263
@@ -99283,7 +99318,7 @@ shupir	书皮儿	232
 shupo	叔婆	305
 shuputao	树葡萄	228
 shuqi	舒淇	811
-shuqi	竖起	744
+shuqi	竖起	743
 shuqi	暑期	719
 shuqi	暑气	88
 shuqian	书签	394
@@ -99734,7 +99769,7 @@ sidaxusheng	四大须生	260
 sidazujian	四大组件	861
 side	死地	863
 side	私的	814
-side	四地	804
+side	四地	803
 side	私地	789
 side	司的	656
 side	死得	644
@@ -99897,7 +99932,7 @@ sijienanjie	死结难解	260
 sijiepan	斯捷潘	205
 sijiganmaojiaonang	四季感冒胶囊	748
 sijiganmaopian	四季感冒片	708
-sijin	死劲	463
+sijin	死劲	464
 sijin	丝巾	241
 sijing	四境	380
 sijingzheng	死精症	608
@@ -103433,6 +103468,8 @@ tengcai	藤菜	198
 tengchu	腾出	421
 tengchushou	腾出手	232
 tengdaiyuan	滕代远	469
+tengde	疼得	752
+tengdelihai	疼得厉害	981
 tengfei	腾飞	283
 tengge	腾格	511
 tenggeli	腾格里	208
@@ -103451,6 +103488,8 @@ tengqiu	藤球	378
 tengsen	藤森	214
 tengsi	疼死	198
 tengsibeige	滕斯贝格	218
+tengsile	疼死了	973
+tengsiwole	疼死我了	987
 tengteng	腾腾	323
 tengtian	藤田	198
 tengtiao	藤条	394
@@ -103746,7 +103785,7 @@ tianji	田忌	427
 tianji	天际	407
 tianjia	添加	962
 tianjia	田家	574
-tianjia	天价	182
+tianjia	天价	183
 tianjiaan	田家庵	167
 tianjiaanqu	田家庵区	228
 tianjiaji	添加剂	567
@@ -104042,8 +104081,8 @@ tiantiwulixuejia	天体物理学家	318
 tiantiyanhuaxue	天体演化学	289
 tiantizhuyi	天体主义	260
 tiantong	甜筒	305
-tiantou	甜头	397
-tiantou	天头	362
+tiantou	甜头	396
+tiantou	天头	363
 tiantu	田土	372
 tiantui	恬退	198
 tiantuzuo	天兔座	232
@@ -104182,7 +104221,7 @@ tianzhu	天主	874
 tianzhu	天诛	687
 tianzhu	天竺	651
 tianzhu	天祝	536
-tianzhu	天柱	459
+tianzhu	天柱	460
 tianzhuanjiawa	添砖加瓦	440
 tianzhude	天主的	569
 tianzhude	天诛地	545
@@ -105297,7 +105336,7 @@ tongchangde	通常地	640
 tongche	通车	897
 tongcheng	统称	742
 tongcheng	通称	725
-tongcheng	通城	581
+tongcheng	通城	580
 tongchengshi	桐城市	165
 tongchengwei	统称为	232
 tongchengxian	通城县	345
@@ -105331,8 +105370,10 @@ tongdaomingling	通道命令	827
 tongdaoxian	通道县	167
 tongdaozhe	同道者	379
 tongdaozhongren	同道中人	405
-tongde	同地	816
-tongde	通地	771
+tongde	痛得	1000
+tongde	同地	434
+tongde	通地	388
+tongdelihai	痛得厉害	981
 tongdeng	同等	904
 tongdeng	筒灯	1
 tongdengde	同等地	640
@@ -105657,7 +105698,10 @@ tongshui	通水	557
 tongshujiaonang	痛舒胶囊	639
 tongshukoushuangjiaonang	通舒口爽胶囊	752
 tongshun	通顺	263
-tongsi	铜丝	391
+tongsi	痛死	1000
+tongsi	铜丝	1
+tongsile	痛死了	973
+tongsiwole	痛死我了	987
 tongsouwuqi	童叟无欺	436
 tongsu	通俗	450
 tongsuan	酮酸	551
@@ -105699,8 +105743,8 @@ tongweixian	通渭县	160
 tongwen	通问	137
 tongwenceng	同温层	429
 tongwenguan	同文馆	449
-tongwu	痛恶	328
-tongwu	同屋	312
+tongwu	痛恶	329
+tongwu	同屋	311
 tongwuersuan	酮戊二酸	750
 tongwuersuantuoqingmeifuheti	酮戊二酸脱氢酶复合体	802
 tongxi	痛惜	623
@@ -110604,6 +110648,7 @@ wenzuodiaoyutai	稳坐钓鱼台	444
 woai	我爱	521
 woaijiulongcheng	我爱九龙城	521
 woaini	我爱你	640
+wobangni	我帮你	973
 wobei	我辈	432
 wobeng	我迸	578
 wobie	握别	372
@@ -110612,11 +110657,16 @@ wobixu	我必须	952
 wobor	窝脖儿	230
 wobu	我不	605
 wobuan	卧不安	382
+wobugao	我不搞	952
 wobuguan	我不管	640
+wobuhui	我不会	973
+wobuqingchu	我不清楚	981
 wobushi	我不是	945
+wobuxiaode	我不晓得	973
 wobuxin	我不信	566
 wobuxing	我不行	966
 wobuxinjiao	我不信教	597
+wobuzhaoji	我不着急	973
 wobuzhidao	我不知道	967
 woca	我擦	578
 wocan	卧蚕	198
@@ -110695,6 +110745,7 @@ wojia	我家	640
 wojiadeshi	我家的事	510
 wojiang	涡桨	385
 wojianqingshanduowumei	我见青山多妩媚	548
+wojintian	我今天	980
 wojiushi	我就是	938
 woju	卧具	448
 woju	蜗居	419
@@ -110711,6 +110762,8 @@ woku	我苦	600
 wokuotai	窝阔台	375
 wokuotaihan	窝阔台汗	260
 wolai	我来	763
+wolaibang	我来帮	959
+wolaibangni	我来帮你	994
 wolaigan	我来干	966
 wolaizuo	我来做	966
 woleile	我累了	973
@@ -110753,6 +110806,7 @@ womenshuode	我们说的	959
 womenxiang	我们想	945
 womenyao	我们要	952
 womenyiding	我们一定	945
+womingtian	我明天	973
 womomo	我摸摸	926
 wonang	窝囊	424
 wonangfei	窝囊废	435
@@ -110811,6 +110865,7 @@ woxiang	我相	140
 woxiangshuo	我想说	952
 woxiangwen	我想问	938
 woxiangyao	我想要	922
+woxiaode	我晓得	952
 woxin	我心	815
 woxin	我信	662
 woxin	窝心	11
@@ -110838,11 +110893,15 @@ woyiding	我一定	959
 woyilukefu	沃伊卢科夫	279
 woyiwei	我以为	938
 woyou	握有	451
+woyoushu	我有数	945
 woyu	我欲	600
 wozhang	我丈	600
+wozhe	我这	741
 wozhegeren	我这个人	260
 wozhenggang	沃正刚	596
 wozher	我这儿	232
+wozhexingqi	我这星期	973
+wozhezhou	我这周	973
 wozhi	我执	600
 wozhidao	我知道	930
 wozhishi	我只是	930
@@ -110851,10 +110910,12 @@ wozhu	握住	825
 wozhu	窝主	92
 wozhuo	龌浊	198
 wozi	窝子	394
+woziji	我自己	966
 wozui	我醉	473
 wozuiyu	我醉欲	562
 wozuiyumian	我醉欲眠	597
 wozuode	我做的	966
+wozuotian	我昨天	973
 wuai	无碍	866
 wuai	雾霭	83
 wuan	武安	325
@@ -110863,7 +110924,7 @@ wuba	武把	954
 wubabituo	戊巴比妥	653
 wubabituona	戊巴比妥钠	702
 wubai	五百	1000
-wubai	伍佰	233
+wubai	伍佰	261
 wubaibashierjuan	五百八十二卷	399
 wubaibashiwu	五百八十五	371
 wubaidi	乌拜迪	167
@@ -112287,7 +112348,7 @@ wuyileiju	物以类聚	451
 wuyiling	乌伊岭	167
 wuyilingqu	乌伊岭区	228
 wuyin	五音	856
-wuyin	无音	834
+wuyin	无音	833
 wuyin	无垠	436
 wuyin	戊寅	32
 wuyinbuquan	五音不全	396
@@ -113494,7 +113555,7 @@ xiangshui	向水	1000
 xiangshui	香水	68
 xiangshuixian	响水县	160
 xiangshuixing	向水性	640
-xiangsi	相似	931
+xiangsi	相似	930
 xiangsi	想死	735
 xiangsi	想思	543
 xiangsi	相思	398
@@ -114607,7 +114668,7 @@ xiaodaoxinwen	小道新闻	260
 xiaodaoying	萧道应	609
 xiaodaxiaonao	小打小闹	463
 xiaode	小的	1000
-xiaode	晓得	49
+xiaode	晓得	97
 xiaodeng	小登	198
 xiaodi	校地	834
 xiaodi	小弟	620
@@ -115777,7 +115838,8 @@ xiazhimaiguanyan	下肢脉管炎	702
 xiazhishang	下至上	232
 xiazhishenjingmaixueshuanxingcheng	下肢深静脉血栓形成	748
 xiazhong	遐终	198
-xiazhou	下周	893
+xiazhou	下周	902
+xiazhoumo	下周末	966
 xiazhu	下注	809
 xiazhuang	下装	413
 xiazhui	下坠	432
@@ -117608,7 +117670,7 @@ xingxian	兴县	1
 xingxianfayubuliang	性腺发育不良	842
 xingxiang	形象	921
 xingxiang	性向	816
-xingxiang	形像	700
+xingxiang	形像	699
 xingxiang	星相	676
 xingxiang	星象	11
 xingxiangdaiyanren	形象代言人	289
@@ -129750,7 +129812,7 @@ youmin	游民	386
 youming	有名	1000
 youming	有命	915
 youming	又名	764
-youming	有明	656
+youming	有明	657
 youming	幽冥	23
 youmingaizao	游民改造	218
 youmingwangshi	有名亡实	387
@@ -129975,7 +130037,7 @@ youshuzhichuandaozuzhi	右束支传导阻滞	710
 yousi	有死	673
 yousi	有司	592
 yousi	忧思	322
-yousi	游丝	219
+yousi	游丝	218
 yousifenlie	有丝分裂	654
 yousifenlieyizhiji	有丝分裂抑制剂	772
 yousifenliezhishu	有丝分裂指数	842
@@ -132882,7 +132944,7 @@ zaiwang	在望	600
 zaiwei	在位	640
 zaiweishidai	在位时代	260
 zaiweishizhenghouqun	再喂食症候群	842
-zaiwo	在握	916
+zaiwo	在握	915
 zaiwo	在我	608
 zaiwokan	在我看	650
 zaiwokanlai	在我看来	387
@@ -134534,9 +134596,9 @@ zhaohuodian	着火点	379
 zhaohuyanjiujipinzhijigou	照护研究及品质机构	802
 zhaohuzhan	招呼站	379
 zhaohuzhe	照护者	712
-zhaoji	着急	994
-zhaoji	召集	851
-zhaoji	招集	492
+zhaoji	着急	1000
+zhaoji	召集	757
+zhaoji	招集	420
 zhaojia	招架	445
 zhaojian	召见	956
 zhaojiaren	赵家人	167
@@ -136010,7 +136072,7 @@ zhentiandongdi	震天动地	601
 zhentianhaide	震天骇地	597
 zhenting	侦听	434
 zhentong	镇痛	940
-zhentong	针筒	519
+zhentong	针筒	518
 zhentong	阵痛	313
 zhentonggao	镇痛膏	602
 zhentongji	镇痛剂	744
@@ -136277,6 +136339,7 @@ zhexiejianzhabingfeibiyao	这些检査并非必要	802
 zhexin	着信	890
 zhexin	着心	439
 zhexinde	着心地	640
+zhexingqi	这星期	959
 zhexinju	着信局	640
 zhexinyin	着信音	640
 zhexiu	遮羞	385
@@ -136322,7 +136385,9 @@ zhezhong	折衷	145
 zhezhong	折中	17
 zhezhongyingwu	折衷鹦鹉	258
 zhezhongzhuyi	折衷主义	462
-zhezhou	褶皱	996
+zhezhou	这周	1000
+zhezhou	褶皱	318
+zhezhoumo	这周末	973
 zhezhoushan	褶皱山	620
 zhezhoushanmai	褶皱山脉	260
 zhezhoushanxi	褶皱山系	260
@@ -136803,7 +136868,7 @@ zhijiangxian	芷江县	174
 zhijianju	质检局	198
 zhijiantuoluo	指尖陀螺	260
 zhijiao	直角	923
-zhijiao	执教	652
+zhijiao	执教	651
 zhijiao	知交	511
 zhijiao	指教	487
 zhijiao	至交	337
@@ -137808,8 +137873,8 @@ zhongcenggenkanghong	中曾根康弘	283
 zhongcha	种差	319
 zhongchan	中产	486
 zhongchang	中场	505
-zhongchang	中常	475
-zhongchang	终场	385
+zhongchang	中常	476
+zhongchang	终场	384
 zhongchangluosheng	终场锣声	218
 zhongchangpao	中长跑	191
 zhongchanjieji	中产阶级	581
@@ -139478,7 +139543,7 @@ zhoubianqiangshi	周边腔室	754
 zhoubianshangpin	周边商品	218
 zhoubianshenjingyan	周边神经炎	800
 zhoubisuanjing	周髀算经	218
-zhoubo	周勃	270
+zhoubo	周勃	271
 zhoubotong	周伯通	933
 zhouchang	周长	867
 zhouchanqizhixi	周产期窒息	800
@@ -139601,7 +139666,7 @@ zhoushuhuizhan	咒术回战	797
 zhoushuhuizhanjiaoseliebiao	咒术回战角色列表	652
 zhoushuren	周树人	198
 zhousi	周四	901
-zhousi	宙斯	673
+zhousi	宙斯	672
 zhousidun	宙斯盾	543
 zhousidunzhandouxitong	宙斯盾战斗系统	348
 zhousishi	骤死式	232
@@ -143532,7 +143597,7 @@ zuoquanzai	左券在	566
 zuoquanzaiwo	左券在握	597
 zuoqujia	作曲家	553
 zuoquzhe	作曲者	388
-zuor	昨儿	933
+zuor	昨儿	934
 zuoren	做人	696
 zuoren	作人	247
 zuorenjia	做人家	232
