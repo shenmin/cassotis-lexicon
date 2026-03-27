@@ -1,5 +1,5 @@
 version: 1
-generated_at: "2026-03-26T17:50:30+00:00"
+generated_at: "2026-03-27T03:23:05+00:00"
 profile: external_broad
 sources:
   - id: cc-cedict
@@ -112,6 +112,16 @@ sources:
     attribution_required: false
     raw_committed: true
     notes: 'Project-maintained computing/domain terminology layer isolated from daily/chat phrase ranking.'
+  - id: project-curated-vertical-medicine
+    name: Cassotis curated medical terms
+    download_url: repo://manifests/vertical/medicine.tsv
+    homepage: https://github.com/shenmin/cassotis-lexicon
+    license: Repository license (project-authored)
+    risk_level: low
+    redistribution_class: project_authored
+    attribution_required: false
+    raw_committed: true
+    notes: 'Project-maintained medical supplement for high-value terms and explicit pinyin corrections that should stay isolated from daily/chat preferred-term ranking.'
   - id: thuocl-it-vertical
     name: THUOCL IT subset
     download_url: https://github.com/thunlp/THUOCL/archive/refs/heads/master.zip#THUOCL_IT.txt

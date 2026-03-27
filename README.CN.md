@@ -13,8 +13,8 @@ Cassotis IME 词库构建与发布仓库。
 
 | 文件 | 字体变体 | 词条数 |
 |------|---------|--------|
-| `data/generated/dict_clean_sc.txt` | 简体中文主词库 | 143,726 |
-| `data/generated/dict_clean_tc.txt` | 繁体中文主词库 | 156,943 |
+| `data/generated/dict_clean_sc.txt` | 简体中文主词库 | 143,725 |
+| `data/generated/dict_clean_tc.txt` | 繁体中文主词库 | 156,914 |
 | `data/generated/dict_unihan_sc.txt` | 简体单字（Unihan） | 23,909 |
 | `data/generated/dict_unihan_tc.txt` | 繁体单字（Unihan） | 24,064 |
 
@@ -44,6 +44,7 @@ Cassotis IME 词库构建与发布仓库。
 | Cassotis 项目内日常/聊天词表 | 仓库许可证（项目自维护） | 补入公开来源仍容易漏掉、但对日常输入价值很高的常用说法 |
 | Cassotis 项目内专名词表 | 仓库许可证（项目自维护） | 项目内维护的人名、作品名、组织名等专名词表；不走日常聊天词的 preferred-term 排序链 |
 | Cassotis 项目内计算机词表 | 仓库许可证（项目自维护） | 项目内维护的计算机/专业术语词表，供独立的计算机垂直层使用；不走日常聊天词的 preferred-term 排序链 |
+| Cassotis 项目内医学词表 | 仓库许可证（项目自维护） | 项目内维护的医学补充词表，用于高价值医学词和显式拼音校正；不走日常聊天词的 preferred-term 排序链 |
 
 详见：
 - `manifests/sources.public.yml`
@@ -70,7 +71,7 @@ Cassotis IME 词库构建与发布仓库。
 - 垂直层可以补入专业词，但不会继承日常/聊天词那套 preferred-term 排序偏置，从而避免污染现有日常输入路径。
 - 当前启用的项目内专名层会把人名、作品名、组织名等词和日常聊天词层分开处理。
 - 当前计算机词库由经过筛选的 `THUOCL_IT` 子集和项目内维护的计算机词表共同组成。
-- 当前医学词库由 MeSH descriptor catalog、与 MeSH 关联的 Wikidata 中文医学实体，以及经过筛选的 `THUOCL_medical` 子集共同组成，并与日常聊天词层隔离。
+- 当前医学词库由项目内维护的医学词表、MeSH descriptor catalog、与 MeSH 关联的 Wikidata 中文医学实体，以及经过筛选的 `THUOCL_medical` 子集共同组成，并与日常聊天词层隔离。
 
 ## 目录结构
 - `data/generated/`：生成词库文件。

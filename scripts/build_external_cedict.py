@@ -1064,6 +1064,85 @@ def _wrap_vertical_entries(
     ]
 
 
+def _build_vertical_explicit_pinyin_override_map(
+    entries: List[VerticalEntry],
+) -> Dict[Tuple[str, str], str]:
+    overrides: Dict[Tuple[str, str], str] = {}
+    for sc_word, _tc_word, _usage_score, explicit_pinyin, layer_id, _source_id in entries:
+        if not explicit_pinyin:
+            continue
+        key = (layer_id, sc_word)
+        if key not in overrides:
+            overrides[key] = explicit_pinyin
+    return overrides
+
+
+def _build_explicit_term_pinyin_override_map(
+    entries: List[VerticalEntry],
+) -> Dict[str, str]:
+    overrides: Dict[str, str] = {}
+    for sc_word, tc_word, _usage_score, explicit_pinyin, _layer_id, _source_id in entries:
+        if not explicit_pinyin:
+            continue
+        if sc_word and sc_word not in overrides:
+            overrides[sc_word] = explicit_pinyin
+        if tc_word and tc_word not in overrides:
+            overrides[tc_word] = explicit_pinyin
+    return overrides
+
+
+def _compute_medicine_vertical_penalty(text: str, source_id: str) -> int:
+    text_len = _cjk_len(text)
+    if text_len <= 2:
+        base_penalty = 140
+    elif text_len == 3:
+        base_penalty = 92
+    elif text_len == 4:
+        base_penalty = 58
+    elif text_len == 5:
+        base_penalty = 30
+    else:
+        base_penalty = 14
+
+    if source_id == "project-curated-vertical-medicine":
+        relief = 32 if text_len <= 4 else 8
+    elif source_id == "wikidata-medical-mesh-zh":
+        relief = 22 if text_len <= 4 else 6
+    else:
+        relief = 0
+
+    return max(0, base_penalty - relief)
+
+
+def _apply_explicit_term_pinyin_overrides(
+    mapping: Dict[Tuple[str, str], int],
+    overrides: Dict[str, str],
+    stat_prefix: str,
+) -> Tuple[Dict[Tuple[str, str], int], Dict[str, int]]:
+    stats = {
+        f"{stat_prefix}_terms_total": len(mapping),
+        f"{stat_prefix}_terms_rekeyed": 0,
+        f"{stat_prefix}_terms_merged": 0,
+    }
+    if (not mapping) or (not overrides):
+        return mapping, stats
+
+    remapped: Dict[Tuple[str, str], int] = {}
+    for (pinyin, text), weight in mapping.items():
+        target_pinyin = overrides.get(text, pinyin)
+        if target_pinyin != pinyin:
+            stats[f"{stat_prefix}_terms_rekeyed"] += 1
+        key = (target_pinyin, text)
+        existing = remapped.get(key)
+        if existing is not None:
+            stats[f"{stat_prefix}_terms_merged"] += 1
+            if weight > existing:
+                remapped[key] = weight
+        else:
+            remapped[key] = weight
+    return remapped, stats
+
+
 def _collect_preferred_unihan_readings(
     ch: str,
     unihan_readings_map: Dict[str, Set[str]] | None,
@@ -8906,6 +8985,8 @@ def _reinforce_vertical_tc_terms(
     stats = {
         "vertical_exact_tc_reinforced": 0,
         "vertical_exact_tc_added": 0,
+        "vertical_medicine_penalized_tc": 0,
+        "vertical_medicine_penalty_tc_total": 0,
     }
     if not tc or not vertical_entries:
         return stats
@@ -8913,12 +8994,17 @@ def _reinforce_vertical_tc_terms(
     opencc_sc_to_tc = _build_opencc_sc_to_tc_map(opencc_entries)
     tc_existing_texts = {text for _pinyin, text in tc.keys()}
     tc_char_prior = _build_effective_char_prior(tc, tc_char_frequency_prior)
+    explicit_pinyin_overrides = _build_vertical_explicit_pinyin_override_map(vertical_entries)
 
     for sc_word, tc_word, usage_score, explicit_pinyin, layer_id, source_id in vertical_entries:
         if _cjk_len(sc_word) < min_hanzi:
             continue
 
-        pinyin = explicit_pinyin or _pinyin_from_unihan(sc_word, unihan_map)
+        pinyin = (
+            explicit_pinyin
+            or explicit_pinyin_overrides.get((layer_id, sc_word), "")
+            or _pinyin_from_unihan(sc_word, unihan_map)
+        )
         if not pinyin:
             continue
 
@@ -8937,7 +9023,16 @@ def _reinforce_vertical_tc_terms(
                 )
         if _cjk_len(tc_candidate) < min_hanzi:
             continue
-        if layer_id == "medicine" and _cjk_len(tc_candidate) <= 2 and not _is_medical_specific_term(tc_candidate):
+        allow_curated_short_medical = (
+            layer_id == "medicine"
+            and source_id == "project-curated-vertical-medicine"
+            and bool(explicit_pinyin)
+        )
+        if (
+            layer_id == "medicine"
+            and _cjk_len(tc_candidate) <= 2
+            and not (_is_medical_specific_term(tc_candidate) or allow_curated_short_medical)
+        ):
             continue
 
         if layer_id == "medicine":
@@ -8969,6 +9064,12 @@ def _reinforce_vertical_tc_terms(
             char_score=tc_char_score,
         )
         tc_weight = min(1000, tc_weight + extra_bonus)
+        if layer_id == "medicine":
+            penalty = _compute_medicine_vertical_penalty(tc_candidate, source_id)
+            if penalty > 0:
+                tc_weight = max(1, tc_weight - penalty)
+                stats["vertical_medicine_penalized_tc"] += 1
+                stats["vertical_medicine_penalty_tc_total"] += penalty
 
         tc_key = (pinyin, tc_candidate)
         existing_tc_weight = tc.get(tc_key)
@@ -9009,6 +9110,10 @@ def _augment_with_vertical_terms(
         "vertical_terms_boosted_tc": 0,
         "vertical_terms_skipped_short": 0,
         "vertical_terms_skipped_no_pinyin": 0,
+        "vertical_medicine_penalized_sc": 0,
+        "vertical_medicine_penalty_sc_total": 0,
+        "vertical_medicine_penalized_tc": 0,
+        "vertical_medicine_penalty_tc_total": 0,
     }
     sc_terms: Set[str] = set()
     tc_terms: Set[str] = set()
@@ -9016,6 +9121,7 @@ def _augment_with_vertical_terms(
     tc_existing_texts = {text for _pinyin, text in tc.keys()}
     sc_char_prior = _build_effective_char_prior(sc, char_frequency_prior)
     tc_char_prior = _build_effective_char_prior(tc, tc_char_frequency_prior)
+    explicit_pinyin_overrides = _build_vertical_explicit_pinyin_override_map(vertical_entries)
 
     for sc_word, tc_word, usage_score, explicit_pinyin, layer_id, source_id in vertical_entries:
         stats["vertical_terms_total"] += 1
@@ -9023,11 +9129,24 @@ def _augment_with_vertical_terms(
             stats["vertical_terms_skipped_short"] += 1
             continue
 
-        if layer_id == "medicine" and _cjk_len(sc_word) <= 2 and not _is_medical_specific_term(sc_word):
+        allow_curated_short_medical = (
+            layer_id == "medicine"
+            and source_id == "project-curated-vertical-medicine"
+            and bool(explicit_pinyin)
+        )
+        if (
+            layer_id == "medicine"
+            and _cjk_len(sc_word) <= 2
+            and not (_is_medical_specific_term(sc_word) or allow_curated_short_medical)
+        ):
             stats["vertical_terms_skipped_short"] += 1
             continue
 
-        pinyin = explicit_pinyin or _pinyin_from_unihan(sc_word, unihan_map)
+        pinyin = (
+            explicit_pinyin
+            or explicit_pinyin_overrides.get((layer_id, sc_word), "")
+            or _pinyin_from_unihan(sc_word, unihan_map)
+        )
         if not pinyin:
             stats["vertical_terms_skipped_no_pinyin"] += 1
             continue
@@ -9063,6 +9182,12 @@ def _augment_with_vertical_terms(
             char_score=sc_char_score,
         )
         sc_weight = min(1000, sc_weight + (short_bonus if _cjk_len(sc_word) <= 4 else long_bonus))
+        if layer_id == "medicine":
+            penalty = _compute_medicine_vertical_penalty(sc_word, source_id)
+            if penalty > 0:
+                sc_weight = max(1, sc_weight - penalty)
+                stats["vertical_medicine_penalized_sc"] += 1
+                stats["vertical_medicine_penalty_sc_total"] += penalty
         sc_key = (pinyin, sc_word)
         existing_sc_weight = sc.get(sc_key)
         if existing_sc_weight is None:
@@ -9113,6 +9238,12 @@ def _augment_with_vertical_terms(
             char_score=tc_char_score,
         )
         tc_weight = min(1000, tc_weight + (short_bonus if _cjk_len(tc_candidate) <= 4 else long_bonus))
+        if layer_id == "medicine":
+            penalty = _compute_medicine_vertical_penalty(tc_candidate, source_id)
+            if penalty > 0:
+                tc_weight = max(1, tc_weight - penalty)
+                stats["vertical_medicine_penalized_tc"] += 1
+                stats["vertical_medicine_penalty_tc_total"] += penalty
         tc_key = (pinyin, tc_candidate)
         existing_tc_weight = tc.get(tc_key)
         if existing_tc_weight is None:
@@ -10820,6 +10951,17 @@ def main() -> int:
         tc_map, tc_script_filter_stats = _filter_tc_mapping_with_script_hints(
             tc_map, sc_script_chars, tc_script_chars
         )
+        explicit_term_pinyin_overrides = _build_explicit_term_pinyin_override_map(vertical_entries)
+        sc_map, sc_pinyin_override_stats = _apply_explicit_term_pinyin_overrides(
+            sc_map,
+            explicit_term_pinyin_overrides,
+            "sc_explicit_pinyin_override",
+        )
+        tc_map, tc_pinyin_override_stats = _apply_explicit_term_pinyin_overrides(
+            tc_map,
+            explicit_term_pinyin_overrides,
+            "tc_explicit_pinyin_override",
+        )
         vertical_tc_exact_stats = _reinforce_vertical_tc_terms(
             tc_map,
             vertical_entries,
@@ -10882,9 +11024,11 @@ def main() -> int:
         stats.update(sc_normalize_stats)
         stats.update(sc_char_normalize_stats)
         stats.update(sc_script_filter_stats)
+        stats.update(sc_pinyin_override_stats)
         stats.update(tc_char_normalize_stats)
         stats.update(tc_backfill_stats)
         stats.update(tc_script_filter_stats)
+        stats.update(tc_pinyin_override_stats)
         stats["unihan_map_size"] = len(unihan_map)
         stats["tc_usage_score_terms"] = len(tc_usage_score_map)
         stats["tc_jieba_direct_score_terms"] = len(tc_jieba_direct_signal_map)

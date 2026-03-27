@@ -1,0 +1,46 @@
+# sc	tc	usage_score	pinyin(optional)
+# Project-maintained medical terminology supplement.
+# Use this layer for high-value medical terms that need explicit pinyin
+# or stable project-authored reinforcement without going through the
+# daily/chat preferred-term path.
+都保	都保	0.84	dubao
+普米克都保	普米剋都保	0.86	pumikedubao
+藏医	藏醫	0.80	zangyi
+藏药	藏藥	0.80	zangyao
+藏医学	藏醫學	0.82	zangyixue
+藏医药	藏醫藥	0.82	zangyiyao
+西藏医学	西藏醫學	0.78	xizangyixue
+藏毛窦	藏毛竇	0.80	zangmaodou
+藏毛囊肿	藏毛囊腫	0.82	zangmaonangzhong
+藏毛性疾病	藏毛性疾病	0.76	zangmaoxingjibing
+藏青果喉片	藏青果喉片	0.78	zangqingguohoupian
+藏菖蒲	藏菖蒲	0.74	zangchangpu
+长牙	長牙	0.72	zhangya
+失调	失調	0.80	shitiao
+调节剂	調節劑	0.82	tiaojieji
+调节性内斜视	調節性內斜視	0.82	tiaojiexingneixieshi
+免疫调节	免疫調節	0.80	mianyitiaojie
+神经调节	神經調節	0.80	shenjingtiaojie
+体液调节	體液調節	0.80	tiyetiaojie
+自身调节	自身調節	0.80	zishentiaojie
+调经补血丸	調經補血丸	0.82	tiaojingbuxuewan
+调经促孕丸	調經促孕丸	0.82	tiaojingcuyunwan
+调经活血片	調經活血片	0.82	tiaojinghuoxuepian
+调经祛斑胶囊	調經祛斑膠囊	0.82	tiaojingqubanjiaonang
+调经益灵片	調經益靈片	0.82	tiaojingyilingpian
+调经益母片	調經益母片	0.82	tiaojingyimupian
+调经至宝丸	調經至寶丸	0.82	tiaojingzhibaowan
+调经止痛胶囊	調經止痛膠囊	0.82	tiaojingzhitongjiaonang
+肝郁调经膏	肝鬱調經膏	0.80	ganyutiaojinggao
+养血调经	養血調經	0.78	yangxuetiaojing
+活血调经	活血調經	0.78	huoxuetiaojing
+调肝汤	調肝湯	0.78	tiaogantang
+调和肝脾	調和肝脾	0.78	tiaoheganpi
+调和脾胃	調和脾胃	0.78	tiaohepiwei
+调胃承气汤	調胃承氣湯	0.78	tiaoweichengqitang
+调胃舒肝丸	調胃舒肝丸	0.78	tiaoweishuganwan
+调中益气汤	調中益氣湯	0.78	tiaozhongyiqitang
+山楂调中丸	山楂調中丸	0.76	shanzhatiaozhongwan
+荷叶调脂茶	荷葉調脂茶	0.76	heyetiaozhicha
+川芎茶调散	川芎茶調散	0.80	chuanxiongchatiaosan
+川芎茶调颗粒	川芎茶調顆粒	0.80	chuanxiongchatiaokeli
