@@ -1,7 +1,7 @@
 # External Build Report
 
 - profile: unihan_single
-- generated_at_utc: 2026-03-28T10:43:19+00:00
+- generated_at_utc: 2026-03-28T11:37:52+00:00
 - min_hanzi: 1
 - max_entries: unlimited
 
@@ -146,8 +146,8 @@
 - sc_homophone_daily_phrase_short_non_daily_damped: 0
 - sc_homophone_dominant_common_boosted: 0
 - sc_homophone_dominant_common_damped: 0
-- sc_homophone_entries_adjusted: 23818
-- sc_homophone_entries_boosted: 3619
+- sc_homophone_entries_adjusted: 23821
+- sc_homophone_entries_boosted: 3622
 - sc_homophone_entries_damped: 20199
 - sc_homophone_inflated_short_penalized: 0
 - sc_homophone_literary_penalized: 0
@@ -172,8 +172,8 @@
 - sc_multi_pronunciation_terms: 0
 - sc_script_filtered_entries: 0
 - sc_script_filtered_total_entries: 23910
-- sc_single_char_leading_adjusted: 377
-- sc_single_char_leading_delta_total: 19920
+- sc_single_char_leading_adjusted: 375
+- sc_single_char_leading_delta_total: 19908
 - sc_single_char_reading_preference_adjusted: 1482
 - sc_single_char_reading_preference_delta_total: 22814
 - sc_single_char_reading_removed: 1
@@ -231,7 +231,7 @@
 - tc_script_filtered_entries: 0
 - tc_script_filtered_total_entries: 24065
 - tc_single_char_leading_adjusted: 335
-- tc_single_char_leading_delta_total: 18036
+- tc_single_char_leading_delta_total: 18108
 - tc_single_char_reading_preference_adjusted: 1842
 - tc_single_char_reading_preference_delta_total: 40966
 - tc_single_char_reading_removed: 1
@@ -363,6 +363,6 @@
 | 和 | he | 709 | 738 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.905 | - | weak-usage,high-modernity-risk |
 | 能 | neng | 698 | 732 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.873 | - | weak-usage,high-modernity-risk |
 | 下 | xia | 698 | 732 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.873 | - | weak-usage,high-modernity-risk |
+| 来 | lai | 697 | 731 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.872 | - | weak-usage,high-modernity-risk |
 | 主 | zhu | 697 | 731 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.872 | - | weak-usage,high-modernity-risk |
 | 看 | kan | 696 | 730 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.872 | - | weak-usage,high-modernity-risk |
-| 前 | qian | 694 | 728 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.871 | - | weak-usage,high-modernity-risk |

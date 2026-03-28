@@ -1,4 +1,4 @@
-﻿# Cassotis Lexicon
+# Cassotis Lexicon
 
 [English](README.md) | 简体中文
 
@@ -13,8 +13,8 @@ Cassotis IME 词库构建与发布仓库。
 
 | 文件 | 字体变体 | 词条数 |
 |------|---------|--------|
-| `data/generated/dict_clean_sc.txt` | 简体中文主词库 | 152,449 |
-| `data/generated/dict_clean_tc.txt` | 繁体中文主词库 | 168,555 |
+| `data/generated/dict_clean_sc.txt` | 简体中文主词库 | 152,474 |
+| `data/generated/dict_clean_tc.txt` | 繁体中文主词库 | 168,580 |
 | `data/generated/dict_unihan_sc.txt` | 简体单字（Unihan） | 23,909 |
 | `data/generated/dict_unihan_tc.txt` | 繁体单字（Unihan） | 24,064 |
 
