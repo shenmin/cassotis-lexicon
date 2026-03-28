@@ -71,6 +71,7 @@ Notes:
 Notes:
 
 - This repository uses titles as lexical seeds for daily wording, colloquial phrases, and chat-style expressions.
+- Filtered title subsets are also used as lightweight lexical supplements for the isolated gaming and game-development vertical layers.
 - Raw dump files are not committed in this repository.
 
 ## Wikipedia zh titles (ns0)
@@ -83,7 +84,8 @@ Notes:
 
 Notes:
 
-- This repository uses titles as external ranking/coverage signals only.
+- This repository uses titles as external ranking/coverage signals for the broad profile.
+- Filtered title subsets are also used as conservative lexical supplements for the isolated gaming and game-development vertical layers.
 - Raw dump files are not committed in this repository.
 
 ## Wikimedia Pageviews Top (zh.wikipedia)
@@ -98,6 +100,32 @@ Notes:
 
 - This repository uses aggregated monthly top-pageview counts as ranking signal only.
 - API responses are cached locally during build and are not committed as raw source dumps.
+
+## Godot Docs zh-cn title index
+
+- Name: Godot Docs zh-cn title index (`searchindex.js`)
+- Homepage: https://docs.godotengine.org/zh-cn/stable/
+- Download: https://docs.godotengine.org/zh-cn/stable/searchindex.js
+- License: CC BY 3.0
+- Copyright holder: Godot contributors
+
+Notes:
+
+- This repository uses filtered Chinese documentation titles as the main term source for the isolated game-development vertical layer.
+- Cached source payloads may be stored locally during build but are not committed as raw source dumps.
+
+## Wikidata zh gaming / game-engine entities
+
+- Name: Wikidata Query Service gaming entities and game-engine entities (Chinese labels/aliases)
+- Homepage: https://www.wikidata.org/wiki/Wikidata:Main_Page
+- Endpoint: https://query.wikidata.org/sparql
+- License: CC0-1.0
+- Copyright holder: Wikidata contributors
+
+Notes:
+
+- This repository queries Chinese labels and aliases for video games, video-game series, genres, consoles, and game engines.
+- Query responses are cached locally during build and are not committed as raw source dumps.
 
 ## MeSH descriptor catalog
 

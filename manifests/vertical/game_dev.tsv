@@ -1,0 +1,23 @@
+# sc	tc	usage_score	pinyin(optional)
+# Project-maintained game-development terminology supplement.
+# Use this layer for engine, content-pipeline, and gameplay-system terms.
+游戏引擎	遊戲引擎	0.82
+游戏策划	遊戲策劃	0.80
+数值策划	數值策劃	0.78
+关卡设计	關卡設計	0.80
+行为树	行為樹	0.78
+状态机	狀態機	0.80
+动画树	動畫樹	0.82
+动画播放器	動畫播放器	0.80
+导航网格	導航網格	0.82
+导航代理	導航代理	0.80
+瓦片地图	瓦片地圖	0.82
+碰撞体	碰撞體	0.80
+碰撞层	碰撞層	0.78
+碰撞掩码	碰撞掩碼	0.78
+输入映射	輸入映射	0.80
+粒子系统	粒子系統	0.80
+着色器	著色器	0.78
+视口	視口	0.76
+场景树	場景樹	0.78
+节点树	節點樹	0.76

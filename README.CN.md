@@ -13,8 +13,8 @@ Cassotis IME 词库构建与发布仓库。
 
 | 文件 | 字体变体 | 词条数 |
 |------|---------|--------|
-| `data/generated/dict_clean_sc.txt` | 简体中文主词库 | 139,925 |
-| `data/generated/dict_clean_tc.txt` | 繁体中文主词库 | 153,621 |
+| `data/generated/dict_clean_sc.txt` | 简体中文主词库 | 152,481 |
+| `data/generated/dict_clean_tc.txt` | 繁体中文主词库 | 168,596 |
 | `data/generated/dict_unihan_sc.txt` | 简体单字（Unihan） | 23,909 |
 | `data/generated/dict_unihan_tc.txt` | 繁体单字（Unihan） | 24,064 |
 
@@ -33,6 +33,10 @@ Cassotis IME 词库构建与发布仓库。
 | 中文维基标题（ns0） | CC BY-SA 4.0 | 命名实体覆盖与高可信专名种子 |
 | Wikimedia Pageviews Top（zh.wikipedia） | CC BY-SA 4.0 | 真实热度信号 |
 | 经过筛选的 `THUOCL_IT` 子集 | THUOCL 自定义开放条款 | 作为计算机垂直词库候选来源；导入前会先过滤，不按日常聊天词层处理 |
+| Wikidata 中文游戏名 / 系列 / 类型 / 主机实体 | CC0-1.0 | 作为独立游戏垂直层的主要作品名/实体来源 |
+| 经过筛选的中文维基词典 / 中文维基游戏词汇标题 | CC BY-SA 4.0 | 作为游戏垂直层的轻量游戏词汇补充，导入时会保守过滤 |
+| Godot Docs 中文标题索引 | CC BY 3.0 | 作为独立游戏开发术语层的主要术语来源，导入前会先过滤 |
+| Wikidata 中文游戏引擎实体 | CC0-1.0 | 作为独立游戏开发术语层的游戏引擎实体补充 |
 | MeSH descriptor catalog | NLM MeSH 条款 | 作为医学垂直词库的官方概念白名单，用来把医学层绑定到可识别的 MeSH 术语 |
 | Wikidata 中文医学实体（MeSH 关联） | CC0-1.0 | 提供与 MeSH 描述符关联的中文医学名称与别名，作为医学实体主层 |
 | 经过筛选的 `THUOCL_medical` 子集 | THUOCL 自定义开放条款 | 作为医学垂直词库候选来源；导入前会过滤并采用比 MeSH 关联医学层更保守的权重 |
@@ -45,6 +49,8 @@ Cassotis IME 词库构建与发布仓库。
 | Cassotis 项目内虚构实体词表 | 仓库许可证（项目自维护） | 存放小说人物、作品名、作品内组织与物件等虚构专名，和日常表达、一般专名分层 |
 | Cassotis 项目内专名词表 | 仓库许可证（项目自维护） | 项目内维护的现实风格人名、机构名、品牌名等一般专名词表；不走日常聊天词的 preferred-term 排序链 |
 | Cassotis 项目内计算机词表 | 仓库许可证（项目自维护） | 项目内维护的计算机/专业术语词表，供独立的计算机垂直层使用；不走日常聊天词的 preferred-term 排序链 |
+| Cassotis 项目内游戏词表 | 仓库许可证（项目自维护） | 项目内维护的游戏行业词汇补充，供独立的游戏垂直层使用；不走日常聊天词的 preferred-term 排序链 |
+| Cassotis 项目内游戏开发词表 | 仓库许可证（项目自维护） | 项目内维护的游戏开发术语补充，供独立的游戏开发术语层使用；不走日常聊天词的 preferred-term 排序链 |
 | Cassotis 项目内医学词表 | 仓库许可证（项目自维护） | 项目内维护的医学补充词表，用于高价值医学词和显式拼音校正；不走日常聊天词的 preferred-term 排序链 |
 
 详见：
@@ -68,11 +74,13 @@ Cassotis IME 词库构建与发布仓库。
 ## 分层原则
 - `manifests/curated_daily_phrases.tsv` 只用于日常/聊天表达，这一层会参与日常输入的 preferred-term 偏置。
 - `manifests/vertical_layers.public.json` 用来声明独立的垂直术语层。
-- `manifests/vertical/*.tsv` 用来存放项目内维护的垂直词表，例如虚构实体、专名词表和计算机专业词汇。
+- `manifests/vertical/*.tsv` 用来存放项目内维护的垂直词表，例如虚构实体、专名词表、计算机词汇、游戏词汇和游戏开发术语。
 - 垂直层可以补入专业词，但不会继承日常/聊天词那套 preferred-term 排序偏置，从而避免污染现有日常输入路径。
 - 当前启用的虚构实体层会把小说人物、作品名和作品内实体与日常聊天词层、一般专名层分开处理。
 - 当前启用的项目内专名层会把现实风格的名称、产品名、机构名等词和日常聊天词层分开处理。
 - 当前计算机词库由经过筛选的 `THUOCL_IT` 子集和项目内维护的计算机词表共同组成。
+- 当前游戏词库由项目内维护的游戏词表、Wikidata 中文游戏实体，以及经过筛选的中文维基/维基词典游戏词汇标题共同组成。
+- 当前游戏开发术语层由项目内维护的游戏开发词表、经过筛选的 Godot Docs 中文标题、Wikidata 中文游戏引擎实体，以及经过筛选的中文维基/维基词典游戏开发词汇标题共同组成。
 - 当前医学词库由项目内维护的医学词表、MeSH descriptor catalog、与 MeSH 关联的 Wikidata 中文医学实体，以及经过筛选的 `THUOCL_medical` 子集共同组成，并与日常聊天词层隔离。
 
 ## 目录结构
@@ -95,3 +103,7 @@ Cassotis IME 词库构建与发布仓库。
 
 `external_broad` 和 `external_cedict` 在构建时会自动读取
 `manifests/vertical_layers.public.json`（如果该文件存在）。
+
+## 约束
+- 外部仓库的 commit message 必须使用英文。
+- 禁止提交私有原始语料、草稿与作者文稿。

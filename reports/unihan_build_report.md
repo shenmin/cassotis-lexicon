@@ -1,7 +1,7 @@
 # External Build Report
 
 - profile: unihan_single
-- generated_at_utc: 2026-03-28T08:29:15+00:00
+- generated_at_utc: 2026-03-28T09:13:57+00:00
 - min_hanzi: 1
 - max_entries: unlimited
 
@@ -36,6 +36,66 @@
   - risk_level: low
   - redistribution_class: project_authored
   - url: repo://manifests/vertical/computing.tsv
+- project-curated-vertical-gaming: Cassotis curated gaming terms
+  - license: Repository license (project-authored)
+  - risk_level: low
+  - redistribution_class: project_authored
+  - url: repo://manifests/vertical/gaming.tsv
+- wikidata-video-games-zh: Wikidata zh video games
+  - license: CC0-1.0
+  - risk_level: low
+  - redistribution_class: public_domain
+  - url: https://query.wikidata.org/sparql
+- wikidata-video-game-series-zh: Wikidata zh video game series
+  - license: CC0-1.0
+  - risk_level: low
+  - redistribution_class: public_domain
+  - url: https://query.wikidata.org/sparql
+- wikidata-video-game-genres-zh: Wikidata zh video game genres
+  - license: CC0-1.0
+  - risk_level: low
+  - redistribution_class: public_domain
+  - url: https://query.wikidata.org/sparql
+- wikidata-game-consoles-zh: Wikidata zh game consoles
+  - license: CC0-1.0
+  - risk_level: low
+  - redistribution_class: public_domain
+  - url: https://query.wikidata.org/sparql
+- zhwiktionary-gaming-lexical: Wiktionary zh gaming lexical titles
+  - license: CC BY-SA 4.0
+  - risk_level: medium
+  - redistribution_class: copyleft_sharealike
+  - url: https://dumps.wikimedia.org/zhwiktionary/latest/zhwiktionary-latest-all-titles-in-ns0.gz
+- zhwiki-gaming-lexical: Wikipedia zh gaming lexical titles
+  - license: CC BY-SA 4.0
+  - risk_level: medium
+  - redistribution_class: copyleft_sharealike
+  - url: https://dumps.wikimedia.org/zhwiki/latest/zhwiki-latest-all-titles-in-ns0.gz
+- project-curated-vertical-game-dev: Cassotis curated game development terms
+  - license: Repository license (project-authored)
+  - risk_level: low
+  - redistribution_class: project_authored
+  - url: repo://manifests/vertical/game_dev.tsv
+- godot-zh-searchindex-titles: Godot Docs zh-cn title index
+  - license: CC BY 3.0
+  - risk_level: low
+  - redistribution_class: attribution_required
+  - url: https://docs.godotengine.org/zh-cn/stable/searchindex.js
+- wikidata-game-engines-zh: Wikidata zh game engines
+  - license: CC0-1.0
+  - risk_level: low
+  - redistribution_class: public_domain
+  - url: https://query.wikidata.org/sparql
+- zhwiktionary-game-dev-lexical: Wiktionary zh game-development lexical titles
+  - license: CC BY-SA 4.0
+  - risk_level: medium
+  - redistribution_class: copyleft_sharealike
+  - url: https://dumps.wikimedia.org/zhwiktionary/latest/zhwiktionary-latest-all-titles-in-ns0.gz
+- zhwiki-game-dev-lexical: Wikipedia zh game-development lexical titles
+  - license: CC BY-SA 4.0
+  - risk_level: medium
+  - redistribution_class: copyleft_sharealike
+  - url: https://dumps.wikimedia.org/zhwiki/latest/zhwiki-latest-all-titles-in-ns0.gz
 - project-curated-vertical-medicine: Cassotis curated medical terms
   - license: Repository license (project-authored)
   - risk_level: low
@@ -86,9 +146,9 @@
 - sc_homophone_daily_phrase_short_non_daily_damped: 0
 - sc_homophone_dominant_common_boosted: 0
 - sc_homophone_dominant_common_damped: 0
-- sc_homophone_entries_adjusted: 23819
-- sc_homophone_entries_boosted: 3652
-- sc_homophone_entries_damped: 20167
+- sc_homophone_entries_adjusted: 23816
+- sc_homophone_entries_boosted: 3653
+- sc_homophone_entries_damped: 20163
 - sc_homophone_inflated_short_penalized: 0
 - sc_homophone_literary_penalized: 0
 - sc_homophone_modernity_risk_penalized: 0
@@ -112,8 +172,8 @@
 - sc_multi_pronunciation_terms: 0
 - sc_script_filtered_entries: 0
 - sc_script_filtered_total_entries: 23910
-- sc_single_char_leading_adjusted: 393
-- sc_single_char_leading_delta_total: 20700
+- sc_single_char_leading_adjusted: 394
+- sc_single_char_leading_delta_total: 20724
 - sc_single_char_reading_preference_adjusted: 1491
 - sc_single_char_reading_preference_delta_total: 21036
 - sc_single_char_reading_removed: 1
@@ -136,9 +196,9 @@
 - tc_homophone_daily_phrase_short_non_daily_damped: 0
 - tc_homophone_dominant_common_boosted: 0
 - tc_homophone_dominant_common_damped: 0
-- tc_homophone_entries_adjusted: 23938
-- tc_homophone_entries_boosted: 4008
-- tc_homophone_entries_damped: 19930
+- tc_homophone_entries_adjusted: 23939
+- tc_homophone_entries_boosted: 4012
+- tc_homophone_entries_damped: 19927
 - tc_homophone_inflated_short_penalized: 0
 - tc_homophone_literary_penalized: 0
 - tc_homophone_modernity_risk_penalized: 0
@@ -170,46 +230,61 @@
 - tc_multi_pronunciation_terms: 0
 - tc_script_filtered_entries: 0
 - tc_script_filtered_total_entries: 24065
-- tc_single_char_leading_adjusted: 360
-- tc_single_char_leading_delta_total: 18984
-- tc_single_char_reading_preference_adjusted: 1850
-- tc_single_char_reading_preference_delta_total: 34779
+- tc_single_char_leading_adjusted: 353
+- tc_single_char_leading_delta_total: 18768
+- tc_single_char_reading_preference_adjusted: 1853
+- tc_single_char_reading_preference_delta_total: 35023
 - tc_single_char_reading_removed: 1
 - total_lines: 49191
 - unihan_core_size: 18816
-- unihan_family_support_boosted_sc: 5023
-- unihan_family_support_boosted_tc: 5239
-- unihan_family_support_terms_sc: 5847
-- unihan_family_support_terms_tc: 6086
+- unihan_family_support_boosted_sc: 5026
+- unihan_family_support_boosted_tc: 5237
+- unihan_family_support_terms_sc: 5845
+- unihan_family_support_terms_tc: 6077
 - unihan_frequency_size: 0
 - unihan_grade_size: 2632
-- unihan_leading_support_terms_sc: 4774
-- unihan_leading_support_terms_tc: 4932
+- unihan_leading_support_terms_sc: 4772
+- unihan_leading_support_terms_tc: 4926
 - unihan_map_size: 26711
 - unihan_pinlu_size: 3799
 - unihan_reading_support_terms_sc: 1542
-- unihan_reading_support_terms_tc: 1984
+- unihan_reading_support_terms_tc: 1985
 - unihan_readings_chars: 26711
 - unihan_readings_pairs: 33908
 - unihan_sc_only_chars: 2766
 - unihan_single_char_injected_sc: 23932
 - unihan_single_char_injected_tc: 24082
 - unihan_tc_only_chars: 2916
-- vertical_layer_sources_loaded: 8
+- vertical_godot_titles_invalid_format: 0
+- vertical_godot_titles_invalid_json: 0
+- vertical_godot_titles_kept: 260
+- vertical_godot_titles_skipped_colon: 78
+- vertical_godot_titles_skipped_duplicate: 2
+- vertical_godot_titles_skipped_empty: 0
+- vertical_godot_titles_skipped_filter: 1583
+- vertical_godot_titles_skipped_long: 88
+- vertical_godot_titles_skipped_non_cjk: 2230
+- vertical_godot_titles_skipped_short: 0
+- vertical_godot_titles_total: 4241
+- vertical_layer_sources_loaded: 20
 - vertical_layer_sources_skipped_inactive: 0
 - vertical_layer_sources_skipped_unsupported: 0
-- vertical_layer_sources_total: 8
-- vertical_layers_active: 4
-- vertical_layers_declared: 4
+- vertical_layer_sources_total: 20
+- vertical_layers_active: 6
+- vertical_layers_declared: 6
 - vertical_layers_manifest_present: 1
 - vertical_mesh_descriptors_medical: 50066
 - vertical_mesh_descriptors_nonmedical: 12154
 - vertical_mesh_descriptors_total: 62220
 - vertical_mesh_missing_payload: 0
-- vertical_support_excluded_sc: 34910
-- vertical_support_excluded_tc: 36462
-- vertical_term_kept: 242
-- vertical_term_rows: 242
+- vertical_payload_titles_candidates: 4357324
+- vertical_payload_titles_kept: 2822
+- vertical_payload_titles_skipped_duplicate: 106
+- vertical_payload_titles_skipped_filter: 4354396
+- vertical_support_excluded_sc: 48067
+- vertical_support_excluded_tc: 49629
+- vertical_term_kept: 282
+- vertical_term_rows: 282
 - vertical_term_skipped_malformed: 0
 - vertical_term_skipped_non_cjk: 0
 - vertical_term_skipped_short: 0
@@ -232,8 +307,23 @@
 - vertical_wikidata_skipped_non_cjk: 1573
 - vertical_wikidata_skipped_nonmedical_mesh: 17959
 - vertical_wikidata_skipped_short: 0
+- vertical_wikidata_term_kept: 10609
+- vertical_wikidata_term_rows: 23478
+- vertical_wikidata_term_skipped_duplicate: 875
+- vertical_wikidata_term_skipped_filter: 0
+- vertical_wikidata_term_skipped_long: 173
+- vertical_wikidata_term_skipped_non_cjk: 11821
+- vertical_wikidata_term_skipped_short: 0
+- wiki_deduplicated: 425822
+- wiki_kept_titles: 4357324
 - wiki_proper_augmented_sc_terms: 0
 - wiki_proper_augmented_tc_terms: 0
+- wiki_skipped_colon: 20078
+- wiki_skipped_empty: 10
+- wiki_skipped_long: 296852
+- wiki_skipped_non_cjk: 6035102
+- wiki_skipped_short: 0
+- wiki_total_lines: 11135188
 
 ## Output
 - sc_file: data/generated/dict_unihan_sc.txt

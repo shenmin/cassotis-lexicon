@@ -206,6 +206,224 @@ COMPUTING_VERTICAL_FILTER_EXACT = {
     "控件",
     "实例化",
 }
+GAMING_LEXICAL_FILTER_EXACT = {
+    "开黑",
+    "联机",
+    "副本",
+    "团本",
+    "关卡",
+    "存档",
+    "读档",
+    "主机",
+    "掌机",
+    "手柄",
+    "手游",
+    "端游",
+    "页游",
+    "氪金",
+    "抽卡",
+    "卡池",
+    "保底",
+    "掉落",
+    "暴击",
+    "冷却",
+    "血条",
+    "蓝条",
+    "回蓝",
+    "回魔",
+    "成就",
+    "奖杯",
+    "攻略",
+    "排位",
+    "段位",
+    "上分",
+    "补刀",
+    "打野",
+    "射手",
+    "辅助",
+    "中单",
+    "上单",
+    "下路",
+    "团战",
+    "出装",
+    "符文",
+    "天赋",
+    "肉鸽",
+    "类魂",
+    "周目",
+    "刷图",
+    "跑图",
+    "开荒",
+}
+GAMING_LEXICAL_FILTER_KEYWORDS = (
+    "游戏",
+    "玩家",
+    "联机",
+    "副本",
+    "关卡",
+    "存档",
+    "读档",
+    "开黑",
+    "电竞",
+    "排位",
+    "段位",
+    "上分",
+    "补刀",
+    "打野",
+    "射手",
+    "辅助",
+    "中单",
+    "上单",
+    "下路",
+    "团战",
+    "出装",
+    "符文",
+    "天赋",
+    "氪金",
+    "抽卡",
+    "卡池",
+    "保底",
+    "掉落",
+    "暴击",
+    "冷却",
+    "血条",
+    "蓝条",
+    "回蓝",
+    "回魔",
+    "成就",
+    "奖杯",
+    "攻略",
+    "主机",
+    "掌机",
+    "手柄",
+    "手游",
+    "端游",
+    "页游",
+    "开放世界",
+    "沙盒",
+    "像素风",
+    "肉鸽",
+    "类魂",
+    "平台跳跃",
+    "动作冒险",
+    "动作游戏",
+    "冒险游戏",
+    "角色扮演",
+    "回合制",
+    "即时战略",
+    "模拟经营",
+    "生存建造",
+    "独立游戏",
+    "游戏引擎",
+    "游戏主机",
+    "游戏平台",
+    "游戏类型",
+)
+GODOT_GAMEDEV_FILTER_EXACT = {
+    "节点",
+    "场景",
+    "信号",
+    "脚本",
+    "资源",
+    "视口",
+    "相机",
+    "网格",
+    "骨骼",
+    "粒子",
+    "材质",
+    "着色器",
+    "输入映射",
+    "动画树",
+    "动画播放器",
+    "补间动画",
+    "碰撞体",
+    "碰撞层",
+    "碰撞掩码",
+    "物理材质",
+    "瓦片地图",
+    "导航网格",
+    "导航代理",
+    "角色身体",
+    "刚体",
+    "静态体",
+    "软体",
+    "区域",
+    "状态机",
+}
+GODOT_GAMEDEV_FILTER_KEYWORDS = (
+    "节点",
+    "场景",
+    "动画",
+    "碰撞",
+    "导航",
+    "瓦片",
+    "信号",
+    "脚本",
+    "输入",
+    "物理",
+    "材质",
+    "渲染",
+    "着色器",
+    "骨骼",
+    "网格",
+    "补间",
+    "视口",
+    "粒子",
+    "相机",
+    "角色身体",
+    "状态机",
+    "资源",
+)
+GODOT_GAMEDEV_BLOCKED_PREFIXES = (
+    "为",
+    "从",
+    "使用",
+    "如何",
+    "为什么",
+    "与你",
+    "与",
+    "在",
+    "将",
+    "让",
+    "创建",
+    "导出",
+    "优化",
+    "你的",
+    "什么是",
+    "何时",
+    "启用",
+    "禁用",
+    "切换",
+    "下载",
+    "安装",
+    "配置",
+    "运行",
+    "编写",
+    "构建",
+    "转换",
+    "获取",
+    "伪造",
+)
+GODOT_GAMEDEV_BLOCKED_SUFFIXES = (
+    "说明",
+    "概览",
+    "教程",
+    "指南",
+    "步骤",
+    "示例",
+    "实例",
+    "方案",
+    "属性",
+    "方法",
+    "问题",
+    "选项",
+    "性能",
+    "知识",
+    "基础",
+    "标签",
+    "参数",
+    "预览",
+)
 DAILY_CHAT_SEED_PREFIXES = (
     "不",
     "没",
@@ -716,6 +934,9 @@ def _load_vertical_layer_sources(
                 "thuocl_zip_member",
                 "mesh_descriptor_catalog",
                 "wikidata_mesh_query",
+                "wikidata_term_query",
+                "payload_titles_filter",
+                "godot_searchindex_titles",
             }:
                 stats["vertical_layer_sources_skipped_unsupported"] += 1
                 continue
@@ -758,6 +979,7 @@ def _load_vertical_layer_sources(
                     "vertical_query": str(source.get("query", "")).strip(),
                     "vertical_mesh_source_id": str(source.get("mesh_source_id", "")).strip(),
                     "vertical_mesh_tree_prefixes": str(source.get("mesh_tree_prefixes", "")).strip(),
+                    "vertical_max_hanzi": int(source.get("max_hanzi", 8) or 8),
                 }
             )
             stats["vertical_layer_sources_loaded"] += 1
@@ -814,6 +1036,25 @@ def _matches_vertical_filter(text: str, filter_id: str) -> bool:
         if text in COMPUTING_VERTICAL_FILTER_EXACT:
             return True
         return any(keyword in text for keyword in COMPUTING_VERTICAL_FILTER_KEYWORDS)
+    if filter_id == "gaming_lexical_heuristic":
+        if text in GAMING_LEXICAL_FILTER_EXACT:
+            return True
+        return any(keyword in text for keyword in GAMING_LEXICAL_FILTER_KEYWORDS)
+    if filter_id == "game_dev_lexical_heuristic":
+        if text in GODOT_GAMEDEV_FILTER_EXACT:
+            return True
+        return any(keyword in text for keyword in GODOT_GAMEDEV_FILTER_KEYWORDS)
+    if filter_id == "godot_gamedev_heuristic":
+        compact = text.strip().replace(" ", "").replace("_", "")
+        if compact in GODOT_GAMEDEV_FILTER_EXACT:
+            return True
+        if not any(keyword in compact for keyword in GODOT_GAMEDEV_FILTER_KEYWORDS):
+            return False
+        if compact.startswith(GODOT_GAMEDEV_BLOCKED_PREFIXES):
+            return False
+        if compact.endswith(GODOT_GAMEDEV_BLOCKED_SUFFIXES):
+            return False
+        return 2 <= _cjk_len(compact) <= 10
     return True
 
 
@@ -831,7 +1072,7 @@ def _resolve_optional_repo_path(
 def _build_vertical_source_request_url(source: Dict[str, object]) -> str:
     source_url = str(source.get("download_url", "")).strip()
     source_type = str(source.get("vertical_source_type", "repo_tsv")).strip().lower()
-    if source_type != "wikidata_mesh_query":
+    if source_type not in {"wikidata_mesh_query", "wikidata_term_query"}:
         return source_url
 
     parsed = urllib.parse.urlparse(source_url)
@@ -854,8 +1095,19 @@ def _download_wikidata_sparql_bytes(url: str, query: str) -> bytes:
         },
         method="POST",
     )
-    with urllib.request.urlopen(request, timeout=180) as response:
-        return response.read()
+    last_error: Exception | None = None
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(request, timeout=180) as response:
+                return response.read()
+        except Exception as exc:
+            last_error = exc
+            if attempt >= 2:
+                raise
+            time.sleep(1.0 + attempt * 1.5)
+    if last_error is not None:
+        raise last_error
+    raise RuntimeError("unreachable")
 
 
 def _iter_wikidata_mesh_prefix_queries(query: str) -> Iterator[str]:
@@ -887,6 +1139,30 @@ def _download_wikidata_mesh_query_payload(url: str, query: str) -> bytes:
     return json.dumps(combined_payload, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
 
 
+def _download_wikidata_term_query_payload(url: str, query: str) -> bytes:
+    return _download_wikidata_sparql_bytes(url, query)
+
+
+def _is_valid_wikidata_sparql_payload(payload: bytes) -> bool:
+    stripped = payload.lstrip()
+    if not stripped:
+        return False
+    if stripped.startswith(b"{"):
+        try:
+            data = json.loads(stripped.decode("utf-8", errors="ignore"))
+        except json.JSONDecodeError:
+            return False
+        results = data.get("results", {})
+        return isinstance(results, dict) and isinstance(results.get("bindings"), list)
+    if stripped.startswith(b"<"):
+        try:
+            root = ET.fromstring(payload)
+        except ET.ParseError:
+            return False
+        return root.tag.endswith("sparql")
+    return False
+
+
 def _prefetch_vertical_source_payloads(
     vertical_sources: List[Dict[str, object]],
     repo_root: pathlib.Path,
@@ -902,11 +1178,27 @@ def _prefetch_vertical_source_payloads(
         cache_file = _resolve_optional_repo_path(repo_root, str(source.get("vertical_cache_file", "")))
         if source_type == "wikidata_mesh_query":
             if cache_file and cache_file.exists():
-                payloads[source_id] = cache_file.read_bytes()
-                continue
+                cached_payload = cache_file.read_bytes()
+                if _is_valid_wikidata_sparql_payload(cached_payload):
+                    payloads[source_id] = cached_payload
+                    continue
             url = _build_vertical_source_request_url(source)
             query = str(source.get("vertical_query", "")).strip()
             payload = _download_wikidata_mesh_query_payload(url, query)
+            if cache_file:
+                cache_file.parent.mkdir(parents=True, exist_ok=True)
+                cache_file.write_bytes(payload)
+            payloads[source_id] = payload
+            continue
+        if source_type == "wikidata_term_query":
+            if cache_file and cache_file.exists():
+                cached_payload = cache_file.read_bytes()
+                if _is_valid_wikidata_sparql_payload(cached_payload):
+                    payloads[source_id] = cached_payload
+                    continue
+            url = _build_vertical_source_request_url(source)
+            query = str(source.get("vertical_query", "")).strip()
+            payload = _download_wikidata_term_query_payload(url, query)
             if cache_file:
                 cache_file.parent.mkdir(parents=True, exist_ok=True)
                 cache_file.write_bytes(payload)
@@ -982,6 +1274,307 @@ def _parse_wikidata_bindings(payload: bytes) -> List[Tuple[str, str]]:
         if term and mesh_id:
             results.append((term, mesh_id))
     return results
+
+
+def _parse_wikidata_term_bindings(payload: bytes) -> List[str]:
+    stripped = payload.lstrip()
+    results: List[str] = []
+    if stripped.startswith(b"{"):
+        data = json.loads(stripped.decode("utf-8", errors="ignore"))
+        for item in data.get("results", {}).get("bindings", []):
+            if not isinstance(item, dict):
+                continue
+            term = str(item.get("term", {}).get("value", "")).strip()
+            if term:
+                results.append(term)
+        return results
+
+    root = ET.fromstring(payload)
+    ns = {"sr": "http://www.w3.org/2005/sparql-results#"}
+    for result in root.findall(".//sr:result", ns):
+        for binding in result.findall("sr:binding", ns):
+            name = binding.get("name", "")
+            if name != "term":
+                continue
+            literal = binding.find("sr:literal", ns)
+            value = (literal.text or "").strip() if literal is not None else ""
+            if value:
+                results.append(value)
+    return results
+
+
+def _build_opencc_variant_context(
+    opencc_payload: bytes | None,
+) -> Tuple[
+    List[Tuple[str, str]],
+    Dict[str, Set[str]],
+    Dict[str, Set[str]],
+    Dict[str, str],
+    Dict[str, str],
+]:
+    opencc_entries: List[Tuple[str, str]] = []
+    opencc_sc_to_tc: Dict[str, Set[str]] = {}
+    opencc_tc_to_sc: Dict[str, Set[str]] = {}
+    trad_to_simp_char_map: Dict[str, str] = {}
+    simp_to_trad_char_map: Dict[str, str] = {}
+    if not opencc_payload:
+        return (
+            opencc_entries,
+            opencc_sc_to_tc,
+            opencc_tc_to_sc,
+            trad_to_simp_char_map,
+            simp_to_trad_char_map,
+        )
+
+    opencc_entries, _ = _parse_opencc_entries(_decode_text(opencc_payload), 1)
+    opencc_sc_to_tc = _build_opencc_sc_to_tc_map(opencc_entries)
+    opencc_tc_to_sc = _build_opencc_tc_to_sc_map(opencc_entries)
+    trad_to_simp_char_map, simp_to_trad_char_map, _sc_chars, _tc_chars = _build_char_variant_hints(
+        opencc_tc_to_sc,
+        opencc_entries,
+    )
+    return (
+        opencc_entries,
+        opencc_sc_to_tc,
+        opencc_tc_to_sc,
+        trad_to_simp_char_map,
+        simp_to_trad_char_map,
+    )
+
+
+def _map_vertical_term_to_sc_tc(
+    term: str,
+    opencc_sc_to_tc: Dict[str, Set[str]],
+    opencc_tc_to_sc: Dict[str, Set[str]],
+    trad_to_simp_char_map: Dict[str, str],
+    simp_to_trad_char_map: Dict[str, str],
+) -> Tuple[str, str]:
+    sc_candidate = term
+    tc_candidate = term
+    mapped_sc_words = opencc_tc_to_sc.get(term, set())
+    mapped_tc_words = opencc_sc_to_tc.get(term, set())
+    if mapped_sc_words:
+        sc_candidate = sorted(mapped_sc_words)[0]
+        tc_candidate = term
+    elif mapped_tc_words:
+        sc_candidate = term
+        tc_candidate = sorted(mapped_tc_words)[0]
+    elif trad_to_simp_char_map:
+        sc_candidate = _convert_text_with_char_map(term, trad_to_simp_char_map)
+        tc_candidate = _convert_sc_text_to_tc_with_phrase_hints(
+            sc_candidate,
+            opencc_sc_to_tc,
+            simp_to_trad_char_map,
+        )
+    return sc_candidate, tc_candidate
+
+
+def _parse_wikidata_term_query_entries(
+    payload: bytes,
+    opencc_payload: bytes | None,
+    min_hanzi: int,
+    default_usage_score: float,
+    filter_id: str,
+    max_hanzi: int,
+) -> Tuple[List[Tuple[str, str, float, str]], Dict[str, int]]:
+    stats = {
+        "vertical_wikidata_term_rows": 0,
+        "vertical_wikidata_term_kept": 0,
+        "vertical_wikidata_term_skipped_non_cjk": 0,
+        "vertical_wikidata_term_skipped_short": 0,
+        "vertical_wikidata_term_skipped_long": 0,
+        "vertical_wikidata_term_skipped_filter": 0,
+        "vertical_wikidata_term_skipped_duplicate": 0,
+    }
+    (
+        _opencc_entries,
+        opencc_sc_to_tc,
+        opencc_tc_to_sc,
+        trad_to_simp_char_map,
+        simp_to_trad_char_map,
+    ) = _build_opencc_variant_context(opencc_payload)
+    default_usage_score = min(1.0, max(0.0, default_usage_score))
+    entries: List[Tuple[str, str, float, str]] = []
+    seen_pairs: Set[Tuple[str, str]] = set()
+    for term in _parse_wikidata_term_bindings(payload):
+        stats["vertical_wikidata_term_rows"] += 1
+        normalized, reason = _normalize_wiki_title_with_reason(
+            term,
+            min_hanzi=min_hanzi,
+            max_hanzi=max_hanzi,
+        )
+        if not normalized:
+            if reason == "non_cjk":
+                stats["vertical_wikidata_term_skipped_non_cjk"] += 1
+            elif reason == "short":
+                stats["vertical_wikidata_term_skipped_short"] += 1
+            elif reason == "long":
+                stats["vertical_wikidata_term_skipped_long"] += 1
+            else:
+                stats["vertical_wikidata_term_skipped_non_cjk"] += 1
+            continue
+        if filter_id and not _matches_vertical_filter(normalized, filter_id):
+            stats["vertical_wikidata_term_skipped_filter"] += 1
+            continue
+        sc_candidate, tc_candidate = _map_vertical_term_to_sc_tc(
+            normalized,
+            opencc_sc_to_tc,
+            opencc_tc_to_sc,
+            trad_to_simp_char_map,
+            simp_to_trad_char_map,
+        )
+        pair_key = (sc_candidate, tc_candidate)
+        if pair_key in seen_pairs:
+            stats["vertical_wikidata_term_skipped_duplicate"] += 1
+            continue
+        seen_pairs.add(pair_key)
+        entries.append((sc_candidate, tc_candidate, default_usage_score, ""))
+        stats["vertical_wikidata_term_kept"] += 1
+    return entries, stats
+
+
+def _parse_payload_titles_filter_entries(
+    payload: bytes,
+    opencc_payload: bytes | None,
+    min_hanzi: int,
+    default_usage_score: float,
+    filter_id: str,
+    max_hanzi: int,
+) -> Tuple[List[Tuple[str, str, float, str]], Dict[str, int]]:
+    titles, wiki_stats = _parse_wiki_titles_entries(
+        payload,
+        min_hanzi=min_hanzi,
+        max_hanzi=max_hanzi,
+    )
+    stats: Dict[str, int] = {
+        "vertical_payload_titles_candidates": len(titles),
+        "vertical_payload_titles_kept": 0,
+        "vertical_payload_titles_skipped_filter": 0,
+        "vertical_payload_titles_skipped_duplicate": 0,
+    }
+    for key, value in wiki_stats.items():
+        stats[key] = stats.get(key, 0) + value
+
+    (
+        _opencc_entries,
+        opencc_sc_to_tc,
+        opencc_tc_to_sc,
+        trad_to_simp_char_map,
+        simp_to_trad_char_map,
+    ) = _build_opencc_variant_context(opencc_payload)
+    default_usage_score = min(1.0, max(0.0, default_usage_score))
+    entries: List[Tuple[str, str, float, str]] = []
+    seen_pairs: Set[Tuple[str, str]] = set()
+    for title in sorted(titles):
+        if filter_id and not _matches_vertical_filter(title, filter_id):
+            stats["vertical_payload_titles_skipped_filter"] += 1
+            continue
+        sc_candidate, tc_candidate = _map_vertical_term_to_sc_tc(
+            title,
+            opencc_sc_to_tc,
+            opencc_tc_to_sc,
+            trad_to_simp_char_map,
+            simp_to_trad_char_map,
+        )
+        pair_key = (sc_candidate, tc_candidate)
+        if pair_key in seen_pairs:
+            stats["vertical_payload_titles_skipped_duplicate"] += 1
+            continue
+        seen_pairs.add(pair_key)
+        entries.append((sc_candidate, tc_candidate, default_usage_score, ""))
+        stats["vertical_payload_titles_kept"] += 1
+    return entries, stats
+
+
+def _parse_godot_searchindex_entries(
+    payload: bytes,
+    opencc_payload: bytes | None,
+    min_hanzi: int,
+    default_usage_score: float,
+    filter_id: str,
+    max_hanzi: int,
+) -> Tuple[List[Tuple[str, str, float, str]], Dict[str, int]]:
+    stats = {
+        "vertical_godot_titles_total": 0,
+        "vertical_godot_titles_kept": 0,
+        "vertical_godot_titles_skipped_empty": 0,
+        "vertical_godot_titles_skipped_colon": 0,
+        "vertical_godot_titles_skipped_non_cjk": 0,
+        "vertical_godot_titles_skipped_short": 0,
+        "vertical_godot_titles_skipped_long": 0,
+        "vertical_godot_titles_skipped_filter": 0,
+        "vertical_godot_titles_skipped_duplicate": 0,
+        "vertical_godot_titles_invalid_format": 0,
+        "vertical_godot_titles_invalid_json": 0,
+    }
+    text = _decode_text(payload).strip()
+    if not text.startswith("Search.setIndex("):
+        stats["vertical_godot_titles_invalid_format"] += 1
+        return [], stats
+    json_text = text[len("Search.setIndex("):].strip()
+    if json_text.endswith(";"):
+        json_text = json_text[:-1].strip()
+    if json_text.endswith(")"):
+        json_text = json_text[:-1].strip()
+    try:
+        data = json.loads(json_text)
+    except json.JSONDecodeError:
+        stats["vertical_godot_titles_invalid_json"] += 1
+        return [], stats
+    alltitles = data.get("alltitles", {})
+    if not isinstance(alltitles, dict):
+        stats["vertical_godot_titles_invalid_format"] += 1
+        return [], stats
+
+    (
+        _opencc_entries,
+        opencc_sc_to_tc,
+        opencc_tc_to_sc,
+        trad_to_simp_char_map,
+        simp_to_trad_char_map,
+    ) = _build_opencc_variant_context(opencc_payload)
+    default_usage_score = min(1.0, max(0.0, default_usage_score))
+    entries: List[Tuple[str, str, float, str]] = []
+    seen_pairs: Set[Tuple[str, str]] = set()
+    for raw_title in alltitles.keys():
+        stats["vertical_godot_titles_total"] += 1
+        normalized, reason = _normalize_wiki_title_with_reason(
+            str(raw_title),
+            min_hanzi=min_hanzi,
+            max_hanzi=max_hanzi,
+        )
+        if not normalized:
+            if reason == "empty":
+                stats["vertical_godot_titles_skipped_empty"] += 1
+            elif reason == "colon":
+                stats["vertical_godot_titles_skipped_colon"] += 1
+            elif reason == "non_cjk":
+                stats["vertical_godot_titles_skipped_non_cjk"] += 1
+            elif reason == "short":
+                stats["vertical_godot_titles_skipped_short"] += 1
+            elif reason == "long":
+                stats["vertical_godot_titles_skipped_long"] += 1
+            else:
+                stats["vertical_godot_titles_skipped_non_cjk"] += 1
+            continue
+        if filter_id and not _matches_vertical_filter(normalized, filter_id):
+            stats["vertical_godot_titles_skipped_filter"] += 1
+            continue
+        sc_candidate, tc_candidate = _map_vertical_term_to_sc_tc(
+            normalized,
+            opencc_sc_to_tc,
+            opencc_tc_to_sc,
+            trad_to_simp_char_map,
+            simp_to_trad_char_map,
+        )
+        pair_key = (sc_candidate, tc_candidate)
+        if pair_key in seen_pairs:
+            stats["vertical_godot_titles_skipped_duplicate"] += 1
+            continue
+        seen_pairs.add(pair_key)
+        entries.append((sc_candidate, tc_candidate, default_usage_score, ""))
+        stats["vertical_godot_titles_kept"] += 1
+    return entries, stats
 
 
 def _parse_wikidata_mesh_query_entries(
@@ -1171,6 +1764,40 @@ def _compute_generic_vertical_penalty(
             relief = 28 if text_len <= 4 else 8
         else:
             relief = 0
+    elif layer_id == "game_dev":
+        if text_len <= 2:
+            base_penalty = 228
+        elif text_len == 3:
+            base_penalty = 148
+        elif text_len == 4:
+            base_penalty = 86
+        elif text_len == 5:
+            base_penalty = 44
+        else:
+            base_penalty = 18
+        if source_id == "project-curated-vertical-game-dev":
+            relief = 24 if text_len <= 4 else 8
+        elif source_id == "godot-zh-searchindex-titles":
+            relief = 16 if text_len <= 4 else 6
+        else:
+            relief = 8 if text_len <= 4 else 4
+    elif layer_id == "gaming":
+        if text_len <= 2:
+            base_penalty = 118
+        elif text_len == 3:
+            base_penalty = 70
+        elif text_len == 4:
+            base_penalty = 38
+        elif text_len == 5:
+            base_penalty = 18
+        else:
+            base_penalty = 8
+        if source_id == "project-curated-vertical-gaming":
+            relief = 22 if text_len <= 4 else 6
+        elif source_id.startswith("wikidata-video-game"):
+            relief = 16 if text_len <= 4 else 5
+        else:
+            relief = 10 if text_len <= 4 else 4
     elif layer_id in {"proper_nouns", "fiction_entities"}:
         if text_len <= 2:
             base_penalty = 96
@@ -10461,6 +11088,59 @@ def _load_vertical_source_entries(
                 if part.strip()
             )
             or MEDICAL_MESH_TREE_PREFIXES,
+        )
+        return _wrap_vertical_entries(entries, source), parse_stats
+    if source_type == "wikidata_term_query":
+        payload = vertical_payload_map.get(str(source.get("id", "")).strip())
+        opencc_payload = payload_map.get("opencc-stphrases")
+        if payload is None:
+            return [], {"vertical_wikidata_term_missing_payload": 1}
+        entries, parse_stats = _parse_wikidata_term_query_entries(
+            payload,
+            opencc_payload,
+            min_hanzi,
+            default_usage_score,
+            str(source.get("vertical_filter_id", "")).strip(),
+            max(min_hanzi, int(source.get("vertical_max_hanzi", 12) or 12)),
+        )
+        return _wrap_vertical_entries(entries, source), parse_stats
+    if source_type == "payload_titles_filter":
+        payload_source_id = str(source.get("vertical_payload_source_id", "")).strip()
+        payload = vertical_payload_map.get(str(source.get("id", "")).strip())
+        if payload is None and payload_source_id:
+            payload = payload_map.get(payload_source_id)
+        if payload is None:
+            payload = _read_source_bytes(
+                _build_vertical_source_request_url(source),
+                _resolve_optional_repo_path(repo_root, str(source.get("vertical_cache_file", ""))),
+                repo_root=repo_root,
+            )
+        opencc_payload = payload_map.get("opencc-stphrases")
+        entries, parse_stats = _parse_payload_titles_filter_entries(
+            payload,
+            opencc_payload,
+            min_hanzi,
+            default_usage_score,
+            str(source.get("vertical_filter_id", "")).strip(),
+            max(min_hanzi, int(source.get("vertical_max_hanzi", 8) or 8)),
+        )
+        return _wrap_vertical_entries(entries, source), parse_stats
+    if source_type == "godot_searchindex_titles":
+        payload = vertical_payload_map.get(str(source.get("id", "")).strip())
+        if payload is None:
+            payload = _read_source_bytes(
+                _build_vertical_source_request_url(source),
+                _resolve_optional_repo_path(repo_root, str(source.get("vertical_cache_file", ""))),
+                repo_root=repo_root,
+            )
+        opencc_payload = payload_map.get("opencc-stphrases")
+        entries, parse_stats = _parse_godot_searchindex_entries(
+            payload,
+            opencc_payload,
+            min_hanzi,
+            default_usage_score,
+            str(source.get("vertical_filter_id", "")).strip(),
+            max(min_hanzi, int(source.get("vertical_max_hanzi", 10) or 10)),
         )
         return _wrap_vertical_entries(entries, source), parse_stats
     return [], {"vertical_terms_unsupported_source_type": 1}
