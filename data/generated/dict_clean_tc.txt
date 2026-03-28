@@ -5879,7 +5879,7 @@ baxi'er	巴希爾	213
 baxiexue	八邪穴	591
 baxilianbanggongheguo	巴西聯邦共和國	343
 baxiliya	巴西利亞	304
-baxin	靶心	400
+baxin	靶心	399
 baxinbagan	巴心巴肝	1
 baxinfangzaiduzili	把心放在肚子裏	348
 baxinfangzaiduzili	把心放在肚子裡	348
@@ -12328,6 +12328,7 @@ caidai	綵帶	411
 caidan	菜單	996
 caidanlan	菜單欄	375
 caidantiao	菜單條	232
+caidanxiang	菜單項	1000
 caidanzhongxuanze	菜單中選擇	406
 caidao	菜刀	844
 caidaqicu	財大氣粗	479
@@ -16023,7 +16024,7 @@ chengtiganxibao	成體干細胞	480
 chengtou	承頭	198
 chengtoudidong	橙頭地鶇	260
 chengtuo	秤砣	943
-chengtuo	承托	231
+chengtuo	承托	230
 chengtuohuaguo	秤砣花過	523
 chengtuohuaguohe	秤砣花過河	569
 chengtuosuixiaoyaqianjin	秤砣雖小壓韆斤	348
@@ -22858,7 +22859,7 @@ danxian	儋縣	183
 danxiananhuanlei	單醯胺環類	1000
 danxian'anhuanlei	單酰胺環類	480
 danxiancheng	单线程	1000
-danxiang	單項	375
+danxiang	單項	578
 danxiangdianliu	單嚮電流	258
 danxiangguanxinzhusheye	丹香冠心注射液	934
 danxiangguanxinzhusheye	丹香冠心註射液	385
@@ -23265,7 +23266,7 @@ daolaibo	到來波	640
 daolaifang	到來方	556
 daolaifangwei	到來方位	597
 daolajilifeng	道拉吉裏峰	279
-daolan	導覽	429
+daolan	導覽	428
 daolang	刀郎	346
 daolao	叨嘮	331
 daole	刀樂	257
@@ -25314,7 +25315,7 @@ diangan	電感	252
 diangangqin	電鋼琴	379
 dianganyou	碘甘油	481
 diangao	墊高	309
-diangao	電告	230
+diangao	電告	231
 diange	點歌	333
 diangong	電工	450
 diangonglv	電功率	438
@@ -28522,7 +28523,7 @@ dongjiejian	冻结肩	1000
 dongjifangtan	動機訪談	770
 dongjin	東晉	429
 dongjing	東京	776
-dongjing	動靜	715
+dongjing	動靜	716
 dongjing	東經	279
 dongjing'anying	東京暗影	868
 dongjingbabieta	東京巴別塔	895
@@ -30484,6 +30485,7 @@ duoguo	多國	161
 duoguogongsi	多國公司	369
 duoguoyuyan	多國語言	770
 duoha	多哈	248
+duohang	多行	763
 duohanzheng	多汗症	1000
 duohegansuan	多核苷酸	803
 duohegansuanlinsuanhuamei	多核苷酸磷酸化酶	822
@@ -30848,8 +30850,7 @@ duoxilinzhixiandanjian	多烯磷脂酰膽鹼	385
 duoxilinzhixiandanjianjiaonang	多烯磷脂酰胆碱胶囊	975
 duoxilinzhixiandanjianjiaonang	多烯磷脂酰膽鹼膠囊	420
 duoxin	多心	419
-duoxing	多行	1000
-duoxing	惰性	1
+duoxing	惰性	477
 duoxingbuyibizibi	多行不義必自斃	686
 duoxinghebaixibao	多形核白細胞	318
 duoxinghongban	多形红斑	943
@@ -36075,6 +36076,7 @@ fenglaidexilinxilie	風來的西林係列	484
 fenglaizhiguo	風來之國	864
 fenglang	風浪	482
 fenglangban	風浪闆	379
+fengle	瘋了	763
 fengleng	風冷	382
 fenglexingfengshidiedayaojiu	冯了性风湿跌打药酒	977
 fenglexingfengshidiedayaojiu	馮了性風濕跌打葯酒	420
@@ -38790,11 +38792,11 @@ fuyaozhishang	扶搖直上	455
 fuyazheng	氟牙症	702
 fuye	複葉	510
 fuye	副業	470
+fuyi	復議	759
 fuyi	輔以	757
-fuyi	復議	741
-fuyi	服役	709
-fuyi	複議	708
-fuyi	副翼	229
+fuyi	複議	731
+fuyi	服役	729
+fuyi	副翼	314
 fuyiceng	負一層	232
 fuyifudingna	伏伊伏丁那	505
 fuyilou	負一樓	232
@@ -40458,6 +40460,7 @@ gaobingfa	高并发	1000
 gaobingqiudanbaixuezheng	高丙球蛋白血癥	792
 gaobuchengdibujiu	高不成低不就	479
 gaobucoudibujiu	高不湊低不就	318
+gaobuding	搞不定	1000
 gaobudong	搞不懂	362
 gaobuhao	搞不好	406
 gaobukepan	高不可攀	474
@@ -57583,7 +57586,7 @@ jianxiaqingyuanwangluobansan	劍俠情緣網絡版叁	1000
 jianxiaqingyuanxilie	劍俠情緣系列	1000
 jianxiaqingyuanxilie	劍俠情緣係列	579
 jianxie	間歇	578
-jianxie	簡寫	371
+jianxie	簡寫	372
 jianxiebo	簡諧波	357
 jianxiere	间歇热	1000
 jianxiexing	间歇性	1000
@@ -57612,7 +57615,7 @@ jianxinghenanshengfenxing	建行河南省分行	334
 jianxingjianyuan	漸行漸遠	260
 jianxingjinshu	鹼性金屬	260
 jianxinglan	鹼性藍	230
-jianxinglinsuanmei	碱性磷酸酶	959
+jianxinglinsuanmei	碱性磷酸酶	955
 jianxinglinsuanmei	鹼性磷酸酶	398
 jianxingtu	鹼性土	379
 jianxingyanyangjun	兼性厌氧菌	936
@@ -61827,9 +61830,9 @@ jingdezhenshi	景德鎮市	247
 jingdezhentaocixueyuan	景德鎮陶瓷學院	339
 jingdi	境地	917
 jingdi	勁敵	43
-jingdian	經典	943
-jingdian	景點	647
-jingdian	靜電	413
+jingdian	經典	896
+jingdian	靜電	760
+jingdian	景點	628
 jingdian'anli	經典案例	260
 jingdianchanglun	經典場論	120
 jingdiandaima	经典代码	1000
@@ -61837,6 +61840,7 @@ jingdiandaima	經典代碼	350
 jingdiandonghuazhangpian	經典動畫長片	811
 jingdianfeijidazhan	經典飛機大戰	935
 jingdianhuiguimojiecun	經典迴歸魔界村	836
+jingdianrong	靜電容	966
 jingdiantiaojianfanshe	經典條件反射	862
 jingdiantujing	經典途徑	770
 jingdianwuli	經典物理	700
@@ -89913,7 +89917,8 @@ niaozhuliu	尿瀦留	761
 niaozhuliu	尿潴留	711
 niaozhuo	尿浊	952
 niaozui	鳥嘴	305
-niba	泥巴	418
+niba	你把	1000
+niba	泥巴	1
 nibao	匿報	305
 nibaochun	倪葆春	587
 nibayouxi	泥巴游戲	1000
@@ -90462,6 +90467,7 @@ nishengjishu	擬生技術	770
 nishengzhang	逆生長	232
 nishentou	逆滲透	228
 nishi	逆勢	461
+nishibushi	你是不是	981
 nishiliu	泥石流	513
 nishishi	你試試	959
 nishiti	尼氏體	557
@@ -90476,8 +90482,8 @@ nishuijiang	泥水匠	434
 nishuile	你睡了	966
 nishuixingzhou	逆水行舟	442
 nishuode	你說的	966
-nisi	溺死	595
-nisi	你死	531
+nisi	溺死	594
+nisi	你死	532
 nisi	尼斯	125
 nisichong	倪嗣沖	211
 nisihushuiguai	尼斯湖水怪	289
@@ -102848,7 +102854,7 @@ ronghui	融會	976
 ronghui	融匯	134
 ronghuiguantong	融會貫通	328
 ronghunxing	溶混性	712
-ronghuo	榮獲	392
+ronghuo	榮獲	391
 rongji	溶劑	803
 rongji	容積	639
 rongjia	戎甲	137
@@ -107460,7 +107466,7 @@ shashenchengren	殺身成仁	452
 shasheng	殺生	435
 shashenzhihuo	殺身之禍	485
 shashi	霎時	965
-shashi	沙市	856
+shashi	沙市	855
 shashi	砂石	104
 shashi	沙石	1
 shashibiya	莎士比亞	377
@@ -109991,7 +109997,7 @@ shensheshoubudui	神射手部隊	796
 shensheshoufangkongxitong	神射手防空系統	1000
 shensheshoufangkongxitong	神射手防空係統	422
 shenshezhangjihua	申社長計劃	818
-shenshi	腎石	788
+shenshi	腎石	787
 shenshi	審視	579
 shenshi	身世	379
 shenshi	紳士	181
@@ -110623,12 +110629,13 @@ shezheng	攝政	482
 shezhengcongxie	捨正從邪	260
 shezhengwang	攝政王	558
 shezhi	設置	1000
-shezhi	攝製	378
+shezhi	攝製	282
 shezhichangjing	設置場景	758
 shezhidanhuangbihexiangji	設置彈簧臂和相機	819
 shezhijiang	佘智江	771
 shezhijiedian	設置節點	758
 shezhiwangge	設置網格	758
+shezhiwei	設置為	966
 shezhiwulidengguangdanyuan	設置物理燈光單元	819
 shezhiwulixiangjidanwei	設置物理相機單位	819
 shezhizhuchangjing	設置主場景	812
@@ -114820,7 +114827,7 @@ shuhuangde	熟荒地	640
 shuhuayu	樹化玉	232
 shuhuazhan	書畫氈	230
 shuhudayi	疏忽大意	501
-shuhui	書會	751
+shuhui	書會	750
 shuhuli	梳乎釐	196
 shuhuzhishou	疏忽職守	260
 shuiba	水壩	608
@@ -125059,8 +125066,8 @@ tuofang	拖放	323
 tuofeng	駝峰	395
 tuofengbi	驼峰鼻	1000
 tuofengmingmingfa	駝峰命名法	289
-tuofu	托付	757
-tuofu	託付	712
+tuofu	托付	763
+tuofu	託付	745
 tuofushaxing	托氟沙星	668
 tuogang	脫肛	357
 tuogao	脫稿	421
@@ -129518,6 +129525,7 @@ woxinshinixin	我心似你心	569
 woxuan	斡鏇	452
 woyan	沃衍	192
 woyao	我要	769
+woyaofengle	我要瘋了	981
 woye	沃野	251
 woyejuede	我也覺得	938
 woyeshi	我也是	945
@@ -130849,10 +130857,10 @@ wushezhiyangwan	乌蛇止痒丸	930
 wushezhiyangwan	烏蛇止癢丸	377
 wushi	五十	1000
 wushi	武士	499
+wushi	務實	431
 wushi	巫師	426
-wushi	務實	371
-wushi	無視	289
-wushi	午時	201
+wushi	無視	346
+wushi	午時	245
 wushi	吳石	199
 wushi	烏什	192
 wushi	無時	53
@@ -134884,6 +134892,7 @@ xiaowei	校尉	427
 xiaoweijian	小葦鳽	228
 xiaoweixing	小卫星	1000
 xiaowen	笑紋	332
+xiaowenti	小問題	966
 xiaowo	小我	307
 xiaowu	小屋	874
 xiaowudaobing	小舞蹈病	660
@@ -135794,6 +135803,7 @@ xiechu	卸除	460
 xiechuliqi	協處理器	458
 xieci	謝詞	194
 xiecongfan	脅從犯	387
+xiecuo	寫錯	803
 xiedai	攜帶	960
 xiedai	懈怠	566
 xiedai	挾帶	271
@@ -138102,6 +138112,7 @@ xinjiruhuo	心急如火	402
 xinjishi	辛集市	179
 xinjishimian	心悸失眠	680
 xinjishuaijie	心肌衰竭	670
+xinjiu	新舊	758
 xinjixianweihua	心肌纤维化	946
 xinjixianweihua	心肌縴維化	388
 xinjixibao	心肌細胞	783
@@ -140872,7 +140883,7 @@ xuehuai	學壞	323
 xuehui	學會	505
 xuehuiyuanshi	學會院士	260
 xueji	血跡	882
-xueji	學籍	496
+xueji	學籍	495
 xuejia	雪茄	940
 xuejia	削價	1
 xuejian	薛劍	950
@@ -144776,6 +144787,7 @@ yaojishi	藥劑士	420
 yaojiu	药酒	977
 yaojiushi	要就是	640
 yaojiushikong	遙久時空	864
+yaojiuzheng	要糾正	966
 yaojixue	药剂学	1000
 yaoju	葯局	289
 yaojue	要訣	418
@@ -147156,6 +147168,7 @@ yihaiwuqiong	貽害無窮	409
 yihaiwuqiong	遺害無窮	355
 yihan	遺憾	1000
 yihan	意涵	1
+yihang	一行	799
 yihanji	抑汗劑	704
 yihao	一號	443
 yihaodianchi	一號電池	260
@@ -150830,11 +150843,10 @@ yixinchushizhitongjiaonang	薏辛除湿止痛胶囊	981
 yixinchushizhitongjiaonang	薏辛除濕止痛膠囊	424
 yixinduoyong	一心多用	387
 yixin'eryong	一心二用	408
-yixing	一行	1000
-yixing	異性	322
-yixing	宜興	197
-yixing	異形	179
-yixing	乙型	1
+yixing	異性	899
+yixing	宜興	649
+yixing	異形	625
+yixing	乙型	315
 yixingbandian	一星半點	439
 yixingbingduxingganyan	乙型病毒性肝炎	748
 yixingchongji	異形衝擊	1000
@@ -157599,7 +157611,7 @@ zhanlanguan	展覽館	509
 zhanlanhui	展覽會	521
 zhanlanlaolong	湛藍牢籠	864
 zhanli	站立	950
-zhanli	顫慄	462
+zhanli	顫慄	463
 zhanli	戰慄	161
 zhanlian	粘連	982
 zhanliang	嶄亮	198
@@ -164061,8 +164073,8 @@ zhuangguyaojiu	壯骨葯酒	317
 zhuanghaoren	裝好人	232
 zhuanghe	莊河	309
 zhuangheshi	莊河市	186
-zhuanghuang	裝潢	657
-zhuanghuang	裝璜	143
+zhuanghuang	裝潢	656
+zhuanghuang	裝璜	144
 zhuanghui	撞毀	405
 zhuanghuo	裝貨	383
 zhuangji	撞擊	1000
@@ -168246,8 +168258,8 @@ zuobi	作弊	432
 zuobian	左邊	431
 zuobianqi	坐便器	362
 zuobianr	左邊兒	167
-zuobiao	坐標	897
-zuobiao	座標	723
+zuobiao	座標	1000
+zuobiao	坐標	904
 zuobiaofa	座標法	231
 zuobiaokongjian	坐標空間	260
 zuobiaokongjian	座標空間	258
