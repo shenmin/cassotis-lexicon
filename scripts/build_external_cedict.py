@@ -1016,6 +1016,215 @@ def _normalize_pinyin(raw: str) -> str:
     return merged
 
 
+def _normalize_compact_pinyin_key(raw: str) -> str:
+    value = raw.strip().lower()
+    value = value.replace("’", "'").replace("'", "")
+    value = re.sub(r"\s+", "", value)
+    return value
+
+
+def _unihan_reading_score_vector(
+    ch: str,
+    pinyin: str,
+    unihan_map: Dict[str, str],
+    unihan_source_rank_map: Dict[Tuple[str, str], int],
+    unihan_pinlu_detail_map: Dict[Tuple[str, str], int],
+) -> Tuple[int, int, int, int, int, int]:
+    source_rank = unihan_source_rank_map.get((ch, pinyin), 0)
+    pinlu_count = max(0, unihan_pinlu_detail_map.get((ch, pinyin), 0))
+    default_bonus = 1 if source_rank >= UNIHAN_SOURCE_MANDARIN and pinyin == unihan_map.get(ch, "") else 0
+    return (
+        1 if source_rank >= UNIHAN_SOURCE_MANDARIN else 0,
+        source_rank,
+        1 if pinlu_count > 0 else 0,
+        pinlu_count,
+        1 if len(pinyin) > 1 else 0,
+        default_bonus,
+    )
+
+
+def _candidate_unihan_readings_for_char(
+    ch: str,
+    unihan_map: Dict[str, str],
+    unihan_readings_map: Dict[str, Set[str]],
+    unihan_source_rank_map: Dict[Tuple[str, str], int],
+    unihan_pinlu_detail_map: Dict[Tuple[str, str], int],
+) -> List[str]:
+    readings = {value for value in unihan_readings_map.get(ch, set()) if value}
+    default_pinyin = unihan_map.get(ch, "")
+    if default_pinyin:
+        readings.add(default_pinyin)
+    if not readings:
+        return []
+
+    best_source_rank = max(unihan_source_rank_map.get((ch, value), 0) for value in readings)
+    if best_source_rank >= UNIHAN_SOURCE_MANDARIN:
+        readings = {
+            value
+            for value in readings
+            if unihan_source_rank_map.get((ch, value), 0) >= UNIHAN_SOURCE_MANDARIN
+        }
+
+    return sorted(
+        readings,
+        key=lambda value: (
+            _unihan_reading_score_vector(
+                ch,
+                value,
+                unihan_map,
+                unihan_source_rank_map,
+                unihan_pinlu_detail_map,
+            ),
+            value,
+        ),
+        reverse=True,
+    )
+
+
+def _best_unihan_pinyin_syllables(
+    text: str,
+    unihan_map: Dict[str, str],
+    unihan_readings_map: Dict[str, Set[str]],
+    unihan_source_rank_map: Dict[Tuple[str, str], int],
+    unihan_pinlu_detail_map: Dict[Tuple[str, str], int],
+) -> List[str] | None:
+    syllables: List[str] = []
+    for ch in text:
+        if not CJK_RE.match(ch):
+            return None
+        readings = _candidate_unihan_readings_for_char(
+            ch,
+            unihan_map,
+            unihan_readings_map,
+            unihan_source_rank_map,
+            unihan_pinlu_detail_map,
+        )
+        if not readings:
+            return None
+        syllables.append(readings[0])
+    return syllables
+
+
+def _split_compact_pinyin_by_unihan(
+    text: str,
+    compact_pinyin: str,
+    unihan_map: Dict[str, str],
+    unihan_readings_map: Dict[str, Set[str]],
+    unihan_source_rank_map: Dict[Tuple[str, str], int],
+    unihan_pinlu_detail_map: Dict[Tuple[str, str], int],
+) -> List[str] | None:
+    compact = _normalize_compact_pinyin_key(compact_pinyin)
+    if not compact or _cjk_len(text) <= 0:
+        return None
+
+    chars = [ch for ch in text]
+    reading_candidates: List[List[str]] = []
+    for ch in chars:
+        readings = _candidate_unihan_readings_for_char(
+            ch,
+            unihan_map,
+            unihan_readings_map,
+            unihan_source_rank_map,
+            unihan_pinlu_detail_map,
+        )
+        if not readings:
+            return None
+        reading_candidates.append(readings)
+
+    score_cache: Dict[Tuple[str, str], Tuple[int, int, int, int, int, int]] = {}
+
+    def score_vector(ch: str, pinyin: str) -> Tuple[int, int, int, int, int, int]:
+        key = (ch, pinyin)
+        value = score_cache.get(key)
+        if value is None:
+            value = _unihan_reading_score_vector(
+                ch,
+                pinyin,
+                unihan_map,
+                unihan_source_rank_map,
+                unihan_pinlu_detail_map,
+            )
+            score_cache[key] = value
+        return value
+
+    memo: Dict[Tuple[int, int], Tuple[List[str], Tuple[int, int, int, int, int, int]] | None] = {}
+
+    def dfs(char_index: int, offset: int) -> Tuple[List[str], Tuple[int, int, int, int, int, int]] | None:
+        key = (char_index, offset)
+        if key in memo:
+            return memo[key]
+        if char_index >= len(chars):
+            memo[key] = ([], (0, 0, 0, 0, 0, 0)) if offset == len(compact) else None
+            return memo[key]
+
+        best: Tuple[List[str], Tuple[int, int, int, int, int, int]] | None = None
+        for reading in reading_candidates[char_index]:
+            if not compact.startswith(reading, offset):
+                continue
+            tail = dfs(char_index + 1, offset + len(reading))
+            if tail is None:
+                continue
+            tail_syllables, tail_score = tail
+            local_score = score_vector(chars[char_index], reading)
+            combined_score = tuple(local_score[i] + tail_score[i] for i in range(len(local_score)))
+            combined_syllables = [reading] + tail_syllables
+            if best is None or combined_score > best[1]:
+                best = (combined_syllables, combined_score)
+
+        memo[key] = best
+        return best
+
+    result = dfs(0, 0)
+    if result is None:
+        return None
+    return result[0]
+
+
+def _format_canonical_pinyin_syllables(syllables: List[str]) -> str:
+    if not syllables:
+        return ""
+    parts = [syllables[0]]
+    for syllable in syllables[1:]:
+        if syllable and syllable[0] in {"a", "e", "o"}:
+            parts.append("'" + syllable)
+        else:
+            parts.append(syllable)
+    return "".join(parts)
+
+
+def _canonicalize_output_pinyin(
+    compact_pinyin: str,
+    text: str,
+    unihan_map: Dict[str, str] | None,
+    unihan_readings_map: Dict[str, Set[str]] | None,
+    unihan_source_rank_map: Dict[Tuple[str, str], int] | None,
+    unihan_pinlu_detail_map: Dict[Tuple[str, str], int] | None,
+) -> str:
+    compact = _normalize_compact_pinyin_key(compact_pinyin)
+    if not compact:
+        return ""
+    if (
+        _cjk_len(text) <= 1
+        or not unihan_map
+        or not unihan_readings_map
+        or not unihan_source_rank_map
+        or not unihan_pinlu_detail_map
+    ):
+        return compact
+
+    syllables = _split_compact_pinyin_by_unihan(
+        text,
+        compact,
+        unihan_map,
+        unihan_readings_map,
+        unihan_source_rank_map,
+        unihan_pinlu_detail_map,
+    )
+    if not syllables or "".join(syllables) != compact:
+        return compact
+    return _format_canonical_pinyin_syllables(syllables)
+
+
 def _cjk_len(text: str) -> int:
     return len(CJK_RE.findall(text))
 
@@ -7465,15 +7674,38 @@ def _load_pinyin_overrides(path: pathlib.Path) -> Dict[str, str]:
     return overrides
 
 
-def _pinyin_from_unihan(text: str, unihan_map: Dict[str, str]) -> str:
+def _pinyin_from_unihan(
+    text: str,
+    unihan_map: Dict[str, str],
+    unihan_readings_map: Dict[str, Set[str]] | None = None,
+    unihan_source_rank_map: Dict[Tuple[str, str], int] | None = None,
+    unihan_pinlu_detail_map: Dict[Tuple[str, str], int] | None = None,
+) -> str:
     syllables: List[str] = []
-    for ch in text:
-        if not CJK_RE.match(ch):
+    if (
+        _cjk_len(text) > 1
+        and unihan_readings_map is not None
+        and unihan_source_rank_map is not None
+        and unihan_pinlu_detail_map is not None
+    ):
+        derived = _best_unihan_pinyin_syllables(
+            text,
+            unihan_map,
+            unihan_readings_map,
+            unihan_source_rank_map,
+            unihan_pinlu_detail_map,
+        )
+        if derived is None:
             return ""
-        py = unihan_map.get(ch, "")
-        if not py:
-            return ""
-        syllables.append(py)
+        syllables = derived
+    else:
+        for ch in text:
+            if not CJK_RE.match(ch):
+                return ""
+            py = unihan_map.get(ch, "")
+            if not py:
+                return ""
+            syllables.append(py)
 
     merged = "".join(syllables)
     if not PINYIN_RE.fullmatch(merged):
@@ -7523,7 +7755,13 @@ def _build_from_opencc_unihan(
             if pinyin:
                 stats["override_hits"] += 1
             else:
-                pinyin = _pinyin_from_unihan(text, unihan_map)
+                pinyin = _pinyin_from_unihan(
+                    text,
+                    unihan_map,
+                    unihan_readings_map,
+                    unihan_reading_source_map,
+                    unihan_pinlu_detail_map,
+                )
                 if pinyin:
                     stats["fallback_hits"] += 1
             if not pinyin:
@@ -9072,7 +9310,13 @@ def _augment_with_frequency_lexicon(
                     stats["freqlex_prefix_seed_pinyin_hits"] += 1
 
         if not pinyin_candidates:
-            fallback = _pinyin_from_unihan(word, unihan_map)
+            fallback = _pinyin_from_unihan(
+                word,
+                unihan_map,
+                unihan_readings_map,
+                unihan_source_rank_map,
+                unihan_pinlu_detail_map,
+            )
             if not fallback:
                 stats["freqlex_skipped_no_pinyin"] += 1
                 continue
@@ -9588,6 +9832,9 @@ def _augment_with_curated_daily_phrases(
     opencc_entries: List[Tuple[str, str]],
     simp_to_trad_char_map: Dict[str, str],
     unihan_map: Dict[str, str],
+    unihan_readings_map: Dict[str, Set[str]],
+    unihan_source_rank_map: Dict[Tuple[str, str], int],
+    unihan_pinlu_detail_map: Dict[Tuple[str, str], int],
     min_hanzi: int,
 ) -> Tuple[Dict[str, int], Set[str], Set[str]]:
     stats = {
@@ -9614,7 +9861,13 @@ def _augment_with_curated_daily_phrases(
             stats["curated_daily_terms_skipped_short"] += 1
             continue
 
-        pinyin = explicit_pinyin or _pinyin_from_unihan(sc_word, unihan_map)
+        pinyin = explicit_pinyin or _pinyin_from_unihan(
+            sc_word,
+            unihan_map,
+            unihan_readings_map,
+            unihan_source_rank_map,
+            unihan_pinlu_detail_map,
+        )
         if not pinyin:
             stats["curated_daily_terms_skipped_no_pinyin"] += 1
             continue
@@ -9736,6 +9989,9 @@ def _reinforce_curated_daily_tc_phrases(
     opencc_entries: List[Tuple[str, str]],
     simp_to_trad_char_map: Dict[str, str],
     unihan_map: Dict[str, str],
+    unihan_readings_map: Dict[str, Set[str]],
+    unihan_source_rank_map: Dict[Tuple[str, str], int],
+    unihan_pinlu_detail_map: Dict[Tuple[str, str], int],
     min_hanzi: int,
 ) -> Dict[str, int]:
     stats = {
@@ -9753,7 +10009,13 @@ def _reinforce_curated_daily_tc_phrases(
         if _cjk_len(sc_word) < min_hanzi:
             continue
 
-        pinyin = explicit_pinyin or _pinyin_from_unihan(sc_word, unihan_map)
+        pinyin = explicit_pinyin or _pinyin_from_unihan(
+            sc_word,
+            unihan_map,
+            unihan_readings_map,
+            unihan_source_rank_map,
+            unihan_pinlu_detail_map,
+        )
         if not pinyin:
             continue
 
@@ -9825,6 +10087,9 @@ def _reinforce_vertical_tc_terms(
     opencc_entries: List[Tuple[str, str]],
     simp_to_trad_char_map: Dict[str, str],
     unihan_map: Dict[str, str],
+    unihan_readings_map: Dict[str, Set[str]],
+    unihan_source_rank_map: Dict[Tuple[str, str], int],
+    unihan_pinlu_detail_map: Dict[Tuple[str, str], int],
     min_hanzi: int,
 ) -> Dict[str, int]:
     stats = {
@@ -9848,7 +10113,13 @@ def _reinforce_vertical_tc_terms(
         pinyin = (
             explicit_pinyin
             or explicit_pinyin_overrides.get((layer_id, sc_word), "")
-            or _pinyin_from_unihan(sc_word, unihan_map)
+            or _pinyin_from_unihan(
+                sc_word,
+                unihan_map,
+                unihan_readings_map,
+                unihan_source_rank_map,
+                unihan_pinlu_detail_map,
+            )
         )
         if not pinyin:
             continue
@@ -9957,6 +10228,9 @@ def _augment_with_vertical_terms(
     opencc_entries: List[Tuple[str, str]],
     simp_to_trad_char_map: Dict[str, str],
     unihan_map: Dict[str, str],
+    unihan_readings_map: Dict[str, Set[str]],
+    unihan_source_rank_map: Dict[Tuple[str, str], int],
+    unihan_pinlu_detail_map: Dict[Tuple[str, str], int],
     min_hanzi: int,
 ) -> Tuple[Dict[str, int], Set[str], Set[str]]:
     stats = {
@@ -10002,7 +10276,13 @@ def _augment_with_vertical_terms(
         pinyin = (
             explicit_pinyin
             or explicit_pinyin_overrides.get((layer_id, sc_word), "")
-            or _pinyin_from_unihan(sc_word, unihan_map)
+            or _pinyin_from_unihan(
+                sc_word,
+                unihan_map,
+                unihan_readings_map,
+                unihan_source_rank_map,
+                unihan_pinlu_detail_map,
+            )
         )
         if not pinyin:
             stats["vertical_terms_skipped_no_pinyin"] += 1
@@ -10271,7 +10551,13 @@ def _augment_with_wiki_proper_noun_titles(
                 )
             )
         if not pinyin_candidates:
-            fallback = _pinyin_from_unihan(sc_word, unihan_map)
+            fallback = _pinyin_from_unihan(
+                sc_word,
+                unihan_map,
+                unihan_readings_map,
+                unihan_source_rank_map,
+                unihan_pinlu_detail_map,
+            )
             if fallback and (pageview_backed or source_backed or prefix_support >= 420.0):
                 pinyin_candidates = [fallback]
         if not pinyin_candidates:
@@ -10459,6 +10745,10 @@ def _write_dict(
     path: pathlib.Path,
     mapping: Dict[Tuple[str, str], int],
     preferred_terms: Set[str] | None = None,
+    unihan_map: Dict[str, str] | None = None,
+    unihan_readings_map: Dict[str, Set[str]] | None = None,
+    unihan_source_rank_map: Dict[Tuple[str, str], int] | None = None,
+    unihan_pinlu_detail_map: Dict[Tuple[str, str], int] | None = None,
 ) -> None:
     preferred_terms = preferred_terms or set()
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -10472,7 +10762,15 @@ def _write_dict(
                 kv[0][1],
             ),
         ):
-            f.write(f"{pinyin}\t{text}\t{weight}\n")
+            output_pinyin = _canonicalize_output_pinyin(
+                pinyin,
+                text,
+                unihan_map,
+                unihan_readings_map,
+                unihan_source_rank_map,
+                unihan_pinlu_detail_map,
+            )
+            f.write(f"{output_pinyin}\t{text}\t{weight}\n")
 
 
 def _build_query_path_prior_map(
@@ -11256,6 +11554,10 @@ def main() -> int:
     vertical_manifest_stats: Dict[str, int] = {}
     vertical_source_configs: List[Dict[str, object]] = []
     vertical_payload_map: Dict[str, bytes] = {}
+    output_unihan_map: Dict[str, str] = {}
+    output_unihan_readings_map: Dict[str, Set[str]] = {}
+    output_unihan_source_rank_map: Dict[Tuple[str, str], int] = {}
+    output_unihan_pinlu_detail_map: Dict[Tuple[str, str], int] = {}
     if (
         vertical_manifest is not None
         and parser_name in {"cedict", "cedict_thuocl_jieba_opencc_unihan_wiki", "unihan_only"}
@@ -11366,7 +11668,17 @@ def main() -> int:
                 curated_daily_payload,
                 args.min_hanzi,
             )
-            curated_unihan_map = _load_unihan_mandarin_map(unihan_payload)
+            (
+                curated_unihan_map,
+                curated_unihan_readings_map,
+                curated_unihan_source_rank_map,
+                _curated_unihan_pinlu_map,
+                curated_unihan_pinlu_detail_map,
+            ) = _load_unihan_readings_detail(unihan_payload)
+            output_unihan_map = curated_unihan_map
+            output_unihan_readings_map = curated_unihan_readings_map
+            output_unihan_source_rank_map = curated_unihan_source_rank_map
+            output_unihan_pinlu_detail_map = curated_unihan_pinlu_detail_map
             curated_usage_score_map: Dict[str, float] = {}
             curated_source_hits_map: Dict[str, int] = {}
             curated_tc_usage_score_map: Dict[str, float] = {}
@@ -11392,6 +11704,9 @@ def main() -> int:
                 [],
                 {},
                 curated_unihan_map,
+                curated_unihan_readings_map,
+                curated_unihan_source_rank_map,
+                curated_unihan_pinlu_detail_map,
                 args.min_hanzi,
             )
             stats.update(curated_daily_parse_stats)
@@ -11456,6 +11771,9 @@ def main() -> int:
                 [],
                 {},
                 curated_unihan_map,
+                curated_unihan_readings_map,
+                curated_unihan_source_rank_map,
+                curated_unihan_pinlu_detail_map,
                 args.min_hanzi,
             )
             lexical_seed_sc_terms.update(vertical_sc_terms)
@@ -11586,6 +11904,10 @@ def main() -> int:
             unihan_pinlu_map,
             unihan_pinlu_detail_map,
         ) = _load_unihan_readings_detail(unihan_payload)
+        output_unihan_map = unihan_map
+        output_unihan_readings_map = unihan_readings_map
+        output_unihan_source_rank_map = unihan_reading_source_map
+        output_unihan_pinlu_detail_map = unihan_pinlu_detail_map
         wiki_titles, wiki_stats = _parse_wiki_titles_entries(
             wiki_titles_payload, min_hanzi=args.min_hanzi
         )
@@ -11796,6 +12118,9 @@ def main() -> int:
             opencc_entries,
             simp_to_trad_char_map,
             unihan_map,
+            unihan_readings_map,
+            unihan_reading_source_map,
+            unihan_pinlu_detail_map,
             args.min_hanzi,
         )
         lexical_seed_sc_terms.update(curated_daily_sc_terms)
@@ -11868,6 +12193,9 @@ def main() -> int:
                 opencc_entries,
                 simp_to_trad_char_map,
                 unihan_map,
+                unihan_readings_map,
+                unihan_reading_source_map,
+                unihan_pinlu_detail_map,
                 args.min_hanzi,
             )
             lexical_seed_sc_terms.update(vertical_sc_terms)
@@ -11923,6 +12251,9 @@ def main() -> int:
             opencc_entries,
             simp_to_trad_char_map,
             unihan_map,
+            unihan_readings_map,
+            unihan_reading_source_map,
+            unihan_pinlu_detail_map,
             args.min_hanzi,
         )
         curated_daily_tc_exact_stats = _reinforce_curated_daily_tc_phrases(
@@ -11936,6 +12267,9 @@ def main() -> int:
             opencc_entries,
             simp_to_trad_char_map,
             unihan_map,
+            unihan_readings_map,
+            unihan_reading_source_map,
+            unihan_pinlu_detail_map,
             args.min_hanzi,
         )
 
@@ -12487,8 +12821,24 @@ def main() -> int:
         char_frequency_prior=char_frequency_prior,
     )
 
-    _write_dict(output_sc, sc_map, preferred_terms=curated_daily_sc_terms)
-    _write_dict(output_tc, tc_map, preferred_terms=curated_daily_tc_terms)
+    _write_dict(
+        output_sc,
+        sc_map,
+        preferred_terms=curated_daily_sc_terms,
+        unihan_map=output_unihan_map,
+        unihan_readings_map=output_unihan_readings_map,
+        unihan_source_rank_map=output_unihan_source_rank_map,
+        unihan_pinlu_detail_map=output_unihan_pinlu_detail_map,
+    )
+    _write_dict(
+        output_tc,
+        tc_map,
+        preferred_terms=curated_daily_tc_terms,
+        unihan_map=output_unihan_map,
+        unihan_readings_map=output_unihan_readings_map,
+        unihan_source_rank_map=output_unihan_source_rank_map,
+        unihan_pinlu_detail_map=output_unihan_pinlu_detail_map,
+    )
     if output_query_path_sc is not None:
         _write_query_path_prior(output_query_path_sc, sc_query_path_priors)
     if output_query_path_tc is not None:

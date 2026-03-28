@@ -86,7 +86,7 @@ function Test-DictFile {
         $pinyin = $parts[0].Trim()
         $weightText = $parts[2].Trim()
 
-        if ($pinyin -notmatch '^[a-z]+$') {
+        if ($pinyin -notmatch "^[a-z]+(?:'[a-z]+)*$") {
             throw "Invalid pinyin at ${Path}:$lineNo -> $pinyin"
         }
 
@@ -117,7 +117,7 @@ function Test-PinyinOverrideFile {
         if ($text -notmatch '[\u3400-\u9fff]') {
             throw "Invalid override text at ${Path}:$lineNo -> $text"
         }
-        if ($pinyin -notmatch '^[a-z]+$') {
+        if ($pinyin -notmatch "^[a-z]+(?:'[a-z]+)*$") {
             throw "Invalid override pinyin at ${Path}:$lineNo -> $pinyin"
         }
     }

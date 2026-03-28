@@ -40,7 +40,6 @@ amibagannongyang	阿米巴|肝膿瘍	497
 amibagannongzhong	阿米巴|肝脓肿	464
 amibajiechangyan	阿米巴|結腸炎	497
 amibaliji	阿米巴|痢疾	476
-anchousuokoufuye	氨溴索|口服液	464
 andingxinhaochang	安定|信號場	498
 anfaxianchang	案發|現場	427
 anheichuanshuo	暗黑|傳說	486
@@ -50,6 +49,7 @@ anheimozu	暗黑|模組	462
 anheixuetong	暗黑|血統	512
 anheixuetongxilie	暗黑|血統|係列	384
 anheiyaosai	暗黑|要塞	490
+anjiading	氨基|吖啶	490
 anjijiasuan	氨基|甲酸	427
 anjijiasuanzhi	氨基|甲酸酯	436
 anjiputaotang	氨基|葡萄糖	468
@@ -60,6 +60,7 @@ anjitanggan	氨基|糖苷	484
 anjiyisuan	氨基|乙酸	484
 anjiyouxi	安吉|遊戲	499
 anjugongcheng	安居|工程	469
+anleiyoujiwu	胺類|有機物	497
 anmingaoshi	安民|告示	470
 anmozhiliao	按摩|治療	500
 annabuzhu	按捺|不住	469
@@ -74,6 +75,7 @@ anquanxingxingwei	安全|性行为	469
 anshayouxi	暗殺|遊戲	499
 anweijixiaoying	安慰劑|效應	477
 anweijizuoyong	安慰劑|作用	483
+anxiusuokoufuye	氨溴索|口服液	464
 anyingdiguo	暗影|帝國	515
 anyingkuangben	暗影|狂奔	502
 anyingqingjie	暗影|情節	512
@@ -85,6 +87,9 @@ aodinglingyu	奧丁|領域	493
 aoliaolishijie	奧力奧力|世界	512
 aomanxuanyan	傲慢|宣言	510
 aomanzide	傲慢|自得	437
+aomentequ	澳門|特區	455
+aomenyiyuan	澳門|醫院	354
+aomenyiyuanliebiao	澳門|醫院|列錶	436
 aosimandiguo	奧斯曼|帝國	520
 aoxianbanhen	凹陷|瘢痕	480
 apianzhongdu	阿片|中毒	471
@@ -319,15 +324,15 @@ bengkuidalu	崩潰|大陸	512
 bengkuizhizao	崩潰|製造	512
 benhailamingtangjiang	苯海拉明|糖浆	457
 benjiasuancierchun	苯甲酸|雌二醇	465
-benjiaxianeyisuan	苯甲醯胺|乙酸	497
+benjiaxiananyisuan	苯甲醯胺|乙酸	497
 bentiganjue	本體|感覺	497
 bentufuzhu	本土|輔助	417
 bentufuzhubudui	本土|輔助|部隊	499
 benweihuobi	本位|貨幣	434
 benweizhuyi	本位|主義	442
 benyangjiyichun	苯氧基|乙醇	459
-benzhachouanrongye	苯扎溴铵|溶液	464
 benzhalvanrongye	苯扎氯铵|溶液	464
+benzhaxiuanrongye	苯扎溴铵|溶液	464
 bianchenghuanjingpeizhi	编程环境|配置	467
 bianchengnongchang	編程|農場	461
 bianchengyouxi	編程|遊戲	497
@@ -466,7 +471,7 @@ bingrenquanli	病人|權利	415
 bingrenquanlifaan	病人|權利|法案	497
 bingtanghulu	冰糖|葫蘆	470
 bingtongsuantuoqingmei	丙酮酸|脫氫酶	459
-bingtongsuantuozuimei	丙酮酸|脫羧酶	497
+bingtongsuantuosuomei	丙酮酸|脫羧酶	497
 binguguzhe	髌骨|骨折	483
 binguguzhe	髕骨|骨折	497
 bingweitebie	病危|特別	415
@@ -474,11 +479,13 @@ bingweitebiehuli	病危|特別|護理	497
 bingxingganyan	丙型|肝炎	487
 bingxingganyanbingdu	丙型肝炎|病毒	364
 bingxisuanzhi	丙烯|酸酯	436
+bingxixianan	丙烯|酰胺	436
 bingyuanshengwuxue	病原|生物学	468
 bingyuantichuanbo	病原體|傳播	497
 bingyuanxiedaizhe	病原|携带者	469
 bingzaoganran	病竈|感染	465
 binkeyingmen	賓客|盈門	418
+biqinxianan	吡嗪|酰胺	467
 bisaixiangmu	比賽|項目	463
 bisuozhenghouqun	閉鎖|症候羣	497
 bisuozonghezheng	閉鎖|綜合徵	497
@@ -728,6 +735,7 @@ chafenxinhao	差分|信號	475
 chafenxulie	差分|序列	449
 chajianshili	插件|示例	434
 chajianshiyong	插件|使用	490
+chanchuzhongdu	蟾蜍|中毒	467
 changdaobingdu	腸道|病毒	415
 changdaobingduganran	肠道病毒|感染	466
 changdaobingduganran	腸道|病毒|感染	497
@@ -796,6 +804,7 @@ chaochaorangrang	吵吵|嚷嚷	464
 chaodaoxianxiang	超導|現象	497
 chaoduanboliaofa	超短波|疗法	454
 chaoelirun	超額|利潤	441
+chaogaidejunshi	晁蓋的|軍師	413
 chaojidazhuankuai	超級|打磚塊	512
 chaojifaming	超級|發明	430
 chaojifamingxiaozi	超級|發明|小子	512
@@ -1000,7 +1009,6 @@ chongzikuaicandian	蟲子|快餐店	490
 chongzujiating	重組|傢庭	504
 choudongzhangai	抽動|障礙	467
 choudongzonghezheng	抽動|綜合症	497
-choujiawanzhongdu	溴甲烷|中毒	467
 choukayouxi	抽卡|遊戲	507
 choushuimatong	抽水|馬桶	468
 chouwaizhuyi	仇外|主義	449
@@ -1063,9 +1071,6 @@ chudongdehuli	齣洞的|狐狸	429
 chufazhanlve	觸發|戰略	497
 chuganjishu	觸感|技術	487
 chuidiaoxingqiu	垂釣|星球	507
-chuidongmaiboli	椎動脈|剝離	497
-chuidongmaijiaceng	椎動脈|夾層	497
-chuijianpantuihua	椎間盤|退化	497
 chuitichuxue	垂體|出血	500
 chuitigongneng	垂體|功能	415
 chuitigongnengjiantui	垂體|功能|減退	497
@@ -1105,7 +1110,6 @@ chulianyubao	初戀|預報	512
 chulicaizhi	處理|材質	505
 chuliyonghu	處理|用戶	423
 chuliyonghushuru	處理|用戶|輸入	505
-chumengsuanxunhuan	柠檬酸|循環	497
 chumozhiliao	觸摸|治療	497
 chumujingxin	觸目|驚心	458
 chunaishouzhaxilie	純愛手札|係列	436
@@ -1704,9 +1708,9 @@ diliushiyi	第六|十一	520
 diliweidu	地理|緯度	467
 diliweizhi	地理|位置	483
 dimianhebaozha	地麵|核爆炸	376
+dingankanameisu	丁胺|卡那霉素	436
 dingdangdafuweng	叮噹|大富翁	505
 dingduanfenshengzuzhi	頂端|分生組織	497
-dingekanameisu	丁胺|卡那霉素	436
 dinggedonghua	定格|動畫	494
 dinghangdebanji	定航的|班機	437
 dingliangfenxi	定量|分析	463
@@ -2014,9 +2018,9 @@ dulizizhu	獨立|自主	488
 dunanzhuirou	肚腩|贅肉	440
 dunpaixingdong	盾牌|行動	483
 dunqichuangshang	鈍器|創傷	464
-duobaejihuo	多巴胺|激活	500
-duobaeyizhiji	多巴胺|抑制劑	497
-duobaezhuanyunti	多巴胺|轉運體	497
+duobaanjihuo	多巴胺|激活	500
+duobaanyizhiji	多巴胺|抑制劑	497
+duobaanzhuanyunti	多巴胺|轉運體	497
 duobianxingwangge	多邊形|網格	477
 duobiqiutegongdui	躲避球|特攻隊	512
 duobiqiuxueyuan	躲避球|學院	515
@@ -2069,7 +2073,6 @@ duzhewenzhai	讀者|文摘	430
 ebiedechouchong	餓癟的|臭蟲	401
 edipusiqingjie	俄狄浦斯|情結	496
 eerduosiziyuan	鄂爾多斯|資源	498
-eleiyoujiwu	胺類|有機物	497
 eliexinjing	惡劣|心境	294
 eliexinjingzhangai	惡劣|心境|障礙	376
 elingshilixilie	噁靈勢力|係列	417
@@ -2129,6 +2132,7 @@ erjiyufang	二級|預防	497
 erkuoruangu	耳廓|软骨	383
 erkuoruangumoyan	耳廓|软骨|膜炎	465
 erlvyiwanzhongdu	二氯乙烷|中毒	466
+erqiangbingtonglinsuan	二羥丙酮|磷酸	469
 ershiyidian	二十|一點	508
 ershiyitiao	二十|一條	470
 ertongleyuan	兒童|樂園	463
@@ -2243,9 +2247,9 @@ fangunxiaozi	翻滾|小子	513
 fangxiabaofu	放下|包袱	467
 fangxiangliaofa	芳香|療法	500
 fangxiangmeiyizhiji	芳香|酶抑制劑	497
+fangxiangsuosuan	芳香|羧酸	497
 fangxiangzhiwu	芳香|植物	499
 fangxiangzuanjisuan	芳香族|氨基酸	497
-fangxiangzuisuan	芳香|羧酸	497
 fangxueliaofa	放血|疗法	485
 fangyugongshi	防禦|工事	444
 fangyuxingyiliao	防禦性|醫療	497
@@ -2920,6 +2924,7 @@ gongzuoyali	工作|壓力	500
 gongzuoyiwai	工作|意外	500
 gouhunyouxi	勾魂|遊戲	496
 goujianlezhuren	狗見了|主人	424
+gouqiduotang	枸杞|多糖	481
 goutongzhangai	溝通|障礙	497
 gouwuguangchang	購物|廣場	463
 gouwuzhongxin	購物|中心	467
@@ -3031,7 +3036,7 @@ guanmaixunhuan	冠脈|循環	495
 guanshuibilei	關稅|壁壘	468
 guansuanshouti	穀氨酸|受體	488
 guansuantuoqingmei	穀氨酸|脫氫酶	471
-guansuantuozuimei	穀氨酸|脫羧酶	497
+guansuantuosuomei	穀氨酸|脫羧酶	497
 guansuanzhuanyunti	穀氨酸|轉運體	497
 guantouxiaosheng	罐頭|笑聲	463
 guanxianyuedui	管弦|樂隊	426
@@ -3138,7 +3143,7 @@ guofangbuzhang	國防|部長	500
 guogansida	果敢|四大	422
 guogansidajiazu	果敢|四大|傢族	504
 guogongneizhan	國共|內戰	467
-guoheyehuzi	過河拽|鬍子	431
+guohezhuaihuzi	過河拽|鬍子	431
 guohuiyiyuan	國會|議員	459
 guojiaanquan	國傢|安全	484
 guojiabiaozhun	國傢|標準	436
@@ -3540,7 +3545,7 @@ houbujingluan	喉部|痙攣	469
 houbulengqueqi	後部|冷卻器	502
 houfanshenjingsunshang	喉返神經|損傷	463
 hougongwangguo	後宮|王國	512
-hougongzhenxuanchuan	後宮|甄嬛傳	446
+hougongzhenhuanchuan	後宮|甄嬛傳	446
 houlongshaya	喉嚨|沙啞	497
 houtaifanghuoqiang	後臺|防火牆	512
 houtoujingluan	喉頭|痙攣	497
@@ -3581,6 +3586,10 @@ huanbaosuruanjiaonang	环孢素|软胶囊	465
 huanbaozhanshi	環保|戰士	512
 huanbaozhuyi	環保|主義	497
 huanchongrongye	緩衝|溶液	511
+huanganerjia	磺胺|二甲	383
+huanganerjiamiding	磺胺|二甲|嘧啶	465
+huanganmiding	磺胺|嘧啶	447
+huangansaizuo	磺胺|噻唑	458
 huangbanbutuihua	黃斑部|退化	500
 huangbanshuizhong	黃斑|水腫	450
 huangdanzhishu	黃疸|指數	483
@@ -3589,9 +3598,6 @@ huangdaoshiergong	黃道|十二宮	494
 huangdidejiaoyi	皇帝的|交椅	433
 huangdidemama	皇帝的|媽媽	436
 huangdineijing	黃帝|內經	435
-huangeerjia	磺胺|二甲	383
-huangeerjiamiding	磺胺|二甲|嘧啶	465
-huangemiding	磺胺|嘧啶	435
 huanghuaguinv	黃花|閨女	468
 huanghungongzhu	黃昏|公主	514
 huanghunlvdian	黃昏|旅店	469
@@ -3644,7 +3650,7 @@ huanmanrenzhi	緩慢|認知	415
 huanmanrenzhifengge	緩慢|認知|風格	497
 huanniaogansuanxiangan	環鳥苷酸|腺苷	497
 huanongxinghanxianyan	化膿性|汗腺炎	497
-huanongxingjichuiyan	化膿性|脊椎炎	497
+huanongxingjizhuiyan	化膿性|脊椎炎	497
 huanongxingrouyazhong	化膿性|肉芽腫	497
 huanqiushibao	環球|時報	463
 huanraozoulang	環繞|走廊	493
@@ -3774,6 +3780,7 @@ hunyinzishang	婚姻|諮商	494
 huobahuandenglong	火把換|燈籠	414
 huobaokuangbiao	火爆|狂飆	512
 huobaomeigui	火爆|玫瑰	512
+huobaoxiangbalao	火爆|鄉巴佬	512
 huobaozhadanren	火爆|炸彈人	515
 huobibianzhi	貨幣|貶值	467
 huobizhuyi	貨幣|主義	448
@@ -3841,6 +3848,7 @@ huxizanting	呼吸|暫停	497
 huxizhongshu	呼吸|中樞	500
 huxizhongxin	呼吸|中心	500
 huxizuoyong	呼吸|作用	500
+jiabenmizuo	甲苯|咪唑	410
 jiabenzhongdu	甲苯|中毒	465
 jiachengzhishengji	駕乘|直升機	512
 jiachongwangzhe	甲蟲|王者	514
@@ -3865,13 +3873,16 @@ jiajihuafanying	甲基化|反應	500
 jiajihuangpiaoling	甲基|黄嘌呤	467
 jiajilianan	甲基|聯氨	475
 jiajimahuangjian	甲基|麻黄碱	467
+jiajimizuo	甲基|咪唑	465
 jiajixianweisu	甲基|纖維素	497
 jiajixianweisu	甲基|纤维素	467
-jiajiyierchuo	甲基|乙二醛	500
+jiajiyierquan	甲基|乙二醛	500
+jiajiyinduo	甲基|吲哚	472
 jiajizhuanyimei	甲基|轉移酶	497
 jiajizhuanyimei	甲基|转移酶	467
 jiajizuansuan	甲基|组氨酸	466
 jialidashadahuo	嘉利大廈|大火	448
+jiamashexianguangpu	伽馬射線|光譜	497
 jiamianqishixilie	假麵騎士|係列	420
 jiamoduotang	荚膜|多糖	496
 jiamutanglang	傢母|螳螂	468
@@ -4084,7 +4095,7 @@ jiatinganquanrexian	傢庭|安全|熱線	436
 jiatingdizhi	傢庭|地址	437
 jiawuzhanzheng	甲午|戰爭	520
 jiaxianglizi	假想|粒子	501
-jiaxiaoshirongye	甲硝唑|溶液	444
+jiaxiaozuorongye	甲硝唑|溶液	422
 jiaxingbingdu	假性|病毒	500
 jiaxingdongmailiu	假性|动脉瘤	468
 jiaxingdongmailiu	假性|動脈瘤	497
@@ -4227,7 +4238,7 @@ jiejishehui	階級|社會	497
 jiejuebanfa	解決|辦法	468
 jiejuefangan	解決|方案	491
 jiejuewenti	解決|問題	497
-jiekongju	飢餓|恐懼	498
+jiekongju	飢餓|恐懼	512
 jiekoufenxi	接口|分析	489
 jiekousulv	接口|速率	487
 jiekouxuqiu	接口|需求	488
@@ -4801,6 +4812,13 @@ jizhiyisheng	機智|醫生	364
 jizhiyishengshenghuo	機智|醫生|生活	446
 jizhuguanjieyan	脊柱|關節炎	497
 jizhuidongwu	脊椎|動物	483
+jizhuiguanjie	脊椎|關節	415
+jizhuiguanjiebingbian	脊椎|關節|病變	497
+jizhuiguanjietuihua	脊椎|關節|退化	497
+jizhuiguzhe	脊椎|骨折	500
+jizhuijibing	脊椎|疾病	500
+jizhuijiehe	脊椎|結核	497
+jizhuijiehebing	脊椎|結核病	497
 jizhushiyingxing	寄主|適應性	497
 jizhuxiazhai	脊柱|狹窄	494
 jizouwangzi	疾走|王子	497
@@ -4808,6 +4826,7 @@ juanzhoudongzuo	卷軸|動作	417
 juanzhoudongzuoyouxi	卷軸|動作|遊戲	499
 juanzhousheji	卷軸|射擊	425
 juanzhoushejiyouxi	卷軸|射擊|遊戲	507
+jubingxixianan	聚丙烯|酰胺	450
 jubudianxianfazuo	局部|癲癇發作	441
 jubufeipang	局部|肥胖	471
 jubuganran	局部|感染	477
@@ -4907,7 +4926,7 @@ juweitongdianrongye	聚维酮碘|溶液	465
 juxianxingduohanzheng	局限性|多汗症	464
 juxibaodongmaiyan	鉅細胞|動脈炎	497
 juxinxiane	居心|險惡	463
-juyixiyae	聚乙烯|亞胺	470
+juyixiyaan	聚乙烯|亞胺	497
 juzaiyiqi	聚在|一起	469
 juzaoxingchouchu	局竈性|抽搐	473
 juzhishuzhi	聚酯|樹脂	448
@@ -5020,7 +5039,7 @@ kejukaoshi	科舉|考試	463
 kekoukele	可口|可樂	504
 kekuzuanyan	刻苦|鑽研	454
 kelixibao	顆粒|細胞	497
-kemeishixuanyaoshui	克霉唑|癣药水	464
+kemeizuoxuanyaoshui	克霉唑|癣药水	464
 keranxingyeti	可燃性|液體	437
 keranyuansu	可燃|元素	469
 kewaiduwu	課外|讀物	404
@@ -5362,10 +5381,13 @@ laoyingbushi	老鷹|捕食	420
 laoyingchijimao	老鷹喫|雞毛	429
 laoyingzhuituzi	老鷹追|兔子	437
 laoyingzhuomaque	老鷹捉|麻雀	423
+laoyinyongshi	烙印|勇士	448
+laoyinyongshiwushuang	烙印|勇士|無雙	512
 laoyushigu	老於|世故	461
 laozizhizao	老子|製造	515
 lapishoushu	拉皮|手術	487
 lashenqiangdu	拉伸|強度	461
+layuedejingshui	臘月的|井水	387
 lazhudepiqi	蠟燭的|脾氣	410
 legaofengkuang	樂高|瘋狂	429
 legaofengkuangsaiche	樂高|瘋狂|賽車	511
@@ -5591,13 +5613,14 @@ linsuanhuameijimei	磷酸化酶|激酶	497
 linsuanjisuan	磷酸|肌酸	454
 linsuankedaiyin	磷酸|可待因	468
 linsuanlvkui	磷酸|氯喹	436
+linsuanpaiqin	磷酸|哌嗪	433
 linsuansiansuan	磷酸|絲氨酸	483
 linsuanwutang	磷酸|戊糖	415
 linsuanwutangpanglu	磷酸|戊糖|旁路	497
 linsuanwutangtujing	磷酸|戊糖|途徑	497
 linsuanxiangan	磷酸|腺苷	480
 linsuanzhimei	磷酸|酯酶	478
-linzhisiesuan	磷脂|絲胺酸	497
+linzhisiansuan	磷脂|絲胺酸	497
 linzhongguanhuai	臨終|關懷	468
 linzhonghuli	臨終|護理	496
 linzhongzhaohu	臨終|照護	433
@@ -5652,7 +5675,7 @@ liusuanlianmeisu	硫酸|链霉素	467
 liusuanlvbigelei	硫酸|氯吡格雷	464
 liusuanmeirongye	硫酸镁|溶液	461
 liusuanqingdameisu	硫酸|庆大霉素	466
-liusuanshadingechun	硫酸|沙丁胺醇	465
+liusuanshadinganchun	硫酸|沙丁胺醇	465
 liusuanshuangjingquqin	硫酸|双肼屈嗪	464
 liusuantebutalin	硫酸|特布他林	465
 liusuantuobumeisu	硫酸|妥布霉素	464
@@ -5773,6 +5796,7 @@ luguguliu	颅骨|骨瘤	479
 luguguzhe	顱骨|骨折	497
 luguguzhe	颅骨|骨折	487
 lugusuilie	顱骨|碎裂	492
+luhuafanying	鹵化|反應	497
 lujingjisuan	路徑|計算	416
 lujingjisuanjiedian	路徑|計算|節點	498
 lulidezhazi	爐裏的|渣滓	399
@@ -5819,7 +5843,6 @@ luoshuidejimao	落水的|雞毛	437
 luoshuidetaohua	落水的|桃花	455
 luosiqizi	螺絲|起子	467
 luoxuanzaoruanjiaonang	螺旋藻|软胶囊	464
-luoyinyongshiwushuang	烙印勇士|無雙	512
 lurongkoufuye	鹿茸|口服液	459
 lushanzhenmianmu	廬山|真麵目	436
 lutoudedingzi	露頭的|釘子	436
@@ -5860,7 +5883,7 @@ maidanglaoshijie	麥當勞|世界	512
 maidanglaoxiaozi	麥當勞|小子	512
 maifangshichang	買方|市場	463
 maiguanjixing	脈管|畸形	492
-maijiaoekafeiyin	麦角胺|咖啡因	465
+maijiaoankafeiyin	麦角胺|咖啡因	465
 maijiaozhongdu	麥角|中毒	482
 mailuomoxueguanliu	脉络膜|血管瘤	464
 mailuomoyan	脉络|膜炎	482
@@ -6213,7 +6236,6 @@ miaoshiyiqie	藐視|一切	474
 miaozaibuyanzhong	妙在不|言中	406
 mibikongjian	密閉|空間	467
 miejunzhusheyongshui	灭菌|注射用水	465
-mieshilanshouti	咪唑啉|受體	497
 mifengdanbai	密封|蛋白	500
 mifengdeyanjing	蜜蜂的|眼睛	455
 mifenghongzhaji	蜜蜂|轟炸機	512
@@ -6315,6 +6337,7 @@ miwugucheng	迷霧|古城	515
 miwuzhentan	迷霧|偵探	512
 miyuxiaochou	謎語|小醜	355
 mizoushenjingsunshang	迷走神經|損傷	497
+mizuolinshouti	咪唑啉|受體	497
 modaihuangdi	末代|皇帝	466
 modaimowang	末代|魔王	469
 modaodelvzi	磨道的|驢子	416
@@ -6541,10 +6564,9 @@ naomonaoyan	脑膜|脑炎	461
 naomonaoyan	腦膜|腦炎	475
 naonaobuxiu	呶呶|不休	435
 naoqiaochuxue	脑桥|出血	483
-naoshenjingbingbian	橈神經|病變	497
 naoshenjingjiaozhiliu	腦神經|膠質瘤	497
 naoshenjingjibing	腦神經|疾病	497
-naoshenjingsunshang	腦神經|損傷	497
+naoshenjingsunshang	腦神經|損傷	495
 naoshichuxue	脑室|出血	485
 naoshichuxue	腦室|出血	500
 naoshineichuxue	脑室|内出血	467
@@ -6649,6 +6671,7 @@ ningjishiyan	凝集|試驗	497
 ningjutaiwuli	凝聚態|物理	501
 ningjutaiwulixue	凝聚態|物理學	498
 ningmengshuitanzi	檸檬水|攤子	492
+ningmengsuanxunhuan	柠檬酸|循環	497
 ningxuegongneng	凝血|功能	415
 ningxuegongnengzhangai	凝血|功能|障礙	497
 ningxuemeiyuan	凝血|酶原	514
@@ -6943,11 +6966,11 @@ puliangjibing	普利昂|疾病	500
 putaomoyan	葡萄|膜炎	497
 putaoqiujun	葡萄|球菌	516
 putaoqiujunganran	葡萄|球菌|感染	465
-putaotangchuosuan	葡萄|糖醛酸	465
 putaotangdai	葡萄|糖甙	497
 putaotangdianfenmei	葡萄糖|澱粉酶	497
 putaotanggan	葡萄|糖苷	497
 putaotanglvhuana	葡萄糖|氯化钠	465
+putaotangquansuan	葡萄|糖醛酸	465
 putaotangsuan	葡萄|糖酸	437
 putaotangxinsheng	葡萄糖|新生	500
 putaoyaren	葡萄|牙人	469
@@ -6974,6 +6997,7 @@ qiangjihuafanying	羟基化|反應	500
 qiangjilinhuishi	羥基|磷灰石	437
 qiangpoguannian	強迫|觀念	436
 qiangpozhangai	強迫|障礙	470
+qiangshangdexiezi	墻上的|蠍子	405
 qiangshouzhenrenxiu	槍手|真人秀	459
 qiangweishouze	薔薇|守則	476
 qiangzhannvshen	槍戰|女神	512
@@ -7029,7 +7053,6 @@ qiegeciji	切割|刺激	415
 qiegecijiyinzi	切割|刺激|因子	497
 qiejulebu	企鵝|俱樂部	508
 qiekoushanqi	切口|疝氣	446
-qiemashexianguangpu	伽馬射線|光譜	497
 qienanhai	企鵝|男孩	495
 qiepianjiancha	切片|檢查	513
 qieshikexing	切實|可行	464
@@ -7191,7 +7214,7 @@ quanfuwuzhuang	全副|武裝	481
 quanguguzhe	颧骨|骨折	482
 quanguogedi	全國|各地	440
 quanguorenda	全國|人大	520
-quanguozhengxie	全國|政協	477
+quanguozhengxie	全國|政協	466
 quanhenglibi	權衡|利弊	414
 quanhuangjixian	拳皇|極限	430
 quanhuangjixianchongji	拳皇|極限|沖擊	436
@@ -7326,6 +7349,7 @@ ranshaozhanche	燃燒|戰車	512
 ranzhichuixian	染指|垂涎	467
 raogutouguzhe	桡骨头|骨折	466
 raoshedewuya	饒舌的|烏鴉	436
+raoshenjingbingbian	橈神經|病變	497
 raoshenjingmabi	桡神经|麻痹	467
 rechengxiangshexiangji	熱成像|攝像機	497
 redaidiqu	熱帶|地區	463
@@ -7622,6 +7646,7 @@ rousuandanbai	鞣酸|蛋白	484
 rousuanjiayasu	鞣酸|加压素	466
 rousuanxiaobojian	鞣酸|小檗碱	464
 routizhuanyi	肉體|轉移	512
+ruandutijibing	朊毒體|疾病	497
 ruangufayubuquan	软骨|发育不全	466
 ruangurouliu	軟骨|肉瘤	480
 ruangurouliu	软骨|肉瘤	479
@@ -7672,7 +7697,7 @@ rusuanlingeshiye	乳酸|林格氏液	497
 rusuanrongye	乳酸|溶液	465
 rusuantuoqingmei	乳酸|脫氫酶	455
 rusuanyatietangjiang	乳酸亚铁|糖浆	464
-rusuanyishayading	乳酸|依沙吖啶	464
+rusuanyishaading	乳酸|依沙吖啶	464
 rusuanzhongdu	乳酸|中毒	500
 rutangcaozongzi	乳糖|操縱子	500
 rutangcaozongzu	乳糖|操縱組	497
@@ -7754,7 +7779,7 @@ sanweixuanran	三維|渲染	498
 sanweiyouxi	三維|遊戲	499
 sanxingdianzi	三星|電子	474
 sanyeyinzi	三葉|因子	478
-sanyuanzuisuan	三元|羧酸	500
+sanyuansuosuan	三元|羧酸	500
 sanyuedebinghe	三月的|冰河	455
 sanzhongquanhui	三中|全會	450
 saobadaicaomao	掃把戴|草帽	418
@@ -8325,7 +8350,7 @@ shentiyouxi	身體|遊戲	499
 shentizhiliang	身體|質量	415
 shentizhiliangshu	身體|質量數	497
 shentizhiliangzhishu	身體|質量|指數	497
-shentoumaomiexilie	神偷貓咪|係列	436
+shentoumaomixilie	神偷貓咪|係列	436
 shentounengli	滲透|能力	486
 shentounongdu	滲透|濃度	482
 shenxiandemaokeng	神仙的|茅坑	455
@@ -8686,6 +8711,7 @@ shouzuqingyi	手足|情誼	485
 shouzuwucuo	手足|無措	467
 shuaibianjiasu	衰變|加速	415
 shuaibianjiasuyinzi	衰變|加速|因子	497
+shuaijiaobawang	摔跤|霸王	512
 shuaishouzhanggui	甩手|掌櫃	422
 shuangbaifangzhen	雙百|方針	465
 shuangceciji	雙側|刺激	480
@@ -8777,6 +8803,7 @@ shuizhiwuran	水質|污染	497
 shuiziyuanduanque	水資源|短缺	500
 shuiziyuankuifa	水資源|匱乏	498
 shuiziyuanxique	水資源|稀缺	500
+shujiaoquantang	樹膠|醛糖	459
 shujingguanjiezhashu	输精管|结扎术	465
 shujucaiji	數據|採集	497
 shujuchuli	數據|處理	489
@@ -8912,7 +8939,7 @@ sirenjiaolian	私人|教練	500
 sirenjingying	私人|經營	415
 sirenjingyinglingyu	私人|經營|領域	497
 sirenzhensuo	私人|診所	498
-sitongbada	四通|八達	442
+sitongbada	四通|八達	438
 siwangailisi	死亡|愛麗絲	512
 siwanganquan	死亡|安全	515
 siwangbanji	死亡|扳機	512
@@ -9004,12 +9031,15 @@ sumeierguowang	蘇美爾|國王	490
 sumeieryouxi	蘇美爾|遊戲	511
 sumingchuanshuo	宿命|傳說	494
 suoguguzhe	锁骨|骨折	487
+suojiajixianweisu	羧甲基|纤维素	465
+suojiliehemei	羧基|裂合酶	500
 suonidonghua	索尼|動畫	459
 suoniyingshi	索尼|影視	411
 suoniyingshidonghua	索尼|影視|動畫	493
 suoshidianzi	瑣事|電子	425
 suoshidianziyouxi	瑣事|電子|遊戲	507
 suoshudanwei	所屬|單位	433
+suosuanzhimei	羧酸|酯酶	497
 suoxiangpimi	所嚮|披靡	395
 suoxudaohang	所需|導航	415
 suoxudaohangxingneng	所需|導航|性能	497
@@ -9283,6 +9313,7 @@ tidaifangfa	替代|方法	476
 tidaitujing	替代|途徑	500
 tidaixianshi	替代|現實	417
 tidaixianshiyouxi	替代|現實|遊戲	499
+tiedadebangchui	鐵打的|棒槌	402
 tiedadefanwan	鐵打的|飯碗	405
 tiedaoshaonv	鐵道|少女	488
 tiedaoxunli	鐵道|巡禮	472
@@ -9424,6 +9455,7 @@ toushihuafa	透視|畫法	463
 toushiwenlu	投石|問路	427
 toutiaolieshou	頭條|獵手	472
 toutiaoxinwen	頭條|新聞	436
+touzidexiacheng	骰子|地下城	515
 touziyinhang	投資|銀行	484
 tuanduijingshen	團隊|精神	463
 tuanduizuozhan	團隊|作戰	483
@@ -9440,7 +9472,7 @@ tubianchansheng	突變|產生	497
 tubianjiyuan	突變|紀元	512
 tubulvxing	徒步|旅行	467
 tudehanchenghuang	土地喊|城隍	455
-tudeliaotengkong	土地佬|騰空	417
+tudelaotengkong	土地佬|騰空	418
 tudeyetitou	土地爺|剃頭	432
 tudeyexiashui	土地爺|下水	419
 tudeyexilian	土地爺|洗臉	436
@@ -9450,6 +9482,7 @@ tudushengling	荼毒|生靈	470
 tufadianxian	突發|癲癇	493
 tufashijian	突發|事件	467
 tugentangjiang	吐根|糖浆	433
+tuiheisushouti	褪黑素|受體	497
 tuihuabianzhi	蛻化|變質	428
 tuilidianzi	推理|電子	425
 tuilidianziyouxi	推理|電子|遊戲	507
@@ -9470,7 +9503,6 @@ tuleitezonghezheng	圖雷特|綜合症	497
 tulingceyan	圖靈|測驗	479
 tumugongcheng	土木|工程	465
 tumuxinghai	土木|形骸	463
-tunheisushouti	褪黑素|受體	497
 tunshixibao	吞噬|細胞	498
 tunshixibaozuoyong	吞噬|細胞|作用	497
 tunshizuoyong	吞噬|作用	500
@@ -9578,7 +9610,6 @@ waizhanshenjingmabi	外展神經|麻痺	497
 waizhanshenjingsunshang	外展神經|損傷	497
 waiziqiye	外資|企業	463
 wakuangzhengba	挖礦|爭霸	460
-wandutijibing	朊毒體|疾病	497
 wangfuyundong	往復|運動	450
 wanggedanbai	網格|蛋白	501
 wanggeguanliyuan	網格|管理員	480
@@ -10320,7 +10351,7 @@ xiaormabi	小兒|麻痺	415
 xiaormabiyimiao	小兒|麻痺|疫苗	497
 xiaoshiliaoliao	小時|了了	462
 xiaoshuoyijingji	小說|義經紀	512
-xiaosuanmiekangshi	硝酸|咪康唑	443
+xiaosuanmikangzuo	硝酸|咪康唑	443
 xiaotoumoniqi	小偷|模擬器	515
 xiaotudenaodai	小禿的|腦袋	411
 xiaotuikuiyang	小腿|溃疡	484
@@ -10423,8 +10454,13 @@ xidanshangchang	西單|商場	478
 xidedianhanpian	西地碘|含片	451
 xidiangonglve	西點|攻略	469
 xiduguoliang	吸毒|過量	459
+xiechengfengyunqishi	邪城風雲|騎士	512
 xiedaidanbai	攜帶|蛋白	497
+xieelaoshu	邪惡|老鼠	512
+xieetiancai	邪惡|天才	515
+xieewushi	邪惡|巫師	512
 xieheyiyuan	協和|醫院	471
+xielingruqin	邪靈|入侵	462
 xieshanghuiyi	協商|會議	463
 xieshatanfensanpian	缬沙坦|分散片	464
 xieyiguifan	協議|規範	436
@@ -10672,6 +10708,7 @@ xinlishuaijie	心力|衰竭	454
 xinlitongjixue	心理|統計學	483
 xinliwulixue	心理|物理學	502
 xinlixingyu	心理|性慾	493
+xinlixuanxie	心理|宣洩	500
 xinlixuelilun	心理學|理論	500
 xinliyayi	心理|壓抑	500
 xinliyouxi	心理|遊戲	499
@@ -10809,6 +10846,7 @@ xiongxianzhongliu	胸腺|腫瘤	497
 xiongxingjisu	雄性|激素	500
 xiongyonghaitun	洶湧|海豚	480
 xiongzhaizhuanmaidian	兇宅|專賣店	424
+xiongzhuiguzhe	胸椎|骨折	484
 xiquedeweiba	喜鵲的|尾巴	407
 xiqueyule	喜鵲|娛樂	450
 xiqujiaoxun	吸取|教訓	467
@@ -10833,6 +10871,7 @@ xiucaidajia	秀才|打架	464
 xiucainaojihuang	秀才鬧|饑荒	436
 xiucaixingxiong	秀才|行兇	400
 xiugaiziduan	修改|字段	477
+xiujiawanzhongdu	溴甲烷|中毒	467
 xiujuequeshi	嗅覺|缺失	477
 xiujuesangshi	嗅覺|喪失	497
 xiujueshouti	嗅覺|受體	459
@@ -10855,7 +10894,6 @@ xixueguixingcunzhe	吸血鬼|倖存者	512
 xixuelaienxilie	吸血萊恩|係列	436
 xiyanchengyin	吸菸|成癮	497
 xiyangcanhanpian	西洋参|含片	446
-xiyuedejingshui	臘月的|井水	387
 xizangyixue	西藏|醫學	504
 xizhenchouxihuojian	細針抽吸|活檢	497
 xizhenchouxiyangben	細針抽吸|樣本	497
@@ -11042,7 +11080,6 @@ yabakanshu	啞巴|看書	436
 yabaoganjun	芽孢|杆菌	483
 yabashuodaxiang	啞巴說|大象	436
 yabenzhiguomin	牙本質|過敏	481
-yachengfengyunqishi	邪城風雲|騎士	512
 yachiduanlie	牙齒|斷裂	497
 yachimengfa	牙齒|萌發	496
 yachimosun	牙齒|磨損	497
@@ -11088,7 +11125,7 @@ yanglanlanshijian	楊蘭蘭|事件	508
 yanglaobaoxian	養老|保險	463
 yanglaojigou	養老|機構	497
 yangmaoguchun	羊毛|固醇	500
-yangmaozichun	羊毛|甾醇	497
+yangmaozaichun	羊毛|甾醇	497
 yangqiliaofa	氧氣|療法	473
 yangqizhiliao	氧氣|治療	497
 yangqundeluozi	羊羣的|騾子	436
@@ -11141,29 +11178,29 @@ yanshichengxu	演示|程序	490
 yanshimoniqi	驗屍|模擬器	486
 yansuanameisu	盐酸|阿霉素	466
 yansuanamitilin	盐酸|阿米替林	464
-yansuananchousuo	盐酸|氨溴索	465
+yansuanandiantong	盐酸|胺碘酮	464
+yansuananxiusuo	盐酸|氨溴索	465
 yansuanbeinapuli	盐酸|贝那普利	464
 yansuanbeinideping	盐酸|贝尼地平	464
 yansuanbenhailaming	盐酸|苯海拉明	465
 yansuanbenhaisuo	盐酸|苯海索	466
-yansuanbenyishuanggu	盐酸|苯乙双胍	465
+yansuanbenyishuanggua	盐酸|苯乙双胍	465
 yansuanbigelietong	盐酸|吡格列酮	465
 yansuanchuanxiongqin	盐酸|川芎嗪	464
 yansuandingbingnuofei	盐酸|丁丙诺啡	464
-yansuandingluodeer	盐酸|丁咯地尔	464
-yansuanduobae	盐酸|多巴胺	467
-yansuanduonaiguqi	盐酸|多奈哌齐	464
+yansuandinggedeer	盐酸|丁咯地尔	464
+yansuanduobaan	盐酸|多巴胺	467
+yansuanduonaipaiqi	盐酸|多奈哌齐	464
 yansuanduosaiping	盐酸|多塞平	466
 yansuanduoxihuansu	盐酸|多西环素	465
-yansuanediantong	盐酸|胺碘酮	464
-yansuanerjiashuanggu	盐酸|二甲双胍	466
+yansuanerjiashuanggua	盐酸|二甲双胍	466
 yansuaneryangbingqin	盐酸|二氧丙嗪	464
 yansuanfadenafei	盐酸|伐地那非	464
 yansuanfashudeer	盐酸|法舒地尔	464
 yansuanfenfulaming	盐酸|芬氟拉明	465
 yansuanfuxiting	盐酸|氟西汀	467
 yansuanhuanbingshaxing	盐酸|环丙沙星	436
-yansuanjingangwane	盐酸|金刚烷胺	466
+yansuanjingangwanan	盐酸|金刚烷胺	466
 yansuanjinmeisu	盐酸|金霉素	467
 yansuankeleding	盐酸|可乐定	467
 yansuankelinmeisu	盐酸|克林霉素	465
@@ -11172,13 +11209,14 @@ yansuanlaiansuan	盐酸|赖氨酸	466
 yansuanleinitiding	盐酸|雷尼替丁	464
 yansuanlinkemeisu	盐酸|林可霉素	466
 yansuanluomeishaxing	盐酸|洛美沙星	464
+yansuanlvantong	盐酸|氯胺酮	464
 yansuanlvbingnalin	盐酸|氯丙那林	465
 yansuanlvbingqin	盐酸|氯丙嗪	464
-yansuanlvetong	盐酸|氯胺酮	464
 yansuanmahuangjian	盐酸|麻黄碱	468
 yansuanmeitahuansu	盐酸|美他环素	464
-yansuannaijiashilin	盐酸|萘甲唑林	464
+yansuannaijiazuolin	盐酸|萘甲唑林	464
 yansuannaluotong	盐酸|纳洛酮	467
+yansuanpaitiding	盐酸|哌替啶	450
 yansuanpulukayin	盐酸|普鲁卡因	465
 yansuanqingtengjian	盐酸|青藤碱	466
 yansuanqumeitaqin	盐酸|曲美他嗪	465
@@ -11187,19 +11225,19 @@ yansuansaigengding	盐酸|赛庚啶	464
 yansuanshanlangdangjian	盐酸|山莨菪碱	464
 yansuanshenshangxiansu	盐酸|肾上腺素	465
 yansuansihuansu	盐酸|四环素	467
-yansuantelashiqin	盐酸|特拉唑嗪	464
+yansuantelazuoqin	盐酸|特拉唑嗪	464
 yansuantuowansiqiong	盐酸|托烷司琼	464
 yansuanwangumeisu	盐酸|万古霉素	464
 yansuanweimahuangjian	盐酸|伪麻黄碱	466
 yansuanxiaobojian	盐酸|小檗碱	467
 yansuanxibuquming	盐酸|西布曲明	466
 yansuanxitiliqin	盐酸|西替利嗪	464
+yansuanyiandingchun	盐酸|乙胺丁醇	464
 yansuanyibingqin	盐酸|异丙嗪	466
-yansuanyiedingchun	盐酸|乙胺丁醇	464
 yansuanyilitikang	盐酸|伊立替康	464
 yansuanyituobili	盐酸|伊托必利	464
 yansuanzuansuan	盐酸|组氨酸	466
-yansuanzuoxuanmieshi	盐酸|左旋咪唑	465
+yansuanzuoxuanmizuo	盐酸|左旋咪唑	465
 yansuimabi	延髓|麻痹	480
 yansuyouxi	嚴肅|遊戲	507
 yantanlinsou	言談|林藪	440
@@ -11290,6 +11328,8 @@ yaoyuanshikong	遙遠|時空	512
 yaoyuanshikongxilie	遙遠|時空|係列	436
 yaoyuanshikongxilie	遙遠|時空系列	509
 yaoyuanxingji	遙遠|星際	498
+yaozhuichuanci	腰椎|穿刺	467
+yaozhuiguzhe	腰椎|骨折	487
 yasechuanshuo	亞瑟|傳說	471
 yasegongzhu	亞瑟|公主	498
 yasezonghezheng	亞瑟|綜合徵	497
@@ -11470,12 +11510,14 @@ yiliaoweishengxingzheng	醫療|衛生|行政	497
 yiliaoweishengyingxiao	醫療|衛生|營銷	497
 yiliaowenduji	醫療|溫度計	497
 yiliaoxinlixue	醫療|心理學	497
+yiliaoxuetou	醫療|噱頭	489
 yiliaoyingji	醫療|應急	497
 yiliaozhaiwu	醫療|債務	497
 yiliaozhenduan	醫療|診斷	495
 yiliaozhiwai	意料|之外	427
 yiliaozhuanji	醫療|專機	480
 yilipendi	伊犁|盆地	469
+yilishabaiershi	伊麗莎白|二世	503
 yiluanshuangsheng	異卵|雙生	435
 yimeichangrongjiaonang	胰酶|肠溶胶囊	464
 yimenxinsi	一門|心思	463
@@ -11509,6 +11551,7 @@ yindubiaozhunshijian	印度|標準|時間	447
 yinduchuantong	印度|傳統	415
 yinduchuantongyixue	印度|傳統|醫學	497
 yindudama	印度|大麻	484
+yinduoshengwujian	吲哚|生物鹼	485
 yinduyixue	印度|醫學	497
 yingaobianbie	音高|辨別	500
 yingbianguanli	應變|管理	497
@@ -11854,6 +11897,7 @@ youjihuaxue	有機|化學	461
 youjijinhuahewu	有機|金化合物	497
 youjilinhuaxue	有機磷|化學	497
 youjilinzhongdu	有機|磷中毒	436
+youjiluhuawu	有機|鹵化物	500
 youjinongye	有機|農業	497
 youjipengsuan	有機|硼酸	497
 youjitiehuahewu	有機|鐵化合物	497
@@ -12307,6 +12351,7 @@ zhanjianshijie	戰艦|世界	512
 zhanjishaonv	戰機|少女	512
 zhanjishaonvxilie	戰機|少女|係列	405
 zhanjishijie	戰機|世界	512
+zhanlanlaolong	湛藍|牢籠	438
 zhanlishaji	戰慄|殺機	441
 zhanlishikong	戰慄|時空	467
 zhanlishikongxilie	戰慄|時空系列	509
@@ -12358,7 +12403,6 @@ zhanzhengyishi	戰爭|儀式	487
 zhanzhengyishu	戰爭|藝術	512
 zhanzhengyouxi	戰爭|遊戲	509
 zhanzhengzhirenxilie	戰爭之人|係列	436
-zhaogaidejunshi	晁蓋的|軍師	413
 zhaohetianhuang	昭和|天皇	418
 zhaoshangyinhang	招商|銀行	520
 zhaoyangchanye	朝陽|產業	430
@@ -12422,6 +12466,7 @@ zhengqueluxian	正確|路線	463
 zhengsanzuoyong	蒸散|作用	471
 zhengtengzuoyong	蒸騰|作用	472
 zhengxianxinhao	正弦|信號	486
+zhengxiehuanxiangqu	正邪|幻想曲	513
 zhengxingshoushu	整形|手术	502
 zhengxingwaike	整形|外科	500
 zhengyilianmeng	正義|聯盟	430
@@ -12647,8 +12692,8 @@ zhiwuxibao	植物|細胞	500
 zhiwuxibaoxue	植物|細胞學	497
 zhiwuxueningsu	植物|血凝素	467
 zhiwuyinshi	植物|飲食	500
+zhiwuzaichun	植物|甾醇	500
 zhiwuzhuangtai	植物|狀態	436
-zhiwuzichun	植物|甾醇	500
 zhixiangxinglide	指嚮性|利得	416
 zhixiangzhanji	紙箱|戰機	509
 zhixinqujian	置信|區間	479
@@ -12982,7 +13027,10 @@ zhuguanjuecha	主觀|覺察	480
 zhuguanrenyuan	主管|人員	467
 zhuguanzhuyi	主觀|主義	471
 zhuhangsaomiao	逐行|掃描	422
+zhuidongmaiboli	椎動脈|剝離	497
+zhuidongmaijiaceng	椎動脈|夾層	497
 zhuiguangdonghua	追光|動畫	454
+zhuijianpantuihua	椎間盤|退化	497
 zhuiruqingwang	墜入|情網	422
 zhuitiwaixijibing	锥体外系|疾病	464
 zhuizongyanjiu	追蹤|研究	500
@@ -13196,7 +13244,7 @@ zongtongdaxuan	總統|大選	463
 zoumakanhua	走馬|看花	415
 zuankongxiansheng	鑽孔|先生	512
 zuanshanfengtangjiang	钻山风|糖浆	466
-zuansuantuozuimei	組氨酸|脫羧酶	497
+zuansuantuosuomei	組氨酸|脫羧酶	497
 zuchengbufen	組成|部分	497
 zudanbaimima	組蛋白|密碼	497
 zudanbaiyixihua	組蛋白|乙醯化	497
@@ -13225,9 +13273,7 @@ zuihourenwu	最後|任務	508
 zuihoushenghaizhe	最後|生還者	515
 zuihoutongdie	最後|通牒	430
 zuihouyizhan	最後|一戰	499
-zuijiajixianweisu	羧甲基|纤维素	465
 zuiniechuanqi	罪孽|傳奇	512
-zuisuanzhimei	羧酸|酯酶	497
 zuizhongchihan	最終|癡漢	414
 zuizhongchihandianche	最終|癡漢|電車	496
 zuizhonghuanxiang	最終|幻想	508

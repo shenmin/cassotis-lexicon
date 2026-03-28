@@ -17,6 +17,10 @@ import pathlib
 from typing import Dict, Iterable, List, Tuple
 
 
+def normalize_pinyin_key(value: str) -> str:
+    return value.strip().lower().replace("’", "").replace("'", "")
+
+
 def load_dict(path: pathlib.Path) -> Dict[str, List[Tuple[str, int]]]:
     bucket: Dict[str, Dict[str, int]] = {}
     with path.open("r", encoding="utf-8") as f:
@@ -29,7 +33,7 @@ def load_dict(path: pathlib.Path) -> Dict[str, List[Tuple[str, int]]]:
             if len(parts) != 3:
                 raise ValueError(f"{path}:{line_no} invalid column count")
 
-            pinyin = parts[0].strip()
+            pinyin = normalize_pinyin_key(parts[0])
             text = parts[1].strip()
             try:
                 weight = int(parts[2].strip())
@@ -80,7 +84,7 @@ def load_samples(path: pathlib.Path, default_rank: int) -> List[Tuple[str, str, 
             if len(parts) < 2:
                 raise ValueError(f"{path}:{line_no} invalid sample row")
 
-            pinyin = parts[0].strip()
+            pinyin = normalize_pinyin_key(parts[0])
             expected_text = parts[1].strip()
             max_rank = default_rank
             if len(parts) >= 3 and parts[2].strip():
