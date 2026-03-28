@@ -1,7 +1,7 @@
 # External Build Report
 
 - profile: unihan_single
-- generated_at_utc: 2026-03-28T11:37:52+00:00
+- generated_at_utc: 2026-03-28T12:06:48+00:00
 - min_hanzi: 1
 - max_entries: unlimited
 
@@ -281,10 +281,10 @@
 - vertical_payload_titles_kept: 2822
 - vertical_payload_titles_skipped_duplicate: 106
 - vertical_payload_titles_skipped_filter: 4354396
-- vertical_support_excluded_sc: 48067
-- vertical_support_excluded_tc: 49629
-- vertical_term_kept: 282
-- vertical_term_rows: 282
+- vertical_support_excluded_sc: 48075
+- vertical_support_excluded_tc: 49637
+- vertical_term_kept: 290
+- vertical_term_rows: 290
 - vertical_term_skipped_malformed: 0
 - vertical_term_skipped_non_cjk: 0
 - vertical_term_skipped_short: 0

@@ -3716,7 +3716,7 @@ fuzhigouzao	复制|构造	360
 fuzhigouzao	赋值|构造	359
 fuzhigouzaohanshu	复制|构造|函数	442
 fuzhigouzaohanshu	赋值|构造|函数	441
-fuzhiguge	附肢|骨骼	473
+fuzhiguge	附肢|骨骼	433
 fuzhihanshu	赋值|函数	454
 fuzhijili	复制|机理	500
 fuzhijishu	复制|技术	514
@@ -4418,10 +4418,11 @@ gufabiancheng	古法|编程	515
 gufengongsi	股份|公司	499
 gugebowuguan	骨骼|博物馆	501
 gugedaixie	骨骼|代谢	500
-gugedonghua	骨骼|动画	501
+gugedonghua	骨骼|动画	471
 gugemidu	骨骼|密度	500
-gugexitong	骨骼|系统	508
-gugeyingshe	骨骼|映射	508
+gugeshurufa	谷歌|输入法	501
+gugexitong	骨骼|系统	481
+gugeyingshe	骨骼|映射	502
 guguanjiejiehe	骨关节|结核	467
 guguguzhe	股骨|骨折	500
 gugujingguzhe	股骨颈|骨折	469
@@ -5147,7 +5148,6 @@ huangyeqiangshen	荒野|枪神	515
 huangyeqiangshou	荒野|枪手	475
 huangyexingdong	荒野|行动	511
 huangyexingqiu	荒野|星球	515
-huangyeyouxia	荒野|游侠	493
 huanhuafanying	环化|反应	495
 huanjiachengfanying	环加成|反应	500
 huanjiedongwu	环节|动物	473
@@ -6493,9 +6493,8 @@ jiqunhuanjing	集群|环境	491
 jiqunpeizhi	集群|配置	491
 jiroubingbian	肌肉|病变	500
 jiroufayan	肌肉|发炎	492
-jirouguge	肌肉|骨骼	416
+jirouguge	肌肉|骨骼	415
 jirougugejibing	肌肉|骨骼|疾病	497
-jirougugexitong	肌肉|骨骼|系统	498
 jiroujisu	肌肉|激素	500
 jiroupilao	肌肉|疲劳	520
 jiroushengcheng	肌肉|生成	500
@@ -12493,7 +12492,6 @@ taikongwulixue	太空|物理学	501
 taikongxingzou	太空|行走	443
 taikongyinqing	太空|引擎	495
 taikongyiyuan	太空|医院	515
-taikongyouxia	太空|游侠	476
 taikongyunxuan	太空|晕眩	467
 taikongzhanzheng	太空|战争	492
 taipancanliu	胎盘|残留	464
@@ -16031,7 +16029,6 @@ yinheshaonvjingcha	银河|少女|警察	509
 yinhewenming	银河|文明	515
 yinheyingxiongchuanshuo	银河|英雄传说	399
 yinheyouxi	银河|游戏	515
-yinheyouxia	银河|游侠	507
 yinhezhanshi	银河|战士	515
 yinhezhanshironghe	银河|战士|融合	512
 yinhezhanshixilie	银河|战士|系列	509
@@ -17700,7 +17697,7 @@ zhongzhichengxu	终止|程序	491
 zhongzhimimazi	终止|密码子	500
 zhongzhiyichi	种植|义齿	499
 zhongzhongweiji	重重|危机	515
-zhongzhouguge	中轴|骨骼	501
+zhongzhouguge	中轴|骨骼	464
 zhongzhuangjibingxilie	重装机兵|系列	509
 zhongzhuangjibingyizhong	重装机兵|异种	511
 zhongzibuhuo	中子|捕获	415
