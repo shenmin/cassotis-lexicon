@@ -7018,7 +7018,7 @@ bianxifa	变戏法	461
 bianxin	变心	841
 bianxing	变形	1000
 bianxing	变性	440
-bianxing	变星	251
+bianxing	变星	250
 bianxingchong	变形虫	428
 bianxingdongwu	扁形动物	447
 bianxingganjun	变形杆菌	659
@@ -14530,7 +14530,7 @@ chengjidan	成绩单	481
 chengjie	承接	737
 chengjie	惩戒	669
 chengjiemeimo	惩戒魅魔	844
-chengjing	乘警	347
+chengjing	乘警	348
 chengjisi	成吉思	629
 chengjisihan	成吉思汗	918
 chengjisihanxilie	成吉思汗系列	899
@@ -32262,7 +32262,7 @@ feiqujunbing	肺曲菌病	637
 feiran	废然	387
 feiran	斐然	211
 feire	肺热	928
-feirebing	肺热病	598
+feirebing	肺热病	594
 feiren	非人	636
 feiren	废人	305
 feirenhua	非人化	232
@@ -33686,8 +33686,8 @@ fenxunbingbeidao	分巡兵备道	289
 fenyan	粉艳	377
 fenyang	汾阳	263
 fenyangshi	汾阳市	165
-fenye	分页	402
-fenye	分野	327
+fenye	分页	403
+fenye	分野	326
 fenyechaxun	分页查询	703
 fenyechengxu	分页程序	668
 fenyefu	分页符	232
@@ -43170,7 +43170,7 @@ haixiehui	海协会	207
 haiximengguzuzangzuzizhizhou	海西蒙古族藏族自治州	391
 haixin	海信	296
 haixing	还行	1000
-haixing	海星	97
+haixing	海星	74
 haixingjichang	海星机场	260
 haixinglei	海星类	600
 haixingxian	海兴县	160
@@ -58457,6 +58457,7 @@ jiubingchengliangyi	久病成良医	289
 jiubingchengyi	久病成医	408
 jiubingfufa	旧病复发	437
 jiubu	旧部	424
+jiubucuole	就不错了	981
 jiucai	韭菜	860
 jiucai	酒菜	303
 jiucaihezi	韭菜盒子	260
@@ -58516,6 +58517,8 @@ jiu'erjiuzhi	久而久之	510
 jiufa	灸法	305
 jiufan	就范	933
 jiufan	酒饭	1
+jiufeichang	就非常	959
+jiufeichanghaole	就非常好了	1000
 jiufen	纠纷	736
 jiufen	九份	131
 jiufengzhijiqianbeishao	酒逢知己千杯少	482
@@ -58540,10 +58543,12 @@ jiugui	酒鬼	562
 jiuguijiu	酒鬼酒	232
 jiuguo	柾国	1000
 jiuguo	救国	711
+jiuhaixing	就还行	966
 jiuhan'erre	酒酣耳热	444
 jiuhanfengganyu	久旱逢甘雨	392
 jiuhao	旧好	198
 jiuhaobupaxiangzishen	酒好不怕巷子深	425
+jiuhaole	就好了	980
 jiuhaoqiu	九号球	232
 jiuhe	纠合	792
 jiuhongzhuque	酒红朱雀	260
@@ -58644,6 +58649,7 @@ jiuju	旧居	455
 jiukan	就看	735
 jiukanuoweiqi	久卡诺维奇	274
 jiuke	鹫科	261
+jiukeyile	就可以了	987
 jiukong	九孔	305
 jiukongluo	九孔螺	230
 jiukou	就口	198
@@ -58669,6 +58675,7 @@ jiulinian	旧历年	391
 jiuliu	久留	834
 jiuliu	九流	1
 jiulixiang	九里香	491
+jiulixiangle	就理想了	973
 jiulong	九龙	493
 jiulongcheng	九龙城	169
 jiulongchengzhai	九龙城寨	260
@@ -58681,6 +58688,7 @@ jiulongxian	九龙县	165
 jiulongzan	九龙赞	808
 jiulou	酒楼	448
 jiuma	舅妈	401
+jiumanyile	就满意了	981
 jiumao	旧貌	366
 jiumaohuanxinyan	旧貌换新颜	400
 jiumeng	旧梦	371
@@ -58760,7 +58768,7 @@ jiushengtingjiaban	救生艇甲板	289
 jiushengyi	救生衣	434
 jiushengyuan	救生员	340
 jiushi	九十	1000
-jiushi	就是	959
+jiushi	就是	960
 jiushi	救世	683
 jiushi	旧时	280
 jiushi	酒食	74
@@ -58822,6 +58830,7 @@ jiusuanle	就算了	640
 jiusuanyaowonuligongzuo	就算要我努力工作	846
 jiusun	旧损	305
 jiutai	九台	376
+jiutaibangle	就太棒了	981
 jiutaifumeng	旧态复萌	387
 jiutaiqu	九台区	174
 jiutan	纠弹	305
@@ -58846,6 +58855,7 @@ jiuwan'erqianpingfanggongli	九万二千平方公里	455
 jiuwang	救亡	435
 jiuwanle	就完了	660
 jiuwanle	就晚了	656
+jiuwanmeile	就完美了	981
 jiuwanqiqiansanbai'ershisipi	九万七千三百二十四匹	455
 jiuwansanqianjiubaijiushiduogongli	九万三千九百九十多公里	455
 jiuwanyiqianyudun	九万一千余吨	399
@@ -58886,6 +58896,7 @@ jiuxin	揪心	424
 jiuxinbagan	揪心扒肝	258
 jiuxing	酒醒	951
 jiuxing	救星	220
+jiuxingle	就行了	980
 jiuxinjinwan	救心金丸	642
 jiuxinjiufei	揪心揪肺	258
 jiuxinwan	救心丸	662
@@ -58963,7 +58974,7 @@ jiuzhenhuanxinzhenfang'an	旧针换新针方案	772
 jiuzheyang	就这样	966
 jiuzheyangba	就这样吧	967
 jiuzhi	九只	1000
-jiuzhi	就职	614
+jiuzhi	就职	615
 jiuzhi	救治	463
 jiuzhi	久之	353
 jiuzhi	旧址	89
@@ -58992,7 +59003,7 @@ jiuzuoshenghuoxingtai	久坐生活型态	842
 jiwa	鸡娃	134
 jiwancifen	己烷雌酚	635
 jiwang	既往	865
-jiwang	寄望	160
+jiwang	寄望	159
 jiwangbujiu	既往不咎	475
 jiwangkailai	继往开来	539
 jiwangshi	既往史	618
@@ -62436,7 +62447,7 @@ kejipinggushu	科技评估署	800
 kejirenyuan	科技人员	491
 kejishu	科技树	232
 kejisuanhanshu	可计算函数	728
-kejiu	窠臼	485
+kejiu	窠臼	484
 kejiyizhong	科技异种	848
 keju	科举	996
 keju	客居	1
@@ -75871,7 +75882,7 @@ meixiao	媚笑	400
 meixiayukuang	每下愈况	387
 meixie	煤屑	363
 meixilv	美西律	483
-meixin	眉心	492
+meixin	眉心	491
 meixin	昧心	324
 meixinde	没芯的	501
 meixindela	没芯的蜡	527
@@ -90410,7 +90421,7 @@ quanhenglibi	权衡利弊	474
 quanhongchan	全红婵	773
 quanhouqiechushu	全喉切除术	712
 quanhu	全乎	255
-quanhua	劝化	459
+quanhua	劝化	458
 quanhuang	拳皇	606
 quanhuangjixianchongji	拳皇极限冲击	915
 quanhui	全会	498
@@ -96158,6 +96169,7 @@ shangaoshuixian	山高水险	405
 shangba	伤疤	429
 shangban	上班	1000
 shangban	上半	450
+shangbanbu	上半部	1000
 shangbanbufen	上半部分	260
 shangbanchang	上半场	523
 shangbang	上榜	420
@@ -111629,7 +111641,7 @@ tonghuaxianjing	童话仙境	848
 tonghuazuoyong	同化作用	441
 tonghun	通婚	989
 tonghuo	通货	996
-tonghuo	同伙	179
+tonghuo	同伙	180
 tonghuo	统货	1
 tonghuojinsuo	通货紧缩	446
 tonghuopengzhang	通货膨胀	935
@@ -114840,8 +114852,10 @@ wangyanyuchuan	望眼欲穿	461
 wangye	网页	926
 wangye	王爷	249
 wangyedizhi	网页地址	260
+wangyeshang	网页上	966
 wangyesheji	网页设计	260
 wangyeyouxi	网页游戏	807
+wangyezhong	网页中	966
 wangyi	王毅	953
 wangyi	亡佚	589
 wangyi	网易	197
@@ -118593,12 +118607,12 @@ wushenlunzhe	无神论者	617
 wushenqi	乌审旗	241
 wushezhiyangwan	乌蛇止痒丸	697
 wushi	五十	1000
-wushi	无时	824
-wushi	务实	658
-wushi	无视	607
+wushi	无时	696
+wushi	务实	515
 wushi	武士	488
+wushi	无视	471
 wushi	巫师	460
-wushi	午时	377
+wushi	午时	274
 wushi	乌什	243
 wushi	五世	1
 wushi	物事	1
@@ -119282,6 +119296,7 @@ xiabai	下摆	899
 xiabake	下巴颏	434
 xiaban	下班	1000
 xiaban	下半	1
+xiabanbu	下半部	966
 xiabanchang	下半场	573
 xiabannian	下半年	538
 xiabanshen	下半身	482
@@ -120373,7 +120388,7 @@ xiangxun	香蕈	174
 xiangxunliaofa	香熏疗法	754
 xiangxunzhiliao	香熏治疗	754
 xiangya	想呀	1000
-xiangya	象牙	525
+xiangya	象牙	524
 xiangyahai'an	象牙海岸	228
 xiangyan	香烟	807
 xiangyanchengxi	相沿成习	249
@@ -127145,8 +127160,8 @@ xuanxue	玄学	431
 xuanya	悬崖	536
 xuanyajuebi	悬崖绝壁	454
 xuanyalema	悬崖勒马	467
-xuanyan	宣言	662
-xuanyan	悬岩	74
+xuanyan	宣言	663
+xuanyan	悬岩	73
 xuanyang	宣扬	465
 xuanyangtoumaigourou	悬羊头卖狗肉	318
 xuanyao	炫耀	961
@@ -129422,7 +129437,7 @@ yangtou	羊头	1
 yangtougourou	羊头狗肉	387
 yangtuo	央托	344
 yanguan	言官	497
-yanguan	烟管	455
+yanguan	烟管	454
 yanguang	验光	1000
 yanguang	眼光	285
 yanguangduan	眼光短	232
@@ -129508,7 +129523,7 @@ yangxuhanningzheng	阳虚寒凝证	699
 yangxushuifan	阳虚水泛	640
 yangxuwen	杨旭文	773
 yangxuxueyuzheng	阳虚血瘀证	699
-yangyan	养眼	484
+yangyan	养眼	483
 yangyang	杨洋	996
 yangyang	洋洋	857
 yangyang	痒痒	806
@@ -129962,9 +129977,12 @@ yanqiuzhaichushu	眼球摘除术	800
 yanqiuzhenchan	眼球震颤	754
 yanqixian	焉耆县	174
 yanqixigu	偃旗息鼓	462
-yanquan	眼圈	765
-yanquan	烟圈	92
+yanquan	言泉	1000
+yanquan	眼圈	279
+yanquan	烟圈	1
 yanquanhongle	眼圈红了	260
+yanquanpinyinshurufa	言泉拼音输入法	887
+yanquanshurufa	言泉输入法	974
 yanque	燕雀	536
 yanqueanzhihonghuzhizhi	燕雀安知鸿鹄之志	493
 yanquechutang	燕雀处堂	244
@@ -130389,7 +130407,7 @@ yanxijunshizihongzhi	盐系菌视紫红质	772
 yanxijunshizihongzhi	盐细菌视紫红质	772
 yanxin	唁信	198
 yanxing	严刑	915
-yanxing	言行	572
+yanxing	言行	573
 yanxingbufu	言行不符	387
 yanxingbuyi	言行不一	439
 yanxingchangbing	炎性肠病	754
@@ -131519,7 +131537,7 @@ yelvsuyuan	叶绿素原	754
 yelvti	叶绿体	282
 yelvtijiyinzu	叶绿体基因组	842
 yelvtijizhi	叶绿体基质	699
-yema	野马	814
+yema	野马	813
 yema	页码	15
 yemai	叶脉	260
 yemaixu	叶脉序	167
@@ -131613,7 +131631,7 @@ yeshi	业师	1
 yeshi	野史	1
 yeshijing	夜视镜	232
 yeshiyi	夜视仪	487
-yeshou	野兽	754
+yeshou	野兽	753
 yeshuhua	叶舒华	782
 yesi	噎死	201
 yesoupuyan	野叟曝言	383
@@ -140435,7 +140453,7 @@ yuyeqinghuopian	玉叶清火片	707
 yuyi	予以	936
 yuyi	语义	858
 yuyi	愈益	716
-yuyi	雨衣	519
+yuyi	雨衣	518
 yuyi	语意	279
 yuyi	寓意	248
 yuyi	羽翼	174
@@ -143067,7 +143085,7 @@ zhejiedushu	折节读书	405
 zhejige	这几个	973
 zhejitian	这几天	232
 zhejiu	这就	1000
-zhejiu	折旧	184
+zhejiu	折旧	183
 zhejiulv	折旧率	421
 zhejiushi	这就是	938
 zhejiushishuo	这就是说	929
@@ -146170,8 +146188,8 @@ zhong'eryan	中耳炎	557
 zhong'eyilitiaoyue	中俄伊犁条约	318
 zhong'ezonglidingqihuiwuweiyuanhui	中俄总理定期会晤委员会	376
 zhongfa	重罚	978
-zhongfan	中饭	400
-zhongfan	重犯	375
+zhongfan	中饭	401
+zhongfan	重犯	374
 zhongfanchenmozhiqiu	重返沉默之丘	839
 zhongfandejunzongbu	重返德军总部	915
 zhongfandeqiu	重返地球	848
@@ -147653,6 +147671,7 @@ zhongyinankexue	中医男科学	707
 zhongyinbandao	中印半岛	226
 zhongyineikexue	中医内科学	718
 zhongying	中英	194
+zhongyingwen	中英文	973
 zhongyinjie	重音节	232
 zhongyiqingli	重义轻利	405
 zhongyirkexue	中医儿科学	713

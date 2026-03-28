@@ -1,7 +1,7 @@
 # External Build Report
 
 - profile: unihan_single
-- generated_at_utc: 2026-03-28T12:06:48+00:00
+- generated_at_utc: 2026-03-28T12:29:07+00:00
 - min_hanzi: 1
 - max_entries: unlimited
 
@@ -173,7 +173,7 @@
 - sc_script_filtered_entries: 0
 - sc_script_filtered_total_entries: 23910
 - sc_single_char_leading_adjusted: 375
-- sc_single_char_leading_delta_total: 19908
+- sc_single_char_leading_delta_total: 19920
 - sc_single_char_reading_preference_adjusted: 1482
 - sc_single_char_reading_preference_delta_total: 22814
 - sc_single_char_reading_removed: 1
@@ -196,9 +196,9 @@
 - tc_homophone_daily_phrase_short_non_daily_damped: 0
 - tc_homophone_dominant_common_boosted: 0
 - tc_homophone_dominant_common_damped: 0
-- tc_homophone_entries_adjusted: 23945
-- tc_homophone_entries_boosted: 3814
-- tc_homophone_entries_damped: 20131
+- tc_homophone_entries_adjusted: 23946
+- tc_homophone_entries_boosted: 3822
+- tc_homophone_entries_damped: 20124
 - tc_homophone_inflated_short_penalized: 0
 - tc_homophone_literary_penalized: 0
 - tc_homophone_modernity_risk_penalized: 0
@@ -231,9 +231,9 @@
 - tc_script_filtered_entries: 0
 - tc_script_filtered_total_entries: 24065
 - tc_single_char_leading_adjusted: 335
-- tc_single_char_leading_delta_total: 18108
-- tc_single_char_reading_preference_adjusted: 1842
-- tc_single_char_reading_preference_delta_total: 40966
+- tc_single_char_leading_delta_total: 18120
+- tc_single_char_reading_preference_adjusted: 1841
+- tc_single_char_reading_preference_delta_total: 40522
 - tc_single_char_reading_removed: 1
 - total_lines: 49191
 - unihan_core_size: 18816
@@ -281,10 +281,10 @@
 - vertical_payload_titles_kept: 2822
 - vertical_payload_titles_skipped_duplicate: 106
 - vertical_payload_titles_skipped_filter: 4354396
-- vertical_support_excluded_sc: 48075
-- vertical_support_excluded_tc: 49637
-- vertical_term_kept: 290
-- vertical_term_rows: 290
+- vertical_support_excluded_sc: 48078
+- vertical_support_excluded_tc: 49640
+- vertical_term_kept: 293
+- vertical_term_rows: 293
 - vertical_term_skipped_malformed: 0
 - vertical_term_skipped_non_cjk: 0
 - vertical_term_skipped_short: 0
@@ -361,8 +361,8 @@
 | 要 | yao | 708 | 741 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.877 | - | weak-usage,high-modernity-risk |
 | 好 | hao | 707 | 740 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.876 | - | weak-usage,high-modernity-risk |
 | 和 | he | 709 | 738 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.905 | - | weak-usage,high-modernity-risk |
+| 就 | jiu | 702 | 736 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.874 | - | weak-usage,high-modernity-risk |
 | 能 | neng | 698 | 732 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.873 | - | weak-usage,high-modernity-risk |
 | 下 | xia | 698 | 732 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.873 | - | weak-usage,high-modernity-risk |
 | 来 | lai | 697 | 731 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.872 | - | weak-usage,high-modernity-risk |
 | 主 | zhu | 697 | 731 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.872 | - | weak-usage,high-modernity-risk |
-| 看 | kan | 696 | 730 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.872 | - | weak-usage,high-modernity-risk |
