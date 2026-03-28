@@ -1150,6 +1150,55 @@ def _compute_medicine_vertical_penalty(text: str, source_id: str) -> int:
     return max(0, base_penalty - relief)
 
 
+def _compute_generic_vertical_penalty(
+    text: str,
+    layer_id: str,
+    source_id: str,
+) -> int:
+    text_len = _cjk_len(text)
+    if layer_id == "computing":
+        if text_len <= 2:
+            base_penalty = 210
+        elif text_len == 3:
+            base_penalty = 132
+        elif text_len == 4:
+            base_penalty = 72
+        elif text_len == 5:
+            base_penalty = 34
+        else:
+            base_penalty = 14
+        if source_id == "project-curated-vertical-computing":
+            relief = 28 if text_len <= 4 else 8
+        else:
+            relief = 0
+    elif layer_id in {"proper_nouns", "fiction_entities"}:
+        if text_len <= 2:
+            base_penalty = 96
+        elif text_len == 3:
+            base_penalty = 54
+        elif text_len == 4:
+            base_penalty = 28
+        elif text_len == 5:
+            base_penalty = 14
+        else:
+            base_penalty = 6
+        relief = 22 if text_len <= 4 else 6
+    else:
+        if text_len <= 2:
+            base_penalty = 96
+        elif text_len == 3:
+            base_penalty = 54
+        elif text_len == 4:
+            base_penalty = 28
+        elif text_len == 5:
+            base_penalty = 14
+        else:
+            base_penalty = 6
+        relief = 12 if text_len <= 4 else 4
+
+    return max(0, base_penalty - relief)
+
+
 def _apply_explicit_term_pinyin_overrides(
     mapping: Dict[Tuple[str, str], int],
     overrides: Dict[str, str],
@@ -2567,6 +2616,17 @@ def _is_short_everyday_term_candidate(
     if pos_tag.startswith(("d", "r", "p", "u", "c", "f", "s", "t")):
         return char_score >= 0.40 or bounded_usage >= 0.10 or bounded_jieba >= 0.10
 
+    if pos_tag.startswith(("v", "a")):
+        return (
+            bounded_usage >= 0.12
+            or bounded_jieba >= 0.12
+            or (bounded_usage >= 0.08 and bounded_jieba >= 0.08)
+            or (
+                source_hits >= 2
+                and (bounded_usage >= 0.08 or bounded_jieba >= 0.08)
+            )
+        )
+
     return False
 
 
@@ -3150,6 +3210,7 @@ def _rerank_homophone_buckets(
         f"{stats_prefix}_homophone_short_everyday_boosted": 0,
         f"{stats_prefix}_homophone_short_everyday_non_daily_damped": 0,
         f"{stats_prefix}_homophone_short_popular_wiki_boosted": 0,
+        f"{stats_prefix}_homophone_short_popular_named_bucket_damped": 0,
         f"{stats_prefix}_homophone_daily_phrase_short_non_daily_damped": 0,
         f"{stats_prefix}_homophone_preferred_term_boosted": 0,
         f"{stats_prefix}_homophone_preferred_term_damped": 0,
@@ -3184,6 +3245,7 @@ def _rerank_homophone_buckets(
         bucket_has_daily_number_term = False
         bucket_has_short_everyday_term = False
         bucket_has_preferred_term = False
+        bucket_has_short_popular_named_term = False
         bucket_dominant_common_text = ""
         bucket_dominant_common_signal = -1.0
         bucket_dominant_common_runner_up = -1.0
@@ -3257,6 +3319,17 @@ def _rerank_homophone_buckets(
                 bucket_has_daily_number_term = True
             if text in preferred_terms:
                 bucket_has_preferred_term = True
+            if (
+                text_len <= 2
+                and _is_named_entity_pos(pos_tag)
+                and (wiki_hit > 0.0 or pageview_score >= 0.12)
+                and (
+                    usage_score >= 0.18
+                    or jieba_direct_score >= 0.10
+                    or source_hits >= 2
+                )
+            ):
+                bucket_has_short_popular_named_term = True
         for text, weight in items:
             text_len = _cjk_len(text)
             usage_score = min(1.0, max(0.0, usage_score_map.get(text, 0.0)))
@@ -3826,6 +3899,24 @@ def _rerank_homophone_buckets(
                 stats[f"{stats_prefix}_homophone_short_everyday_non_daily_damped"] += 1
 
             if (
+                bucket_has_short_everyday_term
+                and text_len <= 2
+                and _is_noun_pos(pos_tag)
+                and not _is_named_entity_pos(pos_tag)
+                and not daily_phrase_support
+                and not short_everyday_support
+                and family_support_score >= 0.24
+                and usage_score < 0.22
+                and jieba_direct_score < 0.18
+                and pageview_score < 0.12
+                and not wiki_support
+            ):
+                delta -= 72
+                stats[
+                    f"{stats_prefix}_homophone_short_everyday_non_daily_damped"
+                ] += 1
+
+            if (
                 text_len <= 2
                 and wiki_support
                 and pageview_score >= 0.12
@@ -3833,6 +3924,22 @@ def _rerank_homophone_buckets(
             ):
                 delta += 160
                 stats[f"{stats_prefix}_homophone_short_popular_wiki_boosted"] += 1
+
+            if (
+                bucket_has_short_popular_named_term
+                and text_len <= 2
+                and not _is_named_entity_pos(pos_tag)
+                and not daily_phrase_support
+                and not short_everyday_support
+                and usage_score < 0.24
+                and jieba_direct_score < 0.16
+                and pageview_score < 0.08
+                and family_support_score < 0.48
+            ):
+                delta -= 76
+                stats[
+                    f"{stats_prefix}_homophone_short_popular_named_bucket_damped"
+                ] += 1
 
             if bucket_has_daily_number_term and daily_number_support:
                 delta += 28 if text_len <= 2 else 18
@@ -9150,6 +9257,14 @@ def _reinforce_vertical_tc_terms(
             base_source_hits = 2 if source_id == "wikidata-medical-mesh-zh" else 1
             extra_bonus = 0 if _cjk_len(tc_candidate) <= 4 else 4
             allow_existing_boost = _cjk_len(tc_candidate) >= 4 or _is_medical_specific_term(tc_candidate)
+        elif layer_id == "computing":
+            base_source_hits = (
+                2 if source_id == "project-curated-vertical-computing" and _cjk_len(tc_candidate) >= 4 else 1
+            )
+            extra_bonus = 0 if _cjk_len(tc_candidate) <= 4 else 4
+            allow_existing_boost = (
+                source_id == "project-curated-vertical-computing" and _cjk_len(tc_candidate) >= 4
+            )
         else:
             base_source_hits = 3
             extra_bonus = 18 if _cjk_len(tc_candidate) <= 4 else 10
@@ -9181,6 +9296,10 @@ def _reinforce_vertical_tc_terms(
                 tc_weight = max(1, tc_weight - penalty)
                 stats["vertical_medicine_penalized_tc"] += 1
                 stats["vertical_medicine_penalty_tc_total"] += penalty
+        else:
+            penalty = _compute_generic_vertical_penalty(tc_candidate, layer_id, source_id)
+            if penalty > 0:
+                tc_weight = max(1, tc_weight - penalty)
 
         tc_key = (pinyin, tc_candidate)
         existing_tc_weight = tc.get(tc_key)
@@ -9267,6 +9386,13 @@ def _augment_with_vertical_terms(
             short_bonus = 0
             long_bonus = 4
             allow_existing_boost = _cjk_len(sc_word) >= 4 or _is_medical_specific_term(sc_word)
+        elif layer_id == "computing":
+            source_hits = 2 if source_id == "project-curated-vertical-computing" and _cjk_len(sc_word) >= 4 else 1
+            short_bonus = 0
+            long_bonus = 4
+            allow_existing_boost = (
+                source_id == "project-curated-vertical-computing" and _cjk_len(sc_word) >= 4
+            )
         else:
             source_hits = 3
             short_bonus = 18
@@ -9299,6 +9425,10 @@ def _augment_with_vertical_terms(
                 sc_weight = max(1, sc_weight - penalty)
                 stats["vertical_medicine_penalized_sc"] += 1
                 stats["vertical_medicine_penalty_sc_total"] += penalty
+        else:
+            penalty = _compute_generic_vertical_penalty(sc_word, layer_id, source_id)
+            if penalty > 0:
+                sc_weight = max(1, sc_weight - penalty)
         sc_key = (pinyin, sc_word)
         existing_sc_weight = sc.get(sc_key)
         if existing_sc_weight is None:
@@ -9355,6 +9485,10 @@ def _augment_with_vertical_terms(
                 tc_weight = max(1, tc_weight - penalty)
                 stats["vertical_medicine_penalized_tc"] += 1
                 stats["vertical_medicine_penalty_tc_total"] += penalty
+        else:
+            penalty = _compute_generic_vertical_penalty(tc_candidate, layer_id, source_id)
+            if penalty > 0:
+                tc_weight = max(1, tc_weight - penalty)
         tc_key = (pinyin, tc_candidate)
         existing_tc_weight = tc.get(tc_key)
         if existing_tc_weight is None:

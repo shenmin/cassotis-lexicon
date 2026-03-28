@@ -1,7 +1,7 @@
 # External Build Report
 
 - profile: unihan_single
-- generated_at_utc: 2026-03-27T13:45:30+00:00
+- generated_at_utc: 2026-03-28T04:42:33+00:00
 - min_hanzi: 1
 - max_entries: unlimited
 
@@ -86,9 +86,9 @@
 - sc_homophone_daily_phrase_short_non_daily_damped: 0
 - sc_homophone_dominant_common_boosted: 0
 - sc_homophone_dominant_common_damped: 0
-- sc_homophone_entries_adjusted: 23814
-- sc_homophone_entries_boosted: 3649
-- sc_homophone_entries_damped: 20165
+- sc_homophone_entries_adjusted: 23819
+- sc_homophone_entries_boosted: 3652
+- sc_homophone_entries_damped: 20167
 - sc_homophone_inflated_short_penalized: 0
 - sc_homophone_literary_penalized: 0
 - sc_homophone_modernity_risk_penalized: 0
@@ -97,6 +97,7 @@
 - sc_homophone_rare_form_penalized: 0
 - sc_homophone_short_everyday_boosted: 0
 - sc_homophone_short_everyday_non_daily_damped: 0
+- sc_homophone_short_popular_named_bucket_damped: 0
 - sc_homophone_short_popular_wiki_boosted: 0
 - sc_homophone_sparse_penalized: 0
 - sc_homophone_written_tail_penalized: 0
@@ -111,10 +112,10 @@
 - sc_multi_pronunciation_terms: 0
 - sc_script_filtered_entries: 0
 - sc_script_filtered_total_entries: 23910
-- sc_single_char_leading_adjusted: 395
-- sc_single_char_leading_delta_total: 20688
-- sc_single_char_reading_preference_adjusted: 1490
-- sc_single_char_reading_preference_delta_total: 20861
+- sc_single_char_leading_adjusted: 393
+- sc_single_char_leading_delta_total: 20700
+- sc_single_char_reading_preference_adjusted: 1491
+- sc_single_char_reading_preference_delta_total: 21036
 - sc_single_char_reading_removed: 1
 - tc_char_normalized_converted_entries: 18
 - tc_char_normalized_total_entries: 24065
@@ -135,9 +136,9 @@
 - tc_homophone_daily_phrase_short_non_daily_damped: 0
 - tc_homophone_dominant_common_boosted: 0
 - tc_homophone_dominant_common_damped: 0
-- tc_homophone_entries_adjusted: 23937
-- tc_homophone_entries_boosted: 4010
-- tc_homophone_entries_damped: 19927
+- tc_homophone_entries_adjusted: 23938
+- tc_homophone_entries_boosted: 4008
+- tc_homophone_entries_damped: 19930
 - tc_homophone_inflated_short_penalized: 0
 - tc_homophone_literary_penalized: 0
 - tc_homophone_modernity_risk_penalized: 0
@@ -151,6 +152,7 @@
 - tc_homophone_sc_guided_penalty_total: 0
 - tc_homophone_short_everyday_boosted: 0
 - tc_homophone_short_everyday_non_daily_damped: 0
+- tc_homophone_short_popular_named_bucket_damped: 0
 - tc_homophone_short_popular_wiki_boosted: 0
 - tc_homophone_sparse_penalized: 0
 - tc_homophone_written_tail_penalized: 0
@@ -168,17 +170,17 @@
 - tc_multi_pronunciation_terms: 0
 - tc_script_filtered_entries: 0
 - tc_script_filtered_total_entries: 24065
-- tc_single_char_leading_adjusted: 357
-- tc_single_char_leading_delta_total: 18864
-- tc_single_char_reading_preference_adjusted: 1849
-- tc_single_char_reading_preference_delta_total: 34469
+- tc_single_char_leading_adjusted: 360
+- tc_single_char_leading_delta_total: 18984
+- tc_single_char_reading_preference_adjusted: 1850
+- tc_single_char_reading_preference_delta_total: 34779
 - tc_single_char_reading_removed: 1
 - total_lines: 49191
 - unihan_core_size: 18816
-- unihan_family_support_boosted_sc: 5011
-- unihan_family_support_boosted_tc: 5227
-- unihan_family_support_terms_sc: 5849
-- unihan_family_support_terms_tc: 6084
+- unihan_family_support_boosted_sc: 5023
+- unihan_family_support_boosted_tc: 5239
+- unihan_family_support_terms_sc: 5847
+- unihan_family_support_terms_tc: 6086
 - unihan_frequency_size: 0
 - unihan_grade_size: 2632
 - unihan_leading_support_terms_sc: 4774
@@ -186,7 +188,7 @@
 - unihan_map_size: 26711
 - unihan_pinlu_size: 3799
 - unihan_reading_support_terms_sc: 1542
-- unihan_reading_support_terms_tc: 1983
+- unihan_reading_support_terms_tc: 1984
 - unihan_readings_chars: 26711
 - unihan_readings_pairs: 33908
 - unihan_sc_only_chars: 2766
@@ -204,10 +206,10 @@
 - vertical_mesh_descriptors_nonmedical: 12154
 - vertical_mesh_descriptors_total: 62220
 - vertical_mesh_missing_payload: 0
-- vertical_support_excluded_sc: 34903
-- vertical_support_excluded_tc: 36455
-- vertical_term_kept: 235
-- vertical_term_rows: 235
+- vertical_support_excluded_sc: 34905
+- vertical_support_excluded_tc: 36457
+- vertical_term_kept: 237
+- vertical_term_rows: 237
 - vertical_term_skipped_malformed: 0
 - vertical_term_skipped_non_cjk: 0
 - vertical_term_skipped_short: 0

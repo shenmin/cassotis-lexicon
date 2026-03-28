@@ -4,6 +4,7 @@
 # platforms, and other real-world named entities that should remain inputable
 # without inheriting the everyday/chat preferred-term path.
 抖音	抖音	0.92	douyin
+微信	微信	0.94	weixin
 火山引擎	火山引擎	0.86	huoshanyinqing
 飞书	飛書	0.88	feishu
 钉钉	釘釘	0.88	dingding
