@@ -25318,7 +25318,7 @@ diangan	電感	252
 diangangqin	電鋼琴	379
 dianganyou	碘甘油	481
 diangao	墊高	309
-diangao	電告	231
+diangao	電告	230
 diange	點歌	333
 diangong	電工	450
 diangonglv	電功率	438
@@ -38795,11 +38795,11 @@ fuyaozhishang	扶搖直上	455
 fuyazheng	氟牙症	702
 fuye	複葉	510
 fuye	副業	470
-fuyi	復議	759
 fuyi	輔以	757
-fuyi	複議	731
-fuyi	服役	729
-fuyi	副翼	314
+fuyi	復議	741
+fuyi	服役	709
+fuyi	複議	708
+fuyi	副翼	229
 fuyiceng	負一層	232
 fuyifudingna	伏伊伏丁那	505
 fuyilou	負一樓	232
@@ -47104,7 +47104,7 @@ guyoumingci	固有名詞	260
 guyu	古語	361
 guyuan	固原	794
 guyuan	僱員	366
-guyuan	故園	56
+guyuan	故園	57
 guyuandequ	固原地区	834
 guyuandequ	固原地區	235
 guyuankeli	固元颗粒	921
@@ -64433,6 +64433,7 @@ jiubingchengyi	久病成醫	408
 jiubingfufa	舊病復發	437
 jiubu	舊部	424
 jiubucuole	就不錯了	981
+jiubuhui	就不會	973
 jiucai	韭菜	860
 jiucai	酒菜	303
 jiucaihezi	韭菜盒子	260
@@ -64542,7 +64543,8 @@ jiuhuazhichuangshuan	九華痔瘡栓	375
 jiuhuche	救護車	854
 jiuhuche	救护车	803
 jiuhucheliang	救護車輛	770
-jiuhui	酒會	437
+jiuhui	就會	1000
+jiuhui	酒會	1
 jiuhundejiuyuan	九魂的久遠	899
 jiuhuo	救活	884
 jiuhuo	救火	303
@@ -66863,7 +66865,7 @@ jushou	鉅獸	859
 jushou	舉手	819
 jushou	據守	754
 jushou	聚首	406
-jushou	拒收	333
+jushou	拒收	334
 jushou	居首	133
 jushoutouzu	舉手投足	469
 jushouzhilao	舉手之勞	461
@@ -82393,7 +82395,7 @@ maosui	毛遂	194
 maosuizijian	毛遂自薦	272
 maosun	卯榫	317
 maosuxiang	毛塑像	635
-maotai	茅臺	880
+maotai	茅臺	881
 maotaijiu	茅臺酒	653
 maotan	毛毯	420
 maotao	酕醄	1
@@ -85568,7 +85570,7 @@ mingpan	命盤	198
 mingpian	名片	771
 mingpian	名篇	193
 mingqi	名氣	454
-mingqian	冥錢	296
+mingqian	冥錢	297
 mingqiang	鳴槍	427
 mingqidemushenjie	冥契的牧神節	935
 mingqin	鳴禽	372
@@ -95227,7 +95229,7 @@ qianbei	謙卑	412
 qianbeixiang	前備箱	232
 qianbi	鉛筆	948
 qianbi	前臂	587
-qianbi	錢幣	386
+qianbi	錢幣	387
 qianbian	前邊	943
 qianbian	欠扁	1
 qianbianr	前邊兒	232
@@ -113504,11 +113506,12 @@ shoujiguanxitong	收集管系統	1000
 shoujiguanxitong	收集管係統	480
 shoujihuanying	手機幻影	868
 shoujika	手機卡	436
-shoujin	受盡	759
-shoujin	收緊	754
-shoujin	手緊	374
-shoujin	手巾	266
-shoujin	手勁	180
+shoujin	收進	1000
+shoujin	受盡	388
+shoujin	收緊	373
+shoujin	手勁	1
+shoujin	手巾	1
+shoujin	手緊	1
 shoujing	受精	1000
 shoujing	受驚	655
 shoujing	授精	297
@@ -113651,7 +113654,8 @@ shoupin	受聘	434
 shoupinyu	受聘於	232
 shouqi	收起	1000
 shouqi	受氣	55
-shouqian	手欠	198
+shouqian	收錢	1000
+shouqianba	收錢吧	969
 shouqiang	手槍	449
 shouqianshou	手牽手	362
 shouqiao	手巧	332
@@ -113668,7 +113672,8 @@ shouquanfanwei	授權範圍	260
 shouquanling	授權令	232
 shouquyizhi	首屈一指	484
 shoure	受熱	457
-shouren	首任	688
+shouren	收人	1000
+shouren	首任	29
 shourenbixusi	獸人必須死	895
 shourenbixusijiefang	獸人必須死解放	836
 shourenyibing	授人以柄	439
@@ -113827,9 +113832,9 @@ shouwuzudao	手舞足蹈	492
 shouwuzudaowali'aozhizao	手舞足蹈瓦里奧製造	1000
 shouwuzudaowali'aozhizao	手舞足蹈瓦裏奧製造	526
 shouxi	首席	975
-shouxi	受洗	256
-shouxia	手下	778
-shouxia	收下	582
+shouxi	受洗	255
+shouxia	手下	777
+shouxia	收下	583
 shouxiabaijiang	手下敗將	387
 shouxialiuqing	手下留情	497
 shouxian	首先	878
@@ -114831,7 +114836,7 @@ shuhuangde	熟荒地	640
 shuhuayu	樹化玉	232
 shuhuazhan	書畫氈	230
 shuhudayi	疏忽大意	501
-shuhui	書會	750
+shuhui	書會	751
 shuhuli	梳乎釐	196
 shuhuzhishou	疏忽職守	260
 shuiba	水壩	608
@@ -115187,8 +115192,8 @@ shuishenhuore	水深火熱	481
 shuisheyao	水蛇腰	399
 shuishezuo	水蛇座	167
 shuishi	水師	446
-shuishou	水手	753
-shuishou	稅收	342
+shuishou	水手	752
+shuishou	稅收	343
 shuishouzhimeng	水手之夢	868
 shuishu	睡鼠	305
 shuishuode	誰說的	966
@@ -125072,8 +125077,8 @@ tuofang	拖放	323
 tuofeng	駝峰	395
 tuofengbi	驼峰鼻	1000
 tuofengmingmingfa	駝峰命名法	289
-tuofu	托付	763
-tuofu	託付	745
+tuofu	托付	757
+tuofu	託付	712
 tuofushaxing	托氟沙星	668
 tuogang	脫肛	357
 tuogao	脫稿	421
@@ -129573,7 +129578,7 @@ wubabituo	戊巴比妥	673
 wubabituona	戊巴比妥钠	936
 wubabituona	戊巴比妥鈉	602
 wubai	五百	1000
-wubai	伍佰	208
+wubai	伍佰	196
 wubaibashi'erjuan	五百八十二捲	399
 wubaibashiwu	五百八十五	371
 wubaidi	烏拜迪	228
@@ -134446,7 +134451,7 @@ xiaopuzidesuan	小鋪子的蒜	569
 xiaoqi	小氣	753
 xiaoqi	消氣	151
 xiaoqian	消遣	952
-xiaoqian	小錢	44
+xiaoqian	小錢	45
 xiaoqianbi	削鉛筆	397
 xiaoqianbiji	削鉛筆機	387
 xiaoqiandekuangrezhuiqiuzhe	小茜的狂熱追求者	866
@@ -153014,7 +153019,7 @@ youxiuchengxuyuan	优秀程序员	1000
 youxiuchengxuyuan	優秀程序員	448
 youxiwaigua	遊戲外掛	755
 youxiwang	遊戲王	1000
-youxiwang	有希望	406
+youxiwang	有希望	407
 youxiwangbeifengyindejiyi	遊戲王被封印的記憶	866
 youxiwangjuedoulianjie	遊戲王決鬥鏈接	762
 youxiwangqixing	遊戲王七星	791
@@ -154996,7 +155001,7 @@ yundongzhijue	運動知覺	353
 yundongzhiliao	運動治療	770
 yundongzhiling	運動指令	770
 yundongzhongban	運動終板	1000
-yundongzhongban	运动终板	927
+yundongzhongban	运动终板	928
 yundongzhongban	運動終闆	434
 yundongzhongshu	运动中枢	973
 yundongzhongshu	運動中樞	333
@@ -157204,7 +157209,7 @@ zhanggongdesuiyue	長工的歲月	569
 zhanggongqu	章貢區	198
 zhanggu	掌骨	971
 zhanggu	长骨	725
-zhanggu	掌故	251
+zhanggu	掌故	252
 zhanggua	張掛	176
 zhangguai	掌摑	198
 zhangguan	掌管	911
@@ -158011,7 +158016,7 @@ zhaoling	詔令	436
 zhaolingxigai	朝令夕改	423
 zhaoliying	趙麗穎	779
 zhaolu	朝露	718
-zhaolu	招錄	260
+zhaolu	招錄	261
 zhaolukezhi	朝露溘至	387
 zhaolusi	趙露思	796
 zhaomafan	找麻煩	472
@@ -158062,6 +158067,7 @@ zhaoqipengbo	朝氣蓬勃	472
 zhaoranruojie	昭然若揭	437
 zhaore	招惹	443
 zhaoren	找人	1000
+zhaoren	招人	1000
 zhaoren	招認	1
 zhaorenxihuan	招人喜歡	260
 zhaori	朝日	536
@@ -168268,8 +168274,8 @@ zuobi	作弊	432
 zuobian	左邊	431
 zuobianqi	坐便器	362
 zuobianr	左邊兒	167
-zuobiao	坐標	897
-zuobiao	座標	723
+zuobiao	座標	1000
+zuobiao	坐標	904
 zuobiaofa	座標法	231
 zuobiaokongjian	坐標空間	260
 zuobiaokongjian	座標空間	258
