@@ -1,67 +1,115 @@
-﻿# Cassotis Lexicon
+# Cassotis Lexicon
 
-[English](README.md) | 绠€浣撲腑鏂?
-Cassotis IME 璇嶅簱鏋勫缓涓庡彂甯冧粨搴撱€?
-## 浠撳簱瀹氫綅
-- 缁存姢璇嶅簱鏋勫缓鑴氭湰銆佹潵婧愭竻鍗曚笌鐢熸垚浜х墿銆?- 鏀寔鈥滃閮ㄥ叕寮€鏉ユ簮鍚姩鈥濅笌鈥滅鏈夎鏂欒瀺鍚堚€濈殑鏋勫缓娴佺▼銆?- 缁存姢褰掑洜涓庡彂甯冭鑼冿紝纭繚涓庡閮ㄥ彂甯冧骇鐗╀竴鑷淬€?
-## 褰撳墠璇嶅簱蹇収锛?026-03-29 鏋勫缓锛?
-| 鏂囦欢 | 瀛椾綋鍙樹綋 | 璇嶆潯鏁?|
-|------|---------|--------|
-| `data/generated/dict_clean_sc.txt` | 绠€浣撲腑鏂囦富璇嶅簱 | 152,860 |
-| `data/generated/dict_clean_tc.txt` | 绻佷綋涓枃涓昏瘝搴?| 168,921 |
-| `data/generated/dict_unihan_sc.txt` | 绠€浣撳崟瀛楋紙Unihan锛?| 23,909 |
-| `data/generated/dict_unihan_tc.txt` | 绻佷綋鍗曞瓧锛圲nihan锛?| 24,064 |
+<p align="center">
+  <img src="cassotis_ime_yanquan.png" alt="Cassotis IME logo" width="280">
+</p>
 
-## 澶栭儴鏉ユ簮涓庨」鐩唴琛ュ厖锛坄external_broad` 閰嶇疆锛?
-### 澶栭儴鏉ユ簮
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-CC%20BY--SA%204.0-blue" alt="License: CC BY-SA 4.0"></a>
+</p>
 
-| 鏉ユ簮 | 璁稿彲璇?| 鐢ㄩ€?|
+[English](README.md) | 简体中文
+
+Cassotis IME 的词库构建与发布仓库。
+
+## 仓库职责
+- 维护词库构建脚本、清单文件和生成产物。
+- 支持外部来源引导构建和私有语料整合流程。
+- 保持署名文件与公开导出产物一致。
+
+## 当前词库快照（2026-03-29 构建）
+
+| 文件 | 变体 | 词条数 |
+|------|------|--------|
+| `data/generated/dict_clean_sc.txt` | 简体主词库 | 152,920 |
+| `data/generated/dict_clean_tc.txt` | 繁体主词库 | 168,981 |
+| `data/generated/dict_unihan_sc.txt` | 简体单字（Unihan） | 23,909 |
+| `data/generated/dict_unihan_tc.txt` | 繁体单字（Unihan） | 24,064 |
+
+## 外部来源与项目维护补充层（`external_broad`）
+
+### 外部来源
+
+| 来源 | 许可证 | 用途 |
 |------|--------|------|
-| Unicode Unihan | Unicode-3.0 | 鍗曞瓧璇婚煶鍏滃簳涓庡崟瀛楄瘝搴?|
-| CC-CEDICT | CC BY-SA 4.0 | 鏍稿績璇嶆潯涓庢嫾闊?|
-| OpenCC STPhrases | Apache-2.0 | 绠€绻佺煭璇槧灏?|
-| THUOCL | THUOCL 鑷畾涔夊紑鏀炬潯娆?| 鎵╁睍瑕嗙洊涓?DF 缁熻 |
-| jieba `dict.txt` | MIT | 棰戠巼鎺掑簭淇″彿 |
-| 涓枃缁村熀璇嶅吀鏍囬锛坣s0锛?| CC BY-SA 4.0 | 鏃ュ父琛ㄨ揪銆佸彛璇娉曚笌鑱婂ぉ鐭绉嶅瓙 |
-| 涓枃缁村熀鏍囬锛坣s0锛?| CC BY-SA 4.0 | 鍛藉悕瀹炰綋瑕嗙洊涓庨珮鍙俊涓撳悕绉嶅瓙 |
-| Wikimedia Pageviews Top锛坺h.wikipedia锛?| CC BY-SA 4.0 | 鐪熷疄鐑害淇″彿 |
-| 缁忚繃绛涢€夌殑 `THUOCL_IT` 瀛愰泦 | THUOCL 鑷畾涔夊紑鏀炬潯娆?| 浣滀负璁＄畻鏈哄瀭鐩磋瘝搴撳€欓€夋潵婧愶紱瀵煎叆鍓嶄細鍏堣繃婊わ紝涓嶆寜鏃ュ父鑱婂ぉ璇嶅眰澶勭悊 |
-| Wikidata 涓枃娓告垙鍚?/ 绯诲垪 / 绫诲瀷 / 涓绘満瀹炰綋 | CC0-1.0 | 浣滀负鐙珛娓告垙鍨傜洿灞傜殑涓昏浣滃搧鍚?瀹炰綋鏉ユ簮 |
-| 缁忚繃绛涢€夌殑涓枃缁村熀璇嶅吀 / 涓枃缁村熀娓告垙璇嶆眹鏍囬 | CC BY-SA 4.0 | 浣滀负娓告垙鍨傜洿灞傜殑杞婚噺娓告垙璇嶆眹琛ュ厖锛屽鍏ユ椂浼氫繚瀹堣繃婊?|
-| Godot Docs 涓枃鏍囬绱㈠紩 | CC BY 3.0 | 浣滀负鐙珛娓告垙寮€鍙戞湳璇眰鐨勪富瑕佹湳璇潵婧愶紝瀵煎叆鍓嶄細鍏堣繃婊?|
-| Wikidata 涓枃娓告垙寮曟搸瀹炰綋 | CC0-1.0 | 浣滀负鐙珛娓告垙寮€鍙戞湳璇眰鐨勬父鎴忓紩鎿庡疄浣撹ˉ鍏?|
-| MeSH descriptor catalog | NLM MeSH 鏉℃ | 浣滀负鍖诲鍨傜洿璇嶅簱鐨勫畼鏂规蹇电櫧鍚嶅崟锛岀敤鏉ユ妸鍖诲灞傜粦瀹氬埌鍙瘑鍒殑 MeSH 鏈 |
-| Wikidata 涓枃鍖诲瀹炰綋锛圡eSH 鍏宠仈锛?| CC0-1.0 | 鎻愪緵涓?MeSH 鎻忚堪绗﹀叧鑱旂殑涓枃鍖诲鍚嶇О涓庡埆鍚嶏紝浣滀负鍖诲瀹炰綋涓诲眰 |
-| 缁忚繃绛涢€夌殑 `THUOCL_medical` 瀛愰泦 | THUOCL 鑷畾涔夊紑鏀炬潯娆?| 浣滀负鍖诲鍨傜洿璇嶅簱鍊欓€夋潵婧愶紱瀵煎叆鍓嶄細杩囨护骞堕噰鐢ㄦ瘮 MeSH 鍏宠仈鍖诲灞傛洿淇濆畧鐨勬潈閲?|
+| Unicode Unihan | Unicode-3.0 | 单字级普通话回退与单字词库 |
+| CC-CEDICT | CC BY-SA 4.0 | 核心词库词条与拼音 |
+| OpenCC STPhrases | Apache-2.0 | 简繁短语映射 |
+| THUOCL | THUOCL custom open terms | 扩展覆盖与 DF 统计信号 |
+| jieba `dict.txt` | MIT | 频率排序信号 |
+| Wiktionary 中文标题（ns0） | CC BY-SA 4.0 | 日常表达、口语短语和聊天类词汇种子 |
+| Wikipedia 中文标题（ns0） | CC BY-SA 4.0 | 专名覆盖与高置信专有名词种子 |
+| Wikimedia Pageviews Top（zh.wikipedia） | CC BY-SA 4.0 | 真实世界热度信号 |
+| 过滤后的 `THUOCL_IT` 子集 | THUOCL custom open terms | 计算机 vertical 候选来源，导入前过滤，避免与日常/聊天词层混在一起 |
+| Wikidata 中文电子游戏 / 系列 / 类型 / 主机 | CC0-1.0 | 隔离式 gaming vertical 的主实体来源 |
+| 过滤后的 Wiktionary / Wikipedia 中文游戏词条标题 | CC BY-SA 4.0 | 以保守方式导入 gaming vertical 的轻量词汇补充 |
+| Godot Docs zh-cn 标题索引 | CC BY 3.0 | game-development vertical 的主术语来源，导入前经过过滤 |
+| Wikidata 中文游戏引擎 | CC0-1.0 | game-development vertical 的游戏引擎实体补充 |
+| MeSH descriptor catalog | NLM MeSH terms and conditions | 医学 vertical 的 MeSH 概念白名单 |
+| Wikidata 中文医学实体（MeSH 关联） | CC0-1.0 | 作为医学实体主层导入的中文医学标签与别名 |
+| 过滤后的 `THUOCL_medical` 子集 | THUOCL custom open terms | 医学 vertical 候选来源，过滤后并以比 MeSH 主层更保守的权重使用 |
 
-### 椤圭洰鍐呰ˉ鍏?
-| 琛ュ厖灞?| 璁稿彲璇?| 鐢ㄩ€?|
+### 项目维护补充层
+
+| 补充层 | 许可证 | 用途 |
 |--------|--------|------|
-| Cassotis 椤圭洰鍐呮棩甯?鑱婂ぉ璇嶈〃 | 浠撳簱璁稿彲璇侊紙椤圭洰鑷淮鎶わ級 | 琛ュ叆鍏紑鏉ユ簮浠嶅鏄撴紡鎺夈€佷絾瀵规棩甯歌緭鍏ヤ环鍊煎緢楂樼殑甯哥敤璇存硶 |
-| Cassotis 椤圭洰鍐呰櫄鏋勫疄浣撹瘝琛?| 浠撳簱璁稿彲璇侊紙椤圭洰鑷淮鎶わ級 | 瀛樻斁灏忚浜虹墿銆佷綔鍝佸悕銆佷綔鍝佸唴缁勭粐涓庣墿浠剁瓑铏氭瀯涓撳悕锛屽拰鏃ュ父琛ㄨ揪銆佷竴鑸笓鍚嶅垎灞?|
-| Cassotis 椤圭洰鍐呬笓鍚嶈瘝琛?| 浠撳簱璁稿彲璇侊紙椤圭洰鑷淮鎶わ級 | 椤圭洰鍐呯淮鎶ょ殑鐜板疄椋庢牸浜哄悕銆佹満鏋勫悕銆佸搧鐗屽悕绛変竴鑸笓鍚嶈瘝琛紱涓嶈蛋鏃ュ父鑱婂ぉ璇嶇殑 preferred-term 鎺掑簭閾?|
-| Cassotis 椤圭洰鍐呰绠楁満璇嶈〃 | 浠撳簱璁稿彲璇侊紙椤圭洰鑷淮鎶わ級 | 椤圭洰鍐呯淮鎶ょ殑璁＄畻鏈?涓撲笟鏈璇嶈〃锛屼緵鐙珛鐨勮绠楁満鍨傜洿灞備娇鐢紱涓嶈蛋鏃ュ父鑱婂ぉ璇嶇殑 preferred-term 鎺掑簭閾?|
-| Cassotis 椤圭洰鍐呮父鎴忚瘝琛?| 浠撳簱璁稿彲璇侊紙椤圭洰鑷淮鎶わ級 | 椤圭洰鍐呯淮鎶ょ殑娓告垙琛屼笟璇嶆眹琛ュ厖锛屼緵鐙珛鐨勬父鎴忓瀭鐩村眰浣跨敤锛涗笉璧版棩甯歌亰澶╄瘝鐨?preferred-term 鎺掑簭閾?|
-| Cassotis 椤圭洰鍐呮父鎴忓紑鍙戣瘝琛?| 浠撳簱璁稿彲璇侊紙椤圭洰鑷淮鎶わ級 | 椤圭洰鍐呯淮鎶ょ殑娓告垙寮€鍙戞湳璇ˉ鍏咃紝渚涚嫭绔嬬殑娓告垙寮€鍙戞湳璇眰浣跨敤锛涗笉璧版棩甯歌亰澶╄瘝鐨?preferred-term 鎺掑簭閾?|
-| Cassotis 椤圭洰鍐呭尰瀛﹁瘝琛?| 浠撳簱璁稿彲璇侊紙椤圭洰鑷淮鎶わ級 | 椤圭洰鍐呯淮鎶ょ殑鍖诲琛ュ厖璇嶈〃锛岀敤浜庨珮浠峰€煎尰瀛﹁瘝鍜屾樉寮忔嫾闊虫牎姝ｏ紱涓嶈蛋鏃ュ父鑱婂ぉ璇嶇殑 preferred-term 鎺掑簭閾?|
+| Cassotis 日常/聊天短语补充 | 仓库许可证（项目自编写） | 对高价值的日常/聊天表达做稳定补充，弥补公开来源遗漏 |
+| Cassotis 小说实体补充 | 仓库许可证（项目自编写） | 项目维护的小说人物、作品名和世界观实体列表，与日常/聊天词及一般专名隔离 |
+| Cassotis 一般专名补充 | 仓库许可证（项目自编写） | 项目维护的人名、头衔、组织、品牌等一般专名列表，不与日常/聊天优先路径混用 |
+| Cassotis 计算机术语补充 | 仓库许可证（项目自编写） | 隔离式 computing vertical 使用的项目维护计算机/领域术语列表 |
+| Cassotis 政务民生术语补充 | 仓库许可证（项目自编写） | 面向税务、房产、户籍和公共服务场景的隔离式 civic vertical 术语层，不走日常/聊天优先路径 |
+| Cassotis 游戏术语补充 | 仓库许可证（项目自编写） | 隔离式 gaming vertical 使用的项目维护游戏术语补充 |
+| Cassotis 游戏开发术语补充 | 仓库许可证（项目自编写） | 隔离式 game-development vertical 使用的项目维护术语补充 |
+| Cassotis 医学术语补充 | 仓库许可证（项目自编写） | 用于高价值医学词汇和显式拼音修正的项目维护医学补充层，与日常/聊天优先路径隔离 |
 
-璇﹁锛?- `manifests/sources.public.yml`
+参见：
+- `manifests/sources.public.yml`
 - `attribution/ATTRIBUTION.md`
 
-## 澶栭儴璇嶅簱瀵煎叆鍚庣殑浼樺寲涓庤繃婊ゆ€濊矾
-- 瀵瑰鏉ユ簮璇嶆潯鍋氭牸寮忓綊涓€銆佸幓閲嶅悎骞讹紝缁熶竴鎷奸煶涓庢枃鏈敭銆?- `weight` 鐢卞绫讳俊鍙峰叡鍚屾瀯鎴愶紙鍩虹棰戠巼銆丏F/璇嶉渚т俊鍙枫€佽闂儹搴︼級锛屽苟鍋氬钩琛＄缉鏀俱€?- 浠庡凡缁忚鍏紑鏉ユ簮鏀寔鐨勮緝闀垮彛璇〃杈句腑锛岃嚜鍔ㄦ淳鐢熸洿鐭殑鏃ュ父/鑱婂ぉ鍓嶇紑锛岃甯歌鍙ュ紡杩炴帴璇嶆洿瀹规槗鎵撳嚭鏉ャ€?- 瀵逛綆淇″彿鍛藉悕瀹炰綋銆佺枒浼间汉鍚嶅拰闀垮熬鍣０鍋氭姂鍒讹紝鍑忓皯鐢熷兓涓撳悕鎸ゅ崰甯哥敤璇嶆帓搴忋€?- 搴旂敤闈㈠悜杈撳叆娉曞満鏅殑鏈夋晥鎬ц繃婊わ紙濡傚彲娓叉煋鎬с€佸瓧褰㈣剼鏈害鏉燂級锛屾彁鍗?Windows 鍦烘櫙鍙敤鎬с€?- 閫氳繃瑙勫垯淇鍜屽洖褰掓牱鏈牎楠岋紝淇濇寔鍚岄煶绔炰簤涓庢暣浣撴帓搴忕ǔ瀹氥€?
-## 瑕嗙洊閲嶇偣
-- 閲嶇偣琛ュ己鑳藉鏄捐憲鎻愬崌鏃ュ父鑱婂ぉ椤虹晠搴︾殑甯哥敤璇存硶锛岃€屼笉鍙槸杩介€愮綉缁滅儹璇嶃€?- 浼樺厛鎭㈠鍙ュ紡琛旀帴璇嶃€佽姘旂浉鍏崇煭璇€佸彛璇寲琛ㄨ揪绛夐珮棰戞棩甯歌緭鍏ュ崟鍏冦€?- 瀵瑰叕寮€鏉ユ簮浠嶇粡甯告紡鎺夈€佷絾杈撳叆浠峰€煎緢楂樼殑鏃ュ父鐭锛屼繚鐣欎竴灏忓眰椤圭洰鍐呯淮鎶ょ殑琛ュ厖璇嶈〃銆?- 灏嗕笓鍚嶄笌鐭湡鐑偣瑙嗕负杈呭姪淇″彿锛岄伩鍏嶆尋鍗犳棩甯哥敤璇殑鏍稿績鎺掑簭绌洪棿銆?
-## 鍒嗗眰鍘熷垯
-- `manifests/curated_daily_phrases.tsv` 鍙敤浜庢棩甯?鑱婂ぉ琛ㄨ揪锛岃繖涓€灞備細鍙備笌鏃ュ父杈撳叆鐨?preferred-term 鍋忕疆銆?- `manifests/vertical_layers.public.json` 鐢ㄦ潵澹版槑鐙珛鐨勫瀭鐩存湳璇眰銆?- `manifests/vertical/*.tsv` 鐢ㄦ潵瀛樻斁椤圭洰鍐呯淮鎶ょ殑鍨傜洿璇嶈〃锛屼緥濡傝櫄鏋勫疄浣撱€佷笓鍚嶈瘝琛ㄣ€佽绠楁満璇嶆眹銆佹父鎴忚瘝姹囧拰娓告垙寮€鍙戞湳璇€?- 鍨傜洿灞傚彲浠ヨˉ鍏ヤ笓涓氳瘝锛屼絾涓嶄細缁ф壙鏃ュ父/鑱婂ぉ璇嶉偅濂?preferred-term 鎺掑簭鍋忕疆锛屼粠鑰岄伩鍏嶆薄鏌撶幇鏈夋棩甯歌緭鍏ヨ矾寰勩€?- 褰撳墠鍚敤鐨勮櫄鏋勫疄浣撳眰浼氭妸灏忚浜虹墿銆佷綔鍝佸悕鍜屼綔鍝佸唴瀹炰綋涓庢棩甯歌亰澶╄瘝灞傘€佷竴鑸笓鍚嶅眰鍒嗗紑澶勭悊銆?- 褰撳墠鍚敤鐨勯」鐩唴涓撳悕灞備細鎶婄幇瀹為鏍肩殑鍚嶇О銆佷骇鍝佸悕銆佹満鏋勫悕绛夎瘝鍜屾棩甯歌亰澶╄瘝灞傚垎寮€澶勭悊銆?- 褰撳墠璁＄畻鏈鸿瘝搴撶敱缁忚繃绛涢€夌殑 `THUOCL_IT` 瀛愰泦鍜岄」鐩唴缁存姢鐨勮绠楁満璇嶈〃鍏卞悓缁勬垚銆?- 褰撳墠娓告垙璇嶅簱鐢遍」鐩唴缁存姢鐨勬父鎴忚瘝琛ㄣ€乄ikidata 涓枃娓告垙瀹炰綋锛屼互鍙婄粡杩囩瓫閫夌殑涓枃缁村熀/缁村熀璇嶅吀娓告垙璇嶆眹鏍囬鍏卞悓缁勬垚銆?- 褰撳墠娓告垙寮€鍙戞湳璇眰鐢遍」鐩唴缁存姢鐨勬父鎴忓紑鍙戣瘝琛ㄣ€佺粡杩囩瓫閫夌殑 Godot Docs 涓枃鏍囬銆乄ikidata 涓枃娓告垙寮曟搸瀹炰綋锛屼互鍙婄粡杩囩瓫閫夌殑涓枃缁村熀/缁村熀璇嶅吀娓告垙寮€鍙戣瘝姹囨爣棰樺叡鍚岀粍鎴愩€?- 褰撳墠鍖诲璇嶅簱鐢遍」鐩唴缁存姢鐨勫尰瀛﹁瘝琛ㄣ€丮eSH descriptor catalog銆佷笌 MeSH 鍏宠仈鐨?Wikidata 涓枃鍖诲瀹炰綋锛屼互鍙婄粡杩囩瓫閫夌殑 `THUOCL_medical` 瀛愰泦鍏卞悓缁勬垚锛屽苟涓庢棩甯歌亰澶╄瘝灞傞殧绂汇€?
-## 鐩綍缁撴瀯
-- `data/generated/`锛氱敓鎴愯瘝搴撴枃浠躲€?- `manifests/`锛氭潵婧?璁稿彲璇佹竻鍗曚笌鍥炲綊鏍锋湰銆?- `manifests/vertical/`锛氶」鐩唴缁存姢鐨勭嫭绔嬪瀭鐩磋瘝琛ㄣ€?- `scripts/`锛氭瀯寤恒€佹牎楠屻€佸鍑鸿緟鍔╄剼鏈€?- `reports/`锛氭瀯寤烘姤鍛娿€?- `rules/`锛氬鍑轰笌鍙戝竷瑙勫垯銆?
-## 鏋勫缓涓庢牎楠?
-```powershell
-# 鍏ㄩ噺閲嶅缓锛坋xternal_broad + unihan_single + 鍥炲綊鏍￠獙锛?.\rebuild_all.ps1
+## 导入后的优化与过滤（外部来源）
+- 统一并去重来自不同来源格式的词条。
+- 综合多个信号（基础频率、DF/频率侧信号、页面热度）计算权重，并做平衡缩放。
+- 从已被支持的长口语表达中派生更短的日常/聊天前缀，让常见句式转折更容易前排出现。
+- 压低低信号专名、疑似人名和长尾噪声，减少冷门专名挤占常用词位置。
+- 应用面向 IME 的有效性过滤（例如可显示性与字符脚本约束），保证输出适合主流 Windows 客户端。
+- 通过规则修正与回归样本校验保持排序行为稳定。
 
-# 鐩存帴鎸夊崟涓?profile 鏋勫缓
+## 覆盖重点
+- 优先改善日常表达和对话式输入，不只追逐热点词。
+- 借助开放词汇来源补回常见短表达、句式转折、语气词和口语连接词。
+- 对开放来源仍然缺失但价值很高的日常表达，保留少量项目维护白名单。
+- 将专名和网页热点作为次级信号，避免它们主导核心日常输入路径。
+
+## 分层策略
+- `manifests/curated_daily_phrases.tsv` 只用于应获得日常输入优待的日常/聊天表达。
+- `manifests/vertical_layers.public.json` 声明隔离式 vertical 术语层。
+- `manifests/vertical/*.tsv` 存放项目维护的 vertical 词表，例如小说实体、一般专名、计算机术语、政务民生术语、游戏术语和游戏开发术语。
+- vertical 层可以补充领域词汇，但不会继承日常/聊天短语的优待偏置。
+- fiction 层将小说人物、作品名和世界观实体与日常/聊天表达及一般专名隔离。
+- active 的 proper-noun 层将人名、头衔和一般现实专名与日常/聊天表达隔离。
+- computing 层目前结合了过滤后的 `THUOCL_IT` 子集与项目维护计算机术语。
+- civic 层目前承载税务、房产、户籍及其他公共服务术语。
+- gaming 层目前结合了项目维护游戏术语、Wikidata 游戏实体和过滤后的 zhwiki/zhwiktionary 游戏词汇标题。
+- game-development 层目前结合了项目维护游戏开发术语、过滤后的 Godot 文档标题、Wikidata 游戏引擎补充，以及过滤后的 zhwiki/zhwiktionary 游戏开发词汇标题。
+- medicine 层目前结合了项目维护医学术语、MeSH 描述符目录、MeSH 关联 Wikidata 医学实体，以及过滤后的 `THUOCL_medical` 子集，并始终与日常/聊天优先路径隔离。
+
+## 目录结构
+- `data/generated/`：生成的词库文件。
+- `manifests/`：来源/许可证清单与回归样本。
+- `manifests/vertical/`：项目维护的隔离式 vertical 词表。
+- `scripts/`：构建、校验和导出辅助脚本。
+- `reports/`：构建报告。
+- `rules/`：导出与发布规则。
+
+## 构建与校验
+
+```powershell
+# 全量重建（external_broad + unihan_single + regression checks）
+.\rebuild_all.ps1
+
+# 直接构建单个 profile
 .\scripts\build_external_seed.ps1 -Profile external_broad
 ```
 
-`external_broad` 鍜?`external_cedict` 鍦ㄦ瀯寤烘椂浼氳嚜鍔ㄨ鍙?`manifests/vertical_layers.public.json`锛堝鏋滆鏂囦欢瀛樺湪锛夈€?
+`external_broad` 和 `external_cedict` 在存在
+`manifests/vertical_layers.public.json` 时会自动加载它。

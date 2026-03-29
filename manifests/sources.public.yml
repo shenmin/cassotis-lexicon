@@ -1,5 +1,5 @@
 version: 1
-generated_at: "2026-03-29T15:13:45+00:00"
+generated_at: "2026-03-29T15:32:09+00:00"
 profile: external_broad
 sources:
   - id: cc-cedict
@@ -122,6 +122,16 @@ sources:
     attribution_required: false
     raw_committed: true
     notes: 'Project-maintained computing/domain terminology layer isolated from daily/chat phrase ranking.'
+  - id: project-curated-vertical-civic
+    name: Cassotis curated civic terms
+    download_url: repo://manifests/vertical/civic.tsv
+    homepage: https://github.com/shenmin/cassotis-lexicon
+    license: Repository license (project-authored)
+    risk_level: low
+    redistribution_class: project_authored
+    attribution_required: false
+    raw_committed: true
+    notes: 'Project-maintained civic/public-service terminology layer for taxation, housing, household-registration, and related administrative vocabulary, isolated from daily/chat preferred-term ranking.'
   - id: project-curated-vertical-gaming
     name: Cassotis curated gaming terms
     download_url: repo://manifests/vertical/gaming.tsv
