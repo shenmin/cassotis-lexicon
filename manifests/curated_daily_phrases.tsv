@@ -1211,7 +1211,7 @@
 某一批	某一批	0.88
 某一群	某一群	0.86
 一群	一群	0.90
-似乎是	似乎是	0.90
+似乎是	似乎是	0.90	sihushi
 主要是	主要是	0.94
 感觉是	感覺是	0.90
 我问的是	我問的是	0.92
@@ -1375,3 +1375,90 @@
 想都不要想	想都不要想	0.94
 别这么	别这么	0.90
 这样不好	这样不好	0.92
+钙片	鈣片	0.90	gaipian
+那也行	那也行	0.90	nayexing
+或许吧	或許吧	0.90	huoxuba
+可以吧	可以吧	0.90	keyiba
+要不这样	要不這樣	0.92	yaobuzheyang
+不然咧	不然咧	0.88	buranlie
+不然呢	不然呢	0.90	buranne
+要不然呢	要不然呢	0.90	yaoburanne
+要不然咧	要不然咧	0.88	yaoburanlie
+我同意	我同意	0.92	wotongyi
+我赞成	我贊成	0.92	wozancheng
+我反对	我反對	0.92	wofandui
+我不同意	我不同意	0.92	wobutongyi
+我不赞成	我不贊成	0.92	wobuzancheng
+我不反对	我不反對	0.92	wobufandui
+我附议	我附議	0.92	wofuyi
+我支持	我支持	0.92	wozhichi
+我提议	我提議	0.92	wotiyi
+我赞同	我贊同	0.92	wozantong
+我喜欢	我喜歡	0.92	woxihuan
+我爱	我愛	0.90	woai
+我希望	我希望	0.92	woxiwang
+我就要	我就要	0.92	wojiuyao
+我就想	我就想	0.92	wojiuxiang
+我只要	我只要	0.92	wozhiyao
+我只想	我只想	0.92	wozhixiang
+我偏要	我偏要	0.92	wopianyao
+我还要	我還要	0.92	wohaiyao
+我偏不	我偏不	0.92	wopianbu
+我偏	我偏	0.88	wopian
+我还	我還	0.88	wohai
+我只	我只	0.88	wozhi
+我就	我就	0.88	wojiu
+我当然	我當然	0.90	wodangran
+我的人	我的人	0.90	woderen
+我命由我不由天	我命由我不由天	0.96	womingyouwobuyoutian
+我还是	我還是	0.92	wohaishi
+我是	我是	0.88	woshi
+我偏偏	我偏偏	0.90	wopianpian
+我一定能	我一定能	0.92	woyidingneng
+我一定会	我一定會	0.92	woyidinghui
+上一版	上一版	0.90	shangyiban
+这一版	這一版	0.90	zheyiban
+下一版	下一版	0.90	xiayiban
+一版	一版	0.88	yiban
+一版本	一版本	0.88	yibanben
+下一版本	下一版本	0.90	xiayibanben
+上一版本	上一版本	0.90	shangyibanben
+这一版本	這一版本	0.90	zheyibanben
+改坏	改壞	0.90	gaihuai
+只想	只想	0.88	zhixiang
+就想	就想	0.88	jiuxiang
+附议	附議	0.90	fuyi
+相关的	相關的	0.90	xiangguande
+有关的	有關的	0.90	youguande
+无关的	無關的	0.90	wuguande
+有关系的	有關係的	0.90	youguanxide
+没关系的	沒關係的	0.90	meiguanxide
+有关联的	有關聯的	0.90	youguanliande
+显示乱码	顯示亂碼	0.92	xianshiluanma
+变成乱码	變成亂碼	0.92	bianchengluanma
+变成了乱码	變成了亂碼	0.92	bianchengleluanma
+谁让你	誰讓你	0.90	shuirangni
+谁叫你	誰叫你	0.90	shuijiaoni
+谁允许你	誰允許你	0.90	shuiyunxuni
+谁同意你	誰同意你	0.90	shuitongyini
+谁教你	誰教你	0.90	shuijiaoni
+谁怂恿你	誰慫恿你	0.90	shuisongyongni
+谁教唆你	誰教唆你	0.90	shuijiaosuoni
+你可以	你可以	0.90	nikeyi
+搜搜	搜搜	0.88	sousou
+搜搜看	搜搜看	0.90	sousoukan
+搜索看看	搜索看看	0.90	sousuokankan
+搜看看	搜看看	0.90	soukankan
+搜索一下	搜索一下	0.90	sousuoyixia
+一份	一份	0.90	yifen
+两份	兩份	0.90	liangfen
+三份	三份	0.90	sanfen
+四份	四份	0.90	sifen
+五份	五份	0.90	wufen
+六份	六份	0.90	liufen
+七份	七份	0.90	qifen
+八份	八份	0.90	bafen
+九份	九份	0.90	jiufen
+十份	十份	0.90	shifen
+你似乎	你似乎	0.90	nisihu
+换行符	換行符	0.92	huanhangfu
