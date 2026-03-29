@@ -4346,6 +4346,7 @@ banguiguan	半规管	616
 banguize	半規則	232
 bangwan	傍晚	431
 bangwo	幫我	763
+bangwoba	幫我把	966
 bangwomen	幫我們	952
 bangwu	傍午	305
 bangxian	幫閑	378
@@ -7712,8 +7713,9 @@ bianyingyuan	变应原	1000
 bianyinjihao	變音記號	260
 bianyipeizhi	编译配置	1000
 bianyipeizhi	編譯配置	380
-bianyiqi	编译器	729
-bianyiqi	編譯器	701
+bianyiqi	編譯期	1000
+bianyiqi	编译器	681
+bianyiqi	編譯器	654
 bianyiqiyouhua	编译器优化	1000
 bianyiqiyouhua	編譯器優化	454
 bianyishi	編譯期	1000
@@ -20263,6 +20265,7 @@ cuojie	錯解	198
 cuoju	措舉	198
 cuojue	錯覺	437
 cuokai	錯開	427
+cuole	錯了	763
 cuoliechuang	挫裂创	1000
 cuolou	錯漏	343
 cuoluan	錯亂	419
@@ -20463,7 +20466,7 @@ daban	大半	508
 dabancheng	達坂城	185
 dabanchengqu	達坂城區	228
 dabanfu	大阪府	198
-dabang	大棒	529
+dabang	大棒	528
 dabanjiling	大斑鶺鴒	258
 dabanniepanjing	大般涅槃經	289
 dabanshao	大阪燒	232
@@ -39096,7 +39099,8 @@ gaidaixiewenluan	鈣代謝紊亂	379
 gaidanbaimei	钙蛋白酶	1000
 gaidanbaimei	鈣蛋白酶	430
 gaidang	該當	967
-gaidao	改道	994
+gaidao	改到	1000
+gaidao	改道	705
 gaidetongweisu	鈣的同位素	1000
 gaidetongweisu	鈣的衕位素	480
 gaidi	溉滌	198
@@ -75244,7 +75248,7 @@ liaotiaozi	撂挑子	479
 liaotou	料頭	198
 liaotour	料頭兒	232
 liaowang	瞭望	950
-liaowang	了望	315
+liaowang	了望	316
 liaowangshao	瞭望哨	337
 liaowangta	了望塔	241
 liaowangtai	瞭望臺	488
@@ -93207,8 +93211,8 @@ piaochen	飄塵	359
 piaochong	瓢蟲	400
 piaochuang	飄窗	198
 piaodai	飄帶	417
-piaodang	飄盪	766
-piaodang	飄蕩	748
+piaodang	飄盪	690
+piaodang	飄蕩	670
 piaodong	飄動	440
 piaofang	票房	419
 piaofanzi	票販子	442
@@ -99304,7 +99308,7 @@ qixi	奇襲	706
 qixia	旗下	683
 qixia	棲霞	452
 qixian	起先	936
-qixian	期限	749
+qixian	期限	750
 qixianbushenjiaonang	芪仙补肾胶囊	989
 qixianbushenjiaonang	芪仙補腎膠囊	430
 qixianfuhuoshao	妻賢夫禍少	371
@@ -107996,7 +108000,7 @@ shencitianfumingdan	神賜天賦名單	831
 shenciyuanzhanjizhanjishaonvshengli	神次元戰記戰機少女勝利	866
 shenciyuanzhanjizhanjishaonvshengli'er	神次元戰記戰機少女勝利二	866
 shencongwen	瀋從文	222
-shencuogouliu	肾错构瘤	956
+shencuogouliu	肾错构瘤	955
 shencuogouliu	腎錯構瘤	329
 shencuoshang	肾挫伤	1000
 shendaixueyuanhuanguanglu	神代學園幻光錄	836
@@ -115942,6 +115946,8 @@ shuocheng	朔城	198
 shuochengqu	朔城區	165
 shuochu	說齣	502
 shuoci	說辭	426
+shuocuo	說錯	803
+shuocuole	說錯了	973
 shuoda	碩大	441
 shuodao	說道	1000
 shuodaodi	說到底	914
@@ -128099,8 +128105,8 @@ weishao	尾梢	198
 weishaonv	微少女	828
 weishe	威懾	497
 weisheliliang	威懾力量	405
-weishen	為什	593
-weishen	委身	325
+weishen	為什	594
+weishen	委身	324
 weisheng	衛生	1000
 weisheng	為生	858
 weisheng	微升	30
@@ -129371,6 +129377,7 @@ wokan	我看	600
 wokankan	我看看	966
 wokao	我靠	198
 wokesihao'er	沃剋斯豪爾	289
+wokeyi	我可以	966
 wokou	倭寇	448
 wokuaidisongdechaokuai	我快遞送得超快	836
 wokuotai	窩闊臺	413
@@ -129479,6 +129486,7 @@ woshou	握手	459
 woshouxinhao	握手信號	700
 woshui	沃水	137
 woshuile	我睡了	973
+woshuocuole	我說錯了	981
 woshuode	我說的	973
 wosi	我司	198
 wosile	我死了	828
@@ -129565,7 +129573,7 @@ wubabituo	戊巴比妥	673
 wubabituona	戊巴比妥钠	936
 wubabituona	戊巴比妥鈉	602
 wubai	五百	1000
-wubai	伍佰	196
+wubai	伍佰	208
 wubaibashi'erjuan	五百八十二捲	399
 wubaibashiwu	五百八十五	371
 wubaidi	烏拜迪	228
@@ -130857,10 +130865,10 @@ wushezhiyangwan	乌蛇止痒丸	930
 wushezhiyangwan	烏蛇止癢丸	377
 wushi	五十	1000
 wushi	武士	499
-wushi	務實	431
 wushi	巫師	426
-wushi	無視	346
-wushi	午時	245
+wushi	務實	371
+wushi	無視	289
+wushi	午時	201
 wushi	吳石	199
 wushi	烏什	192
 wushi	無時	53
@@ -146534,7 +146542,7 @@ yichen	逸塵	268
 yichenburan	一塵不染	484
 yichenduanyang	逸塵斷鞅	249
 yicheng	譯成	927
-yicheng	宜城	766
+yicheng	宜城	765
 yicheng	議程	586
 yichengbubian	一成不變	541
 yichengqu	驛城區	82
@@ -152632,6 +152640,7 @@ youshenji	有身己	640
 youshenjiao	有神教	640
 youshenlun	有神論	641
 youshenlunzhe	有神論者	426
+youshenme	有什麼	1000
 youshenren	有身人	640
 youshenzi	有身子	640
 youshi	有時	874
@@ -154987,7 +154996,7 @@ yundongzhijue	運動知覺	353
 yundongzhiliao	運動治療	770
 yundongzhiling	運動指令	770
 yundongzhongban	運動終板	1000
-yundongzhongban	运动终板	928
+yundongzhongban	运动终板	927
 yundongzhongban	運動終闆	434
 yundongzhongshu	运动中枢	973
 yundongzhongshu	運動中樞	333
@@ -155221,6 +155230,7 @@ yunxingceshi	運行測試	387
 yunxingfangshi	運行方式	260
 yunxinghuanjing	运行环境	1000
 yunxinghuanjing	運行環境	394
+yunxingqi	運行期	966
 yunxingshi	執行期	1000
 yunxingshicuowu	運行時錯誤	289
 yunxingzhuangkuang	運行狀況	405
@@ -158365,8 +158375,8 @@ zheliangtian	這兩天	640
 zheliu	者流	294
 zheliushi	柘榴石	228
 zheluo	摺籮	198
-zheme	這麼	998
-zheme	這麽	978
+zheme	這麼	999
+zheme	這麽	979
 zhemehao	這麼好	1000
 zhemehuai	這麼壞	1000
 zhemekuai	這麼快	1000
@@ -168258,8 +168268,8 @@ zuobi	作弊	432
 zuobian	左邊	431
 zuobianqi	坐便器	362
 zuobianr	左邊兒	167
-zuobiao	座標	1000
-zuobiao	坐標	904
+zuobiao	坐標	897
+zuobiao	座標	723
 zuobiaofa	座標法	231
 zuobiaokongjian	坐標空間	260
 zuobiaokongjian	座標空間	258

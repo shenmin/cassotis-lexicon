@@ -3981,6 +3981,7 @@ banguiguan	半规管	232
 banguize	半规则	232
 bangwan	傍晚	431
 bangwo	帮我	763
+bangwoba	帮我把	966
 bangwomen	帮我们	952
 bangwu	傍午	305
 bangxian	帮闲	378
@@ -6909,7 +6910,7 @@ bianming	辨明	908
 bianming	辩明	185
 bianminlimin	便民利民	405
 bianmoshu	变魔术	406
-bianmu	编目	642
+bianmu	编目	643
 biannaitongcha	便乃通茶	647
 biannan	辩难	328
 biannian	编年	536
@@ -7100,7 +7101,8 @@ bianyingxingxueguanyan	变应性血管炎	743
 bianyingyuan	变应原	649
 bianyinjihao	变音记号	260
 bianyipeizhi	编译配置	700
-bianyiqi	编译器	458
+bianyiqi	编译期	1000
+bianyiqi	编译器	421
 bianyiqiyouhua	编译器优化	774
 bianyishi	编译时	689
 bianyishicuowu	编译时错误	768
@@ -18741,6 +18743,7 @@ cuoju	措举	198
 cuojue	错觉	437
 cuojuejiehe	错觉结合	260
 cuokai	错开	427
+cuole	错了	763
 cuoliechuang	挫裂创	608
 cuolou	错漏	343
 cuoluan	错乱	419
@@ -18882,10 +18885,10 @@ da'anqu	大安区	165
 da'anshi	大安市	174
 da'aqian	打呵欠	770
 da'ayi	大阿姨	232
-daba	打把	735
+daba	打把	736
 daba	搭把	616
 daba	大巴	372
-daba	打靶	299
+daba	打靶	298
 daba	大坝	163
 dabai	打败	965
 dabai	大白	835
@@ -35550,7 +35553,8 @@ gaicuo	改错	423
 gaidaixiewenluan	钙代谢紊乱	699
 gaidanbaimei	钙蛋白酶	750
 gaidang	该当	463
-gaidao	改道	994
+gaidao	改到	1000
+gaidao	改道	705
 gaidetongweisu	钙的同位素	800
 gaidi	溉涤	198
 gaidiao	改掉	400
@@ -89753,7 +89757,7 @@ qiqiuzhudongmaibanmozhengxingshu	气球主动脉瓣膜整型术	802
 qiqu	崎岖	924
 qiquan	弃权	463
 qiquan	齐全	460
-qiquan	期权	443
+qiquan	期权	444
 qique	奇缺	418
 qiran	凄然	413
 qiren	气人	606
@@ -105126,6 +105130,8 @@ shuocheng	朔城	198
 shuochengqu	朔城区	165
 shuochu	说出	502
 shuoci	说辞	426
+shuocuo	说错	803
+shuocuole	说错了	973
 shuoda	硕大	441
 shuodao	说道	1000
 shuodaodi	说到底	914
@@ -117466,6 +117472,7 @@ wokan	我看	600
 wokankan	我看看	966
 wokao	我靠	198
 wokesihao'er	沃克斯豪尔	289
+wokeyi	我可以	966
 wokou	倭寇	448
 wokuaidisongdechaokuai	我快递送得超快	816
 wokuotai	窝阔台	375
@@ -117569,6 +117576,7 @@ woshou	握手	459
 woshouxinhao	握手信号	680
 woshui	沃水	137
 woshuile	我睡了	973
+woshuocuole	我说错了	981
 woshuode	我说的	973
 wosi	我司	198
 wosile	我死了	808
@@ -117653,7 +117661,7 @@ wuba	五霸	284
 wubabituo	戊巴比妥	653
 wubabituona	戊巴比妥钠	702
 wubai	五百	1000
-wubai	伍佰	233
+wubai	伍佰	261
 wubaibashi'erjuan	五百八十二卷	399
 wubaibashiwu	五百八十五	371
 wubaidi	乌拜迪	167
@@ -118825,12 +118833,12 @@ wushenlunzhe	无神论者	617
 wushenqi	乌审旗	241
 wushezhiyangwan	乌蛇止痒丸	697
 wushi	五十	1000
-wushi	无时	824
-wushi	务实	658
-wushi	无视	607
+wushi	无时	696
+wushi	务实	515
 wushi	武士	488
+wushi	无视	471
 wushi	巫师	460
-wushi	午时	377
+wushi	午时	274
 wushi	乌什	243
 wushi	五世	1
 wushi	物事	1
@@ -132472,7 +132480,7 @@ yichen	逸尘	245
 yichenburan	一尘不染	484
 yichenduanyang	逸尘断鞅	249
 yicheng	译成	924
-yicheng	宜城	658
+yicheng	宜城	657
 yicheng	议程	625
 yichengbubian	一成不变	541
 yichengqu	驿城区	88
@@ -137936,6 +137944,7 @@ youshenji	有身己	640
 youshenjiao	有神教	640
 youshenlun	有神论	641
 youshenlunzhe	有神论者	426
+youshenme	有什么	966
 youshenren	有身人	640
 youshenzi	有身子	640
 youshi	有时	885
@@ -140335,6 +140344,7 @@ yunxing	陨星	1
 yunxingceshi	运行测试	707
 yunxingfangshi	运行方式	260
 yunxinghuanjing	运行环境	714
+yunxingqi	运行期	966
 yunxingshi	运行时	232
 yunxingshicuowu	运行时错误	289
 yunxingzhuangkuang	运行状况	405
