@@ -10423,7 +10423,7 @@ budanru	不但如	556
 budanruci	不但如此	664
 budanyuan	卟膽原	724
 budao	不到	1000
-budao	不道	628
+budao	不道	629
 budao	不倒	568
 budao	布道	478
 budao	佈道	366
@@ -38850,10 +38850,10 @@ fuyazheng	氟牙症	702
 fuye	複葉	510
 fuye	副業	470
 fuyi	附議	1000
-fuyi	輔以	564
+fuyi	輔以	666
+fuyi	複議	439
+fuyi	復議	435
 fuyi	服役	387
-fuyi	復議	381
-fuyi	複議	362
 fuyi	副翼	1
 fuyiceng	負一層	232
 fuyifudingna	伏伊伏丁那	505
@@ -48923,9 +48923,12 @@ haowuyiwen	毫無疑問	548
 haoxia	豪俠	390
 haoxian	好險	319
 haoxiang	好想	1000
-haoxiang	好像	634
-haoxiang	好象	114
+haoxiang	好像	716
+haoxiang	好象	160
+haoxiangbu	好像不	959
+haoxiangbushi	好像不是	973
 haoxiangkeyi	好像可以	973
+haoxiangshi	好像是	966
 haoxiangsi	好想死	938
 haoxiao	好笑	440
 haoxiaozi	好小子	720
@@ -66807,7 +66810,7 @@ junweizongzhengzhibu	軍委總政治部	313
 junwen	君吻	613
 junwu	軍務	456
 junxian	均線	474
-junxian	軍銜	449
+junxian	軍銜	450
 junxiang	軍餉	433
 junxiao	軍校	454
 junxie	浚渫	176
@@ -77040,7 +77043,7 @@ linxie	臨寫	198
 linxiexingjianyuanyan	鳞屑性睑缘炎	972
 linxiexingjianyuanyan	鱗屑性瞼緣炎	421
 linxing	臨行	962
-linxing	臨刑	131
+linxing	臨刑	132
 linxing	臨幸	73
 linxinru	林心如	783
 linxintong	林欣彤	767
@@ -78278,7 +78281,7 @@ lixian	立憲	593
 lixian	歷險	318
 lixian	離線	139
 lixianbin	李先彬	773
-lixiang	理想	970
+lixiang	理想	969
 lixiang	立項	273
 lixiang	立像	236
 lixiangbeijing	離鄉背井	447
@@ -90228,6 +90231,7 @@ nihai	泥孩	198
 nihaisha	倪海廈	783
 nihao	你好	600
 nihaoma	你好嗎	635
+nihaoxiang	你好像	966
 nihelu	尼赫魯	251
 niheludaxue	尼赫魯大學	283
 nihong	霓虹	536
@@ -100278,7 +100282,7 @@ quanzhan	犬展	227
 quanzhang	權杖	379
 quanzhansanguo	全戰三國	864
 quanzheng	權證	437
-quanzhi	全職	458
+quanzhi	全職	457
 quanzhide	全知的	640
 quanzhiduzheshijiao	全知讀者視角	846
 quanzhiquanneng	全知全能	449
@@ -109204,7 +109208,7 @@ shengxi	聲息	423
 shengxia	剩下	1000
 shengxian	聖賢	755
 shengxiang	聲響	681
-shengxiang	聖像	244
+shengxiang	聖像	245
 shengxiang	聲像	230
 shengxiangjiao	生橡胶	1000
 shengxiankongziniao	聖賢孔子鳥	289
@@ -119064,6 +119068,8 @@ tage	踏歌	372
 tagong	塔公	198
 tagongsi	塔公寺	232
 taguo	他國	971
+tahaoxiang	他好像	1000
+tahaoxiang	她好像	991
 tahe	塔河	254
 tahetahetadepenghuwan	她和他和她的澎湖灣	866
 tahewodelian'airichang	她和我的戀愛日常	866
@@ -120490,7 +120496,7 @@ tanxiaoshida	貪小失大	387
 tanxiaoyouhongru	談笑有鴻儒	468
 tanxiaoziruo	談笑自若	437
 tanxin	貪心	864
-tanxin	談心	678
+tanxin	談心	654
 tanxinbuzu	貪心不足	427
 tanxing	彈性	996
 tanxingdianchi	碳性電池	260
@@ -129538,6 +129544,7 @@ woguor	臥果兒	232
 wohai	我還	758
 wohaishi	我還是	973
 wohaiyao	我還要	973
+wohaoxiang	我好像	966
 wohe	渦核	198
 woheixingxing	倭黑猩猩	258
 wohejiangshiyougeyuehui	我和僵屍有個約會	611
@@ -129776,7 +129783,7 @@ wubabituo	戊巴比妥	673
 wubabituona	戊巴比妥钠	936
 wubabituona	戊巴比妥鈉	602
 wubai	五百	1000
-wubai	伍佰	208
+wubai	伍佰	196
 wubaibashi'erjuan	五百八十二捲	399
 wubaibashiwu	五百八十五	371
 wubaidi	烏拜迪	228
@@ -132377,7 +132384,7 @@ xiangcunyisheng	鄉村醫生	582
 xiangdai	相待	459
 xiangdang	相當	1000
 xiangdangdang	響噹噹	524
-xiangdangran	想當然	639
+xiangdangran	想當然	624
 xiangdangran'er	想噹然耳	270
 xiangdangran'er	想當然耳	268
 xiangdangran'er	想噹然爾	252
@@ -149872,7 +149879,7 @@ yinxianchuanzhen	引綫穿針	363
 yinxiandula	陰險毒辣	455
 yinxiang	音響	794
 yinxiang	印象	776
-yinxiang	音像	352
+yinxiang	音像	353
 yinxiang	音箱	250
 yinxiangde	印象的	640
 yinxiangfen	印象分	415
@@ -168503,8 +168510,8 @@ zuobi	作弊	432
 zuobian	左邊	431
 zuobianqi	坐便器	362
 zuobianr	左邊兒	167
-zuobiao	座標	1000
-zuobiao	坐標	904
+zuobiao	坐標	897
+zuobiao	座標	723
 zuobiaofa	座標法	231
 zuobiaokongjian	坐標空間	260
 zuobiaokongjian	座標空間	258
