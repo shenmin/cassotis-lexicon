@@ -1,7 +1,7 @@
 # External Build Report
 
 - profile: unihan_single
-- generated_at_utc: 2026-03-30T09:41:12+00:00
+- generated_at_utc: 2026-03-30T11:08:39+00:00
 - min_hanzi: 1
 - max_entries: unlimited
 

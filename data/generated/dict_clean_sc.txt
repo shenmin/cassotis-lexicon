@@ -15043,7 +15043,7 @@ chengping	承平	218
 chengpinyou	成品油	483
 chengpo	撑破	323
 chengpu	诚朴	392
-chengqi	成器	726
+chengqi	成器	727
 chengqian	成千	319
 chengqianbihou	惩前毖后	460
 chengqianchengwan	成千成万	480
@@ -37553,12 +37553,14 @@ gaochao	高潮	631
 gaochao	高超	177
 gaochaodieqi	高潮迭起	451
 gaochayongzhuang	高叉泳装	218
-gaocheng	高程	880
+gaocheng	搞成	1000
+gaocheng	高程	158
 gaochengqu	藁城区	174
 gaochengshenchi	高城深池	249
 gaochou	稿酬	387
-gaochu	高出	854
-gaochu	高处	827
+gaochu	搞出	1000
+gaochu	高出	879
+gaochu	高处	725
 gaochubushenghan	高处不胜寒	289
 gaochui	告吹	387
 gaochun	高淳	211
@@ -37674,12 +37676,15 @@ gaogaoshour	高高手儿	218
 gaogaoxingxing	高高兴兴	332
 gaogaozai	高高在	556
 gaogaozaishang	高高在上	603
-gaoge	高歌	742
-gaoge	高阁	50
+gaoge	搞个	1000
+gaoge	高歌	1
+gaoge	高阁	1
+gaogegui	搞个鬼	973
 gaogemengjin	高歌猛进	471
 gaogen	高跟	521
 gaogengbiao	高庚杓	771
 gaogenxie	高跟鞋	683
+gaogepi	搞个屁	969
 gaogeteshi	高哥特式	674
 gaogezi	高个子	496
 gaogong	高工	363
@@ -37707,6 +37712,7 @@ gaohao	搞好	471
 gaohejin	锆合金	230
 gaohong'an	高虹安	780
 gaohu	高呼	496
+gaohuai	搞坏	803
 gaohuangyu	膏肓俞	587
 gaohuayang	搞花样	232
 gaohuayangr	搞花样儿	260
@@ -37932,6 +37938,7 @@ gaorenyideng	高人一等	464
 gaorucusuxuezheng	高乳促素血症	842
 gaosansuanganyouzhixuezheng	高三酸甘油脂血症	802
 gaoseng	高僧	409
+gaosha	搞啥	763
 gaoshan	高山	493
 gaoshanbing	高山病	490
 gaoshanduanchiying	高山短翅莺	289
@@ -38856,9 +38863,9 @@ geqiangyou'er	隔墙有耳	442
 gequ	歌曲	735
 gequ	割取	103
 gequsuoxu	各取所需	455
-ger	个儿	722
+ger	个儿	723
 ger	哥儿	456
-ger	歌儿	168
+ger	歌儿	167
 gerang	割让	444
 gere	隔热	424
 geren	各人	749
@@ -44406,6 +44413,7 @@ haiyi	骇异	381
 haiyina	海乙那	640
 haiyinsi	海印寺	232
 haiyinzixiaoti	海因兹小体	800
+haiyongshuo	还用说	973
 haiyou	还有	502
 haiyoujige	还有几个	981
 haiyouxiatan	骇游侠探	848
@@ -56884,8 +56892,8 @@ jiganputaotangzhusheye	肌苷葡萄糖注射液	743
 jigansuan'erna	肌苷酸二钠	288
 jigansuanna	肌苷酸钠	638
 jiganzhusheye	肌苷注射液	701
-jige	几个	577
-jige	及格	563
+jige	几个	578
+jige	及格	562
 jigexian	及格线	429
 jigong	技工	930
 jigongde	济公的	501
@@ -81922,7 +81930,7 @@ nangan	南竿	198
 nangang	南港	417
 nangangqu	南岗区	110
 nanganxiang	南竿乡	174
-nangao	难搞	532
+nangao	难搞	533
 nangaojiasuo	南高加索	260
 nangaoyin	男高音	453
 nangbaoxingshenjihuan	囊胞性肾疾患	842
@@ -105023,6 +105031,7 @@ shiyongfenliang	食用份量	754
 shiyongjiazhi	实用价值	436
 shiyongjiazhi	使用价值	211
 shiyongjiemian	使用界面	754
+shiyongle	使用了	966
 shiyongliang	使用量	499
 shiyongpin	试用品	379
 shiyongqi	试用期	524
@@ -112190,7 +112199,7 @@ taoyi	逃逸	930
 taoyi	陶艺	1
 taoyin	套印	366
 taoyisudu	逃逸速度	387
-taoyong	套用	689
+taoyong	套用	690
 taoyu	套语	399
 taoyuan	桃源	808
 taoyuan	桃园	429
@@ -140541,7 +140550,8 @@ yongku	泳裤	305
 yonglai	用来	502
 yonglan	慵懒	420
 yonglang	涌浪	408
-yongle	永乐	597
+yongle	用了	1000
+yongle	永乐	160
 yongledadian	永乐大典	260
 yongli	用力	947
 yongli	勇力	1
@@ -151582,7 +151592,7 @@ zhongyizhenfa	中医诊法	754
 zhongyizhengguxue	中医正骨学	699
 zhongyizhenjiuliaofa	中医针灸疗法	757
 zhongyong	重用	967
-zhongyong	忠勇	397
+zhongyong	忠勇	396
 zhongyong	中用	300
 zhongyong	中庸	148
 zhongyongzhidao	中庸之道	481
@@ -152750,7 +152760,7 @@ zhuganxian	主干线	432
 zhugao	竹篙	399
 zhugaochi	朱高炽	281
 zhuge	逐个	990
-zhuge	诸葛	372
+zhuge	诸葛	371
 zhugeliang	诸葛亮	688
 zhugexingjunsan	诸葛行军散	707
 zhugong	主攻	777
