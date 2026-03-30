@@ -1469,6 +1469,16 @@
 好像是	好像是	0.90	haoxiangshi
 好像不是	好像不是	0.90	haoxiangbushi
 好像不	好像不	0.88	haoxiangbu
+就像	就像	0.90	jiuxiang
+就像是	就像是	0.92	jiuxiangshi
+就如同	就如同	0.90	jiurutong
+就比如	就比如	0.90	jiubiru
+就好像	就好像	0.90	jiuhaoxiang
+就如	就如	0.88	jiuru
+聊着	聊著	0.88	liaozhe
+说着	說著	0.90	shuozhe
+写着	寫著	0.90	xiezhe
+打着	打著	0.90	dazhe
 最坏	最壞	0.90
 最强	最強	0.90
 最弱	最弱	0.90
@@ -1614,3 +1624,22 @@
 用了	用了	0.88
 还用说	還用說	0.92
 使用了	使用了	0.90
+再加上	再加上	0.92	zaijiashang
+悠着点	悠著點	0.92	youzhedian
+又有	又有	0.88	youyou
+又再	又再	0.88	youzai
+又来	又來	0.88	youlai
+还来	還來	0.90	hailai
+滚粗	滾粗	0.90	guncu
+别来	別來	0.90	bielai
+别烦我	別煩我	0.92	biefanwo
+烦死了	煩死了	0.92	fansile
+很烦	很煩	0.90	henfan
+非常烦	非常煩	0.92	feichangfan
+烦我	煩我	0.88	fanwo
+麻烦你	麻煩你	0.92	mafanni
+帮帮我	幫幫我	0.92	bangbangwo
+心很烦	心很煩	0.92	xinhenfan
+心很乱	心很亂	0.92	xinhenluan
+有心事	有心事	0.92	youxinshi
+心事重	心事重	0.92	xinshizhong
