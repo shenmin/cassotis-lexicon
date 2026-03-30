@@ -1,7 +1,7 @@
 # External Build Report
 
 - profile: unihan_single
-- generated_at_utc: 2026-03-30T11:58:28+00:00
+- generated_at_utc: 2026-03-30T12:16:58+00:00
 - min_hanzi: 1
 - max_entries: unlimited
 
@@ -292,7 +292,7 @@
 - total_lines: 49191
 - unihan_core_size: 18816
 - unihan_family_support_boosted_sc: 5037
-- unihan_family_support_boosted_tc: 5257
+- unihan_family_support_boosted_tc: 5256
 - unihan_family_support_terms_sc: 5854
 - unihan_family_support_terms_tc: 6092
 - unihan_frequency_size: 0

@@ -18730,7 +18730,7 @@ cizhengzhuang	次正装	232
 cizhenzaoying	磁振造影	754
 cizheqi	磁着器	640
 cizhi	辞职	1000
-cizhi	次之	726
+cizhi	次之	727
 cizhijingli	此致敬礼	387
 cizhong	刺中	454
 cizhongliangji	次重量级	260
@@ -55626,8 +55626,8 @@ jichuwulijiang	基础物理奖	740
 jichuwulixuetupojiang	基础物理学突破奖	754
 jichuyaolixue	基础药理学	699
 jichuyixue	基础医学	699
-jici	讥刺	786
-jici	几次	785
+jici	几次	782
+jici	讥刺	744
 jicisanfan	几次三番	472
 jicongcong	急匆匆	473
 jicu	急促	460
@@ -89238,6 +89238,7 @@ qianjiaocharendaizhongjian	前交叉韧带重建	772
 qianjiaoyuantaimei	前胶原肽酶	800
 qianjiasandajia	乾嘉三大家	289
 qianjiawanhu	千家万户	510
+qianjici	前几次	966
 qianjie	前揭	198
 qianjin	前进	1000
 qianjin	千金	450
@@ -89259,6 +89260,7 @@ qianjinyinuo	千金一诺	262
 qianjinyizhi	千金一掷	387
 qianjinzhidaiwan	千金止带丸	702
 qianjinzishuang	千金子霜	637
+qianjiri	前几日	959
 qianjitian	前几天	232
 qianjiu	迁就	759
 qianjiu	歉疚	749
@@ -89288,6 +89290,7 @@ qianli	潜力	856
 qianli	千里	831
 qianlian	牵连	963
 qianliang	钱粮	339
+qianliangci	前两次	966
 qianlianhe	前连合	712
 qianlida	千里达	629
 qianlidaheduobage	千里达和多巴哥	348
@@ -89476,7 +89479,7 @@ qianshedao	牵涉到	362
 qianshen	前肾	831
 qianshen	前身	825
 qianshen	欠身	797
-qiansheng	前生	741
+qiansheng	前生	742
 qianshenmoji	潜神默记	405
 qianshetong	牵涉痛	744
 qiansheyizhi	前摄抑制	754
@@ -89643,6 +89646,7 @@ qianyexian	千叶县	172
 qianyi	迁移	1000
 qianyi	歉意	1
 qianyibaishun	千依百顺	452
+qianyici	前一次	959
 qianyifa'erdongquanshen	牵一发而动全身	503
 qianyimohua	潜移默化	485
 qianyin	牵引	1000
@@ -123330,7 +123334,7 @@ xianghuowangdong	相火妄动	646
 xianghuyiwei	相互易位	648
 xianghuzuoyong	相互作用	564
 xiangji	相机	1000
-xiangji	相继	699
+xiangji	相继	698
 xiangjia	想家	879
 xiangjia	相加	814
 xiangjiaba	向家坝	198
@@ -141128,7 +141132,7 @@ youkudexiaodaosudi	尤库的小岛速递	816
 youkuizhishou	有亏职守	387
 youkushuobuchu	有苦说不出	289
 youlai	又来	1000
-youlai	由来	384
+youlai	由来	385
 youlai	有赖	58
 youlaile	又来了	232
 youlaiyu	有赖于	552
@@ -146500,9 +146504,10 @@ zhaohuanyexiangquxilie	召唤夜响曲系列	804
 zhaohuanyexiangquzhujianwuyu	召唤夜想曲铸剑物语	846
 zhaohuanyezhujianwuyu	召唤夜铸剑物语	816
 zhaohuaxishi	朝花夕拾	387
-zhaohui	召回	829
-zhaohui	找回	598
-zhaohui	照会	65
+zhaohui	召回	764
+zhaohui	找回	690
+zhaohui	照会	110
+zhaohuilai	找回来	973
 zhaohuiwenwang	赵惠文王	218
 zhaohuluhuapiao	照葫芦画瓢	444
 zhaohun	招魂	697
@@ -146538,8 +146543,10 @@ zhaokao	招考	445
 zhaoke	赵客	137
 zhaokuangyin	赵匡胤	780
 zhaokuo	赵括	137
-zhaolai	招来	835
-zhaolai	招徕	439
+zhaolai	找来	1000
+zhaolai	招来	527
+zhaolai	招徕	14
+zhaolaizhaoqu	找来找去	981
 zhaolan	招揽	436
 zhaolanshengyi	招揽生意	387
 zhaoleji	赵乐际	786
@@ -146731,7 +146738,7 @@ zhaozeshanque	沼泽山雀	260
 zhaozhan	招展	433
 zhaozhang	照章	332
 zhaozhangpeng	赵长鹏	776
-zhaozhao	找着	241
+zhaozhao	找着	242
 zhaozhaomumu	朝朝暮暮	427
 zhaozhaoshibai	着着失败	260
 zhaozhe	找辙	323
@@ -146912,6 +146919,7 @@ zhejiangyikedaxue	浙江医科大学	304
 zhejianjiaoshibeibuhuijiashezhanlingle	这间教室被不回家社占领了	846
 zhejiao	折角	293
 zhejichensha	折戟沉沙	427
+zhejici	这几次	973
 zhejiedushu	折节读书	405
 zhejige	这几个	973
 zhejitian	这几天	232
@@ -146926,6 +146934,7 @@ zhekou	折扣	452
 zhelei	这类	798
 zheli	这里	1000
 zheli	哲理	1
+zheliangci	这两次	973
 zheliangtian	这两天	640
 zheliu	者流	294
 zheliushi	柘榴石	228
