@@ -1958,19 +1958,7 @@ def _compute_generic_vertical_penalty(
     source_id: str,
 ) -> int:
     text_len = _cjk_len(text)
-    if layer_id == "civic":
-        if text_len <= 2:
-            base_penalty = 88
-        elif text_len == 3:
-            base_penalty = 46
-        elif text_len == 4:
-            base_penalty = 20
-        elif text_len == 5:
-            base_penalty = 8
-        else:
-            base_penalty = 2
-        relief = 14 if text_len <= 4 else 2
-    elif layer_id == "computing":
+    if layer_id == "computing":
         if text_len <= 2:
             base_penalty = 210
         elif text_len == 3:
@@ -2045,6 +2033,82 @@ def _compute_generic_vertical_penalty(
         relief = 12 if text_len <= 4 else 4
 
     return max(0, base_penalty - relief)
+
+
+def _compute_civic_neutral_usage_score(usage_score: float, text_len: int) -> float:
+    if text_len <= 2:
+        return min(usage_score, 0.12)
+    if text_len == 3:
+        return min(usage_score, 0.18)
+    if text_len == 4:
+        return min(usage_score, 0.26)
+    if text_len == 5:
+        return min(usage_score, 0.34)
+    return min(usage_score, 0.42)
+
+
+def _apply_neutral_civic_weights(
+    mapping: Dict[Tuple[str, str], int],
+    civic_terms: Set[str],
+    usage_score_map: Dict[str, float],
+    jieba_direct_signal_map: Dict[str, float],
+    jieba_pos_map: Dict[str, str],
+    char_frequency_prior: Dict[str, float],
+    stats_prefix: str,
+) -> Tuple[Dict[Tuple[str, str], int], Dict[str, int]]:
+    stats = {
+        f"{stats_prefix}_rows_considered": 0,
+        f"{stats_prefix}_rows_reduced": 0,
+        f"{stats_prefix}_weight_delta_total": 0,
+    }
+    if not mapping or not civic_terms:
+        return mapping, stats
+
+    char_prior = _build_effective_char_prior(mapping, char_frequency_prior)
+    adjusted: Dict[Tuple[str, str], int] = {}
+    for key, weight in mapping.items():
+        _pinyin, text = key
+        if text not in civic_terms or _cjk_len(text) < 2:
+            adjusted[key] = weight
+            continue
+
+        stats[f"{stats_prefix}_rows_considered"] += 1
+        text_len = _cjk_len(text)
+        neutral_usage_score = _compute_civic_neutral_usage_score(
+            usage_score_map.get(text, 0.0),
+            text_len,
+        )
+        neutral_weight = _compute_weight_with_signals(
+            text,
+            usage_score=neutral_usage_score,
+            source_hits=0,
+            pageview_score=0.0,
+            wiki_hit=False,
+            core_entry=False,
+            jieba_direct_score=jieba_direct_signal_map.get(text, 0.0),
+            pos_tag=jieba_pos_map.get(text, ""),
+            char_score=_compute_text_single_char_prior(text, char_prior),
+        )
+        neutral_penalty = _compute_civic_neutral_usage_score(0.0, text_len)
+        if text_len <= 2:
+            neutral_penalty = 74
+        elif text_len == 3:
+            neutral_penalty = 32
+        elif text_len == 4:
+            neutral_penalty = 6
+        elif text_len == 5:
+            neutral_penalty = 0
+        else:
+            neutral_penalty = 0
+        if neutral_penalty > 0:
+            neutral_weight = max(1, neutral_weight - neutral_penalty)
+        new_weight = min(weight, neutral_weight)
+        adjusted[key] = new_weight
+        if new_weight < weight:
+            stats[f"{stats_prefix}_rows_reduced"] += 1
+            stats[f"{stats_prefix}_weight_delta_total"] += weight - new_weight
+
+    return adjusted, stats
 
 
 def _apply_explicit_term_pinyin_overrides(
@@ -10300,30 +10364,11 @@ def _augment_with_vertical_terms(
             stats["vertical_terms_skipped_no_pinyin"] += 1
             continue
 
-        effective_usage_score = usage_score
-        if layer_id == "civic":
-            word_len = _cjk_len(sc_word)
-            if word_len <= 2:
-                effective_usage_score = min(usage_score, 0.12)
-            elif word_len == 3:
-                effective_usage_score = min(usage_score, 0.18)
-            elif word_len == 4:
-                effective_usage_score = min(usage_score, 0.26)
-            elif word_len == 5:
-                effective_usage_score = min(usage_score, 0.34)
-            else:
-                effective_usage_score = min(usage_score, 0.42)
-
         if layer_id == "medicine":
             source_hits = 2 if source_id == "wikidata-medical-mesh-zh" else 1
             short_bonus = 0
             long_bonus = 4
             allow_existing_boost = _cjk_len(sc_word) >= 4 or _is_medical_specific_term(sc_word)
-        elif layer_id == "civic":
-            source_hits = 0
-            short_bonus = 0
-            long_bonus = 0
-            allow_existing_boost = False
         elif layer_id == "computing":
             source_hits = 2 if source_id == "project-curated-vertical-computing" and _cjk_len(sc_word) >= 4 else 1
             short_bonus = 0
@@ -10336,21 +10381,18 @@ def _augment_with_vertical_terms(
             short_bonus = 18
             long_bonus = 10
             allow_existing_boost = True
-        usage_score_map[sc_word] = max(usage_score_map.get(sc_word, 0.0), effective_usage_score)
+        usage_score_map[sc_word] = max(usage_score_map.get(sc_word, 0.0), usage_score)
         source_hits_map[sc_word] = max(source_hits_map.get(sc_word, 0), source_hits)
 
-        if layer_id == "civic":
-            sc_jieba_direct = jieba_direct_signal_map.get(sc_word, 0.0)
-        else:
-            sc_jieba_direct = max(
-                jieba_direct_signal_map.get(sc_word, 0.0),
-                min(0.18, usage_score * 0.18),
-            )
+        sc_jieba_direct = max(
+            jieba_direct_signal_map.get(sc_word, 0.0),
+            min(0.18, usage_score * 0.18),
+        )
         sc_pos_tag = jieba_pos_map.get(sc_word, "")
         sc_char_score = _compute_text_single_char_prior(sc_word, sc_char_prior)
         sc_weight = _compute_weight_with_signals(
             sc_word,
-            usage_score=effective_usage_score,
+            usage_score=usage_score,
             source_hits=source_hits,
             pageview_score=0.0,
             wiki_hit=False,
@@ -10399,21 +10441,18 @@ def _augment_with_vertical_terms(
         if _cjk_len(tc_candidate) < min_hanzi:
             continue
 
-        tc_usage_score_map[tc_candidate] = max(tc_usage_score_map.get(tc_candidate, 0.0), effective_usage_score)
+        tc_usage_score_map[tc_candidate] = max(tc_usage_score_map.get(tc_candidate, 0.0), usage_score)
         tc_source_hits_map[tc_candidate] = max(tc_source_hits_map.get(tc_candidate, 0), source_hits)
 
-        if layer_id == "civic":
-            tc_jieba_direct = tc_jieba_direct_signal_map.get(tc_candidate, 0.0)
-        else:
-            tc_jieba_direct = max(
-                tc_jieba_direct_signal_map.get(tc_candidate, 0.0),
-                min(0.18, usage_score * 0.18),
-            )
+        tc_jieba_direct = max(
+            tc_jieba_direct_signal_map.get(tc_candidate, 0.0),
+            min(0.18, usage_score * 0.18),
+        )
         tc_pos_tag = tc_jieba_pos_map.get(tc_candidate, sc_pos_tag)
         tc_char_score = _compute_text_single_char_prior(tc_candidate, tc_char_prior)
         tc_weight = _compute_weight_with_signals(
             tc_candidate,
-            usage_score=effective_usage_score,
+            usage_score=usage_score,
             source_hits=source_hits,
             pageview_score=0.0,
             wiki_hit=False,
@@ -10808,6 +10847,61 @@ def _write_dict(
                 unihan_pinlu_detail_map,
             )
             f.write(f"{output_pinyin}\t{text}\t{weight}\n")
+
+
+def _load_existing_dict_snapshot(
+    path: pathlib.Path,
+) -> Dict[Tuple[str, str], int]:
+    snapshot: Dict[Tuple[str, str], int] = {}
+    if not path.exists():
+        return snapshot
+    with path.open("r", encoding="utf-8") as f:
+        for raw_line in f:
+            line = raw_line.rstrip("\n")
+            if not line or line.startswith("#"):
+                continue
+            parts = line.split("\t")
+            if len(parts) < 3:
+                continue
+            try:
+                snapshot[(parts[0], parts[1])] = int(parts[2])
+            except ValueError:
+                continue
+    return snapshot
+
+
+def _restore_missing_texts_from_snapshot(
+    mapping: Dict[Tuple[str, str], int],
+    previous_snapshot: Dict[Tuple[str, str], int],
+    explicit_drop_terms: Set[str],
+    stats_prefix: str,
+) -> Tuple[Dict[Tuple[str, str], int], Dict[str, int]]:
+    stats = {
+        f"{stats_prefix}_snapshot_rows_considered": len(previous_snapshot),
+        f"{stats_prefix}_snapshot_rows_restored": 0,
+        f"{stats_prefix}_snapshot_texts_restored": 0,
+        f"{stats_prefix}_snapshot_rows_skipped_explicit_drop": 0,
+    }
+    if not previous_snapshot:
+        return mapping, stats
+
+    restored = dict(mapping)
+    current_texts = {text for _pinyin, text in restored.keys()}
+    restored_texts: Set[str] = set()
+    for key, weight in previous_snapshot.items():
+        _pinyin, text = key
+        if len(text) > 1 and text in explicit_drop_terms:
+            stats[f"{stats_prefix}_snapshot_rows_skipped_explicit_drop"] += 1
+            continue
+        if text in current_texts:
+            continue
+        restored[key] = weight
+        current_texts.add(text)
+        restored_texts.add(text)
+        stats[f"{stats_prefix}_snapshot_rows_restored"] += 1
+
+    stats[f"{stats_prefix}_snapshot_texts_restored"] = len(restored_texts)
+    return restored, stats
 
 
 def _build_query_path_prior_map(
@@ -11575,6 +11669,8 @@ def main() -> int:
     output_query_path_tc = (
         repo_root / args.query_path_output_tc if args.query_path_output_tc else None
     )
+    previous_snapshot_sc = _load_existing_dict_snapshot(output_sc)
+    previous_snapshot_tc = _load_existing_dict_snapshot(output_tc)
     support_dict_sc = repo_root / args.support_dict_sc if args.support_dict_sc else None
     support_dict_tc = repo_root / args.support_dict_tc if args.support_dict_tc else None
     manifest = repo_root / args.manifest
@@ -11633,6 +11729,8 @@ def main() -> int:
     curated_daily_tc_terms: Set[str] = set()
     vertical_sc_terms: Set[str] = set()
     vertical_tc_terms: Set[str] = set()
+    civic_sc_terms: Set[str] = set()
+    civic_tc_terms: Set[str] = set()
     tc_usage_score_map: Dict[str, float] = {}
     tc_source_hits_map: Dict[str, int] = {}
     tc_jieba_direct_signal_map: Dict[str, float] = {}
@@ -11815,6 +11913,11 @@ def main() -> int:
             )
             lexical_seed_sc_terms.update(vertical_sc_terms)
             lexical_seed_tc_terms.update(vertical_tc_terms)
+            for sc_word, tc_word, _usage_score, _explicit_pinyin, layer_id, _source_id in vertical_entries:
+                if layer_id != "civic":
+                    continue
+                civic_sc_terms.add(sc_word)
+                civic_tc_terms.add(tc_word or sc_word)
             stats.update(vertical_parse_stats)
             stats.update(vertical_stats)
     elif parser_name == "cedict_thuocl_jieba_opencc_unihan_wiki":
@@ -12237,6 +12340,11 @@ def main() -> int:
             )
             lexical_seed_sc_terms.update(vertical_sc_terms)
             lexical_seed_tc_terms.update(vertical_tc_terms)
+            for sc_word, tc_word, _usage_score, _explicit_pinyin, layer_id, _source_id in vertical_entries:
+                if layer_id != "civic":
+                    continue
+                civic_sc_terms.add(sc_word)
+                civic_tc_terms.add(tc_word or sc_word)
         sc_map, sc_normalize_stats = _normalize_sc_mapping_with_opencc(sc_map, tc_to_sc_map)
         sc_map, sc_char_normalize_stats = _normalize_sc_mapping_with_char_map(
             sc_map, trad_to_simp_char_map, simp_to_trad_char_map
@@ -12818,6 +12926,40 @@ def main() -> int:
 
     sc_map = _apply_limit(sc_map, args.max_entries)
     tc_map = _apply_limit(tc_map, args.max_entries)
+    sc_map, sc_civic_neutral_stats = _apply_neutral_civic_weights(
+        sc_map,
+        civic_sc_terms,
+        usage_score_map,
+        jieba_direct_signal_map,
+        jieba_pos_map,
+        char_frequency_prior,
+        "sc_civic_neutral",
+    )
+    tc_map, tc_civic_neutral_stats = _apply_neutral_civic_weights(
+        tc_map,
+        civic_tc_terms,
+        tc_usage_score_map,
+        tc_jieba_direct_signal_map,
+        tc_jieba_pos_map,
+        tc_char_frequency_prior,
+        "tc_civic_neutral",
+    )
+    stats.update(sc_civic_neutral_stats)
+    stats.update(tc_civic_neutral_stats)
+    sc_map, sc_snapshot_restore_stats = _restore_missing_texts_from_snapshot(
+        sc_map,
+        previous_snapshot_sc,
+        MULTI_CHAR_TERM_DROP_OVERRIDES,
+        "sc",
+    )
+    tc_map, tc_snapshot_restore_stats = _restore_missing_texts_from_snapshot(
+        tc_map,
+        previous_snapshot_tc,
+        MULTI_CHAR_TERM_DROP_OVERRIDES,
+        "tc",
+    )
+    stats.update(sc_snapshot_restore_stats)
+    stats.update(tc_snapshot_restore_stats)
     sc_query_path_priors: Dict[Tuple[str, str], int] = {}
     tc_query_path_priors: Dict[Tuple[str, str], int] = {}
     if output_query_path_sc is not None:
