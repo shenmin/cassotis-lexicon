@@ -935,6 +935,7 @@ def _load_vertical_layer_sources(
                 "mesh_descriptor_catalog",
                 "wikidata_mesh_query",
                 "wikidata_term_query",
+                "sparql_term_query",
                 "payload_titles_filter",
                 "godot_searchindex_titles",
             }:
@@ -1281,7 +1282,7 @@ def _resolve_optional_repo_path(
 def _build_vertical_source_request_url(source: Dict[str, object]) -> str:
     source_url = str(source.get("download_url", "")).strip()
     source_type = str(source.get("vertical_source_type", "repo_tsv")).strip().lower()
-    if source_type not in {"wikidata_mesh_query", "wikidata_term_query"}:
+    if source_type not in {"wikidata_mesh_query", "wikidata_term_query", "sparql_term_query"}:
         return source_url
 
     parsed = urllib.parse.urlparse(source_url)
@@ -1352,6 +1353,10 @@ def _download_wikidata_term_query_payload(url: str, query: str) -> bytes:
     return _download_wikidata_sparql_bytes(url, query)
 
 
+def _download_sparql_term_query_payload(url: str, query: str) -> bytes:
+    return _download_wikidata_sparql_bytes(url, query)
+
+
 def _is_valid_wikidata_sparql_payload(payload: bytes) -> bool:
     stripped = payload.lstrip()
     if not stripped:
@@ -1408,6 +1413,20 @@ def _prefetch_vertical_source_payloads(
             url = _build_vertical_source_request_url(source)
             query = str(source.get("vertical_query", "")).strip()
             payload = _download_wikidata_term_query_payload(url, query)
+            if cache_file:
+                cache_file.parent.mkdir(parents=True, exist_ok=True)
+                cache_file.write_bytes(payload)
+            payloads[source_id] = payload
+            continue
+        if source_type == "sparql_term_query":
+            if cache_file and cache_file.exists():
+                cached_payload = cache_file.read_bytes()
+                if _is_valid_wikidata_sparql_payload(cached_payload):
+                    payloads[source_id] = cached_payload
+                    continue
+            url = _build_vertical_source_request_url(source)
+            query = str(source.get("vertical_query", "")).strip()
+            payload = _download_sparql_term_query_payload(url, query)
             if cache_file:
                 cache_file.parent.mkdir(parents=True, exist_ok=True)
                 cache_file.write_bytes(payload)
@@ -2007,6 +2026,38 @@ def _compute_generic_vertical_penalty(
             relief = 16 if text_len <= 4 else 5
         else:
             relief = 10 if text_len <= 4 else 4
+    elif layer_id == "architecture_terms":
+        if text_len <= 2:
+            base_penalty = 154
+        elif text_len == 3:
+            base_penalty = 96
+        elif text_len == 4:
+            base_penalty = 52
+        elif text_len == 5:
+            base_penalty = 24
+        else:
+            base_penalty = 10
+        if source_id == "project-curated-vertical-architecture-terms":
+            relief = 18 if text_len <= 4 else 6
+        elif source_id.startswith("getty-aat-"):
+            relief = 12 if text_len <= 4 else 4
+        else:
+            relief = 8 if text_len <= 4 else 3
+    elif layer_id == "architecture_entities":
+        if text_len <= 2:
+            base_penalty = 132
+        elif text_len == 3:
+            base_penalty = 82
+        elif text_len == 4:
+            base_penalty = 46
+        elif text_len == 5:
+            base_penalty = 22
+        else:
+            base_penalty = 10
+        if source_id == "project-curated-vertical-architecture-entities":
+            relief = 18 if text_len <= 4 else 6
+        else:
+            relief = 6 if text_len <= 4 else 3
     elif layer_id in {"proper_nouns", "fiction_entities"}:
         if text_len <= 2:
             base_penalty = 96
@@ -10348,6 +10399,13 @@ def _augment_with_vertical_terms(
         ):
             stats["vertical_terms_skipped_short"] += 1
             continue
+        if (
+            layer_id == "architecture_entities"
+            and source_id != "project-curated-vertical-architecture-entities"
+            and _cjk_len(sc_word) <= 3
+        ):
+            stats["vertical_terms_skipped_short"] += 1
+            continue
 
         pinyin = (
             explicit_pinyin
@@ -10375,6 +10433,22 @@ def _augment_with_vertical_terms(
             long_bonus = 4
             allow_existing_boost = (
                 source_id == "project-curated-vertical-computing" and _cjk_len(sc_word) >= 4
+            )
+        elif layer_id == "architecture_terms":
+            source_hits = 1
+            short_bonus = 0
+            long_bonus = 4
+            allow_existing_boost = (
+                source_id == "project-curated-vertical-architecture-terms"
+                and _cjk_len(sc_word) >= 4
+            )
+        elif layer_id == "architecture_entities":
+            source_hits = 1
+            short_bonus = 0
+            long_bonus = 2
+            allow_existing_boost = (
+                source_id == "project-curated-vertical-architecture-entities"
+                and _cjk_len(sc_word) >= 5
             )
         else:
             source_hits = 3
@@ -11524,6 +11598,20 @@ def _load_vertical_source_entries(
         opencc_payload = payload_map.get("opencc-stphrases")
         if payload is None:
             return [], {"vertical_wikidata_term_missing_payload": 1}
+        entries, parse_stats = _parse_wikidata_term_query_entries(
+            payload,
+            opencc_payload,
+            min_hanzi,
+            default_usage_score,
+            str(source.get("vertical_filter_id", "")).strip(),
+            max(min_hanzi, int(source.get("vertical_max_hanzi", 12) or 12)),
+        )
+        return _wrap_vertical_entries(entries, source), parse_stats
+    if source_type == "sparql_term_query":
+        payload = vertical_payload_map.get(str(source.get("id", "")).strip())
+        opencc_payload = payload_map.get("opencc-stphrases")
+        if payload is None:
+            return [], {"vertical_sparql_term_missing_payload": 1}
         entries, parse_stats = _parse_wikidata_term_query_entries(
             payload,
             opencc_payload,

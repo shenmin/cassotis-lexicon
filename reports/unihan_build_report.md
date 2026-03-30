@@ -1,7 +1,7 @@
 # External Build Report
 
 - profile: unihan_single
-- generated_at_utc: 2026-03-30T06:48:39+00:00
+- generated_at_utc: 2026-03-30T09:41:12+00:00
 - min_hanzi: 1
 - max_entries: unlimited
 
@@ -41,6 +41,41 @@
   - risk_level: low
   - redistribution_class: project_authored
   - url: repo://manifests/vertical/civic.tsv
+- project-curated-vertical-architecture-terms: Cassotis curated architecture terms
+  - license: Repository license (project-authored)
+  - risk_level: low
+  - redistribution_class: project_authored
+  - url: repo://manifests/vertical/architecture_terms.tsv
+- getty-aat-architectural-elements-zh: Getty AAT zh architectural elements
+  - license: ODC-By 1.0
+  - risk_level: low
+  - redistribution_class: attribution_required
+  - url: https://vocab.getty.edu/sparql.json
+- getty-aat-rooms-spaces-zh: Getty AAT zh rooms and spaces
+  - license: ODC-By 1.0
+  - risk_level: low
+  - redistribution_class: attribution_required
+  - url: https://vocab.getty.edu/sparql.json
+- wikidata-architectural-elements-zh: Wikidata zh architectural elements
+  - license: CC0-1.0
+  - risk_level: low
+  - redistribution_class: public_domain
+  - url: https://query.wikidata.org/sparql
+- wikidata-architectural-styles-zh: Wikidata zh architectural styles
+  - license: CC0-1.0
+  - risk_level: low
+  - redistribution_class: public_domain
+  - url: https://query.wikidata.org/sparql
+- project-curated-vertical-architecture-entities: Cassotis curated architecture entities
+  - license: Repository license (project-authored)
+  - risk_level: low
+  - redistribution_class: project_authored
+  - url: repo://manifests/vertical/architecture_entities.tsv
+- wikidata-architectural-landmarks-zh: Wikidata zh architectural landmarks
+  - license: CC0-1.0
+  - risk_level: low
+  - redistribution_class: public_domain
+  - url: https://query.wikidata.org/sparql
 - project-curated-vertical-gaming: Cassotis curated gaming terms
   - license: Repository license (project-authored)
   - risk_level: low
@@ -155,8 +190,8 @@
 - sc_homophone_dominant_common_boosted: 0
 - sc_homophone_dominant_common_damped: 0
 - sc_homophone_entries_adjusted: 23824
-- sc_homophone_entries_boosted: 3634
-- sc_homophone_entries_damped: 20190
+- sc_homophone_entries_boosted: 3636
+- sc_homophone_entries_damped: 20188
 - sc_homophone_inflated_short_penalized: 0
 - sc_homophone_literary_penalized: 0
 - sc_homophone_modernity_risk_penalized: 0
@@ -182,8 +217,8 @@
 - sc_script_filtered_total_entries: 23910
 - sc_single_char_leading_adjusted: 374
 - sc_single_char_leading_delta_total: 20100
-- sc_single_char_reading_preference_adjusted: 1481
-- sc_single_char_reading_preference_delta_total: 22392
+- sc_single_char_reading_preference_adjusted: 1483
+- sc_single_char_reading_preference_delta_total: 22472
 - sc_single_char_reading_removed: 1
 - sc_snapshot_rows_considered: 23909
 - sc_snapshot_rows_restored: 0
@@ -211,9 +246,9 @@
 - tc_homophone_daily_phrase_short_non_daily_damped: 0
 - tc_homophone_dominant_common_boosted: 0
 - tc_homophone_dominant_common_damped: 0
-- tc_homophone_entries_adjusted: 23949
-- tc_homophone_entries_boosted: 3818
-- tc_homophone_entries_damped: 20131
+- tc_homophone_entries_adjusted: 23950
+- tc_homophone_entries_boosted: 3820
+- tc_homophone_entries_damped: 20130
 - tc_homophone_inflated_short_penalized: 0
 - tc_homophone_literary_penalized: 0
 - tc_homophone_modernity_risk_penalized: 0
@@ -247,8 +282,8 @@
 - tc_script_filtered_total_entries: 24065
 - tc_single_char_leading_adjusted: 336
 - tc_single_char_leading_delta_total: 18312
-- tc_single_char_reading_preference_adjusted: 1842
-- tc_single_char_reading_preference_delta_total: 40906
+- tc_single_char_reading_preference_adjusted: 1844
+- tc_single_char_reading_preference_delta_total: 40986
 - tc_single_char_reading_removed: 1
 - tc_snapshot_rows_considered: 24064
 - tc_snapshot_rows_restored: 0
@@ -256,17 +291,17 @@
 - tc_snapshot_texts_restored: 0
 - total_lines: 49191
 - unihan_core_size: 18816
-- unihan_family_support_boosted_sc: 5035
-- unihan_family_support_boosted_tc: 5256
-- unihan_family_support_terms_sc: 5855
-- unihan_family_support_terms_tc: 6094
+- unihan_family_support_boosted_sc: 5037
+- unihan_family_support_boosted_tc: 5257
+- unihan_family_support_terms_sc: 5854
+- unihan_family_support_terms_tc: 6092
 - unihan_frequency_size: 0
 - unihan_grade_size: 2632
-- unihan_leading_support_terms_sc: 4750
-- unihan_leading_support_terms_tc: 4899
+- unihan_leading_support_terms_sc: 4748
+- unihan_leading_support_terms_tc: 4898
 - unihan_map_size: 26711
 - unihan_pinlu_size: 3799
-- unihan_reading_support_terms_sc: 1512
+- unihan_reading_support_terms_sc: 1511
 - unihan_reading_support_terms_tc: 1940
 - unihan_readings_chars: 26711
 - unihan_readings_pairs: 33908
@@ -285,12 +320,12 @@
 - vertical_godot_titles_skipped_non_cjk: 2230
 - vertical_godot_titles_skipped_short: 0
 - vertical_godot_titles_total: 4241
-- vertical_layer_sources_loaded: 21
+- vertical_layer_sources_loaded: 28
 - vertical_layer_sources_skipped_inactive: 0
 - vertical_layer_sources_skipped_unsupported: 0
-- vertical_layer_sources_total: 21
-- vertical_layers_active: 7
-- vertical_layers_declared: 7
+- vertical_layer_sources_total: 28
+- vertical_layers_active: 9
+- vertical_layers_declared: 9
 - vertical_layers_manifest_present: 1
 - vertical_mesh_descriptors_medical: 50066
 - vertical_mesh_descriptors_nonmedical: 12154
@@ -300,10 +335,10 @@
 - vertical_payload_titles_kept: 2822
 - vertical_payload_titles_skipped_duplicate: 106
 - vertical_payload_titles_skipped_filter: 4354396
-- vertical_support_excluded_sc: 48167
-- vertical_support_excluded_tc: 49729
-- vertical_term_kept: 382
-- vertical_term_rows: 382
+- vertical_support_excluded_sc: 51517
+- vertical_support_excluded_tc: 53077
+- vertical_term_kept: 421
+- vertical_term_rows: 421
 - vertical_term_skipped_malformed: 0
 - vertical_term_skipped_non_cjk: 0
 - vertical_term_skipped_short: 0
@@ -326,12 +361,12 @@
 - vertical_wikidata_skipped_non_cjk: 1573
 - vertical_wikidata_skipped_nonmedical_mesh: 17959
 - vertical_wikidata_skipped_short: 0
-- vertical_wikidata_term_kept: 10609
-- vertical_wikidata_term_rows: 23478
-- vertical_wikidata_term_skipped_duplicate: 875
+- vertical_wikidata_term_kept: 14027
+- vertical_wikidata_term_rows: 31013
+- vertical_wikidata_term_skipped_duplicate: 1093
 - vertical_wikidata_term_skipped_filter: 0
-- vertical_wikidata_term_skipped_long: 173
-- vertical_wikidata_term_skipped_non_cjk: 11821
+- vertical_wikidata_term_skipped_long: 184
+- vertical_wikidata_term_skipped_non_cjk: 15709
 - vertical_wikidata_term_skipped_short: 0
 - wiki_deduplicated: 425822
 - wiki_kept_titles: 4357324

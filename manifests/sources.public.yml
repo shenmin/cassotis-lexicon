@@ -1,5 +1,5 @@
 version: 1
-generated_at: "2026-03-30T06:47:14+00:00"
+generated_at: "2026-03-30T09:39:53+00:00"
 profile: external_broad
 sources:
   - id: cc-cedict
@@ -132,6 +132,26 @@ sources:
     attribution_required: false
     raw_committed: true
     notes: 'Project-maintained civic/public-service terminology layer for taxation, housing, household-registration, and related administrative vocabulary, isolated from daily/chat preferred-term ranking.'
+  - id: project-curated-vertical-architecture-terms
+    name: Cassotis curated architecture terms
+    download_url: repo://manifests/vertical/architecture_terms.tsv
+    homepage: https://github.com/shenmin/cassotis-lexicon
+    license: Repository license (project-authored)
+    risk_level: low
+    redistribution_class: project_authored
+    attribution_required: false
+    raw_committed: true
+    notes: 'Project-maintained architecture terminology supplement kept separate from the daily/chat preferred-term path.'
+  - id: project-curated-vertical-architecture-entities
+    name: Cassotis curated architecture entities
+    download_url: repo://manifests/vertical/architecture_entities.tsv
+    homepage: https://github.com/shenmin/cassotis-lexicon
+    license: Repository license (project-authored)
+    risk_level: low
+    redistribution_class: project_authored
+    attribution_required: false
+    raw_committed: true
+    notes: 'Project-maintained architecture entity supplement for architects, landmark buildings, and other high-value architecture-specific names.'
   - id: project-curated-vertical-gaming
     name: Cassotis curated gaming terms
     download_url: repo://manifests/vertical/gaming.tsv
@@ -172,6 +192,56 @@ sources:
     attribution_required: true
     raw_committed: false
     notes: 'THUOCL IT subset used as a computing/domain terminology candidate layer.'
+  - id: getty-aat-architectural-elements-zh
+    name: Getty AAT zh architectural elements
+    download_url: https://vocab.getty.edu/sparql.json
+    homepage: https://www.getty.edu/research/tools/vocabularies/aat/
+    license: ODC-By 1.0
+    risk_level: low
+    redistribution_class: attribution_required
+    attribution_required: true
+    raw_committed: false
+    notes: 'Chinese Getty AAT architectural-element terms queried from the official Getty SPARQL endpoint.'
+  - id: getty-aat-rooms-spaces-zh
+    name: Getty AAT zh rooms and spaces
+    download_url: https://vocab.getty.edu/sparql.json
+    homepage: https://www.getty.edu/research/tools/vocabularies/aat/
+    license: ODC-By 1.0
+    risk_level: low
+    redistribution_class: attribution_required
+    attribution_required: true
+    raw_committed: false
+    notes: 'Chinese Getty AAT rooms-and-spaces terms queried from the official Getty SPARQL endpoint.'
+  - id: wikidata-architectural-elements-zh
+    name: Wikidata zh architectural elements
+    download_url: https://query.wikidata.org/sparql
+    homepage: https://www.wikidata.org/wiki/Wikidata:Main_Page
+    license: CC0-1.0
+    risk_level: low
+    redistribution_class: public_domain
+    attribution_required: false
+    raw_committed: false
+    notes: 'Chinese labels and aliases for architectural-element subclasses from Wikidata Query Service.'
+  - id: wikidata-architectural-styles-zh
+    name: Wikidata zh architectural styles
+    download_url: https://query.wikidata.org/sparql
+    homepage: https://www.wikidata.org/wiki/Wikidata:Main_Page
+    license: CC0-1.0
+    risk_level: low
+    redistribution_class: public_domain
+    attribution_required: false
+    raw_committed: false
+    notes: 'Chinese labels and aliases for architectural styles from Wikidata Query Service.'
+  - id: wikidata-architectural-landmarks-zh
+    name: Wikidata zh architectural landmarks
+    download_url: https://query.wikidata.org/sparql
+    homepage: https://www.wikidata.org/wiki/Wikidata:Main_Page
+    license: CC0-1.0
+    risk_level: low
+    redistribution_class: public_domain
+    attribution_required: false
+    raw_committed: false
+    notes: 'Chinese labels and aliases for architectural landmarks from Wikidata Query Service, imported conservatively as an isolated entity layer.'
   - id: wikidata-video-games-zh
     name: Wikidata zh video games
     download_url: https://query.wikidata.org/sparql

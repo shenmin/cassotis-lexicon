@@ -1,0 +1,18 @@
+# sc	tc	usage_score	pinyin(optional)
+# Project-maintained architecture entity supplement.
+# Keep this layer separate from daily/chat phrasing and generic proper nouns.
+贝聿铭	貝聿銘	0.82
+安藤忠雄	安藤忠雄	0.82
+高迪	高第	0.80
+扎哈哈迪德	扎哈哈蒂	0.82
+勒柯布西耶	勒柯比意	0.82
+密斯凡德罗	密斯凡德羅	0.82
+弗兰克盖里	法蘭克蓋瑞	0.82
+埃菲尔铁塔	艾菲爾鐵塔	0.82
+卢浮宫	羅浮宮	0.82
+圣家堂	聖家堂	0.82
+凡尔赛宫	凡爾賽宮	0.82
+包豪斯	包豪斯	0.80
+帝国大厦	帝國大廈	0.82
+悉尼歌剧院	雪梨歌劇院	0.82
+古根海姆博物馆	古根漢美術館	0.82

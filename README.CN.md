@@ -21,8 +21,8 @@ Cassotis IME 的词库构建与发布仓库。
 
 | 文件 | 变体 | 词条数 |
 |------|------|--------|
-| `data/generated/dict_clean_sc.txt` | 简体主词库 | 153,401 |
-| `data/generated/dict_clean_tc.txt` | 繁体主词库 | 169,495 |
+| `data/generated/dict_clean_sc.txt` | 简体主词库 | 156,509 |
+| `data/generated/dict_clean_tc.txt` | 繁体主词库 | 173,257 |
 | `data/generated/dict_unihan_sc.txt` | 简体单字（Unihan） | 23,909 |
 | `data/generated/dict_unihan_tc.txt` | 繁体单字（Unihan） | 24,064 |
 
@@ -41,6 +41,8 @@ Cassotis IME 的词库构建与发布仓库。
 | Wikipedia 中文标题（ns0） | CC BY-SA 4.0 | 专名覆盖与高置信专有名词种子 |
 | Wikimedia Pageviews Top（zh.wikipedia） | CC BY-SA 4.0 | 真实世界热度信号 |
 | 过滤后的 `THUOCL_IT` 子集 | THUOCL custom open terms | 计算机 vertical 候选来源，导入前过滤，避免与日常/聊天词层混在一起 |
+| Getty AAT 中文建筑术语 | ODC-By 1.0 | 以保守方式导入 architecture-terms layer 的官方建筑术语来源 |
+| Wikidata 中文建筑构件 / 风格 / 建筑地标 | CC0-1.0 | 导入隔离式 architecture vertical 的建筑术语与建筑地标补充来源 |
 | Wikidata 中文电子游戏 / 系列 / 类型 / 主机 | CC0-1.0 | 隔离式 gaming vertical 的主实体来源 |
 | 过滤后的 Wiktionary / Wikipedia 中文游戏词条标题 | CC BY-SA 4.0 | 以保守方式导入 gaming vertical 的轻量词汇补充 |
 | Godot Docs zh-cn 标题索引 | CC BY 3.0 | game-development vertical 的主术语来源，导入前经过过滤 |
@@ -58,6 +60,8 @@ Cassotis IME 的词库构建与发布仓库。
 | Cassotis 一般专名补充 | 仓库许可证（项目自编写） | 项目维护的人名、头衔、组织、品牌等一般专名列表，不与日常/聊天优先路径混用 |
 | Cassotis 计算机术语补充 | 仓库许可证（项目自编写） | 隔离式 computing vertical 使用的项目维护计算机/领域术语列表 |
 | Cassotis 政务民生术语补充 | 仓库许可证（项目自编写） | 面向税务、房产、户籍和公共服务场景的隔离式 civic vertical 术语层，不走日常/聊天优先路径 |
+| Cassotis 建筑术语补充 | 仓库许可证（项目自编写） | 隔离式 architecture-terms layer 使用的项目维护建筑术语补充 |
+| Cassotis 建筑实体补充 | 仓库许可证（项目自编写） | 隔离式 architecture-entities layer 使用的项目维护建筑实体补充 |
 | Cassotis 游戏术语补充 | 仓库许可证（项目自编写） | 隔离式 gaming vertical 使用的项目维护游戏术语补充 |
 | Cassotis 游戏开发术语补充 | 仓库许可证（项目自编写） | 隔离式 game-development vertical 使用的项目维护术语补充 |
 | Cassotis 医学术语补充 | 仓库许可证（项目自编写） | 用于高价值医学词汇和显式拼音修正的项目维护医学补充层，与日常/聊天优先路径隔离 |
@@ -83,12 +87,14 @@ Cassotis IME 的词库构建与发布仓库。
 ## 分层策略
 - `manifests/curated_daily_phrases.tsv` 只用于应获得日常输入优待的日常/聊天表达。
 - `manifests/vertical_layers.public.json` 声明隔离式 vertical 术语层。
-- `manifests/vertical/*.tsv` 存放项目维护的 vertical 词表，例如小说实体、一般专名、计算机术语、政务民生术语、游戏术语和游戏开发术语。
+- `manifests/vertical/*.tsv` 存放项目维护的 vertical 词表，例如小说实体、一般专名、计算机术语、政务民生术语、建筑术语/建筑实体、游戏术语和游戏开发术语。
 - vertical 层可以补充领域词汇，但不会继承日常/聊天短语的优待偏置。
 - fiction 层将小说人物、作品名和世界观实体与日常/聊天表达及一般专名隔离。
 - active 的 proper-noun 层将人名、头衔和一般现实专名与日常/聊天表达隔离。
 - computing 层目前结合了过滤后的 `THUOCL_IT` 子集与项目维护计算机术语。
 - civic 层目前承载税务、房产、户籍及其他公共服务术语。
+- architecture-terms 层目前结合了项目维护建筑术语、Getty AAT 建筑术语，以及 Wikidata 建筑构件/风格补充。
+- architecture-entities 层目前结合了项目维护建筑实体，以及保守导入的 Wikidata 建筑地标补充。
 - gaming 层目前结合了项目维护游戏术语、Wikidata 游戏实体和过滤后的 zhwiki/zhwiktionary 游戏词汇标题。
 - game-development 层目前结合了项目维护游戏开发术语、过滤后的 Godot 文档标题、Wikidata 游戏引擎补充，以及过滤后的 zhwiki/zhwiktionary 游戏开发词汇标题。
 - medicine 层目前结合了项目维护医学术语、MeSH 描述符目录、MeSH 关联 Wikidata 医学实体，以及过滤后的 `THUOCL_medical` 子集，并始终与日常/聊天优先路径隔离。

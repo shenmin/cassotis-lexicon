@@ -114,6 +114,40 @@ Notes:
 - This repository uses filtered Chinese documentation titles as the main term source for the isolated game-development vertical layer.
 - Cached source payloads may be stored locally during build but are not committed as raw source dumps.
 
+## Getty AAT zh architectural terms
+
+- Name: Getty Art & Architecture Thesaurus (AAT) Chinese architectural terms
+- Homepage: https://www.getty.edu/research/tools/vocabularies/aat/
+- Endpoint: https://vocab.getty.edu/sparql.json
+- License: ODC-By 1.0
+- Copyright holder: Getty Vocabulary Program / J. Paul Getty Trust
+
+Notes:
+
+- This repository queries Chinese-prefLabel architecture terms from Getty AAT
+  through the official SPARQL endpoint.
+- The imported set is limited to isolated architecture terminology layers and
+  does not share the daily/chat preferred-term path.
+- Query responses are cached locally during build and are not committed as raw
+  source dumps.
+
+## Wikidata zh architecture terms / landmarks
+
+- Name: Wikidata Query Service architecture terms and landmark entities (Chinese labels/aliases)
+- Homepage: https://www.wikidata.org/wiki/Wikidata:Main_Page
+- Endpoint: https://query.wikidata.org/sparql
+- License: CC0-1.0
+- Copyright holder: Wikidata contributors
+
+Notes:
+
+- This repository queries Chinese labels and aliases for architectural elements,
+  architectural styles, and architectural landmarks.
+- The imported set is used only in isolated architecture vertical layers and
+  is weighted conservatively to avoid overriding the main everyday lexicon.
+- Query responses are cached locally during build and are not committed as raw
+  source dumps.
+
 ## Wikidata zh gaming / game-engine entities
 
 - Name: Wikidata Query Service gaming entities and game-engine entities (Chinese labels/aliases)
