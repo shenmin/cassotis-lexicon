@@ -1,7 +1,7 @@
 # External Build Report
 
 - profile: unihan_single
-- generated_at_utc: 2026-03-28T13:40:21+00:00
+- generated_at_utc: 2026-03-30T03:25:45+00:00
 - min_hanzi: 1
 - max_entries: unlimited
 
@@ -36,6 +36,11 @@
   - risk_level: low
   - redistribution_class: project_authored
   - url: repo://manifests/vertical/computing.tsv
+- project-curated-vertical-civic: Cassotis curated civic terms
+  - license: Repository license (project-authored)
+  - risk_level: low
+  - redistribution_class: project_authored
+  - url: repo://manifests/vertical/civic.tsv
 - project-curated-vertical-gaming: Cassotis curated gaming terms
   - license: Repository license (project-authored)
   - risk_level: low
@@ -146,9 +151,9 @@
 - sc_homophone_daily_phrase_short_non_daily_damped: 0
 - sc_homophone_dominant_common_boosted: 0
 - sc_homophone_dominant_common_damped: 0
-- sc_homophone_entries_adjusted: 23821
-- sc_homophone_entries_boosted: 3622
-- sc_homophone_entries_damped: 20199
+- sc_homophone_entries_adjusted: 23820
+- sc_homophone_entries_boosted: 3623
+- sc_homophone_entries_damped: 20197
 - sc_homophone_inflated_short_penalized: 0
 - sc_homophone_literary_penalized: 0
 - sc_homophone_modernity_risk_penalized: 0
@@ -172,8 +177,8 @@
 - sc_multi_pronunciation_terms: 0
 - sc_script_filtered_entries: 0
 - sc_script_filtered_total_entries: 23910
-- sc_single_char_leading_adjusted: 373
-- sc_single_char_leading_delta_total: 19860
+- sc_single_char_leading_adjusted: 375
+- sc_single_char_leading_delta_total: 20052
 - sc_single_char_reading_preference_adjusted: 1481
 - sc_single_char_reading_preference_delta_total: 22781
 - sc_single_char_reading_removed: 1
@@ -196,9 +201,9 @@
 - tc_homophone_daily_phrase_short_non_daily_damped: 0
 - tc_homophone_dominant_common_boosted: 0
 - tc_homophone_dominant_common_damped: 0
-- tc_homophone_entries_adjusted: 23946
-- tc_homophone_entries_boosted: 3822
-- tc_homophone_entries_damped: 20124
+- tc_homophone_entries_adjusted: 23947
+- tc_homophone_entries_boosted: 3824
+- tc_homophone_entries_damped: 20123
 - tc_homophone_inflated_short_penalized: 0
 - tc_homophone_literary_penalized: 0
 - tc_homophone_modernity_risk_penalized: 0
@@ -230,25 +235,25 @@
 - tc_multi_pronunciation_terms: 0
 - tc_script_filtered_entries: 0
 - tc_script_filtered_total_entries: 24065
-- tc_single_char_leading_adjusted: 335
-- tc_single_char_leading_delta_total: 18120
+- tc_single_char_leading_adjusted: 336
+- tc_single_char_leading_delta_total: 18180
 - tc_single_char_reading_preference_adjusted: 1841
 - tc_single_char_reading_preference_delta_total: 40520
 - tc_single_char_reading_removed: 1
 - total_lines: 49191
 - unihan_core_size: 18816
-- unihan_family_support_boosted_sc: 5028
-- unihan_family_support_boosted_tc: 5239
+- unihan_family_support_boosted_sc: 5029
+- unihan_family_support_boosted_tc: 5248
 - unihan_family_support_terms_sc: 5848
-- unihan_family_support_terms_tc: 6077
+- unihan_family_support_terms_tc: 6085
 - unihan_frequency_size: 0
 - unihan_grade_size: 2632
 - unihan_leading_support_terms_sc: 4743
-- unihan_leading_support_terms_tc: 4887
+- unihan_leading_support_terms_tc: 4890
 - unihan_map_size: 26711
 - unihan_pinlu_size: 3799
 - unihan_reading_support_terms_sc: 1510
-- unihan_reading_support_terms_tc: 1935
+- unihan_reading_support_terms_tc: 1938
 - unihan_readings_chars: 26711
 - unihan_readings_pairs: 33908
 - unihan_sc_only_chars: 2766
@@ -266,12 +271,12 @@
 - vertical_godot_titles_skipped_non_cjk: 2230
 - vertical_godot_titles_skipped_short: 0
 - vertical_godot_titles_total: 4241
-- vertical_layer_sources_loaded: 20
+- vertical_layer_sources_loaded: 21
 - vertical_layer_sources_skipped_inactive: 0
 - vertical_layer_sources_skipped_unsupported: 0
-- vertical_layer_sources_total: 20
-- vertical_layers_active: 6
-- vertical_layers_declared: 6
+- vertical_layer_sources_total: 21
+- vertical_layers_active: 7
+- vertical_layers_declared: 7
 - vertical_layers_manifest_present: 1
 - vertical_mesh_descriptors_medical: 50066
 - vertical_mesh_descriptors_nonmedical: 12154
@@ -281,10 +286,10 @@
 - vertical_payload_titles_kept: 2822
 - vertical_payload_titles_skipped_duplicate: 106
 - vertical_payload_titles_skipped_filter: 4354396
-- vertical_support_excluded_sc: 48078
-- vertical_support_excluded_tc: 49640
-- vertical_term_kept: 293
-- vertical_term_rows: 293
+- vertical_support_excluded_sc: 48167
+- vertical_support_excluded_tc: 49729
+- vertical_term_kept: 382
+- vertical_term_rows: 382
 - vertical_term_skipped_malformed: 0
 - vertical_term_skipped_non_cjk: 0
 - vertical_term_skipped_short: 0

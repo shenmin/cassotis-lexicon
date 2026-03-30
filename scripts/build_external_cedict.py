@@ -1958,7 +1958,19 @@ def _compute_generic_vertical_penalty(
     source_id: str,
 ) -> int:
     text_len = _cjk_len(text)
-    if layer_id == "computing":
+    if layer_id == "civic":
+        if text_len <= 2:
+            base_penalty = 88
+        elif text_len == 3:
+            base_penalty = 46
+        elif text_len == 4:
+            base_penalty = 20
+        elif text_len == 5:
+            base_penalty = 8
+        else:
+            base_penalty = 2
+        relief = 14 if text_len <= 4 else 2
+    elif layer_id == "computing":
         if text_len <= 2:
             base_penalty = 210
         elif text_len == 3:
@@ -10288,11 +10300,30 @@ def _augment_with_vertical_terms(
             stats["vertical_terms_skipped_no_pinyin"] += 1
             continue
 
+        effective_usage_score = usage_score
+        if layer_id == "civic":
+            word_len = _cjk_len(sc_word)
+            if word_len <= 2:
+                effective_usage_score = min(usage_score, 0.12)
+            elif word_len == 3:
+                effective_usage_score = min(usage_score, 0.18)
+            elif word_len == 4:
+                effective_usage_score = min(usage_score, 0.26)
+            elif word_len == 5:
+                effective_usage_score = min(usage_score, 0.34)
+            else:
+                effective_usage_score = min(usage_score, 0.42)
+
         if layer_id == "medicine":
             source_hits = 2 if source_id == "wikidata-medical-mesh-zh" else 1
             short_bonus = 0
             long_bonus = 4
             allow_existing_boost = _cjk_len(sc_word) >= 4 or _is_medical_specific_term(sc_word)
+        elif layer_id == "civic":
+            source_hits = 0
+            short_bonus = 0
+            long_bonus = 0
+            allow_existing_boost = False
         elif layer_id == "computing":
             source_hits = 2 if source_id == "project-curated-vertical-computing" and _cjk_len(sc_word) >= 4 else 1
             short_bonus = 0
@@ -10305,18 +10336,21 @@ def _augment_with_vertical_terms(
             short_bonus = 18
             long_bonus = 10
             allow_existing_boost = True
-        usage_score_map[sc_word] = max(usage_score_map.get(sc_word, 0.0), usage_score)
+        usage_score_map[sc_word] = max(usage_score_map.get(sc_word, 0.0), effective_usage_score)
         source_hits_map[sc_word] = max(source_hits_map.get(sc_word, 0), source_hits)
 
-        sc_jieba_direct = max(
-            jieba_direct_signal_map.get(sc_word, 0.0),
-            min(0.18, usage_score * 0.18),
-        )
+        if layer_id == "civic":
+            sc_jieba_direct = jieba_direct_signal_map.get(sc_word, 0.0)
+        else:
+            sc_jieba_direct = max(
+                jieba_direct_signal_map.get(sc_word, 0.0),
+                min(0.18, usage_score * 0.18),
+            )
         sc_pos_tag = jieba_pos_map.get(sc_word, "")
         sc_char_score = _compute_text_single_char_prior(sc_word, sc_char_prior)
         sc_weight = _compute_weight_with_signals(
             sc_word,
-            usage_score=usage_score,
+            usage_score=effective_usage_score,
             source_hits=source_hits,
             pageview_score=0.0,
             wiki_hit=False,
@@ -10365,18 +10399,21 @@ def _augment_with_vertical_terms(
         if _cjk_len(tc_candidate) < min_hanzi:
             continue
 
-        tc_usage_score_map[tc_candidate] = max(tc_usage_score_map.get(tc_candidate, 0.0), usage_score)
+        tc_usage_score_map[tc_candidate] = max(tc_usage_score_map.get(tc_candidate, 0.0), effective_usage_score)
         tc_source_hits_map[tc_candidate] = max(tc_source_hits_map.get(tc_candidate, 0), source_hits)
 
-        tc_jieba_direct = max(
-            tc_jieba_direct_signal_map.get(tc_candidate, 0.0),
-            min(0.18, usage_score * 0.18),
-        )
+        if layer_id == "civic":
+            tc_jieba_direct = tc_jieba_direct_signal_map.get(tc_candidate, 0.0)
+        else:
+            tc_jieba_direct = max(
+                tc_jieba_direct_signal_map.get(tc_candidate, 0.0),
+                min(0.18, usage_score * 0.18),
+            )
         tc_pos_tag = tc_jieba_pos_map.get(tc_candidate, sc_pos_tag)
         tc_char_score = _compute_text_single_char_prior(tc_candidate, tc_char_prior)
         tc_weight = _compute_weight_with_signals(
             tc_candidate,
-            usage_score=usage_score,
+            usage_score=effective_usage_score,
             source_hits=source_hits,
             pageview_score=0.0,
             wiki_hit=False,
