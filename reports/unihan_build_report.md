@@ -1,7 +1,7 @@
 # External Build Report
 
 - profile: unihan_single
-- generated_at_utc: 2026-04-01T03:29:10+00:00
+- generated_at_utc: 2026-04-02T08:33:49+00:00
 - min_hanzi: 1
 - max_entries: unlimited
 
@@ -215,8 +215,8 @@
 - sc_multi_pronunciation_terms: 0
 - sc_script_filtered_entries: 0
 - sc_script_filtered_total_entries: 23910
-- sc_single_char_leading_adjusted: 377
-- sc_single_char_leading_delta_total: 20232
+- sc_single_char_leading_adjusted: 376
+- sc_single_char_leading_delta_total: 20208
 - sc_single_char_reading_preference_adjusted: 1484
 - sc_single_char_reading_preference_delta_total: 22734
 - sc_single_char_reading_removed: 1
@@ -246,9 +246,9 @@
 - tc_homophone_daily_phrase_short_non_daily_damped: 0
 - tc_homophone_dominant_common_boosted: 0
 - tc_homophone_dominant_common_damped: 0
-- tc_homophone_entries_adjusted: 23952
+- tc_homophone_entries_adjusted: 23953
 - tc_homophone_entries_boosted: 3825
-- tc_homophone_entries_damped: 20127
+- tc_homophone_entries_damped: 20128
 - tc_homophone_inflated_short_penalized: 0
 - tc_homophone_literary_penalized: 0
 - tc_homophone_modernity_risk_penalized: 0
@@ -292,9 +292,9 @@
 - total_lines: 49191
 - unihan_core_size: 18816
 - unihan_family_support_boosted_sc: 5048
-- unihan_family_support_boosted_tc: 5268
+- unihan_family_support_boosted_tc: 5269
 - unihan_family_support_terms_sc: 5862
-- unihan_family_support_terms_tc: 6100
+- unihan_family_support_terms_tc: 6101
 - unihan_frequency_size: 0
 - unihan_grade_size: 2632
 - unihan_leading_support_terms_sc: 4749
@@ -302,7 +302,7 @@
 - unihan_map_size: 26711
 - unihan_pinlu_size: 3799
 - unihan_reading_support_terms_sc: 1511
-- unihan_reading_support_terms_tc: 1941
+- unihan_reading_support_terms_tc: 1942
 - unihan_readings_chars: 26711
 - unihan_readings_pairs: 33908
 - unihan_sc_only_chars: 2766
@@ -331,14 +331,14 @@
 - vertical_mesh_descriptors_nonmedical: 12154
 - vertical_mesh_descriptors_total: 62220
 - vertical_mesh_missing_payload: 0
-- vertical_payload_titles_candidates: 4357324
-- vertical_payload_titles_kept: 2822
+- vertical_payload_titles_candidates: 4366886
+- vertical_payload_titles_kept: 2826
 - vertical_payload_titles_skipped_duplicate: 106
-- vertical_payload_titles_skipped_filter: 4354396
-- vertical_support_excluded_sc: 51524
-- vertical_support_excluded_tc: 53084
-- vertical_term_kept: 428
-- vertical_term_rows: 428
+- vertical_payload_titles_skipped_filter: 4363954
+- vertical_support_excluded_sc: 51538
+- vertical_support_excluded_tc: 53099
+- vertical_term_kept: 439
+- vertical_term_rows: 439
 - vertical_term_skipped_malformed: 0
 - vertical_term_skipped_non_cjk: 0
 - vertical_term_skipped_short: 0
@@ -368,16 +368,16 @@
 - vertical_wikidata_term_skipped_long: 184
 - vertical_wikidata_term_skipped_non_cjk: 15709
 - vertical_wikidata_term_skipped_short: 0
-- wiki_deduplicated: 425822
-- wiki_kept_titles: 4357324
+- wiki_deduplicated: 427474
+- wiki_kept_titles: 4366886
 - wiki_proper_augmented_sc_terms: 0
 - wiki_proper_augmented_tc_terms: 0
-- wiki_skipped_colon: 20078
+- wiki_skipped_colon: 20166
 - wiki_skipped_empty: 10
-- wiki_skipped_long: 296852
-- wiki_skipped_non_cjk: 6035102
+- wiki_skipped_long: 298308
+- wiki_skipped_non_cjk: 6076074
 - wiki_skipped_short: 0
-- wiki_total_lines: 11135188
+- wiki_total_lines: 11188918
 
 ## Output
 - sc_file: data/generated/dict_unihan_sc.txt

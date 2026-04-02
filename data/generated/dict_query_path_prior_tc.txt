@@ -140,6 +140,7 @@ bainianshuren	百年|樹人	428
 bairihaiganjun	百日咳|杆菌	467
 bairihaijunmiao	百日咳|菌苗	467
 bairihaiyimiao	百日咳|疫苗	500
+bairitideng	白日|提燈	474
 baisekangzhen	白色|糠疹	482
 baisekongbu	白色|恐怖	467
 baisemishi	白色|密室	510
@@ -166,7 +167,7 @@ baiyigaoxueya	白衣|高血壓	500
 baiyingxiongchuanjueqi	百英雄傳|崛起	512
 baiyinniaolong	白銀|鳥籠	485
 baiyizhanshi	白衣|戰士	468
-baiyunjichang	白雲|機場	458
+baiyunjichang	白雲|機場	453
 baizhantianchonggeming	百戰天蟲|革命	512
 baizhantianchongxilie	百戰天蟲|係列	436
 baizhantianchongyuanjun	百戰天蟲|援軍	512
@@ -514,7 +515,7 @@ bingfangyishi	病房|軼事	479
 bingfengzhiguxilie	冰風之穀|係列	417
 bingganjishuqi	餅乾|計數器	483
 binggongbanli	秉公|辦理	456
-binghejiyuan	冰河|紀元	507
+binghejiyuan	冰河|紀元	472
 binghuananquan	病患|安全	500
 binghuanquanli	病患|權利	497
 bingliangongsheng	並聯|共生	472
@@ -1074,6 +1075,7 @@ chisezhanxianxilie	赤色戰綫|係列	416
 chisezhanxianxilie	赤色戰線|係列	436
 chishenjingmabi	尺神经|麻痹	466
 chixushijian	持續|時間	463
+chizhafengyun	叱吒|風雲	478
 chongfengfeiche	衝鋒|飛車	354
 chongfengfeichexilie	衝鋒|飛車|係列	436
 chongfenkaolv	充分|考慮	440
@@ -1716,6 +1718,7 @@ dianziyouxiruanjian	電子|遊戲|軟件	499
 dianziyouxisheji	電子|遊戲|設計	499
 dianziyouxishuihuo	電子|遊戲|水貨	499
 dianziyouxishuyu	電子|遊戲|術語	499
+dianziyouxiting	電子|遊戲廳	499
 dianziyouxiyanjiu	電子|遊戲|研究	499
 dianziyouxiyinle	電子|遊戲音樂	499
 dianziyouxiyizhi	電子|遊戲|移植	499
@@ -2574,7 +2577,7 @@ fengkuangdalou	瘋狂|大樓	480
 fengkuangduanpao	瘋狂|短跑	430
 fengkuangduanpaosaiche	瘋狂|短跑|賽車	512
 fengkuanggongniu	瘋狂|公牛	479
-fengkuangjichang	瘋狂|機場	502
+fengkuangjichang	瘋狂|機場	496
 fengkuanglaoshu	瘋狂|老鼠	486
 fengkuanglongjuanfeng	瘋狂|龍捲風	512
 fengkuangmotuoche	瘋狂|摩托車	476
@@ -3941,7 +3944,7 @@ huashenzhentan	化身|偵探	472
 huashichuanggejiegou	花飾窗格|結構	465
 huashiranliao	化石|燃料	500
 huashizhanshi	化石|戰士	513
-huaweiwuyou	化為|烏有	435
+huaweiwuyou	化為|烏有	431
 huaxianggongxue	畫像|工學	436
 huaxuefanying	化學|反應	467
 huaxuefanyingmoxing	化學|反應|模型	497
@@ -4341,9 +4344,9 @@ jiaoyangkancaiyuan	叫羊看|菜園	437
 jiaoyishichang	交易|市場	468
 jiaoyishuifei	交易|稅費	498
 jiaoyizhongxin	交易|中心	520
-jiaoyuandanbai	膠原|蛋白	514
-jiaoyuanjibing	膠原|疾病	500
-jiaoyuanningjisu	膠原|凝集素	500
+jiaoyuandanbai	膠原|蛋白	507
+jiaoyuanjibing	膠原|疾病	487
+jiaoyuanningjisu	膠原|凝集素	492
 jiaoyubuzhang	教育|部長	472
 jiaoyudianzi	教育|電子	425
 jiaoyudianziyouxi	教育|電子|遊戲	507
@@ -4458,12 +4461,12 @@ jidishenjingjie	基底|神經節	497
 jidishenjingjie	基底|神经节	467
 jidixibaoai	基底|细胞癌	468
 jidongcheliang	機動|車輛	446
-jiduanfenzi	極端|分子	469
-jiduanganzao	極端|乾燥	491
-jiduanhuanjing	極端|環境	497
-jiduanqihou	極端|氣候	482
-jiduantianqi	極端|天氣	497
-jiduanzhuyi	極端|主義	447
+jiduanfenzi	極端|分子	444
+jiduanganzao	極端|乾燥	464
+jiduanhuanjing	極端|環境	481
+jiduanqihou	極端|氣候	455
+jiduantianqi	極端|天氣	478
+jiduanzhuyi	極端|主義	420
 jiduhunluan	極度|混亂	512
 jidujiaotu	基督|教徒	478
 jidukonghuang	極度|恐慌	512
@@ -4631,7 +4634,7 @@ jijinfenzi	激進|份子	467
 jijinfenzi	激進|分子	467
 jijingfengbao	寂靜|風暴	512
 jijinzhuyi	激進|主義	466
-jijiuhuqi	急救|呼氣	497
+jijiuhuqi	急救|呼氣	488
 jijiuyiliao	急救|醫療	497
 jijiuzhongxin	急救|中心	501
 jikeyouxi	飢渴|遊戲	475
@@ -5390,7 +5393,7 @@ kexueyanjiufangfa	科學|研究|方法	497
 kexuezhishi	科學|知識	463
 kexuezhuyi	科學|主義	446
 keyanfangfa	科研|方法	484
-keyanjijin	科研|基金	500
+keyanjijin	科研|基金	497
 keyanrenyuan	科研|人員	470
 kezaishengnengyuan	可再生|能源	500
 kezhanqumian	可展|麯麵	422
@@ -5621,7 +5624,7 @@ laoguniuzoulu	老牯牛|走路	437
 laohankenganzhe	老漢啃|甘蔗	424
 laoheshangbanjia	老和尚|搬傢	408
 laoheshangmajie	老和尚|罵街	391
-laoheshangqiaozhong	老和尚|敲鐘	390
+laoheshangqiaozhong	老和尚|敲鐘	389
 laoheshangtitou	老和尚|剃頭	419
 laohubanheshang	老虎扮|和尚	455
 laohuchidaxiang	老虎喫|大象	437
@@ -7253,7 +7256,7 @@ pendigongnengzhangai	盆底|功能|障礙	480
 penghushuidao	澎湖|水道	482
 pengsuanrongye	硼酸|溶液	458
 pengyoushouji	朋友|收集	515
-pengyoushoujixilie	朋友|收集|係列	387
+pengyoushoujixilie	朋友|收集|係列	386
 pengzhuangceshi	碰撞|測試	498
 pengzhuangceshijiaren	碰撞|測試|假人	498
 pengzhuanggongyue	碰撞|公約	469
@@ -8704,7 +8707,7 @@ shenhaiweiji	深海|危機	513
 shenhaizhanxian	深海|戰線	499
 shenhuachuanshuo	神話|傳說	512
 shenhuajingling	神話|精靈	512
-shenhuajiyuan	神話|紀元	510
+shenhuajiyuan	神話|紀元	475
 shenhuaqingzhongdu	砷化氢|中毒	467
 shenhuashidai	神話|時代	512
 shenhuashiji	神話|世紀	512
@@ -9964,6 +9967,7 @@ tongyongzhuanlu	通用|轉錄	415
 tongyongzhuanluyinzi	通用|轉錄|因子	497
 tongyuanzhongzuxiufu	同源重組|修復	497
 toubaosaifen	頭孢|噻吩	411
+toubiyouxiji	投幣|遊戲機	499
 toubuchuankong	頭部|穿孔	461
 toubushoushang	頭部|受傷	497
 toubuwaishang	頭部|外傷	446
@@ -9999,7 +10003,7 @@ tuantixuexi	團體|學習	497
 tuantizhiliao	團體|治療	497
 tubanyouxi	圖版|遊戲	474
 tubianchansheng	突變|產生	497
-tubianjiyuan	突變|紀元	512
+tubianjiyuan	突變|紀元	487
 tubulvxing	徒步|旅行	467
 tudehanchenghuang	土地喊|城隍	455
 tudelaotengkong	土地佬|騰空	418
@@ -10154,7 +10158,7 @@ wanggesheji	網格|設計	498
 wanggeshitu	網格|視圖	426
 wanggexibao	網格|細胞	508
 wangguofengyun	王國|風雲	512
-wangguojiyuan	王國|紀元	506
+wangguojiyuan	王國|紀元	471
 wangguomiezhong	亡國|滅種	429
 wangguozaixian	王國|在線	511
 wangguozhixinbianma	王國之心|編碼	512
@@ -10544,6 +10548,7 @@ wulidezhikuozhan	物理地址|擴展	498
 wulidinglv	物理|定律	499
 wulidingshu	物理|定數	493
 wulidonglixue	物理|動理學	501
+wuliduixiang	物理|對象	499
 wulifangwen	物理|訪問	498
 wulifaze	物理|法則	501
 wuliguangxue	物理|光學	502
@@ -10555,6 +10560,7 @@ wulihaiyangxue	物理|海洋學	492
 wulihuaxue	物理|化學	520
 wulihuaxueshouce	物理|化學|手冊	498
 wulihuaxuetongxun	物理|化學|通訊	498
+wulihuitian	無力|迴天	436
 wulijiaoshi	物理|教師	501
 wulijiaoyu	物理|教育	501
 wulijiegou	物理|結構	499
@@ -11144,8 +11150,8 @@ xingjihundouluo	星際|魂鬥羅	512
 xingjihuohu	星際|火狐	459
 xingjihuohumingling	星際火狐|命令	512
 xingjihuohuxilie	星際火狐|係列	436
-xingjikache	星際|卡車	428
-xingjikachesiji	星際|卡車|司機	510
+xingjikache	星際|卡車	402
+xingjikachesiji	星際|卡車|司機	484
 xingjililiang	星際|力量	461
 xingjilingzhu	星際|領主	453
 xingjilvxing	星際|旅行	501
@@ -12085,6 +12091,7 @@ yilangrenzhi	伊朗|人質	422
 yilangrenzhiweiji	伊朗|人質|危機	504
 yilangwuzhuang	伊朗|武裝	364
 yilangwuzhuangbudui	伊朗|武裝|部隊	446
+yilangzhanzheng	伊朗|戰爭	453
 yilangzhishi	伊朗|知識	387
 yilangzhishichanquan	伊朗|知識|產權	469
 yilangzongtong	伊朗|總統	505
@@ -12501,7 +12508,7 @@ yonghengdoushi	永恆|鬥士	466
 yonghengguanghui	永恆|光輝	467
 yonghengheian	永恆|黑暗	475
 yonghenghuanxiang	永恆|幻想	496
-yonghengjiyuan	永恆|紀元	475
+yonghengjiyuan	永恆|紀元	440
 yonghengkongjian	永恆|空間	508
 yonghenglunhui	永恆|輪迴	469
 yonghenglvzhou	永恆|綠洲	487
@@ -13142,6 +13149,7 @@ zhengxingshoushu	整形|手术	490
 zhengxingwaike	整形|外科	491
 zhengyilianmeng	正義|聯盟	430
 zhengyilianmengyingxiong	正義|聯盟|英雄	512
+zhengyinvshen	正義|女神	453
 zhengzhantianxia	爭戰|天下	502
 zhengzhicelve	政治|策略	497
 zhengzhidianzi	政治|電子	425
@@ -13979,7 +13987,7 @@ zuihoudexinyang	最後的|信仰	515
 zuihoudeyiji	最後的|遺蹟	473
 zuihoudezhanshi	最後的|戰士	504
 zuihoudezhouyu	最後的|咒語	481
-zuihoujiyuan	最後|紀元	483
+zuihoujiyuan	最後|紀元	449
 zuihourenwu	最後|任務	508
 zuihoushenghaizhe	最後|生還者	515
 zuihoutongdie	最後|通牒	430
