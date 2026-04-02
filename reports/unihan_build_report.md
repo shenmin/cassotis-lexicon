@@ -1,7 +1,7 @@
 # External Build Report
 
 - profile: unihan_single
-- generated_at_utc: 2026-04-02T08:33:49+00:00
+- generated_at_utc: 2026-04-02T13:27:01+00:00
 - min_hanzi: 1
 - max_entries: unlimited
 
@@ -216,7 +216,7 @@
 - sc_script_filtered_entries: 0
 - sc_script_filtered_total_entries: 23910
 - sc_single_char_leading_adjusted: 376
-- sc_single_char_leading_delta_total: 20208
+- sc_single_char_leading_delta_total: 20136
 - sc_single_char_reading_preference_adjusted: 1484
 - sc_single_char_reading_preference_delta_total: 22734
 - sc_single_char_reading_removed: 1
@@ -281,7 +281,7 @@
 - tc_script_filtered_entries: 0
 - tc_script_filtered_total_entries: 24065
 - tc_single_char_leading_adjusted: 337
-- tc_single_char_leading_delta_total: 18360
+- tc_single_char_leading_delta_total: 18288
 - tc_single_char_reading_preference_adjusted: 1846
 - tc_single_char_reading_preference_delta_total: 41288
 - tc_single_char_reading_removed: 1
@@ -418,5 +418,5 @@
 | 好 | hao | 707 | 740 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.876 | - | weak-usage,high-modernity-risk |
 | 能 | neng | 698 | 732 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.873 | - | weak-usage,high-modernity-risk |
 | 下 | xia | 698 | 732 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.873 | - | weak-usage,high-modernity-risk |
-| 来 | lai | 697 | 731 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.872 | - | weak-usage,high-modernity-risk |
 | 主 | zhu | 697 | 731 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.872 | - | weak-usage,high-modernity-risk |
+| 看 | kan | 696 | 730 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.872 | - | weak-usage,high-modernity-risk |
