@@ -1174,6 +1174,9 @@ chuizhiganran	垂直|感染	478
 chuizhigeteshi	垂直|哥特式	429
 chuizhipianxiang	垂直|偏嚮	414
 chujiadeguniang	齣嫁的|姑娘	418
+chujianchengxiao	初見|成效	520
+chujianduanni	初見|端倪	520
+chujianshuguang	初見|曙光	520
 chujibaojian	初級|保健	415
 chujibaojianyisheng	初級|保健|醫生	497
 chujijiankang	初級|健康	415
@@ -1217,7 +1220,7 @@ chunzhenchuanqi	純真|傳奇	512
 chushandemenghu	齣山的|猛虎	406
 chushengdewawa	初生的|娃娃	455
 chushidaimakuai	初始|代码块	469
-chushixulie	初始|序列	490
+chushixulie	初始|序列	487
 chushoushaonv	觸手|少女	515
 chuxueshijian	出血|時間	497
 cidaiguaishou	磁帶|怪獸	512
@@ -2069,6 +2072,7 @@ dongwucanting	動物|餐廳	512
 dongwuceshi	動物|測試	497
 dongwudelixue	動物|地理學	500
 dongwudusu	動物|毒素	467
+dongwufangcheng	動物|方城	415
 dongwufasheng	動物|發聲	497
 dongwufeixing	動物|飛行	497
 dongwufuli	動物|福利	500
@@ -3190,7 +3194,7 @@ guangmingpohuaizhe	光明|破壞者	515
 guangmingqishi	光明|騎士	479
 guangmingqishixilie	光明騎士|係列	423
 guangmingribao	光明|日報	477
-guangmingshizhe	光明|使者	515
+guangmingshizhe	光明|使者	479
 guangmingyongshi	光明|勇士	515
 guangminsesu	光敏|色素	450
 guangminshiji	光敏|試劑	430
@@ -3524,6 +3528,7 @@ haishafengyun	海砂|風雲	502
 haishangjiaoyisuo	海上|交易所	431
 haishangzhengxiong	海上|爭雄	473
 haishenpenquan	海神|噴泉	450
+haishihaizi	還是|孩子	520
 haisoutanduo	咳嗽|痰多	455
 haiwaihuaren	海外|華人	438
 haiwanzhanzheng	海灣|戰爭	520
@@ -3548,6 +3553,7 @@ hamadeyanjing	蛤蟆的|眼睛	455
 hamaguohe	蛤蟆|過河	436
 hanbaoshijie	漢堡|世界	515
 hanchanliming	寒蟬|黎明	472
+hanchenggonglve	韓城|攻略	471
 handedewugui	旱地的|烏龜	420
 handongdedianshan	寒鼕的|電扇	418
 hangbanchaxunjiekou	航班|查询接口	467
@@ -3588,6 +3594,7 @@ haobuzaihu	毫不|在乎	472
 haodoudegongji	好鬥的|公雞	377
 haodoudeshanyang	好鬥的|山羊	429
 haohanshangliangshan	好漢上|梁山	430
+haohaoxiangxiang	好好|想想	520
 haohaoxiansheng	好好|先生	472
 haohuajiaoche	豪華|轎車	463
 haojieqianxi	浩劫|前夕	515
@@ -5936,7 +5943,7 @@ linghunbanji	靈魂|扳機	491
 linghunjiaozhi	靈魂|交織	485
 linghunlvren	靈魂|旅人	479
 linghunmengyue	靈魂|盟約	477
-linghunshizhe	靈魂|使者	515
+linghunshizhe	靈魂|使者	479
 linghunxieyi	靈魂|協議	512
 linghunxingzhe	靈魂|行者	487
 linghunzhanshi	靈魂|戰士	501
@@ -6763,7 +6770,7 @@ mofashaonvdazhan	魔法|少女|大戰	512
 mofashichuanqi	魔法師|傳奇	512
 mofashijie	魔法|世界	515
 mofashixiezouqu	魔法師|協奏麯	414
-mofashizhe	魔法|使者	515
+mofashizhe	魔法|使者	479
 mogongdiguo	魔宮|帝國	505
 mogongzhanshi	魔宮|戰士	479
 moguizhanjiangxilie	魔鬼戰將|係列	436
@@ -12941,7 +12948,7 @@ zaiwozhixia	在我|之下	430
 zaiwozhixiazhengzha	在我|之下|掙扎	512
 zaixianyouxi	在線|遊戲	499
 zaiyemingliu	在野|名流	465
-zaizaoxiangxiang	再造|想象	472
+zaizaoxiangxiang	再造|想象	469
 zaizhixunlian	在職|訓練	463
 zajiaoxibao	雜交|細胞	497
 zajiyanyuan	雜技|演員	463

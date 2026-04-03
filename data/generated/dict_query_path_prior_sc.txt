@@ -1746,6 +1746,9 @@ chuizhigeteshi	垂直|哥特式	429
 chuizhipianxiang	垂直|偏向	447
 chuizhiqianyi	垂直|迁移	483
 chujiadeguniang	出嫁的|姑娘	443
+chujianchengxiao	初见|成效	520
+chujianduanni	初见|端倪	520
+chujianshuguang	初见|曙光	520
 chujibaojian	初级|保健	415
 chujibaojianyisheng	初级|保健|医生	497
 chujifeilong	出击|飞龙	515
@@ -1815,7 +1818,7 @@ chushengzhengming	出生|证明	520
 chushengzhengmingshu	出生|证明书	500
 chushengzhixi	出生|窒息	500
 chushidaimakuai	初始|代码块	469
-chushixulie	初始|序列	488
+chushixulie	初始|序列	487
 chushoushaonv	触手|少女	515
 chuxianxulie	出现|序列	488
 chuxueqingxiang	出血|倾向	486
@@ -2182,7 +2185,7 @@ daofengzhanshen	刀锋|战神	487
 daogelasinongzhong	道格拉斯|脓肿	426
 daohangdaili	导航|代理	493
 daohangdiaoshigongju	导航|调试工具	505
-daohangjiedao	导航|街道	491
+daohangjiedao	导航|街道	490
 daohangshuju	导航|数据	416
 daohangshujubiaozhun	导航|数据|标准	498
 daohangwangge	导航|网格	483
@@ -2886,7 +2889,7 @@ dongmaizhushe	动脉|注射	484
 dongmanyouxi	动漫|游戏	502
 dongqingsushouti	动情素|受体	449
 dongqingzhouqi	动情|周期	514
-dongrikuangxiangqu	冬日|狂想曲	488
+dongrikuangxiangqu	冬日|狂想曲	475
 dongriruanjian	东日|软件	510
 dongtaibianyi	动态|编译	490
 dongtaibushu	动态|部署	489
@@ -2911,6 +2914,7 @@ dongwucanting	动物|餐厅	515
 dongwuceshi	动物|测试	500
 dongwudelixue	动物|地理学	500
 dongwudusu	动物|毒素	498
+dongwufangcheng	动物|方城	416
 dongwufasheng	动物|发声	500
 dongwufeixing	动物|飞行	500
 dongwufenleixue	动物|分类学	468
@@ -4507,7 +4511,7 @@ guangmingpohuaizhe	光明|破坏者	515
 guangmingqishi	光明|骑士	479
 guangmingqishixilie	光明骑士|系列	487
 guangmingribao	光明|日报	477
-guangmingshizhe	光明|使者	515
+guangmingshizhe	光明|使者	475
 guangmingxilie	光明|系列	485
 guangmingyongshi	光明|勇士	515
 guangminsesu	光敏|色素	450
@@ -4944,6 +4948,7 @@ haishafengyun	海砂|风云	505
 haishangjiaoyisuo	海上|交易所	431
 haishangzhengxiong	海上|争雄	473
 haishenpenquan	海神|喷泉	432
+haishihaizi	还是|孩子	520
 haisoutanduo	咳嗽|痰多	452
 haitelingjiaonang	咳特灵|胶囊	468
 haiwaihuaren	海外|华人	438
@@ -4972,6 +4977,7 @@ hamaguohe	蛤蟆|过河	469
 hanbaoshijie	汉堡|世界	515
 hanchangedou	寒蝉|格斗	462
 hanchanliming	寒蝉|黎明	475
+hanchenggonglve	韩城|攻略	470
 handedewugui	旱地的|乌龟	441
 handongdedianshan	寒冬的|电扇	443
 hangbanchaxun	航班|查询	385
@@ -5042,6 +5048,7 @@ haobuzaihu	毫不|在乎	472
 haodoudegongji	好斗的|公鸡	406
 haodoudeshanyang	好斗的|山羊	453
 haohanshangliangshan	好汉上|梁山	455
+haohaoxiangxiang	好好|想想	520
 haohaoxiansheng	好好|先生	472
 haohuajiaoche	豪华|轿车	467
 haojieqianxi	浩劫|前夕	515
@@ -8218,7 +8225,7 @@ linghunbanji	灵魂|扳机	503
 linghunjiaozhi	灵魂|交织	492
 linghunlvren	灵魂|旅人	479
 linghunmengyue	灵魂|盟约	480
-linghunshizhe	灵魂|使者	515
+linghunshizhe	灵魂|使者	475
 linghunxieyi	灵魂|协议	515
 linghunxingzhe	灵魂|行者	487
 linghunzhanshi	灵魂|战士	508
@@ -9185,7 +9192,7 @@ mingwenguiding	明文|规定	465
 mingxiangdianzi	冥想|电子	425
 mingxiangdianziyouxi	冥想|电子|游戏	507
 mingxingdonghua	明星|动画	464
-mingxingjiedao	明星|街道	498
+mingxingjiedao	明星|街道	497
 mingxingzhiyuan	明星|志愿	494
 mingyuboshi	名誉|博士	467
 mingyunchuanqi	命运|传奇	515
@@ -9273,7 +9280,7 @@ mofashaonvdazhan	魔法|少女|大战	512
 mofashichuanqi	魔法师|传奇	515
 mofashijie	魔法|世界	515
 mofashixiezouqu	魔法师|协奏曲	511
-mofashizhe	魔法|使者	515
+mofashizhe	魔法|使者	475
 mogongdiguo	魔宫|帝国	508
 mogongzhanshi	魔宫|战士	487
 moguikexing	魔鬼|克星	453
@@ -10709,7 +10716,7 @@ rengonggainian	人工|概念	459
 rengongguanjie	人工|关节	500
 rengonghecheng	人工|合成	500
 rengonghefanyingdui	人工|核反应堆	497
-rengonghuanqi	人工|换气	458
+rengonghuanqi	人工|换气	459
 rengonghuxi	人工|呼吸	504
 rengonghuxijijiu	人工|呼吸|急救	497
 rengonghuxiqi	人工|呼吸器	477
@@ -12034,7 +12041,7 @@ shidaoxiazhai	食道|狭窄	487
 shidishuiruanjiaonang	十滴水|软胶囊	464
 shiduodelunchuan	失舵的|轮船	435
 shierdizhi	十二|地支	453
-shiershizhe	十二|使者	507
+shiershizhe	十二|使者	503
 shierxueyuan	十二|学院	480
 shierzhichangkuiyang	十二指肠|溃疡	497
 shierzhichangsunshang	十二指肠|损伤	464
@@ -12897,7 +12904,7 @@ siwanglingzhu	死亡|领主	515
 siwangmigong	死亡|迷宫	515
 siwangmoshu	死亡|魔术	515
 siwangsheshou	死亡|射手	502
-siwangshizhe	死亡|使者	515
+siwangshizhe	死亡|使者	511
 siwangtianshi	死亡|天使	437
 siwangtongbu	死亡|同步	515
 siwangtuwei	死亡|突围	515
@@ -17587,7 +17594,7 @@ zaiwozhixiazhengzha	在我|之下|挣扎	512
 zaixianqingxi	在线|清洗	480
 zaixianyouxi	在线|游戏	502
 zaiyemingliu	在野|名流	465
-zaizaoxiangxiang	再造|想象	469
+zaizaoxiangxiang	再造|想象	466
 zaizhixunlian	在职|训练	467
 zajiaoxibao	杂交|细胞	500
 zajiyanyuan	杂技|演员	467

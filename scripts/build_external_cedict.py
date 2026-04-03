@@ -10338,6 +10338,210 @@ def _reinforce_vertical_tc_terms(
     return stats
 
 
+def _augment_with_admin_place_short_aliases(
+    sc: Dict[Tuple[str, str], int],
+    tc: Dict[Tuple[str, str], int],
+    usage_score_map: Dict[str, float],
+    source_hits_map: Dict[str, int],
+    pageviews_signal_map: Dict[str, float],
+    tc_usage_score_map: Dict[str, float],
+    tc_source_hits_map: Dict[str, int],
+    tc_pageviews_signal_map: Dict[str, float],
+    jieba_direct_signal_map: Dict[str, float],
+    tc_jieba_direct_signal_map: Dict[str, float],
+    jieba_pos_map: Dict[str, str],
+    tc_jieba_pos_map: Dict[str, str],
+    char_frequency_prior: Dict[str, float],
+    tc_char_frequency_prior: Dict[str, float],
+    opencc_entries: List[Tuple[str, str]],
+    simp_to_trad_char_map: Dict[str, str],
+    unihan_map: Dict[str, str],
+    unihan_readings_map: Dict[str, Set[str]] | None,
+    unihan_source_rank_map: Dict[Tuple[str, str], int] | None,
+    unihan_pinlu_detail_map: Dict[Tuple[str, str], int] | None,
+    min_hanzi: int,
+) -> Tuple[Dict[str, int], Set[str], Set[str]]:
+    stats = {
+        "admin_place_alias_source_terms": 0,
+        "admin_place_alias_skipped_short": 0,
+        "admin_place_alias_skipped_existing": 0,
+        "admin_place_alias_skipped_no_pinyin": 0,
+        "admin_place_alias_added_sc": 0,
+        "admin_place_alias_boosted_sc": 0,
+        "admin_place_alias_added_tc": 0,
+        "admin_place_alias_boosted_tc": 0,
+    }
+    sc_terms: Set[str] = set()
+    tc_terms: Set[str] = set()
+    opencc_sc_to_tc = _build_opencc_sc_to_tc_map(opencc_entries)
+    pinyin_index = _build_text_pinyin_index(sc, tc)
+    sc_existing_texts = {text for _pinyin, text in sc.keys()}
+    tc_existing_texts = {text for _pinyin, text in tc.keys()}
+    sc_char_prior = _build_effective_char_prior(sc, char_frequency_prior)
+    tc_char_prior = _build_effective_char_prior(tc, tc_char_frequency_prior)
+    sc_parent_terms = sorted(
+        {
+            text
+            for _pinyin, text in sc.keys()
+            if text.endswith("市") and _cjk_len(text) >= max(min_hanzi + 1, 3)
+        }
+    )
+
+    def _derive_alias_pinyin_candidates(parent_text: str, alias_text: str) -> List[str]:
+        candidates: Set[str] = set()
+        for parent_pinyin in pinyin_index.get(parent_text, set()):
+            normalized_parent = _normalize_pinyin(parent_pinyin)
+            if normalized_parent.endswith("shi") and len(normalized_parent) > 3:
+                candidates.add(normalized_parent[:-3])
+
+        if not candidates:
+            fallback = _pinyin_from_unihan(
+                alias_text,
+                unihan_map,
+                unihan_readings_map,
+                unihan_source_rank_map,
+                unihan_pinlu_detail_map,
+            )
+            if fallback:
+                candidates.add(fallback)
+
+        return sorted(candidate for candidate in candidates if candidate)
+
+    for sc_parent in sc_parent_terms:
+        stats["admin_place_alias_source_terms"] += 1
+        sc_alias = sc_parent[:-1]
+        if not CJK_FULL_RE.fullmatch(sc_alias) or _cjk_len(sc_alias) < min_hanzi:
+            stats["admin_place_alias_skipped_short"] += 1
+            continue
+        if sc_alias in sc_existing_texts:
+            stats["admin_place_alias_skipped_existing"] += 1
+            continue
+
+        pinyin_candidates = _derive_alias_pinyin_candidates(sc_parent, sc_alias)
+        if not pinyin_candidates:
+            stats["admin_place_alias_skipped_no_pinyin"] += 1
+            continue
+
+        parent_usage = min(1.0, max(0.0, usage_score_map.get(sc_parent, 0.0)))
+        parent_source_hits = max(0, source_hits_map.get(sc_parent, 0))
+        parent_pageview = min(1.0, max(0.0, pageviews_signal_map.get(sc_parent, 0.0)))
+        parent_jieba_direct = min(
+            1.0, max(0.0, jieba_direct_signal_map.get(sc_parent, 0.0))
+        )
+        sc_usage = max(
+            usage_score_map.get(sc_alias, 0.0),
+            min(0.34, max(parent_usage * 0.82, 0.18)),
+        )
+        sc_source_hits = max(
+            source_hits_map.get(sc_alias, 0),
+            max(2, min(parent_source_hits, 4)),
+        )
+        sc_pageview = max(
+            pageviews_signal_map.get(sc_alias, 0.0),
+            min(parent_pageview, 0.24),
+        )
+        sc_jieba_direct = max(
+            jieba_direct_signal_map.get(sc_alias, 0.0),
+            min(0.12, max(parent_jieba_direct * 0.50, sc_usage * 0.22)),
+        )
+        sc_pos_tag = jieba_pos_map.get(sc_parent, "ns") or "ns"
+        sc_char_score = _compute_text_single_char_prior(sc_alias, sc_char_prior)
+        sc_weight = _compute_weight_with_signals(
+            sc_alias,
+            usage_score=sc_usage,
+            source_hits=sc_source_hits,
+            pageview_score=sc_pageview,
+            wiki_hit=True,
+            core_entry=False,
+            jieba_direct_score=sc_jieba_direct,
+            pos_tag=sc_pos_tag,
+            char_score=sc_char_score,
+        )
+        usage_score_map[sc_alias] = max(usage_score_map.get(sc_alias, 0.0), sc_usage)
+        source_hits_map[sc_alias] = max(source_hits_map.get(sc_alias, 0), sc_source_hits)
+        pageviews_signal_map[sc_alias] = max(
+            pageviews_signal_map.get(sc_alias, 0.0), sc_pageview
+        )
+
+        added_sc = False
+        boosted_sc = False
+        for pinyin in pinyin_candidates:
+            sc_key = (pinyin, sc_alias)
+            existing_sc_weight = sc.get(sc_key)
+            if existing_sc_weight is None:
+                sc[sc_key] = sc_weight
+                added_sc = True
+                sc_terms.add(sc_alias)
+            elif sc_weight > existing_sc_weight:
+                sc[sc_key] = sc_weight
+                boosted_sc = True
+                sc_terms.add(sc_alias)
+        if added_sc:
+            stats["admin_place_alias_added_sc"] += 1
+        if boosted_sc:
+            stats["admin_place_alias_boosted_sc"] += 1
+
+        tc_candidates = opencc_sc_to_tc.get(sc_alias, set())
+        if not tc_candidates:
+            converted = _convert_sc_text_to_tc_with_phrase_hints(
+                sc_alias,
+                opencc_sc_to_tc,
+                simp_to_trad_char_map,
+            )
+            if converted != sc_alias or sc_alias in tc_existing_texts:
+                tc_candidates = {converted}
+
+        added_tc = False
+        boosted_tc = False
+        for tc_alias in tc_candidates:
+            if not CJK_FULL_RE.fullmatch(tc_alias) or _cjk_len(tc_alias) < min_hanzi:
+                continue
+            if tc_alias in tc_existing_texts:
+                continue
+
+            tc_usage = max(tc_usage_score_map.get(tc_alias, 0.0), sc_usage)
+            tc_source_hits = max(tc_source_hits_map.get(tc_alias, 0), sc_source_hits)
+            tc_pageview = max(tc_pageviews_signal_map.get(tc_alias, 0.0), sc_pageview)
+            tc_jieba_direct = max(
+                tc_jieba_direct_signal_map.get(tc_alias, 0.0), sc_jieba_direct
+            )
+            tc_pos_tag = tc_jieba_pos_map.get(tc_alias, sc_pos_tag) or sc_pos_tag
+            tc_char_score = _compute_text_single_char_prior(tc_alias, tc_char_prior)
+            tc_weight = _compute_weight_with_signals(
+                tc_alias,
+                usage_score=tc_usage,
+                source_hits=tc_source_hits,
+                pageview_score=tc_pageview,
+                wiki_hit=True,
+                core_entry=False,
+                jieba_direct_score=tc_jieba_direct,
+                pos_tag=tc_pos_tag,
+                char_score=tc_char_score,
+            )
+            tc_usage_score_map[tc_alias] = max(tc_usage_score_map.get(tc_alias, 0.0), tc_usage)
+            tc_source_hits_map[tc_alias] = max(tc_source_hits_map.get(tc_alias, 0), tc_source_hits)
+            tc_pageviews_signal_map[tc_alias] = max(
+                tc_pageviews_signal_map.get(tc_alias, 0.0), tc_pageview
+            )
+            for pinyin in pinyin_candidates:
+                tc_key = (pinyin, tc_alias)
+                existing_tc_weight = tc.get(tc_key)
+                if existing_tc_weight is None:
+                    tc[tc_key] = tc_weight
+                    added_tc = True
+                    tc_terms.add(tc_alias)
+                elif tc_weight > existing_tc_weight:
+                    tc[tc_key] = tc_weight
+                    boosted_tc = True
+                    tc_terms.add(tc_alias)
+        if added_tc:
+            stats["admin_place_alias_added_tc"] += 1
+        if boosted_tc:
+            stats["admin_place_alias_boosted_tc"] += 1
+
+    return stats, sc_terms, tc_terms
+
+
 def _augment_with_vertical_terms(
     sc: Dict[Tuple[str, str], int],
     tc: Dict[Tuple[str, str], int],
@@ -11815,6 +12019,8 @@ def main() -> int:
     wiki_proper_tc_terms: Set[str] = set()
     curated_daily_sc_terms: Set[str] = set()
     curated_daily_tc_terms: Set[str] = set()
+    admin_place_alias_sc_terms: Set[str] = set()
+    admin_place_alias_tc_terms: Set[str] = set()
     vertical_sc_terms: Set[str] = set()
     vertical_tc_terms: Set[str] = set()
     civic_sc_terms: Set[str] = set()
@@ -11835,6 +12041,16 @@ def main() -> int:
     sc_reading_support_sum_map: Dict[Tuple[str, str], float] = {}
     tc_reading_term_count_map: Dict[Tuple[str, str], int] = {}
     tc_reading_support_sum_map: Dict[Tuple[str, str], float] = {}
+    admin_place_alias_stats = {
+        "admin_place_alias_source_terms": 0,
+        "admin_place_alias_skipped_short": 0,
+        "admin_place_alias_skipped_existing": 0,
+        "admin_place_alias_skipped_no_pinyin": 0,
+        "admin_place_alias_added_sc": 0,
+        "admin_place_alias_boosted_sc": 0,
+        "admin_place_alias_added_tc": 0,
+        "admin_place_alias_boosted_tc": 0,
+    }
     sc_leading_term_count_map: Dict[Tuple[str, str], int] = {}
     sc_leading_support_sum_map: Dict[Tuple[str, str], float] = {}
     tc_leading_term_count_map: Dict[Tuple[str, str], int] = {}
@@ -13048,6 +13264,36 @@ def main() -> int:
     )
     stats.update(sc_snapshot_restore_stats)
     stats.update(tc_snapshot_restore_stats)
+    (
+        admin_place_alias_stats,
+        admin_place_alias_sc_terms,
+        admin_place_alias_tc_terms,
+    ) = _augment_with_admin_place_short_aliases(
+        sc_map,
+        tc_map,
+        usage_score_map,
+        source_hits_map,
+        pageviews_signal_map,
+        tc_usage_score_map,
+        tc_source_hits_map,
+        tc_pageviews_signal_map,
+        jieba_direct_signal_map,
+        tc_jieba_direct_signal_map,
+        jieba_pos_map,
+        tc_jieba_pos_map,
+        char_frequency_prior,
+        tc_char_frequency_prior,
+        opencc_entries,
+        simp_to_trad_char_map,
+        unihan_map,
+        unihan_readings_map,
+        unihan_reading_source_map,
+        unihan_pinlu_detail_map,
+        args.min_hanzi,
+    )
+    stats.update(admin_place_alias_stats)
+    stats["admin_place_alias_augmented_sc_terms"] = len(admin_place_alias_sc_terms)
+    stats["admin_place_alias_augmented_tc_terms"] = len(admin_place_alias_tc_terms)
     sc_query_path_priors: Dict[Tuple[str, str], int] = {}
     tc_query_path_priors: Dict[Tuple[str, str], int] = {}
     if output_query_path_sc is not None:
