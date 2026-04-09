@@ -11880,6 +11880,41 @@ def _collect_vertical_term_sets(
     return sc_terms, tc_terms
 
 
+def _remove_known_incorrect_jiancha_entries(
+    sc_map: Dict[Tuple[str, str], int],
+    tc_map: Dict[Tuple[str, str], int],
+) -> Dict[str, int]:
+    stats = {
+        "known_incorrect_jiancha_entries_removed_sc": 0,
+        "known_incorrect_jiancha_entries_removed_tc": 0,
+    }
+    sc_blocklist = {
+        ("houjingjianchashu", "喉镜检察术"),
+        ("jianchashidengdai", "监察式等待"),
+        ("kunchongjiancha", "昆虫奸察"),
+        ("linchuangjianchaqi", "临床监察期"),
+        ("shenjingxuejiancha", "神经学检察"),
+    }
+    tc_blocklist = {
+        ("houjingjianchashu", "喉鏡檢察術"),
+        ("jianchashidengdai", "監察式等待"),
+        ("kunchongjiancha", "昆蟲奸察"),
+        ("linchuangjianchaqi", "臨床監察期"),
+        ("shenjingxuejiancha", "神經學檢察"),
+    }
+
+    for key in sc_blocklist:
+        if key in sc_map:
+            del sc_map[key]
+            stats["known_incorrect_jiancha_entries_removed_sc"] += 1
+    for key in tc_blocklist:
+        if key in tc_map:
+            del tc_map[key]
+            stats["known_incorrect_jiancha_entries_removed_tc"] += 1
+
+    return stats
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(
         description="Build dictionary seed files from external data sources."
@@ -13333,6 +13368,7 @@ def main() -> int:
         jieba_pos_map=jieba_pos_map,
         char_frequency_prior=char_frequency_prior,
     )
+    stats.update(_remove_known_incorrect_jiancha_entries(sc_map, tc_map))
 
     _write_dict(
         output_sc,
