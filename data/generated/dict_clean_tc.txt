@@ -3666,7 +3666,7 @@ baisuzhen	白素貞	215
 baita	白塔	493
 baitan	擺攤	497
 baitang	拜堂	770
-baitang	白糖	457
+baitang	白糖	456
 baitanzi	擺攤子	421
 baitao	白陶	208
 baitaqu	白塔區	165
@@ -12010,6 +12010,7 @@ bushenguchi	补肾固齿	948
 bushenguchi	補腎固齒	322
 bushenguchiwan	补肾固齿丸	933
 bushenguchiwan	補腎固齒丸	377
+bushengxiao	不生效	966
 bushenqiangshenjiaonang	补肾强身胶囊	981
 bushenqiangshenjiaonang	補腎強身膠囊	423
 bushentianjingwan	补肾填精丸	939
@@ -37734,7 +37735,7 @@ fenju	分居	952
 fenju	分局	466
 fenju	分句	1
 fenkai	分開	816
-fenkai	憤慨	620
+fenkai	憤慨	621
 fenkamaminjiaonang	酚咖麻敏胶囊	990
 fenkamaminjiaonang	酚咖麻敏膠囊	433
 fenke	分剋	305
@@ -40018,10 +40019,10 @@ fuyazheng	氟牙症	702
 fuye	複葉	511
 fuye	副業	470
 fuyi	附議	1000
-fuyi	輔以	666
-fuyi	複議	439
-fuyi	復議	435
+fuyi	輔以	564
 fuyi	服役	387
+fuyi	復議	381
+fuyi	複議	362
 fuyi	副翼	1
 fuyiceng	負一層	232
 fuyifudingna	伏伊伏丁那	505
@@ -53259,7 +53260,7 @@ huadian	樺甸	416
 huadianshi	樺甸市	160
 huadianzi	花點子	193
 huadiao	花掉	919
-huadiao	花雕	11
+huadiao	花雕	12
 huadijiaozi	畫荻教子	249
 huadimatangqu	花地瑪堂區	288
 huading	劃定	468
@@ -89796,9 +89797,10 @@ moyixia	摸一下	952
 moyixieyefu	莫伊謝耶夫	300
 moyong	魔勇	613
 moyou	抹油	198
-moyu	魔域	972
-moyu	墨魚	872
-moyu	魔芋	29
+moyu	摸魚	1000
+moyu	魔域	686
+moyu	墨魚	591
+moyu	魔芋	1
 moyuan	末願	198
 moyuchuanshuo	魔域傳說	864
 moyudiguo	魔域帝國	864
@@ -92247,6 +92249,7 @@ nene	訥訥	373
 nengbuneng	能不能	959
 nengdongxing	能動性	503
 nengfou	能否	502
+nengfoushi	能否使	959
 nenggan	能干	486
 nenggan	能幹	435
 nengge	能歌	473
@@ -96210,8 +96213,8 @@ piaochen	飄塵	359
 piaochong	瓢蟲	400
 piaochuang	飄窗	198
 piaodai	飄帶	417
-piaodang	飄盪	766
-piaodang	飄蕩	748
+piaodang	飄盪	690
+piaodang	飄蕩	670
 piaodong	飄動	440
 piaofang	票房	419
 piaofanzi	票販子	442
@@ -101963,7 +101966,7 @@ qiqiu	祈求	775
 qiqiu	乞求	759
 qiqiu	氣球	410
 qiqiu	企求	336
-qiqiu	起球	313
+qiqiu	起球	312
 qiqiudazhan	氣球大戰	864
 qiqiutafang	氣球塔防	848
 qiqiuzhudongmaibanmozhengxingshu	氣球主動脈瓣膜整型術	822
@@ -112631,8 +112634,8 @@ shengxiangping	聖像屏	723
 shengxiankongziniao	聖賢孔子鳥	289
 shengxianshu	聖賢書	198
 shengxianzhezhiming	聖賢者之名	899
-shengxiao	生效	877
-shengxiao	生肖	380
+shengxiao	生效	903
+shengxiao	生肖	300
 shengxiaoshuxiang	生肖屬相	260
 shengxiashi	省轄市	598
 shengxichi	聖洗池	723
@@ -133310,7 +133313,7 @@ wenyan	文言	879
 wenyanhuanliu	溫鹽環流	258
 wenyanwen	文言文	479
 wenyi	瘟疫	1000
-wenyi	文藝	790
+wenyi	文藝	789
 wenyi	温疫	492
 wenyibing	文藝兵	370
 wenyiduo	聞一多	527
@@ -133785,7 +133788,7 @@ wubabituo	戊巴比妥	673
 wubabituona	戊巴比妥钠	936
 wubabituona	戊巴比妥鈉	602
 wubai	五百	1000
-wubai	伍佰	195
+wubai	伍佰	207
 wubaibashi'erjuan	五百八十二捲	399
 wubaibashiwu	五百八十五	371
 wubaidi	烏拜迪	228
@@ -135142,10 +135145,10 @@ wushezhiyangwan	乌蛇止痒丸	930
 wushezhiyangwan	烏蛇止癢丸	377
 wushi	五十	1000
 wushi	武士	499
+wushi	務實	431
 wushi	巫師	426
-wushi	務實	371
-wushi	無視	288
-wushi	午時	201
+wushi	無視	345
+wushi	午時	245
 wushi	吳石	198
 wushi	烏什	192
 wushi	無時	53
@@ -145033,7 +145036,7 @@ xuanpu	玄圃	198
 xuanqianji	旋前肌	1000
 xuanqianyuanji	旋前圆肌	930
 xuanqianyuanji	鏇前圓肌	317
-xuanqianzhuankun	鏇乾轉坤	401
+xuanqianzhuankun	鏇乾轉坤	383
 xuanqing	玄青	195
 xuanqu	選取	991
 xuanqu	選區	249
@@ -149589,6 +149592,7 @@ yaoqing	邀請	502
 yaoqinghan	邀請函	423
 yaoqingsai	邀請賽	501
 yaoqiu	要求	502
+yaoqiuguo	要求過	966
 yaoqixue	腰奇穴	591
 yaoran	杳然	378
 yaorao	妖嬈	416
@@ -150366,6 +150370,7 @@ yeguangdan	曳光彈	453
 yeguangyinqing	夜光引擎	762
 yeguo	野果	592
 yehai	業海	198
+yehaihao	也還好	966
 yehaizi	野孩子	379
 yehanzi	野漢子	198
 yehao	也好	1000
@@ -150387,8 +150392,9 @@ yehuashiyouqi	液化石油氣	289
 yehuchan	野狐禪	211
 yehudale	夜壺打了	527
 yehudaleba	夜壺打了把	569
-yehui	夜回	1000
-yehui	夜廻	539
+yehui	也會	1000
+yehui	夜回	894
+yehui	夜廻	445
 yehuishenyehui	夜回深夜回	1000
 yehuishenyehui	夜迴深夜迴	559
 yehuizhangyeheji	夜回長夜合集	1000
@@ -150522,7 +150528,7 @@ yemaozi	夜貓子	244
 yemazhui	野马追	1000
 yemege	也幺哥	640
 yemen	也門	1000
-yemen	爺們	849
+yemen	爺們	848
 yemen	液门	585
 yemengongheguo	也門共和國	277
 yemenr	爺們兒	429
@@ -150680,9 +150686,9 @@ yexiaohui	野小茴	230
 yexiaor	夜宵兒	230
 yexibie	耶洗別	230
 yexin	野心	881
-yexing	夜行	877
-yexing	也行	679
-yexing	野性	171
+yexing	也行	1000
+yexing	夜行	368
+yexing	野性	1
 yexing'anqu	液性暗区	943
 yexing'anqu	液性暗區	327
 yexingjianxingxianjiao	葉形箭形線腳	1000
@@ -152759,7 +152765,7 @@ yinbiqiangpoxiazai	隱蔽強迫下載	318
 yinbiqianxian	隱蔽前線	1000
 yinbiqianxian	隱蔽前綫	512
 yinbiyouxi	隱蔽遊戲	755
-yinbo	音波	517
+yinbo	音波	516
 yinbojinshu	銀波錦屬	770
 yinbu	陰部	793
 yinbushenjing	陰部神經	770
@@ -169066,7 +169072,7 @@ zhouyangbankuai	粥樣斑塊	816
 zhouyangbankuai	粥样斑块	664
 zhouyangyinghua	粥樣硬化	260
 zhouye	晝夜	1000
-zhouye	周也	272
+zhouye	周也	273
 zhouye	肘腋	1
 zhouyejielv	晝夜節律	921
 zhouyejielv	昼夜节律	786
@@ -172722,7 +172728,7 @@ zongsheng	縱聲	334
 zongshenggong	宗聖公	167
 zongshenghou	宗聖侯	167
 zongshi	總是	1000
-zongshi	縱使	685
+zongshi	縱使	686
 zongshi	宗室	294
 zongshi	宗師	14
 zongshouru	總收入	512
@@ -173550,8 +173556,8 @@ zuobi	作弊	432
 zuobian	左邊	431
 zuobianqi	坐便器	362
 zuobianr	左邊兒	167
-zuobiao	座標	1000
-zuobiao	坐標	904
+zuobiao	坐標	896
+zuobiao	座標	724
 zuobiaofa	座標法	231
 zuobiaokongjian	坐標空間	260
 zuobiaokongjian	座標空間	258
