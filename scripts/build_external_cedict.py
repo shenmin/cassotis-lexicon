@@ -3591,22 +3591,28 @@ def _is_short_everyday_term_candidate(
         )
 
     if _is_noun_pos(pos_tag):
-        # Common 2-character nouns like “结果/里面/功能” should compete as
-        # everyday bare-query targets in same-pinyin buckets, but keep the
-        # gate noticeably stricter than function words / verbs so specialized
-        # or domain nouns do not flood the preferred layer.
+        if source_hits >= 2:
+            return (
+                bounded_usage >= 0.10
+                or bounded_jieba >= 0.12
+                or (bounded_usage >= 0.08 and bounded_jieba >= 0.08)
+                or (
+                    bounded_pageviews >= 0.10
+                    and (bounded_usage >= 0.08 or bounded_jieba >= 0.08)
+                )
+            )
+
+        if bounded_pageviews >= 0.18:
+            return (
+                bounded_jieba >= 0.16
+                or bounded_usage >= 0.14
+                or (char_score >= 0.70 and bounded_jieba >= 0.12)
+            )
+
         return (
-            bounded_usage >= 0.16
-            or bounded_jieba >= 0.18
-            or (bounded_usage >= 0.10 and bounded_jieba >= 0.10)
-            or (
-                source_hits >= 2
-                and (bounded_usage >= 0.08 or bounded_jieba >= 0.10)
-            )
-            or (
-                char_score >= 0.62
-                and (bounded_usage >= 0.08 or bounded_jieba >= 0.08)
-            )
+            bounded_jieba >= 0.46
+            or (bounded_jieba >= 0.38 and char_score >= 0.70)
+            or (bounded_jieba >= 0.30 and char_score >= 0.80)
         )
 
     return False
