@@ -3590,6 +3590,25 @@ def _is_short_everyday_term_candidate(
             )
         )
 
+    if _is_noun_pos(pos_tag):
+        # Common 2-character nouns like “结果/里面/功能” should compete as
+        # everyday bare-query targets in same-pinyin buckets, but keep the
+        # gate noticeably stricter than function words / verbs so specialized
+        # or domain nouns do not flood the preferred layer.
+        return (
+            bounded_usage >= 0.16
+            or bounded_jieba >= 0.18
+            or (bounded_usage >= 0.10 and bounded_jieba >= 0.10)
+            or (
+                source_hits >= 2
+                and (bounded_usage >= 0.08 or bounded_jieba >= 0.10)
+            )
+            or (
+                char_score >= 0.62
+                and (bounded_usage >= 0.08 or bounded_jieba >= 0.08)
+            )
+        )
+
     return False
 
 
@@ -10030,6 +10049,7 @@ def _augment_with_curated_daily_phrases(
         if sc_daily_number_support:
             sc_weight = min(1000, sc_weight + (40 if _cjk_len(sc_word) <= 2 else 26))
             stats["curated_daily_number_terms_boosted_sc"] += 1
+        sc_weight = max(sc_weight, 1000)
         sc_key = (pinyin, sc_word)
         existing_sc_weight = sc.get(sc_key)
         if existing_sc_weight is None:
@@ -10089,6 +10109,7 @@ def _augment_with_curated_daily_phrases(
         if tc_daily_number_support:
             tc_weight = min(1000, tc_weight + (40 if _cjk_len(tc_candidate) <= 2 else 26))
             stats["curated_daily_number_terms_boosted_tc"] += 1
+        tc_weight = max(tc_weight, 1000)
         tc_key = (pinyin, tc_candidate)
         existing_tc_weight = tc.get(tc_key)
         if existing_tc_weight is None:
@@ -10190,6 +10211,7 @@ def _reinforce_curated_daily_tc_phrases(
         )
         if tc_daily_number_support:
             tc_weight = min(1000, tc_weight + (40 if _cjk_len(tc_candidate) <= 2 else 26))
+        tc_weight = max(tc_weight, 1000)
 
         tc_key = (pinyin, tc_candidate)
         existing_tc_weight = tc.get(tc_key)
@@ -10199,6 +10221,85 @@ def _reinforce_curated_daily_tc_phrases(
         elif tc_weight > existing_tc_weight:
             tc[tc_key] = tc_weight
             stats["curated_daily_exact_tc_reinforced"] += 1
+
+    return stats
+
+
+def _reinforce_curated_daily_sc_phrases(
+    sc: Dict[Tuple[str, str], int],
+    curated_entries: List[Tuple[str, str, float, str]],
+    usage_score_map: Dict[str, float],
+    source_hits_map: Dict[str, int],
+    jieba_direct_signal_map: Dict[str, float],
+    jieba_pos_map: Dict[str, str],
+    char_frequency_prior: Dict[str, float],
+    unihan_map: Dict[str, str],
+    unihan_readings_map: Dict[str, Set[str]],
+    unihan_source_rank_map: Dict[Tuple[str, str], int],
+    unihan_pinlu_detail_map: Dict[Tuple[str, str], int],
+    min_hanzi: int,
+) -> Dict[str, int]:
+    stats = {
+        "curated_daily_exact_sc_reinforced": 0,
+        "curated_daily_exact_sc_added": 0,
+    }
+    if not sc or not curated_entries:
+        return stats
+
+    sc_char_prior = _build_effective_char_prior(sc, char_frequency_prior)
+
+    for sc_word, _tc_word, usage_score, explicit_pinyin in curated_entries:
+        if _cjk_len(sc_word) < min_hanzi:
+            continue
+
+        pinyin = explicit_pinyin or _pinyin_from_unihan(
+            sc_word,
+            unihan_map,
+            unihan_readings_map,
+            unihan_source_rank_map,
+            unihan_pinlu_detail_map,
+        )
+        if not pinyin:
+            continue
+
+        source_hits = max(4, source_hits_map.get(sc_word, 0))
+        usage_score = max(usage_score, usage_score_map.get(sc_word, 0.0))
+        sc_jieba_direct = max(
+            jieba_direct_signal_map.get(sc_word, 0.0),
+            min(0.26, usage_score * 0.32),
+        )
+        sc_pos_tag = jieba_pos_map.get(sc_word, "")
+        sc_char_score = _compute_text_single_char_prior(sc_word, sc_char_prior)
+        sc_daily_number_support = _is_daily_number_word_candidate(
+            sc_word,
+            text_len=_cjk_len(sc_word),
+            usage_score=usage_score,
+            source_hits=source_hits,
+            pos_tag=sc_pos_tag,
+        )
+        sc_weight = _compute_weight_with_signals(
+            sc_word,
+            usage_score=usage_score,
+            source_hits=source_hits,
+            pageview_score=0.0,
+            wiki_hit=True,
+            core_entry=False,
+            jieba_direct_score=sc_jieba_direct,
+            pos_tag=sc_pos_tag,
+            char_score=sc_char_score,
+        )
+        if sc_daily_number_support:
+            sc_weight = min(1000, sc_weight + (40 if _cjk_len(sc_word) <= 2 else 26))
+        sc_weight = max(sc_weight, 1000)
+
+        sc_key = (pinyin, sc_word)
+        existing_sc_weight = sc.get(sc_key)
+        if existing_sc_weight is None:
+            sc[sc_key] = sc_weight
+            stats["curated_daily_exact_sc_added"] += 1
+        elif sc_weight > existing_sc_weight:
+            sc[sc_key] = sc_weight
+            stats["curated_daily_exact_sc_reinforced"] += 1
 
     return stats
 
@@ -12054,6 +12155,13 @@ def main() -> int:
     wiki_proper_tc_terms: Set[str] = set()
     curated_daily_sc_terms: Set[str] = set()
     curated_daily_tc_terms: Set[str] = set()
+    curated_daily_entries: List[Tuple[str, str, float, str]] = []
+    curated_daily_parse_stats: Dict[str, int] = {}
+    curated_usage_score_map: Dict[str, float] = {}
+    curated_source_hits_map: Dict[str, int] = {}
+    curated_tc_usage_score_map: Dict[str, float] = {}
+    curated_tc_source_hits_map: Dict[str, int] = {}
+    curated_daily_stats: Dict[str, int] = {}
     admin_place_alias_sc_terms: Set[str] = set()
     admin_place_alias_tc_terms: Set[str] = set()
     vertical_sc_terms: Set[str] = set()
@@ -12097,6 +12205,10 @@ def main() -> int:
     unihan_reading_source_map: Dict[Tuple[str, str], int] = {}
     unihan_pinlu_map: Dict[str, int] = {}
     unihan_pinlu_detail_map: Dict[Tuple[str, str], int] = {}
+    curated_unihan_map: Dict[str, str] = {}
+    curated_unihan_readings_map: Dict[str, Set[str]] = {}
+    curated_unihan_source_rank_map: Dict[Tuple[str, str], int] = {}
+    curated_unihan_pinlu_detail_map: Dict[Tuple[str, str], int] = {}
     primary_cache = repo_root / args.cache_file if args.cache_file else None
     cache_source_id = ""
     if primary_cache is not None:
@@ -12756,6 +12868,20 @@ def main() -> int:
             unihan_pinlu_detail_map,
             args.min_hanzi,
         )
+        curated_daily_sc_exact_stats = _reinforce_curated_daily_sc_phrases(
+            sc_map,
+            curated_daily_entries,
+            curated_usage_score_map,
+            curated_source_hits_map,
+            jieba_direct_signal_map,
+            jieba_pos_map,
+            char_frequency_prior,
+            curated_unihan_map,
+            curated_unihan_readings_map,
+            curated_unihan_source_rank_map,
+            curated_unihan_pinlu_detail_map,
+            args.min_hanzi,
+        )
 
         stats = {}
         stats.update(cedict_stats)
@@ -12783,6 +12909,7 @@ def main() -> int:
         stats.update(sc_rescore_stats)
         stats.update(tc_rescore_stats)
         stats.update(augment_stats)
+        stats.update(curated_daily_sc_exact_stats)
         stats.update(curated_daily_tc_exact_stats)
         stats.update(daily_prefix_stats)
         stats.update(wiki_proper_stats)
