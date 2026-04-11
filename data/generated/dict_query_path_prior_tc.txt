@@ -315,7 +315,7 @@ baoxianhangai	保險|涵蓋	415
 baoxianhangaibuzu	保險|涵蓋|不足	497
 baoyulunli	保育|倫理	500
 baoyushaji	暴雨|殺機	455
-baozhatouwushi	爆炸頭|武士	483
+baozhatouwushi	爆炸頭|武士	487
 baoziqiyuan	孢子|起源	515
 baozougongzhu	暴走|公主	509
 baqizidi	八旗|子弟	472
@@ -386,8 +386,8 @@ benyangjiyichun	苯氧基|乙醇	459
 benzhalvanrongye	苯扎氯铵|溶液	464
 benzhaxiuanrongye	苯扎溴铵|溶液	464
 bianchenghuanjingpeizhi	编程环境|配置	467
-bianchengluanma	變成|亂碼	511
-bianchengnongchang	編程|農場	455
+bianchengluanma	變成|亂碼	512
+bianchengnongchang	編程|農場	454
 bianchengyouxi	編程|遊戲	491
 biandikaihua	遍地|開花	471
 bianduishaonv	編隊|少女	479
@@ -836,7 +836,7 @@ changjiangliuyu	長江|流域	503
 changjiangsanxia	長江|三峽	520
 changjianshiyong	常見|使用	423
 changjianshiyongchangjing	常見|使用|場景	505
-changjingbuzhi	場景|佈置	497
+changjingbuzhi	場景|佈置	492
 changjingjicheng	場景|繼承	505
 changjingshezhi	場景|設置	505
 changjingweiyi	場景|唯一	423
@@ -4408,7 +4408,7 @@ jiaxingyansuimabi	假性|延髓|麻痹	464
 jiayaloutijing	加壓|樓梯井	464
 jiayaoxiaoying	假藥|效應	466
 jiayaqingjieji	假牙|清潔劑	459
-jiazaichangjing	加載|場景	505
+jiazaichangjing	加載|場景	501
 jiazhiliancheng	價值|連城	465
 jiazhouligong	加州|理工	437
 jiazhuangpangxianjisu	甲状旁腺|激素	465
@@ -5109,6 +5109,7 @@ jiyinqudong	基因|驅動	497
 jiyinquexian	基因|缺陷	487
 jiyinshuiping	基因|水平	415
 jiyinshuipingzhuanyi	基因|水平|轉移	497
+jiyintibuwending	基因體|不穩定	497
 jiyintichu	基因|剔除	415
 jiyintichuxiaoshu	基因|剔除|小鼠	497
 jiyintubian	基因|突變	514
@@ -5125,6 +5126,7 @@ jiyinzhiliao	基因|治疗	500
 jiyinzhiliao	基因|治療	514
 jiyinzhongzuyimiao	基因重组|疫苗	465
 jiyinzhuanhuan	基因|轉換	497
+jiyinzubuwending	基因組|不穩定	497
 jiyinzudaxiao	基因組|大小	500
 jiyinzuowei	基因|座位	466
 jiyixiaoying	記憶|效應	497
@@ -6616,7 +6618,7 @@ mianyiquexian	免疫|缺陷	487
 mianyishengwuxue	免疫|生物学	467
 mianyishuailao	免疫|衰老	500
 mianyitaobi	免疫|逃避	500
-mianyitiaojie	免疫|調節	494
+mianyitiaojie	免疫|調節	516
 mianyituchu	免疫|突觸	497
 mianyixiaoguo	免疫|效果	486
 mianyixifu	免疫|吸附	514
@@ -8767,7 +8769,7 @@ shenjingshengzhang	神經|生長	415
 shenjingshengzhangyinzi	神經|生長|因子	497
 shenjingshuairuo	神經|衰弱	459
 shenjingsidanbai	神经丝|蛋白	466
-shenjingtiaojie	神經|調節	494
+shenjingtiaojie	神經|調節	516
 shenjingtunshi	神經|吞噬	415
 shenjingtunshizuoyong	神經|吞噬|作用	497
 shenjingwaike	神經|外科	436
@@ -9836,7 +9838,7 @@ tianzhongzhenmeizi	田中|真美子	449
 tianzhudegaoyang	天主的|羔羊	455
 tianzhujiaohui	天主|教會	479
 tianzhujiaotu	天主|教徒	477
-tiaohepiwei	調和|脾胃	492
+tiaohepiwei	調和|脾胃	515
 tiaojianfanshe	條件|反射	505
 tiaojiangailv	條件|概率	463
 tiaojianzuoyong	條件|作用	500
@@ -9920,7 +9922,7 @@ tixingwomen	提醒|我們	520
 tiyemianyi	体液|免疫	485
 tiyemianyi	體液|免疫	497
 tiyemianyixitong	體液|免疫系統	497
-tiyetiaojie	體液|調節	494
+tiyetiaojie	體液|調節	516
 tiyubisai	體育|比賽	463
 tiyuchangguan	體育|場館	512
 tiyuchangsuo	體育|場所	497
@@ -10352,6 +10354,7 @@ weisuizisha	未遂|自殺	497
 weisuoshijie	微縮|世界	499
 weituoshijian	委托|事件	489
 weiwaijingying	委外|經營	473
+weiweixingbuwending	微衛星|不穩定	497
 weiwuzhuyi	唯物|主義	511
 weixianfeiwu	危險|廢物	497
 weixianjiashi	危險|駕駛	512
@@ -11499,7 +11502,7 @@ xixueguixingcunzhe	吸血鬼|倖存者	512
 xixuelaienxilie	吸血萊恩|係列	436
 xiyanchengyin	吸菸|成癮	497
 xiyangcanhanpian	西洋参|含片	446
-xizangyixue	西藏|醫學	504
+xizangyixue	西藏|醫學	515
 xizhenchouxihuojian	細針抽吸|活檢	497
 xizhenchouxiyangben	細針抽吸|樣本	497
 xizideliandan	戲子的|臉蛋	377
@@ -12760,7 +12763,7 @@ yuanzhuijiaomo	圓錐|角膜	475
 yuanzhujiaoji	援助|交際	464
 yuanzhuohuiyi	圓桌|會議	469
 yuanzhuoqishi	圓桌|騎士	485
-yuanzhuowushi	圓桌|武士	499
+yuanzhuowushi	圓桌|武士	503
 yuanzifanyingdui	原子|反應堆	501
 yuanzifanyinglu	原子|反應爐	500
 yuanzihewulixue	原子|核物理學	376
@@ -13847,7 +13850,7 @@ zishenmianyijibing	自身|免疫|疾病	497
 zishenmianyixing	自身|免疫性	500
 zishennaishou	自身|耐受	483
 zishenshuxue	自身|输血	484
-zishentiaojie	自身|調節	494
+zishentiaojie	自身|調節	516
 zishenyimiao	自身|疫苗	483
 zitimianyifanying	自體免疫|反應	497
 ziwaiguangpu	紫外|光譜	500

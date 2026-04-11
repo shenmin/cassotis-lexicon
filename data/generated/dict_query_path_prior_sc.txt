@@ -250,7 +250,7 @@ baluokeshiqi	巴洛克|时期	468
 baluokeyishu	巴洛克|艺术	468
 baluokeyishu	巴罗克|艺术	447
 baluokeyouhua	巴罗克|油画	409
-banbenbiancheng	版本|编程	467
+banbenbiancheng	版本|编程	466
 banbencelve	版本|策略	487
 banbenchongtu	版本|冲突	490
 banbendingzhi	版本|定制	488
@@ -418,7 +418,7 @@ baoxianhangaibuzu	保险|涵盖|不足	497
 baoyulunli	保育|伦理	500
 baoyupeiyang	保育|培养	482
 baoyushaji	暴雨|杀机	456
-baozhatouwushi	爆炸头|武士	483
+baozhatouwushi	爆炸头|武士	492
 baoziqiyuan	孢子|起源	515
 baozougongzhu	暴走|公主	509
 baqizidi	八旗|子弟	472
@@ -502,13 +502,13 @@ benyangjiyichun	苯氧基|乙醇	459
 benzhalvanrongye	苯扎氯铵|溶液	464
 benzhaxiuanrongye	苯扎溴铵|溶液	464
 bianchengdaima	编程|代码	436
-bianchenghuanjing	编程|环境	475
-bianchenghuanjingpeizhi	编程|环境|配置	410
+bianchenghuanjing	编程|环境	474
+bianchenghuanjingpeizhi	编程|环境|配置	408
 bianchengluanma	变成|乱码	519
 bianchengnongchang	编程|农场	457
 bianchengshili	编程|实例	409
-bianchengyouxi	编程|游戏	494
-bianchengyuandaima	编程|源代码	468
+bianchengyouxi	编程|游戏	493
+bianchengyuandaima	编程|源代码	467
 biandikaihua	遍地|开花	471
 bianduishaonv	编队|少女	482
 bianfukantaiyang	蝙蝠看|太阳	455
@@ -738,7 +738,7 @@ bingduyichuanxue	病毒|遗传学	466
 bingduyimiao	病毒|疫苗	500
 bingduzaiti	病毒|载体	485
 bingduzhuangpei	病毒|装配	500
-bingfabiancheng	并发|编程	492
+bingfabiancheng	并发|编程	491
 bingfacaozuo	并发|操作	364
 bingfacaozuoxitong	并发|操作|系统	446
 bingfaceshi	并发|测试	489
@@ -1214,7 +1214,7 @@ changjianjizheng	常见|急症	383
 changjianjizhengchuli	常见|急症|处理	465
 changjianshiyong	常见|使用	423
 changjianshiyongchangjing	常见|使用|场景	505
-changjingbuzhi	场景|布置	502
+changjingbuzhi	场景|布置	496
 changjingjicheng	场景|继承	508
 changjingshezhi	场景|设置	508
 changjingshumianban	场景树|面板	508
@@ -1470,7 +1470,7 @@ chengtiganxibao	成体|干细胞	500
 chengxuanzhuang	程序|安装	505
 chengxubaohu	程序|保护	488
 chengxubengkui	程序|崩溃	492
-chengxubiancheng	程序|编程	473
+chengxubiancheng	程序|编程	472
 chengxubianyi	程序|变异	487
 chengxuchucuo	程序|出错	491
 chengxucunchu	程序|存储	490
@@ -4649,7 +4649,7 @@ guduganjue	孤独|感觉	500
 guduhuisheng	孤独|回声	515
 gudumogu	孤独|蘑菇	512
 guduxingge	孤独|性格	500
-gufabiancheng	古法|编程	509
+gufabiancheng	古法|编程	508
 gufengongsi	股份|公司	499
 gugebowuguan	骨骼|博物馆	501
 gugedaixie	骨骼|代谢	500
@@ -5005,7 +5005,7 @@ hankongjiaohuazheng	汗孔|角化症	495
 hanrebingyiqing	汗热病|疫情	500
 hanshoudaxue	函授|大学	470
 hanshubangding	函数|绑定	481
-hanshubiancheng	函数|编程	464
+hanshubiancheng	函数|编程	463
 hanshubiaodashi	函数|表达式	471
 hanshucanshu	函数|参数	505
 hanshuchengxu	函数|程序	384
@@ -5022,7 +5022,7 @@ hanshujiangjie	函数|讲解	489
 hanshujieliu	函数|节流	488
 hanshumoxing	函数|模型	484
 hanshushengming	函数|声明	492
-hanshushibiancheng	函数式|编程	451
+hanshushibiancheng	函数式|编程	450
 hanshushijiekou	函数式|接口	471
 hanshushixian	函数|实现	492
 hanshuyilai	函数|依赖	490
@@ -5427,7 +5427,7 @@ huanjiedongwu	环节|动物	473
 huanjinganzhuang	环境|安装	490
 huanjingbaohu	环境|保护	520
 huanjingbaohuzhuyi	环境|保护|主义	497
-huanjingbiancheng	环境|编程	472
+huanjingbiancheng	环境|编程	471
 huanjingbianliang	环境|变量	520
 huanjingbianliangpeizhi	环境|变量|配置	470
 huanjingbianliangshezhi	环境|变量|设置	469
@@ -6162,7 +6162,7 @@ jiayongyouxiji	家用|游戏机	502
 jiayongzhuji	家用|主机	502
 jiayuanaomi	家园|奥秘	503
 jiayuanzhanxian	家园|战线	515
-jiazaichangjing	加载|场景	508
+jiazaichangjing	加载|场景	502
 jiazhangzuofeng	家长|作风	514
 jiazhiliancheng	价值|连城	468
 jiazhitixi	价值|体系	514
@@ -6320,7 +6320,7 @@ jiegoudanbai	结构|蛋白	485
 jiegoudanbaizhi	结构|蛋白质	466
 jiegoudanyuan	结构|单元	498
 jiegouhuabaohu	结构化|保护	469
-jiegouhuabiancheng	结构化|编程	461
+jiegouhuabiancheng	结构化|编程	460
 jiegouhuachengxu	结构化|程序	475
 jiegouhuafangfa	结构化|方法	471
 jiegouhuafenxi	结构化|分析	471
@@ -7099,6 +7099,7 @@ jiyinqudong	基因|驱动	500
 jiyinquexian	基因|缺陷	487
 jiyinshuiping	基因|水平	415
 jiyinshuipingzhuanyi	基因|水平|转移	497
+jiyintibuwending	基因体|不稳定	497
 jiyintichu	基因|剔除	415
 jiyintichuxiaoshu	基因|剔除|小鼠	497
 jiyintubian	基因|突变	514
@@ -7115,6 +7116,7 @@ jiyinzhiliao	基因|治疗	514
 jiyinzhongzuyimiao	基因重组|疫苗	465
 jiyinzhuanhuan	基因|转换	500
 jiyinzhuanyi	基因|转移	486
+jiyinzubuwending	基因组|不稳定	497
 jiyinzudaxiao	基因组|大小	500
 jiyinzuowei	基因|座位	457
 jiyinzuwenku	基因组|文库	466
@@ -9086,7 +9088,7 @@ mianyiquexian	免疫|缺陷	487
 mianyishengwuxue	免疫|生物学	467
 mianyishuailao	免疫|衰老	500
 mianyitaobi	免疫|逃避	500
-mianyitiaojie	免疫|调节	511
+mianyitiaojie	免疫|调节	520
 mianyituchu	免疫|突触	500
 mianyiwangluo	免疫|网络	484
 mianyixiaoguo	免疫|效果	486
@@ -10586,7 +10588,7 @@ qubaohoushen	取保|候审	421
 quchongyaoji	驱虫|药剂	500
 qudonganquan	驱动|安全	486
 qudonganzhuang	驱动|安装	490
-qudongbiancheng	驱动|编程	473
+qudongbiancheng	驱动|编程	472
 qudongchengxu	驱动|程序	520
 qudongdanbai	驱动|蛋白	483
 qudongdashi	驱动|大师	487
@@ -11849,7 +11851,7 @@ shenjingshuairuo	神经|衰弱	492
 shenjingsidanbai	神经丝|蛋白	466
 shenjingsongjieshu	神经|松解术	466
 shenjingsunshang	神经|损伤	487
-shenjingtiaojie	神经|调节	497
+shenjingtiaojie	神经|调节	520
 shenjingtonglu	神经|通路	485
 shenjingtunshi	神经|吞噬	415
 shenjingtunshizuoyong	神经|吞噬|作用	497
@@ -13334,7 +13336,7 @@ tianzhudegaoyang	天主的|羔羊	455
 tianzhujiaohui	天主|教会	479
 tianzhujiaotu	天主|教徒	477
 tiaochuhuokeng	跳出|火坑	425
-tiaohepiwei	调和|脾胃	496
+tiaohepiwei	调和|脾胃	518
 tiaojianbianliang	条件|变量	491
 tiaojianbianyi	条件|编译	491
 tiaojianchaxun	条件|查询	491
@@ -13449,7 +13451,7 @@ tixingwomen	提醒|我们	520
 tixuruwei	体恤|入微	466
 tiyemianyi	体液|免疫	500
 tiyemianyixitong	体液|免疫|系统	497
-tiyetiaojie	体液|调节	497
+tiyetiaojie	体液|调节	520
 tiyubisai	体育|比赛	467
 tiyuchangguan	体育|场馆	515
 tiyuchangsuo	体育|场所	500
@@ -14071,6 +14073,7 @@ weisuizisha	未遂|自杀	500
 weisuoshijie	微缩|世界	501
 weituoshijian	委托|事件	489
 weiwaijingying	委外|经营	478
+weiweixingbuwending	微卫星|不稳定	497
 weiwuzhuyi	唯物|主义	511
 weixianfeiwu	危险|废物	514
 weixianjiashi	危险|驾驶	515
@@ -15576,7 +15579,7 @@ xiyangcanhanpian	西洋参|含片	429
 xiyangcanjiaonang	西洋参|胶囊	446
 xiyineikexue	西医|内科学	402
 xiyiwaikexue	西医|外科学	386
-xizangyixue	西藏|医学	507
+xizangyixue	西藏|医学	518
 xizhenchouxihuojian	细针抽吸|活检	497
 xizhenchouxiyangben	细针抽吸|样本	497
 xizideliandan	戏子的|脸蛋	407
@@ -16720,7 +16723,7 @@ yingyezhizhao	营业|执照	518
 yingyongbushu	应用|部署	490
 yingyongchengshi	应用|程式	467
 yingyongchengxu	应用|程序	520
-yingyongchengxubiancheng	应用|程序|编程	417
+yingyongchengxubiancheng	应用|程序|编程	415
 yingyongchengxufuwu	应用|程序|服务	468
 yingyongchengxujiekou	应用|程序|接口	469
 yingyongchengxukaifa	应用|程序|开发	470
@@ -17154,7 +17157,7 @@ youxianzhuangtaiji	有限|状态机	501
 youxiaocuoshi	有效|措施	469
 youxiaojiliang	有效|剂量	486
 youxiaopengzhuang	有效|碰撞	501
-youxibiancheng	游戏|编程	486
+youxibiancheng	游戏|编程	485
 youxicaozong	游戏|操纵	417
 youxicaozongshoubing	游戏|操纵|手柄	499
 youxicehua	游戏|策划	520
@@ -17345,7 +17348,7 @@ yuanzhuijiaomo	圆锥|角膜	476
 yuanzhujiaoji	援助|交际	467
 yuanzhuohuiyi	圆桌|会议	472
 yuanzhuoqishi	圆桌|骑士	488
-yuanzhuowushi	圆桌|武士	513
+yuanzhuowushi	圆桌|武士	520
 yuanzibianliang	原子|变量	490
 yuanzifanyingdui	原子|反应堆	501
 yuanzifanyinglu	原子|反应炉	500
@@ -18821,7 +18824,7 @@ zishenmianyijibing	自身|免疫|疾病	497
 zishenmianyixing	自身|免疫性	500
 zishennaishou	自身|耐受	483
 zishenshuxue	自身|输血	484
-zishentiaojie	自身|调节	497
+zishentiaojie	自身|调节	520
 zishenyimiao	自身|疫苗	483
 zishifanshe	姿势|反射	483
 zitimianyifanying	自体免疫|反应	497

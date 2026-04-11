@@ -1962,7 +1962,12 @@ def _compute_medicine_vertical_penalty(text: str, source_id: str) -> int:
         base_penalty = 14
 
     if source_id == "project-curated-vertical-medicine":
-        relief = 32 if text_len <= 4 else 8
+        if text_len <= 2:
+            relief = 112
+        elif text_len <= 4:
+            relief = 48
+        else:
+            relief = 8
     elif source_id == "wikidata-medical-mesh-zh":
         relief = 22 if text_len <= 4 else 6
     else:
@@ -10386,9 +10391,14 @@ def _reinforce_vertical_tc_terms(
             continue
 
         if layer_id == "medicine":
-            base_source_hits = 2 if source_id == "wikidata-medical-mesh-zh" else 1
-            extra_bonus = 0 if _cjk_len(tc_candidate) <= 4 else 4
-            allow_existing_boost = _cjk_len(tc_candidate) >= 4 or _is_medical_specific_term(tc_candidate)
+            if allow_curated_short_medical:
+                base_source_hits = 3
+                extra_bonus = 18 if _cjk_len(tc_candidate) <= 2 else (8 if _cjk_len(tc_candidate) <= 4 else 4)
+                allow_existing_boost = True
+            else:
+                base_source_hits = 2 if source_id == "wikidata-medical-mesh-zh" else 1
+                extra_bonus = 0 if _cjk_len(tc_candidate) <= 4 else 4
+                allow_existing_boost = _cjk_len(tc_candidate) >= 4 or _is_medical_specific_term(tc_candidate)
         elif layer_id == "computing":
             base_source_hits = (
                 2 if source_id == "project-curated-vertical-computing" and _cjk_len(tc_candidate) >= 4 else 1
@@ -10734,10 +10744,16 @@ def _augment_with_vertical_terms(
             continue
 
         if layer_id == "medicine":
-            source_hits = 2 if source_id == "wikidata-medical-mesh-zh" else 1
-            short_bonus = 0
-            long_bonus = 4
-            allow_existing_boost = _cjk_len(sc_word) >= 4 or _is_medical_specific_term(sc_word)
+            if allow_curated_short_medical:
+                source_hits = 3
+                short_bonus = 18 if _cjk_len(sc_word) <= 2 else 0
+                long_bonus = 8 if _cjk_len(sc_word) <= 4 else 4
+                allow_existing_boost = True
+            else:
+                source_hits = 2 if source_id == "wikidata-medical-mesh-zh" else 1
+                short_bonus = 0
+                long_bonus = 4
+                allow_existing_boost = _cjk_len(sc_word) >= 4 or _is_medical_specific_term(sc_word)
         elif layer_id == "computing":
             source_hits = 2 if source_id == "project-curated-vertical-computing" and _cjk_len(sc_word) >= 4 else 1
             short_bonus = 0
