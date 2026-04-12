@@ -457,9 +457,11 @@ biguguzhe	鼻骨|骨折	487
 bihuabizhi	壁畫|壁紙	463
 bihuashurufa	筆劃|輸入法	475
 bihuashurufa	筆畫|輸入法	498
+bijiaobianyi	比較|便宜	405
 bijiaolakua	比較|拉胯	520
 bijiaolihai	比較|厲害	520
 bijiaomeiyou	比較|沒有	520
+bijiaopianyi	比較|便宜	437
 bijiaotaoyan	比較|討厭	520
 bijiaowenxue	比較|文學	468
 bijiaoxiaoyi	比較|效益	415
@@ -876,7 +878,7 @@ chankeyishi	產科|醫師	465
 chanqianchuxue	產前|出血	494
 chanqianhuli	產前|護理	481
 chanqianjiancha	產前|檢查	496
-chanqianzhenduan	產前|診斷	461
+chanqianzhenduan	產前|診斷	457
 chanruqiganran	产褥期|感染	467
 chanruqijibing	產褥期|疾病	497
 chanruqiyiyuzheng	產褥期|抑鬱症	497
@@ -1074,7 +1076,6 @@ chisezhanxianxilie	赤色戰綫|係列	416
 chisezhanxianxilie	赤色戰線|係列	436
 chishenjingmabi	尺神经|麻痹	466
 chixushijian	持續|時間	462
-chizhafengyun	叱吒|風雲	478
 chongfengfeiche	衝鋒|飛車	354
 chongfengfeichexilie	衝鋒|飛車|係列	436
 chongfenkaolv	充分|考慮	440
@@ -1489,7 +1490,7 @@ daxueyuke	大學|預科	463
 dayuyouxi	大魚|遊戲	499
 dazaoshijie	打造|世界	515
 dazhanlveyouxi	大戰略|遊戲	507
-dazhengfangzhen	大政|方針	471
+dazhengfangzhen	大政|方針	470
 dazhengxiaoxiao	大正|小小	515
 dazhengxiaoxiaoxiansheng	大正|小小|先生	512
 dazhongdianping	大眾|點評	520
@@ -1653,7 +1654,7 @@ dianxingxiangguan	典型|相關	500
 dianxiukeliaofa	电休克|疗法	467
 dianxiukeliaofa	電休克|療法	497
 dianxiukezhiliao	电休克|治疗	468
-dianxuezhenduan	電學|診斷	480
+dianxuezhenduan	電學|診斷	476
 dianyingjuben	電影|劇本	472
 dianyingmenggongchang	電影|夢工廠	512
 dianyingsheying	電影|攝影	470
@@ -3506,6 +3507,7 @@ guzhizaisheng	骨質|再生	477
 guzhizengsheng	骨質|增生	470
 hafodaxue	哈佛|大學	516
 hahadaxiao	哈哈|大笑	493
+hahahaha	哈哈|哈哈	498
 haibinxiaoxiaole	海濱|消消樂	512
 haichanshiwu	海產|食物	479
 haichuanningkoufuye	咳喘宁|口服液	464
@@ -5158,7 +5160,7 @@ juanzhoudongzuoyouxi	卷軸|動作|遊戲	499
 juanzhousheji	卷軸|射擊	425
 juanzhoushejiyouxi	卷軸|射擊|遊戲	507
 jubingxixianan	聚丙烯|酰胺	450
-jubudianxianfazuo	局部|癲癇發作	494
+jubudianxianfazuo	局部|癲癇發作	493
 jubufeipang	局部|肥胖	471
 jubuganran	局部|感染	477
 jubujiepouxue	局部|解剖学	467
@@ -5875,7 +5877,7 @@ lianxuxinhao	連續|信號	498
 lianxuxuetang	連續|血糖	415
 lianxuxuetangjiance	連續|血糖|監測	497
 lianzhanbuxiu	戀戰|不休	512
-lianzhencha	立案|偵查	430
+lianzhencha	立案|偵查	420
 liaolimama	料理|媽媽	512
 liaotianchengxu	聊天|程序	490
 liaoyangyuanchuanghu	療養院|窗戶	465
@@ -13214,7 +13216,7 @@ zhenshimoguiyouxi	真實|魔鬼|遊戲	499
 zhenshisaiche	真實|賽車	512
 zhentangeju	偵探|歌劇	512
 zhenxiangdabai	真相|大白	472
-zhenxianhuor	針線|活兒	463
+zhenxianhuor	針線|活兒	428
 zhenxingdongmailiu	真性|动脉瘤	450
 zhenxingniaoshijin	真性|尿失禁	454
 zhenxinzhenyi	真心|真意	470

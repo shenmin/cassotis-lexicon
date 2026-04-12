@@ -682,6 +682,7 @@ bijiaolakua	比较|拉胯	520
 bijiaolihai	比较|厉害	520
 bijiaomeiyou	比较|没有	520
 bijiaomianyixue	比较|免疫学	466
+bijiaopianyi	比较|便宜	520
 bijiaotaoyan	比较|讨厌	520
 bijiaowenxue	比较|文学	472
 bijiaoxiaoyi	比较|效益	415
@@ -1276,7 +1277,7 @@ chanqianchuxue	产前|出血	467
 chanqianhuli	产前|护理	491
 chanqianjiancha	产前|检查	493
 chanqianshengchan	产钳|生产	484
-chanqianzhenduan	产前|诊断	465
+chanqianzhenduan	产前|诊断	494
 chanredanbai	产热|蛋白	500
 chanruqiganran	产褥期|感染	458
 chanruqijibing	产褥期|疾病	500
@@ -2419,7 +2420,7 @@ dianxingfeijiehe	典型|肺结核	466
 dianxingxiangguan	典型|相关	500
 dianxiukeliaofa	电休克|疗法	500
 dianxiukezhiliao	电休克|治疗	468
-dianxuezhenduan	电学|诊断	488
+dianxuezhenduan	电学|诊断	500
 dianyingjuben	电影|剧本	475
 dianyingmenggongchang	电影|梦工厂	515
 dianyingsheying	电影|摄影	474
@@ -4912,6 +4913,7 @@ guzhizaisheng	骨质|再生	500
 guzhizengsheng	骨质|增生	515
 hafodaxue	哈佛|大学	516
 hahadaxiao	哈哈|大笑	493
+hahahaha	哈哈|哈哈	498
 haibinxiaoxiaole	海滨|消消乐	515
 haichanshiwu	海产|食物	478
 haichuanningjiaonang	咳喘宁|胶囊	464
@@ -5340,7 +5342,7 @@ huaijiuwanjia	怀旧|玩家	498
 huaijiuyouxi	怀旧|游戏	502
 huaiyunbingfazheng	怀孕|并发症	500
 huaiyunkenengxing	怀孕|可能性	500
-hualianxianxianzhang	花莲县|县长	393
+hualianxianxianzhang	花莲县|县长	392
 hualiaoyaowu	化疗|药物	487
 hualidedabing	画里的|大饼	427
 huamojianxi	滑膜|间隙	457
@@ -5980,7 +5982,7 @@ jiaobenxiaozi	脚本|小子	501
 jiaobenyuyan	脚本|语言	520
 jiaochabaohu	交叉|保护	486
 jiaochabianyi	交叉|编译	470
-jiaochabianyihuanjing	交叉|编译|环境	382
+jiaochabianyihuanjing	交叉|编译|环境	381
 jiaochabianyiqi	交叉|编译器	438
 jiaochafanying	交叉|反应	471
 jiaochaganran	交叉|感染	453
@@ -8108,7 +8110,7 @@ lianxuxinhao	连续|信号	501
 lianxuxuetang	连续|血糖	415
 lianxuxuetangjiance	连续|血糖|监测	497
 lianzhanbuxiu	恋战|不休	515
-lianzhencha	立案|侦查	427
+lianzhencha	立案|侦查	417
 liaoliaowuji	寥寥|无几	451
 liaolimama	料理|妈妈	501
 liaoningchengda	辽宁|成大	461
@@ -8213,7 +8215,7 @@ linchuangyichuanxue	临床|遗传学	467
 linchuangyingyangxue	临床|营养学	465
 linchuangyixue	临床|医学	489
 linchuangyouyuzheng	临床|忧郁症	500
-linchuangzhenduan	临床|诊断	465
+linchuangzhenduan	临床|诊断	488
 linchuangzhenduanxue	临床|诊断学	467
 linchuangzhili	临床|治理	500
 lingdaobanzi	领导|班子	500
@@ -17620,7 +17622,7 @@ zaogaoxiangqi	糟糕|象棋	509
 zaokuangfazuo	躁狂|发作	475
 zaonanxinhao	遭难|信号	473
 zaoqiaomoniqi	造桥|模拟器	485
-zaoqizhenduan	早期|诊断	480
+zaoqizhenduan	早期|诊断	488
 zaoqizhengzhuang	早期|症状	500
 zaoshengwuran	噪声|污染	440
 zaoxingyishu	造型|艺术	476
@@ -17798,7 +17800,7 @@ zhenduanceshi	诊断|测试	487
 zhenduanchengxu	诊断|程序	488
 zhenduancunyou	诊断|存有	415
 zhenduancunyouchayi	诊断|存有|差异	497
-zhenduanshiji	诊断|试剂	432
+zhenduanshiji	诊断|试剂	460
 zhenduanxuejichu	诊断学|基础	466
 zhengceleixing	政策|类型	471
 zhengcezhiding	政策|制定	500
@@ -17919,7 +17921,7 @@ zhentangeju	侦探|歌剧	515
 zhentanshenshi	侦探|绅士	410
 zhentanshenshixilie	侦探|绅士|系列	492
 zhenxiangdabai	真相|大白	472
-zhenxianhuor	针线|活儿	467
+zhenxianhuor	针线|活儿	442
 zhenxingdongmailiu	真性|动脉瘤	445
 zhenxingniaoshijin	真性|尿失禁	445
 zhenxinzhenyi	真心|真意	470
@@ -19023,7 +19025,7 @@ zuihoushenghaizhe	最后|生还者	515
 zuihoutongdie	最后|通牒	433
 zuihouyizhan	最后|一战	510
 zuihouyizhanxilie	最后|一战|系列	402
-zuihouzhenduan	最后|诊断	460
+zuihouzhenduan	最后|诊断	486
 zuikuihuoshou	罪魁|祸首	412
 zuiniechuanqi	罪孽|传奇	515
 zuipaodengji	嘴炮|等级	354
