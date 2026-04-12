@@ -639,8 +639,9 @@ SINGLE_CHAR_READING_DELTA_OVERRIDES: Dict[Tuple[str, str], int] = {
 }
 
 MULTI_CHAR_TERM_DROP_OVERRIDES: Set[str] = {
-    # Keep this escape hatch empty by default. Short-term filtering should come
-    # from general build rules instead of an ever-growing denylist.
+    # Legacy orthography no longer preferred in modern IME usage.
+    "补钉",
+    "補釘",
 }
 
 COPYLEFT_LICENSE_TOKENS = (

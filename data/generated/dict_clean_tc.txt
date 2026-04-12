@@ -10920,8 +10920,9 @@ budi'ersikaya	布蒂爾斯卡婭	309
 budikang	不抵抗	640
 budikangzhu	不抵抗主	527
 budikangzhuyi	不抵抗主義	569
+buding	补丁	1000
 buding	不定	1000
-buding	補釘	1
+buding	補丁	1000
 budingci	不定詞	379
 budingfang	不定方	501
 budingfangcheng	不定方程	527
@@ -11007,7 +11008,7 @@ bufa	不乏	908
 bufa	不法	875
 bufa	步伐	425
 bufa	步法	176
-bufa	補發	135
+bufa	補發	136
 bufafen	不法分	556
 bufafenzi	不法分子	674
 bufafenzi	不法份子	634
@@ -16789,7 +16790,7 @@ chengxuyuanbibei	程序员必备	1000
 chengxuyuanbibei	程序員必備	425
 chengxuyuanbidu	程序员必读	1000
 chengxuyuanbidu	程序員必讀	422
-chengxuyuanchuangye	程序员创业	999
+chengxuyuanchuangye	程序员创业	1000
 chengxuyuanchuangye	程序員創業	415
 chengxuyuandaima	程序源代码	1000
 chengxuyuandaima	程序源代碼	452
@@ -18529,7 +18530,7 @@ chuangkan	創刊	442
 chuangkanhao	創刊號	447
 chuangke	創客	198
 chuangketie	创可贴	1000
-chuangketie	創可貼	443
+chuangketie	創可貼	448
 chuangkong	窗孔	528
 chuangkongmen	闖空門	232
 chuangkou	窗口	1000
@@ -18654,6 +18655,10 @@ chuangyimanmu	瘡痍滿目	419
 chuangyizusaiche	創意族賽車	895
 chuangyou	創優	282
 chuangzao	創造	551
+chuangzaochu	创造出	1000
+chuangzaochule	创造出了	1000
+chuangzaochule	創造齣了	680
+chuangzaole	创造了	1000
 chuangzaoli	創造力	523
 chuangzaolun	創造論	232
 chuangzaoqiuhui	創造球會	864
@@ -19306,7 +19311,7 @@ chuiziheliandao	錘子和鐮刀	895
 chuizou	吹奏	445
 chuji	初級	815
 chuji	觸及	813
-chuji	出際	811
+chuji	出際	812
 chuji	處級	644
 chujia	齣嫁	690
 chujiade	齣嫁的	599
@@ -27263,7 +27268,7 @@ didong	地洞	751
 didongshanyao	地動山搖	455
 didongyi	地動儀	442
 didu	帝都	355
-diduan	地段	558
+diduan	地段	559
 diduan	低端	553
 diduanrenkou	低端人口	260
 didui	敵對	447
@@ -40043,9 +40048,9 @@ fuyazheng	氟牙症	702
 fuye	複葉	511
 fuye	副業	470
 fuyi	附議	1000
-fuyi	輔以	696
-fuyi	復議	512
-fuyi	複議	493
+fuyi	輔以	634
+fuyi	復議	434
+fuyi	複議	416
 fuyi	服役	385
 fuyi	副翼	1
 fuyiceng	負一層	232
@@ -69033,7 +69038,7 @@ jushou	舉手	819
 jushou	據守	718
 jushou	聚首	374
 jushou	拒收	305
-jushou	居首	103
+jushou	居首	102
 jushoutouzu	舉手投足	469
 jushouzhilao	舉手之勞	461
 jushu	拘束	945
@@ -78778,7 +78783,7 @@ lingdianlingsanba	零點零三八	371
 lingdianneng	零點能	379
 lingdianwu	零點五	232
 lingdianzu	零電阻	712
-lingding	伶仃	659
+lingding	伶仃	658
 lingdong	靈動	1000
 lingdongqishi	靈動騎士	864
 lingdongqu	嶺東區	165
@@ -88275,7 +88280,7 @@ mingli	明麗	315
 mingliang	明亮	473
 mingliangci	名量詞	232
 mingli'anli	明裡暗裡	257
-mingliao	明了	193
+mingliao	明了	194
 minglichang	名利場	423
 minglie	名列	465
 minglieqianmao	名列前茅	542
@@ -90477,6 +90482,7 @@ nadetongweisu	鈉的衕位素	480
 nading	拿頂	305
 nadou	納豆	198
 nadoujun	納豆菌	193
+naduan	那段	1000
 naduoluo'er	纳多洛尔	938
 naduoluo'er	納多洛爾	320
 na'emi	拿俄米	232
@@ -96327,8 +96333,8 @@ piaochen	飄塵	359
 piaochong	瓢蟲	400
 piaochuang	飄窗	198
 piaodai	飄帶	417
-piaodang	飄盪	766
-piaodang	飄蕩	748
+piaodang	飄盪	689
+piaodang	飄蕩	670
 piaodong	飄動	440
 piaofang	票房	419
 piaofanzi	票販子	442
@@ -133945,7 +133951,7 @@ wubabituo	戊巴比妥	673
 wubabituona	戊巴比妥钠	936
 wubabituona	戊巴比妥鈉	602
 wubai	五百	1000
-wubai	伍佰	195
+wubai	伍佰	207
 wubaibashi'erjuan	五百八十二捲	399
 wubaibashiwu	五百八十五	371
 wubaidi	烏拜迪	228
@@ -145204,7 +145210,7 @@ xuanpu	玄圃	198
 xuanqianji	旋前肌	1000
 xuanqianyuanji	旋前圆肌	930
 xuanqianyuanji	鏇前圓肌	317
-xuanqianzhuankun	鏇乾轉坤	401
+xuanqianzhuankun	鏇乾轉坤	383
 xuanqing	玄青	195
 xuanqu	選取	991
 xuanqu	選區	249
@@ -161743,7 +161749,7 @@ zaozai	早在	305
 zaozaoban	早早班	232
 zaozaor	早早兒	461
 zaozhi	早知	759
-zaozhi	造紙	742
+zaozhi	造紙	743
 zaozhidao	早知道	232
 zaozhijinrihebidangchu	早知今日何必噹初	378
 zaozhijinrihebidangchu	早知今日何必當初	378
@@ -161752,7 +161758,7 @@ zaozhong	遭重	198
 zaozhuang	棗莊	231
 zaozhuangshi	棗莊市	185
 zaozi	鑿子	479
-zaozi	造字	459
+zaozi	造字	460
 zaozi	棗子	439
 zaozixi	早自習	379
 zaozui	遭罪	392
@@ -163533,6 +163539,7 @@ zhediedao	摺疊刀	230
 zhedieping	摺疊屏	228
 zhedieshi	摺疊式	442
 zhedieyi	摺疊椅	371
+zheduan	这段	1000
 zheduan	遮斷	471
 zhedui	摺兌	323
 zhe'ergen	摺耳根	232
@@ -165186,6 +165193,7 @@ zheyi	這一	1000
 zheyiban	這一版	1000
 zheyibanben	這一版本	1000
 zheyici	這一次	1000
+zheyiduan	这一段	1000
 zheyihui	這一回	1000
 zheyimiaoguohuo	這一秒過火	813
 zheyin	遮蔭	431
@@ -165831,6 +165839,7 @@ zhijiwu	致畸物	1000
 zhijixiye	痔疾洗液	653
 zhijixue	制剂学	1000
 zhijizhibi	知己知彼	482
+zhiju	之举	1000
 zhiju	指居	198
 zhijuankuwen	致倦库蚊	958
 zhijuankuwen	緻倦庫蚊	330
@@ -166286,7 +166295,7 @@ zhisecengfenxifa	紙色層分析法	862
 zhisepufa	紙色譜法	770
 zhishang	之上	815
 zhishang	至上	809
-zhishang	智商	331
+zhishang	智商	330
 zhishangdelaizhongjueqian	紙上得來終覺淺	530
 zhishangdemofashi	紙上的魔法使	935
 zhishangjiaosebanyanyouxi	紙上角色扮演遊戲	792
@@ -167071,7 +167080,7 @@ zhongdu	中都	216
 zhongdu	重讀	85
 zhongduan	終端	1000
 zhongduan	中斷	231
-zhongduan	中段	208
+zhongduan	中段	209
 zhongduanfuwuqi	終端服務器	373
 zhongduanji	終端機	216
 zhongduanmingling	终端命令	1000
@@ -171619,8 +171628,8 @@ zidongzhuangxiang	自動裝箱	260
 zidongzifa	自動自發	387
 zidoujia	梓都加	635
 zidu	自瀆	460
-ziduan	字段	695
-ziduan	欄位	298
+ziduan	字段	696
+ziduan	欄位	297
 ziduanleixing	字段类型	1000
 ziduanleixing	字段類型	386
 ziduanming	字段名	678

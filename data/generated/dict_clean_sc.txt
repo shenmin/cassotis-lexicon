@@ -9972,8 +9972,8 @@ budi'ersikaya	布蒂尔斯卡娅	309
 budikang	不抵抗	640
 budikangzhu	不抵抗主	527
 budikangzhuyi	不抵抗主义	569
+buding	补丁	1000
 buding	不定	1000
-buding	补钉	1
 budingci	不定词	379
 budingfang	不定方	501
 budingfangcheng	不定方程	527
@@ -10056,7 +10056,7 @@ bu'erzi	不二字	640
 bufa	不乏	908
 bufa	不法	846
 bufa	步伐	377
-bufa	补发	293
+bufa	补发	294
 bufa	步法	124
 bufafen	不法分	556
 bufafenzi	不法分子	603
@@ -17151,6 +17151,9 @@ chuangyimanmu	疮痍满目	419
 chuangyizusaiche	创意族赛车	879
 chuangyou	创优	417
 chuangzao	创造	551
+chuangzaochu	创造出	1000
+chuangzaochule	创造出了	1000
+chuangzaole	创造了	1000
 chuangzaoli	创造力	523
 chuangzaolun	创造论	232
 chuangzaoqiuhui	创造球会	848
@@ -62266,7 +62269,7 @@ juji	局级	1
 juji	聚积	1
 jujia	居家	680
 jujia	举家	515
-jujia	俱佳	452
+jujia	俱佳	451
 jujiabangong	居家办公	754
 jujiajibingxisuanjiazhi	聚甲基丙烯酸甲酯	745
 jujiajibingxisuanqiangyizhi	聚甲基丙烯酸羟乙酯	802
@@ -82156,6 +82159,7 @@ nadetongweisu	钠的同位素	800
 nading	拿顶	305
 nadou	纳豆	198
 nadoujun	纳豆菌	193
+naduan	那段	1000
 naduoluo'er	纳多洛尔	640
 na'emi	拿俄米	232
 na'ernaqian	那尔那茜	513
@@ -121536,7 +121540,7 @@ wuba	五霸	284
 wubabituo	戊巴比妥	653
 wubabituona	戊巴比妥钠	702
 wubai	五百	1000
-wubai	伍佰	232
+wubai	伍佰	260
 wubaibashi'erjuan	五百八十二卷	399
 wubaibashiwu	五百八十五	371
 wubaidi	乌拜迪	167
@@ -146180,7 +146184,7 @@ zaozai	早在	305
 zaozaoban	早早班	232
 zaozaor	早早儿	461
 zaozhi	造纸	852
-zaozhi	早知	753
+zaozhi	早知	752
 zaozhidao	早知道	232
 zaozhijinrihebidangchu	早知今日何必当初	378
 zaozhishu	造纸术	456
@@ -147898,7 +147902,8 @@ zhediedao	折叠刀	230
 zhedieping	折叠屏	228
 zhedieshi	折叠式	442
 zhedieyi	折叠椅	371
-zheduan	折断	938
+zheduan	这段	1000
+zheduan	折断	485
 zheduan	遮断	14
 zhedui	折兑	323
 zhe'ergen	折耳根	232
@@ -149446,6 +149451,7 @@ zheyi	这一	1000
 zheyiban	这一版	1000
 zheyibanben	这一版本	1000
 zheyici	这一次	1000
+zheyiduan	这一段	1000
 zheyihui	这一回	1000
 zheyimiaoguohuo	这一秒过火	813
 zheyin	遮荫	405
@@ -150029,6 +150035,7 @@ zhijiwu	致畸物	612
 zhijixiye	痔疾洗液	633
 zhijixue	制剂学	604
 zhijizhibi	知己知彼	482
+zhiju	之举	1000
 zhiju	指居	198
 zhijuankuwen	致倦库蚊	650
 zhijue	知觉	1000
@@ -151142,7 +151149,7 @@ zhongdu	中都	145
 zhongdu	重读	114
 zhongduan	终端	1000
 zhongduan	中断	279
-zhongduan	中段	145
+zhongduan	中段	146
 zhongduanfuwuqi	终端服务器	373
 zhongduanji	终端机	216
 zhongduanmingling	终端命令	700
