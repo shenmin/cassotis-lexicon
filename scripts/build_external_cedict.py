@@ -636,6 +636,8 @@ SINGLE_CHAR_READING_DELTA_OVERRIDES: Dict[Tuple[str, str], int] = {
     # Keep 朊 visible for medical contexts after vertical medical terms are
     # isolated from single-character support derivation.
     ("朊", "ruan"): 220,
+    # Keep 爿 visible for standalone lookup under its modern pan reading.
+    ("爿", "pan"): 120,
 }
 
 MULTI_CHAR_TERM_DROP_OVERRIDES: Set[str] = {
@@ -6947,6 +6949,26 @@ def _load_unihan_readings_detail(
     )
     if "嗯" not in mandarin_map:
         mandarin_map["嗯"] = "en"
+
+    for override_char, override_pinyin, min_detail in (
+        ("\u5e62", "zhuang", 1),  # 幢
+        ("\u723f", "pan", 12),    # 爿
+        ("\u723f", "qiang", 8),   # 爿
+        ("\u719f", "shou", 1),    # 熟
+        ("\u98a4", "zhan", 1),    # 颤
+        ("\u85cf", "zang", 1),    # 藏
+        ("\u5265", "bao", 1),     # 剥
+        ("\u54ea", "nei", 1),     # 哪
+    ):
+        _add_unihan_reading(
+            readings_map,
+            source_rank_map,
+            override_char,
+            override_pinyin,
+            UNIHAN_SOURCE_PINLU,
+        )
+        if pinlu_detail_map.get((override_char, override_pinyin), 0) < min_detail:
+            pinlu_detail_map[(override_char, override_pinyin)] = min_detail
 
     return mandarin_map, readings_map, source_rank_map, pinlu_map, pinlu_detail_map
 
