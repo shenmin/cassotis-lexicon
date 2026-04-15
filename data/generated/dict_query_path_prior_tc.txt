@@ -315,7 +315,7 @@ baoxianhangai	保險|涵蓋	415
 baoxianhangaibuzu	保險|涵蓋|不足	497
 baoyulunli	保育|倫理	500
 baoyushaji	暴雨|殺機	455
-baozhatouwushi	爆炸頭|武士	483
+baozhatouwushi	爆炸頭|武士	487
 baoziqiyuan	孢子|起源	515
 baozougongzhu	暴走|公主	509
 baqizidi	八旗|子弟	472
@@ -621,7 +621,7 @@ budongchanquanzheng	不動產|權證	515
 budongchanzhengming	不動產|證明	520
 budongdanbaizhi	不凍|蛋白質	494
 buduiyiyuan	部隊|醫院	497
-bufafenzi	不法|份子	468
+bufafenzi	不法|份子	432
 bufafenzi	不法|分子	474
 bufenbici	不分|彼此	471
 bufenhanshuyilai	部分|函数依赖	468
@@ -687,6 +687,7 @@ bunengziba	不能|自拔	449
 bupianfensan	不偏|分散	441
 buqieshiji	不切|實際	472
 buqiuchengwang	不求|承望	429
+burenbuyi	不仁|不義	520
 burongzhiyi	不容|置疑	425
 burudongwu	哺乳|動物	495
 bushengmeiju	不勝|枚舉	425
@@ -709,6 +710,7 @@ buxingmoniqi	步行|模擬器	510
 buxuekoufuye	补血|口服液	467
 buyanbuyu	不言|不語	453
 buyaobuji	不要|不急	469
+buyaobuyaode	不要|不要的	455
 buyaoweishi	不要|餵食	430
 buyaoweishihouzi	不要|餵食|猴子	512
 buyihuir	不一|會兒	520
@@ -1075,7 +1077,6 @@ chisezhanxianxilie	赤色戰綫|係列	416
 chisezhanxianxilie	赤色戰線|係列	436
 chishenjingmabi	尺神经|麻痹	466
 chixushijian	持續|時間	462
-chizhafengyun	叱吒|風雲	478
 chongfengfeiche	衝鋒|飛車	354
 chongfengfeichexilie	衝鋒|飛車|係列	436
 chongfenkaolv	充分|考慮	440
@@ -3210,8 +3211,8 @@ guangrongshiming	光榮|使命	511
 guangsutuzaizi	光速|兔崽子	490
 guangxianfeiche	光線|飛車	454
 guangxishifan	廣西|師範	427
-guangxiwenge	廣西|文革	425
-guangxiwengetusha	廣西|文革|屠殺	507
+guangxiwenge	廣西|文革	410
+guangxiwengetusha	廣西|文革|屠殺	492
 guangxuedezhongxin	光學的|中心	437
 guangxuexianxiang	光學|現象	497
 guangxueyiqi	光學|儀器	436
@@ -12774,7 +12775,7 @@ yuanzhuijiaomo	圓錐|角膜	475
 yuanzhujiaoji	援助|交際	464
 yuanzhuohuiyi	圓桌|會議	469
 yuanzhuoqishi	圓桌|騎士	485
-yuanzhuowushi	圓桌|武士	499
+yuanzhuowushi	圓桌|武士	503
 yuanzifanyingdui	原子|反應堆	501
 yuanzifanyinglu	原子|反應爐	500
 yuanzihewulixue	原子|核物理學	376
@@ -13247,6 +13248,7 @@ zheyangbuhao	這樣|不好	436
 zheyangdehua	這樣|的話	519
 zheyangyilai	這樣|一來	483
 zheyibanben	這一|版本	520
+zheyitanzi	這一|攤子	518
 zhezhishijie	摺紙|世界	430
 zhezhishijiechaifeng	摺紙|世界|拆封	512
 zhiaijiyin	致癌|基因	500

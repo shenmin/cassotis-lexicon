@@ -418,7 +418,7 @@ baoxianhangaibuzu	保险|涵盖|不足	497
 baoyulunli	保育|伦理	500
 baoyupeiyang	保育|培养	482
 baoyushaji	暴雨|杀机	456
-baozhatouwushi	爆炸头|武士	483
+baozhatouwushi	爆炸头|武士	492
 baoziqiyuan	孢子|起源	515
 baozougongzhu	暴走|公主	509
 baqizidi	八旗|子弟	472
@@ -896,7 +896,7 @@ budongdanbaizhi	不冻|蛋白质	497
 budongguanjie	不动|关节	482
 buduiyiyuan	部队|医院	500
 buerfamen	不二|法门	456
-bufafenzi	不法|分子	474
+bufafenzi	不法|分子	434
 bufenbici	不分|彼此	471
 bufenhanshu	部分|函数	386
 bufenhanshuyilai	部分|函数|依赖	468
@@ -909,7 +909,7 @@ buguizesanguang	不规则|散光	467
 buguoruci	不过|如此	481
 buguyiqie	不顾|一切	468
 buhaoyisi	不好|意思	517
-buheshiyi	不合|时宜	439
+buheshiyi	不合|时宜	431
 buhuangbumang	不慌|不忙	476
 bujianjingzhuan	不见|经传	469
 bujiasisuo	不假|思索	464
@@ -969,6 +969,7 @@ bunengziba	不能|自拔	449
 bupianfensan	不偏|分散	441
 buqieshiji	不切|实际	475
 buqiuchengwang	不求|承望	429
+burenbuyi	不仁|不义	520
 burongzhiyi	不容|置疑	417
 burudongwu	哺乳|动物	498
 buruxingwei	哺乳|行为	500
@@ -993,8 +994,8 @@ butaipanshan	步态|蹒跚	478
 butaiyichang	步态|异常	498
 butijiehe	补体|结合	415
 butijieheshiyan	补体|结合|试验	497
-butishouti	补体|受体	450
-butixitong	补体|系统	445
+butishouti	补体|受体	427
+butixitong	补体|系统	421
 butongbanben	不同|版本	492
 butongxunchang	不同|寻常	465
 butoumingti	不透|明体	437
@@ -1010,10 +1011,11 @@ buxingmoniqi	步行|模拟器	510
 buxuekoufuye	补血|口服液	467
 buyanbuyu	不言|不语	455
 buyaobuji	不要|不急	469
+buyaobuyaode	不要|不要的	455
 buyaoweishi	不要|喂食	430
 buyaoweishihouzi	不要|喂食|猴子	512
 buyihuir	不一|会儿	520
-buyiyuli	不遗|余力	459
+buyiyuli	不遗|余力	447
 buyizishengwan	补益|资生丸	430
 buyoufenshuo	不由|分说	424
 buyouzizhu	不由|自主	495
@@ -4526,8 +4528,8 @@ guangrongshiming	光荣|使命	513
 guangsutuzaizi	光速|兔崽子	490
 guangxianfeiche	光线|飞车	460
 guangxishifan	广西|师范	437
-guangxiwenge	广西|文革	425
-guangxiwengetusha	广西|文革|屠杀	507
+guangxiwenge	广西|文革	406
+guangxiwengetusha	广西|文革|屠杀	488
 guangxuedezhongxin	光学的|中心	455
 guangxuexianweijing	光学|显微镜	433
 guangxuexianxiang	光学|现象	500
@@ -5959,7 +5961,7 @@ jianyuezhuyi	简约|主义	477
 jianyujianzaoshi	监狱|建造师	495
 jianyujianzhushi	监狱|建筑师	512
 jianzaowutuobang	建造|乌托邦	515
-jianzhenbuqu	坚贞|不屈	421
+jianzhenbuqu	坚贞|不屈	411
 jianzhidonghua	剪纸|动画	446
 jianzhudiaosu	建筑|雕塑	483
 jianzhugongren	建筑|工人	467
@@ -10883,8 +10885,8 @@ rentixingtaixue	人体|形态学	467
 rentongweiji	认同|危机	500
 renweihuanjing	人为|环境	354
 renweihuanjingyingxiang	人为|环境|影响	436
-renweixianxiang	人为|现象	488
-renweizaihai	人为|灾害	430
+renweixianxiang	人为|现象	483
+renweizaihai	人为|灾害	424
 renwendili	人文|地理	501
 renwenjingguan	人文|景观	467
 renwenzhuyi	人文|主义	493
@@ -14168,7 +14170,7 @@ wenmingzhengzhan	文明|争战	515
 wenquannvhai	温泉|女孩	506
 wenrejingwei	温热|经纬	478
 wenroucike	温柔|刺客	453
-wenshenxiaochu	纹身|消除	462
+wenshenxiaochu	纹身|消除	439
 wenshiqiti	温室|气体	500
 wenshixiaoying	温室|效应	467
 wenshixiaoyingqiti	温室|效应|气体	497
@@ -17358,7 +17360,7 @@ yuanzhuijiaomo	圆锥|角膜	476
 yuanzhujiaoji	援助|交际	467
 yuanzhuohuiyi	圆桌|会议	472
 yuanzhuoqishi	圆桌|骑士	488
-yuanzhuowushi	圆桌|武士	513
+yuanzhuowushi	圆桌|武士	520
 yuanzibianliang	原子|变量	490
 yuanzifanyingdui	原子|反应堆	501
 yuanzifanyinglu	原子|反应炉	500
@@ -17955,6 +17957,7 @@ zheyangbuhao	这样|不好	520
 zheyangdehua	这样|的话	520
 zheyangyilai	这样|一来	487
 zheyibanben	这一|版本	520
+zheyitanzi	这一|摊子	518
 zhezhishijie	折纸|世界	430
 zhezhishijiechaifeng	折纸|世界|拆封	512
 zhezhongzhuyi	折衷|主义	440
