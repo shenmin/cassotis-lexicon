@@ -1867,7 +1867,7 @@ cixinglizi	磁性|粒子	415
 cixinglizichengxiang	磁性|粒子|成像	497
 cixingnaimi	磁性|奈米	321
 cixingnaimilizi	磁性|奈米|粒子	403
-cixitaihou	慈禧|太后	513
+cixitaihou	慈禧|太后	486
 ciyaotezhi	次要|特质	458
 cizhuanpeidui	瓷砖|配对	425
 cizhuanpeiduiyouxi	瓷砖|配对|游戏	507
@@ -6876,16 +6876,16 @@ jishengqianye	寄生|前夜	515
 jishibianyiqi	即时|编译器	471
 jishicelve	即时|策略	425
 jishicelveyouxi	即时|策略|游戏	507
-jishichaxun	即时|查询	488
+jishichaxun	即时|查询	481
 jishichengxiang	即时|成像	416
 jishichengxiangxiangji	即时|成像|相机	498
-jishicundang	即时|存档	502
-jishixuanran	即时|渲染	500
+jishicundang	即时|存档	499
+jishixuanran	即时|渲染	493
 jishizhanlve	即时|战略	520
-jishizhanlveyouxi	即时|战略|游戏	425
+jishizhanlveyouxi	即时|战略|游戏	383
 jishizhanshu	即时|战术	425
 jishizhanshuyouxi	即时|战术|游戏	507
-jishizhanzheng	即时|战争	515
+jishizhanzheng	即时|战争	511
 jishubiaozhun	技术|标准	469
 jishudaima	技术|代码	487
 jishuguifan	技术|规范	468
@@ -10339,7 +10339,7 @@ qingchunqiyanchi	青春期|延迟	500
 qingchunwansui	青春|万岁	506
 qingdaofushouti	清道夫|受体	447
 qingdaozonghezheng	倾倒|综合征	467
-qinggandanmo	情感|淡漠	499
+qinggandanmo	情感|淡漠	495
 qingganfenxi	情感|分析	500
 qinggangaozhang	情感|高涨	484
 qingganzhangai	情感|障碍	500
@@ -12215,7 +12215,7 @@ shikuangyeqiuxilie	实况野球|系列	509
 shikuangzhuoqiu	实况|桌球	472
 shikuangzuqiu	实况|足球	508
 shikuangzuqiuxilie	实况足球|系列	433
-shilaimujishen	史莱姆|吉什	501
+shilaimujishen	史莱姆|吉什	468
 shilaimumuchang	史莱姆|牧场	494
 shilaiyunzhuan	时来|运转	439
 shilaliaofa	石蜡|疗法	471
@@ -13054,7 +13054,7 @@ suzhuyingyong	宿主|应用	386
 suzhuyingyongchengxu	宿主|应用|程序	468
 tadaoshengtian	塔倒|升天	486
 tafangyouxi	塔防|游戏	510
-taidawulixi	台大|物理系	501
+taidawulixi	台大|物理系	477
 taidongbuan	胎动|不安	460
 taiduliangbiao	态度|量表	472
 taifengfenghuang	台风|凤凰	400
@@ -13132,7 +13132,7 @@ taiyangwuli	太阳|物理	501
 taiyangwulinianbiao	太阳|物理|年表	498
 taiyangwulixue	太阳|物理学	502
 taiyangxianxiang	太阳|现象	500
-taizitaibao	太子|太保	469
+taizitaibao	太子|太保	449
 takemosijiaonang	他克莫司|胶囊	464
 tamenshuode	他们|说的	520
 tanboyueqi	弹拨|乐器	470
@@ -14385,7 +14385,7 @@ wulixuechangshu	物理学|常数	501
 wulixuedinglv	物理学|定律	501
 wulixuefenzhi	物理学|分支	501
 wulixuejialiebiao	物理学家|列表	498
-wulixuejishi	物理学|记事	494
+wulixuejishi	物理学|记事	488
 wulixueke	物理|学科	501
 wulixuelishi	物理学|历史	501
 wulixuenianjian	物理学|年鉴	501
@@ -17147,9 +17147,9 @@ yousejinshu	有色|金属	500
 youshengxiaoshuo	有声|小说	510
 youshengyouse	有声|有色	461
 youshengziyin	有声|子音	469
-youshihoudao	有失|厚道	461
+youshihoudao	有失|厚道	456
 youshishenfen	有失|身份	483
-youshishunwei	优势|顺位	461
+youshishunwei	优势|顺位	451
 yousifenliezhishu	有丝分裂|指数	497
 yousuobutong	有所|不同	487
 yousuozuowei	有所|作为	469
@@ -17640,7 +17640,7 @@ zaoxueganxibao	造血|干细胞	470
 zaoxueqiguan	造血|器官	480
 zaoxuexitong	造血|系统	454
 zaoxuezuoyong	造血|作用	466
-zazhongyoushi	杂种|优势	482
+zazhongyoushi	杂种|优势	472
 zengjiaziduan	增加|字段	446
 zengliangbianyi	增量|编译	490
 zengqiangbiaoxian	增强|表现	415
