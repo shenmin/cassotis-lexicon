@@ -9602,7 +9602,7 @@ bingyao	炳耀	198
 bingyerizhonghua	冰葉日中花	289
 bingyi	兵役	866
 bingyin	病因	1000
-bingying	兵營	706
+bingying	兵營	705
 bingyinxue	病因学	1000
 bingyinxue	病因學	416
 bingyou	病友	370
@@ -40123,9 +40123,9 @@ fuyazheng	氟牙症	702
 fuye	複葉	510
 fuye	副業	470
 fuyi	附議	1000
-fuyi	輔以	696
-fuyi	復議	512
-fuyi	複議	493
+fuyi	輔以	634
+fuyi	復議	434
+fuyi	複議	416
 fuyi	服役	385
 fuyi	副翼	1
 fuyiceng	負一層	232
@@ -51217,6 +51217,7 @@ heiniaozheng	黑尿症	1000
 heinuyutianlu	黑奴籲天錄	289
 heipi	黑屁	198
 heipibing	黑皮病	620
+heiping	黑屏	440
 heipinuo	黑皮諾	232
 heipizhisu	黑皮質素	774
 heipizhisushouti	黑皮質素受體	862
@@ -74669,6 +74670,7 @@ lannihubushangqiang	爛泥糊不上牆	318
 lannong	藍儂	137
 lanpeichengqing	攬轡澄清	383
 lanpian	爛片	305
+lanping	藍屏	947
 lanping	蘭坪	190
 lanpingbaizupumizuzizhixian	蘭坪白族普米族自治縣	378
 lanpingsiji	藍屏死機	258
@@ -76914,7 +76916,7 @@ liangpeng	涼棚	370
 liangpengyiyou	良朋益友	405
 liangpi	涼皮	305
 liangpiao	糧票	399
-liangping	量瓶	371
+liangping	量瓶	370
 liangpingqu	梁平區	167
 liangqi	兩棲	971
 liangqi	量器	126
@@ -95503,7 +95505,7 @@ paochelangmanlv	跑車浪漫旅	879
 paochelangmanlvjingsu	跑車浪漫旅競速	836
 paochelangmanlvxilie	跑車浪漫旅系列	1000
 paochelangmanlvxilie	跑車浪漫旅係列	484
-paochu	庖廚	588
+paochu	庖廚	587
 paodafen	泡打粉	375
 paodan	炮彈	487
 paodankeng	炮彈坑	230
@@ -95677,6 +95679,7 @@ paoxiuqiu	拋繡球	413
 paoxuan	泡漩	198
 paoyan	炮眼	542
 paoyewu	跑業務	232
+paoyichang	拋異常	720
 paoying	泡影	823
 paoyou	炮友	198
 paozao	泡澡	385
@@ -97271,7 +97274,8 @@ pingren	平人	155
 pingri	平日	462
 pingsai	瓶塞	400
 pingsaizuan	瓶塞鑽	228
-pingshan	平山	733
+pingshan	屏閃	890
+pingshan	平山	838
 pingshangqu	平上去	556
 pingshangquru	平上去入	597
 pingshanqu	坪山區	196
@@ -97315,7 +97319,7 @@ pingtanzhuliangjiegou	平坦柱梁結構	450
 pingti	平替	137
 pingtian	平添	289
 pingtianxia	平天下	362
-pingtiao	憑眺	423
+pingtiao	憑眺	422
 pingting	娉婷	323
 pingtingniaonuo	娉婷裊娜	427
 pingtingniaonuo	娉婷嫋娜	321
@@ -110638,6 +110642,7 @@ shanneng	善能	198
 shannian	閃念	366
 shanniqingxie	山泥傾瀉	770
 shanpao	山炮	375
+shanping	閃屏	481
 shanpo	山坡	426
 shanqi	疝氣	337
 shanqiang	山牆	1000
@@ -110668,7 +110673,7 @@ shanranleixia	潸然淚下	467
 shanren	善人	878
 shanrui	山瑞	194
 shanruibie	山瑞鱉	167
-shanshan	閃閃	805
+shanshan	閃閃	806
 shanshang	山上	487
 shanshangcheye	山上徹也	502
 shanshanlaichi	姍姍來遲	450
@@ -111045,7 +111050,7 @@ shaonvzhijianyumimidexiezouqu	少女之劍與祕密的協奏麯	526
 shaonvzhimeng	少女之夢	868
 shaopeile	少陪了	640
 shaopiaoping	邵飄萍	283
-shaoping	燒瓶	734
+shaoping	燒瓶	733
 shaoqia	哨卡	369
 shaoqian	少前	1000
 shaoqing	少頃	390
@@ -123538,7 +123543,7 @@ taipusiqi	太僕寺旗	253
 taipusiqing	太僕寺卿	258
 taiqi	擡起	502
 taiqian	太淺	1000
-taiqian	臺前	424
+taiqian	臺前	317
 taiqiang	太強	1000
 taiqianxian	檯前縣	145
 taiqiu	檯球	482
@@ -129533,8 +129538,8 @@ tuofang	拖放	323
 tuofeng	駝峰	395
 tuofengbi	驼峰鼻	1000
 tuofengmingmingfa	駝峰命名法	289
-tuofu	托付	757
-tuofu	託付	712
+tuofu	托付	763
+tuofu	託付	745
 tuofushaxing	托氟沙星	668
 tuogang	脫肛	357
 tuogao	脫稿	421
@@ -132340,8 +132345,8 @@ weilaizhuyijianzhu	未來主義建築	873
 weilake	韋拉剋	629
 weilakelusi	韋拉剋魯斯	301
 weilakelusizhou	韋拉剋魯斯州	320
-weilan	蔚藍	936
-weilan	圍欄	181
+weilan	蔚藍	937
+weilan	圍欄	180
 weilandang'an	蔚藍檔案	864
 weilansefaze	蔚藍色法則	895
 weilao	慰勞	424
@@ -135592,11 +135597,11 @@ wushenqi	烏審旗	241
 wushezhiyangwan	乌蛇止痒丸	930
 wushezhiyangwan	烏蛇止癢丸	377
 wushi	五十	1000
-wushi	武士	721
-wushi	務實	429
+wushi	武士	675
 wushi	巫師	424
-wushi	無視	345
-wushi	午時	244
+wushi	務實	369
+wushi	無視	287
+wushi	午時	200
 wushi	吳石	197
 wushi	烏什	190
 wushi	無時	53
@@ -151696,7 +151701,7 @@ yibingqindanzhipian	异丙嗪胆汁片	973
 yibingqindanzhipian	異丙嗪膽汁片	421
 yibingshenshangxiansu	异丙肾上腺素	992
 yibingshenshangxiansu	異丙腎上腺素	433
-yibingtongzhi	异病同治	966
+yibingtongzhi	异病同治	965
 yibingtongzhi	異病衕治	335
 yibingtuoxiu'an	异丙托溴铵	926
 yibingtuoxiu'an	異丙托溴銨	375
@@ -156480,7 +156485,7 @@ yiyanbufa	一言不發	545
 yiyanchaobaizong	一言抄百總	289
 yiyandaifa	以言代法	387
 yiyang	一樣	1000
-yiyang	異樣	466
+yiyang	異樣	467
 yiyang'a	一樣啊	1000
 yiyangbenliu'an	乙氧苯柳胺	715
 yiyangduncuo	抑揚頓挫	469
