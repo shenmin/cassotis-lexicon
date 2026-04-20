@@ -532,7 +532,7 @@ bianlishangdian	便利|商店	467
 bianmaodanbai	鞭毛|蛋白	514
 bianminlimin	便民|利民	466
 bianpingfengzhuang	扁平|封装	444
-bianpingshiyou	扁平|湿疣	429
+bianpingshiyou	扁平|湿疣	423
 bianpingtaixian	扁平|苔藓	499
 bianpingxibao	扁平|细胞	483
 bianselongxiaozi	变色龙|小子	515
@@ -1898,7 +1898,7 @@ cunquleixing	存取|类型	450
 cunzaizhuyi	存在|主义	493
 cunzaizhuyizhexue	存在主义|哲学	383
 cuopeixiufu	错配|修复	453
-cuoshoubuji	措手|不及	439
+cuoshoubuji	措手|不及	435
 cuowudaima	错误|代码	478
 cuowuleixing	错误|类型	460
 cuowupeidui	错误|配对	415
@@ -3983,7 +3983,7 @@ gangmenkuoyueji	肛门|括约肌	455
 gangmensaoyang	肛门|瘙痒	482
 gangmensaoyangzheng	肛门|瘙痒症	468
 gangmenshijin	肛门|失禁	468
-gangmenshiyou	肛门|湿疣	430
+gangmenshiyou	肛门|湿疣	424
 gangmenxiazhai	肛门|狭窄	461
 gangmenxirou	肛门|息肉	475
 gangongnengceshi	肝功能|测试	500
@@ -5936,7 +5936,7 @@ jianqingshanghai	减轻|伤害	500
 jianquanbaquan	健全|霸权	371
 jianquanbaquanzhuyi	健全|霸权|主义	453
 jianrongxingceshi	兼容性|测试	471
-jianruishiyou	尖锐|湿疣	465
+jianruishiyou	尖锐|湿疣	460
 jianshaoshanghai	减少|伤害	498
 jianshaosunhai	减少|损害	471
 jianshaoweihai	减少|危害	500
@@ -6256,7 +6256,7 @@ jichuyaolixue	基础|药理学	466
 jichuyixue	基础|医学	501
 jicuhuxi	急促|呼吸	500
 jidaoxiaoxiongxilie	极道枭雄|系列	436
-jideliyi	既得|利益	473
+jideliyi	既得|利益	471
 jidianpeizhi	极点|配置	486
 jididongmai	基底|动脉	500
 jidingzhihechengmei	几丁质|合成酶	497
@@ -10584,7 +10584,7 @@ quantirenyuan	全体|人员	467
 quantonglizi	全同|粒子	489
 quantouchanpin	拳头|产品	446
 quantouyouxi	拳头|游戏	502
-quanwanggongdi	全网|公敌	476
+quanwanggongdi	全网|公敌	450
 quanweizhuyi	权威|主义	487
 quanwenjiansuo	全文|检索	503
 quanwensuoyin	全文|索引	412
@@ -12066,6 +12066,7 @@ shifangziyuan	释放|资源	508
 shifanxueyuan	师范|学院	507
 shifeideshi	是非|得失	470
 shifenzhiyi	十分|之一	465
+shifoujide	是否|记得	520
 shigaobengdai	石膏|绷带	485
 shigongdanwei	施工|单位	467
 shiguanbisuo	食管|闭锁	458
@@ -13807,7 +13808,7 @@ waixingyuanren	外星|原人	515
 waixingyuanshiren	外星|原始人	515
 waiyinbaise	外阴|白色	382
 waiyinbaisebingbian	外阴|白色|病变	464
-waiyinjianruishiyou	外阴|尖锐湿疣	460
+waiyinjianruishiyou	外阴|尖锐湿疣	464
 waiyinkuiyang	外阴|溃疡	447
 waiyinsaoyang	外阴|瘙痒	500
 waiyintengtong	外阴|疼痛	466
@@ -16937,6 +16938,7 @@ yixiansunshang	胰腺|损伤	484
 yixianyisuan	乙酰|乙酸	445
 yixianyizhi	胰腺|移植	500
 yixianzhongliu	胰腺|肿瘤	482
+yixijide	依稀|记得	520
 yixijihuahewu	乙烯基|化合物	483
 yixijijuhewu	乙烯基|聚合物	475
 yixingchongji	异形|冲击	515
@@ -18370,7 +18372,7 @@ zhongjiezhanchang	终结|战场	515
 zhongjifangyu	终极|防御	487
 zhongjijingtan	终极|警探	369
 zhongjinshushandian	重金属|闪电	515
-zhongjiquanwang	终极|拳王	470
+zhongjiquanwang	终极|拳王	448
 zhongjishenghua	终极|生化	430
 zhongjishenghuashaonv	终极|生化|少女	512
 zhongjishuju	中级|数据	384
@@ -18379,7 +18381,7 @@ zhongjiwanjia	终极|玩家	496
 zhongjixiangqi	终极|象棋	508
 zhongjizhanqu	终极|战区	484
 zhongjizhizhuren	终极|蜘蛛人	515
-zhongliangjiquanwang	重量级|拳王	506
+zhongliangjiquanwang	重量级|拳王	485
 zhonglifanying	重力|反应	500
 zhongliubingdu	肿瘤|病毒	498
 zhongliufasheng	肿瘤|发生	500
