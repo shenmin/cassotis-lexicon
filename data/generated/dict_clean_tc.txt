@@ -13698,8 +13698,8 @@ canzhu	殘株	305
 canzhuang	慘狀	423
 canzhujingkeli	参竹精颗粒	932
 canzhujingkeli	參竹精顆粒	379
-canzhuo	餐桌	738
-canzhuo	參酌	155
+canzhuo	餐桌	739
+canzhuo	參酌	154
 canzhuoyan	餐桌鹽	228
 canzhuozhuanpan	餐桌轉盤	260
 canzi	蠶子	305
@@ -30394,6 +30394,7 @@ duanduanxuxu	斷斷續續	541
 duandun	斷頓	364
 duanduo	短多	198
 duan'erxiao	短耳鴞	228
+duanfa	短髮	1000
 duanfan	端飯	198
 duanfang	端方	384
 duangangjuehuang	斷港絕潢	260
@@ -30447,7 +30448,7 @@ duanlieqiangdu	斷裂強度	405
 duanlimei	端粒酶	198
 duanliu	斷流	417
 duanlu	斷路	857
-duanlu	短路	670
+duanlu	短路	671
 duanluo	段落	431
 duanluqi	斷路器	447
 duanluxueguan	短路血管	774
@@ -30535,7 +30536,7 @@ duanwu	端午	1000
 duanwujie	端午節	468
 duanxian	斷綫	948
 duanxian	斷線	392
-duanxian	短線	369
+duanxian	短線	370
 duanxian	端線	153
 duanxiande	斷綫的	501
 duanxiandela	斷綫的喇	527
@@ -35707,7 +35708,7 @@ fawei	乏味	943
 fawen	發問	796
 fawen	法文	135
 fawen	發文	1
-fawu	髮屋	265
+fawu	髮屋	266
 faxian	發現	1000
 faxiang	法嚮	770
 faxiang	發祥	1
@@ -35827,7 +35828,7 @@ fayuxingcanji	發育性殘疾	816
 fayuyichuanxue	发育遗传学	956
 fayuyichuanxue	發育遺傳學	388
 fayuzhang'ai	發育障礙	770
-fazan	髮簪	505
+fazan	髮簪	506
 faze	法則	895
 faze	罰則	1
 fazhan	發展	1000
@@ -94994,10 +94995,10 @@ paidangjianshi	排檔間飾	779
 paidengjie	排燈節	779
 paidian	拍點	305
 paidianying	拍電影	379
-paiding	排定	898
+paiding	排定	899
 paidu	排毒	432
 paidui	派對	981
-paidui	排隊	152
+paidui	排隊	153
 paiduidianziyouxi	派對電子遊戲	893
 paiduishashou	派對殺手	864
 paiduiyouxi	派對遊戲	755
@@ -96537,8 +96538,8 @@ piaochen	飄塵	359
 piaochong	瓢蟲	400
 piaochuang	飄窗	198
 piaodai	飄帶	417
-piaodang	飄盪	766
-piaodang	飄蕩	748
+piaodang	飄盪	689
+piaodang	飄蕩	670
 piaodong	飄動	440
 piaofang	票房	419
 piaofanzi	票販子	442
@@ -105725,6 +105726,7 @@ renwuwanren	人無完人	420
 renwuxiaoxiang	人物肖像	597
 renxia	任俠	214
 renxiachuandushirenyidaiji	任俠傳渡世人一代記	866
+renxiang	人像	1000
 renxiang	人相	216
 renxiangxue	人相學	232
 renxianqi	任賢齊	764
@@ -118751,7 +118753,7 @@ shubei	鼠輩	394
 shubeilizhuan	樹碑立傳	423
 shuben	書本	462
 shubenhua	叔本華	379
-shubi	梳篦	378
+shubi	梳篦	377
 shubian	戍邊	399
 shubiao	鼠標	536
 shubiaodian	鼠標墊	371
@@ -120181,6 +120183,7 @@ shuozhong	說中	216
 shuozhou	朔州	255
 shuozhoushi	朔州市	178
 shuozui	說嘴	198
+shupai	豎排	1000
 shupaotongzide	屬炮筒子的	569
 shupi	樹皮	456
 shupi	書皮	275
@@ -122822,7 +122825,7 @@ suotuofeiren	所託非人	395
 suowei	所為	578
 suowei	所謂	462
 suoweipingpian	縮微平片	405
-suowen	所聞	364
+suowen	所聞	365
 suowen	瑣聞	148
 suoxi	瑣細	412
 suoxian	索縣	178
@@ -123566,7 +123569,7 @@ taipusiqi	太僕寺旗	253
 taipusiqing	太僕寺卿	258
 taiqi	擡起	502
 taiqian	太淺	1000
-taiqian	臺前	424
+taiqian	臺前	317
 taiqiang	太強	1000
 taiqianxian	檯前縣	145
 taiqiu	檯球	482
@@ -125580,7 +125583,7 @@ tianfuyibing	天賦異稟	755
 tianfuzhen	田馥甄	771
 tianfuzhiguo	天府之國	274
 tiangan	天干	407
-tiangang	天罡	450
+tiangang	天罡	449
 tiangangliang	天剛亮	211
 tiangaode	天高地	434
 tiangaodehou	天高地厚	599
@@ -125597,7 +125600,7 @@ tiangongbuzuomei	天公不作美	434
 tiangongdi	天公地	556
 tiangongdidao	天公地道	615
 tiangongzuomei	天公作美	260
-tiangou	天溝	154
+tiangou	天溝	153
 tiangoure	天狗熱	724
 tiangourezheng	天狗熱症	1000
 tiangourezheng	天狗熱癥	434
@@ -126016,7 +126019,7 @@ tianshuibi	天水碧	232
 tianshuishi	天水市	189
 tianshujiaonang	天舒胶囊	926
 tianshujiaonang	天舒膠囊	320
-tianshun	天順	543
+tianshun	天順	542
 tianshuxue	天枢穴	1000
 tiansuan	甜酸	305
 tiansuanrou	甜酸肉	230
@@ -126048,10 +126051,12 @@ tiantanshengwu	天壇生物	239
 tiantanzuo	天壇座	232
 tianti	天體	1000
 tianti	天梯	1
-tiantian	天天	984
+tiantian	舔舔	1000
+tiantian	天天	886
 tiantian'aixiaochu	天天愛消除	899
 tiantianfuweng	天天富翁	868
 tiantianguomalu	天天過馬路	899
+tiantiankan	舔舔看	1000
 tiantiankupao	天天酷跑	868
 tiantianlianmeng	天天連萌	868
 tiantianquan	甜甜圈	228
@@ -127155,6 +127160,7 @@ tingtangshijiaotang	廳堂式教堂	833
 tingtian'anming	聽天安命	260
 tingtianyouming	聽天由命	489
 tingting	聽聽	1000
+tingtingkan	聽聽看	1000
 tingtingyuli	亭亭玉立	520
 tingtong	聽筒	396
 tingtou	聽頭	323
@@ -129245,7 +129251,7 @@ tuiwannian	腿玩年	232
 tuiwei	退位	774
 tuiwei	推諉	748
 tuiwei	推委	233
-tuiwen	推問	319
+tuiwen	推問	320
 tuiwu	退伍	551
 tuiwujunren	退伍軍人	497
 tuiwujunrenbing	退伍軍人病	820
@@ -133724,8 +133730,12 @@ wenweishujiaonang	温胃舒胶囊	939
 wenweishujiaonang	溫胃舒膠囊	382
 wenweishukeli	温胃舒颗粒	927
 wenweishukeli	溫胃舒顆粒	375
+wenwen	問問	1000
+wenwen	聞聞	1000
 wenwen	溫文	341
 wenwen'erya	溫文爾雅	327
+wenwenkan	問問看	1000
+wenwenkan	聞聞看	1000
 wenwo	問我	1000
 wenwomen	問我們	1000
 wenwu	文物	1000
@@ -138499,7 +138509,9 @@ xianyingji	顯影劑	415
 xianyinqin	獻殷勤	504
 xianyiren	嫌疑人	513
 xianyiyuan	县医院	1000
+xianyong	先用	1000
 xianyong	掀湧	198
+xianyongzhe	先用著	1000
 xianyou	現有	849
 xianyou	仙遊	79
 xianyouhouhun	先有後婚	260
@@ -152198,6 +152210,7 @@ yidong	一棟	1000
 yidong	移動	788
 yidong	以東	292
 yidong	異動	223
+yidongban	移動版	1000
 yidongbudong	一動不動	549
 yidongburuyijing	一動不如一靜	399
 yidongceshi	移动测试	1000
@@ -152206,6 +152219,7 @@ yidongdaima	移动代码	1000
 yidongdaima	移動代碼	374
 yidongdianhua	移動電話	405
 yidongdianyuan	移動電源	260
+yidongduan	移動端	1000
 yidongduanhetukuaixuanran	移動端和圖塊渲染	819
 yidongfuzhuyuyanxuexi	移動輔助語言學習	792
 yidongjiqiren	移動機器人	406
@@ -157354,6 +157368,7 @@ yongyuandemali'ao	永遠的馬裏奧	595
 yongyuanguanjun	永遠冠軍	864
 yongyuanzaiyiqi	永遠在一起	899
 yongyue	踴躍	451
+yongzhe	用著	1000
 yongzhebiexiaozhang	勇者別嚣張	1000
 yongzhedazhanmowuniang	勇者大戰魔物娘	836
 yongzhedonghuaxilie	勇者動畫系列	1000
@@ -161414,6 +161429,8 @@ zaicizhi	在此之	556
 zaicizhihou	在此之後	387
 zaicizhiji	在此之際	260
 zaicizhiqian	在此之前	597
+zaida	再打	1000
+zaida	在打	1000
 zaidanliang	載彈量	457
 zaidao	栽倒	744
 zaidashang	再搭上	640
@@ -161499,6 +161516,7 @@ zaijiushi	再就是	528
 zaijiuwenzi	載酒問字	405
 zaiju	載具	198
 zaijuzhandoudianziyouxi	載具戰鬥電子遊戲	841
+zaikan	再看	1000
 zaikankan	再看看	1000
 zaike	載客	737
 zaikeche	載客車	232
@@ -161653,6 +161671,7 @@ zaitianjinyukongzhizhongyundebi'an	在天津禦空之中雲的彼岸	526
 zaitianzhiling	在天之靈	487
 zaitidanbai	載體蛋白	770
 zaitidanbaizhi	載體蛋白質	816
+zaiting	再聽	1000
 zaitixiaoying	载体效应	965
 zaitixiaoying	載體效應	327
 zaitong	甾酮	198
@@ -161668,6 +161687,8 @@ zaiwei	在位	480
 zaiweishidai	在位時代	260
 zaiweishizhenghouqun	再餵食症候羣	1000
 zaiweishizhenghouqun	再餵食癥候羣	522
+zaiwen	再問	1000
+zaiwenwen	再問問	1000
 zaiwo	在我	633
 zaiwo	在握	430
 zaiwokan	在我看	640
@@ -161710,6 +161731,7 @@ zaiyige	在一個	1000
 zaiyijia	在一家	1000
 zaiyinghuasemengjingzhonglianshangni	在櫻花色夢境中戀上你	866
 zaiyiqi	在一起	640
+zaiyong	再用	1000
 zaiyu	在於	1000
 zaiyun	載運	406
 zaiyuzhouqin	宰予晝寢	218
@@ -161742,6 +161764,8 @@ zaizhongji	栽種機	232
 zaizhongliang	載重量	497
 zaizhongnengli	載重能力	260
 zaizhoufuzhou	載舟覆舟	383
+zaizhuang	再裝	1000
+zaizhuang	在裝	1000
 zaizhushe	再註射	640
 zaizi	崽子	683
 zaizi	栽子	70
@@ -169875,8 +169899,9 @@ zhuanchang	專場	463
 zhuanchang	專長	429
 zhuanche	轉車	425
 zhuanche	專車	341
-zhuancheng	專程	459
-zhuancheng	轉乘	348
+zhuancheng	轉成	1000
+zhuancheng	專程	1
+zhuancheng	轉乘	1
 zhuanchetai	轉車檯	232
 zhuanchuan	轉船	323
 zhuancun	轉存	323
@@ -169995,6 +170020,7 @@ zhuanglan	撞爛	198
 zhuanglang	莊浪	228
 zhuanglangxian	莊浪縣	209
 zhuanglao	莊老	198
+zhuangle	裝了	1000
 zhuangli	壯麗	502
 zhuanglian	裝殮	636
 zhuanglian	妝奩	286
@@ -170289,7 +170315,8 @@ zhuanwa	磚瓦	437
 zhuanwan	轉彎	454
 zhuanwang	轉往	323
 zhuanwanmojiao	轉彎抹角	458
-zhuanwei	轉位	372
+zhuanwei	轉為	1000
+zhuanwei	轉位	1
 zhuanweiwei'an	轉危為安	487
 zhuanwen	撰文	457
 zhuanxi	轉徙	323
@@ -170371,7 +170398,7 @@ zhuanyongjichengdianlu	專用集成電路	684
 zhuanyongwanglu	專用網路	226
 zhuanyongyouxiji	專用遊戲機	791
 zhuanyou	轉悠	810
-zhuanyou	專有	723
+zhuanyou	專有	722
 zhuanyoumingci	專有名詞	417
 zhuanyu	轉喻	323
 zhuanyuan	專員	555
@@ -170401,7 +170428,7 @@ zhuanzhizhuyi	專製主義	520
 zhuanzhong	轉鍾	199
 zhuanzhou	轉軸	424
 zhuanzhour	轉軸兒	232
-zhuanzhu	專著	510
+zhuanzhu	專著	511
 zhuanzhuan	轉轉	438
 zhuanzhuanhuaili'ougongfang	轉轉壞利歐工坊	836
 zhuanzhuanleyuan	轉轉樂園	864
@@ -171191,6 +171218,7 @@ zhuoluo	著落	441
 zhuoluxian	涿鹿縣	184
 zhuoman	酌滿	198
 zhuomian	桌麵	536
+zhuomianban	桌面版	1000
 zhuomiancaozuoxitong	桌麵操作係統	424
 zhuomianchuliqi	桌麵處理器	422
 zhuomiandexiacheng	桌面地下城	1000
