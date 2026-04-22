@@ -1979,6 +1979,7 @@ daimajilu	代码|记录	489
 daimajiqiao	代码|技巧	488
 daimajishu	代码|技术	488
 daimakuochong	代码|扩充	471
+daimamoban	代码|模板	490
 daimanengli	代码|能力	462
 daimapianduan	代码|片段	441
 daimapingshen	代码|评审	489
@@ -5001,7 +5002,7 @@ hangtianfeiji	航天|飞机	482
 hangtianxinlixue	航天|心理学	467
 hanguochuantong	韩国|传统	415
 hanguochuantongyixue	韩国|传统|医学	497
-hanguodonghua	韩国|动画	494
+hanguodonghua	韩国|动画	474
 hanguowaijiao	韩国|外交	474
 hanguowuli	韩国|物理	416
 hanguowulixuehui	韩国|物理|学会	498
@@ -5026,6 +5027,7 @@ hanshufugai	函数|覆盖	490
 hanshuhuidiao	函数|回调	490
 hanshujiangjie	函数|讲解	489
 hanshujieliu	函数|节流	488
+hanshumoban	函数|模板	491
 hanshumoxing	函数|模型	484
 hanshushengming	函数|声明	492
 hanshushibiancheng	函数式|编程	450
@@ -6452,7 +6454,7 @@ jiezhulianai	借住|恋爱	515
 jiezoudashi	节奏|大师	491
 jiezoufangkuai	节奏|方块	491
 jiezoulieren	节奏|猎人	497
-jiezoutianguo	节奏|天国	470
+jiezoutianguo	节奏|天国	453
 jiezoutianguoxilie	节奏天国|系列	509
 jiezouyisheng	节奏|医生	481
 jiezouyouxi	节奏|游戏	510
@@ -9258,6 +9260,7 @@ miwuzhentan	迷雾|侦探	515
 miyuxiaochou	谜语|小丑	434
 mizoushenjingsunshang	迷走神经|损伤	497
 mizuolinshouti	咪唑啉|受体	497
+mobanhanshu	模板|函数	491
 mobuzhaotounao	摸不着|头脑	466
 mocashuipao	摩擦|水疱	482
 modaihuangdi	末代|皇帝	466
@@ -9806,7 +9809,7 @@ nvshengwaixiang	女生|外向	467
 nvshenlianmeng	女神|联盟	477
 nvshenpeidui	女神|配对	354
 nvshenpeiduijihua	女神|配对|计划	436
-nvshentianguo	女神|天国	462
+nvshentianguo	女神|天国	445
 nvshenxunli	女神|巡礼	470
 nvshenzhuansheng	女神|转生	469
 nvshenzhuanshengxilie	女神转生|系列	509
@@ -13100,7 +13103,7 @@ taipancanliu	胎盘|残留	464
 taipanpingzhang	胎盘|屏障	484
 taipanzhiliu	胎盘|滞留	494
 taipinggongzhu	太平|公主	507
-taipingtianguo	太平|天国	389
+taipingtianguo	太平|天国	372
 taipingyangyingxiong	太平洋|英雄	515
 taipingyangzhanzheng	太平洋|战争	436
 taishengzhiwu	胎生|植物	483
@@ -14364,8 +14367,6 @@ wulikongjiandaishu	物理|空间|代数	498
 wulikuaibao	物理|快报	494
 wuliliaofa	物理|疗法	520
 wulililun	物理|理论	501
-wulimiyao	物理|密钥	416
-wulimiyaoguanli	物理|密钥|管理	498
 wulineicun	物理|内存	515
 wulinianjian	物理|年鉴	482
 wulinwaichuan	武林|外传	472
@@ -17249,7 +17250,7 @@ youxishejishi	游戏|设计师	502
 youxishiguang	游戏|时光	502
 youxishoubing	游戏|手柄	502
 youxishuxing	游戏|属性	502
-youxitianguo	游戏|天国	506
+youxitianguo	游戏|天国	490
 youxitiantang	游戏|天堂	502
 youxitongxingzheng	游戏|通行证	502
 youxiuchengxuyuan	优秀|程序员	454
