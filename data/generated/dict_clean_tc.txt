@@ -23860,11 +23860,11 @@ danzhuqishui	彈珠汽水	864
 danzhutai	彈珠檯	855
 danzhutaizhuankuai	彈珠檯磚塊	895
 danzhuye	淡竹叶	1000
-danzi	彈子	705
-danzi	膽子	628
-danzi	擔子	447
-danzi	單子	398
-danzi	單字	253
+danzi	單字	1000
+danzi	彈子	392
+danzi	膽子	308
+danzi	擔子	144
+danzi	單子	31
 danzifang	彈子房	709
 danzipaidui	蛋仔派對	864
 danziqiuyouxi	彈子球遊戲	791
@@ -44656,7 +44656,7 @@ gougudingli	勾股定理	491
 gouhao	勾號	305
 gouhe	媾和	962
 gouhe	溝壑	1
-gouhua	勾畫	552
+gouhua	勾畫	553
 gouhuan	狗獾	447
 gouhui	購匯	398
 gouhun	勾魂	361
@@ -52423,6 +52423,7 @@ hongcaozhihan	红草止鼾	928
 hongcaozhihan	紅草止鼾	322
 hongcaozhihankeli	红草止鼾颗粒	973
 hongcaozhihankeli	紅草止鼾顆粒	421
+hongcha	紅叉	1000
 hongcha	紅茶	288
 hongchajun	紅茶菌	577
 hongchajunzhong	紅茶菌種	770
@@ -59943,7 +59944,7 @@ jiaocailiangzhichuan	腳踩兩戠船	289
 jiaocailiangzhichuan	腳踩兩隻船	288
 jiaocang	窖藏	423
 jiaocha	較差	1000
-jiaocha	交叉	269
+jiaocha	交叉	270
 jiaochabaohu	交叉保護	770
 jiaochabianyi	交叉编译	1000
 jiaochabianyi	交叉編譯	385
@@ -73658,7 +73659,7 @@ kuli	苦力	431
 kulian	苦練	999
 kulianpi	苦楝皮	627
 kulie	酷烈	372
-kuling	哭靈	339
+kuling	哭靈	340
 kulitiba	庫裏提巴	260
 kulong	窟窿	444
 kulongqishi	窟窿騎士	864
@@ -75604,8 +75605,8 @@ laosuansuojun	酪酸梭菌	653
 laosuansuojunhuojunjiaonang	酪酸梭菌活菌胶囊	967
 laosuansuojunhuojunjiaonang	酪酸梭菌活菌膠囊	417
 laosun	勞損	417
-laotai	老太	863
-laotai	老態	409
+laotai	老太	864
+laotai	老態	408
 laotaida	老太大	501
 laotaidade	老太大的	527
 laotaidadexie	老太大的鞋	569
@@ -76449,6 +76450,7 @@ lengnuanzizhi	冷暖自知	423
 lengpan	冷盤	366
 lengpen	冷盆	137
 lengpi	冷僻	389
+lengpizi	冷僻字	1000
 lengqi	冷氣	536
 lengqiang	冷槍	371
 lengqidong	冷啟動	192
@@ -83279,6 +83281,7 @@ lvfenhuangminpian	氯芬黃敏片	390
 lvfuting	氯氟烴	739
 lvganfei	驢肝肺	391
 lvgongbingniao	氯汞丙脲	770
+lvgou	綠勾	1000
 lvguan	旅館	452
 lvguangjing	濾光鏡	198
 lvguisuanyan	鋁硅酸鹽	770
@@ -99246,7 +99249,7 @@ qianhukou	遷戶口	412
 qianji	牽記	323
 qianjia	欠佳	982
 qianjiaban	前甲闆	232
-qianjian	前件	536
+qianjian	前件	537
 qianjian	淺見	324
 qianjiang	黔江	526
 qianjiang	潛江	493
@@ -99415,7 +99418,7 @@ qianlongdieyingxilie	潛龍諜影系列	1000
 qianlongdieyingxilie	潛龍諜影係列	579
 qianlou	淺陋	405
 qianlu	前路	533
-qianlu	淺露	266
+qianlu	淺露	265
 qianlun	前輪	373
 qianlveyi	前掠翼	230
 qianlvjiqiong	黔驢技窮	429
@@ -99430,7 +99433,7 @@ qianmaxianmei	鉗馬銜枚	383
 qianmen	前門	514
 qianmi	韆米	462
 qianmian	前面	1000
-qianmian	千面	469
+qianmian	千面	468
 qianming	簽名	466
 qianmo	前膜	925
 qianmoya	前磨牙	712
@@ -99697,7 +99700,7 @@ qianxinan	黔西南	629
 qianxinanbuyizumiaozuzizhizhou	黔西南布依族苗族自治州	383
 qianxinanzhou	黔西南州	223
 qianxing	前行	935
-qianxing	潛行	376
+qianxing	潛行	375
 qianxingleiyouxi	潛行類遊戲	853
 qianxingshaxiang	千星沙箱	1000
 qianxingshaxiang	韆星沙箱	422
@@ -101527,7 +101530,9 @@ qingrou	輕柔	445
 qingsang	清嗓	198
 qingsangzi	清嗓子	379
 qingsao	清掃	442
-qingse	青色	496
+qingse	情色	1000
+qingse	青澀	1000
+qingse	青色	1
 qingsen	青森	216
 qingsenxian	青森縣	174
 qingseqianzouqu	青澀前奏曲	1000
@@ -101805,7 +101810,7 @@ qingyao	輕咬	323
 qingyi	輕易	1000
 qingyi	情意	236
 qingyi	青衣	148
-qingyi	情誼	129
+qingyi	情誼	130
 qingyi	情義	1
 qingyi	清議	1
 qingyiji	氰乙基	704
@@ -101861,6 +101866,7 @@ qingzangtieluxian	青藏鐵路綫	289
 qingzangtieluxian	青藏鐵路線	288
 qingzangxian	青藏線	413
 qingzao	清早	959
+qingzao	青棗	1
 qingzaojiufeitang	清燥救肺汤	937
 qingzaojiufeitang	清燥救肺湯	385
 qingzaokuang	轻躁狂	1000
@@ -112298,7 +112304,7 @@ shengjiedeqiji	聖界的奇跡	559
 shengjiezhiqiji	聖界之奇蹟	1000
 shengjiezhiqiji	聖界之奇跡	559
 shengjililushengmoduoditang	聖濟利祿聖默多狄堂	789
-shengjin	生津	290
+shengjin	生津	291
 shengjing	聖經	1000
 shengjing	生境	46
 shengjing	勝景	1
@@ -112604,7 +112610,7 @@ shengpangzi	聲旁字	232
 shengpankeleisizhan	聖潘剋勒斯站	318
 shengpatelike	聖帕特裏剋	290
 shengpatelikejie	聖帕特裏剋節	843
-shengpi	生僻	580
+shengpi	生僻	680
 shengpi'ai'er	聖皮埃爾	488
 shengpi'ai'erhemikelong	聖皮埃爾和密剋隆	378
 shengpijiu	生啤酒	379
@@ -112615,6 +112621,7 @@ shengping	昇平	196
 shengpingjianjie	生平簡介	260
 shengpingshiji	生平事跡	448
 shengpingshiji	生平事蹟	344
+shengpizi	生僻字	1000
 shengpuhuang	生蒲黄	1000
 shengqi	生氣	1000
 shengqi	升起	828
@@ -117220,7 +117227,7 @@ shizhushu	石竹屬	167
 shizhutujiazuzizhixian	石柱土傢族自治縣	369
 shizhuxian	石柱縣	193
 shizi	獅子	1000
-shizi	識字	836
+shizi	識字	837
 shizi	十字	659
 shizi	柿子	606
 shizi	蝨子	539
@@ -123191,7 +123198,8 @@ tahui	他會	1000
 tai'ai	擡愛	359
 tai'ai	太愛	1000
 tai'ai	太矮	1000
-tai'an	泰安	753
+tai'an	太暗	1000
+tai'an	泰安	344
 tai'anshi	泰安市	207
 tai'anxian	泰安縣	91
 tai'anxiang	泰安鄉	228
@@ -123373,10 +123381,11 @@ taihuai	太壞	1000
 taihuaile	太壞了	1000
 taihuangtai	太皇太	556
 taihuangtaihou	太皇太後	514
+taihui	太灰	1000
 taihuqian	臺虎鉗	228
 taihushi	太湖石	506
 taihuxian	太湖縣	165
-taiji	太極	717
+taiji	太極	718
 taijialin	泰加林	178
 taijian	太監	958
 taijianchu	太監齣	556
@@ -123486,6 +123495,7 @@ taileihuanjingchengjiujiang	泰勒環境成就奬	422
 taileijisu	肽類激素	770
 taili	檯曆	357
 tailian	肽鏈	305
+tailiang	太亮	1000
 tailibituo	泰利必妥	662
 tailihai	太厲害	1000
 tailimeisu	泰利霉素	933
@@ -123512,7 +123522,8 @@ taimi'ernadebang	泰米爾納德邦	328
 taimi'eryilamu	泰米爾伊拉姆	304
 taimi'eryilamumenghujiefangzuzhi	泰米爾伊拉姆猛虎解放組織	378
 taimi'eryu	泰米爾語	267
-taimo	胎膜	506
+taimo	太末	1000
+taimo	胎膜	46
 taimozaopo	胎膜早破	684
 tainan	太難	1000
 tainan	臺南	281
@@ -123586,8 +123597,9 @@ taipusi	太僕寺	248
 taipusiqi	太僕寺旗	253
 taipusiqing	太僕寺卿	258
 taiqi	擡起	502
+taiqian	太前	1000
 taiqian	太淺	1000
-taiqian	臺前	424
+taiqian	臺前	343
 taiqiang	太強	1000
 taiqianxian	檯前縣	145
 taiqiu	檯球	482
@@ -123616,6 +123628,8 @@ tairuo	太弱	1000
 tairxiaoyurenshennianling	胎兒小於妊娠年齡	822
 tairxuehongdanbai	胎兒血紅蛋白	862
 tairzhixi	胎兒窒息	770
+taise	太澀	1000
+taise	太色	1000
 taise	泰瑟	198
 taise'erdao	泰瑟爾島	258
 taiseqiang	泰瑟槍	228
@@ -123690,7 +123704,8 @@ taitouxiyinshu	胎頭吸引術	388
 taituochuanqi	泰托傳奇	864
 taiwa	檯蛙	199
 taiwa	臺蛙	198
-taiwan	臺灣	1000
+taiwan	太晚	1000
+taiwan	臺灣	889
 taiwanbaihouzaomei	檯灣白喉噪鶥	318
 taiwanbaihouzaomei	臺灣白喉噪鶥	318
 taiwanbaisekongbushiqi	檯灣白色恐怖時期	629
@@ -123865,6 +123880,7 @@ taiyangyu	太陽雨	198
 taiyangzhaozaisangganheshang	太陽照在桑干河上	379
 taiyangzhaozaisangganheshang	太陽照在桑乾河上	377
 taiyangzhizi	太陽之子	521
+taiyaoyan	太耀眼	1000
 taiyashishi	泰亞史詩	864
 taiyazu	泰雅族	193
 taiye	太液	808
@@ -123886,6 +123902,7 @@ taiyuanhuochezhan	太原火車站	373
 taiyuanshi	太原市	506
 taiyuanweixingfashezhongxin	太原衛星發射中心	369
 taiyuanxue	太渊穴	1000
+taizao	太早	1000
 taizhang	檯賬	306
 taizhi'anjiaonang	泰脂安胶囊	941
 taizhi'anjiaonang	泰脂安膠囊	387
@@ -124747,7 +124764,7 @@ tanzi	攤子	613
 tanzi	罈子	527
 tanzi	探子	475
 tanzi	毯子	409
-tanzi	彈子	215
+tanzi	彈子	329
 tanzi	談資	190
 tanzou	彈奏	422
 tanzui	貪嘴	387
@@ -129745,7 +129762,7 @@ tuoruishizonghezheng	妥瑞氏綜閤癥	522
 tuoruizheng	妥瑞症	1000
 tuosa	脫灑	198
 tuosai	托腮	198
-tuose	脫澀	222
+tuose	脫澀	223
 tuoseji	脱色剂	1000
 tuoseji	脫色劑	401
 tuoshan	妥善	461
@@ -130675,7 +130692,7 @@ walisihefutuna	瓦利斯和富圖納	348
 walong	瓦隆	200
 wana	膃肭	65
 wan'aike	萬艾可	205
-wan'an	晚安	570
+wan'an	晚安	571
 wan'anjingsu	灣岸競速	848
 wan'anxian	萬安縣	184
 wan'anxiaoji	晚安小雞	785
@@ -135135,7 +135152,7 @@ wuli	無禮	761
 wuli	無力	567
 wuli	武力	512
 wuli	物力	344
-wulian	五蓮	300
+wulian	五蓮	298
 wuliande	伍连德	715
 wuliang	無量	903
 wuliangha	烏良哈	228
@@ -136113,10 +136130,11 @@ wuxuweixin	戊戌維新	488
 wuxuweixinyundong	戊戌維新運動	353
 wuxuzhengbian	戊戌政變	440
 wuya	烏鴉	1000
-wuyan	無言	826
-wuyan	屋檐	768
-wuyan	屋簷	725
-wuyan	午宴	23
+wuyan	捂眼	1000
+wuyan	無言	754
+wuyan	屋檐	490
+wuyan	屋簷	480
+wuyan	午宴	1
 wuyandingshi	屋簷頂飾	1000
 wuyandingshi	屋檐頂飾	345
 wuyang	舞陽	791
@@ -136371,7 +136389,7 @@ wuzhou	梧州	278
 wuzhou	五洲	269
 wuzhoushi	梧州市	212
 wuzhu	無助	667
-wuzhu	捂住	617
+wuzhu	捂住	621
 wuzhu	物主	96
 wuzhuang	武裝	1000
 wuzhuangbudui	武裝部隊	548
@@ -136422,11 +136440,13 @@ wuzixu	伍子胥	369
 wuziyanzongwan	五子衍宗丸	731
 wuzong	無蹤	323
 wuzongxian	吳宗憲	765
-wuzui	無罪	448
+wuzui	捂嘴	1000
+wuzui	無罪	405
 wuzuichuanqi	無罪傳奇	864
 wuzuikangbian	無罪抗辯	260
 wuzuiliuying	烏嘴柳鶯	258
 wuzuituiding	無罪推定	260
+wuzuixiao	捂嘴笑	1000
 wuzuizhiting	無罪之庭	868
 wuzun	吳尊	198
 wuzuo	仵作	505
@@ -139174,6 +139194,7 @@ xiaokelingpian	消渴靈片	317
 xiaokepingpian	消渴平片	657
 xiaokewan	消渴丸	608
 xiaokoujixing	小口畸形	774
+xiaoku	笑哭	1000
 xiaokuihuafengtouyingwu	小葵花鳳頭鸚鵡	348
 xiaokuohao	小括號	379
 xiaolao	效勞	422
@@ -139236,7 +139257,7 @@ xiaomaipeiya	小麥胚芽	560
 xiaomajugen	小馬駒跟	527
 xiaomajugenche	小馬駒跟車	569
 xiaoman	小滿	198
-xiaomao	笑貌	285
+xiaomao	笑貌	286
 xiaomaochong	小毛蟲	232
 xiaomaomidacheng	小貓咪大城	721
 xiaomaomidachengshi	小貓咪大城市	935
@@ -143959,7 +143980,7 @@ xinyihua	辛夷花	610
 xinyilama	新藝拉瑪	260
 xinyin	心音	510
 xinying	新穎	975
-xinying	心硬	175
+xinying	心硬	176
 xinying'er	心影兒	232
 xinyinggelan	新英格蘭	301
 xinyinghuadazhan	新櫻花大戰	899
@@ -145575,7 +145596,7 @@ xuanpu	玄圃	198
 xuanqianji	旋前肌	1000
 xuanqianyuanji	旋前圆肌	931
 xuanqianyuanji	鏇前圓肌	317
-xuanqianzhuankun	鏇乾轉坤	383
+xuanqianzhuankun	鏇乾轉坤	401
 xuanqing	玄青	195
 xuanqu	選取	991
 xuanqu	選區	249
@@ -150469,8 +150490,8 @@ yaoxuezonghezhishiyujineng	葯學綜閤知識與技能	417
 yaoya	咬牙	465
 yaoyan	謠言	816
 yaoyan	耀眼	783
-yaoyan	要言	629
-yaoyan	妖艷	153
+yaoyan	要言	603
+yaoyan	妖艷	94
 yaoyan	妖言	50
 yaoyanbu	要言不	556
 yaoyanbufan	要言不煩	597
@@ -153656,7 +153677,7 @@ yingbi	硬幣	504
 yingbian	應變	551
 yingbianguanli	應變管理	770
 yingbianli	應變力	362
-yingbianma	硬編碼	230
+yingbianma	硬編碼	1000
 yingbianshu	應變數	228
 yingbin	迎賓	374
 yingbing	瘿病	954
@@ -155427,7 +155448,7 @@ yiqi	儀器	502
 yiqi	義氣	134
 yiqi	一氣	131
 yiqian	一千	940
-yiqian	一韆	502
+yiqian	一韆	501
 yiqian	以前	153
 yiqianbabaibashiyuge	一韆八百八十餘個	455
 yiqianbabaiduokuai	一韆八百多塊	399
@@ -160047,7 +160068,7 @@ yuetong	約衕	198
 yuetour	月頭兒	379
 yuetuan	樂團	432
 yuewanggoujian	越王勾踐	218
-yuewei	越位	678
+yuewei	越位	677
 yueweicaotangbiji	閱微草堂筆記	318
 yuewen	越文	137
 yuexi	月息	438
@@ -162241,7 +162262,7 @@ zaozai	早在	305
 zaozaoban	早早班	232
 zaozaor	早早兒	461
 zaozhi	早知	759
-zaozhi	造紙	743
+zaozhi	造紙	742
 zaozhidao	早知道	232
 zaozhijinrihebidangchu	早知今日何必噹初	378
 zaozhijinrihebidangchu	早知今日何必當初	378
@@ -174037,6 +174058,8 @@ zuimeiqu	最沒趣	1000
 zuimeiyiyi	最沒意義	1000
 zuimiduiji	最密堆積	260
 zuiming	罪名	453
+zuimo	最末	1000
+zuimowei	最末尾	1000
 zuinan	最難	1000
 zuineng	最能	1000
 zuinianzhang	最年長	232
@@ -174047,7 +174070,8 @@ zuipaodengjigonglve	嘴砲等級攻略	1000
 zuipaodengjigonglve	嘴炮等級攻略	491
 zuipiao	嘴瓢	198
 zuipizi	嘴皮子	443
-zuiqian	罪愆	496
+zuiqian	最前	1000
+zuiqian	罪愆	1
 zuiqiang	最強	1000
 zuiqiangfanzhangshishaonv	最強番長是少女	836
 zuiqiangjiurenzuxilie	最強九人組系列	1000
@@ -174073,12 +174097,15 @@ zuitaoyan	最討厭	1000
 zuiti	嘴替	198
 zuitian	嘴甜	389
 zuitianxinku	嘴甜心苦	387
-zuiwei	最為	502
+zuiwan	最晚	1000
+zuiwei	最尾	1000
+zuiwei	最為	461
 zuiweixianyouxi	最危險遊戲	791
 zuiwen	嘴穩	198
 zuiwenchuanqi	罪紋傳奇	864
 zuiweng	醉翁	205
 zuiwengzhiyibuzaijiu	醉翁之意不在酒	720
+zuixia	最下	1000
 zuixia	醉蝦	198
 zuixi'ai	最喜愛	232
 zuixian	最先	477
@@ -174127,6 +174154,7 @@ zuiyouyiyi	最有意義	1000
 zuiyuan	最遠	443
 zuiyufa	罪與罰	375
 zuiyufayuzhoudehoujizhe	罪與罰宇宙的後繼者	866
+zuizao	最早	1000
 zuizao	醉棗	305
 zuize	罪責	421
 zuizhangdedonghuadianying	最長的動畫電影	744
