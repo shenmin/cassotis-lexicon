@@ -502,6 +502,7 @@ DAILY_NUMBER_WORD_CHARS = set(
 DAILY_NUMBER_WORD_UNIT_CHARS = set(
     "\u5341\u767e\u5343\u4e07\u842c\u4ebf\u5104"
 )
+CURATED_DAILY_NUMBER_WEIGHT_CAP = 940
 
 CEDICT_LINE_RE = re.compile(r"^(\S+)\s+(\S+)\s+\[([^\]]+)\]\s+/(.*)/$")
 CJK_RE = re.compile("[\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\U00020000-\U0002A6DF]")
@@ -3601,12 +3602,17 @@ def _is_short_everyday_term_candidate(
     if _is_noun_pos(pos_tag):
         if source_hits >= 2:
             return (
-                bounded_usage >= 0.10
-                or bounded_jieba >= 0.12
+                bounded_jieba >= 0.12
+                or (bounded_usage >= 0.14 and bounded_jieba >= 0.08)
                 or (bounded_usage >= 0.08 and bounded_jieba >= 0.08)
                 or (
                     bounded_pageviews >= 0.10
                     and (bounded_usage >= 0.08 or bounded_jieba >= 0.08)
+                )
+                or (
+                    bounded_usage >= 0.18
+                    and bounded_jieba >= 0.06
+                    and char_score >= 0.62
                 )
             )
 
@@ -4210,6 +4216,7 @@ def _rerank_homophone_buckets(
         f"{stats_prefix}_homophone_daily_phrase_short_non_daily_damped": 0,
         f"{stats_prefix}_homophone_preferred_term_boosted": 0,
         f"{stats_prefix}_homophone_preferred_term_damped": 0,
+        f"{stats_prefix}_homophone_short_family_noun_damped": 0,
     }
     if not mapping:
         return stats
@@ -4568,6 +4575,23 @@ def _rerank_homophone_buckets(
                 wiki_augmented_terms=wiki_augmented_terms,
                 preferred_terms=preferred_terms,
             )
+            short_everyday_support = _is_short_everyday_term_candidate(
+                text,
+                text_len=text_len,
+                usage_score=usage_score,
+                source_hits=source_hits,
+                pageview_score=pageview_score,
+                jieba_direct_score=jieba_direct_score,
+                pos_tag=pos_tag,
+                char_score=char_score,
+            )
+            daily_number_support = _is_daily_number_word_candidate(
+                text,
+                text_len=text_len,
+                usage_score=usage_score,
+                source_hits=source_hits,
+                pos_tag=pos_tag,
+            )
             looks_like_literary_term = _looks_like_low_signal_literary_term(
                 text,
                 usage_score=usage_score,
@@ -4911,6 +4935,28 @@ def _rerank_homophone_buckets(
                 stats[
                     f"{stats_prefix}_homophone_short_everyday_non_daily_damped"
                 ] += 1
+
+            if (
+                bucket_has_short_everyday_term
+                and text_len <= 2
+                and _is_noun_pos(pos_tag)
+                and not _is_named_entity_pos(pos_tag)
+                and not daily_phrase_support
+                and not short_everyday_support
+                and family_support_score >= 0.18
+                and usage_score < 0.24
+                and jieba_direct_score < 0.20
+                and pageview_score < 0.12
+                and not wiki_support
+            ):
+                # Edge-family support mostly says "this is a valid domain head"
+                # (for example medical/technical terms), not that it is a
+                # high-priority daily input target. In a same-pinyin bucket with
+                # an everyday short term, keep such nouns below broadly supported
+                # conversational/verb candidates unless they have their own
+                # broad frequency evidence.
+                delta -= 72
+                stats[f"{stats_prefix}_homophone_short_family_noun_damped"] += 1
 
             if (
                 text_len <= 2
@@ -5908,7 +5954,7 @@ def _compute_cedict_style_penalty(defs: str) -> int:
     return 0
 
 
-def _compute_cedict_ime_seed_adjustment(defs: str) -> int:
+def _compute_cedict_ime_seed_adjustment(text: str, defs: str) -> int:
     defs_lower = defs.strip().lower()
     if not defs_lower:
         return 0
@@ -5923,6 +5969,7 @@ def _compute_cedict_ime_seed_adjustment(defs: str) -> int:
     verb_senses = 0
     function_senses = 0
     article_noun_senses = 0
+    text_len = _cjk_len(text)
 
     function_clues = (
         "due to",
@@ -5965,6 +6012,10 @@ def _compute_cedict_ime_seed_adjustment(defs: str) -> int:
         adjustment += 80
     elif verb_senses > 0:
         adjustment += 22
+        if text_len == 2:
+            adjustment += 48
+        elif text_len == 3:
+            adjustment += 24
     elif article_noun_senses == total_senses:
         adjustment -= 44
     elif article_noun_senses > 0:
@@ -6030,7 +6081,7 @@ def _parse_cedict_entries(
                 stats["filtered_short"] += 1
                 continue
             key = (pinyin, text)
-            weight = _compute_weight(text) + _compute_cedict_ime_seed_adjustment(defs)
+            weight = _compute_weight(text) + _compute_cedict_ime_seed_adjustment(text, defs)
             if weight < 1:
                 weight = 1
             elif weight > 1000:
@@ -9995,6 +10046,68 @@ def _augment_with_daily_prefix_derivation(
     return stats, sc_terms, tc_terms
 
 
+def _finalize_curated_daily_weight(
+    weight: int,
+    usage_score: float,
+    is_number_word: bool,
+) -> int:
+    if not is_number_word:
+        return max(weight, 1000)
+
+    # Number words are useful daily entries, but should not be as dominant as
+    # conversational words/phrases. Keep them strong enough to surface while
+    # leaving room for non-numeric homophones and user learning.
+    number_cap = CURATED_DAILY_NUMBER_WEIGHT_CAP
+    number_floor = min(
+        number_cap,
+        840 + int(round(max(0.0, min(1.0, usage_score)) * 110.0)),
+    )
+    return min(number_cap, max(weight, number_floor))
+
+
+def _is_pure_daily_number_word(text: str) -> bool:
+    return (
+        bool(text)
+        and CJK_FULL_RE.fullmatch(text) is not None
+        and all(ch in DAILY_NUMBER_WORD_CHARS for ch in text)
+        and any(ch in DAILY_NUMBER_WORD_UNIT_CHARS for ch in text)
+    )
+
+
+def _cap_curated_daily_number_weights(
+    mapping: Dict[Tuple[str, str], int],
+    curated_entries: List[Tuple[str, str, float, str]],
+    *,
+    use_traditional: bool,
+    stats_prefix: str,
+) -> Dict[str, int]:
+    stats = {
+        f"{stats_prefix}_curated_daily_number_cap_terms": 0,
+        f"{stats_prefix}_curated_daily_number_cap_rows": 0,
+    }
+    if not mapping or not curated_entries:
+        return stats
+
+    number_terms: Set[str] = set()
+    for sc_word, tc_word, _usage_score, _explicit_pinyin in curated_entries:
+        text = tc_word if use_traditional and tc_word else sc_word
+        if _is_pure_daily_number_word(text):
+            number_terms.add(text)
+
+    stats[f"{stats_prefix}_curated_daily_number_cap_terms"] = len(number_terms)
+    if not number_terms:
+        return stats
+
+    for key, weight in list(mapping.items()):
+        _pinyin, text = key
+        if text not in number_terms or weight <= CURATED_DAILY_NUMBER_WEIGHT_CAP:
+            continue
+        mapping[key] = CURATED_DAILY_NUMBER_WEIGHT_CAP
+        stats[f"{stats_prefix}_curated_daily_number_cap_rows"] += 1
+
+    return stats
+
+
 def _augment_with_curated_daily_phrases(
     sc: Dict[Tuple[str, str], int],
     tc: Dict[Tuple[str, str], int],
@@ -10083,7 +10196,11 @@ def _augment_with_curated_daily_phrases(
         if sc_daily_number_support:
             sc_weight = min(1000, sc_weight + (40 if _cjk_len(sc_word) <= 2 else 26))
             stats["curated_daily_number_terms_boosted_sc"] += 1
-        sc_weight = max(sc_weight, 1000)
+        sc_weight = _finalize_curated_daily_weight(
+            sc_weight,
+            usage_score=usage_score,
+            is_number_word=sc_daily_number_support,
+        )
         sc_key = (pinyin, sc_word)
         existing_sc_weight = sc.get(sc_key)
         if existing_sc_weight is None:
@@ -10143,7 +10260,11 @@ def _augment_with_curated_daily_phrases(
         if tc_daily_number_support:
             tc_weight = min(1000, tc_weight + (40 if _cjk_len(tc_candidate) <= 2 else 26))
             stats["curated_daily_number_terms_boosted_tc"] += 1
-        tc_weight = max(tc_weight, 1000)
+        tc_weight = _finalize_curated_daily_weight(
+            tc_weight,
+            usage_score=usage_score,
+            is_number_word=tc_daily_number_support,
+        )
         tc_key = (pinyin, tc_candidate)
         existing_tc_weight = tc.get(tc_key)
         if existing_tc_weight is None:
@@ -10245,7 +10366,11 @@ def _reinforce_curated_daily_tc_phrases(
         )
         if tc_daily_number_support:
             tc_weight = min(1000, tc_weight + (40 if _cjk_len(tc_candidate) <= 2 else 26))
-        tc_weight = max(tc_weight, 1000)
+        tc_weight = _finalize_curated_daily_weight(
+            tc_weight,
+            usage_score=usage_score,
+            is_number_word=tc_daily_number_support,
+        )
 
         tc_key = (pinyin, tc_candidate)
         existing_tc_weight = tc.get(tc_key)
@@ -10324,7 +10449,11 @@ def _reinforce_curated_daily_sc_phrases(
         )
         if sc_daily_number_support:
             sc_weight = min(1000, sc_weight + (40 if _cjk_len(sc_word) <= 2 else 26))
-        sc_weight = max(sc_weight, 1000)
+        sc_weight = _finalize_curated_daily_weight(
+            sc_weight,
+            usage_score=usage_score,
+            is_number_word=sc_daily_number_support,
+        )
 
         sc_key = (pinyin, sc_word)
         existing_sc_weight = sc.get(sc_key)
@@ -13004,6 +13133,7 @@ def main() -> int:
             opencc_text, unihan_payload, args.min_hanzi, overrides
         )
         opencc_entries_for_hints, _opencc_hint_stats = _parse_opencc_entries(opencc_text, 1)
+        opencc_entries = opencc_entries_for_hints
         opencc_tc_to_sc_map = _build_opencc_tc_to_sc_map(opencc_entries_for_hints)
         (
             trad_to_simp_char_map,
@@ -13501,6 +13631,20 @@ def main() -> int:
     stats.update(admin_place_alias_stats)
     stats["admin_place_alias_augmented_sc_terms"] = len(admin_place_alias_sc_terms)
     stats["admin_place_alias_augmented_tc_terms"] = len(admin_place_alias_tc_terms)
+    sc_curated_daily_number_cap_stats = _cap_curated_daily_number_weights(
+        sc_map,
+        curated_daily_entries,
+        use_traditional=False,
+        stats_prefix="sc",
+    )
+    tc_curated_daily_number_cap_stats = _cap_curated_daily_number_weights(
+        tc_map,
+        curated_daily_entries,
+        use_traditional=True,
+        stats_prefix="tc",
+    )
+    stats.update(sc_curated_daily_number_cap_stats)
+    stats.update(tc_curated_daily_number_cap_stats)
     sc_query_path_priors: Dict[Tuple[str, str], int] = {}
     tc_query_path_priors: Dict[Tuple[str, str], int] = {}
     if output_query_path_sc is not None:
