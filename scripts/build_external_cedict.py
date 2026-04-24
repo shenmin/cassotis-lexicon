@@ -9974,6 +9974,18 @@ def _augment_with_daily_prefix_derivation(
                 pos_tag=pos_tag,
                 char_score=prefix_char_score,
             )
+            # A prefix derived from a longer daily phrase is supporting
+            # evidence, not an explicit curated entry. If it keeps the same
+            # ceiling as the source phrase, incomplete input such as "dianl"
+            # can prefer a derived prefix ("店里") over a stronger complete
+            # conversational phrase ("点了"). Keep derived prefixes visible
+            # while leaving room for direct dictionary/user evidence.
+            if prefix_len == 2:
+                weight = min(weight, 760)
+            elif prefix_len == 3:
+                weight = min(weight, 860)
+            else:
+                weight = min(weight, 920)
 
             sc_words = {prefix}
             added_sc = False
@@ -10027,6 +10039,12 @@ def _augment_with_daily_prefix_derivation(
                     pos_tag=pos_tag,
                     char_score=tc_char_score,
                 )
+                if prefix_len == 2:
+                    tc_weight = min(tc_weight, 760)
+                elif prefix_len == 3:
+                    tc_weight = min(tc_weight, 860)
+                else:
+                    tc_weight = min(tc_weight, 920)
                 for pinyin in pinyin_candidates:
                     key = (pinyin, tc_word)
                     existing_weight = tc.get(key)
@@ -11428,12 +11446,15 @@ def _restore_missing_texts_from_snapshot(
     previous_snapshot: Dict[Tuple[str, str], int],
     explicit_drop_terms: Set[str],
     stats_prefix: str,
+    snapshot_restore_block_terms: Set[str] | None = None,
 ) -> Tuple[Dict[Tuple[str, str], int], Dict[str, int]]:
+    snapshot_restore_block_terms = snapshot_restore_block_terms or set()
     stats = {
         f"{stats_prefix}_snapshot_rows_considered": len(previous_snapshot),
         f"{stats_prefix}_snapshot_rows_restored": 0,
         f"{stats_prefix}_snapshot_texts_restored": 0,
         f"{stats_prefix}_snapshot_rows_skipped_explicit_drop": 0,
+        f"{stats_prefix}_snapshot_rows_skipped_blocked_prefix": 0,
     }
     if not previous_snapshot:
         return mapping, stats
@@ -11446,6 +11467,9 @@ def _restore_missing_texts_from_snapshot(
         if len(text) > 1 and text in explicit_drop_terms:
             stats[f"{stats_prefix}_snapshot_rows_skipped_explicit_drop"] += 1
             continue
+        if len(text) > 1 and text in snapshot_restore_block_terms:
+            stats[f"{stats_prefix}_snapshot_rows_skipped_blocked_prefix"] += 1
+            continue
         if text in current_texts:
             continue
         restored[key] = weight
@@ -11455,6 +11479,28 @@ def _restore_missing_texts_from_snapshot(
 
     stats[f"{stats_prefix}_snapshot_texts_restored"] = len(restored_texts)
     return restored, stats
+
+
+def _build_curated_daily_prefix_restore_blocklist(
+    curated_entries: List[Tuple[str, str, float, str]],
+    use_traditional: bool,
+) -> Set[str]:
+    """
+    Snapshot restore is useful for stable releases, but it must not undo a
+    deliberate decision to keep only the full curated phrase. Prefixes of new
+    daily phrases should survive only if the current build produces them again.
+    """
+    blocked: Set[str] = set()
+    for sc_word, tc_word, _usage_score, _explicit_pinyin in curated_entries:
+        word = tc_word if use_traditional and tc_word else sc_word
+        word_len = _cjk_len(word)
+        if word_len <= 2:
+            continue
+        for prefix_len in range(2, min(4, word_len - 1) + 1):
+            prefix = word[:prefix_len]
+            if CJK_FULL_RE.fullmatch(prefix):
+                blocked.add(prefix)
+    return blocked
 
 
 def _build_query_path_prior_map(
@@ -13592,12 +13638,20 @@ def main() -> int:
         previous_snapshot_sc,
         MULTI_CHAR_TERM_DROP_OVERRIDES,
         "sc",
+        _build_curated_daily_prefix_restore_blocklist(
+            curated_daily_entries,
+            use_traditional=False,
+        ),
     )
     tc_map, tc_snapshot_restore_stats = _restore_missing_texts_from_snapshot(
         tc_map,
         previous_snapshot_tc,
         MULTI_CHAR_TERM_DROP_OVERRIDES,
         "tc",
+        _build_curated_daily_prefix_restore_blocklist(
+            curated_daily_entries,
+            use_traditional=True,
+        ),
     )
     stats.update(sc_snapshot_restore_stats)
     stats.update(tc_snapshot_restore_stats)

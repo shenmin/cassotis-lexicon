@@ -1,5 +1,6 @@
 # sc	tc	usage_score	pinyin(optional)
 反例	反例	0.90
+店里取	店裏取	0.92
 酱紫	醬紫	0.94
 一个	一個	0.96
 两个	兩個	0.96
