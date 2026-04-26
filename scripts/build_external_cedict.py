@@ -2071,6 +2071,21 @@ def _compute_generic_vertical_penalty(
             relief = 18 if text_len <= 4 else 6
         else:
             relief = 6 if text_len <= 4 else 3
+    elif layer_id == "place_names":
+        if text_len <= 2:
+            base_penalty = 230
+        elif text_len == 3:
+            base_penalty = 150
+        elif text_len == 4:
+            base_penalty = 90
+        elif text_len == 5:
+            base_penalty = 48
+        else:
+            base_penalty = 22
+        if source_id == "project-curated-vertical-place-names":
+            relief = 22 if text_len <= 2 else 12 if text_len <= 4 else 6
+        else:
+            relief = 0
     elif layer_id in NAMED_ENTITY_VERTICAL_LAYERS:
         if text_len <= 2:
             base_penalty = 260
@@ -11284,6 +11299,15 @@ def _augment_with_vertical_terms(
                 source_id == "project-curated-vertical-architecture-entities"
                 and _cjk_len(sc_word) >= 5
             )
+        elif layer_id == "place_names":
+            curated_common_place = (
+                source_id == "project-curated-vertical-place-names"
+                and usage_score >= 0.82
+            )
+            source_hits = 2 if curated_common_place else 1
+            short_bonus = 4 if curated_common_place and _cjk_len(sc_word) <= 4 else 0
+            long_bonus = 2 if curated_common_place else 0
+            allow_existing_boost = curated_common_place
         elif is_named_entity_layer:
             source_hits = 2 if sc_supported_named_entity else 1
             short_bonus = 8 if sc_supported_named_entity else 0

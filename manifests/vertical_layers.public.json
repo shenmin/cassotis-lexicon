@@ -46,6 +46,28 @@
       ]
     },
     {
+      "id": "place_names",
+      "status": "active",
+      "title": "Place name layer",
+      "notes": "Dedicated low-priority place-name layer kept separate from everyday/chat phrase seeds and general proper nouns.",
+      "sources": [
+        {
+          "id": "project-curated-vertical-place-names",
+          "type": "repo_tsv",
+          "name": "Cassotis curated place names",
+          "download_url": "repo://manifests/vertical/place_names.tsv",
+          "homepage": "https://github.com/shenmin/cassotis-lexicon",
+          "license": "Repository license (project-authored)",
+          "risk_level": "low",
+          "redistribution_class": "project_authored",
+          "attribution_required": false,
+          "raw_committed": true,
+          "default_usage_score": 0.46,
+          "notes": "Project-maintained place names with conservative ranking so complete pinyin matches remain inputable without crowding common everyday candidates."
+        }
+      ]
+    },
+    {
       "id": "computing",
       "status": "active",
       "title": "Computing vertical layer",

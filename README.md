@@ -22,7 +22,7 @@ Lexicon build and release repository for Cassotis IME.
 | File | Variant | Entries |
 |------|---------|---------|
 | `data/generated/dict_clean_sc.txt` | Simplified Chinese | 158,393 |
-| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 175,127 |
+| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 175,136 |
 | `data/generated/dict_unihan_sc.txt` | Simplified single-char (Unihan) | 23,917 |
 | `data/generated/dict_unihan_tc.txt` | Traditional single-char (Unihan) | 24,070 |
 
@@ -58,6 +58,7 @@ Lexicon build and release repository for Cassotis IME.
 | Cassotis curated daily/chat phrases | Repository license (project-authored) | High-value everyday/chat phrasing that is worth keeping stable even when open sources miss it |
 | Cassotis curated fiction entities | Repository license (project-authored) | Project-maintained fiction entity list for novel characters, titles, and in-world named entities, kept separate from daily/chat phrasing and from general proper nouns |
 | Cassotis curated proper nouns | Repository license (project-authored) | Project-maintained general proper-noun list for names, titles, organizations, brands, and other real-world named entities that should not share the daily/chat preferred-term path |
+| Cassotis curated place names | Repository license (project-authored) | Project-maintained low-priority place-name list used by the isolated `place_names` vertical layer, with explicit pinyin corrections for ambiguous domestic and international locations |
 | Cassotis curated computing terms | Repository license (project-authored) | Project-maintained computing/domain term list used by the isolated computing vertical layer; does not share the daily/chat preferred-term path |
 | Cassotis curated civic terms | Repository license (project-authored) | Project-maintained civic/public-service terminology layer for taxation, housing, household-registration, and related administrative vocabulary, isolated from daily/chat preferred-term ranking |
 | Cassotis curated architecture terms | Repository license (project-authored) | Project-maintained architecture terminology supplement used by the isolated architecture-terms layer |
@@ -87,10 +88,11 @@ See:
 ## Layering policy
 - `manifests/curated_daily_phrases.tsv` is reserved for everyday/chat phrasing that should receive daily-use preference treatment.
 - `manifests/vertical_layers.public.json` declares isolated vertical terminology layers.
-- `manifests/vertical/*.tsv` stores project-authored vertical term lists such as fiction entities, proper nouns, computing vocabulary, civic/public-service terminology, architecture terminology/entities, gaming terminology, and game-development terminology.
+- `manifests/vertical/*.tsv` stores project-authored vertical term lists such as fiction entities, proper nouns, place names, computing vocabulary, civic/public-service terminology, architecture terminology/entities, gaming terminology, and game-development terminology.
 - Vertical layers can add domain vocabulary without inheriting the same preferred-term bias used for daily/chat phrases.
 - The fiction layer keeps novel characters, titles, and in-world named entities separate from everyday/chat phrasing and from general proper nouns.
 - The active project-maintained proper-noun layer keeps names, titles, and general real-world named entities separate from everyday/chat phrasing.
+- The place-name layer keeps common domestic and international locations inputable with conservative weights, so complete place-name input works without crowding everyday candidates.
 - The computing layer currently combines a filtered `THUOCL_IT` subset with project-curated computing terminology.
 - The civic layer currently contains project-curated taxation, housing, household-registration, and other public-service terminology.
 - The architecture-terms layer currently combines project-curated terminology, Getty AAT architectural terms, and Wikidata architectural elements/styles.

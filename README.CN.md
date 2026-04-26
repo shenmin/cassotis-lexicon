@@ -22,7 +22,7 @@ Cassotis IME 的词库构建与发布仓库。
 | 文件 | 变体 | 词条数 |
 |------|------|--------|
 | `data/generated/dict_clean_sc.txt` | 简体主词库 | 158,393 |
-| `data/generated/dict_clean_tc.txt` | 繁体主词库 | 175,127 |
+| `data/generated/dict_clean_tc.txt` | 繁体主词库 | 175,136 |
 | `data/generated/dict_unihan_sc.txt` | 简体单字（Unihan） | 23,917 |
 | `data/generated/dict_unihan_tc.txt` | 繁体单字（Unihan） | 24,070 |
 
@@ -58,6 +58,7 @@ Cassotis IME 的词库构建与发布仓库。
 | Cassotis 日常/聊天短语补充 | 仓库许可证（项目自编写） | 对高价值的日常/聊天表达做稳定补充，弥补公开来源遗漏 |
 | Cassotis 小说实体补充 | 仓库许可证（项目自编写） | 项目维护的小说人物、作品名和世界观实体列表，与日常/聊天词及一般专名隔离 |
 | Cassotis 一般专名补充 | 仓库许可证（项目自编写） | 项目维护的人名、头衔、组织、品牌等一般专名列表，不与日常/聊天优先路径混用 |
+| Cassotis 地名补充 | 仓库许可证（项目自编写） | 隔离式 `place_names` vertical 使用的项目维护低优先级常见国内外地名列表，并为多音/易错地名提供显式拼音修正 |
 | Cassotis 计算机术语补充 | 仓库许可证（项目自编写） | 隔离式 computing vertical 使用的项目维护计算机/领域术语列表 |
 | Cassotis 政务民生术语补充 | 仓库许可证（项目自编写） | 面向税务、房产、户籍和公共服务场景的隔离式 civic vertical 术语层，不走日常/聊天优先路径 |
 | Cassotis 建筑术语补充 | 仓库许可证（项目自编写） | 隔离式 architecture-terms layer 使用的项目维护建筑术语补充 |
@@ -87,10 +88,11 @@ Cassotis IME 的词库构建与发布仓库。
 ## 分层策略
 - `manifests/curated_daily_phrases.tsv` 只用于应获得日常输入优待的日常/聊天表达。
 - `manifests/vertical_layers.public.json` 声明隔离式 vertical 术语层。
-- `manifests/vertical/*.tsv` 存放项目维护的 vertical 词表，例如小说实体、一般专名、计算机术语、政务民生术语、建筑术语/建筑实体、游戏术语和游戏开发术语。
+- `manifests/vertical/*.tsv` 存放项目维护的 vertical 词表，例如小说实体、一般专名、地名、计算机术语、政务民生术语、建筑术语/建筑实体、游戏术语和游戏开发术语。
 - vertical 层可以补充领域词汇，但不会继承日常/聊天短语的优待偏置。
 - fiction 层将小说人物、作品名和世界观实体与日常/聊天表达及一般专名隔离。
 - active 的 proper-noun 层将人名、头衔和一般现实专名与日常/聊天表达隔离。
+- place-name 层以保守权重保留常见国内外地名，让完整地名输入可候选，但不挤占日常词候选。
 - computing 层目前结合了过滤后的 `THUOCL_IT` 子集与项目维护计算机术语。
 - civic 层目前承载税务、房产、户籍及其他公共服务术语。
 - architecture-terms 层目前结合了项目维护建筑术语、Getty AAT 建筑术语，以及 Wikidata 建筑构件/风格补充。
