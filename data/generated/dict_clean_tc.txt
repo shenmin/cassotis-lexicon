@@ -7171,6 +7171,7 @@ benbabituona	苯巴比妥鈉	379
 benbabituonazhusheye	苯巴比妥钠注射液	965
 benbabituonazhusheye	苯巴比妥鈉註射液	415
 benbabituopian	苯巴比妥片	728
+benbang	本幫	1238
 benbangcai	本幫菜	232
 benbao	本報	502
 benben	本本	536
@@ -21231,7 +21232,7 @@ daban	大半	509
 dabancheng	達坂城	185
 dabanchengqu	達坂城區	228
 dabanfu	大阪府	198
-dabang	大棒	529
+dabang	大棒	528
 dabanjiling	大斑鶺鴒	258
 dabanniepanjing	大般涅槃經	289
 dabanshao	大阪燒	232
@@ -21976,6 +21977,7 @@ daihu	怠忽	323
 daihuai	帶壞	323
 daihuan	代換	397
 daihui	待會	1228
+daihui'er	待會兒	1231
 daihuir	待會兒	1231
 daihuo	帶貨	198
 daiji	待機	547
@@ -35976,7 +35978,7 @@ feicefurendai	腓侧副韧带	933
 feicefurendai	腓側副韌帶	377
 feicengyan	非層岩	246
 feicengzhuang	非層狀	232
-feichai	肥差	501
+feichai	肥差	502
 feichaiwangzi	廢柴王子	868
 feichang	非常	1000
 feichang'ai	非常愛	1246
@@ -45239,6 +45241,7 @@ guang'ansuanzheng	胱胺酸癥	430
 guang'ansuanzhujizheng	胱氨酸贮积症	982
 guang'ansuanzhujizheng	胱氨酸貯積癥	426
 guangban	光斑	382
+guangbang	廣幫	1238
 guangbangzi	光膀子	362
 guangbao	光爆	198
 guangbeididong	光背地鶇	260
@@ -45586,7 +45589,8 @@ guangshenhuapa'ertinazhijing	光神話帕爾提娜之鏡	866
 guangshenhuaxilie	光神話系列	1000
 guangshenhuaxilie	光神話係列	543
 guangshexian	光射綫	232
-guangshi	光是	836
+guangshi	廣式	1242
+guangshi	光是	1
 guangshiqudexiatian	光逝去的夏天	550
 guangshiying	光適應	844
 guangshiying	光适应	609
@@ -47549,8 +47553,9 @@ guohezhuaihuzi	過河拽衚子	422
 guohongzhi	郭泓誌	771
 guohou	過後	438
 guohu	過戶	440
-guohua	國畫	499
-guohua	國花	250
+guohua	國華	1000
+guohua	國畫	1
+guohua	國花	1
 guohuai	國槐	332
 guohuaishu	國槐樹	228
 guohufei	過戶費	412
@@ -49735,6 +49740,7 @@ hangban	航班	485
 hangbanbiao	航班錶	232
 hangbanchaxunjiekou	航班查询接口	1000
 hangbanchaxunjiekou	航班查詢接口	454
+hangbang	杭幫	1238
 hangbei	行輩	355
 hangbiao	航標	482
 hangbiaodeng	航標燈	431
@@ -51196,7 +51202,7 @@ heihouyanliu	黑喉岩鷚	258
 heihouyaque	黑喉鴉雀	258
 heihouzaomei	黑喉噪鶥	258
 heihu	黑戶	366
-heihua	黑話	335
+heihua	黑話	336
 heihuan	黑鯇	198
 heihuhu	黑乎乎	549
 heihuhu	黑糊糊	477
@@ -75108,6 +75114,7 @@ laofang	牢房	664
 laofangzi	老方子	640
 laofanzhiwanyingshenqu	老范志万应神曲	944
 laofanzhiwanyingshenqu	老範誌萬應神麯	385
+laofeimao	佬肥貓	910
 laofoye	老佛爺	350
 laofu	老夫	728
 laofu	老父	292
@@ -82789,6 +82796,7 @@ luosha	羅莎	214
 luoshahaceshi	羅沙哈測試	816
 luoshakeceyan	羅沙克測驗	1000
 luoshakeceyan	羅沙剋測驗	480
+luoshan	落山	1242
 luoshan	羅山	499
 luoshanji	洛杉磯	635
 luoshanjidaoqi	洛杉磯道奇	819
@@ -82879,7 +82887,8 @@ luowenguan	螺纹管	1000
 luowenya	羅紋鴨	228
 luowu	落伍	402
 luoxi	裸戲	198
-luoxia	落下	495
+luoxia	落霞	1242
+luoxia	落下	482
 luoxiaceshi	羅夏測試	770
 luoxiaceyan	羅夏測驗	770
 luoxiahui	落下灰	712
@@ -82965,6 +82974,7 @@ luoyincheng	落銀城	824
 luoyixiu	羅一秀	230
 luoyong	裸泳	323
 luoyonghao	羅永浩	772
+luoyu	落雨	1242
 luoyu	羅語	234
 luoyuan	羅源	293
 luoyuanxian	羅源縣	160
@@ -108136,7 +108146,9 @@ salatuofuzhou	薩拉托夫州	253
 salayu	撒拉語	232
 salazu	撒拉族	348
 sali	薩裏	253
+sali	薩莉	222
 salijun	薩裏郡	179
+saliya	薩莉亞	910
 saluo	灑落	394
 saluofuxiudaoyuan	薩羅夫修道院	828
 saluoman	撒羅滿	232
@@ -134386,6 +134398,8 @@ woxinshi	我心似	501
 woxinshini	我心似你	527
 woxinshinixin	我心似你心	569
 woxiwang	我希望	1246
+woxuan	我選	1242
+woxuan	我宣	1238
 woxuan	斡鏇	450
 woyan	沃衍	192
 woyao	我要	1246
@@ -136789,7 +136803,7 @@ xiajiaoliao	下腳料	421
 xiaji'aoyunhui	夏季奧運會	895
 xiajie	下界	524
 xiajin	夏津	194
-xiajing	霞徑	238
+xiajing	霞徑	239
 xiajingqu	夏敬渠	167
 xiajinxian	夏津縣	165
 xiajipiyan	夏季皮炎	675
@@ -152798,10 +152812,11 @@ yiji	遺蹟	324
 yiji	異己	1
 yiji	疑忌	1
 yiji	藝妓	1
-yijia	意甲	627
-yijia	衣架	421
-yijia	衣甲	302
-yijia	溢價	237
+yijia	宜家	1000
+yijia	意甲	310
+yijia	衣架	217
+yijia	溢價	108
+yijia	衣甲	64
 yijia'an	一甲胺	501
 yijiajijing	一甲基肼	774
 yijialuanzhen	以假亂真	452
@@ -153007,7 +153022,7 @@ yijuhua	一句話	232
 yijuliangde	一舉兩得	602
 yijun	抑菌	1000
 yijun	以軍	744
-yijun	義軍	316
+yijun	義軍	315
 yijunsu	抑菌素	728
 yijuntuqi	異軍突起	480
 yijunxian	宜君縣	165
@@ -155806,7 +155821,7 @@ yiranxingnaobaizhiyingyangbuliang	異染性腦白質營養不良	421
 yiranzide	怡然自得	599
 yirefusike	伊熱夫斯剋	283
 yiren	藝人	821
-yiren	宜人	267
+yiren	宜人	268
 yiren	伊人	244
 yirendaodadaoxinzhang	伊忍道打倒信長	836
 yirenfeiyan	以人廢言	387
@@ -160191,8 +160206,9 @@ yuesefuxiaoying	約瑟夫效應	406
 yueshafa	約沙法	232
 yuesheng	躍升	425
 yueshenle	月神樂	824
-yueshi	月食	507
-yueshi	樂師	310
+yueshi	粵式	1242
+yueshi	月食	1
+yueshi	樂師	1
 yueshijianzhu	粵式建築	784
 yueshou	樂手	389
 yueshouru	月收入	232
@@ -160232,7 +160248,7 @@ yuexiayexiangqu	月下夜想曲	1000
 yuexiayexiangqu	月下夜想麯	559
 yuexin	月薪	729
 yuexingzhan	越行站	736
-yuexiu	越秀	465
+yuexiu	越秀	464
 yuexiuqu	越秀區	219
 yuexixian	越西縣	79
 yuexiya	約西亞	232
@@ -160398,7 +160414,7 @@ yuguzuzizhixian	裕固族自治縣	309
 yuhai	遇害	983
 yuhai	欲海	1
 yuhan	禦寒	387
-yuhang	宇航	773
+yuhang	宇航	772
 yuhangfu	宇航服	400
 yuhangju	宇航局	461
 yuhangqu	餘杭區	165
@@ -164280,8 +164296,10 @@ zhejiu	這就	1231
 zhejiulv	摺舊率	421
 zhejiushi	這就是	1228
 zhejiushishuo	這就是說	1220
+zheju	這句	1244
 zheju	蟄居	418
 zheju	謫居	412
+zhejuhua	這句話	1246
 zhekou	摺扣	452
 zhelei	這類	1238
 zheli	這裡	1246
@@ -174494,8 +174512,8 @@ zuobi	作弊	432
 zuobian	左邊	431
 zuobianqi	坐便器	362
 zuobianr	左邊兒	167
-zuobiao	座標	781
-zuobiao	坐標	746
+zuobiao	座標	1000
+zuobiao	坐標	904
 zuobiaofa	座標法	231
 zuobiaokongjian	坐標空間	260
 zuobiaokongjian	座標空間	258

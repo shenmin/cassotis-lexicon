@@ -526,7 +526,8 @@
 马上到	馬上到	0.88
 一会儿	一會兒	0.84
 待会	待會	0.82
-待会儿	待會兒	0.84
+待会儿	待會兒	0.84	daihuir
+待会儿	待會兒	0.84	daihuier
 来了	來了	0.86
 来了吧	來了吧	0.86
 来了吗	來了嗎	0.88
@@ -2886,3 +2887,15 @@
 流畅而	流暢而	0.88	liuchanger
 十点十五	十點十五	0.86	shidianshiwu
 既高效又	既高效又	0.86	jigaoxiaoyou
+落山	落山	0.90	luoshan
+落霞	落霞	0.90	luoxia
+落雨	落雨	0.90	luoyu
+这句话	這句話	0.92	zhejuhua
+这句	這句	0.91	zheju
+我选	我選	0.90	woxuan
+我宣	我宣	0.88	woxuan
+本帮	本幫	0.88	benbang
+杭帮	杭幫	0.88	hangbang
+广帮	廣幫	0.88	guangbang
+广式	廣式	0.90	guangshi
+粤式	粵式	0.90	yueshi
