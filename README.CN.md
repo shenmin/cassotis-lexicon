@@ -14,15 +14,15 @@ Cassotis IME 的词库构建与发布仓库。
 
 ## 仓库职责
 - 维护词库构建脚本、清单文件和生成产物。
-- 支持外部来源引导构建和私有语料整合流程。
-- 保持署名文件与公开导出产物一致。
+- 支持外部来源引导构建和可复现的生成词库构建流程。
+- 保持署名文件与生成产物一致。
 
 ## 当前词库快照（2026-04-27 构建）
 
 | 文件 | 变体 | 词条数 |
 |------|------|--------|
-| `data/generated/dict_clean_sc.txt` | 简体主词库 | 158,397 |
-| `data/generated/dict_clean_tc.txt` | 繁体主词库 | 175,140 |
+| `data/generated/dict_clean_sc.txt` | 简体主词库 | 161,805 |
+| `data/generated/dict_clean_tc.txt` | 繁体主词库 | 170,320 |
 | `data/generated/dict_unihan_sc.txt` | 简体单字（Unihan） | 23,917 |
 | `data/generated/dict_unihan_tc.txt` | 繁体单字（Unihan） | 24,070 |
 
@@ -41,6 +41,7 @@ Cassotis IME 的词库构建与发布仓库。
 | Wikipedia 中文标题（ns0） | CC BY-SA 4.0 | 专名覆盖与高置信专有名词种子 |
 | Wikimedia Pageviews Top（zh.wikipedia） | CC BY-SA 4.0 | 真实世界热度信号 |
 | 过滤后的 `THUOCL_IT` 子集 | THUOCL custom open terms | 计算机 vertical 候选来源，导入前过滤，避免与日常/聊天词层混在一起 |
+| 过滤后的 `THUOCL_chengyu` 子集 | THUOCL custom open terms | 成语典故 vertical 候选来源，过滤后以保守权重使用，让完整成语输入可候选但不挤占日常短语 |
 | Getty AAT 中文建筑术语 | ODC-By 1.0 | 以保守方式导入 architecture-terms layer 的官方建筑术语来源 |
 | Wikidata 中文建筑构件 / 风格 / 建筑地标 | CC0-1.0 | 导入隔离式 architecture vertical 的建筑术语与建筑地标补充来源 |
 | Wikidata 中文电子游戏 / 系列 / 类型 / 主机 | CC0-1.0 | 隔离式 gaming vertical 的主实体来源 |
@@ -59,6 +60,7 @@ Cassotis IME 的词库构建与发布仓库。
 | Cassotis 小说实体补充 | 仓库许可证（项目自编写） | 项目维护的小说人物、作品名和世界观实体列表，与日常/聊天词及一般专名隔离 |
 | Cassotis 一般专名补充 | 仓库许可证（项目自编写） | 项目维护的人名、头衔、组织、品牌等一般专名列表，不与日常/聊天优先路径混用 |
 | Cassotis 地名补充 | 仓库许可证（项目自编写） | 隔离式 `place_names` vertical 使用的项目维护低优先级常见国内外地名列表，并为多音/易错地名提供显式拼音修正 |
+| Cassotis 成语典故补充 | 仓库许可证（项目自编写） | 项目维护的高价值成语与文学典故列表，与日常/聊天短语排序路径隔离 |
 | Cassotis 计算机术语补充 | 仓库许可证（项目自编写） | 隔离式 computing vertical 使用的项目维护计算机/领域术语列表 |
 | Cassotis 政务民生术语补充 | 仓库许可证（项目自编写） | 面向税务、房产、户籍和公共服务场景的隔离式 civic vertical 术语层，不走日常/聊天优先路径 |
 | Cassotis 建筑术语补充 | 仓库许可证（项目自编写） | 隔离式 architecture-terms layer 使用的项目维护建筑术语补充 |
@@ -88,11 +90,12 @@ Cassotis IME 的词库构建与发布仓库。
 ## 分层策略
 - `manifests/curated_daily_phrases.tsv` 只用于应获得日常输入优待的日常/聊天表达。
 - `manifests/vertical_layers.public.json` 声明隔离式 vertical 术语层。
-- `manifests/vertical/*.tsv` 存放项目维护的 vertical 词表，例如小说实体、一般专名、地名、计算机术语、政务民生术语、建筑术语/建筑实体、游戏术语和游戏开发术语。
+- `manifests/vertical/*.tsv` 存放项目维护的 vertical 词表，例如小说实体、一般专名、地名、成语典故、计算机术语、政务民生术语、建筑术语/建筑实体、游戏术语和游戏开发术语。
 - vertical 层可以补充领域词汇，但不会继承日常/聊天短语的优待偏置。
 - fiction 层将小说人物、作品名和世界观实体与日常/聊天表达及一般专名隔离。
 - active 的 proper-noun 层将人名、头衔和一般现实专名与日常/聊天表达隔离。
 - place-name 层以保守权重保留常见国内外地名，让完整地名输入可候选，但不挤占日常词候选。
+- idioms-allusions 层目前结合了过滤后的 `THUOCL_chengyu` 子集与项目维护成语典故，用保守权重保证完整成语输入可候选，但不继承日常/聊天短语的优待偏置。
 - computing 层目前结合了过滤后的 `THUOCL_IT` 子集与项目维护计算机术语。
 - civic 层目前承载税务、房产、户籍及其他公共服务术语。
 - architecture-terms 层目前结合了项目维护建筑术语、Getty AAT 建筑术语，以及 Wikidata 建筑构件/风格补充。

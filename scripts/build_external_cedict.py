@@ -635,6 +635,8 @@ SINGLE_CHAR_READING_DROP_OVERRIDES: Set[Tuple[str, str]] = {
     ("哦", "e"),
 }
 SINGLE_CHAR_READING_DELTA_OVERRIDES: Dict[Tuple[str, str], int] = {
+    # `是/shi` is the dominant standalone IME target for shi in both SC and TC.
+    ("是", "shi"): 90,
     # Keep 阮 visible as a common surname and standalone lexical target without
     # overriding 软 as the dominant everyday ruan reading.
     ("阮", "ruan"): 320,
@@ -1273,6 +1275,11 @@ def _matches_vertical_filter(text: str, filter_id: str) -> bool:
         if compact.endswith(GODOT_GAMEDEV_BLOCKED_SUFFIXES):
             return False
         return 2 <= _cjk_len(compact) <= 10
+    if filter_id == "idioms_allusions_heuristic":
+        text_len = _cjk_len(text)
+        if text_len < 4 or text_len > 10:
+            return False
+        return CJK_FULL_RE.fullmatch(text) is not None
     return True
 
 
@@ -2086,6 +2093,21 @@ def _compute_generic_vertical_penalty(
             relief = 22 if text_len <= 2 else 12 if text_len <= 4 else 6
         else:
             relief = 0
+    elif layer_id == "idioms_allusions":
+        if text_len <= 3:
+            base_penalty = 220
+        elif text_len == 4:
+            base_penalty = 92
+        elif text_len <= 6:
+            base_penalty = 58
+        else:
+            base_penalty = 34
+        if source_id == "project-curated-vertical-idioms-allusions":
+            relief = 24 if text_len <= 4 else 10
+        elif source_id == "thuocl-chengyu-vertical":
+            relief = 12 if text_len <= 4 else 6
+        else:
+            relief = 0
     elif layer_id in NAMED_ENTITY_VERTICAL_LAYERS:
         if text_len <= 2:
             base_penalty = 260
@@ -2141,6 +2163,16 @@ def _vertical_ranking_usage_score(
 ) -> float:
     if _is_named_entity_vertical_layer(layer_id) and not supported_named_entity:
         return _cap_named_entity_vertical_usage_score(usage_score, _cjk_len(text))
+    if layer_id == "idioms_allusions":
+        bounded = min(1.0, max(0.0, usage_score))
+        text_len = _cjk_len(text)
+        if text_len <= 3:
+            return min(bounded, 0.50)
+        if text_len == 4:
+            return min(bounded, 0.72)
+        if text_len <= 6:
+            return min(bounded, 0.64)
+        return min(bounded, 0.58)
     return min(1.0, max(0.0, usage_score))
 
 
@@ -6693,7 +6725,9 @@ def _parse_vertical_thuocl_member_entries(
         for word, df_value in parsed_rows:
             df_signal = math.log1p(df_value) / max_df_log if max_df_log > 0 else 0.0
             usage_score = min(0.86, max(default_usage_score, default_usage_score + df_signal * 0.18))
-            entries.append((word, word, usage_score, ""))
+            # THUOCL members are simplified Chinese; leave TC blank so the
+            # vertical import path converts it through OpenCC phrase hints.
+            entries.append((word, "", usage_score, ""))
             stats["vertical_thuocl_kept"] += 1
 
     return entries, stats
@@ -8676,6 +8710,43 @@ def _convert_text_with_char_map(
     return "".join(char_map.get(ch, ch) for ch in text)
 
 
+def _choose_tc_phrase_candidate(
+    sc_text: str,
+    candidates: Set[str],
+    simp_to_trad_char_map: Dict[str, str],
+) -> str:
+    if not candidates:
+        return ""
+
+    ordered = sorted(candidates)
+    char_converted = _convert_text_with_char_map(sc_text, simp_to_trad_char_map)
+    if char_converted in candidates:
+        return char_converted
+
+    def score(candidate: str) -> Tuple[int, int, int, int, str]:
+        expected_matches = sum(
+            1
+            for left, right in zip(candidate, char_converted)
+            if left == right
+        )
+        changed_from_source = sum(
+            1
+            for left, right in zip(candidate, sc_text)
+            if left != right
+        )
+        same_as_source_penalty = 1 if candidate == sc_text and char_converted != sc_text else 0
+        length_match = 1 if len(candidate) == len(sc_text) else 0
+        return (
+            -same_as_source_penalty,
+            length_match,
+            expected_matches,
+            changed_from_source,
+            candidate,
+        )
+
+    return max(ordered, key=score)
+
+
 def _convert_sc_text_to_tc_with_phrase_hints(
     text: str,
     opencc_sc_to_tc_map: Dict[str, Set[str]],
@@ -8684,7 +8755,11 @@ def _convert_sc_text_to_tc_with_phrase_hints(
     if not text:
         return text
     if text in opencc_sc_to_tc_map:
-        return sorted(opencc_sc_to_tc_map[text])[0]
+        return _choose_tc_phrase_candidate(
+            text,
+            opencc_sc_to_tc_map[text],
+            simp_to_trad_char_map,
+        )
 
     output: List[str] = []
     index = 0
@@ -8697,7 +8772,11 @@ def _convert_sc_text_to_tc_with_phrase_hints(
             candidates = opencc_sc_to_tc_map.get(fragment, set())
             if not candidates:
                 continue
-            matched = sorted(candidates)[0]
+            matched = _choose_tc_phrase_candidate(
+                fragment,
+                candidates,
+                simp_to_trad_char_map,
+            )
             index += span
             output.append(matched)
             break
@@ -8739,6 +8818,104 @@ def _backfill_tc_mapping_from_sc_with_char_map(
         "tc_backfill_from_sc_added": added,
         "tc_backfill_from_sc_boosted": boosted,
         "tc_backfill_from_sc_total": len(normalized),
+    }
+    return normalized, stats
+
+
+def _merge_tc_simplified_terms_into_existing_traditional_targets(
+    mapping: Dict[Tuple[str, str], int],
+    sc_terms: Set[str],
+    simp_to_trad_char_map: Dict[str, str],
+    stats_prefix: str,
+) -> Tuple[Dict[Tuple[str, str], int], Dict[str, int]]:
+    if not mapping or not sc_terms or not simp_to_trad_char_map:
+        return mapping, {
+            f"{stats_prefix}_simplified_variant_rows_merged": 0,
+            f"{stats_prefix}_simplified_variant_targets_boosted": 0,
+        }
+
+    normalized = dict(mapping)
+    merged = 0
+    boosted = 0
+    for key, weight in list(mapping.items()):
+        pinyin, text = key
+        if text not in sc_terms:
+            continue
+        converted = _convert_text_with_char_map(text, simp_to_trad_char_map)
+        if converted == text:
+            continue
+        target_key = (pinyin, converted)
+        if target_key not in normalized:
+            continue
+        if normalized[target_key] < weight:
+            normalized[target_key] = weight
+            boosted += 1
+        if key in normalized:
+            del normalized[key]
+            merged += 1
+
+    stats = {
+        f"{stats_prefix}_simplified_variant_rows_merged": merged,
+        f"{stats_prefix}_simplified_variant_targets_boosted": boosted,
+    }
+    return normalized, stats
+
+
+def _merge_tc_converted_variants_into_preferred_targets(
+    mapping: Dict[Tuple[str, str], int],
+    preferred_tc_by_sc: Dict[str, str],
+    simp_to_trad_char_map: Dict[str, str],
+    stats_prefix: str,
+) -> Tuple[Dict[Tuple[str, str], int], Dict[str, int]]:
+    if not mapping or not preferred_tc_by_sc or not simp_to_trad_char_map:
+        return mapping, {
+            f"{stats_prefix}_converted_variant_rows_merged": 0,
+            f"{stats_prefix}_converted_variant_targets_boosted": 0,
+        }
+
+    converted_to_preferred: Dict[str, Set[str]] = {}
+    for sc_text, preferred_tc in preferred_tc_by_sc.items():
+        if not sc_text or not preferred_tc:
+            continue
+        converted = _convert_text_with_char_map(sc_text, simp_to_trad_char_map)
+        if not converted or converted == preferred_tc:
+            continue
+        converted_to_preferred.setdefault(converted, set()).add(preferred_tc)
+
+    if not converted_to_preferred:
+        return mapping, {
+            f"{stats_prefix}_converted_variant_rows_merged": 0,
+            f"{stats_prefix}_converted_variant_targets_boosted": 0,
+        }
+
+    normalized = dict(mapping)
+    merged = 0
+    boosted = 0
+    for key, weight in list(mapping.items()):
+        pinyin, text = key
+        preferred_candidates = converted_to_preferred.get(text)
+        if not preferred_candidates:
+            continue
+
+        target_key = None
+        for preferred_tc in sorted(preferred_candidates):
+            candidate_key = (pinyin, preferred_tc)
+            if candidate_key in normalized:
+                target_key = candidate_key
+                break
+        if target_key is None:
+            continue
+
+        if normalized[target_key] < weight:
+            normalized[target_key] = weight
+            boosted += 1
+        if key in normalized:
+            del normalized[key]
+            merged += 1
+
+    stats = {
+        f"{stats_prefix}_converted_variant_rows_merged": merged,
+        f"{stats_prefix}_converted_variant_targets_boosted": boosted,
     }
     return normalized, stats
 
@@ -10540,7 +10717,11 @@ def _augment_with_curated_daily_phrases(
         if not tc_candidate:
             tc_words = opencc_sc_to_tc.get(sc_word, set())
             if tc_words:
-                tc_candidate = sorted(tc_words)[0]
+                tc_candidate = _choose_tc_phrase_candidate(
+                    sc_word,
+                    tc_words,
+                    simp_to_trad_char_map,
+                )
             elif sc_word in tc_existing_texts:
                 tc_candidate = sc_word
             else:
@@ -10648,7 +10829,11 @@ def _reinforce_curated_daily_tc_phrases(
         if not tc_candidate:
             tc_words = opencc_sc_to_tc.get(sc_word, set())
             if tc_words:
-                tc_candidate = sorted(tc_words)[0]
+                tc_candidate = _choose_tc_phrase_candidate(
+                    sc_word,
+                    tc_words,
+                    simp_to_trad_char_map,
+                )
             elif sc_word in tc_existing_texts:
                 tc_candidate = sc_word
             else:
@@ -10848,7 +11033,11 @@ def _reinforce_vertical_tc_terms(
         if not tc_candidate:
             tc_words = opencc_sc_to_tc.get(sc_word, set())
             if tc_words:
-                tc_candidate = sorted(tc_words)[0]
+                tc_candidate = _choose_tc_phrase_candidate(
+                    sc_word,
+                    tc_words,
+                    simp_to_trad_char_map,
+                )
             elif sc_word in tc_existing_texts:
                 tc_candidate = sc_word
             else:
@@ -10895,6 +11084,11 @@ def _reinforce_vertical_tc_terms(
             allow_existing_boost = (
                 source_id == "project-curated-vertical-computing" and _cjk_len(tc_candidate) >= 4
             )
+        elif layer_id == "idioms_allusions":
+            curated_idiom = source_id == "project-curated-vertical-idioms-allusions"
+            base_source_hits = 2 if curated_idiom and _cjk_len(tc_candidate) <= 6 else 1
+            extra_bonus = 4 if curated_idiom and _cjk_len(tc_candidate) <= 4 else (2 if curated_idiom else 0)
+            allow_existing_boost = curated_idiom
         elif is_named_entity_layer:
             base_source_hits = 2 if supported_named_entity else 1
             extra_bonus = (8 if _cjk_len(tc_candidate) <= 4 else 4) if supported_named_entity else (
@@ -11308,6 +11502,12 @@ def _augment_with_vertical_terms(
             short_bonus = 4 if curated_common_place and _cjk_len(sc_word) <= 4 else 0
             long_bonus = 2 if curated_common_place else 0
             allow_existing_boost = curated_common_place
+        elif layer_id == "idioms_allusions":
+            curated_idiom = source_id == "project-curated-vertical-idioms-allusions"
+            source_hits = 2 if curated_idiom and _cjk_len(sc_word) <= 6 else 1
+            short_bonus = 4 if curated_idiom and _cjk_len(sc_word) <= 4 else 0
+            long_bonus = 2 if curated_idiom else 0
+            allow_existing_boost = curated_idiom
         elif is_named_entity_layer:
             source_hits = 2 if sc_supported_named_entity else 1
             short_bonus = 8 if sc_supported_named_entity else 0
@@ -11370,7 +11570,11 @@ def _augment_with_vertical_terms(
         if not tc_candidate:
             tc_words = opencc_sc_to_tc.get(sc_word, set())
             if tc_words:
-                tc_candidate = sorted(tc_words)[0]
+                tc_candidate = _choose_tc_phrase_candidate(
+                    sc_word,
+                    tc_words,
+                    simp_to_trad_char_map,
+                )
             elif sc_word in tc_existing_texts:
                 tc_candidate = sc_word
             else:
@@ -14197,6 +14401,32 @@ def main() -> int:
     )
     stats.update(sc_curated_daily_number_cap_stats)
     stats.update(tc_curated_daily_number_cap_stats)
+    idiom_allusion_sc_terms = {
+        sc_word
+        for sc_word, _tc_word, _usage_score, _explicit_pinyin, layer_id, _source_id in vertical_entries
+        if layer_id == "idioms_allusions"
+    }
+    tc_map, tc_idiom_variant_merge_stats = _merge_tc_simplified_terms_into_existing_traditional_targets(
+        tc_map,
+        idiom_allusion_sc_terms,
+        simp_to_trad_char_map,
+        "tc_idiom_allusion",
+    )
+    stats.update(tc_idiom_variant_merge_stats)
+    preferred_tc_by_sc: Dict[str, str] = {}
+    for sc_word, tc_word, _usage_score, _explicit_pinyin in curated_daily_entries:
+        if sc_word and tc_word:
+            preferred_tc_by_sc[sc_word] = tc_word
+    for sc_word, tc_word, _usage_score, _explicit_pinyin, _layer_id, source_id in vertical_entries:
+        if sc_word and tc_word and source_id.startswith("project-curated"):
+            preferred_tc_by_sc.setdefault(sc_word, tc_word)
+    tc_map, tc_project_preferred_merge_stats = _merge_tc_converted_variants_into_preferred_targets(
+        tc_map,
+        preferred_tc_by_sc,
+        simp_to_trad_char_map,
+        "tc_project_preferred",
+    )
+    stats.update(tc_project_preferred_merge_stats)
     sc_query_path_priors: Dict[Tuple[str, str], int] = {}
     tc_query_path_priors: Dict[Tuple[str, str], int] = {}
     if output_query_path_sc is not None:

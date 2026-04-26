@@ -68,6 +68,45 @@
       ]
     },
     {
+      "id": "idioms_allusions",
+      "status": "active",
+      "title": "Idiom and allusion vertical layer",
+      "notes": "Dedicated idiom and literary-allusion layer kept separate from everyday/chat phrase seeds and topical named entities.",
+      "sources": [
+        {
+          "id": "thuocl-chengyu-vertical",
+          "type": "thuocl_zip_member",
+          "name": "THUOCL chengyu subset",
+          "download_url": "https://github.com/thunlp/THUOCL/archive/refs/heads/master.zip#THUOCL_chengyu.txt",
+          "homepage": "https://github.com/thunlp/THUOCL",
+          "license": "THUOCL custom open terms",
+          "risk_level": "medium",
+          "redistribution_class": "attribution_required",
+          "attribution_required": true,
+          "raw_committed": false,
+          "payload_source_id": "thuocl",
+          "member_name": "THUOCL_chengyu.txt",
+          "filter_id": "idioms_allusions_heuristic",
+          "default_usage_score": 0.50,
+          "notes": "THUOCL chengyu subset used as a conservative idiom/allusion candidate source."
+        },
+        {
+          "id": "project-curated-vertical-idioms-allusions",
+          "type": "repo_tsv",
+          "name": "Cassotis curated idioms and allusions",
+          "download_url": "repo://manifests/vertical/idioms_allusions.tsv",
+          "homepage": "https://github.com/shenmin/cassotis-lexicon",
+          "license": "Repository license (project-authored)",
+          "risk_level": "low",
+          "redistribution_class": "project_authored",
+          "attribution_required": false,
+          "raw_committed": true,
+          "default_usage_score": 0.66,
+          "notes": "Project-maintained high-value idioms and literary allusions kept separate from daily/chat phrase ranking."
+        }
+      ]
+    },
+    {
       "id": "computing",
       "status": "active",
       "title": "Computing vertical layer",

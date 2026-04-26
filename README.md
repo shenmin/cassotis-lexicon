@@ -14,15 +14,15 @@ Lexicon build and release repository for Cassotis IME.
 
 ## Repository role
 - Maintains lexicon build scripts, manifests, and generated outputs.
-- Supports external-source bootstrap and private-corpus integration workflows.
-- Keeps attribution and release policy files aligned with exported public artifacts.
+- Supports external-source bootstrap and reproducible generated dictionary builds.
+- Keeps attribution and release policy files aligned with generated artifacts.
 
 ## Current dictionary snapshot (2026-04-27 build)
 
 | File | Variant | Entries |
 |------|---------|---------|
-| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 158,397 |
-| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 175,140 |
+| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 161,805 |
+| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 170,320 |
 | `data/generated/dict_unihan_sc.txt` | Simplified single-char (Unihan) | 23,917 |
 | `data/generated/dict_unihan_tc.txt` | Traditional single-char (Unihan) | 24,070 |
 
@@ -41,6 +41,7 @@ Lexicon build and release repository for Cassotis IME.
 | Wikipedia zh titles (ns0) | CC BY-SA 4.0 | Named-entity coverage and high-confidence proper-noun seeds |
 | Wikimedia Pageviews Top (zh.wikipedia) | CC BY-SA 4.0 | Real-world usage heat signal |
 | Filtered `THUOCL_IT` subset | THUOCL custom open terms | Computing vertical-layer candidate source, filtered before import so it does not behave like the everyday/chat phrase layer |
+| Filtered `THUOCL_chengyu` subset | THUOCL custom open terms | Idiom/allusion vertical-layer candidate source, filtered and weighted conservatively so idioms stay inputable without crowding everyday phrases |
 | Getty AAT zh architectural terms | ODC-By 1.0 | Official architecture-term source imported conservatively into the isolated architecture-terms layer |
 | Wikidata zh architectural elements / styles / landmarks | CC0-1.0 | Architecture-term and landmark-entity supplements imported into isolated architecture vertical layers |
 | Wikidata zh video games / series / genres / consoles | CC0-1.0 | Main gaming-title/entity sources imported into an isolated gaming vertical layer |
@@ -59,6 +60,7 @@ Lexicon build and release repository for Cassotis IME.
 | Cassotis curated fiction entities | Repository license (project-authored) | Project-maintained fiction entity list for novel characters, titles, and in-world named entities, kept separate from daily/chat phrasing and from general proper nouns |
 | Cassotis curated proper nouns | Repository license (project-authored) | Project-maintained general proper-noun list for names, titles, organizations, brands, and other real-world named entities that should not share the daily/chat preferred-term path |
 | Cassotis curated place names | Repository license (project-authored) | Project-maintained low-priority place-name list used by the isolated `place_names` vertical layer, with explicit pinyin corrections for ambiguous domestic and international locations |
+| Cassotis curated idioms and allusions | Repository license (project-authored) | Project-maintained high-value idiom and literary-allusion list kept separate from daily/chat phrase ranking |
 | Cassotis curated computing terms | Repository license (project-authored) | Project-maintained computing/domain term list used by the isolated computing vertical layer; does not share the daily/chat preferred-term path |
 | Cassotis curated civic terms | Repository license (project-authored) | Project-maintained civic/public-service terminology layer for taxation, housing, household-registration, and related administrative vocabulary, isolated from daily/chat preferred-term ranking |
 | Cassotis curated architecture terms | Repository license (project-authored) | Project-maintained architecture terminology supplement used by the isolated architecture-terms layer |
@@ -88,11 +90,12 @@ See:
 ## Layering policy
 - `manifests/curated_daily_phrases.tsv` is reserved for everyday/chat phrasing that should receive daily-use preference treatment.
 - `manifests/vertical_layers.public.json` declares isolated vertical terminology layers.
-- `manifests/vertical/*.tsv` stores project-authored vertical term lists such as fiction entities, proper nouns, place names, computing vocabulary, civic/public-service terminology, architecture terminology/entities, gaming terminology, and game-development terminology.
+- `manifests/vertical/*.tsv` stores project-authored vertical term lists such as fiction entities, proper nouns, place names, idioms/allusions, computing vocabulary, civic/public-service terminology, architecture terminology/entities, gaming terminology, and game-development terminology.
 - Vertical layers can add domain vocabulary without inheriting the same preferred-term bias used for daily/chat phrases.
 - The fiction layer keeps novel characters, titles, and in-world named entities separate from everyday/chat phrasing and from general proper nouns.
 - The active project-maintained proper-noun layer keeps names, titles, and general real-world named entities separate from everyday/chat phrasing.
 - The place-name layer keeps common domestic and international locations inputable with conservative weights, so complete place-name input works without crowding everyday candidates.
+- The idioms/allusions layer currently combines a filtered `THUOCL_chengyu` subset with project-curated idioms and literary allusions, using conservative ranking so full idiom input works without inheriting daily/chat phrase priority.
 - The computing layer currently combines a filtered `THUOCL_IT` subset with project-curated computing terminology.
 - The civic layer currently contains project-curated taxation, housing, household-registration, and other public-service terminology.
 - The architecture-terms layer currently combines project-curated terminology, Getty AAT architectural terms, and Wikidata architectural elements/styles.
