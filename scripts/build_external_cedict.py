@@ -10070,7 +10070,8 @@ def _finalize_curated_daily_weight(
     is_number_word: bool,
 ) -> int:
     if not is_number_word:
-        return max(weight, 1000)
+        daily_floor = 1080 + int(round(max(0.0, min(1.0, usage_score)) * 180.0))
+        return max(weight, daily_floor)
 
     # Number words are useful daily entries, but should not be as dominant as
     # conversational words/phrases. Keep them strong enough to surface while
@@ -13685,6 +13686,48 @@ def main() -> int:
     stats.update(admin_place_alias_stats)
     stats["admin_place_alias_augmented_sc_terms"] = len(admin_place_alias_sc_terms)
     stats["admin_place_alias_augmented_tc_terms"] = len(admin_place_alias_tc_terms)
+    curated_daily_sc_final_stats = _reinforce_curated_daily_sc_phrases(
+        sc_map,
+        curated_daily_entries,
+        curated_usage_score_map,
+        curated_source_hits_map,
+        jieba_direct_signal_map,
+        jieba_pos_map,
+        char_frequency_prior,
+        curated_unihan_map,
+        curated_unihan_readings_map,
+        curated_unihan_source_rank_map,
+        curated_unihan_pinlu_detail_map,
+        args.min_hanzi,
+    )
+    curated_daily_tc_final_stats = _reinforce_curated_daily_tc_phrases(
+        tc_map,
+        curated_daily_entries,
+        tc_usage_score_map,
+        tc_source_hits_map,
+        tc_jieba_direct_signal_map,
+        tc_jieba_pos_map,
+        tc_char_frequency_prior,
+        opencc_entries,
+        simp_to_trad_char_map,
+        unihan_map,
+        unihan_readings_map,
+        unihan_reading_source_map,
+        unihan_pinlu_detail_map,
+        args.min_hanzi,
+    )
+    stats.update(
+        {
+            f"final_{key}": value
+            for key, value in curated_daily_sc_final_stats.items()
+        }
+    )
+    stats.update(
+        {
+            f"final_{key}": value
+            for key, value in curated_daily_tc_final_stats.items()
+        }
+    )
     sc_curated_daily_number_cap_stats = _cap_curated_daily_number_weights(
         sc_map,
         curated_daily_entries,
