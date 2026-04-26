@@ -503,6 +503,10 @@ DAILY_NUMBER_WORD_UNIT_CHARS = set(
     "\u5341\u767e\u5343\u4e07\u842c\u4ebf\u5104"
 )
 CURATED_DAILY_NUMBER_WEIGHT_CAP = 940
+# Fiction entities are supplemental names and should not inherit everyday-word
+# priors. Product/platform proper nouns are handled by the generic vertical path
+# because they are frequently normal daily input terms.
+NAMED_ENTITY_VERTICAL_LAYERS = {"fiction_entities"}
 
 CEDICT_LINE_RE = re.compile(r"^(\S+)\s+(\S+)\s+\[([^\]]+)\]\s+/(.*)/$")
 CJK_RE = re.compile("[\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\U00020000-\U0002A6DF]")
@@ -2067,18 +2071,18 @@ def _compute_generic_vertical_penalty(
             relief = 18 if text_len <= 4 else 6
         else:
             relief = 6 if text_len <= 4 else 3
-    elif layer_id in {"proper_nouns", "fiction_entities"}:
+    elif layer_id in NAMED_ENTITY_VERTICAL_LAYERS:
         if text_len <= 2:
-            base_penalty = 96
+            base_penalty = 260
         elif text_len == 3:
-            base_penalty = 54
+            base_penalty = 170
         elif text_len == 4:
-            base_penalty = 28
+            base_penalty = 108
         elif text_len == 5:
-            base_penalty = 14
+            base_penalty = 60
         else:
-            base_penalty = 6
-        relief = 22 if text_len <= 4 else 6
+            base_penalty = 28
+        relief = 0
     else:
         if text_len <= 2:
             base_penalty = 96
@@ -2093,6 +2097,75 @@ def _compute_generic_vertical_penalty(
         relief = 12 if text_len <= 4 else 4
 
     return max(0, base_penalty - relief)
+
+
+def _is_named_entity_vertical_layer(layer_id: str) -> bool:
+    return layer_id in NAMED_ENTITY_VERTICAL_LAYERS
+
+
+def _cap_named_entity_vertical_usage_score(usage_score: float, text_len: int) -> float:
+    """Keep supplementary names visible without making them daily-word priors."""
+    bounded = min(1.0, max(0.0, usage_score))
+    if text_len <= 2:
+        return min(bounded, 0.34)
+    if text_len == 3:
+        return min(bounded, 0.42)
+    if text_len == 4:
+        return min(bounded, 0.50)
+    if text_len == 5:
+        return min(bounded, 0.56)
+    return min(bounded, 0.62)
+
+
+def _vertical_ranking_usage_score(
+    text: str,
+    layer_id: str,
+    usage_score: float,
+    *,
+    supported_named_entity: bool = False,
+) -> float:
+    if _is_named_entity_vertical_layer(layer_id) and not supported_named_entity:
+        return _cap_named_entity_vertical_usage_score(usage_score, _cjk_len(text))
+    return min(1.0, max(0.0, usage_score))
+
+
+def _build_existing_prefix_support_map(
+    mapping: Dict[Tuple[str, str], int],
+    unihan_map: Dict[str, str],
+    unihan_readings_map: Dict[str, Set[str]] | None,
+    unihan_source_rank_map: Dict[Tuple[str, str], int] | None,
+    unihan_pinlu_detail_map: Dict[Tuple[str, str], int] | None,
+    *,
+    min_weight: int = 520,
+    max_prefix_len: int = 4,
+) -> Dict[Tuple[str, str], int]:
+    support: Dict[Tuple[str, str], int] = {}
+    if not mapping:
+        return support
+
+    for (pinyin, text), weight in mapping.items():
+        text_len = _cjk_len(text)
+        if weight < min_weight or text_len < 3 or not CJK_FULL_RE.fullmatch(text):
+            continue
+        syllables = _split_compact_pinyin_by_unihan(
+            text,
+            pinyin,
+            unihan_map,
+            unihan_readings_map,
+            unihan_source_rank_map,
+            unihan_pinlu_detail_map,
+        )
+        if not syllables or len(syllables) < text_len:
+            continue
+        for prefix_len in range(2, min(max_prefix_len, text_len - 1) + 1):
+            prefix_text = text[:prefix_len]
+            prefix_pinyin = _normalize_compact_pinyin_key("".join(syllables[:prefix_len]))
+            if not prefix_pinyin:
+                continue
+            key = (prefix_pinyin, prefix_text)
+            support[key] = max(support.get(key, 0), weight)
+
+    return support
 
 
 def _compute_civic_neutral_usage_score(usage_score: float, text_len: int) -> float:
@@ -10127,6 +10200,221 @@ def _cap_curated_daily_number_weights(
     return stats
 
 
+def _reinforce_curated_daily_existing_prefixes(
+    mapping: Dict[Tuple[str, str], int],
+    curated_entries: List[Tuple[str, str, float, str]],
+    usage_score_map: Dict[str, float],
+    source_hits_map: Dict[str, int],
+    jieba_pos_map: Dict[str, str],
+    char_frequency_prior: Dict[str, float],
+    unihan_map: Dict[str, str],
+    unihan_readings_map: Dict[str, Set[str]],
+    unihan_source_rank_map: Dict[Tuple[str, str], int],
+    unihan_pinlu_detail_map: Dict[Tuple[str, str], int],
+    *,
+    use_traditional: bool,
+    stats_prefix: str,
+    min_hanzi: int,
+) -> Dict[str, int]:
+    stats = {
+        f"{stats_prefix}_curated_daily_prefix_terms_considered": 0,
+        f"{stats_prefix}_curated_daily_prefix_reinforced": 0,
+    }
+    if not mapping or not curated_entries:
+        return stats
+
+    existing_texts = {text for _pinyin, text in mapping.keys()}
+    char_prior = _build_effective_char_prior(mapping, char_frequency_prior)
+
+    def prefix_floor(prefix_len: int, inherited_usage: float) -> int:
+        usage = min(1.0, max(0.0, inherited_usage))
+        if prefix_len <= 2:
+            return min(1120, 900 + int(round(usage * 220.0)))
+        if prefix_len == 3:
+            return min(1080, 840 + int(round(usage * 200.0)))
+        return min(1040, 800 + int(round(usage * 180.0)))
+
+    for sc_word, tc_word, usage_score, explicit_pinyin in curated_entries:
+        source_text = tc_word if use_traditional and tc_word else sc_word
+        source_len = _cjk_len(source_text)
+        if source_len < 3:
+            continue
+
+        pinyin = explicit_pinyin or _pinyin_from_unihan(
+            sc_word,
+            unihan_map,
+            unihan_readings_map,
+            unihan_source_rank_map,
+            unihan_pinlu_detail_map,
+        )
+        if not pinyin:
+            continue
+
+        syllables = _split_compact_pinyin_by_unihan(
+            sc_word,
+            pinyin,
+            unihan_map,
+            unihan_readings_map,
+            unihan_source_rank_map,
+            unihan_pinlu_detail_map,
+        )
+        if not syllables or len(syllables) < source_len:
+            continue
+
+        for prefix_len in range(max(2, min_hanzi), min(4, source_len - 1) + 1):
+            prefix = source_text[:prefix_len]
+            if prefix not in existing_texts:
+                continue
+            if not CJK_FULL_RE.fullmatch(prefix):
+                continue
+            if _is_named_entity_pos(jieba_pos_map.get(prefix, "")):
+                continue
+
+            prefix_char_score = _compute_text_single_char_prior(prefix, char_prior)
+            prefix_min_char_prior = _compute_min_char_prior(prefix, char_prior)
+            if prefix_char_score < 0.08 or prefix_min_char_prior < 0.01:
+                continue
+
+            prefix_pinyin = _normalize_compact_pinyin_key("".join(syllables[:prefix_len]))
+            if not prefix_pinyin:
+                continue
+
+            key = (prefix_pinyin, prefix)
+            existing_weight = mapping.get(key)
+            if existing_weight is None:
+                continue
+
+            stats[f"{stats_prefix}_curated_daily_prefix_terms_considered"] += 1
+            inherited_usage = max(
+                min(1.0, max(0.0, usage_score_map.get(prefix, 0.0))),
+                min(0.86, max(0.28, min(1.0, max(0.0, usage_score)) - 0.06)),
+            )
+            floor_weight = prefix_floor(prefix_len, inherited_usage)
+            if existing_weight < floor_weight:
+                mapping[key] = floor_weight
+                stats[f"{stats_prefix}_curated_daily_prefix_reinforced"] += 1
+
+            usage_score_map[prefix] = max(usage_score_map.get(prefix, 0.0), inherited_usage)
+            source_hits_map[prefix] = max(source_hits_map.get(prefix, 0), 2)
+
+    return stats
+
+
+def _cap_curated_daily_prefix_competitors(
+    mapping: Dict[Tuple[str, str], int],
+    curated_entries: List[Tuple[str, str, float, str]],
+    usage_score_map: Dict[str, float],
+    jieba_pos_map: Dict[str, str],
+    char_frequency_prior: Dict[str, float],
+    unihan_map: Dict[str, str],
+    unihan_readings_map: Dict[str, Set[str]],
+    unihan_source_rank_map: Dict[Tuple[str, str], int],
+    unihan_pinlu_detail_map: Dict[Tuple[str, str], int],
+    *,
+    use_traditional: bool,
+    stats_prefix: str,
+    min_hanzi: int,
+) -> Dict[str, int]:
+    stats = {
+        f"{stats_prefix}_curated_daily_prefix_competitors_capped": 0,
+        f"{stats_prefix}_curated_daily_prefix_competitor_rows": 0,
+    }
+    if not mapping or not curated_entries:
+        return stats
+
+    by_pinyin: Dict[str, List[Tuple[str, int]]] = {}
+    for (pinyin, text), weight in mapping.items():
+        by_pinyin.setdefault(pinyin, []).append((text, weight))
+
+    existing_texts = {text for _pinyin, text in mapping.keys()}
+    char_prior = _build_effective_char_prior(mapping, char_frequency_prior)
+
+    def prefix_floor(prefix_len: int, inherited_usage: float) -> int:
+        usage = min(1.0, max(0.0, inherited_usage))
+        if prefix_len <= 2:
+            return min(1120, 900 + int(round(usage * 220.0)))
+        if prefix_len == 3:
+            return min(1080, 840 + int(round(usage * 200.0)))
+        return min(1040, 800 + int(round(usage * 180.0)))
+
+    for sc_word, tc_word, usage_score, explicit_pinyin in curated_entries:
+        source_text = tc_word if use_traditional and tc_word else sc_word
+        source_len = _cjk_len(source_text)
+        if source_len < 3:
+            continue
+
+        pinyin = explicit_pinyin or _pinyin_from_unihan(
+            sc_word,
+            unihan_map,
+            unihan_readings_map,
+            unihan_source_rank_map,
+            unihan_pinlu_detail_map,
+        )
+        if not pinyin:
+            continue
+
+        syllables = _split_compact_pinyin_by_unihan(
+            sc_word,
+            pinyin,
+            unihan_map,
+            unihan_readings_map,
+            unihan_source_rank_map,
+            unihan_pinlu_detail_map,
+        )
+        if not syllables or len(syllables) < source_len:
+            continue
+
+        for prefix_len in range(max(2, min_hanzi), min(4, source_len - 1) + 1):
+            prefix = source_text[:prefix_len]
+            if prefix not in existing_texts:
+                continue
+            if not CJK_FULL_RE.fullmatch(prefix):
+                continue
+            if _is_named_entity_pos(jieba_pos_map.get(prefix, "")):
+                continue
+
+            prefix_char_score = _compute_text_single_char_prior(prefix, char_prior)
+            prefix_min_char_prior = _compute_min_char_prior(prefix, char_prior)
+            if prefix_char_score < 0.08 or prefix_min_char_prior < 0.01:
+                continue
+
+            prefix_pinyin = _normalize_compact_pinyin_key("".join(syllables[:prefix_len]))
+            if not prefix_pinyin:
+                continue
+
+            key = (prefix_pinyin, prefix)
+            prefix_weight = mapping.get(key)
+            if prefix_weight is None:
+                continue
+
+            inherited_usage = max(
+                min(1.0, max(0.0, usage_score_map.get(prefix, 0.0))),
+                min(0.86, max(0.28, min(1.0, max(0.0, usage_score)) - 0.06)),
+            )
+            if prefix_weight < prefix_floor(prefix_len, inherited_usage) - 8:
+                continue
+
+            competitor_cap = max(1, min(prefix_weight - 420, 760))
+            if competitor_cap <= 0:
+                continue
+
+            for competitor_text, competitor_weight in by_pinyin.get(prefix_pinyin, []):
+                if competitor_text == prefix:
+                    continue
+                if competitor_weight <= competitor_cap:
+                    continue
+                if not CJK_FULL_RE.fullmatch(competitor_text):
+                    continue
+                if _is_named_entity_pos(jieba_pos_map.get(competitor_text, "")):
+                    continue
+                mapping[(prefix_pinyin, competitor_text)] = competitor_cap
+                stats[f"{stats_prefix}_curated_daily_prefix_competitors_capped"] += 1
+
+            stats[f"{stats_prefix}_curated_daily_prefix_competitor_rows"] += 1
+
+    return stats
+
+
 def _augment_with_curated_daily_phrases(
     sc: Dict[Tuple[str, str], int],
     tc: Dict[Tuple[str, str], int],
@@ -10515,6 +10803,13 @@ def _reinforce_vertical_tc_terms(
     tc_existing_texts = {text for _pinyin, text in tc.keys()}
     tc_char_prior = _build_effective_char_prior(tc, tc_char_frequency_prior)
     explicit_pinyin_overrides = _build_vertical_explicit_pinyin_override_map(vertical_entries)
+    tc_prefix_support = _build_existing_prefix_support_map(
+        tc,
+        unihan_map,
+        unihan_readings_map,
+        unihan_source_rank_map,
+        unihan_pinlu_detail_map,
+    )
 
     for sc_word, tc_word, usage_score, explicit_pinyin, layer_id, source_id in vertical_entries:
         if _cjk_len(sc_word) < min_hanzi:
@@ -10560,6 +10855,13 @@ def _reinforce_vertical_tc_terms(
             and not (_is_medical_specific_term(tc_candidate) or allow_curated_short_medical)
         ):
             continue
+        tc_key = (pinyin, tc_candidate)
+        existing_tc_weight = tc.get(tc_key)
+        is_named_entity_layer = _is_named_entity_vertical_layer(layer_id)
+        supported_named_entity = is_named_entity_layer and (
+            (existing_tc_weight is not None and existing_tc_weight >= 700)
+            or tc_prefix_support.get(tc_key, 0) >= 620
+        )
 
         if layer_id == "medicine":
             if allow_curated_short_medical:
@@ -10578,13 +10880,27 @@ def _reinforce_vertical_tc_terms(
             allow_existing_boost = (
                 source_id == "project-curated-vertical-computing" and _cjk_len(tc_candidate) >= 4
             )
+        elif is_named_entity_layer:
+            base_source_hits = 2 if supported_named_entity else 1
+            extra_bonus = (8 if _cjk_len(tc_candidate) <= 4 else 4) if supported_named_entity else (
+                0 if _cjk_len(tc_candidate) <= 4 else 2
+            )
+            allow_existing_boost = supported_named_entity
         else:
             base_source_hits = 3
             extra_bonus = 18 if _cjk_len(tc_candidate) <= 4 else 10
             allow_existing_boost = True
 
         source_hits = max(base_source_hits, tc_source_hits_map.get(tc_candidate, 0))
-        usage_score = max(usage_score, tc_usage_score_map.get(tc_candidate, 0.0))
+        usage_score = max(
+            _vertical_ranking_usage_score(
+                tc_candidate,
+                layer_id,
+                usage_score,
+                supported_named_entity=supported_named_entity,
+            ),
+            tc_usage_score_map.get(tc_candidate, 0.0),
+        )
         tc_jieba_direct = max(
             tc_jieba_direct_signal_map.get(tc_candidate, 0.0),
             min(0.18, usage_score * 0.18),
@@ -10609,13 +10925,11 @@ def _reinforce_vertical_tc_terms(
                 tc_weight = max(1, tc_weight - penalty)
                 stats["vertical_medicine_penalized_tc"] += 1
                 stats["vertical_medicine_penalty_tc_total"] += penalty
-        else:
+        elif not supported_named_entity:
             penalty = _compute_generic_vertical_penalty(tc_candidate, layer_id, source_id)
             if penalty > 0:
                 tc_weight = max(1, tc_weight - penalty)
 
-        tc_key = (pinyin, tc_candidate)
-        existing_tc_weight = tc.get(tc_key)
         if existing_tc_weight is None:
             tc[tc_key] = tc_weight
             stats["vertical_exact_tc_added"] += 1
@@ -10872,6 +11186,20 @@ def _augment_with_vertical_terms(
     sc_char_prior = _build_effective_char_prior(sc, char_frequency_prior)
     tc_char_prior = _build_effective_char_prior(tc, tc_char_frequency_prior)
     explicit_pinyin_overrides = _build_vertical_explicit_pinyin_override_map(vertical_entries)
+    sc_prefix_support = _build_existing_prefix_support_map(
+        sc,
+        unihan_map,
+        unihan_readings_map,
+        unihan_source_rank_map,
+        unihan_pinlu_detail_map,
+    )
+    tc_prefix_support = _build_existing_prefix_support_map(
+        tc,
+        unihan_map,
+        unihan_readings_map,
+        unihan_source_rank_map,
+        unihan_pinlu_detail_map,
+    )
 
     for sc_word, tc_word, usage_score, explicit_pinyin, layer_id, source_id in vertical_entries:
         stats["vertical_terms_total"] += 1
@@ -10914,6 +11242,14 @@ def _augment_with_vertical_terms(
             stats["vertical_terms_skipped_no_pinyin"] += 1
             continue
 
+        sc_key = (pinyin, sc_word)
+        existing_sc_weight = sc.get(sc_key)
+        is_named_entity_layer = _is_named_entity_vertical_layer(layer_id)
+        sc_supported_named_entity = is_named_entity_layer and (
+            (existing_sc_weight is not None and existing_sc_weight >= 700)
+            or sc_prefix_support.get(sc_key, 0) >= 620
+        )
+
         if layer_id == "medicine":
             if allow_curated_short_medical:
                 source_hits = 3
@@ -10948,23 +11284,34 @@ def _augment_with_vertical_terms(
                 source_id == "project-curated-vertical-architecture-entities"
                 and _cjk_len(sc_word) >= 5
             )
+        elif is_named_entity_layer:
+            source_hits = 2 if sc_supported_named_entity else 1
+            short_bonus = 8 if sc_supported_named_entity else 0
+            long_bonus = 4 if sc_supported_named_entity else 2
+            allow_existing_boost = sc_supported_named_entity
         else:
             source_hits = 3
             short_bonus = 18
             long_bonus = 10
             allow_existing_boost = True
-        usage_score_map[sc_word] = max(usage_score_map.get(sc_word, 0.0), usage_score)
+        sc_ranking_usage_score = _vertical_ranking_usage_score(
+            sc_word,
+            layer_id,
+            usage_score,
+            supported_named_entity=sc_supported_named_entity,
+        )
+        usage_score_map[sc_word] = max(usage_score_map.get(sc_word, 0.0), sc_ranking_usage_score)
         source_hits_map[sc_word] = max(source_hits_map.get(sc_word, 0), source_hits)
 
         sc_jieba_direct = max(
             jieba_direct_signal_map.get(sc_word, 0.0),
-            min(0.18, usage_score * 0.18),
+            min(0.18, sc_ranking_usage_score * 0.18),
         )
         sc_pos_tag = jieba_pos_map.get(sc_word, "")
         sc_char_score = _compute_text_single_char_prior(sc_word, sc_char_prior)
         sc_weight = _compute_weight_with_signals(
             sc_word,
-            usage_score=usage_score,
+            usage_score=sc_ranking_usage_score,
             source_hits=source_hits,
             pageview_score=0.0,
             wiki_hit=False,
@@ -10980,12 +11327,10 @@ def _augment_with_vertical_terms(
                 sc_weight = max(1, sc_weight - penalty)
                 stats["vertical_medicine_penalized_sc"] += 1
                 stats["vertical_medicine_penalty_sc_total"] += penalty
-        else:
+        elif not sc_supported_named_entity:
             penalty = _compute_generic_vertical_penalty(sc_word, layer_id, source_id)
             if penalty > 0:
                 sc_weight = max(1, sc_weight - penalty)
-        sc_key = (pinyin, sc_word)
-        existing_sc_weight = sc.get(sc_key)
         if existing_sc_weight is None:
             sc[sc_key] = sc_weight
             stats["vertical_terms_added_sc"] += 1
@@ -11013,19 +11358,45 @@ def _augment_with_vertical_terms(
         if _cjk_len(tc_candidate) < min_hanzi:
             continue
 
-        tc_usage_score_map[tc_candidate] = max(tc_usage_score_map.get(tc_candidate, 0.0), usage_score)
-        tc_source_hits_map[tc_candidate] = max(tc_source_hits_map.get(tc_candidate, 0), source_hits)
+        tc_key = (pinyin, tc_candidate)
+        existing_tc_weight = tc.get(tc_key)
+        tc_supported_named_entity = is_named_entity_layer and (
+            (existing_tc_weight is not None and existing_tc_weight >= 700)
+            or tc_prefix_support.get(tc_key, 0) >= 620
+        )
+        tc_source_hits = (
+            max(source_hits, 2)
+            if tc_supported_named_entity
+            else source_hits
+        )
+        tc_short_bonus = (
+            max(short_bonus, 8)
+            if tc_supported_named_entity and _cjk_len(tc_candidate) <= 4
+            else short_bonus
+        )
+        tc_long_bonus = max(long_bonus, 4) if tc_supported_named_entity else long_bonus
+        tc_allow_existing_boost = (
+            tc_supported_named_entity if is_named_entity_layer else allow_existing_boost
+        )
+        tc_ranking_usage_score = _vertical_ranking_usage_score(
+            tc_candidate,
+            layer_id,
+            usage_score,
+            supported_named_entity=tc_supported_named_entity,
+        )
+        tc_usage_score_map[tc_candidate] = max(tc_usage_score_map.get(tc_candidate, 0.0), tc_ranking_usage_score)
+        tc_source_hits_map[tc_candidate] = max(tc_source_hits_map.get(tc_candidate, 0), tc_source_hits)
 
         tc_jieba_direct = max(
             tc_jieba_direct_signal_map.get(tc_candidate, 0.0),
-            min(0.18, usage_score * 0.18),
+            min(0.18, tc_ranking_usage_score * 0.18),
         )
         tc_pos_tag = tc_jieba_pos_map.get(tc_candidate, sc_pos_tag)
         tc_char_score = _compute_text_single_char_prior(tc_candidate, tc_char_prior)
         tc_weight = _compute_weight_with_signals(
             tc_candidate,
-            usage_score=usage_score,
-            source_hits=source_hits,
+            usage_score=tc_ranking_usage_score,
+            source_hits=tc_source_hits,
             pageview_score=0.0,
             wiki_hit=False,
             core_entry=False,
@@ -11033,24 +11404,22 @@ def _augment_with_vertical_terms(
             pos_tag=tc_pos_tag,
             char_score=tc_char_score,
         )
-        tc_weight = min(1000, tc_weight + (short_bonus if _cjk_len(tc_candidate) <= 4 else long_bonus))
+        tc_weight = min(1000, tc_weight + (tc_short_bonus if _cjk_len(tc_candidate) <= 4 else tc_long_bonus))
         if layer_id == "medicine":
             penalty = _compute_medicine_vertical_penalty(tc_candidate, source_id)
             if penalty > 0:
                 tc_weight = max(1, tc_weight - penalty)
                 stats["vertical_medicine_penalized_tc"] += 1
                 stats["vertical_medicine_penalty_tc_total"] += penalty
-        else:
+        elif not tc_supported_named_entity:
             penalty = _compute_generic_vertical_penalty(tc_candidate, layer_id, source_id)
             if penalty > 0:
                 tc_weight = max(1, tc_weight - penalty)
-        tc_key = (pinyin, tc_candidate)
-        existing_tc_weight = tc.get(tc_key)
         if existing_tc_weight is None:
             tc[tc_key] = tc_weight
             stats["vertical_terms_added_tc"] += 1
             tc_terms.add(tc_candidate)
-        elif allow_existing_boost and tc_weight > existing_tc_weight:
+        elif tc_allow_existing_boost and tc_weight > existing_tc_weight:
             tc[tc_key] = tc_weight
             stats["vertical_terms_boosted_tc"] += 1
             tc_terms.add(tc_candidate)
@@ -13728,6 +14097,68 @@ def main() -> int:
             for key, value in curated_daily_tc_final_stats.items()
         }
     )
+    sc_curated_daily_prefix_final_stats = _reinforce_curated_daily_existing_prefixes(
+        sc_map,
+        curated_daily_entries,
+        usage_score_map,
+        source_hits_map,
+        jieba_pos_map,
+        char_frequency_prior,
+        unihan_map,
+        unihan_readings_map,
+        unihan_reading_source_map,
+        unihan_pinlu_detail_map,
+        use_traditional=False,
+        stats_prefix="sc",
+        min_hanzi=args.min_hanzi,
+    )
+    tc_curated_daily_prefix_final_stats = _reinforce_curated_daily_existing_prefixes(
+        tc_map,
+        curated_daily_entries,
+        tc_usage_score_map,
+        tc_source_hits_map,
+        tc_jieba_pos_map,
+        tc_char_frequency_prior,
+        unihan_map,
+        unihan_readings_map,
+        unihan_reading_source_map,
+        unihan_pinlu_detail_map,
+        use_traditional=True,
+        stats_prefix="tc",
+        min_hanzi=args.min_hanzi,
+    )
+    stats.update(sc_curated_daily_prefix_final_stats)
+    stats.update(tc_curated_daily_prefix_final_stats)
+    sc_curated_daily_prefix_competitor_stats = _cap_curated_daily_prefix_competitors(
+        sc_map,
+        curated_daily_entries,
+        usage_score_map,
+        jieba_pos_map,
+        char_frequency_prior,
+        unihan_map,
+        unihan_readings_map,
+        unihan_reading_source_map,
+        unihan_pinlu_detail_map,
+        use_traditional=False,
+        stats_prefix="sc",
+        min_hanzi=args.min_hanzi,
+    )
+    tc_curated_daily_prefix_competitor_stats = _cap_curated_daily_prefix_competitors(
+        tc_map,
+        curated_daily_entries,
+        tc_usage_score_map,
+        tc_jieba_pos_map,
+        tc_char_frequency_prior,
+        unihan_map,
+        unihan_readings_map,
+        unihan_reading_source_map,
+        unihan_pinlu_detail_map,
+        use_traditional=True,
+        stats_prefix="tc",
+        min_hanzi=args.min_hanzi,
+    )
+    stats.update(sc_curated_daily_prefix_competitor_stats)
+    stats.update(tc_curated_daily_prefix_competitor_stats)
     sc_curated_daily_number_cap_stats = _cap_curated_daily_number_weights(
         sc_map,
         curated_daily_entries,
