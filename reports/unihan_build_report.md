@@ -1,7 +1,7 @@
 # External Build Report
 
 - profile: unihan_single
-- generated_at_utc: 2026-04-23T10:28:25+00:00
+- generated_at_utc: 2026-04-27T17:02:46+00:00
 - min_hanzi: 1
 - max_entries: unlimited
 
@@ -26,6 +26,56 @@
   - risk_level: low
   - redistribution_class: project_authored
   - url: repo://manifests/vertical/proper_nouns.tsv
+- project-curated-vertical-place-names: Cassotis curated place names
+  - license: Repository license (project-authored)
+  - risk_level: low
+  - redistribution_class: project_authored
+  - url: repo://manifests/vertical/place_names.tsv
+- project-curated-vertical-countries-regions: Cassotis curated countries and regions
+  - license: Repository license (project-authored)
+  - risk_level: low
+  - redistribution_class: project_authored
+  - url: repo://manifests/vertical/countries_regions.tsv
+- project-curated-vertical-world-cities: Cassotis curated world cities
+  - license: Repository license (project-authored)
+  - risk_level: low
+  - redistribution_class: project_authored
+  - url: repo://manifests/vertical/world_cities.tsv
+- project-curated-vertical-landmarks: Cassotis curated landmarks
+  - license: Repository license (project-authored)
+  - risk_level: low
+  - redistribution_class: project_authored
+  - url: repo://manifests/vertical/landmarks.tsv
+- wikidata-countries-zh: Wikidata zh countries
+  - license: CC0-1.0
+  - risk_level: low
+  - redistribution_class: public_domain
+  - url: https://query.wikidata.org/sparql
+- wikidata-major-cities-zh: Wikidata zh major cities
+  - license: CC0-1.0
+  - risk_level: low
+  - redistribution_class: public_domain
+  - url: https://query.wikidata.org/sparql
+- wikidata-admin-territories-zh: Wikidata zh administrative territories
+  - license: CC0-1.0
+  - risk_level: low
+  - redistribution_class: public_domain
+  - url: https://query.wikidata.org/sparql
+- wikidata-tourist-landmarks-zh: Wikidata zh tourist attractions and landmarks
+  - license: CC0-1.0
+  - risk_level: low
+  - redistribution_class: public_domain
+  - url: https://query.wikidata.org/sparql
+- thuocl-chengyu-vertical: THUOCL chengyu subset
+  - license: THUOCL custom open terms
+  - risk_level: medium
+  - redistribution_class: attribution_required
+  - url: https://github.com/thunlp/THUOCL/archive/refs/heads/master.zip#THUOCL_chengyu.txt
+- project-curated-vertical-idioms-allusions: Cassotis curated idioms and allusions
+  - license: Repository license (project-authored)
+  - risk_level: low
+  - redistribution_class: project_authored
+  - url: repo://manifests/vertical/idioms_allusions.tsv
 - thuocl-it-vertical: THUOCL IT subset
   - license: THUOCL custom open terms
   - risk_level: medium
@@ -169,23 +219,33 @@
 - admin_place_alias_skipped_short: 0
 - admin_place_alias_source_terms: 0
 - filtered_short: 0
+- final_curated_daily_exact_sc_added: 0
+- final_curated_daily_exact_sc_reinforced: 0
+- final_curated_daily_exact_tc_added: 0
+- final_curated_daily_exact_tc_reinforced: 0
 - invalid_format: 0
 - known_incorrect_jiancha_entries_removed_sc: 0
 - known_incorrect_jiancha_entries_removed_tc: 0
+- known_incorrect_lexical_entries_removed_sc: 0
+- known_incorrect_lexical_entries_removed_tc: 0
 - lexical_seed_augmented_sc_terms: 0
 - lexical_seed_augmented_tc_terms: 0
-- override_entries: 13
-- override_hits: 0
-- override_injected: 0
+- override_entries: 72
+- override_hits: 1
+- override_injected: 2
 - parsed_lines: 49192
 - sc_char_normalized_blocked_reverse_entries: 0
 - sc_char_normalized_converted_entries: 23
-- sc_char_normalized_total_entries: 23917
+- sc_char_normalized_total_entries: 23919
 - sc_civic_neutral_rows_considered: 0
 - sc_civic_neutral_rows_reduced: 0
 - sc_civic_neutral_weight_delta_total: 0
 - sc_curated_daily_number_cap_rows: 0
 - sc_curated_daily_number_cap_terms: 0
+- sc_curated_daily_prefix_competitor_rows: 0
+- sc_curated_daily_prefix_competitors_capped: 0
+- sc_curated_daily_prefix_reinforced: 0
+- sc_curated_daily_prefix_terms_considered: 0
 - sc_explicit_multi_char_drop_rows: 0
 - sc_filtered_non_windows_cjk: 0
 - sc_global_tail_constituent_mismatch_removed: 0
@@ -203,9 +263,9 @@
 - sc_homophone_daily_phrase_short_non_daily_damped: 0
 - sc_homophone_dominant_common_boosted: 0
 - sc_homophone_dominant_common_damped: 0
-- sc_homophone_entries_adjusted: 23819
-- sc_homophone_entries_boosted: 3646
-- sc_homophone_entries_damped: 20173
+- sc_homophone_entries_adjusted: 23831
+- sc_homophone_entries_boosted: 3611
+- sc_homophone_entries_damped: 20220
 - sc_homophone_inflated_short_penalized: 0
 - sc_homophone_literary_penalized: 0
 - sc_homophone_modernity_risk_penalized: 0
@@ -229,23 +289,31 @@
 - sc_multi_pronunciation_penalty_total: 0
 - sc_multi_pronunciation_terms: 0
 - sc_script_filtered_entries: 0
-- sc_script_filtered_total_entries: 23917
-- sc_single_char_leading_adjusted: 372
-- sc_single_char_leading_delta_total: 20136
-- sc_single_char_reading_preference_adjusted: 1499
-- sc_single_char_reading_preference_delta_total: 22313
+- sc_script_filtered_total_entries: 23919
+- sc_single_char_leading_adjusted: 391
+- sc_single_char_leading_delta_total: 20928
+- sc_single_char_reading_preference_adjusted: 1483
+- sc_single_char_reading_preference_delta_total: 21470
 - sc_single_char_reading_removed: 1
-- sc_snapshot_rows_considered: 23916
+- sc_snapshot_rows_considered: 23917
 - sc_snapshot_rows_restored: 0
+- sc_snapshot_rows_skipped_blocked_prefix: 0
 - sc_snapshot_rows_skipped_explicit_drop: 0
 - sc_snapshot_texts_restored: 0
+- sc_word_pinyin_override_terms_merged: 1
+- sc_word_pinyin_override_terms_rekeyed: 1
+- sc_word_pinyin_override_terms_total: 23918
 - tc_char_normalized_converted_entries: 18
-- tc_char_normalized_total_entries: 24070
+- tc_char_normalized_total_entries: 24072
 - tc_civic_neutral_rows_considered: 0
 - tc_civic_neutral_rows_reduced: 0
 - tc_civic_neutral_weight_delta_total: 0
 - tc_curated_daily_number_cap_rows: 0
 - tc_curated_daily_number_cap_terms: 0
+- tc_curated_daily_prefix_competitor_rows: 0
+- tc_curated_daily_prefix_competitors_capped: 0
+- tc_curated_daily_prefix_reinforced: 0
+- tc_curated_daily_prefix_terms_considered: 0
 - tc_explicit_multi_char_drop_rows: 0
 - tc_filtered_non_windows_cjk: 0
 - tc_global_tail_constituent_mismatch_removed: 0
@@ -263,9 +331,9 @@
 - tc_homophone_daily_phrase_short_non_daily_damped: 0
 - tc_homophone_dominant_common_boosted: 0
 - tc_homophone_dominant_common_damped: 0
-- tc_homophone_entries_adjusted: 23952
-- tc_homophone_entries_boosted: 3846
-- tc_homophone_entries_damped: 20106
+- tc_homophone_entries_adjusted: 23934
+- tc_homophone_entries_boosted: 3962
+- tc_homophone_entries_damped: 19972
 - tc_homophone_inflated_short_penalized: 0
 - tc_homophone_literary_penalized: 0
 - tc_homophone_modernity_risk_penalized: 0
@@ -284,6 +352,8 @@
 - tc_homophone_short_popular_wiki_boosted: 0
 - tc_homophone_sparse_penalized: 0
 - tc_homophone_written_tail_penalized: 0
+- tc_idiom_allusion_simplified_variant_rows_merged: 0
+- tc_idiom_allusion_simplified_variant_targets_boosted: 0
 - tc_low_signal_fragment_removed: 0
 - tc_low_signal_literary_removed: 0
 - tc_low_signal_named_removed: 0
@@ -296,36 +366,42 @@
 - tc_multi_pronunciation_sc_guided_penalty_total: 0
 - tc_multi_pronunciation_sc_guided_terms: 0
 - tc_multi_pronunciation_terms: 0
+- tc_project_preferred_converted_variant_rows_merged: 0
+- tc_project_preferred_converted_variant_targets_boosted: 0
 - tc_script_filtered_entries: 0
-- tc_script_filtered_total_entries: 24070
-- tc_single_char_leading_adjusted: 337
-- tc_single_char_leading_delta_total: 18336
-- tc_single_char_reading_preference_adjusted: 1857
-- tc_single_char_reading_preference_delta_total: 41051
+- tc_script_filtered_total_entries: 24072
+- tc_single_char_leading_adjusted: 314
+- tc_single_char_leading_delta_total: 17832
+- tc_single_char_reading_preference_adjusted: 1894
+- tc_single_char_reading_preference_delta_total: 45781
 - tc_single_char_reading_removed: 1
-- tc_snapshot_rows_considered: 24069
+- tc_snapshot_rows_considered: 24070
 - tc_snapshot_rows_restored: 0
+- tc_snapshot_rows_skipped_blocked_prefix: 0
 - tc_snapshot_rows_skipped_explicit_drop: 0
 - tc_snapshot_texts_restored: 0
+- tc_word_pinyin_override_terms_merged: 1
+- tc_word_pinyin_override_terms_rekeyed: 1
+- tc_word_pinyin_override_terms_total: 24071
 - total_lines: 49199
 - unihan_core_size: 18816
-- unihan_family_support_boosted_sc: 5059
-- unihan_family_support_boosted_tc: 5322
-- unihan_family_support_terms_sc: 5870
-- unihan_family_support_terms_tc: 6158
+- unihan_family_support_boosted_sc: 4986
+- unihan_family_support_boosted_tc: 5553
+- unihan_family_support_terms_sc: 5822
+- unihan_family_support_terms_tc: 6299
 - unihan_frequency_size: 0
 - unihan_grade_size: 2632
-- unihan_leading_support_terms_sc: 4757
-- unihan_leading_support_terms_tc: 4919
+- unihan_leading_support_terms_sc: 4734
+- unihan_leading_support_terms_tc: 5039
 - unihan_map_size: 26711
 - unihan_pinlu_size: 3799
-- unihan_reading_support_terms_sc: 1519
-- unihan_reading_support_terms_tc: 1957
+- unihan_reading_support_terms_sc: 1515
+- unihan_reading_support_terms_tc: 2007
 - unihan_readings_chars: 26711
 - unihan_readings_pairs: 33910
 - unihan_sc_only_chars: 2768
-- unihan_single_char_injected_sc: 23939
-- unihan_single_char_injected_tc: 24087
+- unihan_single_char_injected_sc: 23940
+- unihan_single_char_injected_tc: 24088
 - unihan_tc_only_chars: 2916
 - vertical_godot_titles_invalid_format: 0
 - vertical_godot_titles_invalid_json: 0
@@ -338,12 +414,12 @@
 - vertical_godot_titles_skipped_non_cjk: 2230
 - vertical_godot_titles_skipped_short: 0
 - vertical_godot_titles_total: 4241
-- vertical_layer_sources_loaded: 28
+- vertical_layer_sources_loaded: 38
 - vertical_layer_sources_skipped_inactive: 0
 - vertical_layer_sources_skipped_unsupported: 0
-- vertical_layer_sources_total: 28
-- vertical_layers_active: 9
-- vertical_layers_declared: 9
+- vertical_layer_sources_total: 38
+- vertical_layers_active: 11
+- vertical_layers_declared: 11
 - vertical_layers_manifest_present: 1
 - vertical_mesh_descriptors_medical: 50066
 - vertical_mesh_descriptors_nonmedical: 12154
@@ -353,21 +429,21 @@
 - vertical_payload_titles_kept: 2826
 - vertical_payload_titles_skipped_duplicate: 106
 - vertical_payload_titles_skipped_filter: 4363954
-- vertical_support_excluded_sc: 51546
-- vertical_support_excluded_tc: 53107
-- vertical_term_kept: 447
-- vertical_term_rows: 447
+- vertical_support_excluded_sc: 63081
+- vertical_support_excluded_tc: 36061
+- vertical_term_kept: 843
+- vertical_term_rows: 843
 - vertical_term_skipped_malformed: 0
 - vertical_term_skipped_non_cjk: 0
 - vertical_term_skipped_short: 0
 - vertical_terms_fallback_downloads: 0
 - vertical_terms_missing_payload_source: 0
 - vertical_terms_unsupported_source_type: 0
-- vertical_thuocl_files_matched: 2
+- vertical_thuocl_files_matched: 3
 - vertical_thuocl_invalid_format: 0
-- vertical_thuocl_kept: 20877
+- vertical_thuocl_kept: 29396
 - vertical_thuocl_missing_member: 0
-- vertical_thuocl_rows: 34749
+- vertical_thuocl_rows: 43268
 - vertical_thuocl_skipped_filter: 10727
 - vertical_thuocl_skipped_non_cjk: 3145
 - vertical_thuocl_skipped_short: 0
@@ -379,12 +455,12 @@
 - vertical_wikidata_skipped_non_cjk: 1573
 - vertical_wikidata_skipped_nonmedical_mesh: 17959
 - vertical_wikidata_skipped_short: 0
-- vertical_wikidata_term_kept: 14027
-- vertical_wikidata_term_rows: 31013
-- vertical_wikidata_term_skipped_duplicate: 1093
+- vertical_wikidata_term_kept: 16978
+- vertical_wikidata_term_rows: 35527
+- vertical_wikidata_term_skipped_duplicate: 2602
 - vertical_wikidata_term_skipped_filter: 0
-- vertical_wikidata_term_skipped_long: 184
-- vertical_wikidata_term_skipped_non_cjk: 15709
+- vertical_wikidata_term_skipped_long: 199
+- vertical_wikidata_term_skipped_non_cjk: 15748
 - vertical_wikidata_term_skipped_short: 0
 - wiki_deduplicated: 427474
 - wiki_kept_titles: 4366886
@@ -396,12 +472,13 @@
 - wiki_skipped_non_cjk: 6076074
 - wiki_skipped_short: 0
 - wiki_total_lines: 11188918
+- word_pinyin_override_entries: 72
 
 ## Output
 - sc_file: data/generated/dict_unihan_sc.txt
 - tc_file: data/generated/dict_unihan_tc.txt
-- sc_entries: 23916
-- tc_entries: 24069
+- sc_entries: 23917
+- tc_entries: 24070
 - suspicious_sc_entries: 25
 
 ## Suspicious SC Reason Summary
@@ -422,10 +499,11 @@
 | 那 | na | 755 | 785 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.897 | - | weak-usage,high-modernity-risk |
 | 我 | wo | 751 | 782 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.895 | - | weak-usage,high-modernity-risk |
 | 可 | ke | 748 | 779 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.894 | - | weak-usage,high-modernity-risk |
+| 是 | shi | 738 | 769 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.890 | - | weak-usage,high-modernity-risk |
 | 上 | shang | 731 | 763 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.887 | - | weak-usage,high-modernity-risk |
 | 没 | mei | 731 | 760 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.908 | - | weak-usage,high-modernity-risk |
 | 就 | jiu | 727 | 759 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.885 | - | weak-usage,high-modernity-risk |
-| 也 | ye | 727 | 759 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.885 | - | weak-usage,high-modernity-risk |
+| 也 | ye | 726 | 758 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.885 | - | weak-usage,high-modernity-risk |
 | 在 | zai | 720 | 753 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.882 | - | weak-usage,high-modernity-risk |
 | 和 | he | 721 | 750 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.910 | - | weak-usage,high-modernity-risk |
 | 去 | qu | 713 | 746 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.879 | - | weak-usage,high-modernity-risk |
@@ -433,8 +511,7 @@
 | 你 | ni | 710 | 743 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.878 | - | weak-usage,high-modernity-risk |
 | 以 | yi | 709 | 742 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.877 | - | weak-usage,high-modernity-risk |
 | 要 | yao | 708 | 741 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.877 | - | weak-usage,high-modernity-risk |
+| 都 | dou | 710 | 740 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.903 | - | weak-usage,high-modernity-risk |
 | 好 | hao | 707 | 740 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.876 | - | weak-usage,high-modernity-risk |
-| 都 | dou | 712 | 739 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.923 | - | weak-usage,high-modernity-risk |
 | 能 | neng | 698 | 732 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.873 | - | weak-usage,high-modernity-risk |
 | 下 | xia | 698 | 732 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.873 | - | weak-usage,high-modernity-risk |
-| 来 | lai | 697 | 731 | 312 | 0.000 | 0.000 | 0.000 | 0 | 0.872 | - | weak-usage,high-modernity-risk |

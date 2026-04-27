@@ -1,5 +1,5 @@
 version: 1
-generated_at: "2026-04-27T06:51:01+00:00"
+generated_at: "2026-04-27T17:02:46+00:00"
 profile: unihan_single
 sources:
   - id: opencc-stphrases
@@ -52,6 +52,76 @@ sources:
     attribution_required: false
     raw_committed: true
     notes: 'Project-maintained place names with conservative ranking so complete pinyin matches remain inputable without crowding common everyday candidates.'
+  - id: project-curated-vertical-countries-regions
+    name: Cassotis curated countries and regions
+    download_url: repo://manifests/vertical/countries_regions.tsv
+    homepage: https://github.com/shenmin/cassotis-lexicon
+    license: Repository license (project-authored)
+    risk_level: low
+    redistribution_class: project_authored
+    attribution_required: false
+    raw_committed: true
+    notes: 'Project-maintained countries, territories, and broad regions with moderately conservative weights.'
+  - id: project-curated-vertical-world-cities
+    name: Cassotis curated world cities
+    download_url: repo://manifests/vertical/world_cities.tsv
+    homepage: https://github.com/shenmin/cassotis-lexicon
+    license: Repository license (project-authored)
+    risk_level: low
+    redistribution_class: project_authored
+    attribution_required: false
+    raw_committed: true
+    notes: 'Project-maintained high-value world city names kept in the place-name layer.'
+  - id: project-curated-vertical-landmarks
+    name: Cassotis curated landmarks
+    download_url: repo://manifests/vertical/landmarks.tsv
+    homepage: https://github.com/shenmin/cassotis-lexicon
+    license: Repository license (project-authored)
+    risk_level: low
+    redistribution_class: project_authored
+    attribution_required: false
+    raw_committed: true
+    notes: 'Project-maintained scenic spots and landmarks with conservative weights.'
+  - id: wikidata-countries-zh
+    name: Wikidata zh countries
+    download_url: https://query.wikidata.org/sparql
+    homepage: https://www.wikidata.org/wiki/Wikidata:Main_Page
+    license: CC0-1.0
+    risk_level: low
+    redistribution_class: public_domain
+    attribution_required: false
+    raw_committed: false
+    notes: 'Chinese labels and aliases for countries from Wikidata Query Service.'
+  - id: wikidata-major-cities-zh
+    name: Wikidata zh major cities
+    download_url: https://query.wikidata.org/sparql
+    homepage: https://www.wikidata.org/wiki/Wikidata:Main_Page
+    license: CC0-1.0
+    risk_level: low
+    redistribution_class: public_domain
+    attribution_required: false
+    raw_committed: false
+    notes: 'Chinese labels for major cities from Wikidata, imported with lower weights than curated city seeds.'
+  - id: wikidata-admin-territories-zh
+    name: Wikidata zh administrative territories
+    download_url: https://query.wikidata.org/sparql
+    homepage: https://www.wikidata.org/wiki/Wikidata:Main_Page
+    license: CC0-1.0
+    risk_level: low
+    redistribution_class: public_domain
+    attribution_required: false
+    raw_committed: false
+    notes: 'Chinese labels for administrative territories with zh-wiki coverage, imported at low weight to avoid crowding everyday candidates.'
+  - id: wikidata-tourist-landmarks-zh
+    name: Wikidata zh tourist attractions and landmarks
+    download_url: https://query.wikidata.org/sparql
+    homepage: https://www.wikidata.org/wiki/Wikidata:Main_Page
+    license: CC0-1.0
+    risk_level: low
+    redistribution_class: public_domain
+    attribution_required: false
+    raw_committed: false
+    notes: 'Chinese labels for tourist attractions and architectural landmarks, imported at low weight so cold buildings and facilities remain available without dominating.'
   - id: thuocl-chengyu-vertical
     name: THUOCL chengyu subset
     download_url: https://github.com/thunlp/THUOCL/archive/refs/heads/master.zip#THUOCL_chengyu.txt
