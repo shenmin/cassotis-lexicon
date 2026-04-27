@@ -7819,6 +7819,115 @@ def _collect_unihan_constituent_reading_alignments(
     return alignments
 
 
+def _looks_like_single_pinyin_syllable(value: str) -> bool:
+    if not PINYIN_RE.fullmatch(value):
+        return False
+    if len(value) < 1 or len(value) > 6:
+        return False
+    if not any(ch in value for ch in "aeiouv"):
+        return False
+    return True
+
+
+def _collect_unihan_single_gap_reading_candidates(
+    text: str,
+    pinyin: str,
+    unihan_readings_map: Dict[str, Set[str]] | None,
+    unihan_source_rank_map: Dict[Tuple[str, str], int] | None,
+    unihan_mandarin_map: Dict[str, str] | None,
+    unihan_pinlu_detail_map: Dict[Tuple[str, str], int] | None,
+    max_alignments: int = 64,
+) -> List[Tuple[str, str]]:
+    if not PINYIN_RE.fullmatch(pinyin):
+        return []
+
+    units = _split_text_units(text)
+    if len(units) < 2 or len(units) > 8:
+        return []
+    if len(pinyin) < len(units):
+        return []
+
+    unihan_readings_map = unihan_readings_map or {}
+    unit_readings: List[List[str]] = []
+    for ch in units:
+        readings = _collect_preferred_unihan_readings(
+            ch,
+            unihan_readings_map,
+            unihan_source_rank_map,
+            unihan_mandarin_map,
+            unihan_pinlu_detail_map,
+        )
+        unit_readings.append(readings[:4])
+
+    candidates: List[Tuple[str, str]] = []
+    seen_candidates: Set[Tuple[str, str]] = set()
+    for gap_idx, gap_char in enumerate(units):
+        if not gap_char or _cjk_len(gap_char) != 1:
+            continue
+        if not unihan_readings_map.get(gap_char):
+            continue
+        if any(not readings for idx, readings in enumerate(unit_readings) if idx != gap_idx):
+            continue
+
+        alignments: List[Tuple[str, ...]] = []
+        current: List[str] = []
+        truncated = False
+
+        def walk(unit_idx: int, offset: int) -> None:
+            nonlocal truncated
+            if truncated:
+                return
+            if len(alignments) >= max_alignments:
+                truncated = True
+                return
+            if unit_idx >= len(units):
+                if offset == len(pinyin):
+                    alignments.append(tuple(current))
+                return
+            if offset >= len(pinyin):
+                return
+
+            if unit_idx == gap_idx:
+                remaining_units = len(units) - unit_idx - 1
+                max_end = min(len(pinyin) - remaining_units, offset + 6)
+                for end in range(offset + 1, max_end + 1):
+                    inferred = pinyin[offset:end]
+                    if not _looks_like_single_pinyin_syllable(inferred):
+                        continue
+                    current.append(inferred)
+                    walk(unit_idx + 1, end)
+                    current.pop()
+                    if truncated:
+                        return
+                return
+
+            for reading in unit_readings[unit_idx]:
+                if not pinyin.startswith(reading, offset):
+                    continue
+                current.append(reading)
+                walk(unit_idx + 1, offset + len(reading))
+                current.pop()
+                if truncated:
+                    return
+
+        walk(0, 0)
+        if truncated or not alignments:
+            continue
+
+        gap_readings = {alignment[gap_idx] for alignment in alignments}
+        if len(gap_readings) != 1:
+            continue
+        inferred = next(iter(gap_readings))
+
+        pair = (gap_char, inferred)
+        if pair in seen_candidates:
+            continue
+        seen_candidates.add(pair)
+        candidates.append(pair)
+
+    return candidates
+
+
 def _load_char_reading_support_from_generated_dict(
     path: pathlib.Path | None,
     unihan_readings_map: Dict[str, Set[str]] | None,
@@ -7889,6 +7998,74 @@ def _load_char_reading_support_from_generated_dict(
                     continue
                 reading = next(iter(aligned_readings))
                 pair = (ch, reading)
+                if pair in seen_pairs:
+                    continue
+                seen_pairs.add(pair)
+                term_count_map[pair] = term_count_map.get(pair, 0) + 1
+                support_sum_map[pair] = support_sum_map.get(pair, 0.0) + support
+
+    return term_count_map, support_sum_map
+
+
+def _load_char_inferred_reading_support_from_generated_dict(
+    path: pathlib.Path | None,
+    unihan_readings_map: Dict[str, Set[str]] | None,
+    unihan_source_rank_map: Dict[Tuple[str, str], int] | None,
+    unihan_mandarin_map: Dict[str, str] | None,
+    unihan_pinlu_detail_map: Dict[Tuple[str, str], int] | None,
+    exclude_texts: Set[str] | None = None,
+) -> Tuple[Dict[Tuple[str, str], int], Dict[Tuple[str, str], float]]:
+    term_count_map: Dict[Tuple[str, str], int] = {}
+    support_sum_map: Dict[Tuple[str, str], float] = {}
+    if path is None or (not path.exists()):
+        return term_count_map, support_sum_map
+
+    unihan_readings_map = unihan_readings_map or {}
+    if not unihan_readings_map:
+        return term_count_map, support_sum_map
+
+    with path.open("r", encoding="utf-8") as f:
+        for raw_line in f:
+            line = raw_line.strip()
+            if not line:
+                continue
+
+            parts = line.split("\t")
+            if len(parts) != 3:
+                continue
+
+            pinyin = parts[0].strip()
+            text = parts[1].strip()
+            if _cjk_len(text) < 2 or not CJK_FULL_RE.fullmatch(text):
+                continue
+            if exclude_texts and text in exclude_texts:
+                continue
+
+            try:
+                weight = int(parts[2].strip())
+            except ValueError:
+                continue
+
+            candidates = _collect_unihan_single_gap_reading_candidates(
+                text,
+                pinyin,
+                unihan_readings_map,
+                unihan_source_rank_map,
+                unihan_mandarin_map,
+                unihan_pinlu_detail_map,
+            )
+            if not candidates:
+                continue
+
+            support = max(12.0, min(220.0, float(weight) * 0.16))
+            text_len = _cjk_len(text)
+            if text_len >= 4:
+                support *= 0.82
+            if text_len >= 6:
+                support *= 0.72
+
+            seen_pairs: Set[Tuple[str, str]] = set()
+            for pair in candidates:
                 if pair in seen_pairs:
                     continue
                 seen_pairs.add(pair)
@@ -8004,6 +8181,31 @@ def _compute_unihan_family_support_bonus(
         bonus = int(round(bonus * 0.75))
 
     return max(0, min(110, bonus))
+
+
+def _compute_phrase_inferred_single_char_reading_weight(
+    base_weight: int,
+    term_count: int,
+    support_sum: float,
+) -> int:
+    count_bonus = min(70, int(round(math.log1p(max(0, term_count)) * 22.0)))
+    support_bonus = min(90, int(round(math.sqrt(max(0.0, support_sum)) * 4.0)))
+    weight = base_weight - 28 + count_bonus + support_bonus
+    return max(90, min(620, weight))
+
+
+def _is_strong_phrase_inferred_single_char_reading(
+    term_count: int,
+    support_sum: float,
+    source_rank: int,
+) -> bool:
+    if source_rank > 0 and term_count >= 8 and support_sum >= 520.0:
+        return True
+    if source_rank > 0 and term_count >= 12 and support_sum >= 360.0:
+        return True
+    if source_rank <= 0 and term_count >= 12 and support_sum >= 760.0:
+        return True
+    return False
 
 
 def _adjust_unihan_weight_for_source(weight: int, source_rank: int) -> int:
@@ -8250,6 +8452,10 @@ def _build_from_unihan_only(
     sc_family_support_sum_map: Dict[str, float] | None = None,
     tc_family_term_count_map: Dict[str, int] | None = None,
     tc_family_support_sum_map: Dict[str, float] | None = None,
+    sc_inferred_reading_term_count_map: Dict[Tuple[str, str], int] | None = None,
+    sc_inferred_reading_support_sum_map: Dict[Tuple[str, str], float] | None = None,
+    tc_inferred_reading_term_count_map: Dict[Tuple[str, str], int] | None = None,
+    tc_inferred_reading_support_sum_map: Dict[Tuple[str, str], float] | None = None,
 ) -> Tuple[Dict[Tuple[str, str], int], Dict[Tuple[str, str], int], Dict[str, int]]:
     sc: Dict[Tuple[str, str], int] = {}
     tc: Dict[Tuple[str, str], int] = {}
@@ -8279,6 +8485,8 @@ def _build_from_unihan_only(
         "unihan_sc_only_chars": 0,
         "unihan_family_support_boosted_sc": 0,
         "unihan_family_support_boosted_tc": 0,
+        "unihan_phrase_inferred_reading_injected_sc": 0,
+        "unihan_phrase_inferred_reading_injected_tc": 0,
     }
 
     tc_only_chars = tc_chars.difference(sc_chars)
@@ -8372,6 +8580,67 @@ def _build_from_unihan_only(
                     if tc_output_weight > previous_tc:
                         tc[key] = tc_output_weight
                         stats["unihan_single_char_injected_tc"] += 1
+
+    def inject_phrase_inferred_readings(
+        bucket: Dict[Tuple[str, str], int],
+        term_count_map: Dict[Tuple[str, str], int] | None,
+        support_sum_map: Dict[Tuple[str, str], float] | None,
+        skip_chars: Set[str],
+        stats_key: str,
+    ) -> None:
+        if min_hanzi > 1 or not term_count_map:
+            return
+
+        support_sum_map = support_sum_map or {}
+        for ch, pinyin in sorted(term_count_map.keys()):
+            if ch in skip_chars:
+                continue
+            if _cjk_len(ch) != 1 or not _is_windows_renderable_cjk_text(ch):
+                continue
+            if (ch, pinyin) in SINGLE_CHAR_READING_DROP_OVERRIDES:
+                continue
+            key = (pinyin, ch)
+            if key in bucket:
+                continue
+
+            term_count = max(0, term_count_map.get((ch, pinyin), 0))
+            support_sum = max(0.0, support_sum_map.get((ch, pinyin), 0.0))
+            source_rank = unihan_reading_source_map.get((ch, pinyin), 0)
+            if not _is_strong_phrase_inferred_single_char_reading(
+                term_count,
+                support_sum,
+                source_rank,
+            ):
+                continue
+
+            base_weight = _compute_unihan_single_char_weight(
+                freq=unihan_freq_map.get(ch, 0),
+                pinlu_freq=unihan_pinlu_map.get(ch, 0),
+                grade_level=unihan_grade_map.get(ch, 0),
+                core_coverage=unihan_core_map.get(ch, 0),
+            )
+            output_weight = _compute_phrase_inferred_single_char_reading_weight(
+                base_weight,
+                term_count,
+                support_sum,
+            )
+            bucket[key] = output_weight
+            stats[stats_key] += 1
+
+    inject_phrase_inferred_readings(
+        sc,
+        sc_inferred_reading_term_count_map,
+        sc_inferred_reading_support_sum_map,
+        tc_only_chars,
+        "unihan_phrase_inferred_reading_injected_sc",
+    )
+    inject_phrase_inferred_readings(
+        tc,
+        tc_inferred_reading_term_count_map,
+        tc_inferred_reading_support_sum_map,
+        sc_only_chars,
+        "unihan_phrase_inferred_reading_injected_tc",
+    )
 
     for text, pinyin in overrides.items():
         if _cjk_len(text) != 1:
@@ -13061,6 +13330,10 @@ def main() -> int:
     sc_reading_support_sum_map: Dict[Tuple[str, str], float] = {}
     tc_reading_term_count_map: Dict[Tuple[str, str], int] = {}
     tc_reading_support_sum_map: Dict[Tuple[str, str], float] = {}
+    sc_inferred_reading_term_count_map: Dict[Tuple[str, str], int] = {}
+    sc_inferred_reading_support_sum_map: Dict[Tuple[str, str], float] = {}
+    tc_inferred_reading_term_count_map: Dict[Tuple[str, str], int] = {}
+    tc_inferred_reading_support_sum_map: Dict[Tuple[str, str], float] = {}
     admin_place_alias_stats = {
         "admin_place_alias_source_terms": 0,
         "admin_place_alias_skipped_short": 0,
@@ -14041,6 +14314,28 @@ def main() -> int:
             unihan_pinlu_detail_map,
             exclude_texts=vertical_tc_support_excludes,
         )
+        (
+            sc_inferred_reading_term_count_map,
+            sc_inferred_reading_support_sum_map,
+        ) = _load_char_inferred_reading_support_from_generated_dict(
+            support_dict_sc,
+            unihan_readings_map,
+            unihan_reading_source_map,
+            unihan_map,
+            unihan_pinlu_detail_map,
+            exclude_texts=vertical_sc_support_excludes,
+        )
+        (
+            tc_inferred_reading_term_count_map,
+            tc_inferred_reading_support_sum_map,
+        ) = _load_char_inferred_reading_support_from_generated_dict(
+            support_dict_tc,
+            unihan_readings_map,
+            unihan_reading_source_map,
+            unihan_map,
+            unihan_pinlu_detail_map,
+            exclude_texts=vertical_tc_support_excludes,
+        )
         sc_map, tc_map, stats = _build_from_unihan_only(
             unihan_payload,
             args.min_hanzi,
@@ -14053,6 +14348,10 @@ def main() -> int:
             sc_family_support_sum_map,
             tc_family_term_count_map,
             tc_family_support_sum_map,
+            sc_inferred_reading_term_count_map,
+            sc_inferred_reading_support_sum_map,
+            tc_inferred_reading_term_count_map,
+            tc_inferred_reading_support_sum_map,
         )
         stats.update(opencc_stats)
         stats.update(vertical_manifest_stats)
@@ -14063,6 +14362,8 @@ def main() -> int:
         stats["unihan_reading_support_terms_tc"] = len(tc_reading_term_count_map)
         stats["unihan_leading_support_terms_sc"] = len(sc_leading_term_count_map)
         stats["unihan_leading_support_terms_tc"] = len(tc_leading_term_count_map)
+        stats["unihan_inferred_reading_support_terms_sc"] = len(sc_inferred_reading_term_count_map)
+        stats["unihan_inferred_reading_support_terms_tc"] = len(tc_inferred_reading_term_count_map)
         stats["vertical_support_excluded_sc"] = len(vertical_sc_support_excludes)
         stats["vertical_support_excluded_tc"] = len(vertical_tc_support_excludes)
     else:
