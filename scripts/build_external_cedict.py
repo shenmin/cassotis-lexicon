@@ -636,6 +636,10 @@ SINGLE_CHAR_READING_DROP_OVERRIDES: Set[Tuple[str, str]] = {
     ("哦", "e"),
 }
 SINGLE_CHAR_READING_DELTA_OVERRIDES: Dict[Tuple[str, str], int] = {
+    # Keep U+5594 visible under its wo reading without competing with everyday wo.
+    ("\u5594", "wo"): 160,
+    # Keep U+54E6 as the dominant everyday standalone o reading.
+    ("\u54e6", "o"): 360,
     # `是/shi` is the dominant standalone IME target for shi in both SC and TC.
     ("是", "shi"): 90,
     # Keep 阮 visible as a common surname and standalone lexical target without
@@ -1953,15 +1957,34 @@ def _build_explicit_term_pinyin_override_map(
 def _build_curated_daily_explicit_pinyin_override_map(
     entries: List[Tuple[str, str, float, str]],
 ) -> Dict[str, str]:
-    overrides: Dict[str, str] = {}
+    pinyins_by_text: Dict[str, Set[str]] = {}
     for sc_word, tc_word, _usage_score, explicit_pinyin in entries:
         if not explicit_pinyin:
             continue
-        if sc_word and sc_word not in overrides:
-            overrides[sc_word] = explicit_pinyin
-        if tc_word and tc_word not in overrides:
-            overrides[tc_word] = explicit_pinyin
+        if sc_word:
+            pinyins_by_text.setdefault(sc_word, set()).add(explicit_pinyin)
+        if tc_word:
+            pinyins_by_text.setdefault(tc_word, set()).add(explicit_pinyin)
+
+    overrides: Dict[str, str] = {}
+    for text, pinyins in pinyins_by_text.items():
+        if len(pinyins) == 1:
+            overrides[text] = next(iter(pinyins))
     return overrides
+
+
+def _build_curated_daily_explicit_pinyin_key_set(
+    entries: List[Tuple[str, str, float, str]],
+) -> Set[Tuple[str, str]]:
+    keys: Set[Tuple[str, str]] = set()
+    for sc_word, tc_word, _usage_score, explicit_pinyin in entries:
+        if not explicit_pinyin:
+            continue
+        if sc_word:
+            keys.add((explicit_pinyin, sc_word))
+        if tc_word:
+            keys.add((explicit_pinyin, tc_word))
+    return keys
 
 
 def _compute_medicine_vertical_penalty(text: str, source_id: str) -> int:
@@ -7141,6 +7164,7 @@ def _load_unihan_readings_detail(
         ("\u85cf", "zang", 1),    # 藏
         ("\u5265", "bao", 1),     # 剥
         ("\u54ea", "nei", 1),     # 哪
+        ("\u5594", "wo", 1),      # 喔
     ):
         _add_unihan_reading(
             readings_map,
@@ -11999,12 +12023,14 @@ def _write_dict(
     path: pathlib.Path,
     mapping: Dict[Tuple[str, str], int],
     preferred_terms: Set[str] | None = None,
+    preserve_pinyin_keys: Set[Tuple[str, str]] | None = None,
     unihan_map: Dict[str, str] | None = None,
     unihan_readings_map: Dict[str, Set[str]] | None = None,
     unihan_source_rank_map: Dict[Tuple[str, str], int] | None = None,
     unihan_pinlu_detail_map: Dict[Tuple[str, str], int] | None = None,
 ) -> None:
     preferred_terms = preferred_terms or set()
+    preserve_pinyin_keys = preserve_pinyin_keys or set()
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8", newline="\n") as f:
         for (pinyin, text), weight in sorted(
@@ -12016,14 +12042,17 @@ def _write_dict(
                 kv[0][1],
             ),
         ):
-            output_pinyin = _canonicalize_output_pinyin(
-                pinyin,
-                text,
-                unihan_map,
-                unihan_readings_map,
-                unihan_source_rank_map,
-                unihan_pinlu_detail_map,
-            )
+            if (pinyin, text) in preserve_pinyin_keys:
+                output_pinyin = pinyin
+            else:
+                output_pinyin = _canonicalize_output_pinyin(
+                    pinyin,
+                    text,
+                    unihan_map,
+                    unihan_readings_map,
+                    unihan_source_rank_map,
+                    unihan_pinlu_detail_map,
+                )
             f.write(f"{output_pinyin}\t{text}\t{weight}\n")
 
 
@@ -12815,6 +12844,8 @@ def _remove_known_incorrect_jiancha_entries(
     stats = {
         "known_incorrect_jiancha_entries_removed_sc": 0,
         "known_incorrect_jiancha_entries_removed_tc": 0,
+        "known_incorrect_lexical_entries_removed_sc": 0,
+        "known_incorrect_lexical_entries_removed_tc": 0,
     }
     sc_blocklist = {
         ("houjingjianchashu", "喉镜检察术"),
@@ -12831,6 +12862,13 @@ def _remove_known_incorrect_jiancha_entries(
         ("shenjingxuejiancha", "神經學檢察"),
     }
 
+    sc_lexical_blocklist = {
+        ("haoxiang", "好象"),
+    }
+    tc_lexical_blocklist = {
+        ("haoxiang", "好象"),
+    }
+
     for key in sc_blocklist:
         if key in sc_map:
             del sc_map[key]
@@ -12839,6 +12877,14 @@ def _remove_known_incorrect_jiancha_entries(
         if key in tc_map:
             del tc_map[key]
             stats["known_incorrect_jiancha_entries_removed_tc"] += 1
+    for key in sc_lexical_blocklist:
+        if key in sc_map:
+            del sc_map[key]
+            stats["known_incorrect_lexical_entries_removed_sc"] += 1
+    for key in tc_lexical_blocklist:
+        if key in tc_map:
+            del tc_map[key]
+            stats["known_incorrect_lexical_entries_removed_tc"] += 1
 
     return stats
 
@@ -14492,11 +14538,15 @@ def main() -> int:
         char_frequency_prior=char_frequency_prior,
     )
     stats.update(_remove_known_incorrect_jiancha_entries(sc_map, tc_map))
+    curated_daily_explicit_pinyin_keys = _build_curated_daily_explicit_pinyin_key_set(
+        curated_daily_entries
+    )
 
     _write_dict(
         output_sc,
         sc_map,
         preferred_terms=curated_daily_sc_terms,
+        preserve_pinyin_keys=curated_daily_explicit_pinyin_keys,
         unihan_map=output_unihan_map,
         unihan_readings_map=output_unihan_readings_map,
         unihan_source_rank_map=output_unihan_source_rank_map,
@@ -14506,6 +14556,7 @@ def main() -> int:
         output_tc,
         tc_map,
         preferred_terms=curated_daily_tc_terms,
+        preserve_pinyin_keys=curated_daily_explicit_pinyin_keys,
         unihan_map=output_unihan_map,
         unihan_readings_map=output_unihan_readings_map,
         unihan_source_rank_map=output_unihan_source_rank_map,
