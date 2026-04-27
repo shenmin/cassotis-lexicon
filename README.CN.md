@@ -21,10 +21,10 @@ Cassotis IME 的词库构建与发布仓库。
 
 | 文件 | 变体 | 词条数 |
 |------|------|--------|
-| `data/generated/dict_clean_sc.txt` | 简体主词库 | 161,805 |
-| `data/generated/dict_clean_tc.txt` | 繁体主词库 | 170,320 |
-| `data/generated/dict_unihan_sc.txt` | 简体单字（Unihan） | 23,917 |
-| `data/generated/dict_unihan_tc.txt` | 繁体单字（Unihan） | 24,070 |
+| `data/generated/dict_clean_sc.txt` | 简体主词库 | 161,791 |
+| `data/generated/dict_clean_tc.txt` | 繁体主词库 | 170,307 |
+| `data/generated/dict_unihan_sc.txt` | 简体单字（Unihan） | 23,916 |
+| `data/generated/dict_unihan_tc.txt` | 繁体单字（Unihan） | 24,069 |
 
 ## 外部来源与项目维护补充层（`external_broad`）
 
@@ -57,6 +57,7 @@ Cassotis IME 的词库构建与发布仓库。
 | 补充层 | 许可证 | 用途 |
 |--------|--------|------|
 | Cassotis 日常/聊天短语补充 | 仓库许可证（项目自编写） | 对高价值的日常/聊天表达做稳定补充，弥补公开来源遗漏 |
+| Cassotis 词条级拼音覆盖 | 仓库许可证（项目自编写） | 项目维护的多音词读音覆盖表，在来源融合后压制所有层中由单字兜底生成的错误读音 |
 | Cassotis 小说实体补充 | 仓库许可证（项目自编写） | 项目维护的小说人物、作品名和世界观实体列表，与日常/聊天词及一般专名隔离 |
 | Cassotis 一般专名补充 | 仓库许可证（项目自编写） | 项目维护的人名、头衔、组织、品牌等一般专名列表，不与日常/聊天优先路径混用 |
 | Cassotis 地名补充 | 仓库许可证（项目自编写） | 隔离式 `place_names` vertical 使用的项目维护低优先级常见国内外地名列表，并为多音/易错地名提供显式拼音修正 |
@@ -107,6 +108,7 @@ Cassotis IME 的词库构建与发布仓库。
 ## 目录结构
 - `data/generated/`：生成的词库文件。
 - `manifests/`：来源/许可证清单与回归样本。
+- `manifests/pinyin_overrides.tsv`：项目维护的词条级读音覆盖表。
 - `manifests/vertical/`：项目维护的隔离式 vertical 词表。
 - `scripts/`：构建、校验和导出辅助脚本。
 - `reports/`：构建报告。

@@ -21,10 +21,10 @@ Lexicon build and release repository for Cassotis IME.
 
 | File | Variant | Entries |
 |------|---------|---------|
-| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 161,805 |
-| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 170,320 |
-| `data/generated/dict_unihan_sc.txt` | Simplified single-char (Unihan) | 23,917 |
-| `data/generated/dict_unihan_tc.txt` | Traditional single-char (Unihan) | 24,070 |
+| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 161,791 |
+| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 170,307 |
+| `data/generated/dict_unihan_sc.txt` | Simplified single-char (Unihan) | 23,916 |
+| `data/generated/dict_unihan_tc.txt` | Traditional single-char (Unihan) | 24,069 |
 
 ## External sources and project-maintained supplements (`external_broad`)
 
@@ -57,6 +57,7 @@ Lexicon build and release repository for Cassotis IME.
 | Supplement | License | Usage |
 |-----------|---------|-------|
 | Cassotis curated daily/chat phrases | Repository license (project-authored) | High-value everyday/chat phrasing that is worth keeping stable even when open sources miss it |
+| Cassotis word-level pinyin overrides | Repository license (project-authored) | Project-maintained pronunciation overrides used after source fusion to suppress noisy character-level fallback readings for polyphonic words across all layers |
 | Cassotis curated fiction entities | Repository license (project-authored) | Project-maintained fiction entity list for novel characters, titles, and in-world named entities, kept separate from daily/chat phrasing and from general proper nouns |
 | Cassotis curated proper nouns | Repository license (project-authored) | Project-maintained general proper-noun list for names, titles, organizations, brands, and other real-world named entities that should not share the daily/chat preferred-term path |
 | Cassotis curated place names | Repository license (project-authored) | Project-maintained low-priority place-name list used by the isolated `place_names` vertical layer, with explicit pinyin corrections for ambiguous domestic and international locations |
@@ -107,6 +108,7 @@ See:
 ## Directory layout
 - `data/generated/`: generated lexicon files.
 - `manifests/`: source/license manifests and regression samples.
+- `manifests/pinyin_overrides.tsv`: project-authored word-level pronunciation overrides.
 - `manifests/vertical/`: project-authored isolated vertical term lists.
 - `scripts/`: build/validation/export helper scripts.
 - `reports/`: generated build reports.

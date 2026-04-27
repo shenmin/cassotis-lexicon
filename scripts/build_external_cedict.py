@@ -58,6 +58,7 @@ MESH_DESCRIPTOR_XML_URL = f"https://nlmpubs.nlm.nih.gov/projects/mesh/MESH_FILES
 MESH_HOMEPAGE = "https://www.nlm.nih.gov/mesh/meshhome.html"
 WIKIDATA_SPARQL_URL = "https://query.wikidata.org/sparql"
 WIKIDATA_HOMEPAGE = "https://www.wikidata.org/wiki/Wikidata:Main_Page"
+DEFAULT_PINYIN_OVERRIDES = "manifests/pinyin_overrides.tsv"
 DEFAULT_PERMISSIVE_OVERRIDES = "manifests/pinyin_overrides.clean_permissive.tsv"
 DEFAULT_HTTP_USER_AGENT = "cassotis-lexicon/1.0 (+https://github.com/shenmin/cassotis-lexicon)"
 COMPUTING_VERTICAL_FILTER_KEYWORDS = (
@@ -2318,6 +2319,14 @@ def _apply_explicit_term_pinyin_overrides(
         else:
             remapped[key] = weight
     return remapped, stats
+
+
+def _apply_word_pinyin_overrides(
+    mapping: Dict[Tuple[str, str], int],
+    overrides: Dict[str, str],
+    stat_prefix: str,
+) -> Tuple[Dict[Tuple[str, str], int], Dict[str, int]]:
+    return _apply_explicit_term_pinyin_overrides(mapping, overrides, stat_prefix)
 
 
 def _collect_preferred_unihan_readings(
@@ -12882,8 +12891,8 @@ def main() -> int:
     )
     parser.add_argument(
         "--pinyin-overrides",
-        default=DEFAULT_PERMISSIVE_OVERRIDES,
-        help="Optional override TSV for clean_permissive/unihan_single profile: text<TAB>pinyin",
+        default=DEFAULT_PINYIN_OVERRIDES,
+        help="Optional word-level pinyin override TSV: text<TAB>pinyin",
     )
     parser.add_argument("--min-hanzi", type=int, default=2)
     parser.add_argument(
@@ -12933,6 +12942,9 @@ def main() -> int:
     vertical_manifest_stats: Dict[str, int] = {}
     vertical_source_configs: List[Dict[str, object]] = []
     vertical_payload_map: Dict[str, bytes] = {}
+    word_pinyin_overrides: Dict[str, str] = {}
+    if args.pinyin_overrides:
+        word_pinyin_overrides = _load_pinyin_overrides(repo_root / args.pinyin_overrides)
     output_unihan_map: Dict[str, str] = {}
     output_unihan_readings_map: Dict[str, Set[str]] = {}
     output_unihan_source_rank_map: Dict[Tuple[str, str], int] = {}
@@ -14427,6 +14439,19 @@ def main() -> int:
         "tc_project_preferred",
     )
     stats.update(tc_project_preferred_merge_stats)
+    sc_map, sc_word_pinyin_override_stats = _apply_word_pinyin_overrides(
+        sc_map,
+        word_pinyin_overrides,
+        "sc_word_pinyin_override",
+    )
+    tc_map, tc_word_pinyin_override_stats = _apply_word_pinyin_overrides(
+        tc_map,
+        word_pinyin_overrides,
+        "tc_word_pinyin_override",
+    )
+    stats.update(sc_word_pinyin_override_stats)
+    stats.update(tc_word_pinyin_override_stats)
+    stats["word_pinyin_override_entries"] = len(word_pinyin_overrides)
     sc_query_path_priors: Dict[Tuple[str, str], int] = {}
     tc_query_path_priors: Dict[Tuple[str, str], int] = {}
     if output_query_path_sc is not None:

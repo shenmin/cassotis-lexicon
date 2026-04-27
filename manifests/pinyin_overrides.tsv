@@ -1,0 +1,59 @@
+# text<TAB>pinyin<TAB>scope(optional)<TAB>note(optional)
+# General word-level pinyin overrides. Applied after source fusion to suppress
+# noisy character-level fallback readings for polyphonic words.
+勒	le	common
+文件	wenjian	common
+人工智能	rengongzhineng	common
+智能	zhineng	common
+我们	women	common
+我們	women	common
+中国	zhongguo	common
+中國	zhongguo	common
+输入	shuru	common
+輸入	shuru	common
+拼音	pinyin	common
+你好	nihao	common
+您好	ninhao	common
+世界	shijie	common
+重庆	chongqing	place	重读chong
+重慶	chongqing	place	重读chong
+厦门	xiamen	place	厦读xia
+廈門	xiamen	place	厦读xia
+长安	changan	place	长读chang
+長安	changan	place	长读chang
+长治	changzhi	place	长读chang
+長治	changzhi	place	长读chang
+六安	luan	place	六安专读
+蚌埠	bengbu	place	蚌埠专读
+台州	taizhou	place	台读tai
+重庆市	chongqingshi	place	重读chong
+重慶市	chongqingshi	place	重读chong
+厦门市	xiamenshi	place	厦读xia
+廈門市	xiamenshi	place	厦读xia
+长治市	changzhishi	place	长读chang
+長治市	changzhishi	place	长读chang
+长治久安	changzhijiuan	idiom	长读chang
+長治久安	changzhijiuan	idiom	长读chang
+自怨自艾	ziyuanziyi	idiom	艾读yi
+刚正不阿	gangzhengbue	idiom	阿读e
+剛正不阿	gangzhengbue	idiom	阿读e
+深恶痛绝	shenwutongjue	idiom	恶读wu
+深惡痛絕	shenwutongjue	idiom	恶读wu
+好逸恶劳	haoyiwulao	idiom	恶读wu
+好逸惡勞	haoyiwulao	idiom	恶读wu
+一气呵成	yiqihecheng	idiom	呵读he
+一氣呵成	yiqihecheng	idiom	呵读he
+男儿有泪不轻弹	naneryouleibuqingtan	idiom	儿读er
+男兒有淚不輕彈	naneryouleibuqingtan	idiom	儿读er
+置之死地而后生	zhizhisidierhousheng	idiom	地读di
+置之死地而後生	zhizhisidierhousheng	idiom	地读di
+儿孙自有儿孙福	ersunziyouersunfu	idiom	儿读er
+兒孫自有兒孫福	ersunziyouersunfu	idiom	儿读er
+养儿防老	yangerfanglao	idiom	儿读er
+養兒防老	yangerfanglao	idiom	儿读er
+扬长而去	yangchangerqu	idiom	长读chang
+揚長而去	yangchangerqu	idiom	长读chang
+视同儿戏	shitongerxi	idiom	儿读er
+視同兒戲	shitongerxi	idiom	儿读er
+席地而坐	xidierzuo	idiom	地读di
+似是而非	sishierfei	idiom	似读si

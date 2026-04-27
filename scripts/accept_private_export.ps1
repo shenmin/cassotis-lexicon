@@ -170,6 +170,7 @@ $required = @(
     'data\generated\dict_unihan_tc.txt',
     'manifests\sources.public.yml',
     'manifests\profiles.public.yml',
+    'manifests\pinyin_overrides.tsv',
     'manifests\pinyin_overrides.clean_permissive.tsv',
     'manifests\regression_samples.sc.tsv',
     'manifests\regression_samples.tc.tsv',
@@ -204,6 +205,7 @@ Test-DictFile (Join-Path $Root 'data\generated\dict_query_path_prior_sc.txt')
 Test-DictFile (Join-Path $Root 'data\generated\dict_query_path_prior_tc.txt')
 Test-DictFile (Join-Path $Root 'data\generated\dict_unihan_sc.txt')
 Test-DictFile (Join-Path $Root 'data\generated\dict_unihan_tc.txt')
+Test-PinyinOverrideFile (Join-Path $Root 'manifests\pinyin_overrides.tsv')
 Test-PinyinOverrideFile (Join-Path $Root 'manifests\pinyin_overrides.clean_permissive.tsv')
 Assert-ManifestPolicy (Join-Path $Root 'manifests\sources.public.yml')
 
