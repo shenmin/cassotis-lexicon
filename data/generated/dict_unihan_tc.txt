@@ -672,7 +672,7 @@ bi	筆	407
 bi	臂	394
 bi	壁	379
 bi	蔽	376
-bi	畢	365
+bi	畢	364
 bi	閉	362
 bi	逼	351
 bi	彼	332
@@ -1943,7 +1943,7 @@ cheng	懲	296
 cheng	橙	277
 cheng	澄	243
 cheng	逞	229
-cheng	丞	213
+cheng	丞	204
 cheng	瞠	204
 cheng	盛	158
 cheng	騁	150
@@ -3274,7 +3274,6 @@ di	狄	257
 di	嘀	235
 di	迪	210
 di	蒂	200
-di	棣	189
 di	骶	186
 di	諦	182
 di	的	154
@@ -3283,6 +3282,7 @@ di	睇	136
 di	嫡	134
 di	砥	119
 di	荻	113
+di	棣	102
 di	詆	102
 di	娣	94
 di	牴	94
@@ -5279,8 +5279,8 @@ gong	汞	290
 gong	蚣	235
 gong	恭	210
 gong	肱	207
-gong	龔	148
 gong	觥	141
+gong	龔	139
 gong	珙	67
 gong	廾	62
 gong	匑	51
@@ -6016,7 +6016,7 @@ hao	皓	207
 hao	郝	196
 hao	鎬	194
 hao	嚎	191
-hao	昊	148
+hao	昊	137
 hao	濠	112
 hao	淏	106
 hao	嗥	101
@@ -8237,7 +8237,7 @@ jing	井	372
 jing	鯨	357
 jing	莖	354
 jing	頸	354
-jing	敬	353
+jing	敬	351
 jing	徑	337
 jing	競	337
 jing	晶	324
@@ -8260,13 +8260,13 @@ jing	粳	114
 jing	璟	106
 jing	阱	99
 jing	瀞	97
-jing	婧	96
 jing	倞	73
 jing	璥	73
 jing	俓	67
 jing	暻	67
 jing	丼	62
 jing	剄	62
+jing	婧	62
 jing	汫	62
 jing	獍	62
 jing	穽	62
@@ -8822,9 +8822,9 @@ jun	郡	224
 jun	鈞	213
 jun	竣	154
 jun	駿	147
-jun	珺	125
 jun	皸	120
 jun	濬	119
+jun	珺	109
 jun	晙	84
 jun	焌	84
 jun	畯	84
@@ -9797,7 +9797,7 @@ lei	類	427
 lei	壘	371
 lei	雷	358
 lei	肋	265
-lei	磊	262
+lei	磊	257
 lei	擂	206
 lei	蕾	206
 lei	纍	197
@@ -12276,7 +12276,7 @@ nan	南	487
 nan	難	487
 nan	男	434
 nan	喃	323
-nan	楠	174
+nan	楠	166
 nan	赧	154
 nan	囡	119
 nan	腩	110
@@ -16083,8 +16083,8 @@ shui	䭨	32
 shui	䳠	32
 shun	順	423
 shun	瞬	213
-shun	舜	184
 shun	吮	183
+shun	舜	177
 shun	楯	86
 shun	蕣	76
 shun	橓	61
@@ -16686,10 +16686,10 @@ tan	貪	317
 tan	痰	314
 tan	壇	267
 tan	袒	253
-tan	檀	249
+tan	檀	243
 tan	癱	220
 tan	歎	211
-tan	譚	207
+tan	譚	202
 tan	坍	172
 tan	忐	154
 tan	罈	147
@@ -17259,12 +17259,12 @@ tong	童	395
 tong	筒	374
 tong	銅	372
 tong	桶	351
-tong	桐	272
+tong	桐	268
 tong	酮	258
 tong	衕	253
 tong	潼	213
-tong	彤	178
 tong	瞳	174
+tong	彤	170
 tong	捅	151
 tong	仝	90
 tong	慟	85
@@ -17828,7 +17828,7 @@ wei	桅	240
 wei	萎	232
 wei	爲	231
 wei	魏	221
-wei	薇	204
+wei	薇	196
 wei	渭	175
 wei	帷	172
 wei	瑋	158
@@ -18028,7 +18028,7 @@ wen	吻	289
 wen	瘟	239
 wen	汶	228
 wen	紊	192
-wen	雯	169
+wen	雯	155
 wen	刎	112
 wen	炆	63
 wen	璺	63
@@ -18361,19 +18361,19 @@ xi	唏	205
 xi	嬉	201
 xi	蜥	201
 xi	矽	200
-xi	兮	191
 xi	禧	185
-xi	曦	183
 xi	硒	183
+xi	曦	177
+xi	兮	176
 xi	汐	171
-xi	璽	171
+xi	璽	164
 xi	羲	164
 xi	屣	162
 xi	熹	157
 xi	奚	150
 xi	蓆	148
 xi	淅	146
-xi	晞	139
+xi	晞	123
 xi	浠	121
 xi	檄	119
 xi	螅	117
@@ -19016,8 +19016,8 @@ xiao	硝	357
 xiao	銷	344
 xiao	哮	340
 xiao	曉	334
-xiao	肖	307
 xiao	宵	305
+xiao	肖	305
 xiao	嘯	272
 xiao	簫	247
 xiao	囂	238
@@ -19526,7 +19526,7 @@ xu	絮	260
 xu	噓	257
 xu	卹	251
 xu	戌	246
-xu	旭	218
+xu	旭	217
 xu	鬚	212
 xu	煦	192
 xu	婿	176
@@ -19845,7 +19845,7 @@ xun	勛	217
 xun	殉	203
 xun	馴	200
 xun	薰	194
-xun	勳	190
+xun	勳	189
 xun	蕁	184
 xun	徇	167
 xun	燻	147
@@ -20283,7 +20283,6 @@ yang	鴦	181
 yang	恙	151
 yang	佯	138
 yang	煬	113
-yang	烊	101
 yang	鞅	101
 yang	徉	95
 yang	怏	74
@@ -20292,6 +20291,7 @@ yang	瀁	69
 yang	泱	64
 yang	垟	59
 yang	昜	59
+yang	烊	59
 yang	羕	59
 yang	蛘	59
 yang	佒	54
@@ -20498,10 +20498,10 @@ yao	闄	25
 yao	餆	25
 yao	鴁	25
 yao	鼼	25
-ye	也	705
+ye	也	704
 ye	野	467
 ye	業	453
-ye	葉	436
+ye	葉	437
 ye	夜	425
 ye	液	410
 ye	爺	407
@@ -20518,7 +20518,7 @@ ye	腋	164
 ye	燁	140
 ye	曄	123
 ye	揶	69
-ye	嶪	58
+ye	嶪	59
 ye	倻	53
 ye	埜	53
 ye	靨	53
@@ -20628,7 +20628,7 @@ yi	亦	318
 yi	姨	318
 yi	抑	318
 yi	誼	317
-yi	毅	311
+yi	毅	308
 yi	疫	303
 yi	伊	300
 yi	屹	259
@@ -20637,7 +20637,6 @@ yi	邑	227
 yi	夷	212
 yi	逸	209
 yi	溢	205
-yi	軼	202
 yi	揖	201
 yi	繹	201
 yi	怡	200
@@ -20646,6 +20645,7 @@ yi	矣	199
 yi	胰	198
 yi	沂	196
 yi	佚	193
+yi	軼	190
 yi	飴	189
 yi	肄	188
 yi	蜴	187
@@ -21595,7 +21595,7 @@ yu	竽	243
 yu	諭	226
 yu	浴	224
 yu	盂	224
-yu	瑜	223
+yu	瑜	221
 yu	喻	219
 yu	瘀	219
 yu	鬱	219
@@ -21604,12 +21604,12 @@ yu	淤	214
 yu	渝	214
 yu	俞	210
 yu	榆	210
-yu	虞	208
 yu	慾	207
 yu	閾	207
 yu	迂	205
+yu	虞	204
 yu	隅	201
-yu	禹	199
+yu	禹	192
 yu	毓	177
 yu	峪	174
 yu	萸	167
@@ -21619,10 +21619,10 @@ yu	禺	154
 yu	馭	153
 yu	煜	152
 yu	諛	152
-yu	昱	148
 yu	俁	146
 yu	臾	137
 yu	圄	131
+yu	昱	128
 yu	紆	126
 yu	妤	125
 yu	腴	125
@@ -22095,7 +22095,6 @@ yun	熨	142
 yun	殞	134
 yun	筠	110
 yun	奫	104
-yun	昀	99
 yun	醞	96
 yun	藴	93
 yun	惲	91
@@ -22107,6 +22106,7 @@ yun	縕	70
 yun	鈗	70
 yun	伝	64
 yun	妘	64
+yun	昀	64
 yun	狁	64
 yun	薀	64
 yun	褞	64
@@ -22705,7 +22705,7 @@ zhao	朝	20
 zhe	這	829
 zhe	著	548
 zhe	者	445
-zhe	哲	362
+zhe	哲	361
 zhe	褶	339
 zhe	遮	329
 zhe	蔗	276

@@ -21,8 +21,8 @@ Lexicon build and release repository for Cassotis IME.
 
 | File | Variant | Entries |
 |------|---------|---------|
-| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 164,980 |
-| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 173,941 |
+| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 165,020 |
+| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 173,981 |
 | `data/generated/dict_unihan_sc.txt` | Simplified single-char (Unihan) | 23,923 |
 | `data/generated/dict_unihan_tc.txt` | Traditional single-char (Unihan) | 24,088 |
 
@@ -62,7 +62,7 @@ Lexicon build and release repository for Cassotis IME.
 | Cassotis word-level pinyin overrides | Repository license (project-authored) | Project-maintained pronunciation overrides used after source fusion to suppress noisy character-level fallback readings for polyphonic words across all layers |
 | Cassotis curated fiction entities | Repository license (project-authored) | Project-maintained fiction entity list for novel characters, titles, and in-world named entities, kept separate from daily/chat phrasing and from general proper nouns |
 | Cassotis curated proper nouns | Repository license (project-authored) | Project-maintained general non-person proper-noun list for titles, organizations, brands, platforms, products, and other real-world named entities that should not share the daily/chat preferred-term path |
-| Cassotis curated people names | Repository license (project-authored) | Project-maintained public and historical people-name list with explicit pinyin corrections, isolated from daily/chat phrasing and from non-person proper nouns |
+| Cassotis curated people names | Repository license (project-authored) | Project-maintained contemporary public-figure and historical people-name list with explicit pinyin corrections, isolated from daily/chat phrasing and from non-person proper nouns |
 | Cassotis curated place names / countries / cities / landmarks | Repository license (project-authored) | Project-maintained low-priority place-name lists used by the isolated `place_names` vertical layer, with explicit pinyin corrections for ambiguous domestic and international locations, countries/regions, world cities, and landmarks |
 | Cassotis curated idioms and allusions | Repository license (project-authored) | Project-maintained high-value idiom and literary-allusion list kept separate from daily/chat phrase ranking |
 | Cassotis curated computing terms | Repository license (project-authored) | Project-maintained computing/domain term list used by the isolated computing vertical layer; does not share the daily/chat preferred-term path |
@@ -124,6 +124,9 @@ See:
 ```powershell
 # Full rebuild (external_broad + unihan_single + regression checks)
 .\rebuild_all.ps1
+
+# Optional: generate manual-review people-name candidates; this does not import them automatically
+.\scripts\build_people_names_candidates.ps1
 
 # Build one profile directly
 .\scripts\build_external_seed.ps1 -Profile external_broad
