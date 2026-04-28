@@ -17,14 +17,14 @@ Cassotis IME 的词库构建与发布仓库。
 - 支持外部来源引导构建和可复现的生成词库构建流程。
 - 保持署名文件与生成产物一致。
 
-## 当前词库快照（2026-04-28 构建）
+## 当前词库快照（2026-04-29 构建）
 
 | 文件 | 变体 | 词条数 |
 |------|------|--------|
-| `data/generated/dict_clean_sc.txt` | 简体主词库 | 164,366 |
-| `data/generated/dict_clean_tc.txt` | 繁体主词库 | 173,244 |
-| `data/generated/dict_unihan_sc.txt` | 简体单字（Unihan） | 23,917 |
-| `data/generated/dict_unihan_tc.txt` | 繁体单字（Unihan） | 24,070 |
+| `data/generated/dict_clean_sc.txt` | 简体主词库 | 164,980 |
+| `data/generated/dict_clean_tc.txt` | 繁体主词库 | 173,941 |
+| `data/generated/dict_unihan_sc.txt` | 简体单字（Unihan） | 23,923 |
+| `data/generated/dict_unihan_tc.txt` | 繁体单字（Unihan） | 24,088 |
 
 ## 外部来源与项目维护补充层（`external_broad`）
 
@@ -40,6 +40,7 @@ Cassotis IME 的词库构建与发布仓库。
 | Wiktionary 中文标题（ns0） | CC BY-SA 4.0 | 日常表达、口语短语和聊天类词汇种子 |
 | Wikipedia 中文标题（ns0） | CC BY-SA 4.0 | 专名覆盖与高置信专有名词种子 |
 | Wikimedia Pageviews Top（zh.wikipedia） | CC BY-SA 4.0 | 真实世界热度信号 |
+| Wikidata 中文历史人物 | CC0-1.0 | 以保守权重导入独立人名层的知名历史人物补充 |
 | 过滤后的 `THUOCL_IT` 子集 | THUOCL custom open terms | 计算机 vertical 候选来源，导入前过滤，避免与日常/聊天词层混在一起 |
 | 过滤后的 `THUOCL_chengyu` 子集 | THUOCL custom open terms | 成语典故 vertical 候选来源，过滤后以保守权重使用，让完整成语输入可候选但不挤占日常短语 |
 | Getty AAT 中文建筑术语 | ODC-By 1.0 | 以保守方式导入 architecture-terms layer 的官方建筑术语来源 |
@@ -60,7 +61,8 @@ Cassotis IME 的词库构建与发布仓库。
 | Cassotis 日常/聊天短语补充 | 仓库许可证（项目自编写） | 对高价值的日常/聊天表达做稳定补充，弥补公开来源遗漏 |
 | Cassotis 词条级拼音覆盖 | 仓库许可证（项目自编写） | 项目维护的多音词读音覆盖表，在来源融合后压制所有层中由单字兜底生成的错误读音 |
 | Cassotis 小说实体补充 | 仓库许可证（项目自编写） | 项目维护的小说人物、作品名和世界观实体列表，与日常/聊天词及一般专名隔离 |
-| Cassotis 一般专名补充 | 仓库许可证（项目自编写） | 项目维护的人名、头衔、组织、品牌等一般专名列表，不与日常/聊天优先路径混用 |
+| Cassotis 一般专名补充 | 仓库许可证（项目自编写） | 项目维护的非人名专名列表，覆盖头衔、组织、品牌、平台、产品等现实命名实体，不与日常/聊天优先路径混用 |
+| Cassotis 人名补充 | 仓库许可证（项目自编写） | 项目维护的知名人物与历史人物列表，带显式拼音修正，并与日常/聊天短语和非人名专名隔离 |
 | Cassotis 地名 / 国家地区 / 城市 / 地标补充 | 仓库许可证（项目自编写） | 隔离式 `place_names` vertical 使用的项目维护低优先级地名列表，并为多音/易错的国内外地名、国家地区、世界城市和地标提供显式拼音修正 |
 | Cassotis 成语典故补充 | 仓库许可证（项目自编写） | 项目维护的高价值成语与文学典故列表，与日常/聊天短语排序路径隔离 |
 | Cassotis 计算机术语补充 | 仓库许可证（项目自编写） | 隔离式 computing vertical 使用的项目维护计算机/领域术语列表 |
@@ -92,10 +94,11 @@ Cassotis IME 的词库构建与发布仓库。
 ## 分层策略
 - `manifests/curated_daily_phrases.tsv` 只用于应获得日常输入优待的日常/聊天表达。
 - `manifests/vertical_layers.public.json` 声明隔离式 vertical 术语层。
-- `manifests/vertical/*.tsv` 存放项目维护的 vertical 词表，例如小说实体、一般专名、地名、国家地区、世界城市、地标、成语典故、计算机术语、政务民生术语、建筑术语/建筑实体、游戏术语和游戏开发术语。
+- `manifests/vertical/*.tsv` 存放项目维护的 vertical 词表，例如小说实体、一般专名、人名、地名、国家地区、世界城市、地标、成语典故、计算机术语、政务民生术语、建筑术语/建筑实体、游戏术语和游戏开发术语。
 - vertical 层可以补充领域词汇，但不会继承日常/聊天短语的优待偏置。
 - fiction 层将小说人物、作品名和世界观实体与日常/聊天表达及一般专名隔离。
-- active 的 proper-noun 层将人名、头衔和一般现实专名与日常/聊天表达隔离。
+- active 的 proper-noun 层将非人名头衔、组织、品牌、平台、产品和一般现实专名与日常/聊天表达隔离。
+- people-name 层将知名人物与历史人物姓名和日常/聊天表达、小说实体、非人名专名隔离；Wikidata 补充的人名会刻意使用保守权重，让完整姓名输入可候选但不挤占常用词。
 - place-name 层以保守权重保留常见国内外地名、国家地区、世界主要城市、景点和地标，让完整地名输入可候选，但不挤占日常词候选。
 - Wikidata 补充的地名词条会刻意低于项目维护词条；冷门行政区和冷门地标应当能在完整输入时出现，但不应压过常用词。
 - idioms-allusions 层目前结合了过滤后的 `THUOCL_chengyu` 子集与项目维护成语典故，用保守权重保证完整成语输入可候选，但不继承日常/聊天短语的优待偏置。

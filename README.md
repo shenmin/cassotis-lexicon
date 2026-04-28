@@ -17,14 +17,14 @@ Lexicon build and release repository for Cassotis IME.
 - Supports external-source bootstrap and reproducible generated dictionary builds.
 - Keeps attribution and release policy files aligned with generated artifacts.
 
-## Current dictionary snapshot (2026-04-28 build)
+## Current dictionary snapshot (2026-04-29 build)
 
 | File | Variant | Entries |
 |------|---------|---------|
-| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 164,366 |
-| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 173,244 |
-| `data/generated/dict_unihan_sc.txt` | Simplified single-char (Unihan) | 23,917 |
-| `data/generated/dict_unihan_tc.txt` | Traditional single-char (Unihan) | 24,070 |
+| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 164,980 |
+| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 173,941 |
+| `data/generated/dict_unihan_sc.txt` | Simplified single-char (Unihan) | 23,923 |
+| `data/generated/dict_unihan_tc.txt` | Traditional single-char (Unihan) | 24,088 |
 
 ## External sources and project-maintained supplements (`external_broad`)
 
@@ -40,6 +40,7 @@ Lexicon build and release repository for Cassotis IME.
 | Wiktionary zh titles (ns0) | CC BY-SA 4.0 | Daily wording, colloquial phrases, and chat-style lexical seeds |
 | Wikipedia zh titles (ns0) | CC BY-SA 4.0 | Named-entity coverage and high-confidence proper-noun seeds |
 | Wikimedia Pageviews Top (zh.wikipedia) | CC BY-SA 4.0 | Real-world usage heat signal |
+| Wikidata zh historical people | CC0-1.0 | Conservative historical people-name supplements imported into the isolated people-name layer |
 | Filtered `THUOCL_IT` subset | THUOCL custom open terms | Computing vertical-layer candidate source, filtered before import so it does not behave like the everyday/chat phrase layer |
 | Filtered `THUOCL_chengyu` subset | THUOCL custom open terms | Idiom/allusion vertical-layer candidate source, filtered and weighted conservatively so idioms stay inputable without crowding everyday phrases |
 | Getty AAT zh architectural terms | ODC-By 1.0 | Official architecture-term source imported conservatively into the isolated architecture-terms layer |
@@ -60,7 +61,8 @@ Lexicon build and release repository for Cassotis IME.
 | Cassotis curated daily/chat phrases | Repository license (project-authored) | High-value everyday/chat phrasing that is worth keeping stable even when open sources miss it |
 | Cassotis word-level pinyin overrides | Repository license (project-authored) | Project-maintained pronunciation overrides used after source fusion to suppress noisy character-level fallback readings for polyphonic words across all layers |
 | Cassotis curated fiction entities | Repository license (project-authored) | Project-maintained fiction entity list for novel characters, titles, and in-world named entities, kept separate from daily/chat phrasing and from general proper nouns |
-| Cassotis curated proper nouns | Repository license (project-authored) | Project-maintained general proper-noun list for names, titles, organizations, brands, and other real-world named entities that should not share the daily/chat preferred-term path |
+| Cassotis curated proper nouns | Repository license (project-authored) | Project-maintained general non-person proper-noun list for titles, organizations, brands, platforms, products, and other real-world named entities that should not share the daily/chat preferred-term path |
+| Cassotis curated people names | Repository license (project-authored) | Project-maintained public and historical people-name list with explicit pinyin corrections, isolated from daily/chat phrasing and from non-person proper nouns |
 | Cassotis curated place names / countries / cities / landmarks | Repository license (project-authored) | Project-maintained low-priority place-name lists used by the isolated `place_names` vertical layer, with explicit pinyin corrections for ambiguous domestic and international locations, countries/regions, world cities, and landmarks |
 | Cassotis curated idioms and allusions | Repository license (project-authored) | Project-maintained high-value idiom and literary-allusion list kept separate from daily/chat phrase ranking |
 | Cassotis curated computing terms | Repository license (project-authored) | Project-maintained computing/domain term list used by the isolated computing vertical layer; does not share the daily/chat preferred-term path |
@@ -92,10 +94,11 @@ See:
 ## Layering policy
 - `manifests/curated_daily_phrases.tsv` is reserved for everyday/chat phrasing that should receive daily-use preference treatment.
 - `manifests/vertical_layers.public.json` declares isolated vertical terminology layers.
-- `manifests/vertical/*.tsv` stores project-authored vertical term lists such as fiction entities, proper nouns, place names, countries/regions, world cities, landmarks, idioms/allusions, computing vocabulary, civic/public-service terminology, architecture terminology/entities, gaming terminology, and game-development terminology.
+- `manifests/vertical/*.tsv` stores project-authored vertical term lists such as fiction entities, proper nouns, people names, place names, countries/regions, world cities, landmarks, idioms/allusions, computing vocabulary, civic/public-service terminology, architecture terminology/entities, gaming terminology, and game-development terminology.
 - Vertical layers can add domain vocabulary without inheriting the same preferred-term bias used for daily/chat phrases.
 - The fiction layer keeps novel characters, titles, and in-world named entities separate from everyday/chat phrasing and from general proper nouns.
-- The active project-maintained proper-noun layer keeps names, titles, and general real-world named entities separate from everyday/chat phrasing.
+- The active project-maintained proper-noun layer keeps non-person titles, organizations, brands, platforms, products, and general real-world named entities separate from everyday/chat phrasing.
+- The people-name layer keeps public and historical human names separate from daily/chat phrasing, fiction entities, and non-person proper nouns; Wikidata-backed people-name entries are deliberately weighted conservatively so full-name input works without crowding common words.
 - The place-name layer keeps common domestic and international locations, countries/regions, world cities, scenic spots, and landmarks inputable with conservative weights, so complete place-name input works without crowding everyday candidates.
 - Wikidata-backed place supplements are intentionally weighted lower than curated entries; cold administrative places and landmarks should remain available on full input but should not dominate common words.
 - The idioms/allusions layer currently combines a filtered `THUOCL_chengyu` subset with project-curated idioms and literary allusions, using conservative ranking so full idiom input works without inheriting daily/chat phrase priority.

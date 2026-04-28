@@ -1,5 +1,5 @@
 version: 1
-generated_at: "2026-04-28T15:51:50+00:00"
+generated_at: "2026-04-28T16:22:47+00:00"
 profile: unihan_single
 sources:
   - id: opencc-stphrases
@@ -41,7 +41,27 @@ sources:
     redistribution_class: project_authored
     attribution_required: false
     raw_committed: true
-    notes: 'Project-maintained general proper nouns for names, titles, organizations, brands, and other real-world named entities that should not share the everyday/chat preferred-term path.'
+    notes: 'Project-maintained general non-person proper nouns for titles, organizations, brands, platforms, products, and other real-world named entities that should not share the everyday/chat preferred-term path.'
+  - id: project-curated-vertical-people-names
+    name: Cassotis curated people names
+    download_url: repo://manifests/vertical/people_names.tsv
+    homepage: https://github.com/shenmin/cassotis-lexicon
+    license: Repository license (project-authored)
+    risk_level: low
+    redistribution_class: project_authored
+    attribution_required: false
+    raw_committed: true
+    notes: 'Project-maintained public and historical people names with explicit pinyin corrections, isolated from daily/chat phrase ranking.'
+  - id: wikidata-historical-people-zh
+    name: Wikidata zh historical people
+    download_url: https://query.wikidata.org/sparql
+    homepage: https://www.wikidata.org/wiki/Wikidata:Main_Page
+    license: CC0-1.0
+    risk_level: low
+    redistribution_class: public_domain
+    attribution_required: false
+    raw_committed: false
+    notes: 'Chinese labels for historical/deceased people with zh-wiki coverage and broad Wikidata sitelink support, imported conservatively as an isolated people-name supplement.'
   - id: project-curated-vertical-place-names
     name: Cassotis curated place names
     download_url: repo://manifests/vertical/place_names.tsv

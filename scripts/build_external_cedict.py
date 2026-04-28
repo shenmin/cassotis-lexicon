@@ -505,10 +505,10 @@ DAILY_NUMBER_WORD_UNIT_CHARS = set(
     "\u5341\u767e\u5343\u4e07\u842c\u4ebf\u5104"
 )
 CURATED_DAILY_NUMBER_WEIGHT_CAP = 940
-# Fiction entities are supplemental names and should not inherit everyday-word
-# priors. Product/platform proper nouns are handled by the generic vertical path
-# because they are frequently normal daily input terms.
-NAMED_ENTITY_VERTICAL_LAYERS = {"fiction_entities"}
+# Fiction entities and public/historical people names are supplemental named
+# entities and should not inherit everyday-word priors. Product/platform proper
+# nouns stay on the generic vertical path because they are frequent daily input.
+NAMED_ENTITY_VERTICAL_LAYERS = {"fiction_entities", "people_names"}
 
 CEDICT_LINE_RE = re.compile(r"^(\S+)\s+(\S+)\s+\[([^\]]+)\]\s+/(.*)/$")
 CJK_RE = re.compile("[\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\U00020000-\U0002A6DF]")

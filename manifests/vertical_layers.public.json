@@ -27,7 +27,7 @@
       "id": "proper_nouns",
       "status": "active",
       "title": "Project-maintained proper noun layer",
-      "notes": "Dedicated general proper-noun layer kept separate from everyday/chat phrase seeds, fiction-specific names, and domain-specific vertical terminology.",
+      "notes": "Dedicated general non-person proper-noun layer kept separate from everyday/chat phrase seeds, fiction-specific names, public people names, and domain-specific vertical terminology.",
       "sources": [
         {
           "id": "project-curated-proper-nouns",
@@ -41,7 +41,46 @@
           "attribution_required": false,
           "raw_committed": true,
           "default_usage_score": 0.78,
-          "notes": "Project-maintained general proper nouns for names, titles, organizations, brands, and other real-world named entities that should not share the everyday/chat preferred-term path."
+          "notes": "Project-maintained general non-person proper nouns for titles, organizations, brands, platforms, products, and other real-world named entities that should not share the everyday/chat preferred-term path."
+        }
+      ]
+    },
+    {
+      "id": "people_names",
+      "status": "active",
+      "title": "People name layer",
+      "notes": "Dedicated public and historical people-name layer kept separate from everyday/chat phrase seeds, fiction-specific names, and non-person proper nouns.",
+      "sources": [
+        {
+          "id": "project-curated-vertical-people-names",
+          "type": "repo_tsv",
+          "name": "Cassotis curated people names",
+          "download_url": "repo://manifests/vertical/people_names.tsv",
+          "homepage": "https://github.com/shenmin/cassotis-lexicon",
+          "license": "Repository license (project-authored)",
+          "risk_level": "low",
+          "redistribution_class": "project_authored",
+          "attribution_required": false,
+          "raw_committed": true,
+          "default_usage_score": 0.74,
+          "notes": "Project-maintained public and historical people names with explicit pinyin corrections, isolated from daily/chat phrase ranking."
+        },
+        {
+          "id": "wikidata-historical-people-zh",
+          "type": "wikidata_term_query",
+          "name": "Wikidata zh historical people",
+          "download_url": "https://query.wikidata.org/sparql",
+          "homepage": "https://www.wikidata.org/wiki/Wikidata:Main_Page",
+          "license": "CC0-1.0",
+          "risk_level": "low",
+          "redistribution_class": "public_domain",
+          "attribution_required": false,
+          "raw_committed": false,
+          "cache_file": "data/cache/wikidata_historical_people_zh.json",
+          "query": "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX schema: <http://schema.org/>\nPREFIX wikibase: <http://wikiba.se/ontology#>\nSELECT ?term WHERE {\n  ?item wdt:P31 wd:Q5 ;\n        wdt:P570 ?deathDate ;\n        wikibase:sitelinks ?sitelinks ;\n        rdfs:label ?label .\n  ?article schema:about ?item ;\n           schema:isPartOf <https://zh.wikipedia.org/> .\n  FILTER(LANG(?label) = \"zh\")\n  FILTER(?sitelinks >= 10)\n  BIND(STR(?label) AS ?term)\n}\nORDER BY DESC(?sitelinks)\nLIMIT 2500",
+          "default_usage_score": 0.38,
+          "max_hanzi": 8,
+          "notes": "Chinese labels for historical/deceased people with zh-wiki coverage and broad Wikidata sitelink support, imported conservatively as an isolated people-name supplement."
         }
       ]
     },

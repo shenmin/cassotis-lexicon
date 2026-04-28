@@ -675,14 +675,14 @@ bi	蔽	376
 bi	畢	365
 bi	閉	362
 bi	逼	351
-bi	彼	333
+bi	彼	332
 bi	幣	325
 bi	碧	321
 bi	斃	298
 bi	痺	292
 bi	鄙	290
 bi	鉍	248
-bi	庇	240
+bi	庇	237
 bi	俾	217
 bi	弊	210
 bi	敝	207
@@ -1513,7 +1513,7 @@ cha	搽	207
 cha	碴	154
 cha	衩	145
 cha	剎	120
-cha	奼	106
+cha	奼	105
 cha	侘	86
 cha	槎	76
 cha	垞	71
@@ -3750,8 +3750,8 @@ du	睹	193
 du	嘟	190
 du	蠹	190
 du	犢	189
-du	篤	170
 du	妒	169
+du	篤	169
 du	牘	148
 du	都	95
 du	髑	61
@@ -4398,8 +4398,8 @@ fei	蜚	225
 fei	菲	214
 fei	吠	206
 fei	腓	204
-fei	斐	185
 fei	緋	183
+fei	斐	181
 fei	翡	171
 fei	榧	116
 fei	霏	114
@@ -4663,7 +4663,7 @@ fu	腐	353
 fu	符	352
 fu	撫	348
 fu	覆	341
-fu	甫	339
+fu	甫	337
 fu	腹	337
 fu	輻	335
 fu	俯	322
@@ -4675,8 +4675,8 @@ fu	縛	300
 fu	袱	294
 fu	赴	294
 fu	俘	293
-fu	蝠	278
 fu	孵	277
+fu	蝠	277
 fu	復	245
 fu	拂	234
 fu	弗	221
@@ -6085,7 +6085,7 @@ he	河	442
 he	盒	389
 he	核	382
 he	荷	343
-he	賀	308
+he	賀	307
 he	褐	291
 he	赫	258
 he	壑	247
@@ -7457,14 +7457,14 @@ jia	傢	370
 jia	伽	367
 jia	賈	363
 jia	甲	359
-jia	稼	334
+jia	稼	333
 jia	茄	332
 jia	駕	327
 jia	嫁	325
 jia	佳	319
 jia	頰	278
-jia	迦	252
 jia	鉀	251
+jia	迦	250
 jia	嘉	213
 jia	浹	179
 jia	痂	168
@@ -7761,7 +7761,7 @@ jiang	疆	305
 jiang	韁	262
 jiang	槳	258
 jiang	薑	218
-jiang	蔣	216
+jiang	蔣	213
 jiang	奬	204
 jiang	殭	150
 jiang	繮	146
@@ -7822,7 +7822,7 @@ jiao	驕	382
 jiao	膠	371
 jiao	澆	365
 jiao	狡	347
-jiao	蕉	344
+jiao	蕉	346
 jiao	繳	343
 jiao	僥	322
 jiao	窖	322
@@ -11054,7 +11054,7 @@ lun	淪	236
 lun	倫	212
 lun	侖	209
 lun	掄	200
-lun	崙	189
+lun	崙	182
 lun	圇	140
 lun	棆	64
 lun	惀	59
@@ -11272,7 +11272,7 @@ mai	賣	414
 mai	埋	396
 mai	麥	368
 mai	脈	356
-mai	邁	327
+mai	邁	329
 mai	霾	69
 mai	勱	59
 mai	嘪	59
@@ -11800,7 +11800,7 @@ mian	免	467
 mian	棉	420
 mian	眠	377
 mian	綿	323
-mian	勉	316
+mian	勉	319
 mian	麪	224
 mian	麵	219
 mian	娩	216
@@ -12117,7 +12117,7 @@ mo	魹	38
 mo	獏	1
 mou	某	460
 mou	謀	360
-mou	牟	234
+mou	牟	221
 mou	眸	191
 mou	繆	143
 mou	侔	75
@@ -13465,7 +13465,6 @@ pu	僕	262
 pu	譜	240
 pu	樸	232
 pu	浦	227
-pu	溥	206
 pu	曝	191
 pu	圃	184
 pu	蹼	171
@@ -13474,6 +13473,7 @@ pu	濮	162
 pu	璞	162
 pu	舖	157
 pu	噗	156
+pu	溥	138
 pu	潽	87
 pu	墣	77
 pu	氆	77
@@ -13561,8 +13561,8 @@ qi	蘄	198
 qi	鰭	195
 qi	憩	191
 qi	歧	185
-qi	琪	183
 qi	麒	183
+qi	琪	179
 qi	淇	163
 qi	岐	159
 qi	琦	152
@@ -14434,7 +14434,7 @@ qu	區	489
 qu	取	440
 qu	趣	421
 qu	渠	387
-qu	屈	356
+qu	屈	355
 qu	趨	353
 qu	娶	347
 qu	驅	307
@@ -16318,7 +16318,7 @@ su	溯	265
 su	粟	217
 su	酥	217
 su	囌	207
-su	穌	207
+su	穌	204
 su	夙	195
 su	簌	154
 su	僳	148
@@ -16505,7 +16505,7 @@ suo	梭	373
 suo	羧	364
 suo	鎖	350
 suo	嗦	287
-suo	瑣	278
+suo	瑣	275
 suo	唆	218
 suo	娑	168
 suo	蓑	148
@@ -16766,7 +16766,7 @@ tang	糖	377
 tang	燙	373
 tang	趟	372
 tang	塘	361
-tang	膛	309
+tang	膛	308
 tang	倘	292
 tang	淌	280
 tang	搪	268
@@ -16904,7 +16904,7 @@ tao	詜	48
 tao	飸	48
 tao	䄻	1
 te	特	444
-te	忒	211
+te	忒	237
 te	忑	144
 te	慝	80
 te	蟘	59
@@ -18349,7 +18349,7 @@ xi	晰	300
 xi	嘻	298
 xi	犀	298
 xi	昔	271
-xi	熙	270
+xi	熙	268
 xi	蟋	263
 xi	係	247
 xi	醯	239
@@ -18362,7 +18362,7 @@ xi	嬉	201
 xi	蜥	201
 xi	矽	200
 xi	兮	191
-xi	禧	187
+xi	禧	185
 xi	曦	183
 xi	硒	183
 xi	汐	171
@@ -19674,11 +19674,11 @@ xuan	楦	139
 xuan	璇	129
 xuan	泫	125
 xuan	玹	125
-xuan	鉉	113
 xuan	瑄	108
 xuan	煊	105
 xuan	諼	90
 xuan	衒	80
+xuan	鉉	75
 xuan	愃	70
 xuan	琁	70
 xuan	璿	70
@@ -19829,7 +19829,7 @@ xue	雤	41
 xue	噱	1
 xue	踅	1
 xun	尋	425
-xun	迅	376
+xun	迅	375
 xun	訊	373
 xun	旬	369
 xun	訓	365
@@ -19942,7 +19942,7 @@ ya	訝	285
 ya	雅	242
 ya	蚜	222
 ya	涯	221
-ya	婭	162
+ya	婭	167
 ya	琊	160
 ya	伢	150
 ya	睚	118
@@ -22420,7 +22420,7 @@ zha	渣	309
 zha	眨	292
 zha	札	254
 zha	乍	253
-zha	查	237
+zha	查	238
 zha	詐	223
 zha	蚱	206
 zha	榨	195
@@ -22615,8 +22615,8 @@ zhang	杖	207
 zhang	彰	202
 zhang	漳	183
 zhang	嶂	135
-zhang	璋	135
 zhang	獐	126
+zhang	璋	114
 zhang	蟑	93
 zhang	暲	66
 zhang	瘴	61
