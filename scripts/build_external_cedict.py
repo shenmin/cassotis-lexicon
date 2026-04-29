@@ -2179,15 +2179,62 @@ def _cap_named_entity_vertical_usage_score(usage_score: float, text_len: int) ->
     return min(bounded, 0.62)
 
 
+def _cap_place_vertical_usage_score(
+    usage_score: float,
+    text_len: int,
+    source_id: str = "",
+) -> float:
+    """Keep place names discoverable without letting obscure places outrank daily words."""
+    bounded = min(1.0, max(0.0, usage_score))
+    source = source_id.strip().lower()
+
+    if source == "project-curated-vertical-place-names":
+        if text_len <= 2:
+            return min(bounded, 0.62)
+        if text_len <= 4:
+            return min(bounded, 0.56)
+        return min(bounded, 0.48)
+
+    if source in {
+        "project-curated-vertical-country-region-names",
+        "project-curated-vertical-major-city-names",
+    }:
+        if text_len <= 2:
+            return min(bounded, 0.52)
+        if text_len <= 4:
+            return min(bounded, 0.46)
+        return min(bounded, 0.40)
+
+    if source.startswith("wikidata-"):
+        if text_len <= 2:
+            return min(bounded, 0.22)
+        if text_len == 3:
+            return min(bounded, 0.26)
+        if text_len == 4:
+            return min(bounded, 0.30)
+        return min(bounded, 0.28)
+
+    if text_len <= 2:
+        return min(bounded, 0.30)
+    if text_len == 3:
+        return min(bounded, 0.34)
+    if text_len == 4:
+        return min(bounded, 0.36)
+    return min(bounded, 0.34)
+
+
 def _vertical_ranking_usage_score(
     text: str,
     layer_id: str,
     usage_score: float,
     *,
+    source_id: str = "",
     supported_named_entity: bool = False,
 ) -> float:
     if _is_named_entity_vertical_layer(layer_id) and not supported_named_entity:
         return _cap_named_entity_vertical_usage_score(usage_score, _cjk_len(text))
+    if layer_id == "place_names":
+        return _cap_place_vertical_usage_score(usage_score, _cjk_len(text), source_id)
     if layer_id == "idioms_allusions":
         bounded = min(1.0, max(0.0, usage_score))
         text_len = _cjk_len(text)
@@ -11409,6 +11456,7 @@ def _reinforce_vertical_tc_terms(
                 tc_candidate,
                 layer_id,
                 usage_score,
+                source_id=source_id,
                 supported_named_entity=supported_named_entity,
             ),
             tc_usage_score_map.get(tc_candidate, 0.0),
@@ -11544,19 +11592,19 @@ def _augment_with_admin_place_short_aliases(
         )
         sc_usage = max(
             usage_score_map.get(sc_alias, 0.0),
-            min(0.34, max(parent_usage * 0.82, 0.18)),
+            min(0.18, max(parent_usage * 0.45, 0.08)),
         )
         sc_source_hits = max(
             source_hits_map.get(sc_alias, 0),
-            max(2, min(parent_source_hits, 4)),
+            min(max(parent_source_hits, 1), 2),
         )
         sc_pageview = max(
             pageviews_signal_map.get(sc_alias, 0.0),
-            min(parent_pageview, 0.24),
+            min(parent_pageview * 0.35, 0.06),
         )
         sc_jieba_direct = max(
             jieba_direct_signal_map.get(sc_alias, 0.0),
-            min(0.12, max(parent_jieba_direct * 0.50, sc_usage * 0.22)),
+            min(0.04, max(parent_jieba_direct * 0.25, sc_usage * 0.12)),
         )
         sc_pos_tag = jieba_pos_map.get(sc_parent, "ns") or "ns"
         sc_char_score = _compute_text_single_char_prior(sc_alias, sc_char_prior)
@@ -11565,12 +11613,13 @@ def _augment_with_admin_place_short_aliases(
             usage_score=sc_usage,
             source_hits=sc_source_hits,
             pageview_score=sc_pageview,
-            wiki_hit=True,
+            wiki_hit=False,
             core_entry=False,
             jieba_direct_score=sc_jieba_direct,
             pos_tag=sc_pos_tag,
             char_score=sc_char_score,
         )
+        sc_weight = min(sc_weight, 320)
         usage_score_map[sc_alias] = max(usage_score_map.get(sc_alias, 0.0), sc_usage)
         source_hits_map[sc_alias] = max(source_hits_map.get(sc_alias, 0), sc_source_hits)
         pageviews_signal_map[sc_alias] = max(
@@ -11626,12 +11675,13 @@ def _augment_with_admin_place_short_aliases(
                 usage_score=tc_usage,
                 source_hits=tc_source_hits,
                 pageview_score=tc_pageview,
-                wiki_hit=True,
+                wiki_hit=False,
                 core_entry=False,
                 jieba_direct_score=tc_jieba_direct,
                 pos_tag=tc_pos_tag,
                 char_score=tc_char_score,
             )
+            tc_weight = min(tc_weight, 320)
             tc_usage_score_map[tc_alias] = max(tc_usage_score_map.get(tc_alias, 0.0), tc_usage)
             tc_source_hits_map[tc_alias] = max(tc_source_hits_map.get(tc_alias, 0), tc_source_hits)
             tc_pageviews_signal_map[tc_alias] = max(
@@ -11825,6 +11875,7 @@ def _augment_with_vertical_terms(
             sc_word,
             layer_id,
             usage_score,
+            source_id=source_id,
             supported_named_entity=sc_supported_named_entity,
         )
         usage_score_map[sc_word] = max(usage_score_map.get(sc_word, 0.0), sc_ranking_usage_score)
@@ -11913,6 +11964,7 @@ def _augment_with_vertical_terms(
             tc_candidate,
             layer_id,
             usage_score,
+            source_id=source_id,
             supported_named_entity=tc_supported_named_entity,
         )
         tc_usage_score_map[tc_candidate] = max(tc_usage_score_map.get(tc_candidate, 0.0), tc_ranking_usage_score)
