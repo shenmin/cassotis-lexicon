@@ -10868,6 +10868,27 @@ def _cap_curated_daily_prefix_competitors(
     for (pinyin, text), weight in mapping.items():
         by_pinyin.setdefault(pinyin, []).append((text, weight))
 
+    protected_exact_keys: Set[Tuple[str, str]] = set()
+    protected_exact_texts: Set[str] = set()
+    for sc_word, tc_word, _usage_score, explicit_pinyin in curated_entries:
+        protected_text = tc_word if use_traditional and tc_word else sc_word
+        if _cjk_len(protected_text) < min_hanzi:
+            continue
+        protected_texts = [protected_text]
+        if not use_traditional and tc_word and tc_word == sc_word:
+            protected_texts.append(sc_word)
+        protected_pinyin = explicit_pinyin or _pinyin_from_unihan(
+            sc_word,
+            unihan_map,
+            unihan_readings_map,
+            unihan_source_rank_map,
+            unihan_pinlu_detail_map,
+        )
+        for item_text in protected_texts:
+            protected_exact_texts.add(item_text)
+            if protected_pinyin:
+                protected_exact_keys.add((protected_pinyin, item_text))
+
     existing_texts = {text for _pinyin, text in mapping.keys()}
     char_prior = _build_effective_char_prior(mapping, char_frequency_prior)
 
@@ -10942,6 +10963,10 @@ def _cap_curated_daily_prefix_competitors(
 
             for competitor_text, competitor_weight in by_pinyin.get(prefix_pinyin, []):
                 if competitor_text == prefix:
+                    continue
+                if (prefix_pinyin, competitor_text) in protected_exact_keys:
+                    continue
+                if competitor_text in protected_exact_texts:
                     continue
                 if competitor_weight <= competitor_cap:
                     continue
@@ -12405,14 +12430,30 @@ def _restore_missing_texts_from_snapshot(
     explicit_drop_terms: Set[str],
     stats_prefix: str,
     snapshot_restore_block_terms: Set[str] | None = None,
+    usage_score_map: Dict[str, float] | None = None,
+    source_hits_map: Dict[str, int] | None = None,
+    pageviews_signal_map: Dict[str, float] | None = None,
+    jieba_direct_signal_map: Dict[str, float] | None = None,
+    jieba_pos_map: Dict[str, str] | None = None,
+    char_frequency_prior: Dict[str, float] | None = None,
+    wiki_titles: Set[str] | None = None,
+    wiki_augmented_terms: Set[str] | None = None,
 ) -> Tuple[Dict[Tuple[str, str], int], Dict[str, int]]:
     snapshot_restore_block_terms = snapshot_restore_block_terms or set()
+    usage_score_map = usage_score_map or {}
+    source_hits_map = source_hits_map or {}
+    pageviews_signal_map = pageviews_signal_map or {}
+    jieba_direct_signal_map = jieba_direct_signal_map or {}
+    jieba_pos_map = jieba_pos_map or {}
+    wiki_titles = wiki_titles or set()
+    char_prior = _build_effective_char_prior(mapping, char_frequency_prior)
     stats = {
         f"{stats_prefix}_snapshot_rows_considered": len(previous_snapshot),
         f"{stats_prefix}_snapshot_rows_restored": 0,
         f"{stats_prefix}_snapshot_texts_restored": 0,
         f"{stats_prefix}_snapshot_rows_skipped_explicit_drop": 0,
         f"{stats_prefix}_snapshot_rows_skipped_blocked_prefix": 0,
+        f"{stats_prefix}_snapshot_rows_skipped_low_signal_risk": 0,
     }
     if not previous_snapshot:
         return mapping, stats
@@ -12430,6 +12471,45 @@ def _restore_missing_texts_from_snapshot(
             continue
         if text in current_texts:
             continue
+        if len(text) > 1 and weight >= 900:
+            usage_score = min(1.0, max(0.0, usage_score_map.get(text, 0.0)))
+            source_hits = max(0, source_hits_map.get(text, 0))
+            pageview_score = min(1.0, max(0.0, pageviews_signal_map.get(text, 0.0)))
+            jieba_direct_score = min(1.0, max(0.0, jieba_direct_signal_map.get(text, 0.0)))
+            pos_tag = jieba_pos_map.get(text, "")
+            wiki_support = _has_effective_wiki_support(
+                text,
+                wiki_titles,
+                pageview_score=pageview_score,
+                source_hits=source_hits,
+                wiki_augmented_terms=wiki_augmented_terms,
+            )
+            char_score = _compute_text_single_char_prior(text, char_prior)
+            modernity_risk = _compute_low_signal_modernity_risk(
+                text,
+                usage_score=usage_score,
+                source_hits=source_hits,
+                pageview_score=pageview_score,
+                jieba_direct_score=jieba_direct_score,
+                wiki_support=wiki_support,
+                pos_tag=pos_tag,
+                char_score=char_score,
+                min_char_prior=_compute_min_char_prior(text, char_prior),
+                looks_like_person_name=False,
+                looks_like_place_name=False,
+                looks_like_literary_term=False,
+                looks_like_written_tail_term=False,
+            )
+            if (
+                usage_score < 0.04
+                and jieba_direct_score < 0.04
+                and source_hits <= 0
+                and pageview_score < 0.02
+                and not wiki_support
+                and modernity_risk >= 180
+            ):
+                stats[f"{stats_prefix}_snapshot_rows_skipped_low_signal_risk"] += 1
+                continue
         restored[key] = weight
         current_texts.add(text)
         restored_texts.add(text)
@@ -14652,6 +14732,14 @@ def main() -> int:
             curated_daily_entries,
             use_traditional=False,
         ),
+        usage_score_map,
+        source_hits_map,
+        pageviews_signal_map,
+        jieba_direct_signal_map,
+        jieba_pos_map,
+        char_frequency_prior,
+        wiki_titles,
+        sc_augmented_terms,
     )
     tc_map, tc_snapshot_restore_stats = _restore_missing_texts_from_snapshot(
         tc_map,
@@ -14662,6 +14750,14 @@ def main() -> int:
             curated_daily_entries,
             use_traditional=True,
         ),
+        tc_usage_score_map,
+        tc_source_hits_map,
+        tc_pageviews_signal_map,
+        tc_jieba_direct_signal_map,
+        tc_jieba_pos_map,
+        tc_char_frequency_prior,
+        wiki_titles,
+        tc_augmented_terms,
     )
     stats.update(sc_snapshot_restore_stats)
     stats.update(tc_snapshot_restore_stats)
