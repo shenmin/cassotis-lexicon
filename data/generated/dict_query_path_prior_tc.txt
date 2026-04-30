@@ -186,6 +186,7 @@ babietashengge	巴別塔|聖歌	499
 bachibuding	把持|不定	484
 bachubaijia	罷黜|百傢	464
 badalingchangcheng	八達嶺|長城	456
+badianyike	八點|一刻	520
 badouzhongdu	巴豆|中毒	482
 bafanglvren	八方|旅人	469
 bafangzhichi	八方|支持	497
@@ -480,7 +481,7 @@ baquanzhuyi	霸權|主義	450
 bashimoni	巴士|模擬	515
 bawansiqian	八萬|四千	483
 baxishizhen	巴西|市鎮	468
-bayiqiyi	八一|起義	472
+bayiqiyi	八一|起義	473
 bayuedeshizi	八月的|柿子	449
 beibiwochuo	卑鄙|齷齪	481
 beibiwuchi	卑鄙|無恥	485
@@ -4101,7 +4102,7 @@ fuzhiguge	附肢|骨骼	469
 fuzhihanshu	賦值|函數	457
 fuzhijili	複製|機理	497
 fuzhijishu	複製|技術	497
-fuzhiqidian	複製|起點	479
+fuzhiqidian	複製|起點	460
 fuzhiyuandian	複製|原點	497
 fuzhubianliang	輔助|變量	499
 fuzhubingdu	輔助|病毒	499
@@ -4315,7 +4316,7 @@ gaosutamen	告訴|他們	516
 gaosuwomen	告訴|我們	520
 gaosuxiangji	高速|相機	501
 gaosuyexiangsepu	高速|液相色譜	497
-gaotajiudian	高塔|酒店	432
+gaotajiudian	高塔|酒店	423
 gaowanfujian	睾丸|附件	382
 gaowanfujianniuzhuan	睾丸|附件|扭轉	464
 gaowanjianzhixibao	睾丸|間質細胞	497
@@ -7102,6 +7103,7 @@ jitizhuzhai	集體|住宅	497
 jituangongsi	集團|公司	437
 jiubiechongfeng	久別|重逢	472
 jiuchanbuqing	糾纏|不清	471
+jiudianyike	九點|一刻	520
 jiudiqucai	就地|取材	489
 jiudizhengfa	就地|正法	452
 jiuergongshi	九二|共識	443
@@ -8204,6 +8206,10 @@ lianbujirou	臉部|肌肉	497
 lianbuyizhi	臉部|移植	500
 liangansuanlalian	亮氨酸|拉鍊	497
 liangcaoxianxing	糧草|先行	485
+liangdianshifen	兩點|十分	416
+liangdianshifendonghua	兩點|十分|動畫	498
+liangdianyike	兩點|一刻	520
+liangdianzhijian	兩點|之間	512
 lianggeshijie	兩個|世界	512
 liangguangzongdu	兩廣|總督	434
 lianghantongyiwenti	兩韓統一|問題	454
@@ -8504,6 +8510,7 @@ litizhaopian	立體|照片	467
 litizhuyi	立體|主義	482
 liubangyouxuean	劉邦友|血案	404
 liubianxingwangge	六邊形|網格	469
+liudianyike	六點|一刻	520
 liudongrenkou	流動|人口	445
 liudongzijin	流動|資金	467
 liufangqiangu	流芳|韆古	372
@@ -10520,6 +10527,7 @@ qichelvguan	汽車|旅館	463
 qichezongdongyuan	汽車|總動員	512
 qidaiganran	臍帶|感染	420
 qidaozuli	氣道|阻力	448
+qidianyike	七點|一刻	520
 qidongdaima	啓動|代碼	487
 qidongshiwu	啓動|事務	472
 qidongzichengxu	啓動子|程序	467
@@ -11467,6 +11475,7 @@ sanchashanshijian	三叉山|事件	427
 sanchashenjing	三叉|神經	514
 sanchashenjingjie	三叉|神經節	481
 sanchashenjingtong	三叉|神經痛	500
+sandianyike	三點|一刻	520
 sanfanliangci	三番|兩次	486
 sanfentianxia	三分|天下	408
 sangeheshang	三個|和尚	487
@@ -12376,8 +12385,10 @@ shidangxingwei	失當|行為	497
 shidaokuiyang	食道|潰瘍	485
 shidaoxiazhai	食道|狹窄	484
 shidianshiwu	十點|十五	520
+shidianyike	十點|一刻	520
 shidishuiruanjiaonang	十滴水|軟膠囊	464
 shiduodelunchuan	失舵的|輪船	416
+shierdianyike	十二點|一刻	520
 shierdizhi	十二|地支	461
 shiershizhe	十二|使者	448
 shierwanfen	十二|萬分	483
@@ -12701,6 +12712,7 @@ shiyeruhejiejue	失業|如何|解決	497
 shiyewenti	失業|問題	497
 shiyeyoucheng	事業|有成	487
 shiyiciji	適宜|刺激	479
+shiyidianyike	十一點|一刻	520
 shiyingzhangai	適應|障礙	482
 shiyongchengxu	實用|程序	491
 shiyongdaima	實用|代碼	485
@@ -13108,6 +13120,7 @@ siansuandanbaimei	絲氨酸|蛋白酶	465
 sichuanjianzhu	四川|建築	485
 sidalinjianzhu	斯大林|建築	468
 sidazujian	四大|組件	463
+sidianyike	四點|一刻	520
 sifajiguan	司法|機關	463
 sifajingshen	司法|精神	415
 sifajingshenyixue	司法|精神|醫學	497
@@ -14503,6 +14516,7 @@ wuchanjieji	無產|階級	501
 wudaojinhua	舞蹈|進化	512
 wudaoliaofa	舞蹈|療法	497
 wudaozhongxin	舞蹈|中心	515
+wudianyike	五點|一刻	520
 wudikangzhuyi	無抵抗|主義	416
 wudingdenglong	屋頂|燈籠	480
 wudingdiaoxiang	屋頂|雕像	480
@@ -16681,8 +16695,9 @@ yidaosukangti	胰島素|抗體	464
 yidaosushouti	胰島素|受體	497
 yidaoxibaoai	胰島|細胞癌	497
 yidaoyizhi	胰島|移植	482
-yidianbandian	一點|半點	468
+yidianbandian	一點|半點	481
 yidianyidian	一點|一點	465
+yidianyike	一點|一刻	520
 yidianyuanjihua	伊甸園|計劃	503
 yidongceshi	移動|測試	485
 yidongdaima	移動|代碼	486
@@ -18753,7 +18768,7 @@ zhongyimeirongxue	中醫|美容學	466
 zhongyineikexue	中醫|內科學	466
 zhongyirkexue	中醫|兒科學	465
 zhongyiwaikexue	中醫|外科學	458
-zhongyiwuguankexue	中醫|五官科學	373
+zhongyiwuguankexue	中醫|五官科學	372
 zhongyixinlixue	中醫|心理學	467
 zhongyixuejichu	中醫學|基礎	461
 zhongyiyankexue	中醫|眼科學	467

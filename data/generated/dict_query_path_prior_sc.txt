@@ -184,6 +184,7 @@ babietashengge	巴别塔|圣歌	502
 bachibuding	把持|不定	484
 bachubaijia	罢黜|百家	486
 badacaixi	八大|菜系	467
+badianyike	八点|一刻	520
 badouzhongdu	巴豆|中毒	467
 bafanglvren	八方|旅人	469
 bafangzhichi	八方|支持	497
@@ -1132,7 +1133,7 @@ buliangfanying	不良|反应	501
 buliesiteyaosai	布列斯特|要塞	436
 bulincijiao	不吝|赐教	476
 bulisituo	布里|斯托	476
-bulisituojiudian	布里|斯托|酒店	362
+bulisituojiudian	布里|斯托|酒店	360
 bulufengmang	不露|锋芒	483
 buluochongtu	部落|冲突	515
 buluofenhunxuanye	布洛芬|混悬液	445
@@ -4436,7 +4437,7 @@ fuzhiguge	附肢|骨骼	464
 fuzhihanshu	赋值|函数	454
 fuzhijili	复制|机理	499
 fuzhijishu	复制|技术	514
-fuzhiqidian	复制|起点	482
+fuzhiqidian	复制|起点	460
 fuzhiyuandian	复制|原点	500
 fuzhubianliang	辅助|变量	502
 fuzhubingdu	辅助|病毒	502
@@ -4659,7 +4660,7 @@ gaosutamen	告诉|他们	520
 gaosuwomen	告诉|我们	520
 gaosuxiangji	高速|相机	501
 gaosuyexiangsepu	高速|液相色谱	497
-gaotajiudian	高塔|酒店	432
+gaotajiudian	高塔|酒店	410
 gaowanfujian	睾丸|附件	382
 gaowanfujianniuzhuan	睾丸|附件|扭转	464
 gaowanjianzhixibao	睾丸|间质细胞	497
@@ -5379,7 +5380,7 @@ guojizuqiu	国际|足球	520
 guojizuqiujuxing	国际|足球|巨星	509
 guojizuxie	国际|足协	436
 guolidepangxie	锅里的|螃蟹	449
-guolijiudian	国立|酒店	480
+guolijiudian	国立|酒店	467
 guolucaishen	过路|财神	473
 guolurendiaosang	过路人|吊丧	439
 guolvjiaoben	过滤|脚本	508
@@ -7738,6 +7739,7 @@ jituangongsi	集团|公司	508
 jiubiechongfeng	久别|重逢	475
 jiubingfufa	旧病|复发	462
 jiuchanbuqing	纠缠|不清	462
+jiudianyike	九点|一刻	520
 jiudiqucai	就地|取材	489
 jiudizhengfa	就地|正法	449
 jiuergongshi	九二|共识	449
@@ -8933,6 +8935,10 @@ lianbujirou	脸部|肌肉	500
 lianbuyizhi	脸部|移植	500
 liangansuanlalian	亮氨酸|拉链	500
 liangcaoxianxing	粮草|先行	499
+liangdianshifen	两点|十分	416
+liangdianshifendonghua	两点|十分|动画	498
+liangdianyike	两点|一刻	520
+liangdianzhijian	两点|之间	515
 lianggeshijie	两个|世界	515
 liangguangzongdu	两广|总督	457
 lianghantongyiwenti	两韩统一|问题	454
@@ -9268,6 +9274,7 @@ litizhuyi	立体|主义	499
 liuansuquefazheng	硫胺素|缺乏症	486
 liubangyouxuean	刘邦友|血案	394
 liubianxingwangge	六边形|网格	474
+liudianyike	六点|一刻	520
 liudongrenkou	流动|人口	445
 liudongzijin	流动|资金	473
 liufangqiangu	流芳|千古	420
@@ -11428,6 +11435,7 @@ qichezongdongyuan	汽车|总动员	515
 qichuanxuxu	气喘|吁吁	495
 qidaiganran	脐带|感染	423
 qidaozuli	气道|阻力	448
+qidianyike	七点|一刻	520
 qidongdaima	启动|代码	491
 qidongshiwu	启动|事务	490
 qidunguosuanjiaonang	齐墩果酸|胶囊	464
@@ -12423,6 +12431,7 @@ sanchashanshijian	三叉山|事件	417
 sanchashenjing	三叉|神经	514
 sanchashenjingjie	三叉|神经节	486
 sanchashenjingtong	三叉|神经痛	507
+sandianyike	三点|一刻	520
 sanfanliangci	三番|两次	486
 sanfentianxia	三分|天下	445
 sangeheshang	三个|和尚	487
@@ -13373,8 +13382,10 @@ shidangxingwei	失当|行为	437
 shidaokuiyang	食道|溃疡	425
 shidaoxiazhai	食道|狭窄	487
 shidianshiwu	十点|十五	520
+shidianyike	十点|一刻	520
 shidishuiruanjiaonang	十滴水|软胶囊	464
 shiduodelunchuan	失舵的|轮船	435
+shierdianyike	十二点|一刻	520
 shierdizhi	十二|地支	444
 shiershizhe	十二|使者	498
 shierwanfen	十二|万分	483
@@ -13615,7 +13626,7 @@ shiquzhijue	失去|知觉	500
 shiroudongwu	食肉|动物	487
 shiroudongwuxilie	食肉|动物|系列	509
 shiruikesanshi	史瑞克|三世	505
-shiruishizhi	石蕊|试纸	441
+shiruishizhi	石蕊|试纸	440
 shirutoushuizhong	视乳头|水肿	467
 shishangbaifenbai	时尚|百分百	494
 shishangjingcha	时尚|警察	430
@@ -13723,6 +13734,7 @@ shiyeruhejiejue	失业|如何|解决	497
 shiyewenti	失业|问题	514
 shiyeyoucheng	事业|有成	487
 shiyiciji	适宜|刺激	482
+shiyidianyike	十一点|一刻	520
 shiyingzhangai	适应|障碍	486
 shiyizhengxilie	失忆症|系列	513
 shiyongchengxu	实用|程序	505
@@ -14209,6 +14221,7 @@ siansuandanbaimei	丝氨酸|蛋白酶	465
 sichuanjianzhu	四川|建筑	485
 sidalinjianzhu	斯大林|建筑	468
 sidazujian	四大|组件	463
+sidianyike	四点|一刻	520
 sifajiguan	司法|机关	467
 sifajingshen	司法|精神	415
 sifajingshenyixue	司法|精神|医学	497
@@ -15754,6 +15767,7 @@ wuchanjieji	无产|阶级	505
 wudaojinhua	舞蹈|进化	515
 wudaoliaofa	舞蹈|疗法	514
 wudaozhongxin	舞蹈|中心	515
+wudianyike	五点|一刻	520
 wudikangzhuyi	无抵抗|主义	441
 wudingdenglong	屋顶|灯笼	483
 wudingdiaoxiang	屋顶|雕像	483
@@ -15826,7 +15840,7 @@ wukefenggao	无可|奉告	487
 wukeguliang	无可|估量	484
 wukehuiyan	无可|讳言	476
 wukelanfangzi	乌克兰|房子	464
-wukelanjiudian	乌克兰|酒店	464
+wukelanjiudian	乌克兰|酒店	457
 wukelanzhanlanguan	乌克兰|展览馆	462
 wukelanzongtongfu	乌克兰|总统府	462
 wukemingzhuang	无可|名状	440
@@ -18140,8 +18154,9 @@ yidaosukangti	胰岛素|抗体	467
 yidaosushouti	胰岛素|受体	500
 yidaoxibaoai	胰岛|细胞癌	500
 yidaoyizhi	胰岛|移植	485
-yidianbandian	一点|半点	473
+yidianbandian	一点|半点	484
 yidianyidian	一点|一点	465
+yidianyike	一点|一刻	520
 yidianyuanjihua	伊甸园|计划	506
 yidongceshi	移动|测试	489
 yidongdaima	移动|代码	490
