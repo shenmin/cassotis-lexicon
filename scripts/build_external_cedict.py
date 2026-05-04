@@ -12424,6 +12424,161 @@ def _load_existing_dict_snapshot(
     return snapshot
 
 
+def _build_snapshot_prefix_fragment_support_index(
+    mapping: Dict[Tuple[str, str], int],
+    previous_snapshot: Dict[Tuple[str, str], int],
+) -> Dict[str, List[Tuple[str, int]]]:
+    """
+    Index longer terms that can explain a shorter snapshot row as a stale
+    generated prefix fragment.  The index is used only as evidence while
+    restoring old rows; it does not synthesize any exact dictionary entry.
+    """
+    combined: Dict[Tuple[str, str], int] = {}
+    combined.update(previous_snapshot)
+    combined.update(mapping)
+
+    support_index: Dict[str, List[Tuple[str, int]]] = {}
+    for (pinyin, text), weight in combined.items():
+        text_len = _cjk_len(text)
+        if weight <= 0 or text_len < 4 or not CJK_FULL_RE.fullmatch(text):
+            continue
+
+        for prefix_len in range(3, min(4, text_len - 1) + 1):
+            prefix_text = text[:prefix_len]
+            support_index.setdefault(prefix_text, []).append((pinyin, weight))
+
+    return support_index
+
+
+def _is_low_signal_snapshot_prefix_fragment(
+    pinyin: str,
+    text: str,
+    weight: int,
+    prefix_fragment_support_index: Dict[str, List[Tuple[str, int]]],
+    usage_score_map: Dict[str, float],
+    source_hits_map: Dict[str, int],
+    pageviews_signal_map: Dict[str, float],
+    jieba_direct_signal_map: Dict[str, float],
+    wiki_titles: Set[str],
+    wiki_augmented_terms: Set[str] | None,
+) -> bool:
+    if not _has_low_weight_longer_prefix_fragment_structure(
+        pinyin,
+        text,
+        weight,
+        prefix_fragment_support_index,
+    ):
+        return False
+
+    usage_score = min(1.0, max(0.0, usage_score_map.get(text, 0.0)))
+    source_hits = max(0, source_hits_map.get(text, 0))
+    pageview_score = min(1.0, max(0.0, pageviews_signal_map.get(text, 0.0)))
+    jieba_direct_score = min(1.0, max(0.0, jieba_direct_signal_map.get(text, 0.0)))
+    wiki_support = _has_effective_wiki_support(
+        text,
+        wiki_titles,
+        pageview_score=pageview_score,
+        source_hits=source_hits,
+        wiki_augmented_terms=wiki_augmented_terms,
+    )
+
+    return (
+        usage_score < 0.16
+        and jieba_direct_score < 0.16
+        and source_hits <= 2
+        and pageview_score < 0.08
+        and not wiki_support
+    )
+
+
+def _has_low_weight_longer_prefix_fragment_structure(
+    pinyin: str,
+    text: str,
+    weight: int,
+    prefix_fragment_support_index: Dict[str, List[Tuple[str, int]]],
+) -> bool:
+    text_len = _cjk_len(text)
+    if (
+        weight >= 360
+        or text_len < 3
+        or text_len > 4
+        or not CJK_FULL_RE.fullmatch(text)
+    ):
+        return False
+
+    support_entries = prefix_fragment_support_index.get(text)
+    if not support_entries:
+        return False
+
+    for support_pinyin, support_weight in support_entries:
+        if (
+            support_pinyin.startswith(pinyin)
+            and len(support_pinyin) > len(pinyin)
+            and support_weight >= max(420, weight + 240)
+        ):
+            return True
+
+    return False
+
+
+def _filter_low_signal_prefix_fragment_entries(
+    mapping: Dict[Tuple[str, str], int],
+    usage_score_map: Dict[str, float],
+    source_hits_map: Dict[str, int],
+    pageviews_signal_map: Dict[str, float],
+    jieba_direct_signal_map: Dict[str, float],
+    wiki_titles: Set[str],
+    wiki_augmented_terms: Set[str] | None,
+    stats_prefix: str,
+    respect_source_signal: bool = True,
+) -> Dict[str, int]:
+    stats = {
+        f"{stats_prefix}_prefix_fragment_entries_removed": 0,
+    }
+    if not mapping:
+        return stats
+
+    support_index = _build_snapshot_prefix_fragment_support_index(mapping, {})
+    best_bucket_weight: Dict[str, int] = {}
+    for (pinyin, _text), weight in mapping.items():
+        best_bucket_weight[pinyin] = max(best_bucket_weight.get(pinyin, 0), weight)
+
+    to_drop: List[Tuple[str, str]] = []
+    for (pinyin, text), weight in mapping.items():
+        if best_bucket_weight.get(pinyin, 0) < max(720, weight * 3):
+            continue
+        if not _has_low_weight_longer_prefix_fragment_structure(
+            pinyin,
+            text,
+            weight,
+            support_index,
+        ):
+            continue
+        if respect_source_signal and (
+            not _is_low_signal_snapshot_prefix_fragment(
+                pinyin,
+                text,
+                weight,
+                support_index,
+                usage_score_map,
+                source_hits_map,
+                pageviews_signal_map,
+                jieba_direct_signal_map,
+                wiki_titles,
+                wiki_augmented_terms,
+            )
+        ):
+            continue
+        to_drop.append((pinyin, text))
+
+    for key in to_drop:
+        if key in mapping:
+            del mapping[key]
+            stats[f"{stats_prefix}_prefix_fragment_entries_removed"] += 1
+
+    return stats
+
+
 def _restore_missing_texts_from_snapshot(
     mapping: Dict[Tuple[str, str], int],
     previous_snapshot: Dict[Tuple[str, str], int],
@@ -12453,6 +12608,7 @@ def _restore_missing_texts_from_snapshot(
         f"{stats_prefix}_snapshot_texts_restored": 0,
         f"{stats_prefix}_snapshot_rows_skipped_explicit_drop": 0,
         f"{stats_prefix}_snapshot_rows_skipped_blocked_prefix": 0,
+        f"{stats_prefix}_snapshot_rows_skipped_prefix_fragment": 0,
         f"{stats_prefix}_snapshot_rows_skipped_low_signal_risk": 0,
     }
     if not previous_snapshot:
@@ -12460,6 +12616,10 @@ def _restore_missing_texts_from_snapshot(
 
     restored = dict(mapping)
     current_texts = {text for _pinyin, text in restored.keys()}
+    prefix_fragment_support_index = _build_snapshot_prefix_fragment_support_index(
+        mapping,
+        previous_snapshot,
+    )
     restored_texts: Set[str] = set()
     for key, weight in previous_snapshot.items():
         _pinyin, text = key
@@ -12470,6 +12630,20 @@ def _restore_missing_texts_from_snapshot(
             stats[f"{stats_prefix}_snapshot_rows_skipped_blocked_prefix"] += 1
             continue
         if text in current_texts:
+            continue
+        if len(text) > 1 and _is_low_signal_snapshot_prefix_fragment(
+            _pinyin,
+            text,
+            weight,
+            prefix_fragment_support_index,
+            usage_score_map,
+            source_hits_map,
+            pageviews_signal_map,
+            jieba_direct_signal_map,
+            wiki_titles,
+            wiki_augmented_terms,
+        ):
+            stats[f"{stats_prefix}_snapshot_rows_skipped_prefix_fragment"] += 1
             continue
         if len(text) > 1 and weight >= 900:
             usage_score = min(1.0, max(0.0, usage_score_map.get(text, 0.0)))
@@ -14761,6 +14935,28 @@ def main() -> int:
     )
     stats.update(sc_snapshot_restore_stats)
     stats.update(tc_snapshot_restore_stats)
+    sc_prefix_fragment_stats = _filter_low_signal_prefix_fragment_entries(
+        sc_map,
+        usage_score_map,
+        source_hits_map,
+        pageviews_signal_map,
+        jieba_direct_signal_map,
+        wiki_titles,
+        sc_augmented_terms,
+        "sc",
+    )
+    tc_prefix_fragment_stats = _filter_low_signal_prefix_fragment_entries(
+        tc_map,
+        tc_usage_score_map,
+        tc_source_hits_map,
+        tc_pageviews_signal_map,
+        tc_jieba_direct_signal_map,
+        wiki_titles,
+        tc_augmented_terms,
+        "tc",
+    )
+    stats.update(sc_prefix_fragment_stats)
+    stats.update(tc_prefix_fragment_stats)
     (
         admin_place_alias_stats,
         admin_place_alias_sc_terms,
@@ -14948,6 +15144,30 @@ def main() -> int:
     stats.update(sc_word_pinyin_override_stats)
     stats.update(tc_word_pinyin_override_stats)
     stats["word_pinyin_override_entries"] = len(word_pinyin_overrides)
+    sc_final_prefix_fragment_stats = _filter_low_signal_prefix_fragment_entries(
+        sc_map,
+        usage_score_map,
+        source_hits_map,
+        pageviews_signal_map,
+        jieba_direct_signal_map,
+        wiki_titles,
+        sc_augmented_terms,
+        "sc_final",
+        respect_source_signal=False,
+    )
+    tc_final_prefix_fragment_stats = _filter_low_signal_prefix_fragment_entries(
+        tc_map,
+        tc_usage_score_map,
+        tc_source_hits_map,
+        tc_pageviews_signal_map,
+        tc_jieba_direct_signal_map,
+        wiki_titles,
+        tc_augmented_terms,
+        "tc_final",
+        respect_source_signal=False,
+    )
+    stats.update(sc_final_prefix_fragment_stats)
+    stats.update(tc_final_prefix_fragment_stats)
     sc_query_path_priors: Dict[Tuple[str, str], int] = {}
     tc_query_path_priors: Dict[Tuple[str, str], int] = {}
     if output_query_path_sc is not None:
