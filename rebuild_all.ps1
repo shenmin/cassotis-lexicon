@@ -1,6 +1,6 @@
 [CmdletBinding()]
 param(
-    [string]$Root = (Resolve-Path $PSScriptRoot).Path,
+    [string]$Root = "",
     [ValidateSet("external_broad", "external_cedict", "clean_permissive")]
     [string]$Profile = "external_broad",
     [int]$MinHanzi = 2,
@@ -23,6 +23,16 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
+
+if ([string]::IsNullOrWhiteSpace($Root)) {
+    if (-not [string]::IsNullOrWhiteSpace($PSScriptRoot)) {
+        $Root = $PSScriptRoot
+    }
+    else {
+        $Root = (Get-Location).Path
+    }
+}
+$Root = (Resolve-Path $Root).Path
 
 function Get-PythonCommand {
     function Test-PythonCandidate {
