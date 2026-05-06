@@ -3191,7 +3191,7 @@ duimahaixia	對馬|海峽	415
 duimayouhun	對馬|幽魂	500
 duimenchuidizi	對門吹|笛子	399
 duiniutanqin	對牛|彈琴	476
-duiniuyinshi	對牛|吟詩	428
+duiniuyinshi	對牛|吟詩	410
 duiwaimaoyi	對外|貿易	485
 duiwaizhaiwu	對外|債務	484
 duixiangbijiao	對象|比較	487
@@ -6792,6 +6792,7 @@ jingnangexingzhongliu	精囊|惡性|腫瘤	464
 jingnangjieshi	精囊|結石	407
 jingnangnangzhong	精囊|囊腫	430
 jingnangzhongliu	精囊|腫瘤	478
+jingongcankao	僅供|參考	485
 jingqidonghua	驚奇|動畫	498
 jingqiriben	驚奇|日本	376
 jingqiribendonghua	驚奇|日本|動畫	458
@@ -7431,7 +7432,7 @@ julushilingqin	居魯士|陵寢	438
 junbeijingsai	軍備|競賽	463
 junfangyiyuan	軍方|醫院	497
 junfeikaizhi	軍費|開支	463
-junhengyinshi	均衡|飲食	491
+junhengyinshi	均衡|飲食	455
 junhuojiaoyi	軍火|交易	467
 junluoxingcheng	菌落|形成	384
 junluoxingchengdanwei	菌落|形成|單位	466
@@ -13360,7 +13361,7 @@ suoyintuxiang	索引|圖像	485
 suoyinyouhua	索引|優化	490
 suranqijing	肅然|起敬	471
 surongajiaokeli	速溶|阿膠顆粒	460
-sushiyinshi	素食|飲食	500
+sushiyinshi	素食|飲食	493
 sushizhuyi	素食|主義	474
 sushuoyouxi	訴說|遊戲	499
 suxiaoganmao	速效|感冒	383
@@ -14569,7 +14570,7 @@ wudongzhiliao	舞動|治療	497
 wudongzhiyexilie	無鼕之夜|係列	417
 wuduanwangyou	無端|網遊	431
 wufangzachu	五方|雜處	409
-wufuzhiyinshi	無麩質|飲食	474
+wufuzhiyinshi	無麩質|飲食	438
 wugandagongheguo	烏干達|共和國	436
 wugengxiexie	五更|泄瀉	480
 wugongyaoshang	蜈蚣|咬傷	481
@@ -15011,6 +15012,7 @@ xianrujiangju	陷入|僵局	454
 xianshenshuofa	現身|說法	437
 xianshidaohang	顯示|導航	505
 xianshijianyan	現實|檢驗	497
+xianshijiekoushixian	顯式|接口實現	467
 xianshiliaofa	現實|療法	487
 xianshiluanma	顯示|亂碼	519
 xianshipengzhuang	顯示|碰撞	423
@@ -15113,7 +15115,7 @@ xiaochouchali	小醜|查理	393
 xiaochuanchixu	哮喘|持續	383
 xiaochuanchixuzhuangtai	哮喘|持續|狀態	465
 xiaochuanjiaonang	哮喘|膠囊	479
-xiaochuyinshi	消除|飲食	498
+xiaochuyinshi	消除|飲食	462
 xiaodaoxiaoxi	小道|消息	489
 xiaoducuoshouye	消毒|搓手液	500
 xiaoermabi	小兒|麻痺	498
@@ -17165,11 +17167,13 @@ yinrongxiaomao	音容|笑貌	432
 yinsehuanxiang	銀色|幻想	515
 yinseshijian	銀色|事件	515
 yinseyaoyuan	銀色|遙遠	512
-yinshibuchongji	飲食|補充劑	489
-yinshiliaofa	飲食|療法	482
-yinshimeirong	飲食|美容	479
-yinshinannv	飲食|男女	481
-yinshiqiju	飲食|起居	487
+yinshibuchongji	飲食|補充劑	454
+yinshileixing	隱式|類型	387
+yinshileixingzhuanhuan	隱式|類型|轉換	469
+yinshiliaofa	飲食|療法	447
+yinshimeirong	飲食|美容	443
+yinshinannv	飲食|男女	445
+yinshiqiju	飲食|起居	484
 yinshuijiafu	飲水|加氟	475
 yinshuisiyuan	飲水|思源	501
 yinsizhengce	隱私|政策	520
@@ -18512,7 +18516,7 @@ zhiwuxianwei	植物|纖維	485
 zhiwuxibao	植物|細胞	500
 zhiwuxibaoxue	植物|細胞學	497
 zhiwuxueningsu	植物|血凝素	467
-zhiwuyinshi	植物|飲食	500
+zhiwuyinshi	植物|飲食	497
 zhiwuzaichun	植物|甾醇	500
 zhiwuzhuangtai	植物|狀態	482
 zhixiangxinglide	指嚮性|利得	416

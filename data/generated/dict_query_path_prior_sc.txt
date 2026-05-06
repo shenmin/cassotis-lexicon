@@ -3438,7 +3438,7 @@ duimahaixia	对马|海峡	426
 duimayouhun	对马|幽魂	511
 duimenchuidizi	对门吹|笛子	429
 duiniutanqin	对牛|弹琴	480
-duiniuyinshi	对牛|吟诗	462
+duiniuyinshi	对牛|吟诗	445
 duiwaikaifang	对外|开放	495
 duiwaimaoyi	对外|贸易	488
 duiwaizhaiwu	对外|债务	487
@@ -7420,6 +7420,7 @@ jingnangexingzhongliu	精囊|恶性|肿瘤	464
 jingnangjieshi	精囊|结石	407
 jingnangnangzhong	精囊|囊肿	433
 jingnangzhongliu	精囊|肿瘤	482
+jingongcankao	仅供|参考	488
 jingqidonghua	惊奇|动画	501
 jingqiriben	惊奇|日本	378
 jingqiribendonghua	惊奇|日本|动画	460
@@ -7609,7 +7610,7 @@ jinrongwulixue	金融|物理学	501
 jinrujuzhen	进入|矩阵	515
 jinrumuti	进入|母体	515
 jinshenbiaozhun	谨慎|标准	500
-jinshengjinshi	今生|今世	488
+jinshengjinshi	今生|今世	481
 jinshileishe	近视|雷射	477
 jinshixingwei	进食|行为	500
 jinshizhangai	进食|障碍	492
@@ -8098,7 +8099,7 @@ julushilingqin	居鲁士|陵寝	436
 junbeijingsai	军备|竞赛	467
 junfangyiyuan	军方|医院	500
 junfeikaizhi	军费|开支	467
-junhengyinshi	均衡|饮食	494
+junhengyinshi	均衡|饮食	458
 junhuojiaoyi	军火|交易	467
 junluoxingcheng	菌落|形成	384
 junluoxingchengdanwei	菌落|形成|单位	466
@@ -14481,7 +14482,7 @@ suoyintuxiang	索引|图像	489
 suoyinyouhua	索引|优化	490
 suranqijing	肃然|起敬	468
 surongajiaokeli	速溶|阿胶颗粒	459
-sushiyinshi	素食|饮食	500
+sushiyinshi	素食|饮食	493
 sushizhuyi	素食|主义	474
 sushuoyouxi	诉说|游戏	502
 suweiaizhengfu	苏维埃|政府	497
@@ -15826,7 +15827,7 @@ wudongzhiyexilie	无冬之夜|系列	509
 wuduanwangyou	无端|网游	436
 wuebuzuo	无恶|不作	491
 wufangzachu	五方|杂处	408
-wufuzhiyinshi	无麸质|饮食	477
+wufuzhiyinshi	无麸质|饮食	441
 wugengxiexie	五更|泄泻	483
 wugongyaoshang	蜈蚣|咬伤	481
 wuguandaju	无关|大局	485
@@ -16305,6 +16306,8 @@ xianrujiangju	陷入|僵局	454
 xianshenshuofa	现身|说法	442
 xianshidaohang	显示|导航	508
 xianshijianyan	现实|检验	500
+xianshijiekou	显式|接口	385
+xianshijiekoushixian	显式|接口|实现	467
 xianshiliaofa	现实|疗法	489
 xianshiluanma	显示|乱码	520
 xianshipengzhuang	显示|碰撞	423
@@ -16413,7 +16416,7 @@ xiaochoulouti	小丑|楼梯	423
 xiaochuanchixu	哮喘|持续	383
 xiaochuanchixuzhuangtai	哮喘|持续|状态	465
 xiaochuanjiaonang	哮喘|胶囊	479
-xiaochuyinshi	消除|饮食	498
+xiaochuyinshi	消除|饮食	462
 xiaodaoxiaoxi	小道|消息	484
 xiaoducuoshouye	消毒|搓手液	500
 xiaoermabi	小儿|麻痹	502
@@ -18650,11 +18653,13 @@ yinrongxiaomao	音容|笑貌	429
 yinsehuanxiang	银色|幻想	515
 yinseshijian	银色|事件	515
 yinseyaoyuan	银色|遥远	515
-yinshibuchongji	饮食|补充剂	500
-yinshiliaofa	饮食|疗法	498
-yinshimeirong	饮食|美容	479
-yinshinannv	饮食|男女	482
-yinshiqiju	饮食|起居	489
+yinshibuchongji	饮食|补充剂	469
+yinshileixing	隐式|类型	387
+yinshileixingzhuanhuan	隐式|类型|转换	469
+yinshiliaofa	饮食|疗法	462
+yinshimeirong	饮食|美容	443
+yinshinannv	饮食|男女	446
+yinshiqiju	饮食|起居	486
 yinshuisiyuan	饮水|思源	501
 yinsizhengce	隐私|政策	520
 yinsuchuji	音速|出击	502
@@ -20126,7 +20131,7 @@ zhiwuxianwei	植物|纤维	489
 zhiwuxibao	植物|细胞	500
 zhiwuxibaoxue	植物|细胞学	500
 zhiwuxueningsu	植物|血凝素	467
-zhiwuyinshi	植物|饮食	500
+zhiwuyinshi	植物|饮食	497
 zhiwuzaichun	植物|甾醇	500
 zhiwuzhuangtai	植物|状态	486
 zhixiangxinglide	指向性|利得	447

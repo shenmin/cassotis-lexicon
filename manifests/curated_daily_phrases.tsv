@@ -3211,6 +3211,17 @@
 我开	我開	0.90	wokai
 我服	我服	0.90	wofu
 # daily action and utility phrases
+显式	顯式	0.90	xianshi
+隐式	隱式	0.90	yinshi
+仅有	僅有	0.90	jinyou
+仅剩	僅剩	0.90	jinsheng
+仅次	僅次	0.90	jinci
+仅供	僅供	0.90	jingong
+不饿	不餓	0.90	bu'e
+很饿	很餓	0.90	hen'e
+饿了	餓了	0.90	e'le
+还饿	還餓	0.90	hai'e
+又饿	又餓	0.90	you'e
 找找	找找	0.90	zhaozhao
 要到	要到	0.90	yaodao
 就到	就到	0.90	jiudao
