@@ -4374,6 +4374,7 @@ def _rerank_homophone_buckets(
     jieba_pos_map: Dict[str, str] | None,
     char_frequency_prior: Dict[str, float] | None,
     term_style_penalty_map: Dict[Tuple[str, str], int] | None,
+    term_semantic_bonus_map: Dict[Tuple[str, str], int] | None,
     preferred_terms: Set[str] | None,
     stats_prefix: str,
 ) -> Dict[str, int]:
@@ -4417,6 +4418,7 @@ def _rerank_homophone_buckets(
         f"{stats_prefix}_homophone_preferred_term_boosted": 0,
         f"{stats_prefix}_homophone_preferred_term_damped": 0,
         f"{stats_prefix}_homophone_short_family_noun_damped": 0,
+        f"{stats_prefix}_homophone_semantic_daily_boosted": 0,
     }
     if not mapping:
         return stats
@@ -4427,6 +4429,7 @@ def _rerank_homophone_buckets(
     jieba_direct_signal_map = jieba_direct_signal_map or {}
     jieba_pos_map = jieba_pos_map or {}
     term_style_penalty_map = term_style_penalty_map or {}
+    term_semantic_bonus_map = term_semantic_bonus_map or {}
     preferred_terms = preferred_terms or set()
     char_prior = _build_effective_char_prior(mapping, char_frequency_prior)
     edge_family_support = _build_edge_family_support_for_terms(mapping)
@@ -4473,6 +4476,12 @@ def _rerank_homophone_buckets(
             jieba_direct_score = min(1.0, max(0.0, jieba_direct_signal_map.get(text, 0.0)))
             char_score = _compute_text_single_char_prior(text, char_prior)
             pos_tag = jieba_pos_map.get(text, "")
+            semantic_bonus = term_semantic_bonus_map.get((pinyin, text), 0)
+            semantic_daily_support = (
+                text_len <= 3
+                and semantic_bonus >= 120
+                and not _is_named_entity_pos(pos_tag)
+            )
             if (
                 text_len <= 2
                 and (
@@ -4498,6 +4507,9 @@ def _rerank_homophone_buckets(
             )
             if short_everyday_support:
                 bucket_has_short_everyday_term = True
+            if semantic_daily_support:
+                bucket_has_short_everyday_term = True
+                bucket_has_daily_phrase_term = True
             if _is_daily_phrase_candidate(
                 text,
                 text_len=text_len,
@@ -4552,6 +4564,12 @@ def _rerank_homophone_buckets(
             )
             char_score = _compute_text_single_char_prior(text, char_prior)
             pos_tag = jieba_pos_map.get(text, "")
+            semantic_bonus = term_semantic_bonus_map.get((pinyin, text), 0)
+            semantic_daily_support = (
+                text_len <= 3
+                and semantic_bonus >= 120
+                and not _is_named_entity_pos(pos_tag)
+            )
             daily_phrase_support = _is_daily_phrase_candidate(
                 text,
                 text_len=text_len,
@@ -4565,6 +4583,8 @@ def _rerank_homophone_buckets(
                 wiki_augmented_terms=wiki_augmented_terms,
                 preferred_terms=preferred_terms,
             )
+            if semantic_daily_support:
+                daily_phrase_support = True
             short_everyday_support = _is_short_everyday_term_candidate(
                 text,
                 text_len=text_len,
@@ -4575,6 +4595,8 @@ def _rerank_homophone_buckets(
                 pos_tag=pos_tag,
                 char_score=char_score,
             )
+            if semantic_daily_support and text_len <= 2:
+                short_everyday_support = True
             daily_number_support = _is_daily_number_word_candidate(
                 text,
                 text_len=text_len,
@@ -4620,6 +4642,7 @@ def _rerank_homophone_buckets(
                     + wiki_hit * 26.0
                     + family_support_score * (148.0 if not has_robust_usage else 96.0)
                     + max(0.0, pos_bias) * 160.0
+                    + float(semantic_bonus) * 0.90
                 )
                 if text_len <= 2:
                     common_signal += char_score * 60.0
@@ -4661,6 +4684,7 @@ def _rerank_homophone_buckets(
                 + family_support_score * (104.0 if not has_robust_usage else 76.0)
                 + char_score * char_weight
                 + pos_bias * 190.0
+                + float(semantic_bonus) * 0.55
                 + (weight / 1000.0) * 14.0
                 + (76.0 if (daily_phrase_support and text_len <= 2) else 24.0 if daily_phrase_support else 0.0)
                 + (36.0 if (daily_number_support and text_len <= 2) else 22.0 if daily_number_support else 0.0)
@@ -4735,6 +4759,12 @@ def _rerank_homophone_buckets(
                 max(0.0, edge_family_support.get((pinyin, text), 0.0) / 900.0),
             )
             pos_tag = jieba_pos_map.get(text, "")
+            semantic_bonus = term_semantic_bonus_map.get((pinyin, text), 0)
+            semantic_daily_support = (
+                text_len <= 3
+                and semantic_bonus >= 120
+                and not _is_named_entity_pos(pos_tag)
+            )
             wiki_support = _has_effective_wiki_support(
                 text,
                 wiki_titles,
@@ -4775,6 +4805,8 @@ def _rerank_homophone_buckets(
                 wiki_augmented_terms=wiki_augmented_terms,
                 preferred_terms=preferred_terms,
             )
+            if semantic_daily_support:
+                daily_phrase_support = True
             short_everyday_support = _is_short_everyday_term_candidate(
                 text,
                 text_len=text_len,
@@ -4785,6 +4817,8 @@ def _rerank_homophone_buckets(
                 pos_tag=pos_tag,
                 char_score=char_score,
             )
+            if semantic_daily_support and text_len <= 2:
+                short_everyday_support = True
             daily_number_support = _is_daily_number_word_candidate(
                 text,
                 text_len=text_len,
@@ -5186,6 +5220,11 @@ def _rerank_homophone_buckets(
             if bucket_has_daily_number_term and daily_number_support:
                 delta += 28 if text_len <= 2 else 18
                 stats[f"{stats_prefix}_homophone_daily_number_boosted"] += 1
+
+            if semantic_daily_support:
+                delta += min(220, 72 + semantic_bonus)
+                post_cap_bonus += min(120, semantic_bonus // 2)
+                stats[f"{stats_prefix}_homophone_semantic_daily_boosted"] += 1
 
             if bucket_has_preferred_term:
                 if text in preferred_terms:
@@ -6224,6 +6263,102 @@ def _compute_cedict_ime_seed_adjustment(text: str, defs: str) -> int:
     return adjustment
 
 
+def _compute_cedict_daily_semantic_bonus(text: str, defs: str) -> int:
+    defs_lower = defs.strip().lower()
+    text_len = _cjk_len(text)
+    if text_len < 2 or text_len > 3 or not defs_lower:
+        return 0
+
+    senses = [sense.strip() for sense in defs_lower.split("/") if sense.strip()]
+    if not senses:
+        senses = [defs_lower]
+
+    total_senses = max(1, len(senses))
+    variant_senses = 0
+    place_senses = 0
+    comparison_senses = 0
+    daily_abstract_senses = 0
+    function_senses = 0
+
+    comparison_clues = (
+        "greater than",
+        "bigger than",
+        "larger than",
+        "more than",
+        "less than",
+        "smaller than",
+        "lower than",
+        "equal to",
+        "not equal to",
+        "at least",
+        "at most",
+        "no less than",
+        "no more than",
+    )
+    daily_abstract_clues = (
+        "usefulness",
+        "useful",
+        "purpose",
+        "reason",
+        "method",
+        "means",
+        "approach",
+        "basis",
+        "condition",
+        "situation",
+        "state",
+        "period",
+        "location",
+    )
+    function_clues = (
+        "due to",
+        "owing to",
+        "because of",
+        "because",
+        "thanks to",
+        "as a result of",
+        "since",
+        "rather than",
+        "instead of",
+        "according to",
+        "with regard to",
+        "in order to",
+    )
+    place_clues = (
+        "county in ",
+        "district in ",
+        "town in ",
+        "township in ",
+        "village in ",
+        "county of ",
+        "place name",
+    )
+
+    for sense in senses:
+        if sense.startswith(("variant of ", "old variant of ", "see also ")):
+            variant_senses += 1
+        if any(clue in sense for clue in place_clues):
+            place_senses += 1
+        if any(clue in sense for clue in comparison_clues):
+            comparison_senses += 1
+        if any(clue in sense for clue in daily_abstract_clues):
+            daily_abstract_senses += 1
+        if any(clue in sense for clue in function_clues):
+            function_senses += 1
+
+    if variant_senses == total_senses or place_senses * 2 >= total_senses:
+        return 0
+
+    if comparison_senses > 0:
+        return 260 if text_len == 2 else 180
+    if function_senses > 0:
+        return 230 if text_len == 2 else 160
+    if daily_abstract_senses > 0:
+        return 220 if text_len == 2 else 140
+
+    return 0
+
+
 def _compute_style_ranking_penalty(style_penalty: int) -> int:
     if style_penalty >= 200:
         return 120
@@ -6244,10 +6379,12 @@ def _parse_cedict_entries(
     Dict[Tuple[str, str], int],
     Dict[str, int],
     Dict[Tuple[str, str], int],
+    Dict[Tuple[str, str], int],
 ]:
     sc: Dict[Tuple[str, str], int] = {}
     tc: Dict[Tuple[str, str], int] = {}
     term_style_penalty_map: Dict[Tuple[str, str], int] = {}
+    term_semantic_bonus_map: Dict[Tuple[str, str], int] = {}
     stats = {
         "total_lines": 0,
         "parsed_lines": 0,
@@ -6275,6 +6412,7 @@ def _parse_cedict_entries(
 
         stats["parsed_lines"] += 1
         style_penalty = _compute_cedict_style_penalty(defs)
+        semantic_bonus = _compute_cedict_daily_semantic_bonus(simp, defs)
 
         for text, bucket in ((simp, sc), (trad, tc)):
             if _cjk_len(text) < min_hanzi:
@@ -6291,8 +6429,10 @@ def _parse_cedict_entries(
                 bucket[key] = weight
             if style_penalty > term_style_penalty_map.get(key, 0):
                 term_style_penalty_map[key] = style_penalty
+            if semantic_bonus > term_semantic_bonus_map.get(key, 0):
+                term_semantic_bonus_map[key] = semantic_bonus
 
-    return sc, tc, stats, term_style_penalty_map
+    return sc, tc, stats, term_style_penalty_map, term_semantic_bonus_map
 
 
 def _parse_opencc_entries(source_text: str, min_hanzi: int) -> Tuple[List[Tuple[str, str]], Dict[str, int]]:
@@ -9750,6 +9890,7 @@ def _rescore_mapping_with_signals(
     jieba_pos_map: Dict[str, str] | None,
     char_frequency_prior: Dict[str, float] | None,
     term_style_penalty_map: Dict[Tuple[str, str], int] | None,
+    term_semantic_bonus_map: Dict[Tuple[str, str], int] | None,
     unihan_map: Dict[str, str] | None,
     unihan_readings_map: Dict[str, Set[str]] | None,
     unihan_pinlu_map: Dict[str, int] | None,
@@ -9766,10 +9907,12 @@ def _rescore_mapping_with_signals(
         f"{stats_prefix}_named_entity_penalized": 0,
         f"{stats_prefix}_single_char_adjusted": 0,
         f"{stats_prefix}_single_char_reading_adjusted": 0,
+        f"{stats_prefix}_semantic_bonus_applied": 0,
     }
     jieba_direct_signal_map = jieba_direct_signal_map or {}
     jieba_pos_map = jieba_pos_map or {}
     term_style_penalty_map = term_style_penalty_map or {}
+    term_semantic_bonus_map = term_semantic_bonus_map or {}
     unihan_map = unihan_map or {}
     unihan_readings_map = unihan_readings_map or {}
     unihan_pinlu_map = unihan_pinlu_map or {}
@@ -9846,6 +9989,11 @@ def _rescore_mapping_with_signals(
         style_penalty = term_style_penalty_map.get(key, 0)
         if style_penalty > 0:
             weight = max(1, weight - style_penalty)
+
+        semantic_bonus = term_semantic_bonus_map.get(key, 0)
+        if semantic_bonus > 0:
+            weight = min(1000, weight + semantic_bonus)
+            stats[f"{stats_prefix}_semantic_bonus_applied"] += 1
 
         if mapping[key] != weight:
             stats[f"{stats_prefix}_rescored"] += 1
@@ -13656,6 +13804,7 @@ def main() -> int:
     tc_leading_support_sum_map: Dict[Tuple[str, str], float] = {}
     tc_to_sc_map: Dict[str, Set[str]] = {}
     cedict_style_penalty_map: Dict[Tuple[str, str], int] = {}
+    cedict_semantic_bonus_map: Dict[Tuple[str, str], int] = {}
     unihan_map: Dict[str, str] = {}
     unihan_readings_map: Dict[str, Set[str]] = {}
     unihan_reading_source_map: Dict[Tuple[str, str], int] = {}
@@ -13684,9 +13833,13 @@ def main() -> int:
         primary_source_id = str(sources[0]["id"])
         source_payload = payload_map[primary_source_id]
         source_text = _decode_text(source_payload)
-        sc_map, tc_map, stats, cedict_style_penalty_map = _parse_cedict_entries(
-            source_text, args.min_hanzi
-        )
+        (
+            sc_map,
+            tc_map,
+            stats,
+            cedict_style_penalty_map,
+            cedict_semantic_bonus_map,
+        ) = _parse_cedict_entries(source_text, args.min_hanzi)
         source_ids = {str(source.get("id", "")) for source in sources}
         if (
             "project-curated-daily-phrases" in source_ids
@@ -13888,9 +14041,13 @@ def main() -> int:
         opencc_text = _decode_text(opencc_payload)
         cedict_tc_to_sc_map = _build_cedict_tc_to_sc_map(cedict_text, args.min_hanzi)
 
-        sc_map, tc_map, cedict_stats, cedict_style_penalty_map = _parse_cedict_entries(
-            cedict_text, args.min_hanzi
-        )
+        (
+            sc_map,
+            tc_map,
+            cedict_stats,
+            cedict_style_penalty_map,
+            cedict_semantic_bonus_map,
+        ) = _parse_cedict_entries(cedict_text, args.min_hanzi)
         opencc_entries, opencc_stats = _parse_opencc_entries(opencc_text, args.min_hanzi)
         opencc_tc_to_sc_map = _build_opencc_tc_to_sc_map(opencc_entries)
         tc_to_sc_map = _merge_tc_to_sc_maps(opencc_tc_to_sc_map, cedict_tc_to_sc_map)
@@ -14035,6 +14192,7 @@ def main() -> int:
             jieba_pos_map=jieba_pos_map,
             char_frequency_prior=char_frequency_prior,
             term_style_penalty_map=cedict_style_penalty_map,
+            term_semantic_bonus_map=cedict_semantic_bonus_map,
             unihan_map=unihan_map,
             unihan_readings_map=unihan_readings_map,
             unihan_pinlu_map=unihan_pinlu_map,
@@ -14052,6 +14210,7 @@ def main() -> int:
             jieba_pos_map=tc_jieba_pos_map,
             char_frequency_prior=tc_char_frequency_prior,
             term_style_penalty_map=cedict_style_penalty_map,
+            term_semantic_bonus_map=cedict_semantic_bonus_map,
             unihan_map=unihan_map,
             unihan_readings_map=unihan_readings_map,
             unihan_pinlu_map=unihan_pinlu_map,
@@ -14756,6 +14915,7 @@ def main() -> int:
         jieba_pos_map=jieba_pos_map,
         char_frequency_prior=char_frequency_prior,
         term_style_penalty_map=cedict_style_penalty_map,
+        term_semantic_bonus_map=cedict_semantic_bonus_map,
         preferred_terms=curated_daily_sc_terms,
         stats_prefix="sc",
     )
@@ -14813,6 +14973,7 @@ def main() -> int:
         jieba_pos_map=tc_jieba_pos_map,
         char_frequency_prior=tc_char_frequency_prior,
         term_style_penalty_map=cedict_style_penalty_map,
+        term_semantic_bonus_map=cedict_semantic_bonus_map,
         preferred_terms=curated_daily_tc_terms,
         stats_prefix="tc",
     )
