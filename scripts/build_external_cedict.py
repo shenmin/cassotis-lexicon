@@ -51,6 +51,7 @@ ZHWIKTIONARY_TITLES_URL = (
 )
 ZHWIKTIONARY_HOMEPAGE = "https://dumps.wikimedia.org/zhwiktionary/latest/"
 CURATED_DAILY_PHRASES_URL = "repo://manifests/curated_daily_phrases.tsv"
+CURATED_DAILY_SUPPLEMENT_PHRASES_URL = "repo://manifests/curated_daily_supplement_phrases.tsv"
 CURATED_DAILY_PHRASES_HOMEPAGE = "https://github.com/shenmin/cassotis-lexicon"
 VERTICAL_LAYERS_MANIFEST_DEFAULT = "manifests/vertical_layers.public.json"
 WIKIMEDIA_PAGEVIEWS_TOP_URL = "https://wikimedia.org/api/rest_v1/metrics/pageviews/top/zh.wikipedia/all-access"
@@ -505,6 +506,7 @@ DAILY_NUMBER_WORD_UNIT_CHARS = set(
     "\u5341\u767e\u5343\u4e07\u842c\u4ebf\u5104"
 )
 CURATED_DAILY_NUMBER_WEIGHT_CAP = 940
+CURATED_DAILY_SUPPLEMENT_WEIGHT_CAP = 840
 # Fiction entities and public/historical people names are supplemental named
 # entities and should not inherit everyday-word priors. Product/platform proper
 # nouns stay on the generic vertical path because they are frequent daily input.
@@ -710,6 +712,18 @@ PROFILE_DEFAULTS: Dict[str, Dict[str, object]] = {
                 "raw_committed": True,
                 "notes": "Project-maintained daily/chat phrase whitelist layered on top of CEDICT.",
             },
+            {
+                "id": "project-curated-daily-supplement-phrases",
+                "name": "Cassotis low-frequency daily supplements",
+                "download_url": CURATED_DAILY_SUPPLEMENT_PHRASES_URL,
+                "homepage": CURATED_DAILY_PHRASES_HOMEPAGE,
+                "license": "Repository license (project-authored)",
+                "risk_level": "low",
+                "redistribution_class": "project_authored",
+                "attribution_required": False,
+                "raw_committed": True,
+                "notes": "Project-maintained exact-match supplements that should remain visible without inheriting daily/chat preferred-term weight.",
+            },
         ],
     },
     "external_broad": {
@@ -798,6 +812,18 @@ PROFILE_DEFAULTS: Dict[str, Dict[str, object]] = {
                 "attribution_required": False,
                 "raw_committed": True,
                 "notes": "Project-maintained high-value daily/chat phrase whitelist for IME-friendly everyday input.",
+            },
+            {
+                "id": "project-curated-daily-supplement-phrases",
+                "name": "Cassotis low-frequency daily supplements",
+                "download_url": CURATED_DAILY_SUPPLEMENT_PHRASES_URL,
+                "homepage": CURATED_DAILY_PHRASES_HOMEPAGE,
+                "license": "Repository license (project-authored)",
+                "risk_level": "low",
+                "redistribution_class": "project_authored",
+                "attribution_required": False,
+                "raw_committed": True,
+                "notes": "Project-maintained exact-match supplements for useful but lower-frequency daily-adjacent terms; isolated from daily/chat preferred-term ranking.",
             },
             {
                 "id": "zhwiki-titles-ns0",
@@ -6768,13 +6794,15 @@ def _build_wiktionary_daily_seed_signal_map(
 def _parse_curated_daily_phrase_entries(
     payload: bytes,
     min_hanzi: int,
+    *,
+    stats_prefix: str = "curated_daily_phrase",
 ) -> Tuple[List[Tuple[str, str, float, str]], Dict[str, int]]:
     stats = {
-        "curated_daily_phrase_rows": 0,
-        "curated_daily_phrase_kept": 0,
-        "curated_daily_phrase_skipped_short": 0,
-        "curated_daily_phrase_skipped_non_cjk": 0,
-        "curated_daily_phrase_skipped_malformed": 0,
+        f"{stats_prefix}_rows": 0,
+        f"{stats_prefix}_kept": 0,
+        f"{stats_prefix}_skipped_short": 0,
+        f"{stats_prefix}_skipped_non_cjk": 0,
+        f"{stats_prefix}_skipped_malformed": 0,
     }
     entries: List[Tuple[str, str, float, str]] = []
     text = _decode_text(payload)
@@ -6782,10 +6810,10 @@ def _parse_curated_daily_phrase_entries(
         line = raw_line.strip()
         if not line or line.startswith("#"):
             continue
-        stats["curated_daily_phrase_rows"] += 1
+        stats[f"{stats_prefix}_rows"] += 1
         parts = line.split("\t")
         if len(parts) < 2:
-            stats["curated_daily_phrase_skipped_malformed"] += 1
+            stats[f"{stats_prefix}_skipped_malformed"] += 1
             continue
         sc_word = parts[0].strip()
         tc_word = parts[1].strip()
@@ -6794,10 +6822,10 @@ def _parse_curated_daily_phrase_entries(
         except ValueError:
             usage_score = 0.82
         if (not sc_word) or (not CJK_FULL_RE.fullmatch(sc_word)):
-            stats["curated_daily_phrase_skipped_non_cjk"] += 1
+            stats[f"{stats_prefix}_skipped_non_cjk"] += 1
             continue
         if _cjk_len(sc_word) < min_hanzi:
-            stats["curated_daily_phrase_skipped_short"] += 1
+            stats[f"{stats_prefix}_skipped_short"] += 1
             continue
         if not tc_word:
             tc_word = sc_word
@@ -6812,7 +6840,7 @@ def _parse_curated_daily_phrase_entries(
                 explicit_pinyin,
             )
         )
-        stats["curated_daily_phrase_kept"] += 1
+        stats[f"{stats_prefix}_kept"] += 1
     return entries, stats
 
 
@@ -10831,7 +10859,12 @@ def _finalize_curated_daily_weight(
     weight: int,
     usage_score: float,
     is_number_word: bool,
+    low_frequency: bool = False,
 ) -> int:
+    if low_frequency:
+        supplement_floor = 560 + int(round(max(0.0, min(1.0, usage_score)) * 260.0))
+        return min(CURATED_DAILY_SUPPLEMENT_WEIGHT_CAP, max(weight, supplement_floor))
+
     if not is_number_word:
         daily_floor = 1080 + int(round(max(0.0, min(1.0, usage_score)) * 180.0))
         return max(weight, daily_floor)
@@ -10887,6 +10920,81 @@ def _cap_curated_daily_number_weights(
         mapping[key] = CURATED_DAILY_NUMBER_WEIGHT_CAP
         stats[f"{stats_prefix}_curated_daily_number_cap_rows"] += 1
 
+    return stats
+
+
+def _cap_curated_daily_supplement_exact_weights(
+    mapping: Dict[Tuple[str, str], int],
+    curated_entries: List[Tuple[str, str, float, str]],
+    opencc_entries: List[Tuple[str, str]],
+    simp_to_trad_char_map: Dict[str, str],
+    unihan_map: Dict[str, str],
+    unihan_readings_map: Dict[str, Set[str]],
+    unihan_source_rank_map: Dict[Tuple[str, str], int],
+    unihan_pinlu_detail_map: Dict[Tuple[str, str], int],
+    *,
+    use_traditional: bool,
+    stats_prefix: str,
+    min_hanzi: int,
+) -> Dict[str, int]:
+    stats = {
+        f"{stats_prefix}_curated_daily_supplement_exact_cap_terms": 0,
+        f"{stats_prefix}_curated_daily_supplement_exact_cap_rows": 0,
+    }
+    if not mapping or not curated_entries:
+        return stats
+
+    opencc_sc_to_tc = _build_opencc_sc_to_tc_map(opencc_entries)
+    existing_texts = {text for _pinyin, text in mapping.keys()}
+    capped_terms: Set[str] = set()
+
+    for sc_word, tc_word, _usage_score, explicit_pinyin in curated_entries:
+        if _cjk_len(sc_word) < min_hanzi:
+            continue
+
+        pinyin = explicit_pinyin or _pinyin_from_unihan(
+            sc_word,
+            unihan_map,
+            unihan_readings_map,
+            unihan_source_rank_map,
+            unihan_pinlu_detail_map,
+        )
+        if not pinyin:
+            continue
+
+        text = sc_word
+        if use_traditional:
+            text = tc_word
+            if not text:
+                tc_words = opencc_sc_to_tc.get(sc_word, set())
+                if tc_words:
+                    text = _choose_tc_phrase_candidate(
+                        sc_word,
+                        tc_words,
+                        simp_to_trad_char_map,
+                    )
+                elif sc_word in existing_texts:
+                    text = sc_word
+                else:
+                    text = _convert_sc_text_to_tc_with_phrase_hints(
+                        sc_word,
+                        opencc_sc_to_tc,
+                        simp_to_trad_char_map,
+                    )
+
+        if _cjk_len(text) < min_hanzi:
+            continue
+
+        key = (pinyin, text)
+        weight = mapping.get(key)
+        if weight is None or weight <= CURATED_DAILY_SUPPLEMENT_WEIGHT_CAP:
+            continue
+
+        mapping[key] = CURATED_DAILY_SUPPLEMENT_WEIGHT_CAP
+        capped_terms.add(text)
+        stats[f"{stats_prefix}_curated_daily_supplement_exact_cap_rows"] += 1
+
+    stats[f"{stats_prefix}_curated_daily_supplement_exact_cap_terms"] = len(capped_terms)
     return stats
 
 
@@ -11151,17 +11259,25 @@ def _augment_with_curated_daily_phrases(
     unihan_source_rank_map: Dict[Tuple[str, str], int],
     unihan_pinlu_detail_map: Dict[Tuple[str, str], int],
     min_hanzi: int,
+    *,
+    stats_prefix: str = "curated_daily",
+    low_frequency: bool = False,
 ) -> Tuple[Dict[str, int], Set[str], Set[str]]:
+    def stat(name: str) -> str:
+        return f"{stats_prefix}_{name}"
+
     stats = {
-        "curated_daily_terms_total": 0,
-        "curated_daily_terms_added_sc": 0,
-        "curated_daily_terms_boosted_sc": 0,
-        "curated_daily_terms_added_tc": 0,
-        "curated_daily_terms_boosted_tc": 0,
-        "curated_daily_number_terms_boosted_sc": 0,
-        "curated_daily_number_terms_boosted_tc": 0,
-        "curated_daily_terms_skipped_short": 0,
-        "curated_daily_terms_skipped_no_pinyin": 0,
+        stat("terms_total"): 0,
+        stat("terms_added_sc"): 0,
+        stat("terms_boosted_sc"): 0,
+        stat("terms_capped_sc"): 0,
+        stat("terms_added_tc"): 0,
+        stat("terms_boosted_tc"): 0,
+        stat("terms_capped_tc"): 0,
+        stat("number_terms_boosted_sc"): 0,
+        stat("number_terms_boosted_tc"): 0,
+        stat("terms_skipped_short"): 0,
+        stat("terms_skipped_no_pinyin"): 0,
     }
     sc_terms: Set[str] = set()
     tc_terms: Set[str] = set()
@@ -11171,9 +11287,9 @@ def _augment_with_curated_daily_phrases(
     tc_char_prior = _build_effective_char_prior(tc, tc_char_frequency_prior)
 
     for sc_word, tc_word, usage_score, explicit_pinyin in curated_entries:
-        stats["curated_daily_terms_total"] += 1
+        stats[stat("terms_total")] += 1
         if _cjk_len(sc_word) < min_hanzi:
-            stats["curated_daily_terms_skipped_short"] += 1
+            stats[stat("terms_skipped_short")] += 1
             continue
 
         pinyin = explicit_pinyin or _pinyin_from_unihan(
@@ -11184,10 +11300,10 @@ def _augment_with_curated_daily_phrases(
             unihan_pinlu_detail_map,
         )
         if not pinyin:
-            stats["curated_daily_terms_skipped_no_pinyin"] += 1
+            stats[stat("terms_skipped_no_pinyin")] += 1
             continue
 
-        source_hits = 4
+        source_hits = 2 if low_frequency else 4
         usage_score_map[sc_word] = max(usage_score_map.get(sc_word, 0.0), usage_score)
         source_hits_map[sc_word] = max(source_hits_map.get(sc_word, 0), source_hits)
 
@@ -11217,21 +11333,26 @@ def _augment_with_curated_daily_phrases(
         )
         if sc_daily_number_support:
             sc_weight = min(1000, sc_weight + (40 if _cjk_len(sc_word) <= 2 else 26))
-            stats["curated_daily_number_terms_boosted_sc"] += 1
+            stats[stat("number_terms_boosted_sc")] += 1
         sc_weight = _finalize_curated_daily_weight(
             sc_weight,
             usage_score=usage_score,
             is_number_word=sc_daily_number_support,
+            low_frequency=low_frequency,
         )
         sc_key = (pinyin, sc_word)
         existing_sc_weight = sc.get(sc_key)
         if existing_sc_weight is None:
             sc[sc_key] = sc_weight
-            stats["curated_daily_terms_added_sc"] += 1
+            stats[stat("terms_added_sc")] += 1
+            sc_terms.add(sc_word)
+        elif low_frequency and existing_sc_weight > sc_weight:
+            sc[sc_key] = sc_weight
+            stats[stat("terms_capped_sc")] += 1
             sc_terms.add(sc_word)
         elif sc_weight > existing_sc_weight:
             sc[sc_key] = sc_weight
-            stats["curated_daily_terms_boosted_sc"] += 1
+            stats[stat("terms_boosted_sc")] += 1
             sc_terms.add(sc_word)
         else:
             sc_terms.add(sc_word)
@@ -11285,21 +11406,26 @@ def _augment_with_curated_daily_phrases(
         )
         if tc_daily_number_support:
             tc_weight = min(1000, tc_weight + (40 if _cjk_len(tc_candidate) <= 2 else 26))
-            stats["curated_daily_number_terms_boosted_tc"] += 1
+            stats[stat("number_terms_boosted_tc")] += 1
         tc_weight = _finalize_curated_daily_weight(
             tc_weight,
             usage_score=usage_score,
             is_number_word=tc_daily_number_support,
+            low_frequency=low_frequency,
         )
         tc_key = (pinyin, tc_candidate)
         existing_tc_weight = tc.get(tc_key)
         if existing_tc_weight is None:
             tc[tc_key] = tc_weight
-            stats["curated_daily_terms_added_tc"] += 1
+            stats[stat("terms_added_tc")] += 1
+            tc_terms.add(tc_candidate)
+        elif low_frequency and existing_tc_weight > tc_weight:
+            tc[tc_key] = tc_weight
+            stats[stat("terms_capped_tc")] += 1
             tc_terms.add(tc_candidate)
         elif tc_weight > existing_tc_weight:
             tc[tc_key] = tc_weight
-            stats["curated_daily_terms_boosted_tc"] += 1
+            stats[stat("terms_boosted_tc")] += 1
             tc_terms.add(tc_candidate)
         else:
             tc_terms.add(tc_candidate)
@@ -11322,10 +11448,13 @@ def _reinforce_curated_daily_tc_phrases(
     unihan_source_rank_map: Dict[Tuple[str, str], int],
     unihan_pinlu_detail_map: Dict[Tuple[str, str], int],
     min_hanzi: int,
+    *,
+    stats_prefix: str = "curated_daily_exact_tc",
+    low_frequency: bool = False,
 ) -> Dict[str, int]:
     stats = {
-        "curated_daily_exact_tc_reinforced": 0,
-        "curated_daily_exact_tc_added": 0,
+        f"{stats_prefix}_reinforced": 0,
+        f"{stats_prefix}_added": 0,
     }
     if not tc or not curated_entries:
         return stats
@@ -11368,7 +11497,7 @@ def _reinforce_curated_daily_tc_phrases(
         if _cjk_len(tc_candidate) < min_hanzi:
             continue
 
-        source_hits = max(4, tc_source_hits_map.get(tc_candidate, 0))
+        source_hits = max(2 if low_frequency else 4, tc_source_hits_map.get(tc_candidate, 0))
         usage_score = max(usage_score, tc_usage_score_map.get(tc_candidate, 0.0))
         tc_jieba_direct = max(
             tc_jieba_direct_signal_map.get(tc_candidate, 0.0),
@@ -11400,16 +11529,17 @@ def _reinforce_curated_daily_tc_phrases(
             tc_weight,
             usage_score=usage_score,
             is_number_word=tc_daily_number_support,
+            low_frequency=low_frequency,
         )
 
         tc_key = (pinyin, tc_candidate)
         existing_tc_weight = tc.get(tc_key)
         if existing_tc_weight is None:
             tc[tc_key] = tc_weight
-            stats["curated_daily_exact_tc_added"] += 1
+            stats[f"{stats_prefix}_added"] += 1
         elif tc_weight > existing_tc_weight:
             tc[tc_key] = tc_weight
-            stats["curated_daily_exact_tc_reinforced"] += 1
+            stats[f"{stats_prefix}_reinforced"] += 1
 
     return stats
 
@@ -11427,10 +11557,13 @@ def _reinforce_curated_daily_sc_phrases(
     unihan_source_rank_map: Dict[Tuple[str, str], int],
     unihan_pinlu_detail_map: Dict[Tuple[str, str], int],
     min_hanzi: int,
+    *,
+    stats_prefix: str = "curated_daily_exact_sc",
+    low_frequency: bool = False,
 ) -> Dict[str, int]:
     stats = {
-        "curated_daily_exact_sc_reinforced": 0,
-        "curated_daily_exact_sc_added": 0,
+        f"{stats_prefix}_reinforced": 0,
+        f"{stats_prefix}_added": 0,
     }
     if not sc or not curated_entries:
         return stats
@@ -11451,7 +11584,7 @@ def _reinforce_curated_daily_sc_phrases(
         if not pinyin:
             continue
 
-        source_hits = max(4, source_hits_map.get(sc_word, 0))
+        source_hits = max(2 if low_frequency else 4, source_hits_map.get(sc_word, 0))
         usage_score = max(usage_score, usage_score_map.get(sc_word, 0.0))
         sc_jieba_direct = max(
             jieba_direct_signal_map.get(sc_word, 0.0),
@@ -11483,16 +11616,17 @@ def _reinforce_curated_daily_sc_phrases(
             sc_weight,
             usage_score=usage_score,
             is_number_word=sc_daily_number_support,
+            low_frequency=low_frequency,
         )
 
         sc_key = (pinyin, sc_word)
         existing_sc_weight = sc.get(sc_key)
         if existing_sc_weight is None:
             sc[sc_key] = sc_weight
-            stats["curated_daily_exact_sc_added"] += 1
+            stats[f"{stats_prefix}_added"] += 1
         elif sc_weight > existing_sc_weight:
             sc[sc_key] = sc_weight
-            stats["curated_daily_exact_sc_reinforced"] += 1
+            stats[f"{stats_prefix}_reinforced"] += 1
 
     return stats
 
@@ -13757,11 +13891,16 @@ def main() -> int:
     curated_daily_tc_terms: Set[str] = set()
     curated_daily_entries: List[Tuple[str, str, float, str]] = []
     curated_daily_parse_stats: Dict[str, int] = {}
+    curated_daily_supplement_sc_terms: Set[str] = set()
+    curated_daily_supplement_tc_terms: Set[str] = set()
+    curated_daily_supplement_entries: List[Tuple[str, str, float, str]] = []
+    curated_daily_supplement_parse_stats: Dict[str, int] = {}
     curated_usage_score_map: Dict[str, float] = {}
     curated_source_hits_map: Dict[str, int] = {}
     curated_tc_usage_score_map: Dict[str, float] = {}
     curated_tc_source_hits_map: Dict[str, int] = {}
     curated_daily_stats: Dict[str, int] = {}
+    curated_daily_supplement_stats: Dict[str, int] = {}
     admin_place_alias_sc_terms: Set[str] = set()
     admin_place_alias_tc_terms: Set[str] = set()
     vertical_sc_terms: Set[str] = set()
@@ -13863,6 +14002,22 @@ def main() -> int:
                 curated_daily_payload,
                 args.min_hanzi,
             )
+            if "project-curated-daily-supplement-phrases" in source_ids:
+                curated_daily_supplement_payload = _require_source_payload(
+                    payload_map,
+                    sources,
+                    role="project-curated-daily-supplement-phrases",
+                    source_id="project-curated-daily-supplement-phrases",
+                    download_url=CURATED_DAILY_SUPPLEMENT_PHRASES_URL,
+                )
+                (
+                    curated_daily_supplement_entries,
+                    curated_daily_supplement_parse_stats,
+                ) = _parse_curated_daily_phrase_entries(
+                    curated_daily_supplement_payload,
+                    args.min_hanzi,
+                    stats_prefix="curated_daily_supplement_phrase",
+                )
             (
                 curated_unihan_map,
                 curated_unihan_readings_map,
@@ -13904,8 +14059,39 @@ def main() -> int:
                 curated_unihan_pinlu_detail_map,
                 args.min_hanzi,
             )
+            if curated_daily_supplement_entries:
+                (
+                    curated_daily_supplement_stats,
+                    curated_daily_supplement_sc_terms,
+                    curated_daily_supplement_tc_terms,
+                ) = _augment_with_curated_daily_phrases(
+                    sc_map,
+                    tc_map,
+                    curated_daily_supplement_entries,
+                    curated_usage_score_map,
+                    curated_source_hits_map,
+                    curated_tc_usage_score_map,
+                    curated_tc_source_hits_map,
+                    jieba_direct_signal_map,
+                    tc_jieba_direct_signal_map,
+                    jieba_pos_map,
+                    tc_jieba_pos_map,
+                    char_frequency_prior,
+                    tc_char_frequency_prior,
+                    [],
+                    {},
+                    curated_unihan_map,
+                    curated_unihan_readings_map,
+                    curated_unihan_source_rank_map,
+                    curated_unihan_pinlu_detail_map,
+                    args.min_hanzi,
+                    stats_prefix="curated_daily_supplement",
+                    low_frequency=True,
+                )
             stats.update(curated_daily_parse_stats)
             stats.update(curated_daily_stats)
+            stats.update(curated_daily_supplement_parse_stats)
+            stats.update(curated_daily_supplement_stats)
         stats.update(vertical_manifest_stats)
         if vertical_source_configs:
             vertical_entries: List[Tuple[str, str, float, str]] = []
@@ -14030,6 +14216,7 @@ def main() -> int:
             source_id="zhwiktionary-titles-ns0",
             download_url=ZHWIKTIONARY_TITLES_URL,
         )
+        source_ids = {str(source.get("id", "")) for source in sources}
         curated_daily_payload = _require_source_payload(
             payload_map,
             sources,
@@ -14129,6 +14316,22 @@ def main() -> int:
             curated_daily_payload,
             args.min_hanzi,
         )
+        if "project-curated-daily-supplement-phrases" in source_ids:
+            curated_daily_supplement_payload = _require_source_payload(
+                payload_map,
+                sources,
+                role="project-curated-daily-supplement-phrases",
+                source_id="project-curated-daily-supplement-phrases",
+                download_url=CURATED_DAILY_SUPPLEMENT_PHRASES_URL,
+            )
+            (
+                curated_daily_supplement_entries,
+                curated_daily_supplement_parse_stats,
+            ) = _parse_curated_daily_phrase_entries(
+                curated_daily_supplement_payload,
+                args.min_hanzi,
+                stats_prefix="curated_daily_supplement_phrase",
+            )
         for word, score in wiktionary_usage_score_map.items():
             usage_score_map[word] = max(score, usage_score_map.get(word, 0.0))
             source_hits_map[word] = max(1, source_hits_map.get(word, 0))
@@ -14331,6 +14534,34 @@ def main() -> int:
         )
         lexical_seed_sc_terms.update(curated_daily_sc_terms)
         lexical_seed_tc_terms.update(curated_daily_tc_terms)
+        (
+            curated_daily_supplement_stats,
+            curated_daily_supplement_sc_terms,
+            curated_daily_supplement_tc_terms,
+        ) = _augment_with_curated_daily_phrases(
+            sc_map,
+            tc_map,
+            curated_daily_supplement_entries,
+            usage_score_map,
+            source_hits_map,
+            tc_usage_score_map,
+            tc_source_hits_map,
+            jieba_direct_signal_map,
+            tc_jieba_direct_signal_map,
+            jieba_pos_map,
+            tc_jieba_pos_map,
+            char_frequency_prior,
+            tc_char_frequency_prior,
+            opencc_entries,
+            simp_to_trad_char_map,
+            unihan_map,
+            unihan_readings_map,
+            unihan_reading_source_map,
+            unihan_pinlu_detail_map,
+            args.min_hanzi,
+            stats_prefix="curated_daily_supplement",
+            low_frequency=True,
+        )
         vertical_parse_stats = {
             "vertical_term_rows": 0,
             "vertical_term_kept": 0,
@@ -14428,7 +14659,7 @@ def main() -> int:
             tc_map, sc_script_chars, tc_script_chars
         )
         curated_daily_explicit_pinyin_overrides = _build_curated_daily_explicit_pinyin_override_map(
-            curated_daily_entries
+            curated_daily_entries + curated_daily_supplement_entries
         )
         sc_map, sc_curated_daily_pinyin_override_stats = _apply_explicit_term_pinyin_overrides(
             sc_map,
@@ -14483,6 +14714,24 @@ def main() -> int:
             unihan_pinlu_detail_map,
             args.min_hanzi,
         )
+        curated_daily_supplement_tc_exact_stats = _reinforce_curated_daily_tc_phrases(
+            tc_map,
+            curated_daily_supplement_entries,
+            tc_usage_score_map,
+            tc_source_hits_map,
+            tc_jieba_direct_signal_map,
+            tc_jieba_pos_map,
+            tc_char_frequency_prior,
+            opencc_entries,
+            simp_to_trad_char_map,
+            unihan_map,
+            unihan_readings_map,
+            unihan_reading_source_map,
+            unihan_pinlu_detail_map,
+            args.min_hanzi,
+            stats_prefix="curated_daily_supplement_exact_tc",
+            low_frequency=True,
+        )
         curated_daily_sc_exact_stats = _reinforce_curated_daily_sc_phrases(
             sc_map,
             curated_daily_entries,
@@ -14496,6 +14745,22 @@ def main() -> int:
             curated_unihan_source_rank_map,
             curated_unihan_pinlu_detail_map,
             args.min_hanzi,
+        )
+        curated_daily_supplement_sc_exact_stats = _reinforce_curated_daily_sc_phrases(
+            sc_map,
+            curated_daily_supplement_entries,
+            curated_usage_score_map,
+            curated_source_hits_map,
+            jieba_direct_signal_map,
+            jieba_pos_map,
+            char_frequency_prior,
+            curated_unihan_map,
+            curated_unihan_readings_map,
+            curated_unihan_source_rank_map,
+            curated_unihan_pinlu_detail_map,
+            args.min_hanzi,
+            stats_prefix="curated_daily_supplement_exact_sc",
+            low_frequency=True,
         )
 
         stats = {}
@@ -14519,6 +14784,7 @@ def main() -> int:
         stats.update(wiktionary_stats)
         stats.update(wiktionary_seed_stats)
         stats.update(curated_daily_parse_stats)
+        stats.update(curated_daily_supplement_parse_stats)
         stats.update(sc_curated_daily_pinyin_override_stats)
         stats.update(tc_curated_daily_pinyin_override_stats)
         stats.update(sc_rescore_stats)
@@ -14526,9 +14792,12 @@ def main() -> int:
         stats.update(augment_stats)
         stats.update(curated_daily_sc_exact_stats)
         stats.update(curated_daily_tc_exact_stats)
+        stats.update(curated_daily_supplement_sc_exact_stats)
+        stats.update(curated_daily_supplement_tc_exact_stats)
         stats.update(daily_prefix_stats)
         stats.update(wiki_proper_stats)
         stats.update(curated_daily_stats)
+        stats.update(curated_daily_supplement_stats)
         stats.update(vertical_manifest_stats)
         stats.update(vertical_parse_stats)
         stats.update(vertical_stats)
@@ -15282,6 +15551,9 @@ def main() -> int:
     for sc_word, tc_word, _usage_score, _explicit_pinyin in curated_daily_entries:
         if sc_word and tc_word:
             preferred_tc_by_sc[sc_word] = tc_word
+    for sc_word, tc_word, _usage_score, _explicit_pinyin in curated_daily_supplement_entries:
+        if sc_word and tc_word:
+            preferred_tc_by_sc.setdefault(sc_word, tc_word)
     for sc_word, tc_word, _usage_score, _explicit_pinyin, _layer_id, source_id in vertical_entries:
         if sc_word and tc_word and source_id.startswith("project-curated"):
             preferred_tc_by_sc.setdefault(sc_word, tc_word)
@@ -15369,8 +15641,36 @@ def main() -> int:
         char_frequency_prior=char_frequency_prior,
     )
     stats.update(_remove_known_incorrect_jiancha_entries(sc_map, tc_map))
+    sc_curated_daily_supplement_cap_stats = _cap_curated_daily_supplement_exact_weights(
+        sc_map,
+        curated_daily_supplement_entries,
+        opencc_entries,
+        simp_to_trad_char_map,
+        unihan_map,
+        unihan_readings_map,
+        unihan_reading_source_map,
+        unihan_pinlu_detail_map,
+        use_traditional=False,
+        stats_prefix="sc",
+        min_hanzi=args.min_hanzi,
+    )
+    tc_curated_daily_supplement_cap_stats = _cap_curated_daily_supplement_exact_weights(
+        tc_map,
+        curated_daily_supplement_entries,
+        opencc_entries,
+        simp_to_trad_char_map,
+        unihan_map,
+        unihan_readings_map,
+        unihan_reading_source_map,
+        unihan_pinlu_detail_map,
+        use_traditional=True,
+        stats_prefix="tc",
+        min_hanzi=args.min_hanzi,
+    )
+    stats.update(sc_curated_daily_supplement_cap_stats)
+    stats.update(tc_curated_daily_supplement_cap_stats)
     curated_daily_explicit_pinyin_keys = _build_curated_daily_explicit_pinyin_key_set(
-        curated_daily_entries
+        curated_daily_entries + curated_daily_supplement_entries
     )
 
     _write_dict(

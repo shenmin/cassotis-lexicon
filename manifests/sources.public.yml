@@ -1,5 +1,5 @@
 version: 1
-generated_at: "2026-05-07T07:39:17+00:00"
+generated_at: "2026-05-07T09:24:33+00:00"
 profile: external_broad
 sources:
   - id: cc-cedict
@@ -72,6 +72,16 @@ sources:
     attribution_required: false
     raw_committed: true
     notes: 'Project-maintained high-value daily/chat phrase whitelist for IME-friendly everyday input.'
+  - id: project-curated-daily-supplement-phrases
+    name: Cassotis low-frequency daily supplements
+    download_url: repo://manifests/curated_daily_supplement_phrases.tsv
+    homepage: https://github.com/shenmin/cassotis-lexicon
+    license: Repository license (project-authored)
+    risk_level: low
+    redistribution_class: project_authored
+    attribution_required: false
+    raw_committed: true
+    notes: 'Project-maintained exact-match supplements for useful but lower-frequency daily-adjacent terms; isolated from daily/chat preferred-term ranking.'
   - id: zhwiki-titles-ns0
     name: Wikipedia zh titles (ns0)
     download_url: https://dumps.wikimedia.org/zhwiki/latest/zhwiki-latest-all-titles-in-ns0.gz

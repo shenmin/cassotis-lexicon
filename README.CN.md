@@ -17,12 +17,12 @@ Cassotis IME 的词库构建与发布仓库。
 - 支持外部来源引导构建和可复现的生成词库构建流程。
 - 保持署名文件与生成产物一致。
 
-## 当前词库快照（2026-05-06 构建）
+## 当前词库快照（2026-05-07 构建）
 
 | 文件 | 变体 | 词条数 |
 |------|------|--------|
-| `data/generated/dict_clean_sc.txt` | 简体主词库 | 165,758 |
-| `data/generated/dict_clean_tc.txt` | 繁体主词库 | 174,417 |
+| `data/generated/dict_clean_sc.txt` | 简体主词库 | 166,074 |
+| `data/generated/dict_clean_tc.txt` | 繁体主词库 | 174,749 |
 | `data/generated/dict_unihan_sc.txt` | 简体单字（Unihan） | 23,923 |
 | `data/generated/dict_unihan_tc.txt` | 繁体单字（Unihan） | 24,088 |
 
@@ -59,6 +59,7 @@ Cassotis IME 的词库构建与发布仓库。
 | 补充层 | 许可证 | 用途 |
 |--------|--------|------|
 | Cassotis 日常/聊天短语补充 | 仓库许可证（项目自编写） | 对高价值的日常/聊天表达做稳定补充，弥补公开来源遗漏 |
+| Cassotis 低频日常补充 | 仓库许可证（项目自编写） | 保留有用的 exact 候选，但使用带上限的低频权重，避免挤占更强的常用词 |
 | Cassotis 词条级拼音覆盖 | 仓库许可证（项目自编写） | 项目维护的多音词读音覆盖表，在来源融合后压制所有层中由单字兜底生成的错误读音 |
 | Cassotis 小说实体补充 | 仓库许可证（项目自编写） | 项目维护的小说人物、作品名和世界观实体列表，与日常/聊天词及一般专名隔离 |
 | Cassotis 一般专名补充 | 仓库许可证（项目自编写） | 项目维护的非人名专名列表，覆盖头衔、组织、品牌、平台、产品等现实命名实体，不与日常/聊天优先路径混用 |
@@ -93,6 +94,7 @@ Cassotis IME 的词库构建与发布仓库。
 
 ## 分层策略
 - `manifests/curated_daily_phrases.tsv` 只用于应获得日常输入优待的日常/聊天表达。
+- `manifests/curated_daily_supplement_phrases.tsv` 用于低频日常补充：保证完整输入可候选，但不继承日常/聊天短语的高优先级权重。
 - `manifests/vertical_layers.public.json` 声明隔离式 vertical 术语层。
 - `manifests/vertical/*.tsv` 存放项目维护的 vertical 词表，例如小说实体、一般专名、人名、地名、国家地区、世界城市、地标、成语典故、计算机术语、政务民生术语、建筑术语/建筑实体、游戏术语和游戏开发术语。
 - vertical 层可以补充领域词汇，但不会继承日常/聊天短语的优待偏置。

@@ -576,14 +576,14 @@ benzhaxiuanrongye	苯扎溴銨|溶液	464
 benzouhuhao	奔走|呼號	462
 biancaiwuai	辯才|無礙	480
 bianchengdaima	編程|代碼	486
-bianchengfangmian	編程|方面	520
+bianchengfangmian	編程|方面	514
 bianchenghuanjing	編程|環境	487
 bianchenghuanjingpeizhi	編程|環境|配置	467
 bianchengluanma	變成|亂碼	520
-bianchengnongchang	編程|農場	512
-bianchengshili	編程|實例	484
+bianchengnongchang	編程|農場	494
+bianchengshili	編程|實例	442
 bianchengyouxi	編程|遊戲	507
-bianchengyuyan	編程|語言	520
+bianchengyuyan	編程|語言	511
 biandikaihua	遍地|開花	490
 bianduishaonv	編隊|少女	479
 bianfukantaiyang	蝙蝠看|太陽	436
@@ -1734,7 +1734,7 @@ chimeiwangliang	魑魅|魍魎	455
 chimingshijie	馳名|世界	484
 chimingtianxia	馳名|天下	452
 chimingzhongwai	馳名|中外	452
-chirejuji	熾熱|狙擊	497
+chirejuji	熾熱|狙擊	501
 chisezhanxianxilie	赤色戰綫|係列	416
 chisezhanxianxilie	赤色戰線|係列	436
 chishenjingmabi	尺神經|麻痺	464
@@ -1747,7 +1747,7 @@ chixujicheng	持續|集成	491
 chixushijian	持續|時間	462
 chiyibuding	遲疑|不定	483
 chiyiguanwang	遲疑|觀望	441
-chizhafengyun	叱吒|風雲	486
+chizhafengyun	叱吒|風雲	507
 chizhouzhuanqu	池州|專區	454
 chongcaoanjisuan	蟲草|氨基酸	459
 chongcaoqicanjiaonang	蟲草|芪參膠囊	462
@@ -2627,7 +2627,7 @@ dianqixianlu	電器|線路	455
 dianqixianlu	電氣|線路	497
 dianranmoxing	點燃|模型	497
 dianshidonghua	電視|動畫	498
-dianshidonghuajuji	電視|動畫劇集	498
+dianshidonghuajuji	電視|動畫|劇集	498
 dianshidoushi	電視|鬥士	487
 dianshijiemu	電視|節目	469
 dianshiyanboshi	電視|演播室	464
@@ -2705,7 +2705,7 @@ dianzixiaoshuo	電子|小說	507
 dianzixinhao	電子|信號	498
 dianzixinxiang	電子|信箱	467
 dianziyizhiyouxi	電子|益智遊戲	499
-dianziyoujian	電子|郵件	505
+dianziyoujian	電子|郵件	513
 dianziyouxi	電子|遊戲	514
 dianziyouxiang	電子|郵箱	463
 dianziyouxichanye	電子|遊戲|產業	499
@@ -3028,6 +3028,7 @@ donghuagongnengjieshao	動畫|功能|介紹	505
 donghuaguidao	動畫|軌道	423
 donghuaguidaoleixing	動畫|軌道|類型	505
 donghuajiemu	動畫|節目	487
+donghuajuji	動畫|劇集	498
 donghualianxuju	動畫|連續劇	486
 donghualishi	動畫|歷史	498
 donghuapianzhizuozhe	動畫片|製作者	498
@@ -4842,7 +4843,7 @@ gudongdahui	股東|大會	463
 guduganjue	孤獨|感覺	497
 gudumogu	孤獨|蘑菇	512
 guduxingge	孤獨|性格	500
-gufabiancheng	古法|編程	520
+gufabiancheng	古法|編程	514
 gufengongsi	股份|公司	499
 gugebowuguan	骨骼|博物館	498
 gugedaixie	骨骼|代謝	497
@@ -5178,7 +5179,7 @@ hangkonggongsi	航空|公司	477
 hangkonghangtian	航空|航天	445
 hangkongshigu	航空|事故	498
 hangkongshiye	航空|事業	465
-hangkongyoujian	航空|郵件	423
+hangkongyoujian	航空|郵件	446
 hangkongzainan	航空|災難	473
 hangtianfeiji	航天|飛機	479
 hangtianxinlixue	航天|心理學	467
@@ -7568,7 +7569,7 @@ kaiyuandaima	開源|代碼	488
 kaiyuanjieliu	開源|節流	498
 kaiyuanxieyi	開源|協議	487
 kaiyuanyouxi	開源|遊戲	499
-kaiyuanzujian	開源|組件	481
+kaiyuanzujian	開源|組件	463
 kaizhadehongshui	開閘的|洪水	411
 kakudonghuapindao	卡酷動畫|頻道	498
 kakudonghuaweishi	卡酷動畫|衛視	484
@@ -7966,7 +7967,7 @@ lajifenshao	垃圾|焚燒	497
 lajiguanli	垃圾|管理	500
 lajihuishousuanfa	垃圾回收|算法	469
 lajinjuli	拉近|距離	515
-lajiyoujian	垃圾|郵件	455
+lajiyoujian	垃圾|郵件	463
 lajiyouxi	垃圾|遊戲	499
 lalisaiyishu	拉力賽|藝術	505
 lameixisi	拉美|西斯	376
@@ -9473,7 +9474,8 @@ miniaowaike	泌尿|外科	436
 miniaowaikexue	泌尿|外科學	493
 miniaoxitongjibing	泌尿系統|疾病	497
 miniaoxitongzhengzhuang	泌尿系統|症狀	497
-minidonghuajuji	迷你|動畫劇集	498
+minidonghua	迷你|動畫	416
+minidonghuajuji	迷你|動畫|劇集	498
 minigonglu	迷你|公路	515
 minijiche	迷你|機車	491
 minirenzhe	迷你|忍者	483
@@ -10298,7 +10300,7 @@ pifushenchu	皮膚|深處	512
 pifutanju	皮膚|炭疽	483
 pifuweishengwuqun	皮膚|微生物羣	497
 pifuweisuo	皮膚|萎縮	482
-pifuwuzui	匹夫|無罪	425
+pifuwuzui	匹夫|無罪	458
 pifuxianwei	皮膚|纖維	335
 pifuxianweirouliu	皮膚|纖維|肉瘤	417
 pifuxingbingxue	皮膚|性病學	466
@@ -14167,7 +14169,8 @@ wangluochengyin	網絡|成癮	497
 wangluochuangshiji	網絡|創世紀	512
 wangluocundang	網絡|存檔	499
 wangluodanyuan	網絡|單元	485
-wangluodonghuajuji	網絡|動畫劇集	498
+wangluodonghua	網絡|動畫	416
+wangluodonghuajuji	網絡|動畫|劇集	498
 wangluoguanggao	網絡|廣告	463
 wangluoguanli	網絡|管理	499
 wangluohongren	網絡|紅人	463
@@ -14830,9 +14833,9 @@ wuxianziyuanguanli	無線|資源|管理	498
 wuxianziyuankongzhi	無線|資源|控制	498
 wuxiaoxunhuan	無效|循環	497
 wuxingxiangshengxiangke	五行|相生相剋	465
-wuyandingshi	屋簷|頂飾	462
+wuyandingshi	屋簷|頂飾	481
 wuyanghuxi	無氧|呼吸	480
-wuyangouzao	屋簷|構造	450
+wuyangouzao	屋簷|構造	472
 wuyeguanli	物業|管理	467
 wuyejiqiren	午夜|機器人	515
 wuyelingzhu	午夜|領主	500
@@ -14936,7 +14939,7 @@ xiangduifenzizhiliang	相對|分子|質量	497
 xiangduilunlizi	相對論|粒子	498
 xiangduimidu	相對|密度	500
 xiangduiwucha	相對|誤差	450
-xiangduiwuyan	相對|無言	477
+xiangduiwuyan	相對|無言	481
 xiangduixunidezhi	相對|虛擬地址	468
 xianggangdabidasai	香港打吡|大賽	429
 xianggangdianshi	香港|電視	470
@@ -16169,7 +16172,7 @@ xunihuajishu	虛擬化|技術	469
 xunihuanjing	虛擬|環境	520
 xunihuiyi	虛擬|會議	497
 xunihuobi	虛擬|貨幣	463
-xunijianpan	虛擬|鍵盤	487
+xunijianpan	虛擬|鍵盤	485
 xunijianzhuang	虛擬機|安裝	469
 xunijicheng	虛擬|繼承	486
 xunijingying	虛擬|經營	507
@@ -16271,7 +16274,7 @@ yakeyiyuan	牙科|醫院	500
 yakezhensuo	牙科|診所	487
 yakezhiruwu	牙科|植入物	500
 yakezhuli	牙科|助理	500
-yakouwuyan	啞口|無言	464
+yakouwuyan	啞口|無言	475
 yaliceshi	壓力|測試	488
 yalichuanganqi	壓力|傳感器	497
 yaliqiangdu	壓力|強度	463
@@ -17201,7 +17204,7 @@ yinshinannv	飲食|男女	445
 yinshiqiju	飲食|起居	470
 yinshuijiafu	飲水|加氟	475
 yinshuisiyuan	飲水|思源	501
-yinsizhengce	隱私|政策	520
+yinsizhengce	隱私|政策	510
 yinsufenxi	因素|分析	500
 yinsuxiaozi	音速|小子	497
 yinxiangshebei	音響|設備	463
@@ -17324,7 +17327,7 @@ yixianyisuan	乙酰|乙酸	428
 yixianyizhi	胰腺|移植	500
 yixianzhongliu	胰腺|腫瘤	482
 yixiaodafang	貽笑|大方	487
-yixiekaiyuan	一些|開源	520
+yixiekaiyuan	一些|開源	514
 yixijide	依稀|記得	520
 yixijijuhewu	乙烯基|聚合物	497
 yixingchongji	異形|衝擊	512
@@ -18731,7 +18734,7 @@ zhongjianputao	中間|葡萄	376
 zhongjianputaomoyan	中間|葡萄|膜炎	458
 zhongjianqueshi	中間|缺失	484
 zhongjianshenjingyuan	中間|神經元	500
-zhongjiansuzhu	中間|宿主	450
+zhongjiansuzhu	中間|宿主	461
 zhongjianxianwei	中間|纖維	497
 zhongjidedaixilie	終極地帶|係列	436
 zhongjidongyuanling	終極|動員令	486

@@ -600,12 +600,12 @@ benzhaxiuanrongye	苯扎溴铵|溶液	464
 benzouhuhao	奔走|呼号	475
 biancaiwuai	辩才|无碍	483
 bianchengdaima	编程|代码	489
-bianchengfangmian	编程|方面	520
+bianchengfangmian	编程|方面	514
 bianchenghuanjing	编程|环境	491
 bianchenghuanjingpeizhi	编程|环境|配置	467
 bianchengluanma	变成|乱码	520
-bianchengnongchang	编程|农场	515
-bianchengshili	编程|实例	488
+bianchengnongchang	编程|农场	497
+bianchengshili	编程|实例	446
 bianchengyouxi	编程|游戏	510
 bianchengyuandaima	编程|源代码	469
 bianchengyuyan	编程|语言	520
@@ -1858,7 +1858,7 @@ chimingshijie	驰名|世界	484
 chimingtianxia	驰名|天下	452
 chimingzhongwai	驰名|中外	478
 chiqiangsongshu	持枪|松鼠	515
-chirejuji	炽热|狙击	500
+chirejuji	炽热|狙击	501
 chiruxilie	耻辱|系列	513
 chisezhanxianxilie	赤色战线|系列	509
 chishenjingmabi	尺神经|麻痹	466
@@ -2890,7 +2890,7 @@ dianzixiaoshuo	电子|小说	510
 dianzixinhao	电子|信号	501
 dianzixinxiang	电子|信箱	467
 dianziyizhiyouxi	电子|益智游戏	499
-dianziyoujian	电子|邮件	504
+dianziyoujian	电子|邮件	516
 dianziyouxi	电子|游戏	518
 dianziyouxiang	电子|邮箱	467
 dianziyouxichanye	电子|游戏|产业	499
@@ -5247,7 +5247,7 @@ guduganjue	孤独|感觉	500
 guduhuisheng	孤独|回声	515
 gudumogu	孤独|蘑菇	512
 guduxingge	孤独|性格	500
-gufabiancheng	古法|编程	520
+gufabiancheng	古法|编程	514
 gufengongsi	股份|公司	499
 gugebowuguan	骨骼|博物馆	501
 gugedaixie	骨骼|代谢	500
@@ -5615,7 +5615,7 @@ hangkonggongsi	航空|公司	477
 hangkonghangtian	航空|航天	478
 hangkongshigu	航空|事故	497
 hangkongshiye	航空|事业	465
-hangkongyoujian	航空|邮件	418
+hangkongyoujian	航空|邮件	443
 hangkongzainan	航空|灾难	476
 hangtianfeiji	航天|飞机	482
 hangtianxinlixue	航天|心理学	467
@@ -6425,7 +6425,7 @@ huodongjiaozhiqi	活动|矫治器	445
 huodongjilu	活动|纪录	500
 huodongqudongqi	活动|驱动器	460
 huodongzhangai	活动|障碍	473
-huodongzhuomian	活动|桌面	467
+huodongzhuomian	活动|桌面	444
 huoermuzihaixia	霍尔木兹|海峡	518
 huofuxiangyi	祸福|相依	438
 huoguangchongtian	火光|冲天	423
@@ -6676,7 +6676,7 @@ jiannankunku	艰难|困苦	455
 jiannanquzhe	艰难|曲折	460
 jiannanxianzu	艰难|险阻	461
 jianneifanjiaozhengshu	睑内翻|矫正术	464
-jianpanshijian	键盘|事件	491
+jianpanshijian	键盘|事件	487
 jianpanyueqi	键盘|乐器	472
 jianpiyishenkeli	健脾益肾|颗粒	464
 jianqiangbuqu	坚强|不屈	459
@@ -8246,7 +8246,7 @@ kaiyuanjieliu	开源|节流	501
 kaiyuanxieyi	开源|协议	490
 kaiyuanyouxi	开源|游戏	502
 kaiyuanyouxiliebiao	开源|游戏|列表	499
-kaiyuanzujian	开源|组件	486
+kaiyuanzujian	开源|组件	468
 kaizhadehongshui	开闸的|洪水	441
 kakudonghuapindao	卡酷动画|频道	498
 kakudonghuaweishi	卡酷动画|卫视	494
@@ -8682,7 +8682,7 @@ lajihuishou	垃圾|回收	509
 lajihuishoujizhi	垃圾|回收|机制	470
 lajihuishousuanfa	垃圾|回收|算法	469
 lajinjuli	拉近|距离	515
-lajiyoujian	垃圾|邮件	455
+lajiyoujian	垃圾|邮件	467
 lajiyouxi	垃圾|游戏	502
 lalisaiyishu	拉力赛|艺术	508
 lameixisi	拉美|西斯	376
@@ -11180,7 +11180,7 @@ pifushenchu	皮肤|深处	515
 pifutanju	皮肤|炭疽	483
 pifuweishengwuqun	皮肤|微生物群	497
 pifuweisuo	皮肤|萎缩	485
-pifuwuzui	匹夫|无罪	439
+pifuwuzui	匹夫|无罪	460
 pifuxianwei	皮肤|纤维	415
 pifuxianweirouliu	皮肤|纤维|肉瘤	497
 pifuxingbingxue	皮肤|性病学	468
@@ -11433,8 +11433,8 @@ qianshaojiance	前哨|检测	500
 qianshaolinbajie	前哨|淋巴结	496
 qianshenglaishi	前生|来世	520
 qianshijinsheng	前世|今生	520
-qiantaochaxun	嵌套|查询	490
-qiantaoleixing	嵌套|类型	489
+qiantaochaxun	嵌套|查询	488
+qiantaoleixing	嵌套|类型	486
 qiantaoshiwu	嵌套|事务	490
 qiantingdaxiannangzhong	前庭大腺|囊肿	465
 qiantingdaxiannongzhong	前庭大腺|脓肿	449
@@ -16105,9 +16105,9 @@ wuxiaoxunhuan	无效|循环	500
 wuxiaxiaoshuo	武侠|小说	460
 wuxingxiangshengxiangke	五行|相生相克	465
 wuxubianfa	戊戌|变法	458
-wuyandingshi	屋檐|顶饰	411
+wuyandingshi	屋檐|顶饰	436
 wuyanghuxi	无氧|呼吸	486
-wuyangouzao	屋檐|构造	399
+wuyangouzao	屋檐|构造	423
 wuyeguanli	物业|管理	467
 wuyejiqiren	午夜|机器人	515
 wuyelingzhu	午夜|领主	484
@@ -16176,7 +16176,7 @@ xianchanghuiyi	现场|会议	467
 xianchangyanjiu	现场|研究	487
 xianchangzhibo	现场|直播	467
 xianchenganquan	线程|安全	490
-xianchengbiancheng	线程|编程	489
+xianchengbiancheng	线程|编程	481
 xianchengbingfa	线程|并发	491
 xianchengchuangjian	线程|创建	491
 xianchengdiaodu	线程|调度	463
@@ -17331,8 +17331,8 @@ xixuelaienxilie	吸血莱恩|系列	509
 xiyanchengyin	吸烟|成瘾	500
 xiyangcanhanpian	西洋参|含片	429
 xiyangcanjiaonang	西洋参|胶囊	446
-xiyineikexue	西医|内科学	402
-xiyiwaikexue	西医|外科学	385
+xiyineikexue	西医|内科学	406
+xiyiwaikexue	西医|外科学	390
 xizangyixue	西藏|医学	518
 xizhenchouxihuojian	细针抽吸|活检	497
 xizhenchouxiyangben	细针抽吸|样本	497
@@ -17585,7 +17585,7 @@ xunihuajishu	虚拟化|技术	471
 xunihuanjing	虚拟|环境	520
 xunihuiyi	虚拟|会议	500
 xunihuobi	虚拟|货币	467
-xunijianpan	虚拟|键盘	490
+xunijianpan	虚拟|键盘	488
 xunijianzhuang	虚拟机|安装	471
 xunijicheng	虚拟|继承	490
 xunijingying	虚拟|经营	510
@@ -17694,7 +17694,7 @@ yakeyiyuan	牙科|医院	436
 yakezhensuo	牙科|诊所	498
 yakezhiruwu	牙科|植入物	500
 yakezhuli	牙科|助理	500
-yakouwuyan	哑口|无言	488
+yakouwuyan	哑口|无言	491
 yaliceshi	压力|测试	491
 yalichuanganqi	压力|传感器	500
 yaliqiangdu	压力|强度	467
@@ -18154,7 +18154,7 @@ yibimosha	一笔|抹煞	483
 yibingjijiaben	异丙基|甲苯	460
 yibinzhuanqu	宜宾|专区	460
 yibolayimiao	伊波拉|疫苗	414
-yibubiancheng	异步|编程	508
+yibubiancheng	异步|编程	485
 yibucaozuo	异步|操作	457
 yibuchuanshu	异步|传输	490
 yibuchuanshumoshi	异步|传输|模式	468
@@ -18694,7 +18694,7 @@ yinshimeirong	饮食|美容	443
 yinshinannv	饮食|男女	446
 yinshiqiju	饮食|起居	472
 yinshuisiyuan	饮水|思源	501
-yinsizhengce	隐私|政策	520
+yinsizhengce	隐私|政策	501
 yinsuchuji	音速|出击	502
 yinsufenxi	因素|分析	500
 yinsuxiaozi	音速|小子	497
@@ -18823,7 +18823,7 @@ yixianyisuan	乙酰|乙酸	457
 yixianyizhi	胰腺|移植	500
 yixianzhongliu	胰腺|肿瘤	482
 yixiaodafang	贻笑|大方	485
-yixiekaiyuan	一些|开源	520
+yixiekaiyuan	一些|开源	514
 yixijide	依稀|记得	520
 yixijihuahewu	乙烯基|化合物	483
 yixijijuhewu	乙烯基|聚合物	475
@@ -20364,7 +20364,7 @@ zhongjianputao	中间|葡萄	373
 zhongjianputaomoyan	中间|葡萄|膜炎	455
 zhongjianqueshi	中间|缺失	484
 zhongjianshenjingyuan	中间|神经元	500
-zhongjiansuzhu	中间|宿主	450
+zhongjiansuzhu	中间|宿主	461
 zhongjianxianwei	中间|纤维	500
 zhongjidedaixilie	终极地带|系列	512
 zhongjidongyuanling	终极|动员令	500

@@ -17,12 +17,12 @@ Lexicon build and release repository for Cassotis IME.
 - Supports external-source bootstrap and reproducible generated dictionary builds.
 - Keeps attribution and release policy files aligned with generated artifacts.
 
-## Current dictionary snapshot (2026-05-06 build)
+## Current dictionary snapshot (2026-05-07 build)
 
 | File | Variant | Entries |
 |------|---------|---------|
-| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 165,758 |
-| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 174,417 |
+| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 166,074 |
+| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 174,749 |
 | `data/generated/dict_unihan_sc.txt` | Simplified single-char (Unihan) | 23,923 |
 | `data/generated/dict_unihan_tc.txt` | Traditional single-char (Unihan) | 24,088 |
 
@@ -59,6 +59,7 @@ Lexicon build and release repository for Cassotis IME.
 | Supplement | License | Usage |
 |-----------|---------|-------|
 | Cassotis curated daily/chat phrases | Repository license (project-authored) | High-value everyday/chat phrasing that is worth keeping stable even when open sources miss it |
+| Cassotis low-frequency daily supplements | Repository license (project-authored) | Useful exact-match daily-adjacent terms kept visible with a capped low-frequency weight so they do not crowd stronger common words |
 | Cassotis word-level pinyin overrides | Repository license (project-authored) | Project-maintained pronunciation overrides used after source fusion to suppress noisy character-level fallback readings for polyphonic words across all layers |
 | Cassotis curated fiction entities | Repository license (project-authored) | Project-maintained fiction entity list for novel characters, titles, and in-world named entities, kept separate from daily/chat phrasing and from general proper nouns |
 | Cassotis curated proper nouns | Repository license (project-authored) | Project-maintained general non-person proper-noun list for titles, organizations, brands, platforms, products, and other real-world named entities that should not share the daily/chat preferred-term path |
@@ -93,6 +94,7 @@ See:
 
 ## Layering policy
 - `manifests/curated_daily_phrases.tsv` is reserved for everyday/chat phrasing that should receive daily-use preference treatment.
+- `manifests/curated_daily_supplement_phrases.tsv` stores useful exact-match supplements with capped low-frequency weights; entries in this layer should remain selectable but should not inherit daily/chat priority.
 - `manifests/vertical_layers.public.json` declares isolated vertical terminology layers.
 - `manifests/vertical/*.tsv` stores project-authored vertical term lists such as fiction entities, proper nouns, people names, place names, countries/regions, world cities, landmarks, idioms/allusions, computing vocabulary, civic/public-service terminology, architecture terminology/entities, gaming terminology, and game-development terminology.
 - Vertical layers can add domain vocabulary without inheriting the same preferred-term bias used for daily/chat phrases.
