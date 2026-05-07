@@ -385,7 +385,7 @@ baochishejiao	保持|社交	415
 baochishejiaojuli	保持|社交|距離	497
 baochouxuechi	報仇|雪恥	479
 baochuanyouxi	寶船|遊戲	491
-baocunshili	保存|實力	460
+baocunshili	保存|實力	441
 baocunyouxi	保存|遊戲	499
 baodaojiyin	報導|基因	472
 baodaojiyin	報道|基因	483
@@ -581,7 +581,7 @@ bianchenghuanjing	編程|環境	487
 bianchenghuanjingpeizhi	編程|環境|配置	467
 bianchengluanma	變成|亂碼	520
 bianchengnongchang	編程|農場	494
-bianchengshili	編程|實例	442
+bianchengshili	編程|實例	486
 bianchengyouxi	編程|遊戲	507
 bianchengyuyan	編程|語言	511
 biandikaihua	遍地|開花	490
@@ -1417,7 +1417,7 @@ chanruqiyiyuzheng	產褥期|抑鬱症	497
 chanyegongren	產業|工人	476
 chanziqishi	鏟子|騎士	512
 chaocaidetieguo	炒菜的|鐵鍋	416
-chaochangfahui	超常|發揮	462
+chaochangfahui	超常|發揮	463
 chaochaorangrang	吵吵|嚷嚷	467
 chaodaoxianxiang	超導|現象	497
 chaoduanboliaofa	超短波|療法	453
@@ -1666,7 +1666,7 @@ chengxushejiyuyan	程序|設計|語言	470
 chengxushejizuoye	程序|設計|作業	467
 chengxushengcheng	程序|生成	491
 chengxushijian	程序|實踐	484
-chengxushili	程序|實例	477
+chengxushili	程序|實例	490
 chengxutance	程序|探測	489
 chengxutixijiegou	程序|體系結構	467
 chengxutuichu	程序|退齣	436
@@ -1747,7 +1747,7 @@ chixujicheng	持續|集成	491
 chixushijian	持續|時間	462
 chiyibuding	遲疑|不定	483
 chiyiguanwang	遲疑|觀望	441
-chizhafengyun	叱吒|風雲	507
+chizhafengyun	叱吒|風雲	486
 chizhouzhuanqu	池州|專區	454
 chongcaoanjisuan	蟲草|氨基酸	459
 chongcaoqicanjiaonang	蟲草|芪參膠囊	462
@@ -2174,8 +2174,8 @@ daimasheji	代碼|設計	487
 daimashengcheng	代碼|生成	492
 daimashengchengchengxu	代碼|生成|程序	467
 daimashenji	代碼|審計	485
-daimashili	代碼|實例	486
-daimashili	代碼|示例	487
+daimashili	代碼|實例	488
+daimashili	代碼|示例	485
 daimashixian	代碼|實現	489
 daimatishi	代碼|提示	491
 daimatongji	代碼|統計	485
@@ -6048,7 +6048,7 @@ jianchenghuanjing	建成|環境	500
 jianchibuxie	堅持|不懈	496
 jiandanchengxu	簡單|程序	487
 jiandanfanyingshi	簡單|反應時	464
-jiandanshili	簡單|實例	467
+jiandanshili	簡單|實例	487
 jiandanshuju	簡單|數據	386
 jiandanshujujiegou	簡單|數據|結構	468
 jiandezhuanqu	建德|專區	440
@@ -7328,7 +7328,7 @@ jiyixibao	記憶|細胞	481
 jiyizengqiang	記憶|增強	480
 jiyizhangai	記憶|障礙	497
 jiyujieshi	基於|解釋	483
-jiyushili	基於|實例	483
+jiyushili	基於|實例	485
 jizhanglidixia	肌張力|低下	500
 jizhanglizhangai	肌張力|障礙	497
 jizhanhailukong	激戰|海陸空	512
@@ -7458,7 +7458,7 @@ junshikexue	軍事|科學	501
 junshililiang	軍事|力量	467
 junshiqingbao	軍事|情報	463
 junshisheshi	軍事|設施	463
-junshishili	軍事|實力	463
+junshishili	軍事|實力	458
 junshitandingdadi	君士坦丁|大帝	458
 junshixingdong	軍事|行動	463
 junshixinlixue	軍事|心理學	500
@@ -9623,7 +9623,7 @@ monizhuti	模擬|主題	337
 monizhutigongyuan	模擬|主題|公園	419
 monvbingqi	魔女|兵器	508
 monvchahui	魔女|茶會	456
-monvduchang	魔女|賭場	437
+monvduchang	魔女|賭場	436
 monvlianai	魔女|戀愛	430
 monvlianairiji	魔女|戀愛|日記	512
 monvqishi	魔女|騎士	480
@@ -12610,19 +12610,19 @@ shilaiyunzhuan	時來|運轉	451
 shilaliaofa	石蠟|療法	470
 shilaqiepian	石蠟|切片	467
 shiliangpaoku	矢量|跑酷	433
-shilibianliang	實例|變量	469
-shilichengxu	示例|程序	475
-shilidaima	實例|代碼	486
-shilidaima	示例|代碼	488
-shilifangfa	實例|方法	451
-shilifenxi	實例|分析	471
+shilibianliang	實例|變量	489
+shilichengxu	示例|程序	473
+shilidaima	實例|代碼	488
+shilidaima	示例|代碼	486
+shilifangfa	實例|方法	492
+shilifenxi	實例|分析	491
 shilihuachangjing	實例化|場景	505
 shilihuajiedian	實例化|節點	505
 shilijiance	視力|檢測	497
-shilijiaoben	示例|腳本	485
+shilijiaoben	示例|腳本	483
 shilingdeqiche	失靈的|汽車	436
 shilisangshi	視力|喪失	482
-shilixiaoren	勢利|小人	411
+shilixiaoren	勢利|小人	408
 shiliyinqing	視力|引擎	506
 shiliyiyuan	市立|醫院	500
 shiluojiyi	失落|記憶	512
@@ -14723,6 +14723,9 @@ wulixingzhi	物理|性質	520
 wulixuebao	物理|學報	498
 wulixuechangliang	物理學|常量	501
 wulixuechangshu	物理學|常數	501
+wulixuede	物理|學的	416
+wulixuedejinhua	物理|學的|進化	498
+wulixuedeyanhua	物理|學的|演化	498
 wulixuedinglv	物理學|定律	501
 wulixuefenzhi	物理學|分支	501
 wulixuejishi	物理學|記事	494
@@ -14981,7 +14984,7 @@ xiangmufanyinglilun	項目|反應|理論	464
 xiangmuguanli	項目|管理	475
 xiangmujiegou	項目|結構	488
 xiangmujindu	項目|進度	520
-xiangmushili	項目|實例	484
+xiangmushili	項目|實例	486
 xiangmuyuanma	項目|源碼	487
 xiangpituzhang	橡皮|圖章	464
 xiangqianxianxiang	鑲嵌|現象	497
@@ -17121,7 +17124,7 @@ yingyonghuanjing	應用|環境	488
 yingyongjiedian	應用|節點	423
 yingyongjiedianbianhuan	應用|節點|變換	505
 yingyongjiegou	應用|結構	486
-yingyongshili	應用|實例	468
+yingyongshili	應用|實例	488
 yingyongwenxiezuo	應用文|寫作	453
 yingyongwuli	應用|物理	502
 yingyongwulixue	應用|物理學	501
