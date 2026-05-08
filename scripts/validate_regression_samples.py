@@ -17,8 +17,15 @@ import pathlib
 from typing import Dict, Iterable, List, Tuple
 
 
+def normalize_exact_pinyin_key(value: str) -> str:
+    normalized = value.strip().lower()
+    normalized = normalized.replace("\u2018", "'").replace("\u2019", "'")
+    normalized = normalized.replace("\u02bc", "'").replace("`", "'")
+    return "".join(ch for ch in normalized if ("a" <= ch <= "z") or ch == "'")
+
+
 def normalize_pinyin_key(value: str) -> str:
-    return value.strip().lower().replace("’", "").replace("'", "")
+    return normalize_exact_pinyin_key(value).replace("'", "")
 
 
 def load_dict(path: pathlib.Path) -> Dict[str, List[Tuple[str, int]]]:
@@ -33,6 +40,7 @@ def load_dict(path: pathlib.Path) -> Dict[str, List[Tuple[str, int]]]:
             if len(parts) != 3:
                 raise ValueError(f"{path}:{line_no} invalid column count")
 
+            exact_pinyin = normalize_exact_pinyin_key(parts[0])
             pinyin = normalize_pinyin_key(parts[0])
             text = parts[1].strip()
             try:
@@ -43,11 +51,14 @@ def load_dict(path: pathlib.Path) -> Dict[str, List[Tuple[str, int]]]:
             if not pinyin or not text:
                 raise ValueError(f"{path}:{line_no} empty pinyin/text")
 
-            if pinyin not in bucket:
-                bucket[pinyin] = {}
-            prev = bucket[pinyin].get(text, -10**9)
-            if weight > prev:
-                bucket[pinyin][text] = weight
+            for key in {pinyin, exact_pinyin}:
+                if not key:
+                    continue
+                if key not in bucket:
+                    bucket[key] = {}
+                prev = bucket[key].get(text, -10**9)
+                if weight > prev:
+                    bucket[key][text] = weight
 
     finalized: Dict[str, List[Tuple[str, int]]] = {}
     for pinyin, mapping in bucket.items():
@@ -84,7 +95,8 @@ def load_samples(path: pathlib.Path, default_rank: int) -> List[Tuple[str, str, 
             if len(parts) < 2:
                 raise ValueError(f"{path}:{line_no} invalid sample row")
 
-            pinyin = normalize_pinyin_key(parts[0])
+            exact_pinyin = normalize_exact_pinyin_key(parts[0])
+            pinyin = exact_pinyin if "'" in exact_pinyin else normalize_pinyin_key(parts[0])
             expected_text = parts[1].strip()
             max_rank = default_rank
             if len(parts) >= 3 and parts[2].strip():

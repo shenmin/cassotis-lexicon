@@ -481,15 +481,16 @@ DAILY_CHAT_SEED_SUFFIXES = (
     "去",
 )
 DAILY_CHAT_SEED_CHARS = set("的得地就也还才又都把被给跟让像向对从为在这那哪怎啥谁您你我他她它咱吗呢吧呀啊嘛哦呗啦了着过说看来去")
+DAILY_CHAT_SEED_CHARS.update(("\u6539", "\u6210"))
 STRONG_TWO_CHAR_DAILY_HEAD_CHARS = set(
     "\u4e0d\u6ca1\u522b\u8fd9\u90a3\u54ea\u600e\u5565\u8c01\u60a8\u4f60\u6211\u4ed6\u5979\u5b83\u54b1"
     "\u6709\u65e0\u53ef\u80fd\u4f1a\u8981\u60f3\u8be5\u771f\u633a\u592a\u597d\u5148\u518d\u8fd8\u4e5f"
-    "\u5c31\u624d\u53c8\u90fd\u8001\u603b"
+    "\u5c31\u624d\u53c8\u90fd\u8001\u603b\u6539"
 )
 STRONG_TWO_CHAR_DAILY_TAIL_CHARS = set(
     "\u5417\u5462\u5427\u5440\u554a\u561b\u54e6\u5457\u5566\u4e86\u7740\u8fc7"
     "\u662f\u7684\u5f97\u6765\u53bb\u770b\u8bf4\u505a\u641e\u5f04\u95ee\u67e5\u542c\u8bd5\u6539"
-    "\u7ed9\u8981\u4f1a\u80fd\u884c\u597d\u5bf9\u9519\u5fd9\u7d2f\u723d\u75bc\u75db"
+    "\u7ed9\u8981\u4f1a\u80fd\u884c\u597d\u5bf9\u9519\u5fd9\u7d2f\u723d\u75bc\u75db\u6210"
 )
 LOW_SIGNAL_FRAGMENT_HEAD_CHARS = set(
     "\u6765\u4f86\u53bb\u770b\u8bf4\u8aaa\u505a\u641e\u5f04\u542c\u807d\u95ee\u554f\u8bd5\u8a66\u60f3"
@@ -505,8 +506,9 @@ DAILY_NUMBER_WORD_CHARS = set(
 DAILY_NUMBER_WORD_UNIT_CHARS = set(
     "\u5341\u767e\u5343\u4e07\u842c\u4ebf\u5104"
 )
-CURATED_DAILY_NUMBER_WEIGHT_CAP = 940
-CURATED_DAILY_SUPPLEMENT_WEIGHT_CAP = 840
+CURATED_DAILY_NUMBER_WEIGHT_CAP = 700
+CURATED_DAILY_SUPPLEMENT_WEIGHT_CAP = 560
+CURATED_DAILY_SUPPLEMENT_NUMBER_WEIGHT_CAP = 520
 # Fiction entities and public/historical people names are supplemental named
 # entities and should not inherit everyday-word priors. Product/platform proper
 # nouns stay on the generic vertical path because they are frequent daily input.
@@ -2042,6 +2044,179 @@ def _compute_medicine_vertical_penalty(text: str, source_id: str) -> int:
     return max(0, base_penalty - relief)
 
 
+def _cap_medicine_vertical_weight(weight: int, text: str, source_id: str) -> int:
+    """Keep medical vertical terms discoverable without daily-word priority."""
+    text_len = _cjk_len(text)
+    source = source_id.strip().lower()
+
+    if source == "project-curated-vertical-medicine":
+        if text_len <= 2:
+            cap = 620
+        elif text_len == 3:
+            cap = 680
+        elif text_len == 4:
+            cap = 740
+        elif text_len == 5:
+            cap = 780
+        else:
+            cap = 820
+    elif source == "wikidata-medical-mesh-zh":
+        if text_len <= 2:
+            cap = 560
+        elif text_len == 3:
+            cap = 620
+        elif text_len == 4:
+            cap = 680
+        elif text_len == 5:
+            cap = 730
+        else:
+            cap = 780
+    else:
+        if text_len <= 2:
+            cap = 520
+        elif text_len == 3:
+            cap = 580
+        elif text_len == 4:
+            cap = 640
+        elif text_len == 5:
+            cap = 700
+        else:
+            cap = 760
+
+    return min(weight, cap)
+
+
+def _cap_medical_specific_term_weights(
+    mapping: Dict[Tuple[str, str], int],
+    usage_score_map: Dict[str, float],
+    source_hits_map: Dict[str, int],
+    pageviews_signal_map: Dict[str, float],
+    jieba_direct_signal_map: Dict[str, float],
+    curated_daily_terms: Set[str],
+    stats_prefix: str,
+) -> Dict[str, int]:
+    """Cap medical-domain fragments that enter through generic sources."""
+    stats = {
+        f"{stats_prefix}_medical_specific_capped": 0,
+    }
+    if not mapping:
+        return stats
+
+    for key, weight in list(mapping.items()):
+        _pinyin, text = key
+        text_len = _cjk_len(text)
+        if text_len < 2 or text_len > 4:
+            continue
+        if text in curated_daily_terms or not _is_medical_specific_term(text):
+            continue
+
+        usage_score = min(1.0, max(0.0, usage_score_map.get(text, 0.0)))
+        source_hits = max(0, source_hits_map.get(text, 0))
+        pageview_score = min(1.0, max(0.0, pageviews_signal_map.get(text, 0.0)))
+        jieba_direct_score = min(1.0, max(0.0, jieba_direct_signal_map.get(text, 0.0)))
+        if usage_score >= 0.52 or pageview_score >= 0.16:
+            continue
+
+        if text_len <= 2:
+            cap = 620
+        elif text_len == 3:
+            cap = 680
+        else:
+            cap = 740
+
+        if source_hits >= 3 or jieba_direct_score >= 0.50:
+            cap += 40
+        if weight > cap:
+            mapping[key] = cap
+            stats[f"{stats_prefix}_medical_specific_capped"] += 1
+
+    return stats
+
+
+def _cap_low_signal_short_term_weights(
+    mapping: Dict[Tuple[str, str], int],
+    usage_score_map: Dict[str, float],
+    source_hits_map: Dict[str, int],
+    pageviews_signal_map: Dict[str, float],
+    jieba_direct_signal_map: Dict[str, float],
+    jieba_pos_map: Dict[str, str],
+    protected_terms: Set[str],
+    stats_prefix: str,
+) -> Dict[str, int]:
+    """Keep low-evidence short dictionary/wiki terms discoverable but non-dominant."""
+    stats = {
+        f"{stats_prefix}_low_signal_short_capped": 0,
+    }
+    if not mapping:
+        return stats
+
+    for key, weight in list(mapping.items()):
+        _pinyin, text = key
+        text_len = _cjk_len(text)
+        if text_len < 2 or text_len > 3:
+            continue
+        if text in protected_terms or _is_pure_daily_number_word(text):
+            continue
+
+        usage_score = min(1.0, max(0.0, usage_score_map.get(text, 0.0)))
+        source_hits = max(0, source_hits_map.get(text, 0))
+        pageview_score = min(1.0, max(0.0, pageviews_signal_map.get(text, 0.0)))
+        jieba_direct_score = min(1.0, max(0.0, jieba_direct_signal_map.get(text, 0.0)))
+        pos_tag = jieba_pos_map.get(text, "")
+
+        if source_hits > 2:
+            continue
+        if usage_score >= 0.16 or jieba_direct_score >= 0.08 or pageview_score >= 0.03:
+            continue
+        if _is_conversational_pos(pos_tag):
+            continue
+
+        cap = 560 if text_len <= 2 else 620
+        if weight > cap:
+            mapping[key] = cap
+            stats[f"{stats_prefix}_low_signal_short_capped"] += 1
+
+    return stats
+
+
+def _cap_low_signal_reduplicated_term_weights(
+    mapping: Dict[Tuple[str, str], int],
+    source_hits_map: Dict[str, int],
+    pageviews_signal_map: Dict[str, float],
+    jieba_direct_signal_map: Dict[str, float],
+    protected_terms: Set[str],
+    stats_prefix: str,
+) -> Dict[str, int]:
+    """Prevent low-evidence AA reduplications from dominating exact buckets."""
+    stats = {
+        f"{stats_prefix}_low_signal_redup_capped": 0,
+    }
+    if not mapping:
+        return stats
+
+    for key, weight in list(mapping.items()):
+        _pinyin, text = key
+        if _cjk_len(text) != 2 or len(text) != 2 or text[0] != text[1]:
+            continue
+        if text in protected_terms or _is_pure_daily_number_word(text):
+            continue
+
+        source_hits = max(0, source_hits_map.get(text, 0))
+        pageview_score = min(1.0, max(0.0, pageviews_signal_map.get(text, 0.0)))
+        jieba_direct_score = min(1.0, max(0.0, jieba_direct_signal_map.get(text, 0.0)))
+        if pageview_score >= 0.08 or jieba_direct_score >= 0.18:
+            continue
+        if source_hits >= 4 and jieba_direct_score >= 0.08:
+            continue
+
+        cap = 560
+        if weight > cap:
+            mapping[key] = cap
+            stats[f"{stats_prefix}_low_signal_redup_capped"] += 1
+
+    return stats
+
+
 def _compute_generic_vertical_penalty(
     text: str,
     layer_id: str,
@@ -2249,6 +2424,42 @@ def _cap_place_vertical_usage_score(
     return min(bounded, 0.34)
 
 
+def _cap_medicine_vertical_usage_score(
+    usage_score: float,
+    text_len: int,
+    source_id: str = "",
+) -> float:
+    """Medical terms are exact-searchable vertical terms, not daily priors."""
+    bounded = min(1.0, max(0.0, usage_score))
+    source = source_id.strip().lower()
+
+    if source == "project-curated-vertical-medicine":
+        if text_len <= 2:
+            return min(bounded, 0.48)
+        if text_len == 3:
+            return min(bounded, 0.54)
+        if text_len == 4:
+            return min(bounded, 0.58)
+        return min(bounded, 0.62)
+
+    if source == "wikidata-medical-mesh-zh":
+        if text_len <= 2:
+            return min(bounded, 0.34)
+        if text_len == 3:
+            return min(bounded, 0.40)
+        if text_len == 4:
+            return min(bounded, 0.46)
+        return min(bounded, 0.52)
+
+    if text_len <= 2:
+        return min(bounded, 0.28)
+    if text_len == 3:
+        return min(bounded, 0.34)
+    if text_len == 4:
+        return min(bounded, 0.40)
+    return min(bounded, 0.46)
+
+
 def _vertical_ranking_usage_score(
     text: str,
     layer_id: str,
@@ -2259,6 +2470,8 @@ def _vertical_ranking_usage_score(
 ) -> float:
     if _is_named_entity_vertical_layer(layer_id) and not supported_named_entity:
         return _cap_named_entity_vertical_usage_score(usage_score, _cjk_len(text))
+    if layer_id == "medicine":
+        return _cap_medicine_vertical_usage_score(usage_score, _cjk_len(text), source_id)
     if layer_id == "place_names":
         return _cap_place_vertical_usage_score(usage_score, _cjk_len(text), source_id)
     if layer_id == "idioms_allusions":
@@ -2734,7 +2947,17 @@ def _compute_weight_with_signals(
             else:
                 bias -= 0.18
         elif _is_conversational_pos(pos_tag):
-            if length <= 4 and (bounded_usage >= 0.05 or jieba_direct_score >= 0.08):
+            if (
+                length <= 2
+                and pos_tag.startswith(("d", "r", "p", "u", "c"))
+                and (
+                    bounded_usage >= 0.05
+                    or jieba_direct_score >= 0.06
+                    or source_hits >= 2
+                )
+            ):
+                bias += 0.32
+            elif length <= 4 and (bounded_usage >= 0.05 or jieba_direct_score >= 0.08):
                 bias += 0.22
             elif length <= 4:
                 bias += 0.10
@@ -3764,11 +3987,7 @@ def _is_daily_number_word_candidate(
         return False
     if _is_named_entity_pos(pos_tag):
         return False
-    if not text:
-        return False
-    if any(ch not in DAILY_NUMBER_WORD_CHARS for ch in text):
-        return False
-    if not any(ch in DAILY_NUMBER_WORD_UNIT_CHARS for ch in text):
+    if not _is_pure_daily_number_word(text):
         return False
 
     bounded_usage = min(1.0, max(0.0, usage_score))
@@ -4438,6 +4657,8 @@ def _rerank_homophone_buckets(
         f"{stats_prefix}_homophone_daily_number_boosted": 0,
         f"{stats_prefix}_homophone_short_everyday_boosted": 0,
         f"{stats_prefix}_homophone_short_everyday_non_daily_damped": 0,
+        f"{stats_prefix}_homophone_short_everyday_weak_noun_damped": 0,
+        f"{stats_prefix}_homophone_conversational_family_noun_damped": 0,
         f"{stats_prefix}_homophone_short_popular_wiki_boosted": 0,
         f"{stats_prefix}_homophone_short_popular_named_bucket_damped": 0,
         f"{stats_prefix}_homophone_daily_phrase_short_non_daily_damped": 0,
@@ -5219,6 +5440,30 @@ def _rerank_homophone_buckets(
                 stats[f"{stats_prefix}_homophone_short_family_noun_damped"] += 1
 
             if (
+                bucket_has_short_everyday_term
+                and text_len <= 2
+                and _is_noun_pos(pos_tag)
+                and not _is_named_entity_pos(pos_tag)
+                and not daily_phrase_support
+                and not short_everyday_support
+                and usage_score < 0.22
+                and jieba_direct_score < 0.18
+                and pageview_score < 0.16
+                and (
+                    common_signal_scores.get(text, 0.0) + 72.0 < bucket_dominant_common_signal
+                    or family_support_score >= 0.18
+                    or char_score < 0.58
+                    or (source_hits <= 2 and not wiki_support)
+                )
+            ):
+                # Family/prefix support says "valid term", not "daily default".
+                # In buckets that already contain a well-supported short everyday
+                # candidate, keep low-direct-evidence short nouns discoverable
+                # without letting them crowd common functional words.
+                delta -= 168
+                stats[f"{stats_prefix}_homophone_short_everyday_weak_noun_damped"] += 1
+
+            if (
                 text_len <= 2
                 and wiki_support
                 and pageview_score >= 0.12
@@ -5305,6 +5550,22 @@ def _rerank_homophone_buckets(
                         and (usage_score >= 0.08 or jieba_direct_score >= 0.10 or source_hits >= 2)
                     ):
                         delta += 20
+
+            if (
+                bucket_has_conversational_short_term
+                and text_len <= 2
+                and _is_noun_pos(pos_tag)
+                and not _is_named_entity_pos(pos_tag)
+                and family_support_score >= 0.42
+                and jieba_direct_score < 0.12
+                and usage_score < 0.30
+                and pageview_score < 0.05
+            ):
+                # Phrase-family support often marks domain heads as valid
+                # (medical/technical nouns), but it should not make them the
+                # default over a same-pinyin conversational/function word.
+                post_cap_bonus -= 300
+                stats[f"{stats_prefix}_homophone_conversational_family_noun_damped"] += 1
 
             if text_len == 1:
                 audited_reading_delta = SINGLE_CHAR_READING_DELTA_OVERRIDES.get((text, pinyin), 0)
@@ -10862,7 +11123,13 @@ def _finalize_curated_daily_weight(
     low_frequency: bool = False,
 ) -> int:
     if low_frequency:
-        supplement_floor = 560 + int(round(max(0.0, min(1.0, usage_score)) * 260.0))
+        if is_number_word:
+            number_floor = 400 + int(round(max(0.0, min(1.0, usage_score)) * 120.0))
+            return min(
+                CURATED_DAILY_SUPPLEMENT_NUMBER_WEIGHT_CAP,
+                max(weight, number_floor),
+            )
+        supplement_floor = 430 + int(round(max(0.0, min(1.0, usage_score)) * 140.0))
         return min(CURATED_DAILY_SUPPLEMENT_WEIGHT_CAP, max(weight, supplement_floor))
 
     if not is_number_word:
@@ -10881,6 +11148,8 @@ def _finalize_curated_daily_weight(
 
 
 def _is_pure_daily_number_word(text: str) -> bool:
+    if text.startswith("\u7b2c") and len(text) > 1:
+        text = text[1:]
     return (
         bool(text)
         and CJK_FULL_RE.fullmatch(text) is not None
@@ -10987,10 +11256,15 @@ def _cap_curated_daily_supplement_exact_weights(
 
         key = (pinyin, text)
         weight = mapping.get(key)
-        if weight is None or weight <= CURATED_DAILY_SUPPLEMENT_WEIGHT_CAP:
+        cap = (
+            CURATED_DAILY_SUPPLEMENT_NUMBER_WEIGHT_CAP
+            if _is_pure_daily_number_word(text)
+            else CURATED_DAILY_SUPPLEMENT_WEIGHT_CAP
+        )
+        if weight is None or weight <= cap:
             continue
 
-        mapping[key] = CURATED_DAILY_SUPPLEMENT_WEIGHT_CAP
+        mapping[key] = cap
         capped_terms.add(text)
         stats[f"{stats_prefix}_curated_daily_supplement_exact_cap_rows"] += 1
 
@@ -11094,6 +11368,106 @@ def _reinforce_curated_daily_existing_prefixes(
 
             usage_score_map[prefix] = max(usage_score_map.get(prefix, 0.0), inherited_usage)
             source_hits_map[prefix] = max(source_hits_map.get(prefix, 0), 2)
+
+    return stats
+
+
+def _reinforce_curated_daily_existing_suffixes(
+    mapping: Dict[Tuple[str, str], int],
+    curated_entries: List[Tuple[str, str, float, str]],
+    usage_score_map: Dict[str, float],
+    source_hits_map: Dict[str, int],
+    jieba_pos_map: Dict[str, str],
+    char_frequency_prior: Dict[str, float],
+    unihan_map: Dict[str, str],
+    unihan_readings_map: Dict[str, Set[str]],
+    unihan_source_rank_map: Dict[Tuple[str, str], int],
+    unihan_pinlu_detail_map: Dict[Tuple[str, str], int],
+    *,
+    use_traditional: bool,
+    stats_prefix: str,
+    min_hanzi: int,
+) -> Dict[str, int]:
+    stats = {
+        f"{stats_prefix}_curated_daily_suffix_terms_considered": 0,
+        f"{stats_prefix}_curated_daily_suffix_reinforced": 0,
+    }
+    if not mapping or not curated_entries:
+        return stats
+
+    existing_texts = {text for _pinyin, text in mapping.keys()}
+    char_prior = _build_effective_char_prior(mapping, char_frequency_prior)
+
+    def suffix_floor(suffix_len: int, inherited_usage: float) -> int:
+        usage = min(1.0, max(0.0, inherited_usage))
+        if suffix_len <= 2:
+            return min(1040, 800 + int(round(usage * 220.0)))
+        if suffix_len == 3:
+            return min(1000, 760 + int(round(usage * 200.0)))
+        return min(960, 720 + int(round(usage * 180.0)))
+
+    for sc_word, tc_word, usage_score, explicit_pinyin in curated_entries:
+        source_text = tc_word if use_traditional and tc_word else sc_word
+        source_len = _cjk_len(source_text)
+        if source_len < 3:
+            continue
+
+        pinyin = explicit_pinyin or _pinyin_from_unihan(
+            sc_word,
+            unihan_map,
+            unihan_readings_map,
+            unihan_source_rank_map,
+            unihan_pinlu_detail_map,
+        )
+        if not pinyin:
+            continue
+
+        syllables = _split_compact_pinyin_by_unihan(
+            sc_word,
+            pinyin,
+            unihan_map,
+            unihan_readings_map,
+            unihan_source_rank_map,
+            unihan_pinlu_detail_map,
+        )
+        if not syllables or len(syllables) < source_len:
+            continue
+
+        for suffix_len in range(max(2, min_hanzi), min(4, source_len - 1) + 1):
+            suffix = source_text[-suffix_len:]
+            if suffix not in existing_texts:
+                continue
+            if not CJK_FULL_RE.fullmatch(suffix):
+                continue
+            if _is_named_entity_pos(jieba_pos_map.get(suffix, "")):
+                continue
+
+            suffix_char_score = _compute_text_single_char_prior(suffix, char_prior)
+            suffix_min_char_prior = _compute_min_char_prior(suffix, char_prior)
+            if suffix_char_score < 0.12 or suffix_min_char_prior < 0.02:
+                continue
+
+            suffix_pinyin = _normalize_compact_pinyin_key("".join(syllables[-suffix_len:]))
+            if not suffix_pinyin:
+                continue
+
+            key = (suffix_pinyin, suffix)
+            existing_weight = mapping.get(key)
+            if existing_weight is None:
+                continue
+
+            stats[f"{stats_prefix}_curated_daily_suffix_terms_considered"] += 1
+            inherited_usage = max(
+                min(1.0, max(0.0, usage_score_map.get(suffix, 0.0))),
+                min(0.82, max(0.24, min(1.0, max(0.0, usage_score)) - 0.08)),
+            )
+            floor_weight = suffix_floor(suffix_len, inherited_usage)
+            if existing_weight < floor_weight:
+                mapping[key] = floor_weight
+                stats[f"{stats_prefix}_curated_daily_suffix_reinforced"] += 1
+
+            usage_score_map[suffix] = max(usage_score_map.get(suffix, 0.0), inherited_usage)
+            source_hits_map[suffix] = max(source_hits_map.get(suffix, 0), 2)
 
     return stats
 
@@ -11652,6 +12026,7 @@ def _reinforce_vertical_tc_terms(
         "vertical_exact_tc_added": 0,
         "vertical_medicine_penalized_tc": 0,
         "vertical_medicine_penalty_tc_total": 0,
+        "vertical_medicine_capped_tc": 0,
     }
     if not tc or not vertical_entries:
         return stats
@@ -11792,6 +12167,10 @@ def _reinforce_vertical_tc_terms(
                 tc_weight = max(1, tc_weight - penalty)
                 stats["vertical_medicine_penalized_tc"] += 1
                 stats["vertical_medicine_penalty_tc_total"] += penalty
+            capped_weight = _cap_medicine_vertical_weight(tc_weight, tc_candidate, source_id)
+            if capped_weight < tc_weight:
+                tc_weight = capped_weight
+                stats["vertical_medicine_capped_tc"] += 1
         elif not supported_named_entity:
             penalty = _compute_generic_vertical_penalty(tc_candidate, layer_id, source_id)
             if penalty > 0:
@@ -12045,8 +12424,10 @@ def _augment_with_vertical_terms(
         "vertical_terms_skipped_no_pinyin": 0,
         "vertical_medicine_penalized_sc": 0,
         "vertical_medicine_penalty_sc_total": 0,
+        "vertical_medicine_capped_sc": 0,
         "vertical_medicine_penalized_tc": 0,
         "vertical_medicine_penalty_tc_total": 0,
+        "vertical_medicine_capped_tc": 0,
     }
     sc_terms: Set[str] = set()
     tc_terms: Set[str] = set()
@@ -12212,6 +12593,10 @@ def _augment_with_vertical_terms(
                 sc_weight = max(1, sc_weight - penalty)
                 stats["vertical_medicine_penalized_sc"] += 1
                 stats["vertical_medicine_penalty_sc_total"] += penalty
+            capped_weight = _cap_medicine_vertical_weight(sc_weight, sc_word, source_id)
+            if capped_weight < sc_weight:
+                sc_weight = capped_weight
+                stats["vertical_medicine_capped_sc"] += 1
         elif not sc_supported_named_entity:
             penalty = _compute_generic_vertical_penalty(sc_word, layer_id, source_id)
             if penalty > 0:
@@ -12301,6 +12686,10 @@ def _augment_with_vertical_terms(
                 tc_weight = max(1, tc_weight - penalty)
                 stats["vertical_medicine_penalized_tc"] += 1
                 stats["vertical_medicine_penalty_tc_total"] += penalty
+            capped_weight = _cap_medicine_vertical_weight(tc_weight, tc_candidate, source_id)
+            if capped_weight < tc_weight:
+                tc_weight = capped_weight
+                stats["vertical_medicine_capped_tc"] += 1
         elif not tc_supported_named_entity:
             penalty = _compute_generic_vertical_penalty(tc_candidate, layer_id, source_id)
             if penalty > 0:
@@ -15491,6 +15880,38 @@ def main() -> int:
     )
     stats.update(sc_curated_daily_prefix_final_stats)
     stats.update(tc_curated_daily_prefix_final_stats)
+    sc_curated_daily_suffix_final_stats = _reinforce_curated_daily_existing_suffixes(
+        sc_map,
+        curated_daily_entries,
+        usage_score_map,
+        source_hits_map,
+        jieba_pos_map,
+        char_frequency_prior,
+        unihan_map,
+        unihan_readings_map,
+        unihan_reading_source_map,
+        unihan_pinlu_detail_map,
+        use_traditional=False,
+        stats_prefix="sc",
+        min_hanzi=args.min_hanzi,
+    )
+    tc_curated_daily_suffix_final_stats = _reinforce_curated_daily_existing_suffixes(
+        tc_map,
+        curated_daily_entries,
+        tc_usage_score_map,
+        tc_source_hits_map,
+        tc_jieba_pos_map,
+        tc_char_frequency_prior,
+        unihan_map,
+        unihan_readings_map,
+        unihan_reading_source_map,
+        unihan_pinlu_detail_map,
+        use_traditional=True,
+        stats_prefix="tc",
+        min_hanzi=args.min_hanzi,
+    )
+    stats.update(sc_curated_daily_suffix_final_stats)
+    stats.update(tc_curated_daily_suffix_final_stats)
     sc_curated_daily_prefix_competitor_stats = _cap_curated_daily_prefix_competitors(
         sc_map,
         curated_daily_entries,
@@ -15601,6 +16022,66 @@ def main() -> int:
     )
     stats.update(sc_final_prefix_fragment_stats)
     stats.update(tc_final_prefix_fragment_stats)
+    sc_medical_specific_cap_stats = _cap_medical_specific_term_weights(
+        sc_map,
+        usage_score_map,
+        source_hits_map,
+        pageviews_signal_map,
+        jieba_direct_signal_map,
+        curated_daily_sc_terms,
+        "sc",
+    )
+    tc_medical_specific_cap_stats = _cap_medical_specific_term_weights(
+        tc_map,
+        tc_usage_score_map,
+        tc_source_hits_map,
+        tc_pageviews_signal_map,
+        tc_jieba_direct_signal_map,
+        curated_daily_tc_terms,
+        "tc",
+    )
+    stats.update(sc_medical_specific_cap_stats)
+    stats.update(tc_medical_specific_cap_stats)
+    sc_low_signal_short_cap_stats = _cap_low_signal_short_term_weights(
+        sc_map,
+        usage_score_map,
+        source_hits_map,
+        pageviews_signal_map,
+        jieba_direct_signal_map,
+        jieba_pos_map,
+        curated_daily_sc_terms | curated_daily_supplement_sc_terms,
+        "sc",
+    )
+    tc_low_signal_short_cap_stats = _cap_low_signal_short_term_weights(
+        tc_map,
+        tc_usage_score_map,
+        tc_source_hits_map,
+        tc_pageviews_signal_map,
+        tc_jieba_direct_signal_map,
+        tc_jieba_pos_map,
+        curated_daily_tc_terms | curated_daily_supplement_tc_terms,
+        "tc",
+    )
+    stats.update(sc_low_signal_short_cap_stats)
+    stats.update(tc_low_signal_short_cap_stats)
+    sc_low_signal_redup_cap_stats = _cap_low_signal_reduplicated_term_weights(
+        sc_map,
+        source_hits_map,
+        pageviews_signal_map,
+        jieba_direct_signal_map,
+        curated_daily_sc_terms | curated_daily_supplement_sc_terms,
+        "sc",
+    )
+    tc_low_signal_redup_cap_stats = _cap_low_signal_reduplicated_term_weights(
+        tc_map,
+        tc_source_hits_map,
+        tc_pageviews_signal_map,
+        tc_jieba_direct_signal_map,
+        curated_daily_tc_terms | curated_daily_supplement_tc_terms,
+        "tc",
+    )
+    stats.update(sc_low_signal_redup_cap_stats)
+    stats.update(tc_low_signal_redup_cap_stats)
     sc_query_path_priors: Dict[Tuple[str, str], int] = {}
     tc_query_path_priors: Dict[Tuple[str, str], int] = {}
     if output_query_path_sc is not None:

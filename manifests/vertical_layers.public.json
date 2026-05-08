@@ -676,7 +676,7 @@
           "redistribution_class": "project_authored",
           "attribution_required": false,
           "raw_committed": true,
-          "default_usage_score": 0.76,
+          "default_usage_score": 0.56,
           "notes": "Project-maintained medical supplement for high-value terms and explicit pinyin corrections that should stay isolated from daily/chat preferred-term ranking."
         },
         {
@@ -709,7 +709,7 @@
           "mesh_source_id": "mesh-descriptor-catalog",
           "mesh_tree_prefixes": "A,C,D,E,F,G,N",
           "query": "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX skos: <http://www.w3.org/2004/02/skos/core#>\nSELECT ?term ?mesh WHERE {\n  {\n    ?item wdt:P486 ?mesh ;\n          rdfs:label ?label .\n    FILTER(LANG(?label) = \"zh\")\n    BIND(STR(?label) AS ?term)\n  }\n  UNION\n  {\n    ?item wdt:P486 ?mesh ;\n          skos:altLabel ?alt .\n    FILTER(LANG(?alt) = \"zh\")\n    BIND(STR(?alt) AS ?term)\n  }\n  __MESH_PREFIX_FILTER__\n}",
-          "default_usage_score": 0.66,
+          "default_usage_score": 0.42,
           "notes": "Chinese medical labels and aliases from Wikidata Query Service, kept only when the linked MeSH descriptor stays inside medical MeSH tree categories."
         },
         {
@@ -725,7 +725,7 @@
           "raw_committed": false,
           "payload_source_id": "thuocl",
           "member_name": "THUOCL_medical.txt",
-          "default_usage_score": 0.54,
+          "default_usage_score": 0.34,
           "notes": "Medical-domain candidate layer from THUOCL, kept separate from daily/chat phrase ranking and weighted more conservatively than the MeSH-validated medical entities."
         }
       ]
