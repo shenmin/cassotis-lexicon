@@ -1237,7 +1237,7 @@ bu	布	432
 bu	捕	349
 bu	补	341
 bu	哺	315
-bu	怖	291
+bu	怖	292
 bu	簿	267
 bu	埠	245
 bu	逋	111
@@ -2991,7 +2991,7 @@ dan	蛋	384
 dan	丹	338
 dan	旦	333
 dan	诞	319
-dan	耽	286
+dan	耽	291
 dan	氮	268
 dan	疸	188
 dan	殚	139
@@ -3082,7 +3082,7 @@ dang	党	459
 dang	当	450
 dang	挡	317
 dang	荡	310
-dang	档	303
+dang	档	304
 dang	铛	232
 dang	宕	158
 dang	裆	133
@@ -3374,7 +3374,7 @@ di	鯳	32
 di	坻	1
 dia	嗲	91
 dian	点	518
-dian	电	512
+dian	电	445
 dian	店	412
 dian	典	405
 dian	甸	369
@@ -6184,11 +6184,11 @@ heng	䯒	40
 heng	悙	40
 hm	噷	28
 hong	红	447
-hong	宏	336
+hong	宏	335
 hong	洪	332
 hong	哄	330
 hong	轰	323
-hong	烘	318
+hong	烘	320
 hong	虹	287
 hong	鸿	197
 hong	弘	192
@@ -9855,7 +9855,7 @@ li	犁	279
 li	沥	271
 li	篱	269
 li	栗	266
-li	莉	263
+li	莉	266
 li	鲤	257
 li	砾	250
 li	鹂	248
@@ -10999,7 +10999,7 @@ lun	腀	37
 luo	落	502
 luo	骆	327
 luo	络	319
-luo	萝	309
+luo	萝	310
 luo	锣	302
 luo	逻	300
 luo	骡	281
@@ -11522,8 +11522,8 @@ meng	蒙	329
 meng	萌	231
 meng	孟	216
 meng	檬	207
-meng	勐	147
 meng	锰	144
+meng	勐	140
 meng	獴	134
 meng	鹲	121
 meng	蜢	112
@@ -11602,10 +11602,10 @@ mi	眯	292
 mi	瞇	265
 mi	靡	247
 mi	糜	201
+mi	幂	191
 mi	谜	186
 mi	觅	179
 mi	醚	156
-mi	幂	141
 mi	汨	141
 mi	麋	103
 mi	谧	94
@@ -11825,7 +11825,7 @@ min	敏	332
 min	抿	212
 min	泯	192
 min	皿	188
-min	闽	185
+min	闽	187
 min	珉	160
 min	旻	147
 min	悯	140
@@ -12315,7 +12315,7 @@ ng	嗯	240
 ni	你	710
 ni	泥	465
 ni	溺	306
-ni	拟	292
+ni	拟	293
 ni	倪	232
 ni	匿	213
 ni	逆	211
@@ -12636,11 +12636,11 @@ nu	㚢	49
 nu	伮	49
 nu	搙	49
 nu	胬	1
-nuan	暖	421
+nuan	暖	422
 nuan	煖	108
-nuan	奻	61
-nuan	渜	61
-nuan	餪	61
+nuan	奻	60
+nuan	渜	60
+nuan	餪	60
 nuan	煗	50
 nuan	㬉	38
 nun	黁	79
@@ -13446,8 +13446,8 @@ qi	砌	341
 qi	妻	338
 qi	骑	337
 qi	欺	334
+qi	泣	328
 qi	崎	326
-qi	泣	324
 qi	弃	321
 qi	启	311
 qi	岂	297
@@ -14139,8 +14139,8 @@ qing	蜻	289
 qing	氢	286
 qing	氰	208
 qing	卿	202
+qing	擎	180
 qing	罄	168
-qing	擎	163
 qing	勍	87
 qing	磬	87
 qing	檠	77
@@ -15423,7 +15423,7 @@ shen	申	321
 shen	婶	311
 shen	审	310
 shen	渗	298
-shen	绅	244
+shen	绅	249
 shen	呻	241
 shen	砷	156
 shen	肾	134
@@ -20485,7 +20485,7 @@ yi	邑	230
 yi	夷	211
 yi	彝	202
 yi	沂	202
-yi	逸	200
+yi	逸	202
 yi	怡	196
 yi	溢	190
 yi	佚	188
@@ -21297,7 +21297,7 @@ you	幽	204
 you	疣	157
 you	酉	154
 you	攸	141
-you	鼬	140
+you	鼬	141
 you	柚	138
 you	鱿	125
 you	侑	123
@@ -22817,7 +22817,7 @@ zhi	执	386
 zhi	置	379
 zhi	职	354
 zhi	肢	351
-zhi	智	347
+zhi	智	348
 zhi	汁	345
 zhi	址	319
 zhi	脂	317
