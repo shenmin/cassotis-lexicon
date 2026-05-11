@@ -544,8 +544,14 @@
 可不可以	可不可以	0.82
 有点	有點	0.88
 有点像	有點像	0.80
+有时	有時	0.92	youshi
+有时会	有時會	0.90	youshihui
 有时候	有時候	0.82
+有雨	有雨	0.88	youyu
+下午有雨	下午有雨	0.86	xiawuyouyu
 有问题	有問題	0.82
+有权	有權	0.88	youquan
+没有人	沒有人	0.90	meiyouren
 没关系	沒關係	0.90
 没办法	沒辦法	0.88
 没什么	沒什麼	0.84
@@ -888,7 +894,14 @@
 # be / change style chat phrases
 是什么	是什麼	0.96
 这是	這是	0.96
+这是一个	這是一個	0.94	zheshiyige
+这是一种	這是一種	0.94	zheshiyizhong
+这是我	這是我	0.92	zheshiwo
+是真的	是真的	0.92	shizhende
 是啥	是啥	0.90
+事情	事情	0.92	shiqing
+任务	任務	0.90	renwu
+申请	申請	0.90	shenqing
 改吗	改嗎	0.88
 改吧	改吧	0.88
 改好了	改好了	0.92
@@ -1482,6 +1495,7 @@
 搞成	搞成	0.88
 用了	用了	0.88
 还用说	還用說	0.92
+使用	使用	0.94	shiyong
 使用了	使用了	0.90
 再加上	再加上	0.92	zaijiashang
 悠着点	悠著點	0.92	youzhedian
@@ -1918,7 +1932,6 @@
 创造了	创造了	0.90	chuangzaole
 闺蜜	闺蜜	0.90	guimi
 共情	共情	0.90	gongqing
-坍缩	坍缩	0.90	tansuo
 不吃	不吃	0.90	buchi
 不赞同	不贊同	0.90	buzantong
 不认同	不認同	0.90	burentong
@@ -2241,7 +2254,7 @@
 太害怕	太害怕	0.90	taihaipa
 重试	重試	0.90	chongshi
 再试	再試	0.90	zaishi
-又试	又試	0.90	youshi
+两位	兩位	0.90	liangwei
 两周	兩週	0.90	liangzhou
 三周	三週	0.90	sanzhou
 两月	兩月	0.90	liangyue
@@ -2473,22 +2486,58 @@
 进度	進度	0.90	jindu
 落后了	落後了	0.90	luohoule
 工作日	工作日	0.90	gongzuori
+步行上班	步行上班	0.86	buxingshangban
 早晨	早晨	0.90	zaochen
 急于	急於	0.90	jiyu
 不急于	不急於	0.90	bujiyu
 出生于	出生於	0.90	chushengyu
 奥运	奧運	0.90	aoyun
 计算机	計算機	0.91	jisuanji
+如何	如何	0.94	ruhe
+团队	團隊	0.93	tuandui
+终端	終端	0.91	zhongduan
+权重数据	權重數據	0.86	quanzhongshuju
+细节	細節	0.90	xijie
+服务	服務	0.90	fuwu
+更好的	更好的	0.92	genghaode
+更好地为	更好地為	0.93	genghaodewei
+以便更好	以便更好	0.86	yibiangenghao
+提供服务	提供服務	0.88	tigongfuwu
+为你	為你	0.90	weini
+察觉	察覺	0.88	chajue
+喜爱	喜愛	0.88	xiai
+悦耳	悅耳	0.86	yueer
+阻碍	阻礙	0.86	zuai
+伦理	倫理	0.86	lunli
+能力	能力	0.92	nengli
+学习能力	學習能力	0.90	xuexinengli
+瓶颈	瓶頸	0.88	pingjing
+面临	面臨	0.88	mianlin
+特殊	特殊	0.88	teshu
+广受	廣受	0.86	guangshou
+听完	聽完	0.88	tingwan
+你对	你對	0.88	nidui
+既定	既定	0.86	jiding
+任何人	任何人	0.88	renheren
+工位	工位	0.86	gongwei
+重要的	重要的	0.90	zhongyaode
+有重要的	有重要的	0.86	youzhongyaode
+经典	經典	0.90	jingdian
+经典问题	經典問題	0.88	jingdianwenti
+坐上	坐上	0.88	zuoshang
+坐公交	坐公交	0.88	zuogongjiao
+毕竟是	畢竟是	0.88	bijingshi
+达成	達成	0.88	dacheng
 浓厚	濃厚	0.90	nonghou
 浓厚兴趣	濃厚興趣	0.90	nonghouxingqu
 几乎没有	幾乎沒有	0.90	jihumeiyou
 加以	加以	0.90	jiayi
-指导	指導	0.90	zhidao
 加以指导	加以指導	0.90	jiayizhidao
 出于	出於	0.90	chuyu
 自发	自發	0.90	zifa
 自发的	自發的	0.90	zifade
 小有所成	小有所成	0.90	xiaoyousuocheng
+校友	校友	0.88	xiaoyou
 亲戚	親戚	0.90	qinqi
 亲戚朋友	親戚朋友	0.90	qinqipengyou
 出问题	出問題	0.90	chuwenti
@@ -3245,12 +3294,10 @@
 我们也	我們也	0.90	womenye
 延时	延時	0.90	yanshi
 延绵	延綿	0.90	yanmian
-长时	長時	0.90	changshi
 短时	短時	0.90	duanshi
 自组词	自組詞	0.90	zizuci
 拼词	拼詞	0.90	pinci
 降智	降智	0.90	jiangzhi
-是用	是用	0.90	shiyong
 现价	現價	0.90	xianjia
 先买	先買	0.90	xianmai
 再买	再買	0.90	zaimai
@@ -3305,3 +3352,31 @@
 低的	低的	0.90	dide
 搞的	搞的	0.90	gaode
 低权重	低權重	0.90	diquanzhong
+祥和	祥和	0.88	xianghe
+这台	這台	0.88	zhetai
+不存在	不存在	0.90	bucunzai
+包围	包圍	0.88	baowei
+现场	現場	0.88	xianchang
+到现场	到現場	0.86	daoxianchang
+解决方案	解決方案	0.90	jiejuefangan
+更没有人	更沒有人	0.88	gengmeiyouren
+没有人有权	沒有人有權	0.86	meiyourenyouquan
+有权改变	有權改變	0.86	youquangaibian
+却又	卻又	0.90	queyou
+却又有点	卻又有點	0.88	queyouyoudian
+阻碍和限制	阻礙和限制	0.86	zuaihexianzhi
+著称的	著稱的	0.88	zhuchengde
+迁移到	遷移到	0.88	qianyidao
+放空	放空	0.88	fangkong
+专注于	專注於	0.90	zhuanzhuyu
+拉着	拉著	0.88	lazhe
+得力助手	得力助手	0.88	delizhushou
+特定任务	特定任務	0.88	tedingrenwu
+完美结合	完美結合	0.88	wanmeijiehe
+被认为	被認為	0.88	beirenwei
+学生们	學生們	0.88	xueshengmen
+的一面	的一面	0.88	deyimian
+的性能	的性能	0.88	dexingneng
+模型性能	模型性能	0.86	moxingxingneng
+建筑设计	建築設計	0.88	jianzhusheji
+的比例	的比例	0.86	debili

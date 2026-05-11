@@ -1,6 +1,13 @@
 # sc	tc	usage_score	pinyin(optional)
 # Useful exact-match daily-adjacent terms that should remain inputable, but should
 # not inherit the high-priority daily/chat weight floor from curated_daily_phrases.tsv.
+# technical/domain or phrase-fragment supplements that should stay visible without
+# outranking more common homophones
+坍缩	坍缩	0.82	tansuo
+指导	指導	0.84	zhidao
+长时	長時	0.82	changshi
+是用	是用	0.82	shiyong
+又试	又試	0.82	youshi
 # low-priority everyday number words
 十一	十一	0.82
 十二	十二	0.82
@@ -252,3 +259,9 @@
 圆幂定理	圓冪定理	0.90	yuanmidingli
 幂幂	冪冪	0.90	mimi
 幂历	冪歷	0.90	mili
+幻影	幻影	0.88	huanying
+电车难题	電車難題	0.88	dianchenanti
+幻影般	幻影般	0.86	huanyingban
+顺利进入	順利進入	0.86	shunlijinru
+安装完	安裝完	0.86	anzhuangwan
+驱动后	驅動後	0.84	qudonghou

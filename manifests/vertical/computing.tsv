@@ -18,21 +18,32 @@
 虚拟环境	虛擬環境	0.82
 包管理器	套件管理器	0.80
 数据库	資料庫	0.82
+信息流	資訊流	0.80	xinxiliu
 关系型数据库	關係型資料庫	0.78
 非关系型数据库	非關係型資料庫	0.78
 数据结构	資料結構	0.80
 数据类型	資料型別	0.80
+带宽	帶寬	0.82	daikuan
+显存	顯存	0.82	xiancun
 字段	欄位	0.74
 索引	索引	0.76
 主键	主鍵	0.76
 外键	外鍵	0.76
 查询优化	查詢最佳化	0.76
 事务	事務	0.76
+读取	讀取	0.78	duqu
+接收	接收	0.78	jieshou
+响应	響應	0.78	xiangying
+迁移	遷移	0.78	qianyi
+算力	算力	0.80	suanli
+显卡	顯卡	0.82	xianka
+显卡驱动	顯卡驅動	0.82	xiankaqudong
 中间件	中介軟體	0.80
 消息队列	訊息佇列	0.78
 网关	閘道	0.74
 反向代理	反向代理	0.82
 负载均衡	負載平衡	0.82
+防火墙	防火牆	0.82	fanghuoqiang
 缓存命中	快取命中	0.78
 缓存失效	快取失效	0.76
 容器	容器	0.76
@@ -71,6 +82,7 @@
 扩展包	擴充套件包	0.74
 驱动程序	驅動程式	0.76
 开发者工具	開發者工具	0.80
+开发环境	開發環境	0.80	kaifahuanjing
 环境配置	環境配置	0.76
 构造函数	建構函式	0.78
 头文件	標頭檔	0.78
@@ -92,3 +104,19 @@
 线程	執行緒	0.84
 大核	大核	0.80
 小核	小核	0.80
+即时通讯	即時通訊	0.82	jishitongxun
+团队协作	團隊協作	0.82	tuanduixiezuo
+神经网络	神經網絡	0.82	shenjingwangluo
+模型训练	模型訓練	0.82	moxingxunlian
+训练集	訓練集	0.80	xunlianji
+源代码	源代碼	0.82	yuandaima
+竞态条件	競態條件	0.82	jingtaitiaojian
+损失函数	損失函數	0.82	sunshihanshu
+网络带宽	網絡帶寬	0.82	wangluodaikuan
+终端窗口	終端窗口	0.90	zhongduanchuangkou
+维护模式	維護模式	0.80	weihumoshi
+软件	軟件	0.86	ruanjian
+软件工程	軟件工程	0.84	ruanjiangongcheng
+软件工程师	軟件工程師	0.82	ruanjiangongchengshi
+工程师	工程師	0.84	gongchengshi
+编程	編程	0.86	biancheng

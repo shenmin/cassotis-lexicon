@@ -13049,10 +13049,50 @@ def _write_dict(
 ) -> None:
     preferred_terms = preferred_terms or set()
     preserve_pinyin_keys = preserve_pinyin_keys or set()
+    valid_single_syllables: Set[str] = set()
+    if unihan_readings_map:
+        for readings in unihan_readings_map.values():
+            valid_single_syllables.update(readings)
+
+    def should_emit_compact_apostrophe_alias(output_pinyin: str, text: str) -> bool:
+        if "'" not in output_pinyin:
+            return False
+        if _cjk_len(text) > 4:
+            return False
+        compact = output_pinyin.replace("'", "")
+        if not compact or compact == output_pinyin:
+            return False
+        if not PINYIN_RE.fullmatch(compact):
+            return False
+        # Do not alias forms like ji'e -> jie or xi'an -> xian; those compact
+        # strings are valid standalone syllables and would pollute exact lookup.
+        return compact not in valid_single_syllables
+
+    output_rows: Dict[Tuple[str, str], int] = {}
     path.parent.mkdir(parents=True, exist_ok=True)
+    for (pinyin, text), weight in mapping.items():
+        if (pinyin, text) in preserve_pinyin_keys:
+            output_pinyin = pinyin
+        else:
+            output_pinyin = _canonicalize_output_pinyin(
+                pinyin,
+                text,
+                unihan_map,
+                unihan_readings_map,
+                unihan_source_rank_map,
+                unihan_pinlu_detail_map,
+            )
+        if not output_pinyin:
+            continue
+        key = (output_pinyin, text)
+        output_rows[key] = max(output_rows.get(key, 0), weight)
+        if should_emit_compact_apostrophe_alias(output_pinyin, text):
+            alias_key = (output_pinyin.replace("'", ""), text)
+            output_rows[alias_key] = max(output_rows.get(alias_key, 0), weight)
+
     with path.open("w", encoding="utf-8", newline="\n") as f:
-        for (pinyin, text), weight in sorted(
-            mapping.items(),
+        for (output_pinyin, text), weight in sorted(
+            output_rows.items(),
             key=lambda kv: (
                 kv[0][0],
                 -kv[1],
@@ -13060,17 +13100,6 @@ def _write_dict(
                 kv[0][1],
             ),
         ):
-            if (pinyin, text) in preserve_pinyin_keys:
-                output_pinyin = pinyin
-            else:
-                output_pinyin = _canonicalize_output_pinyin(
-                    pinyin,
-                    text,
-                    unihan_map,
-                    unihan_readings_map,
-                    unihan_source_rank_map,
-                    unihan_pinlu_detail_map,
-                )
             f.write(f"{output_pinyin}\t{text}\t{weight}\n")
 
 
