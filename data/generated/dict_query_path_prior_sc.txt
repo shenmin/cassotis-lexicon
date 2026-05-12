@@ -31,7 +31,7 @@ aimenaihu	挨门|挨户	428
 aimierwuyu	埃米尔|物语	485
 aipositandangan	爱泼斯坦|档案	506
 aiqianbingbian	癌前|病变	459
-aiqianzhuangtai	癌前|状态	465
+aiqianzhuangtai	癌前|状态	486
 aiqingfuchou	爱情|复仇	417
 aiqingfuchouyouxi	爱情|复仇|游戏	499
 aiqingxiju	爱情|喜剧	445
@@ -105,7 +105,7 @@ anninghuanhe	安宁|缓和	401
 anninghuanheyiliao	安宁|缓和|医疗	483
 anniudianji	按钮|点击	387
 anniudianjishijian	按钮|点击|事件	469
-anniuleixing	按钮|类型	450
+anniuleixing	按钮|类型	489
 anqingzhuanqu	安庆|专区	466
 anquanceshi	安全|测试	490
 anquanfanghu	安全|防护	446
@@ -763,14 +763,14 @@ biaozhunduixiang	标准|对象	461
 biaozhunhuabingren	标准化|病人	460
 biaozhunkuhanshu	标准|库函数	472
 biaozhunrongye	标准|溶液	458
-biaozhunshuru	标准|输入	478
+biaozhunshuru	标准|输入	501
 biaozhunshurufa	标准|输入法	501
 biaozhunwucha	标准|误差	453
 biaozhunyichuan	标准|遗传	401
 biaozhunyichuanmima	标准|遗传|密码	483
 biaozhunzhengtaifenbu	标准|正态分布	483
 biaozhunzhuangkuang	标准|状况	458
-biaozhunzhuangtai	标准|状态	458
+biaozhunzhuangtai	标准|状态	467
 bibingduganran	鼻病毒|感染	450
 bicibici	彼此|彼此	459
 bicongshenjingsunshang	臂丛神经|损伤	455
@@ -3282,7 +3282,7 @@ donghuajuji	动画|剧集	501
 donghualianxuju	动画|连续剧	491
 donghualishi	动画|历史	501
 donghuapianzhizuozhe	动画片|制作者	498
-donghuarenwu	动画|人物	515
+donghuarenwu	动画|人物	506
 donghuashenhu	动画|神户	462
 donghuashijie	动画|世界	416
 donghuashijiewangluo	动画|世界|网络	498
@@ -3492,7 +3492,7 @@ duixiangshuzu	对象|数组	491
 duixiangxuliehua	对象|序列化	472
 duixiangyinyong	对象|引用	492
 duixiangzhizhen	对象|指针	454
-duixiangzhuangtai	对象|状态	478
+duixiangzhuangtai	对象|状态	491
 duixiangzidian	对象|字典	451
 duiyichuanqi	对弈|传奇	515
 duiyingyigou	对映|异构	437
@@ -3580,7 +3580,7 @@ duoyuanxianxing	多元|线性	386
 duoyuanxianxinghuigui	多元|线性|回归	468
 duoyuanzhezhong	多元|折衷	384
 duoyuanzhezhongzhuyi	多元|折衷|主义	466
-duozhandizhi	多站|地址	428
+duozhandizhi	多站|地址	456
 duozhiyilai	多值|依赖	487
 duozhongduoyang	多种|多样	438
 duozhongrengezhangai	多重人格|障碍	483
@@ -4170,7 +4170,7 @@ fengkuangyouxi	疯狂|游戏	502
 fenglidanbaimei	凤梨|蛋白酶	475
 fenglijiaosu	凤梨|酵素	439
 fengliucaizi	风流|才子	485
-fengliurenwu	风流|人物	498
+fengliurenwu	风流|人物	489
 fengliutitang	风流|倜傥	443
 fengliuxiaosa	风流|潇洒	483
 fengliuyunshi	风流|韵事	473
@@ -7124,7 +7124,7 @@ jiedianshezhi	节点|设置	508
 jiedizuzhixibao	结缔组织|细胞	483
 jieduandemutou	截断的|木头	439
 jieduanzhengzhuang	戒断|症状	412
-jieduanzhuangtai	戒断|状态	441
+jieduanzhuangtai	戒断|状态	468
 jieduanzonghezheng	戒断|综合征	433
 jiedujiaonang	解毒|胶囊	460
 jieduzuoyong	解毒|作用	474
@@ -8281,6 +8281,7 @@ kaisachongji	凯撒|冲击	515
 kaisadadi	凯撒|大帝	489
 kaisalinyishi	凯萨琳|一世	460
 kaishanzushi	开山|祖师	463
+kaishicaidan	开始|菜单	520
 kaiweijianpiwan	开胃|健脾丸	455
 kaixinnongchang	开心|农场	487
 kaixinxiaoxiaole	开心|消消乐	515
@@ -10250,7 +10251,7 @@ mifengxueyuan	蜜蜂|学园	490
 migezoulang	米格|走廊	486
 migongdianzi	迷宫|电子	425
 migongdianziyouxi	迷宫|电子|游戏	507
-migongtansuo	迷宫|探索	497
+migongtansuo	迷宫|探索	498
 mihuandianzi	迷幻|电子	425
 mihuandianziyouxi	迷幻|电子|游戏	507
 mihuobujie	迷惑|不解	468
@@ -12225,8 +12226,8 @@ renwenjingguan	人文|景观	467
 renwenzhuyi	人文|主义	479
 renwudiaodu	任务|调度	386
 renwudiaoduchengxu	任务|调度|程序	468
-renwumiaoxie	人物|描写	467
-renwuxiaoxiang	人物|肖像	436
+renwumiaoxie	人物|描写	459
+renwuxiaoxiang	人物|肖像	426
 renxinggongzhu	人形|公主	488
 renxingyouhuo	任性|诱惑	489
 renxinhuanghuang	人心|惶惶	467
@@ -13948,7 +13949,7 @@ shouxiankongjian	受限|空间	401
 shouxiankongjianzuoye	受限|空间|作业	483
 shouxidaibiao	首席|代表	467
 shouxiedaima	手写|代码	490
-shouxieshuru	手写|输入	479
+shouxieshuru	手写|输入	515
 shouxifaguan	首席|法官	467
 shouxingdemianao	寿星的|棉袄	444
 shouxinshoubei	手心|手背	411
@@ -14249,9 +14250,9 @@ shureganmaokeli	暑热|感冒|颗粒	457
 shuruchuli	输入|处理	508
 shurudanbai	输入|蛋白	501
 shurudongzuo	输入|动作	508
-shurujiashuo	输入|假说	473
-shurushebei	输入|设备	475
-shurushijian	输入|事件	483
+shurujiashuo	输入|假说	501
+shurushebei	输入|设备	501
+shurushijian	输入|事件	508
 shurushuchu	输入|输出	515
 shurushuchuhanshu	输入|输出|函数	469
 shurushuchujiekou	输入|输出|接口	468
@@ -14259,8 +14260,8 @@ shuruwenben	输入|文本	385
 shuruwenbenleixing	输入|文本|类型	467
 shuruyanchi	输入|延迟	508
 shuruyilai	输入|依赖	487
-shuruyingshe	输入|映射	518
-shuruzukang	输入|阻抗	493
+shuruyingshe	输入|映射	520
+shuruzukang	输入|阻抗	515
 shushangdeyezi	树上的|叶子	431
 shushiwendu	舒适|温度	486
 shushoudaibi	束手|待毙	475
@@ -14468,7 +14469,15 @@ songxiagongsi	松下|公司	467
 songxinshijian	送信|时间	515
 sougouceshi	搜狗|测试	488
 sougoushurufa	搜狗|输入法	501
+sousuoanniu	搜索|按钮	520
+sousuogongneng	搜索|功能	520
+sousuojianyi	搜索|建议	520
+sousuojieguo	搜索|结果	520
+sousuojilu	搜索|记录	520
 sousuokankan	搜索|看看	520
+sousuolishi	搜索|历史	520
+sousuorukou	搜索|入口	520
+sousuoyemian	搜索|页面	520
 sousuoyinqing	搜索|引擎	481
 sousuoyinqingjishu	搜索|引擎|技术	468
 sousuoyinqingyingxiao	搜索|引擎|营销	468
@@ -15117,7 +15126,7 @@ tongxinjishou	痛心|疾首	478
 tongxinluli	同心|戮力	450
 tongxinxieli	同心|协力	492
 tongxinxieyi	通信|协议	436
-tongxundizhi	通讯|地址	454
+tongxundizhi	通讯|地址	467
 tongxunweixing	通讯|卫星	470
 tongxunxieyi	通讯|协议	488
 tongyijiankang	同一|健康	486
@@ -15161,7 +15170,7 @@ toujiaozhengrong	头角|峥嵘	435
 toujidaoba	投机|倒把	488
 toujiquqiao	投机|取巧	503
 toujizuanying	投机|钻营	486
-toumianrenwu	头面|人物	473
+toumianrenwu	头面|人物	464
 toumingguge	透明|骨骼	416
 touminggugebiaoben	透明|骨骼|标本	498
 touminggugeyangben	透明|骨骼|样本	498
@@ -16248,7 +16257,7 @@ xianchengtongxin	线程|通信	488
 xianchengxiezuo	线程|协作	485
 xianchengyouxianji	线程|优先级	431
 xianchengzhongduan	线程|中断	432
-xianchengzhuangtai	线程|状态	486
+xianchengzhuangtai	线程|状态	491
 xiandaidazhanlve	现代|大战略	515
 xiandaijianzhu	现代|建筑	485
 xiandaimeiguo	现代|美国	416
@@ -18153,7 +18162,7 @@ yelusalengchengqiang	耶路撒冷|城墙	454
 yelvtijiyinzu	叶绿体|基因组	470
 yelvtijizhi	叶绿体|基质	381
 yemanqishi	野蛮|骑士	515
-yemianhuancun	页面|缓存	459
+yemianhuancun	页面|缓存	490
 yemianxuanran	页面|渲染	302
 yemianxuanranyinqing	页面|渲染|引擎	384
 yemudichui	夜幕|低垂	425
@@ -19791,7 +19800,7 @@ zhanshutupo	战术|突破	430
 zhanshutupowushi	战术|突破|巫师	512
 zhanshuxiaodui	战术|小队	508
 zhansishachang	战死|沙场	459
-zhanwangzhuangtai	谵妄|状态	421
+zhanwangzhuangtai	谵妄|状态	448
 zhanwenjiaobu	站稳|脚步	460
 zhanwenjiaogen	站稳|脚跟	466
 zhanzhengbianyuan	战争|边缘	515
