@@ -2086,6 +2086,27 @@ def _cap_medicine_vertical_weight(weight: int, text: str, source_id: str) -> int
     return min(weight, cap)
 
 
+def _cap_generic_vertical_weight(weight: int, text: str, layer_id: str, source_id: str) -> int:
+    """Keep imported vertical short terms visible without letting them dominate daily exact input."""
+    text_len = _cjk_len(text)
+    if text_len <= 0:
+        return weight
+
+    source = source_id.strip().lower()
+    if layer_id == "architecture_terms" and source != "project-curated-vertical-architecture-terms":
+        if text_len <= 2:
+            cap = 520
+        elif text_len == 3:
+            cap = 600
+        elif text_len == 4:
+            cap = 680
+        else:
+            cap = 760
+        return min(weight, cap)
+
+    return weight
+
+
 def _cap_medical_specific_term_weights(
     mapping: Dict[Tuple[str, str], int],
     usage_score_map: Dict[str, float],
@@ -12425,9 +12446,11 @@ def _augment_with_vertical_terms(
         "vertical_medicine_penalized_sc": 0,
         "vertical_medicine_penalty_sc_total": 0,
         "vertical_medicine_capped_sc": 0,
+        "vertical_generic_capped_sc": 0,
         "vertical_medicine_penalized_tc": 0,
         "vertical_medicine_penalty_tc_total": 0,
         "vertical_medicine_capped_tc": 0,
+        "vertical_generic_capped_tc": 0,
     }
     sc_terms: Set[str] = set()
     tc_terms: Set[str] = set()
@@ -12601,6 +12624,10 @@ def _augment_with_vertical_terms(
             penalty = _compute_generic_vertical_penalty(sc_word, layer_id, source_id)
             if penalty > 0:
                 sc_weight = max(1, sc_weight - penalty)
+            capped_weight = _cap_generic_vertical_weight(sc_weight, sc_word, layer_id, source_id)
+            if capped_weight < sc_weight:
+                sc_weight = capped_weight
+                stats["vertical_generic_capped_sc"] += 1
         if existing_sc_weight is None:
             sc[sc_key] = sc_weight
             stats["vertical_terms_added_sc"] += 1
@@ -12694,6 +12721,10 @@ def _augment_with_vertical_terms(
             penalty = _compute_generic_vertical_penalty(tc_candidate, layer_id, source_id)
             if penalty > 0:
                 tc_weight = max(1, tc_weight - penalty)
+            capped_weight = _cap_generic_vertical_weight(tc_weight, tc_candidate, layer_id, source_id)
+            if capped_weight < tc_weight:
+                tc_weight = capped_weight
+                stats["vertical_generic_capped_tc"] += 1
         if existing_tc_weight is None:
             tc[tc_key] = tc_weight
             stats["vertical_terms_added_tc"] += 1

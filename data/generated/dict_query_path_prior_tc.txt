@@ -6594,6 +6594,7 @@ jiekongju	飢餓|恐懼	512
 jielianbuduan	接連|不斷	507
 jiemaodaoci	睫毛|倒刺	479
 jiemaoyizhi	睫毛|移植	461
+jiemianhuoxingji	界面|活性劑	486
 jiemiyouxi	解密|遊戲	507
 jiemiyouxi	解謎|遊戲	507
 jiemochongxue	結膜|充血	445
@@ -12815,7 +12816,9 @@ shiyongchengxu	實用|程序	491
 shiyongdaima	實用|代碼	485
 shiyongdaimapianduan	實用|代碼|片段	467
 shiyongfenliang	食用|份量	426
+shiyongjiemian	使用|界面	486
 shiyongsesu	食用|色素	437
+shiyongzhejiemian	使用者|界面	486
 shiyongzhuyi	實用|主義	464
 shiyouchucun	石油|儲存	486
 shiyouxielou	石油|泄漏	486
@@ -17516,6 +17519,7 @@ yonghengyuanzhu	永恆|圓柱	507
 yonghengzhineng	永恆|智能	464
 yonghuchengxu	用戶|程序	492
 yonghujiaoben	用戶|腳本	498
+yonghujiemian	用戶|界面	502
 yonghuneicun	用戶|內存	486
 yonghuxianchengmoxing	用戶綫程|模型	348
 yongjinxinji	用盡|心機	439
