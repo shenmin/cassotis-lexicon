@@ -1756,7 +1756,7 @@ chixujicheng	持續|集成	491
 chixushijian	持續|時間	463
 chiyibuding	遲疑|不定	483
 chiyiguanwang	遲疑|觀望	442
-chizhafengyun	叱吒|風雲	507
+chizhafengyun	叱吒|風雲	486
 chizhouzhuanqu	池州|專區	454
 chongcaoanjisuan	蟲草|氨基酸	437
 chongcaoqicanjiaonang	蟲草|芪參膠囊	442
@@ -2652,7 +2652,7 @@ diantouhayao	點頭|哈腰	446
 diantouzazui	點頭|咂嘴	428
 dianxianchixu	癲癇|持續	376
 dianxianchixuzhuangtai	癲癇|持續|狀態	458
-dianxianfazuo	癲癇|發作	434
+dianxianfazuo	癲癇|發作	433
 dianxingfeijiehe	典型|肺結核	456
 dianxingxiangguan	典型|相關	486
 dianxiukeliaofa	電休克|療法	483
@@ -3571,6 +3571,7 @@ fangshezhenduanxue	放射|診斷學	457
 fangshezhiliao	放射|治療	500
 fangshichuandao	房室|傳導	359
 fangshichuandaozuzhi	房室|傳導|阻滯	441
+fangshuituliao	防水|塗料	496
 fangsongjiqiao	放鬆|技巧	486
 fangsongjishu	放鬆|技術	483
 fangsongliaofa	放鬆|療法	483
@@ -5878,7 +5879,7 @@ huliyanxuguocheng	護理|延續|過程	483
 hulizhuanye	護理|專業	375
 hulizhuanyeyingyu	護理|專業|英語	457
 hunchengfangbodi	混成|防波堤	447
-hunchenghuilu	混成|迴路	433
+hunchenghuilu	混成|迴路	436
 hundouluoerdai	魂鬥羅|二代	512
 hundouluojingshen	魂鬥羅|精神	512
 hundouluosandai	魂鬥羅|三代	512
@@ -6436,6 +6437,7 @@ jibutigongheguo	吉布提|共和國	454
 jicharenyuan	稽查|人員	467
 jichefengbao	機車|風暴	512
 jichefengbaoxilie	機車|風暴|係列	400
+jichengdiaoding	集成|吊頂	495
 jichengkaifa	集成|開發	388
 jichengkaifahuanjing	集成|開發|環境	470
 jichengmoshi	集成|模式	489
@@ -6643,7 +6645,7 @@ jiezoutianguoxilie	節奏天國|係列	436
 jiezouyisheng	節奏|醫生	475
 jiezouyouxi	節奏|遊戲	507
 jifaxingbijing	繼發性|閉經	453
-jifaxingdianxian	繼發性|癲癇	426
+jifaxingdianxian	繼發性|癲癇	425
 jifaxingfeijiehe	繼發性|肺結核	458
 jifaxingganran	繼發性|感染	450
 jifaxinggaoxueya	繼發性|高血壓	458
@@ -6661,7 +6663,7 @@ jifuluosijianzhu	基輔|羅斯|建築	466
 jifupaizhao	基輔|牌照	416
 jifupaizhaoxiangji	基輔|牌照|相機	498
 jifuyaosai	基輔|要塞	454
-jigongdeshanzi	濟公的|扇子	385
+jigongdeshanzi	濟公的|扇子	386
 jigongxuexiao	技工|學校	467
 jiguangchangpian	激光|唱片	467
 jiguangerjiguan	激光|二極管	486
@@ -7394,7 +7396,7 @@ juanzhousheji	卷軸|射擊	425
 juanzhoushejiyouxi	卷軸|射擊|遊戲	507
 jubingxixianan	聚丙烯|酰胺	426
 jububianliang	局部|變量	493
-jubudianxianfazuo	局部|癲癇發作	409
+jubudianxianfazuo	局部|癲癇發作	412
 jubufanying	局部|反應	474
 jubufeipang	局部|肥胖	463
 jubuganran	局部|感染	468
@@ -9745,7 +9747,7 @@ mumabingdu	木馬|病毒	454
 mumingshijie	姆明|世界	468
 muoudonghua	木偶|動畫	471
 muoushenqiangshou	木偶|神槍手	499
-muqichenchen	暮氣|沉沉	444
+muqichenchen	暮氣|沉沉	442
 muruweiyang	母乳|餵養	502
 musecangmang	暮色|蒼茫	472
 muweisixieyi	木衛四|協議	489
@@ -10902,7 +10904,7 @@ quanmianduikangxilie	全麵|對抗|係列	436
 quanmiangongji	全麵|攻擊	436
 quanmianhuimie	全麵|毀滅	402
 quanmianhuimiejixian	全面毀滅|極限	512
-quanmianqidong	全麵|啓動	418
+quanmianqidong	全麵|啓動	419
 quanmiantongji	全麵|通緝	436
 quanmianzhanzheng	全麵|戰爭	354
 quanmianzhanzhengsanguo	全麵|戰爭|三國	436
@@ -12973,6 +12975,7 @@ shuhudayi	疏忽|大意	466
 shuhuzhijian	倏忽|之間	472
 shuibingdehanshan	水兵的|汗衫	445
 shuichanziyuan	水產|資源	498
+shuidiangaizao	水電|改造	469
 shuidianjiezhiwenluan	水電解質|紊亂	454
 shuidianjingjichang	水電|競技場	488
 shuidouyimiao	水痘|疫苗	434
@@ -13008,6 +13011,7 @@ shuimianyichang	睡眠|異常	483
 shuimianzhangai	睡眠|障礙	470
 shuimianzhixi	睡眠|窒息	483
 shuinichenfei	水泥|塵肺	434
+shuinishajiang	水泥|砂漿	465
 shuiniuguohe	水牛|過河	404
 shuipingchuandi	水平|傳遞	468
 shuipingjiexiangdu	水平|解像度	455
@@ -14007,7 +14011,7 @@ tudigaige	土地|改革	478
 tudouxiongdi	土豆|兄弟	491
 tudushengling	荼毒|生靈	470
 tuerqigongheguo	土耳其|共和國	454
-tufadianxian	突發|癲癇	469
+tufadianxian	突發|癲癇	468
 tufashijian	突發|事件	467
 tugentangjiang	吐根|糖漿	427
 tuhaolieshen	土豪|劣紳	440
@@ -15919,7 +15923,7 @@ xiongqiangchuxue	胸腔|出血	486
 xiongqiangjishui	胸腔|積水	434
 xiongqiangshoushu	胸腔|手術	483
 xiongqiangsunshang	胸腔|損傷	469
-xiongqiangwaikexue	胸腔|外科學	456
+xiongqiangwaikexue	胸腔|外科學	455
 xiongqiangwaishang	胸腔|外傷	434
 xiongqiangyinliuguan	胸腔|引流管	486
 xiongqiangyisheng	胸腔|醫生	459
@@ -17584,7 +17588,7 @@ youmenxiazhai	幽門|狹窄	467
 youminglvcheng	幽冥|旅程	467
 younvdanzhuqishui	幼女|彈珠汽水	512
 youpaifenzi	右派|分子	467
-youqituxing	有期|徒刑	415
+youqituxing	有期|徒刑	414
 youquangaibian	有權|改變	520
 youranzide	悠然|自得	462
 yourenxiangni	有人|想你	469
@@ -19449,6 +19453,7 @@ zuihoujiyuan	最後|紀元	449
 zuihourenwu	最後|任務	512
 zuihoushenghaizhe	最後|生還者	515
 zuihoutongdie	最後|通牒	430
+zuihouyishanmen	最後|一扇門	512
 zuihouyizhan	最後|一戰	499
 zuihouzhenduan	最後|診斷	443
 zuikuihuoshou	罪魁|禍首	433

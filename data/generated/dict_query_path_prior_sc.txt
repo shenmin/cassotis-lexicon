@@ -2716,6 +2716,7 @@ dengxiaopinglilun	邓小平|理论	494
 dengzhanshengmai	灯盏|生脉	272
 dengzhanshengmaijiaonang	灯盏|生脉|胶囊	354
 dengzhanxixin	灯盏|细辛	419
+denuanxitong	地暖|系统	458
 deqiudiguoxilie	地球帝国|系列	509
 deqiumaoxianxilie	地球冒险|系列	509
 deqiuwennuanhua	地球温|暖化	417
@@ -3852,6 +3853,7 @@ fangshezhenduanxue	放射|诊断学	459
 fangshezhiliao	放射|治疗	500
 fangshichuandao	房室|传导	358
 fangshichuandaozuzhi	房室|传导|阻滞	440
+fangshuituliao	防水|涂料	510
 fangsongjiqiao	放松|技巧	486
 fangsongjishu	放松|技术	486
 fangsongliaofa	放松|疗法	500
@@ -4348,6 +4350,7 @@ fuhaohudong	符号|互动	401
 fuhaohudonglilun	符号|互动|理论	483
 fuheanjisuan	复合|氨基酸	459
 fuhecailiao	复合|材料	480
+fuhedeban	复合|地板	508
 fuheleixing	复合|类型	490
 fuhelizi	复合|粒子	501
 fuheshuzhi	复合|树脂	440
@@ -6411,7 +6414,7 @@ hulizhuanyeyingyu	护理|专业|英语	457
 hunaobanjia	胡闹|搬家	513
 hunaochufang	胡闹|厨房	472
 hunchengfangbodi	混成|防波堤	447
-hunchenghuilu	混成|回路	466
+hunchenghuilu	混成|回路	469
 hundouluoerdai	魂斗罗|二代	515
 hundouluojingshen	魂斗罗|精神	515
 hundouluosandai	魂斗罗|三代	515
@@ -7036,6 +7039,7 @@ jicharenyuan	稽查|人员	467
 jichefengbao	机车|风暴	515
 jichefengbaoxilie	机车|风暴|系列	475
 jichengceshi	集成|测试	509
+jichengdiaoding	集成|吊顶	485
 jichengfulei	继承|父类	385
 jichengfuleichengyuan	继承|父类|成员	467
 jichengkaifa	集成|开发	388
@@ -10593,7 +10597,7 @@ mumabingdu	木马|病毒	454
 mumingshijie	姆明|世界	468
 muoudonghua	木偶|动画	474
 muoushenqiangshou	木偶|神枪手	499
-muqichenchen	暮气|沉沉	448
+muqichenchen	暮气|沉沉	445
 muruweiyang	母乳|喂养	507
 musecangmang	暮色|苍茫	477
 muweisixieyi	木卫四|协议	492
@@ -10601,7 +10605,7 @@ muxingdeyu	木星|地狱	515
 muxishehui	母系|社会	467
 muxiyichuan	母系|遗传	474
 muyugaibangzi	木鱼改|梆子	441
-muzhideban	木制|地板	453
+muzhideban	木制|地板	458
 muzhijiegou	木质|结构	384
 muzhijiegoufangwu	木质|结构|房屋	466
 muzhudeweiba	母猪的|尾巴	436
@@ -11426,6 +11430,7 @@ qianglipikangwang	强力|皮康王	446
 qianglipipa	强力|枇杷	367
 qianglipipajiaonang	强力|枇杷|胶囊	449
 qianglipipalu	强力|枇杷露	445
+qiangmianzhaoping	墙面|找平	486
 qiangpoguannian	强迫|观念	460
 qiangpoxingshenjingzheng	强迫性|神经症	481
 qiangpozhangai	强迫|障碍	459
@@ -14023,6 +14028,7 @@ shuhudayi	疏忽|大意	466
 shuhuzhijian	倏忽|之间	496
 shuibingdehanshan	水兵的|汗衫	445
 shuichanziyuan	水产|资源	515
+shuidiangaizao	水电|改造	469
 shuidianjiezhiwenluan	水电解质|紊乱	453
 shuidianjingjichang	水电|竞技场	492
 shuidouyimiao	水痘|疫苗	430
@@ -14060,6 +14066,7 @@ shuimianyichang	睡眠|异常	486
 shuimianzhangai	睡眠|障碍	474
 shuimianzhixi	睡眠|窒息	483
 shuinichenfei	水泥|尘肺	436
+shuinishajiang	水泥|砂浆	483
 shuiniuguohe	水牛|过河	469
 shuipingchuandi	水平|传递	471
 shuipingjiexiangdu	水平|解像度	455
@@ -17746,7 +17753,7 @@ yakesheying	牙科|摄影	486
 yakezhensuo	牙科|诊所	468
 yakezhiruwu	牙科|植入物	483
 yakezhuli	牙科|助理	486
-yakouwuyan	哑口|无言	491
+yakouwuyan	哑口|无言	464
 yaliceshi	压力|测试	491
 yalichuanganqi	压力|传感器	486
 yaliqiangdu	压力|强度	467
@@ -21162,6 +21169,7 @@ zuihoujiyuan	最后|纪元	452
 zuihourenwu	最后|任务	515
 zuihoushenghaizhe	最后|生还者	515
 zuihoutongdie	最后|通牒	433
+zuihouyishanmen	最后|一扇门	515
 zuihouyizhan	最后|一战	510
 zuihouyizhanxilie	最后|一战|系列	402
 zuihouzhenduan	最后|诊断	453
