@@ -19,6 +19,9 @@
 包管理器	套件管理器	0.80
 数据库	資料庫	0.82
 信息流	資訊流	0.80	xinxiliu
+服务器	伺服器	0.82	fuwuqi
+负载	負載	0.80	fuzai
+服务器负载	伺服器負載	0.80	fuwuqifuzai
 关系型数据库	關係型資料庫	0.78
 非关系型数据库	非關係型資料庫	0.78
 数据结构	資料結構	0.80
@@ -31,9 +34,13 @@
 外键	外鍵	0.76
 查询优化	查詢最佳化	0.76
 事务	事務	0.76
+权重	權重	0.80	quanzhong
 读取	讀取	0.78	duqu
 接收	接收	0.78	jieshou
 响应	響應	0.78	xiangying
+提交	提交	0.82	tijiao
+推送	推送	0.82	tuisong
+提交推送	提交推送	0.80	tijiaotuisong
 迁移	遷移	0.78	qianyi
 算力	算力	0.80	suanli
 显卡	顯卡	0.82	xianka
@@ -71,6 +78,7 @@
 解释执行	直譯執行	0.76
 运维	運維	0.82
 编译执行	編譯執行	0.74
+运行状态	執行狀態	0.80	yunxingzhuangtai
 单元测试	單元測試	0.84
 集成测试	整合測試	0.82
 端到端测试	端到端測試	0.80
@@ -113,6 +121,8 @@
 竞态条件	競態條件	0.82	jingtaitiaojian
 损失函数	損失函數	0.82	sunshihanshu
 网络带宽	網絡帶寬	0.82	wangluodaikuan
+向量	向量	0.80	xiangliang
+向量值	向量值	0.80	xiangliangzhi
 终端窗口	終端窗口	0.90	zhongduanchuangkou
 维护模式	維護模式	0.80	weihumoshi
 软件	軟件	0.86	ruanjian
