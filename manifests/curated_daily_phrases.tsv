@@ -1049,6 +1049,7 @@
 比较多	比較多	0.92
 较少	較少	0.88
 比较少	比較少	0.92
+比较远	比較遠	0.90	bijiaoyuan
 比较拉胯	比較拉胯	0.90
 拉胯	拉胯	0.88
 # 却*
@@ -1522,6 +1523,8 @@
 再加上	再加上	0.92	zaijiashang
 悠着点	悠著點	0.92	youzhedian
 又有	又有	0.88	youyou
+我又	我又	0.90	woyou
+又要	又要	0.90	youyao
 又再	又再	0.88	youzai
 又来	又來	0.88	youlai
 还来	還來	0.90	hailai
@@ -1538,6 +1541,7 @@
 心很乱	心很亂	0.92	xinhenluan
 有心事	有心事	0.92	youxinshi
 心事重	心事重	0.92	xinshizhong
+身体要紧	身體要緊	0.90	shentiyaojin
 我认为	我認為	0.92
 可用性	可用性	0.90	keyongxing
 另一个	另一個	0.90	lingyige
@@ -1577,6 +1581,8 @@
 较近	較近	0.88	jiaojin
 较久	較久	0.88	jiaojiu
 比较久	比較久	0.90	bijiaojiu
+你们店	你們店	0.88	nimendian
+铺地板	鋪地板	0.88	pudiban
 太久	太久	0.88	taijiu
 太远	太遠	0.88	taiyuan
 太近	太近	0.88	taijin
