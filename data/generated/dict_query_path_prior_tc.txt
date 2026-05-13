@@ -10268,6 +10268,7 @@ pengyoujiade	朋友|家的	520
 pengyoushouji	朋友|收集	515
 pengyoushoujixilie	朋友|收集|係列	436
 pengzhangyundong	膨脹|運動	442
+pengzhuangbianju	碰撞|邊距	505
 pengzhuangceshi	碰撞|測試	498
 pengzhuangceshijiaren	碰撞|測試|假人	498
 pengzhuanggongyue	碰撞|公約	469
@@ -15692,7 +15693,7 @@ xinhaofenzi	信號|分子	501
 xinhaohuilu	信號|迴路	499
 xinhaojiance	信號|檢測	416
 xinhaojiancelilun	信號|檢測|理論	498
-xinhaojuli	信號|距離	488
+xinhaojuli	信號|距離	489
 xinhaokongzhi	信號|控制	501
 xinhaoleiguan	信號|雷管	488
 xinhaolide	信號|利得	485
@@ -17068,10 +17069,8 @@ yingguangtoushi	熒光|透視	483
 yingguangtoushi	螢光|透視	401
 yingguangtoushijiancha	螢光|透視|檢查	483
 yingguangxianweijing	熒光|顯微鏡	458
-yingguangyuanwei	熒光|原位	396
-yingguangyuanwei	螢光|原位	396
-yingguangyuanweizajiao	熒光|原位|雜交	478
-yingguangyuanweizajiao	螢光|原位|雜交	478
+yingguangyuanweizajiao	熒光|原位雜交	427
+yingguangyuanweizajiao	螢光|原位雜交	427
 yingguobaluoke	英國|巴洛克	468
 yingguochuizhishi	英國|垂直式	468
 yingguodiguo	英國|帝國	465
@@ -17801,9 +17800,9 @@ yuansuzhouqi	元素|週期	474
 yuansuzhouqibiao	元素|周期錶	424
 yuansuzhuyi	元素|主義	447
 yuanweihuawuyu	鳶尾花|物語	488
-yuanweiyizhi	原位|移植	469
-yuanweizajiao	原位|雜交	451
-yuanweizajiaojishu	原位|雜交|技術	478
+yuanweiyizhi	原位|移植	430
+yuanweizajiao	原位|雜交	411
+yuanweizajiaojishu	原位雜交|技術	427
 yuanweiziyuan	原位|資源	416
 yuanweiziyuanliyong	原位|資源|利用	498
 yuanxingbingqi	原型|兵器	491
