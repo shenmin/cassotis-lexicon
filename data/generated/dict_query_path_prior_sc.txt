@@ -9116,6 +9116,7 @@ liansuoyichuan	连锁|遗传	472
 liantiaoxianjiao	链条|线脚	449
 liantishuangbaotai	连体|双胞胎	469
 lianxichuanqi	联系|传奇	515
+lianxishangle	联系|上了	520
 lianxubeidong	连续|被动	383
 lianxubeidongyundong	连续|被动|运动	465
 lianxubianliang	连续|变量	472
@@ -10639,6 +10640,7 @@ muzhijiegoufangwu	木质|结构|房屋	466
 muzhudeweiba	母猪的|尾巴	436
 muzichuizhi	母子|垂直	401
 muzichuizhichuanbo	母子|垂直|传播	483
+muzuogedeshi	木作|哥德式	422
 nacuijianzhu	纳粹|建筑	485
 nacuizhuyi	纳粹|主义	441
 naerxunzonghezheng	纳尔逊|综合征	473
@@ -11318,6 +11320,7 @@ pinglezhuanqu	平乐|专区	466
 pingliangzhuanqu	平凉|专区	468
 pingmiandongzuo	平面|动作	425
 pingmiandongzuoyouxi	平面|动作|游戏	507
+pingmianfangan	平面|方案	494
 pingmianquxian	平面|曲线	467
 pingpangqiupai	乒乓|球拍	424
 pingpangqiutai	乒乓|球台	428
@@ -11738,7 +11741,7 @@ qinshengzinv	亲生|子女	434
 qinshihuangbingmayong	秦始皇|兵马俑	456
 qinshizuoyong	侵蚀|作用	467
 qinshouburu	禽兽|不如	467
-qinshuixingfuliao	亲水性|敷料	485
+qinshuixingfuliao	亲水性|敷料	437
 qinyanmudu	亲眼|目睹	436
 qinyuandelixue	亲缘|地理学	486
 qinyuanguanxi	亲缘|关系	474
@@ -11795,7 +11798,7 @@ qiweixiangtou	气味|相投	485
 qixiangdaohang	气象|导航	501
 qixiangwanqian	气象|万千	488
 qixiangweixing	气象|卫星	475
-qixiaoliangfang	奇效|良方	426
+qixiaoliangfang	奇效|良方	413
 qixieticao	器械|体操	465
 qixinheli	齐心|合力	465
 qixinxieli	齐心|协力	493
@@ -12744,7 +12747,7 @@ shangjilingdao	上级|领导	467
 shangjinqibing	赏金|奇兵	372
 shangjinqibingxilie	赏金|奇兵|系列	454
 shangjinzhanshi	赏金|战士	471
-shangkoufuliao	伤口|敷料	472
+shangkoufuliao	伤口|敷料	448
 shangkouyuhe	伤口|愈合	486
 shangpinjingji	商品|经济	500
 shangpishengzhang	上皮|生长	375
@@ -13145,7 +13148,7 @@ shengwudelixue	生物|地理学	455
 shengwuduoyangxing	生物|多样性	486
 shengwufankui	生物|反馈	488
 shengwufankuiliaofa	生物|反馈|疗法	457
-shengwufuliao	生物|敷料	473
+shengwufuliao	生物|敷料	453
 shengwufuzhi	生物|复制	486
 shengwugeli	生物|隔离	486
 shengwuguti	生物|固体	486
@@ -13550,7 +13553,7 @@ shifeiziyougonglun	是非|自有|公论	465
 shifenzhiyi	十分|之一	465
 shifoujide	是否|记得	520
 shigaobengdai	石膏|绷带	473
-shigongdanwei	施工|单位	466
+shigongdanwei	施工|单位	467
 shiguanbisuo	食管|闭锁	447
 shiguanchuankong	食管|穿孔	402
 shiguandongli	食管|动力	401
@@ -16893,6 +16896,7 @@ xinfeigongnengduanlian	心肺|功能|锻炼	483
 xinfeishuaijie	心肺|衰竭	445
 xinfeiyizhi	心肺|移植	471
 xinfeiyizhishoushu	心肺|移植|手术	483
+xinfengxitong	新风|系统	495
 xinfukoufu	心服|口服	466
 xingaijiaosebanyan	性爱|角色扮演	499
 xinganbaobei	心肝|宝贝	435
@@ -17075,7 +17079,7 @@ xinhaoleiguan	信号|雷管	485
 xinhaolide	信号|利得	481
 xinhaolilun	信号|理论	501
 xinhaoqiangdu	信号|强度	494
-xinhaoqingbao	信号|情报	497
+xinhaoqingbao	信号|情报	517
 xinhaoshibie	信号|识别	416
 xinhaoshibiekeli	信号|识别|颗粒	498
 xinhaoshuailuo	信号|衰落	478
@@ -17320,10 +17324,10 @@ xiongmoqiangliuxue	胸膜腔|流血	470
 xiongmozenghou	胸膜|增厚	429
 xiongmozhanlian	胸膜|粘连	473
 xiongqiangchuanci	胸腔|穿刺	441
-xiongqiangchuxue	胸腔|出血	446
+xiongqiangchuxue	胸腔|出血	445
 xiongqiangjishui	胸腔|积水	413
-xiongqiangshoushu	胸腔|手术	446
-xiongqiangsunshang	胸腔|损伤	448
+xiongqiangshoushu	胸腔|手术	445
+xiongqiangsunshang	胸腔|损伤	447
 xiongqiangwaikexue	胸腔|外科学	431
 xiongqiangwaishang	胸腔|外伤	413
 xiongqiangyinliuguan	胸腔|引流管	463
@@ -20597,7 +20601,8 @@ zhongyangchuli	中央|处理	386
 zhongyangchulidanyuan	中央|处理|单元	468
 zhongyangguangchang	中央|广场	482
 zhongyangjiquan	中央|集权	500
-zhongyangkongtiao	中央|空调	500
+zhongyangkongdiaoxitong	中央空调|系统	479
+zhongyangkongtiao	中央|空调	520
 zhongyangrenmin	中央|人民	418
 zhongyangrenminzhengfu	中央|人民|政府	500
 zhongyangshenjing	中央|神经	401
@@ -20716,6 +20721,7 @@ zhuangshiyishu	装饰|艺术	384
 zhuangshiyishujianzhu	装饰|艺术|建筑	466
 zhuangtaijiaolv	状态|焦虑	471
 zhuangtaijifuzhi	状态机|复制	501
+zhuangxiujianli	装修|监理	479
 zhuangyanjinxingqu	庄严|进行曲	515
 zhuangzhihaoqing	壮志|豪情	425
 zhuanhengbahu	专横|跋扈	448
