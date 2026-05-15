@@ -72,7 +72,7 @@ a'ersaishi	阿爾塞市	587
 a'ersasi	阿爾薩斯	301
 a'ershan	阿爾山	187
 a'ershanshi	阿爾山市	228
-a'ersitelunzhenghouqun	阿爾斯特倫症候羣	899
+a'ersitelunzhenghouqun	阿爾斯特倫症候羣	900
 a'ersitelunzhenghouqun	阿爾斯特倫癥候羣	380
 a'ersitonggongsi	阿爾斯通公司	318
 a'ertai	阿爾泰	629
@@ -675,7 +675,7 @@ ailisidao	埃利斯島	587
 ailisimanyouqijingji	愛麗絲漫遊奇境記	378
 ailisimengyoumojing	愛麗絲夢遊魔境	836
 ailisimengyouxianjing	愛麗絲夢遊仙境	836
-ailisimengyouxianjingzheng	愛麗絲夢遊仙境症	899
+ailisimengyouxianjingzheng	愛麗絲夢遊仙境症	900
 ailisimengyouxianjingzheng	愛麗絲夢遊仙境癥	380
 ailisimiji	愛麗絲祕跡	895
 ailisiquan	愛麗絲泉	248
@@ -1637,7 +1637,7 @@ aniqikefugong	阿尼奇科夫宮	828
 aniqikefuqiao	阿尼奇科夫橋	828
 aniwadengta	阿尼瓦燈塔	786
 anji	氨基	1000
-anji	安吉	594
+anji	安吉	593
 anji	胺基	150
 anji	暗記	1
 anji'ading	氨基吖啶	570
@@ -4155,7 +4155,7 @@ baixuebingguanjieyan	敗血病關節炎	700
 baixuegongzhu	白雪公主	296
 baixueguitu	白雪歸途	864
 baixueqiu	白血球	438
-baixueqiunianfuquefazheng	白血球黏附缺乏症	899
+baixueqiunianfuquefazheng	白血球黏附缺乏症	900
 baixueqiunianfuquefazheng	白血球黏附缺乏癥	380
 baixueqiushuliangzengjia	白血球數量增加	700
 baixueqiuzengduozheng	白血球增多症	900
@@ -4164,6 +4164,7 @@ baixuexingliuchan	敗血性流產	640
 baixuexingxiuke	敗血性休克	841
 baixuexingxiuke	敗血性休剋	320
 baixuezheng	敗血症	510
+baixuezheng	白血症	510
 baixuezheng	白血癥	510
 baixuqizhong	敗絮其中	698
 baiyan	白眼	536
@@ -9956,7 +9957,8 @@ bingsuanfutikasongqiwuji	丙酸氟替卡鬆氣霧劑	677
 bingsuangaowansu	丙酸睾丸素	610
 bingsuanlvbeitasuo	丙酸氯倍他索	668
 bingsuanlvbeitasuorugao	丙酸氯倍他索乳膏	680
-bingsuanxuezheng	丙酸血癥	570
+bingsuanxuezheng	丙酸血症	580
+bingsuanxuezheng	丙酸血癥	250
 bingsuanyan	丙酸鹽	500
 bingsuanyitong	丙酸睪酮	570
 bingta	病榻	379
@@ -10124,7 +10126,7 @@ bingzhuangtu	餅狀圖	230
 bingzhui	冰錐	324
 bingzhuzhai	病住宅	500
 bingzi	丙子	975
-bingzi	餅子	47
+bingzi	餅子	46
 bingzihuluan	丙子衚亂	260
 bingzizhanzheng	丙子戰爭	260
 bingzu	兵卒	420
@@ -12339,7 +12341,7 @@ bulu	不露	1000
 buludunlao'ansuanjimei	布魯頓酪氨酸激酶	700
 buludunshilao'ansuanjimei	布魯頓氏酪氨酸激酶	700
 bulufengmang	不露鋒芒	619
-bulugedashizhenghouqun	布魯格達氏症候羣	899
+bulugedashizhenghouqun	布魯格達氏症候羣	900
 bulugedashizhenghouqun	布魯格達氏癥候羣	380
 bulugui	不露圭	556
 buluguijiao	不露圭角	597
@@ -15765,7 +15767,7 @@ changwen	常溫	427
 changwenwenti	常問問題	218
 changwu	常務	947
 changwulishi	常務理事	405
-changwushenjingjiexibaozheng	腸無神經節細胞症	899
+changwushenjingjiexibaozheng	腸無神經節細胞症	900
 changwushenjingjiexibaozheng	腸無神經節細胞癥	380
 changwuweiyuanhui	常務委員會	444
 changwuxian	長武縣	165
@@ -18302,7 +18304,7 @@ chifanhuangdida	喫飯皇帝大	289
 chifanle	吃飯了	1242
 chifaxingbuzizhuyundong	遲發性不自主運動	700
 chifaxingdongzuozhang'ai	遲發性動作障礙	700
-chifaxingpifubulinzheng	遲發性皮膚卟啉症	899
+chifaxingpifubulinzheng	遲發性皮膚卟啉症	900
 chifaxingpifubulinzheng	遲發性皮膚卟啉癥	380
 chifaxingsunshang	遲發性損傷	289
 chifaxingxingxiangongnengdixiazheng	遲髮型性腺功能低下症	899
@@ -19511,7 +19513,7 @@ chuangshang	創傷	653
 chuangshangdandaoxue	創傷彈道學	610
 chuangshanghouyalixinlizhang'aizheng	創傷後壓力心理障礙症	899
 chuangshanghouyalixinlizhang'aizheng	創傷後壓力心理障礙癥	380
-chuangshanghouyalizhenghouqun	創傷後壓力症候羣	899
+chuangshanghouyalizhenghouqun	創傷後壓力症候羣	900
 chuangshanghouyalizhenghouqun	創傷後壓力癥候羣	380
 chuangshanghouyalizonghezheng	創傷後壓力綜合症	902
 chuangshanghouyalizonghezheng	創傷後壓力綜閤癥	380
@@ -24425,6 +24427,7 @@ danke	蛋殼	591
 danke	彈殼	562
 dankelongkangti	單克隆抗體	841
 dankelongkangti	單剋隆抗體	320
+dankelongmianyiqiudanbaixuezheng	單克隆免疫球蛋白血症	901
 dankelongmianyiqiudanbaixuezheng	單克隆免疫球蛋白血癥	900
 dankelongmianyiqiudanbaixuezheng	單剋隆免疫球蛋白血癥	380
 dankeng	彈坑	387
@@ -24836,7 +24839,8 @@ danzhixiaoyaosan	丹梔逍遙散	610
 danzhixiaoyaowan	丹梔逍遙丸	610
 danzhixingfumoyan	膽汁性腹膜炎	669
 danzhixingganyinghua	膽汁性肝硬化	680
-danzhixuezheng	氮質血癥	570
+danzhixuezheng	氮質血症	580
+danzhixuezheng	氮質血癥	250
 danzhiyuji	膽汁淤積	540
 danzhizhijian	彈指之間	624
 danzhong	丹衷	560
@@ -27337,9 +27341,11 @@ di'erxinhaoxitong	第二信號係統	364
 di'erxinshi	第二信使	475
 di'erxinshixitong	第二信使系統	901
 di'erxinshixitong	第二信使係統	380
-di'eryanghuatanxuezheng	低二氧化碳血癥	700
+di'eryanghuatanxuezheng	低二氧化碳血症	900
+di'eryanghuatanxuezheng	低二氧化碳血癥	367
 di'eryangong	第二嚥弓	570
-di'eryangtanxuezheng	低二氧碳血癥	700
+di'eryangtanxuezheng	低二氧碳血症	900
+di'eryangtanxuezheng	低二氧碳血癥	380
 di'eryi	第二億	700
 di'erzhiye	第二職業	260
 di'eshidai	帝俄時代	587
@@ -28457,7 +28463,8 @@ dibadu	低八度	232
 dibafendui	第八分隊	868
 dibai	迪拜	457
 dibaichong	敵百蟲	432
-dibaidanbaixuezheng	低白蛋白血癥	700
+dibaidanbaixuezheng	低白蛋白血症	900
+dibaidanbaixuezheng	低白蛋白血癥	380
 dibaita	迪拜塔	537
 dibaji	第八集	1242
 dibajiequanguorenmindaibiaodahui	第八屆全國人民代錶大會	380
@@ -28468,7 +28475,7 @@ dibanjia	地闆價	232
 dibanzhuan	地闆磚	340
 dibao	低保	846
 dibao	地堡	359
-dibao	地保	193
+dibao	地保	192
 dibaozhen	低保真	379
 dibaqian	第八千	700
 dibaqianwan	第八千萬	700
@@ -28505,7 +28512,8 @@ dibie	地鱉	580
 dibiguanjie	骶髀關節	570
 dibiji	滴鼻劑	470
 dibilisi	第比利斯	605
-dibingzhongqiudanbaixuezheng	低丙種球蛋白血癥	680
+dibingzhongqiudanbaixuezheng	低丙種球蛋白血症	838
+dibingzhongqiudanbaixuezheng	低丙種球蛋白血癥	379
 dibisi	底比斯	216
 dibopuweila	狄波普維拉	274
 dibu	地步	1246
@@ -28798,7 +28806,8 @@ difu	弟婦	115
 difuliyidaqingzhensi	迪夫里伊大清真寺	812
 difuliyidaqingzhensi	迪夫裏伊大清真寺	350
 difuni	蒂芙尼	228
-digaixuezheng	低鈣血癥	570
+digaixuezheng	低鈣血症	580
+digaixuezheng	低鈣血癥	250
 dige	的哥	397
 dige'er	迪格爾	820
 digeer	迪格爾	820
@@ -28889,7 +28898,8 @@ dijiaotianya	地角天涯	405
 dijiaxingzhouqixingmabi	低钾性週期性麻痹	900
 dijiaxingzhouqixingmabi	低鉀性周期性麻痺	380
 dijiaxingzhouqixingmabi	低鉀性週期性麻痺	380
-dijiaxuezheng	低鉀血癥	570
+dijiaxuezheng	低鉀血症	580
+dijiaxuezheng	低鉀血癥	250
 dijiaxuezhouqixingmabi	低鉀血週期性麻痺	896
 dijiaxuezhouqixingmabi	低鉀血周期性麻痺	380
 dijidan	地積單	232
@@ -29104,7 +29114,8 @@ diman	地幔	428
 dimao	地貌	486
 dimei	弟妹	423
 dimeishunyan	低眉順眼	387
-dimeixuezheng	低鎂血癥	540
+dimeixuezheng	低鎂血症	580
+dimeixuezheng	低鎂血癥	220
 dimeng	第懞	198
 dimi	低迷	445
 dimian	底面	1000
@@ -29127,7 +29138,7 @@ diming	地名	456
 dimishenwala	蒂米什瓦拉	283
 dimo	笛膜	305
 dimoxini	狄摩西尼	507
-dimoxiyashizhenghouqun	狄莫西亞氏症候羣	899
+dimoxiyashizhenghouqun	狄莫西亞氏症候羣	900
 dimoxiyashizhenghouqun	狄莫西亞氏癥候羣	380
 dimu	底木	983
 dimu	嫡母	1
@@ -29138,7 +29149,8 @@ dinamotiyuchang	迪納摩體育場	828
 dinamozhan	迪納摩站	743
 dinaojiyeyalizonghezheng	低腦脊液壓力綜合症	902
 dinaojiyeyalizonghezheng	低腦脊液壓力綜閤癥	380
-dinaxuezheng	低鈉血癥	540
+dinaxuezheng	低鈉血症	580
+dinaxuezheng	低鈉血癥	149
 dinayanyinshi	低钠鹽飲食	839
 dinayanyinshi	低鈉鹽飲食	320
 dinayinshi	低鈉飲食	570
@@ -30130,7 +30142,7 @@ diwushiyipian	第五十一篇	371
 diwushiyitiao	第五十一條	371
 diwushiyizhang	第五十一章	434
 diwuwan	第五萬	700
-diwuxinggantangchujizheng	第五型肝醣儲積症	899
+diwuxinggantangchujizheng	第五型肝醣儲積症	900
 diwuxinggantangchujizheng	第五型肝醣儲積癥	380
 diwuyi	第五億	700
 diwuyuansu	第五元素	868
@@ -31861,7 +31873,7 @@ duanzuidouyan	短嘴豆雁	260
 duanzuijinsiyan	短嘴金絲燕	289
 duanzuishanjiaoniao	短嘴山椒鳥	289
 duanzuo	端坐	452
-duanzuoxingxinboguosuzheng	端坐性心搏過速症	899
+duanzuoxingxinboguosuzheng	端坐性心搏過速症	900
 duanzuoxingxinboguosuzheng	端坐性心搏過速癥	380
 duba	獨霸	428
 dubai	杜拜	1000
@@ -33217,7 +33229,7 @@ duoyuanrichangshenghuo	多元日常生活	935
 duoyuanwenhuazhuyi	多元文化主義	318
 duoyuanxianxinghuigui	多元綫性迴歸	809
 duoyuanxing	多元性	425
-duoyuanxinghuaxueminganzheng	多元性化學敏感症	899
+duoyuanxinghuaxueminganzheng	多元性化學敏感症	900
 duoyuanxinghuaxueminganzheng	多元性化學敏感癥	380
 duoyuanyuzhou	多元宇宙	260
 duoyuanyuzhoudaluandou	多元宇宙大亂鬥	836
@@ -33404,7 +33416,7 @@ duwuxue	毒物學	470
 duxian	毒腺	440
 duxianjineng	妒賢嫉能	398
 duxiansheng	杜先生	828
-duxianshijirouweisuozheng	杜顯氏肌肉萎縮症	899
+duxianshijirouweisuozheng	杜顯氏肌肉萎縮症	900
 duxianshijirouweisuozheng	杜顯氏肌肉萎縮癥	380
 duxiao	毒梟	332
 duxie	讀寫	445
@@ -33426,6 +33438,7 @@ duxingxia	獨行俠	213
 duxinhaoxue	篤信好學	432
 duxiu	獨秀	397
 duxue	督學	394
+duxuezheng	毒血症	510
 duxuezheng	毒血癥	470
 duxun	毒蕈	373
 duxunhe	杜荀鶴	216
@@ -37755,7 +37768,7 @@ feipaobiaomianhuoxingwuzhi	肺泡表面活性物質	840
 feipaobiaomianhuoxingwuzhi	肺泡錶麵活性物質	375
 feipaodanbaichenjizheng	肺泡蛋白沉積症	900
 feipaodanbaichenjizheng	肺泡蛋白沉積癥	367
-feipaodanbaizhichenjizheng	肺泡蛋白質沉積症	899
+feipaodanbaizhichenjizheng	肺泡蛋白質沉積症	900
 feipaodanbaizhichenjizheng	肺泡蛋白質沉積癥	380
 feipaoge	肺泡隔	470
 feipaoguan	肺泡管	470
@@ -41035,7 +41048,7 @@ furongxuexinghujun	副溶血性弧菌	680
 furongye	芙蓉葉	360
 furou	腐肉	386
 furoujian	腐肉鹼	500
-furu	婦孺	506
+furu	婦孺	505
 furuan	服軟	371
 furudonghai	福如東海	258
 furufang	副乳房	470
@@ -42631,7 +42644,7 @@ gankui	感喟	370
 gankuyugong	甘苦與共	632
 ganlai	趕來	515
 ganlan	橄欖	1000
-ganlan	甘藍	313
+ganlan	甘藍	314
 ganlancai	甘藍菜	375
 ganlangtou	趕浪頭	362
 ganlanheqiaonaoxiaonaoweisuozheng	橄欖核橋腦小腦萎縮症	899
@@ -42881,9 +42894,9 @@ gantang	肝糖	440
 gantang	肝醣	312
 gantangchujizheng	肝醣儲積症	840
 gantangchujizheng	肝醣儲積癥	320
-gantangchujizhengdibaxing	肝醣儲積症第八型	899
+gantangchujizhengdibaxing	肝醣儲積症第八型	900
 gantangchujizhengdibaxing	肝醣儲積癥第八型	380
-gantangchujizhengdiwuxing	肝醣儲積症第五型	899
+gantangchujizhengdiwuxing	肝醣儲積症第五型	900
 gantangchujizhengdiwuxing	肝醣儲積癥第五型	380
 gantangchun	甘糖醇	167
 gantangxujizheng	肝醣蓄積症	840
@@ -43095,6 +43108,7 @@ gao'an	高岸	329
 gao'ang	高昂	351
 gao'anshengu	高岸深穀	249
 gao'anshi	高安市	165
+gao'anxuezheng	高氨血症	580
 gao'anxuezheng	高氨血癥	570
 gao'ao	高傲	442
 gao'e	高額	453
@@ -43120,6 +43134,7 @@ gaoan	高岸	329
 gaoang	高昂	351
 gaoanshengu	高岸深穀	249
 gaoanshi	高安市	165
+gaoanxuezheng	高氨血症	580
 gaoanxuezheng	高氨血癥	570
 gaoao	高傲	442
 gaobadu	高八度	167
@@ -43132,7 +43147,8 @@ gaobeidian	高碑店	180
 gaobeidianshi	高碑店市	228
 gaobeitulouqun	高北土樓羣	635
 gaoben	稿本	560
-gaobenbing'ansuanxuezheng	高苯丙氨酸血癥	654
+gaobenbing'ansuanxuezheng	高苯丙氨酸血症	808
+gaobenbing'ansuanxuezheng	高苯丙氨酸血癥	348
 gaobenhan	高本漢	202
 gaobian	告便	323
 gaobie	告別	501
@@ -43144,7 +43160,8 @@ gaobieshi	告別式	362
 gaobige	高逼格	167
 gaobing	糕餅	394
 gaobingfa	高併發	1000
-gaobingqiudanbaixuezheng	高丙球蛋白血癥	700
+gaobingqiudanbaixuezheng	高丙球蛋白血症	900
+gaobingqiudanbaixuezheng	高丙球蛋白血癥	367
 gaobuchengdibujiu	高不成低不就	479
 gaobucoudibujiu	高不湊低不就	318
 gaobuding	搞不定	1246
@@ -43190,7 +43207,8 @@ gaochuye	高齣葉	611
 gaochuyichou	高出一籌	941
 gaochuyichou	高齣一籌	656
 gaoci	告辭	1000
-gaocuirusuxuezheng	高催乳素血癥	700
+gaocuirusuxuezheng	高催乳素血症	900
+gaocuirusuxuezheng	高催乳素血癥	380
 gaocunzhengyan	高村正彥	249
 gaocuo	搞錯	323
 gaoda	高大	1000
@@ -43200,7 +43218,8 @@ gaodanbaizhiyinshifa	高蛋白質飲食法	700
 gaodang	高檔	430
 gaodangfuzhuang	高檔服裝	218
 gaodanguchun	高膽固醇	570
-gaodanguchunxuezheng	高膽固醇血癥	700
+gaodanguchunxuezheng	高膽固醇血症	900
+gaodanguchunxuezheng	高膽固醇血癥	380
 gaodao	高蹈	137
 gaodashang	高大上	167
 gaodawushuang	高達無雙	864
@@ -43210,7 +43229,7 @@ gaode	搞得	1242
 gaode	搞的	1242
 gaode	高得	1242
 gaode	高的	1235
-gaode	高德	482
+gaode	高德	483
 gaodena	高德納	167
 gaodeng	高等	462
 gaodengdaishu	高等代數	218
@@ -43288,13 +43307,15 @@ gaofushui	高氟水	470
 gaofuzai	高負載	633
 gaogainiaozheng	高鈣尿症	580
 gaogainiaozheng	高鈣尿癥	580
+gaogaixuezheng	高鈣血症	580
 gaogaixuezheng	高鈣血癥	540
 gaogan	高干	485
 gaogan	高幹	435
 gaogandui	高幹隊	898
 gaogang	高港	137
 gaogangqu	高港區	174
-gaoganyousanzhixuezheng	高甘油三酯血癥	664
+gaoganyousanzhixuezheng	高甘油三酯血症	826
+gaoganyousanzhixuezheng	高甘油三酯血癥	350
 gaogao	高高	551
 gaogaodidi	高高低低	451
 gaogaoguaqi	高高掛起	634
@@ -43344,8 +43365,9 @@ gaohuai	搞壞	1242
 gaohuangyu	膏肓俞	470
 gaohuayang	搞花樣	232
 gaohuayangr	搞花樣兒	260
+gaohuluobosuxuezheng	高胡蘿蔔素血症	818
 gaohuluobosuxuezheng	高胡蘿蔔素血癥	816
-gaohuluobosuxuezheng	高衚蘿蔔素血癥	348
+gaohuluobosuxuezheng	高衚蘿蔔素血癥	346
 gaohun	搞混	323
 gaohuo	搞活	439
 gaoji	告急	1000
@@ -43366,6 +43388,7 @@ gaojiasuoshanmai	高加索山脈	289
 gaojiaxi	高甲戲	388
 gaojiaxingzhouqixingmabi	高鉀性週期性麻痺	896
 gaojiaxingzhouqixingmabi	高鉀性周期性麻痺	380
+gaojiaxuezheng	高鉀血症	580
 gaojiaxuezheng	高鉀血癥	540
 gaojiaxuezhouqixingmabi	高鉀血週期性麻痺	896
 gaojiaxuezhouqixingmabi	高鉀血周期性麻痺	380
@@ -43409,7 +43432,7 @@ gaojizhuanyuan	高級專員	387
 gaoju	高舉	1000
 gaoju	高居	1
 gaojun	高峻	936
-gaojun	告竣	79
+gaojun	告竣	78
 gaojuwu	高聚物	450
 gaojuyuandao	高舉遠蹈	387
 gaokache	高卡車	167
@@ -43438,7 +43461,8 @@ gaoleng	高冷	357
 gaolengde	高冷地	640
 gaoli	高利	953
 gaoli	高麗	852
-gaoli'ansuanxuezheng	高離氨酸血癥	700
+gaoli'ansuanxuezheng	高離氨酸血症	900
+gaoli'ansuanxuezheng	高離氨酸血癥	380
 gaolian	高戀	613
 gaoliang	高梁	762
 gaoliang	高粱	704
@@ -43463,8 +43487,11 @@ gaolingchanfu	高齡產婦	570
 gaolingqu	高陵區	167
 gaolingtiewei	高嶺鐵衛	864
 gaolingtu	高嶺土	482
-gaolinsuanxuezheng	高磷酸血癥	640
-gaolinsuanyanxuezheng	高磷酸鹽血癥	700
+gaolinsuanxuezheng	高磷酸血症	840
+gaolinsuanxuezheng	高磷酸血癥	320
+gaolinsuanyanxuezheng	高磷酸鹽血症	900
+gaolinsuanyanxuezheng	高磷酸鹽血癥	380
+gaolinxuezheng	高磷血症	580
 gaolinxuezheng	高磷血癥	570
 gaolishen	高麗蔘	61
 gaoliwangchao	高麗王朝	218
@@ -43484,6 +43511,7 @@ gaoman	高慢	323
 gaomanao	縞瑪瑙	820
 gaomao	搞毛	78
 gaomaozi	高帽子	242
+gaomeixuezheng	高鎂血症	580
 gaomeixuezheng	高鎂血癥	540
 gaomengsuan	高錳酸	510
 gaomengsuanjia	高錳酸鉀	540
@@ -43502,12 +43530,15 @@ gaoming	高名	201
 gaomingqu	高明區	198
 gaomingzhen	高明鎮	492
 gaominxing	高敏性	470
-gaomirujisuxuezheng	高泌乳激素血癥	700
-gaomirusuxuezheng	高泌乳素血癥	700
+gaomirujisuxuezheng	高泌乳激素血症	900
+gaomirujisuxuezheng	高泌乳激素血癥	367
+gaomirusuxuezheng	高泌乳素血症	900
+gaomirusuxuezheng	高泌乳素血癥	380
 gaomishi	高密市	340
 gaomizhe	告密者	412
 gaomu	高木	137
 gaonan	高難	428
+gaonaxuezheng	高鈉血症	580
 gaonaxuezheng	高鈉血癥	570
 gaoneng	高能	536
 gaonengliang	高能量	444
@@ -43522,7 +43553,8 @@ gaonengwulixue	高能物理學	760
 gaonengwuliyuhewuli	高能物理與核物理	774
 gaonian	高年	137
 gaonianjisheng	高年級生	218
-gaoniaosuanxuezheng	高尿酸血癥	640
+gaoniaosuanxuezheng	高尿酸血症	840
+gaoniaosuanxuezheng	高尿酸血癥	320
 gaoningguxingxueye	高凝固性血液	700
 gaoningzhuangtai	高凝狀態	570
 gaonongduxuexiaobanxuejiang	高濃度血小板血漿	900
@@ -43564,7 +43596,8 @@ gaoqiubei	高球杯	167
 gaoqiuchang	高球場	167
 gaoqiujingyingsai	高球菁英賽	895
 gaoqiya	高氣壓	470
-gaoquangutongxuezheng	高醛固酮血癥	700
+gaoquangutongxuezheng	高醛固酮血症	900
+gaoquangutongxuezheng	高醛固酮血癥	380
 gaoquangutongzheng	高醛固酮症	840
 gaoquangutongzheng	高醛固酮癥	320
 gaor	告兒	198
@@ -43576,9 +43609,11 @@ gaoreliang	高熱量	379
 gaoren	高人	155
 gaorenyichou	高人一籌	628
 gaorenyideng	高人一等	464
-gaorucusuxuezheng	高乳促素血癥	700
+gaorucusuxuezheng	高乳促素血症	900
+gaorucusuxuezheng	高乳促素血癥	380
 gaosan	高三	1242
-gaosansuanganyouzhixuezheng	高三酸甘油脂血癥	700
+gaosansuanganyouzhixuezheng	高三酸甘油脂血症	900
+gaosansuanganyouzhixuezheng	高三酸甘油脂血癥	380
 gaoseng	高僧	409
 gaosenting	高森町	492
 gaosha	搞啥	1242
@@ -43668,7 +43703,8 @@ gaotangxian	高唐縣	198
 gaotankuolun	高談闊論	485
 gaotanqishi	高譚騎士	864
 gaotanshimaopaihuo	高譚市冒牌貨	935
-gaotansuanxuezheng	高碳酸血癥	640
+gaotansuanxuezheng	高碳酸血症	840
+gaotansuanxuezheng	高碳酸血癥	320
 gaotatelashan	高塔特拉山	639
 gaotian	高田	137
 gaotianfanghandong	高填方涵洞	274
@@ -43678,10 +43714,12 @@ gaotiaozi	高挑子	167
 gaotie	高鐵	453
 gaotiexuehongdanbai	高鐵血紅蛋白	318
 gaotiexuehongdanbaihaiyuanmei	高鐵血紅蛋白還原酶	700
-gaotiexuehongdanbaixuezheng	高鐵血紅蛋白血癥	680
+gaotiexuehongdanbaixuezheng	高鐵血紅蛋白血症	841
+gaotiexuehongdanbaixuezheng	高鐵血紅蛋白血癥	381
 gaotong	搞通	334
 gaotong	睾酮	1
 gaotonggongsi	高通公司	304
+gaotongxingbanguang'ansuanxuezheng	高同型半胱氨酸血症	902
 gaotongxingbanguang'ansuanxuezheng	高同型半胱氨酸血癥	900
 gaotongxingbanguang'ansuanxuezheng	高衕型半胱氨酸血癥	380
 gaotongxue	高筒靴	198
@@ -43714,7 +43752,7 @@ gaowantong	睾丸酮	371
 gaowanwang	睾丸網	500
 gaowanweisuo	睾丸萎縮	540
 gaowanxiajiangbuquan	睾丸下降不全	674
-gaowanxingnvxingzhenghouqun	睾丸性女性症候羣	899
+gaowanxingnvxingzhenghouqun	睾丸性女性症候羣	900
 gaowanxingnvxingzhenghouqun	睾丸性女性癥候羣	380
 gaowanyan	睾丸炎	500
 gaowanzaitong	睾丸甾酮	258
@@ -43746,7 +43784,7 @@ gaoxiangcaosuan	高香草酸	556
 gaoxianting	高賢廷	620
 gaoxianzhi	高仙芝	167
 gaoxiao	高效	1244
-gaoxiao	搞笑	340
+gaoxiao	搞笑	339
 gaoxiao	高校	27
 gaoxiaokuangshi	高校狂師	868
 gaoxiaolv	高效率	440
@@ -43772,9 +43810,11 @@ gaoxinshi	高辛氏	209
 gaoxinxin	高欣欣	774
 gaoxinyanglian	高薪養廉	249
 gaoxiong	高雄	329
-gaoxiongjisuxuezheng	高雄激素血癥	700
+gaoxiongjisuxuezheng	高雄激素血症	900
+gaoxiongjisuxuezheng	高雄激素血癥	380
 gaoxiongshi	高雄市	496
-gaoxiongxingsuxuezheng	高雄性素血癥	700
+gaoxiongxingsuxuezheng	高雄性素血症	900
+gaoxiongxingsuxuezheng	高雄性素血癥	380
 gaoxue	膏血	305
 gaoxue'an	高血氨	500
 gaoxue'anzheng	高血氨症	580
@@ -43839,7 +43879,8 @@ gaoyayexiangsepu	高壓液相色譜	700
 gaoyazhengqimiejun	高壓蒸汽滅菌	679
 gaoyi	高一	1244
 gaoyi	高邑	220
-gaoyidaosuxuezheng	高胰島素血癥	680
+gaoyidaosuxuezheng	高胰島素血症	845
+gaoyidaosuxuezheng	高胰島素血癥	374
 gaoyiduanluo	告一段落	489
 gaoyige	搞一個	1235
 gaoyin	高音	536
@@ -43870,7 +43911,8 @@ gaoyunzhen	高允貞	776
 gaoyuzhide	膏腴之地	688
 gaoza	搞砸	305
 gaozaitong	睾甾酮	228
-gaozhanchouxuezheng	高粘稠血癥	610
+gaozhanchouxuezheng	高粘稠血症	761
+gaozhanchouxuezheng	高粘稠血癥	320
 gaozhang	高漲	472
 gaozhanyuanzhu	高瞻遠矚	481
 gaozhao	高招	292
@@ -43881,10 +43923,11 @@ gaozhi	稿紙	1
 gaozhibingxing	高緻病性	218
 gaozhibingxingqinliugan	高致病性禽流感	857
 gaozhibingxingqinliugan	高緻病性禽流感	356
-gaozhidanbaixuezheng	高脂蛋白血癥	679
+gaozhidanbaixuezheng	高脂蛋白血症	837
+gaozhidanbaixuezheng	高脂蛋白血癥	369
 gaozhiliang	高質量	497
 gaozhiliangdaima	高質量代碼	742
-gaozhitongbuminzhenghouzu	睾脂酮不敏症候族	899
+gaozhitongbuminzhenghouzu	睾脂酮不敏症候族	900
 gaozhitongbuminzhenghouzu	睾脂酮不敏癥候族	380
 gaozhixue	高脂血	470
 gaozhixuezheng	高脂血症	580
@@ -44227,7 +44270,7 @@ geleikeshizheng	葛雷克氏症	844
 geleikeshizheng	葛雷剋氏癥	320
 geleimaosi	格雷茅斯	249
 geleishijiepouxue	格雷氏解剖學	318
-geleixuexibaojianshaozheng	各類血細胞減少症	899
+geleixuexibaojianshaozheng	各類血細胞減少症	900
 geleixuexibaojianshaozheng	各類血細胞減少癥	380
 gelenuobuer	格勒諾布爾	297
 geleshan	歌樂山	583
@@ -46305,7 +46348,8 @@ gua'anhua	瓜氨化	500
 gua'ansuan	瓜氨酸	510
 gua'ansuan	瓜胺酸	510
 gua'ansuanhua	瓜胺酸化	570
-gua'ansuanxuezheng	瓜氨酸血癥	640
+gua'ansuanxuezheng	瓜氨酸血症	840
+gua'ansuanxuezheng	瓜氨酸血癥	320
 gua'ershaoshuang	寡二少雙	387
 guaai	掛礙	400
 guaanhua	瓜氨化	500
@@ -49889,7 +49933,7 @@ gupiaojiaoyiyuanshun	股票交易員瞬	935
 gupiaoshichang	股票市場	405
 gupiaotouzi	股票投資	369
 gupiaozhishu	股票指數	414
-gupixingrengezhang'aizheng	孤僻型人格障礙症	899
+gupixingrengezhang'aizheng	孤僻型人格障礙症	900
 gupixingrengezhang'aizheng	孤僻型人格障礙癥	380
 gupizhi	骨皮質	470
 gupo	姑婆	390
@@ -51256,7 +51300,7 @@ hangtianfeiji	航天飛機	543
 hangtiangongyebu	航天工業部	283
 hangtianju	航天局	481
 hangtianqi	航天器	528
-hangtianweizhonglizhenghouqun	航天微重力症候羣	899
+hangtianweizhonglizhenghouqun	航天微重力症候羣	900
 hangtianweizhonglizhenghouqun	航天微重力癥候羣	380
 hangtianxinlixue	航天心理學	610
 hangtianyuan	航天員	505
@@ -54910,7 +54954,7 @@ houteng	後藤	305
 houtengxiang'erlang	後藤象二郎	274
 houtian	後天	1000
 houtianhua	猴天花	500
-houtianmianyiliquefazheng	後天免疫力缺乏症	899
+houtianmianyiliquefazheng	後天免疫力缺乏症	900
 houtianmianyiliquefazheng	後天免疫力缺乏癥	380
 houtianmianyiquefazhenghouqun	後天免疫缺乏症候羣	899
 houtianmianyiquefazhenghouqun	後天免疫缺乏癥候羣	380
@@ -54942,7 +54986,7 @@ houxiandaizhuyijianzhu	後現代主義建築	794
 houxiao	後效	319
 houxiaormabiganranzhenghouqun	後小兒麻痺感染症候羣	899
 houxiaormabiganranzhenghouqun	後小兒麻痺感染癥候羣	380
-houxiaormabizhenghouqun	後小兒麻痺症候羣	899
+houxiaormabizhenghouqun	後小兒麻痺症候羣	900
 houxiaormabizhenghouqun	後小兒麻痺癥候羣	380
 houxiazhai	喉狹窄	470
 houxin	後心	330
@@ -55408,6 +55452,7 @@ huaixiangtanbo	壞象坦博	864
 huaixiao	壞笑	198
 huaixuebing	壞血病	500
 huaixuebingzidian	壞血病紫癜	640
+huaixuezheng	壞血症	510
 huaixuezheng	壞血癥	500
 huaiyang	淮陽	283
 huaiyangqu	淮陽區	228
@@ -56916,7 +56961,7 @@ huashenjiangshi	化神降世	868
 huashenzhentan	化身偵探	868
 huashetianzu	畫蛇添足	775
 huashi	化石	1000
-huashi	華氏	662
+huashi	華氏	714
 huashi	花式	616
 huashi	滑石	290
 huashi	畫室	1
@@ -56931,7 +56976,8 @@ huashidu	華氏度	165
 huashifen	滑石粉	469
 huashihuabing	花式滑冰	218
 huashijian	花時間	167
-huashijuqiudanbaixuezheng	華氏鉅球蛋白血癥	700
+huashijuqiudanbaixuezheng	華氏鉅球蛋白血症	900
+huashijuqiudanbaixuezheng	華氏鉅球蛋白血癥	380
 huashiliubing	花式溜冰	249
 huashiqiantiaochuang	花飾鉛條窗	821
 huashiqun	化石羣	423
@@ -58449,6 +58495,7 @@ hunhexingjiedizuzhibing	混合性結締組織病	837
 hunhexingjiedizuzhibing	混閤性結締組織病	377
 hunhexingjiedizuzhijibing	混合型結締組織疾病	900
 hunhexingjiedizuzhijibing	混閤型結締組織疾病	380
+hunhexinglengqiudanbaixuezheng	混合性冷球蛋白血症	902
 hunhexinglengqiudanbaixuezheng	混合性冷球蛋白血癥	900
 hunhexinglengqiudanbaixuezheng	混閤性冷球蛋白血癥	380
 hunhexingpifu	混合性皮膚	768
@@ -61660,7 +61707,7 @@ jianzhisuan	簡直算	1235
 jianzhixibao	間質細胞	570
 jianzhixingbangguangyan	間質性膀胱炎	700
 jianzhixingfeibing	間質性肺病	640
-jianzhixingfeixianweihuazheng	間質性肺纖維化症	899
+jianzhixingfeixianweihuazheng	間質性肺纖維化症	900
 jianzhixingfeixianweihuazheng	間質性肺縴維化癥	380
 jianzhixingfeixianweihuazheng	間質性肺纖維化癥	380
 jianzhixingfeiyan	間質性肺炎	610
@@ -62792,7 +62839,8 @@ jiaqiumizuo	甲巰咪唑	540
 jiaqiumizuopian	甲巰咪唑片	610
 jiaqiweiba	夾起尾巴	434
 jiaqu	嫁娶	715
-jiaquan	加權	983
+jiaquan	加權	844
+jiaquan	甲醛	576
 jiaquanpingjun	加權平均	260
 jiaquanrongye	甲醛溶液	540
 jiaquanzhongdu	甲醛中毒	540
@@ -63270,7 +63318,7 @@ jiazhuangxiangaihua	甲狀腺鈣化	610
 jiazhuangxiangongnengceshi	甲狀腺功能測試	700
 jiazhuangxiangongnengjiantui	甲狀腺功能減退	674
 jiazhuangxiangongnengkangjin	甲狀腺功能亢進	348
-jiazhuangxiangongnengkangjinzheng	甲狀腺功能亢進症	899
+jiazhuangxiangongnengkangjinzheng	甲狀腺功能亢進症	900
 jiazhuangxiangongnengkangjinzheng	甲狀腺功能亢進癥	380
 jiazhuangxianjibing	甲狀腺疾病	640
 jiazhuangxianjiejie	甲狀腺結節	610
@@ -63324,10 +63372,13 @@ jiazuxingdezhonghairezonghezheng	家族性地中海熱綜合徵	902
 jiazuxingdezhonghairezonghezheng	傢族性地中海熱綜閤征	380
 jiazuxingdezhonghairezonghezheng	傢族性地中海熱綜閤徵	380
 jiazuxingdezhonghairezonghezheng	傢族性地中海熱綜閤癥	380
+jiazuxingdilinsuanyanxuezheng	家族性低磷酸鹽血症	902
 jiazuxingdilinsuanyanxuezheng	家族性低磷酸鹽血癥	900
 jiazuxingdilinsuanyanxuezheng	傢族性低磷酸鹽血癥	380
+jiazuxinggaodanguchunxuezheng	家族性高膽固醇血症	902
+jiazuxinggaodanguchunxuezheng	傢族性高膽固醇血症	789
 jiazuxinggaodanguchunxuezheng	家族性高膽固醇血癥	746
-jiazuxinggaodanguchunxuezheng	傢族性高膽固醇血癥	654
+jiazuxinggaodanguchunxuezheng	傢族性高膽固醇血癥	380
 jiazuxingguxianweiyichangzengzhizheng	家族性骨纖維異常增殖症	901
 jiazuxingguxianweiyichangzengzhizheng	傢族性骨縴維異常增殖癥	380
 jiazuxingguxianweiyichangzengzhizheng	傢族性骨纖維異常增殖癥	380
@@ -63722,7 +63773,7 @@ jidu	幾度	729
 jidu	嫉妒	699
 jidu	季度	611
 jidu	基督	556
-jidu	緝毒	286
+jidu	緝毒	287
 jidu	忌妒	144
 jiduan	極短	1238
 jiduan	極端	512
@@ -65789,7 +65840,7 @@ jing'an	精胺	440
 jing'anhuposuan	精氨琥珀酸	640
 jing'anjihuposuan	精氨基琥珀酸	700
 jing'anjihuposuanhemei	精氨基琥珀酸合酶	900
-jing'anjihuposuanniaozheng	精氨基琥珀酸尿症	899
+jing'anjihuposuanniaozheng	精氨基琥珀酸尿症	900
 jing'anjihuposuanniaozheng	精氨基琥珀酸尿癥	380
 jing'anqu	靜安區	208
 jing'ansuan	精氨酸	510
@@ -65798,7 +65849,8 @@ jing'ansuanjiayasu	精氨酸加壓素	664
 jing'ansuanmei	精氨酸酶	556
 jing'ansuanmeiquefazheng	精氨酸酶缺乏症	900
 jing'ansuanmeiquefazheng	精氨酸酶缺乏癥	367
-jing'ansuanxuezheng	精氨酸血癥	640
+jing'ansuanxuezheng	精氨酸血症	840
+jing'ansuanxuezheng	精氨酸血癥	320
 jing'anxian	靖安縣	160
 jing'e	驚愕	424
 jing'erhu	京二衚	379
@@ -66552,7 +66604,7 @@ jingsheng'eyexingyunjinghun	驚聲噁夜星雲驚魂	526
 jingshenganzhi	景深感知	570
 jingshengeye	驚聲惡夜	1000
 jingshengeye	驚聲噁夜	528
-jingshenguannengxingyouyuzheng	精神官能性憂鬱症	899
+jingshenguannengxingyouyuzheng	精神官能性憂鬱症	900
 jingshenguannengxingyouyuzheng	精神官能性憂鬱癥	380
 jingshenguannengzheng	精神官能癥	289
 jingshenhuanfa	精神煥發	457
@@ -67862,7 +67914,7 @@ jinzhangxing	緊張性	470
 jinzhangxingjingshenfenliezheng	緊張型精神分裂症	827
 jinzhangxingjingshenfenliezheng	緊張型精神分裂癥	375
 jinzhangxingshousuo	緊張性收縮	610
-jinzhangxingsijueshidiaozheng	緊張型思覺失調症	899
+jinzhangxingsijueshidiaozheng	緊張型思覺失調症	900
 jinzhangxingsijueshidiaozheng	緊張型思覺失調癥	380
 jinzhangxingtoutong	緊張性頭痛	640
 jinzhangzheng	緊張癥	470
@@ -68431,12 +68483,12 @@ jisuixiaonaoshu	脊髓小腦束	640
 jisuixiaonaoweisuozheng	脊髓小腦萎縮症	900
 jisuixiaonaoweisuozheng	脊髓小腦萎縮癥	367
 jisuixiaonaoxinggongjishidiao	脊髓小腦性共濟失調	700
-jisuixiaonaoxingshidiaozheng	脊髓小腦性失調症	899
+jisuixiaonaoxingshidiaozheng	脊髓小腦性失調症	900
 jisuixiaonaoxingshidiaozheng	脊髓小腦性失調癥	380
 jisuixiaonaoxingtuihua	脊髓小腦性退化	700
 jisuixingjiweisuo	脊髓性肌萎縮	700
 jisuiyan	脊髓炎	500
-jisuiyansuijiweisuozheng	脊髓延髓肌萎縮症	899
+jisuiyansuijiweisuozheng	脊髓延髓肌萎縮症	900
 jisuiyansuijiweisuozheng	脊髓延髓肌萎縮癥	380
 jisuiyapo	脊髓壓迫	570
 jisuizaoying	脊髓造影	570
@@ -69251,7 +69303,7 @@ jiweisuoxingcesuoyinghuazheng	肌萎縮性側索硬化症	899
 jiweisuoxingcesuoyinghuazheng	肌萎縮性側索硬化癥	380
 jiweisuoxingjisuicesuoyinghuazheng	肌萎縮性脊髓側索硬化症	899
 jiweisuoxingjisuicesuoyinghuazheng	肌萎縮性脊髓側索硬化癥	380
-jiweixingcesuoyinghuazheng	肌萎性側索硬化症	899
+jiweixingcesuoyinghuazheng	肌萎性側索硬化症	900
 jiweixingcesuoyinghuazheng	肌萎性側索硬化癥	380
 jiwen	祭文	429
 jiwo	雞窩	386
@@ -69575,7 +69627,7 @@ jixingzhiqiguanyan	急性支氣管炎	680
 jixingzhizuo	即興之作	412
 jixingzhong'eryan	急性中耳炎	610
 jixingzhongdu	急性中毒	540
-jixingzhudongmaizhenghouqun	急性主動脈症候羣	899
+jixingzhudongmaizhenghouqun	急性主動脈症候羣	900
 jixingzhudongmaizhenghouqun	急性主動脈癥候羣	380
 jixingzi	急性子	462
 jixingzigongneimoyan	急性子宮內膜炎	653
@@ -71058,7 +71110,8 @@ juqingbanli	據情辦理	260
 juqingfengfu	劇情豐富	822
 juqiu	拘囚	198
 juqiudanbai	鉅球蛋白	540
-juqiudanbaixuezheng	鉅球蛋白血癥	700
+juqiudanbaixuezheng	鉅球蛋白血症	900
+juqiudanbaixuezheng	鉅球蛋白血癥	380
 juquan	俱全	458
 juquexue	鉅闕穴	470
 juqun	句羣	198
@@ -75397,7 +75450,7 @@ kuanguangdu	寬廣度	232
 kuanguanjie	髖關節	431
 kuanguanjiefayubuliang	髋關節發育不良	700
 kuanguanjiefayubuliang	髖關節發育不良	700
-kuanguanjiefayubuquanzheng	髖關節發育不全症	899
+kuanguanjiefayubuquanzheng	髖關節發育不全症	900
 kuanguanjiefayubuquanzheng	髖關節發育不全癥	380
 kuanguanjietuowei	髖關節脫位	610
 kuanguanjieyan	髖關節炎	540
@@ -77092,8 +77145,10 @@ lao'ansuanjimeiyizhiji	酪胺酸激酶抑製劑	380
 lao'ansuanmei	酪氨酸酶	540
 lao'ansuanqianghuamei	酪氨酸羟化酶	899
 lao'ansuanqianghuamei	酪氨酸羥化酶	380
-lao'ansuanxuezheng	酪胺酸血癥	685
-lao'ansuanxuezheng	酪氨酸血癥	565
+lao'ansuanxuezheng	酪胺酸血症	841
+lao'ansuanxuezheng	酪氨酸血症	721
+lao'ansuanxuezheng	酪胺酸血癥	320
+lao'ansuanxuezheng	酪氨酸血癥	288
 lao'apo	老阿婆	506
 lao'er	老兒	466
 lao'er	老二	376
@@ -78686,7 +78741,8 @@ lengmei	冷媒	305
 lengmen	冷門	445
 lengmian	冷麵	401
 lengmo	冷漠	445
-lengningqiudanbaixuezheng	冷凝球蛋白血癥	700
+lengningqiudanbaixuezheng	冷凝球蛋白血症	900
+lengningqiudanbaixuezheng	冷凝球蛋白血癥	367
 lengnu	冷奴	137
 lengnuan	冷暖	551
 lengnuanfang	冷暖房	307
@@ -78703,7 +78759,8 @@ lengqiji	冷氣機	519
 lengqing	冷清	295
 lengqingqing	冷清清	243
 lengqishan	冷氣衫	307
-lengqiudanbaixuezheng	冷球蛋白血癥	700
+lengqiudanbaixuezheng	冷球蛋白血症	900
+lengqiudanbaixuezheng	冷球蛋白血癥	380
 lengque	冷卻	595
 lengquecai	冷卻材	738
 lengquechi	冷卻池	711
@@ -78745,8 +78802,9 @@ lengtai	棱臺	291
 lengtian	冷天	380
 lengtoulengnao	愣頭愣腦	408
 lengtouqing	愣頭青	411
-lengxianweidanbaiyuanxuezheng	冷纖維蛋白原血癥	825
-lengxianweidanbaiyuanxuezheng	冷縴維蛋白原血癥	377
+lengxianweidanbaiyuanxuezheng	冷纖維蛋白原血症	827
+lengxianweidanbaiyuanxuezheng	冷縴維蛋白原血癥	375
+lengxianweidanbaiyuanxuezheng	冷纖維蛋白原血癥	375
 lengxiao	冷笑	431
 lengxiaohua	冷笑話	167
 lengxiuke	冷休克	960
@@ -79437,7 +79495,7 @@ liangxingnaoliu	良性腦瘤	540
 liangxingpingdeng	兩性平等	260
 liangxingqi	兩星期	232
 liangxingqianliexianzengsheng	良性前列腺增生	700
-liangxingqianliexianzengshengzheng	良性前列腺增生症	899
+liangxingqianliexianzengshengzheng	良性前列腺增生症	900
 liangxingqianliexianzengshengzheng	良性前列腺增生癥	380
 liangxingxunhuan	良性循環	387
 liangxingyixiang	兩性異象	570
@@ -83138,7 +83196,8 @@ liuxu	柳絮	477
 liuxucai	柳絮才	631
 liuxue	留學	754
 liuxue	流血	440
-liuxuehongdanbaixuezheng	硫血紅蛋白血癥	700
+liuxuehongdanbaixuezheng	硫血紅蛋白血症	900
+liuxuehongdanbaixuezheng	硫血紅蛋白血癥	367
 liuxuesheng	留學生	558
 liuxueyi	劉學義	458
 liuxunhuan	硫循環	470
@@ -87449,7 +87508,7 @@ manxingqianliexianyan	慢性前列腺炎	680
 manxingqianyanxingganyan	慢性遷延性肝炎	654
 manxingqiguanyan	慢性氣管炎	610
 manxingrouyazhongbing	慢性肉芽腫病	700
-manxingrtongnaoyinghuazheng	慢性兒童腦硬化症	899
+manxingrtongnaoyinghuazheng	慢性兒童腦硬化症	900
 manxingrtongnaoyinghuazheng	慢性兒童腦硬化癥	380
 manxingruxianyan	慢性乳腺炎	610
 manxingsaixianyan	慢性腮腺炎	610
@@ -87631,7 +87690,7 @@ maoershan	貓兒山	187
 maofahongkangzhen	毛髮紅糠疹	758
 maofahongkangzhen	毛發紅糠疹	323
 maofan	冒犯	1000
-maofanbaixueqiujianshaozheng	貓泛白血球減少症	899
+maofanbaixueqiujianshaozheng	貓泛白血球減少症	900
 maofanbaixueqiujianshaozheng	貓泛白血球減少癥	380
 maofang	茅房	392
 maofashangpiliu	毛髮上皮瘤	758
@@ -94458,7 +94517,7 @@ naochongbing	蟯蟲病	500
 naochongxue	腦充血	340
 naochou	腦抽	198
 naochuiti	腦垂體	486
-naochuitijinengdixiazheng	腦垂體機能低下症	899
+naochuitijinengdixiazheng	腦垂體機能低下症	900
 naochuitijinengdixiazheng	腦垂體機能低下癥	380
 naochuixianhouye	腦垂腺後葉	640
 naochuixianqianye	腦垂腺前葉	640
@@ -95032,7 +95091,7 @@ neifenmixian	內分泌腺	540
 neifenmixitong	內分泌系統	845
 neifenmixitong	內分泌係統	320
 neifenmixue	內分泌學	570
-neifenmizhongliuzhenghouqun	內分泌腫瘤症候羣	899
+neifenmizhongliuzhenghouqun	內分泌腫瘤症候羣	900
 neifenmizhongliuzhenghouqun	內分泌腫瘤癥候羣	380
 neifu	內服	560
 neigang	內港	288
@@ -97084,6 +97143,7 @@ nongxing	弄醒	323
 nongxuan	膿癬	353
 nongxue	農學	436
 nongxuebian	膿血便	470
+nongxuezheng	膿血症	510
 nongxuezheng	膿血癥	470
 nongxuzuojia	弄虛作假	773
 nongxuzuojiazhe	弄虛作假者	432
@@ -99336,7 +99396,7 @@ pianjing	片警	313
 pianju	騙局	560
 pianke	片刻	1242
 pianke	偏科	1
-piankuangxingjingshenfenliezheng	偏狂型精神分裂症	899
+piankuangxingjingshenfenliezheng	偏狂型精神分裂症	900
 piankuangxingjingshenfenliezheng	偏狂型精神分裂癥	380
 pianlao	偏勞	372
 pianli	偏離	1000
@@ -99462,7 +99522,7 @@ pianzhidianliu	偏置電流	260
 pianzhidianzu	偏置電阻	260
 pianzhikuang	偏執狂	403
 pianzhiti	胼胝體	228
-pianzhitifayubuquanzheng	胼胝體發育不全症	899
+pianzhitifayubuquanzheng	胼胝體發育不全症	900
 pianzhitifayubuquanzheng	胼胝體發育不全癥	380
 pianzhixing	偏執型	232
 pianzhixingjingshenfenliezheng	偏執型精神分裂症	847
@@ -102043,7 +102103,7 @@ qiangpoguannian	強迫觀念	540
 qiangpolaodong	強迫勞動	258
 qiangpoxing	強迫性	453
 qiangpoxingchuwuzheng	強迫性儲物癥	318
-qiangpoxingpifusaozhuazheng	強迫性皮膚搔抓症	899
+qiangpoxingpifusaozhuazheng	強迫性皮膚搔抓症	900
 qiangpoxingpifusaozhuazheng	強迫性皮膚搔抓癥	380
 qiangpoxingrengezhang'ai	強迫型人格障礙	700
 qiangpoxingshenjingzheng	強迫性神經症	900
@@ -102195,7 +102255,7 @@ qiangzhijueyu	強制絕育	831
 qiangzhijueyu	強製絕育	250
 qiangzhileixingzhuanhuan	強制類型轉換	1000
 qiangzhileixingzhuanhuan	強製類型轉換	506
-qiangzhixingjiroushiyangzheng	強直性肌肉失養症	899
+qiangzhixingjiroushiyangzheng	強直性肌肉失養症	900
 qiangzhixingjiroushiyangzheng	強直性肌肉失養癥	380
 qiangzhixingjiyingyangbuliang	強直性肌營養不良	680
 qiangzhixingjizhuyan	強直性脊柱炎	700
@@ -104061,7 +104121,7 @@ qingchunxingfenliezheng	青春型分裂症	900
 qingchunxingfenliezheng	青春型分裂癥	380
 qingchunxingjingshenfenliezheng	青春型精神分裂症	834
 qingchunxingjingshenfenliezheng	青春型精神分裂癥	378
-qingchunxingsijueshidiaozheng	青春型思覺失調症	899
+qingchunxingsijueshidiaozheng	青春型思覺失調症	900
 qingchunxingsijueshidiaozheng	青春型思覺失調癥	380
 qingchunyongzhu	青春永駐	249
 qingchunzhutoushaonianxilie	青春豬頭少年係列	599
@@ -104908,7 +104968,7 @@ qingzhe	輕者	182
 qingzhen	清真	1000
 qingzhen	清鎮	416
 qingzheng	輕症	1242
-qingzheng	清蒸	782
+qingzheng	清蒸	781
 qingzheng	清正	669
 qingzhengfu	清政府	539
 qingzhenglianming	清正廉明	260
@@ -105840,9 +105900,9 @@ qiuxinde	求心的	510
 qiuxing	球形	654
 qiuxing	球星	349
 qiuxingpengzhuang	球形碰撞	762
-qiuxinshijirouweisuozheng	裘馨氏肌肉萎縮症	899
+qiuxinshijirouweisuozheng	裘馨氏肌肉萎縮症	900
 qiuxinshijirouweisuozheng	裘馨氏肌肉萎縮癥	380
-qiuxinxingjirouweisuozheng	裘馨型肌肉萎縮症	899
+qiuxinxingjirouweisuozheng	裘馨型肌肉萎縮症	900
 qiuxinxingjirouweisuozheng	裘馨型肌肉萎縮癥	380
 qiuxue	求學	461
 qiuxun	鞦汛	261
@@ -109244,7 +109304,7 @@ rezha	熱軋	395
 rezhan	熱戰	355
 rezheng	熱症	440
 rezheng	熱癥	440
-rezheng	熱證	422
+rezheng	熱證	421
 rezhi	熱值	390
 rezhong	熱衷	375
 rezhongfenxi	熱重分析	570
@@ -115514,7 +115574,7 @@ shengfen	省份	823
 shengfen	生分	332
 shengfenshui	生粉水	232
 shengfu	勝負	1000
-shengfu	生父	260
+shengfu	生父	261
 shengfu	升幅	1
 shengfu	聖父	1
 shengfulajimi'erzhujiaozuotang	聖弗拉基米爾主教座堂	789
@@ -119766,7 +119826,7 @@ shitidai	屍體袋	232
 shitidian	實體店	539
 shitiesu	嗜鐵素	500
 shitieti	嗜鐵體	500
-shitifenqiangshengzhenghouqun	史提芬強生症候羣	899
+shitifenqiangshengzhenghouqun	史提芬強生症候羣	900
 shitifenqiangshengzhenghouqun	史提芬強生癥候羣	380
 shitifubai	屍體腐敗	540
 shitijiepou	屍體解剖	540
@@ -133812,7 +133872,7 @@ wabogexiaoying	瓦伯格效應	640
 wacheng	瓦城	198
 wadai	襪帶	305
 wadang	瓦當	324
-wadengbogeshizhenghouqun	瓦登伯革氏症候羣	899
+wadengbogeshizhenghouqun	瓦登伯革氏症候羣	900
 wadengbogeshizhenghouqun	瓦登伯革氏癥候羣	380
 wadese	瓦德瑟	230
 wadexi	瓦德西	253
@@ -135087,7 +135147,7 @@ wangzhuan	網賺	323
 wangzhuangchuanghuage	網狀窗花格	821
 wangzhuanggongding	網狀拱頂	779
 wangzhuanghongxueqiu	網狀紅血球	640
-wangzhuanghongxueqiuzengduozheng	網狀紅血球增多症	899
+wangzhuanghongxueqiuzengduozheng	網狀紅血球增多症	900
 wangzhuanghongxueqiuzengduozheng	網狀紅血球增多癥	380
 wangzhuangjiegou	網狀結構	570
 wangzhuangmai	網狀脈	470
@@ -140283,7 +140343,7 @@ wuzhengbuxin	無征不信	349
 wuzhengfuzhuyi	無政府主義	548
 wuzhengyi	無爭議	232
 wuzhengzhuang	無癥狀	362
-wuzhengzhuangbingduxiedaizhe	無症狀病毒攜帶者	899
+wuzhengzhuangbingduxiedaizhe	無症狀病毒攜帶者	900
 wuzhengzhuangbingduxiedaizhe	無癥狀病毒攜帶者	380
 wuzhensong	五針鬆	232
 wuzhenyu	吳鎮宇	198
@@ -142233,7 +142293,7 @@ xiantianxingfeidongjingmailou	先天性肺動靜脈瘺	677
 xiantianxingfeidongmaixiazhai	先天性肺動脈狹窄	680
 xiantianxingfeifayubuquan	先天性肺發育不全	677
 xiantianxingfeinangzhong	先天性肺囊腫	673
-xiantianxingfengzhenzhenghouqun	先天性風疹症候羣	899
+xiantianxingfengzhenzhenghouqun	先天性風疹症候羣	900
 xiantianxingfengzhenzhenghouqun	先天性風疹癥候羣	380
 xiantianxingfengzhenzonghezheng	先天性風疹綜合徵	902
 xiantianxingfengzhenzonghezheng	先天性風疹綜合症	780
@@ -142252,7 +142312,7 @@ xiantianxinghouchuanming	先天性喉喘鳴	669
 xiantianxinghoupu	先天性喉蹼	610
 xiantianxingjianneifan	先天性瞼內翻	664
 xiantianxingjiaohuabuliang	先天性角化不良	700
-xiantianxingjiaohuabuliangzheng	先天性角化不良症	899
+xiantianxingjiaohuabuliangzheng	先天性角化不良症	900
 xiantianxingjiaohuabuliangzheng	先天性角化不良癥	380
 xiantianxingjiazuxingjiankouxiaxiaozheng	先天性家族性瞼口狹小症	901
 xiantianxingjiazuxingjiankouxiaxiaozheng	先天性傢族性瞼口狹小癥	380
@@ -142289,7 +142349,7 @@ xiantianxingshenshangxianzengshengzheng	先天性腎上腺增生症	899
 xiantianxingshenshangxianzengshengzheng	先天性腎上腺增生癥	380
 xiantianxingshiguanbisuo	先天性食管閉鎖	660
 xiantianxingshiguanxiazhai	先天性食管狹窄	653
-xiantianxingshuidouzhenghouqun	先天性水痘症候羣	899
+xiantianxingshuidouzhenghouqun	先天性水痘症候羣	900
 xiantianxingshuidouzhenghouqun	先天性水痘癥候羣	380
 xiantianxingtangjihuawenluan	先天性糖基化紊亂	700
 xiantianxingtangjihuazhang'ai	先天性糖基化障礙	700
@@ -142307,7 +142367,7 @@ xiantianxingxinzangbing	先天性心臟病	700
 xiantianxingxinzangjibing	先天性心臟疾病	700
 xiantianxingxueshuanxingchengtizhi	先天性血栓形成體質	700
 xiantianxingyanqiuzhenchan	先天性眼球震顫	654
-xiantianxingyichuanduomaozheng	先天性遺傳多毛症	899
+xiantianxingyichuanduomaozheng	先天性遺傳多毛症	900
 xiantianxingyichuanduomaozheng	先天性遺傳多毛癥	380
 xiantianxingyidaogongnengbuliang	先天性胰島功能不良	700
 xiantianxingyindaobisuo	先天性陰道閉鎖	653
@@ -142798,7 +142858,7 @@ xiaochangbingbian	小腸病變	570
 xiaochanggengzu	小腸梗阻	540
 xiaochangjiechangyan	小腸結腸炎	640
 xiaochangkuiyang	小腸潰瘍	540
-xiaochanglinbaguankuozhangzheng	小腸淋巴管擴張症	899
+xiaochanglinbaguankuozhangzheng	小腸淋巴管擴張症	900
 xiaochanglinbaguankuozhangzheng	小腸淋巴管擴張癥	380
 xiaochangpolie	小腸破裂	540
 xiaochangqi	小腸氣	500
@@ -146557,7 +146617,7 @@ xinguanbingdu	新冠病毒	570
 xinguanchijiuzhengzhuang	新冠持久症狀	900
 xinguanchijiuzhengzhuang	新冠持久癥狀	380
 xinguanfeiyan	新冠肺炎	260
-xinguanfeiyanzhangqizhengzhuang	新冠肺炎長期症狀	899
+xinguanfeiyanzhangqizhengzhuang	新冠肺炎長期症狀	900
 xinguanfeiyanzhangqizhengzhuang	新冠肺炎長期癥狀	380
 xinguangmingyuhei'an	新光明與黑暗	935
 xinguanhouyizheng	新冠後遺症	840
@@ -147530,7 +147590,7 @@ xinshengrhuxijiongpozonghezheng	新生兒呼吸窘迫綜閤征	380
 xinshengrhuxijiongpozonghezheng	新生兒呼吸窘迫綜閤徵	380
 xinshengrjiahubingfang	新生兒加護病房	700
 xinshengrjieduan	新生兒戒斷	640
-xinshengrjieduanzhenghouqun	新生兒戒斷症候羣	899
+xinshengrjieduanzhenghouqun	新生兒戒斷症候羣	900
 xinshengrjieduanzhenghouqun	新生兒戒斷癥候羣	380
 xinshengrjieduanzhengzhuang	新生兒戒斷症狀	900
 xinshengrjieduanzhengzhuang	新生兒戒斷癥狀	367
@@ -147546,7 +147606,8 @@ xinshengrposhangfeng	新生兒破傷風	680
 xinshengrqi	新生兒期	540
 xinshengrqiyan	新生兒臍炎	610
 xinshengrquexuequeyangxingnaobing	新生兒缺血缺氧性腦病	680
-xinshengrrongxuezheng	新生兒溶血癥	700
+xinshengrrongxuezheng	新生兒溶血症	900
+xinshengrrongxuezheng	新生兒溶血癥	380
 xinshengrshaicha	新生兒篩查	610
 xinshengrshifei	新生兒濕肺	610
 xinshengrsiwang	新生兒死亡	640
@@ -147563,7 +147624,7 @@ xinshengrzhixi	新生兒窒息	640
 xinshengrzhiyixingpiyan	新生兒脂溢性皮炎	700
 xinshengrzhongzhengjianhubingfang	新生兒重症監護病房	899
 xinshengrzhongzhengjianhubingfang	新生兒重癥監護病房	380
-xinshengrzhongzhengjianhushi	新生兒重症監護室	899
+xinshengrzhongzhengjianhushi	新生兒重症監護室	900
 xinshengrzhongzhengjianhushi	新生兒重癥監護室	380
 xinshengxueguanxingqingguangyan	新生血管性青光眼	700
 xinshenhuanghu	心神恍惚	457
@@ -148266,7 +148327,7 @@ xiongpeizi	雄配子	232
 xiongpi	熊羆	137
 xiongpimao	熊皮帽	167
 xiongpu	胸脯	446
-xiongqi	雄起	599
+xiongqi	雄起	600
 xiongqi	兇器	560
 xiongqi	胸鰭	334
 xiongqian	胸前	433
@@ -150488,7 +150549,7 @@ xueyue	血月	198
 xueyueshan	雪岳山	102
 xueyujiaoshi	鳕魚角式	1000
 xueyujiaoshi	鱈魚角式	784
-xueyun	學運	265
+xueyun	學運	264
 xueyurongyudeshengzhan	血與榮譽的聖戰	836
 xueyutan	血餘炭	470
 xueyuxingfeng	血雨腥風	672
@@ -150506,6 +150567,7 @@ xuezhang	雪仗	407
 xuezhang	學長	332
 xuezhanyiyezhiwen	血戰一夜之吻	935
 xuezhe	學者	487
+xuezheng	血症	440
 xuezheng	血癥	440
 xuezhi	血脂	440
 xuezhibenjingjiejingpian	雪之本境解境篇	836
@@ -152383,7 +152445,7 @@ yangwangtianshangyunduo	仰望天上雲朵	935
 yangwangyekongdexingchen	仰望夜空的星辰	836
 yangwawa	洋娃娃	439
 yangwei	楊偉	979
-yangwei	陽痿	778
+yangwei	陽痿	777
 yangweikeli	養胃顆粒	540
 yangweilun	楊偉倫	773
 yangweishujiaonang	養胃舒膠囊	610
@@ -153712,7 +153774,7 @@ yaobuburushibu	葯補不如食補	318
 yaobuburushibu	藥補不如食補	318
 yaobude	要不得	955
 yaobude	要不的	620
-yaobujizhuguanxiazhaizheng	腰部脊柱管狹窄症	899
+yaobujizhuguanxiazhaizheng	腰部脊柱管狹窄症	900
 yaobujizhuguanxiazhaizheng	腰部脊柱管狹窄癥	380
 yaobukeji	遙不可及	453
 yaobuqi	要不起	640
@@ -155828,9 +155890,9 @@ yichuanxingfenzizhizheng	遺傳性糞紫質症	900
 yichuanxingfenzizhizheng	遺傳性糞紫質癥	367
 yichuanxinggongjishidiao	遺傳性共濟失調	662
 yichuanxinggongjishidiaoxingduofaxingshenjingyanyangbing	遺傳性共濟失調性多發性神經炎樣病	700
-yichuanxinggongjishidiaozheng	遺傳性共濟失調症	899
+yichuanxinggongjishidiaozheng	遺傳性共濟失調症	900
 yichuanxinggongjishidiaozheng	遺傳性共濟失調癥	380
-yichuanxingguotangbunaizheng	遺傳性果糖不耐症	899
+yichuanxingguotangbunaizheng	遺傳性果糖不耐症	900
 yichuanxingguotangbunaizheng	遺傳性果糖不耐癥	380
 yichuanxingjibing	遺傳性疾病	610
 yichuanxingjingluanxingjietan	遺傳性痙攣性截癱	680
@@ -160039,7 +160101,7 @@ yiwanliuqianduo	一萬六韆多	392
 yiwanliuqiansanbaihu	一萬六韆三百戶	425
 yiwanliuqianyuhu	一萬六韆餘戶	399
 yiwannuoweiqi	伊萬諾維奇	304
-yiwannvxinghuazhenghouqun	睪丸女性化症候羣	899
+yiwannvxinghuazhenghouqun	睪丸女性化症候羣	900
 yiwannvxinghuazhenghouqun	睪丸女性化癥候羣	822
 yiwanqiqianduo	一萬七韆多	371
 yiwanqiqianduohu	一萬七韆多戶	399
@@ -163073,7 +163135,8 @@ yuanfaxingjinxingxingshiyu	原發性進行性失語	378
 yuanfaxingjinxingxingshiyuzheng	原發性進行性失語症	899
 yuanfaxingjinxingxingshiyuzheng	原發性進行性失語癥	380
 yuanfaxingkaijiaoxingqingguangyan	原發性開角型青光眼	680
-yuanfaxinglao'ansuanxuezheng	原發性酪氨酸血癥	700
+yuanfaxinglao'ansuanxuezheng	原發性酪氨酸血症	900
+yuanfaxinglao'ansuanxuezheng	原發性酪氨酸血癥	380
 yuanfaxingluanchaogongnengshuaijie	原發性卵巢功能衰竭	700
 yuanfaxingmianyiquexianbing	原發性免疫缺陷病	700
 yuanfaxingsanchashenjingtong	原發性三叉神經痛	680
@@ -164634,7 +164697,7 @@ yundongyingyang	運動營養	570
 yundongyixue	運動醫學	570
 yundongyouxi	運動遊戲	822
 yundongyuan	運動員	610
-yundongyuanxinzangzhenghouqun	運動員心臟症候羣	899
+yundongyuanxinzangzhenghouqun	運動員心臟症候羣	900
 yundongyuanxinzangzhenghouqun	運動員心臟癥候羣	380
 yundongyupengzhuang	運動與碰撞	812
 yundongzhan	運動戰	505
@@ -169002,7 +169065,8 @@ zhengtian	整天	444
 zhengtianwan	正天丸	360
 zhengtiao	整條	387
 zhengtiejihongdanbai	正鐵肌紅蛋白	700
-zhengtiexuehongdanbaixuezheng	正鐵血紅蛋白血癥	700
+zhengtiexuehongdanbaixuezheng	正鐵血紅蛋白血症	900
+zhengtiexuehongdanbaixuezheng	正鐵血紅蛋白血癥	380
 zhengtifuwushuweiwanglu	整體服務數位網路	378
 zhengtiguannian	整體觀念	540
 zhengtileiyao	正體類要	540
@@ -169657,7 +169721,8 @@ zhenxing	振興	1000
 zhenxing	真性	1
 zhenxing	陣型	1
 zhenxingdongmailiu	真性動脈瘤	610
-zhenxingduoxuezheng	真性多血癥	640
+zhenxingduoxuezheng	真性多血症	840
+zhenxingduoxuezheng	真性多血癥	320
 zhenxinghongxibaozengduozheng	真性紅細胞增多症	744
 zhenxinghongxibaozengduozheng	真性紅細胞增多癥	656
 zhenxingniaoshijin	真性尿失禁	610
@@ -170149,7 +170214,8 @@ zhidaixingjirouyingyangbuliangzheng	肢帶型肌肉營養不良癥	380
 zhidalieche	直達列車	260
 zhidan	誌丹	224
 zhidanbai	脂蛋白	495
-zhidanbaixuezheng	脂蛋白血癥	610
+zhidanbaixuezheng	脂蛋白血症	761
+zhidanbaixuezheng	脂蛋白血癥	320
 zhidang	值當	472
 zhidang	戠噹	425
 zhidangfangbi	織當訪婢	442
@@ -173849,12 +173915,12 @@ zhoumeitou	皺眉頭	541
 zhoumi	周密	374
 zhoumo	週末	980
 zhoumo	周末	671
-zhoumoyemabizhenghouqun	週末夜麻痺症候羣	899
+zhoumoyemabizhenghouqun	週末夜麻痺症候羣	900
 zhoumoyemabizhenghouqun	周末夜麻痺癥候羣	380
 zhoumoyemabizhenghouqun	週末夜麻痺癥候羣	380
 zhoumoyukuai	週末愉快	247
 zhoumuwang	周穆王	469
-zhounaoshibaizhiruanhuazheng	周腦室白質軟化症	899
+zhounaoshibaizhiruanhuazheng	周腦室白質軟化症	900
 zhounaoshibaizhiruanhuazheng	周腦室白質軟化癥	380
 zhouneifan	肘內翻	470
 zhounian	周年	731
@@ -173882,7 +173948,7 @@ zhouqisu	周期素	61
 zhouqixi	週期係	355
 zhouqixing	週期性	1000
 zhouqixing	周期性	961
-zhouqixingfashaozhenghouqun	週期性發燒症候羣	899
+zhouqixingfashaozhenghouqun	週期性發燒症候羣	900
 zhouqixingfashaozhenghouqun	周期性發燒癥候羣	380
 zhouqixingfashaozhenghouqun	週期性發燒癥候羣	380
 zhouqixingjingshenbing	週期性精神病	794
@@ -178543,8 +178609,8 @@ zuobianju	左邊距	1238
 zuobiankuang	左邊框	1238
 zuobianqi	坐便器	362
 zuobianr	左邊兒	167
-zuobiao	座標	1000
-zuobiao	坐標	904
+zuobiao	座標	781
+zuobiao	坐標	746
 zuobiaofa	座標法	620
 zuobiaokongjian	坐標空間	260
 zuobiaokongjian	座標空間	258

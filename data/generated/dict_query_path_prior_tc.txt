@@ -363,6 +363,7 @@ banquansuoyou	版權|所有	433
 banrutangjimei	半乳糖|激酶	446
 banrutangnaoganzhi	半乳糖|腦苷脂	483
 banrutangningjisu	半乳糖|凝集素	483
+banrutangxuezheng	半乳糖|血症	473
 banshangdeniqiu	闆上的|泥鰍	436
 bansuimianyi	伴隨|免疫	435
 banxiatangjiang	半夏|糖漿	443
@@ -803,6 +804,7 @@ bingduxingweichangyan	病毒性|胃腸炎	458
 bingduxingxingbing	病毒性|性病	480
 bingduxingxinjiyan	病毒性|心肌炎	459
 bingduxingyanyan	病毒性|咽炎	453
+bingduxuezheng	病毒|血症	462
 bingduyichuanxue	病毒|遺傳學	455
 bingduyimiao	病毒|疫苗	420
 bingduzaiti	病毒|載體	432
@@ -4054,6 +4056,7 @@ fumohouxuezhong	腹膜後|血腫	441
 fumotouxi	腹膜|透析	477
 fumotouxiye	腹膜|透析液	431
 fumusiwang	父母|死亡	486
+funanjiaquan	呋喃|甲醛	444
 funvdingqi	婦女|定期	401
 funvdingqijiancha	婦女|定期|檢查	483
 funvjiankang	婦女|健康	486
@@ -4302,7 +4305,7 @@ ganzhenliaofa	乾針|療法	441
 ganzhenzhiliao	乾針|治療	445
 ganzhifuben	感知|副本	502
 gaobiehuiyixilie	告別迴憶|係列	416
-gaodanguchunxuezheng	高膽固醇|血癥	476
+gaodanguchunxuezheng	高膽固醇|血症	476
 gaodawushuangxilie	高達無雙|係列	436
 gaodengjiaoyu	高等|教育	520
 gaodengxuexiao	高等|學校	490
@@ -4373,7 +4376,7 @@ gaoxiaoyexiangsepu	高效|液相色譜	483
 gaoxingnenggaobingfa	高性能|高併發	468
 gaoxinjishu	高新|技術	513
 gaoxiongjisu	高雄|激素	388
-gaoxiongjisuxuezheng	高雄|激素|血癥	470
+gaoxiongjisuxuezheng	高雄|激素|血症	470
 gaoxueyafangzhi	高血壓|防治	461
 gaoxueyahuanzhe	高血壓|患者	458
 gaoxueyajizheng	高血壓|急症	476
@@ -4669,7 +4672,7 @@ gouzaoleixing	構造|類型	456
 gouzaosuanfa	構造|算法	475
 gouzaowulixue	構造|物理學	498
 gouzizhanji	鉤子|戰機	505
-guaansuanxuezheng	瓜氨酸|血癥	470
+guaansuanxuezheng	瓜氨酸|血症	473
 guaduandianhua	掛斷|電話	520
 guaimiandiaoshi	怪面|雕飾	473
 guaishoudianli	怪獸|電力	430
@@ -6353,6 +6356,8 @@ jiaozhouzhuanqu	膠州|專區	465
 jiaozhuanglinbaxitong	膠狀|淋巴系統	483
 jiaozhuobuan	焦灼|不安	484
 jiaqiaodongwu	甲殼|動物	457
+jiaquanrongye	甲醛|溶液	444
+jiaquanzhongdu	甲醛|中毒	448
 jiarencaizi	佳人|才子	483
 jiashangdehulu	架上的|葫蘆	437
 jiashangdeputao	架上的|葡萄	455
@@ -6763,7 +6768,7 @@ jingangjiaonang	金剛|膠囊	448
 jingangnumu	金剛|怒目	453
 jingangzhanshi	金剛|戰士	505
 jingansuanjiayasu	精氨酸|加壓素	456
-jingansuanxuezheng	精氨酸|血癥	471
+jingansuanxuezheng	精氨酸|血症	474
 jingbaopilao	警報|疲勞	483
 jingbaoxinhao	警報|信號	498
 jingbushaoshang	頸部|燒傷	423
@@ -7530,7 +7535,7 @@ junzhuzhengzhi	君主|政治	467
 junziguqiong	君子|固窮	468
 junzixieding	君子|協定	496
 juqingfengfu	劇情|豐富	471
-juqiudanbaixuezheng	鉅球蛋白|血癥	471
+juqiudanbaixuezheng	鉅球蛋白|血症	471
 jurenqianlizhiwai	拒人韆裏|之外	436
 jurumonv	鉅乳|魔女	438
 jushangwangluo	鉅商|網絡	430
@@ -8048,7 +8053,7 @@ lanyaxieyi	藍牙|協議	466
 lanyongzhiquan	濫用|職權	464
 lanyuchongshu	濫竽|充數	422
 lanzaodusu	藍藻|毒素	429
-laoansuanxuezheng	酪氨酸|血癥	415
+laoansuanxuezheng	酪氨酸|血症	415
 laobiediegentou	老鱉跌|跟頭	404
 laochengchizhong	老成|持重	500
 laociweixiashan	老刺蝟|下山	419
@@ -11249,6 +11254,7 @@ renqunyiganxing	人羣|易感性	450
 renrenyoufen	人人|有份	480
 renshenbingfazheng	妊娠|併發症	483
 renshenceshi	妊娠|測試	483
+renshenduxuezheng	妊娠|毒血症	483
 renshengdingfei	人聲|鼎沸	464
 renshenghualang	人生|畫廊	515
 renshennianling	妊娠|年齡	476
@@ -18402,6 +18408,7 @@ zhenjunbaixuezheng	真菌|敗血症	440
 zhenjundusu	真菌|毒素	444
 zhenjunganran	真菌|感染	442
 zhenjunshijie	真菌|世界	515
+zhenjunxuezheng	真菌|血症	444
 zhenkongbaozhuang	真空|包裝	437
 zhenkongbileiqi	真空|避雷器	455
 zhenkongchengxing	真空|成形	469
@@ -18478,7 +18485,7 @@ zhichixibao	支持|細胞	472
 zhichuangjiaonang	痔瘡|膠囊	434
 zhichuangzhixue	痔瘡|止血	375
 zhichuangzhixuekeli	痔瘡|止血|顆粒	457
-zhidanbaixuezheng	脂蛋白|血癥	444
+zhidanbaixuezheng	脂蛋白|血症	447
 zhidaohuanglong	直搗|黃龍	459
 zhidaojiaoshou	指導|教授	467
 zhidaolaoshi	指導|老師	520
@@ -18528,7 +18535,7 @@ zhijiangwangshi	枝江|往事	515
 zhijianzhanzheng	指尖|戰爭	450
 zhijiaozhuanwan	直角|轉彎	383
 zhijiaozhuanwanjieti	直角|轉彎|階梯	465
-zhijiaozuobiao	直角|座標	474
+zhijiaozuobiao	直角|座標	467
 zhijiedanhongsu	直接|膽紅素	457
 zhijiedianli	直接|電離	417
 zhijiedianlilizi	直接|電離|粒子	499
