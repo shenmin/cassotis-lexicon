@@ -507,8 +507,15 @@ DAILY_NUMBER_WORD_UNIT_CHARS = set(
     "\u5341\u767e\u5343\u4e07\u842c\u4ebf\u5104"
 )
 CURATED_DAILY_NUMBER_WEIGHT_CAP = 700
+CURATED_DAILY_COUNT_MEASURE_WEIGHT_CAP = 820
 CURATED_DAILY_SUPPLEMENT_WEIGHT_CAP = 560
 CURATED_DAILY_SUPPLEMENT_NUMBER_WEIGHT_CAP = 520
+
+# Quantity-classifier snippets are useful exact matches, but they are not
+# necessarily more common than same-pinyin lexical words. Keep them visible
+# without giving them the full daily/chat priority floor.
+DAILY_COUNT_MEASURE_CHARS = set("把部对栋副根幢件轮盘匹批片篇瓶扇双台条桶页只爿")
+DAILY_COUNT_PREFIX_CHARS = set("一二两三四五六七八九十几每")
 # Fiction entities and public/historical people names are supplemental named
 # entities and should not inherit everyday-word priors. Product/platform proper
 # nouns stay on the generic vertical path because they are frequent daily input.
@@ -4788,12 +4795,22 @@ def _rerank_homophone_buckets(
         bucket_has_short_everyday_term = False
         bucket_has_preferred_term = False
         bucket_has_short_popular_named_term = False
+        bucket_has_chat_prefixed_short_term = False
         bucket_dominant_common_text = ""
         bucket_dominant_common_signal = -1.0
         bucket_dominant_common_runner_up = -1.0
+        bucket_direct_leader_text = ""
+        bucket_direct_leader_score = -1.0
+        bucket_direct_runner_up = -1.0
+        bucket_direct_leader_usage = 0.0
+        bucket_direct_leader_jieba = 0.0
+        bucket_direct_leader_source_hits = 0
+        bucket_direct_leader_pageview = 0.0
+        bucket_direct_leader_pos = ""
         strong_short_head_terms: Set[str] = set()
         for text, _weight in items:
             text_len = _cjk_len(text)
+            count_measure_support = _is_daily_count_measure_phrase(text)
             usage_score = min(1.0, max(0.0, usage_score_map.get(text, 0.0)))
             source_hits = max(0, source_hits_map.get(text, 0))
             pageview_score = min(1.0, max(0.0, pageviews_signal_map.get(text, 0.0)))
@@ -4818,6 +4835,24 @@ def _rerank_homophone_buckets(
                 and semantic_bonus >= 120
                 and not _is_named_entity_pos(pos_tag)
             )
+            if text_len <= 3 and not _is_named_entity_pos(pos_tag):
+                direct_common_score = (
+                    jieba_direct_score
+                    + usage_score * 0.35
+                    + min(source_hits, 3) * 0.035
+                    + pageview_score * 0.12
+                )
+                if direct_common_score > bucket_direct_leader_score:
+                    bucket_direct_runner_up = bucket_direct_leader_score
+                    bucket_direct_leader_score = direct_common_score
+                    bucket_direct_leader_text = text
+                    bucket_direct_leader_usage = usage_score
+                    bucket_direct_leader_jieba = jieba_direct_score
+                    bucket_direct_leader_source_hits = source_hits
+                    bucket_direct_leader_pageview = pageview_score
+                    bucket_direct_leader_pos = pos_tag
+                elif direct_common_score > bucket_direct_runner_up:
+                    bucket_direct_runner_up = direct_common_score
             if (
                 text_len <= 2
                 and (
@@ -4843,10 +4878,22 @@ def _rerank_homophone_buckets(
             )
             if short_everyday_support:
                 bucket_has_short_everyday_term = True
+            if (
+                text_len <= 2
+                and text
+                and text[0] in DAILY_CHAT_SEED_PREFIXES
+                and (
+                    _is_conversational_pos(pos_tag)
+                    or usage_score >= 0.08
+                    or jieba_direct_score >= 0.06
+                    or source_hits >= 1
+                )
+            ):
+                bucket_has_chat_prefixed_short_term = True
             if semantic_daily_support:
                 bucket_has_short_everyday_term = True
                 bucket_has_daily_phrase_term = True
-            if _is_daily_phrase_candidate(
+            if (not count_measure_support) and _is_daily_phrase_candidate(
                 text,
                 text_len=text_len,
                 usage_score=usage_score,
@@ -4868,7 +4915,7 @@ def _rerank_homophone_buckets(
                 pos_tag=pos_tag,
             ):
                 bucket_has_daily_number_term = True
-            if text in preferred_terms:
+            if text in preferred_terms and not count_measure_support:
                 bucket_has_preferred_term = True
             if (
                 text_len <= 2
@@ -4881,8 +4928,29 @@ def _rerank_homophone_buckets(
                 )
             ):
                 bucket_has_short_popular_named_term = True
+        bucket_direct_leader_margin = max(
+            0.0,
+            bucket_direct_leader_score - max(0.0, bucket_direct_runner_up),
+        )
+        bucket_direct_leader_active = (
+            bool(bucket_direct_leader_text)
+            and bucket_direct_leader_jieba >= 0.18
+            and bucket_direct_leader_margin >= 0.16
+            and (
+                bucket_direct_leader_usage >= 0.08
+                or bucket_direct_leader_jieba >= 0.30
+                or bucket_direct_leader_source_hits >= 1
+                or bucket_direct_leader_pageview >= 0.04
+            )
+            and not (
+                bucket_has_chat_prefixed_short_term
+                and _is_noun_pos(bucket_direct_leader_pos)
+                and bucket_direct_leader_jieba < 0.75
+            )
+        )
         for text, weight in items:
             text_len = _cjk_len(text)
+            count_measure_support = _is_daily_count_measure_phrase(text)
             usage_score = min(1.0, max(0.0, usage_score_map.get(text, 0.0)))
             source_hits = max(0, source_hits_map.get(text, 0))
             pageview_score = min(1.0, max(0.0, pageviews_signal_map.get(text, 0.0)))
@@ -4921,6 +4989,8 @@ def _rerank_homophone_buckets(
             )
             if semantic_daily_support:
                 daily_phrase_support = True
+            if count_measure_support:
+                daily_phrase_support = False
             short_everyday_support = _is_short_everyday_term_candidate(
                 text,
                 text_len=text_len,
@@ -4933,6 +5003,8 @@ def _rerank_homophone_buckets(
             )
             if semantic_daily_support and text_len <= 2:
                 short_everyday_support = True
+            if count_measure_support:
+                short_everyday_support = False
             daily_number_support = _is_daily_number_word_candidate(
                 text,
                 text_len=text_len,
@@ -4940,6 +5012,8 @@ def _rerank_homophone_buckets(
                 source_hits=source_hits,
                 pos_tag=pos_tag,
             )
+            if count_measure_support:
+                daily_number_support = False
             pos_bias = _compute_effective_pos_bias(
                 pos_tag=pos_tag,
                 text_len=text_len,
@@ -5226,6 +5300,36 @@ def _rerank_homophone_buckets(
             delta = int(round((normalized - 0.5) * (2 * delta_cap) * spread_factor))
             post_cap_bonus = 0
 
+            if bucket_direct_leader_active:
+                if text == bucket_direct_leader_text:
+                    direct_leader_boost = min(
+                        150,
+                        42 + int(round(bucket_direct_leader_margin * 260.0)),
+                    )
+                    delta += direct_leader_boost
+                    post_cap_bonus += min(
+                        72,
+                        20 + int(round(bucket_direct_leader_margin * 180.0)),
+                    )
+                elif (
+                    text_len <= 3
+                    and not wiki_support
+                    and not _is_named_entity_pos(pos_tag)
+                    and jieba_direct_score + 0.18 < bucket_direct_leader_jieba
+                    and usage_score <= bucket_direct_leader_usage + 0.05
+                    and pageview_score <= bucket_direct_leader_pageview + 0.08
+                    and source_hits <= bucket_direct_leader_source_hits + 1
+                ):
+                    direct_leader_damp = min(
+                        118,
+                        26 + int(round(bucket_direct_leader_margin * 220.0)),
+                    )
+                    delta -= direct_leader_damp
+                    post_cap_bonus -= min(
+                        72,
+                        18 + int(round(bucket_direct_leader_margin * 160.0)),
+                    )
+
             if text == bucket_dominant_common_text:
                 dominant_common_boost = min(
                     168,
@@ -5416,6 +5520,15 @@ def _rerank_homophone_buckets(
                 and not wiki_support
             ):
                 delta -= 42
+
+            if (
+                bucket_has_strong_term
+                and count_measure_support
+                and usage_score < 0.16
+                and jieba_direct_score < 0.18
+                and pageview_score < 0.05
+            ):
+                delta -= 96
 
             if (
                 bucket_has_strong_term
@@ -11250,6 +11363,7 @@ def _finalize_curated_daily_weight(
     usage_score: float,
     is_number_word: bool,
     low_frequency: bool = False,
+    text: str = "",
 ) -> int:
     if low_frequency:
         if is_number_word:
@@ -11262,6 +11376,10 @@ def _finalize_curated_daily_weight(
         return min(CURATED_DAILY_SUPPLEMENT_WEIGHT_CAP, max(weight, supplement_floor))
 
     if not is_number_word:
+        if _is_daily_count_measure_phrase(text):
+            count_floor = 560 + int(round(max(0.0, min(1.0, usage_score)) * 130.0))
+            count_cap = 760 if _cjk_len(text) <= 2 else 820
+            return min(count_cap, max(weight, count_floor))
         daily_floor = 1080 + int(round(max(0.0, min(1.0, usage_score)) * 180.0))
         return max(weight, daily_floor)
 
@@ -11274,6 +11392,23 @@ def _finalize_curated_daily_weight(
         840 + int(round(max(0.0, min(1.0, usage_score)) * 110.0)),
     )
     return min(number_cap, max(weight, number_floor))
+
+
+def _is_daily_count_measure_phrase(text: str) -> bool:
+    if not text or CJK_FULL_RE.fullmatch(text) is None:
+        return False
+
+    rest = ""
+    if text.startswith("每一"):
+        rest = text[2:]
+    elif text.startswith("每"):
+        rest = text[1:]
+    elif text[0] in DAILY_COUNT_PREFIX_CHARS:
+        rest = text[1:]
+
+    if not rest:
+        return False
+    return rest[0] in DAILY_COUNT_MEASURE_CHARS
 
 
 def _is_pure_daily_number_word(text: str) -> bool:
@@ -11304,7 +11439,7 @@ def _cap_curated_daily_number_weights(
     number_terms: Set[str] = set()
     for sc_word, tc_word, _usage_score, _explicit_pinyin in curated_entries:
         text = tc_word if use_traditional and tc_word else sc_word
-        if _is_pure_daily_number_word(text):
+        if _is_pure_daily_number_word(text) or _is_daily_count_measure_phrase(text):
             number_terms.add(text)
 
     stats[f"{stats_prefix}_curated_daily_number_cap_terms"] = len(number_terms)
@@ -11313,9 +11448,16 @@ def _cap_curated_daily_number_weights(
 
     for key, weight in list(mapping.items()):
         _pinyin, text = key
-        if text not in number_terms or weight <= CURATED_DAILY_NUMBER_WEIGHT_CAP:
+        if text not in number_terms:
             continue
-        mapping[key] = CURATED_DAILY_NUMBER_WEIGHT_CAP
+        cap = (
+            CURATED_DAILY_COUNT_MEASURE_WEIGHT_CAP
+            if _is_daily_count_measure_phrase(text)
+            else CURATED_DAILY_NUMBER_WEIGHT_CAP
+        )
+        if weight <= cap:
+            continue
+        mapping[key] = cap
         stats[f"{stats_prefix}_curated_daily_number_cap_rows"] += 1
 
     return stats
@@ -11430,10 +11572,10 @@ def _reinforce_curated_daily_existing_prefixes(
     def prefix_floor(prefix_len: int, inherited_usage: float) -> int:
         usage = min(1.0, max(0.0, inherited_usage))
         if prefix_len <= 2:
-            return min(1120, 900 + int(round(usage * 220.0)))
+            return min(980, 760 + int(round(usage * 220.0)))
         if prefix_len == 3:
-            return min(1080, 840 + int(round(usage * 200.0)))
-        return min(1040, 800 + int(round(usage * 180.0)))
+            return min(960, 720 + int(round(usage * 210.0)))
+        return min(960, 720 + int(round(usage * 190.0)))
 
     for sc_word, tc_word, usage_score, explicit_pinyin in curated_entries:
         source_text = tc_word if use_traditional and tc_word else sc_word
@@ -11486,17 +11628,18 @@ def _reinforce_curated_daily_existing_prefixes(
                 continue
 
             stats[f"{stats_prefix}_curated_daily_prefix_terms_considered"] += 1
+            direct_usage = min(1.0, max(0.0, usage_score_map.get(prefix, 0.0)))
+            direct_hits = source_hits_map.get(prefix, 0)
+            if direct_usage < 0.18 and direct_hits < 2:
+                continue
             inherited_usage = max(
-                min(1.0, max(0.0, usage_score_map.get(prefix, 0.0))),
-                min(0.86, max(0.28, min(1.0, max(0.0, usage_score)) - 0.06)),
+                direct_usage,
+                min(0.70, max(0.18, min(1.0, max(0.0, usage_score)) - 0.16)),
             )
             floor_weight = prefix_floor(prefix_len, inherited_usage)
             if existing_weight < floor_weight:
                 mapping[key] = floor_weight
                 stats[f"{stats_prefix}_curated_daily_prefix_reinforced"] += 1
-
-            usage_score_map[prefix] = max(usage_score_map.get(prefix, 0.0), inherited_usage)
-            source_hits_map[prefix] = max(source_hits_map.get(prefix, 0), 2)
 
     return stats
 
@@ -11530,10 +11673,10 @@ def _reinforce_curated_daily_existing_suffixes(
     def suffix_floor(suffix_len: int, inherited_usage: float) -> int:
         usage = min(1.0, max(0.0, inherited_usage))
         if suffix_len <= 2:
-            return min(1040, 800 + int(round(usage * 220.0)))
+            return min(920, 700 + int(round(usage * 210.0)))
         if suffix_len == 3:
-            return min(1000, 760 + int(round(usage * 200.0)))
-        return min(960, 720 + int(round(usage * 180.0)))
+            return min(930, 700 + int(round(usage * 190.0)))
+        return min(940, 710 + int(round(usage * 170.0)))
 
     for sc_word, tc_word, usage_score, explicit_pinyin in curated_entries:
         source_text = tc_word if use_traditional and tc_word else sc_word
@@ -11586,17 +11729,18 @@ def _reinforce_curated_daily_existing_suffixes(
                 continue
 
             stats[f"{stats_prefix}_curated_daily_suffix_terms_considered"] += 1
+            direct_usage = min(1.0, max(0.0, usage_score_map.get(suffix, 0.0)))
+            direct_hits = source_hits_map.get(suffix, 0)
+            if direct_usage < 0.18 and direct_hits < 2:
+                continue
             inherited_usage = max(
-                min(1.0, max(0.0, usage_score_map.get(suffix, 0.0))),
-                min(0.82, max(0.24, min(1.0, max(0.0, usage_score)) - 0.08)),
+                direct_usage,
+                min(0.64, max(0.16, min(1.0, max(0.0, usage_score)) - 0.18)),
             )
             floor_weight = suffix_floor(suffix_len, inherited_usage)
             if existing_weight < floor_weight:
                 mapping[key] = floor_weight
                 stats[f"{stats_prefix}_curated_daily_suffix_reinforced"] += 1
-
-            usage_score_map[suffix] = max(usage_score_map.get(suffix, 0.0), inherited_usage)
-            source_hits_map[suffix] = max(source_hits_map.get(suffix, 0), 2)
 
     return stats
 
@@ -11654,10 +11798,10 @@ def _cap_curated_daily_prefix_competitors(
     def prefix_floor(prefix_len: int, inherited_usage: float) -> int:
         usage = min(1.0, max(0.0, inherited_usage))
         if prefix_len <= 2:
-            return min(1120, 900 + int(round(usage * 220.0)))
+            return min(900, 650 + int(round(usage * 240.0)))
         if prefix_len == 3:
-            return min(1080, 840 + int(round(usage * 200.0)))
-        return min(1040, 800 + int(round(usage * 180.0)))
+            return min(920, 660 + int(round(usage * 220.0)))
+        return min(940, 680 + int(round(usage * 200.0)))
 
     for sc_word, tc_word, usage_score, explicit_pinyin in curated_entries:
         source_text = tc_word if use_traditional and tc_word else sc_word
@@ -11709,9 +11853,12 @@ def _cap_curated_daily_prefix_competitors(
             if prefix_weight is None:
                 continue
 
+            direct_usage = min(1.0, max(0.0, usage_score_map.get(prefix, 0.0)))
+            if direct_usage < 0.08:
+                continue
             inherited_usage = max(
-                min(1.0, max(0.0, usage_score_map.get(prefix, 0.0))),
-                min(0.86, max(0.28, min(1.0, max(0.0, usage_score)) - 0.06)),
+                direct_usage,
+                min(0.62, max(0.18, min(1.0, max(0.0, usage_score)) - 0.18)),
             )
             if prefix_weight < prefix_floor(prefix_len, inherited_usage) - 8:
                 continue
@@ -11842,6 +11989,7 @@ def _augment_with_curated_daily_phrases(
             usage_score=usage_score,
             is_number_word=sc_daily_number_support,
             low_frequency=low_frequency,
+            text=sc_word,
         )
         sc_key = (pinyin, sc_word)
         existing_sc_weight = sc.get(sc_key)
@@ -11915,6 +12063,7 @@ def _augment_with_curated_daily_phrases(
             usage_score=usage_score,
             is_number_word=tc_daily_number_support,
             low_frequency=low_frequency,
+            text=tc_candidate,
         )
         tc_key = (pinyin, tc_candidate)
         existing_tc_weight = tc.get(tc_key)
@@ -12033,6 +12182,7 @@ def _reinforce_curated_daily_tc_phrases(
             usage_score=usage_score,
             is_number_word=tc_daily_number_support,
             low_frequency=low_frequency,
+            text=tc_candidate,
         )
 
         tc_key = (pinyin, tc_candidate)
@@ -12120,6 +12270,7 @@ def _reinforce_curated_daily_sc_phrases(
             usage_score=usage_score,
             is_number_word=sc_daily_number_support,
             low_frequency=low_frequency,
+            text=sc_word,
         )
 
         sc_key = (pinyin, sc_word)
