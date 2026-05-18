@@ -4950,13 +4950,33 @@ def _rerank_homophone_buckets(
                 char_score=char_score,
             )
             min_char_prior = _compute_min_char_prior(text, char_prior)
-            if text_len <= 2:
+            if text_len == 1:
                 char_weight = 220.0
+            elif text_len == 2:
+                # For multi-character exact words, term-level frequency should
+                # dominate character-level priors. A high-prior character pair
+                # is evidence that a word is plausible, not that it is more
+                # common than a better-supported same-pinyin word.
+                char_weight = 160.0
             elif text_len <= 4:
                 char_weight = 72.0
             else:
                 char_weight = 28.0
-            if text_len <= 2 and _is_conversational_pos(pos_tag):
+            conversational_short_supported = (
+                text_len <= 2
+                and _is_conversational_pos(pos_tag)
+                and (
+                    daily_phrase_support
+                    or short_everyday_support
+                    or semantic_daily_support
+                    or usage_score >= 0.08
+                    or jieba_direct_score >= 0.06
+                    or source_hits >= 2
+                    or pageview_score >= 0.05
+                    or wiki_hit > 0.0
+                )
+            )
+            if conversational_short_supported:
                 bucket_has_conversational_short_term = True
             if (
                 usage_score >= 0.28
@@ -4983,8 +5003,14 @@ def _rerank_homophone_buckets(
                 if text_len <= 2:
                     common_signal += char_score * 60.0
                     if _is_conversational_pos(pos_tag):
-                        common_signal += 68.0
-                        if text and text[0] in ("不", "没", "无", "非", "未"):
+                        if conversational_short_supported:
+                            common_signal += 68.0
+                        else:
+                            # POS tags are noisy for short homophones. Keep a
+                            # weak verb/function-word hint, but do not let a
+                            # low-evidence POS label outweigh direct usage.
+                            common_signal += 18.0
+                        if conversational_short_supported and text and text[0] in ("不", "没", "无", "非", "未"):
                             common_signal += 46.0
                     elif (
                         _is_noun_pos(pos_tag)
@@ -6179,6 +6205,20 @@ def _filter_global_tail_entries(
         if style_penalty >= 160 and usage_score < 0.12 and jieba_direct_score < 0.10:
             if schedule_drop(key):
                 stats[f"{stats_prefix}_global_tail_written_removed"] += 1
+            continue
+        if (
+            text_len <= 2
+            and mapping.get(key, 0) >= 380
+            and char_score >= 0.58
+            and usage_score >= 0.04
+            and source_hits >= 1
+            and not _is_named_entity_pos(pos_tag)
+            and _is_conversational_pos(pos_tag)
+        ):
+            # A short CEDICT-derived modern verb with moderate direct evidence
+            # should stay selectable even if it is not a default candidate.
+            # Global tail trimming is for noise removal, not for deleting valid
+            # exact words after homophone reranking has already lowered them.
             continue
         if (
             inflated_short_penalty >= 112
