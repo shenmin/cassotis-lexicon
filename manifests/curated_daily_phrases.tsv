@@ -1247,7 +1247,7 @@
 编译期	編譯期	0.90	bianyiqi
 运行期	運行期	0.90	yunxingqi
 不兼容	不兼容	0.90
-不适合	不适合	0.90
+不适合	不適合	0.90
 不好用	不好用	0.92
 不耐看	不耐看	0.90
 不耐	不耐	0.88
@@ -2763,7 +2763,6 @@
 优雅	優雅	0.91	youya
 舞者	舞者	0.91	wuzhe
 无论	無論	0.92	wulun
-何时	何時	0.91	heshi
 保持	保持	0.92	baochi
 平衡	平衡	0.91	pingheng
 生命	生命	0.92	shengming
@@ -3192,7 +3191,6 @@
 近几日	近幾日	0.90	jinjiri
 几月	幾月	0.90	jiyue
 哪年	哪年	0.90	nanian
-何年	何年	0.90	henian
 猴年	猴年	0.90	hounian
 马月	馬月	0.90	mayue
 几周	幾週	0.90	jizhou
@@ -3740,3 +3738,18 @@
 冲这句	衝這句	0.86	chongzheju
 冲这话	衝這話	0.86	chongzhehua
 冲这份	衝這份	0.86	chongzhefen
+# Everyday gap/season/nature phrases.
+还差	還差	0.90	haicha
+还少	還少	0.88	haishao
+还缺	還缺	0.88	haique
+差些	差些	0.84	chaxie
+还差点	還差點	0.86	haichadian
+还差些	還差些	0.84	haichaxie
+还差一点	還差一點	0.86	haichayidian
+盛夏	盛夏	0.90	shengxia
+盛暑	盛暑	0.82	shengshu
+山间	山間	0.88	shanjian
+山涧	山澗	0.84	shanjian
+林间	林間	0.86	linjian
+小溪	小溪	0.90	xiaoxi
+溪水	溪水	0.86	xishui

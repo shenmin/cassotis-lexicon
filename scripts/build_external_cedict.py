@@ -2275,6 +2275,146 @@ def _cap_low_signal_short_term_weights(
     return stats
 
 
+def _build_longer_prefix_term_support_index(
+    mapping: Dict[Tuple[str, str], int],
+    *,
+    min_prefix_len: int = 2,
+    max_prefix_len: int = 3,
+    min_support_weight: int = 520,
+) -> Dict[str, List[Tuple[str, str, int]]]:
+    support_index: Dict[str, List[Tuple[str, str, int]]] = {}
+    if not mapping:
+        return support_index
+
+    for (pinyin, text), weight in mapping.items():
+        text_len = _cjk_len(text)
+        if (
+            weight < min_support_weight
+            or text_len <= min_prefix_len
+            or not CJK_FULL_RE.fullmatch(text)
+        ):
+            continue
+
+        max_len = min(max_prefix_len, text_len - 1)
+        for prefix_len in range(min_prefix_len, max_len + 1):
+            prefix_text = text[:prefix_len]
+            support_index.setdefault(prefix_text, []).append((pinyin, text, weight))
+
+    return support_index
+
+
+def _has_longer_prefix_term_support(
+    pinyin: str,
+    text: str,
+    support_index: Dict[str, List[Tuple[str, str, int]]],
+) -> bool:
+    for support_pinyin, support_text, support_weight in support_index.get(text, []):
+        if support_text == text:
+            continue
+        if (
+            support_pinyin.startswith(pinyin)
+            and len(support_pinyin) > len(pinyin)
+            and support_weight >= 520
+        ):
+            return True
+    return False
+
+
+def _cap_low_independent_prefix_fragment_weights(
+    mapping: Dict[Tuple[str, str], int],
+    usage_score_map: Dict[str, float],
+    source_hits_map: Dict[str, int],
+    pageviews_signal_map: Dict[str, float],
+    jieba_direct_signal_map: Dict[str, float],
+    jieba_pos_map: Dict[str, str],
+    wiki_titles: Set[str],
+    wiki_augmented_terms: Set[str] | None,
+    protected_terms: Set[str],
+    stats_prefix: str,
+) -> Dict[str, int]:
+    """Cap weak short terms that mostly exist as prefixes of longer terms.
+
+    Formal long terms should remain strong exact entries (for example 核试验),
+    while their low-independent-signal prefixes (for example 核试) stay visible
+    but should not dominate common exact alternatives.
+    """
+    stats = {
+        f"{stats_prefix}_low_independent_prefix_fragments_capped": 0,
+    }
+    if not mapping:
+        return stats
+
+    support_index = _build_longer_prefix_term_support_index(mapping)
+    if not support_index:
+        return stats
+
+    for key, weight in list(mapping.items()):
+        pinyin, text = key
+        text_len = _cjk_len(text)
+        if text_len < 2 or text_len > 3:
+            continue
+        if text in protected_terms or _is_pure_daily_number_word(text):
+            continue
+        if not _has_longer_prefix_term_support(pinyin, text, support_index):
+            continue
+
+        usage_score = min(1.0, max(0.0, usage_score_map.get(text, 0.0)))
+        source_hits = max(0, source_hits_map.get(text, 0))
+        pageview_score = min(1.0, max(0.0, pageviews_signal_map.get(text, 0.0)))
+        jieba_direct_score = min(1.0, max(0.0, jieba_direct_signal_map.get(text, 0.0)))
+        pos_tag = jieba_pos_map.get(text, "")
+        weak_nominal_verb_fragment = (
+            pos_tag.startswith("vn")
+            and jieba_direct_score < 0.14
+            and pageview_score < 0.06
+            and source_hits <= 4
+        )
+        weak_function_prefix_fragment = (
+            pos_tag.startswith(("d", "p", "c"))
+            and jieba_direct_score < 0.04
+            and pageview_score < 0.04
+            and source_hits <= 2
+        )
+        has_strong_wiki_signal = (
+            (
+                text in (wiki_augmented_terms or set())
+                and (pageview_score >= 0.08 or source_hits >= 5)
+            )
+            or (text in wiki_titles and pageview_score >= 0.08)
+        )
+        if (
+            (usage_score >= 0.32 and not weak_nominal_verb_fragment)
+            or jieba_direct_score >= 0.18
+            or pageview_score >= 0.08
+            or source_hits >= 5
+            or has_strong_wiki_signal
+        ):
+            continue
+
+        very_low_signal_fragment = (
+            usage_score < 0.14
+            and jieba_direct_score < 0.06
+            and pageview_score < 0.025
+            and source_hits <= 2
+            and not _is_conversational_pos(pos_tag)
+        )
+        if not (
+            weak_nominal_verb_fragment
+            or weak_function_prefix_fragment
+            or very_low_signal_fragment
+        ):
+            continue
+
+        cap = 480 if text_len <= 2 else 540
+        if source_hits >= 3:
+            cap += 20
+        if weight > cap:
+            mapping[key] = cap
+            stats[f"{stats_prefix}_low_independent_prefix_fragments_capped"] += 1
+
+    return stats
+
+
 def _cap_low_signal_reduplicated_term_weights(
     mapping: Dict[Tuple[str, str], int],
     source_hits_map: Dict[str, int],
@@ -4130,6 +4270,13 @@ def _is_short_everyday_term_candidate(
         return char_score >= 0.40 or bounded_usage >= 0.10 or bounded_jieba >= 0.10
 
     if pos_tag.startswith(("v", "a")):
+        if (
+            pos_tag.startswith("vn")
+            and bounded_jieba < 0.12
+            and bounded_pageviews < 0.04
+            and source_hits <= 3
+        ):
+            return False
         return (
             bounded_usage >= 0.12
             or bounded_jieba >= 0.12
@@ -6838,6 +6985,18 @@ def _compute_cedict_daily_semantic_bonus(text: str, defs: str) -> int:
         "state",
         "period",
         "location",
+        "part",
+        "portion",
+        "piece",
+        "section",
+        "component",
+        "ingredient",
+        "constituent",
+        "suitable",
+        "fitting",
+        "appropriate",
+        "proper",
+        "apt",
     )
     function_clues = (
         "due to",
@@ -6863,16 +7022,23 @@ def _compute_cedict_daily_semantic_bonus(text: str, defs: str) -> int:
         "place name",
     )
 
+    def has_clue(sense: str, clue: str) -> bool:
+        clue = clue.strip().lower()
+        if not clue:
+            return False
+        # Avoid false positives such as matching "state" inside "statement".
+        return re.search(rf"(?<![a-z]){re.escape(clue)}(?![a-z])", sense) is not None
+
     for sense in senses:
         if sense.startswith(("variant of ", "old variant of ", "see also ")):
             variant_senses += 1
-        if any(clue in sense for clue in place_clues):
+        if any(has_clue(sense, clue) for clue in place_clues):
             place_senses += 1
-        if any(clue in sense for clue in comparison_clues):
+        if any(has_clue(sense, clue) for clue in comparison_clues):
             comparison_senses += 1
-        if any(clue in sense for clue in daily_abstract_clues):
+        if any(has_clue(sense, clue) for clue in daily_abstract_clues):
             daily_abstract_senses += 1
-        if any(clue in sense for clue in function_clues):
+        if any(has_clue(sense, clue) for clue in function_clues):
             function_senses += 1
 
     if variant_senses == total_senses or place_senses * 2 >= total_senses:
@@ -9404,7 +9570,11 @@ def _build_from_unihan_only(
         )
         stats.update(normalize_stats)
     if simp_to_trad_char_map:
-        tc, normalize_stats = _normalize_tc_mapping_with_char_map(tc, simp_to_trad_char_map)
+        tc, normalize_stats = _normalize_tc_mapping_with_char_map(
+            tc,
+            simp_to_trad_char_map,
+            trad_to_simp_char_map,
+        )
         stats.update(normalize_stats)
 
     sc, sc_script_stats = _filter_sc_mapping_with_script_hints(sc, sc_chars, tc_chars)
@@ -9552,6 +9722,45 @@ def _build_char_variant_hints(
     return trad_to_simp, simp_to_trad, sc_chars, tc_chars
 
 
+def _build_tc_shared_identity_chars(
+    tc_to_sc_map: Dict[str, Set[str]],
+    opencc_entries: List[Tuple[str, str]],
+    min_identity_count: int = 20,
+) -> Set[str]:
+    """Find simplified-looking chars that are also common in TC text.
+
+    Unihan exposes pairs such as 閤/合, 麵/面, 製/制 and 齣/出 as variants.
+    They are useful for SC normalization, but forcing the simplified-looking
+    member to the rare traditional variant globally breaks ordinary TC words
+    such as 合適, 同意, 反向代理 and 台州.  OpenCC identity alignments provide a
+    broad signal for chars that should remain legal in TC output.
+    """
+    identity_counts: Dict[str, int] = {}
+
+    def add_pair(tc_word: str, sc_word: str) -> None:
+        if len(tc_word) != len(sc_word):
+            return
+        for tc_ch, sc_ch in zip(tc_word, sc_word):
+            if not CJK_FULL_RE.fullmatch(tc_ch):
+                continue
+            if not CJK_FULL_RE.fullmatch(sc_ch):
+                continue
+            if tc_ch == sc_ch:
+                identity_counts[sc_ch] = identity_counts.get(sc_ch, 0) + 1
+
+    for sc_word, tc_word in opencc_entries:
+        add_pair(tc_word, sc_word)
+    for tc_word, sc_words in tc_to_sc_map.items():
+        for sc_word in sc_words:
+            add_pair(tc_word, sc_word)
+
+    return {
+        ch
+        for ch, count in identity_counts.items()
+        if count >= min_identity_count
+    }
+
+
 def _apply_explicit_script_pair(
     trad_ch: str,
     simp_ch: str,
@@ -9559,6 +9768,7 @@ def _apply_explicit_script_pair(
     simp_to_trad_char_map: Dict[str, str],
     sc_chars: Set[str],
     tc_chars: Set[str],
+    tc_shared_identity_chars: Set[str] | None = None,
 ) -> None:
     if (
         trad_ch == simp_ch
@@ -9587,6 +9797,20 @@ def _apply_explicit_script_pair(
             tc_chars.add(simp_ch)
         else:
             tc_chars.discard(simp_ch)
+        return
+
+    if tc_shared_identity_chars and simp_ch in tc_shared_identity_chars:
+        # Keep SC cleanup for the traditional variant, but do not globally
+        # rewrite the shared form away from TC output.
+        trad_to_simp_char_map[trad_ch] = simp_ch
+        simp_to_trad_char_map.pop(simp_ch, None)
+        trad_to_simp_char_map.pop(simp_ch, None)
+        simp_to_trad_char_map.pop(trad_ch, None)
+
+        sc_chars.add(simp_ch)
+        sc_chars.discard(trad_ch)
+        tc_chars.add(trad_ch)
+        tc_chars.add(simp_ch)
         return
 
     # Treat explicit Unihan/OpenCC single-character variant relations as
@@ -9688,21 +9912,32 @@ def _filter_sc_mapping_with_script_hints(
 def _normalize_tc_mapping_with_char_map(
     mapping: Dict[Tuple[str, str], int],
     simp_to_trad_char_map: Dict[str, str],
+    trad_to_simp_char_map: Dict[str, str] | None = None,
 ) -> Tuple[Dict[Tuple[str, str], int], Dict[str, int]]:
+    trad_to_simp_char_map = trad_to_simp_char_map or {}
     if not simp_to_trad_char_map:
         return mapping, {
             "tc_char_normalized_converted_entries": 0,
             "tc_char_normalized_total_entries": len(mapping),
+            "tc_char_normalized_blocked_reverse_entries": 0,
         }
 
     normalized: Dict[Tuple[str, str], int] = {}
     converted_entries = 0
+    blocked_reverse_entries = 0
 
     for (pinyin, text), weight in mapping.items():
         converted_chars: List[str] = []
         changed = False
         for ch in text:
             replacement = simp_to_trad_char_map.get(ch, ch)
+            # Guardrail symmetric to SC normalization: do not rewrite a known
+            # traditional form into another simplified/variant form. Noisy
+            # phrase-level hints can otherwise turn exact TC entries such as
+            # 合適 into a mixed-script/non-preferred form.
+            if replacement != ch and ch in trad_to_simp_char_map:
+                replacement = ch
+                blocked_reverse_entries += 1
             if replacement != ch:
                 changed = True
             converted_chars.append(replacement)
@@ -9718,6 +9953,7 @@ def _normalize_tc_mapping_with_char_map(
     stats = {
         "tc_char_normalized_converted_entries": converted_entries,
         "tc_char_normalized_total_entries": len(normalized),
+        "tc_char_normalized_blocked_reverse_entries": blocked_reverse_entries,
     }
     return normalized, stats
 
@@ -13374,6 +13610,10 @@ def _write_dict(
             )
         if not output_pinyin:
             continue
+        output_pinyin = output_pinyin.replace("\ufeff", "").strip()
+        text = text.replace("\ufeff", "").strip()
+        if not output_pinyin or not text:
+            continue
         key = (output_pinyin, text)
         output_rows[key] = max(output_rows.get(key, 0), weight)
         if should_emit_compact_apostrophe_alias(output_pinyin, text):
@@ -15073,6 +15313,10 @@ def main() -> int:
             sc_script_chars,
             tc_script_chars,
         ) = _build_char_variant_hints(tc_to_sc_map, opencc_entries)
+        tc_shared_identity_chars = _build_tc_shared_identity_chars(
+            tc_to_sc_map,
+            opencc_entries,
+        )
         unihan_simplified_variant_map = _load_unihan_simplified_variant_map(unihan_payload)
         for trad_ch, simp_ch in unihan_simplified_variant_map.items():
             _apply_explicit_script_pair(
@@ -15082,6 +15326,7 @@ def main() -> int:
                 simp_to_trad_char_map,
                 sc_script_chars,
                 tc_script_chars,
+                tc_shared_identity_chars,
             )
         unihan_traditional_variant_map = _load_unihan_traditional_variant_map(unihan_payload)
         for simp_ch, trad_ch in unihan_traditional_variant_map.items():
@@ -15092,6 +15337,7 @@ def main() -> int:
                 simp_to_trad_char_map,
                 sc_script_chars,
                 tc_script_chars,
+                tc_shared_identity_chars,
             )
         sc_rescore_stats = _rescore_mapping_with_signals(
             sc_map,
@@ -15358,7 +15604,9 @@ def main() -> int:
             sc_map, sc_script_chars, tc_script_chars
         )
         tc_map, tc_char_normalize_stats = _normalize_tc_mapping_with_char_map(
-            tc_map, simp_to_trad_char_map
+            tc_map,
+            simp_to_trad_char_map,
+            trad_to_simp_char_map,
         )
         tc_map, tc_backfill_stats = _backfill_tc_mapping_from_sc_with_char_map(
             sc_map, tc_map, simp_to_trad_char_map
@@ -15559,6 +15807,10 @@ def main() -> int:
             sc_script_chars,
             tc_script_chars,
         ) = _build_char_variant_hints(opencc_tc_to_sc_map, opencc_entries_for_hints)
+        tc_shared_identity_chars = _build_tc_shared_identity_chars(
+            opencc_tc_to_sc_map,
+            opencc_entries_for_hints,
+        )
         unihan_simplified_variant_map = _load_unihan_simplified_variant_map(unihan_payload)
         for trad_ch, simp_ch in unihan_simplified_variant_map.items():
             _apply_explicit_script_pair(
@@ -15568,6 +15820,7 @@ def main() -> int:
                 simp_to_trad_char_map,
                 sc_script_chars,
                 tc_script_chars,
+                tc_shared_identity_chars,
             )
         unihan_traditional_variant_map = _load_unihan_traditional_variant_map(unihan_payload)
         for simp_ch, trad_ch in unihan_traditional_variant_map.items():
@@ -15578,6 +15831,7 @@ def main() -> int:
                 simp_to_trad_char_map,
                 sc_script_chars,
                 tc_script_chars,
+                tc_shared_identity_chars,
             )
         sc_map, sc_char_normalize_stats = _normalize_sc_mapping_with_char_map(
             sc_map, trad_to_simp_char_map, simp_to_trad_char_map
@@ -15586,7 +15840,9 @@ def main() -> int:
             sc_map, sc_script_chars, tc_script_chars
         )
         tc_map, tc_char_normalize_stats = _normalize_tc_mapping_with_char_map(
-            tc_map, simp_to_trad_char_map
+            tc_map,
+            simp_to_trad_char_map,
+            trad_to_simp_char_map,
         )
         tc_map, tc_script_filter_stats = _filter_tc_mapping_with_script_hints(
             tc_map, sc_script_chars, tc_script_chars
@@ -15619,6 +15875,10 @@ def main() -> int:
             sc_script_chars,
             tc_script_chars,
         ) = _build_char_variant_hints(opencc_tc_to_sc_map, opencc_entries)
+        tc_shared_identity_chars = _build_tc_shared_identity_chars(
+            opencc_tc_to_sc_map,
+            opencc_entries,
+        )
         unihan_simplified_variant_map = _load_unihan_simplified_variant_map(unihan_payload)
         for trad_ch, simp_ch in unihan_simplified_variant_map.items():
             _apply_explicit_script_pair(
@@ -15628,6 +15888,7 @@ def main() -> int:
                 simp_to_trad_char_map,
                 sc_script_chars,
                 tc_script_chars,
+                tc_shared_identity_chars,
             )
         unihan_traditional_variant_map = _load_unihan_traditional_variant_map(unihan_payload)
         for simp_ch, trad_ch in unihan_traditional_variant_map.items():
@@ -15638,6 +15899,7 @@ def main() -> int:
                 simp_to_trad_char_map,
                 sc_script_chars,
                 tc_script_chars,
+                tc_shared_identity_chars,
             )
         overrides: Dict[str, str] = {}
         if args.pinyin_overrides:
@@ -16383,6 +16645,32 @@ def main() -> int:
     )
     stats.update(sc_low_signal_short_cap_stats)
     stats.update(tc_low_signal_short_cap_stats)
+    sc_low_independent_prefix_cap_stats = _cap_low_independent_prefix_fragment_weights(
+        sc_map,
+        usage_score_map,
+        source_hits_map,
+        pageviews_signal_map,
+        jieba_direct_signal_map,
+        jieba_pos_map,
+        wiki_titles,
+        sc_augmented_terms,
+        curated_daily_sc_terms | curated_daily_supplement_sc_terms,
+        "sc",
+    )
+    tc_low_independent_prefix_cap_stats = _cap_low_independent_prefix_fragment_weights(
+        tc_map,
+        tc_usage_score_map,
+        tc_source_hits_map,
+        tc_pageviews_signal_map,
+        tc_jieba_direct_signal_map,
+        tc_jieba_pos_map,
+        wiki_titles,
+        tc_augmented_terms,
+        curated_daily_tc_terms | curated_daily_supplement_tc_terms,
+        "tc",
+    )
+    stats.update(sc_low_independent_prefix_cap_stats)
+    stats.update(tc_low_independent_prefix_cap_stats)
     sc_low_signal_redup_cap_stats = _cap_low_signal_reduplicated_term_weights(
         sc_map,
         source_hits_map,
@@ -16401,6 +16689,33 @@ def main() -> int:
     )
     stats.update(sc_low_signal_redup_cap_stats)
     stats.update(tc_low_signal_redup_cap_stats)
+
+    # Snapshot restore and late augmenters can reintroduce stale rows that were
+    # valid in a previous build but are no longer script-compatible after the
+    # current SC/TC normalization rules. Run a final script pass so generated
+    # TC output does not keep obsolete simplified variants (and vice versa).
+    sc_map, sc_final_script_filter_stats = _filter_sc_mapping_with_script_hints(
+        sc_map,
+        sc_script_chars,
+        tc_script_chars,
+    )
+    tc_map, tc_final_script_filter_stats = _filter_tc_mapping_with_script_hints(
+        tc_map,
+        sc_script_chars,
+        tc_script_chars,
+    )
+    stats.update(
+        {
+            f"final_{key}": value
+            for key, value in sc_final_script_filter_stats.items()
+        }
+    )
+    stats.update(
+        {
+            f"final_{key}": value
+            for key, value in tc_final_script_filter_stats.items()
+        }
+    )
     sc_query_path_priors: Dict[Tuple[str, str], int] = {}
     tc_query_path_priors: Dict[Tuple[str, str], int] = {}
     if output_query_path_sc is not None:
