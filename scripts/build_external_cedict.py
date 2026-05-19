@@ -6954,6 +6954,7 @@ def _compute_cedict_daily_semantic_bonus(text: str, defs: str) -> int:
     place_senses = 0
     comparison_senses = 0
     daily_abstract_senses = 0
+    daily_concrete_senses = 0
     function_senses = 0
 
     comparison_clues = (
@@ -6998,6 +6999,42 @@ def _compute_cedict_daily_semantic_bonus(text: str, defs: str) -> int:
         "proper",
         "apt",
     )
+    daily_concrete_clues = (
+        "clothes",
+        "clothing",
+        "garment",
+        "shirt",
+        "coat",
+        "jacket",
+        "pants",
+        "trousers",
+        "shoes",
+        "socks",
+        "hat",
+        "food",
+        "meal",
+        "rice",
+        "vegetable",
+        "meat",
+        "water",
+        "tea",
+        "coffee",
+        "milk",
+        "cup",
+        "bowl",
+        "plate",
+        "chopsticks",
+        "table",
+        "chair",
+        "bed",
+        "door",
+        "window",
+        "road",
+        "street",
+        "car",
+        "phone",
+        "computer",
+    )
     function_clues = (
         "due to",
         "owing to",
@@ -7038,6 +7075,8 @@ def _compute_cedict_daily_semantic_bonus(text: str, defs: str) -> int:
             comparison_senses += 1
         if any(has_clue(sense, clue) for clue in daily_abstract_clues):
             daily_abstract_senses += 1
+        if any(has_clue(sense, clue) for clue in daily_concrete_clues):
+            daily_concrete_senses += 1
         if any(has_clue(sense, clue) for clue in function_clues):
             function_senses += 1
 
@@ -7048,6 +7087,8 @@ def _compute_cedict_daily_semantic_bonus(text: str, defs: str) -> int:
         return 260 if text_len == 2 else 180
     if function_senses > 0:
         return 230 if text_len == 2 else 160
+    if daily_concrete_senses > 0:
+        return 240 if text_len == 2 else 150
     if daily_abstract_senses > 0:
         return 220 if text_len == 2 else 140
 

@@ -590,19 +590,92 @@
 还要	還要	0.88
 还行	還行	0.90
 还不赖	還不賴	0.88
-买过	買過	0.84
-吃过	吃過	0.88
-玩过	玩過	0.84
-想过	想過	0.86
-干过	幹過	0.82
-做过	做過	0.84
-开过	開過	0.82
-用过	用過	0.86
-见过	見過	0.90
-看过	看過	0.88
-听过	聽過	0.86
-去过	去過	0.90
-来过	來過	0.84
+买过	買過	0.91	maiguo
+吃过	吃過	0.88	chiguo
+玩过	玩過	0.84	wanguo
+想过	想過	0.86	xiangguo
+干过	幹過	0.82	ganguo
+做过	做過	0.84	zuoguo
+开过	開過	0.82	kaiguo
+用过	用過	0.86	yongguo
+见过	見過	0.90	jianguo
+看过	看過	0.88	kanguo
+听过	聽過	0.86	tingguo
+去过	去過	0.90	quguo
+来过	來過	0.84	laiguo
+写过	寫過	0.88	xieguo
+问过	問過	0.88	wenguo
+提过	提過	0.91	tiguo
+发过	發過	0.88	faguo
+查过	查過	0.88	chaguo
+改过	改過	0.88	gaiguo
+交过	交過	0.88	jiaoguo
+付过	付過	0.88	fuguo
+卖过	賣過	0.86	maiguo
+读过	讀過	0.88	duguo
+学过	學過	0.88	xueguo
+喝过	喝過	0.88	heguo
+走过	走過	0.88	zouguo
+跑过	跑過	0.88	paoguo
+打过	打過	0.88	daguo
+关过	關過	0.86	guanguo
+修过	修過	0.86	xiuguo
+装过	裝過	0.86	zhuangguo
+拆过	拆過	0.86	chaiguo
+换过	換過	0.88	huanguo
+加过	加過	0.88	jiaguo
+减过	減過	0.86	jianguo
+移过	移過	0.86	yiguo
+调过	調過	0.86	tiaoguo
+转过	轉過	0.86	zhuanguo
+切过	切過	0.86	qieguo
+回过	回過	0.86	huiguo
+拿过	拿過	0.88	naguo
+找过	找過	0.88	zhaoguo
+到过	到過	0.88	daoguo
+选过	選過	0.86	xuanguo
+填过	填過	0.86	tianguo
+签过	簽過	0.86	qianguo
+定过	定過	0.86	dingguo
+订过	訂過	0.86	dingguo
+放过	放過	0.88	fangguo
+讲过	講過	0.88	jiangguo
+编过	編過	0.86	bianguo
+唱过	唱過	0.86	changguo
+跳过	跳過	0.88	tiaoguo
+考过	考過	0.86	kaoguo
+爱过	愛過	0.86	aiguo
+变过	變過	0.86	bianguo
+比过	比過	0.86	biguo
+输过	輸過	0.86	shuguo
+赢过	贏過	0.86	yingguo
+住过	住過	0.88	zhuguo
+坐过	坐過	0.86	zuoguo
+睡过	睡過	0.86	shuiguo
+洗过	洗過	0.86	xiguo
+拍过	拍過	0.86	paiguo
+录过	錄過	0.86	luguo
+存过	存過	0.86	cunguo
+删过	刪過	0.86	shanguo
+传过	傳過	0.86	chuanguo
+收过	收過	0.86	shouguo
+寄过	寄過	0.86	jiguo
+带过	帶過	0.86	daiguo
+还过	還過	0.86	huanguo
+帮过	幫過	0.86	bangguo
+教过	教過	0.86	jiaoguo
+练过	練過	0.86	lianguo
+等过	等過	0.86	dengguo
+聊过	聊過	0.86	liaoguo
+谈过	談過	0.86	tanguo
+碰过	碰過	0.86	pengguo
+刷过	刷過	0.86	shuaguo
+扫过	掃過	0.86	saoguo
+排过	排過	0.86	paiguo
+投过	投過	0.86	touguo
+约过	約過	0.86	yueguo
+哭过	哭過	0.86	kuguo
+笑过	笑過	0.86	xiaoguo
 这就	這就	0.84
 这就是	這就是	0.82
 这就是说	這就是說	0.78
@@ -1232,6 +1305,8 @@
 我要疯了	我要瘋了	0.92	woyaofengle
 疯了	瘋了	0.90	fengle
 小问题	小問題	0.90	xiaowenti
+小事	小事	0.92	xiaoshi
+消失	消失	0.90	xiaoshi
 搞不定	搞不定	0.92	gaobuding
 新旧	新舊	0.88	xinjiu
 你把	你把	0.88	niba
@@ -1245,6 +1320,25 @@
 有什么	有什麼	0.90	youshenme
 我可以	我可以	0.90	wokeyi
 改到	改到	0.88	gaidao
+加到	加到	0.90	jiadao
+减到	減到	0.88	jiandao
+移到	移到	0.90	yidao
+调到	調到	0.88	diaodao
+转到	轉到	0.88	zhuandao
+换到	換到	0.88	huandao
+切到	切到	0.88	qiedao
+回到	回到	0.90	huidao
+拿到	拿到	0.90	nadao
+用到	用到	0.90	yongdao
+说到	說到	0.90	shuodao
+听到	聽到	0.90	tingdao
+做到	做到	0.90	zuodao
+找到	找到	0.90	zhaodao
+查到	查到	0.88	chadao
+提到	提到	0.90	tidao
+发到	發到	0.88	fadao
+升到	升到	0.88	shengdao
+降到	降到	0.88	jiangdao
 编译期	編譯期	0.90	bianyiqi
 运行期	運行期	0.90	yunxingqi
 不兼容	不兼容	0.90
@@ -2688,6 +2782,36 @@
 人工智能	人工智能	0.94	rengongzhineng
 解决问题	解決問題	0.94	jiejuewenti
 多小时	多小時	0.91	duoxiaoshi
+半小时	半小時	0.91	banxiaoshi
+半个小时	半個小時	0.91	bangexiaoshi
+几小时	幾小時	0.90	jixiaoshi
+几个小时	幾個小時	0.90	jigexiaoshi
+零小时	零小時	0.82	lingxiaoshi
+一小时	一小時	0.92	yixiaoshi
+一个小时	一個小時	0.92	yigexiaoshi
+两小时	兩小時	0.92	liangxiaoshi
+两个小时	兩個小時	0.92	lianggexiaoshi
+二小时	二小時	0.90	erxiaoshi
+三小时	三小時	0.91	sanxiaoshi
+三个小时	三個小時	0.91	sangexiaoshi
+四小时	四小時	0.91	sixiaoshi
+四个小时	四個小時	0.91	sigexiaoshi
+五小时	五小時	0.91	wuxiaoshi
+五个小时	五個小時	0.91	wugexiaoshi
+六小时	六小時	0.91	liuxiaoshi
+六个小时	六個小時	0.91	liugexiaoshi
+七小时	七小時	0.91	qixiaoshi
+七个小时	七個小時	0.91	qigexiaoshi
+八小时	八小時	0.91	baxiaoshi
+八个小时	八個小時	0.91	bagexiaoshi
+九小时	九小時	0.91	jiuxiaoshi
+九个小时	九個小時	0.91	jiugexiaoshi
+十小时	十小時	0.91	shixiaoshi
+十个小时	十個小時	0.91	shigexiaoshi
+十一小时	十一小時	0.90	shiyixiaoshi
+十一个小时	十一個小時	0.90	shiyigexiaoshi
+十二小时	十二小時	0.90	shi'erxiaoshi
+十二个小时	十二個小時	0.90	shi'ergexiaoshi
 工作了	工作了	0.90	gongzuole
 自己的	自己的	0.90	zijide
 学业	學業	0.92	xueye
@@ -3697,7 +3821,6 @@
 已订	已訂	0.90	yiding
 已签	已簽	0.90	yiqian
 已放	已放	0.90	yifang
-已付	已付	0.90	yifu
 已买	已買	0.90	yimai
 已卖	已賣	0.90	yimai
 已给	已給	0.90	yigei

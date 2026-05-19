@@ -15,6 +15,8 @@
 每秒	每秒	0.72	meimiao
 每分	每分	0.72	meifen
 每刻	每刻	0.72	meike
+小时	小時	0.24	xiaoshi
+已付	已付	0.00	yifu
 # low-priority everyday number words
 十一	十一	0.82
 十二	十二	0.82
@@ -212,6 +214,8 @@
 模板	模板	0.90	moban
 密钥	密鑰	0.90	miyue
 压过	壓過	0.90	yaguo
+借过	借過	0.20	jieguo
+截过	截過	0.20	jieguo
 短词	短詞	0.90	duanci
 词库词	詞庫詞	0.90	cikuci
 用户词	用戶詞	0.90	yonghuci
