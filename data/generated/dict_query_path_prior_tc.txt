@@ -903,7 +903,7 @@ bingfajincheng	併發|進程	486
 bingfakongzhi	並發|控制	354
 bingfakongzhi	併發|控制	487
 bingfakongzhijizhi	並發|控制|機制	436
-bingfakongzhijizhi	並發控製|機製	396
+bingfakongzhijizhi	並發控製|機製	421
 bingfamoni	併發|模擬	483
 bingfamoxing	併發|模型	486
 bingfangyishi	病房|軼事	454
@@ -1879,7 +1879,7 @@ chixujichengxitong	持續|集成|系統	468
 chixushijian	持續|時間	463
 chiyibuding	遲疑|不定	483
 chiyiguanwang	遲疑|觀望	443
-chizhafengyun	叱吒|風雲	486
+chizhafengyun	叱吒|風雲	507
 chizhouzhuanqu	池州|專區	454
 chongcaoanjisuan	蟲草|氨基酸	423
 chongcaoqicanjiaonang	蟲草|芪參膠囊	441
@@ -5958,8 +5958,8 @@ huanbaozhanshi	環保|戰士	512
 huanbaozhuyi	環保|主義	473
 huanchongrongye	緩衝|溶液	497
 huancuncelve	緩存|策略	457
-huancunjizhi	緩存|機制	403
-huancunjizhi	緩存|機製	392
+huancunjizhi	緩存|機制	421
+huancunjizhi	緩存|機製	416
 huancunkuangjia	緩存|框架	446
 huancunwenjian	緩存|文件	491
 huancunxitong	緩存|系統	478
@@ -6211,7 +6211,7 @@ huichunruyijiaonang	回春|如意|膠囊	458
 huicuifenxi	薈萃|分析	436
 huidaoweilai	回到|未來	515
 huidiaofangfa	回調|方法	492
-huidiaojizhi	回調|機制	434
+huidiaojizhi	回調|機制	436
 huidiaomoshi	回調|模式	489
 huifaxingyoujiwu	揮發性|有機物	483
 huifuchengxu	恢復|程序	486
@@ -6978,7 +6978,7 @@ jidingzhihechengmei	幾丁質|合成酶	483
 jidiqiannao	基底|前腦	449
 jidishenjingjie	基底|神經節	464
 jidixibaoai	基底|細胞癌	470
-jidongcheliang	機動|車輛	428
+jidongcheliang	機動|車輛	447
 jiduanfenzi	極端|分子	469
 jiduanganzao	極端|乾燥	483
 jiduanhuanjing	極端|環境	483
@@ -7171,8 +7171,8 @@ jifuluosi	基輔|羅斯	384
 jifuluosijianzhu	基輔|羅斯|建築	466
 jifupaizhao	基輔|牌照	416
 jifupaizhaoxiangji	基輔|牌照|相機	498
-jifuyaosai	基輔|要塞	454
-jigexiaoshi	幾個|小時	520
+jifuyaosai	基輔|要塞	457
+jigexiaoshi	幾個|小時	470
 jigongxuexiao	技工|學校	467
 jiguangchangpian	激光|唱片	467
 jiguangerjiguan	激光|二極管	486
@@ -7203,7 +7203,7 @@ jihuatidulengque	極化|梯度|冷卻	451
 jihuiganran	機會|感染	483
 jihuikongjian	集會|空間	454
 jihuizhuyi	機會|主義	467
-jihumeiyou	幾乎|沒有	520
+jihumeiyou	幾乎|沒有	470
 jihuohanshu	激活|函數	487
 jihuoyinzi	激活|因子	472
 jijianbingbian	肌腱|病變	412
@@ -7226,7 +7226,7 @@ jijiuhuqi	急救|呼氣	483
 jijiuyiliao	急救|醫療	483
 jijiuzhongxin	急救|中心	487
 jijiyoushengxue	積極|優生學	456
-jikeyichi	即刻|義齒	459
+jikeyichi	即刻|義齒	461
 jikeyouxi	飢渴|遊戲	474
 jiledisike	極樂|迪斯科	512
 jileshijie	極樂|世界	497
@@ -7633,7 +7633,7 @@ jishicundang	即時|存檔	499
 jishitongxun	即時|通訊	436
 jishixuanran	即時|渲染	498
 jishizhanlve	即時|戰略	514
-jishizhanlveyouxi	即時|戰略|遊戲	450
+jishizhanlveyouxi	即時|戰略|遊戲	459
 jishizhanshu	即時|戰術	425
 jishizhanshuyouxi	即時|戰術|遊戲	507
 jishizhanzheng	即時|戰爭	512
@@ -8096,7 +8096,7 @@ juzhishuzhi	聚酯|樹脂	412
 juzhiyantan	舉止|言談	480
 juzhongzishi	聚眾|滋事	383
 juzhudengji	居住|登記	520
-juzhuzhengjifen	居住證|積分	490
+juzhuzhengjifen	居住證|積分	520
 kachemoni	卡車|模擬	509
 kafangfenbu	卡方|分佈	465
 kafangfenpei	卡方|分配	436
@@ -10568,8 +10568,8 @@ neicunjiance	內存|檢測	486
 neicunjiegou	內存|結構	487
 neicunjinggao	內存|警告	491
 neicunjisuan	內存|計算	487
-neicunjizhi	內存|機制	427
-neicunjizhi	內存|機製	415
+neicunjizhi	內存|機制	436
+neicunjizhi	內存|機製	436
 neicunkaobei	內存|拷貝	479
 neicunkongjian	內存|空間	490
 neicunmokuai	內存|模塊	486
@@ -12940,7 +12940,7 @@ shengwukeji	生物|科技	488
 shengwukongzhi	生物|控制	486
 shengwukongzhishouduan	生物|控制|手段	483
 shengwukuanghuajizhi	生物礦化|機制	436
-shengwukuanghuajizhi	生物礦化|機製	427
+shengwukuanghuajizhi	生物礦化|機製	436
 shengwukuanghuazuoyong	生物礦化|作用	483
 shengwuleiji	生物|累積	486
 shengwulixue	生物|力學	486
@@ -13380,8 +13380,8 @@ shijianguanliyouxi	時間|管理|遊戲	507
 shijianguolvqi	事件|過濾器	449
 shijianhanshu	時間|函數	487
 shijianjianting	事件|監聽	449
-shijianjizhi	事件|機制	402
-shijianjizhi	事件|機製	390
+shijianjizhi	事件|機制	420
+shijianjizhi	事件|機製	414
 shijiankongzhi	事件|控制	489
 shijianlanjie	事件|攔截	490
 shijianleixing	時間|類型	487
@@ -19701,7 +19701,7 @@ zhijianshumu	只見|樹木	481
 zhijianzhanzheng	指尖|戰爭	450
 zhijiaozhuanwan	直角|轉彎	383
 zhijiaozhuanwanjieti	直角|轉彎|階梯	465
-zhijiaozuobiao	直角|座標	467
+zhijiaozuobiao	直角|座標	474
 zhijiedanhongsu	直接|膽紅素	457
 zhijiedianli	直接|電離	417
 zhijiedianlilizi	直接|電離|粒子	499
