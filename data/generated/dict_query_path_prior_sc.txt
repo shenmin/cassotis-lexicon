@@ -1535,6 +1535,7 @@ chaojiliubianxing	超级|六边形	489
 chaojiliujiaoxing	超级|六角形	507
 chaojiluobinhan	超级|罗宾汉	459
 chaojimotuoche	超级|摩托车	471
+chaojipaopao	超级|跑跑	515
 chaojiqiangguo	超级|强国	425
 chaojiqianghuazi	超级|强化子	470
 chaojiqie	超级|企鹅	471
@@ -7211,7 +7212,7 @@ jifuluosi	基辅|罗斯	384
 jifuluosijianzhu	基辅|罗斯|建筑	466
 jifupaizhao	基辅|牌照	416
 jifupaizhaoxiangji	基辅|牌照|相机	498
-jifuyaosai	基辅|要塞	453
+jifuyaosai	基辅|要塞	456
 jigexiaoshi	几个|小时	520
 jigongxuexiao	技工|学校	467
 jiguangchangpian	激光|唱片	467
@@ -9005,8 +9006,8 @@ lianxuxuetangjiance	连续|血糖|监测	483
 lianzhanbuxiu	恋战|不休	510
 lianzhencha	立案|侦查	417
 liaochengzhuanqu	聊城|专区	468
-liaoliaokeshu	寥寥|可数	435
-liaoliaowuji	寥寥|无几	486
+liaoliaokeshu	寥寥|可数	411
+liaoliaowuji	寥寥|无几	462
 liaolimama	料理|妈妈	515
 liaoningchengda	辽宁|成大	427
 liaotianchengxu	聊天|程序	490
@@ -9991,7 +9992,7 @@ menzhenzhaohu	门诊|照护	420
 mianaogaibeiwo	棉袄改|被窝	455
 mianbaochaoren	面包|超人	437
 mianbaorenzhe	面包|忍者	394
-mianbaoshifu	面包|师傅	427
+mianbaoshifu	面包|师傅	424
 mianbaoxiedaohang	面包屑|导航	477
 mianbubiaoqing	面部|表情	486
 mianbuchuzhoushu	面部|除皱术	460
@@ -10950,10 +10951,12 @@ paohuoliantian	炮火|连天	479
 paokuyouxi	跑酷|游戏	487
 paomojingji	泡沫|经济	506
 paomoxibao	泡沫|细胞	486
-paopaofangkuai	泡泡|方块	491
+paopaodiandian	跑跑|颠颠	445
+paopaofangkuai	泡泡|方块	453
+paopaokadingche	跑跑|卡丁车	505
 paopaolonggeming	泡泡龙|革命	515
-paopaoxiongdi	泡泡|兄弟	491
-paopaozhanshi	泡泡|战士	507
+paopaoxiongdi	泡泡|兄弟	453
+paopaozhanshi	泡泡|战士	470
 paotengbengjieji	泡腾|崩解剂	420
 paowumiangezha	抛物面|格栅	467
 paoxiaoshanzhuang	咆哮|山庄	426
@@ -11035,7 +11038,6 @@ penqiangqiguantuochui	盆腔|器官|脱垂	483
 penqimotuo	喷气|摩托	502
 penshezhanshi	喷射|战士	499
 penwuganzao	喷雾|干燥	486
-pianduanzheseqi	片断|着色器	501
 piangaodiansuan	偏高|碘酸	408
 pianguangxianweijing	偏光|显微镜	434
 pianpianfengdu	翩翩|风度	385
@@ -11437,7 +11439,7 @@ qihoumoshi	气候|模式	486
 qihoumoxing	气候|模型	486
 qihoutiaozhan	气候|挑战	515
 qihuandaoshiji	奇幻岛|世纪	515
-qihuanpaopao	奇幻|泡泡	478
+qihuanpaopao	奇幻|泡泡	441
 qihuantonghua	奇幻|童话	372
 qihuantonghuachengbao	奇幻|童话|城堡	454
 qihuanxianjing	奇幻|仙境	443
@@ -12916,7 +12918,7 @@ shengqiaozhidajiaotang	圣乔治|大教堂	400
 shengqiaozhijiaotang	圣乔治|教堂	457
 shengqiaozhishengdian	圣乔治|圣殿	417
 shengqiaozhixiudaoyuan	圣乔治|修道院	403
-shengqixiangtong	声气|相通	444
+shengqixiangtong	声气|相通	436
 shengshihaoda	声势|浩大	497
 shengshitianxia	盛世|天下	507
 shengsicunwang	生死|存亡	520
@@ -14376,7 +14378,7 @@ suoqichezhan	索契|车站	462
 suoranwuwei	索然|无味	478
 suoshidianzi	琐事|电子	425
 suoshidianziyouxi	琐事|电子|游戏	507
-suoshudanwei	所属|单位	437
+suoshudanwei	所属|单位	416
 suosuanzhimei	羧酸|酯酶	440
 suoxiangpimi	所向|披靡	448
 suoxiangwudi	所向|无敌	488
@@ -14542,6 +14544,7 @@ tansuanyinliao	碳酸|饮料	481
 tansuanyinpin	碳酸|饮品	428
 tansuoxianfeng	探索|先锋	515
 tantebuan	忐忑|不安	469
+tanwanchichi	贪玩|吃吃	515
 tanwanchiji	贪玩|吃鸡	515
 tanwantanchi	贪玩|贪吃	507
 tanwufuhua	贪污|腐化	489
@@ -14738,6 +14741,7 @@ tiaopidaodan	调皮|捣蛋	453
 tiaotaidongzuo	跳台|动作	417
 tiaotaidongzuoyouxi	跳台|动作|游戏	499
 tiaotaiyouxi	跳台|游戏	510
+tiaotiaomofashi	跳跳|魔法师	515
 tiaowenjizuzhi	条纹|肌组织	437
 tiaoyangouzao	挑檐|构造	383
 tiaozaoshichang	跳蚤|市场	471
@@ -15714,7 +15718,7 @@ wuduanwangyou	无端|网游	498
 wuebuzuo	无恶|不作	491
 wufangzachu	五方|杂处	406
 wufuzhiyinshi	无麸质|饮食	479
-wugengxiexie	五更|泄泻	428
+wugengxiexie	五更|泄泻	417
 wugexiaoshi	五个|小时	520
 wugongyaoshang	蜈蚣|咬伤	470
 wuguandaju	无关|大局	485
@@ -15988,7 +15992,7 @@ wuyishixinli	无意识|心理	486
 wuyonghuiyan	毋庸|讳言	464
 wuyuanwugu	无缘|无故	474
 wuyuemoli	五月|茉莉	503
-wuzangliufu	五脏|六腑	466
+wuzangliufu	五脏|六腑	441
 wuzhilizi	物质|粒子	501
 wuzhishijie	物质|世界	515
 wuzhiwenming	物质|文明	501
@@ -17248,7 +17252,7 @@ xuanzezhishu	选择|指数	487
 xuanzhuanchelun	旋转|车轮	490
 xuanzhuanjijian	旋转|肌腱	379
 xuanzhuanjijiansilie	旋转|肌腱|撕裂	461
-xuanzhuanpaopao	旋转|泡泡	492
+xuanzhuanpaopao	旋转|泡泡	454
 xuanzhuanyinlv	旋转|音律	482
 xuchangzhuanqu	许昌|专区	461
 xuduguangyin	虚度|光阴	430
@@ -19492,7 +19496,7 @@ zhanchangnvwushen	战场|女武神	468
 zhanchangshuangmawei	战场|双马尾	463
 zhancheshijie	战车|世界	515
 zhandefengyunxilie	战地风云|系列	509
-zhandianlianlian	站点|连连	515
+zhandianlianlian	站点|连连	512
 zhandimianji	占地|面积	467
 zhandoubingzhong	战斗|兵种	490
 zhandouhuilu	战斗|回路	515
@@ -20896,6 +20900,7 @@ zongpaizhuyi	宗派|主义	433
 zongsechenai	棕色|尘埃	478
 zongsezhifang	棕色|脂肪	401
 zongsezhifangzuzhi	棕色|脂肪|组织	483
+zongshangsuoshu	综上|所述	484
 zongtiguihua	总体|规划	467
 zongtimubiao	总体|目标	439
 zongtongbangongting	总统|办公厅	461

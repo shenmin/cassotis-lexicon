@@ -1549,6 +1549,7 @@ chaojiliubianxing	超級|六邊形	484
 chaojiliujiaoxing	超級|六角形	507
 chaojiluobinhan	超級|羅賓漢	456
 chaojimotuoche	超級|摩托車	468
+chaojipaopao	超級|跑跑	512
 chaojiqiangguo	超級|強國	421
 chaojiqianghuazi	超級|強化子	467
 chaojiqie	超級|企鵝	468
@@ -1878,7 +1879,7 @@ chixujichengxitong	持續|集成|系統	468
 chixushijian	持續|時間	463
 chiyibuding	遲疑|不定	483
 chiyiguanwang	遲疑|觀望	443
-chizhafengyun	叱吒|風雲	507
+chizhafengyun	叱吒|風雲	486
 chizhouzhuanqu	池州|專區	454
 chongcaoanjisuan	蟲草|氨基酸	423
 chongcaoqicanjiaonang	蟲草|芪參膠囊	441
@@ -8964,8 +8965,8 @@ lianxuxuetang	連續|血糖	401
 lianxuxuetangjiance	連續|血糖|監測	483
 lianzhanbuxiu	戀戰|不休	503
 lianzhencha	立案|偵查	420
-liaoliaokeshu	寥寥|可數	433
-liaoliaowuji	寥寥|無幾	474
+liaoliaokeshu	寥寥|可數	408
+liaoliaowuji	寥寥|無幾	449
 liaolimama	料理|媽媽	512
 liaoningchengda	遼寧|成大	423
 liaoshenzhanyi	遼瀋|戰役	436
@@ -9952,8 +9953,8 @@ menzhenzhaohu	門診|照護	417
 mianaogaibeiwo	棉襖改|被窩	436
 mianbaochaoren	麵包|超人	434
 mianbaorenzhe	麵包|忍者	456
-mianbaoshifu	麪包|師傅	459
-mianbaoshifu	麵包|師傅	408
+mianbaoshifu	麪包|師傅	457
+mianbaoshifu	麵包|師傅	405
 mianbaoxiedaohang	麪包屑|導航	470
 mianbubiaoqing	面部|表情	486
 mianbuchuzhoushu	面部|除皺術	457
@@ -10900,10 +10901,11 @@ paohuoliantian	炮火|連天	482
 paokuyouxi	跑酷|遊戲	484
 paomojingji	泡沫|經濟	503
 paomoxibao	泡沫|細胞	483
-paopaofangkuai	泡泡|方塊	488
+paopaofangkuai	泡泡|方塊	450
+paopaokadingche	跑跑|卡丁車	502
 paopaolonggeming	泡泡龍|革命	512
-paopaoxiongdi	泡泡|兄弟	491
-paopaozhanshi	泡泡|戰士	501
+paopaoxiongdi	泡泡|兄弟	453
+paopaozhanshi	泡泡|戰士	464
 paotengbengjieji	泡騰|崩解劑	417
 paowumiangezha	拋物面|格柵	465
 paoxiaoshanzhuang	咆哮|山莊	427
@@ -11392,7 +11394,7 @@ qihoumoshi	氣候|模式	486
 qihoumoxing	氣候|模型	486
 qihoutiaozhan	氣候|挑戰	512
 qihuandaoshiji	奇幻島|世紀	512
-qihuanpaopao	奇幻|泡泡	478
+qihuanpaopao	奇幻|泡泡	441
 qihuantonghua	奇幻|童話	372
 qihuantonghuachengbao	奇幻|童話|城堡	454
 qihuanxianjing	奇幻|仙境	443
@@ -12891,7 +12893,7 @@ shengqiaozhidajiaotang	聖喬治|大教堂	425
 shengqiaozhijiaotang	聖喬治|教堂	462
 shengqiaozhishengdian	聖喬治|聖殿	440
 shengqiaozhixiudaoyuan	聖喬治|修道院	428
-shengqixiangtong	聲氣|相通	440
+shengqixiangtong	聲氣|相通	432
 shengshihaoda	聲勢|浩大	485
 shengshitianxia	盛世|天下	505
 shengsicunwang	生死|存亡	520
@@ -14290,7 +14292,7 @@ suoqichezhan	索契|車站	458
 suoranwuwei	索然|無味	477
 suoshidianzi	瑣事|電子	425
 suoshidianziyouxi	瑣事|電子|遊戲	507
-suoshudanwei	所屬|單位	433
+suoshudanwei	所屬|單位	408
 suosuanzhimei	羧酸|酯酶	440
 suoxiangpimi	所向|披靡	448
 suoxiangpimi	所嚮|披靡	395
@@ -14650,6 +14652,7 @@ tiaopidaodan	調皮|搗蛋	451
 tiaotaidongzuo	跳臺|動作	417
 tiaotaidongzuoyouxi	跳臺|動作|遊戲	499
 tiaotaiyouxi	跳臺|遊戲	507
+tiaotiaomofashi	跳跳|魔法師	512
 tiaowenjizuzhi	條紋|肌組織	432
 tiaozaoshichang	跳蚤|市場	468
 tiaozhanchengxu	挑戰|程序	385
@@ -15868,7 +15871,7 @@ wuyincangbai	無垠|蒼白	483
 wuyishixinli	無意識|心理	486
 wuyuanwugu	無緣|無故	462
 wuyuemoli	五月|茉莉	504
-wuzangliufu	五臟|六腑	462
+wuzangliufu	五臟|六腑	437
 wuzhilizi	物質|粒子	501
 wuzhishijie	物質|世界	515
 wuzhiwenming	物質|文明	501
@@ -17110,7 +17113,7 @@ xuanzezhishu	選擇|指數	470
 xuanzhuanchelun	旋轉|車輪	486
 xuanzhuanjijian	旋轉|肌腱	379
 xuanzhuanjijiansilie	旋轉|肌腱|撕裂	461
-xuanzhuanpaopao	旋轉|泡泡	489
+xuanzhuanpaopao	旋轉|泡泡	451
 xuanzhuanyinlv	旋轉|音律	479
 xuchangzhuanqu	許昌|專區	458
 xuduguangyin	虛度|光陰	426
@@ -19303,7 +19306,7 @@ zhanchangshuangmawei	戰場|雙馬尾	464
 zhancheshijie	戰車|世界	512
 zhandefengyunxilie	戰地風云|系列	416
 zhandefengyunxilie	戰地風雲|系列	509
-zhandianlianlian	站點|連連	512
+zhandianlianlian	站點|連連	506
 zhandoubingzhong	戰鬥|兵種	487
 zhandouhuilu	戰鬥|迴路	512
 zhandourenwu	戰鬥|任務	520
@@ -20714,6 +20717,7 @@ zongpaizhuyi	宗派|主義	427
 zongsechenai	棕色|塵埃	475
 zongsezhifang	棕色|脂肪	401
 zongsezhifangzuzhi	棕色|脂肪|組織	483
+zongshangsuoshu	綜上|所述	484
 zongtiguihua	總體|規劃	463
 zongtimubiao	總體|目標	435
 zongtongbangongting	總統|辦公廳	458

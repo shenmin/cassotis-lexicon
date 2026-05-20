@@ -479,6 +479,8 @@
 就先这样吧	就先這樣吧	0.82
 看看	看看	0.82
 试试	試試	0.90
+谢谢	謝謝	0.96	xiexie
+呵呵	呵呵	0.90	hehe
 嘻嘻	嘻嘻	0.88
 就来	就來	0.84
 就会	就會	0.90
@@ -2232,6 +2234,27 @@
 每副	每副	0.90	meifu
 每一副	每一副	0.90	meiyifu
 一副	一副	0.90	yifu
+两副	兩副	0.88	liangfu
+三副	三副	0.87	sanfu
+四副	四副	0.87	sifu
+五副	五副	0.87	wufu
+六副	六副	0.86	liufu
+七副	七副	0.86	qifu
+八副	八副	0.86	bafu
+九副	九副	0.86	jiufu
+十副	十副	0.87	shifu
+几副	幾副	0.86	jifu
+每一幅	每一幅	0.90	meiyifu
+一幅	一幅	0.90	yifu
+两幅	兩幅	0.89	liangfu
+三幅	三幅	0.88	sanfu
+四幅	四幅	0.88	sifu
+五幅	五幅	0.88	wufu
+六幅	六幅	0.87	liufu
+七幅	七幅	0.87	qifu
+八幅	八幅	0.87	bafu
+九幅	九幅	0.87	jiufu
+十幅	十幅	0.88	shifu
 每一对	每一對	0.90	meiyidui
 每对	每對	0.90	meidui
 每一双	每一雙	0.90	meiyishuang
@@ -3842,6 +3865,26 @@
 已选	已選	0.88	yixuan
 已完成	已完成	0.90	yiwancheng
 已确认	已確認	0.90	yiqueren
+# Everyday wording and short writing phrases.
+给出	給出	0.92	geichu
+所述	所述	0.88	suoshu
+综上	綜上	0.88	zongshang
+想通	想通	0.88	xiangtong
+# Common reduplicated verbs. Lower scores are used for homophones of very common words.
+走走	走走	0.82	zouzou
+跳跳	跳跳	0.78	tiaotiao
+吃吃	吃吃	0.76	chichi
+捏捏	捏捏	0.78	nienie
+讲讲	講講	0.78	jiangjiang
+聊聊	聊聊	0.84	liaoliao
+用用	用用	0.78	yongyong
+跑跑	跑跑	0.76	paopao
+拍拍	拍拍	0.78	paipai
+练练	練練	0.78	lianlian
+改改	改改	0.80	gaigai
+揉揉	揉揉	0.76	rourou
+哄哄	哄哄	0.74	honghong
+算算	算算	0.82	suansuan
 # Everyday "冲/衝" prepositional phrases.
 冲着	衝著	0.90	chongzhe
 就冲	就衝	0.90	jiuchong

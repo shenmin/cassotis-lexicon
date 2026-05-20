@@ -1,6 +1,12 @@
 # pinyin<TAB>expected_text<TAB>max_rank(optional)
 ji'e	饥饿	3
 yifu	衣服	1
+pianduan	片段	1
+pianduan	!片断
+moban	模板	1
+moban	!模版
+muban	模板	3
+muban	!模版
 ji'an	季胺	5
 ji'an	吉安	5
 wenjian	文件	3

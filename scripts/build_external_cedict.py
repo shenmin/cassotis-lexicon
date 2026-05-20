@@ -518,7 +518,7 @@ CURATED_DAILY_SUPPLEMENT_NUMBER_WEIGHT_CAP = 520
 # Quantity-classifier snippets are useful exact matches, but they are not
 # necessarily more common than same-pinyin lexical words. Keep them visible
 # without giving them the full daily/chat priority floor.
-DAILY_COUNT_MEASURE_CHARS = set("把部对栋副根幢件轮盘匹批片篇瓶扇双台条桶页只爿")
+DAILY_COUNT_MEASURE_CHARS = set("把部对栋副幅根幢件轮盘匹批片篇瓶扇双台条桶页只爿")
 DAILY_COUNT_PREFIX_CHARS = set("一二两三四五六七八九十几每")
 # Fiction entities and public/historical people names are supplemental named
 # entities and should not inherit everyday-word priors. Product/platform proper
@@ -741,6 +741,23 @@ MULTI_CHAR_TERM_DROP_OVERRIDES: Set[str] = {
     "昨日状况",
     "昨日狀況",
 }
+
+MULTI_CHAR_TERM_DROP_SUBSTRINGS: Set[str] = {
+    # Deprecated or erroneous orthographic variants. Drop compounds containing
+    # these fragments as well; keep the standard forms `片段` and `模板`.
+    "片断",
+    "片斷",
+    "模版",
+    "模闆",
+}
+
+
+def _is_explicit_multi_char_drop_text(text: str) -> bool:
+    if len(text) <= 1:
+        return False
+    if text in MULTI_CHAR_TERM_DROP_OVERRIDES:
+        return True
+    return any(fragment in text for fragment in MULTI_CHAR_TERM_DROP_SUBSTRINGS)
 
 COPYLEFT_LICENSE_TOKENS = (
     "by-sa",
@@ -13750,7 +13767,10 @@ def _drop_explicit_multi_char_terms(
     dropped = 0
     for key, weight in mapping.items():
         _pinyin, text = key
-        if len(text) > 1 and text in drop_terms:
+        if len(text) > 1 and (
+            text in drop_terms
+            or any(fragment in text for fragment in MULTI_CHAR_TERM_DROP_SUBSTRINGS)
+        ):
             dropped += 1
             continue
         filtered[key] = weight
@@ -14061,7 +14081,7 @@ def _restore_missing_texts_from_snapshot(
     restored_texts: Set[str] = set()
     for key, weight in previous_snapshot.items():
         _pinyin, text = key
-        if len(text) > 1 and text in explicit_drop_terms:
+        if len(text) > 1 and _is_explicit_multi_char_drop_text(text):
             stats[f"{stats_prefix}_snapshot_rows_skipped_explicit_drop"] += 1
             continue
         if len(text) > 1 and text in snapshot_restore_block_terms:
