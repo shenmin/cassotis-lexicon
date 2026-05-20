@@ -482,6 +482,10 @@ DAILY_CHAT_SEED_SUFFIXES = (
 )
 DAILY_CHAT_SEED_CHARS = set("的得地就也还才又都把被给跟让像向对从为在这那哪怎啥谁您你我他她它咱吗呢吧呀啊嘛哦呗啦了着过说看来去")
 DAILY_CHAT_SEED_CHARS.update(("\u6539", "\u6210"))
+DERIVED_PREFIX_BLOCKED_TAIL_CHARS = set(
+    "\u800c\u4e4b\u6240\u4e0e\u8207\u53ca\u548c\u6216\u5c06\u5c07"
+    "\u88ab\u628a\u7684\u5730\u5f97"
+)
 STRONG_TWO_CHAR_DAILY_HEAD_CHARS = set(
     "\u4e0d\u6ca1\u522b\u8fd9\u90a3\u54ea\u600e\u5565\u8c01\u60a8\u4f60\u6211\u4ed6\u5979\u5b83\u54b1"
     "\u6709\u65e0\u53ef\u80fd\u4f1a\u8981\u60f3\u8be5\u771f\u633a\u592a\u597d\u5148\u518d\u8fd8\u4e5f"
@@ -4355,7 +4359,7 @@ def _is_daily_phrase_candidate(
         return True
 
     preferred_terms = preferred_terms or set()
-    if text in preferred_terms:
+    if text in preferred_terms and usage_score >= 0.90:
         return True
 
     wiki_augmented_terms = wiki_augmented_terms or set()
@@ -4898,6 +4902,7 @@ def _rerank_homophone_buckets(
         f"{stats_prefix}_homophone_daily_phrase_boosted": 0,
         f"{stats_prefix}_homophone_daily_phrase_damped": 0,
         f"{stats_prefix}_homophone_daily_number_boosted": 0,
+        f"{stats_prefix}_homophone_rare_char_short_damped": 0,
         f"{stats_prefix}_homophone_short_everyday_boosted": 0,
         f"{stats_prefix}_homophone_short_everyday_non_daily_damped": 0,
         f"{stats_prefix}_homophone_short_everyday_weak_noun_damped": 0,
@@ -5062,7 +5067,7 @@ def _rerank_homophone_buckets(
                 pos_tag=pos_tag,
             ):
                 bucket_has_daily_number_term = True
-            if text in preferred_terms and not count_measure_support:
+            if text in preferred_terms and usage_score >= 0.90 and not count_measure_support:
                 bucket_has_preferred_term = True
             if (
                 text_len <= 2
@@ -5554,6 +5559,31 @@ def _rerank_homophone_buckets(
                 delta -= c_rare_form_penalty
                 stats[f"{stats_prefix}_homophone_rare_form_penalized"] += 1
 
+            if (
+                bucket_has_strong_term
+                and text_len == 2
+                and not daily_phrase_support
+                and not short_everyday_support
+                and not semantic_daily_support
+                and not _is_named_entity_pos(pos_tag)
+                and usage_score < 0.20
+                and jieba_direct_score < 0.18
+                and source_hits <= 2
+                and pageview_score < 0.06
+                and not wiki_support
+                and min_char_prior < 0.12
+                and char_score < 0.62
+                and (
+                    common_signal_scores.get(text, 0.0) + 80.0
+                    < bucket_dominant_common_signal
+                )
+            ):
+                # A common head character can make a rare two-character term look
+                # deceptively strong. In an exact homophone bucket, keep such
+                # entries visible but below the better supported daily term.
+                delta -= 112
+                stats[f"{stats_prefix}_homophone_rare_char_short_damped"] += 1
+
             inflated_short_penalty = _compute_low_signal_inflated_short_term_penalty(
                 text,
                 usage_score=usage_score,
@@ -5873,7 +5903,7 @@ def _rerank_homophone_buckets(
                 stats[f"{stats_prefix}_homophone_semantic_daily_boosted"] += 1
 
             if bucket_has_preferred_term:
-                if text in preferred_terms:
+                if text in preferred_terms and usage_score >= 0.90:
                     delta += 24 if text_len <= 2 else 14
                     stats[f"{stats_prefix}_homophone_preferred_term_boosted"] += 1
                 elif text_len <= 3:
@@ -6993,6 +7023,10 @@ def _compute_cedict_daily_semantic_bonus(text: str, defs: str) -> int:
         "component",
         "ingredient",
         "constituent",
+        "position",
+        "posture",
+        "pose",
+        "stance",
         "suitable",
         "fitting",
         "appropriate",
@@ -7397,6 +7431,12 @@ def _looks_like_daily_chat_seed(text: str) -> bool:
     return False
 
 
+def _is_unsafe_derived_prefix_text(text: str) -> bool:
+    if _cjk_len(text) < 2 or not CJK_FULL_RE.fullmatch(text):
+        return True
+    return text[-1] in DERIVED_PREFIX_BLOCKED_TAIL_CHARS
+
+
 def _looks_like_strong_two_char_daily_seed(text: str) -> bool:
     if _cjk_len(text) != 2:
         return False
@@ -7475,6 +7515,8 @@ def _build_wiktionary_daily_seed_signal_map(
 
         for prefix_len in range(2, min(4, text_len - 1) + 1):
             prefix = text[:prefix_len]
+            if _is_unsafe_derived_prefix_text(prefix):
+                continue
             if not _looks_like_daily_chat_seed(prefix):
                 continue
             prefix_char_score = _compute_text_single_char_prior(prefix, char_frequency_prior)
@@ -10953,6 +10995,29 @@ def _adjust_single_char_leading_preferences(
             ):
                 delta += 120
             elif (
+                reading_pinlu >= 1000
+                and bucket_best_leading_support >= 1600.0
+                and leading_support >= bucket_best_leading_support * 0.88
+                and leading_support >= 1800.0
+                and leading_term_count >= 8
+                and leading_ratio >= 0.38
+            ):
+                # A lower Unihan Pinlu standalone count should not bury a
+                # character that dominates same-pinyin compound heads in
+                # everyday lexicon evidence. This keeps single-character
+                # ordering aligned with modern IME usage without per-character
+                # overrides.
+                delta += 164
+            elif (
+                reading_pinlu >= 1000
+                and bucket_best_leading_support >= 1200.0
+                and leading_support >= bucket_best_leading_support * 0.72
+                and leading_support >= 1200.0
+                and leading_term_count >= 6
+                and leading_ratio >= 0.34
+            ):
+                delta += 76
+            elif (
                 reading_pinlu >= 3000
                 and leading_support >= 1500.0
                 and leading_ratio >= 0.20
@@ -11466,6 +11531,8 @@ def _augment_with_daily_prefix_derivation(
         word_len = _cjk_len(word)
         for prefix_len in range(2, min(4, word_len - 1) + 1):
             prefix = word[:prefix_len]
+            if _is_unsafe_derived_prefix_text(prefix):
+                continue
             if not _looks_like_daily_chat_seed(prefix):
                 continue
             prefix_char_score = _compute_text_single_char_prior(prefix, char_prior)
@@ -11642,23 +11709,37 @@ def _finalize_curated_daily_weight(
     low_frequency: bool = False,
     text: str = "",
 ) -> int:
+    bounded_usage = max(0.0, min(1.0, usage_score))
     if low_frequency:
         if is_number_word:
-            number_floor = 400 + int(round(max(0.0, min(1.0, usage_score)) * 120.0))
+            number_floor = 400 + int(round(bounded_usage * 120.0))
             return min(
                 CURATED_DAILY_SUPPLEMENT_NUMBER_WEIGHT_CAP,
                 max(weight, number_floor),
             )
-        supplement_floor = 430 + int(round(max(0.0, min(1.0, usage_score)) * 140.0))
+        supplement_floor = 430 + int(round(bounded_usage * 140.0))
         return min(CURATED_DAILY_SUPPLEMENT_WEIGHT_CAP, max(weight, supplement_floor))
 
     if not is_number_word:
         if _is_daily_count_measure_phrase(text):
-            count_floor = 560 + int(round(max(0.0, min(1.0, usage_score)) * 130.0))
+            count_floor = 560 + int(round(bounded_usage * 130.0))
             count_cap = 760 if _cjk_len(text) <= 2 else 820
             return min(count_cap, max(weight, count_floor))
-        daily_floor = 1080 + int(round(max(0.0, min(1.0, usage_score)) * 180.0))
-        return max(weight, daily_floor)
+
+        # Daily curated entries serve two different purposes:
+        # - high-confidence everyday words should be strong defaults;
+        # - useful exact-match supplements should stay visible without
+        #   overpowering more common same-pinyin words.
+        # A single 1200+ floor for both groups makes entries such as "起始"
+        # outrank broader daily words such as "其实". Keep the boost tiered by
+        # usage score and never cap independent evidence from other sources.
+        if bounded_usage >= 0.90:
+            daily_floor = 1000 + int(round((bounded_usage - 0.90) * 900.0))
+            return max(weight, daily_floor)
+
+        visibility_floor = 620 + int(round(bounded_usage * 360.0))
+        visibility_cap = 960 if _cjk_len(text) <= 2 else 1020
+        return max(weight, min(visibility_cap, visibility_floor))
 
     # Number words are useful daily entries, but should not be as dominant as
     # conversational words/phrases. Keep them strong enough to surface while
@@ -11666,7 +11747,7 @@ def _finalize_curated_daily_weight(
     number_cap = CURATED_DAILY_NUMBER_WEIGHT_CAP
     number_floor = min(
         number_cap,
-        840 + int(round(max(0.0, min(1.0, usage_score)) * 110.0)),
+        840 + int(round(bounded_usage * 110.0)),
     )
     return min(number_cap, max(weight, number_floor))
 
@@ -12022,6 +12103,85 @@ def _reinforce_curated_daily_existing_suffixes(
     return stats
 
 
+def _cap_curated_daily_visibility_exact_weights(
+    mapping: Dict[Tuple[str, str], int],
+    curated_entries: List[Tuple[str, str, float, str]],
+    opencc_entries: List[Tuple[str, str]],
+    simp_to_trad_char_map: Dict[str, str],
+    unihan_map: Dict[str, str],
+    unihan_readings_map: Dict[str, Set[str]],
+    unihan_source_rank_map: Dict[Tuple[str, str], int],
+    unihan_pinlu_detail_map: Dict[Tuple[str, str], int],
+    *,
+    use_traditional: bool,
+    stats_prefix: str,
+    min_hanzi: int,
+) -> Dict[str, int]:
+    stats = {
+        f"{stats_prefix}_curated_daily_visibility_cap_terms": 0,
+        f"{stats_prefix}_curated_daily_visibility_cap_rows": 0,
+    }
+    if not mapping or not curated_entries:
+        return stats
+
+    opencc_sc_to_tc = _build_opencc_sc_to_tc_map(opencc_entries)
+    existing_texts = {text for _pinyin, text in mapping.keys()}
+    capped_terms: Set[str] = set()
+
+    for sc_word, tc_word, usage_score, explicit_pinyin in curated_entries:
+        if usage_score >= 0.90 or _cjk_len(sc_word) < min_hanzi:
+            continue
+
+        pinyin = explicit_pinyin or _pinyin_from_unihan(
+            sc_word,
+            unihan_map,
+            unihan_readings_map,
+            unihan_source_rank_map,
+            unihan_pinlu_detail_map,
+        )
+        if not pinyin:
+            continue
+
+        text = sc_word
+        if use_traditional:
+            text = tc_word
+            if not text:
+                tc_words = opencc_sc_to_tc.get(sc_word, set())
+                if tc_words:
+                    text = _choose_tc_phrase_candidate(
+                        sc_word,
+                        tc_words,
+                        simp_to_trad_char_map,
+                    )
+                elif sc_word in existing_texts:
+                    text = sc_word
+                else:
+                    text = _convert_sc_text_to_tc_with_phrase_hints(
+                        sc_word,
+                        opencc_sc_to_tc,
+                        simp_to_trad_char_map,
+                    )
+
+        text_len = _cjk_len(text)
+        if text_len < min_hanzi:
+            continue
+        if _is_pure_daily_number_word(text) or _is_daily_count_measure_phrase(text):
+            continue
+
+        key = (pinyin, text)
+        weight = mapping.get(key)
+        cap = 960 if text_len <= 2 else 1020
+        if weight is None or weight <= cap:
+            continue
+
+        mapping[key] = cap
+        capped_terms.add(text)
+        stats[f"{stats_prefix}_curated_daily_visibility_cap_rows"] += 1
+
+    stats[f"{stats_prefix}_curated_daily_visibility_cap_terms"] = len(capped_terms)
+    return stats
+
+
 def _cap_curated_daily_prefix_competitors(
     mapping: Dict[Tuple[str, str], int],
     curated_entries: List[Tuple[str, str, float, str]],
@@ -12230,13 +12390,20 @@ def _augment_with_curated_daily_phrases(
             stats[stat("terms_skipped_no_pinyin")] += 1
             continue
 
-        source_hits = 2 if low_frequency else 4
-        usage_score_map[sc_word] = max(usage_score_map.get(sc_word, 0.0), usage_score)
+        signal_usage_score = usage_score
+        if not low_frequency and usage_score < 0.90:
+            # Scores below the strong daily threshold are exact-visibility
+            # supplements, not real corpus-frequency evidence. Feeding their
+            # full curated score back into the homophone/common-word model
+            # makes valid-but-less-common words crowd out broader daily words.
+            signal_usage_score = min(usage_score, 0.10)
+        source_hits = 2 if low_frequency else 4 if usage_score >= 0.90 else 1
+        usage_score_map[sc_word] = max(usage_score_map.get(sc_word, 0.0), signal_usage_score)
         source_hits_map[sc_word] = max(source_hits_map.get(sc_word, 0), source_hits)
 
         sc_jieba_direct = max(
             jieba_direct_signal_map.get(sc_word, 0.0),
-            min(0.26, usage_score * 0.32),
+            min(0.26, signal_usage_score * 0.32),
         )
         sc_pos_tag = jieba_pos_map.get(sc_word, "")
         sc_char_score = _compute_text_single_char_prior(sc_word, sc_char_prior)
@@ -12249,10 +12416,10 @@ def _augment_with_curated_daily_phrases(
         )
         sc_weight = _compute_weight_with_signals(
             sc_word,
-            usage_score=usage_score,
+            usage_score=signal_usage_score,
             source_hits=source_hits,
             pageview_score=0.0,
-            wiki_hit=True,
+            wiki_hit=usage_score >= 0.90,
             core_entry=False,
             jieba_direct_score=sc_jieba_direct,
             pos_tag=sc_pos_tag,
@@ -12305,12 +12472,12 @@ def _augment_with_curated_daily_phrases(
         if _cjk_len(tc_candidate) < min_hanzi:
             continue
 
-        tc_usage_score_map[tc_candidate] = max(tc_usage_score_map.get(tc_candidate, 0.0), usage_score)
+        tc_usage_score_map[tc_candidate] = max(tc_usage_score_map.get(tc_candidate, 0.0), signal_usage_score)
         tc_source_hits_map[tc_candidate] = max(tc_source_hits_map.get(tc_candidate, 0), source_hits)
 
         tc_jieba_direct = max(
             tc_jieba_direct_signal_map.get(tc_candidate, 0.0),
-            min(0.26, usage_score * 0.32),
+            min(0.26, signal_usage_score * 0.32),
         )
         tc_pos_tag = tc_jieba_pos_map.get(tc_candidate, sc_pos_tag)
         tc_char_score = _compute_text_single_char_prior(tc_candidate, tc_char_prior)
@@ -12323,10 +12490,10 @@ def _augment_with_curated_daily_phrases(
         )
         tc_weight = _compute_weight_with_signals(
             tc_candidate,
-            usage_score=usage_score,
+            usage_score=signal_usage_score,
             source_hits=source_hits,
             pageview_score=0.0,
-            wiki_hit=True,
+            wiki_hit=usage_score >= 0.90,
             core_entry=False,
             jieba_direct_score=tc_jieba_direct,
             pos_tag=tc_pos_tag,
@@ -13900,6 +14067,19 @@ def _restore_missing_texts_from_snapshot(
         if len(text) > 1 and text in snapshot_restore_block_terms:
             stats[f"{stats_prefix}_snapshot_rows_skipped_blocked_prefix"] += 1
             continue
+        if len(text) > 1 and _is_unsafe_derived_prefix_text(text):
+            usage_score = min(1.0, max(0.0, usage_score_map.get(text, 0.0)))
+            source_hits = max(0, source_hits_map.get(text, 0))
+            pageview_score = min(1.0, max(0.0, pageviews_signal_map.get(text, 0.0)))
+            jieba_direct_score = min(1.0, max(0.0, jieba_direct_signal_map.get(text, 0.0)))
+            if (
+                usage_score < 0.08
+                and jieba_direct_score < 0.05
+                and source_hits <= 0
+                and pageview_score < 0.02
+            ):
+                stats[f"{stats_prefix}_snapshot_rows_skipped_prefix_fragment"] += 1
+                continue
         if text in current_texts:
             continue
         if len(text) > 1 and _is_low_signal_snapshot_prefix_fragment(
@@ -13981,7 +14161,7 @@ def _build_curated_daily_prefix_restore_blocklist(
             continue
         for prefix_len in range(2, min(4, word_len - 1) + 1):
             prefix = word[:prefix_len]
-            if CJK_FULL_RE.fullmatch(prefix):
+            if CJK_FULL_RE.fullmatch(prefix) and not _is_unsafe_derived_prefix_text(prefix):
                 blocked.add(prefix)
     return blocked
 
@@ -14693,6 +14873,8 @@ def _remove_known_incorrect_jiancha_entries(
         "known_incorrect_jiancha_entries_removed_tc": 0,
         "known_incorrect_lexical_entries_removed_sc": 0,
         "known_incorrect_lexical_entries_removed_tc": 0,
+        "script_specific_variant_capped_sc": 0,
+        "script_specific_variant_removed_tc": 0,
     }
     sc_blocklist = {
         ("houjingjianchashu", "喉镜检察术"),
@@ -14715,6 +14897,10 @@ def _remove_known_incorrect_jiancha_entries(
     tc_lexical_blocklist = {
         ("haoxiang", "好象"),
     }
+    sc_variant_caps = {
+        ("xiangxiang", "想像"): 360,
+        ("xiangxiangli", "想像力"): 360,
+    }
 
     for key in sc_blocklist:
         if key in sc_map:
@@ -14732,6 +14918,16 @@ def _remove_known_incorrect_jiancha_entries(
         if key in tc_map:
             del tc_map[key]
             stats["known_incorrect_lexical_entries_removed_tc"] += 1
+
+    for key, cap in sc_variant_caps.items():
+        weight = sc_map.get(key)
+        if weight is not None and weight > cap:
+            sc_map[key] = cap
+            stats["script_specific_variant_capped_sc"] += 1
+    for key in {("xiangxiang", "想象"), ("xiangxiangli", "想象力")}:
+        if key in tc_map:
+            del tc_map[key]
+            stats["script_specific_variant_removed_tc"] += 1
 
     return stats
 
@@ -16797,6 +16993,34 @@ def main() -> int:
         char_frequency_prior=char_frequency_prior,
     )
     stats.update(_remove_known_incorrect_jiancha_entries(sc_map, tc_map))
+    sc_curated_daily_visibility_cap_stats = _cap_curated_daily_visibility_exact_weights(
+        sc_map,
+        curated_daily_entries,
+        opencc_entries,
+        simp_to_trad_char_map,
+        unihan_map,
+        unihan_readings_map,
+        unihan_reading_source_map,
+        unihan_pinlu_detail_map,
+        use_traditional=False,
+        stats_prefix="sc",
+        min_hanzi=args.min_hanzi,
+    )
+    tc_curated_daily_visibility_cap_stats = _cap_curated_daily_visibility_exact_weights(
+        tc_map,
+        curated_daily_entries,
+        opencc_entries,
+        simp_to_trad_char_map,
+        unihan_map,
+        unihan_readings_map,
+        unihan_reading_source_map,
+        unihan_pinlu_detail_map,
+        use_traditional=True,
+        stats_prefix="tc",
+        min_hanzi=args.min_hanzi,
+    )
+    stats.update(sc_curated_daily_visibility_cap_stats)
+    stats.update(tc_curated_daily_visibility_cap_stats)
     sc_curated_daily_supplement_cap_stats = _cap_curated_daily_supplement_exact_weights(
         sc_map,
         curated_daily_supplement_entries,

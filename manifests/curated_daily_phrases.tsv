@@ -1072,11 +1072,14 @@
 不想活	不想活	0.84
 好想死	好想死	0.82
 # want / think / playful chat phrases
-好想	好想	0.86
+好想	好想	0.86	haoxiang
+好像	好像	0.92	haoxiang
 想你	想你	0.90
 想我	想我	0.86
 想他	想他	0.84
 想她	想她	0.84
+想象	想像	0.92	xiangxiang
+想象力	想像力	0.92	xiangxiangli
 想试试	想試試	0.88
 想尝尝	想嘗嘗	0.86
 想玩玩	想玩玩	0.84
@@ -3866,10 +3869,16 @@
 还差点	還差點	0.86	haichadian
 还差些	還差些	0.84	haichaxie
 还差一点	還差一點	0.86	haichayidian
-盛夏	盛夏	0.90	shengxia
 盛暑	盛暑	0.82	shengshu
 山间	山間	0.88	shanjian
 山涧	山澗	0.84	shanjian
 林间	林間	0.86	linjian
 小溪	小溪	0.90	xiaoxi
 溪水	溪水	0.86	xishui
+# High-frequency two-character exact terms.
+技术	技術	0.90	jishu
+普通	普通	0.90	putong
+感到	感到	0.90	gandao
+即使	即使	0.90	jishi
+变得	變得	0.90	biande
+思路	思路	0.92	silu
