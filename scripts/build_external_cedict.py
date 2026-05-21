@@ -6035,6 +6035,169 @@ def _rerank_homophone_buckets(
     return stats
 
 
+def _cap_short_domain_terms_against_direct_common(
+    mapping: Dict[Tuple[str, str], int],
+    usage_score_map: Dict[str, float],
+    source_hits_map: Dict[str, int],
+    pageviews_signal_map: Dict[str, float],
+    wiki_titles: Set[str],
+    wiki_augmented_terms: Set[str] | None,
+    jieba_direct_signal_map: Dict[str, float] | None,
+    jieba_pos_map: Dict[str, str] | None,
+    char_frequency_prior: Dict[str, float] | None,
+    preferred_terms: Set[str] | None,
+    stats_prefix: str,
+) -> Dict[str, int]:
+    """Keep wiki/family-supported short domain nouns below direct common terms.
+
+    Wiki titles and edge-family support are good visibility signals, but they
+    are not enough evidence that a short term should become the default in an
+    exact homophone bucket. This pass caps those terms after the general
+    homophone reranker so they stay selectable without crowding common words.
+    """
+    stats = {
+        f"{stats_prefix}_short_domain_buckets": 0,
+        f"{stats_prefix}_short_domain_capped": 0,
+    }
+    if not mapping:
+        return stats
+
+    wiki_augmented_terms = wiki_augmented_terms or set()
+    jieba_direct_signal_map = jieba_direct_signal_map or {}
+    jieba_pos_map = jieba_pos_map or {}
+    preferred_terms = preferred_terms or set()
+    char_prior = _build_effective_char_prior(mapping, char_frequency_prior)
+    edge_family_support = _build_edge_family_support_for_terms(mapping)
+
+    buckets: Dict[str, List[Tuple[str, int]]] = {}
+    for key, weight in mapping.items():
+        pinyin, text = key
+        buckets.setdefault(pinyin, []).append((text, weight))
+
+    for pinyin, items in buckets.items():
+        if len(items) < 2:
+            continue
+
+        metrics: Dict[str, Tuple[float, float, float, int, float, float, str, bool]] = {}
+        leader_text = ""
+        leader_signal = -1.0
+        leader_runner_up = -1.0
+        for text, _weight in items:
+            text_len = _cjk_len(text)
+            if text_len <= 0 or text_len > 3:
+                continue
+            usage_score = min(1.0, max(0.0, usage_score_map.get(text, 0.0)))
+            source_hits = max(0, source_hits_map.get(text, 0))
+            pageview_score = min(1.0, max(0.0, pageviews_signal_map.get(text, 0.0)))
+            jieba_score = min(1.0, max(0.0, jieba_direct_signal_map.get(text, 0.0)))
+            char_score = _compute_text_single_char_prior(text, char_prior)
+            family_score = min(
+                1.0,
+                max(0.0, edge_family_support.get((pinyin, text), 0.0) / 900.0),
+            )
+            pos_tag = jieba_pos_map.get(text, "")
+            wiki_support = _has_effective_wiki_support(
+                text,
+                wiki_titles,
+                pageview_score=pageview_score,
+                source_hits=source_hits,
+                wiki_augmented_terms=wiki_augmented_terms,
+            )
+            direct_signal = (
+                jieba_score * 0.68
+                + usage_score * 0.18
+                + pageview_score * 0.04
+                + min(source_hits, 3) * 0.012
+                + char_score * 0.04
+            )
+            if _is_conversational_pos(pos_tag):
+                direct_signal += 0.08
+            elif _is_noun_pos(pos_tag):
+                direct_signal += 0.015
+            if char_score >= 0.64:
+                direct_signal += 0.015
+            if _is_named_entity_pos(pos_tag):
+                direct_signal *= 0.72
+
+            metrics[text] = (
+                direct_signal,
+                usage_score,
+                jieba_score,
+                source_hits,
+                pageview_score,
+                family_score,
+                pos_tag,
+                wiki_support,
+            )
+            if direct_signal > leader_signal:
+                leader_runner_up = leader_signal
+                leader_signal = direct_signal
+                leader_text = text
+            elif direct_signal > leader_runner_up:
+                leader_runner_up = direct_signal
+
+        if not leader_text:
+            continue
+        leader_margin = leader_signal - max(0.0, leader_runner_up)
+        if leader_signal < 0.12 or leader_margin < 0.035:
+            continue
+        leader_weight = mapping.get((pinyin, leader_text), 0)
+        if leader_weight <= 0:
+            continue
+
+        bucket_touched = False
+        for text, weight in items:
+            if text == leader_text or text in preferred_terms:
+                continue
+            text_len = _cjk_len(text)
+            if text_len != 2:
+                continue
+            metric = metrics.get(text)
+            if metric is None:
+                continue
+            (
+                direct_signal,
+                usage_score,
+                jieba_score,
+                source_hits,
+                pageview_score,
+                family_score,
+                pos_tag,
+                wiki_support,
+            ) = metric
+            if _is_conversational_pos(pos_tag) or _is_named_entity_pos(pos_tag):
+                continue
+            has_visibility_only_signal = (
+                wiki_support
+                or family_score >= 0.18
+                or (source_hits >= 2 and usage_score < 0.12 and jieba_score < 0.12)
+            )
+            has_strong_direct_signal = (
+                jieba_score >= 0.22
+                or (usage_score >= 0.24 and jieba_score >= 0.08)
+                or (pageview_score >= 0.18 and jieba_score >= 0.12)
+                or (source_hits >= 4 and jieba_score >= 0.10)
+            )
+            if not has_visibility_only_signal or has_strong_direct_signal:
+                continue
+            if direct_signal + 0.045 >= leader_signal:
+                continue
+            if weight <= leader_weight - 48:
+                continue
+
+            cap_margin = 64 + min(160, int(round((leader_signal - direct_signal) * 360.0)))
+            cap = max(1, leader_weight - cap_margin)
+            if weight > cap:
+                mapping[(pinyin, text)] = cap
+                stats[f"{stats_prefix}_short_domain_capped"] += 1
+                bucket_touched = True
+
+        if bucket_touched:
+            stats[f"{stats_prefix}_short_domain_buckets"] += 1
+
+    return stats
+
+
 def _filter_low_signal_rare_entries(
     mapping: Dict[Tuple[str, str], int],
     usage_score_map: Dict[str, float],
@@ -16416,6 +16579,20 @@ def main() -> int:
         stats_prefix="sc",
     )
     stats.update(sc_homophone_stats)
+    sc_short_domain_cap_stats = _cap_short_domain_terms_against_direct_common(
+        sc_map,
+        usage_score_map=usage_score_map,
+        source_hits_map=source_hits_map,
+        pageviews_signal_map=pageviews_signal_map,
+        wiki_titles=wiki_titles,
+        wiki_augmented_terms=sc_augmented_terms,
+        jieba_direct_signal_map=jieba_direct_signal_map,
+        jieba_pos_map=jieba_pos_map,
+        char_frequency_prior=char_frequency_prior,
+        preferred_terms=curated_daily_sc_terms,
+        stats_prefix="sc",
+    )
+    stats.update(sc_short_domain_cap_stats)
     sc_low_signal_stats = _filter_low_signal_rare_entries(
         sc_map,
         usage_score_map=usage_score_map,
@@ -16474,6 +16651,20 @@ def main() -> int:
         stats_prefix="tc",
     )
     stats.update(tc_homophone_stats)
+    tc_short_domain_cap_stats = _cap_short_domain_terms_against_direct_common(
+        tc_map,
+        usage_score_map=tc_usage_score_map,
+        source_hits_map=tc_source_hits_map,
+        pageviews_signal_map=tc_pageviews_signal_map,
+        wiki_titles=wiki_titles,
+        wiki_augmented_terms=tc_augmented_terms,
+        jieba_direct_signal_map=tc_jieba_direct_signal_map,
+        jieba_pos_map=tc_jieba_pos_map,
+        char_frequency_prior=tc_char_frequency_prior,
+        preferred_terms=curated_daily_tc_terms,
+        stats_prefix="tc",
+    )
+    stats.update(tc_short_domain_cap_stats)
     tc_low_signal_stats = _filter_low_signal_rare_entries(
         tc_map,
         usage_score_map=tc_usage_score_map,
