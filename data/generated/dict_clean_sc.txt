@@ -882,6 +882,7 @@ aiya	哎呀	418
 aiyan	碍眼	634
 aiyan	挨延	560
 aiyangmei	矮杨梅	228
+aiye	爱液	560
 aiye	艾叶	231
 aiyetan	艾叶炭	167
 aiyeyou	艾叶油	375
@@ -7944,8 +7945,8 @@ bianqiao	便桥	144
 bianqiaoxingchong	扁锹形虫	258
 bianqin	边沁	137
 bianqing	编磬	313
-bianqu	边区	921
-bianqu	编曲	1
+bianqu	编曲	960
+bianqu	边区	338
 bianque	扁鹊	439
 bianr	边儿	404
 bianren	辨认	1000
@@ -12224,7 +12225,7 @@ bushizi	不是滋	1000
 bushiziwei	不是滋味	597
 bushou	不收	1000
 bushou	不受	982
-bushou	不首	351
+bushou	不首	352
 bushou	部首	1
 bushoubianpaifa	部首编排法	289
 bushouhuanying	不受欢迎	260
@@ -12468,11 +12469,11 @@ buxiaozisun	不肖子孙	628
 buxiayu	不下于	684
 buxiban	补习班	452
 buxie	不写	1000
-buxie	不懈	816
+buxie	不懈	817
 buxie	不屑	789
 buxie	布鞋	560
 buxie	不协	418
-buxie	补泻	32
+buxie	补泻	31
 buxiedai	不懈怠	230
 buxiehe	不协和	640
 buxietiao	不协调	232
@@ -20389,7 +20390,8 @@ ciqing	刺青	305
 ciqingu	刺芹菇	228
 ciqiong	词穷	305
 ciqiquan	磁气圈	232
-ciqu	辞去	465
+ciqu	词曲	960
+ciqu	辞去	560
 cir	刺儿	364
 ciren	辞任	560
 ciren	词人	95
@@ -20576,6 +20578,7 @@ cizhuwan	磁朱丸	470
 cizi	次子	632
 cizi	刺字	234
 cizu	词组	560
+cizuo	词作	922
 cong'er	从而	520
 cong'erubeng	从恶如崩	632
 congbai	葱白	560
@@ -30744,7 +30747,7 @@ duichenxing	对称性	508
 duichenzhou	对称轴	437
 duichong	对冲	668
 duichongjijin	对冲基金	260
-duici	对词	203
+duici	对词	204
 duida	对答	997
 duidai	对待	502
 duidaruliu	对答如流	469
@@ -32779,8 +32782,8 @@ erfu	二伏	316
 erganchun	二甘醇	230
 erganzi	二杆子	443
 ergazi	二尕子	232
-erge	儿歌	498
-erge	二哥	446
+erge	儿歌	499
+erge	二哥	445
 erge	尔格	194
 ergen	耳根	536
 ergeng	二更	198
@@ -41847,8 +41850,8 @@ gejiushi	个旧市	409
 gejixian	革吉县	165
 gejiyanyongniudao	割鸡焉用牛刀	318
 geju	歌剧	890
-geju	割据	722
-geju	格局	191
+geju	割据	721
+geju	格局	190
 gejue	隔绝	454
 gejumeiying	歌剧魅影	780
 gejuwujuyuan	歌剧舞剧院	429
@@ -45491,7 +45494,7 @@ gugan	骨感	1
 guganran	骨感染	500
 guganwanglu	骨干网路	226
 gugao	孤高	387
-guge	谷歌	666
+guge	谷歌	667
 guge	骨骼	470
 gugebaizhedeshizheng	骨骼柏哲德氏症	687
 gugebowuguan	骨骼博物馆	740
@@ -67794,7 +67797,7 @@ jushizhuqun	巨石柱群	260
 jushou	据守	1000
 jushou	巨兽	935
 jushou	举手	828
-jushou	聚首	321
+jushou	聚首	322
 jushou	拒收	263
 jushou	居首	27
 jushoutouzu	举手投足	469
@@ -96343,7 +96346,7 @@ puputongtong	普普通通	340
 pupuyishu	普普艺术	260
 puqi	铺砌	381
 puqini	普契尼	218
-puqu	谱曲	560
+puqu	谱曲	960
 puquanneizhi	葡醛内酯	540
 puquanneizhipian	葡醛内酯片	602
 puquansuannazhusheye	葡醛酸钠注射液	637
@@ -112359,10 +112362,10 @@ shichuwuming	师出无名	402
 shichuwunai	事出无奈	620
 shichuyouming	师出有名	430
 shichuyouyin	事出有因	678
+shici	诗词	960
 shici	是次	560
-shici	诗词	504
-shici	誓词	410
-shici	实词	386
+shici	实词	1
+shici	誓词	1
 shiciyuanlifangti	十次元立方体	915
 shicong	侍从	1000
 shicong	师从	1
@@ -114043,7 +114046,7 @@ shiweizhizhu	视微知著	387
 shiweizhizhu	识微知著	387
 shiweizuzhi	世卫组织	570
 shiwen	试问	942
-shiwen	诗文	568
+shiwen	诗文	569
 shiwen	室温	11
 shiwen	时文	1
 shiwen	释文	1
@@ -114678,8 +114681,8 @@ shizuishanshi	石嘴山市	245
 shizun	世尊	354
 shizuniao	始祖鸟	439
 shizuniaogongsi	始祖鸟公司	813
-shizuo	视作	1000
-shizuo	诗作	150
+shizuo	视作	837
+shizuo	诗作	560
 shizuode	世做的	640
 shizuoyongzhe	始作俑者	487
 shou'er	首尔	323
@@ -115159,7 +115162,7 @@ shoushi	收拾	869
 shoushi	收视	864
 shoushi	守势	560
 shoushi	手势	132
-shoushi	首饰	98
+shoushi	首饰	99
 shoushi	收市	50
 shoushi	守时	18
 shoushi	收尸	18
@@ -122727,7 +122730,7 @@ tianbing	天兵	493
 tianbingtianjiang	天兵天将	429
 tianbo	恬波	198
 tianbu	填补	1000
-tianbu	添补	32
+tianbu	添补	31
 tianbujianian	天不假年	619
 tianbula	甜不辣	362
 tianbupadebupa	天不怕地不怕	720
@@ -122777,9 +122780,10 @@ tianchongxue	天冲穴	470
 tianchuang	天窗	403
 tianchuangdenglong	天窗灯笼	656
 tianchuanri	天穿日	232
+tianci	填词	560
 tianci	天次	560
-tianci	天赐	449
-tianci	填词	423
+tianci	天赐	1
+tianciren	填词人	981
 tiancun	田村	137
 tianda	天大	410
 tiandadeda	天大地大	527
@@ -137641,6 +137645,7 @@ xiechu	写出	1000
 xiechu	泄出	382
 xiechu	卸除	312
 xiechuliqi	协处理器	458
+xieci	写词	960
 xieci	谢词	194
 xiecongfan	胁从犯	387
 xiecuo	写错	1000
@@ -137698,6 +137703,8 @@ xiefu	亵服	438
 xiegaisu	携钙素	500
 xiegang	斜杠	293
 xiegangqingnian	斜杠青年	218
+xiege	写歌	949
+xiegeci	写歌词	952
 xiegen	鞋跟	383
 xiegong	斜拱	452
 xiegou	斜钩	137
@@ -137842,8 +137849,9 @@ xiesheng	写生	677
 xiesheng	谐声	560
 xieshenme	写什么	922
 xiesheqiu	斜射球	317
-xieshi	写实	947
-xieshi	楔石	615
+xieshi	写诗	960
+xieshi	写实	806
+xieshi	楔石	476
 xieshi	斜视	1
 xieshi	谢世	1
 xieshixingruoshi	斜视性弱视	603
@@ -137852,6 +137860,8 @@ xieshizhuyi	写实主义	680
 xieshou	携手	1000
 xieshou	写手	183
 xieshoubingjian	携手并肩	427
+xieshouge	写首歌	945
+xieshoushi	写首诗	945
 xieshoutongxing	携手同行	260
 xieshu	解数	560
 xieshu	邪术	331
@@ -137903,7 +137913,7 @@ xiewa'erdenaze	谢瓦尔德纳泽	355
 xiewan	写完	240
 xiewanwen	谢婉雯	470
 xiewei	写为	1000
-xiewei	些微	92
+xiewei	些微	91
 xiewei'ou	楔尾鸥	228
 xieweibolao	楔尾伯劳	258
 xieweigu	蟹味菇	228
@@ -147018,7 +147028,7 @@ yehehua	耶和华	243
 yehehuajianzhengren	耶和华见证人	318
 yehu	夜壶	996
 yehua	液化	470
-yehua	野花	55
+yehua	野花	54
 yehuang	椰皇	198
 yehuangsu	叶黄素	464
 yehuangsulei	叶黄素类	570
@@ -150984,6 +150994,7 @@ yinshuati	印刷体	388
 yinshuaye	印刷业	456
 yinshui	引水	1000
 yinshui	饮水	807
+yinshui	淫水	251
 yinshuide	引水的	640
 yinshuigongcheng	引水工程	260
 yinshuiji	饮水机	587
@@ -151194,7 +151205,8 @@ yinyangshiyouxi	阴阳师游戏	879
 yinyangxiaozhang	阴阳消长	540
 yinyangzhu	阴阳烛	955
 yinyangzhuanhua	阴阳转化	540
-yinye	夤夜	560
+yinye	淫液	560
+yinye	夤夜	1
 yinye	银叶	1
 yinyefeishi	因噎废食	445
 yinyekuisun	阴液亏损	540
@@ -169847,7 +169859,9 @@ zuochixiangfu	坐吃享福	260
 zuochu	作出	872
 zuochu	做出	775
 zuochuo	作辍	198
+zuoci	作词	960
 zuoci	座次	560
+zuociren	作词人	952
 zuocuo	做错	198
 zuoda	作答	1000
 zuodannu	佐丹奴	198
@@ -170057,7 +170071,8 @@ zuoshenme	做什么	1000
 zuoshi	做事	802
 zuoshi	坐视	745
 zuoshi	作势	560
-zuoshi	坐失	345
+zuoshi	作诗	560
+zuoshi	坐失	244
 zuoshibao	佐世保	232
 zuoshibuli	坐视不理	387
 zuoshichunqiu	左氏春秋	249
