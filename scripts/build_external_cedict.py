@@ -666,6 +666,10 @@ SINGLE_CHAR_READING_DELTA_OVERRIDES: Dict[Tuple[str, str], int] = {
     ("朊", "ruan"): 220,
     # Keep 爿 visible for standalone lookup under its modern pan reading.
     ("爿", "pan"): 120,
+    # `难/難` is the everyday standalone target for nan; geographic/name
+    # support can keep 南 visible, but should not outrank the common adjective.
+    ("难", "nan"): 180,
+    ("難", "nan"): 180,
 }
 
 MULTI_CHAR_TERM_DROP_OVERRIDES: Set[str] = {
@@ -6035,6 +6039,80 @@ def _rerank_homophone_buckets(
     return stats
 
 
+def _promote_negated_predicate_homophone_terms(
+    mapping: Dict[Tuple[str, str], int],
+    term_semantic_bonus_map: Dict[Tuple[str, str], int] | None,
+    stats_prefix: str,
+) -> Dict[str, int]:
+    """Prefer high-confidence negated predicate words over same-pinyin nouns.
+
+    Words such as "不行" are daily predicates, while same-pinyin terms such as
+    "步行" are valid but less likely as the default exact bucket target. The
+    semantic gate comes from CEDICT definitions, so this stays a class rule
+    rather than an item-specific exception.
+    """
+    stats = {
+        f"{stats_prefix}_negated_predicate_buckets": 0,
+        f"{stats_prefix}_negated_predicate_promoted": 0,
+        f"{stats_prefix}_negated_predicate_competitors_capped": 0,
+    }
+    if not mapping:
+        return stats
+
+    term_semantic_bonus_map = term_semantic_bonus_map or {}
+    buckets: Dict[str, List[Tuple[str, int]]] = {}
+    for (pinyin, text), weight in mapping.items():
+        buckets.setdefault(pinyin, []).append((text, weight))
+
+    def is_negated_predicate(key: Tuple[str, str]) -> bool:
+        _pinyin, text = key
+        return (
+            _cjk_len(text) == 2
+            and text.startswith(("不", "没", "無", "无", "非", "未"))
+            and term_semantic_bonus_map.get(key, 0) >= 300
+        )
+
+    for pinyin, items in buckets.items():
+        if len(items) < 2:
+            continue
+        protected = [
+            (text, weight)
+            for text, weight in items
+            if is_negated_predicate((pinyin, text))
+        ]
+        if not protected:
+            continue
+
+        best_competitor_weight = max(
+            (weight for text, weight in items if not is_negated_predicate((pinyin, text))),
+            default=0,
+        )
+        target_weight = min(1000, max(880, best_competitor_weight + 72))
+        competitor_cap = max(620, target_weight - 160)
+        touched = False
+
+        for text, weight in protected:
+            key = (pinyin, text)
+            if weight < target_weight:
+                mapping[key] = target_weight
+                stats[f"{stats_prefix}_negated_predicate_promoted"] += 1
+                touched = True
+
+        for text, weight in items:
+            key = (pinyin, text)
+            if is_negated_predicate(key):
+                continue
+            if weight > competitor_cap:
+                mapping[key] = competitor_cap
+                stats[f"{stats_prefix}_negated_predicate_competitors_capped"] += 1
+                touched = True
+
+        if touched:
+            stats[f"{stats_prefix}_negated_predicate_buckets"] += 1
+
+    return stats
+
+
 def _cap_short_domain_terms_against_direct_common(
     mapping: Dict[Tuple[str, str], int],
     usage_score_map: Dict[str, float],
@@ -7165,9 +7243,16 @@ def _compute_cedict_daily_semantic_bonus(text: str, defs: str) -> int:
     comparison_senses = 0
     daily_abstract_senses = 0
     daily_concrete_senses = 0
+    negative_predicate_senses = 0
     function_senses = 0
 
     comparison_clues = (
+        "compare",
+        "comparison",
+        "compared with",
+        "compared to",
+        "by comparison",
+        "in comparison",
         "greater than",
         "bigger than",
         "larger than",
@@ -7249,6 +7334,28 @@ def _compute_cedict_daily_semantic_bonus(text: str, defs: str) -> int:
         "phone",
         "computer",
     )
+    daily_negative_predicate_clues = (
+        "won't do",
+        "will not do",
+        "would not do",
+        "be out of the question",
+        "out of the question",
+        "be no good",
+        "no good",
+        "not work",
+        "doesn't work",
+        "do not work",
+        "not be capable",
+        "not capable",
+        "unable to",
+        "cannot",
+    )
+    daily_function_adverb_clues = (
+        "obviously",
+        "plainly",
+        "undoubtedly",
+        "definitely",
+    )
     function_clues = (
         "due to",
         "owing to",
@@ -7291,12 +7398,21 @@ def _compute_cedict_daily_semantic_bonus(text: str, defs: str) -> int:
             daily_abstract_senses += 1
         if any(has_clue(sense, clue) for clue in daily_concrete_clues):
             daily_concrete_senses += 1
+        if (
+            text.startswith(("不", "没", "無", "无", "非", "未"))
+            and any(has_clue(sense, clue) for clue in daily_negative_predicate_clues)
+        ):
+            negative_predicate_senses += 1
+        if any(has_clue(sense, clue) for clue in daily_function_adverb_clues):
+            function_senses += 1
         if any(has_clue(sense, clue) for clue in function_clues):
             function_senses += 1
 
     if variant_senses == total_senses or place_senses * 2 >= total_senses:
         return 0
 
+    if negative_predicate_senses > 0:
+        return 320 if text_len == 2 else 200
     if comparison_senses > 0:
         return 260 if text_len == 2 else 180
     if function_senses > 0:
@@ -17164,6 +17280,18 @@ def main() -> int:
             for key, value in tc_final_script_filter_stats.items()
         }
     )
+    sc_negated_predicate_stats = _promote_negated_predicate_homophone_terms(
+        sc_map,
+        term_semantic_bonus_map=cedict_semantic_bonus_map,
+        stats_prefix="sc_final",
+    )
+    tc_negated_predicate_stats = _promote_negated_predicate_homophone_terms(
+        tc_map,
+        term_semantic_bonus_map=cedict_semantic_bonus_map,
+        stats_prefix="tc_final",
+    )
+    stats.update(sc_negated_predicate_stats)
+    stats.update(tc_negated_predicate_stats)
     sc_query_path_priors: Dict[Tuple[str, str], int] = {}
     tc_query_path_priors: Dict[Tuple[str, str], int] = {}
     if output_query_path_sc is not None:
