@@ -1879,7 +1879,7 @@ chixujichengxitong	持續|集成|系統	468
 chixushijian	持續|時間	463
 chiyibuding	遲疑|不定	483
 chiyiguanwang	遲疑|觀望	443
-chizhafengyun	叱吒|風雲	507
+chizhafengyun	叱吒|風雲	486
 chizhouzhuanqu	池州|專區	454
 chongcaoanjisuan	蟲草|氨基酸	423
 chongcaoqicanjiaonang	蟲草|芪參膠囊	441
@@ -4194,6 +4194,7 @@ fensuisirenbang	粉碎|四人幫	508
 fenwaiyaorao	分外|妖嬈	444
 fenwenbuqu	分文|不取	486
 fenwenbuzhi	分文|不值	446
+fenxichulai	分析|出來	520
 fenxihanshu	分析|函數	487
 fenxihuaxue	分析|化學	474
 fenxingjihe	分形|幾何	486
@@ -5540,7 +5541,7 @@ handanxuebu	邯鄲|學步	476
 hangbanchaxunjiekou	航班|查詢接口	467
 hanghaishiji	航海|世紀	515
 hangjialishou	行家|里手	422
-hangkongbaye	航空|霸業	476
+hangkongbaye	航空|霸業	485
 hangkonggongsi	航空|公司	477
 hangkonghangtian	航空|航天	445
 hangkongshigu	航空|事故	484
@@ -8806,7 +8807,7 @@ leixingcachu	類型|擦除	464
 leixingcanshu	類型|參數	488
 leixingcanshuliebiao	類型|參數|列表	468
 leixingshican	類型|實參	460
-leixingtuiduan	類型|推斷	474
+leixingtuiduan	類型|推斷	487
 leixingtuili	類型|推理	488
 leixingwuli	類型|物理	381
 leixingwulizhuyi	類型|物理|主義	463
@@ -10884,6 +10885,7 @@ paixiexitong	排泄|系統	463
 paixiezhangai	排泄|障礙	483
 pajinsenzhenghouqun	帕金森|症候羣	483
 pajinsenzonghezheng	帕金森|綜合徵	483
+panduanchulai	判斷|出來	453
 panduolamiling	潘多拉|密令	462
 pangdahaihanpian	胖大海|含片	427
 pangguanzhexiaoying	旁觀者|效應	458
@@ -11788,7 +11790,7 @@ quyifengying	曲意|逢迎	485
 quyifujiu	曲意|俯就	438
 quzhengsheying	取證|攝影	483
 quzhikeshu	屈指|可數	427
-quzhongxinhuashibie	去中心化|識別	443
+quzhongxinhuashibie	去中心化|識別	476
 quzhouzhuanqu	衢州|專區	465
 quzhuchujing	驅逐|出境	448
 quzhujianzhihuiguan	驅逐艦|指揮官	512
@@ -12158,8 +12160,8 @@ ribenxingzhengquhua	日本|行政區划	434
 ribenxinhao	日本|信號	501
 ribenxuexichong	日本|血吸蟲	460
 ribenxuexichongbing	日本|血吸蟲病	483
-ribenyouxi	日本|遊戲	339
-ribenyouxidajiang	日本|遊戲|大獎	421
+ribenyouxi	日本|遊戲	343
+ribenyouxidajiang	日本|遊戲|大獎	425
 richanggainian	日常|概念	471
 richangyongyu	日常|用語	500
 riguangliaofa	日光|療法	438
@@ -13287,7 +13289,8 @@ shezhijiedian	設置|節點	505
 shezhiwangge	設置|網格	505
 shibaizhuyi	失敗|主義	418
 shibaoguangchang	時報|廣場	465
-shibiexinhao	識別|信號	482
+shibiechulai	識別|出來	453
+shibiexinhao	識別|信號	499
 shibinggongsi	士兵|公司	515
 shichangfene	市場|份額	463
 shichangjingji	市場|經濟	507
@@ -13412,7 +13415,7 @@ shijianyinqing	事件|引擎	482
 shijianyouxian	時間|優先	483
 shijianzhijue	時間|知覺	483
 shijianzhuanyi	事件|轉移	487
-shijibaye	世紀|霸業	502
+shijibaye	世紀|霸業	511
 shijidiguo	世紀|帝國	512
 shijidiguoxilie	世紀|帝國|系列	509
 shijiebangqiu	世界|棒球	515
@@ -15863,7 +15866,7 @@ wuyeshasheng	午夜|殺生	505
 wuyexiangwen	午夜|香吻	453
 wuyexianjing	午夜|陷阱	515
 wuyexingcunzhe	午夜|倖存者	501
-wuyeyoumin	無業|遊民	423
+wuyeyoumin	無業|遊民	424
 wuyeyouxi	午夜|遊戲	499
 wuyichaoqun	武藝|超羣	433
 wuyincangbai	無垠|蒼白	483
@@ -15927,6 +15930,7 @@ xiandaimeiguodonghua	現代|美國|動畫	457
 xiandaiwuli	現代|物理	501
 xiandaiwulipinglun	現代|物理|評論	498
 xiandaiwulixue	現代|物理學	501
+xiandaiwuxiang	現代|五項	466
 xiandaiyixue	現代|醫學	376
 xiandaiyixuemoshi	現代|醫學|模式	458
 xiandaizhanjian	現代|戰艦	496
@@ -17797,6 +17801,8 @@ yelusalengchengqiang	耶路撒冷|城牆	454
 yelvtijiyinzu	葉綠體|基因組	469
 yelvtijizhi	葉綠體|基質	378
 yemanqishi	野蠻|騎士	512
+yemeibanfa	也沒|辦法	453
+yemeiguanxi	也沒|關係	453
 yemianhuancun	頁面|緩存	450
 yemianxuanran	頁面|渲染	416
 yemianxuanranyinqing	頁面|渲染|引擎	498
@@ -18787,7 +18793,7 @@ youxichengyin	遊戲|成癮	499
 youxichuangzao	遊戲|創造	499
 youxichubanshang	遊戲|出版商	499
 youxicundang	遊戲|存檔	499
-youxidajiang	遊戲|大獎	487
+youxidajiang	遊戲|大獎	488
 youxidaoju	遊戲|道具	499
 youxidaoyan	遊戲|導演	499
 youxidianbo	遊戲|點播	499
@@ -19699,7 +19705,7 @@ zhijianshumu	只見|樹木	481
 zhijianzhanzheng	指尖|戰爭	450
 zhijiaozhuanwan	直角|轉彎	383
 zhijiaozhuanwanjieti	直角|轉彎|階梯	465
-zhijiaozuobiao	直角|座標	474
+zhijiaozuobiao	直角|座標	467
 zhijiedanhongsu	直接|膽紅素	457
 zhijiedianli	直接|電離	417
 zhijiedianlilizi	直接|電離|粒子	499
@@ -20709,6 +20715,7 @@ zongjiaojianzhu	宗教|建筑	467
 zongjiaojianzhu	宗教|建築	485
 zongjiaoxinlixue	宗教|心理學	486
 zongjiaoyishi	宗教|儀式	457
+zongjiechulai	總結|出來	453
 zongliyamen	總理|衙門	463
 zonglvqundao	棕櫚|羣島	476
 zongpaizhuyi	宗派|主義	427

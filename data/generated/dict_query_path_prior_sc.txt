@@ -2454,7 +2454,7 @@ dangdaijianzhu	当代|建筑	485
 dangguisinitang	当归|四逆汤	438
 dangjiazuozhu	当家|作主	475
 dangqianbanben	当前|版本	492
-dangqianduixiang	当前|对象	459
+dangqianduixiang	当前|对象	492
 dangqianxuanranqi	当前|渲染器	508
 dangtoubanghe	当头|棒喝	458
 danguanjieshi	胆管|结石	400
@@ -4190,6 +4190,7 @@ fensuisirenbang	粉碎|四人帮	508
 fenwaiyaorao	分外|妖娆	445
 fenwenbuqu	分文|不取	486
 fenwenbuzhi	分文|不值	446
+fenxichulai	分析|出来	520
 fenxihanshu	分析|函数	490
 fenxihuaxue	分析|化学	474
 fenxingjihe	分形|几何	486
@@ -4209,7 +4210,7 @@ fenziliuxingbingxue	分子|流行病学	483
 fenzimianyixue	分子|免疫学	455
 fenzishengwu	分子|生物	501
 fenzishengwuxue	分子|生物学	498
-fenzishibie	分子|识别	447
+fenzishibie	分子|识别	473
 fenzitanzhen	分子|探针	451
 fenziwulixue	分子|物理学	502
 fenziyanhua	分子|演化	485
@@ -5574,7 +5575,7 @@ hangbanchaxun	航班|查询	385
 hangbanchaxunjiekou	航班|查询|接口	467
 hanghaishiji	航海|世纪	515
 hangjialishou	行家|里手	451
-hangkongbaye	航空|霸业	479
+hangkongbaye	航空|霸业	453
 hangkonggongsi	航空|公司	477
 hangkonghangtian	航空|航天	478
 hangkongshigu	航空|事故	483
@@ -8056,7 +8057,7 @@ juhongjiaonang	橘红|胶囊	431
 juhongkeli	橘红|颗粒	468
 juhuiyouxi	聚会|游戏	502
 jujiabangong	居家|办公	484
-jujiajiuye	居家|就业	484
+jujiajiuye	居家|就业	483
 jujiangonglei	居间|拱肋	414
 jujiashengchan	居家|生产	484
 jujidanbai	聚集|蛋白	486
@@ -8823,9 +8824,9 @@ leimanxilie	雷曼|系列	488
 leimojishui	肋膜|积水	476
 leinitidingjiaonang	雷尼替丁|胶囊	437
 leinuogongmen	雷诺|拱门	449
-leisheerjiguan	镭射|二极管	451
+leisheerjiguan	镭射|二极管	441
 leisheerjiguan	雷射|二极管	461
-leishelengque	镭射|冷却	450
+leishelengque	镭射|冷却	440
 leishelengque	雷射|冷却	463
 leishenshijie	雷神|世界	496
 leishentuoer	雷神|托尔	472
@@ -8843,7 +8844,7 @@ leixingcachu	类型|擦除	467
 leixingcanshu	类型|参数	492
 leixingcanshuliebiao	类型|参数|列表	468
 leixingshican	类型|实参	463
-leixingtuiduan	类型|推断	477
+leixingtuiduan	类型|推断	490
 leixingtuili	类型|推理	488
 leixingwuli	类型|物理	373
 leixingwulizhuyi	类型|物理|主义	455
@@ -10935,6 +10936,7 @@ pajinsenzhenghouqun	帕金森|症候群	483
 pajinsenzonghezheng	帕金森|综合征	483
 paladela	帕拉|德拉	424
 palashijie	帕拉|世界	510
+panduanchulai	判断|出来	520
 panduolamiling	潘多拉|密令	462
 pangdahaihanpian	胖大海|含片	427
 pangguanzhexiaoying	旁观者|效应	460
@@ -11823,7 +11825,7 @@ quyanghetang	去氧|核糖	453
 quyangshenshangxiansu	去氧|肾上腺素	457
 quzhengsheying	取证|摄影	486
 quzhikeshu	屈指|可数	423
-quzhongxinhuashibie	去中心化|识别	443
+quzhongxinhuashibie	去中心化|识别	476
 quzhouzhuanqu	衢州|专区	468
 quzhuchujing	驱逐|出境	443
 quzhujianzhihuiguan	驱逐舰|指挥官	512
@@ -12192,8 +12194,8 @@ ribenxingzhengquhua	日本|行政|区划	436
 ribenxinhao	日本|信号	498
 ribenxuexichong	日本|血吸虫	460
 ribenxuexichongbing	日本|血吸虫病	483
-ribenyouxi	日本|游戏	323
-ribenyouxidajiang	日本|游戏|大奖	405
+ribenyouxi	日本|游戏	326
+ribenyouxidajiang	日本|游戏|大奖	408
 richanggainian	日常|概念	471
 richangyongyu	日常|用语	514
 riguangliaofa	日光|疗法	452
@@ -13311,7 +13313,8 @@ shezhijiedian	设置|节点	508
 shezhiwangge	设置|网格	508
 shibaizhuyi	失败|主义	428
 shibaoguangchang	时报|广场	468
-shibiexinhao	识别|信号	481
+shibiechulai	识别|出来	520
+shibiexinhao	识别|信号	502
 shibinggongsi	士兵|公司	515
 shichangfene	市场|份额	467
 shichangjingji	市场|经济	511
@@ -13434,7 +13437,7 @@ shijianyouxian	时间|优先	486
 shijianzhijue	时间|知觉	500
 shijianzhuanyi	事件|转移	483
 shijianzongxian	事件|总线	486
-shijibaye	世纪|霸业	505
+shijibaye	世纪|霸业	479
 shijidiguo	世纪|帝国	515
 shijidiguoxilie	世纪|帝国|系列	509
 shijiebangqiu	世界|棒球	515
@@ -15940,7 +15943,7 @@ wutanglinsuantujing	戊糖|磷酸|途径	483
 wutiaojianfanshe	无条件|反射	459
 wuweianshen	五味|安神	375
 wuweianshenkeli	五味|安神|颗粒	457
-wuweijuquan	五味|俱全	465
+wuweijuquan	五味|俱全	466
 wuweirensheng	五味|人生	508
 wuweizikeli	五味子|颗粒	459
 wuweizitangjiang	五味子|糖浆	459
@@ -15979,12 +15982,12 @@ wuyanghuxi	无氧|呼吸	472
 wuyangouzao	屋檐|构造	425
 wuyeguanli	物业|管理	467
 wuyejiqiren	午夜|机器人	515
-wuyelingzhu	午夜|领主	499
-wuyemanbu	午夜|漫步	509
-wuyeshasheng	午夜|杀生	498
-wuyexiangwen	午夜|香吻	446
+wuyelingzhu	午夜|领主	498
+wuyemanbu	午夜|漫步	508
+wuyeshasheng	午夜|杀生	497
+wuyexiangwen	午夜|香吻	445
 wuyexianjing	午夜|陷阱	515
-wuyexingcunzhe	午夜|幸存者	492
+wuyexingcunzhe	午夜|幸存者	491
 wuyeyoumin	无业|游民	409
 wuyeyouxi	午夜|游戏	502
 wuyincangbai	无垠|苍白	490
@@ -16064,6 +16067,7 @@ xiandaimeiguodonghua	现代|美国|动画	459
 xiandaiwuli	现代|物理	501
 xiandaiwulipinglun	现代|物理|评论	498
 xiandaiwulixue	现代|物理学	501
+xiandaiwuxiang	现代|五项	466
 xiandaiyixue	现代|医学	376
 xiandaiyixuemoshi	现代|医学|模式	458
 xiandaizhanjian	现代|战舰	495
@@ -17953,6 +17957,8 @@ yelusalengchengqiang	耶路撒冷|城墙	454
 yelvtijiyinzu	叶绿体|基因组	470
 yelvtijizhi	叶绿体|基质	381
 yemanqishi	野蛮|骑士	515
+yemeibanfa	也没|办法	520
+yemeiguanxi	也没|关系	520
 yemianhuancun	页面|缓存	453
 yemianxuanran	页面|渲染	416
 yemianxuanranyinqing	页面|渲染|引擎	498
@@ -18963,7 +18969,7 @@ youxichengyin	游戏|成瘾	502
 youxichuangzao	游戏|创造	502
 youxichubanshang	游戏|出版商	502
 youxicundang	游戏|存档	502
-youxidajiang	游戏|大奖	509
+youxidajiang	游戏|大奖	510
 youxidaoju	游戏|道具	502
 youxidaoyan	游戏|导演	502
 youxidianbo	游戏|点播	502
@@ -20894,6 +20900,7 @@ zongjiaofating	宗教|法庭	467
 zongjiaojianzhu	宗教|建筑	499
 zongjiaoxinlixue	宗教|心理学	486
 zongjiaoyishi	宗教|仪式	460
+zongjiechulai	总结|出来	520
 zongliyamen	总理|衙门	467
 zonglvqundao	棕榈|群岛	408
 zongpaizhuyi	宗派|主义	433

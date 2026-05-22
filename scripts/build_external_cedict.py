@@ -518,7 +518,7 @@ CURATED_DAILY_SUPPLEMENT_NUMBER_WEIGHT_CAP = 520
 # Quantity-classifier snippets are useful exact matches, but they are not
 # necessarily more common than same-pinyin lexical words. Keep them visible
 # without giving them the full daily/chat priority floor.
-DAILY_COUNT_MEASURE_CHARS = set("把部对栋副幅根幢件轮盘匹批片篇瓶扇双台条桶页只爿")
+DAILY_COUNT_MEASURE_CHARS = set("把部对栋副幅根幢件轮盘匹批片篇瓶扇双台条桶页项只爿")
 DAILY_COUNT_PREFIX_CHARS = set("一二两三四五六七八九十几每")
 # Fiction entities and public/historical people names are supplemental named
 # entities and should not inherit everyday-word priors. Product/platform proper
