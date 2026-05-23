@@ -482,6 +482,7 @@ DAILY_CHAT_SEED_SUFFIXES = (
 )
 DAILY_CHAT_SEED_CHARS = set("的得地就也还才又都把被给跟让像向对从为在这那哪怎啥谁您你我他她它咱吗呢吧呀啊嘛哦呗啦了着过说看来去")
 DAILY_CHAT_SEED_CHARS.update(("\u6539", "\u6210"))
+DAILY_ASPECT_SUFFIX_CHARS = set("\u4e86\u7740\u8fc7")
 DERIVED_PREFIX_BLOCKED_TAIL_CHARS = set(
     "\u800c\u4e4b\u6240\u4e0e\u8207\u53ca\u548c\u6216\u5c06\u5c07"
     "\u88ab\u628a\u7684\u5730\u5f97"
@@ -514,6 +515,7 @@ CURATED_DAILY_NUMBER_WEIGHT_CAP = 700
 CURATED_DAILY_COUNT_MEASURE_WEIGHT_CAP = 820
 CURATED_DAILY_SUPPLEMENT_WEIGHT_CAP = 560
 CURATED_DAILY_SUPPLEMENT_NUMBER_WEIGHT_CAP = 520
+CURATED_DAILY_ASPECT_VISIBILITY_CAP = 760
 
 # Quantity-classifier snippets are useful exact matches, but they are not
 # necessarily more common than same-pinyin lexical words. Keep them visible
@@ -524,6 +526,9 @@ DAILY_COUNT_PREFIX_CHARS = set("一二两三四五六七八九十几每")
 # entities and should not inherit everyday-word priors. Product/platform proper
 # nouns stay on the generic vertical path because they are frequent daily input.
 NAMED_ENTITY_VERTICAL_LAYERS = {"fiction_entities", "people_names"}
+LOW_PRIORITY_VERTICAL_ENTITY_SOURCE_PREFIXES = (
+    "wikidata-video-game",
+)
 
 CEDICT_LINE_RE = re.compile(r"^(\S+)\s+(\S+)\s+\[([^\]]+)\]\s+/(.*)/$")
 CJK_RE = re.compile("[\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\U00020000-\U0002A6DF]")
@@ -2193,6 +2198,18 @@ def _cap_generic_vertical_weight(weight: int, text: str, layer_id: str, source_i
         return weight
 
     source = source_id.strip().lower()
+    if layer_id == "gaming" and source.startswith(LOW_PRIORITY_VERTICAL_ENTITY_SOURCE_PREFIXES):
+        if text_len <= 2:
+            cap = 360
+        elif text_len == 3:
+            cap = 460
+        elif text_len == 4:
+            cap = 560
+        elif text_len == 5:
+            cap = 640
+        else:
+            cap = 720
+        return min(weight, cap)
     if layer_id == "architecture_terms" and source != "project-curated-vertical-architecture-terms":
         if text_len <= 2:
             cap = 520
@@ -2261,6 +2278,7 @@ def _cap_low_signal_short_term_weights(
     pageviews_signal_map: Dict[str, float],
     jieba_direct_signal_map: Dict[str, float],
     jieba_pos_map: Dict[str, str],
+    term_semantic_bonus_map: Dict[Tuple[str, str], int] | None,
     protected_terms: Set[str],
     stats_prefix: str,
 ) -> Dict[str, int]:
@@ -2270,9 +2288,10 @@ def _cap_low_signal_short_term_weights(
     }
     if not mapping:
         return stats
+    term_semantic_bonus_map = term_semantic_bonus_map or {}
 
     for key, weight in list(mapping.items()):
-        _pinyin, text = key
+        pinyin, text = key
         text_len = _cjk_len(text)
         if text_len < 2 or text_len > 3:
             continue
@@ -2290,6 +2309,8 @@ def _cap_low_signal_short_term_weights(
         if usage_score >= 0.16 or jieba_direct_score >= 0.08 or pageview_score >= 0.03:
             continue
         if _is_conversational_pos(pos_tag):
+            continue
+        if term_semantic_bonus_map.get((pinyin, text), 0) >= 120:
             continue
 
         cap = 560 if text_len <= 2 else 620
@@ -2729,15 +2750,24 @@ def _vertical_ranking_usage_score(
     source_id: str = "",
     supported_named_entity: bool = False,
 ) -> float:
+    source = source_id.strip().lower()
+    bounded = min(1.0, max(0.0, usage_score))
+    text_len = _cjk_len(text)
+    if layer_id == "gaming" and source.startswith(LOW_PRIORITY_VERTICAL_ENTITY_SOURCE_PREFIXES):
+        if text_len <= 2:
+            return min(bounded, 0.16)
+        if text_len == 3:
+            return min(bounded, 0.22)
+        if text_len == 4:
+            return min(bounded, 0.28)
+        return min(bounded, 0.34)
     if _is_named_entity_vertical_layer(layer_id) and not supported_named_entity:
-        return _cap_named_entity_vertical_usage_score(usage_score, _cjk_len(text))
+        return _cap_named_entity_vertical_usage_score(usage_score, text_len)
     if layer_id == "medicine":
-        return _cap_medicine_vertical_usage_score(usage_score, _cjk_len(text), source_id)
+        return _cap_medicine_vertical_usage_score(usage_score, text_len, source_id)
     if layer_id == "place_names":
-        return _cap_place_vertical_usage_score(usage_score, _cjk_len(text), source_id)
+        return _cap_place_vertical_usage_score(usage_score, text_len, source_id)
     if layer_id == "idioms_allusions":
-        bounded = min(1.0, max(0.0, usage_score))
-        text_len = _cjk_len(text)
         if text_len <= 3:
             return min(bounded, 0.50)
         if text_len == 4:
@@ -2745,7 +2775,7 @@ def _vertical_ranking_usage_score(
         if text_len <= 6:
             return min(bounded, 0.64)
         return min(bounded, 0.58)
-    return min(1.0, max(0.0, usage_score))
+    return bounded
 
 
 def _build_existing_prefix_support_map(
@@ -6276,6 +6306,282 @@ def _cap_short_domain_terms_against_direct_common(
     return stats
 
 
+def _cap_low_signal_competitors_against_direct_leaders(
+    mapping: Dict[Tuple[str, str], int],
+    usage_score_map: Dict[str, float],
+    source_hits_map: Dict[str, int],
+    pageviews_signal_map: Dict[str, float],
+    jieba_direct_signal_map: Dict[str, float],
+    jieba_pos_map: Dict[str, str],
+    char_frequency_prior: Dict[str, float],
+    preferred_terms: Set[str],
+    weak_leader_terms: Set[str],
+    stats_prefix: str,
+) -> Dict[str, int]:
+    """Keep low-signal exact competitors below stronger same-pinyin direct terms."""
+    stats = {
+        f"{stats_prefix}_low_signal_competitors_capped": 0,
+        f"{stats_prefix}_low_signal_competitor_buckets": 0,
+    }
+    if not mapping:
+        return stats
+
+    support_index = _build_longer_prefix_term_support_index(mapping)
+    char_prior = _build_effective_char_prior(mapping, char_frequency_prior)
+    buckets: Dict[str, List[Tuple[str, int]]] = {}
+    for pinyin, text in mapping.keys():
+        buckets.setdefault(pinyin, []).append((text, mapping[(pinyin, text)]))
+
+    def signal_parts(text: str) -> Tuple[float, int, float, float, str, float, bool, bool]:
+        usage_score = min(1.0, max(0.0, usage_score_map.get(text, 0.0)))
+        source_hits = max(0, source_hits_map.get(text, 0))
+        pageview_score = min(1.0, max(0.0, pageviews_signal_map.get(text, 0.0)))
+        jieba_score = min(1.0, max(0.0, jieba_direct_signal_map.get(text, 0.0)))
+        pos_tag = jieba_pos_map.get(text, "")
+        char_score = _compute_text_single_char_prior(text, char_prior)
+        text_len = _cjk_len(text)
+        short_everyday = _is_short_everyday_term_candidate(
+            text,
+            text_len=text_len,
+            usage_score=usage_score,
+            source_hits=source_hits,
+            pageview_score=pageview_score,
+            jieba_direct_score=jieba_score,
+            pos_tag=pos_tag,
+            char_score=char_score,
+        )
+        preferred_daily = text in preferred_terms and text not in weak_leader_terms
+        return (
+            usage_score,
+            source_hits,
+            pageview_score,
+            jieba_score,
+            pos_tag,
+            char_score,
+            short_everyday,
+            preferred_daily,
+        )
+
+    def direct_signal(text: str) -> float:
+        (
+            usage_score,
+            source_hits,
+            pageview_score,
+            jieba_score,
+            _pos_tag,
+            _char_score,
+            short_everyday,
+            preferred_daily,
+        ) = signal_parts(text)
+        signal = (
+            usage_score * 0.42
+            + jieba_score * 0.36
+            + pageview_score * 0.14
+            + min(1.0, source_hits / 6.0) * 0.08
+        )
+        if short_everyday:
+            signal += 0.16
+        if preferred_daily:
+            signal += 0.18
+        return min(1.0, signal)
+
+    for pinyin, items in buckets.items():
+        direct_items = [
+            (text, weight, direct_signal(text))
+            for text, weight in items
+            if (
+                _cjk_len(text) >= 2
+                and _cjk_len(text) <= 4
+                and not _is_pure_daily_number_word(text)
+                and text not in weak_leader_terms
+                and not _is_named_entity_pos(jieba_pos_map.get(text, ""))
+            )
+        ]
+        direct_items = [
+            (text, weight, signal)
+            for text, weight, signal in direct_items
+            if signal >= 0.12
+        ]
+        if not direct_items:
+            continue
+
+        leader_text, leader_weight, leader_signal = max(
+            direct_items, key=lambda item: (item[2], item[1])
+        )
+        if leader_weight < 300 or leader_signal < 0.12:
+            continue
+
+        bucket_touched = False
+        for text, weight in items:
+            text_len = _cjk_len(text)
+            if (
+                text == leader_text
+                or text_len < 2
+                or text_len > 3
+                or _is_pure_daily_number_word(text)
+            ):
+                continue
+            if text_len == 2 and len(text) == 2 and text[0] == text[1]:
+                continue
+            if weight <= leader_weight - 64:
+                continue
+
+            (
+                usage_score,
+                source_hits,
+                pageview_score,
+                jieba_score,
+                pos_tag,
+                _char_score,
+                short_everyday,
+                preferred_daily,
+            ) = signal_parts(text)
+            if _is_named_entity_pos(pos_tag):
+                continue
+            if (
+                _is_conversational_pos(pos_tag)
+                and (jieba_score >= 0.14 or pageview_score >= 0.08 or source_hits >= 4)
+            ):
+                continue
+            if preferred_daily:
+                continue
+            if short_everyday and (
+                jieba_score >= 0.12
+                or pageview_score >= 0.08
+                or (usage_score >= 0.18 and source_hits >= 4)
+            ):
+                continue
+
+            signal = direct_signal(text)
+            prefix_fragment = _has_longer_prefix_term_support(pinyin, text, support_index)
+            strong_independent_signal = (
+                usage_score >= 0.30
+                or jieba_score >= 0.24
+                or pageview_score >= 0.10
+                or source_hits >= 4
+            )
+            if strong_independent_signal:
+                continue
+            comparable_direct_signal = signal >= max(0.12, leader_signal * 0.82)
+            low_independent_signal = (
+                usage_score < 0.18
+                and jieba_score < 0.16
+                and pageview_score < 0.08
+                and source_hits <= 2
+            )
+            weaker_than_leader = signal + 0.10 < leader_signal
+            if comparable_direct_signal and not prefix_fragment:
+                continue
+            if not (low_independent_signal or prefix_fragment or weaker_than_leader):
+                continue
+
+            weak_prefix_fragment = (
+                prefix_fragment
+                and jieba_score < 0.08
+                and pageview_score < 0.04
+                and source_hits <= 3
+            )
+            cap_margin = (
+                180
+                if low_independent_signal or weak_prefix_fragment
+                else 96
+                if prefix_fragment
+                else 72
+            )
+            cap = max(1, leader_weight - cap_margin)
+            if low_independent_signal:
+                cap = min(cap, 640)
+            if weight > cap:
+                mapping[(pinyin, text)] = cap
+                stats[f"{stats_prefix}_low_signal_competitors_capped"] += 1
+                bucket_touched = True
+
+        if bucket_touched:
+            stats[f"{stats_prefix}_low_signal_competitor_buckets"] += 1
+
+    return stats
+
+
+def _boost_high_productivity_short_roots(
+    mapping: Dict[Tuple[str, str], int],
+    source_hits_map: Dict[str, int],
+    jieba_pos_map: Dict[str, str],
+    stats_prefix: str,
+) -> Dict[str, int]:
+    """Promote short independent roots backed by many aligned longer terms.
+
+    This handles terms such as two-character technical roots that appear in
+    many high-confidence compounds. The threshold is intentionally high so a
+    short fragment backed by only one or a few longer formal terms stays low.
+    """
+    stats = {
+        f"{stats_prefix}_productive_short_roots_boosted": 0,
+        f"{stats_prefix}_productive_short_roots_delta_total": 0,
+    }
+    if not mapping:
+        return stats
+
+    candidates_by_text: Dict[str, List[Tuple[str, int]]] = {}
+    for (pinyin, text), weight in mapping.items():
+        text_len = _cjk_len(text)
+        if text_len < 2 or text_len > 3:
+            continue
+        if _is_pure_daily_number_word(text) or not CJK_FULL_RE.fullmatch(text):
+            continue
+        if _is_named_entity_pos(jieba_pos_map.get(text, "")):
+            continue
+        candidates_by_text.setdefault(text, []).append((pinyin, weight))
+
+    support: Dict[Tuple[str, str], List[int]] = {}
+    for (term_pinyin, term_text), term_weight in mapping.items():
+        term_len = _cjk_len(term_text)
+        if term_len <= 2 or term_weight < 600 or not CJK_FULL_RE.fullmatch(term_text):
+            continue
+        term_pos_tag = jieba_pos_map.get(term_text, "")
+        if _is_named_entity_pos(term_pos_tag):
+            continue
+
+        for root_len in range(2, min(3, term_len - 1) + 1):
+            prefix_text = term_text[:root_len]
+            for root_pinyin, _root_weight in candidates_by_text.get(prefix_text, []):
+                if term_pinyin.startswith(root_pinyin) and len(term_pinyin) > len(root_pinyin):
+                    support.setdefault((root_pinyin, prefix_text), []).append(term_weight)
+
+            suffix_text = term_text[-root_len:]
+            for root_pinyin, _root_weight in candidates_by_text.get(suffix_text, []):
+                if term_pinyin.endswith(root_pinyin) and len(term_pinyin) > len(root_pinyin):
+                    support.setdefault((root_pinyin, suffix_text), []).append(term_weight)
+
+    for key, weights in support.items():
+        current = mapping.get(key, 0)
+        if current <= 0:
+            continue
+
+        pinyin, text = key
+        text_len = _cjk_len(text)
+        support_count = len(weights)
+        support_total = sum(weights)
+        min_count = 12 if text_len == 2 else 16
+        if support_count < min_count or support_total < min_count * 620:
+            continue
+
+        source_hits = max(0, source_hits_map.get(text, 0))
+        base_target = 560 + min(160, (support_count - min_count) * 6)
+        if source_hits >= 2:
+            base_target += min(80, (source_hits - 1) * 16)
+        else:
+            base_target = min(base_target, 660)
+        target = min(780, max(current, base_target))
+        if target <= current:
+            continue
+
+        mapping[(pinyin, text)] = target
+        stats[f"{stats_prefix}_productive_short_roots_boosted"] += 1
+        stats[f"{stats_prefix}_productive_short_roots_delta_total"] += target - current
+
+    return stats
+
+
 def _filter_low_signal_rare_entries(
     mapping: Dict[Tuple[str, str], int],
     usage_score_map: Dict[str, float],
@@ -7120,6 +7426,8 @@ def _compute_cedict_style_penalty(defs: str) -> int:
 
     dialect_senses = 0
     literary_senses = 0
+    variant_senses = 0
+    geopolitical_state_senses = 0
     plain_senses = 0
 
     for sense in senses:
@@ -7129,16 +7437,34 @@ def _compute_cedict_style_penalty(defs: str) -> int:
             or ("classical" in sense)
             or ("archaic" in sense)
         )
+        is_variant = sense.startswith(("variant of ", "old variant of ", "see also "))
+        # CEDICT definitions such as "Yue state" describe historical/geographic
+        # proper terms, not the everyday abstract sense "state/condition".
+        is_geopolitical_state = (
+            "generic term for states" in sense
+            or re.search(r"(?<![a-z])(?:[a-z]+ )+state(?![a-z])", sense) is not None
+        )
         if is_dialect:
             dialect_senses += 1
         if is_literary:
             literary_senses += 1
-        if (not is_dialect) and (not is_literary):
+        if is_variant:
+            variant_senses += 1
+        if is_geopolitical_state:
+            geopolitical_state_senses += 1
+        if (not is_dialect) and (not is_literary) and (not is_variant) and (not is_geopolitical_state):
             plain_senses += 1
 
     total_senses = max(1, len(senses))
     dialect_ratio = dialect_senses / total_senses
     literary_ratio = literary_senses / total_senses
+
+    if variant_senses > 0:
+        if plain_senses <= 0:
+            return 180
+        if variant_senses * 2 >= total_senses:
+            return 120
+        return 64
 
     if dialect_senses > 0:
         if plain_senses <= 0:
@@ -7153,6 +7479,13 @@ def _compute_cedict_style_penalty(defs: str) -> int:
         if literary_ratio >= 0.5:
             return 72
         return 28
+
+    if geopolitical_state_senses > 0:
+        if plain_senses <= 0:
+            return 120
+        if geopolitical_state_senses * 2 >= total_senses:
+            return 80
+        return 40
 
     return 0
 
@@ -7279,6 +7612,8 @@ def _compute_cedict_daily_semantic_bonus(text: str, defs: str) -> int:
         "condition",
         "situation",
         "state",
+        "case",
+        "example",
         "period",
         "location",
         "part",
@@ -7297,6 +7632,9 @@ def _compute_cedict_daily_semantic_bonus(text: str, defs: str) -> int:
         "appropriate",
         "proper",
         "apt",
+        "adequate",
+        "sufficient",
+        "abundant",
     )
     daily_concrete_clues = (
         "clothes",
@@ -7315,6 +7653,7 @@ def _compute_cedict_daily_semantic_bonus(text: str, defs: str) -> int:
         "rice",
         "vegetable",
         "meat",
+        "chicken",
         "water",
         "tea",
         "coffee",
@@ -7405,7 +7744,9 @@ def _compute_cedict_daily_semantic_bonus(text: str, defs: str) -> int:
             negative_predicate_senses += 1
         if any(has_clue(sense, clue) for clue in daily_function_adverb_clues):
             function_senses += 1
-        if any(has_clue(sense, clue) for clue in function_clues):
+        if any(has_clue(sense, clue) for clue in function_clues) and not has_clue(
+            sense, "according to reason"
+        ):
             function_senses += 1
 
     if variant_senses == total_senses or place_senses * 2 >= total_senses:
@@ -7450,6 +7791,7 @@ def _parse_cedict_entries(
     sc: Dict[Tuple[str, str], int] = {}
     tc: Dict[Tuple[str, str], int] = {}
     term_style_penalty_map: Dict[Tuple[str, str], int] = {}
+    term_style_plain_keys: Set[Tuple[str, str]] = set()
     term_semantic_bonus_map: Dict[Tuple[str, str], int] = {}
     stats = {
         "total_lines": 0,
@@ -7493,10 +7835,15 @@ def _parse_cedict_entries(
             previous = bucket.get(key, 0)
             if weight > previous:
                 bucket[key] = weight
-            if style_penalty > term_style_penalty_map.get(key, 0):
+            if style_penalty <= 0:
+                term_style_plain_keys.add(key)
+            elif key not in term_style_plain_keys and style_penalty > term_style_penalty_map.get(key, 0):
                 term_style_penalty_map[key] = style_penalty
             if semantic_bonus > term_semantic_bonus_map.get(key, 0):
                 term_semantic_bonus_map[key] = semantic_bonus
+
+    for key in term_style_plain_keys:
+        term_style_penalty_map.pop(key, None)
 
     return sc, tc, stats, term_style_penalty_map, term_semantic_bonus_map
 
@@ -11282,9 +11629,46 @@ def _adjust_single_char_leading_preferences(
             strong_leading_presence = (
                 leading_support >= 520.0 and leading_term_count >= 6
             )
+            high_pinlu_mainstream_competitor = False
+            for other_text, _other_weight in items:
+                if other_text == text:
+                    continue
+                other_pinlu = max(0, unihan_pinlu_detail_map.get((other_text, pinyin), 0))
+                if (
+                    other_pinlu >= 500
+                    and other_pinlu >= max(reading_pinlu * 2.5, reading_pinlu + 400)
+                ):
+                    high_pinlu_mainstream_competitor = True
+                    break
 
             delta = 0
             if (
+                leading_support >= 3000.0
+                and leading_term_count >= 24
+                and leading_ratio >= 0.55
+                and not high_pinlu_mainstream_competitor
+            ):
+                # Strong compound-head evidence is a better IME prior than
+                # raw standalone frequency for many action/common characters.
+                delta += 132
+            elif (
+                leading_support >= 10000.0
+                and leading_term_count >= 80
+                and leading_ratio >= 0.30
+            ):
+                delta += 96
+            elif (
+                bucket_best_leading_support >= 8000.0
+                and leading_support >= bucket_best_leading_support * 0.82
+                and leading_support >= 8000.0
+                and leading_term_count >= 20
+                and leading_ratio >= 0.32
+            ):
+                # A character can be common as a compound head even when its
+                # standalone corpus count is modest. Use same-reading compound
+                # evidence instead of enumerating such characters one by one.
+                delta += 132 if leading_ratio >= 0.55 else 96
+            elif (
                 reading_pinlu >= 3000
                 and leading_support >= 1200.0
                 and leading_ratio >= 0.70
@@ -11373,6 +11757,12 @@ def _adjust_single_char_leading_preferences(
                     delta -= 120
                 elif leading_support < 360.0 or leading_term_count < 4:
                     delta -= 36
+
+            if text in DAILY_CHAT_SEED_CHARS:
+                # Single-character IME usage is not the same as raw character
+                # frequency inside compounds. Keep common standalone/action
+                # characters competitive without per-reading overrides.
+                delta += 132 if current < 760 else 48
 
             if delta == 0:
                 continue
@@ -12117,6 +12507,186 @@ def _cap_curated_daily_number_weights(
     return stats
 
 
+def _is_curated_aspect_visibility_term(text: str, usage_score: float) -> bool:
+    return (
+        _cjk_len(text) == 2
+        and len(text) == 2
+        and text[-1] in DAILY_ASPECT_SUFFIX_CHARS
+        and usage_score < 0.90
+    )
+
+
+def _cap_curated_daily_aspect_visibility_weights(
+    mapping: Dict[Tuple[str, str], int],
+    curated_entries: List[Tuple[str, str, float, str]],
+    usage_score_map: Dict[str, float],
+    source_hits_map: Dict[str, int],
+    pageviews_signal_map: Dict[str, float],
+    jieba_direct_signal_map: Dict[str, float],
+    jieba_pos_map: Dict[str, str],
+    *,
+    use_traditional: bool,
+    stats_prefix: str,
+) -> Dict[str, int]:
+    """Keep weak verb-aspect daily supplements visible but behind strong words.
+
+    Entries such as "笑过" are valid exact candidates, but they are productive
+    verb-aspect forms rather than corpus-frequency evidence. When the same
+    pinyin bucket contains a stronger independent word (for example "效果"),
+    the aspect form should not become the default solely because it is curated.
+    """
+    stats = {
+        f"{stats_prefix}_curated_daily_aspect_cap_terms": 0,
+        f"{stats_prefix}_curated_daily_aspect_cap_rows": 0,
+    }
+    if not mapping or not curated_entries:
+        return stats
+
+    aspect_terms: Set[str] = set()
+    for sc_word, tc_word, usage_score, _explicit_pinyin in curated_entries:
+        text = tc_word if use_traditional and tc_word else sc_word
+        effective_usage = max(usage_score, usage_score_map.get(text, 0.0))
+        if _is_curated_aspect_visibility_term(text, effective_usage):
+            aspect_terms.add(text)
+    if not aspect_terms:
+        return stats
+
+    buckets: Dict[str, List[Tuple[str, int]]] = {}
+    for (pinyin, text), weight in mapping.items():
+        buckets.setdefault(pinyin, []).append((text, weight))
+
+    capped_terms: Set[str] = set()
+
+    def direct_signal(text: str) -> float:
+        usage_score = min(1.0, max(0.0, usage_score_map.get(text, 0.0)))
+        source_hits = max(0, source_hits_map.get(text, 0))
+        pageview_score = min(1.0, max(0.0, pageviews_signal_map.get(text, 0.0)))
+        jieba_score = min(1.0, max(0.0, jieba_direct_signal_map.get(text, 0.0)))
+        pos_tag = jieba_pos_map.get(text, "")
+        signal = (
+            usage_score * 0.44
+            + jieba_score * 0.40
+            + pageview_score * 0.10
+            + min(1.0, source_hits / 5.0) * 0.06
+        )
+        if _is_conversational_pos(pos_tag):
+            signal += 0.04
+        elif _is_named_entity_pos(pos_tag):
+            signal *= 0.70
+        return min(1.0, signal)
+
+    for pinyin, items in buckets.items():
+        aspects = [(text, weight) for text, weight in items if text in aspect_terms]
+        if not aspects:
+            continue
+        leaders = [
+            (text, weight, direct_signal(text))
+            for text, weight in items
+            if text not in aspect_terms
+            and _cjk_len(text) >= 2
+            and _cjk_len(text) <= 4
+        ]
+        leaders = [
+            item for item in leaders
+            if item[1] >= 520 and item[2] >= 0.16
+        ]
+        if not leaders:
+            continue
+        leader_text, leader_weight, leader_signal = max(
+            leaders,
+            key=lambda item: (item[2], item[1]),
+        )
+        del leader_text, leader_signal
+        cap = min(CURATED_DAILY_ASPECT_VISIBILITY_CAP, max(520, leader_weight - 64))
+        for text, weight in aspects:
+            if weight <= cap:
+                continue
+            mapping[(pinyin, text)] = cap
+            capped_terms.add(text)
+            stats[f"{stats_prefix}_curated_daily_aspect_cap_rows"] += 1
+
+    stats[f"{stats_prefix}_curated_daily_aspect_cap_terms"] = len(capped_terms)
+    return stats
+
+
+def _cap_styled_exact_competitors(
+    mapping: Dict[Tuple[str, str], int],
+    term_style_penalty_map: Dict[Tuple[str, str], int] | None,
+    usage_score_map: Dict[str, float],
+    pageviews_signal_map: Dict[str, float],
+    jieba_direct_signal_map: Dict[str, float],
+    *,
+    stats_prefix: str,
+) -> Dict[str, int]:
+    """Apply a final homophone cap for CEDICT-styled variants/proper terms."""
+    stats = {
+        f"{stats_prefix}_styled_competitor_cap_rows": 0,
+        f"{stats_prefix}_styled_competitor_cap_buckets": 0,
+    }
+    if not mapping or not term_style_penalty_map:
+        return stats
+
+    buckets: Dict[str, List[Tuple[str, int]]] = {}
+    for (pinyin, text), weight in mapping.items():
+        buckets.setdefault(pinyin, []).append((text, weight))
+
+    def direct_signal(text: str) -> float:
+        usage_score = min(1.0, max(0.0, usage_score_map.get(text, 0.0)))
+        pageview_score = min(1.0, max(0.0, pageviews_signal_map.get(text, 0.0)))
+        jieba_score = min(1.0, max(0.0, jieba_direct_signal_map.get(text, 0.0)))
+        return usage_score * 0.45 + jieba_score * 0.45 + pageview_score * 0.10
+
+    for pinyin, items in buckets.items():
+        best_unstyled_weight = max(
+            (
+                weight
+                for text, weight in items
+                if term_style_penalty_map.get((pinyin, text), 0) <= 0
+            ),
+            default=0,
+        )
+        if best_unstyled_weight <= 0:
+            continue
+
+        touched = False
+        for text, weight in items:
+            style_penalty = term_style_penalty_map.get((pinyin, text), 0)
+            if style_penalty <= 0:
+                continue
+
+            usage_score = min(1.0, max(0.0, usage_score_map.get(text, 0.0)))
+            pageview_score = min(1.0, max(0.0, pageviews_signal_map.get(text, 0.0)))
+            jieba_score = min(1.0, max(0.0, jieba_direct_signal_map.get(text, 0.0)))
+            low_signal_geo_state = (
+                style_penalty >= 100
+                and _cjk_len(text) <= 3
+                and text.endswith(("\u56fd", "\u570b"))
+                and usage_score < 0.08
+                and jieba_score < 0.08
+                and pageview_score < 0.08
+            )
+
+            if low_signal_geo_state:
+                cap = 420
+            elif style_penalty >= 140:
+                cap = max(320, best_unstyled_weight - 140)
+            elif style_penalty >= 80 and direct_signal(text) < 0.16:
+                cap = max(360, best_unstyled_weight - 96)
+            else:
+                continue
+
+            if weight <= cap:
+                continue
+            mapping[(pinyin, text)] = cap
+            stats[f"{stats_prefix}_styled_competitor_cap_rows"] += 1
+            touched = True
+
+        if touched:
+            stats[f"{stats_prefix}_styled_competitor_cap_buckets"] += 1
+
+    return stats
+
+
 def _cap_curated_daily_supplement_exact_weights(
     mapping: Dict[Tuple[str, str], int],
     curated_entries: List[Tuple[str, str, float, str]],
@@ -12142,7 +12712,7 @@ def _cap_curated_daily_supplement_exact_weights(
     existing_texts = {text for _pinyin, text in mapping.keys()}
     capped_terms: Set[str] = set()
 
-    for sc_word, tc_word, _usage_score, explicit_pinyin in curated_entries:
+    for sc_word, tc_word, usage_score, explicit_pinyin in curated_entries:
         if _cjk_len(sc_word) < min_hanzi:
             continue
 
@@ -13141,6 +13711,10 @@ def _reinforce_vertical_tc_terms(
             base_source_hits = 2 if curated_idiom and _cjk_len(tc_candidate) <= 6 else 1
             extra_bonus = 4 if curated_idiom and _cjk_len(tc_candidate) <= 4 else (2 if curated_idiom else 0)
             allow_existing_boost = curated_idiom
+        elif layer_id == "gaming" and source_id.strip().lower().startswith(LOW_PRIORITY_VERTICAL_ENTITY_SOURCE_PREFIXES):
+            base_source_hits = 1
+            extra_bonus = 0 if _cjk_len(tc_candidate) <= 4 else 2
+            allow_existing_boost = False
         elif is_named_entity_layer:
             base_source_hits = 2 if supported_named_entity else 1
             extra_bonus = (8 if _cjk_len(tc_candidate) <= 4 else 4) if supported_named_entity else (
@@ -13195,6 +13769,7 @@ def _reinforce_vertical_tc_terms(
             penalty = _compute_generic_vertical_penalty(tc_candidate, layer_id, source_id)
             if penalty > 0:
                 tc_weight = max(1, tc_weight - penalty)
+            tc_weight = _cap_generic_vertical_weight(tc_weight, tc_candidate, layer_id, source_id)
 
         if existing_tc_weight is None:
             tc[tc_key] = tc_weight
@@ -13571,6 +14146,11 @@ def _augment_with_vertical_terms(
             short_bonus = 4 if curated_idiom and _cjk_len(sc_word) <= 4 else 0
             long_bonus = 2 if curated_idiom else 0
             allow_existing_boost = curated_idiom
+        elif layer_id == "gaming" and source_id.strip().lower().startswith(LOW_PRIORITY_VERTICAL_ENTITY_SOURCE_PREFIXES):
+            source_hits = 1
+            short_bonus = 0
+            long_bonus = 2
+            allow_existing_boost = False
         elif is_named_entity_layer:
             source_hits = 2 if sc_supported_named_entity else 1
             short_bonus = 8 if sc_supported_named_entity else 0
@@ -15197,6 +15777,11 @@ def _remove_known_incorrect_jiancha_entries(
         ("haoxiang", "好象"),
     }
     sc_variant_caps = {
+        # In simplified Chinese, standalone `象` is uncommon in modern IME use;
+        # keep compound words such as `大象`/`象棋` intact, but do not let the
+        # single character compete with everyday `xiang` characters such as
+        # `像`/`想`/`向`.
+        ("xiang", "象"): 220,
         ("xiangxiang", "想像"): 360,
         ("xiangxiangli", "想像力"): 360,
     }
@@ -17194,6 +17779,7 @@ def main() -> int:
         pageviews_signal_map,
         jieba_direct_signal_map,
         jieba_pos_map,
+        cedict_semantic_bonus_map,
         curated_daily_sc_terms | curated_daily_supplement_sc_terms,
         "sc",
     )
@@ -17204,6 +17790,7 @@ def main() -> int:
         tc_pageviews_signal_map,
         tc_jieba_direct_signal_map,
         tc_jieba_pos_map,
+        cedict_semantic_bonus_map,
         curated_daily_tc_terms | curated_daily_supplement_tc_terms,
         "tc",
     )
@@ -17388,6 +17975,88 @@ def main() -> int:
     )
     stats.update(sc_curated_daily_supplement_cap_stats)
     stats.update(tc_curated_daily_supplement_cap_stats)
+    sc_low_signal_competitor_cap_stats = _cap_low_signal_competitors_against_direct_leaders(
+        sc_map,
+        usage_score_map,
+        source_hits_map,
+        pageviews_signal_map,
+        jieba_direct_signal_map,
+        jieba_pos_map,
+        char_frequency_prior,
+        curated_daily_sc_terms,
+        curated_daily_supplement_sc_terms,
+        "sc",
+    )
+    tc_low_signal_competitor_cap_stats = _cap_low_signal_competitors_against_direct_leaders(
+        tc_map,
+        tc_usage_score_map,
+        tc_source_hits_map,
+        tc_pageviews_signal_map,
+        tc_jieba_direct_signal_map,
+        tc_jieba_pos_map,
+        tc_char_frequency_prior,
+        curated_daily_tc_terms,
+        curated_daily_supplement_tc_terms,
+        "tc",
+    )
+    stats.update(sc_low_signal_competitor_cap_stats)
+    stats.update(tc_low_signal_competitor_cap_stats)
+    sc_productive_short_root_stats = _boost_high_productivity_short_roots(
+        sc_map,
+        source_hits_map,
+        jieba_pos_map,
+        "sc",
+    )
+    tc_productive_short_root_stats = _boost_high_productivity_short_roots(
+        tc_map,
+        tc_source_hits_map,
+        tc_jieba_pos_map,
+        "tc",
+    )
+    stats.update(sc_productive_short_root_stats)
+    stats.update(tc_productive_short_root_stats)
+    sc_curated_daily_aspect_cap_stats = _cap_curated_daily_aspect_visibility_weights(
+        sc_map,
+        curated_daily_entries,
+        usage_score_map,
+        source_hits_map,
+        pageviews_signal_map,
+        jieba_direct_signal_map,
+        jieba_pos_map,
+        use_traditional=False,
+        stats_prefix="sc",
+    )
+    tc_curated_daily_aspect_cap_stats = _cap_curated_daily_aspect_visibility_weights(
+        tc_map,
+        curated_daily_entries,
+        tc_usage_score_map,
+        tc_source_hits_map,
+        tc_pageviews_signal_map,
+        tc_jieba_direct_signal_map,
+        tc_jieba_pos_map,
+        use_traditional=True,
+        stats_prefix="tc",
+    )
+    stats.update(sc_curated_daily_aspect_cap_stats)
+    stats.update(tc_curated_daily_aspect_cap_stats)
+    sc_styled_competitor_cap_stats = _cap_styled_exact_competitors(
+        sc_map,
+        cedict_style_penalty_map,
+        usage_score_map,
+        pageviews_signal_map,
+        jieba_direct_signal_map,
+        stats_prefix="sc",
+    )
+    tc_styled_competitor_cap_stats = _cap_styled_exact_competitors(
+        tc_map,
+        cedict_style_penalty_map,
+        tc_usage_score_map,
+        tc_pageviews_signal_map,
+        tc_jieba_direct_signal_map,
+        stats_prefix="tc",
+    )
+    stats.update(sc_styled_competitor_cap_stats)
+    stats.update(tc_styled_competitor_cap_stats)
     curated_daily_explicit_pinyin_keys = _build_curated_daily_explicit_pinyin_key_set(
         curated_daily_entries + curated_daily_supplement_entries
     )
