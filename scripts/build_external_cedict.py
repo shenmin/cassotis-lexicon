@@ -2366,6 +2366,26 @@ def _has_longer_prefix_term_support(
     return False
 
 
+def _longer_prefix_term_support_stats(
+    pinyin: str,
+    text: str,
+    support_index: Dict[str, List[Tuple[str, str, int]]],
+) -> Tuple[int, int]:
+    support_count = 0
+    support_total = 0
+    for support_pinyin, support_text, support_weight in support_index.get(text, []):
+        if support_text == text:
+            continue
+        if (
+            support_pinyin.startswith(pinyin)
+            and len(support_pinyin) > len(pinyin)
+            and support_weight >= 520
+        ):
+            support_count += 1
+            support_total += support_weight
+    return support_count, support_total
+
+
 def _cap_low_independent_prefix_fragment_weights(
     mapping: Dict[Tuple[str, str], int],
     usage_score_map: Dict[str, float],
@@ -6317,6 +6337,8 @@ def _cap_low_signal_competitors_against_direct_leaders(
     preferred_terms: Set[str],
     weak_leader_terms: Set[str],
     stats_prefix: str,
+    bucket_pinyin_map: Dict[Tuple[str, str], str] | None = None,
+    term_semantic_bonus_map: Dict[Tuple[str, str], int] | None = None,
 ) -> Dict[str, int]:
     """Keep low-signal exact competitors below stronger same-pinyin direct terms."""
     stats = {
@@ -6328,9 +6350,21 @@ def _cap_low_signal_competitors_against_direct_leaders(
 
     support_index = _build_longer_prefix_term_support_index(mapping)
     char_prior = _build_effective_char_prior(mapping, char_frequency_prior)
+    bucket_pinyin_map = bucket_pinyin_map or {}
+    term_semantic_bonus_map = term_semantic_bonus_map or {}
+    semantic_bonus_by_text: Dict[str, int] = {}
+    for (_pinyin, text), bonus in term_semantic_bonus_map.items():
+        if bonus <= 0:
+            continue
+        previous = semantic_bonus_by_text.get(text, 0)
+        if bonus > previous:
+            semantic_bonus_by_text[text] = bonus
     buckets: Dict[str, List[Tuple[str, int]]] = {}
     for pinyin, text in mapping.keys():
-        buckets.setdefault(pinyin, []).append((text, mapping[(pinyin, text)]))
+        bucket_pinyin = bucket_pinyin_map.get((pinyin, text), pinyin)
+        if not bucket_pinyin:
+            continue
+        buckets.setdefault(bucket_pinyin, []).append((text, mapping[(pinyin, text)]))
 
     def signal_parts(text: str) -> Tuple[float, int, float, float, str, float, bool, bool]:
         usage_score = min(1.0, max(0.0, usage_score_map.get(text, 0.0)))
@@ -6383,20 +6417,44 @@ def _cap_low_signal_competitors_against_direct_leaders(
             signal += 0.16
         if preferred_daily:
             signal += 0.18
+        semantic_bonus = semantic_bonus_by_text.get(text, 0)
+        if semantic_bonus >= 120:
+            signal += min(0.18, semantic_bonus / 1200.0)
         return min(1.0, signal)
 
     for pinyin, items in buckets.items():
-        direct_items = [
-            (text, weight, direct_signal(text))
-            for text, weight in items
+        direct_items: List[Tuple[str, int, float]] = []
+        for text, weight in items:
+            text_len = _cjk_len(text)
             if (
-                _cjk_len(text) >= 2
-                and _cjk_len(text) <= 4
-                and not _is_pure_daily_number_word(text)
-                and text not in weak_leader_terms
-                and not _is_named_entity_pos(jieba_pos_map.get(text, ""))
-            )
-        ]
+                text_len < 2
+                or text_len > 4
+                or _is_pure_daily_number_word(text)
+                or text in weak_leader_terms
+            ):
+                continue
+
+            (
+                usage_score,
+                source_hits,
+                _pageview_score,
+                jieba_score,
+                pos_tag,
+                _char_score,
+                _short_everyday,
+                _preferred_daily,
+            ) = signal_parts(text)
+            # Jieba occasionally marks ordinary words as place/name POS. Keep
+            # the named-entity guard for weak direct evidence, but do not block
+            # clearly frequent words from becoming the bucket's direct leader.
+            if _is_named_entity_pos(pos_tag) and not (
+                usage_score >= 0.16
+                or jieba_score >= 0.18
+                or (usage_score >= 0.12 and source_hits >= 2)
+            ):
+                continue
+
+            direct_items.append((text, weight, direct_signal(text)))
         direct_items = [
             (text, weight, signal)
             for text, weight, signal in direct_items
@@ -6410,6 +6468,31 @@ def _cap_low_signal_competitors_against_direct_leaders(
         )
         if leader_weight < 300 or leader_signal < 0.12:
             continue
+
+        (
+            leader_usage_score,
+            leader_source_hits,
+            leader_pageview_score,
+            leader_jieba_score,
+            leader_pos_tag,
+            _leader_char_score,
+            leader_short_everyday,
+            leader_preferred_daily,
+        ) = signal_parts(leader_text)
+        leader_is_daily_like = (
+            leader_short_everyday
+            or leader_preferred_daily
+            or semantic_bonus_by_text.get(leader_text, 0) >= 120
+            or (
+                _is_conversational_pos(leader_pos_tag)
+                and (
+                    leader_jieba_score >= 0.18
+                    or leader_usage_score >= 0.16
+                    or leader_source_hits >= 2
+                    or leader_pageview_score >= 0.08
+                )
+            )
+        )
 
         bucket_touched = False
         for text, weight in items:
@@ -6436,8 +6519,6 @@ def _cap_low_signal_competitors_against_direct_leaders(
                 short_everyday,
                 preferred_daily,
             ) = signal_parts(text)
-            if _is_named_entity_pos(pos_tag):
-                continue
             if (
                 _is_conversational_pos(pos_tag)
                 and (jieba_score >= 0.14 or pageview_score >= 0.08 or source_hits >= 4)
@@ -6445,7 +6526,20 @@ def _cap_low_signal_competitors_against_direct_leaders(
                 continue
             if preferred_daily:
                 continue
-            if short_everyday and (
+            if semantic_bonus_by_text.get(text, 0) >= 120:
+                continue
+            short_everyday_yields_to_daily_leader = (
+                short_everyday
+                and leader_is_daily_like
+                and _is_noun_pos(pos_tag)
+                and not _is_conversational_pos(pos_tag)
+                and source_hits <= 3
+                and pageview_score < 0.12
+                and jieba_score + 0.08 < leader_jieba_score
+                and usage_score <= leader_usage_score + 0.08
+            )
+            effective_short_everyday = short_everyday and not short_everyday_yields_to_daily_leader
+            if effective_short_everyday and (
                 jieba_score >= 0.12
                 or pageview_score >= 0.08
                 or (usage_score >= 0.18 and source_hits >= 4)
@@ -6453,13 +6547,36 @@ def _cap_low_signal_competitors_against_direct_leaders(
                 continue
 
             signal = direct_signal(text)
-            prefix_fragment = _has_longer_prefix_term_support(pinyin, text, support_index)
+            support_count, support_total = _longer_prefix_term_support_stats(
+                pinyin,
+                text,
+                support_index,
+            )
+            prefix_fragment = support_count > 0
+            productive_action_root = (
+                pos_tag.startswith("v")
+                and source_hits >= 2
+                and support_count >= 12
+                and support_total >= 12 * 620
+                and jieba_score >= 0.08
+            )
+            if productive_action_root:
+                continue
             strong_independent_signal = (
                 usage_score >= 0.30
                 or jieba_score >= 0.24
                 or pageview_score >= 0.10
-                or source_hits >= 4
+                or (
+                    source_hits >= 4
+                    and (
+                        usage_score >= 0.20
+                        or jieba_score >= 0.12
+                        or pageview_score >= 0.06
+                    )
+                )
             )
+            if _is_named_entity_pos(pos_tag) and strong_independent_signal:
+                continue
             if strong_independent_signal:
                 continue
             comparable_direct_signal = signal >= max(0.12, leader_signal * 0.82)
@@ -6470,9 +6587,26 @@ def _cap_low_signal_competitors_against_direct_leaders(
                 and source_hits <= 2
             )
             weaker_than_leader = signal + 0.10 < leader_signal
-            if comparable_direct_signal and not prefix_fragment:
+            moderate_non_daily_competitor = (
+                leader_is_daily_like
+                and not effective_short_everyday
+                and not preferred_daily
+                and not _is_conversational_pos(pos_tag)
+                and text_len <= 3
+                and source_hits <= 3
+                and pageview_score < 0.12
+                and jieba_score + 0.08 < leader_jieba_score
+                and usage_score <= leader_usage_score + 0.06
+                and signal + 0.03 < leader_signal
+            )
+            if comparable_direct_signal and not prefix_fragment and not moderate_non_daily_competitor:
                 continue
-            if not (low_independent_signal or prefix_fragment or weaker_than_leader):
+            if not (
+                low_independent_signal
+                or prefix_fragment
+                or weaker_than_leader
+                or moderate_non_daily_competitor
+            ):
                 continue
 
             weak_prefix_fragment = (
@@ -6485,7 +6619,7 @@ def _cap_low_signal_competitors_against_direct_leaders(
                 180
                 if low_independent_signal or weak_prefix_fragment
                 else 96
-                if prefix_fragment
+                if prefix_fragment or moderate_non_daily_competitor
                 else 72
             )
             cap = max(1, leader_weight - cap_margin)
@@ -11780,6 +11914,133 @@ def _adjust_single_char_leading_preferences(
     return stats
 
 
+def _rebalance_single_char_homophones_by_leading_support(
+    mapping: Dict[Tuple[str, str], int],
+    leading_term_count_map: Dict[Tuple[str, str], int] | None,
+    leading_support_sum_map: Dict[Tuple[str, str], float] | None,
+    family_support_sum_map: Dict[str, float] | None,
+    unihan_pinlu_detail_map: Dict[Tuple[str, str], int] | None,
+    stats_prefix: str,
+) -> Dict[str, int]:
+    """Prefer modern compound-head evidence over raw Unihan frequency for single chars.
+
+    Unihan Pinlu is useful, but for IME single-character ordering it can
+    over-favor literary/written characters.  When a same-pinyin character is
+    clearly more productive as the first character of modern lexicon words,
+    keep weaker compound-head competitors below it.  This is intentionally
+    bucket-local and data-driven; no character-specific overrides are used.
+    """
+    stats = {
+        f"{stats_prefix}_single_char_leading_rebalanced": 0,
+        f"{stats_prefix}_single_char_leading_rebalanced_buckets": 0,
+    }
+    if not mapping:
+        return stats
+
+    leading_term_count_map = leading_term_count_map or {}
+    leading_support_sum_map = leading_support_sum_map or {}
+    family_support_sum_map = family_support_sum_map or {}
+    unihan_pinlu_detail_map = unihan_pinlu_detail_map or {}
+
+    buckets: Dict[str, List[Tuple[str, int]]] = {}
+    for (pinyin, text), weight in mapping.items():
+        if _cjk_len(text) != 1:
+            continue
+        buckets.setdefault(pinyin, []).append((text, weight))
+
+    for pinyin, items in buckets.items():
+        if len(items) < 2:
+            continue
+
+        records: List[Dict[str, float | int | str]] = []
+        for text, weight in items:
+            pair = (text, pinyin)
+            leading_support = max(0.0, leading_support_sum_map.get(pair, 0.0))
+            leading_count = max(0, leading_term_count_map.get(pair, 0))
+            family_support = max(0.0, family_support_sum_map.get(text, 0.0))
+            leading_ratio = leading_support / family_support if family_support > 0.0 else 0.0
+            records.append(
+                {
+                    "text": text,
+                    "weight": weight,
+                    "leading_support": leading_support,
+                    "leading_count": leading_count,
+                    "leading_ratio": leading_ratio,
+                    "pinlu": max(0, unihan_pinlu_detail_map.get(pair, 0)),
+                }
+            )
+
+        eligible = [
+            record
+            for record in records
+            if float(record["leading_support"]) >= 1200.0
+            and int(record["leading_count"]) >= 6
+            and float(record["leading_ratio"]) >= 0.24
+            and int(record["pinlu"]) >= 1000
+        ]
+        if not eligible:
+            continue
+
+        leader = max(
+            eligible,
+            key=lambda item: (
+                float(item["leading_support"]),
+                int(item["leading_count"]),
+                float(item["leading_ratio"]),
+                int(item["pinlu"]),
+            ),
+        )
+        leader_text = str(leader["text"])
+        leader_weight = int(leader["weight"])
+        leader_support = float(leader["leading_support"])
+        leader_count = int(leader["leading_count"])
+        leader_ratio = float(leader["leading_ratio"])
+        leader_pinlu = int(leader["pinlu"])
+
+        bucket_touched = False
+        for record in records:
+            text = str(record["text"])
+            if text == leader_text:
+                continue
+
+            weight = int(record["weight"])
+            leading_support = float(record["leading_support"])
+            leading_count = int(record["leading_count"])
+            leading_ratio = float(record["leading_ratio"])
+            pinlu = int(record["pinlu"])
+
+            clear_leading_advantage = (
+                leader_support >= max(leading_support * 1.35, leading_support + 900.0)
+                or (
+                    leader_ratio >= max(leading_ratio * 1.75, leading_ratio + 0.16)
+                    and leader_support >= leading_support + 600.0
+                )
+                or (leader_count >= leading_count + 28 and leader_support >= leading_support + 600.0)
+            )
+            if not clear_leading_advantage:
+                continue
+
+            # Do not overturn an overwhelmingly stronger standalone reading.
+            if pinlu > max(leader_pinlu * 3.2, leader_pinlu + 4200):
+                continue
+
+            if leading_ratio >= leader_ratio * 0.72 and leading_support >= leader_support * 0.82:
+                continue
+
+            cap = max(1, leader_weight - 24)
+            if weight <= cap:
+                continue
+
+            mapping[(pinyin, text)] = cap
+            stats[f"{stats_prefix}_single_char_leading_rebalanced"] += 1
+            bucket_touched = True
+
+        if bucket_touched:
+            stats[f"{stats_prefix}_single_char_leading_rebalanced_buckets"] += 1
+
+    return stats
+
+
 def _augment_with_frequency_lexicon(
     sc: Dict[Tuple[str, str], int],
     tc: Dict[Tuple[str, str], int],
@@ -14718,6 +14979,35 @@ def _write_dict(
             ),
         ):
             f.write(f"{output_pinyin}\t{text}\t{weight}\n")
+
+
+def _build_output_pinyin_bucket_map(
+    mapping: Dict[Tuple[str, str], int],
+    preserve_pinyin_keys: Set[Tuple[str, str]] | None = None,
+    unihan_map: Dict[str, str] | None = None,
+    unihan_readings_map: Dict[str, Set[str]] | None = None,
+    unihan_source_rank_map: Dict[Tuple[str, str], int] | None = None,
+    unihan_pinlu_detail_map: Dict[Tuple[str, str], int] | None = None,
+) -> Dict[Tuple[str, str], str]:
+    """Return the same pinyin bucket key that _write_dict will emit."""
+    preserve_pinyin_keys = preserve_pinyin_keys or set()
+    bucket_map: Dict[Tuple[str, str], str] = {}
+    for pinyin, text in mapping.keys():
+        if (pinyin, text) in preserve_pinyin_keys:
+            output_pinyin = pinyin
+        else:
+            output_pinyin = _canonicalize_output_pinyin(
+                pinyin,
+                text,
+                unihan_map,
+                unihan_readings_map,
+                unihan_source_rank_map,
+                unihan_pinlu_detail_map,
+            )
+        output_pinyin = output_pinyin.replace("\ufeff", "").strip()
+        if output_pinyin:
+            bucket_map[(pinyin, text)] = output_pinyin
+    return bucket_map
 
 
 def _load_existing_dict_snapshot(
@@ -17986,6 +18276,7 @@ def main() -> int:
         curated_daily_sc_terms,
         curated_daily_supplement_sc_terms,
         "sc",
+        term_semantic_bonus_map=cedict_semantic_bonus_map,
     )
     tc_low_signal_competitor_cap_stats = _cap_low_signal_competitors_against_direct_leaders(
         tc_map,
@@ -17998,6 +18289,7 @@ def main() -> int:
         curated_daily_tc_terms,
         curated_daily_supplement_tc_terms,
         "tc",
+        term_semantic_bonus_map=cedict_semantic_bonus_map,
     )
     stats.update(sc_low_signal_competitor_cap_stats)
     stats.update(tc_low_signal_competitor_cap_stats)
@@ -18060,6 +18352,70 @@ def main() -> int:
     curated_daily_explicit_pinyin_keys = _build_curated_daily_explicit_pinyin_key_set(
         curated_daily_entries + curated_daily_supplement_entries
     )
+    sc_output_pinyin_bucket_map = _build_output_pinyin_bucket_map(
+        sc_map,
+        preserve_pinyin_keys=curated_daily_explicit_pinyin_keys,
+        unihan_map=output_unihan_map,
+        unihan_readings_map=output_unihan_readings_map,
+        unihan_source_rank_map=output_unihan_source_rank_map,
+        unihan_pinlu_detail_map=output_unihan_pinlu_detail_map,
+    )
+    tc_output_pinyin_bucket_map = _build_output_pinyin_bucket_map(
+        tc_map,
+        preserve_pinyin_keys=curated_daily_explicit_pinyin_keys,
+        unihan_map=output_unihan_map,
+        unihan_readings_map=output_unihan_readings_map,
+        unihan_source_rank_map=output_unihan_source_rank_map,
+        unihan_pinlu_detail_map=output_unihan_pinlu_detail_map,
+    )
+    sc_final_low_signal_competitor_cap_stats = _cap_low_signal_competitors_against_direct_leaders(
+        sc_map,
+        usage_score_map,
+        source_hits_map,
+        pageviews_signal_map,
+        jieba_direct_signal_map,
+        jieba_pos_map,
+        char_frequency_prior,
+        curated_daily_sc_terms,
+        curated_daily_supplement_sc_terms,
+        "sc_final",
+        bucket_pinyin_map=sc_output_pinyin_bucket_map,
+        term_semantic_bonus_map=cedict_semantic_bonus_map,
+    )
+    tc_final_low_signal_competitor_cap_stats = _cap_low_signal_competitors_against_direct_leaders(
+        tc_map,
+        tc_usage_score_map,
+        tc_source_hits_map,
+        tc_pageviews_signal_map,
+        tc_jieba_direct_signal_map,
+        tc_jieba_pos_map,
+        tc_char_frequency_prior,
+        curated_daily_tc_terms,
+        curated_daily_supplement_tc_terms,
+        "tc_final",
+        bucket_pinyin_map=tc_output_pinyin_bucket_map,
+        term_semantic_bonus_map=cedict_semantic_bonus_map,
+    )
+    stats.update(sc_final_low_signal_competitor_cap_stats)
+    stats.update(tc_final_low_signal_competitor_cap_stats)
+    sc_single_char_rebalance_stats = _rebalance_single_char_homophones_by_leading_support(
+        sc_map,
+        sc_leading_term_count_map,
+        sc_leading_support_sum_map,
+        sc_family_support_sum_map,
+        unihan_pinlu_detail_map,
+        "sc_final",
+    )
+    tc_single_char_rebalance_stats = _rebalance_single_char_homophones_by_leading_support(
+        tc_map,
+        tc_leading_term_count_map,
+        tc_leading_support_sum_map,
+        tc_family_support_sum_map,
+        unihan_pinlu_detail_map,
+        "tc_final",
+    )
+    stats.update(sc_single_char_rebalance_stats)
+    stats.update(tc_single_char_rebalance_stats)
 
     _write_dict(
         output_sc,
