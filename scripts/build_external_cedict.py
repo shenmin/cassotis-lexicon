@@ -12948,6 +12948,212 @@ def _cap_styled_exact_competitors(
     return stats
 
 
+def _enforce_final_normative_homophone_order(
+    mapping: Dict[Tuple[str, str], int],
+    usage_score_map: Dict[str, float],
+    source_hits_map: Dict[str, int],
+    pageviews_signal_map: Dict[str, float],
+    jieba_direct_signal_map: Dict[str, float],
+    jieba_pos_map: Dict[str, str],
+    char_frequency_prior: Dict[str, float] | None,
+    term_style_penalty_map: Dict[Tuple[str, str], int] | None,
+    term_semantic_bonus_map: Dict[Tuple[str, str], int] | None,
+    stats_prefix: str,
+    bucket_pinyin_map: Dict[Tuple[str, str], str] | None = None,
+) -> Dict[str, int]:
+    """Final homophone ordering guard for exact candidates.
+
+    Some source signals are visibility signals rather than rank-priority
+    signals: CEDICT "variant of" forms, semantic-definition bonuses, and short
+    prefixes mainly supported by longer fixed expressions. Keep these entries
+    selectable, but do not let them outrank stronger mainstream same-pinyin
+    exact words after later rescoring/boost stages have run.
+    """
+    stats = {
+        f"{stats_prefix}_normative_homophone_rows_capped": 0,
+        f"{stats_prefix}_normative_homophone_buckets": 0,
+        f"{stats_prefix}_normative_variant_rows_capped": 0,
+        f"{stats_prefix}_normative_semantic_rows_capped": 0,
+        f"{stats_prefix}_normative_prefix_rows_capped": 0,
+    }
+    if not mapping:
+        return stats
+
+    term_style_penalty_map = term_style_penalty_map or {}
+    term_semantic_bonus_map = term_semantic_bonus_map or {}
+    bucket_pinyin_map = bucket_pinyin_map or {}
+    char_prior = _build_effective_char_prior(mapping, char_frequency_prior)
+    support_index = _build_longer_prefix_term_support_index(mapping)
+
+    buckets: Dict[str, List[Tuple[str, str, int]]] = {}
+    for key, weight in mapping.items():
+        pinyin, text = key
+        bucket_pinyin = bucket_pinyin_map.get(key, pinyin)
+        if not bucket_pinyin:
+            continue
+        buckets.setdefault(bucket_pinyin, []).append((pinyin, text, weight))
+
+    def parts(pinyin: str, text: str) -> Tuple[float, int, float, float, str, float, int, int, int, float]:
+        usage_score = min(1.0, max(0.0, usage_score_map.get(text, 0.0)))
+        source_hits = max(0, source_hits_map.get(text, 0))
+        pageview_score = min(1.0, max(0.0, pageviews_signal_map.get(text, 0.0)))
+        jieba_score = min(1.0, max(0.0, jieba_direct_signal_map.get(text, 0.0)))
+        pos_tag = jieba_pos_map.get(text, "")
+        char_score = _compute_text_single_char_prior(text, char_prior)
+        style_penalty = term_style_penalty_map.get((pinyin, text), 0)
+        semantic_bonus = term_semantic_bonus_map.get((pinyin, text), 0)
+        support_count, support_total = _longer_prefix_term_support_stats(
+            pinyin,
+            text,
+            support_index,
+        )
+        # Mainstream signal deliberately excludes CEDICT semantic bonuses and
+        # final weight, because those can encode "visible but not frequent".
+        mainstream_signal = (
+            usage_score * 0.38
+            + jieba_score * 0.36
+            + pageview_score * 0.14
+            + min(1.0, source_hits / 5.0) * 0.08
+            + char_score * 0.04
+        )
+        if _is_conversational_pos(pos_tag):
+            mainstream_signal += 0.04
+        elif _is_noun_pos(pos_tag) and (usage_score >= 0.08 or jieba_score >= 0.08):
+            mainstream_signal += 0.02
+        if style_penalty > 0:
+            mainstream_signal -= min(0.22, style_penalty / 900.0)
+        return (
+            usage_score,
+            source_hits,
+            pageview_score,
+            jieba_score,
+            pos_tag,
+            char_score,
+            style_penalty,
+            semantic_bonus,
+            support_count,
+            max(0.0, min(1.0, mainstream_signal)),
+        )
+
+    for bucket_pinyin, items in buckets.items():
+        if len(items) < 2:
+            continue
+
+        enriched = []
+        for pinyin, text, weight in items:
+            text_len = _cjk_len(text)
+            if text_len < 2 or text_len > 4:
+                continue
+            enriched.append((pinyin, text, weight, parts(pinyin, text)))
+        if len(enriched) < 2:
+            continue
+
+        mainstream_candidates = [
+            item
+            for item in enriched
+            if item[3][6] <= 0  # style_penalty
+            and item[3][9] >= 0.075  # mainstream_signal
+            and not _is_pure_daily_number_word(item[1])
+        ]
+        if not mainstream_candidates:
+            continue
+
+        touched = False
+
+        def best_mainstream_except(text: str) -> Tuple[str, str, int, Tuple[float, int, float, float, str, float, int, int, int, float]] | None:
+            candidates = [
+                item
+                for item in mainstream_candidates
+                if item[1] != text
+            ]
+            if not candidates:
+                return None
+            return max(candidates, key=lambda item: (item[3][9], item[2]))
+
+        for pinyin, text, weight, item_parts in enriched:
+            (
+                usage_score,
+                source_hits,
+                pageview_score,
+                jieba_score,
+                pos_tag,
+                _char_score,
+                style_penalty,
+                semantic_bonus,
+                support_count,
+                mainstream_signal,
+            ) = item_parts
+            text_len = _cjk_len(text)
+            if text_len < 2 or text_len > 3:
+                continue
+
+            leader = best_mainstream_except(text)
+            if leader is None:
+                continue
+            _leader_pinyin, leader_text, leader_weight, leader_parts = leader
+            leader_signal = leader_parts[9]
+
+            cap_kind = ""
+            cap_margin = 0
+            if style_penalty >= 80:
+                # "variant of X" and similar styled forms are useful exact
+                # candidates, but the unstyled form should remain ahead.
+                if leader_weight <= 0:
+                    continue
+                cap_kind = "variant"
+                cap_margin = 96 if style_penalty < 140 else 140
+            else:
+                low_independent_signal = (
+                    usage_score < 0.12
+                    and jieba_score < 0.10
+                    and pageview_score < 0.06
+                    and source_hits <= 2
+                )
+                semantic_visibility_only = (
+                    semantic_bonus >= 160
+                    and low_independent_signal
+                    and leader_signal >= mainstream_signal + 0.035
+                )
+                prefix_visibility_only = (
+                    support_count >= 1
+                    and low_independent_signal
+                    and leader_signal >= mainstream_signal + 0.04
+                    and not (
+                        pos_tag.startswith("v")
+                        and source_hits >= 2
+                        and jieba_score >= 0.08
+                        and support_count >= 12
+                    )
+                )
+                if semantic_visibility_only:
+                    cap_kind = "semantic"
+                    cap_margin = 120
+                elif prefix_visibility_only:
+                    cap_kind = "prefix"
+                    cap_margin = 112
+                else:
+                    continue
+
+            cap = max(1, leader_weight - cap_margin)
+            if weight <= cap:
+                continue
+
+            mapping[(pinyin, text)] = cap
+            stats[f"{stats_prefix}_normative_homophone_rows_capped"] += 1
+            if cap_kind == "variant":
+                stats[f"{stats_prefix}_normative_variant_rows_capped"] += 1
+            elif cap_kind == "semantic":
+                stats[f"{stats_prefix}_normative_semantic_rows_capped"] += 1
+            elif cap_kind == "prefix":
+                stats[f"{stats_prefix}_normative_prefix_rows_capped"] += 1
+            touched = True
+
+        if touched:
+            stats[f"{stats_prefix}_normative_homophone_buckets"] += 1
+
+    return stats
+
+
 def _cap_curated_daily_supplement_exact_weights(
     mapping: Dict[Tuple[str, str], int],
     curated_entries: List[Tuple[str, str, float, str]],
@@ -18398,6 +18604,34 @@ def main() -> int:
     )
     stats.update(sc_final_low_signal_competitor_cap_stats)
     stats.update(tc_final_low_signal_competitor_cap_stats)
+    sc_final_normative_homophone_stats = _enforce_final_normative_homophone_order(
+        sc_map,
+        usage_score_map,
+        source_hits_map,
+        pageviews_signal_map,
+        jieba_direct_signal_map,
+        jieba_pos_map,
+        char_frequency_prior,
+        cedict_style_penalty_map,
+        cedict_semantic_bonus_map,
+        "sc_final",
+        bucket_pinyin_map=sc_output_pinyin_bucket_map,
+    )
+    tc_final_normative_homophone_stats = _enforce_final_normative_homophone_order(
+        tc_map,
+        tc_usage_score_map,
+        tc_source_hits_map,
+        tc_pageviews_signal_map,
+        tc_jieba_direct_signal_map,
+        tc_jieba_pos_map,
+        tc_char_frequency_prior,
+        cedict_style_penalty_map,
+        cedict_semantic_bonus_map,
+        "tc_final",
+        bucket_pinyin_map=tc_output_pinyin_bucket_map,
+    )
+    stats.update(sc_final_normative_homophone_stats)
+    stats.update(tc_final_normative_homophone_stats)
     sc_single_char_rebalance_stats = _rebalance_single_char_homophones_by_leading_support(
         sc_map,
         sc_leading_term_count_map,
