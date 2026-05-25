@@ -56,6 +56,19 @@
 几几	幾幾	0.20	jiji
 小时	小時	0.24	xiaoshi
 已付	已付	0.00	yifu
+不方	不方	0.40	bufang
+有光	有光	0.46	youguang
+有风	有風	0.44	youfeng
+有雨	有雨	0.46	youyu
+有雾	有霧	0.40	youwu
+有雪	有雪	0.40	youxue
+有图	有圖	0.46	youtu
+有字	有字	0.40	youzi
+有声	有聲	0.44	yousheng
+水硕	水碩	0.42	shuishuo
+水博	水博	0.42	shuibo
+水湾	水灣	0.36	shuiwan
+水刊	水刊	0.42	shuikan
 # low-priority everyday number words
 十一	十一	0.82
 十二	十二	0.82

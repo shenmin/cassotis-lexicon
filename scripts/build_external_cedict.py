@@ -1014,6 +1014,18 @@ PROFILE_DEFAULTS: Dict[str, Dict[str, object]] = {
                 "raw_committed": False,
                 "notes": "Single-character Mandarin readings with frequency/rank metadata.",
             },
+            {
+                "id": "jieba-dict",
+                "name": "jieba dict.txt",
+                "download_url": JIEBA_DICT_URL,
+                "homepage": JIEBA_HOMEPAGE,
+                "license": "MIT",
+                "risk_level": "low",
+                "redistribution_class": "permissive",
+                "attribution_required": True,
+                "raw_committed": False,
+                "notes": "Single-character lexical frequency signal used to keep standalone IME ordering from being dominated by compound-root support.",
+            },
         ],
     },
 }
@@ -12041,6 +12053,139 @@ def _rebalance_single_char_homophones_by_leading_support(
     return stats
 
 
+def _dampen_compound_root_inflated_single_chars(
+    mapping: Dict[Tuple[str, str], int],
+    leading_support_sum_map: Dict[Tuple[str, str], float] | None,
+    family_support_sum_map: Dict[str, float] | None,
+    unihan_pinlu_detail_map: Dict[Tuple[str, str], int] | None,
+    single_char_frequency_map: Dict[str, float] | None,
+    stats_prefix: str,
+) -> Dict[str, int]:
+    """Keep compound-root evidence from dominating standalone single-char order.
+
+    Family/leading support is useful for keeping productive characters visible,
+    but it is not the same as standalone IME usefulness.  In a same-pinyin
+    bucket, a content root that is inflated mostly by many compounds should not
+    outrank a comparable standalone-frequency competitor whose support is not
+    compound-heavy.  The rule is bucket-local and signal-based; it does not name
+    individual characters.
+    """
+    stats = {
+        f"{stats_prefix}_single_char_compound_root_capped": 0,
+        f"{stats_prefix}_single_char_compound_root_buckets": 0,
+    }
+    if not mapping:
+        return stats
+
+    leading_support_sum_map = leading_support_sum_map or {}
+    family_support_sum_map = family_support_sum_map or {}
+    unihan_pinlu_detail_map = unihan_pinlu_detail_map or {}
+    single_char_frequency_map = single_char_frequency_map or {}
+
+    buckets: Dict[str, List[Tuple[str, int]]] = {}
+    for (pinyin, text), weight in mapping.items():
+        if _cjk_len(text) != 1:
+            continue
+        buckets.setdefault(pinyin, []).append((text, weight))
+
+    for pinyin, items in buckets.items():
+        if len(items) < 2:
+            continue
+
+        records: List[Dict[str, float | int | str]] = []
+        for text, weight in items:
+            pair = (text, pinyin)
+            records.append(
+                {
+                    "text": text,
+                    "weight": weight,
+                    "pinlu": max(0, unihan_pinlu_detail_map.get(pair, 0)),
+                    "standalone_frequency": max(0.0, single_char_frequency_map.get(text, 0.0)),
+                    "family": max(0.0, family_support_sum_map.get(text, 0.0)),
+                    "leading": max(0.0, leading_support_sum_map.get(pair, 0.0)),
+                }
+            )
+
+        bucket_touched = False
+        for record in records:
+            text = str(record["text"])
+            weight = int(record["weight"])
+            pinlu = int(record["pinlu"])
+            standalone_frequency = float(record["standalone_frequency"])
+            family = float(record["family"])
+            leading = float(record["leading"])
+
+            if text in DAILY_CHAT_SEED_CHARS:
+                continue
+            if text in DAILY_NUMBER_WORD_CHARS:
+                continue
+            if weight < 460:
+                continue
+            if family < 12000.0 and leading < 3600.0:
+                continue
+            if pinlu <= 0:
+                continue
+            if standalone_frequency <= 0.0:
+                continue
+
+            best_competitor: Dict[str, float | int | str] | None = None
+            for competitor in records:
+                competitor_text = str(competitor["text"])
+                if competitor_text == text:
+                    continue
+
+                competitor_weight = int(competitor["weight"])
+                competitor_pinlu = int(competitor["pinlu"])
+                competitor_standalone_frequency = float(competitor["standalone_frequency"])
+                competitor_family = float(competitor["family"])
+                competitor_leading = float(competitor["leading"])
+                if competitor_weight < 360 or competitor_pinlu <= 0:
+                    continue
+                if competitor_standalone_frequency < max(
+                    standalone_frequency * 8.0,
+                    standalone_frequency + 30000.0,
+                ):
+                    continue
+                if competitor_pinlu < max(480, int(round(pinlu * 0.45))):
+                    continue
+                if competitor_family > max(2600.0, family * 0.35):
+                    continue
+                if leading > 0.0 and competitor_leading > max(900.0, leading * 0.35):
+                    continue
+
+                if best_competitor is None:
+                    best_competitor = competitor
+                    continue
+                if (
+                    competitor_weight,
+                    int(round(competitor_standalone_frequency)),
+                    competitor_pinlu,
+                    -int(round(competitor_family)),
+                ) > (
+                    int(best_competitor["weight"]),
+                    int(round(float(best_competitor["standalone_frequency"]))),
+                    int(best_competitor["pinlu"]),
+                    -int(round(float(best_competitor["family"]))),
+                ):
+                    best_competitor = competitor
+
+            if best_competitor is None:
+                continue
+
+            cap = max(1, int(best_competitor["weight"]) - 8)
+            if weight <= cap:
+                continue
+
+            mapping[(pinyin, text)] = cap
+            stats[f"{stats_prefix}_single_char_compound_root_capped"] += 1
+            bucket_touched = True
+
+        if bucket_touched:
+            stats[f"{stats_prefix}_single_char_compound_root_buckets"] += 1
+
+    return stats
+
+
 def _augment_with_frequency_lexicon(
     sc: Dict[Tuple[str, str], int],
     tc: Dict[Tuple[str, str], int],
@@ -16454,6 +16599,8 @@ def main() -> int:
     wiki_proper_tc_terms: Set[str] = set()
     curated_daily_sc_terms: Set[str] = set()
     curated_daily_tc_terms: Set[str] = set()
+    single_char_frequency_map: Dict[str, float] = {}
+    tc_single_char_frequency_map: Dict[str, float] = {}
     curated_daily_entries: List[Tuple[str, str, float, str]] = []
     curated_daily_parse_stats: Dict[str, int] = {}
     curated_daily_supplement_sc_terms: Set[str] = set()
@@ -17486,6 +17633,29 @@ def main() -> int:
         opencc_text = _decode_text(opencc_payload)
         opencc_entries, opencc_stats = _parse_opencc_entries(opencc_text, 1)
         opencc_tc_to_sc_map = _build_opencc_tc_to_sc_map(opencc_entries)
+        unihan_jieba_stats: Dict[str, int] = {}
+        source_ids = {str(source.get("id", "")) for source in sources}
+        if "jieba-dict" in source_ids:
+            jieba_payload = _require_source_payload(
+                payload_map,
+                sources,
+                role="jieba-dict",
+                source_id="jieba-dict",
+                download_url=JIEBA_DICT_URL,
+            )
+            jieba_entries, _jieba_pos_map, unihan_jieba_stats = _parse_jieba_frequency_entries(
+                jieba_payload,
+                1,
+            )
+            single_char_frequency_map = {
+                text: float(freq)
+                for text, freq in jieba_entries.items()
+                if _cjk_len(text) == 1 and CJK_FULL_RE.fullmatch(text)
+            }
+            tc_single_char_frequency_map = _build_tc_signal_map(
+                single_char_frequency_map,
+                opencc_tc_to_sc_map,
+            )
         (
             trad_to_simp_char_map,
             simp_to_trad_char_map,
@@ -17675,6 +17845,9 @@ def main() -> int:
             tc_inferred_reading_support_sum_map,
         )
         stats.update(opencc_stats)
+        stats.update({f"unihan_{key}": value for key, value in unihan_jieba_stats.items()})
+        stats["unihan_jieba_single_char_frequency_terms_sc"] = len(single_char_frequency_map)
+        stats["unihan_jieba_single_char_frequency_terms_tc"] = len(tc_single_char_frequency_map)
         stats.update(vertical_manifest_stats)
         stats.update(vertical_parse_stats)
         stats["unihan_family_support_terms_sc"] = len(sc_family_term_count_map)
@@ -18650,6 +18823,24 @@ def main() -> int:
     )
     stats.update(sc_single_char_rebalance_stats)
     stats.update(tc_single_char_rebalance_stats)
+    sc_single_char_compound_root_stats = _dampen_compound_root_inflated_single_chars(
+        sc_map,
+        sc_leading_support_sum_map,
+        sc_family_support_sum_map,
+        unihan_pinlu_detail_map,
+        single_char_frequency_map,
+        "sc_final",
+    )
+    tc_single_char_compound_root_stats = _dampen_compound_root_inflated_single_chars(
+        tc_map,
+        tc_leading_support_sum_map,
+        tc_family_support_sum_map,
+        unihan_pinlu_detail_map,
+        tc_single_char_frequency_map,
+        "tc_final",
+    )
+    stats.update(sc_single_char_compound_root_stats)
+    stats.update(tc_single_char_compound_root_stats)
 
     _write_dict(
         output_sc,

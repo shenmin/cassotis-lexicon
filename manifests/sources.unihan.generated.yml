@@ -1,5 +1,5 @@
 version: 1
-generated_at: "2026-05-23T13:38:58+00:00"
+generated_at: "2026-05-25T03:26:52+00:00"
 profile: unihan_single
 sources:
   - id: opencc-stphrases
@@ -22,6 +22,16 @@ sources:
     attribution_required: true
     raw_committed: false
     notes: 'Single-character Mandarin readings with frequency/rank metadata.'
+  - id: jieba-dict
+    name: jieba dict.txt
+    download_url: https://raw.githubusercontent.com/fxsjy/jieba/master/jieba/dict.txt
+    homepage: https://github.com/fxsjy/jieba
+    license: MIT
+    risk_level: low
+    redistribution_class: permissive
+    attribution_required: true
+    raw_committed: false
+    notes: 'Single-character lexical frequency signal used to keep standalone IME ordering from being dominated by compound-root support.'
   - id: project-curated-fiction-entities
     name: Cassotis curated fiction entities
     download_url: repo://manifests/vertical/fiction_entities.tsv
