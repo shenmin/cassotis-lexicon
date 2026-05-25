@@ -13205,11 +13205,16 @@ def _enforce_final_normative_homophone_order(
 
         touched = False
 
+        min_normative_leader_weight = 240
+
         def best_mainstream_except(text: str) -> Tuple[str, str, int, Tuple[float, int, float, float, str, float, int, int, int, float]] | None:
             candidates = [
                 item
                 for item in mainstream_candidates
                 if item[1] != text
+                # A candidate already suppressed to visibility-only weight is
+                # not a valid ranking leader for capping another exact word.
+                and item[2] >= min_normative_leader_weight
             ]
             if not candidates:
                 return None
