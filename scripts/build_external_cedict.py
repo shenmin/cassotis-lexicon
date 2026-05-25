@@ -15556,6 +15556,7 @@ def _restore_missing_texts_from_snapshot(
     char_frequency_prior: Dict[str, float] | None = None,
     wiki_titles: Set[str] | None = None,
     wiki_augmented_terms: Set[str] | None = None,
+    require_current_signal: bool = False,
 ) -> Tuple[Dict[Tuple[str, str], int], Dict[str, int]]:
     snapshot_restore_block_terms = snapshot_restore_block_terms or set()
     usage_score_map = usage_score_map or {}
@@ -15573,6 +15574,7 @@ def _restore_missing_texts_from_snapshot(
         f"{stats_prefix}_snapshot_rows_skipped_blocked_prefix": 0,
         f"{stats_prefix}_snapshot_rows_skipped_prefix_fragment": 0,
         f"{stats_prefix}_snapshot_rows_skipped_low_signal_risk": 0,
+        f"{stats_prefix}_snapshot_rows_skipped_no_current_signal": 0,
     }
     if not previous_snapshot:
         return mapping, stats
@@ -15607,6 +15609,36 @@ def _restore_missing_texts_from_snapshot(
                 continue
         if text in current_texts:
             continue
+        usage_score = min(1.0, max(0.0, usage_score_map.get(text, 0.0)))
+        source_hits = max(0, source_hits_map.get(text, 0))
+        pageview_score = min(1.0, max(0.0, pageviews_signal_map.get(text, 0.0)))
+        jieba_direct_score = min(1.0, max(0.0, jieba_direct_signal_map.get(text, 0.0)))
+        wiki_support = _has_effective_wiki_support(
+            text,
+            wiki_titles,
+            pageview_score=pageview_score,
+            source_hits=source_hits,
+            wiki_augmented_terms=wiki_augmented_terms,
+        )
+        has_current_signal = (
+            len(text) <= 1
+            or text in wiki_augmented_terms
+            or source_hits >= 2
+            or usage_score >= 0.08
+            or jieba_direct_score >= 0.08
+            or pageview_score >= 0.03
+            or (
+                source_hits >= 1
+                and (
+                    usage_score >= 0.04
+                    or jieba_direct_score >= 0.04
+                    or pageview_score >= 0.01
+                )
+            )
+        )
+        if require_current_signal and not has_current_signal:
+            stats[f"{stats_prefix}_snapshot_rows_skipped_no_current_signal"] += 1
+            continue
         if len(text) > 1 and _is_low_signal_snapshot_prefix_fragment(
             _pinyin,
             text,
@@ -15622,18 +15654,7 @@ def _restore_missing_texts_from_snapshot(
             stats[f"{stats_prefix}_snapshot_rows_skipped_prefix_fragment"] += 1
             continue
         if len(text) > 1 and weight >= 900:
-            usage_score = min(1.0, max(0.0, usage_score_map.get(text, 0.0)))
-            source_hits = max(0, source_hits_map.get(text, 0))
-            pageview_score = min(1.0, max(0.0, pageviews_signal_map.get(text, 0.0)))
-            jieba_direct_score = min(1.0, max(0.0, jieba_direct_signal_map.get(text, 0.0)))
             pos_tag = jieba_pos_map.get(text, "")
-            wiki_support = _has_effective_wiki_support(
-                text,
-                wiki_titles,
-                pageview_score=pageview_score,
-                source_hits=source_hits,
-                wiki_augmented_terms=wiki_augmented_terms,
-            )
             char_score = _compute_text_single_char_prior(text, char_prior)
             modernity_risk = _compute_low_signal_modernity_risk(
                 text,
@@ -18155,6 +18176,7 @@ def main() -> int:
         tc_char_frequency_prior,
         wiki_titles,
         tc_augmented_terms,
+        require_current_signal=True,
     )
     stats.update(sc_snapshot_restore_stats)
     stats.update(tc_snapshot_restore_stats)
