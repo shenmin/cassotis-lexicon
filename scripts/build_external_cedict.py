@@ -6406,6 +6406,7 @@ def _cap_low_signal_competitors_against_direct_leaders(
     stats_prefix: str,
     bucket_pinyin_map: Dict[Tuple[str, str], str] | None = None,
     term_semantic_bonus_map: Dict[Tuple[str, str], int] | None = None,
+    term_style_penalty_map: Dict[Tuple[str, str], int] | None = None,
 ) -> Dict[str, int]:
     """Keep low-signal exact competitors below stronger same-pinyin direct terms."""
     stats = {
@@ -6419,6 +6420,7 @@ def _cap_low_signal_competitors_against_direct_leaders(
     char_prior = _build_effective_char_prior(mapping, char_frequency_prior)
     bucket_pinyin_map = bucket_pinyin_map or {}
     term_semantic_bonus_map = term_semantic_bonus_map or {}
+    term_style_penalty_map = term_style_penalty_map or {}
     semantic_bonus_by_text: Dict[str, int] = {}
     for (_pinyin, text), bonus in term_semantic_bonus_map.items():
         if bonus <= 0:
@@ -6511,6 +6513,12 @@ def _cap_low_signal_competitors_against_direct_leaders(
                 _short_everyday,
                 _preferred_daily,
             ) = signal_parts(text)
+            # Styled CEDICT senses (variants, dialect/literary terms, geographic
+            # proper names) are visibility signals. They should stay selectable
+            # but must not become "direct leaders" that suppress ordinary exact
+            # homophones such as 亮光 below 两广.
+            if term_style_penalty_map.get((pinyin, text), 0) >= 80:
+                continue
             # Jieba occasionally marks ordinary words as place/name POS. Keep
             # the named-entity guard for weak direct evidence, but do not block
             # clearly frequent words from becoming the bucket's direct leader.
@@ -7629,6 +7637,7 @@ def _compute_cedict_style_penalty(defs: str) -> int:
     literary_senses = 0
     variant_senses = 0
     geopolitical_state_senses = 0
+    geographic_place_senses = 0
     plain_senses = 0
 
     for sense in senses:
@@ -7645,6 +7654,20 @@ def _compute_cedict_style_penalty(defs: str) -> int:
             "generic term for states" in sense
             or re.search(r"(?<![a-z])(?:[a-z]+ )+state(?![a-z])", sense) is not None
         )
+        is_geographic_place = (
+            re.search(
+                r"(?<![a-z])(?:province|provinces|region|regions|"
+                r"autonomous region|municipality|prefecture|city|island|"
+                r"mountain|river|lake|bay|strait|sea) (?:of|in)(?![a-z])",
+                sense,
+            )
+            is not None
+            or re.search(
+                r"(?<![a-z])(?:capital|part) of [a-z][a-z -]+(?![a-z])",
+                sense,
+            )
+            is not None
+        )
         if is_dialect:
             dialect_senses += 1
         if is_literary:
@@ -7653,7 +7676,15 @@ def _compute_cedict_style_penalty(defs: str) -> int:
             variant_senses += 1
         if is_geopolitical_state:
             geopolitical_state_senses += 1
-        if (not is_dialect) and (not is_literary) and (not is_variant) and (not is_geopolitical_state):
+        if is_geographic_place:
+            geographic_place_senses += 1
+        if (
+            (not is_dialect)
+            and (not is_literary)
+            and (not is_variant)
+            and (not is_geopolitical_state)
+            and (not is_geographic_place)
+        ):
             plain_senses += 1
 
     total_senses = max(1, len(senses))
@@ -7685,6 +7716,13 @@ def _compute_cedict_style_penalty(defs: str) -> int:
         if plain_senses <= 0:
             return 120
         if geopolitical_state_senses * 2 >= total_senses:
+            return 80
+        return 40
+
+    if geographic_place_senses > 0:
+        if plain_senses <= 0:
+            return 120
+        if geographic_place_senses * 2 >= total_senses:
             return 80
         return 40
 
@@ -7724,6 +7762,29 @@ def _compute_cedict_ime_seed_adjustment(text: str, defs: str) -> int:
         "township in ",
         "village in ",
         "county of ",
+        "province of ",
+        "provinces of ",
+        "region of ",
+        "region in ",
+        "autonomous region",
+        "municipality in ",
+        "municipality of ",
+        "prefecture in ",
+        "prefecture of ",
+        "city in ",
+        "city of ",
+        "island in ",
+        "island of ",
+        "mountain in ",
+        "mountain of ",
+        "river in ",
+        "river of ",
+        "lake in ",
+        "lake of ",
+        "bay in ",
+        "bay of ",
+        "strait in ",
+        "strait of ",
         "place name",
     )
 
@@ -7917,6 +7978,29 @@ def _compute_cedict_daily_semantic_bonus(text: str, defs: str) -> int:
         "township in ",
         "village in ",
         "county of ",
+        "province of ",
+        "provinces of ",
+        "region of ",
+        "region in ",
+        "autonomous region",
+        "municipality in ",
+        "municipality of ",
+        "prefecture in ",
+        "prefecture of ",
+        "city in ",
+        "city of ",
+        "island in ",
+        "island of ",
+        "mountain in ",
+        "mountain of ",
+        "river in ",
+        "river of ",
+        "lake in ",
+        "lake of ",
+        "bay in ",
+        "bay of ",
+        "strait in ",
+        "strait of ",
         "place name",
     )
 
@@ -13146,11 +13230,11 @@ def _cap_styled_exact_competitors(
             )
 
             if low_signal_geo_state:
-                cap = 420
+                cap = min(420, max(1, best_unstyled_weight - 96))
             elif style_penalty >= 140:
-                cap = max(320, best_unstyled_weight - 140)
+                cap = max(1, best_unstyled_weight - 140)
             elif style_penalty >= 80 and direct_signal(text) < 0.16:
-                cap = max(360, best_unstyled_weight - 96)
+                cap = max(1, best_unstyled_weight - 96)
             else:
                 continue
 
@@ -18777,6 +18861,7 @@ def main() -> int:
         curated_daily_supplement_sc_terms,
         "sc",
         term_semantic_bonus_map=cedict_semantic_bonus_map,
+        term_style_penalty_map=cedict_style_penalty_map,
     )
     tc_low_signal_competitor_cap_stats = _cap_low_signal_competitors_against_direct_leaders(
         tc_map,
@@ -18790,6 +18875,7 @@ def main() -> int:
         curated_daily_supplement_tc_terms,
         "tc",
         term_semantic_bonus_map=cedict_semantic_bonus_map,
+        term_style_penalty_map=cedict_style_penalty_map,
     )
     stats.update(sc_low_signal_competitor_cap_stats)
     stats.update(tc_low_signal_competitor_cap_stats)
@@ -18881,6 +18967,7 @@ def main() -> int:
         "sc_final",
         bucket_pinyin_map=sc_output_pinyin_bucket_map,
         term_semantic_bonus_map=cedict_semantic_bonus_map,
+        term_style_penalty_map=cedict_style_penalty_map,
     )
     tc_final_low_signal_competitor_cap_stats = _cap_low_signal_competitors_against_direct_leaders(
         tc_map,
@@ -18895,6 +18982,7 @@ def main() -> int:
         "tc_final",
         bucket_pinyin_map=tc_output_pinyin_bucket_map,
         term_semantic_bonus_map=cedict_semantic_bonus_map,
+        term_style_penalty_map=cedict_style_penalty_map,
     )
     stats.update(sc_final_low_signal_competitor_cap_stats)
     stats.update(tc_final_low_signal_competitor_cap_stats)
