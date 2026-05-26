@@ -513,6 +513,7 @@ DAILY_NUMBER_WORD_UNIT_CHARS = set(
 )
 CURATED_DAILY_NUMBER_WEIGHT_CAP = 700
 CURATED_DAILY_COUNT_MEASURE_WEIGHT_CAP = 820
+CURATED_DAILY_HOUSING_COUNT_MEASURE_WEIGHT_CAP = 650
 CURATED_DAILY_SUPPLEMENT_WEIGHT_CAP = 560
 CURATED_DAILY_SUPPLEMENT_NUMBER_WEIGHT_CAP = 520
 CURATED_DAILY_ASPECT_VISIBILITY_CAP = 760
@@ -520,11 +521,13 @@ CURATED_DAILY_ASPECT_VISIBILITY_CAP = 760
 # Quantity-classifier snippets are useful exact matches, but they are not
 # necessarily more common than same-pinyin lexical words. Keep them visible
 # without giving them the full daily/chat priority floor.
-DAILY_COUNT_MEASURE_CHARS = set("把部对栋副幅根幢件轮盘匹批片篇瓶扇双台条桶页项只爿")
+DAILY_COUNT_MEASURE_CHARS = set("把部对栋副幅根幢件轮盘匹批片篇瓶扇双台条桶页项只爿间間套房厅廳卫衛室厨廚")
+DAILY_HOUSING_COUNT_MEASURE_CHARS = set("间間套房厅廳卫衛室厨廚")
 DAILY_COUNT_PREFIX_CHARS = set("一二两三四五六七八九十几每")
 # Fiction entities and public/historical people names are supplemental named
 # entities and should not inherit everyday-word priors. Product/platform proper
-# nouns stay on the generic vertical path because they are frequent daily input.
+# nouns have their own conservative cap: exact matches should stay visible, but
+# the brand/proper-noun layer should not reinforce them like daily words.
 NAMED_ENTITY_VERTICAL_LAYERS = {"fiction_entities", "people_names"}
 LOW_PRIORITY_VERTICAL_ENTITY_SOURCE_PREFIXES = (
     "wikidata-video-game",
@@ -2210,6 +2213,18 @@ def _cap_generic_vertical_weight(weight: int, text: str, layer_id: str, source_i
         return weight
 
     source = source_id.strip().lower()
+    if layer_id == "proper_nouns":
+        if text_len <= 2:
+            cap = 1000
+        elif text_len == 3:
+            cap = 780
+        elif text_len == 4:
+            cap = 720
+        elif text_len == 5:
+            cap = 700
+        else:
+            cap = 700
+        return min(weight, cap)
     if layer_id == "gaming" and source.startswith(LOW_PRIORITY_VERTICAL_ENTITY_SOURCE_PREFIXES):
         if text_len <= 2:
             cap = 360
@@ -2660,6 +2675,18 @@ def _compute_generic_vertical_penalty(
         else:
             base_penalty = 28
         relief = 0
+    elif layer_id == "proper_nouns":
+        if text_len <= 2:
+            base_penalty = 170
+        elif text_len == 3:
+            base_penalty = 118
+        elif text_len == 4:
+            base_penalty = 76
+        elif text_len == 5:
+            base_penalty = 46
+        else:
+            base_penalty = 24
+        relief = 0
     else:
         if text_len <= 2:
             base_penalty = 96
@@ -2692,6 +2719,32 @@ def _cap_named_entity_vertical_usage_score(usage_score: float, text_len: int) ->
     if text_len == 5:
         return min(bounded, 0.56)
     return min(bounded, 0.62)
+
+
+def _cap_proper_noun_vertical_usage_score(usage_score: float, text_len: int) -> float:
+    """Keep brands/proper nouns exact-searchable without turning them into daily priors."""
+    bounded = min(1.0, max(0.0, usage_score))
+    if bounded >= 0.90:
+        if text_len <= 2:
+            return bounded
+        if text_len <= 4:
+            return min(bounded, 0.86)
+        return min(bounded, 0.68)
+    if bounded >= 0.82:
+        if text_len <= 2:
+            return min(bounded, 0.58)
+        if text_len <= 4:
+            return min(bounded, 0.52)
+        return min(bounded, 0.48)
+    if text_len <= 2:
+        return min(bounded, 0.30)
+    if text_len == 3:
+        return min(bounded, 0.38)
+    if text_len == 4:
+        return min(bounded, 0.46)
+    if text_len == 5:
+        return min(bounded, 0.52)
+    return min(bounded, 0.58)
 
 
 def _cap_place_vertical_usage_score(
@@ -2793,6 +2846,8 @@ def _vertical_ranking_usage_score(
         if text_len == 4:
             return min(bounded, 0.28)
         return min(bounded, 0.34)
+    if layer_id == "proper_nouns":
+        return _cap_proper_noun_vertical_usage_score(usage_score, text_len)
     if _is_named_entity_vertical_layer(layer_id) and not supported_named_entity:
         return _cap_named_entity_vertical_usage_score(usage_score, text_len)
     if layer_id == "medicine":
@@ -12815,7 +12870,11 @@ def _finalize_curated_daily_weight(
     if not is_number_word:
         if _is_daily_count_measure_phrase(text):
             count_floor = 560 + int(round(bounded_usage * 130.0))
-            count_cap = 760 if _cjk_len(text) <= 2 else 820
+            count_cap = (
+                CURATED_DAILY_HOUSING_COUNT_MEASURE_WEIGHT_CAP
+                if _is_daily_housing_count_measure_phrase(text)
+                else (760 if _cjk_len(text) <= 2 else 820)
+            )
             return min(count_cap, max(weight, count_floor))
 
         # Daily curated entries serve two different purposes:
@@ -12861,6 +12920,18 @@ def _is_daily_count_measure_phrase(text: str) -> bool:
     return rest[0] in DAILY_COUNT_MEASURE_CHARS
 
 
+def _is_daily_housing_count_measure_phrase(text: str) -> bool:
+    if not _is_daily_count_measure_phrase(text):
+        return False
+    if text.startswith("每一"):
+        rest = text[2:]
+    elif text.startswith("每"):
+        rest = text[1:]
+    else:
+        rest = text[1:]
+    return bool(rest) and rest[0] in DAILY_HOUSING_COUNT_MEASURE_CHARS
+
+
 def _is_pure_daily_number_word(text: str) -> bool:
     if text.startswith("\u7b2c") and len(text) > 1:
         text = text[1:]
@@ -12901,7 +12972,9 @@ def _cap_curated_daily_number_weights(
         if text not in number_terms:
             continue
         cap = (
-            CURATED_DAILY_COUNT_MEASURE_WEIGHT_CAP
+            CURATED_DAILY_HOUSING_COUNT_MEASURE_WEIGHT_CAP
+            if _is_daily_housing_count_measure_phrase(text)
+            else CURATED_DAILY_COUNT_MEASURE_WEIGHT_CAP
             if _is_daily_count_measure_phrase(text)
             else CURATED_DAILY_NUMBER_WEIGHT_CAP
         )
@@ -14328,6 +14401,17 @@ def _reinforce_vertical_tc_terms(
             base_source_hits = 2 if curated_idiom and _cjk_len(tc_candidate) <= 6 else 1
             extra_bonus = 4 if curated_idiom and _cjk_len(tc_candidate) <= 4 else (2 if curated_idiom else 0)
             allow_existing_boost = curated_idiom
+        elif layer_id == "proper_nouns":
+            high_common_proper_noun = (
+                source_id == "project-curated-proper-nouns"
+                and usage_score >= 0.90
+                and _cjk_len(tc_candidate) <= 4
+            )
+            base_source_hits = 3 if high_common_proper_noun else 1
+            extra_bonus = (18 if _cjk_len(tc_candidate) <= 4 else 2) if high_common_proper_noun else (
+                0 if _cjk_len(tc_candidate) <= 4 else 2
+            )
+            allow_existing_boost = high_common_proper_noun
         elif layer_id == "gaming" and source_id.strip().lower().startswith(LOW_PRIORITY_VERTICAL_ENTITY_SOURCE_PREFIXES):
             base_source_hits = 1
             extra_bonus = 0 if _cjk_len(tc_candidate) <= 4 else 2
@@ -14763,6 +14847,16 @@ def _augment_with_vertical_terms(
             short_bonus = 4 if curated_idiom and _cjk_len(sc_word) <= 4 else 0
             long_bonus = 2 if curated_idiom else 0
             allow_existing_boost = curated_idiom
+        elif layer_id == "proper_nouns":
+            high_common_proper_noun = (
+                source_id == "project-curated-proper-nouns"
+                and usage_score >= 0.90
+                and _cjk_len(sc_word) <= 4
+            )
+            source_hits = 3 if high_common_proper_noun else 1
+            short_bonus = 18 if high_common_proper_noun else 0
+            long_bonus = 2
+            allow_existing_boost = high_common_proper_noun
         elif layer_id == "gaming" and source_id.strip().lower().startswith(LOW_PRIORITY_VERTICAL_ENTITY_SOURCE_PREFIXES):
             source_hits = 1
             short_bonus = 0
