@@ -21,8 +21,8 @@ Lexicon build and release repository for Cassotis IME.
 
 | File | Variant | Entries |
 |------|---------|---------|
-| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 167,930 |
-| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 171,898 |
+| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 171,399 |
+| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 175,412 |
 | `data/generated/dict_unihan_sc.txt` | Simplified single-char (Unihan) | 23,904 |
 | `data/generated/dict_unihan_tc.txt` | Traditional single-char (Unihan) | 24,161 |
 
