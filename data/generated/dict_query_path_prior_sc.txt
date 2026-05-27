@@ -102,7 +102,7 @@ anninghuanhe	安宁|缓和	401
 anninghuanheyiliao	安宁|缓和|医疗	483
 anniudianji	按钮|点击	387
 anniudianjishijian	按钮|点击|事件	469
-anniuleixing	按钮|类型	469
+anniuleixing	按钮|类型	489
 anqingzhuanqu	安庆|专区	443
 anquanceshi	安全|测试	490
 anquanfanghu	安全|防护	469
@@ -662,10 +662,10 @@ bianxingtanke	变形|坦克	467
 bianxingyundong	变形|运动	472
 bianxingzhanji	变形|战机	467
 bianyianzhuang	编译|安装	492
-bianyibaocuo	编译|报错	479
+bianyibaocuo	编译|报错	485
 bianyicanshu	编译|参数	491
 bianyichengxu	编译|程序	508
-bianyichucuo	编译|出错	488
+bianyichucuo	编译|出错	491
 bianyichuli	编译|处理	489
 bianyicuowu	编译|错误	492
 bianyidabao	编译|打包	490
@@ -680,16 +680,16 @@ bianyipeizhi	编译|配置	490
 bianyiqiyouhua	编译器|优化	472
 bianyishicuowu	编译时|错误	471
 bianyisudu	编译|速度	491
-bianyiwugong	变异|蜈蚣	422
-bianyixiaozhen	变异|小镇	425
-bianyixingshi	便宜|行事	437
+bianyiwugong	变异|蜈蚣	428
+bianyixiaozhen	变异|小镇	432
+bianyixingshi	便宜|行事	444
 bianyixingxinjiaotong	变异性|心绞痛	483
-bianyixishu	变异|系数	408
+bianyixishu	变异|系数	415
 bianyixitong	编译|系统	505
-bianyixuanxiang	编译|选项	488
+bianyixuanxiang	编译|选项	491
 bianyiyouhua	编译|优化	490
 bianyiyuanli	编译|原理	491
-bianyiyuanma	编译|源码	479
+bianyiyuanma	编译|源码	485
 bianyizhiling	编译|指令	490
 bianyizhixing	编译|执行	505
 bianyuanceshi	边缘|测试	487
@@ -1098,7 +1098,7 @@ bujinrenqing	不近|人情	423
 bujinruci	不仅|如此	489
 bujiujiwang	不咎|既往	388
 bujurongqi	布局|容器	474
-bujuxiaojie	不拘|小节	463
+bujuxiaojie	不拘|小节	488
 bukangbubei	不亢|不卑	439
 bukanhuishou	不堪|回首	489
 bukanshexiang	不堪|设想	494
@@ -1161,7 +1161,7 @@ bunengwanghuai	不能|忘怀	486
 bunengziba	不能|自拔	491
 bunengzizhu	不能|自主	486
 bupianfensan	不偏|分散	438
-buqieshiji	不切|实际	494
+buqieshiji	不切|实际	465
 buqiuchengwang	不求|承望	429
 buqiushangjin	不求|上进	485
 buqiuwenda	不求|闻达	424
@@ -1522,7 +1522,7 @@ chankehushi	产科|护士	442
 chankeyishi	产科|医师	421
 chanmingshifen	蝉鸣|时分	442
 chanpinceshi	产品|测试	489
-chanpinzhaohui	产品|召回	482
+chanpinzhaohui	产品|召回	459
 chanqianchuxue	产前|出血	446
 chanqianhuli	产前|护理	476
 chanqianjiancha	产前|检查	494
@@ -2342,7 +2342,7 @@ daimajilu	代码|记录	489
 daimajiqiao	代码|技巧	488
 daimajishu	代码|技术	488
 daimakuochong	代码|扩充	500
-daimamoban	代码|模板	490
+daimamoban	代码|模板	482
 daimanengli	代码|能力	490
 daimapianduan	代码|片段	468
 daimapingshen	代码|评审	489
@@ -2653,7 +2653,7 @@ debingbuchiyao	得病不|吃药	435
 decaijianbei	德才|兼备	490
 dedaoduozhu	得道|多助	437
 deditanxian	地底|探险	425
-deerjiaduo	德尔|加多	442
+deerjiaduo	德尔|加多	420
 defangxingfuzhongdu	地方性|氟中毒	458
 defangxingketingbing	地方性|克汀病	458
 defangxingliuxingbing	地方性|流行病	483
@@ -2818,7 +2818,7 @@ dianqixianlu	电器|线路	477
 dianqixianlu	电气|线路	486
 dianranmoxing	点燃|模型	486
 dianshidonghua	电视|动画	501
-dianshidonghuajuji	电视|动画|剧集	470
+dianshidonghuajuji	电视|动画剧集	382
 dianshidoushi	电视|斗士	442
 dianshijiemu	电视|节目	472
 dianshiyanboshi	电视|演播室	466
@@ -3271,7 +3271,7 @@ donghuagongnengjieshao	动画|功能|介绍	505
 donghuaguidao	动画|轨道	423
 donghuaguidaoleixing	动画|轨道|类型	505
 donghuajiemu	动画|节目	500
-donghuajuji	动画|剧集	490
+donghuajuji	动画|剧集	465
 donghualianxuju	动画|连续剧	491
 donghualishi	动画|历史	501
 donghuapianzhizuozhe	动画片|制作者	498
@@ -5636,14 +5636,14 @@ handanxuebu	邯郸|学步	481
 handanzhuanqu	邯郸|专区	468
 hangbanchaxun	航班|查询	385
 hangbanchaxunjiekou	航班|查询|接口	467
-hanghaishiji	航海|世纪	467
+hanghaishiji	航海|世纪	440
 hangjialishou	行家|里手	451
 hangkongbaye	航空|霸业	405
 hangkonggongsi	航空|公司	477
 hangkonghangtian	航空|航天	478
 hangkongshigu	航空|事故	483
 hangkongshiye	航空|事业	467
-hangkongyoujian	航空|邮件	442
+hangkongyoujian	航空|邮件	443
 hangkongzainan	航空|灾难	462
 hangtianfeiji	航天|飞机	482
 hangtianxinlixue	航天|心理学	460
@@ -5676,7 +5676,7 @@ hanshufugai	函数|覆盖	490
 hanshuhuidiao	函数|回调	490
 hanshujiangjie	函数|讲解	489
 hanshujieliu	函数|节流	488
-hanshumoban	函数|模板	491
+hanshumoban	函数|模板	482
 hanshumoxing	函数|模型	472
 hanshushengming	函数|声明	492
 hanshushibiancheng	函数式|编程	472
@@ -5741,7 +5741,7 @@ haoxinhaoyi	好心|好意	485
 haoxinmeihaobao	好心没|好报	417
 haoxuebujuan	好学|不倦	431
 haoxueshensi	好学|深思	410
-haoyouduijue	好友|对决	462
+haoyouduijue	好友|对决	464
 haozikanliangcang	耗子看|粮仓	433
 hebaofenghe	荷包|缝合	463
 hebeibangzi	河北|梆子	445
@@ -6223,7 +6223,7 @@ huanxiyuanjia	欢喜|冤家	475
 huanxueliaofa	换血|疗法	444
 huanyanghuahewu	环氧|化合物	486
 huanyangshuzhi	环氧|树脂	450
-huanyingjuntuan	幻影|军团	467
+huanyingjuntuan	幻影|军团	452
 huanyingliuxing	幻影|流星	467
 huanzheanquan	患者|安全	482
 huanzheguanli	患者|管理	486
@@ -6339,7 +6339,7 @@ huilubianyuan	回路|边缘	467
 huimiegongjue	毁灭|公爵	443
 huimiegongjuexilie	毁灭|公爵|系列	359
 huimiequnxing	毁灭|群星	420
-huimiewushi	毁灭|巫师	403
+huimiewushi	毁灭|巫师	404
 huimiexiaoying	毁灭|效应	439
 huimieyingxiong	毁灭|英雄	435
 huimiezhanshen	毁灭|战神	420
@@ -6428,7 +6428,7 @@ hunranyiti	浑然|一体	482
 hunshenxieshu	浑身|解数	464
 huntouzhuanxiang	昏头|转向	477
 hunwaixingxingwei	婚外|性行为	483
-hunxiaobianyi	混淆|编译	486
+hunxiaobianyi	混淆|编译	488
 hunxiaodaima	混淆|代码	490
 hunxiaoheibai	混淆|黑白	450
 hunxiaoshifei	混淆|是非	486
@@ -6708,8 +6708,8 @@ jiannankunku	艰难|困苦	455
 jiannanquzhe	艰难|曲折	460
 jiannanxianzu	艰难|险阻	461
 jianneifanjiaozhengshu	睑内翻|矫正术	445
-jianpanshijian	键盘|事件	452
-jianpanyueqi	键盘|乐器	472
+jianpanshijian	键盘|事件	430
+jianpanyueqi	键盘|乐器	463
 jianpiyishenkeli	健脾益肾|颗粒	457
 jianqiangbuqu	坚强|不屈	460
 jianqiaonangzhong	腱鞘|囊肿	458
@@ -6775,8 +6775,8 @@ jiaobenxiaohai	脚本|小孩	501
 jiaobenxiaozi	脚本|小子	501
 jiaobenyuyan	脚本|语言	520
 jiaochabaohu	交叉|保护	479
-jiaochabianyi	交叉|编译	478
-jiaochabianyihuanjing	交叉|编译|环境	428
+jiaochabianyi	交叉|编译	484
+jiaochabianyihuanjing	交叉|编译|环境	466
 jiaochabianyiqi	交叉|编译器	445
 jiaochafanying	交叉|反应	466
 jiaochaganran	交叉|感染	446
@@ -7040,7 +7040,7 @@ jichengyibo	继承|衣钵	467
 jichexinhao	机车|信号	504
 jichicanying	疾驰|残影	465
 jichisaima	疾驰|赛马	467
-jichuciku	基础|词库	517
+jichuciku	基础|词库	520
 jichudaima	基础|代码	490
 jichudaixie	基础|代谢	474
 jichuhanshu	基础|函数	489
@@ -7660,7 +7660,7 @@ jinrongwulixue	金融|物理学	501
 jinrujuzhen	进入|矩阵	467
 jinrumuti	进入|母体	467
 jinshenbiaozhun	谨慎|标准	486
-jinshengjinshi	今生|今世	447
+jinshengjinshi	今生|今世	471
 jinshileishe	近视|雷射	461
 jinshixingwei	进食|行为	486
 jinshizhangai	进食|障碍	486
@@ -8278,7 +8278,7 @@ kaixinnongchang	开心|农场	433
 kaixinxiaoxiaole	开心|消消乐	439
 kaixinxingqiu	开心|星球	467
 kaiyuandaima	开源|代码	491
-kaiyuanjieliu	开源|节流	501
+kaiyuanjieliu	开源|节流	496
 kaiyuanxieyi	开源|协议	490
 kaiyuanyouxi	开源|游戏	502
 kaiyuanyouxiliebiao	开源|游戏|列表	499
@@ -8329,7 +8329,7 @@ kangtiduoyangxing	抗体|多样性	473
 kangtixiaojia	抗体|效价	403
 kangxingdianfen	抗性|淀粉	450
 kangyaqiangdu	抗压|强度	433
-kangyuanbianyi	抗原|变异	450
+kangyuanbianyi	抗原|变异	457
 kangyuanchengxian	抗原|呈现	486
 kangyuankangti	抗原|抗体	433
 kangyuankangtifanying	抗原|抗体|反应	362
@@ -8726,7 +8726,7 @@ langmanzhuyijianzhu	浪漫主义|建筑	388
 langrenjueqi	浪人|崛起	467
 langtouduichuizi	榔头对|锤子	440
 langyandonghua	狼烟|动画	470
-langyansiqi	狼烟|四起	440
+langyansiqi	狼烟|四起	439
 langzihuitou	浪子|回头	462
 lanjingsiwang	蓝鲸|死亡	417
 lanjingsiwangyouxi	蓝鲸|死亡|游戏	499
@@ -9283,7 +9283,7 @@ lintaozhuanqu	临洮|专区	458
 linweishouming	临危|受命	487
 linweishouming	临危|授命	457
 linyihanshijian	林奕含|事件	507
-linyizhuanqu	临沂|专区	468
+linyizhuanqu	临沂|专区	466
 linzhentuisuo	临阵|退缩	485
 linzhentuotao	临阵|脱逃	464
 linzhisiansuan	磷脂|丝胺酸	483
@@ -10203,7 +10203,7 @@ mifengxueyuan	蜜蜂|学园	442
 migezoulang	米格|走廊	426
 migongdianzi	迷宫|电子	374
 migongdianziyouxi	迷宫|电子|游戏	456
-migongtansuo	迷宫|探索	453
+migongtansuo	迷宫|探索	454
 mihuandianzi	迷幻|电子	374
 mihuandianziyouxi	迷幻|电子|游戏	456
 mihuobujie	迷惑|不解	468
@@ -10303,8 +10303,7 @@ miniaoxijieshi	泌尿系|结石	415
 miniaoxitong	泌尿|系统	483
 miniaoxitongjibing	泌尿|系统|疾病	483
 miniaoxitongzhengzhuang	泌尿|系统|症状	483
-minidonghua	迷你|动画	388
-minidonghuajuji	迷你|动画|剧集	470
+minidonghuajuji	迷你|动画剧集	382
 minigonglu	迷你|公路	467
 minijiche	迷你|机车	467
 minirenzhe	迷你|忍者	435
@@ -10351,7 +10350,7 @@ miyuxiaochou	谜语|小丑	407
 mizhishuganwan	秘制|舒肝丸	442
 mizoushenjingsunshang	迷走神经|损伤	479
 mizuolinshouti	咪唑啉|受体	467
-mobanhanshu	模板|函数	491
+mobanhanshu	模板|函数	482
 mobuzhaotounao	摸不着|头脑	492
 mocashuipao	摩擦|水疱	447
 modaihuangdi	末代|皇帝	466
@@ -10868,7 +10867,7 @@ ningjishiyan	凝集|试验	486
 ningjutaiwuli	凝聚态|物理	501
 ningjutaiwulixue	凝聚态|物理学	498
 ningmengshuidaheng	柠檬水|大亨	409
-ningmengshuitanzi	柠檬水|摊子	391
+ningmengshuitanzi	柠檬水|摊子	435
 ningmengsuanxunhuan	柠檬酸|循环	483
 ningmengzhidaheng	柠檬汁|大亨	414
 ningxuegongneng	凝血|功能	401
@@ -10895,7 +10894,7 @@ niujinyimiao	牛津|疫苗	421
 niulangzhinv	牛郎|织女	459
 niulunbaofengge	纽伦堡|风格	464
 niulunbaoshizhengting	纽伦堡|市政厅	431
-niunaihuaile	牛奶|坏了	430
+niunaihuaile	牛奶|坏了	467
 niunizuotai	忸怩|作态	414
 niupixuanguanjieyan	牛皮癣|关节炎	457
 niuquxianjing	扭曲|仙境	400
@@ -11179,7 +11178,7 @@ pifushenchu	皮肤|深处	467
 pifutanju	皮肤|炭疽	470
 pifuweishengwuqun	皮肤|微生物群	483
 pifuweisuo	皮肤|萎缩	474
-pifuwuzui	匹夫|无罪	458
+pifuwuzui	匹夫|无罪	465
 pifuxianwei	皮肤|纤维	401
 pifuxianweirouliu	皮肤|纤维|肉瘤	483
 pifuxingbingxue	皮肤|性病学	460
@@ -11436,9 +11435,9 @@ qianshaojiance	前哨|检测	486
 qianshaolinbajie	前哨|淋巴结	478
 qianshenglaishi	前生|来世	520
 qianshijinsheng	前世|今生	520
-qiantaochaxun	嵌套|查询	469
-qiantaoleixing	嵌套|类型	486
-qiantaoshiwu	嵌套|事务	470
+qiantaochaxun	嵌套|查询	445
+qiantaoleixing	嵌套|类型	463
+qiantaoshiwu	嵌套|事务	447
 qiantingdaxiannangzhong	前庭大腺|囊肿	448
 qiantingdaxiannongzhong	前庭大腺|脓肿	422
 qiantingmoni	潜艇|模拟	461
@@ -11535,7 +11534,7 @@ qihougaibian	气候|改变	486
 qihoumoshi	气候|模式	486
 qihoumoxing	气候|模型	486
 qihoutiaozhan	气候|挑战	467
-qihuandaoshiji	奇幻岛|世纪	458
+qihuandaoshiji	奇幻岛|世纪	439
 qihuanpaopao	奇幻|泡泡	395
 qihuantonghua	奇幻|童话	372
 qihuantonghuachengbao	奇幻|童话|城堡	454
@@ -12292,9 +12291,9 @@ ribenxuexichong	日本|血吸虫	460
 ribenxuexichongbing	日本|血吸虫病	483
 ribenyouxi	日本|游戏	326
 ribenyouxidajiang	日本|游戏|大奖	408
-richangciku	日常|词库	518
+richangciku	日常|词库	520
 richanggainian	日常|概念	471
-richangyongyu	日常|用语	514
+richangyongyu	日常|用语	520
 riguangliaofa	日光|疗法	452
 riguangpingtai	日光|平台	454
 riguangpiyan	日光|皮炎	439
@@ -12601,7 +12600,7 @@ shalibingdu	沙粒|病毒	330
 shalibingduganran	沙粒|病毒|感染	412
 shaludedaixilie	杀戮地带|系列	449
 shalugongzhu	杀戮|公主	467
-shaluhuanying	杀戮|幻影	464
+shaluhuanying	杀戮|幻影	444
 shalujianta	杀戮|尖塔	432
 shalukongjian	杀戮|空间	467
 shalunvwang	杀戮|女王	429
@@ -12633,7 +12632,7 @@ shangdimoniyouxi	上帝|模拟|游戏	499
 shangfafenming	赏罚|分明	450
 shanggantuya	伤感|涂鸦	465
 shanggujuanzhou	上古|卷轴	413
-shanggushiji	上古|世纪	451
+shanggushiji	上古|世纪	422
 shangguzhanzheng	上古|战争	357
 shangguzhanzhengyishu	上古|战争|艺术	439
 shanghaidianying	上海|电影	474
@@ -13443,7 +13442,7 @@ shidianshiwu	十点|十五	520
 shidianyike	十点|一刻	520
 shidishuiruanjiaonang	十滴水|软胶囊	437
 shierdianyike	十二点|一刻	520
-shierdizhi	十二|地支	444
+shierdizhi	十二|地支	439
 shiergexiaoshi	十二个|小时	520
 shierwanfen	十二|万分	484
 shierxiaoshi	十二|小时	520
@@ -13546,7 +13545,7 @@ shijianyouxian	时间|优先	486
 shijianzhijue	时间|知觉	500
 shijianzhuanyi	事件|转移	483
 shijianzongxian	事件|总线	486
-shijibaye	世纪|霸业	431
+shijibaye	世纪|霸业	402
 shijidiguo	世纪|帝国	467
 shijidiguoxilie	世纪|帝国|系列	456
 shijiebangqiu	世界|棒球	478
@@ -13573,8 +13572,8 @@ shijiezhishi	世界|知识	487
 shijikongzhi	实际|控制	487
 shijingwulai	市井|无赖	484
 shijingxiaomin	市井|小民	467
-shijixuean	世纪|血案	429
-shijizhengba	世纪|争霸	460
+shijixuean	世纪|血案	401
+shijizhengba	世纪|争霸	431
 shijuecuojue	视觉|错觉	482
 shijueguding	视觉|固定	486
 shijuejiati	视觉|假体	476
@@ -13703,7 +13702,7 @@ shishishujuku	实时|数据库	470
 shishixuanran	实时|渲染	501
 shishizhanlve	实时|战略	467
 shishuijiafu	食水|加氟	399
-shisibuqu	誓死|不屈	482
+shisibuqu	誓死|不屈	483
 shisuanxinglixibao	嗜酸性|粒细胞	483
 shisuanxingrouyazhong	嗜酸性|肉芽肿	483
 shisuanxingxibao	嗜酸性|细胞	459
@@ -14180,7 +14179,7 @@ shunshiliaofa	顺势|疗法	403
 shunshishouti	瞬时|受体	401
 shunshishoutidianwei	瞬时|受体|电位	483
 shunshuirenqing	顺水|人情	445
-shunshuishunfeng	顺水|顺风	437
+shunshuishunfeng	顺水|顺风	477
 shunxifanshe	吮吸|反射	491
 shunxizhijian	瞬息|之间	483
 shunxuchengxu	顺序|程序	385
@@ -14416,7 +14415,7 @@ songxiagongsi	松下|公司	467
 songxinshijian	送信|时间	465
 sougouceshi	搜狗|测试	488
 sougoushurufa	搜狗|输入法	501
-sousuoanniu	搜索|按钮	518
+sousuoanniu	搜索|按钮	520
 sousuogongneng	搜索|功能	520
 sousuojianyi	搜索|建议	520
 sousuojieguo	搜索|结果	520
@@ -14562,7 +14561,7 @@ taikongpaopaolong	太空|泡泡龙	423
 taikongqingwa	太空|青蛙	434
 taikongqinlvezhe	太空|侵略者	458
 taikongsibadaren	太空|斯巴达人	453
-taikongtansuo	太空|探索	465
+taikongtansuo	太空|探索	466
 taikongtanxian	太空|探险	458
 taikongwubu	太空|舞步	408
 taikongwulixue	太空|物理学	501
@@ -14693,7 +14692,7 @@ taowangdaheng	逃亡|大亨	456
 taowangyouxi	逃亡|游戏	437
 taoxiugaiwazi	套袖改|袜子	455
 tashenganchezhan	塔什干|车站	456
-tebiebaoqian	特别|抱歉	518
+tebiebaoqian	特别|抱歉	520
 tebiefuzhu	特别|辅助	417
 tebiefuzhujihua	特别|辅助|计划	499
 tebieganxie	特别|感谢	520
@@ -15232,7 +15231,7 @@ tupianhuancun	图片|缓存	491
 tupianyibujiazai	图片|异步加载	440
 tupoxingganran	突破性|感染	481
 turangdongwu	土壤|动物	472
-turangliushi	土壤|流失	460
+turangliushi	土壤|流失	461
 turangpoumian	土壤|剖面	458
 turangweishengwu	土壤|微生物	461
 turangweishengwuxue	土壤|微生物学	483
@@ -15391,8 +15390,7 @@ wangluochuangshiji	网络|创世纪	455
 wangluocundang	网络|存档	502
 wangluodaikuan	网络|带宽	520
 wangluodanyuan	网络|单元	502
-wangluodonghua	网络|动画	388
-wangluodonghuajuji	网络|动画|剧集	470
+wangluodonghuajuji	网络|动画剧集	382
 wangluoduoxiancheng	网络|多线程	469
 wangluoguanggao	网络|广告	467
 wangluoguanli	网络|管理	503
@@ -15444,7 +15442,7 @@ wangzhanbushu	网站|部署	485
 wangzhanyuanma	网站|源码	445
 wangzhemiling	王者|密令	433
 wangzherongyao	王者|荣耀	431
-wangzheshiji	王者|世纪	467
+wangzheshiji	王者|世纪	442
 wangzheshijie	王者|世界	467
 wangzhetianxia	王者|天下	413
 wangzhewushuang	王者|无双	458
@@ -15500,7 +15498,7 @@ wanxingxuepai	完形|学派	486
 wanxingzhiliaofa	完形|治疗法	486
 wanyaotuobei	弯腰|驼背	431
 wanyouyinli	万有|引力	445
-wanzhengciku	完整|词库	516
+wanzhengciku	完整|词库	520
 wanzhengjiaoben	完整|脚本	508
 wanzudongwu	腕足|动物	467
 wapianbandao	瓦片|半岛	501
@@ -15987,7 +15985,7 @@ wulixuedeyanhua	物理|学的|演化	498
 wulixuedinglv	物理学|定律	501
 wulixuefenzhi	物理学|分支	501
 wulixuejialiebiao	物理学家|列表	498
-wulixuejishi	物理学|记事	488
+wulixuejishi	物理学|记事	501
 wulixueke	物理|学科	501
 wulixuelishi	物理学|历史	501
 wulixuenianjian	物理学|年鉴	488
@@ -16721,7 +16719,7 @@ xiguanjiesunshang	膝关节|损伤	450
 xiguanjiezhihuan	膝关节|置换	486
 xiguanxingliuchan	习惯性|流产	448
 xiguanyongfa	习惯|用法	467
-xiguanyongyu	习惯|用语	442
+xiguanyongyu	习惯|用语	467
 xiguayouxi	西瓜|游戏	465
 xihuanjiushi	喜欢|就是	374
 xihuanjiushixihuan	喜欢|就是|喜欢	456
@@ -17589,7 +17587,7 @@ xunihuajishu	虚拟化|技术	471
 xunihuanjing	虚拟|环境	520
 xunihuiyi	虚拟|会议	486
 xunihuobi	虚拟|货币	467
-xunijianpan	虚拟|键盘	469
+xunijianpan	虚拟|键盘	446
 xunijianzhuang	虚拟机|安装	471
 xunijicheng	虚拟|继承	490
 xunijingying	虚拟|经营	467
@@ -18104,7 +18102,7 @@ yelvtijizhi	叶绿体|基质	381
 yemanqishi	野蛮|骑士	467
 yemeibanfa	也没|办法	520
 yemeiguanxi	也没|关系	520
-yemianhuancun	页面|缓存	453
+yemianhuancun	页面|缓存	481
 yemianxuanran	页面|渲染	416
 yemianxuanranyinqing	页面|渲染|引擎	498
 yemudichui	夜幕|低垂	425
@@ -18153,7 +18151,7 @@ yibanwaike	一般|外科	486
 yibanyiliao	一般|医疗	401
 yibanyiliaoyishi	一般|医疗|医师	483
 yibeiwudao	以北|五道	468
-yibenzhengjing	一本|正经	515
+yibenzhengjing	一本|正经	520
 yibiangenghao	以便|更好	520
 yibianyouyibian	一遍又|一遍	447
 yibiaotangtang	仪表|堂堂	483
@@ -18990,7 +18988,7 @@ yonghengweilanxilie	永恒|蔚蓝|系列	436
 yonghengyuanzhu	永恒|圆柱	464
 yonghengzhineng	永恒|智能	480
 yonghuchengxu	用户|程序	506
-yonghuciku	用户|词库	517
+yonghuciku	用户|词库	520
 yonghujiaoben	用户|脚本	501
 yonghujiekou	用户|接口	502
 yonghujiemian	用户|界面	502
@@ -19091,8 +19089,8 @@ youseyanjing	有色|眼镜	483
 youshengliliang	有生|力量	489
 youshengxiaoshuo	有声|小说	467
 youshengyilai	有生|以来	490
-youshengyouse	有声|有色	488
-youshengziyin	有声|子音	468
+youshengyouse	有声|有色	465
+youshengziyin	有声|子音	446
 youshihoudao	有失|厚道	439
 youshishenfen	有失|身份	483
 youshishunwei	优势|顺位	441
@@ -19273,7 +19271,7 @@ yuanhexibao	原核|细胞	500
 yuanjiaduitou	冤家|对头	447
 yuanlairuci	原来|如此	494
 yuanmaanzhuang	源码|安装	486
-yuanmabianyi	源码|编译	480
+yuanmabianyi	源码|编译	486
 yuanmafenxi	源码|分析	487
 yuanmafenxiang	源码|分享	484
 yuanmaguanli	源码|管理	485
@@ -19751,8 +19749,8 @@ zhanshudaodan	战术|导弹	465
 zhanshuganyu	战术|干预	461
 zhanshusheji	战术|射击	417
 zhanshushejiyouxi	战术|射击|游戏	499
-zhanshutupo	战术|突破	358
-zhanshutupowushi	战术|突破|巫师	440
+zhanshutupo	战术|突破	359
+zhanshutupowushi	战术|突破|巫师	441
 zhanshuxiaodui	战术|小队	420
 zhansishachang	战死|沙场	458
 zhanwangzhuangtai	谵妄|状态	436
@@ -19995,7 +19993,7 @@ zheyangbuhao	这样|不好	520
 zheyangdehua	这样|的话	520
 zheyangyilai	这样|一来	487
 zheyibanben	这一|版本	520
-zheyitanzi	这一|摊子	517
+zheyitanzi	这一|摊子	520
 zhezhishijie	折纸|世界	374
 zhezhishijiechaifeng	折纸|世界|拆封	456
 zhezhongzhuyi	折衷|主义	397
@@ -20159,7 +20157,7 @@ zhiqiguankuozhang	支气管|扩张	486
 zhiqiguanxiaochuan	支气管|哮喘	481
 zhiqingtongyi	知情|同意	486
 zhiqingurou	至亲|骨肉	417
-zhiqinhaoyou	至亲|好友	453
+zhiqinhaoyou	至亲|好友	455
 zhiruwuguzhang	植入物|故障	486
 zhishicaichan	知识|财产	486
 zhishichanquan	知识|产权	520

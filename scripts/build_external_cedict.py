@@ -514,7 +514,7 @@ DAILY_NUMBER_WORD_UNIT_CHARS = set(
 CURATED_DAILY_NUMBER_WEIGHT_CAP = 700
 CURATED_DAILY_COUNT_MEASURE_WEIGHT_CAP = 820
 CURATED_DAILY_HOUSING_COUNT_MEASURE_WEIGHT_CAP = 650
-CURATED_DAILY_SUPPLEMENT_WEIGHT_CAP = 560
+CURATED_DAILY_SUPPLEMENT_WEIGHT_CAP = 280
 CURATED_DAILY_SUPPLEMENT_NUMBER_WEIGHT_CAP = 520
 CURATED_DAILY_ASPECT_VISIBILITY_CAP = 760
 
@@ -2397,6 +2397,8 @@ def _longer_prefix_term_support_stats(
     pinyin: str,
     text: str,
     support_index: Dict[str, List[Tuple[str, str, int]]],
+    *,
+    min_support_weight: int = 520,
 ) -> Tuple[int, int]:
     support_count = 0
     support_total = 0
@@ -2406,7 +2408,7 @@ def _longer_prefix_term_support_stats(
         if (
             support_pinyin.startswith(pinyin)
             and len(support_pinyin) > len(pinyin)
-            and support_weight >= 520
+            and support_weight >= min_support_weight
         ):
             support_count += 1
             support_total += support_weight
@@ -4780,11 +4782,14 @@ def _rerank_multi_pronunciation_terms(
         if len(supports) < 2:
             continue
 
-        best_support, best_pinyin, _best_weight = supports[0]
+        best_support, best_pinyin, best_weight = supports[0]
         second_support = supports[1][0]
         if best_support < 520.0:
             continue
-        if best_support < second_support * 1.35:
+        strong_primary_reading = best_weight >= 900 and any(
+            variant_weight >= 420 for _support, _pinyin, variant_weight in supports[1:]
+        )
+        if best_support < second_support * 1.35 and not strong_primary_reading:
             continue
 
         stats[f"{stats_prefix}_multi_pronunciation_terms"] += 1
@@ -4804,6 +4809,8 @@ def _rerank_multi_pronunciation_terms(
                 penalty += 56
             if family_support[text].get(pinyin, 0.0) <= best_family_support * 0.22:
                 penalty += 72
+            if strong_primary_reading and weight > 360:
+                penalty = max(penalty, weight - 360)
             penalty = min(min(460, max(280, int(weight * 0.55))), penalty)
             if penalty <= 0:
                 continue
@@ -12948,7 +12955,7 @@ def _finalize_curated_daily_weight(
                 CURATED_DAILY_SUPPLEMENT_NUMBER_WEIGHT_CAP,
                 max(weight, number_floor),
             )
-        supplement_floor = 430 + int(round(bounded_usage * 140.0))
+        supplement_floor = 220 + int(round(bounded_usage * 80.0))
         return min(CURATED_DAILY_SUPPLEMENT_WEIGHT_CAP, max(weight, supplement_floor))
 
     if not is_number_word:
@@ -13285,7 +13292,10 @@ def _enforce_final_normative_homophone_order(
     term_semantic_bonus_map = term_semantic_bonus_map or {}
     bucket_pinyin_map = bucket_pinyin_map or {}
     char_prior = _build_effective_char_prior(mapping, char_frequency_prior)
-    support_index = _build_longer_prefix_term_support_index(mapping)
+    support_index = _build_longer_prefix_term_support_index(
+        mapping,
+        min_support_weight=360,
+    )
 
     buckets: Dict[str, List[Tuple[str, str, int]]] = {}
     for key, weight in mapping.items():
@@ -13308,14 +13318,31 @@ def _enforce_final_normative_homophone_order(
             pinyin,
             text,
             support_index,
+            min_support_weight=360,
         )
+        text_len = _cjk_len(text)
+        productive_support_threshold = 4 if text_len <= 2 else 8
         # Mainstream signal deliberately excludes CEDICT semantic bonuses and
         # final weight, because those can encode "visible but not frequent".
+        #
+        # Long-term support is a visibility signal for productive roots, not
+        # direct evidence that the short root itself is the best exact
+        # homophone.  Otherwise entries such as "复合" can be inflated by many
+        # compounds and outrank a more common direct word like "符合".
+        source_signal = min(1.0, source_hits / 5.0) * 0.08
+        if (
+            support_count >= productive_support_threshold
+            and support_total >= support_count * 360
+            and usage_score < 0.34
+            and jieba_score < 0.30
+            and pageview_score < 0.14
+        ):
+            source_signal *= 0.35
         mainstream_signal = (
             usage_score * 0.38
             + jieba_score * 0.36
             + pageview_score * 0.14
-            + min(1.0, source_hits / 5.0) * 0.08
+            + source_signal
             + char_score * 0.04
         )
         if _is_conversational_pos(pos_tag):
@@ -13421,9 +13448,22 @@ def _enforce_final_normative_homophone_order(
                     and low_independent_signal
                     and leader_signal >= mainstream_signal + 0.035
                 )
+                productive_prefix_visibility = (
+                    support_count >= (4 if text_len <= 2 else 8)
+                    and leader_signal >= mainstream_signal - 0.005
+                    and not (
+                        usage_score >= 0.36
+                        and jieba_score >= 0.30
+                        and pageview_score >= 0.12
+                    )
+                    and (
+                        leader_parts[0] + leader_parts[3] + leader_parts[2]
+                        >= usage_score + jieba_score + pageview_score - 0.02
+                    )
+                )
                 prefix_visibility_only = (
                     support_count >= 1
-                    and low_independent_signal
+                    and (low_independent_signal or productive_prefix_visibility)
                     and leader_signal >= mainstream_signal + 0.04
                     and not (
                         pos_tag.startswith("v")
@@ -13435,6 +13475,9 @@ def _enforce_final_normative_homophone_order(
                 if semantic_visibility_only:
                     cap_kind = "semantic"
                     cap_margin = 120
+                elif productive_prefix_visibility:
+                    cap_kind = "prefix"
+                    cap_margin = 80
                 elif prefix_visibility_only:
                     cap_kind = "prefix"
                     cap_margin = 112
@@ -13611,9 +13654,13 @@ def _reinforce_curated_daily_existing_prefixes(
             if _is_named_entity_pos(jieba_pos_map.get(prefix, "")):
                 continue
 
+            curated_prefix_support = min(1.0, max(0.0, usage_score)) >= 0.88
             prefix_char_score = _compute_text_single_char_prior(prefix, char_prior)
             prefix_min_char_prior = _compute_min_char_prior(prefix, char_prior)
-            if prefix_char_score < 0.08 or prefix_min_char_prior < 0.01:
+            if (
+                not curated_prefix_support
+                and (prefix_char_score < 0.08 or prefix_min_char_prior < 0.01)
+            ):
                 continue
 
             prefix_pinyin = _normalize_compact_pinyin_key("".join(syllables[:prefix_len]))
@@ -13628,7 +13675,7 @@ def _reinforce_curated_daily_existing_prefixes(
             stats[f"{stats_prefix}_curated_daily_prefix_terms_considered"] += 1
             direct_usage = min(1.0, max(0.0, usage_score_map.get(prefix, 0.0)))
             direct_hits = source_hits_map.get(prefix, 0)
-            if direct_usage < 0.18 and direct_hits < 2:
+            if direct_usage < 0.18 and direct_hits < 2 and not curated_prefix_support:
                 continue
             inherited_usage = max(
                 direct_usage,
@@ -13638,6 +13685,12 @@ def _reinforce_curated_daily_existing_prefixes(
             if existing_weight < floor_weight:
                 mapping[key] = floor_weight
                 stats[f"{stats_prefix}_curated_daily_prefix_reinforced"] += 1
+            # Later homophone capping passes use usage/source maps, not just the
+            # current weight. Preserve the evidence that an existing short word
+            # is a productive prefix of a high-confidence daily phrase.
+            if curated_prefix_support:
+                usage_score_map[prefix] = max(direct_usage, min(0.42, inherited_usage))
+                source_hits_map[prefix] = max(direct_hits, 2)
 
     return stats
 
@@ -13712,9 +13765,13 @@ def _reinforce_curated_daily_existing_suffixes(
             if _is_named_entity_pos(jieba_pos_map.get(suffix, "")):
                 continue
 
+            curated_suffix_support = min(1.0, max(0.0, usage_score)) >= 0.88
             suffix_char_score = _compute_text_single_char_prior(suffix, char_prior)
             suffix_min_char_prior = _compute_min_char_prior(suffix, char_prior)
-            if suffix_char_score < 0.12 or suffix_min_char_prior < 0.02:
+            if (
+                not curated_suffix_support
+                and (suffix_char_score < 0.12 or suffix_min_char_prior < 0.02)
+            ):
                 continue
 
             suffix_pinyin = _normalize_compact_pinyin_key("".join(syllables[-suffix_len:]))
@@ -13729,7 +13786,7 @@ def _reinforce_curated_daily_existing_suffixes(
             stats[f"{stats_prefix}_curated_daily_suffix_terms_considered"] += 1
             direct_usage = min(1.0, max(0.0, usage_score_map.get(suffix, 0.0)))
             direct_hits = source_hits_map.get(suffix, 0)
-            if direct_usage < 0.18 and direct_hits < 2:
+            if direct_usage < 0.18 and direct_hits < 2 and not curated_suffix_support:
                 continue
             inherited_usage = max(
                 direct_usage,
@@ -13739,6 +13796,9 @@ def _reinforce_curated_daily_existing_suffixes(
             if existing_weight < floor_weight:
                 mapping[key] = floor_weight
                 stats[f"{stats_prefix}_curated_daily_suffix_reinforced"] += 1
+            if curated_suffix_support:
+                usage_score_map[suffix] = max(direct_usage, min(0.38, inherited_usage))
+                source_hits_map[suffix] = max(direct_hits, 2)
 
     return stats
 
