@@ -13654,7 +13654,19 @@ def _reinforce_curated_daily_existing_prefixes(
             if _is_named_entity_pos(jieba_pos_map.get(prefix, "")):
                 continue
 
-            curated_prefix_support = min(1.0, max(0.0, usage_score)) >= 0.88
+            # A high-confidence 3-character daily phrase often carries a
+            # productive 2-character everyday prefix (e.g. 新房子 -> 新房).
+            # The prefix must already exist in the dictionary; this only
+            # restores a reasonable weight instead of synthesizing new words.
+            near_complete_daily_prefix = (
+                prefix_len == 2
+                and source_len == 3
+                and min(1.0, max(0.0, usage_score)) >= 0.82
+            )
+            curated_prefix_support = (
+                min(1.0, max(0.0, usage_score)) >= 0.88
+                or near_complete_daily_prefix
+            )
             prefix_char_score = _compute_text_single_char_prior(prefix, char_prior)
             prefix_min_char_prior = _compute_min_char_prior(prefix, char_prior)
             if (

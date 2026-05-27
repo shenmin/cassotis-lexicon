@@ -71,6 +71,16 @@
 水博	水博	0.42	shuibo
 水湾	水灣	0.36	shuiwan
 水刊	水刊	0.42	shuikan
+电离水	電離水	0.50	dianlishui
+电解水	電解水	0.50	dianjieshui
+弱碱水	弱鹼水	0.46	ruojianshui
+碱性水	鹼性水	0.50	jianxingshui
+过滤水	過濾水	0.46	guolvshui
+净化水	淨化水	0.48	jinghuashui
+回款	回款	0.54	huikuan
+进账	進賬	0.52	jinzhang
+进钱	進錢	0.50	jinqian
+对账	對賬	0.52	duizhang
 # low-priority everyday number words
 十一	十一	0.82
 十二	十二	0.82
