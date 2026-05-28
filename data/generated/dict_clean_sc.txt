@@ -10565,8 +10565,8 @@ boshishan	博士山	174
 boshisheng	博士生	372
 boshixian	博氏线	470
 boshixuewei	博士学位	405
-boshu	波束	669
-boshu	波数	136
+boshu	波束	670
+boshu	波数	135
 boshuzufu	伯叔祖父	260
 boshuzumu	伯叔祖母	260
 bosi	波斯	672
@@ -22233,7 +22233,7 @@ daihu	怠忽	323
 daihuai	带坏	323
 daihuan	代换	397
 daihui	待会	960
-daihui	带回	548
+daihui	带回	547
 daihuier	待会儿	981
 daihuir	待会儿	981
 daihuo	带货	198
@@ -22507,8 +22507,8 @@ daixinghuabian	带形花边	669
 daixingxianjiao	带形线脚	669
 daixinxiujia	带薪休假	405
 daixiong	袋熊	313
-daixu	代旭	828
-daixu	待续	672
+daixu	待续	960
+daixu	代旭	328
 daixuejin	贷学金	436
 daiyan	代言	493
 daiyanren	代言人	519
@@ -129958,7 +129958,7 @@ weiboyingxiang	微波影像	570
 weibozhiliao	微波治疗	540
 weibu	尾部	1000
 weibu	围捕	160
-weibu	未卜	75
+weibu	未卜	76
 weibujibing	胃部疾病	570
 weibuxianzhi	未卜先知	450
 weibuzudao	微不足道	516
@@ -130273,6 +130273,7 @@ weijiehe	胃结核	470
 weijiejuedewuliwenti	未解决的物理问题	754
 weijier	维吉尔	223
 weijieshi	胃结石	470
+weijieshu	未结束	922
 weijiezhimi	未解之谜	260
 weijifen	微积分	593
 weijifenxue	微积分学	405
@@ -130436,7 +130437,7 @@ weiliansishi	威廉四世	507
 weilianyishi	威廉一世	507
 weiliao	未了	733
 weiliao	未料	613
-weiliao	尉缭	233
+weiliao	尉缭	232
 weiliaozi	尉缭子	370
 weilibang	威力棒	744
 weilie	位列	987
@@ -130938,10 +130939,12 @@ weituoshu	委托书	529
 weiwadi	韦瓦第	167
 weiwai	委外	198
 weiwaijingying	委外经营	570
-weiwan	委婉	1000
-weiwancheng	未完成	640
+weiwan	未完	960
+weiwan	委婉	580
+weiwancheng	未完成	945
 weiwanchengdetian'e	未完成的天鹅	648
 weiwanci	委婉词	232
+weiwandaixu	未完待续	959
 weiwang	威望	808
 weiwang	危亡	766
 weiwang	围网	191
@@ -130949,6 +130952,7 @@ weiwangdijituan	威望迪集团	274
 weiwangdiyouxi	维旺迪游戏	776
 weiwangmoyoudongmai	胃网膜右动脉	649
 weiwangren	未亡人	379
+weiwanjie	未完结	938
 weiwanyu	委婉语	232
 weiwei	微微	1000
 weiwei	娓娓	510
