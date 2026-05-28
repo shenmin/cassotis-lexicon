@@ -1,5 +1,7 @@
 # pinyin<TAB>expected_text<TAB>max_rank(optional)
 ji'e	饥饿	3
+huashuo	话说	1
+huashuo	华硕	5
 yifu	衣服	1
 pianduan	片段	1
 pianduan	!片断
