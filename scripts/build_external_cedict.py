@@ -2249,7 +2249,11 @@ def _cap_generic_vertical_weight(weight: int, text: str, layer_id: str, source_i
                 cap = 760
         else:
             if text_len <= 2:
-                cap = 520
+                # Externally imported short architecture labels are useful as
+                # exact candidates, but should not outrank broad daily/common
+                # homophones such as qiangzhi=强制. Project-curated architecture
+                # terms keep the higher cap above.
+                cap = 260
             elif text_len == 3:
                 cap = 600
             elif text_len == 4:
@@ -14081,6 +14085,64 @@ def _reinforce_curated_daily_existing_suffixes(
     return stats
 
 
+def _cap_curated_daily_de_complement_pair_weights(
+    mapping: Dict[Tuple[str, str], int],
+    curated_entries: List[Tuple[str, str, float, str]],
+    *,
+    use_traditional: bool,
+    stats_prefix: str,
+) -> Dict[str, int]:
+    """Prefer standalone V+的 over matching standalone V+得 pairs.
+
+    Two-character V+得 forms are valid exact candidates, but they normally need
+    a following complement such as "做得好". When the same curated V+的 phrase
+    exists in the same pinyin bucket, keep V+得 visible without making it the
+    default standalone exact match.
+    """
+    stats = {
+        f"{stats_prefix}_curated_daily_de_pair_cap_terms": 0,
+        f"{stats_prefix}_curated_daily_de_pair_cap_rows": 0,
+    }
+    if not mapping or not curated_entries:
+        return stats
+
+    curated_terms: Set[str] = set()
+    for sc_word, tc_word, _usage_score, _explicit_pinyin in curated_entries:
+        text = tc_word if use_traditional and tc_word else sc_word
+        if text:
+            curated_terms.add(text)
+
+    capped_terms: Set[str] = set()
+    for key, weight in list(mapping.items()):
+        pinyin, text = key
+        if (
+            _cjk_len(text) != 2
+            or len(text) != 2
+            or not text.endswith("\u5f97")
+            or text not in curated_terms
+        ):
+            continue
+
+        de_text = text[:-1] + "\u7684"
+        if de_text not in curated_terms:
+            continue
+
+        de_weight = mapping.get((pinyin, de_text))
+        if de_weight is None or de_weight <= 1:
+            continue
+
+        cap = max(1, de_weight - 24)
+        if weight <= cap:
+            continue
+
+        mapping[key] = cap
+        capped_terms.add(text)
+        stats[f"{stats_prefix}_curated_daily_de_pair_cap_rows"] += 1
+
+    stats[f"{stats_prefix}_curated_daily_de_pair_cap_terms"] = len(capped_terms)
+    return stats
+
+
 def _cap_curated_daily_visibility_exact_weights(
     mapping: Dict[Tuple[str, str], int],
     curated_entries: List[Tuple[str, str, float, str]],
@@ -19400,6 +19462,20 @@ def main() -> int:
     )
     stats.update(sc_final_short_exact_direct_stats)
     stats.update(tc_final_short_exact_direct_stats)
+    sc_de_complement_pair_cap_stats = _cap_curated_daily_de_complement_pair_weights(
+        sc_map,
+        curated_daily_entries,
+        use_traditional=False,
+        stats_prefix="sc_final",
+    )
+    tc_de_complement_pair_cap_stats = _cap_curated_daily_de_complement_pair_weights(
+        tc_map,
+        curated_daily_entries,
+        use_traditional=True,
+        stats_prefix="tc_final",
+    )
+    stats.update(sc_de_complement_pair_cap_stats)
+    stats.update(tc_de_complement_pair_cap_stats)
     sc_single_char_rebalance_stats = _rebalance_single_char_homophones_by_leading_support(
         sc_map,
         sc_leading_term_count_map,
