@@ -9378,6 +9378,7 @@ binglaijiangdang	兵来将挡	634
 binglaijiangdangshuilaituyan	兵来将挡水来土掩	724
 binglairushandao	病来如山倒	690
 binglang	槟榔	536
+bingle	病了	894
 bingleichuanranbing	丙类传染病	610
 bingleng	冰冷	423
 bingli	病历	440
@@ -68740,7 +68741,7 @@ kaijia	开价	677
 kaijia	铠甲	25
 kaijiamaidanglao	开家麦当劳	613
 kaijian	开间	637
-kaijiang	开讲	584
+kaijiang	开讲	585
 kaijiang	开奖	62
 kaijiangpitu	开疆辟土	633
 kaijiangtatu	开疆拓土	643
@@ -84481,7 +84482,8 @@ meibian	没变	1000
 meibian	霉变	228
 meibian	美编	1
 meibida	美吡哒	470
-meibing	霉病	313
+meibing	没病	960
+meibing	霉病	1
 meibiyao	没必要	930
 meiboshuchuliang	每博输出量	641
 meiboshuchuliang	每搏输出量	639
@@ -91488,7 +91490,7 @@ nianyun	辇运	126
 nianzai	年载	198
 nianzhang	年长	444
 nianzhexiaodai	黏着小带	570
-nianzhi	拈指	198
+nianzhi	拈指	199
 nianzhijiu	年之久	372
 nianzhixing	黏滞性	228
 nianzhong	年中	960
@@ -112937,6 +112939,7 @@ shibianhanshulun	实变函数论	289
 shibianxing	十边形	379
 shibiao	师表	400
 shibiao	试表	238
+shibiaoshi	是表示	914
 shibie	识别	910
 shibiechu	识别出	945
 shibiechulai	识别出来	953
@@ -113343,7 +113346,7 @@ shigongburushiguo	使功不如使过	399
 shigongdanwei	施工单位	405
 shigongdui	施工队	556
 shigongtu	施工图	562
-shigu	事故	791
+shigu	事故	790
 shigu	石鼓	738
 shigu	世故	514
 shigu	尸骨	314
@@ -113549,7 +113552,8 @@ shijianfanyanxinhaochuli	时间反演信号处理	754
 shijianfenfa	事件分发	704
 shijianfenfajizhi	事件分发机制	815
 shijianfuxing	时间复兴	538
-shijiang	石匠	1000
+shijiang	是讲	960
+shijiang	石匠	843
 shijiangdegang	石匠的钢	527
 shijiangdegangqian	石匠的钢钎	569
 shijiangdezao	石匠的凿	527
@@ -114534,6 +114538,7 @@ shishuiliunian	似水流年	634
 shishuiwen	试水温	232
 shishuizheng	嗜睡症	500
 shishuji	实数集	232
+shishuo	是说	930
 shishuoxinyu	世说新语	387
 shishuzhi	实数值	232
 shisi	誓死	812
@@ -115244,16 +115249,17 @@ shizhenzhengfu	市镇政府	570
 shizherusi	逝者如斯	628
 shizherusiying	逝者如斯蝇	613
 shizheshengcun	适者生存	727
+shizhi	是指	960
 shizhi	十只	820
 shizhi	食指	787
+shizhi	失职	738
 shizhi	实质	697
-shizhi	失职	642
 shizhi	试制	640
-shizhi	试纸	337
-shizhi	施治	280
+shizhi	试纸	433
+shizhi	施治	376
+shizhi	适值	125
 shizhi	市值	122
 shizhi	石质	96
-shizhi	适值	73
 shizhi	矢志	1
 shizhibajiu	十之八九	496
 shizhibuyi	矢志不移	641
@@ -148027,7 +148033,7 @@ yejinxue	冶金学	481
 yejiqu	叶集区	167
 yejiu	也就	914
 yejiushi	也就是	1027
-yejiushishuo	也就是说	578
+yejiushishuo	也就是说	953
 yejude	夜具地	640
 yejueming	野决明	470
 yejuhua	野菊花	469
@@ -152905,6 +152911,7 @@ yisimingzhi	以死明志	260
 yisipani	伊斯帕尼	637
 yisipani'aola	伊斯帕尼奥拉	318
 yisipani'aoladao	伊斯帕尼奥拉岛	356
+yisishi	意思是	952
 yisitan	伊斯坦	629
 yisitanbao	伊斯坦堡	228
 yisitanbu'er	伊斯坦布尔	466
@@ -154452,7 +154459,9 @@ youbiaokachi	游标卡尺	271
 youbie	有别	483
 youbikongju	幽闭恐惧	258
 youbikongjuzheng	幽闭恐惧症	640
-youbing	油饼	558
+youbing	有病	960
+youbing	油饼	1
+youbingba	有病吧	922
 youbingluantouyi	有病乱投医	412
 youbingyangfen	右丙氧芬	540
 youbitian'e	疣鼻天鹅	426
@@ -154952,7 +154961,7 @@ youmai	油麦	351
 youmai	莜麦	326
 youmaicai	油麦菜	346
 youmaixiang	有卖相	232
-youmaobing	有毛病	510
+youmaobing	有毛病	938
 youmaoniyulegongzuoshi	有猫腻娱乐工作室	662
 youmei	有没	1000
 youmei	优美	580
@@ -163019,6 +163028,7 @@ zhidejingpei	值得敬佩	597
 zhidengdeng	直瞪瞪	394
 zhidepin	值得品	556
 zhidepinwei	值得品味	597
+zhideshi	指的是	945
 zhideyanjiufa	质的研究法	640
 zhideyi	值得一	867
 zhideyiman	志得意满	475
@@ -163448,7 +163458,7 @@ zhiliangxiaoyingxilie	质量效应系列	648
 zhiliangxiaoyingyinhe	质量效应银河	648
 zhiliangxingzhuang	质量性状	540
 zhiliao	治疗	752
-zhiliao	知了	327
+zhiliao	知了	328
 zhiliao	质料	1
 zhiliaochumo	治疗触摸	570
 zhiliaocuoshi	治疗措施	540

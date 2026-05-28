@@ -9551,6 +9551,7 @@ binglairushandao	病來如山倒	690
 binglang	檳榔	536
 binglangxishi	檳榔西施	258
 binglangyu	檳榔嶼	228
+bingle	病了	894
 bingleichuanranbing	丙類傳染病	610
 bingleng	冰冷	423
 bingli	病歷	440
@@ -25425,7 +25426,7 @@ dayezhuanqu	大冶專區	583
 dayezizhu	大葉紫珠	540
 dayi	大意	960
 dayi	大義	892
-dayi	答疑	281
+dayi	答疑	280
 dayi	大姨	48
 dayi	大衣	14
 dayi	達意	1
@@ -50921,7 +50922,7 @@ haoshengsheng	好生生	676
 haoshengzhide	好生之德	619
 haoshi	好使	1000
 haoshi	好事	891
-haoshi	好是	839
+haoshi	好是	840
 haoshi	耗時	762
 haoshi	好市	600
 haoshibuchumen	好事不出門	430
@@ -86604,7 +86605,7 @@ meibi	眉筆	328
 meibian	沒變	1000
 meibian	美編	484
 meibida	美吡噠	470
-meibing	黴病	313
+meibing	沒病	901
 meibiyao	沒必要	947
 meiboshuchuliang	每博輸出量	641
 meiboshuchuliang	每搏輸出量	639
@@ -115626,6 +115627,7 @@ shibianhanshu	實變函數	260
 shibianhanshulun	實變函數論	289
 shibianxing	十邊形	379
 shibiao	師表	289
+shibiaoshi	是表示	914
 shibie	識別	910
 shibiechu	識別出	937
 shibiechulai	識別出來	949
@@ -116037,7 +116039,7 @@ shigu	事故	807
 shigu	石鼓	700
 shigu	世故	552
 shigu	尸骨	351
-shigu	屍骨	230
+shigu	屍骨	231
 shiguai	石拐	137
 shiguaimingjian	時乖命蹇	387
 shiguaiqu	石拐區	167
@@ -116244,6 +116246,7 @@ shijianfenfa	事件分發	704
 shijianfenfajizhi	事件分發機制	815
 shijianfuxing	時間復興	538
 shijiang	石匠	1000
+shijiang	是講	901
 shijiangdegang	石匠的鋼	527
 shijiangdegangqian	石匠的鋼釺	569
 shijiangdezao	石匠的鑿	527
@@ -117256,6 +117259,7 @@ shishuiliunian	似水流年	634
 shishuiwen	試水溫	232
 shishuizheng	嗜睡症	500
 shishuji	實數集	232
+shishuo	是說	930
 shishuoxinyu	世說新語	387
 shishuzhi	實數值	232
 shisi	誓死	812
@@ -117983,15 +117987,16 @@ shizherusi	逝者如斯	628
 shizherusiying	逝者如斯蠅	613
 shizheshengcun	適者生存	727
 shizhi	十隻	1018
+shizhi	是指	960
 shizhi	實質	814
 shizhi	食指	735
 shizhi	試製	597
-shizhi	失職	511
-shizhi	施治	183
-shizhi	試紙	166
+shizhi	失職	552
+shizhi	施治	223
+shizhi	試紙	206
 shizhi	市值	85
 shizhi	石質	59
-shizhi	適值	36
+shizhi	適值	58
 shizhi	矢誌	2
 shizhi	矢志	1
 shizhibajiu	十之八九	496
@@ -151510,7 +151515,7 @@ yejinxue	冶金學	481
 yejiqu	葉集區	228
 yejiu	也就	914
 yejiushi	也就是	1027
-yejiushishuo	也就是說	578
+yejiushishuo	也就是說	953
 yejude	夜具地	640
 yejueming	野決明	470
 yejuhua	野菊花	469
@@ -156500,6 +156505,7 @@ yisimingzhi	以死明志	260
 yisipani	伊斯帕尼	637
 yisipani'aola	伊斯帕尼奧拉	318
 yisipani'aoladao	伊斯帕尼奧拉島	356
+yisishi	意思是	952
 yisitan	伊斯坦	540
 yisitanbu'er	伊斯坦布爾	360
 yisitanbuer	伊斯坦堡	749
@@ -158126,7 +158132,9 @@ youbiaokachi	遊標卡尺	271
 youbie	有別	483
 youbikongju	幽閉恐懼	258
 youbikongjuzheng	幽閉恐懼症	640
-youbing	油餅	518
+youbing	有病	960
+youbing	油餅	1
+youbingba	有病吧	922
 youbingluantouyi	有病亂投醫	412
 youbingyangfen	右丙氧芬	540
 youbitian'e	疣鼻天鵝	426
@@ -158642,7 +158650,7 @@ youmai	莜麥	326
 youmai	油麥	167
 youmaicai	油麥菜	345
 youmaixiang	有賣相	232
-youmaobing	有毛病	510
+youmaobing	有毛病	938
 youmaoniyulegongzuoshi	有貓膩娛樂工作室	662
 youmei	有沒	1000
 youmei	優美	580
@@ -166769,6 +166777,7 @@ zhidejingpei	值得敬佩	597
 zhidengdeng	直瞪瞪	394
 zhidepin	值得品	556
 zhidepinwei	值得品味	597
+zhideshi	指的是	945
 zhideyanjiufa	質的研究法	640
 zhideyi	值得一	867
 zhideyiman	志得意滿	475
@@ -174019,7 +174028,7 @@ zongshenggong	宗聖公	167
 zongshenghou	宗聖侯	167
 zongshi	總是	1000
 zongshi	縱使	583
-zongshi	宗室	154
+zongshi	宗室	153
 zongshi	宗師	1
 zongshouru	總收入	512
 zongshouyi	總收益	232
@@ -174943,8 +174952,8 @@ zuobianju	左邊距	951
 zuobiankuang	左邊框	951
 zuobianqi	坐便器	362
 zuobianr	左邊兒	167
-zuobiao	坐標	941
-zuobiao	座標	801
+zuobiao	坐標	843
+zuobiao	座標	703
 zuobiaofa	座標法	760
 zuobiaokongjian	坐標空間	260
 zuobiaokongjian	座標空間	258
