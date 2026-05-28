@@ -2760,6 +2760,7 @@
 低调的	低調的	0.90	didiaode
 程序员	程序員	0.91	chengxuyuan
 进度	進度	0.90	jindu
+幅度	幅度	0.90	fudu
 落后了	落後了	0.90	luohoule
 工作日	工作日	0.90	gongzuori
 步行上班	步行上班	0.86	buxingshangban
@@ -3286,7 +3287,7 @@
 极后	極後	0.90
 极左	極左	0.90
 极上	極上	0.90
-极下	極下	0.90
+极下	極下	0.35
 极老	極老	0.90
 极宽	極寬	0.90
 极窄	極窄	0.90
@@ -4591,3 +4592,34 @@
 八行	八行	0.74	bahang
 九行	九行	0.72	jiuhang
 十行	十行	0.74	shihang
+全屋	全屋	0.86	quanwu
+全屋定制	全屋定制	0.82	quanwudingzhi
+全屋装修	全屋裝修	0.80	quanwuzhuangxiu
+全屋智能	全屋智能	0.80	quanwuzhineng
+全屋家电	全屋家電	0.78	quanwujiadian
+全屋家具	全屋家具	0.78	quanwujiaju
+全屋收纳	全屋收納	0.76	quanwushouna
+全屋设计	全屋設計	0.76	quanwusheji
+全屋清洁	全屋清潔	0.72	quanwuqingjie
+那位	那位	0.86	nawei
+哪位	哪位	0.88	nawei
+那一位	那一位	0.78	nayiwei
+这一位	這一位	0.78	zheyiwei
+哪一位	哪一位	0.78	nayiwei
+每位	每位	0.80	meiwei
+几下	幾下	0.84	jixia
+按几下	按幾下	0.74	anjixia
+点几下	點幾下	0.74	dianjixia
+敲几下	敲幾下	0.72	qiaojixia
+拍几下	拍幾下	0.72	paijixia
+打几下	打幾下	0.72	dajixia
+试几下	試幾下	0.72	shijixia
+看几下	看幾下	0.70	kanjixia
+摸几下	摸幾下	0.70	mojixia
+想几下	想幾下	0.68	xiangjixia
+热胀冷缩	熱脹冷縮	0.82	rezhanglengsuo
+遇热	遇熱	0.76	yure
+受冷	受冷	0.70	shouleng
+受热膨胀	受熱膨脹	0.70	shourepengzhang
+遇热膨胀	遇熱膨脹	0.70	yurepengzhang
+遇冷收缩	遇冷收縮	0.70	yulengshousuo

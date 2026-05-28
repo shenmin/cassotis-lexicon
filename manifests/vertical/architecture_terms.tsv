@@ -62,6 +62,7 @@
 中央空调	中央空調	0.76
 暖通	暖通	0.76
 甲醛	甲醛	0.76	jiaquan
+油漆	油漆	0.80	youqi
 底漆	底漆	0.80
 面漆	面漆	0.80
 腻子	膩子	0.80
@@ -85,6 +86,30 @@
 墙面找平	牆面找平	0.76
 地面找平	地面找平	0.76
 找平	找平	0.78
+冲筋	沖筋	0.00	chongjin
+冲筋找平	沖筋找平	0.40	chongjinzhaoping
+墙面冲筋	牆面沖筋	0.38	qiangmianchongjin
+地面冲筋	地面沖筋	0.36	dimianchongjin
+灰饼	灰餅	0.72	huibing
+打灰饼	打灰餅	0.72	dahuibing
+做灰饼	做灰餅	0.70	zuohuibing
+基层找平	基層找平	0.74	jicengzhaoping
+基层处理	基層處理	0.74	jicengchuli
+找平层	找平層	0.74	zhaopingceng
+抹灰找平	抹灰找平	0.74	mohuizhaoping
+石膏找平	石膏找平	0.72	shigaozhaoping
+水泥找平	水泥找平	0.72	shuinizhaoping
+水泥砂浆找平	水泥砂漿找平	0.72	shuinishajiangzhaoping
+找方	找方	0.70	zhaofang
+找直	找直	0.70	zhaozhi
+找垂直	找垂直	0.70	zhaochuizhi
+阴阳角	陰陽角	0.74	yinyangjiao
+阴阳角找直	陰陽角找直	0.70	yinyangjiaozhaozhi
+阳角条	陽角條	0.72	yangjiaotiao
+阴角条	陰角條	0.72	yinjiaotiao
+拉毛	拉毛	0.72	lamao
+墙面拉毛	牆面拉毛	0.70	qiangmianlamao
+拉毛处理	拉毛處理	0.70	lamaochuli
 打磨	打磨	0.76
 砂纸	砂紙	0.76
 涂刷	塗刷	0.76
