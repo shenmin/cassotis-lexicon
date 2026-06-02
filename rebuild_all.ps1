@@ -19,7 +19,8 @@ param(
     [string]$RedistributionClass = "",
     [string]$AttributionRequired = "",
     [string]$SourceNotes = "",
-    [string]$PinyinOverrides = ""
+    [string]$PinyinOverrides = "",
+    [switch]$SkipReadmeSnapshot
 )
 
 $ErrorActionPreference = "Stop"
@@ -116,12 +117,16 @@ if (-not (Test-Path -LiteralPath $Root)) {
 
 $buildScript = Join-Path $Root "scripts\build_external_seed.ps1"
 $validateScript = Join-Path $Root "scripts\validate_regression_samples.py"
+$readmeSnapshotScript = Join-Path $Root "scripts\update_readme_snapshot.py"
 
 if (-not (Test-Path -LiteralPath $buildScript)) {
     throw "Missing build script: $buildScript"
 }
 if ((-not $SkipRegression) -and (-not (Test-Path -LiteralPath $validateScript))) {
     throw "Missing regression validator: $validateScript"
+}
+if ((-not $SkipReadmeSnapshot) -and (-not (Test-Path -LiteralPath $readmeSnapshotScript))) {
+    throw "Missing README snapshot updater: $readmeSnapshotScript"
 }
 
 if ($CacheSourceId -eq "") {
@@ -149,6 +154,9 @@ if ($CacheFile -ne "") {
 }
 if ($SkipRegression) {
     Write-Host "Regression validation: skipped"
+}
+if ($SkipReadmeSnapshot) {
+    Write-Host "README dictionary snapshot update: skipped"
 }
 
 $buildArgs = @{
@@ -198,6 +206,13 @@ Write-Host "Building dedicated lexicon Unihan outputs (dict_unihan_sc/tc)..."
 & $buildScript @unihanBuildArgs
 if ($LASTEXITCODE -ne 0) {
     throw "Unihan build step failed with exit code $LASTEXITCODE"
+}
+
+if (-not $SkipReadmeSnapshot) {
+    Write-Host "Updating README dictionary snapshot from generated file row counts..."
+    Invoke-PythonScript -ScriptPath $readmeSnapshotScript -ScriptArgs @(
+        "--root", $Root
+    )
 }
 
 if (-not $SkipRegression) {

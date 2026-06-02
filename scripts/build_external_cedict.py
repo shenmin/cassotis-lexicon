@@ -512,8 +512,10 @@ DAILY_NUMBER_WORD_UNIT_CHARS = set(
     "\u5341\u767e\u5343\u4e07\u842c\u4ebf\u5104"
 )
 CURATED_DAILY_NUMBER_WEIGHT_CAP = 700
-CURATED_DAILY_COUNT_MEASURE_WEIGHT_CAP = 820
+CURATED_DAILY_COUNT_MEASURE_WEIGHT_CAP = 620
 CURATED_DAILY_HOUSING_COUNT_MEASURE_WEIGHT_CAP = 650
+CURATED_DAILY_VISIBILITY_WEIGHT_CAP_SHORT = 700
+CURATED_DAILY_VISIBILITY_WEIGHT_CAP_LONG = 800
 CURATED_DAILY_SUPPLEMENT_WEIGHT_CAP = 280
 CURATED_DAILY_SUPPLEMENT_NUMBER_WEIGHT_CAP = 520
 CURATED_DAILY_ASPECT_VISIBILITY_CAP = 760
@@ -6960,6 +6962,185 @@ def _cap_short_exact_homophones_by_direct_signal(
     return stats
 
 
+def _cap_weak_exact_homophones_against_curated_daily_leaders(
+    mapping: Dict[Tuple[str, str], int],
+    usage_score_map: Dict[str, float],
+    source_hits_map: Dict[str, int],
+    pageviews_signal_map: Dict[str, float],
+    jieba_direct_signal_map: Dict[str, float],
+    jieba_pos_map: Dict[str, str],
+    preferred_terms: Set[str],
+    weak_leader_terms: Set[str],
+    stats_prefix: str,
+    bucket_pinyin_map: Dict[Tuple[str, str], str] | None = None,
+    term_style_penalty_map: Dict[Tuple[str, str], int] | None = None,
+    term_semantic_bonus_map: Dict[Tuple[str, str], int] | None = None,
+) -> Dict[str, int]:
+    """Keep weak exact homophones below explicit curated daily exact terms.
+
+    Curated daily terms are human frequency anchors. Domain terms, fragments
+    backed mainly by longer compounds, and style-marked entries should remain
+    visible, but should not outrank these anchors in the same pinyin bucket.
+    """
+    stats = {
+        f"{stats_prefix}_curated_exact_leader_buckets": 0,
+        f"{stats_prefix}_curated_exact_leader_capped": 0,
+    }
+    if not mapping or not preferred_terms:
+        return stats
+
+    bucket_pinyin_map = bucket_pinyin_map or {}
+    term_style_penalty_map = term_style_penalty_map or {}
+    term_semantic_bonus_map = term_semantic_bonus_map or {}
+    support_index = _build_longer_prefix_term_support_index(mapping)
+
+    buckets: Dict[str, List[Tuple[str, str, int]]] = {}
+    for key, weight in mapping.items():
+        pinyin, text = key
+        bucket_pinyin = bucket_pinyin_map.get(key, pinyin)
+        if not bucket_pinyin:
+            continue
+        buckets.setdefault(bucket_pinyin, []).append((pinyin, text, weight))
+
+    def direct_parts(pinyin: str, text: str) -> Tuple[float, float, float, int, str, int, int, int]:
+        usage_score = min(1.0, max(0.0, usage_score_map.get(text, 0.0)))
+        jieba_score = min(1.0, max(0.0, jieba_direct_signal_map.get(text, 0.0)))
+        pageview_score = min(1.0, max(0.0, pageviews_signal_map.get(text, 0.0)))
+        source_hits = max(0, source_hits_map.get(text, 0))
+        pos_tag = jieba_pos_map.get(text, "")
+        style_penalty = term_style_penalty_map.get((pinyin, text), 0)
+        semantic_bonus = term_semantic_bonus_map.get((pinyin, text), 0)
+        support_count, _support_total = _longer_prefix_term_support_stats(
+            pinyin,
+            text,
+            support_index,
+            min_support_weight=360,
+        )
+        return (
+            usage_score,
+            jieba_score,
+            pageview_score,
+            source_hits,
+            pos_tag,
+            style_penalty,
+            support_count,
+            semantic_bonus,
+        )
+
+    for bucket_pinyin, items in buckets.items():
+        leaders: List[Tuple[str, str, int, Tuple[float, float, float, int, str, int, int, int]]] = []
+        for pinyin, text, weight in items:
+            text_len = _cjk_len(text)
+            if text_len < 2 or text_len > 4:
+                continue
+            if text not in preferred_terms or text in weak_leader_terms:
+                continue
+            leaders.append((pinyin, text, weight, direct_parts(pinyin, text)))
+        if not leaders:
+            continue
+
+        leader_pinyin, leader_text, leader_weight, leader_parts = max(
+            leaders,
+            key=lambda item: (
+                item[2],
+                item[3][0] + item[3][1] + item[3][2] + min(1.0, item[3][3] / 6.0),
+            ),
+        )
+        preferred_min_weight = min(item[2] for item in leaders)
+        if leader_weight < 520:
+            continue
+        (
+            leader_usage,
+            leader_jieba,
+            leader_page,
+            leader_hits,
+            _leader_pos,
+            _leader_style,
+            _leader_support,
+            _leader_semantic,
+        ) = leader_parts
+        leader_direct_total = leader_usage + leader_jieba + leader_page + min(1.0, leader_hits / 6.0)
+
+        bucket_touched = False
+        for pinyin, text, weight in items:
+            if text == leader_text:
+                continue
+            text_len = _cjk_len(text)
+            if text_len < 2 or text_len > 3 or _is_pure_daily_number_word(text):
+                continue
+            if text in preferred_terms and text not in weak_leader_terms:
+                continue
+            if weight <= leader_weight - 72:
+                continue
+
+            (
+                usage_score,
+                jieba_score,
+                pageview_score,
+                source_hits,
+                pos_tag,
+                style_penalty,
+                support_count,
+                semantic_bonus,
+            ) = direct_parts(pinyin, text)
+            direct_total = usage_score + jieba_score + pageview_score + min(1.0, source_hits / 6.0)
+
+            strong_independent = (
+                usage_score >= 0.34
+                or jieba_score >= 0.28
+                or pageview_score >= 0.16
+                or (
+                    source_hits >= 5
+                    and (usage_score >= 0.18 or jieba_score >= 0.14 or pageview_score >= 0.08)
+                )
+                or semantic_bonus >= 220
+            )
+            weak_signal = (
+                usage_score < 0.20
+                and jieba_score < 0.18
+                and pageview_score < 0.10
+                and source_hits <= 3
+            )
+            domain_or_visibility_only = (
+                _is_medical_specific_term(text)
+                or style_penalty >= 80
+                or support_count > 0
+                or (_is_named_entity_pos(pos_tag) and direct_total + 0.08 < leader_direct_total)
+            )
+            if strong_independent and not domain_or_visibility_only:
+                continue
+            if not (
+                weak_signal
+                or domain_or_visibility_only
+                or direct_total + 0.12 < leader_direct_total
+            ):
+                continue
+
+            cap_margin = 112
+            if _is_medical_specific_term(text) or style_penalty >= 120:
+                cap_margin = 180
+            elif support_count > 0 or weak_signal:
+                cap_margin = 144
+            cap = max(1, leader_weight - cap_margin)
+            if weak_signal:
+                cap = min(cap, 760)
+            if _is_medical_specific_term(text):
+                cap = min(cap, 640)
+            if preferred_min_weight >= 520:
+                cap = min(cap, max(1, preferred_min_weight - 24))
+            if weight <= cap:
+                continue
+
+            mapping[(pinyin, text)] = cap
+            stats[f"{stats_prefix}_curated_exact_leader_capped"] += 1
+            bucket_touched = True
+
+        if bucket_touched:
+            stats[f"{stats_prefix}_curated_exact_leader_buckets"] += 1
+
+    return stats
+
+
 def _boost_high_productivity_short_roots(
     mapping: Dict[Tuple[str, str], int],
     source_hits_map: Dict[str, int],
@@ -13230,11 +13411,11 @@ def _finalize_curated_daily_weight(
 
     if not is_number_word:
         if _is_daily_count_measure_phrase(text):
-            count_floor = 560 + int(round(bounded_usage * 130.0))
+            count_floor = 440 + int(round(bounded_usage * 120.0))
             count_cap = (
                 CURATED_DAILY_HOUSING_COUNT_MEASURE_WEIGHT_CAP
                 if _is_daily_housing_count_measure_phrase(text)
-                else (760 if _cjk_len(text) <= 2 else 820)
+                else CURATED_DAILY_COUNT_MEASURE_WEIGHT_CAP
             )
             return min(count_cap, max(weight, count_floor))
 
@@ -13249,9 +13430,13 @@ def _finalize_curated_daily_weight(
             daily_floor = 1000 + int(round((bounded_usage - 0.90) * 900.0))
             return max(weight, daily_floor)
 
-        visibility_floor = 620 + int(round(bounded_usage * 360.0))
-        visibility_cap = 960 if _cjk_len(text) <= 2 else 1020
-        return max(weight, min(visibility_cap, visibility_floor))
+        visibility_floor = 540 + int(round(bounded_usage * 300.0))
+        visibility_cap = (
+            CURATED_DAILY_VISIBILITY_WEIGHT_CAP_SHORT
+            if _cjk_len(text) <= 2
+            else CURATED_DAILY_VISIBILITY_WEIGHT_CAP_LONG
+        )
+        return min(visibility_cap, max(weight, visibility_floor))
 
     # Number words are useful daily entries, but should not be as dominant as
     # conversational words/phrases. Keep them strong enough to surface while
@@ -14210,7 +14395,11 @@ def _cap_curated_daily_visibility_exact_weights(
 
         key = (pinyin, text)
         weight = mapping.get(key)
-        cap = 960 if text_len <= 2 else 1020
+        cap = (
+            CURATED_DAILY_VISIBILITY_WEIGHT_CAP_SHORT
+            if text_len <= 2
+            else CURATED_DAILY_VISIBILITY_WEIGHT_CAP_LONG
+        )
         if weight is None or weight <= cap:
             continue
 
@@ -14633,27 +14822,34 @@ def _reinforce_curated_daily_tc_phrases(
         if _cjk_len(tc_candidate) < min_hanzi:
             continue
 
-        source_hits = max(2 if low_frequency else 4, tc_source_hits_map.get(tc_candidate, 0))
-        usage_score = max(usage_score, tc_usage_score_map.get(tc_candidate, 0.0))
+        entry_usage_score = usage_score
+        signal_usage_score = entry_usage_score
+        if not low_frequency and entry_usage_score < 0.90:
+            signal_usage_score = min(entry_usage_score, 0.10)
+        source_hits = max(
+            2 if low_frequency else 4 if entry_usage_score >= 0.90 else 1,
+            tc_source_hits_map.get(tc_candidate, 0),
+        )
+        signal_usage_score = max(signal_usage_score, tc_usage_score_map.get(tc_candidate, 0.0))
         tc_jieba_direct = max(
             tc_jieba_direct_signal_map.get(tc_candidate, 0.0),
-            min(0.26, usage_score * 0.32),
+            min(0.26, signal_usage_score * 0.32),
         )
         tc_pos_tag = tc_jieba_pos_map.get(tc_candidate, "")
         tc_char_score = _compute_text_single_char_prior(tc_candidate, tc_char_prior)
         tc_daily_number_support = _is_daily_number_word_candidate(
             tc_candidate,
             text_len=_cjk_len(tc_candidate),
-            usage_score=usage_score,
+            usage_score=entry_usage_score,
             source_hits=source_hits,
             pos_tag=tc_pos_tag,
         )
         tc_weight = _compute_weight_with_signals(
             tc_candidate,
-            usage_score=usage_score,
+            usage_score=signal_usage_score,
             source_hits=source_hits,
             pageview_score=0.0,
-            wiki_hit=True,
+            wiki_hit=entry_usage_score >= 0.90,
             core_entry=False,
             jieba_direct_score=tc_jieba_direct,
             pos_tag=tc_pos_tag,
@@ -14663,7 +14859,7 @@ def _reinforce_curated_daily_tc_phrases(
             tc_weight = min(1000, tc_weight + (40 if _cjk_len(tc_candidate) <= 2 else 26))
         tc_weight = _finalize_curated_daily_weight(
             tc_weight,
-            usage_score=usage_score,
+            usage_score=entry_usage_score,
             is_number_word=tc_daily_number_support,
             low_frequency=low_frequency,
             text=tc_candidate,
@@ -14721,27 +14917,34 @@ def _reinforce_curated_daily_sc_phrases(
         if not pinyin:
             continue
 
-        source_hits = max(2 if low_frequency else 4, source_hits_map.get(sc_word, 0))
-        usage_score = max(usage_score, usage_score_map.get(sc_word, 0.0))
+        entry_usage_score = usage_score
+        signal_usage_score = entry_usage_score
+        if not low_frequency and entry_usage_score < 0.90:
+            signal_usage_score = min(entry_usage_score, 0.10)
+        source_hits = max(
+            2 if low_frequency else 4 if entry_usage_score >= 0.90 else 1,
+            source_hits_map.get(sc_word, 0),
+        )
+        signal_usage_score = max(signal_usage_score, usage_score_map.get(sc_word, 0.0))
         sc_jieba_direct = max(
             jieba_direct_signal_map.get(sc_word, 0.0),
-            min(0.26, usage_score * 0.32),
+            min(0.26, signal_usage_score * 0.32),
         )
         sc_pos_tag = jieba_pos_map.get(sc_word, "")
         sc_char_score = _compute_text_single_char_prior(sc_word, sc_char_prior)
         sc_daily_number_support = _is_daily_number_word_candidate(
             sc_word,
             text_len=_cjk_len(sc_word),
-            usage_score=usage_score,
+            usage_score=entry_usage_score,
             source_hits=source_hits,
             pos_tag=sc_pos_tag,
         )
         sc_weight = _compute_weight_with_signals(
             sc_word,
-            usage_score=usage_score,
+            usage_score=signal_usage_score,
             source_hits=source_hits,
             pageview_score=0.0,
-            wiki_hit=True,
+            wiki_hit=entry_usage_score >= 0.90,
             core_entry=False,
             jieba_direct_score=sc_jieba_direct,
             pos_tag=sc_pos_tag,
@@ -14751,7 +14954,7 @@ def _reinforce_curated_daily_sc_phrases(
             sc_weight = min(1000, sc_weight + (40 if _cjk_len(sc_word) <= 2 else 26))
         sc_weight = _finalize_curated_daily_weight(
             sc_weight,
-            usage_score=usage_score,
+            usage_score=entry_usage_score,
             is_number_word=sc_daily_number_support,
             low_frequency=low_frequency,
             text=sc_word,
@@ -19462,6 +19665,36 @@ def main() -> int:
     )
     stats.update(sc_final_short_exact_direct_stats)
     stats.update(tc_final_short_exact_direct_stats)
+    sc_final_curated_exact_leader_stats = _cap_weak_exact_homophones_against_curated_daily_leaders(
+        sc_map,
+        usage_score_map,
+        source_hits_map,
+        pageviews_signal_map,
+        jieba_direct_signal_map,
+        jieba_pos_map,
+        curated_daily_sc_terms,
+        curated_daily_supplement_sc_terms,
+        "sc_final",
+        bucket_pinyin_map=sc_output_pinyin_bucket_map,
+        term_style_penalty_map=cedict_style_penalty_map,
+        term_semantic_bonus_map=cedict_semantic_bonus_map,
+    )
+    tc_final_curated_exact_leader_stats = _cap_weak_exact_homophones_against_curated_daily_leaders(
+        tc_map,
+        tc_usage_score_map,
+        tc_source_hits_map,
+        tc_pageviews_signal_map,
+        tc_jieba_direct_signal_map,
+        tc_jieba_pos_map,
+        curated_daily_tc_terms,
+        curated_daily_supplement_tc_terms,
+        "tc_final",
+        bucket_pinyin_map=tc_output_pinyin_bucket_map,
+        term_style_penalty_map=cedict_style_penalty_map,
+        term_semantic_bonus_map=cedict_semantic_bonus_map,
+    )
+    stats.update(sc_final_curated_exact_leader_stats)
+    stats.update(tc_final_curated_exact_leader_stats)
     sc_de_complement_pair_cap_stats = _cap_curated_daily_de_complement_pair_weights(
         sc_map,
         curated_daily_entries,
