@@ -416,7 +416,7 @@ baochishejiao	保持|社交	401
 baochishejiaojuli	保持|社交|距離	483
 baochouxuechi	報仇|雪恥	479
 baochuanyouxi	寶船|遊戲	493
-baocunshili	保存|實力	434
+baocunshili	保存|實力	461
 baocunyouxi	保存|遊戲	499
 baodaojiyin	報導|基因	458
 baodaojiyin	報道|基因	471
@@ -3114,7 +3114,7 @@ disishiwu	第四|十五	520
 disishiyi	第四|十一	520
 ditantuoxie	地毯|拖鞋	432
 ditouhayao	低頭|哈腰	474
-diwenbaocun	低溫|保存	451
+diwenbaocun	低溫|保存	478
 diwenbingxiang	低溫|冰箱	463
 diwenlengdong	低溫|冷凍	401
 diwenlengdongbaocun	低溫|冷凍|保存	483
@@ -4676,8 +4676,8 @@ gengnianqiyouyuzheng	更年期|憂鬱症	457
 gengoujiaopengyou	跟狗交|朋友	455
 genguguci	跟骨|骨刺	428
 genguguzhe	跟骨|骨折	432
-gengxinhuandai	更新|換代	475
-gengxinsuoyin	更新|索引	474
+gengxinhuandai	更新|換代	492
+gengxinsuoyin	更新|索引	490
 genjianduanlie	跟腱|斷裂	443
 gerenbaohu	個人|保護	401
 gerenbaohuzhuangbei	個人|保護|裝備	483
@@ -12368,7 +12368,7 @@ shangcanbaoxian	傷殘|保險	483
 shangcanrenyuan	傷殘|人員	464
 shangcengjianzhu	上層|建築	465
 shangchuandaima	上傳|代碼	487
-shangchuanxiada	上傳|下達	477
+shangchuanxiada	上傳|下達	480
 shangdilizi	上帝|粒子	501
 shangdimoni	上帝|模擬	417
 shangdimoniyouxi	上帝|模擬|遊戲	499
@@ -14625,8 +14625,8 @@ tongbujiaobenxiugai	同步|腳本|修改	505
 tongbujiasuqi	同步|加速器	486
 tongbupeiyang	同步|培養	472
 tongbushengzhang	同步|生長	472
-tongbuxulie	同步|序列	485
-tongbuyibu	同步|異步	469
+tongbuxulie	同步|序列	489
+tongbuyibu	同步|異步	473
 tongchaituanti	同儕|團體	459
 tongchaiyali	同儕|壓力	483
 tongchoujiangu	統籌|兼顧	479
@@ -17702,12 +17702,12 @@ yibujiazaitupian	異步加載|圖片	462
 yibukongzhi	異步|控制	479
 yibuqingqiu	異步|請求	441
 yiburenwu	異步|任務	479
-yibushangchuan	異步|上傳	462
+yibushangchuan	異步|上傳	465
 yibushifen	異步|時分	385
 yibushifenfuyong	異步|時分|複用	467
 yibushuaxin	異步|刷新	457
 yibusuanfa	異步|算法	455
-yibutongbu	異步|同步	467
+yibutongbu	異步|同步	471
 yibutongxin	異步|通信	474
 yibutongzhi	異步|通知	474
 yibuxiaoxi	異步|消息	482
@@ -17796,8 +17796,8 @@ yifandadizhonglou	伊凡|大帝|鐘樓	440
 yifangbuce	以防|不測	486
 yifangwanyi	以防|萬一	489
 yifanzhuizong	疑犯|追蹤	463
-yifapaozhi	依法|炮制	428
-yifapaozhi	依法|炮製	458
+yifapaozhi	依法|炮制	395
+yifapaozhi	依法|炮製	425
 yiganbiaomian	乙肝|表面	376
 yiganbiaomiankangti	乙肝|表面|抗體	458
 yiganbiaomiankangyuan	乙肝|表面|抗原	392
@@ -17810,7 +17810,7 @@ yigebange	一個|半個	480
 yigejinr	一個|勁兒	461
 yigexiaoshi	一個|小時	520
 yigouxianxiang	異構|現象	474
-yiguanqinshou	衣冠|禽獸	481
+yiguanqinshou	衣冠|禽獸	458
 yigunaor	一股|腦兒	485
 yiguoxingnaoquexue	一過性|腦缺血	431
 yihaojiebei	一號|戒備	416
@@ -18309,7 +18309,7 @@ yishizhangai	意識|障礙	483
 yishizhuli	醫師|助理	458
 yishoubaoban	一手|包辦	487
 yishoubaolan	一手|包攬	484
-yishouwangguo	異獸|王國	407
+yishouwangguo	異獸|王國	392
 yishufangjian	藝術|房間	476
 yishujiagongyu	藝術家|公寓	462
 yishuticao	藝術|體操	431
@@ -19040,7 +19040,7 @@ zahuanhuahewu	雜環|化合物	481
 zahuocangku	雜貨|倉庫	479
 zahuoshangdian	雜貨|商店	458
 zaiciyiju	在此|一舉	476
-zaiciyiqian	在此|以前	427
+zaiciyiqian	在此|以前	426
 zaicizhiqian	在此|之前	466
 zaidaohoulai	再到|後來	453
 zaiebaolei	災厄|堡壘	459
@@ -19535,7 +19535,7 @@ zhijianshumu	只見|樹木	481
 zhijianzhanzheng	指尖|戰爭	464
 zhijiaozhuanwan	直角|轉彎	383
 zhijiaozhuanwanjieti	直角|轉彎|階梯	465
-zhijiaozuobiao	直角|座標	474
+zhijiaozuobiao	直角|座標	466
 zhijiedanhongsu	直接|膽紅素	457
 zhijiedianli	直接|電離	417
 zhijiedianlilizi	直接|電離|粒子	499
