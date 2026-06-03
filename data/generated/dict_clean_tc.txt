@@ -4922,7 +4922,7 @@ bankouxianchongbing	板口綫蟲病	320
 banku	班庫	560
 banku	扮酷	355
 bankuai	板塊	1000
-bankuai	版塊	627
+bankuai	版塊	626
 bankuai	斑塊	1
 bankuaigouzao	板塊構造	260
 bankuaililun	板塊理論	260
@@ -18910,6 +18910,7 @@ chongzuo	重做	1000
 chongzuo	充作	1
 chongzuoshi	崇左市	165
 chou'e	醜惡	997
+chouba	抽拔	280
 choubaguai	丑八怪	461
 choubaguai	醜八怪	439
 chouban	籌辦	439
@@ -18993,8 +18994,17 @@ choukayouxi	抽卡遊戲	755
 choukong	抽空	436
 chouku	愁苦	435
 choukuan	籌款	400
+choula	抽拉	280
+choulacengban	抽拉層板	280
+choulagan	抽拉桿	280
+choulagui	抽拉櫃	280
+choulagui	抽拉軌	274
+choulahe	抽拉盒	280
+choulalan	抽拉籃	280
+choulamen	抽拉門	280
 choulao	酬勞	426
 choulaojiu	臭老九	406
+choulashi	抽拉式	280
 choulei	醜類	370
 choulengzi	抽冷子	362
 chouli	抽離	198
@@ -19061,6 +19071,7 @@ choutaibaichu	丑態百出	316
 choutaibilu	醜態畢露	879
 choutaibilu	丑態畢露	303
 chouti	抽屜	451
+choutishi	抽屜式	280
 choutishiyan	抽屜試驗	540
 choutong	抽痛	198
 choutou	抽頭	389
@@ -41797,8 +41808,8 @@ ganbule	干不了	732
 ganbushang	趕不上	406
 gancai	乾菜	1000
 gancai	干菜	1000
-gancai	幹才	312
 gancai	干才	51
+gancai	幹才	51
 gancao	甘草	560
 gancao	干草	331
 gancao	乾草	286
@@ -43830,7 +43841,7 @@ gejinsuoneng	各盡所能	741
 gejinsuoneng	各儘所能	134
 gejiu	箇舊	870
 gejiu	個舊	744
-gejiu	各就	468
+gejiu	各就	469
 gejiucai	割韭菜	228
 gejiuge	各就各	556
 gejiugewei	各就各位	600
@@ -50472,7 +50483,7 @@ haixiehui	海協會	207
 haiximengguzuzangzuzizhizhou	海西蒙古族藏族自治州	391
 haixin	海信	296
 haixing	還行	1000
-haixing	海星	158
+haixing	海星	157
 haixingjichang	海星機場	260
 haixinglei	海星類	470
 haixingxian	海興縣	160
@@ -61929,7 +61940,7 @@ jiaomujunrengongranseti	酵母菌人工染色體	700
 jiaomujunshuangzahexitong	酵母菌雙雜合系統	700
 jiaomujutang	酵母聚糖	570
 jiaona	繳納	829
-jiaona	交納	688
+jiaona	交納	687
 jiaonan	較難	700
 jiaonang	膠囊	752
 jiaonangji	膠囊劑	500
@@ -68387,7 +68398,8 @@ jiu'ergongshi	九二共識	788
 jiu'erjiuzhi	久而久之	510
 jiuai	舊愛	198
 jiuan	舊案	533
-jiuba	酒吧	882
+jiuba	就把	700
+jiuba	酒吧	447
 jiubadao	九把刀	717
 jiubai	九百	520
 jiubai'ershi'er	九百二十二	371
@@ -68411,7 +68423,8 @@ jiuban	究辦	372
 jiubanben	舊版本	1000
 jiubao	酒保	500
 jiubao	久保	204
-jiubei	酒杯	695
+jiubei	酒杯	1000
+jiubei	就被	700
 jiubian	就便	198
 jiubianxing	九邊形	232
 jiubianzi	揪辮子	358
@@ -68424,7 +68437,8 @@ jiubingchengliangyi	久病成良醫	289
 jiubingchengyi	久病成醫	408
 jiubingfufa	舊病復發	437
 jiubiru	就比如	1000
-jiubu	舊部	424
+jiubu	就不	700
+jiubu	舊部	1
 jiubucuole	就不錯了	1018
 jiubuhui	就不會	1018
 jiucai	酒菜	1000
@@ -68443,9 +68457,9 @@ jiuchang	酒廠	1
 jiuchangrujiuhuo	救場如救火	289
 jiucheduanle	舊車斷了	527
 jiucheduanlezhou	舊車斷了軸	569
-jiucheng	就成	976
+jiucheng	就成	700
 jiucheng	舊稱	560
-jiucheng	九成	500
+jiucheng	九成	301
 jiucheshichang	舊車市場	260
 jiuchi	就吃	1000
 jiuchi	臼齒	1
@@ -68466,8 +68480,8 @@ jiudalu	舊大陸	208
 jiudan	酒單	198
 jiudaneizhiduixiang	九大內置對象	788
 jiudao	就到	1000
-jiude	就得	999
 jiude	舊的	700
+jiudei	就得	700
 jiudeng	久等	436
 jiudequcai	就地取材	649
 jiudezhengfa	就地正法	630
@@ -68488,9 +68502,11 @@ jiudiqu	就地取	556
 jiudiqucai	就地取材	600
 jiudizheng	就地正	556
 jiudizhengfa	就地正法	599
-jiudou	揪斗	513
-jiudou	揪鬥	482
+jiudou	就都	700
+jiudou	揪斗	35
+jiudou	揪鬥	1
 jiudu	就讀	1000
+jiudui	就對	700
 jiue	舊惡	933
 jiuen	救恩	198
 jiuenjihua	救恩計划	272
@@ -68514,9 +68530,11 @@ jiufu	九副	620
 jiufu	九幅	620
 jiufu	舅父	87
 jiufushengming	久負盛名	472
+jiugai	就該	700
 jiugang	酒缸	323
 jiuge	九個	1036
 jiuge	糾葛	1
+jiugei	就給	700
 jiugen	九根	620
 jiugexiaoshi	九個小時	1009
 jiugong	舊宮	288
@@ -68537,17 +68555,19 @@ jiugui	酒鬼	560
 jiuguijiu	酒鬼酒	232
 jiuguo	柾國	667
 jiuguo	救國	595
+jiuhai	就還	700
 jiuhaixing	就還行	1000
 jiuhan'erre	酒酣耳熱	444
 jiuhanerre	酒酣耳熱	444
 jiuhanfengganyu	久旱逢甘雨	678
 jiuhang	九行	700
-jiuhao	就好	1000
+jiuhao	就好	700
 jiuhaobupaxiangzishen	酒好不怕巷子深	425
 jiuhaole	就好了	1036
 jiuhaoqiu	九號球	232
 jiuhaoxiang	就好像	1000
 jiuhe	糾合	833
+jiuhen	就很	700
 jiuhongzhuque	酒紅朱雀	260
 jiuhou	酒后	639
 jiuhou	酒後	459
@@ -68572,7 +68592,7 @@ jiuhuazhichuangshuan	九華痔瘡栓	610
 jiuhuazhongti	舊話重提	634
 jiuhuche	救護車	512
 jiuhucheliang	救護車輛	570
-jiuhui	就會	1000
+jiuhui	就會	700
 jiuhui	救回	280
 jiuhui	酒會	1
 jiuhundejiuyuan	九魂的久遠	613
@@ -68712,6 +68732,7 @@ jiuma	舅媽	401
 jiumanyile	就滿意了	1018
 jiumao	舊貌	366
 jiumaohuanxinyan	舊貌換新顏	400
+jiumei	就沒	700
 jiumeng	舊夢	371
 jiumengzi	酒蒙子	12
 jiumianti	九面體	232
@@ -68730,6 +68751,7 @@ jiuna	就那	1000
 jiunan	救難	382
 jiunangfandai	酒囊飯袋	453
 jiunanzhishengji	救難直升機	613
+jiuneng	就能	700
 jiunian	舊年	375
 jiuniang	酒釀	585
 jiunianzhiying	九年之影	538
@@ -68758,7 +68780,7 @@ jiuqin	就寢	1000
 jiuqin	就擒	1
 jiuqing	舊情	522
 jiuqiyuanyin	究其原因	1036
-jiuqu	就去	1000
+jiuqu	就去	700
 jiuqu	酒曲	1
 jiuqu	酒麴	1
 jiuquan	酒泉	1000
@@ -68863,6 +68885,7 @@ jiushu	救贖	429
 jiushu	舊書	305
 jiushui	酒水	414
 jiushuiyinliao	酒水飲料	260
+jiushuo	就說	700
 jiushuzhu	救贖主	230
 jiusi	就死	1000
 jiusi	酒肆	1
@@ -68872,7 +68895,7 @@ jiusifushang	救死扶傷	460
 jiusiyisheng	九死一生	477
 jiusong	揪送	198
 jiusu	舊俗	387
-jiusuan	就算	561
+jiusuan	就算	700
 jiusuanle	就算了	640
 jiusuanyaowonuligongzuo	就算要我努力工作	662
 jiusun	舊損	305
@@ -68938,7 +68961,8 @@ jiuwudaishi	舊五代史	260
 jiuwuzhizun	九五之尊	654
 jiuxi	酒席	709
 jiuxi	舊習	212
-jiuxiang	就像	1000
+jiuxian	就先	700
+jiuxiang	就像	700
 jiuxiang	就想	700
 jiuxiangbupaxiangzishen	酒香不怕巷子深	348
 jiuxiangchong	九香蟲	198
@@ -68954,7 +68978,7 @@ jiuxiaoyunwai	九霄云外	508
 jiuxifengjingqu	九溪風景區	635
 jiuxin	揪心	424
 jiuxinbagan	揪心扒肝	258
-jiuxing	就行	1018
+jiuxing	就行	700
 jiuxing	酒醒	327
 jiuxing	救星	1
 jiuxingle	就行了	1036
@@ -68970,9 +68994,9 @@ jiuyan	酒筵	355
 jiuyang	久仰	446
 jiuyangdaming	久仰大名	420
 jiuyanjiuyu	酒言酒語	387
-jiuyao	就要	1000
-jiuyao	酒殽	739
-jiuyao	酒餚	281
+jiuyao	就要	700
+jiuyao	酒殽	548
+jiuyao	酒餚	182
 jiuye	第九頁	798
 jiuye	就業	654
 jiuye	舅爺	1
@@ -68998,7 +69022,9 @@ jiuyiyang	就一樣	800
 jiuyiyi	玖壹壹	849
 jiuyiyiguojiajinianbowuguan	九一一國家紀念博物館	681
 jiuyiyixijishijian	九一一襲擊事件	616
-jiuyou	就有	1018
+jiuyong	就用	700
+jiuyou	就又	700
+jiuyou	就有	700
 jiuyou	酒友	401
 jiuyou	舊友	1
 jiuyouyingde	咎有應得	387
@@ -69018,7 +69044,8 @@ jiuyuedeshi	九月的柿	527
 jiuyuedeshizi	九月的柿子	569
 jiuyuefen	九月份	215
 jiuyuequanshu	舊約全書	405
-jiuzai	就在	1018
+jiuzai	就再	700
+jiuzai	就在	700
 jiuzai	救災	500
 jiuzaijiujisi	救災救濟司	289
 jiuzaikuan	救災款	407
@@ -69043,6 +69070,7 @@ jiuzheyang	就這樣	1000
 jiuzheyangba	就這樣吧	800
 jiuzhi	九隻	1009
 jiuzhi	就職	1000
+jiuzhi	就只	700
 jiuzhi	舊址	580
 jiuzhi	救治	559
 jiuzhi	久之	334
@@ -69451,7 +69479,7 @@ jiyan	基岩	260
 jiyanban	基岩版	460
 jiyang	幾樣	834
 jiyang	寄養	774
-jiyang	給養	635
+jiyang	給養	636
 jiyangao	雞眼膏	470
 jiyangqu	吉陽區	167
 jiyanlise	疾言厲色	628
@@ -145378,7 +145406,7 @@ xingshuai	興衰	470
 xingshuangdeyamaxun	星霜的亞馬遜	648
 xingshuangdeyamaxunren	星霜的亞馬遜人	632
 xingsi	形似	468
-xingsong	惺忪	678
+xingsong	惺忪	679
 xingsu'erchenwan	杏囌二陳丸	610
 xingsudenvpengyou	星宿的女朋友	648
 xingsufa	刑訴法	379
@@ -156874,7 +156902,7 @@ yingtuyue	盈凸月	230
 yingu	因故	663
 yinguan	音管	198
 yinguang	銀光	423
-yingui	淫鬼	234
+yingui	淫鬼	233
 yinguishangmen	引鬼上門	387
 yingun	淫棍	305
 yinguo	因果	525
@@ -160364,7 +160392,7 @@ youchaoyounao	又吵又鬧	258
 youche	油車	309
 youche	郵車	289
 youchen	有沉	473
-youcheng	又稱	108
+youcheng	又稱	109
 youcheng	有成	1
 youchengguo	有成果	1000
 youchenghuanjianlu	幽城幻劍錄	613
