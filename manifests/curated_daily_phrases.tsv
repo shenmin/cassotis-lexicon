@@ -4732,3 +4732,18 @@
 八类	八類	0.86	balei
 九类	九類	0.86	jiulei
 十类	十類	0.87	shilei
+
+# account/payment calculation additions 2026-06-03 (high daily)
+算出来	算出來	0.84	suanchulai
+算不出	算不出	0.80	suanbuchu
+算得出	算得出	0.76	suandechu
+算一下	算一下	0.84	suanyixia
+算一算	算一算	0.80	suanyisuan
+算清楚	算清楚	0.78	suanqingchu
+收款人	收款人	0.80	shoukuanren
+付款人	付款人	0.78	fukuanren
+开户行	開戶行	0.78	kaihuhang
+银行账号	銀行賬號	0.78	yinhangzhanghao
+银行账户	銀行賬戶	0.78	yinhangzhanghu
+账户名	賬戶名	0.76	zhanghuming
+户名	戶名	0.74	huming

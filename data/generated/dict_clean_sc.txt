@@ -6528,7 +6528,7 @@ beichenqu	北辰区	172
 beichi	贝齿	137
 beichou	悲愁	392
 beichu	辈出	1000
-beichu	被除	574
+beichu	被除	573
 beichuan	北川	224
 beichuang	悲怆	427
 beichuanqiangzuzizhixian	北川羌族自治县	348
@@ -11033,7 +11033,7 @@ buchoubu	不瞅不	556
 buchoubucai	不瞅不睬	597
 buchouchi	不愁吃	640
 buchouchuan	不愁穿	640
-buchu	不出	579
+buchu	不出	830
 buchuai	不揣	473
 buchuaimao	不揣冒	552
 buchuaimaomei	不揣冒昧	615
@@ -14633,7 +14633,7 @@ chachu	查处	580
 chachulai	查出来	800
 chacuo	差错	435
 chadai	茶袋	545
-chadao	茶道	934
+chadao	茶道	933
 chadao	岔道	899
 chadao	查到	700
 chade	差的	700
@@ -16329,7 +16329,7 @@ chashi	差事	1
 chashidingniyishi	查士丁尼一世	645
 chashisaomiaoliangrefa	差示扫描量热法	687
 chashou	插手	1000
-chashou	查收	60
+chashou	查收	61
 chashu	茶树	1000
 chashu	差数	1
 chashui	茶水	682
@@ -21367,7 +21367,7 @@ cuiyouqi	崔祐齐	620
 cuiyucheng	崔宇成	481
 cuiyunzhi	崔允智	769
 cuiyuzhi	崔宇植	620
-cuizhang	催账	298
+cuizhang	催账	299
 cuizheng	催证	198
 cuizhenhe	崔振赫	767
 cuizhihai	翠之海	460
@@ -22092,9 +22092,9 @@ dadongmaiyan	大动脉炎	570
 dadongmaizhuanwei	大动脉转位	640
 dadongqu	大东区	165
 dadongyagongrongquan	大东亚共荣圈	318
-dadou	大都	984
-dadou	大豆	842
-dadou	打斗	459
+dadou	大都	983
+dadou	大豆	841
+dadou	打斗	460
 dadougan	大豆苷	470
 dadouganyuan	大豆苷元	540
 dadougen	大豆根	500
@@ -23045,6 +23045,8 @@ dakuairenxin	大快人心	466
 dakuaitou	大块头	472
 dakuan	打款	700
 dakuan	大款	1
+dakuanfang	打款方	280
+dakuanren	打款人	280
 dakuohao	大括号	379
 dakuohu	大括弧	232
 dala	达拉	756
@@ -24756,7 +24758,8 @@ daozei	盗贼	437
 daozeidexiachenglei	盗贼地下城类	648
 daozeizhihai	盗贼之海	538
 daozhang	到账	700
-daozhang	道长	347
+daozhang	道长	325
+daozhangshijian	到账时间	280
 daozhe	倒着	198
 daozhen	道真	198
 daozheng	导正	323
@@ -25686,7 +25689,7 @@ dechengshouhuzhe	地城守护者	613
 dechengshouweizhe	地城守卫者	613
 dechengyingxiongzhi	地城英雄志	613
 dechong	得宠	418
-dechu	得出	499
+dechu	得出	822
 dechuan	德川	266
 dechuanjia	地穿甲	640
 dechuanjiakang	德川家康	507
@@ -29509,7 +29512,7 @@ diwuzongdui	第五纵队	804
 dixi	底细	436
 dixi	弟媳	429
 dixi	嫡系	379
-dixi	低息	352
+dixi	低息	353
 dixia	地下	955
 dixia	底下	844
 dixia	低下	765
@@ -31432,6 +31435,7 @@ duigong	对公	280
 duigong	对攻	206
 duigong	对工	160
 duigongr	对工儿	372
+duigongzhanghu	对公账户	280
 duiguangfanshe	对光反射	570
 duiguo	对过	579
 duiguor	对过儿	640
@@ -31658,7 +31662,7 @@ duiyoufuyangzinvdejiatingtigongyuanzhu	对有抚养子女的家庭提供援助	7
 duiyu	对于	750
 duiyuan	队员	487
 duizhan	堆栈	319
-duizhang	队长	800
+duizhang	队长	799
 duizhang	对账	280
 duizhang	对仗	197
 duizhangedouyouxi	对战格斗游戏	648
@@ -39371,10 +39375,15 @@ fukezhiyangjiaonang	妇科止痒胶囊	649
 fuku	府库	305
 fukua	浮夸	435
 fukuan	付款	700
+fukuanfang	付款方	280
 fukuanfangshi	付款方式	260
 fukuang	富矿	387
 fukuanma	付款码	800
+fukuanren	付款人	800
+fukuanshijian	付款时间	280
 fukuantiaojian	付款条件	387
+fukuanzhanghao	付款账号	280
+fukuanzhanghu	付款账户	280
 fukui	浮亏	198
 fukuinuotong	氟喹诺酮	540
 fukuinuotongleiyaowu	氟喹诺酮类药物	687
@@ -43314,6 +43323,7 @@ gerenxingqu	个人兴趣	280
 gerenxinxi	个人信息	280
 gerenyinsi	个人隐私	387
 gerenyirong	个人仪容	570
+gerenzhanghu	个人账户	280
 gerenzhongxinzhiliao	个人中心治疗	700
 gerenzhuyi	个人主义	501
 gerenzisaomenqianxue	各人自扫门前雪	456
@@ -44002,8 +44012,8 @@ gongmie	攻灭	198
 gongmin	公民	554
 gongminbiaojue	公民表决	218
 gongminchenshuizhe	公民沉睡者	613
-gongming	共鸣	662
-gongming	功名	482
+gongming	共鸣	661
+gongming	功名	483
 gongming	公明	370
 gongmingdang	公明党	620
 gongmingfugui	功名富贵	616
@@ -56108,7 +56118,9 @@ huikongquezhi	灰孔雀雉	258
 huikou	回扣	1000
 huikuan	汇款	700
 huikuan	回款	280
+huikuanfang	汇款方	280
 huikuangquemei	灰眶雀鹛	258
+huikuanren	汇款人	280
 huikudehaiziyounaichi	会哭的孩子有奶吃	378
 huikudehaiziyoutangchi	会哭的孩子有糖吃	378
 huikui	回馈	415
@@ -56692,6 +56704,7 @@ humen	虎门	353
 humeng	狐獴	198
 humian	湖面	280
 humian	互勉	1
+huming	户名	700
 huming	糊名	198
 humujing	护目镜	404
 hun'an	昏暗	671
@@ -63035,7 +63048,7 @@ jiezhai	借债	902
 jiezhai	劫寨	1
 jiezhairen	借债人	340
 jiezhan	接战	198
-jiezhang	接掌	729
+jiezhang	接掌	728
 jiezhang	结账	355
 jiezhang	结帐	256
 jiezhangbuduan	截长补短	621
@@ -65232,8 +65245,8 @@ jinhou	今后	462
 jinhoujianpenwuji	金喉健喷雾剂	648
 jinhounizhuomuniao	金喉拟啄木鸟	318
 jinhu	近乎	1000
-jinhua	金华	390
-jinhua	进化	310
+jinhua	金华	389
+jinhua	进化	309
 jinhuachengxu	进化程序	656
 jinhuadao	进化岛	460
 jinhuahewu	金化合物	570
@@ -65414,7 +65427,7 @@ jinkui	锦葵	361
 jinkuishenqiwan	金匮肾气丸	610
 jinkuiyaolve	金匮要略	540
 jinlai	进来	1000
-jinlai	近来	423
+jinlai	近来	373
 jinlan	金兰	493
 jinlang	津浪	198
 jinlanpu	金兰谱	167
@@ -65585,8 +65598,8 @@ jinqiu	金秋	32
 jinqiujiang	金球奖	219
 jinqiujiangzhongshenchengjiujiang	金球奖终身成就奖	772
 jinqu	进取	1000
-jinqu	进去	952
-jinqu	禁区	25
+jinqu	进去	936
+jinqu	禁区	41
 jinquan	金泉	200
 jinquanli	尽全力	280
 jinque	紧缺	998
@@ -66508,7 +66521,7 @@ jisu	急速	622
 jisu	极速	280
 jisu	疾速	1
 jisuan	计算	1000
-jisuan	肌酸	22
+jisuan	肌酸	21
 jisuanchengben	计算成本	775
 jisuanchengxu	计算程序	696
 jisuanchi	计算尺	447
@@ -69730,8 +69743,8 @@ kaiheqi	开河期	112
 kaiheziru	开合自如	619
 kaihongpan	开红盘	232
 kaihoumen	开后门	586
-kaihu	开壶	878
-kaihu	开户	88
+kaihu	开户	296
+kaihu	开壶	176
 kaihua	开花	886
 kaihua	开化	581
 kaihuai	开怀	423
@@ -69744,7 +69757,9 @@ kaihuanzaiti	开环甾体	570
 kaihuar	开花儿	232
 kaihuaxian	开化县	160
 kaihuayi	开花衣	232
+kaihuhang	开户行	800
 kaihui	开会	516
+kaihuming	开户名	280
 kaihun	开荤	563
 kaihuo	开火	627
 kaihuo	开伙	507
@@ -73064,7 +73079,7 @@ kuanchuo	宽绰	389
 kuanda	宽大	475
 kuandachuli	宽大处理	280
 kuandai	款待	997
-kuandai	宽待	65
+kuandai	宽待	64
 kuandai	宽带	1
 kuandaofahuo	款到发货	260
 kuandaren'ai	宽大仁爱	260
@@ -73079,7 +73094,7 @@ kuandonghua	款冬花	470
 kuandu	宽度	450
 kuanduan	款段	126
 kuanfan	宽泛	426
-kuanfu	款服	232
+kuanfu	款服	233
 kuanfudetan	宽幅地毯	669
 kuang'ankun	邝安堃	470
 kuang'ao	狂傲	409
@@ -77607,7 +77622,7 @@ lianwupi	恋物癖	371
 lianwuzheng	恋物症	470
 lianxi	联系	980
 lianxi	练习	560
-lianxi	怜惜	376
+lianxi	怜惜	377
 lianxian	连线	560
 lianxiang	联想	1000
 lianxiang	脸相	1
@@ -99761,8 +99776,8 @@ qianze	谴责	497
 qianzexiaoshuo	谴责小说	260
 qianzhai	欠债	425
 qianzhan	前瞻	387
-qianzhang	欠账	580
-qianzhang	签章	210
+qianzhang	欠账	581
+qianzhang	签章	209
 qianzhangfanshe	牵张反射	570
 qianzhanxing	前瞻性	487
 qianzhanxingdiaocha	前瞻性调查	610
@@ -100615,7 +100630,7 @@ qijian	期间	1018
 qijian	器件	853
 qijian	起见	714
 qijian	七间	650
-qijian	其间	437
+qijian	其间	438
 qijian	旗舰	99
 qijiandian	旗舰店	402
 qijiang	起降	1000
@@ -112548,7 +112563,7 @@ shengmiao	圣庙	227
 shengmie	生灭	323
 shengming	生命	1018
 shengming	声明	921
-shengming	盛名	365
+shengming	盛名	366
 shengming	圣明	1
 shengming	声名	1
 shengmingbaoxian	生命保险	570
@@ -114124,7 +114139,7 @@ shenyu	肾俞	389
 shenyu'ai	肾盂癌	470
 shenyuai	肾盂癌	470
 shenyuan	深远	992
-shenyuan	伸冤	568
+shenyuan	伸冤	569
 shenyuan	肾元	440
 shenyuan	深渊	280
 shenyuan	申冤	1
@@ -117434,8 +117449,15 @@ shoukouzubing	手口足病	570
 shouku	受苦	450
 shoukuan	收款	700
 shoukuan	首款	1
+shoukuanfang	收款方	280
+shoukuanfangshi	收款方式	280
+shoukuanhuming	收款户名	280
 shoukuanma	收款码	800
+shoukuanren	收款人	800
+shoukuanshijian	收款时间	280
 shoukuantai	收款台	340
+shoukuanzhanghao	收款账号	280
+shoukuanzhanghu	收款账户	280
 shoukun	受困	412
 shoulache	手拉车	232
 shoulahulu	手拉葫芦	260
@@ -117535,6 +117557,7 @@ shoupiaoyuan	收票员	340
 shoupin	受聘	434
 shoupinyu	受聘于	232
 shouqi	收起	700
+shouqi	首期	280
 shouqi	受气	205
 shouqi	手气	1
 shouqian	收钱	1000
@@ -117544,6 +117567,7 @@ shouqianshou	手牵手	362
 shouqiao	手巧	332
 shouqibao	受气包	377
 shouqijuansan	收旗卷伞	405
+shouqikuan	首期款	280
 shouqilai	收起来	1018
 shouqing	售罄	364
 shouqiong	受穷	395
@@ -121014,6 +121038,7 @@ sirenjingyinglingyu	私人经营领域	700
 sirenluomi'ou	死人罗密欧	613
 sirenmajiang	四人麻将	538
 sirenyaoshi	私人钥匙	260
+sirenzhanghu	私人账户	280
 sirenzhanyouzhi	私人占有制	397
 sirenzhensuo	私人诊所	570
 siri	四日	700
@@ -121352,7 +121377,7 @@ siyangye	饲养业	455
 siyangyuan	饲养员	446
 siyangzhe	饲养者	340
 siyantianji	四眼田鸡	228
-siyao	撕咬	601
+siyao	撕咬	600
 siyaomianzi	死要面子	405
 siyaomianzihuoshouzui	死要面子活受罪	348
 siyasheng	嘶哑声	228
@@ -121772,19 +121797,26 @@ su'er	苏尔	229
 suan'erlanv	酸儿辣女	260
 suanbai	酸败	440
 suanban	蒜瓣	341
+suanbuchu	算不出	800
 suanbude	算不得	715
 suanbuliao	算不了	646
 suanbuliudiu	酸不溜丢	260
 suanbuliuqiu	酸不溜秋	260
 suanbushang	算不上	280
+suanbuzhun	算不准	280
 suancai	酸菜	406
 suancaiyu	酸菜鱼	280
 suancheng	酸橙	434
+suanchu	算出	910
 suanchu	酸楚	440
-suanchu	算出	58
+suanchulai	算出来	800
+suancuole	算错了	280
 suande	酸的	700
+suandechu	算得出	800
 suandeshang	算得上	640
+suandezhun	算得准	280
 suandou	酸豆	305
+suanduole	算多了	280
 suanerlanv	酸儿辣女	260
 suanfa	算法	678
 suanfachengxusheji	算法程序设计	774
@@ -121797,6 +121829,7 @@ suangen	酸根	227
 suangua	算卦	497
 suanguade	算卦的	635
 suanhao	算好	280
+suanhaole	算好了	280
 suanhua	算话	323
 suanhuanggua	酸黄瓜	379
 suanji	算计	666
@@ -121804,6 +121837,8 @@ suanjiandu	酸碱度	470
 suanjiang	酸浆	305
 suanjianshiheng	酸碱失衡	570
 suanjianzhi	酸碱值	375
+suanjinlai	算进来	280
+suanjinqu	算进去	280
 suanla	算啦	700
 suanlafen	酸辣粉	198
 suanlajiang	酸辣酱	228
@@ -121834,6 +121869,7 @@ suannihen	算你狠	357
 suanpan	算盘	454
 suanputao	酸葡萄	371
 suanqilai	算起来	232
+suanqingchu	算清楚	800
 suanqu	酸曲	198
 suanrong	蒜蓉	434
 suanrongqian	蒜茸钳	228
@@ -121841,6 +121877,7 @@ suanru	酸乳	228
 suanruan	酸软	440
 suanrulao	酸乳酪	371
 suanse	酸涩	405
+suanshaole	算少了	280
 suanshi	算是	1000
 suanshi	酸蚀	147
 suanshiyan	酸式盐	419
@@ -121870,6 +121907,8 @@ suanxingdanbaimei	酸性蛋白酶	603
 suanxingdingzhe	酸性定着	527
 suanxingdingzheye	酸性定着液	569
 suanxinglinsuanmei	酸性磷酸酶	640
+suanyisuan	算一算	800
+suanyixia	算一下	800
 suanyu	酸雨	430
 suanzao	酸枣	401
 suanzaorentang	酸枣仁汤	540
@@ -142268,7 +142307,7 @@ xingpingshi	兴平市	165
 xingqi	星期	834
 xingqi	兴起	822
 xingqi	行期	778
-xingqi	性器	213
+xingqi	性器	212
 xingqi	行乞	159
 xingqi	刑期	71
 xingqi'er	星期二	471
@@ -143289,8 +143328,8 @@ xinran	信然	560
 xinranjieshou	欣然接受	280
 xinredai	新热带	510
 xinredaijie	新热带界	405
-xinren	新人	284
-xinren	信任	211
+xinren	新人	285
+xinren	信任	212
 xinren	新任	1
 xinrendejinhua	信任的进化	613
 xinrengan	信任感	280
@@ -153841,6 +153880,8 @@ yinhangka	银行卡	288
 yinhangliushui	银行流水	800
 yinhangye	银行业	516
 yinhangyewu	银行业务	541
+yinhangzhanghao	银行账号	800
+yinhangzhanghu	银行账户	800
 yinhanshu	隐函数	232
 yinhanzheng	阴寒证	470
 yinhao	引号	996
@@ -162369,12 +162410,13 @@ zhangguogancao	胀果甘草	540
 zhangguorong	张国荣	789
 zhangguotao	张国焘	368
 zhanghao	账号	560
-zhanghao	帐号	256
+zhanghao	帐号	155
+zhanghaoxinxi	账号信息	280
 zhanghaoyingxiong	长号英雄	538
 zhangheng	张衡	287
 zhanghong	涨红	305
-zhanghu	帐户	1
-zhanghu	账户	1
+zhanghu	账户	892
+zhanghu	帐户	472
 zhanghua	彰化	1000
 zhanghua	张华	1
 zhanghuaduanshuo	长话短说	630
@@ -162387,7 +162429,10 @@ zhanghuichun	张惠春	620
 zhanghuimei	张惠妹	780
 zhanghuitidianziyouxi	章回体电子游戏	632
 zhanghuixiaoshuo	章回小说	464
+zhanghuming	账户名	800
+zhanghuming	帐户名	1
 zhanghuo	仗火	198
+zhanghuxinxi	账户信息	280
 zhangji	掌机	974
 zhangji	长机	140
 zhangji'an	张吉安	620
@@ -162497,7 +162542,7 @@ zhangmingjiaozhu	彰明较著	432
 zhangminglei	张明磊	458
 zhangmu	丈母	521
 zhangmu	帐目	520
-zhangmu	账目	474
+zhangmu	账目	475
 zhangmu	帐幕	345
 zhangmu	樟木	326
 zhangmuniang	丈母娘	481
@@ -169891,6 +169936,7 @@ zhuanze	专责	395
 zhuanzeng	转赠	392
 zhuanzhan	转战	463
 zhuanzhang	转账	700
+zhuanzhangbeizhu	转账备注	280
 zhuanzhangjilu	转账记录	800
 zhuanzhangka	转账卡	230
 zhuanzhanqianli	转战千里	387

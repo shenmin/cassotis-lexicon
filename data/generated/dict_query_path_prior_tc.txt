@@ -856,7 +856,7 @@ bilifengxianmoshi	比例|風險|模式	483
 bilishiwangguo	比利時|王國	454
 bilujiegou	壁爐|結構	481
 biluqiangjiao	壁爐|牆角	479
-bimenbuchu	閉門|不出	474
+bimenbuchu	閉門|不出	482
 bimendushu	閉門|讀書	480
 bimensiguo	閉門|思過	482
 bimoguansi	筆墨|官司	484
@@ -1079,7 +1079,7 @@ buchengtitong	不成|體統	483
 buchengwenfa	不成|文法	489
 buchengwenti	不成|問題	479
 buchuaimaomei	不揣|冒昧	497
-buchusuoliao	不出|所料	451
+buchusuoliao	不出|所料	471
 budabudao	不打|不倒	386
 budabuxiangshi	不打不|相識	468
 budabuxiao	不大|不小	473
@@ -2650,6 +2650,7 @@ daomuzheluola	盜墓者|羅拉	414
 daoqiangruku	刀槍|入庫	481
 daoyebushi	倒也|不是	483
 daoyushengcunzhe	島嶼|生存者	456
+daozhangshijian	到賬|時間	489
 daozhixianweijing	倒置|顯微鏡	434
 dapengzhuangjiashuo	大碰撞|假說	501
 dapengzhuanglilun	大碰撞|理論	501
@@ -3509,6 +3510,7 @@ duibidukuozhan	對比度|擴展	443
 duibimingandu	對比|敏感度	454
 duibugongtang	對簿|公堂	459
 duidiedalu	堆疊|大陸	460
+duigongzhanghu	對公|賬戶	481
 duihaoruzuo	對號|入座	430
 duilieyanjiu	隊列|研究	474
 duiliuhunhe	對流|混合	471
@@ -4448,6 +4450,9 @@ fukeqianjinjiaonang	婦科|千金|膠囊	458
 fukeqianjinxiye	婦科|千金|洗液	457
 fukeyisheng	婦科|醫生	463
 fukeyixue	婦科|醫學	483
+fukuanshijian	付款|時間	488
+fukuanzhanghao	付款|賬號	488
+fukuanzhanghu	付款|賬戶	488
 fulanguodu	腐爛|國度	439
 fuleixijiazu	富勒烯|家族	471
 fuliangzhuanqu	浮梁|專區	465
@@ -4887,6 +4892,7 @@ gerenxiaofei	個人|消費	493
 gerenxingqu	個人|興趣	479
 gerenxinxi	個人|信息	483
 gerenyirong	個人|儀容	482
+gerenzhanghu	個人|賬戶	490
 gerenzhongxin	個人|中心	401
 gerenzhongxinzhiliao	個人|中心|治療	483
 gerenzhuyi	個人|主義	463
@@ -14064,6 +14070,11 @@ shoujishurufa	手機|輸入法	501
 shoujixinhao	手機|信號	498
 shoujiyouxi	手機|遊戲	499
 shoukongduixiang	受控|對象	488
+shoukuanfangshi	收款|方式	490
+shoukuanhuming	收款|戶名	489
+shoukuanshijian	收款|時間	486
+shoukuanzhanghao	收款|賬號	489
+shoukuanzhanghu	收款|賬戶	489
 shoumingfeituo	壽命|吠陀	424
 shounaohuiwu	首腦|會晤	462
 shounaohuiyi	首腦|會議	463
@@ -14463,6 +14474,7 @@ sirenjianshenjiaolian	私人|健身|教練	483
 sirenjiaolian	私人|教練	486
 sirenjingying	私人|經營	401
 sirenjingyinglingyu	私人|經營|領域	483
+sirenzhanghu	私人|賬戶	485
 sirenzhensuo	私人|診所	486
 sishifenzhong	四十|分鐘	483
 sishuwujing	四書|五經	449
@@ -18781,6 +18793,8 @@ yingzineige	影子|內閣	468
 yinhangdaikuan	銀行|貸款	505
 yinhangliushui	銀行|流水	457
 yinhangyewu	銀行|業務	505
+yinhangzhanghao	銀行|賬號	515
+yinhangzhanghu	銀行|賬戶	515
 yinhebazhu	銀河|霸主	467
 yinhechuancheng	銀河|傳承	449
 yinhechuangshiji	銀河|創世紀	435
@@ -19814,7 +19828,9 @@ zhanfuxilie	戰斧|系列	415
 zhangaihuaxue	障礙|滑雪	405
 zhangfeikanlaoshu	張飛看|老鼠	436
 zhangguguzhe	掌骨|骨折	432
+zhanghaoxinxi	賬號|信息	489
 zhanghuangshicuo	張皇|失措	455
+zhanghuxinxi	賬戶|信息	489
 zhangjiakoushiziyuan	張家口市|資源	498
 zhangjiakouzhuanqu	張家口|專區	454
 zhangjimoniqi	掌機|模擬器	499
@@ -20821,6 +20837,7 @@ zhuanyongjicheng	專用|集成	386
 zhuanyongjichengdianlu	專用|集成|電路	468
 zhuanyongyouxiji	專用|遊戲機	499
 zhuanyundanbai	轉運|蛋白	483
+zhuanzhangbeizhu	轉賬|備註	488
 zhuanzhangjilu	轉賬|記錄	453
 zhuanzhanqianli	轉戰|千里	480
 zhuanzhengshenqing	轉正|申請	453

@@ -11209,7 +11209,7 @@ buchoubu	不瞅不	556
 buchoubucai	不瞅不睬	597
 buchouchi	不愁喫	620
 buchouchuan	不愁穿	640
-buchu	不出	579
+buchu	不出	830
 buchuai	不揣	473
 buchuaimao	不揣冒	552
 buchuaimaomei	不揣冒昧	615
@@ -12280,7 +12280,7 @@ bumianyouxie	不免有些	280
 bumianzheng	不眠症	510
 bumiao	不妙	1000
 buming	不明	1000
-buming	不名	136
+buming	不名	137
 bumingbu	不明不	556
 bumingbubai	不明不白	604
 bumingfeixingwu	不明飛行物	468
@@ -19044,7 +19044,7 @@ choushen	酬神	499
 choushenshihai	仇深似海	617
 choushi	丑事	510
 choushi	仇視	485
-choushi	醜事	449
+choushi	醜事	448
 choushijian	抽時間	362
 choushui	抽水	1000
 choushui	抽稅	1
@@ -22378,7 +22378,7 @@ dadongyagongrongquan	大東亞共榮圈	318
 dadou	大都	1000
 dadou	大豆	842
 dadou	打斗	515
-dadou	打鬥	396
+dadou	打鬥	397
 dadougan	大豆苷	470
 dadouganyuan	大豆苷元	540
 dadougen	大豆根	500
@@ -23181,7 +23181,7 @@ daji	大計	1
 dajia	大家	1000
 dajia	打架	600
 dajia	大加	599
-dajia	打假	481
+dajia	打假	482
 dajiadebaokemengmuchang	大家的寶可夢牧場	662
 dajiadechangshilidianshi	大家的常識力電視	662
 dajiadejiezoutianguo	大家的節奏天國	632
@@ -23250,7 +23250,7 @@ dajiexiaoxiang	大街小巷	545
 dajike	大戟科	440
 dajiling	大吉嶺	230
 dajilv	打擊率	379
-dajin	打緊	400
+dajin	打緊	401
 dajinbeizhuomuniao	大金背啄木鳥	318
 dajindachu	大進大出	260
 dajing	打井	986
@@ -23340,7 +23340,9 @@ dakuairenxin	大快人心	466
 dakuaitou	大塊頭	472
 dakuan	打款	700
 dakuan	大款	1
+dakuanfang	打款方	280
 dakuang	大鵟	198
+dakuanren	打款人	280
 dakuohao	大括號	379
 dakuohu	大括弧	232
 dala	達拉	728
@@ -25129,7 +25131,8 @@ daozei	盜賊	437
 daozeidexiachenglei	盜賊地下城類	648
 daozeizhihai	盜賊之海	538
 daozhang	到賬	700
-daozhang	道長	288
+daozhang	道長	269
+daozhangshijian	到賬時間	280
 daozhe	倒著	198
 daozhen	道真	198
 daozheng	導正	323
@@ -26052,7 +26055,7 @@ dechengshouhuzhe	地城守護者	613
 dechengshouweizhe	地城守衛者	613
 dechengyingxiongzhi	地城英雄志	613
 dechong	得寵	418
-dechu	得出	499
+dechu	得出	822
 dechuan	德川	266
 dechuanjia	地穿甲	640
 dechuanjiakang	德川家康	507
@@ -31849,6 +31852,7 @@ duige	對歌	367
 duigong	對公	280
 duigong	對攻	240
 duigongr	對工兒	372
+duigongzhanghu	對公賬戶	280
 duiguangfanshe	對光反射	570
 duiguo	對過	579
 duiguor	對過兒	620
@@ -32076,7 +32080,7 @@ duiyoufuyangzinvdejiatingtigongyuanzhu	對有撫養子女的家庭提供援助	7
 duiyu	對於	1000
 duiyuan	隊員	487
 duizhan	堆棧	413
-duizhang	隊長	763
+duizhang	隊長	762
 duizhang	對賬	280
 duizhang	對仗	198
 duizhangedouyouxi	對戰格鬥遊戲	790
@@ -40340,10 +40344,15 @@ fuku	府庫	305
 fukua	浮夸	725
 fukua	浮誇	705
 fukuan	付款	700
+fukuanfang	付款方	280
 fukuanfangshi	付款方式	260
 fukuang	富礦	387
 fukuanma	付款碼	800
+fukuanren	付款人	800
+fukuanshijian	付款時間	280
 fukuantiaojian	付款條件	387
+fukuanzhanghao	付款賬號	280
+fukuanzhanghu	付款賬戶	280
 fukuinuotong	氟喹諾酮	540
 fukuinuotongleiyaowu	氟喹諾酮類藥物	898
 fukuinuotongleiyaowu	氟喹諾酮類葯物	367
@@ -44412,6 +44421,7 @@ gerenxingqu	個人興趣	280
 gerenxinxi	個人信息	280
 gerenyinsi	個人隱私	387
 gerenyirong	個人儀容	570
+gerenzhanghu	個人賬戶	280
 gerenzhongxinzhiliao	個人中心治療	700
 gerenzhuyi	個人主義	501
 gerenzisaomenqianxue	各人自掃門前雪	456
@@ -57474,7 +57484,9 @@ huikongquezhi	灰孔雀雉	258
 huikou	回扣	1000
 huikuan	匯款	700
 huikuan	回款	280
+huikuanfang	匯款方	280
 huikuangquemei	灰眶雀鶥	258
+huikuanren	匯款人	280
 huikudehaiziyounaichi	會哭的孩子有奶喫	378
 huikudehaiziyoutangchi	會哭的孩子有糖喫	378
 huikui	回饋	415
@@ -57908,7 +57920,7 @@ huizuizixin	悔罪自新	616
 huizuo	會做	1000
 huizuren	回族人	232
 huji	滬籍	286
-huji	戶籍	274
+huji	戶籍	275
 huji	呼機	43
 hujia	護甲	78
 hujiahua	胡家驊	771
@@ -57949,7 +57961,7 @@ hujuyiganjiaonang	虎駒乙肝膠囊	664
 huke	胡克	283
 hukonghuan	護孔環	232
 hukou	戶口	1000
-hukou	虎口	579
+hukou	虎口	578
 hukou	湖口	569
 hukou	糊口	1
 hukou	餬口	1
@@ -58084,7 +58096,7 @@ humen	虎門	353
 humeng	狐獴	198
 humian	湖面	280
 humian	互勉	1
-huming	糊名	198
+huming	戶名	700
 humujing	護目鏡	404
 hun'an	昏暗	671
 hunan	湖南	863
@@ -59144,7 +59156,7 @@ huxin	互信	969
 huxin	湖心	1
 huxineike	呼吸內科	540
 huxing	戶型	300
-huxing	弧形	158
+huxing	弧形	157
 huxingtianhuaban	弧形天花板	760
 huxingtu	戶型圖	412
 huxinjiaonang	護心膠囊	540
@@ -67006,7 +67018,7 @@ jinkui	錦葵	361
 jinkuishenqiwan	金匱腎氣丸	610
 jinkuiyaolve	金匱要略	540
 jinlai	進來	1000
-jinlai	近來	477
+jinlai	近來	431
 jinlan	金蘭	493
 jinlang	津浪	198
 jinlanpu	金蘭譜	167
@@ -67178,8 +67190,8 @@ jinqiujiang	金球獎	219
 jinqiujiangzhongshenchengjiujiang	金球獎終身成就獎	1000
 jinqiujiangzhongshenchengjiujiang	金球奬終身成就奬	452
 jinqu	進取	1000
-jinqu	進去	951
-jinqu	禁區	26
+jinqu	進去	935
+jinqu	禁區	42
 jinquan	金泉	200
 jinquanli	盡全力	280
 jinque	緊缺	998
@@ -68121,7 +68133,7 @@ jisu	急速	622
 jisu	極速	280
 jisu	疾速	5
 jisuan	計算	1000
-jisuan	肌酸	89
+jisuan	肌酸	88
 jisuanchengben	計算成本	775
 jisuanchengxu	計算程序	696
 jisuanchi	計算尺	447
@@ -71428,8 +71440,8 @@ kaiheqi	開河期	112
 kaiheziru	開合自如	619
 kaihongpan	開紅盤	232
 kaihoumen	開後門	1000
-kaihu	開壺	878
-kaihu	開戶	88
+kaihu	開戶	296
+kaihu	開壺	176
 kaihua	開花	887
 kaihua	開化	543
 kaihuai	開懷	423
@@ -71442,7 +71454,9 @@ kaihuanzaiti	開環甾體	570
 kaihuar	開花兒	232
 kaihuaxian	開化縣	160
 kaihuayi	開花衣	232
+kaihuhang	開戶行	800
 kaihui	開會	516
+kaihuming	開戶名	280
 kaihun	開葷	563
 kaihuo	開火	625
 kaihuo	開伙	505
@@ -119978,9 +119992,16 @@ shoukouzubing	手口足病	570
 shouku	受苦	450
 shoukuan	收款	700
 shoukuan	首款	1
+shoukuanfang	收款方	280
+shoukuanfangshi	收款方式	280
+shoukuanhuming	收款戶名	280
 shoukuanma	收款碼	800
+shoukuanren	收款人	800
+shoukuanshijian	收款時間	280
 shoukuantai	收款台	356
 shoukuantai	收款臺	321
+shoukuanzhanghao	收款賬號	280
+shoukuanzhanghu	收款賬戶	280
 shoukun	受困	412
 shoulache	手拉車	232
 shoulahulu	手拉葫蘆	260
@@ -120083,6 +120104,7 @@ shoupiaoyuan	收票員	340
 shoupin	受聘	434
 shoupinyu	受聘于	248
 shouqi	收起	700
+shouqi	首期	280
 shouqi	受氣	128
 shouqian	收錢	1000
 shouqianba	收錢吧	1018
@@ -120091,6 +120113,7 @@ shouqianshou	手牽手	362
 shouqiao	手巧	332
 shouqibao	受氣包	377
 shouqijuansan	收旗卷傘	405
+shouqikuan	首期款	280
 shouqilai	收起來	1018
 shouqing	售罄	364
 shouqiong	受窮	395
@@ -123615,6 +123638,7 @@ sirenjingyinglingyu	私人經營領域	700
 sirenluomi'ou	死人羅密歐	613
 sirenmajiang	四人麻將	538
 sirenyaoshi	私人鑰匙	260
+sirenzhanghu	私人賬戶	280
 sirenzhanyouzhi	私人佔有制	397
 sirenzhensuo	私人診所	570
 siri	四日	700
@@ -124389,19 +124413,26 @@ su'er	囌爾	254
 suan'erlanv	酸兒辣女	260
 suanbai	酸敗	440
 suanban	蒜瓣	341
+suanbuchu	算不出	800
 suanbude	算不得	715
 suanbuliao	算不了	646
 suanbuliudiu	酸不溜丟	260
 suanbuliuqiu	酸不溜秋	260
 suanbushang	算不上	280
+suanbuzhun	算不準	280
 suancai	酸菜	406
 suancaiyu	酸菜魚	280
 suancheng	酸橙	434
+suanchu	算出	910
 suanchu	酸楚	440
-suanchu	算出	58
+suanchulai	算出來	800
+suancuole	算錯了	280
 suande	酸的	700
+suandechu	算得出	800
 suandeshang	算得上	640
+suandezhun	算得準	280
 suandou	酸豆	305
+suanduole	算多了	280
 suanerlanv	酸兒辣女	260
 suanfa	算法	678
 suanfachengxusheji	算法程序設計	774
@@ -124414,6 +124445,7 @@ suangen	酸根	227
 suangua	算卦	497
 suanguade	算卦的	635
 suanhao	算好	280
+suanhaole	算好了	280
 suanhua	算話	323
 suanhuanggua	酸黃瓜	379
 suanji	算計	666
@@ -124421,6 +124453,8 @@ suanjiandu	酸鹼度	470
 suanjiang	酸漿	305
 suanjianshiheng	酸鹼失衡	570
 suanjianzhi	酸鹼值	375
+suanjinlai	算進來	280
+suanjinqu	算進去	280
 suanla	算啦	700
 suanlafen	酸辣粉	198
 suanlajiang	酸辣醬	228
@@ -124451,6 +124485,7 @@ suannihen	算你狠	357
 suanpan	算盤	454
 suanputao	酸葡萄	371
 suanqilai	算起來	232
+suanqingchu	算清楚	800
 suanqu	酸曲	198
 suanrong	蒜蓉	433
 suanrongqian	蒜茸鉗	228
@@ -124459,6 +124494,7 @@ suanruan	痠軟	719
 suanruan	酸軟	440
 suanrulao	酸乳酪	371
 suanse	酸澀	405
+suanshaole	算少了	280
 suanshi	算是	1000
 suanshi	酸蝕	122
 suanshiyan	酸式鹽	419
@@ -124488,6 +124524,8 @@ suanxin	酸辛	331
 suanxing	酸性	470
 suanxingdanbaimei	酸性蛋白酶	610
 suanxinglinsuanmei	酸性磷酸酶	640
+suanyisuan	算一算	800
+suanyixia	算一下	800
 suanyu	酸雨	430
 suanzao	酸棗	401
 suanzaorentang	酸棗仁湯	540
@@ -130285,7 +130323,7 @@ tonggoutongxiao	統購統銷	486
 tonggu	筒鼓	848
 tonggu	銅鼓	79
 tongguan	通關	663
-tongguan	統管	443
+tongguan	統管	442
 tongguan	銅管	399
 tongguan	潼關	242
 tongguanjie	通關節	307
@@ -156777,7 +156815,7 @@ yingshimenlang	英式門廊	680
 yingshipingfang	英式平房	680
 yingshixunishijing	影視虛擬實境	648
 yingshou	應手	757
-yingshou	應收	707
+yingshou	應收	708
 yingshou	營收	232
 yingshouyingzikuangqu	鷹手營子礦區	318
 yingshouzhangkuan	應收賬款	258
@@ -157160,6 +157198,8 @@ yinhangka	銀行卡	288
 yinhangliushui	銀行流水	800
 yinhangye	銀行業	516
 yinhangyewu	銀行業務	518
+yinhangzhanghao	銀行賬號	800
+yinhangzhanghu	銀行賬戶	800
 yinhanshu	隱函數	232
 yinhanzheng	陰寒證	470
 yinhao	引號	996
@@ -160321,7 +160361,7 @@ youchanzhe	有產者	503
 youchaoyiri	有朝一日	653
 youchaoyiridaozhongdiedeweilai	有朝一日到重疊的未來	662
 youchaoyounao	又吵又鬧	258
-youche	油車	310
+youche	油車	309
 youche	郵車	289
 youchen	有沉	473
 youcheng	又稱	108
@@ -165873,12 +165913,13 @@ zhangguogancao	脹果甘草	540
 zhangguorong	張國榮	789
 zhangguotao	張國燾	368
 zhanghao	賬號	560
-zhanghao	帳號	256
+zhanghao	帳號	155
+zhanghaoxinxi	賬號信息	280
 zhanghaoyingxiong	長號英雄	538
 zhangheng	張衡	287
 zhanghong	漲紅	305
-zhanghu	帳戶	1
-zhanghu	賬戶	1
+zhanghu	賬戶	892
+zhanghu	帳戶	472
 zhanghua	彰化	1000
 zhanghua	張華	1
 zhanghuaduanshuo	長話短說	630
@@ -165891,7 +165932,10 @@ zhanghuichun	張惠春	767
 zhanghuimei	張惠妹	780
 zhanghuitidianziyouxi	章回體電子遊戲	632
 zhanghuixiaoshuo	章回小說	464
+zhanghuming	賬戶名	788
+zhanghuming	帳戶名	280
 zhanghuo	仗火	198
+zhanghuxinxi	賬戶信息	280
 zhangji	掌機	994
 zhangji	長機	61
 zhangjia	漲價	436
@@ -165991,7 +166035,7 @@ zhangmingjiaozhu	彰明較著	432
 zhangminglei	張明磊	458
 zhangmu	丈母	560
 zhangmu	帳目	560
-zhangmu	賬目	483
+zhangmu	賬目	484
 zhangmu	樟木	350
 zhangmu	帳幕	346
 zhangmuniang	丈母娘	495
@@ -173526,7 +173570,7 @@ zhuanyou	專有	722
 zhuanyoumingci	專有名詞	417
 zhuanyouweixi	轉憂為喜	623
 zhuanyu	轉喻	323
-zhuanyuan	專員	583
+zhuanyuan	專員	582
 zhuanyun	轉運	1000
 zhuanyundanbai	轉運蛋白	570
 zhuanyunhetanghesuan	轉運核糖核酸	700
@@ -173539,6 +173583,7 @@ zhuanze	專責	395
 zhuanzeng	轉贈	392
 zhuanzhan	轉戰	463
 zhuanzhang	轉賬	700
+zhuanzhangbeizhu	轉賬備註	280
 zhuanzhangjilu	轉賬記錄	800
 zhuanzhangka	轉賬卡	230
 zhuanzhanqianli	轉戰千里	387
