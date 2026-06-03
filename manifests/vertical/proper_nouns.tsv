@@ -95,3 +95,9 @@
 昇腾	昇騰	0.76	shengteng
 昆仑芯	崑崙芯	0.76	kunlunxin
 鲲鹏	鯤鵬	0.76	kunpeng
+
+# word1 curated import 2026-06-03 (proper_nouns); reviewed from D:/word1.txt
+北京奥运	北京奧運	0.58	beijingaoyun
+
+# word2 curated import 2026-06-03 (proper_nouns); reviewed from D:/word2.txt
+创智	創智	0.46	chuangzhi
