@@ -483,6 +483,7 @@ DAILY_CHAT_SEED_SUFFIXES = (
 DAILY_CHAT_SEED_CHARS = set("的得地就也还才又都把被给跟让像向对从为在这那哪怎啥谁您你我他她它咱吗呢吧呀啊嘛哦呗啦了着过说看来去")
 DAILY_CHAT_SEED_CHARS.update(("\u6539", "\u6210"))
 DAILY_ASPECT_SUFFIX_CHARS = set("\u4e86\u7740\u8fc7")
+CURATED_PRODUCTIVE_STATE_PREFIX_CHARS = set("\u5df2\u6ca1\u6c92\u672a")
 DERIVED_PREFIX_BLOCKED_TAIL_CHARS = set(
     "\u800c\u4e4b\u6240\u4e0e\u8207\u53ca\u548c\u6216\u5c06\u5c07"
     "\u88ab\u628a\u7684\u5730\u5f97"
@@ -13634,6 +13635,161 @@ def _cap_curated_daily_aspect_visibility_weights(
     return stats
 
 
+def _is_curated_productive_state_visibility_term(text: str, usage_score: float) -> bool:
+    """Return whether a curated entry is a productive state phrase.
+
+    Short phrases such as "已签" or "没气" are useful exact candidates, but
+    their manifest score mostly encodes product visibility, not broad corpus
+    frequency. They should remain selectable without outranking stronger
+    independent same-pinyin words such as "以前" or "煤气".
+    """
+    if (
+        _cjk_len(text) < 2
+        or _cjk_len(text) > 3
+        or len(text) < 2
+        or text[0] not in CURATED_PRODUCTIVE_STATE_PREFIX_CHARS
+    ):
+        return False
+
+    # "没/沒" also forms strong everyday words ("没变", "没钱"). Only treat
+    # lower-confidence entries as visibility supplements; otherwise a weak
+    # dictionary competitor such as "霉变" can incorrectly become the default.
+    if text[0] in ("\u6ca1", "\u6c92"):
+        return usage_score < 0.85
+
+    return usage_score <= 0.92
+
+
+def _cap_curated_productive_visibility_against_direct_leaders(
+    mapping: Dict[Tuple[str, str], int],
+    curated_entries: List[Tuple[str, str, float, str]],
+    usage_score_map: Dict[str, float],
+    source_hits_map: Dict[str, int],
+    pageviews_signal_map: Dict[str, float],
+    jieba_direct_signal_map: Dict[str, float],
+    jieba_pos_map: Dict[str, str],
+    *,
+    use_traditional: bool,
+    stats_prefix: str,
+    bucket_pinyin_map: Dict[Tuple[str, str], str] | None = None,
+) -> Dict[str, int]:
+    """Keep productive curated supplements visible but behind common exact words.
+
+    This is the reverse of the curated-daily leader guard: manually curated
+    productive forms and pure number words are valid candidates, but if a same
+    pinyin bucket contains an independent word with direct frequency evidence,
+    the productive supplement should not become the default just because the
+    manifest gave it a visibility boost.
+    """
+    stats = {
+        f"{stats_prefix}_curated_productive_visibility_cap_terms": 0,
+        f"{stats_prefix}_curated_productive_visibility_cap_rows": 0,
+    }
+    if not mapping or not curated_entries:
+        return stats
+
+    bucket_pinyin_map = bucket_pinyin_map or {}
+    candidate_terms: Dict[str, float] = {}
+    number_terms: Set[str] = set()
+    for sc_word, tc_word, usage_score, _explicit_pinyin in curated_entries:
+        text = tc_word if use_traditional and tc_word else sc_word
+        effective_usage = max(usage_score, usage_score_map.get(text, 0.0))
+        if _is_curated_productive_state_visibility_term(text, effective_usage):
+            candidate_terms[text] = effective_usage
+        elif _is_pure_daily_number_word(text):
+            candidate_terms[text] = effective_usage
+            number_terms.add(text)
+    if not candidate_terms:
+        return stats
+
+    buckets: Dict[str, List[Tuple[str, str, int]]] = {}
+    for key, weight in mapping.items():
+        pinyin, text = key
+        bucket_pinyin = bucket_pinyin_map.get(key, pinyin)
+        if not bucket_pinyin:
+            continue
+        buckets.setdefault(bucket_pinyin, []).append((pinyin, text, weight))
+
+    def direct_signal(text: str) -> float:
+        usage_score = min(1.0, max(0.0, usage_score_map.get(text, 0.0)))
+        jieba_score = min(1.0, max(0.0, jieba_direct_signal_map.get(text, 0.0)))
+        pageview_score = min(1.0, max(0.0, pageviews_signal_map.get(text, 0.0)))
+        source_hits = max(0, source_hits_map.get(text, 0))
+        pos_tag = jieba_pos_map.get(text, "")
+        signal = (
+            usage_score * 0.36
+            + jieba_score * 0.42
+            + pageview_score * 0.12
+            + min(1.0, source_hits / 5.0) * 0.10
+        )
+        if _is_conversational_pos(pos_tag):
+            signal += 0.04
+        elif _is_noun_pos(pos_tag):
+            signal += 0.02
+        elif _is_named_entity_pos(pos_tag):
+            signal *= 0.70
+        return max(0.0, min(1.0, signal))
+
+    capped_terms: Set[str] = set()
+    for _bucket_pinyin, items in buckets.items():
+        productive_items = [
+            (pinyin, text, weight)
+            for pinyin, text, weight in items
+            if text in candidate_terms
+        ]
+        if not productive_items:
+            continue
+
+        leader_items: List[Tuple[str, int, float]] = []
+        for _pinyin, text, weight in items:
+            if text in candidate_terms:
+                continue
+            text_len = _cjk_len(text)
+            if text_len < 2 or text_len > 4:
+                continue
+            if _is_pure_daily_number_word(text):
+                continue
+            signal = direct_signal(text)
+            if weight < 180 or signal < 0.045:
+                continue
+            if weight < 240 and signal < 0.10:
+                continue
+            leader_items.append((text, weight, signal))
+        if not leader_items:
+            continue
+
+        leader_text, leader_weight, leader_signal = max(
+            leader_items,
+            key=lambda item: (item[2], item[1]),
+        )
+        if leader_weight < 180 or leader_signal < 0.045:
+            continue
+
+        for pinyin, text, weight in productive_items:
+            candidate_signal = direct_signal(text)
+            candidate_usage = candidate_terms.get(text, 0.0)
+            if (
+                text not in number_terms
+                and candidate_usage >= 0.94
+                and candidate_signal + 0.03 >= leader_signal
+            ):
+                continue
+
+            cap_margin = 36 if text in number_terms else 24
+            cap = max(1, leader_weight - cap_margin)
+            if text in number_terms:
+                cap = min(cap, CURATED_DAILY_SUPPLEMENT_NUMBER_WEIGHT_CAP - 48)
+            if weight <= cap:
+                continue
+
+            mapping[(pinyin, text)] = cap
+            capped_terms.add(text)
+            stats[f"{stats_prefix}_curated_productive_visibility_cap_rows"] += 1
+
+    stats[f"{stats_prefix}_curated_productive_visibility_cap_terms"] = len(capped_terms)
+    return stats
+
+
 def _cap_styled_exact_competitors(
     mapping: Dict[Tuple[str, str], int],
     term_style_penalty_map: Dict[Tuple[str, str], int] | None,
@@ -19695,6 +19851,32 @@ def main() -> int:
     )
     stats.update(sc_final_curated_exact_leader_stats)
     stats.update(tc_final_curated_exact_leader_stats)
+    sc_final_curated_productive_visibility_stats = _cap_curated_productive_visibility_against_direct_leaders(
+        sc_map,
+        curated_daily_entries + curated_daily_supplement_entries,
+        usage_score_map,
+        source_hits_map,
+        pageviews_signal_map,
+        jieba_direct_signal_map,
+        jieba_pos_map,
+        use_traditional=False,
+        stats_prefix="sc_final",
+        bucket_pinyin_map=sc_output_pinyin_bucket_map,
+    )
+    tc_final_curated_productive_visibility_stats = _cap_curated_productive_visibility_against_direct_leaders(
+        tc_map,
+        curated_daily_entries + curated_daily_supplement_entries,
+        tc_usage_score_map,
+        tc_source_hits_map,
+        tc_pageviews_signal_map,
+        tc_jieba_direct_signal_map,
+        tc_jieba_pos_map,
+        use_traditional=True,
+        stats_prefix="tc_final",
+        bucket_pinyin_map=tc_output_pinyin_bucket_map,
+    )
+    stats.update(sc_final_curated_productive_visibility_stats)
+    stats.update(tc_final_curated_productive_visibility_stats)
     sc_de_complement_pair_cap_stats = _cap_curated_daily_de_complement_pair_weights(
         sc_map,
         curated_daily_entries,
