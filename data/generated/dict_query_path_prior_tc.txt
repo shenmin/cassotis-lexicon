@@ -528,7 +528,7 @@ baxishizhen	巴西|市鎮	459
 bayiqiyi	八一|起義	474
 beibiwochuo	卑鄙|齷齪	481
 beibiwuchi	卑鄙|無恥	485
-beibujingluan	背部|痙攣	469
+beibujingluan	背部|痙攣	421
 beidawuli	北大|物理	501
 beidongjiezhong	被動|接種	474
 beidongkuosan	被動|擴散	435
@@ -795,7 +795,7 @@ biaozhunzhengtaifenbu	標準|正態分佈	483
 biaozhunzhuangkuang	標準|狀況	463
 biaozhunzhuangtai	標準|狀態	463
 bibingduganran	鼻病毒|感染	448
-bibunangzhong	鼻部|囊腫	468
+bibunangzhong	鼻部|囊腫	449
 bicibici	彼此|彼此	459
 bicongshenjingsunshang	臂叢神經|損傷	452
 bidebaluoke	彼得|巴洛克	458
@@ -3664,7 +3664,7 @@ ebeishatanjiaonang	厄貝沙坦|膠囊	454
 edipusiqingjie	俄狄浦斯|情結	460
 eerduosiziyuan	鄂爾多斯|資源	498
 eguaduogongheguo	厄瓜多|共和國	454
-egubibu	額骨|鼻部	486
+egubibu	額骨|鼻部	470
 eguofuxing	俄國|復興	384
 eguofuxingjianzhu	俄國|復興|建築	466
 eliexinjing	惡劣|心境	297
@@ -3707,8 +3707,8 @@ erbaiwushi	二百|五十	455
 erbanianhua	二八|年華	433
 erbeitixibao	二倍體|細胞	458
 erbudaizhuangpaozhen	耳部|帶狀皰疹	456
-erbuganran	耳部|感染	486
-erbutengtong	耳部|疼痛	486
+erbuganran	耳部|感染	478
+erbutengtong	耳部|疼痛	467
 erchuiquesun	耳垂|缺損	422
 erciganran	二次|感染	442
 ercijiegou	二次|結構	470
@@ -4366,7 +4366,7 @@ fubifanshe	腹壁|反射	461
 fubitaiyimiao	復必泰|疫苗	438
 fubuchongji	腹部|衝擊	483
 fubusunshang	腹部|損傷	470
-fubuzhengxing	腹部|整形	484
+fubuzhengxing	腹部|整形	477
 fuchankehulixue	婦產科|護理學	455
 fuchankeyiyuan	婦產科|醫院	483
 fuchouxingdong	復仇|行動	464
@@ -7486,8 +7486,8 @@ jingansuanjiayasu	精氨酸|加壓素	456
 jingansuanxuezheng	精氨酸|血症	474
 jingbaopilao	警報|疲勞	483
 jingbaoxinhao	警報|信號	498
-jingbushaoshang	頸部|燒傷	469
-jingbusunshang	頸部|損傷	470
+jingbushaoshang	頸部|燒傷	460
+jingbusunshang	頸部|損傷	467
 jingbuxueguanliu	頸部|血管瘤	459
 jingchagushi	警察|故事	481
 jingchagushixilie	警察|故事|系列	456
@@ -9146,7 +9146,7 @@ lianbujirou	臉部|肌肉	483
 lianbushangle	連不|上了	457
 lianbushangwang	連不|上網	453
 lianbushangxian	連不|上線	453
-lianbuyizhi	臉部|移植	486
+lianbuyizhi	臉部|移植	464
 liangansuanlalian	亮氨酸|拉鏈	442
 liangcaoxianxing	糧草|先行	484
 liangdianshifen	兩點|十分	416
@@ -14046,7 +14046,7 @@ shoubingchezhan	手柄|車站	499
 shoubizhendongbing	手臂|振動病	460
 shoubugenzong	手部|跟蹤	423
 shoubugenzongjiedian	手部|跟蹤|節點	505
-shoubuyouxi	手部|遊戲	499
+shoubuyouxi	手部|遊戲	490
 shoudaoqianlian	受到|牽連	479
 shoudonggenggai	手動|更改	423
 shoudonggenggaichangjing	手動|更改|場景	505
@@ -15233,9 +15233,9 @@ toubaoladingjiaonang	頭孢拉定|膠囊	455
 toubaomizuo	頭孢|咪唑	405
 toubaosaifen	頭孢|噻吩	408
 toubiyouxiji	投幣|遊戲機	499
-toubuchuankong	頭部|穿孔	472
-toubushoushang	頭部|受傷	483
-toubuwaishang	頭部|外傷	442
+toubuchuankong	頭部|穿孔	431
+toubushoushang	頭部|受傷	461
+toubuwaishang	頭部|外傷	400
 toufangshichang	投放|市場	467
 toufayizhi	頭髮|移植	470
 touhaowanjia	頭號|玩家	499
@@ -17343,9 +17343,9 @@ xinzhigongneng	心智|功能	483
 xinzhililun	心智|理論	486
 xinzhongwushu	心中|無數	463
 xinzhongyoushu	心中|有數	494
-xiongbuanya	胸部|按壓	472
-xiongbuchuangshang	胸部|創傷	483
-xiongbusunshang	胸部|損傷	463
+xiongbuanya	胸部|按壓	431
+xiongbuchuangshang	胸部|創傷	474
+xiongbusunshang	胸部|損傷	422
 xiongcaidalve	雄才|大略	450
 xiongdandiyanye	熊膽|滴眼液	416
 xiongdanjiaonang	熊膽|膠囊	423
@@ -17877,11 +17877,11 @@ yanandiqu	沿岸|地區	467
 yananzhuanqu	延安|專區	457
 yanbianzhuanqu	延邊|專區	465
 yanbohaomiao	煙波|浩渺	458
-yanbudaizhuangpaozhen	眼部|帶狀皰疹	456
-yanbujujiao	眼部|聚焦	486
-yanbupaozhen	眼部|皰疹	471
-yanbushoushang	眼部|受傷	486
-yanbuxishou	眼部|吸收	486
+yanbudaizhuangpaozhen	眼部|帶狀皰疹	440
+yanbujujiao	眼部|聚焦	477
+yanbupaozhen	眼部|皰疹	432
+yanbushoushang	眼部|受傷	464
+yanbuxishou	眼部|吸收	472
 yancaokongzhi	菸草|控制	486
 yanchengzhuanqu	鹽城|專區	465
 yanchizhekou	延遲|折扣	483
@@ -19907,7 +19907,7 @@ zhanshutupowushi	戰術|突破|巫師	438
 zhanshuxiaodui	戰術|小隊	417
 zhansishachang	戰死|沙場	456
 zhanwangzhuangtai	譫妄|狀態	436
-zhanwenjiaobu	站穩|腳步	429
+zhanwenjiaobu	站穩|腳步	448
 zhanwenjiaogen	站穩|腳跟	462
 zhanzhengbianyuan	戰爭|邊緣	464
 zhanzhengchuanshuo	戰爭|傳說	436

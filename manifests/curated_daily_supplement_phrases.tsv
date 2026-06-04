@@ -2600,3 +2600,25 @@
 抽拉轨	抽拉軌	0.40	choulagui
 抽拉层板	抽拉層板	0.40	choulacengban
 抽屉式	抽屜式	0.48	choutishi
+
+# low-frequency body-part area terms 2026-06-04
+手部	手部	0.44	shoubu
+脚部	腳部	0.44	jiaobu
+腿部	腿部	0.44	tuibu
+腰部	腰部	0.42	yaobu
+背部	背部	0.42	beibu
+腹部	腹部	0.42	fubu
+胸部	胸部	0.42	xiongbu
+肩部	肩部	0.42	jianbu
+颈部	頸部	0.40	jingbu
+头部	頭部	0.44	toubu
+脸部	臉部	0.44	lianbu
+眼部	眼部	0.40	yanbu
+鼻部	鼻部	0.38	bibu
+耳部	耳部	0.38	erbu
+口部	口部	0.36	koubu
+腕部	腕部	0.38	wanbu
+肘部	肘部	0.38	zhoubu
+膝部	膝部	0.38	xibu
+踝部	踝部	0.38	huaibu
+臀部	臀部	0.38	tunbu
