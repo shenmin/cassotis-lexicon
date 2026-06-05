@@ -1102,6 +1102,7 @@ budongchanquanzheng	不動產|權證	515
 budongchanzhengming	不動產|證明	520
 budongdanbaizhi	不凍|蛋白質	465
 budongguanjie	不動|關節	468
+budoushizheyang	不都是|這樣	449
 buduangengxin	不斷|更新	483
 buduankuoda	不斷|擴大	483
 buduanyongxian	不斷|湧現	479
@@ -4860,6 +4861,7 @@ gengnianqijingshenbing	更年期|精神病	457
 gengnianqiyiyuzheng	更年期|抑鬱症	457
 gengnianqiyouyuzheng	更年期|憂鬱症	457
 gengoujiaopengyou	跟狗交|朋友	455
+gengqiangyixie	更強|一些	457
 genguguci	跟骨|骨刺	428
 genguguzhe	跟骨|骨折	432
 gengxinhuandai	更新|換代	492
@@ -5140,7 +5142,7 @@ gouzaofangfa	構造|方法	481
 gouzaofanxingleixing	構造|泛型類型	467
 gouzaojihe	構造|幾何	484
 gouzaoleixing	構造|類型	476
-gouzaosuanfa	構造|算法	475
+gouzaosuanfa	構造|算法	486
 gouzaowulixue	構造|物理學	498
 gouzizhanji	鉤子|戰機	458
 guaansuanxuezheng	瓜氨酸|血症	473
@@ -5857,7 +5859,7 @@ hechengshuzhi	合成|樹脂	465
 hechengxiangjiao	合成|橡膠	476
 hechengxiangliao	合成|香料	469
 hechengxianwei	合成|纖維	461
-hechengyuanyou	合成|原油	450
+hechengyuanyou	合成|原油	449
 hechuanshimingzheng	河川|失明症	430
 hecigongzhen	核磁|共振	462
 hecigongzhenchengxiang	核磁|共振|成像	483
@@ -6615,6 +6617,7 @@ huoyanshengmu	火焰|聖母	464
 huoyanwenzhang	火焰|紋章	464
 huoyanxinhao	火焰|信號	498
 huoyunkache	貨運|卡車	430
+huozhejiaozuo	或者|叫做	520
 huoziyinshua	活字|印刷	453
 hupodanjian	琥珀|膽鹼	446
 hupolvmeisu	琥珀|氯黴素	456
@@ -6857,6 +6860,8 @@ jianyiwaishangfenshu	簡易|外傷|分數	483
 jianyuezhuyi	簡約|主義	432
 jianyujianzaoshi	監獄|建造師	454
 jianyujianzhushi	監獄|建築師	456
+jianyulaide	監獄|來的	354
+jianyulaidemama	監獄|來的|媽媽	436
 jianzaowutuobang	建造|烏托邦	454
 jianzhenbuqu	堅貞|不屈	432
 jianzhidonghua	剪紙|動畫	440
@@ -7245,6 +7250,8 @@ jiefangshaonv	解放|少女	467
 jiefangsilin	街坊|四鄰	481
 jiefangsixiang	解放|思想	512
 jiefangzhanzheng	解放|戰爭	499
+jiefengzhanghao	解封|賬號	453
+jiefengzhanghu	解封|賬戶	453
 jiegoubianyi	結構|變異	483
 jiegoubiaoxian	結構|表現	384
 jiegoubiaoxianzhuyi	結構|表現|主義	466
@@ -8399,7 +8406,7 @@ kaifazhefuwu	開發者|服務	468
 kaifazhegongju	開發者|工具	505
 kaifazhemoshi	開發者|模式	469
 kaifazheshequ	開發者|社區	469
-kaifazhezhanghao	開發者|賬號	467
+kaifazhezhanghao	開發者|賬號	469
 kaifazhezhengshu	開發者|證書	467
 kaifazhouqi	開發|周期	463
 kaifazhouqi	開發|週期	463
@@ -8849,6 +8856,8 @@ labiwulixue	蠟筆|物理學	498
 ladinghuobi	拉丁|貨幣	372
 ladinghuobitongmeng	拉丁|貨幣|同盟	454
 laibadongwuzhisen	來吧|動物之森	456
+laidelushang	來的|路上	457
+laideshihou	來的|時候	453
 laidianxianshi	來電|顯示	470
 laihamaguonian	癩蛤蟆|過年	436
 laikaxiangji	萊卡|相機	484
@@ -9314,7 +9323,11 @@ lilunwulitongxun	理論|物理|通訊	498
 lilunwulixue	理論|物理學	501
 lilunwulixuejia	理論|物理學家	498
 lilunxinlixue	理論|心理學	459
-limiangouzao	立面|構造	461
+limiangouzao	立面|構造	460
+limianhaiyou	裏面|還有	436
+limianhaiyou	裡面|還有	453
+limianmeiyou	裏面|沒有	436
+limianmeiyou	裡面|沒有	453
 limingshaji	黎明|殺機	450
 limingyouxi	黎明|遊戲	417
 limingyouxigongsi	黎明|遊戲|公司	499
@@ -10213,7 +10226,7 @@ mengmeiyiqiu	夢寐|以求	490
 mengpanasidalou	蒙帕納斯|大樓	409
 mengshoupaidui	猛獸|派對	437
 mengtekaluofangfa	蒙特卡洛|方法	463
-mengtekaluosuanfa	蒙特卡洛|算法	461
+mengtekaluosuanfa	蒙特卡洛|算法	472
 mengtenigeluo	蒙特|尼格羅	413
 mengtuoshisanji	蒙脫石|散劑	396
 mengxiangdenglong	夢想|燈籠	464
@@ -18344,7 +18357,7 @@ yibushangchuan	異步|上傳	465
 yibushifen	異步|時分	385
 yibushifenfuyong	異步|時分|複用	467
 yibushuaxin	異步|刷新	457
-yibusuanfa	異步|算法	455
+yibusuanfa	異步|算法	466
 yibutongbu	異步|同步	471
 yibutongxin	異步|通信	474
 yibutongzhi	異步|通知	474
@@ -19197,7 +19210,9 @@ youcikanlai	由此|看來	483
 youcikejian	由此|可見	505
 youdaomiru	誘導|泌乳	434
 youdaopailuan	誘導|排卵	445
-youdeyoushi	有得|有失	469
+youdetamen	由得|他們	457
+youdetamen	由得|她們	457
+youdeyoushi	有得|有失	453
 youdianxinkuai	有點|欣快	487
 youdiquhao	郵遞|區號	457
 youdongbaozi	遊動|孢子	458
@@ -19844,8 +19859,10 @@ zhanfuxilie	戰斧|系列	415
 zhangaihuaxue	障礙|滑雪	405
 zhangfeikanlaoshu	張飛看|老鼠	436
 zhangguguzhe	掌骨|骨折	432
+zhanghaobeifeng	賬號|被封	453
 zhanghaoxinxi	賬號|信息	489
 zhanghuangshicuo	張皇|失措	455
+zhanghubeifeng	賬戶|被封	453
 zhanghuxinxi	賬戶|信息	489
 zhangjiakoushiziyuan	張家口市|資源	498
 zhangjiakouzhuanqu	張家口|專區	454
@@ -20234,7 +20251,7 @@ zhijianshumu	只見|樹木	478
 zhijianzhanzheng	指尖|戰爭	464
 zhijiaozhuanwan	直角|轉彎	383
 zhijiaozhuanwanjieti	直角|轉彎|階梯	465
-zhijiaozuobiao	直角|座標	466
+zhijiaozuobiao	直角|座標	474
 zhijiecanyu	直接|參與	480
 zhijiedanhongsu	直接|膽紅素	457
 zhijiedianli	直接|電離	417
