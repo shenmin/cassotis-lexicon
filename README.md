@@ -17,7 +17,7 @@ Lexicon build and release repository for Cassotis IME.
 - Supports external-source bootstrap and reproducible generated dictionary builds.
 - Keeps attribution and release policy files aligned with generated artifacts.
 
-## Current dictionary snapshot (2026-06-04 build)
+## Current dictionary snapshot (2026-06-05 build)
 
 | File | Variant | Entries |
 |------|---------|---------|
