@@ -588,6 +588,9 @@
 没问题	沒問題	0.92
 没必要	沒必要	0.86
 没时间	沒時間	0.86
+时间	時間	0.96	shijian
+可乐	可樂	0.92	kele
+订阅	訂閱	0.92	dingyue
 没空	沒空	0.88
 没事	沒事	0.86
 方便的话	方便的話	0.80
@@ -2644,10 +2647,8 @@
 闻闻	聞聞	0.90	wenwen
 问问	問問	0.90	wenwen
 问问看	問問看	0.90	wenwenkan
-舔舔	舔舔	0.90	tiantian
 用着	用著	0.90	yongzhe
 闻闻看	聞聞看	0.90	wenwenkan
-舔舔看	舔舔看	0.90	tiantiankan
 听听看	聽聽看	0.90	tingtingkan
 先用着	先用著	0.90	xianyongzhe
 先用	先用	0.90	xianyong
@@ -4790,3 +4791,16 @@
 # common phrase additions 2026-06-05
 单机	單機	0.84	danji
 没有的	沒有的	0.86	meiyoude
+
+# implementation/result phrase additions 2026-06-05
+实处	實處	0.82	shichu
+落在	落在	0.84	luozai
+落在实处	落在實處	0.82	luozaishichu
+落到实处	落到實處	0.82	luodaoshichu
+落实到	落實到	0.80	luoshidao
+落实到位	落實到位	0.78	luoshidaowei
+落到位	落到位	0.74	luodaowei
+落地执行	落地執行	0.76	luodizhixing
+落地实施	落地實施	0.76	luodishishi
+抓落实	抓落實	0.72	zhualuoshi
+见实效	見實效	0.72	jianshixiao

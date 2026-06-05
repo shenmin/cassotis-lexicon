@@ -513,8 +513,8 @@ DAILY_NUMBER_WORD_UNIT_CHARS = set(
     "\u5341\u767e\u5343\u4e07\u842c\u4ebf\u5104"
 )
 CURATED_DAILY_NUMBER_WEIGHT_CAP = 700
-CURATED_DAILY_COUNT_MEASURE_WEIGHT_CAP = 620
-CURATED_DAILY_HOUSING_COUNT_MEASURE_WEIGHT_CAP = 650
+CURATED_DAILY_COUNT_MEASURE_WEIGHT_CAP = 420
+CURATED_DAILY_HOUSING_COUNT_MEASURE_WEIGHT_CAP = 420
 CURATED_DAILY_VISIBILITY_WEIGHT_CAP_SHORT = 700
 CURATED_DAILY_VISIBILITY_WEIGHT_CAP_LONG = 800
 CURATED_DAILY_SUPPLEMENT_WEIGHT_CAP = 280
@@ -2225,6 +2225,16 @@ def _cap_generic_vertical_weight(weight: int, text: str, layer_id: str, source_i
             cap = 700
         else:
             cap = 700
+        return min(weight, cap)
+    if layer_id == "architecture_entities":
+        if text_len <= 2:
+            cap = 420
+        elif text_len == 3:
+            cap = 520
+        elif text_len == 4:
+            cap = 600
+        else:
+            cap = 660
         return min(weight, cap)
     if layer_id == "gaming" and source.startswith(LOW_PRIORITY_VERTICAL_ENTITY_SOURCE_PREFIXES):
         if text_len <= 2:
@@ -12649,6 +12659,249 @@ def _rebalance_single_char_homophones_by_leading_support(
     return stats
 
 
+def _promote_single_char_homophones_by_head_productivity(
+    mapping: Dict[Tuple[str, str], int],
+    leading_term_count_map: Dict[Tuple[str, str], int] | None,
+    leading_support_sum_map: Dict[Tuple[str, str], float] | None,
+    family_support_sum_map: Dict[str, float] | None,
+    unihan_pinlu_detail_map: Dict[Tuple[str, str], int] | None,
+    stats_prefix: str,
+    single_char_frequency_map: Dict[str, float] | None = None,
+    single_char_pos_map: Dict[str, str] | None = None,
+) -> Dict[str, int]:
+    """Lift productive same-pinyin word-head characters above broad root noise.
+
+    Some single characters inherit high weight from many related compounds, but
+    are weaker as a modern IME word-head choice.  In the same pinyin bucket, a
+    character with strong leading ratio and enough absolute support should not
+    be buried behind a broader but less head-productive root.  This is a
+    bucket-local signal rule, not a per-character override.
+    """
+    stats = {
+        f"{stats_prefix}_single_char_head_productive_promoted": 0,
+        f"{stats_prefix}_single_char_head_productive_buckets": 0,
+        f"{stats_prefix}_single_char_input_signal_promoted": 0,
+        f"{stats_prefix}_single_char_input_signal_buckets": 0,
+    }
+    if not mapping:
+        return stats
+
+    leading_term_count_map = leading_term_count_map or {}
+    leading_support_sum_map = leading_support_sum_map or {}
+    family_support_sum_map = family_support_sum_map or {}
+    unihan_pinlu_detail_map = unihan_pinlu_detail_map or {}
+    single_char_frequency_map = single_char_frequency_map or {}
+    single_char_pos_map = single_char_pos_map or {}
+
+    def input_pos_bonus(pos_tag: str) -> int:
+        if pos_tag in {"a", "ad", "an"}:
+            return 160
+        if pos_tag in {"v", "vd", "vn"}:
+            return 150
+        if pos_tag in {"d", "r", "p", "c"}:
+            return 120
+        if pos_tag in {"q", "m"}:
+            return 80
+        if pos_tag in {"ns", "nr", "nt", "nz"}:
+            return -120
+        if pos_tag in {"t", "tg", "zg"}:
+            return -110
+        if pos_tag == "n":
+            return -36
+        return 0
+
+    buckets: Dict[str, List[Tuple[str, int]]] = {}
+    for (pinyin, text), weight in mapping.items():
+        if _cjk_len(text) != 1:
+            continue
+        buckets.setdefault(pinyin, []).append((text, weight))
+
+    for pinyin, items in buckets.items():
+        if len(items) < 2:
+            continue
+
+        records: List[Dict[str, float | int | str]] = []
+        for text, weight in items:
+            pair = (text, pinyin)
+            family_support = max(0.0, family_support_sum_map.get(text, 0.0))
+            leading_support = max(0.0, leading_support_sum_map.get(pair, 0.0))
+            records.append(
+                {
+                    "text": text,
+                    "weight": weight,
+                    "pinlu": max(0, unihan_pinlu_detail_map.get(pair, 0)),
+                    "family": family_support,
+                    "leading": leading_support,
+                    "leading_count": max(0, leading_term_count_map.get(pair, 0)),
+                    "leading_ratio": leading_support / family_support
+                    if family_support > 0.0
+                    else 0.0,
+                    "standalone_frequency": max(
+                        0.0, single_char_frequency_map.get(text, 0.0)
+                    ),
+                    "pos": single_char_pos_map.get(text, ""),
+                }
+            )
+
+        bucket_touched = False
+        for record in records:
+            text = str(record["text"])
+            weight = int(record["weight"])
+            pinlu = int(record["pinlu"])
+            leading = float(record["leading"])
+            leading_count = int(record["leading_count"])
+            leading_ratio = float(record["leading_ratio"])
+
+            if weight < 240:
+                continue
+            if pinlu < 80:
+                continue
+            if leading < 4200.0 or leading_count < 18 or leading_ratio < 0.52:
+                continue
+
+            target = weight
+            for competitor in records:
+                competitor_text = str(competitor["text"])
+                if competitor_text == text:
+                    continue
+                competitor_weight = int(competitor["weight"])
+                if competitor_weight <= target:
+                    continue
+
+                competitor_pinlu = int(competitor["pinlu"])
+                competitor_leading = float(competitor["leading"])
+                competitor_count = int(competitor["leading_count"])
+                competitor_ratio = float(competitor["leading_ratio"])
+
+                if competitor_ratio >= leading_ratio - 0.12:
+                    continue
+                if leading < max(competitor_leading * 0.50, 3600.0):
+                    continue
+                if leading_count < max(12, int(round(competitor_count * 0.45))):
+                    continue
+                # Keep genuinely dominant standalone readings stable.
+                if competitor_pinlu > max(pinlu * 6, pinlu + 1800):
+                    continue
+
+                target = max(target, min(760, competitor_weight + 8))
+
+            if target <= weight:
+                continue
+
+            mapping[(pinyin, text)] = target
+            stats[f"{stats_prefix}_single_char_head_productive_promoted"] += 1
+            bucket_touched = True
+
+        if bucket_touched:
+            stats[f"{stats_prefix}_single_char_head_productive_buckets"] += 1
+
+        signal_touched = False
+        max_bucket_weight = max(int(record["weight"]) for record in records)
+        for record in records:
+            text = str(record["text"])
+            weight = int(mapping.get((pinyin, text), int(record["weight"])))
+            pinlu = int(record["pinlu"])
+            standalone_frequency = float(record["standalone_frequency"])
+            leading = float(record["leading"])
+            leading_count = int(record["leading_count"])
+            leading_ratio = float(record["leading_ratio"])
+            pos_tag = str(record["pos"])
+
+            if weight >= max_bucket_weight:
+                continue
+            if pinlu <= 0 and standalone_frequency <= 0.0:
+                continue
+
+            head_bonus = 0
+            if leading >= 3600.0 and leading_count >= 18 and leading_ratio >= 0.50:
+                head_bonus = 80
+            elif leading >= 1800.0 and leading_count >= 10 and leading_ratio >= 0.44:
+                head_bonus = 40
+
+            signal = (
+                math.log1p(max(0, pinlu)) * 88.0
+                + math.log1p(max(0.0, standalone_frequency)) * 30.0
+                + float(input_pos_bonus(pos_tag))
+                + float(head_bonus)
+            )
+
+            better_than_all_heavier = True
+            for competitor in records:
+                competitor_text = str(competitor["text"])
+                if competitor_text == text:
+                    continue
+                competitor_weight = int(
+                    mapping.get((pinyin, competitor_text), int(competitor["weight"]))
+                )
+                if competitor_weight <= weight:
+                    continue
+
+                competitor_pinlu = int(competitor["pinlu"])
+                competitor_frequency = float(competitor["standalone_frequency"])
+                competitor_leading = float(competitor["leading"])
+                competitor_count = int(competitor["leading_count"])
+                competitor_ratio = float(competitor["leading_ratio"])
+                competitor_pos = str(competitor["pos"])
+                competitor_head_bonus = 0
+                if (
+                    competitor_leading >= 3600.0
+                    and competitor_count >= 18
+                    and competitor_ratio >= 0.50
+                ):
+                    competitor_head_bonus = 80
+                elif (
+                    competitor_leading >= 1800.0
+                    and competitor_count >= 10
+                    and competitor_ratio >= 0.44
+                ):
+                    competitor_head_bonus = 40
+                competitor_signal = (
+                    math.log1p(max(0, competitor_pinlu)) * 88.0
+                    + math.log1p(max(0.0, competitor_frequency)) * 30.0
+                    + float(input_pos_bonus(competitor_pos))
+                    + float(competitor_head_bonus)
+                )
+
+                if (
+                    competitor_pinlu >= max(pinlu * 3.8, pinlu + 420)
+                    and competitor_frequency >= max(
+                        standalone_frequency * 1.28,
+                        standalone_frequency + 1200.0,
+                    )
+                ):
+                    better_than_all_heavier = False
+                    break
+                candidate_pinlu_frequency_dominant = (
+                    pinlu >= max(competitor_pinlu * 3.5, competitor_pinlu + 420)
+                    and standalone_frequency
+                    >= max(competitor_frequency * 1.25, competitor_frequency + 1200.0)
+                )
+                if candidate_pinlu_frequency_dominant:
+                    if signal + 96.0 < competitor_signal:
+                        better_than_all_heavier = False
+                        break
+                    continue
+                if signal < competitor_signal + 72.0:
+                    better_than_all_heavier = False
+                    break
+
+            if not better_than_all_heavier:
+                continue
+
+            target = min(780, max_bucket_weight + 8)
+            if target <= weight:
+                continue
+
+            mapping[(pinyin, text)] = target
+            stats[f"{stats_prefix}_single_char_input_signal_promoted"] += 1
+            signal_touched = True
+
+        if signal_touched:
+            stats[f"{stats_prefix}_single_char_input_signal_buckets"] += 1
+
+    return stats
+
+
 def _dampen_compound_root_inflated_single_chars(
     mapping: Dict[Tuple[str, str], int],
     leading_support_sum_map: Dict[Tuple[str, str], float] | None,
@@ -17562,6 +17815,8 @@ def main() -> int:
     curated_daily_tc_terms: Set[str] = set()
     single_char_frequency_map: Dict[str, float] = {}
     tc_single_char_frequency_map: Dict[str, float] = {}
+    single_char_pos_map: Dict[str, str] = {}
+    tc_single_char_pos_map: Dict[str, str] = {}
     curated_daily_entries: List[Tuple[str, str, float, str]] = []
     curated_daily_parse_stats: Dict[str, int] = {}
     curated_daily_supplement_sc_terms: Set[str] = set()
@@ -18604,7 +18859,7 @@ def main() -> int:
                 source_id="jieba-dict",
                 download_url=JIEBA_DICT_URL,
             )
-            jieba_entries, _jieba_pos_map, unihan_jieba_stats = _parse_jieba_frequency_entries(
+            jieba_entries, unihan_jieba_pos_map, unihan_jieba_stats = _parse_jieba_frequency_entries(
                 jieba_payload,
                 1,
             )
@@ -18613,10 +18868,23 @@ def main() -> int:
                 for text, freq in jieba_entries.items()
                 if _cjk_len(text) == 1 and CJK_FULL_RE.fullmatch(text)
             }
+            single_char_pos_map = {
+                text: pos_tag
+                for text, pos_tag in unihan_jieba_pos_map.items()
+                if _cjk_len(text) == 1 and CJK_FULL_RE.fullmatch(text)
+            }
             tc_single_char_frequency_map = _build_tc_signal_map(
                 single_char_frequency_map,
                 opencc_tc_to_sc_map,
             )
+            tc_single_char_pos_map = {
+                text: pos_tag
+                for text, pos_tag in _build_tc_pos_map(
+                    single_char_pos_map,
+                    opencc_tc_to_sc_map,
+                ).items()
+                if _cjk_len(text) == 1 and CJK_FULL_RE.fullmatch(text)
+            }
         (
             trad_to_simp_char_map,
             simp_to_trad_char_map,
@@ -18649,6 +18917,40 @@ def main() -> int:
                 tc_script_chars,
                 tc_shared_identity_chars,
             )
+        if single_char_frequency_map:
+            variant_frequency_terms = 0
+            for trad_ch, simp_ch in trad_to_simp_char_map.items():
+                if (
+                    _cjk_len(trad_ch) != 1
+                    or _cjk_len(simp_ch) != 1
+                    or not CJK_FULL_RE.fullmatch(trad_ch)
+                    or not CJK_FULL_RE.fullmatch(simp_ch)
+                ):
+                    continue
+                signal = single_char_frequency_map.get(simp_ch, 0.0)
+                if signal <= tc_single_char_frequency_map.get(trad_ch, 0.0):
+                    continue
+                tc_single_char_frequency_map[trad_ch] = signal
+                variant_frequency_terms += 1
+            unihan_jieba_stats["jieba_tc_single_char_variant_frequency_terms"] = (
+                variant_frequency_terms
+            )
+        if single_char_pos_map:
+            variant_pos_terms = 0
+            for trad_ch, simp_ch in trad_to_simp_char_map.items():
+                if (
+                    _cjk_len(trad_ch) != 1
+                    or _cjk_len(simp_ch) != 1
+                    or not CJK_FULL_RE.fullmatch(trad_ch)
+                    or not CJK_FULL_RE.fullmatch(simp_ch)
+                ):
+                    continue
+                pos_tag = single_char_pos_map.get(simp_ch, "")
+                if not pos_tag or tc_single_char_pos_map.get(trad_ch) == pos_tag:
+                    continue
+                tc_single_char_pos_map[trad_ch] = pos_tag
+                variant_pos_terms += 1
+            unihan_jieba_stats["jieba_tc_single_char_variant_pos_terms"] = variant_pos_terms
         overrides: Dict[str, str] = {}
         if args.pinyin_overrides:
             overrides = _load_pinyin_overrides(repo_root / args.pinyin_overrides)
@@ -19907,6 +20209,28 @@ def main() -> int:
     )
     stats.update(sc_single_char_rebalance_stats)
     stats.update(tc_single_char_rebalance_stats)
+    sc_single_char_head_productivity_stats = _promote_single_char_homophones_by_head_productivity(
+        sc_map,
+        sc_leading_term_count_map,
+        sc_leading_support_sum_map,
+        sc_family_support_sum_map,
+        unihan_pinlu_detail_map,
+        "sc_final",
+        single_char_frequency_map=single_char_frequency_map,
+        single_char_pos_map=single_char_pos_map,
+    )
+    tc_single_char_head_productivity_stats = _promote_single_char_homophones_by_head_productivity(
+        tc_map,
+        tc_leading_term_count_map,
+        tc_leading_support_sum_map,
+        tc_family_support_sum_map,
+        unihan_pinlu_detail_map,
+        "tc_final",
+        single_char_frequency_map=tc_single_char_frequency_map,
+        single_char_pos_map=tc_single_char_pos_map,
+    )
+    stats.update(sc_single_char_head_productivity_stats)
+    stats.update(tc_single_char_head_productivity_stats)
     sc_single_char_compound_root_stats = _dampen_compound_root_inflated_single_chars(
         sc_map,
         sc_leading_support_sum_map,
@@ -19925,6 +20249,28 @@ def main() -> int:
     )
     stats.update(sc_single_char_compound_root_stats)
     stats.update(tc_single_char_compound_root_stats)
+    sc_single_char_final_input_stats = _promote_single_char_homophones_by_head_productivity(
+        sc_map,
+        sc_leading_term_count_map,
+        sc_leading_support_sum_map,
+        sc_family_support_sum_map,
+        unihan_pinlu_detail_map,
+        "sc_final_post",
+        single_char_frequency_map=single_char_frequency_map,
+        single_char_pos_map=single_char_pos_map,
+    )
+    tc_single_char_final_input_stats = _promote_single_char_homophones_by_head_productivity(
+        tc_map,
+        tc_leading_term_count_map,
+        tc_leading_support_sum_map,
+        tc_family_support_sum_map,
+        unihan_pinlu_detail_map,
+        "tc_final_post",
+        single_char_frequency_map=tc_single_char_frequency_map,
+        single_char_pos_map=tc_single_char_pos_map,
+    )
+    stats.update(sc_single_char_final_input_stats)
+    stats.update(tc_single_char_final_input_stats)
 
     _write_dict(
         output_sc,

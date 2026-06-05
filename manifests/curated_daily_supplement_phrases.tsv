@@ -3,6 +3,8 @@
 # not inherit the high-priority daily/chat weight floor from curated_daily_phrases.tsv.
 # technical/domain or phrase-fragment supplements that should stay visible without
 # outranking more common homophones
+舔舔	舔舔	0.34	tiantian
+舔舔看	舔舔看	0.34	tiantiankan
 坍缩	坍缩	0.82	tansuo
 指导	指導	0.84	zhidao
 长时	長時	0.82	changshi
