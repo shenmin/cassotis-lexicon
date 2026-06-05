@@ -2562,6 +2562,7 @@ danhexibao	單核|細胞	497
 danheyinzi	單核|因子	486
 danjianshouti	膽鹼|受體	430
 danjiapaidang	擔架|拍檔	464
+danjiyouxi	單機|遊戲	515
 danketegongdui	彈殼|特攻隊	407
 danliankebian	單鏈|可變	396
 danliankebianpianduan	單鏈|可變|片段	478
@@ -3951,7 +3952,7 @@ fangzhiheidaodaheng	放置|黑道|大亨	456
 fangzhihuiguan	紡織|會館	466
 fangzhiyouxi	放置|遊戲	499
 fangzhuxuanju	放逐|選舉	464
-fangzongbuji	放縱|不羈	451
+fangzongbuji	放縱|不羈	480
 fanhuihanshu	返回|函數	487
 fanhuncaokeli	返魂草|顆粒	456
 fanjijiandie	反擊|間諜	464
@@ -6033,7 +6034,7 @@ hezifanyinglu	核子|反應爐	427
 heziliming	核子|黎明	415
 heziwuli	核子|物理	476
 heziwulixue	核子|物理學	489
-hezonglianheng	合縱|連橫	469
+hezonglianheng	合縱|連橫	484
 hezuodianzi	合作|電子	417
 hezuodianziyouxi	合作|電子|遊戲	499
 hezuohuoban	合作|伙伴	466
@@ -9281,7 +9282,7 @@ lielurenxilie	獵鹿人|系列	440
 lieninggongyuan	列寧|公園	423
 lieningyanjiusuo	列寧|研究所	464
 lieningzhuyi	列寧|主義	426
-lieqiangxiaowu	獵槍|小屋	450
+lieqiangxiaowu	獵槍|小屋	447
 lierenxilie	獵人|系列	431
 lieshimunian	烈士|暮年	484
 lieyantongmeng	烈焰|同盟	467
@@ -11885,7 +11886,7 @@ qixinxieli	齊心|協力	490
 qixubianmi	氣虛|便祕	399
 qixuepingzhang	氣血|屏障	477
 qixueyunxing	氣血|運行	470
-qiyanxiaozhang	氣焰|囂張	451
+qiyanxiaozhang	氣焰|囂張	452
 qiyeguanli	企業|管理	487
 qiyejingying	企業|經營	470
 qiyewenhua	企業|文化	486
@@ -12629,7 +12630,8 @@ ruxianrutouzhuangliu	乳腺|乳頭狀瘤	475
 ruxianwaike	乳腺|外科	471
 ruxianxianwei	乳腺|纖維	401
 ruxianxianweixianliu	乳腺|纖維|腺瘤	483
-ruxianxiaoyezengsheng	乳腺|小葉增生	481
+ruxianxiaoye	乳腺|小葉	401
+ruxianxiaoyezengsheng	乳腺|小葉|增生	483
 ruxianzengsheng	乳腺|增生	460
 ruxiasuoshi	如下|所示	520
 ruyazhiliu	乳牙|滯留	469
@@ -12813,7 +12815,7 @@ shangdimoni	上帝|模擬	417
 shangdimoniyouxi	上帝|模擬|遊戲	499
 shangfafenming	賞罰|分明	445
 shanggantuya	傷感|塗鴉	463
-shanggujuanzhou	上古|卷軸	415
+shanggujuanzhou	上古|卷軸	414
 shanggushiji	上古|世紀	423
 shangguzhanzheng	上古|戰爭	361
 shangguzhanzhengyishu	上古|戰爭|藝術	443
@@ -13832,7 +13834,7 @@ shilihuajiedian	實例化|節點	505
 shilijiance	視力|檢測	483
 shilijiaoben	示例|腳本	508
 shilisangshi	視力|喪失	470
-shilixiaoren	勢利|小人	408
+shilixiaoren	勢利|小人	443
 shiliyinqing	視力|引擎	506
 shiliyiyuan	市立|醫院	486
 shiluojiyi	失落|記憶	464
@@ -16628,7 +16630,7 @@ xiaoqiaolinglong	小巧|玲瓏	429
 xiaoqukeneng	消去|可能	469
 xiaorbiyan	小兒|鼻炎	422
 xiaorchangyan	小兒|腸炎	422
-xiaorendezhi	小人|得志	438
+xiaorendezhi	小人|得志	473
 xiaorganmao	小兒|感冒	434
 xiaorganmaokeli	小兒|感冒|顆粒	367
 xiaorganyan	小兒|肝炎	422
@@ -16677,7 +16679,7 @@ xiaoxinjinshen	小心|謹慎	493
 xiaoxiongmenggongchang	小熊|夢工廠	439
 xiaoxixinhao	消息|信號	416
 xiaoxixinhaozhongduan	消息|信號|中斷	498
-xiaoyangxiaoen	小羊|肖恩	416
+xiaoyangxiaoen	小羊|肖恩	394
 xiaoyanlidanpian	消炎|利膽片	443
 xiaoyantuire	消炎|退熱	374
 xiaoyantuirekeli	消炎|退熱|顆粒	456
@@ -16688,7 +16690,8 @@ xiaoyanzhitonggao	消炎|止痛膏	442
 xiaoyaofawai	逍遙|法外	474
 xiaoyaowannongsuowan	逍遙丸|濃縮丸	454
 xiaoyaozizai	逍遙|自在	488
-xiaozhangqiyan	囂張|氣焰	431
+xiaoyezengsheng	小葉|增生	486
+xiaozhangqiyan	囂張|氣焰	432
 xiaozhangyishi	囂張|一時	479
 xiaozhenjinghun	小鎮|驚魂	462
 xiaozhenyingxiong	小鎮|英雄	425
@@ -17660,7 +17663,7 @@ xuexingjingye	血性|精液	415
 xuexingkangyuan	血型|抗原	403
 xuexingtangdanbai	血型|糖蛋白	440
 xuexingwuzhi	血型|物質	436
-xuexingxiaoyuan	血腥|校園	464
+xuexingxiaoyuan	血腥|校園	460
 xuexingxitong	血型|系統	436
 xuexiqianyi	學習|遷移	483
 xuexiquxian	學習|曲線	497
@@ -19550,7 +19553,7 @@ yufangjiezhong	預防|接種	494
 yufangkouqiang	預防|口腔	375
 yufangkouqiangyixue	預防|口腔|醫學	457
 yufangweizhu	預防|為主	470
-yufangxiaoli	預防|效力	486
+yufangxiaoli	預防|效力	478
 yufangxingshoushu	預防性|手術	463
 yufangyixue	預防|醫學	470
 yufangzhushe	預防|注射	500
@@ -20221,7 +20224,7 @@ zhijianshumu	只見|樹木	478
 zhijianzhanzheng	指尖|戰爭	464
 zhijiaozhuanwan	直角|轉彎	383
 zhijiaozhuanwanjieti	直角|轉彎|階梯	465
-zhijiaozuobiao	直角|座標	466
+zhijiaozuobiao	直角|座標	474
 zhijiecanyu	直接|參與	480
 zhijiedanhongsu	直接|膽紅素	457
 zhijiedianli	直接|電離	417
@@ -21374,7 +21377,7 @@ zuqiufengyun	足球|風雲	464
 zuqiujingli	足球|經理	428
 zuqiujingliren	足球|經理人	434
 zuqiuwansui	足球|萬歲	434
-zuqiuxiaojiang	足球|小將	467
+zuqiuxiaojiang	足球|小將	454
 zuqiuxiaozi	足球|小子	467
 zuqundongtai	族羣|動態	483
 zuqunguanxi	族羣|關係	476
