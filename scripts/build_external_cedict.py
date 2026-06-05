@@ -5079,6 +5079,7 @@ def _rerank_homophone_buckets(
     term_semantic_bonus_map: Dict[Tuple[str, str], int] | None,
     preferred_terms: Set[str] | None,
     stats_prefix: str,
+    weak_leader_terms: Set[str] | None = None,
 ) -> Dict[str, int]:
     """
     Re-rank entries within each same-pinyin bucket to suppress rare/noisy
@@ -5122,6 +5123,8 @@ def _rerank_homophone_buckets(
         f"{stats_prefix}_homophone_daily_phrase_short_non_daily_damped": 0,
         f"{stats_prefix}_homophone_preferred_term_boosted": 0,
         f"{stats_prefix}_homophone_preferred_term_damped": 0,
+        f"{stats_prefix}_homophone_supplement_exact_protected": 0,
+        f"{stats_prefix}_homophone_supplement_exact_competitor_capped": 0,
         f"{stats_prefix}_homophone_short_family_noun_damped": 0,
         f"{stats_prefix}_homophone_semantic_daily_boosted": 0,
     }
@@ -5136,6 +5139,7 @@ def _rerank_homophone_buckets(
     term_style_penalty_map = term_style_penalty_map or {}
     term_semantic_bonus_map = term_semantic_bonus_map or {}
     preferred_terms = preferred_terms or set()
+    weak_leader_terms = weak_leader_terms or set()
     char_prior = _build_effective_char_prior(mapping, char_frequency_prior)
     edge_family_support = _build_edge_family_support_for_terms(mapping)
     buckets: Dict[str, List[Tuple[str, int]]] = {}
@@ -5156,6 +5160,9 @@ def _rerank_homophone_buckets(
         bucket_has_daily_number_term = False
         bucket_has_short_everyday_term = False
         bucket_has_preferred_term = False
+        bucket_has_supplement_exact_term = False
+        bucket_supplement_exact_weight = 0
+        bucket_supplement_exact_signal = -1.0
         bucket_has_short_popular_named_term = False
         bucket_has_chat_prefixed_short_term = False
         bucket_dominant_common_text = ""
@@ -5192,6 +5199,17 @@ def _rerank_homophone_buckets(
             char_score = _compute_text_single_char_prior(text, char_prior)
             pos_tag = jieba_pos_map.get(text, "")
             semantic_bonus = term_semantic_bonus_map.get((pinyin, text), 0)
+            supplement_exact_support = (
+                text in weak_leader_terms
+                and 2 <= text_len <= 4
+                and not count_measure_support
+                and not _is_pure_daily_number_word(text)
+                and (
+                    usage_score >= 0.18
+                    or source_hits >= 1
+                    or jieba_direct_score >= 0.08
+                )
+            )
             semantic_daily_support = (
                 text_len <= 3
                 and semantic_bonus >= 120
@@ -5204,6 +5222,11 @@ def _rerank_homophone_buckets(
                     + min(source_hits, 3) * 0.035
                     + pageview_score * 0.12
                 )
+                if supplement_exact_support:
+                    direct_common_score += min(
+                        0.40,
+                        0.18 + usage_score * 0.35 + min(source_hits, 2) * 0.03,
+                    )
                 if direct_common_score > bucket_direct_leader_score:
                     bucket_direct_runner_up = bucket_direct_leader_score
                     bucket_direct_leader_score = direct_common_score
@@ -5255,6 +5278,21 @@ def _rerank_homophone_buckets(
             if semantic_daily_support:
                 bucket_has_short_everyday_term = True
                 bucket_has_daily_phrase_term = True
+            if supplement_exact_support:
+                bucket_has_daily_phrase_term = True
+                bucket_has_short_everyday_term = True
+                bucket_has_supplement_exact_term = True
+                supplement_signal = (
+                    usage_score * 0.42
+                    + jieba_direct_score * 0.36
+                    + min(1.0, source_hits / 4.0) * 0.12
+                )
+                if supplement_signal > bucket_supplement_exact_signal:
+                    bucket_supplement_exact_signal = supplement_signal
+                    bucket_supplement_exact_weight = max(
+                        bucket_supplement_exact_weight,
+                        min(max(1, min(1000, int(weight))), CURATED_DAILY_SUPPLEMENT_WEIGHT_CAP),
+                    )
             if (not count_measure_support) and _is_daily_phrase_candidate(
                 text,
                 text_len=text_len,
@@ -5331,6 +5369,17 @@ def _rerank_homophone_buckets(
             char_score = _compute_text_single_char_prior(text, char_prior)
             pos_tag = jieba_pos_map.get(text, "")
             semantic_bonus = term_semantic_bonus_map.get((pinyin, text), 0)
+            supplement_exact_support = (
+                text in weak_leader_terms
+                and 2 <= text_len <= 4
+                and not count_measure_support
+                and not _is_pure_daily_number_word(text)
+                and (
+                    usage_score >= 0.18
+                    or source_hits >= 1
+                    or jieba_direct_score >= 0.08
+                )
+            )
             semantic_daily_support = (
                 text_len <= 3
                 and semantic_bonus >= 120
@@ -5351,6 +5400,8 @@ def _rerank_homophone_buckets(
             )
             if semantic_daily_support:
                 daily_phrase_support = True
+            if supplement_exact_support:
+                daily_phrase_support = True
             if count_measure_support:
                 daily_phrase_support = False
             short_everyday_support = _is_short_everyday_term_candidate(
@@ -5364,6 +5415,8 @@ def _rerank_homophone_buckets(
                 char_score=char_score,
             )
             if semantic_daily_support and text_len <= 2:
+                short_everyday_support = True
+            if supplement_exact_support and text_len <= 2:
                 short_everyday_support = True
             if count_measure_support:
                 short_everyday_support = False
@@ -5558,6 +5611,16 @@ def _rerank_homophone_buckets(
             )
             pos_tag = jieba_pos_map.get(text, "")
             semantic_bonus = term_semantic_bonus_map.get((pinyin, text), 0)
+            supplement_exact_support = (
+                text in weak_leader_terms
+                and 2 <= text_len <= 4
+                and not _is_pure_daily_number_word(text)
+                and (
+                    usage_score >= 0.18
+                    or source_hits >= 1
+                    or jieba_direct_score >= 0.08
+                )
+            )
             semantic_daily_support = (
                 text_len <= 3
                 and semantic_bonus >= 120
@@ -5605,6 +5668,8 @@ def _rerank_homophone_buckets(
             )
             if semantic_daily_support:
                 daily_phrase_support = True
+            if supplement_exact_support:
+                daily_phrase_support = True
             short_everyday_support = _is_short_everyday_term_candidate(
                 text,
                 text_len=text_len,
@@ -5616,6 +5681,8 @@ def _rerank_homophone_buckets(
                 char_score=char_score,
             )
             if semantic_daily_support and text_len <= 2:
+                short_everyday_support = True
+            if supplement_exact_support and text_len <= 2:
                 short_everyday_support = True
             daily_number_support = _is_daily_number_word_candidate(
                 text,
@@ -6123,6 +6190,23 @@ def _rerank_homophone_buckets(
                     delta -= 96 if text_len <= 2 else 44
                     stats[f"{stats_prefix}_homophone_preferred_term_damped"] += 1
 
+            supplement_competitor_cap = 0
+            if (
+                bucket_has_supplement_exact_term
+                and not supplement_exact_support
+                and text_len <= 3
+                and bucket_supplement_exact_weight > 0
+                and pos_tag.startswith("t")
+                and wiki_support
+                and pageview_score >= 0.12
+                and usage_score >= 0.20
+                and jieba_direct_score < 0.35
+            ):
+                # A pageview-heavy historical/time-label term is a valid exact
+                # entry, but it should not be boosted above an explicitly
+                # curated daily supplement in the same homophone bucket.
+                supplement_competitor_cap = max(1, bucket_supplement_exact_weight - 24)
+
             if bucket_has_conversational_short_term and text_len <= 2:
                 # Keep conversational preference as a mild tiebreaker only.
                 # The old ±300~400 forcing was too aggressive and could demote
@@ -6211,10 +6295,22 @@ def _rerank_homophone_buckets(
                 delta = -delta_cap
             delta += post_cap_bonus
 
-            if delta == 0:
-                continue
-
             new_weight = max(1, min(1000, weight + delta))
+            if supplement_exact_support:
+                supplement_floor = min(
+                    max(1, min(1000, int(weight))),
+                    CURATED_DAILY_SUPPLEMENT_WEIGHT_CAP,
+                )
+                if new_weight < supplement_floor:
+                    new_weight = supplement_floor
+                    stats[f"{stats_prefix}_homophone_supplement_exact_protected"] += 1
+            elif supplement_competitor_cap > 0 and new_weight > supplement_competitor_cap:
+                new_weight = supplement_competitor_cap
+                stats[
+                    f"{stats_prefix}_homophone_supplement_exact_competitor_capped"
+                ] += 1
+            if delta == 0 and new_weight == weight:
+                continue
             if new_weight == weight:
                 continue
 
@@ -6314,6 +6410,7 @@ def _cap_short_domain_terms_against_direct_common(
     char_frequency_prior: Dict[str, float] | None,
     preferred_terms: Set[str] | None,
     stats_prefix: str,
+    weak_leader_terms: Set[str] | None = None,
 ) -> Dict[str, int]:
     """Keep wiki/family-supported short domain nouns below direct common terms.
 
@@ -6333,6 +6430,7 @@ def _cap_short_domain_terms_against_direct_common(
     jieba_direct_signal_map = jieba_direct_signal_map or {}
     jieba_pos_map = jieba_pos_map or {}
     preferred_terms = preferred_terms or set()
+    weak_leader_terms = weak_leader_terms or set()
     char_prior = _build_effective_char_prior(mapping, char_frequency_prior)
     edge_family_support = _build_edge_family_support_for_terms(mapping)
 
@@ -6350,6 +6448,8 @@ def _cap_short_domain_terms_against_direct_common(
         leader_signal = -1.0
         leader_runner_up = -1.0
         for text, _weight in items:
+            if text in weak_leader_terms:
+                continue
             text_len = _cjk_len(text)
             if text_len <= 0 or text_len > 3:
                 continue
@@ -6414,7 +6514,7 @@ def _cap_short_domain_terms_against_direct_common(
 
         bucket_touched = False
         for text, weight in items:
-            if text == leader_text or text in preferred_terms:
+            if text == leader_text or text in preferred_terms or text in weak_leader_terms:
                 continue
             text_len = _cjk_len(text)
             if text_len != 2:
@@ -6649,6 +6749,7 @@ def _cap_low_signal_competitors_against_direct_leaders(
                 or text_len < 2
                 or text_len > 3
                 or _is_pure_daily_number_word(text)
+                or text in weak_leader_terms
             ):
                 continue
             if text_len == 2 and len(text) == 2 and text[0] == text[1]:
@@ -6809,6 +6910,7 @@ def _cap_short_exact_homophones_by_direct_signal(
     stats = {
         f"{stats_prefix}_short_exact_direct_signal_buckets": 0,
         f"{stats_prefix}_short_exact_direct_signal_capped": 0,
+        f"{stats_prefix}_short_exact_direct_evidence_dominated_capped": 0,
     }
     if not mapping:
         return stats
@@ -6855,7 +6957,20 @@ def _cap_short_exact_homophones_by_direct_signal(
         if style_penalty > 0:
             direct_signal -= min(0.18, style_penalty / 1000.0)
         if semantic_bonus > 0:
-            direct_signal += min(0.20, semantic_bonus / 1200.0)
+            semantic_cap = 0.20
+            if (
+                _is_noun_pos(pos_tag)
+                and semantic_bonus <= 240
+                and usage_score < 0.16
+                and jieba_score < 0.12
+                and pageview_score < 0.06
+                and source_hits <= 1
+            ):
+                # CEDICT "daily concrete object" clues are visibility hints for
+                # noun entries.  They should not let a low-direct-signal object
+                # noun outrank a same-pinyin term with stronger usage evidence.
+                semantic_cap = 0.04
+            direct_signal += min(semantic_cap, semantic_bonus / 1200.0)
         return (
             max(0.0, min(1.0, direct_signal)),
             usage_score,
@@ -6936,12 +7051,26 @@ def _cap_short_exact_homophones_by_direct_signal(
                 and leader_signal >= signal + signal_margin
                 and direct_total <= leader_direct_total + 0.18
             )
+            direct_evidence_dominated = (
+                leader_signal >= signal + signal_margin
+                and direct_gap >= 0.12
+                and direct_total <= leader_direct_total + 0.04
+                and usage_score <= leader_usage + 0.03
+                and jieba_score <= leader_jieba + 0.03
+                and pageview_score <= leader_page + 0.05
+                and source_hits <= leader_hits + 1
+                and semantic_bonus <= leader_semantic + 300
+                and style_penalty < 120
+                and not _is_named_entity_pos(pos_tag)
+                and not _is_conversational_pos(pos_tag)
+            )
             if not (
                 leader_signal >= signal + signal_margin
                 and (
                     visibility_inflated
                     or weak_direct_competitor
                     or semantic_daily_leader
+                    or direct_evidence_dominated
                     or style_penalty >= 80
                 )
             ):
@@ -6957,12 +7086,16 @@ def _cap_short_exact_homophones_by_direct_signal(
             cap_margin = 36 + min(132, int(round((leader_signal - signal) * 260.0)))
             if visibility_inflated:
                 cap_margin += 28
+            if direct_evidence_dominated:
+                cap_margin += 28
             cap = max(1, leader_weight - cap_margin)
             if weight <= cap:
                 continue
 
             mapping[(pinyin, text)] = cap
             stats[f"{stats_prefix}_short_exact_direct_signal_capped"] += 1
+            if direct_evidence_dominated:
+                stats[f"{stats_prefix}_short_exact_direct_evidence_dominated_capped"] += 1
             touched = True
 
         if touched:
@@ -14131,6 +14264,7 @@ def _enforce_final_normative_homophone_order(
     term_semantic_bonus_map: Dict[Tuple[str, str], int] | None,
     stats_prefix: str,
     bucket_pinyin_map: Dict[Tuple[str, str], str] | None = None,
+    protected_terms: Set[str] | None = None,
 ) -> Dict[str, int]:
     """Final homophone ordering guard for exact candidates.
 
@@ -14153,6 +14287,7 @@ def _enforce_final_normative_homophone_order(
     term_style_penalty_map = term_style_penalty_map or {}
     term_semantic_bonus_map = term_semantic_bonus_map or {}
     bucket_pinyin_map = bucket_pinyin_map or {}
+    protected_terms = protected_terms or set()
     char_prior = _build_effective_char_prior(mapping, char_frequency_prior)
     support_index = _build_longer_prefix_term_support_index(
         mapping,
@@ -14267,6 +14402,8 @@ def _enforce_final_normative_homophone_order(
             return max(candidates, key=lambda item: (item[3][9], item[2]))
 
         for pinyin, text, weight, item_parts in enriched:
+            if text in protected_terms:
+                continue
             (
                 usage_score,
                 source_hits,
@@ -19210,6 +19347,7 @@ def main() -> int:
         term_semantic_bonus_map=cedict_semantic_bonus_map,
         preferred_terms=curated_daily_sc_terms,
         stats_prefix="sc",
+        weak_leader_terms=curated_daily_supplement_sc_terms,
     )
     stats.update(sc_homophone_stats)
     sc_short_domain_cap_stats = _cap_short_domain_terms_against_direct_common(
@@ -19224,6 +19362,7 @@ def main() -> int:
         char_frequency_prior=char_frequency_prior,
         preferred_terms=curated_daily_sc_terms,
         stats_prefix="sc",
+        weak_leader_terms=curated_daily_supplement_sc_terms,
     )
     stats.update(sc_short_domain_cap_stats)
     sc_low_signal_stats = _filter_low_signal_rare_entries(
@@ -19282,6 +19421,7 @@ def main() -> int:
         term_semantic_bonus_map=cedict_semantic_bonus_map,
         preferred_terms=curated_daily_tc_terms,
         stats_prefix="tc",
+        weak_leader_terms=curated_daily_supplement_tc_terms,
     )
     stats.update(tc_homophone_stats)
     tc_short_domain_cap_stats = _cap_short_domain_terms_against_direct_common(
@@ -19296,6 +19436,7 @@ def main() -> int:
         char_frequency_prior=tc_char_frequency_prior,
         preferred_terms=curated_daily_tc_terms,
         stats_prefix="tc",
+        weak_leader_terms=curated_daily_supplement_tc_terms,
     )
     stats.update(tc_short_domain_cap_stats)
     tc_low_signal_stats = _filter_low_signal_rare_entries(
@@ -20073,6 +20214,7 @@ def main() -> int:
         cedict_semantic_bonus_map,
         "sc_final",
         bucket_pinyin_map=sc_output_pinyin_bucket_map,
+        protected_terms=curated_daily_supplement_sc_terms,
     )
     tc_final_normative_homophone_stats = _enforce_final_normative_homophone_order(
         tc_map,
@@ -20086,6 +20228,7 @@ def main() -> int:
         cedict_semantic_bonus_map,
         "tc_final",
         bucket_pinyin_map=tc_output_pinyin_bucket_map,
+        protected_terms=curated_daily_supplement_tc_terms,
     )
     stats.update(sc_final_normative_homophone_stats)
     stats.update(tc_final_normative_homophone_stats)
