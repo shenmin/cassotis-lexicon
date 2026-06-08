@@ -480,7 +480,8 @@ DAILY_CHAT_SEED_SUFFIXES = (
     "来",
     "去",
 )
-DAILY_CHAT_SEED_CHARS = set("的得地就也还才又都把被给跟让像向对从为在这那哪怎啥谁您你我他她它咱吗呢吧呀啊嘛哦呗啦了着过说看来去")
+DAILY_CHAT_SEED_CHARS = set("的得地就也还才又都把被给跟让像向对从为在将这那哪怎啥谁您你我他她它咱吗呢吧呀啊嘛哦呗啦了着过说看来去")
+DAILY_CHAT_SEED_CHARS.update(("將",))
 DAILY_CHAT_SEED_CHARS.update(("\u6539", "\u6210"))
 DAILY_ASPECT_SUFFIX_CHARS = set("\u4e86\u7740\u8fc7")
 CURATED_PRODUCTIVE_STATE_PREFIX_CHARS = set("\u5df2\u6ca1\u6c92\u672a")
@@ -4979,6 +4980,9 @@ def _propagate_tc_homophone_preference_from_sc(
     tc_map: Dict[Tuple[str, str], int],
     tc_to_sc_map: Dict[str, Set[str]] | None,
     stats_prefix: str,
+    *,
+    min_boost_gap: int = 56,
+    force_sc_leader_order: bool = False,
 ) -> Dict[str, int]:
     stats = {
         f"{stats_prefix}_homophone_sc_guided_buckets": 0,
@@ -5011,7 +5015,7 @@ def _propagate_tc_homophone_preference_from_sc(
         if not sc_bucket:
             continue
 
-        aligned_items: List[Tuple[str, int, int]] = []
+        aligned_items: List[Tuple[str, int, int, str]] = []
         best_sc_weight = 0
         best_tc_weight = 0
         for tc_text, tc_weight in tc_items:
@@ -5021,12 +5025,16 @@ def _propagate_tc_homophone_preference_from_sc(
             candidate_sc_texts.update(tc_to_sc_map.get(tc_text, set()))
 
             sc_weight = 0
+            best_sc_text_for_tc = ""
             for sc_text in candidate_sc_texts:
-                sc_weight = max(sc_weight, sc_bucket.get(sc_text, 0))
+                candidate_weight = sc_bucket.get(sc_text, 0)
+                if candidate_weight > sc_weight:
+                    sc_weight = candidate_weight
+                    best_sc_text_for_tc = sc_text
             if sc_weight <= 0:
                 continue
 
-            aligned_items.append((tc_text, tc_weight, sc_weight))
+            aligned_items.append((tc_text, tc_weight, sc_weight, best_sc_text_for_tc))
             best_sc_weight = max(best_sc_weight, sc_weight)
             best_tc_weight = max(best_tc_weight, tc_weight)
 
@@ -5034,13 +5042,29 @@ def _propagate_tc_homophone_preference_from_sc(
             continue
 
         stats[f"{stats_prefix}_homophone_sc_guided_buckets"] += 1
-        for tc_text, tc_weight, sc_weight in aligned_items:
+        for tc_text, tc_weight, sc_weight, best_sc_text_for_tc in aligned_items:
             sc_ratio = min(1.0, max(0.0, float(sc_weight) / float(best_sc_weight)))
             target_weight = max(1, int(round(best_tc_weight * sc_ratio)))
             gap = target_weight - tc_weight
             key = (pinyin, tc_text)
 
-            if gap >= 56:
+            same_sc_higher_tc_variant = any(
+                other_tc_text != tc_text
+                and other_sc_text == best_sc_text_for_tc
+                and other_tc_weight > tc_weight
+                for other_tc_text, other_tc_weight, _other_sc_weight, other_sc_text in aligned_items
+            )
+            force_leader_for_item = (
+                force_sc_leader_order
+                and sc_ratio >= 0.99
+                and gap > 0
+                and bool(best_sc_text_for_tc)
+                and not same_sc_higher_tc_variant
+            )
+            should_boost = gap >= min_boost_gap or (
+                force_leader_for_item
+            )
+            if should_boost:
                 if sc_ratio >= 0.99:
                     boost_factor = 0.68
                 elif sc_ratio >= 0.95:
@@ -5049,6 +5073,8 @@ def _propagate_tc_homophone_preference_from_sc(
                     boost_factor = 0.42
                 boost = min(220, max(24, int(round(gap * boost_factor))))
                 new_weight = tc_weight + boost
+                if force_leader_for_item:
+                    new_weight = max(new_weight, min(1000, best_tc_weight + 1))
                 if new_weight > tc_weight:
                     tc_map[key] = new_weight
                     stats[f"{stats_prefix}_homophone_sc_guided_boosted"] += 1
@@ -6517,7 +6543,7 @@ def _cap_short_domain_terms_against_direct_common(
             if text == leader_text or text in preferred_terms or text in weak_leader_terms:
                 continue
             text_len = _cjk_len(text)
-            if text_len != 2:
+            if text_len < 2 or text_len > 3:
                 continue
             metric = metrics.get(text)
             if metric is None:
@@ -7359,6 +7385,96 @@ def _boost_high_productivity_short_roots(
         mapping[(pinyin, text)] = target
         stats[f"{stats_prefix}_productive_short_roots_boosted"] += 1
         stats[f"{stats_prefix}_productive_short_roots_delta_total"] += target - current
+
+    return stats
+
+
+def _reinforce_productive_suffix_exact_terms(
+    mapping: Dict[Tuple[str, str], int],
+    usage_score_map: Dict[str, float],
+    source_hits_map: Dict[str, int],
+    pageviews_signal_map: Dict[str, float],
+    jieba_direct_signal_map: Dict[str, float],
+    jieba_pos_map: Dict[str, str],
+    stats_prefix: str,
+) -> Dict[str, int]:
+    """Lift complete short terms backed by several aligned longer suffix terms.
+
+    A short term that appears as the exact suffix of multiple high-confidence
+    longer terms is often an independent target, not a low-value fragment
+    (for example, "X优先级" supports standalone "优先级").  Keep the threshold
+    high enough so single fixed-expression tails do not inherit the full
+    longer-term weight.
+    """
+    stats = {
+        f"{stats_prefix}_productive_suffix_exact_terms_boosted": 0,
+        f"{stats_prefix}_productive_suffix_exact_terms_delta_total": 0,
+    }
+    if not mapping:
+        return stats
+
+    candidates_by_text: Dict[str, List[Tuple[str, int]]] = {}
+    for (pinyin, text), weight in mapping.items():
+        text_len = _cjk_len(text)
+        if text_len < 2 or text_len > 4:
+            continue
+        if _is_pure_daily_number_word(text) or not CJK_FULL_RE.fullmatch(text):
+            continue
+        if _is_named_entity_pos(jieba_pos_map.get(text, "")):
+            continue
+        candidates_by_text.setdefault(text, []).append((pinyin, weight))
+
+    support: Dict[Tuple[str, str], List[int]] = {}
+    for (term_pinyin, term_text), term_weight in mapping.items():
+        term_len = _cjk_len(term_text)
+        if term_len <= 3 or term_weight < 560 or not CJK_FULL_RE.fullmatch(term_text):
+            continue
+        if _is_named_entity_pos(jieba_pos_map.get(term_text, "")):
+            continue
+
+        for suffix_len in range(3, min(4, term_len - 1) + 1):
+            suffix_text = term_text[-suffix_len:]
+            for suffix_pinyin, _suffix_weight in candidates_by_text.get(suffix_text, []):
+                if term_pinyin.endswith(suffix_pinyin) and len(term_pinyin) > len(suffix_pinyin):
+                    support.setdefault((suffix_pinyin, suffix_text), []).append(term_weight)
+
+    for key, weights in support.items():
+        current = mapping.get(key, 0)
+        if current <= 0:
+            continue
+
+        pinyin, text = key
+        text_len = _cjk_len(text)
+        support_count = len(weights)
+        support_total = sum(weights)
+        min_count = 3 if text_len == 3 else 4
+        if support_count < min_count or support_total < min_count * 600:
+            continue
+
+        usage_score = min(1.0, max(0.0, usage_score_map.get(text, 0.0)))
+        source_hits = max(0, source_hits_map.get(text, 0))
+        pageview_score = min(1.0, max(0.0, pageviews_signal_map.get(text, 0.0)))
+        jieba_score = min(1.0, max(0.0, jieba_direct_signal_map.get(text, 0.0)))
+        direct_signal = usage_score + jieba_score + pageview_score + min(1.0, source_hits / 6.0)
+
+        # Without any direct support, suffix inheritance should remain a
+        # visibility floor, not an aggressive promotion.
+        base_target = 600 + min(150, (support_count - min_count) * 28)
+        if direct_signal >= 0.18 or source_hits >= 1 or pageview_score >= 0.04:
+            base_target += 60
+        else:
+            base_target = min(base_target, 660)
+
+        target = min(820, max(current, base_target))
+        if target <= current:
+            continue
+
+        mapping[key] = target
+        inherited_usage = min(0.54, 0.34 + min(0.18, support_count * 0.04))
+        usage_score_map[text] = max(usage_score, inherited_usage)
+        source_hits_map[text] = max(source_hits, min(5, 3 + support_count // 3))
+        stats[f"{stats_prefix}_productive_suffix_exact_terms_boosted"] += 1
+        stats[f"{stats_prefix}_productive_suffix_exact_terms_delta_total"] += target - current
 
     return stats
 
@@ -19324,6 +19440,27 @@ def main() -> int:
     stats["wiki_proper_augmented_sc_terms"] = len(wiki_proper_sc_terms)
     stats["wiki_proper_augmented_tc_terms"] = len(wiki_proper_tc_terms)
 
+    sc_productive_suffix_exact_stats = _reinforce_productive_suffix_exact_terms(
+        sc_map,
+        usage_score_map,
+        source_hits_map,
+        pageviews_signal_map,
+        jieba_direct_signal_map,
+        jieba_pos_map,
+        "sc",
+    )
+    tc_productive_suffix_exact_stats = _reinforce_productive_suffix_exact_terms(
+        tc_map,
+        tc_usage_score_map,
+        tc_source_hits_map,
+        tc_pageviews_signal_map,
+        tc_jieba_direct_signal_map,
+        tc_jieba_pos_map,
+        "tc",
+    )
+    stats.update(sc_productive_suffix_exact_stats)
+    stats.update(tc_productive_suffix_exact_stats)
+
     sc_multi_pronunciation_stats = _rerank_multi_pronunciation_terms(
         sc_map,
         usage_score_map=usage_score_map,
@@ -20414,6 +20551,15 @@ def main() -> int:
     )
     stats.update(sc_single_char_final_input_stats)
     stats.update(tc_single_char_final_input_stats)
+    tc_final_sc_guided_homophone_stats = _propagate_tc_homophone_preference_from_sc(
+        sc_map,
+        tc_map,
+        tc_to_sc_map,
+        stats_prefix="tc_final_post",
+        min_boost_gap=20,
+        force_sc_leader_order=True,
+    )
+    stats.update(tc_final_sc_guided_homophone_stats)
 
     _write_dict(
         output_sc,
