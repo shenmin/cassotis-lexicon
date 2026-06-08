@@ -691,6 +691,10 @@ MULTI_CHAR_TERM_DROP_OVERRIDES: Set[str] = {
     # Context-specific connector phrase; too sentence-like for lexicon output.
     "\u968f\u5373\u518d\u6b21",
     "\u96a8\u5373\u518d\u6b21",
+    # Closed particle pairs are handled by exact IME rules instead of lexicon
+    # entries, otherwise AB+tail composition can recursively create odd forms.
+    "\u7684\u5417",
+    "\u7684\u55ce",
     # Removed from curated daily: sentence fragments mined from narrow context
     # should not re-enter generated dictionaries through external title seeds.
     "不便表现",
@@ -14699,6 +14703,94 @@ def _cap_curated_daily_supplement_exact_weights(
     return stats
 
 
+def _restore_strong_curated_daily_exact_weights(
+    mapping: Dict[Tuple[str, str], int],
+    curated_entries: List[Tuple[str, str, float, str]],
+    opencc_entries: List[Tuple[str, str]],
+    simp_to_trad_char_map: Dict[str, str],
+    unihan_map: Dict[str, str],
+    unihan_readings_map: Dict[str, Set[str]],
+    unihan_source_rank_map: Dict[Tuple[str, str], int],
+    unihan_pinlu_detail_map: Dict[Tuple[str, str], int],
+    *,
+    use_traditional: bool,
+    stats_prefix: str,
+    min_hanzi: int,
+) -> Dict[str, int]:
+    """Keep explicitly high-confidence daily entries from being over-capped.
+
+    Later homophone and low-signal passes may lower exact entries to keep
+    visibility-only supplements from crowding common words.  Entries manually
+    marked as strong daily words (usage >= 0.90) are different: they are human
+    frequency anchors and should not end below same-pinyin variants.
+    """
+    stats = {
+        f"{stats_prefix}_strong_curated_daily_exact_restored": 0,
+        f"{stats_prefix}_strong_curated_daily_exact_added": 0,
+    }
+    if not mapping or not curated_entries:
+        return stats
+
+    opencc_sc_to_tc = _build_opencc_sc_to_tc_map(opencc_entries)
+    existing_texts = {text for _pinyin, text in mapping.keys()}
+
+    for sc_word, tc_word, usage_score, explicit_pinyin in curated_entries:
+        if usage_score < 0.90 or _cjk_len(sc_word) < min_hanzi:
+            continue
+
+        pinyin = explicit_pinyin or _pinyin_from_unihan(
+            sc_word,
+            unihan_map,
+            unihan_readings_map,
+            unihan_source_rank_map,
+            unihan_pinlu_detail_map,
+        )
+        if not pinyin:
+            continue
+
+        text = sc_word
+        if use_traditional:
+            text = tc_word
+            if not text:
+                tc_words = opencc_sc_to_tc.get(sc_word, set())
+                if tc_words:
+                    text = _choose_tc_phrase_candidate(
+                        sc_word,
+                        tc_words,
+                        simp_to_trad_char_map,
+                    )
+                elif sc_word in existing_texts:
+                    text = sc_word
+                else:
+                    text = _convert_sc_text_to_tc_with_phrase_hints(
+                        sc_word,
+                        opencc_sc_to_tc,
+                        simp_to_trad_char_map,
+                    )
+
+        if _cjk_len(text) < min_hanzi:
+            continue
+        if _is_pure_daily_number_word(text) or _is_daily_count_measure_phrase(text):
+            continue
+
+        key = (pinyin, text)
+        target = _finalize_curated_daily_weight(
+            1,
+            usage_score=usage_score,
+            is_number_word=False,
+            low_frequency=False,
+            text=text,
+        )
+        current = mapping.get(key)
+        if current is None:
+            continue
+        if current < target:
+            mapping[key] = target
+            stats[f"{stats_prefix}_strong_curated_daily_exact_restored"] += 1
+
+    return stats
+
+
 def _reinforce_curated_daily_existing_prefixes(
     mapping: Dict[Tuple[str, str], int],
     curated_entries: List[Tuple[str, str, float, str]],
@@ -20560,6 +20652,34 @@ def main() -> int:
         force_sc_leader_order=True,
     )
     stats.update(tc_final_sc_guided_homophone_stats)
+    sc_strong_curated_daily_exact_stats = _restore_strong_curated_daily_exact_weights(
+        sc_map,
+        curated_daily_entries,
+        opencc_entries,
+        simp_to_trad_char_map,
+        output_unihan_map,
+        output_unihan_readings_map,
+        output_unihan_source_rank_map,
+        output_unihan_pinlu_detail_map,
+        use_traditional=False,
+        stats_prefix="sc_final_post",
+        min_hanzi=args.min_hanzi,
+    )
+    tc_strong_curated_daily_exact_stats = _restore_strong_curated_daily_exact_weights(
+        tc_map,
+        curated_daily_entries,
+        opencc_entries,
+        simp_to_trad_char_map,
+        output_unihan_map,
+        output_unihan_readings_map,
+        output_unihan_source_rank_map,
+        output_unihan_pinlu_detail_map,
+        use_traditional=True,
+        stats_prefix="tc_final_post",
+        min_hanzi=args.min_hanzi,
+    )
+    stats.update(sc_strong_curated_daily_exact_stats)
+    stats.update(tc_strong_curated_daily_exact_stats)
 
     _write_dict(
         output_sc,
