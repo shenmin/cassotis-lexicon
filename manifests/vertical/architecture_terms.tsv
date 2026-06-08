@@ -287,3 +287,19 @@
 单身公寓	單身公寓	0.58	danshengongyu
 居住小区	居住小區	0.58	juzhuxiaoqu
 真皮沙发	真皮沙發	0.58	zhenpishafa
+
+# plumbing and weak-current renovation additions 2026-06-08
+增压泵	增壓泵	0.74	zengyabeng
+稳压泵	穩壓泵	0.70	wenyabeng
+循环泵	循環泵	0.72	xunhuanbeng
+热水循环泵	熱水循環泵	0.70	reshuixunhuanbeng
+回水泵	回水泵	0.70	huishuibeng
+屏蔽泵	屏蔽泵	0.66	pingbibeng
+水泵	水泵	0.72	shuibeng
+增压阀	增壓閥	0.66	zengyafa
+减压阀	減壓閥	0.68	jianyafa
+网口	網口	0.76	wangkou
+千兆网口	千兆網口	0.72	qianzhaowangkou
+百兆网口	百兆網口	0.66	baizhaowangkou
+双网口	雙網口	0.68	shuangwangkou
+网线口	網線口	0.68	wangxiankou
