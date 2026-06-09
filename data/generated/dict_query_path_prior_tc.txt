@@ -1120,7 +1120,7 @@ bufenshengfu	不分|勝負	481
 bufenzhouye	不分|晝夜	474
 bufucunzai	不復|存在	485
 bufushuitu	不服|水土	497
-bufuzhongwang	不負|眾望	459
+bufuzhongwang	不負|眾望	453
 bugangoutong	不敢|苟同	455
 buganhouren	不甘|後人	483
 buganjimo	不甘|寂寞	489
@@ -2890,7 +2890,7 @@ diannaoyouxishijie	電腦|遊戲|世界	499
 diannaozhanji	電腦|戰機	463
 diannaozhuji	電腦|主機	499
 dianpeiliuli	顛沛|流離	471
-dianqibuxian	電氣|佈線	477
+dianqibuxian	電氣|佈線	474
 dianqigongcheng	電氣|工程	484
 dianqingyuyan	靛青|預言	421
 dianqixianlu	電器|線路	478
@@ -4499,7 +4499,7 @@ fushefanghu	輻射|防護	483
 fushefenjie	輻射|分解	467
 fusheluochen	輻射|落塵	476
 fushenjingsunshang	副神經|損傷	467
-fushepingbi	輻射|屏蔽	458
+fushepingbi	輻射|屏蔽	483
 fusheqiangdu	輻射|強度	463
 fusheshaoshang	輻射|燒傷	483
 fushesunshang	輻射|損傷	470
@@ -4823,7 +4823,7 @@ gaoxueyahuanzhe	高血壓|患者	462
 gaoxueyajizheng	高血壓|急症	486
 gaoxueyanaobing	高血壓|腦病	483
 gaoxueyaqianqi	高血壓|前期	486
-gaoyaozhuanqu	高要|專區	446
+gaoyaozhuanqu	高要|專區	441
 gaoyashouduan	高壓|手段	467
 gaoyayangliaofa	高壓氧|療法	483
 gaoyayangzhiliao	高壓氧|治療	483
@@ -5243,6 +5243,7 @@ guangrongshiming	光榮|使命	465
 guangrongsuiyue	光榮|歲月	452
 guangsutuzaizi	光速|兔崽子	433
 guangxianfeiche	光線|飛車	389
+guangxianruhu	光纖|入戶	487
 guangxishifan	廣西|師範	424
 guangxiwenge	廣西|文革	407
 guangxiwengetusha	廣西|文革|屠殺	489
@@ -8196,7 +8197,7 @@ jizhuxiazhai	脊柱|狹窄	451
 jizouwangzi	疾走|王子	449
 juanjishenjing	卷積|神經	401
 juanjishenjingwangluo	卷積|神經|網絡	483
-juanqiqianxian	捐棄|前嫌	424
+juanqiqianxian	捐棄|前嫌	422
 juanqumeisu	捲曲|黴素	432
 juanqushouti	捲曲|受體	450
 juanzhihaofan	卷帙|浩繁	433
@@ -9078,9 +9079,9 @@ leimanxilie	雷曼|系列	414
 leimojishui	肋膜|積水	473
 leinitidingjiaonang	雷尼替丁|膠囊	439
 leinuogongmen	雷諾|拱門	445
-leisheerjiguan	鐳射|二極管	462
+leisheerjiguan	鐳射|二極管	460
 leisheerjiguan	雷射|二極管	486
-leishelengque	鐳射|冷卻	444
+leishelengque	鐳射|冷卻	442
 leishelengque	雷射|冷卻	475
 leishenshijie	雷神|世界	453
 leishentuoer	雷神|托爾	421
@@ -9241,7 +9242,7 @@ lianjiyouxi	聯機|遊戲	474
 lianluoganqing	聯絡|感情	479
 lianmengdonghua	聯盟|動畫	465
 lianmianbuduan	連綿|不斷	483
-lianmianbujue	連綿|不絕	465
+lianmianbujue	連綿|不絕	459
 lianmianqifu	連綿|起伏	483
 lianqiujunganran	鏈球菌|感染	479
 lianrilianye	連日|連夜	448
@@ -9806,7 +9807,7 @@ luoxuanzaojiaonang	螺旋藻|膠囊	440
 luoxuanzaoruanjiaonang	螺旋藻|軟膠囊	457
 luoyangzhuanqu	洛陽|專區	465
 luoyeguigen	落葉|歸根	434
-luoyibujue	絡繹|不絕	425
+luoyibujue	絡繹|不絕	420
 luozaishichu	落在|實處	453
 luqidongwu	陸棲|動物	457
 lurongkoufuye	鹿茸|口服液	459
@@ -10280,7 +10281,7 @@ mianfeiwangluoyouxi	免費|網絡|遊戲	499
 mianfeiyouxi	免費|遊戲	499
 miankongzhijue	面孔|知覺	486
 mianmianbuduan	綿綿|不斷	481
-mianmianbujue	綿綿|不絕	427
+mianmianbujue	綿綿|不絕	421
 mianmukezeng	面目|可憎	460
 mianmuyixin	面目|一新	474
 mianmuzhengning	面目|猙獰	484
@@ -13626,7 +13627,7 @@ shexiangshizhu	麝香|石竹	449
 shexiangtouqudong	攝像頭|驅動	468
 shexiangzhentonggao	麝香|鎮痛膏	440
 shexiangzhichuangshuan	麝香|痔瘡栓	440
-shexiashenjing	舌下|神經	448
+shexiashenjing	舌下|神經	446
 shexiashenjingjibing	舌下|神經|疾病	483
 shexiashenjingsunshang	舌下|神經|損傷	483
 shexiaxiannangzhong	舌下腺|囊腫	468
@@ -14870,7 +14871,7 @@ taoliyakefu	逃離|鴨科夫	456
 taosedazhan	桃色|大戰	435
 taosexinwen	桃色|新聞	467
 taotailangchuanshuo	桃太郎|傳說	431
-taotaobujue	滔滔|不絕	437
+taotaobujue	滔滔|不絕	431
 taotianzuixing	滔天|罪行	486
 taowangdaheng	逃亡|大亨	456
 taoxiugaiwazi	套袖改|襪子	437
@@ -15505,7 +15506,7 @@ waiweigongshi	外圍|工事	419
 waiweishijie	外圍|世界	467
 waixiangrenguohe	外鄉人|過河	436
 waixiangxingge	外向|性格	486
-waixianjiyi	外顯|記憶	449
+waixianjiyi	外顯|記憶	443
 waixianzicexu	外顯子|測序	448
 waixingmaoyi	外星|貿易	374
 waixingmaoyigongsi	外星|貿易|公司	456
@@ -15578,7 +15579,9 @@ wangluokongjian	網絡|空間	463
 wangluoleixing	網絡|類型	487
 wangluolianjie	網絡|連接	479
 wangluoliuliang	網絡|流量	497
+wangluomianban	網絡|面板	489
 wangluomingling	網絡|命令	486
+wangluomokuai	網絡|模塊	487
 wangluopeizhi	網絡|配置	488
 wangluoqibing	網絡|奇兵	439
 wangluoqiling	網絡|欺凌	483
@@ -15617,6 +15620,8 @@ wangshangqiling	網上|欺凌	445
 wangumeisu	萬古|黴素	435
 wanguojuexing	萬國|覺醒	440
 wanguoyinbiao	萬國|音標	430
+wangxianchazuo	網線|插座	488
+wangxianmokuai	網線|模塊	487
 wangyangzisi	汪洋|恣肆	455
 wangyeyouxi	網頁|遊戲	499
 wangyiyouxi	網易|遊戲	474
@@ -16287,7 +16292,7 @@ wuxianshijia	無限|試駕	439
 wuxianshijiaxilie	無限|試駕|系列	456
 wuxianwangka	無綫|網卡	386
 wuxianwangkaqudong	無綫|網卡|驅動	468
-wuxianwangluo	無線|網絡	463
+wuxianwangluo	無線|網絡	503
 wuxianweiji	無限|危機	464
 wuxianyinqing	無限|引擎	506
 wuxianziyuan	無線|資源	416
@@ -16431,7 +16436,7 @@ xiangguanxuekejichu	相關|學科|基礎	457
 xiangguduotang	香菇|多糖	465
 xiangheliposhui	向河裏|潑水	404
 xianghujiaocha	相互|交叉	435
-xianghuobujue	香火|不絕	453
+xianghuobujue	香火|不絕	447
 xianghuzuoyong	相互|作用	482
 xiangjiaopinzi	香蕉|拼字	417
 xiangjiaopinziyouxi	香蕉|拼字|遊戲	499
@@ -17200,7 +17205,7 @@ xinkoubuyi	心口|不一	484
 xinkoucihuang	信口|雌黃	411
 xinkouhushuo	信口|胡說	397
 xinkouhuzhou	信口|胡謅	455
-xinkoukaihe	信口|開河	340
+xinkoukaihe	信口|開河	338
 xinkouruyi	心口|如一	439
 xinlaiqujian	信賴|區間	483
 xinlibuyingqi	心理|不應期	486
@@ -17329,10 +17334,12 @@ xinxianchulu	新鮮|出爐	479
 xinxiangzhuanqu	新鄉|專區	465
 xinxiankongqi	新鮮|空氣	479
 xinxichanye	信息|產業	484
+xinxichazuo	信息|插座	491
 xinxichuli	信息|處理	474
 xinxiguanli	信息|管理	491
 xinxijiegou	信息|結構	487
 xinxijishu	信息|技術	520
+xinximianban	信息|面板	491
 xinxinbaibei	信心|百倍	456
 xinxingchuanranbing	新興|傳染病	483
 xinxingguanzhuangbingdu	新型|冠狀病毒	435
@@ -17915,7 +17922,7 @@ yakeyiyuan	牙科|醫院	486
 yakezhensuo	牙科|診所	449
 yakezhiruwu	牙科|植入物	473
 yakezhuli	牙科|助理	486
-yakouwuyan	啞口|無言	450
+yakouwuyan	啞口|無言	448
 yalianwulixue	雅利安|物理學	498
 yaliceshi	壓力|測試	488
 yalichuanganqi	壓力|傳感器	483
@@ -18027,7 +18034,7 @@ yankuangzhongliu	眼眶|腫瘤	431
 yanliaobaobei	顏料|寶貝	431
 yanlipiping	嚴厲|批評	470
 yanlixiaojiaonang	炎立消|膠囊	449
-yanmianbujue	延綿|不絕	480
+yanmianbujue	延綿|不絕	475
 yanmiansaodi	顏面|掃地	478
 yanmianshenjing	顏面|神經	483
 yanmianshenjingmabi	顏面|神經|麻痺	483
@@ -20228,7 +20235,7 @@ zhichangbisuo	直腸|閉鎖	468
 zhichangkuiyang	直腸|潰瘍	469
 zhichangsunshang	直腸|損傷	469
 zhichangtuochui	直腸|脫垂	483
-zhichangyali	職場|壓力	462
+zhichangyali	職場|壓力	459
 zhichangzhanmo	直腸|粘膜	375
 zhichangzhanmotuochui	直腸|粘膜|脫垂	457
 zhichichengxu	支持|程序	489
@@ -20290,7 +20297,7 @@ zhijianshumu	只見|樹木	478
 zhijianzhanzheng	指尖|戰爭	464
 zhijiaozhuanwan	直角|轉彎	383
 zhijiaozhuanwanjieti	直角|轉彎|階梯	465
-zhijiaozuobiao	直角|座標	474
+zhijiaozuobiao	直角|座標	466
 zhijiecanyu	直接|參與	480
 zhijiedanhongsu	直接|膽紅素	457
 zhijiedianli	直接|電離	417

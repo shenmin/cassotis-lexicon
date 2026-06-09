@@ -1443,6 +1443,7 @@
 改到	改到	0.88	gaidao
 加到	加到	0.90	jiadao
 减到	減到	0.88	jiandao
+见到	見到	0.90	jiandao
 移到	移到	0.90	yidao
 调到	調到	0.88	diaodao
 转到	轉到	0.88	zhuandao
@@ -2709,7 +2710,6 @@
 喜怒	喜怒	0.88	xinu
 也用	也用	0.90	yeyong
 都用	都用	0.90	douyong
-又用	又用	0.90	youyong
 店里	店裡	0.94	dianli
 店里面	店裡面	0.92	dianlimian
 不可以	不可以	0.94	bukeyi
@@ -3870,6 +3870,7 @@
 还钱	還錢	0.84	huanqian
 借款	借款	0.84	jiekuan
 借钱	借錢	0.86	jieqian
+定金	定金	0.86	dingjin
 入账	入賬	0.86	ruzhang
 做账	做賬	0.82	zuozhang
 记账	記賬	0.82	jizhang
@@ -4711,6 +4712,10 @@
 九类	九類	0.86	jiulei
 十类	十類	0.87	shilei
 
+# common exact anchors 2026-06-09
+屏蔽	屏蔽	0.90	pingbi
+少见	少見	0.90	shaojian
+
 # account/payment calculation additions 2026-06-03 (high daily)
 算出来	算出來	0.84	suanchulai
 算不出	算不出	0.80	suanbuchu
@@ -4972,3 +4977,61 @@
 想拆	想拆	0.76
 想加	想加	0.78
 想删	想刪	0.76
+
+# common verb-complement "掉" phrases 2026-06-09
+挡掉	擋掉	0.80	dangdiao
+挂掉	掛掉	0.82	guadiao
+糊掉	糊掉	0.76	hudiao
+倒掉	倒掉	0.82	daodiao
+坏掉	壞掉	0.84	huaidiao
+丢掉	丟掉	0.82	diudiao
+扔掉	扔掉	0.82	rengdiao
+删掉	刪掉	0.82	shandiao
+关掉	關掉	0.84	guandiao
+拔掉	拔掉	0.78	badiao
+拆掉	拆掉	0.80	chaidiao
+拿掉	拿掉	0.78	nadiao
+换掉	換掉	0.82	huandiao
+卖掉	賣掉	0.80	maidiao
+跑掉	跑掉	0.78	paodiao
+逃掉	逃掉	0.76	taodiao
+忘掉	忘掉	0.82	wangdiao
+输掉	輸掉	0.78	shudiao
+花掉	花掉	0.78	huadiao
+用掉	用掉	0.78	yongdiao
+喝掉	喝掉	0.76	hediao
+干掉	幹掉	0.78	gandiao
+打掉	打掉	0.78	dadiao
+摔掉	摔掉	0.76	shuaidiao
+烧掉	燒掉	0.74	shaodiao
+擦掉	擦掉	0.78	cadiao
+抹掉	抹掉	0.76	modiao
+洗掉	洗掉	0.74	xidiao
+清掉	清掉	0.76	qingdiao
+切掉	切掉	0.76	qiediao
+剪掉	剪掉	0.76	jiandiao
+撕掉	撕掉	0.76	sidiao
+堵掉	堵掉	0.76	dudiao
+灭掉	滅掉	0.72	miediao
+断掉	斷掉	0.78	duandiao
+卡掉	卡掉	0.72	kadiao
+漏掉	漏掉	0.78	loudiao
+划掉	劃掉	0.76	huadiao
+扣掉	扣掉	0.78	koudiao
+
+# input and ranking feedback phrases 2026-06-09
+网线	網線	0.90	wangxian
+我没	我沒	0.90	womei
+排在	排在	0.86	paizai
+排到	排到	0.84	paidao
+排前	排前	0.76	paiqian
+排后	排後	0.76	paihou
+排前面	排前面	0.80	paiqianmian
+排后面	排後面	0.80	paihoumian
+排第一	排第一	0.82	paidiyi
+排第二	排第二	0.78	paidier
+排第几	排第幾	0.76	paidiji
+要改	要改	0.86	yaogai
+要改成	要改成	0.84	yaogaicheng
+要改掉	要改掉	0.80	yaogaidiao
+没改好	沒改好	0.82	meigaihao

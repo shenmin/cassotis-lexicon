@@ -2725,7 +2725,7 @@ datanggonglve	大唐|攻略	484
 datenglefenggou	打疼了|疯狗	444
 datiechenre	打铁|趁热	476
 datuijiezhishu	大腿|截肢术	459
-daxiangjuren	大象|巨人	464
+daxiangjuren	大象|巨人	463
 daxiaodongtian	大小|洞天	436
 daxiaojiezuqu	大小姐|组曲	404
 daxiaozhijue	大小|知觉	471
@@ -4600,7 +4600,7 @@ fushefanghu	辐射|防护	486
 fushefenjie	辐射|分解	467
 fusheluochen	辐射|落尘	479
 fushenjingsunshang	副神经|损伤	474
-fushepingbi	辐射|屏蔽	461
+fushepingbi	辐射|屏蔽	486
 fusheqiangdu	辐射|强度	467
 fusheshaoshang	辐射|烧伤	486
 fushesunshang	辐射|损伤	488
@@ -5371,7 +5371,8 @@ guangrongdiguo	光荣|帝国	467
 guangrongshiming	光荣|使命	465
 guangrongsuiyue	光荣|岁月	455
 guangsutuzaizi	光速|兔崽子	433
-guangxianfeiche	光线|飞车	393
+guangxianfeiche	光线|飞车	392
+guangxianruhu	光纤|入户	490
 guangxishifan	广西|师范	419
 guangxiwenge	广西|文革	404
 guangxiwengetusha	广西|文革|屠杀	486
@@ -12591,7 +12592,7 @@ renleishengao	人类|身高	486
 renleixiaohuadao	人类|消化道	486
 renleixingxingwei	人类|性行为	437
 renleiyichuanxue	人类|遗传学	461
-renleiyouyong	人类|游泳	463
+renleiyouyong	人类|游泳	486
 renleiyuansu	人类|元素	434
 renleizhili	人类|智力	486
 renleizhuyi	人类|主义	446
@@ -12925,6 +12926,7 @@ runchangtongbian	润肠|通便	427
 runisuojiang	如你|所讲	517
 runisuoshuo	如你|所说	520
 runiuruxianyan	乳牛|乳腺炎	486
+ruodianbuxian	弱电|布线	483
 ruoshixunlian	弱视|训练	448
 ruowangbaoluershi	若望|保禄二世	423
 ruowangershi	若望|二十	359
@@ -16022,7 +16024,9 @@ wangluokongjian	网络|空间	467
 wangluoleixing	网络|类型	491
 wangluolianjie	网络|连接	497
 wangluoliuliang	网络|流量	514
+wangluomianban	网络|面板	492
 wangluomingling	网络|命令	490
+wangluomokuai	网络|模块	490
 wangluopeizhi	网络|配置	491
 wangluoqibing	网络|奇兵	442
 wangluoqiling	网络|欺凌	486
@@ -16060,6 +16064,8 @@ wangribuzai	往日|不再	467
 wangshangqiling	网上|欺凌	448
 wanguojuexing	万国|觉醒	435
 wanguoyinbiao	万国|音标	426
+wangxianchazuo	网线|插座	491
+wangxianmokuai	网线|模块	490
 wangyangzisi	汪洋|恣肆	455
 wangyeyouxi	网页|游戏	502
 wangyiyouxi	网易|游戏	477
@@ -16755,7 +16761,7 @@ wuxianshijia	无限|试驾	442
 wuxianshijiaxilie	无限|试驾|系列	456
 wuxianwangka	无线|网卡	386
 wuxianwangkaqudong	无线|网卡|驱动	468
-wuxianwangluo	无线|网络	467
+wuxianwangluo	无线|网络	506
 wuxianweiji	无限|危机	467
 wuxianyinqing	无限|引擎	509
 wuxianziyuan	无线|资源	416
@@ -17830,10 +17836,12 @@ xinwenzhoukan	新闻|周刊	467
 xinwenziyou	新闻|自由	467
 xinxiangzhuanqu	新乡|专区	468
 xinxichanye	信息|产业	505
+xinxichazuo	信息|插座	491
 xinxichuli	信息|处理	492
 xinxiguanli	信息|管理	491
 xinxijiegou	信息|结构	515
 xinxijishu	信息|技术	520
+xinximianban	信息|面板	491
 xinxinbaibei	信心|百倍	455
 xinxingchuanranbing	新兴|传染病	486
 xinxingguanzhuangbingdu	新型|冠状病毒	439

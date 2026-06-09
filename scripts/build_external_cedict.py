@@ -2219,6 +2219,17 @@ def _cap_generic_vertical_weight(weight: int, text: str, layer_id: str, source_i
         return weight
 
     source = source_id.strip().lower()
+    if layer_id in NAMED_ENTITY_VERTICAL_LAYERS:
+        # Names and fiction entities should stay selectable for exact input, but
+        # short names are visibility signals rather than broad frequency signals.
+        # Keep them below ordinary daily/common words in the same pinyin bucket.
+        if text_len <= 2:
+            cap = 620
+        elif text_len == 3:
+            cap = 700
+        else:
+            cap = 760
+        return min(weight, cap)
     if layer_id == "proper_nouns":
         if text_len <= 2:
             cap = 1000
@@ -12957,8 +12968,13 @@ def _promote_single_char_homophones_by_head_productivity(
             return 80
         if pos_tag in {"ns", "nr", "nt", "nz"}:
             return -120
-        if pos_tag in {"t", "tg", "zg"}:
+        if pos_tag in {"t", "tg"}:
             return -110
+        if pos_tag == "zg":
+            # General morpheme tags include common standalone IME targets such
+            # as "选".  Do not penalize them like temporal/location tags; the
+            # bucket-local frequency and Pinlu signals decide whether they rise.
+            return -12
         if pos_tag == "n":
             return -36
         return 0
