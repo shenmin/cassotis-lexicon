@@ -34,7 +34,6 @@
 几批	幾批	0.20	jipi
 几匹	幾匹	0.20	jipi
 几根	幾根	0.20	jigen
-几点	幾點	0.20	jidian
 几时	幾時	0.20	jishi
 几秒	幾秒	0.20	jimiao
 几幅	幾幅	0.20	jifu
@@ -2760,3 +2759,6 @@
 别逼逼	別逼逼	0.40	biebibi
 逼格	逼格	0.42	bige
 装逼犯	裝逼犯	0.34	zhuangbifan
+
+# alternate pronunciation retention 2026-06-09
+都会	都會	0.20	duhui
