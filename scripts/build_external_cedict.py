@@ -6710,7 +6710,11 @@ def _cap_low_signal_competitors_against_direct_leaders(
             pos_tag=pos_tag,
             char_score=char_score,
         )
-        preferred_daily = text in preferred_terms and text not in weak_leader_terms
+        preferred_daily = (
+            text in preferred_terms
+            and text not in weak_leader_terms
+            and usage_score >= 0.50
+        )
         return (
             usage_score,
             source_hits,
@@ -7109,7 +7113,13 @@ def _cap_short_exact_homophones_by_direct_signal(
         for pinyin, text, weight, item_parts in enriched:
             if text == leader_text:
                 continue
-            if text in preferred_terms or text in weak_leader_terms:
+            if (
+                text in weak_leader_terms
+                or (
+                    text in preferred_terms
+                    and item_parts[1] >= 0.50
+                )
+            ):
                 continue
 
             signal, usage_score, jieba_score, source_hits, pos_tag, pageview_score, style_penalty, support_count, _char_score, semantic_bonus = item_parts
@@ -7262,7 +7272,10 @@ def _cap_weak_exact_homophones_against_curated_daily_leaders(
                 continue
             if text not in preferred_terms or text in weak_leader_terms:
                 continue
-            leaders.append((pinyin, text, weight, direct_parts(pinyin, text)))
+            text_parts = direct_parts(pinyin, text)
+            if text_parts[0] < 0.50:
+                continue
+            leaders.append((pinyin, text, weight, text_parts))
         if not leaders:
             continue
 
@@ -7295,7 +7308,11 @@ def _cap_weak_exact_homophones_against_curated_daily_leaders(
             text_len = _cjk_len(text)
             if text_len < 2 or text_len > 3 or _is_pure_daily_number_word(text):
                 continue
-            if text in preferred_terms and text not in weak_leader_terms:
+            if (
+                text in preferred_terms
+                and text not in weak_leader_terms
+                and direct_parts(pinyin, text)[0] >= 0.50
+            ):
                 continue
             if weight <= leader_weight - 72:
                 continue
@@ -13995,7 +14012,14 @@ def _finalize_curated_daily_weight(
             daily_floor = 1000 + int(round((bounded_usage - 0.90) * 900.0))
             return max(weight, daily_floor)
 
-        visibility_floor = 540 + int(round(bounded_usage * 300.0))
+        if bounded_usage < 0.50:
+            # Some curated daily entries are useful exact candidates but should
+            # sit below stronger same-pinyin common words.  Let explicit low
+            # usage scores express that without moving the word to the very
+            # low-frequency supplement layer.
+            visibility_floor = 420 + int(round(bounded_usage * 400.0))
+        else:
+            visibility_floor = 540 + int(round(bounded_usage * 300.0))
         visibility_cap = (
             CURATED_DAILY_VISIBILITY_WEIGHT_CAP_SHORT
             if _cjk_len(text) <= 2
