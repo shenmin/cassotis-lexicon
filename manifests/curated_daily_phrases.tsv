@@ -228,6 +228,7 @@
 我觉得	我覺得	0.92
 我感觉	我感覺	0.86
 我以为	我以為	0.82
+以为	以為	0.92	yiwei
 我知道	我知道	0.80
 我不知道	我不知道	0.88
 我想	我想	0.92
@@ -2832,7 +2833,7 @@
 自我意识	自我意識	0.88	ziwoyishi
 源于	源於	0.90	yuanyu
 位于	位於	0.90	weiyu
-一味	一味	0.88	yiwei
+一味	一味	0.78	yiwei
 得力	得力	0.88	deli
 信服	信服	0.88	xinfu
 同时	同時	0.91	tongshi
@@ -3056,7 +3057,7 @@
 基于	基於	0.91	jiyu
 也能	也能	0.91	yeneng
 达到	達到	0.92	dadao
-一味	一味	0.91	yiwei
+一味	一味	0.78	yiwei
 学术	學術	0.91	xueshu
 价值	價值	0.92	jiazhi
 学术价值	學術價值	0.90	xueshujiazhi
@@ -3174,7 +3175,7 @@
 也就是	也就是	0.92	yejiushi
 一次	一次	0.92	yici
 一次重要	一次重要	0.88	yicizhongyao
-一位	一位	0.91	yiwei
+一位	一位	0.84	yiwei
 一位教授	一位教授	0.86	yiweijiaoshou
 他看到	他看到	0.88	takandao
 他到	他到	0.86	tadao
@@ -3455,9 +3456,11 @@
 我开	我開	0.90	wokai
 我服	我服	0.90	wofu
 # daily action and utility phrases
+哈哈	哈哈	0.96	haha
 隐式	隱式	0.90	yinshi
 仅有	僅有	0.90	jinyou
 仅剩	僅剩	0.90	jinsheng
+剩余	剩餘	0.91	shengyu
 仅次	僅次	0.90	jinci
 仅供	僅供	0.90	jingong
 不爱	不愛	0.90	bu'ai
@@ -4154,14 +4157,16 @@
 山间	山間	0.88	shanjian
 山涧	山澗	0.84	shanjian
 林间	林間	0.86	linjian
-小溪	小溪	0.90	xiaoxi
 溪水	溪水	0.86	xishui
 # High-frequency two-character exact terms.
 技术	技術	0.90	jishu
 普通	普通	0.90	putong
 感到	感到	0.90	gandao
 即使	即使	0.90	jishi
+相差	相差	0.91	xiangcha
 变得	變得	0.90	biande
+变成	變成	0.92	biancheng
+消息	消息	0.92	xiaoxi
 思路	思路	0.92	silu
 名词	名詞	0.92	mingci
 观众	觀眾	0.90	guanzhong
@@ -5019,7 +5024,6 @@
 想换	想換	0.80
 想改	想改	0.80
 想试	想試	0.80
-想查	想查	0.80
 想修	想修	0.78
 想装	想裝	0.78
 想拆	想拆	0.76
@@ -5083,3 +5087,28 @@
 要改成	要改成	0.84	yaogaicheng
 要改掉	要改掉	0.80	yaogaidiao
 没改好	沒改好	0.82	meigaihao
+
+# common "去 + verb" phrase additions 2026-06-10
+去问	去問	0.86	quwen
+去查	去查	0.86	qucha
+去听	去聽	0.84	quting
+去打	去打	0.84	quda
+去做	去做	0.86	quzuo
+去想	去想	0.82	quxiang
+去说	去說	0.84	qushuo
+去写	去寫	0.84	quxie
+去买	去買	0.84	qumai
+去卖	去賣	0.80	qumai
+去拿	去拿	0.82	quna
+去找	去找	0.84	quzhao
+去等	去等	0.82	qudeng
+去学	去學	0.82	quxue
+去试	去試	0.82	qushi
+去玩	去玩	0.82	quwan
+去吃	去吃	0.82	quchi
+去喝	去喝	0.80	quhe
+去跑	去跑	0.78	qupao
+去睡	去睡	0.78	qushui
+去问问	去問問	0.82	quwenwen
+去查查	去查查	0.82	quchacha
+去听听	去聽聽	0.78	qutingting

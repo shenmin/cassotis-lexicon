@@ -11,6 +11,8 @@
 是用	是用	0.82	shiyong
 又试	又試	0.82	youshi
 又用	又用	0.45	youyong
+想查	想查	0.42	xiangcha
+小溪	小溪	0.42	xiaoxi
 圈中	圈中	0.72	quanzhong
 同事	同事	0.58	tongshi
 何时	何時	0.62	heshi
@@ -2764,3 +2766,19 @@
 
 # alternate pronunciation retention 2026-06-09
 都会	都會	0.20	duhui
+
+# low-frequency colloquial and weaker "去 + verb" additions 2026-06-10
+笨鸟	笨鳥	0.42	benniao
+傻鸟	傻鳥	0.34	shaniao
+傻屌	傻屌	0.36	shadiao
+个鸟	個鳥	0.32	geniao
+个屌	個屌	0.32	gediao
+去摸	去摸	0.44	qumo
+去闻	去聞	0.30	quwen
+去忍	去忍	0.34	quren
+去蹭	去蹭	0.36	quceng
+去扛	去扛	0.34	qukang
+去搬	去搬	0.42	quban
+去挪	去挪	0.36	qunuo
+去闻闻	去聞聞	0.26	quwenwen
+去摸摸	去摸摸	0.36	qumomo
