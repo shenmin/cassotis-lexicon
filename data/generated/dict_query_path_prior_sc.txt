@@ -642,6 +642,7 @@ bianjiewangguan	边界|网关	487
 bianjiewangguanxieyi	边界|网关|协议	468
 bianjiexingdong	变节|行动	418
 bianjingdiqu	边境|地区	467
+bianjingjietou	变径|接头	439
 bianjingzhilv	边境|之旅	458
 bianjiqikuozhan	编辑器|扩展	470
 bianliangchushihua	变量|初始化	472
@@ -2050,7 +2051,7 @@ chuandihanshu	传递|函数	516
 chuandihanshuyilai	传递|函数|依赖	468
 chuandixibao	传递|细胞	485
 chuandongxitong	传动|系统	467
-chuanganqijian	传感|器件	478
+chuanganqijian	传感|器件	445
 chuangdangjianghu	闯荡|江湖	487
 chuanghugouzao	窗户|构造	484
 chuangjianduixiang	创建|对象	507
@@ -2908,7 +2909,7 @@ dianligongye	电力|工业	487
 dianligongying	电力|供应	486
 dianliuqiangdu	电流|强度	445
 dianlixiaozi	电力|小子	467
-dianlizuoyong	电离|作用	481
+dianlizuoyong	电离|作用	480
 diannaoanquan	电脑|安全	481
 diannaobingdu	电脑|病毒	439
 diannaobisimai	电脑|俾斯麦	413
@@ -3914,7 +3915,7 @@ fajiaoruzhipin	发酵|乳制品	486
 fajiaoshipin	发酵|食品	401
 fajiaoshipinjiagong	发酵|食品|加工	483
 fajiaoyinliao	发酵|饮料	486
-fajiazhifu	发家|致富	428
+fajiazhifu	发家|致富	424
 falangzhishengcheng	珐琅质|生成	486
 falanxishaonv	法兰西|少女	458
 falanxishi	法兰|西式	318
@@ -6258,6 +6259,7 @@ hongxibaojishu	红细胞|计数	451
 hongxibaoningji	红细胞|凝集	460
 hongxibaoshengcheng	红细胞|生成	486
 hongxibaozengduo	红细胞|增多	459
+hongxingmeikailong	红星|美凯龙	445
 hongxizhanshi	虹吸|战士	453
 hongxueqiumuxibao	红血球|母细胞	483
 hongxueqiushengcheng	红血球|生成	486
@@ -7181,7 +7183,7 @@ jiaozhixibaozengsheng	胶质|细胞|增生	483
 jiaozhixingcheng	角质|形成	401
 jiaozhixingchengxibao	角质|形成|细胞	483
 jiaozhixinlixue	矫治|心理学	459
-jiaozhizhina	交趾|支那	406
+jiaozhizhina	交趾|支那	397
 jiaozhouzhuanqu	胶州|专区	468
 jiaozhuanglinba	胶状|淋巴	401
 jiaozhuanglinbaxitong	胶状|淋巴|系统	483
@@ -11196,6 +11198,11 @@ neiqianggouzao	内墙|构造	435
 neiranjiche	内燃|机车	446
 neirongfuzhu	内容|辅助	502
 neishijingchaoyinbo	内视镜|超音波	483
+neisijietou	内丝|接头	432
+neisiqiufa	内丝|球阀	437
+neisisantong	内丝|三通	458
+neisizhijie	内丝|直接	489
+neisizhitong	内丝|直通	473
 neiwaijiagong	内外|夹攻	486
 neiwaijiaokun	内外|交困	442
 neixianfangyu	内线|防御	382
@@ -14271,13 +14278,13 @@ shisuanxingxibao	嗜酸性|细胞	459
 shitairenqing	世态|人情	417
 shitangjiaotang	食堂|教堂	480
 shitiaodianya	失调|电压	474
-shitifubai	尸体|腐败	473
-shitijiepou	尸体|解剖	474
+shitifubai	尸体|腐败	443
+shitijiepou	尸体|解剖	447
 shitileixing	实体|类型	490
 shitingzhongxin	视听|中心	482
 shitipaidui	尸体|派对	467
-shitirongqi	实体|容器	481
-shitishashou	尸体|杀手	467
+shitirongqi	实体|容器	484
+shitishashou	尸体|杀手	440
 shitixianxiang	尸体|现象	486
 shitongerxi	视同|儿戏	423
 shitouhuoguo	石头|火锅	460
@@ -15828,7 +15835,7 @@ tuominshipu	脱敏|食谱	425
 tuominyagao	脱敏|牙膏	415
 tuominzhiliao	脱敏|治疗	421
 tuoniaozhengce	鸵鸟|政策	438
-tuopinzhifu	脱贫|致富	438
+tuopinzhifu	脱贫|致富	435
 tuoshanjiejue	妥善|解决	503
 tuosuiqiaojibing	脱髓鞘|疾病	467
 tuoyangdansuan	脱氧|胆酸	427
@@ -15942,6 +15949,11 @@ waikeyishi	外科|医师	446
 wailairenkou	外来|人口	477
 wailaiwuzhong	外来|物种	444
 wailaiyinzi	外来|因子	456
+waisijietou	外丝|接头	432
+waisiqiufa	外丝|球阀	437
+waisisantong	外丝|三通	458
+waisizhijie	外丝|直接	489
+waisizhitong	外丝|直通	473
 waitanxinhaotai	外滩|信号台	446
 waiweigongshi	外围|工事	419
 waiweishijie	外围|世界	467

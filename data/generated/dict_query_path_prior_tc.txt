@@ -646,6 +646,7 @@ bianjichengxu	編輯|程序	486
 bianjiewangguanxieyi	邊界網關|協議	468
 bianjiexingdong	變節|行動	407
 bianjingdiqu	邊境|地區	463
+bianjingjietou	變徑|接頭	419
 bianjingzhilv	邊境|之旅	458
 bianjiqikuozhan	編輯器|擴展	468
 bianliangchushihua	變量|初始化	472
@@ -1907,7 +1908,7 @@ chezaidaohangxitong	車載|導航|系統	447
 chezhanhuiyi	車站|回憶	458
 chiboshangzhen	赤膊|上陣	484
 chichengjiangchang	馳騁|疆場	480
-chichuanyongdu	喫穿|用度	427
+chichuanyongdu	喫穿|用度	428
 chidaojineiya	赤道|幾內亞	436
 chidourenshijie	喫豆人|世界	458
 chidouxiaojie	喫豆|小姐	448
@@ -2011,7 +2012,7 @@ chuandihanshu	傳遞|函數	498
 chuandihanshuyilai	傳遞|函數|依賴	468
 chuandixibao	傳遞|細胞	468
 chuandongxitong	傳動|系統	463
-chuanganqijian	傳感|器件	481
+chuanganqijian	傳感|器件	445
 chuangdangjianghu	闖蕩|江湖	484
 chuanghugouzao	窗戶|構造	481
 chuangjianduixiang	創建|對象	489
@@ -2861,7 +2862,7 @@ dianligongye	電力|工業	470
 dianligongying	電力|供應	483
 dianliuqiangdu	電流|強度	441
 dianlixiaozi	電力|小子	467
-dianlizuoyong	電離|作用	459
+dianlizuoyong	電離|作用	458
 diannaoanquan	電腦|安全	478
 diannaobingdu	電腦|病毒	435
 diannaobisimai	電腦|俾斯麥	411
@@ -6100,6 +6101,7 @@ hongxibaojishu	紅細胞|計數	441
 hongxibaoningji	紅細胞|凝集	458
 hongxibaoshengcheng	紅細胞|生成	483
 hongxibaozengduo	紅細胞|增多	457
+hongxingmeikailong	紅星|美凱龍	442
 hongxizhanshi	虹吸|戰士	450
 hongxueqiumuxibao	紅血球|母細胞	483
 hongxueqiushengcheng	紅血球|生成	486
@@ -7015,7 +7017,7 @@ jiaozhixibaozengsheng	膠質|細胞|增生	483
 jiaozhixingcheng	角質|形成	401
 jiaozhixingchengxibao	角質|形成|細胞	483
 jiaozhixinlixue	矯治|心理學	459
-jiaozhizhina	交趾|支那	411
+jiaozhizhina	交趾|支那	403
 jiaozhouzhuanqu	膠州|專區	465
 jiaozhuanglinba	膠狀|淋巴	401
 jiaozhuanglinbaxitong	膠狀|淋巴|系統	483
@@ -10927,6 +10929,11 @@ neiqianggouzao	內牆|構造	470
 neiranjiche	內燃|機車	443
 neirongfuzhu	內容|輔助	499
 neishijingchaoyinbo	內視鏡|超音波	483
+neisijietou	內絲|接頭	429
+neisiqiufa	內絲|球閥	433
+neisisantong	內絲|三通	454
+neisizhijie	內絲|直接	485
+neisizhitong	內絲|直通	469
 neiwaijiagong	內外|夾攻	481
 neiwaijiaokun	內外|交困	442
 neixiangxingge	內向|性格	486
@@ -12031,7 +12038,6 @@ quanshenxueguan	全身|血管	401
 quanshenxueguanzuli	全身|血管|阻力	483
 quanshenzhaoshe	全身|照射	486
 quanshenzuoyong	全身|作用	472
-quantanghaiyuanmei	醛糖|還原酶	477
 quantihuiyi	全體|會議	463
 quantirenyuan	全體|人員	463
 quantonglizi	全同|粒子	496
@@ -13937,13 +13943,13 @@ shisuanxingrouyazhong	嗜酸性|肉芽腫	483
 shisuanxingxibao	嗜酸性|細胞	457
 shitangjiaotang	食堂|教堂	480
 shitiaodianya	失調|電壓	470
-shitifubai	屍體|腐敗	469
-shitijiepou	屍體|解剖	471
+shitifubai	屍體|腐敗	439
+shitijiepou	屍體|解剖	444
 shitileixing	實體|類型	487
 shitingzhongxin	視聽|中心	479
 shitipaidui	屍體|派對	464
-shitirongqi	實體|容器	477
-shitishashou	屍體|殺手	464
+shitirongqi	實體|容器	480
+shitishashou	屍體|殺手	437
 shitixianxiang	屍體|現象	483
 shitongerxi	視同|兒戲	420
 shitouhuoguo	石頭|火鍋	456
@@ -14283,7 +14289,6 @@ shuizhiwuran	水質|污染	483
 shuiziyuanduanque	水資源|短缺	486
 shuiziyuankuifa	水資源|匱乏	498
 shuiziyuanxique	水資源|稀缺	486
-shujiaoquantang	樹膠|醛糖	428
 shujingguanjiezhashu	輸精管|結紮術	458
 shujintongluokeli	舒筋通絡|顆粒	456
 shujuanquan	數據|安全	520
@@ -15501,6 +15506,11 @@ waikeyishi	外科|醫師	469
 wailairenkou	外來|人口	462
 wailaiwuzhong	外來|物種	438
 wailaiyinzi	外來|因子	456
+waisijietou	外絲|接頭	429
+waisiqiufa	外絲|球閥	433
+waisisantong	外絲|三通	458
+waisizhijie	外絲|直接	489
+waisizhitong	外絲|直通	473
 waitanxinhaotai	外灘|信號臺	437
 waiweigongshi	外圍|工事	419
 waiweishijie	外圍|世界	467
@@ -20297,7 +20307,7 @@ zhijianshumu	只見|樹木	478
 zhijianzhanzheng	指尖|戰爭	464
 zhijiaozhuanwan	直角|轉彎	383
 zhijiaozhuanwanjieti	直角|轉彎|階梯	465
-zhijiaozuobiao	直角|座標	466
+zhijiaozuobiao	直角|座標	474
 zhijiecanyu	直接|參與	480
 zhijiedanhongsu	直接|膽紅素	457
 zhijiedianli	直接|電離	417

@@ -2332,6 +2332,50 @@ def _cap_project_vertical_exact_weights(
     return stats
 
 
+def _restore_project_proper_noun_exact_floor(
+    mapping: Dict[Tuple[str, str], int],
+    vertical_entries: List[VerticalEntry],
+    *,
+    use_traditional: bool,
+    stats_prefix: str,
+) -> Dict[str, int]:
+    """Keep curated proper nouns exact-visible after generic low-signal filters."""
+    stats = {
+        f"{stats_prefix}_project_proper_exact_floor_rows": 0,
+        f"{stats_prefix}_project_proper_exact_floor_restored": 0,
+    }
+    if not mapping or not vertical_entries:
+        return stats
+
+    for sc_word, tc_word, _usage_score, explicit_pinyin, layer_id, source_id in vertical_entries:
+        if layer_id != "proper_nouns" or source_id != "project-curated-proper-nouns":
+            continue
+        text = tc_word if use_traditional and tc_word else sc_word
+        if not text or not explicit_pinyin:
+            continue
+
+        key = (explicit_pinyin, text)
+        weight = mapping.get(key)
+        if weight is None:
+            continue
+
+        text_len = _cjk_len(text)
+        if text_len <= 2:
+            floor = 360
+        elif text_len == 3:
+            floor = 420
+        else:
+            floor = 480
+        floor = _cap_generic_vertical_weight(floor, text, layer_id, source_id)
+
+        stats[f"{stats_prefix}_project_proper_exact_floor_rows"] += 1
+        if weight < floor:
+            mapping[key] = floor
+            stats[f"{stats_prefix}_project_proper_exact_floor_restored"] += 1
+
+    return stats
+
+
 def _cap_medical_specific_term_weights(
     mapping: Dict[Tuple[str, str], int],
     usage_score_map: Dict[str, float],
@@ -20696,6 +20740,22 @@ def main() -> int:
     )
     stats.update(sc_strong_curated_daily_exact_stats)
     stats.update(tc_strong_curated_daily_exact_stats)
+    stats.update(
+        _restore_project_proper_noun_exact_floor(
+            sc_map,
+            vertical_entries,
+            use_traditional=False,
+            stats_prefix="sc_final_post",
+        )
+    )
+    stats.update(
+        _restore_project_proper_noun_exact_floor(
+            tc_map,
+            vertical_entries,
+            use_traditional=True,
+            stats_prefix="tc_final_post",
+        )
+    )
 
     _write_dict(
         output_sc,
