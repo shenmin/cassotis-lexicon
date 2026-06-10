@@ -1255,6 +1255,15 @@
 # evaluative / comparative / connective phrases
 好像可以	好像可以	0.90
 体感	體感	0.88
+体验感	體驗感	0.86	tiyanggan
+体验上	體驗上	0.84	tiyanshang
+体感上	體感上	0.84	tiganshang
+感觉上	感覺上	0.88	ganjueshang
+手感上	手感上	0.82	shouganshang
+视觉上	視覺上	0.82	shijueshang
+观感上	觀感上	0.80	guanganshang
+操作上	操作上	0.82	caozuoshang
+使用上	使用上	0.84	shiyongshang
 很差	很差	0.92
 很大	很大	0.92
 很小	很小	0.92
@@ -5074,6 +5083,16 @@
 # input and ranking feedback phrases 2026-06-09
 网线	網線	0.90	wangxian
 我没	我沒	0.90	womei
+参考图	參考圖	0.78	cankaotu
+参考线	參考線	0.76	cankaoxian
+参考表	參考表	0.70	cankaobiao
+参考值	參考值	0.76	cankaozhi
+示意图	示意圖	0.84	shiyitu
+对比图	對比圖	0.80	duibitu
+预览图	預覽圖	0.80	yulantu
+截图里	截圖裏	0.76	jietuli
+截屏图	截屏圖	0.72	jiepingtu
+标注图	標註圖	0.70	biaozhutu
 排在	排在	0.86	paizai
 排到	排到	0.84	paidao
 排前	排前	0.76	paiqian

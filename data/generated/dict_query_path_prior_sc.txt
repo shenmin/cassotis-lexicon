@@ -1375,7 +1375,7 @@ canjiqishi	残疾|歧视	453
 canjirentiyu	残疾人|体育	486
 cankaowenxian	参考|文献	502
 cankaoxiaoxi	参考|消息	472
-cankaoziliao	参考|资料	444
+cankaoziliao	参考|资料	467
 cankuanying	残酷|暗影	467
 cankujielong	残酷|接龙	453
 canlanhuihuang	灿烂|辉煌	453
@@ -1413,12 +1413,12 @@ caozongjiyin	操纵|基因	486
 caozongziru	操纵|自如	484
 caozuoceshi	操作|测试	489
 caozuochengxu	操作|程序	500
-caozuodiannao	操作|电脑	472
+caozuodiannao	操作|电脑	500
 caozuomingling	操作|命令	505
 caozuotiaojian	操作|条件	375
 caozuotiaojianfanshe	操作|条件|反射	457
 caozuoxitong	操作|系统	520
-caozuozhuyi	操作|主义	432
+caozuozhuyi	操作|主义	460
 celiangwucha	测量|误差	468
 celveguihua	策略|规划	486
 celveyouxi	策略|游戏	502
@@ -3583,7 +3583,7 @@ duduanduxing	独断|独行	484
 duguonanguan	渡过|难关	497
 duianguanhuo	对岸|观火	463
 duibidukuozhan	对比度|扩展	446
-duibimingandu	对比|敏感度	454
+duibimingandu	对比|敏感度	460
 duibugongtang	对簿|公堂	468
 duidiedalu	堆叠|大陆	463
 duigongzhanghu	对公|账户	493
@@ -6099,7 +6099,7 @@ heisuxibao	黑素|细胞	495
 heitaohuanghou	黑桃|皇后	464
 heitianguohe	黑天|过河	469
 heitoufenci	黑头|粉刺	473
-heixiangcaozuo	黑箱|操作	444
+heixiangcaozuo	黑箱|操作	467
 heixiangceshi	黑箱|测试	501
 heiyegaobai	黑夜|告白	471
 hejiangzhuanqu	合江|专区	455
@@ -8562,7 +8562,7 @@ jushixibaoxitong	巨噬细胞|系统	457
 jushiyishu	巨石|艺术	466
 jushizhumu	举世|瞩目	493
 jutianpai	具体|安排	471
-juticaozuo	具体|操作	478
+juticaozuo	具体|操作	500
 jutifangfa	具体|方法	475
 jutiqingkuang	具体|情况	484
 jutiyunsuan	具体|运算	374
@@ -8596,7 +8596,7 @@ kaichuangshiye	开创|实业	472
 kaichudangji	开除|党籍	442
 kaifaceshi	开发|测试	491
 kaifachengben	开发|成本	473
-kaifadaimaku	开发|代码库	469
+kaifadaimaku	开发|代码库	449
 kaifagongju	开发|工具	385
 kaifagongjupeizhi	开发|工具|配置	467
 kaifahuanjing	开发|环境	508
@@ -9056,7 +9056,7 @@ kuohaoxulie	括号|序列	451
 kuosancizhenzaoying	扩散|磁振造影	481
 kuosanxishu	扩散|系数	420
 kuosanzuoyong	扩散|作用	487
-kuozhancaozuo	扩展|操作	467
+kuozhancaozuo	扩展|操作	489
 kuozhanchengxu	扩展|程序	490
 kuozhanfangfa	扩展|方法	483
 kuozhankaifa	扩展|开发	468
@@ -11118,6 +11118,7 @@ napolunyishi	拿破仑|一世	508
 natiaotuiwen	那条|推文	517
 naxiefangmian	哪些|方面	483
 nazhazhanxiaolong	哪咤战|小龙	405
+neibucangku	内部|仓库	486
 neibuduixiang	内部|对象	476
 neibuhanshu	内部|函数	491
 neibukongjian	内部|空间	496
@@ -11134,7 +11135,7 @@ neicerendai	内侧|韧带	472
 neicunbaohu	内存|保护	503
 neicunbuju	内存|布局	491
 neicunbuzu	内存|不足	492
-neicuncaozuo	内存|操作	483
+neicuncaozuo	内存|操作	491
 neicunchacao	内存|插槽	466
 neicunduiqi	内存|对齐	490
 neicunfenbu	内存|分布	490
@@ -11203,6 +11204,7 @@ neisiqiufa	内丝|球阀	437
 neisisantong	内丝|三通	458
 neisizhijie	内丝|直接	489
 neisizhitong	内丝|直通	473
+neiwaicangku	内外|仓库	471
 neiwaijiagong	内外|夹攻	486
 neiwaijiaokun	内外|交困	442
 neixianfangyu	内线|防御	382
@@ -11288,7 +11290,7 @@ nideshangpaoma	泥地上|跑马	412
 nideyouqi	你的|幼妻	410
 nieeguanjiezhangai	颞颚关节|障碍	420
 nieguguzhe	颞骨|骨折	428
-niegutuqi	颞骨|突起	436
+niegutuqi	颞骨|突起	435
 nierfuzhiti	尼尔|复制体	414
 niergeshita	尼尔|格式塔	377
 nierjixie	尼尔|机械	322
@@ -14140,9 +14142,9 @@ shijixingdong	实际|行动	472
 shijixuean	世纪|血案	401
 shijiyiyi	实际|意义	494
 shijizhengba	世纪|争霸	431
-shijuecuojue	视觉|错觉	482
+shijuecuojue	视觉|错觉	486
 shijueguding	视觉|固定	486
-shijuejiati	视觉|假体	476
+shijuejiati	视觉|假体	483
 shijuejiaxiang	视觉|假象	486
 shijueleibi	视觉|类比	401
 shijueleibiliangbiao	视觉|类比|量表	483
@@ -14157,7 +14159,7 @@ shijueyoufa	视觉|诱发	375
 shijueyoufadianwei	视觉|诱发|电位	457
 shijuezaosheng	视觉|噪声	471
 shijuezhangai	视觉|障碍	474
-shijuezhongshu	视觉|中枢	464
+shijuezhongshu	视觉|中枢	471
 shijuntiliaofa	噬菌体|疗法	470
 shikelangshuoshu	屎壳郎|说书	455
 shikongchazuo	十孔|插座	495
@@ -15908,6 +15910,7 @@ tuyayingxiong	涂鸦|英雄	436
 tuzibobi	兔子|波比	458
 tuziluojie	兔子|罗杰	454
 waibazihulu	歪把子|葫芦	455
+waibucangku	外部|仓库	475
 waibuchengxu	外部|程序	491
 waibuwangguan	外部|网关	386
 waibuwangguanxieyi	外部|网关|协议	468
@@ -16195,7 +16198,7 @@ weiguanxiangguandanbai	微管|相关|蛋白	483
 weiguanzuzhi	微管|组织	401
 weiguanzuzhidanbai	微管|组织|蛋白	483
 weiguanzuzhizhongxin	微管|组织|中心	483
-weiguicaozuo	违规|操作	454
+weiguicaozuo	违规|操作	483
 weihaiweixingzhengqu	威海卫|行政区	454
 weihaiwuzhi	危害|物质	486
 weihaiyinsu	危害|因素	474
@@ -16565,7 +16568,7 @@ wujintaowang	无尽|逃亡	374
 wujintaowangyouxi	无尽|逃亡|游戏	456
 wujinyinmi	无尽|隐秘	467
 wujinyouxi	无尽|游戏	502
-wujuncaozuo	无菌|操作	441
+wujuncaozuo	无菌|操作	469
 wujundongwu	无菌|动物	486
 wujunnaomoyan	无菌|脑膜炎	486
 wujunpeiyang	无菌|培养	454
@@ -17066,7 +17069,7 @@ xiantianxingzhongliu	先天性|肿瘤	460
 xiantiaoqishi	线条|骑士	467
 xiantifeida	腺体|肥大	471
 xianweibankuai	纤维|斑块	439
-xianweicaozuo	显微|操作	471
+xianweicaozuo	显微|操作	473
 xianweidanbai	纤维|蛋白	505
 xianweidanbairongjie	纤维|蛋白|溶解	483
 xianweidanbaiyuan	纤维|蛋白原	461
@@ -18925,7 +18928,7 @@ yibingjijiaben	异丙基|甲苯	439
 yibinzhuanqu	宜宾|专区	460
 yibolayimiao	伊波拉|疫苗	400
 yibubiancheng	异步|编程	472
-yibucaozuo	异步|操作	452
+yibucaozuo	异步|操作	480
 yibuchuanshu	异步|传输	486
 yibuchuanshumoshi	异步|传输|模式	468
 yibuchuansong	异步|传送	480

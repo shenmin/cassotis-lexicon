@@ -2782,3 +2782,22 @@
 去挪	去挪	0.36	qunuo
 去闻闻	去聞聞	0.26	quwenwen
 去摸摸	去摸摸	0.36	qumomo
+
+# UI/reference/repository collaboration additions 2026-06-10
+凸点	凸點	0.42	tudian
+凹点	凹點	0.34	aodian
+小凸点	小凸點	0.36	xiaotudian
+凸起点	凸起點	0.34	tuqidian
+内外库	內外庫	0.52	neiwaiku
+内库	內庫	0.46	neiku
+外库	外庫	0.46	waiku
+内部库	內部庫	0.46	neibuku
+外部库	外部庫	0.46	waibuku
+公开库	公開庫	0.42	gongkaiku
+私有库	私有庫	0.42	siyouku
+代码库	代碼庫	0.56	daimaku
+源码库	源碼庫	0.46	yuanmaku
+同步库	同步庫	0.42	tongbuku
+内外仓库	內外倉庫	0.42	neiwaicangku
+内部仓库	內部倉庫	0.42	neibucangku
+外部仓库	外部倉庫	0.42	waibucangku

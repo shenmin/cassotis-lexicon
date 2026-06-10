@@ -2157,6 +2157,7 @@ aodesai	奥德赛	786
 aodesashengmushengtianzhujiaozuotang	敖德萨圣母升天主教座堂	613
 aodexiusi	奥德修斯	226
 aodi	奥迪	284
+aodian	凹点	280
 aodiao	凹雕	198
 aodili	奥地利	535
 aoding	奥丁	200
@@ -8633,6 +8634,7 @@ biaozhunzhuangkuang	标准状况	405
 biaozhunzhuangong	标准砖拱	669
 biaozhunzhuangtai	标准状态	405
 biaozhunzuzhi	标准组织	260
+biaozhutu	标注图	800
 biaozi	婊子	723
 biaozi	表字	560
 biaozimei	表姊妹	424
@@ -10188,7 +10190,7 @@ bizhengzhide	必争之地	651
 bizhenliaofa	鼻针疗法	260
 bizhenxie	避震鞋	380
 bizhi	笔直	446
-bizhi	币值	331
+bizhi	币值	330
 bizhi	壁纸	266
 bizhi	币制	266
 bizhi	比值	266
@@ -13732,7 +13734,7 @@ canger	苍耳	205
 cangerzi	苍耳子	360
 cangfang	舱房	305
 cangfu	仓敷	78
-canggeng	仓庚	372
+canggeng	仓庚	373
 canggou	苍狗	137
 canggounawu	藏垢纳污	383
 canghaichuan	藏海传	790
@@ -13806,7 +13808,7 @@ cangshengtutan	苍生涂炭	387
 cangshenzhichu	藏身之处	387
 cangshu	苍术	440
 cangshu	藏书	430
-cangshu	仓鼠	31
+cangshu	仓鼠	32
 cangshupiao	藏书票	379
 cangshuqiu	仓鼠球	458
 cangsi	藏私	305
@@ -13905,14 +13907,18 @@ canjushi	餐具室	600
 canka'er	参卡尔	232
 cankaer	参卡尔	232
 cankan	参看	443
-cankao	参考	551
+cankao	参考	896
+cankaobiao	参考表	800
 cankaocailiao	参考材料	260
 cankaodian	参考点	470
 cankaoshu	参考书	504
+cankaotu	参考图	800
 cankaotuoqiuti	参考椭球体	289
 cankaowenxian	参考文献	763
 cankaoxi	参考系	487
+cankaoxian	参考线	800
 cankaoxiaoxi	参考消息	469
+cankaozhi	参考值	800
 cankaoziliao	参考资料	405
 canku	残酷	1000
 canku	惨酷	1
@@ -14321,7 +14327,7 @@ caozongjiyin	操纵基因	540
 caozongzi	操纵子	500
 caozongziru	操纵自如	423
 caozongzu	操纵组	500
-caozuo	操作	604
+caozuo	操作	905
 caozuoceshi	操作测试	671
 caozuochengxu	操作程序	746
 caozuodiannao	操作电脑	746
@@ -14329,6 +14335,7 @@ caozuofu	操作符	253
 caozuoguicheng	操作规程	387
 caozuohuanjing	操作环境	260
 caozuomingling	操作命令	732
+caozuoshang	操作上	800
 caozuoshu	操作数	419
 caozuotai	操作台	387
 caozuotiaojianfanshe	操作条件反射	651
@@ -22696,7 +22703,7 @@ daimajiegou	代码结构	707
 daimajilu	代码记录	672
 daimajiqiao	代码技巧	665
 daimajishu	代码技术	666
-daimaku	代码库	640
+daimaku	代码库	280
 daimakuai	代码块	688
 daimakuochong	代码扩充	683
 daimalei	代码类	632
@@ -27050,7 +27057,7 @@ dianhuokaiguan	点火开关	260
 dianji	点击	1000
 dianji	电机	905
 dianji	惦记	768
-dianji	电击	417
+dianji	电击	416
 dianji	电极	145
 dianji	典籍	28
 dianji	奠基	1
@@ -31477,7 +31484,7 @@ duiben	对本	458
 duiben'erfen	对苯二酚	462
 duibenerfen	对苯二酚	462
 duibenkun	对苯醌	215
-duibi	对比	497
+duibi	对比	901
 duibiao	对标	898
 duibiao	对表	210
 duibidu	对比度	427
@@ -31485,6 +31492,7 @@ duibidukuozhan	对比度扩展	724
 duibilianxiang	对比联想	387
 duibimingandu	对比敏感度	610
 duibise	对比色	370
+duibitu	对比图	800
 duibiwendu	对比温度	387
 duibu	对不	983
 duibu	对簿	560
@@ -41382,6 +41390,7 @@ ganjueqi	感觉器	547
 ganjueqiguan	感觉器官	540
 ganjuequ	感觉区	470
 ganjuesangshi	感觉丧失	570
+ganjueshang	感觉上	800
 ganjueshangpi	感觉上皮	540
 ganjueshenjing	感觉神经	540
 ganjueshenjingdemoshao	感觉神经的末梢	687
@@ -44080,6 +44089,7 @@ gongjuxiang	工具箱	412
 gongkai	公开	502
 gongkaichanghe	公开场合	280
 gongkaihua	公开化	250
+gongkaiku	公开库	280
 gongkaisai	公开赛	345
 gongkaitaolunhui	公开讨论会	289
 gongkaixin	公开信	252
@@ -45331,7 +45341,7 @@ guanfengqin	管风琴	252
 guanfu	官府	962
 guanfu	鳏夫	1
 guanfuyuanzhi	官复原职	467
-guang'an	广安	680
+guang'an	广安	633
 guang'anbaoweizhan	光暗包围战	613
 guang'anmen	广安门	208
 guang'anqu	广安区	165
@@ -45351,10 +45361,11 @@ guang'ouheqi	光耦合器	260
 guangai	灌溉	523
 guangaide	灌概地	640
 guangaiqu	灌溉渠	410
-guangan	广安	680
-guangan	观感	276
+guangan	广安	633
+guangan	观感	357
 guanganmen	广安门	208
 guanganqu	广安区	165
+guanganshang	观感上	800
 guanganshi	广安市	172
 guangansuan	胱氨酸	360
 guangansuanjie	胱氨酸结	570
@@ -56461,7 +56472,7 @@ huishengtanlu	回声探路	538
 huishengzaizaowan	回生再造丸	610
 huishi	回事	1000
 huishi	会试	827
-huishi	会师	32
+huishi	会师	31
 huishi	挥师	1
 huishi	辉石	1
 huishibing	惠氏病	500
@@ -62930,6 +62941,7 @@ jiepi	洁癖	1
 jiepianxiang	界偏向	640
 jiepin	解聘	423
 jieping	截屏	198
+jiepingtu	截屏图	800
 jiepo	揭破	425
 jiepou	解剖	551
 jiepoudao	解剖刀	339
@@ -63122,7 +63134,8 @@ jietouxiaozi	街头小子	538
 jietouyiren	街头艺人	260
 jietouyouxi	街头游戏	740
 jietouzuqiu	街头足球	538
-jietu	截图	718
+jietu	截图	1000
+jietuli	截图里	800
 jietuo	解脱	465
 jiewaikuangchao	界外狂潮	538
 jiewaishengzhi	节外生枝	499
@@ -64652,7 +64665,7 @@ jingju	京剧	585
 jingju	警句	1
 jingjuan	经卷	405
 jingjue	惊厥	797
-jingjue	惊觉	752
+jingjue	惊觉	753
 jingjue	警觉	75
 jingjueji	惊厥剂	500
 jingke	荆轲	247
@@ -92425,11 +92438,13 @@ neibiwaituo	内闭外脱	540
 neibo'ershan	内伯尔山	482
 neiboershan	内伯尔山	482
 neibu	内部	682
+neibucangku	内部仓库	280
 neibudouzheng	内部斗争	260
 neibuduixiang	内部对象	701
 neibuhanshu	内部函数	705
 neibuhetangtijinruweidian	内部核糖体进入位点	700
 neibukongjian	内部空间	680
+neibuku	内部库	280
 neibula	内布拉	629
 neibulasijia	内布拉斯加	273
 neibulasijiazhou	内布拉斯加州	330
@@ -92603,7 +92618,8 @@ neikehulixue	内科护理学	610
 neikexue	内科学	688
 neikexuejichu	内科学基础	603
 neikeyisheng	内科医生	405
-neiku	内裤	419
+neiku	内库	280
+neiku	内裤	1
 neikuijing	内窥镜	444
 neilao	内涝	370
 neili	内里	421
@@ -92714,9 +92730,11 @@ neitingxue	内庭穴	470
 neitui	内腿	525
 neitunzuoyong	内吞作用	570
 neiwai	内外	462
+neiwaicangku	内外仓库	280
 neiwaijiagong	内外夹攻	630
 neiwaijianxiu	内外兼修	260
 neiwaijiaokun	内外交困	643
+neiwaiku	内外库	280
 neiwang	内网	280
 neiwu	内务	451
 neiwubu	内务部	249
@@ -100366,7 +100384,7 @@ qiaoshi	乔石	295
 qiaoshixiangji	桥式相机	680
 qiaoshizhengliuqi	桥式整流器	289
 qiaoshou	翘首	974
-qiaoshou	巧手	129
+qiaoshou	巧手	130
 qiaoshouyidai	翘首以待	431
 qiaosi	巧思	231
 qiaosou	乔叟	137
@@ -110215,7 +110233,7 @@ shangai	删改	412
 shangaiseer	上艾瑟尔	260
 shangala	山旮旯	167
 shangan	上岸	1000
-shangan	陕甘	545
+shangan	陕甘	544
 shangang	山冈	266
 shanganning	陕甘宁	458
 shanganningbianqu	陕甘宁边区	405
@@ -115943,7 +115961,7 @@ shiju	实据	31
 shiju	食具	6
 shijuan	试卷	641
 shijuan	释卷	187
-shijue	视觉	914
+shijue	视觉	1000
 shijuecuojue	视觉错觉	570
 shijuefangyan	视觉方言	40
 shijuegongnengzhang'aizhe	视觉功能障碍者	687
@@ -115957,6 +115975,7 @@ shijuepiceng	视觉皮层	570
 shijuepilao	视觉疲劳	570
 shijueqiguan	视觉器官	540
 shijueqipian	视觉欺骗	570
+shijueshang	视觉上	800
 shijueshiying	视觉适应	540
 shijuexiaoguo	视觉效果	280
 shijuexiaoshuo	视觉小说	538
@@ -117179,10 +117198,10 @@ shiyexian	事业线	232
 shiyexin	事业心	492
 shiyeyoucheng	事业有成	459
 shiyezhe	失业者	481
+shiyi	示意	520
 shiyi	适宜	520
 shiyi	十一	472
 shiyi	十亿	472
-shiyi	示意	429
 shiyi	拾遗	414
 shiyi	实意	367
 shiyi	失忆	340
@@ -117245,7 +117264,7 @@ shiyishou	食蚁兽	439
 shiyisiqianwanyumeiyuan	十亿四千万余美元	455
 shiyisuangaotong	十一酸睾酮	607
 shiyisuangaotongjiaowan	十一酸睾酮胶丸	627
-shiyitu	示意图	501
+shiyitu	示意图	800
 shiyiwanlingliubaiyuliang	十一万零六百余两	455
 shiyiweiganlujiaonang	十一味甘露胶囊	635
 shiyiweiyuan	十亿位元	260
@@ -117287,6 +117306,7 @@ shiyongqi	试用期	664
 shiyongquan	使用权	519
 shiyongren	使用人	1000
 shiyongsesu	食用色素	570
+shiyongshang	使用上	800
 shiyongtiaokuan	使用条款	260
 shiyongxishaonv	食用系少女	613
 shiyongyou	食用油	459
@@ -117747,8 +117767,9 @@ shoufukuan	首付款	431
 shoufushideyundong	收复失地运动	579
 shoufushidi	收复失地	387
 shoufutuolaji	手扶拖拉机	488
-shougan	手感	414
+shougan	手感	905
 shougangzonggongsi	首钢总公司	288
+shouganshang	手感上	800
 shougao	手稿	683
 shouge	首个	700
 shouge	收割	590
@@ -121871,6 +121892,7 @@ siyoubianliang	私有变量	705
 siyouchengxuji	私有程序集	730
 siyoude	私有地	676
 siyouhua	私有化	507
+siyouku	私有库	280
 siyouyugu	死有余辜	476
 siyouzhi	私有制	530
 siyu	饲育	397
@@ -124951,8 +124973,8 @@ tantou	滩头	1
 tantoubao	滩头堡	375
 tantoutannao	探头探脑	477
 tantoutannaor	探头探脑儿	289
-tantu	贪图	742
-tantu	坦途	622
+tantu	贪图	743
+tantu	坦途	623
 tantu	谈吐	250
 tantu	滩涂	103
 tantui	潭腿	198
@@ -127299,6 +127321,7 @@ tigang	提纲	446
 tigangqieling	提纲挈领	759
 tiganjianianhua	体感嘉年华	613
 tiganrenzhe	体感忍者	538
+tiganshang	体感上	800
 tiganwendu	体感温度	260
 tigao	提高	1000
 tigaoji	提睾肌	470
@@ -127822,6 +127845,8 @@ tixushan	体恤衫	521
 tiya	剔牙	375
 tiyalazhilei	提亚拉之泪	613
 tiyan	体验	914
+tiyanggan	体验感	800
+tiyanshang	体验上	800
 tiyanyifan	体验一番	1000
 tiyao	提要	438
 tiye	体液	440
@@ -127935,6 +127960,7 @@ tongbuhua	同步化	470
 tongbujiaobenxiugai	同步脚本修改	848
 tongbujiasuqi	同步加速器	640
 tongbukouyi	同步口译	260
+tongbuku	同步库	280
 tongbupeiyang	同步培养	540
 tongbushengzhang	同步生长	540
 tongbushuweijieceng	同步数位阶层	318
@@ -129338,6 +129364,7 @@ tudezhengce	土地政策	597
 tudezhengshou	土地征收	597
 tudi	土地	1000
 tudi	徒弟	1
+tudian	凸点	280
 tudie	突堞	260
 tudigai	土地改	556
 tudigaige	土地改革	608
@@ -129747,7 +129774,7 @@ tulongzhanji	屠龙战记	538
 tulou	土楼	370
 tulu	吐露	708
 tulu	土路	588
-tulu	屠戮	565
+tulu	屠戮	564
 tulu	图录	31
 tulufan	吐鲁番	622
 tulufandequ	吐鲁番地区	269
@@ -130268,13 +130295,14 @@ tupopingjing	突破瓶颈	260
 tupoxing	突破性	515
 tupoxingganran	突破性感染	640
 tupu	图谱	420
-tuqi	突起	952
-tuqi	凸起	752
+tuqi	突起	934
+tuqi	凸起	819
 tuqi	吐气	1
 tuqi	土气	1
 tuqi'eryanghuatanceliangyi	吐气二氧化碳测量仪	700
 tuqianxianzhuangshibantiao	凸嵌线装饰板条	724
 tuqibu	突起部	232
+tuqidian	凸起点	280
 tuqiongbijian	图穷匕见	627
 tuqiongbishoujian	图穷匕首见	677
 tuqiongbishouxian	图穷匕首见	289
@@ -130578,7 +130606,9 @@ waibin	外宾	400
 waibozishuo	歪脖子说	527
 waibozishuohua	歪脖子说话	569
 waibu	外部	511
+waibucangku	外部仓库	280
 waibuchengxu	外部程序	703
+waibuku	外部库	280
 waibulianjie	外部连结	265
 waibulianjie	外部链接	255
 waibuwangguanxieyi	外部网关协议	788
@@ -130728,6 +130758,7 @@ waikeshoushu	外科手术	540
 waikexue	外科学	243
 waikeyisheng	外科医生	536
 waikeyishi	外科医师	570
+waiku	外库	280
 waikuai	外快	409
 waikuanneiji	外宽内忌	387
 wailai	外来	521
@@ -140346,6 +140377,7 @@ xiaotouzuomeng	小偷做梦	597
 xiaotuantizhuyi	小团体主义	289
 xiaotudenao	小秃的脑	527
 xiaotudenaodai	小秃的脑袋	569
+xiaotudian	小凸点	280
 xiaotui	小腿	700
 xiaotui	消退	274
 xiaotuidu	小腿肚	379
@@ -148111,7 +148143,7 @@ yandijing	眼底镜	232
 yandijingjiancha	眼底镜检查	640
 yandijingjianzha	眼底镜检査	796
 yandiling	炎帝陵	182
-yanding	研定	391
+yanding	研定	390
 yandixia	眼底下	362
 yandong	严冬	134
 yandongjishu	眼动技术	260
@@ -156077,7 +156109,7 @@ yitou	一头	480
 yitoure	一头热	362
 yitouwushui	一头雾水	387
 yitouzaijin	一头栽进	260
-yitu	意图	469
+yitu	意图	834
 yituan	疑团	424
 yituanheqi	一团和气	465
 yituanhuo	一团火	232
@@ -159328,6 +159360,7 @@ yuanmafenxiang	源码分享	673
 yuanmaguanli	源码管理	693
 yuanmajiedu	源码解读	693
 yuanmakaifa	源码开发	669
+yuanmaku	源码库	280
 yuanmalijie	源码理解	669
 yuanman	圆满	472
 yuanmanchenggong	圆满成功	280
@@ -160471,13 +160504,14 @@ yukun	雨困	280
 yukuo	迂阔	385
 yulaiguang	御来光	640
 yulaiyu	愈来愈	598
-yulan	预览	683
+yulan	预览	500
 yulangfeiqingongyuan	裕廊飞禽公园	579
 yulanhua	玉兰花	223
 yulanjie	盂兰节	620
 yulanpen	盂兰盆	228
 yulanpenhui	盂兰盆会	228
 yulanpenqiang	盂兰盆腔	570
+yulantu	预览图	800
 yulao	渔捞	392
 yule	娱乐	1000
 yule	育乐	543

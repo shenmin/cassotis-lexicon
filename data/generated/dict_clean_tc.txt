@@ -2202,6 +2202,7 @@ aodesashengmushengtianzhujiaozuotang	敖德薩聖母昇天主教座堂	808
 aodesashengmushengtianzhujiaozuotang	敖德薩聖母升天主教座堂	354
 aodexiusi	奧德修斯	226
 aodi	奧迪	284
+aodian	凹點	280
 aodiao	凹雕	198
 aodili	奧地利	584
 aoding	奧丁	200
@@ -2397,8 +2398,8 @@ aoshalibozhusheye	奧沙利鉑注射液	647
 aoshaxipan	奧沙西泮	540
 aoshen	媼神	58
 aoshendaziyuan	奧深達資源	755
-aoshi	凹室	439
-aoshi	傲視	319
+aoshi	凹室	440
+aoshi	傲視	320
 aoshiganlanqiu	澳式橄欖球	288
 aoshikangding	奧施康定	540
 aoshiqunlun	傲視羣倫	387
@@ -4525,7 +4526,7 @@ banbijiangshan	半壁江山	301
 banbing	搬兵	381
 banbo	斑駁	480
 banbobing	斑駁病	500
-banboli	班伯里	52
+banboli	班伯里	53
 banboluli	斑駁陸離	637
 banboluli	斑駮陸離	452
 banbu	頒布	822
@@ -5141,8 +5142,8 @@ bantoumo	半透膜	470
 bantouxing	半透性	470
 bantouxiuliu	斑頭鵂鶹	258
 bantouyan	斑頭雁	434
-bantu	版圖	469
-bantu	半途	374
+bantu	版圖	470
+bantu	半途	375
 bantu'erfei	半途而廢	481
 bantuerfei	半途而廢	481
 bantuibanjiu	半推半就	599
@@ -8707,8 +8708,8 @@ biaozhinv	表姪女	379
 biaozhixing	標誌性	620
 biaozhixulie	標誌序列	919
 biaozhixulie	標志序列	336
-biaozhu	標注	1000
 biaozhu	標註	1000
+biaozhu	標注	800
 biaozhuan	標磚	198
 biaozhuang	彪壯	365
 biaozhuangruangu	杓狀軟骨	570
@@ -8775,6 +8776,7 @@ biaozhunzhuangtai	標準狀態	431
 biaozhunzhuangtai	標准狀態	375
 biaozhunzuzhi	標准組織	272
 biaozhunzuzhi	標準組織	246
+biaozhutu	標註圖	800
 biaozi	婊子	724
 biaozi	表字	560
 biaozimei	表姊妹	424
@@ -10362,11 +10364,11 @@ bizhengxingshu	鼻整形術	540
 bizhengzhide	必爭之地	651
 bizhenliaofa	鼻針療法	260
 bizhenxie	避震鞋	380
-bizhi	筆直	436
-bizhi	幣值	318
-bizhi	壁紙	256
-bizhi	幣制	256
-bizhi	比值	256
+bizhi	筆直	435
+bizhi	幣值	317
+bizhi	壁紙	255
+bizhi	幣制	255
+bizhi	比值	255
 bizhibi	比值比	500
 bizhong	比重	980
 bizhong	幣種	1
@@ -14153,14 +14155,18 @@ canjushi	餐具室	600
 canka'er	參卡爾	232
 cankaer	參卡爾	232
 cankan	參看	443
-cankao	參考	551
+cankao	參考	896
+cankaobiao	參考表	800
 cankaocailiao	參考材料	260
 cankaodian	參考點	470
 cankaoshu	參考書	504
+cankaotu	參考圖	800
 cankaotuoqiuti	參考橢球體	289
 cankaowenxian	參考文獻	763
 cankaoxi	參考系	487
+cankaoxian	參考線	800
 cankaoxiaoxi	參考消息	469
+cankaozhi	參考值	800
 cankaoziliao	參考資料	405
 canku	殘酷	1000
 canku'anying	殘酷暗影	538
@@ -14321,7 +14327,7 @@ canyong	蠶蛹	341
 canyu	參與	1000
 canyu	殘餘	580
 canyu	參預	340
-canyuan	參院	274
+canyuan	參院	275
 canyuanbaibi	殘垣敗壁	383
 canyuanduanbi	殘垣斷壁	412
 canyude	參與的	1000
@@ -14583,7 +14589,7 @@ caozongjiyin	操縱基因	540
 caozongzi	操縱子	500
 caozongziru	操縱自如	423
 caozongzu	操縱組	500
-caozuo	操作	604
+caozuo	操作	905
 caozuoceshi	操作測試	671
 caozuochengxu	操作程序	766
 caozuodiannao	操作電腦	762
@@ -14591,6 +14597,7 @@ caozuofu	操作符	253
 caozuoguicheng	操作規程	387
 caozuohuanjing	操作環境	260
 caozuomingling	操作命令	732
+caozuoshang	操作上	800
 caozuoshu	操作數	419
 caozuotai	操作檯	408
 caozuotai	操作台	404
@@ -22982,7 +22989,7 @@ daimajiegou	代碼結構	707
 daimajilu	代碼記錄	672
 daimajiqiao	代碼技巧	665
 daimajishu	代碼技術	666
-daimaku	代碼庫	640
+daimaku	代碼庫	280
 daimakuai	代碼塊	688
 daimakuochong	代碼擴充	683
 daimalei	代碼類	632
@@ -24109,8 +24116,8 @@ dangri	當日	1000
 dangshan	碭山	259
 dangshang	當上	955
 dangshanxian	碭山縣	186
-dangshen	黨參	397
-dangshen	黨蔘	397
+dangshen	黨參	398
+dangshen	黨蔘	398
 dangshi	當時	1018
 dangshi	當事	1
 dangshi	黨史	1
@@ -27236,7 +27243,7 @@ dianbing	癲病	440
 dianbinggui	電冰櫃	375
 dianbingxiang	電冰箱	483
 dianbo	顛簸	1000
-dianbo	點播	776
+dianbo	點播	777
 dianbo	點撥	730
 dianbo	電波	1
 dianbobupo	顛簸不破	618
@@ -27443,7 +27450,7 @@ dianhuokaiguan	點火開關	260
 dianji	點擊	1000
 dianji	電機	907
 dianji	惦記	830
-dianji	電擊	365
+dianji	電擊	364
 dianji	電極	131
 dianji	典籍	26
 dianji	奠基	1
@@ -31893,13 +31900,14 @@ duiben	對本	458
 duiben'erfen	對苯二酚	540
 duibenerfen	對苯二酚	540
 duibenkun	對苯醌	215
-duibi	對比	497
+duibi	對比	901
 duibiao	對標	898
 duibidu	對比度	427
 duibidukuozhan	對比度擴展	724
 duibilianxiang	對比聯想	387
 duibimingandu	對比敏感度	610
 duibise	對比色	370
+duibitu	對比圖	800
 duibiwendu	對比溫度	387
 duibu	對不	914
 duibu	對簿	494
@@ -42404,6 +42412,7 @@ ganjueqi	感覺器	547
 ganjueqiguan	感覺器官	540
 ganjuequ	感覺區	470
 ganjuesangshi	感覺喪失	570
+ganjueshang	感覺上	800
 ganjueshangpi	感覺上皮	540
 ganjueshenjing	感覺神經	540
 ganjueshenjingdemoshao	感覺神經的末梢	700
@@ -45172,6 +45181,7 @@ gongjuxiang	工具箱	412
 gongkai	公開	502
 gongkaichanghe	公開場合	280
 gongkaihua	公開化	250
+gongkaiku	公開庫	280
 gongkaisai	公開賽	345
 gongkaitaolunhui	公開討論會	289
 gongkaixin	公開信	252
@@ -46450,7 +46460,7 @@ guanfeng	官俸	371
 guanfengqin	管風琴	252
 guanfu	官府	963
 guanfuyuanzhi	官復原職	467
-guang'an	廣安	694
+guang'an	廣安	649
 guang'anbaoweizhan	光暗包圍戰	613
 guang'anmen	廣安門	208
 guang'anshi	廣安市	172
@@ -46469,8 +46479,9 @@ guang'ouheqi	光耦合器	260
 guangai	灌溉	523
 guangaide	灌概地	640
 guangaiqu	灌溉渠	410
-guangan	廣安	694
+guangan	廣安	649
 guanganmen	廣安門	208
+guanganshang	觀感上	800
 guanganshi	廣安市	172
 guangansuan	胱氨酸	380
 guangansuanjie	胱氨酸結	570
@@ -47118,7 +47129,7 @@ guankong	管控	385
 guankou	關口	458
 guankui	管窺	214
 guankuisuoji	管窺所及	260
-guanlan	觀覽	544
+guanlan	觀覽	545
 guanlanhu	觀瀾湖	333
 guanlaoye	官老爺	241
 guanli	慣例	1010
@@ -64413,6 +64424,7 @@ jiepi	潔癖	1
 jiepianxiang	界偏向	640
 jiepin	解聘	423
 jieping	截屏	198
+jiepingtu	截屏圖	800
 jiepo	揭破	425
 jiepou	解剖	551
 jiepoudao	解剖刀	339
@@ -64611,7 +64623,8 @@ jietouxiaozi	街頭小子	538
 jietouyiren	街頭藝人	260
 jietouyouxi	街頭遊戲	755
 jietouzuqiu	街頭足球	538
-jietu	截圖	641
+jietu	截圖	1000
+jietuli	截圖裏	800
 jietuo	解脫	465
 jiewaikuangchao	界外狂潮	538
 jiewaishengzhi	節外生枝	499
@@ -89775,7 +89788,7 @@ mianhongerchi	面紅耳赤	496
 mianhongerre	面紅耳熱	616
 mianhu	面糊	1000
 mianhu	麵糊	1000
-mianhu	麪糊	860
+mianhu	麪糊	955
 mianhua	棉花	536
 mianhuabang	棉花棒	230
 mianhuai	緬懷	300
@@ -94513,12 +94526,14 @@ neibiwaituo	內閉外脫	540
 neibo'ershan	內伯爾山	583
 neiboershan	內伯爾山	583
 neibu	內部	682
+neibucangku	內部倉庫	280
 neibudouzheng	內部斗爭	271
 neibudouzheng	內部鬥爭	247
 neibuduixiang	內部對象	701
 neibuhanshu	內部函數	705
 neibuhetangtijinruweidian	內部核糖體進入位點	700
 neibukongjian	內部空間	680
+neibuku	內部庫	280
 neibula	內布拉	629
 neibulasijia	內布拉斯加	273
 neibulasijiazhou	內布拉斯加州	330
@@ -94694,7 +94709,8 @@ neikehulixue	內科護理學	610
 neikexue	內科學	688
 neikexuejichu	內科學基礎	610
 neikeyisheng	內科醫生	405
-neiku	內褲	419
+neiku	內庫	280
+neiku	內褲	1
 neikuijing	內窺鏡	444
 neilao	內澇	370
 neili	內裡	940
@@ -94808,9 +94824,11 @@ neitingxue	內庭穴	470
 neitui	內腿	525
 neitunzuoyong	內吞作用	570
 neiwai	內外	462
+neiwaicangku	內外倉庫	280
 neiwaijiagong	內外夾攻	630
 neiwaijianxiu	內外兼修	260
 neiwaijiaokun	內外交困	643
+neiwaiku	內外庫	280
 neiwang	內網	280
 neiwu	內務	451
 neiwubu	內務部	249
@@ -99872,7 +99890,7 @@ pingti	平替	137
 pingtian	平添	289
 pingtianxia	平天下	362
 pingtiao	憑眺	423
-pingtiao	屏條	419
+pingtiao	屏條	420
 pingting	娉婷	323
 pingtingniaonuo	娉婷裊娜	427
 pingtingniaonuo	娉婷嫋娜	321
@@ -112968,8 +112986,8 @@ shangliushehui	上流社會	249
 shanglixian	上栗縣	165
 shanglong	上龍	198
 shanglou	上樓	299
-shanglu	商路	516
-shanglu	上路	391
+shanglu	商路	515
+shanglu	上路	392
 shangluo	商洛	266
 shangluodequ	商洛地區	587
 shangluoshi	商洛市	176
@@ -118394,7 +118412,7 @@ shiju	視距	76
 shiju	實據	42
 shiju	食具	17
 shijuan	試卷	630
-shijue	視覺	900
+shijue	視覺	1000
 shijuecuojue	視覺錯覺	570
 shijuefangyan	視覺方言	40
 shijuegongnengzhang'aizhe	視覺功能障礙者	700
@@ -118409,6 +118427,7 @@ shijuepiceng	視覺皮層	570
 shijuepilao	視覺疲勞	570
 shijueqiguan	視覺器官	540
 shijueqipian	視覺欺騙	570
+shijueshang	視覺上	800
 shijueshiying	視覺適應	540
 shijuexiaoguo	視覺效果	280
 shijuexiaoshuo	視覺小說	538
@@ -119644,10 +119663,10 @@ shiyexian	事業綫	232
 shiyexin	事業心	492
 shiyeyoucheng	事業有成	459
 shiyezhe	失業者	481
+shiyi	示意	520
 shiyi	適宜	520
 shiyi	十一	472
 shiyi	十億	472
-shiyi	示意	431
 shiyi	拾遺	414
 shiyi	失意	340
 shiyi	失憶	340
@@ -119711,7 +119730,7 @@ shiyisiqianwanyumeiyuan	十億四千萬余美元	457
 shiyisiqianwanyumeiyuan	十億四千萬餘美元	453
 shiyisuangaotong	十一酸睾酮	610
 shiyisuangaotongjiaowan	十一酸睾酮膠丸	647
-shiyitu	示意圖	501
+shiyitu	示意圖	800
 shiyiwanlingliubaiyuliang	十一萬零六百余兩	457
 shiyiwanlingliubaiyuliang	十一萬零六百餘兩	453
 shiyiweiganlujiaonang	十一味甘露膠囊	655
@@ -119754,6 +119773,7 @@ shiyongqi	試用期	664
 shiyongquan	使用權	519
 shiyongren	使用人	1000
 shiyongsesu	食用色素	570
+shiyongshang	使用上	800
 shiyongtiaokuan	使用條款	260
 shiyongxishaonv	食用系少女	613
 shiyongyou	食用油	459
@@ -120228,8 +120248,9 @@ shoufukuan	首付款	431
 shoufushideyundong	收復失地運動	691
 shoufushidi	收復失地	387
 shoufutuolaji	手扶拖拉機	488
-shougan	手感	414
+shougan	手感	905
 shougangzonggongsi	首鋼總公司	288
+shouganshang	手感上	800
 shougao	手稿	710
 shouge	收割	1000
 shouge	首個	700
@@ -124417,6 +124438,7 @@ siyoubianliang	私有變量	705
 siyouchengxuji	私有程序集	730
 siyoude	私有地	676
 siyouhua	私有化	507
+siyouku	私有庫	280
 siyouyugu	死有餘辜	663
 siyouyugu	死有余辜	618
 siyouzhi	私有制	530
@@ -129967,6 +129989,7 @@ tigang	提綱	446
 tigangqieling	提綱挈領	775
 tiganjianianhua	體感嘉年華	613
 tiganrenzhe	體感忍者	538
+tiganshang	體感上	800
 tiganwendu	體感溫度	260
 tigao	提高	1000
 tigaoji	提睾肌	470
@@ -130490,6 +130513,8 @@ tixushan	體卹衫	521
 tiya	剔牙	375
 tiyalazhilei	提亞拉之淚	613
 tiyan	體驗	914
+tiyanggan	體驗感	800
+tiyanshang	體驗上	800
 tiyanyifan	體驗一番	1000
 tiyao	提要	438
 tiye	體液	440
@@ -130601,6 +130626,7 @@ tongbuhua	同步化	470
 tongbujiaobenxiugai	同步腳本修改	868
 tongbujiasuqi	同步加速器	640
 tongbukouyi	同步口譯	260
+tongbuku	同步庫	280
 tongbupeiyang	同步培養	540
 tongbushengzhang	同步生長	540
 tongbushuweijieceng	同步數位階層	318
@@ -131889,7 +131915,7 @@ tuba	土壩	596
 tuba	兔爸	476
 tubaiji	涂白劑	243
 tuban	凸版	1000
-tuban	圖版	217
+tuban	圖版	216
 tubang	土邦	472
 tubanyinshua	凸版印刷	387
 tubanyouxi	圖板遊戲	773
@@ -132010,6 +132036,7 @@ tudezhengce	土地政策	597
 tudezhengshou	土地征收	597
 tudi	土地	1000
 tudi	徒弟	1
+tudian	凸點	280
 tudie	突堞	260
 tudigai	土地改	556
 tudigaige	土地改革	608
@@ -132426,7 +132453,7 @@ tulongzhanji	屠龍戰記	538
 tulou	土樓	370
 tulu	吐露	763
 tulu	土路	643
-tulu	屠戮	636
+tulu	屠戮	635
 tulu	圖錄	31
 tulufan	吐魯番	622
 tulufandequ	吐魯番地區	269
@@ -132949,14 +132976,15 @@ tupopingjing	突破瓶頸	260
 tupoxing	突破性	515
 tupoxingganran	突破性感染	640
 tupu	圖譜	420
-tuqi	突起	952
-tuqi	凸起	768
+tuqi	突起	934
+tuqi	凸起	819
 tuqi	吐氣	1
 tuqi	土氣	1
 tuqi'eryanghuatanceliangyi	吐氣二氧化碳測量儀	700
 tuqianxianzhuangshibantiao	凸嵌線裝飾板條	976
 tuqianxianzhuangshibantiao	凸嵌綫裝飾板條	404
 tuqibu	突起部	232
+tuqidian	凸起點	280
 tuqiongbijian	圖窮匕見	627
 tuqiongbishoujian	圖窮匕首見	677
 tuqiongbishouxian	圖窮匕首見	87
@@ -133160,8 +133188,8 @@ tuzhang	圖章	560
 tuzhang	徒長	111
 tuzhengce	土政策	436
 tuzhexian	凸折綫	240
-tuzhi	圖紙	520
-tuzhi	土制	272
+tuzhi	圖紙	521
+tuzhi	土制	273
 tuzhimofen	塗脂抹粉	655
 tuzhimofen	涂脂抹粉	571
 tuzhong	途中	457
@@ -133268,7 +133296,9 @@ waibin	外賓	400
 waibozishuo	歪脖子說	527
 waibozishuohua	歪脖子說話	569
 waibu	外部	511
+waibucangku	外部倉庫	280
 waibuchengxu	外部程序	703
+waibuku	外部庫	280
 waibulianjie	外部連結	273
 waibulianjie	外部鏈接	272
 waibuwangguanxieyi	外部網關協議	788
@@ -133418,6 +133448,7 @@ waikeshoushu	外科手術	610
 waikexue	外科學	243
 waikeyisheng	外科醫生	556
 waikeyishi	外科醫師	660
+waiku	外庫	280
 waikuai	外快	409
 waikuanneiji	外寬內忌	387
 wailai	外來	521
@@ -143173,6 +143204,7 @@ xiaotouxiaomo	小偷小摸	423
 xiaotuantizhuyi	小團體主義	289
 xiaotudenao	小禿的腦	527
 xiaotudenaodai	小禿的腦袋	569
+xiaotudian	小凸點	280
 xiaotui	小腿	700
 xiaotui	消退	274
 xiaotuidu	小腿肚	379
@@ -157567,7 +157599,7 @@ yingxuan	應選	1000
 yingxun	英尋	194
 yingxunzhang	鷹勳章	832
 yingxuzhidi	應許之地	258
-yingyan	應驗	742
+yingyan	應驗	743
 yingyang	營養	616
 yingyang'oulu	鷹揚歐陸	538
 yingyangbuchongji	營養補充劑	640
@@ -159341,7 +159373,7 @@ yitou	一頭	480
 yitoure	一頭熱	362
 yitouwushui	一頭霧水	387
 yitouzaijin	一頭栽進	260
-yitu	意圖	469
+yitu	意圖	834
 yituan	疑團	424
 yituanheqi	一團和氣	465
 yituanhuo	一團火	232
@@ -162687,6 +162719,7 @@ yuanmafenxiang	源碼分享	673
 yuanmaguanli	源碼管理	693
 yuanmajiedu	源碼解讀	693
 yuanmakaifa	源碼開發	669
+yuanmaku	源碼庫	280
 yuanmalijie	源碼理解	669
 yuanman	圓滿	472
 yuanmanchenggong	圓滿成功	280
@@ -163823,12 +163856,13 @@ yukun	雨困	280
 yukuo	迂闊	385
 yulaiguang	御來光	620
 yulaiyu	癒來癒	598
-yulan	預覽	629
+yulan	預覽	500
 yulangfeiqingongyuan	裕廊飛禽公園	691
 yulanhua	玉蘭花	223
 yulanpen	盂蘭盆	228
 yulanpenhui	盂蘭盆會	228
 yulanpenqiang	盂蘭盆腔	570
+yulantu	預覽圖	800
 yulao	漁撈	392
 yule	娛樂	1000
 yule	育樂	500
@@ -164484,9 +164518,9 @@ yuqun	魚羣	405
 yuquyuduo	予取予奪	621
 yuquyuqiu	予取予求	634
 yurcaimiwodetianshi	育兒猜謎我的天使	662
-yure	餘熱	336
-yure	預熱	335
-yure	遇熱	223
+yure	餘熱	337
+yure	預熱	336
+yure	遇熱	224
 yuren	漁人	811
 yuren	愚人	429
 yuren	育人	185
@@ -169657,7 +169691,7 @@ zhichuanlingqiwuji	止喘靈氣霧劑	664
 zhichuanwu	制川烏	470
 zhichun	植醇	440
 zhici	至此	1000
-zhici	致辭	600
+zhici	致辭	599
 zhici	致詞	1
 zhiciyijia	只此一家	636
 zhiciyijiabiewufendian	只此一家別無分店	720
