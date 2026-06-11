@@ -7159,6 +7159,18 @@ def _cap_short_exact_homophones_by_direct_signal(
                 and not _is_named_entity_pos(pos_tag)
                 and not _is_conversational_pos(pos_tag)
             )
+            weak_direct_against_common_leader = (
+                leader_signal >= signal + max(0.040, signal_margin - 0.010)
+                and leader_direct_total >= 0.36
+                and direct_total + 0.16 <= leader_direct_total
+                and usage_score <= leader_usage + 0.03
+                and jieba_score <= leader_jieba + 0.03
+                and pageview_score <= leader_page + 0.05
+                and source_hits <= leader_hits + 1
+                and style_penalty < 160
+                and not _is_named_entity_pos(pos_tag)
+                and not _is_conversational_pos(pos_tag)
+            )
             if not (
                 leader_signal >= signal + signal_margin
                 and (
@@ -7166,6 +7178,7 @@ def _cap_short_exact_homophones_by_direct_signal(
                     or weak_direct_competitor
                     or semantic_daily_leader
                     or direct_evidence_dominated
+                    or weak_direct_against_common_leader
                     or style_penalty >= 80
                 )
             ):
@@ -7183,6 +7196,8 @@ def _cap_short_exact_homophones_by_direct_signal(
                 cap_margin += 28
             if direct_evidence_dominated:
                 cap_margin += 28
+            if weak_direct_against_common_leader:
+                cap_margin += 36
             cap = max(1, leader_weight - cap_margin)
             if weight <= cap:
                 continue
@@ -20776,6 +20791,22 @@ def main() -> int:
         _restore_project_proper_noun_exact_floor(
             tc_map,
             vertical_entries,
+            use_traditional=True,
+            stats_prefix="tc_final_post",
+        )
+    )
+    stats.update(
+        _cap_curated_daily_de_complement_pair_weights(
+            sc_map,
+            curated_daily_entries,
+            use_traditional=False,
+            stats_prefix="sc_final_post",
+        )
+    )
+    stats.update(
+        _cap_curated_daily_de_complement_pair_weights(
+            tc_map,
+            curated_daily_entries,
             use_traditional=True,
             stats_prefix="tc_final_post",
         )
