@@ -8689,6 +8689,12 @@ def _compute_cedict_daily_semantic_bonus(text: str, defs: str) -> int:
         "wrong",
         "amiss",
         "abnormal",
+        "myopia",
+        "shortsighted",
+        "nearsighted",
+        "hyperopia",
+        "farsighted",
+        "astigmatism",
     )
     daily_action_clues = (
         "show",
@@ -8812,6 +8818,9 @@ def _compute_cedict_daily_semantic_bonus(text: str, defs: str) -> int:
         # Avoid false positives such as matching "state" inside "statement".
         return re.search(rf"(?<![a-z]){re.escape(clue)}(?![a-z])", sense) is not None
 
+    def is_verb_like_sense(sense: str) -> bool:
+        return sense.startswith(("to ", "to be ", "to become ", "to get "))
+
     for sense in senses:
         if sense.startswith(("variant of ", "old variant of ", "see also ")):
             variant_senses += 1
@@ -8823,7 +8832,9 @@ def _compute_cedict_daily_semantic_bonus(text: str, defs: str) -> int:
             daily_abstract_senses += 1
         if any(has_clue(sense, clue) for clue in daily_action_clues):
             daily_action_senses += 1
-        if any(has_clue(sense, clue) for clue in daily_concrete_clues):
+        if (not is_verb_like_sense(sense)) and any(
+            has_clue(sense, clue) for clue in daily_concrete_clues
+        ):
             daily_concrete_senses += 1
         if (
             text.startswith(("不", "没", "無", "无", "非", "未"))
