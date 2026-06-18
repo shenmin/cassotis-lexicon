@@ -6,6 +6,16 @@
 安检	安檢	0.91	anjian
 插座	插座	0.84	chazuo
 反例	反例	0.90
+不对	不對	0.94	budui
+文章	文章	0.94	wenzhang
+蚊帐	蚊帳	0.90	wenzhang
+着急	著急	0.94	zhaoji
+中断	中斷	0.92	zhongduan
+遗漏	遺漏	0.90	yilou
+细微	細微	0.90	xiwei
+分支	分支	0.92	fenzhi
+无言	無言	0.88	wuyan
+跳跃	跳躍	0.90	tiaoyue
 店里取	店裏取	0.92
 酱紫	醬紫	0.94
 一个	一個	0.96

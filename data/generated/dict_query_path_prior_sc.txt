@@ -747,7 +747,7 @@ biaomianjiegou	表面|结构	473
 biaomiankangyuan	表面|抗原	455
 biaomianmazui	表面|麻醉	444
 biaomianpeiyang	表面|培养	463
-biaomianwenzhang	表面|文章	496
+biaomianwenzhang	表面|文章	503
 biaomianwulixue	表面|物理学	501
 biaomianyuansu	表面|元素	451
 biaomianzhangli	表面|张力	458
@@ -1101,7 +1101,7 @@ budoushizheyang	不都是|这样	518
 buduangengxin	不断|更新	483
 buduankuoda	不断|扩大	497
 buduanyongxian	不断|涌现	483
-buduiyiyuan	部队|医院	486
+buduiyiyuan	部队|医院	466
 buerfamen	不二|法门	487
 bufafenzi	不法|分子	414
 bufaxianli	不乏|先例	427
@@ -1830,7 +1830,7 @@ chenguzuozhongzi	陈谷做|种子	437
 chengxinchengyi	诚心|诚意	481
 chengxingtexing	成形|特性	469
 chengxingwendu	成形|温度	469
-chengxinshiyi	诚心|实意	437
+chengxinshiyi	诚心|实意	432
 chengxuanzhuang	程序|安装	505
 chengxubaohu	程序|保护	488
 chengxubengkui	程序|崩溃	492
@@ -3138,7 +3138,7 @@ diguichaxun	递归|查询	453
 diguidiaoyong	递归|调用	454
 diguidingli	递归|定理	474
 diguifangfa	递归|方法	472
-diguifenzhi	递归|分治	477
+diguifenzhi	递归|分治	458
 diguiguji	递归|估计	486
 diguihanshu	递归|函数	492
 diguijisuan	递归|计算	490
@@ -3182,7 +3182,7 @@ diliushiwu	第六|十五	520
 diliushiyi	第六|十一	520
 diliweidu	地理|纬度	453
 diliweizhi	地理|位置	483
-dimianbudui	地面|部队	467
+dimianbudui	地面|部队	447
 dimianchongjin	地面|冲筋	450
 dimianhebaozha	地面|核爆炸	455
 dimiankongzhi	地面|控制	467
@@ -9032,8 +9032,8 @@ kuayuyanjiaoben	跨语言|脚本	501
 kucunxianjin	库存|现金	467
 kuernike	库尔|尼克	380
 kuernikechengbao	库尔|尼克|城堡	462
-kuganchongji	苦甘|冲剂	472
-kugankeli	苦甘|颗粒	471
+kuganchongji	苦甘|冲剂	454
+kugankeli	苦甘|颗粒	468
 kuhaiwubian	苦海|无边	485
 kuibaoyiban	窥豹|一斑	394
 kuihuahuganpian	葵花|护肝片	446
@@ -10117,7 +10117,7 @@ maertabaohuguo	马尔他|保护国	412
 mafeizhongdu	吗啡|中毒	445
 mafengfenzhiganjun	麻风|分枝杆菌	457
 maguagaimianao	马褂改|棉袄	455
-maguantiaoyue	马关|条约	481
+maguantiaoyue	马关|条约	460
 maichongchaoren	脉冲|超人	467
 maichongkuandu	脉冲|宽度	436
 maichongleishe	脉冲|雷射	453
@@ -13045,7 +13045,7 @@ sanjiaoxingtaijie	三角形|台阶	467
 sanjiaoyuetai	三角|月台	485
 sanjiaozhanlve	三角|战略	467
 sanjiaozhantai	三角|站台	457
-sanjiaozhoubudui	三角洲|部队	414
+sanjiaozhoubudui	三角洲|部队	381
 sanjiaozhouxingdong	三角洲|行动	437
 sanjigouzao	三级|构造	486
 sanjihuancun	三级|缓存	490
@@ -13883,7 +13883,7 @@ shenshengandong	深深|感动	483
 shenshengheping	神圣|和平	372
 shenshenghepingjiaotang	神圣|和平|教堂	454
 shenshengxiudaoyuan	神圣|修道院	421
-shensheshoubudui	神射手|部队	502
+shensheshoubudui	神射手|部队	492
 shenshiyouxi	绅士|游戏	442
 shenshoubujian	伸手|不见	387
 shenshoubujianwuzhi	伸手|不见|五指	469
@@ -14340,7 +14340,7 @@ shixiaofenxi	失效|分析	486
 shixiaowulixue	失效|物理学	501
 shixiaweidahuo	石硖尾|大火	426
 shixinchuanghuage	实心|窗花格	446
-shixinshiyi	实心|实意	410
+shixinshiyi	实心|实意	404
 shixuezhisi	失血|致死	486
 shixushujuku	时序|数据库	469
 shiyandonghua	实验|动画	471
@@ -15347,7 +15347,7 @@ teyuejizhe	特约|记者	467
 tezhengfenxi	特征|分析	514
 tezhenghanshu	特征|函数	503
 tezhengxiangliang	特征|向量	467
-tezhongbudui	特种|部队	477
+tezhongbudui	特种|部队	445
 tezhongzhanxian	特种|战线	413
 tiananmenchenglou	天安门|城楼	512
 tiananmenguangchang	天安门|广场	520
@@ -16785,9 +16785,9 @@ wuxianziyuankongzhi	无线|资源|控制	498
 wuxiaoxunhuan	无效|循环	486
 wuxiaxiaoshuo	武侠|小说	459
 wuxubianfa	戊戌|变法	464
-wuyandingshi	屋檐|顶饰	413
+wuyandingshi	屋檐|顶饰	392
 wuyanghuxi	无氧|呼吸	472
-wuyangouzao	屋檐|构造	415
+wuyangouzao	屋檐|构造	393
 wuyeguanli	物业|管理	467
 wuyejiqiren	午夜|机器人	458
 wuyelingzhu	午夜|领主	450
@@ -16815,7 +16815,7 @@ wuzhixiangguanzhangai	物质|相关|障碍	483
 wuzhongmiejue	物种|灭绝	446
 wuzhongxingcheng	物种|形成	481
 wuzhouzhuanqu	梧州|专区	462
-wuzhuangbudui	武装|部队	483
+wuzhuangbudui	武装|部队	463
 wuzhuangchongtu	武装|冲突	467
 wuzhuangliliang	武装|力量	497
 wuzhuangtuxi	武装|突袭	467
@@ -16872,7 +16872,7 @@ xianchengtongbu	线程|同步	492
 xianchengtongxin	线程|通信	490
 xianchengxiezuo	线程|协作	472
 xianchengyouxianji	线程|优先级	472
-xianchengzhongduan	线程|中断	433
+xianchengzhongduan	线程|中断	490
 xianchengzhuangtai	线程|状态	491
 xiandaidazhanlve	现代|大战略	442
 xiandaijianzhu	现代|建筑	485
@@ -18057,7 +18057,7 @@ xiuxijingzhi	休息|静止	401
 xiuxijingzhizhenchan	休息|静止|震颤	483
 xiuyangshengxi	休养|生息	477
 xiuzhengzhuyi	修正|主义	456
-xiweimojie	细微|末节	496
+xiweimojie	细微|末节	497
 xixiaonuma	嬉笑|怒骂	484
 xixifusilengque	西西弗斯|冷却	462
 xixilibaluoke	西西里|巴洛克	432
@@ -18449,7 +18449,7 @@ yakesheying	牙科|摄影	486
 yakezhensuo	牙科|诊所	463
 yakezhiruwu	牙科|植入物	473
 yakezhuli	牙科|助理	486
-yakouwuyan	哑口|无言	453
+yakouwuyan	哑口|无言	466
 yalianwulixue	雅利安|物理学	498
 yaliceshi	压力|测试	491
 yalichuanganqi	压力|传感器	486
@@ -20645,7 +20645,7 @@ zhencishanghai	针刺|伤害	486
 zhencishiyan	针刺|试验	469
 zhenciyiwai	针刺|意外	486
 zhencizhentong	针刺|镇痛	433
-zhendangbudui	震荡|部队	457
+zhendangbudui	震荡|部队	425
 zhendejiade	真的|假的	520
 zhendongbaizhibing	振动|白指病	486
 zhendongfankui	震动|反馈	486
@@ -20780,7 +20780,7 @@ zhenkongqianyin	真空|牵引	486
 zhenkongxiyin	真空|吸引	486
 zhenmingtianzi	真命|天子	499
 zhenpishafa	真皮|沙发	459
-zhenqingshiyi	真情|实意	483
+zhenqingshiyi	真情|实意	478
 zhenrendianying	真人|电影	417
 zhenrendianyingyouxi	真人|电影|游戏	499
 zhenrendongzuo	真人|动作	401
@@ -20805,7 +20805,7 @@ zhenxianhuor	针线|活儿	440
 zhenxinchengyi	真心|诚意	480
 zhenxingdongmailiu	真性|动脉瘤	444
 zhenxingniaoshijin	真性|尿失禁	426
-zhenxinshiyi	真心|实意	444
+zhenxinshiyi	真心|实意	439
 zhenxinzhenyi	真心|真意	474
 zhenzhashanghai	针扎|伤害	471
 zhenzhizhuojian	真知|灼见	425
@@ -21136,8 +21136,8 @@ zhongdiankafeiguan	终点|咖啡馆	458
 zhongdongzhanzheng	中东|战争	512
 zhongduanchuangkou	终端|窗口	514
 zhongduanmingling	终端|命令	490
-zhongduanqudong	中断|驱动	464
-zhongduanshijian	中断|事件	395
+zhongduanqudong	中断|驱动	489
+zhongduanshijian	中断|事件	470
 zhongduanyonghu	终端|用户	472
 zhongduanzhuji	终端|主机	502
 zhongdukeli	中毒|颗粒	472

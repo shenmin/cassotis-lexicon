@@ -14389,7 +14389,7 @@ def _cap_curated_productive_visibility_against_direct_leaders(
             ):
                 continue
 
-            cap_margin = 36 if text in number_terms else 24
+            cap_margin = 36 if text in number_terms else 48
             cap = max(1, leader_weight - cap_margin)
             if text in number_terms:
                 cap = min(cap, CURATED_DAILY_SUPPLEMENT_NUMBER_WEIGHT_CAP - 48)
@@ -14690,6 +14690,23 @@ def _enforce_final_normative_homophone_order(
                         >= usage_score + jieba_score + pageview_score - 0.02
                     )
                 )
+                direct_evidence_weaker_than_leader = (
+                    support_count >= 1
+                    and leader_signal >= mainstream_signal - 0.030
+                    and (
+                        leader_parts[0] + leader_parts[3] + leader_parts[2]
+                        >= usage_score + jieba_score + pageview_score + 0.10
+                    )
+                    and not (
+                        usage_score >= 0.34
+                        or jieba_score >= 0.30
+                        or pageview_score >= 0.14
+                        or (
+                            source_hits >= 5
+                            and (usage_score >= 0.18 or jieba_score >= 0.14)
+                        )
+                    )
+                )
                 prefix_visibility_only = (
                     support_count >= 1
                     and (low_independent_signal or productive_prefix_visibility)
@@ -14707,6 +14724,9 @@ def _enforce_final_normative_homophone_order(
                 elif productive_prefix_visibility:
                     cap_kind = "prefix"
                     cap_margin = 80
+                elif direct_evidence_weaker_than_leader:
+                    cap_kind = "prefix"
+                    cap_margin = 96
                 elif prefix_visibility_only:
                     cap_kind = "prefix"
                     cap_margin = 112
@@ -14846,6 +14866,9 @@ def _restore_strong_curated_daily_exact_weights(
 
     for sc_word, tc_word, usage_score, explicit_pinyin in curated_entries:
         if usage_score < 0.90 or _cjk_len(sc_word) < min_hanzi:
+            continue
+        source_text = tc_word if use_traditional and tc_word else sc_word
+        if _is_curated_productive_state_visibility_term(source_text, usage_score):
             continue
 
         pinyin = explicit_pinyin or _pinyin_from_unihan(

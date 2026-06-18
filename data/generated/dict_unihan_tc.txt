@@ -698,7 +698,7 @@ bi	篳	152
 bi	蓽	146
 bi	嗶	145
 bi	秕	143
-bi	愎	130
+bi	愎	127
 bi	弼	126
 bi	裨	123
 bi	毖	122
@@ -4573,7 +4573,7 @@ feng	諷	268
 feng	俸	256
 feng	楓	255
 feng	豐	239
-feng	烽	192
+feng	烽	189
 feng	峯	157
 feng	碸	151
 feng	鳯	83
@@ -5278,9 +5278,9 @@ geng	暅	1
 gong	共	559
 gong	公	551
 gong	工	527
+gong	攻	417
 gong	供	415
 gong	功	403
-gong	攻	390
 gong	拱	369
 gong	宮	332
 gong	鞏	331
@@ -6252,7 +6252,7 @@ hong	宏	330
 hong	哄	325
 hong	洪	325
 hong	烘	313
-hong	虹	285
+hong	虹	286
 hong	鬨	252
 hong	鴻	215
 hong	弘	201
@@ -7477,7 +7477,7 @@ jia	夾	385
 jia	伽	362
 jia	賈	358
 jia	甲	354
-jia	稼	329
+jia	稼	328
 jia	茄	327
 jia	駕	322
 jia	嫁	320
@@ -7978,7 +7978,7 @@ jie	介	444
 jie	姐	438
 jie	節	421
 jie	借	414
-jie	街	409
+jie	街	410
 jie	揭	401
 jie	捷	370
 jie	潔	356
@@ -8133,9 +8133,9 @@ jie	飷	43
 jie	魝	43
 jie	魪	43
 jie	骱	1
-jin	進	626
-jin	緊	618
+jin	進	610
 jin	金	530
+jin	緊	466
 jin	今	457
 jin	勁	443
 jin	近	443
@@ -8278,11 +8278,11 @@ jing	涇	202
 jing	凈	191
 jing	肼	187
 jing	兢	172
+jing	逕	172
 jing	菁	145
 jing	儆	141
 jing	旌	138
 jing	粳	129
-jing	逕	115
 jing	阱	103
 jing	瀞	96
 jing	倞	72
@@ -10593,7 +10593,7 @@ ling	玲	271
 ling	苓	245
 ling	凌	209
 ling	羚	208
-ling	菱	198
+ling	菱	195
 ling	呤	194
 ling	鴒	177
 ling	蛉	149
@@ -10853,8 +10853,8 @@ long	霳	47
 long	驡	47
 long	龓	47
 long	篢	1
-lou	漏	435
 lou	樓	427
+lou	漏	345
 lou	嘍	291
 lou	陋	282
 lou	摟	271
@@ -11460,7 +11460,7 @@ mao	錨	177
 mao	耄	157
 mao	瑁	144
 mao	昴	121
-mao	袤	119
+mao	袤	114
 mao	懋	83
 mao	楙	83
 mao	芼	78
@@ -11540,8 +11540,8 @@ mei	鎂	281
 mei	袂	254
 mei	媒	228
 mei	莓	203
-mei	魅	201
 mei	媚	198
+mei	魅	198
 mei	寐	192
 mei	鶥	184
 mei	玫	181
@@ -12442,7 +12442,7 @@ ni	泥	458
 ni	溺	318
 ni	擬	307
 ni	倪	231
-ni	匿	224
+ni	匿	223
 ni	逆	209
 ni	尼	199
 ni	妮	185
@@ -15349,8 +15349,8 @@ shan	疝	222
 shan	刪	220
 shan	陝	218
 shan	膳	209
-shan	贍	195
-shan	煽	191
+shan	贍	194
+shan	煽	190
 shan	擅	186
 shan	跚	170
 shan	訕	154
@@ -15765,7 +15765,7 @@ shi	矢	214
 shi	柿	205
 shi	屍	203
 shi	仕	197
-shi	蝨	184
+shi	蝨	181
 shi	噬	168
 shi	鳾	164
 shi	舐	162
@@ -15905,9 +15905,9 @@ shi	鉃	38
 shi	鉇	38
 shi	鰘	38
 shi	柹	1
-shou	收	532
+shou	受	482
 shou	手	474
-shou	受	450
+shou	收	450
 shou	首	436
 shou	售	376
 shou	守	367
@@ -18391,6 +18391,7 @@ xi	析	413
 xi	希	407
 xi	犧	382
 xi	溪	370
+xi	谿	370
 xi	錫	370
 xi	惜	364
 xi	繫	357
@@ -18410,7 +18411,6 @@ xi	熙	265
 xi	蟋	260
 xi	係	242
 xi	徙	218
-xi	谿	210
 xi	烯	207
 xi	嬉	205
 xi	鬩	200
@@ -18421,7 +18421,7 @@ xi	硒	170
 xi	屣	168
 xi	曦	168
 xi	汐	167
-xi	禧	164
+xi	禧	163
 xi	璽	162
 xi	羲	162
 xi	熹	156
@@ -19077,10 +19077,10 @@ xiao	哮	336
 xiao	曉	332
 xiao	嘯	329
 xiao	肖	303
-xiao	宵	301
+xiao	宵	300
 xiao	簫	245
 xiao	孝	237
-xiao	囂	229
+xiao	囂	226
 xiao	蕭	210
 xiao	霄	205
 xiao	逍	201
@@ -21667,10 +21667,10 @@ yu	淤	211
 yu	渝	211
 yu	俞	207
 yu	榆	207
-yu	迂	206
 yu	慾	202
 yu	臾	202
 yu	隅	202
+yu	迂	201
 yu	禹	199
 yu	虞	199
 yu	禦	187
@@ -23079,7 +23079,7 @@ zhi	姪	198
 zhi	旨	193
 zhi	炙	190
 zhi	緻	184
-zhi	摯	168
+zhi	摯	167
 zhi	芷	167
 zhi	枳	166
 zhi	櫛	159
@@ -23916,8 +23916,8 @@ zong	宗	324
 zong	蹤	290
 zong	棕	209
 zong	傯	131
-zong	粽	112
 zong	倧	105
+zong	糉	90
 zong	摠	66
 zong	鬃	61
 zong	鬷	61
@@ -23945,7 +23945,6 @@ zong	㷓	45
 zong	䁓	45
 zong	嵸	45
 zong	愡	45
-zong	糉	45
 zong	糭	45
 zong	緵	45
 zong	縦	45
