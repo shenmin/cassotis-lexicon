@@ -185,3 +185,9 @@
 身份证件	身份證件	0.60	shenfenzhengjian
 询问笔录	詢問筆錄	0.60	xunwenbilu
 银行贷款	銀行貸款	0.60	yinhangdaikuan
+# housing relocation additions 2026-06-18
+动迁	動遷	0.66	dongqian
+动迁房	動遷房	0.64	dongqianfang
+动迁款	動遷款	0.62	dongqiankuan
+动迁协议	動遷協議	0.62	dongqianxieyi
+动迁补偿	動遷補償	0.62	dongqianbuchang

@@ -365,7 +365,7 @@ bangongshiruanti	辦公室|軟體	483
 bangongshiyouxi	辦公室|遊戲	499
 bangongshizidonghua	辦公室|自動化	483
 bangongzidonghua	辦公|自動化	493
-bangqiurenzhe	棒球|忍者	412
+bangqiurenzhe	棒球|忍者	404
 bangqiushashou	棒球|殺手	429
 bangqiushijie	棒球|世界	374
 bangqiushijiedasai	棒球|世界|大賽	456
@@ -1071,7 +1071,7 @@ bubianziben	不變|資本	487
 bubiyaode	不必|要的	401
 bubiyaodeyiliao	不必|要的|醫療	483
 bucefengyun	不測|風雲	481
-buchangshiwu	補償|事務	473
+buchangshiwu	補償|事務	474
 buchashangxia	不差|上下	454
 buchengbili	不成|比例	469
 buchengbucheng	不承|不承	400
@@ -1335,6 +1335,8 @@ caimixinqiao	財迷|心竅	412
 caimiyouxi	猜謎|遊戲	464
 caiquanxingling	猜拳|行令	462
 caiquxingdong	採取|行動	463
+caisekaohua	彩色|拷花	383
+caisekaohuaqiangzhi	彩色|拷花|牆紙	465
 caiseshijue	彩色|視覺	483
 caiwuguanli	財務|管理	483
 caiwuruanjian	財務|軟件	463
@@ -1511,6 +1513,7 @@ changdaojunzhong	腸道|菌種	408
 changdaoniuzhuan	腸道|扭轉	435
 changdaoweishengwu	腸道|微生物	470
 changdaoxishou	腸道|吸收	456
+changhongboli	長虹|玻璃	481
 changjiangliuyu	長江|流域	503
 changjiangsanxia	長江|三峽	520
 changjianjizheng	常見|急症	375
@@ -1908,7 +1911,7 @@ chezaidaohangxitong	車載|導航|系統	447
 chezhanhuiyi	車站|回憶	458
 chiboshangzhen	赤膊|上陣	484
 chichengjiangchang	馳騁|疆場	480
-chichuanyongdu	喫穿|用度	428
+chichuanyongdu	喫穿|用度	427
 chidaojineiya	赤道|幾內亞	436
 chidourenshijie	喫豆人|世界	458
 chidouxiaojie	喫豆|小姐	448
@@ -1954,6 +1957,10 @@ chongfengfeiche	衝鋒|飛車	374
 chongfengfeichexilie	衝鋒|飛車|系列	456
 chongfenkaolv	充分|考慮	469
 chongfenliyong	充分|利用	497
+chongfucitiao	重複|詞條	453
+chongfuhouxuan	重複|候選	453
+chongfuneirong	重複|內容	453
+chongfushuju	重複|數據	453
 chongjiliaofa	衝擊|療法	483
 chongjinzhaoping	沖筋|找平	459
 chongjipingyuan	沖積|平原	458
@@ -2032,6 +2039,7 @@ chuangshangyiliaozhongxin	創傷|醫療|中心	483
 chuangshangyixue	創傷|醫學	483
 chuangshangyuhe	創傷|癒合	483
 chuangshangzhongxin	創傷|中心	483
+chuangshijixianshang	創世紀|線上	453
 chuangshijizhengba	創世紀|爭霸	408
 chuangshiyinqing	創世|引擎	506
 chuangshizhexiaoying	創始者|效應	463
@@ -2281,6 +2289,7 @@ congrongyingdui	從容|應對	484
 congrongziru	從容|自如	484
 congrongziruo	從容|自若	483
 congrongzizai	從容|自在	483
+congtoudaowei	從頭|到尾	520
 congweijianguo	從未|見過	479
 congweiyouguo	從未|有過	477
 congyikaishi	從一|開始	520
@@ -2618,7 +2627,7 @@ danyixulie	單一|序列	470
 danyuanceshi	單元|測試	507
 danyuanceshigongju	單元|測試|工具	468
 danzhanxinjing	膽戰|心驚	429
-danzhiyuji	膽汁|淤積	400
+danzhiyuji	膽汁|淤積	401
 danzhuqishui	彈珠|汽水	418
 danzhutaizhuankuai	彈珠檯|磚塊	456
 danzongguanjieshi	膽總管|結石	432
@@ -2770,7 +2779,7 @@ dengjiziliao	等級|資料	461
 denglizitiwuli	等離子體|物理	498
 dengliziwulixue	等離子|物理學	498
 dengshanchuanyue	登山|穿越	486
-dengshanhuodong	登山|活動	460
+dengshanhuodong	登山|活動	481
 dengshansaiche	登山|賽車	464
 dengshanyundong	登山|運動	457
 dengtaiyepian	燈臺|葉片	398
@@ -2844,7 +2853,7 @@ dianjiezhiwenluan	電解質|紊亂	447
 dianjiezhiyichang	電解質|異常	483
 dianjihuaxue	點擊|化學	483
 dianjiliaofa	電擊|療法	432
-dianjingsannian	電競|三年	489
+dianjingsannian	電競|三年	499
 dianjingxuanshou	電競|選手	499
 dianjingyundongyuan	電競|運動員	499
 dianjisheshou	電擊|射手	426
@@ -3395,6 +3404,8 @@ dongmaizhouyangyinghua	動脈|粥樣硬化	442
 dongmaizhushe	動脈|注射	469
 dongmanyouxi	動漫|遊戲	499
 dongnantongjiqu	東南|統計區	454
+dongqianbuchang	動遷|補償	476
+dongqianxieyi	動遷|協議	491
 dongqingsushouti	動情素|受體	434
 dongqingzhouqi	動情|週期	483
 dongrenxinxian	動人|心絃	478
@@ -3861,7 +3872,7 @@ fanghuyongpin	防護|用品	440
 fanghuzhuangzhi	防護|裝置	483
 fangkongyanti	防空|掩體	457
 fangkuaileitai	方塊|擂臺	456
-fangkuairenzhe	方塊|忍者	424
+fangkuairenzhe	方塊|忍者	416
 fangkuaishaonv	方塊|少女	443
 fangkuaishijie	方塊|世界	467
 fangkuaitaotuo	方塊|逃脫	374
@@ -5222,7 +5233,7 @@ guangmingpohuaizhe	光明|破壞者	458
 guangmingqishi	光明|騎士	456
 guangmingqishixilie	光明|騎士|系列	456
 guangmingribao	光明|日報	477
-guangmingshizhe	光明|使者	448
+guangmingshizhe	光明|使者	447
 guangmingxilie	光明|系列	439
 guangmingyongshi	光明|勇士	467
 guangmingzhixin	光明|之心	434
@@ -5318,13 +5329,17 @@ guanlizixunxitong	管理|資訊|系統	483
 guanmaixunhuan	冠脈|循環	481
 guanmenhengmu	關門|橫木	428
 guanmiantanghuang	冠冕|堂皇	471
+guannipishi	關你|屁事	482
 guanshanzuge	關山|阻隔	477
 guanshuibilei	關稅|壁壘	468
 guansuanshouti	穀氨酸|受體	472
 guansuantuoqingmei	穀氨酸|脫氫酶	455
 guansuantuosuomei	穀氨酸|脫羧酶	483
 guansuanzhuanyunti	穀氨酸|轉運體	483
+guantapishi	關他|屁事	483
+guantapishi	關她|屁事	479
 guantouxiaosheng	罐頭|笑聲	463
+guanwopishi	關我|屁事	486
 guanxianyuedui	管弦|樂隊	422
 guanxianyuetuan	管弦|樂團	417
 guanxibuda	關係|不大	483
@@ -5430,7 +5445,7 @@ guiwulixian	鬼屋|歷險	399
 guiwumoying	鬼屋|魔影	411
 guiwuzhexilie	鬼武者|系列	443
 guiyujianggaisu	鮭魚|降鈣素	406
-guizezhiding	規則|制定	483
+guizezhiding	規則|制定	462
 guizhangzhidu	規章|制度	483
 gujiadaima	骨架|代碼	485
 gujianqitanxilie	古劍奇譚|系列	448
@@ -5537,6 +5552,7 @@ guolidaxue	國立|大學	479
 guolijiudian	國立|酒店	480
 guolucaishen	過路|財神	443
 guolurendiaosang	過路人|弔喪	436
+guolvchongfu	過濾|重複	453
 guolvjiaoben	過濾|腳本	505
 guomenburu	過門|不入	463
 guomindaiyu	國民|待遇	467
@@ -5854,9 +5870,10 @@ haozikanliangcang	耗子看|糧倉	414
 hebaofenghe	荷包|縫合	463
 hebeibangzi	河北|梆子	448
 hebidangchu	何必|當初	436
-hebingdanyuange	合併|單元格	449
+hebingchongfu	合併|重複	453
+hebingdanyuange	合併|單元格	458
 hebingganran	合併|感染	486
-hebingzhuyi	合併|主義	447
+hebingzhuyi	合併|主義	455
 hechengdikang	合成|抵抗	469
 hechengfanying	合成|反應	486
 hechenghuahewu	合成|化合物	455
@@ -5964,6 +5981,8 @@ hejinzhuangbeishengcun	合金|裝備|生存	456
 hejinzhuangbeixilie	合金|裝備|系列	456
 helanwangguo	荷蘭|王國	417
 helasixilie	賀拉斯|系列	410
+helemihuntang	喝了|迷魂湯	436
+heleyujiu	喝了|御酒	454
 heliqingxu	合理|情緒	375
 heliqingxuliaofa	合理|情緒|療法	457
 hemuxiangchu	和睦|相處	487
@@ -6242,6 +6261,7 @@ huangtirongjie	黃體|溶解	483
 huangtitongjiaonang	黃體酮|膠囊	439
 huangtiweisuo	黃體|萎縮	483
 huangtixuezhong	黃體|血腫	435
+huangtongjietou	黃銅|接頭	439
 huangtongleihuahewu	黃酮類|化合物	483
 huangyelaocheng	荒野|老城	444
 huangyeqiangshen	荒野|槍神	423
@@ -6563,14 +6583,14 @@ huocongtianjiang	禍從|天降	436
 huodadadu	豁達|大度	458
 huodexingzhuang	獲得|性狀	445
 huodongdeban	活動|地板	484
-huodongfangwu	活動|房屋	456
+huodongfangwu	活動|房屋	467
 huodongfanwei	活動|範圍	483
 huodongjiaozhiqi	活動|矯治器	457
-huodongjilu	活動|紀錄	450
+huodongjilu	活動|紀錄	471
 huodongqudongqi	活動|驅動器	466
-huodongzhangai	活動|障礙	456
+huodongzhangai	活動|障礙	478
 huodongzhuangtai	活動|狀態	479
-huodongzhuomian	活動|桌面	444
+huodongzhuomian	活動|桌面	465
 huoermuzihaixia	霍爾木茲|海峽	517
 huofuxiangyi	禍福|相依	424
 huoguangchongtian	火光|沖天	421
@@ -6668,7 +6688,7 @@ huzhouluanshuo	胡謅|亂說	470
 jiabenmizuo	甲苯|咪唑	399
 jiabenzhongdu	甲苯|中毒	421
 jiachangbianfan	家常|便飯	438
-jiachongwangzhe	甲蟲|王者	408
+jiachongwangzhe	甲蟲|王者	418
 jiachunzhongdu	甲醇|中毒	425
 jiachuyuzhong	家畜|育種	486
 jiadaohuanhu	夾道|歡呼	480
@@ -7106,7 +7126,10 @@ jiazhitixi	價值|體系	483
 jiazhixitong	價值|系統	483
 jiazhongfenmian	家中|分娩	466
 jiazhouligong	加州|理工	437
+jiazhuangcailiao	家裝|材料	466
+jiazhuanggongsi	家裝|公司	490
 jiazhuangpangxianjisu	甲狀旁腺|激素	447
+jiazhuangsheji	家裝|設計	487
 jiazhuangxianduzheng	甲狀腺|毒症	474
 jiazhuangxianfayan	甲狀腺|發炎	446
 jiazhuangxianfengbao	甲狀腺|風暴	483
@@ -9134,6 +9157,7 @@ lengshuijizu	冷水|機組	454
 lengxuedongwu	冷血|動物	498
 lengyanpangguan	冷眼|旁觀	485
 lengyanxiangdai	冷眼|相待	485
+lengzhagangban	冷軋|鋼板	458
 lepingzhuanqu	樂平|專區	454
 lequdonghua	樂趣|動畫	465
 leshanzhuanqu	樂山|專區	465
@@ -9396,7 +9420,7 @@ linghunbanji	靈魂|扳機	442
 linghunjiaozhi	靈魂|交織	406
 linghunlvren	靈魂|旅人	431
 linghunmengyue	靈魂|盟約	429
-linghunshizhe	靈魂|使者	448
+linghunshizhe	靈魂|使者	447
 linghunxieyi	靈魂|協議	464
 linghunxingzhe	靈魂|行者	439
 linghunzhanshi	靈魂|戰士	420
@@ -9547,7 +9571,7 @@ liumangxingdong	流氓|行動	445
 liumeitixieyi	流媒體|協議	468
 liunaoyimiao	流腦|疫苗	398
 liunianbuli	流年|不利	452
-liuqinburen	六親|不認	466
+liuqinburen	六親|不認	465
 liuqiuwenti	琉球|問題	465
 liushadoushi	流沙|鬥士	395
 liushuiwuqing	流水|無情	483
@@ -9842,6 +9866,7 @@ luyouxieyi	路由|協議	487
 luyouxuanze	路由|選擇	386
 luyouxuanzexieyi	路由|選擇|協議	468
 lvcisanfan	屢次|三番	456
+lvhejinxingcai	鋁合金|型材	464
 lvhuanadiyanye	氯化鈉|滴眼液	457
 lvhuanarongye	氯化鈉|溶液	408
 lvleitadingjiaonang	氯雷他定|膠囊	455
@@ -10197,6 +10222,7 @@ meiyourenyouquan	沒有人|有權	449
 meiyoushijian	沒有|時間	374
 meiyoushijianjieshi	沒有|時間|解釋	456
 meiyoushuju	沒有|數據	464
+meiyujijie	梅雨|季節	479
 meizhouzhuichongbing	美洲|錐蟲病	478
 mengdeergongdian	孟德爾|宮殿	456
 menggongchangdonghua	夢工廠|動畫	498
@@ -10264,7 +10290,7 @@ menzhenhuli	門診|護理	480
 menzhenyiliao	門診|醫療	449
 menzhenzhaohu	門診|照護	417
 mianaogaibeiwo	棉襖改|被窩	436
-mianbaorenzhe	麵包|忍者	408
+mianbaorenzhe	麵包|忍者	401
 mianbaoshifu	麪包|師傅	458
 mianbaoshifu	麵包|師傅	407
 mianbaoxiedaohang	麪包屑|導航	470
@@ -10484,8 +10510,8 @@ minidonghua	迷你|動畫	404
 minidonghuajuji	迷你|動畫|劇集	486
 minigonglu	迷你|公路	467
 minijiche	迷你|機車	464
-minirenzhe	迷你|忍者	435
-minirenzhemaoxian	迷你|忍者|冒險	421
+minirenzhe	迷你|忍者	427
+minirenzhemaoxian	迷你|忍者|冒險	375
 minishijie	迷你|世界	467
 miniweiqi	迷你|圍棋	464
 miniyouxi	迷你|遊戲	499
@@ -10556,7 +10582,7 @@ mofashichuanqi	魔法師|傳奇	456
 mofashijie	魔法|世界	467
 mofashixiezouqu	魔法師|協奏曲	456
 mofashiximeng	魔法師|西蒙	415
-mofashizhe	魔法|使者	448
+mofashizhe	魔法|使者	447
 mogongdiguo	魔宮|帝國	457
 mogongzhanshi	魔宮|戰士	400
 moguizhanjiangxilie	魔鬼戰將|系列	448
@@ -11091,7 +11117,7 @@ nongchangshenghuomoni	農場|生活|模擬	456
 nongchangyingxiong	農場|英雄	374
 nongchangyingxiongchuanqi	農場|英雄|傳奇	456
 nongcunjumin	農村|居民	462
-nongfurenzhe	農夫|忍者	460
+nongfurenzhe	農夫|忍者	452
 nonggengmoni	農耕|模擬	456
 nonghouxingqu	濃厚|興趣	520
 nonglinxialu	農林|下路	502
@@ -11425,6 +11451,8 @@ pingmuxianshi	屏幕|顯示	497
 pingpangqiupai	乒乓|球拍	457
 pingpangqiutai	乒乓|球台	468
 pingpangqiutai	乒乓|球檯	465
+pingpuxiaoguo	平鋪|效果	488
+pingpuzhuanwa	平鋪|磚瓦	436
 pingrangsaiche	平壤|賽車	464
 pingtaidongzuo	平臺|動作	417
 pingtaidongzuoyouxi	平臺|動作|遊戲	499
@@ -12065,7 +12093,8 @@ quanxisheying	全息|攝影	486
 quanyajiaocuo	犬牙|交錯	438
 quanzhongshuju	權重|數據	453
 qubaohoushen	取保|候審	421
-quchongyaoji	驅蟲|藥劑	450
+quchongyaoji	驅蟲|藥劑	417
+qudiaochongfu	去掉|重複	457
 qudonganquan	驅動|安全	483
 qudonganzhuang	驅動|安裝	487
 qudongbiancheng	驅動|編程	486
@@ -12120,6 +12149,7 @@ quweiyouxi	趣味|遊戲	474
 quxiangbuming	去向|不明	469
 quxianjiuguo	曲線|救國	463
 quxiannihe	曲線|擬合	441
+quxiaozhiding	取消|置頂	457
 quyangdansuan	去氧|膽酸	450
 quyanghetang	去氧|核糖	454
 quyangshenshangxiansu	去氧|腎上腺素	457
@@ -12177,6 +12207,7 @@ relisaiche	熱力|賽車	464
 remengaoerfu	熱門|高爾夫	456
 renbenchunminingjiao	壬苯醇醚|凝膠	450
 renbenzhuyi	人本|主義	419
+renbuxiaqu	忍不|下去	469
 rencaibeichu	人才|輩出	488
 rencailiushi	人才|流失	469
 rencainande	人才|難得	484
@@ -12285,7 +12316,7 @@ renleifazhanjieduan	人類|發展|階段	483
 renleifuse	人類|膚色	449
 renleiguangmin	人類|光敏	401
 renleiguangminganxing	人類|光敏|感性	483
-renleihuodong	人類|活動	460
+renleihuodong	人類|活動	481
 renleijiyinzu	人類|基因組	486
 renleipifu	人類|皮膚	401
 renleipifujunqun	人類|皮膚|菌羣	483
@@ -12410,16 +12441,17 @@ renzaoweixing	人造|衛星	470
 renzaoxueguan	人造|血管	441
 renzhebushou	忍者|不受	374
 renzhebushouhuanying	忍者|不受|歡迎	456
-renzhedazhan	忍者|大戰	416
-renzhegongzhu	忍者|公主	460
+renzhedazhan	忍者|大戰	408
+renzhegongzhu	忍者|公主	452
 renzhenduidai	認真|對待	479
 renzhengwuzheng	人證|物證	425
 renzhenwancheng	認真|完成	483
-renzhewaichuan	忍者|外傳	415
-renzhexiaozhen	忍者|小鎮	409
-renzhexinshi	忍者|信使	389
-renzhezhandou	忍者|戰鬥	457
-renzhezhanshi	忍者|戰士	403
+renzhewaichuan	忍者|外傳	407
+renzhewaichuanxilie	忍者外傳|系列	356
+renzhexiaozhen	忍者|小鎮	402
+renzhexinshi	忍者|信使	381
+renzhezhandou	忍者|戰鬥	449
+renzhezhanshi	忍者|戰士	396
 renzhibaoliu	認知|保留	401
 renzhibaoliuyanjiu	認知|保留|研究	483
 renzhicunliang	認知|存量	486
@@ -12833,6 +12865,7 @@ shamoqihou	沙漠|氣候	483
 shamuxilie	莎木|系列	419
 shanbeizhutou	扇貝|柱頭	481
 shanchuchengxu	刪除|程序	490
+shanchuchongfu	刪除|重複	453
 shanchutubian	刪除|突變	483
 shandianchuji	閃電|出擊	464
 shandianjiehun	閃電|結婚	470
@@ -13884,6 +13917,9 @@ shimingzhaohuan	使命|召喚	467
 shimingzhaohuanxilie	使命|召喚|系列	456
 shimitezhaoxiangji	施密特|照相機	498
 shimochenfei	石墨|塵肺	468
+shimudiban	實木|地板	489
+shimuduocengban	實木|多層板	472
+shimukeliban	實木|顆粒板	472
 shineidaohang	室內|導航	498
 shineipaodao	室內|跑道	482
 shineisheji	室內|設計	463
@@ -14024,6 +14060,7 @@ shiyeyoucheng	事業|有成	487
 shiyiciji	適宜|刺激	468
 shiyidianyike	十一點|一刻	520
 shiyingnengli	適應|能力	479
+shiyingshitaimian	石英石|檯面	447
 shiyingzhangai	適應|障礙	470
 shiyixiaoshi	十一|小時	520
 shiyizhengxilie	失憶症|系列	456
@@ -14224,7 +14261,7 @@ shuidianjiezhiwenluan	水電解質|紊亂	451
 shuidianjingjichang	水電|競技場	499
 shuidouyimiao	水痘|疫苗	410
 shuifenpingheng	水分|平衡	474
-shuiguorenzhe	水果|忍者	460
+shuiguorenzhe	水果|忍者	452
 shuiheeryanghuatan	水合|二氧化碳	483
 shuijiechanwu	水解|產物	472
 shuijiedanbai	水解|蛋白	474
@@ -15096,7 +15133,7 @@ tiexuezaixiang	鐵血|宰相	424
 tiganbangqiu	體感|棒球	374
 tiganbangqiuxilie	體感|棒球|系列	456
 tiganjianianhua	體感|嘉年華	450
-tiganrenzhe	體感|忍者	460
+tiganrenzhe	體感|忍者	452
 tigongchengxu	提供|程序	491
 tigongfuwu	提供|服務	457
 tigongshuru	提供|輸入	423
@@ -15640,11 +15677,11 @@ wangyeyouxi	網頁|遊戲	499
 wangyiyouxi	網易|遊戲	474
 wangzhanbushu	網站|部署	472
 wangzhanyuanma	網站|源碼	442
-wangzhemiling	王者|密令	433
-wangzherongyao	王者|榮耀	431
-wangzheshiji	王者|世紀	442
+wangzhemiling	王者|密令	443
+wangzherongyao	王者|榮耀	442
+wangzheshiji	王者|世紀	452
 wangzheshijie	王者|世界	467
-wangzhewushuang	王者|無雙	455
+wangzhewushuang	王者|無雙	464
 wangzhidaohang	網址|導航	497
 wanhaowuque	完好|無缺	486
 wanhuozifen	玩火|自焚	447
@@ -15954,7 +15991,7 @@ wenjianmingkuozhan	文件名|擴展	470
 wenjianshijian	文件|事件	485
 wenjianshuxing	文件|屬性	500
 wenjuandiaocha	問卷|調查	453
-wenkanghuodong	文康|活動	418
+wenkanghuodong	文康|活動	440
 wenlibutong	文理|不通	483
 wenmingbiange	文明|變革	467
 wenmingdiguo	文明|帝國	467
@@ -16482,7 +16519,6 @@ xiangsugongchang	像素|工廠	430
 xiangsuhaidao	像素|海盜	467
 xiangsulaji	像素|垃圾	467
 xiangsulveduozhe	像素|掠奪者	428
-xiangsupaozhe	像素|跑者	407
 xiangsuxingji	像素|星際	374
 xiangsuxingjihaidao	像素|星際|海盜	456
 xiangsuyouxi	像素|遊戲	499
@@ -16530,6 +16566,10 @@ xianpiaolinghegansuan	腺嘌呤|核苷酸	483
 xianqishiyan	先期|試驗	483
 xianquzhezhenzi	先驅者|真子	455
 xianrujiangju	陷入|僵局	454
+xianshangfenxi	線上|分析	417
+xianshangfenxichuli	線上|分析|處理	499
+xianshanghuodong	線上|活動	453
+xianshangqudao	線上|渠道	457
 xianshenshuofa	現身|說法	454
 xianshidaohang	顯示|導航	505
 xianshijianyan	現實|檢驗	483
@@ -16601,6 +16641,8 @@ xianweizhaoxiang	顯微|照相	486
 xianweizhiwu	纖維|植物	470
 xianweizhushe	顯微|注射	473
 xianweizuzhi	纖維|組織	470
+xianxiahuodong	線下|活動	430
+xianxiaqudao	線下|渠道	447
 xianximen	西安|西門	480
 xianxingfangcheng	綫性|方程	474
 xianxingganran	顯性|感染	412
@@ -16679,6 +16721,7 @@ xiaojingangsuanshu	小金剛|算數	388
 xiaojinglingfangkuai	小精靈|方塊	413
 xiaojinjiaonang	小金|膠囊	458
 xiaokangshehui	小康|社會	467
+xiaoleqilai	笑了|起來	483
 xiaolunchemoniqi	小輪車|模擬器	456
 xiaomaipeiya	小麥|胚芽	470
 xiaonaobiantaoti	小腦|扁桃體	450
@@ -16714,7 +16757,6 @@ xiaorwaikexue	小兒|外科學	404
 xiaorxiaoshi	小兒|消食	374
 xiaorxiaoshikeli	小兒|消食|顆粒	456
 xiaoshikeli	消食|顆粒	443
-xiaoshiliaoliao	小時|了了	473
 xiaoshoushizhong	梟首|示眾	443
 xiaoshouxiaojiao	小手|小腳	472
 xiaoshuoyijingji	小說|義經紀	456
@@ -16758,8 +16800,8 @@ xiaozhangyishi	囂張|一時	479
 xiaozhenjinghun	小鎮|驚魂	462
 xiaozhenyingxiong	小鎮|英雄	425
 xiaozhihuayenangyan	小指|滑液囊炎	476
-xiapojingsu	下坡|競速	360
-xiapojingsuwangzhe	下坡|競速|王者	442
+xiapojingsu	下坡|競速	371
+xiapojingsuwangzhe	下坡|競速|王者	453
 xiaqingshangda	下情|上達	434
 xiaqiunaoxianti	下丘腦|腺體	473
 xiaqiunaozonghezheng	下丘腦|綜合徵	457
@@ -17177,6 +17219,7 @@ xinhaoshuailuo	信號|衰落	493
 xinhaosudu	信號|速度	501
 xinhaowanzhengxing	信號|完整性	501
 xinhaoxulie	信號|序列	467
+xinhejinbashou	鋅合金|把手	469
 xinhuaiguitai	心懷|鬼胎	437
 xinhuaipoce	心懷|叵測	436
 xinhuaitante	心懷|忐忑	445
@@ -17623,7 +17666,7 @@ xuduguangyin	虛度|光陰	426
 xudunianhua	虛度|年華	423
 xuecangshipin	雪藏|食品	471
 xueguanboli	血管|剝離	469
-xueguanhuodong	血管|活動	458
+xueguanhuodong	血管|活動	480
 xueguanjibing	血管|疾病	464
 xueguanjingluan	血管|痙攣	437
 xueguankuozhang	血管|擴張	401
@@ -17739,7 +17782,7 @@ xueyafanshe	血壓|反射	486
 xueyangnongdu	血氧|濃度	442
 xueyechuanbo	血液|傳播	470
 xueyedonglixue	血液|動力學	483
-xueyeguolv	血液|過濾	448
+xueyeguolv	血液|過濾	482
 xueyejiancha	血液|檢查	483
 xueyejianyan	血液|檢驗	483
 xueyejibing	血液|疾病	448
@@ -17948,6 +17991,8 @@ yalishandasanshi	亞歷山大|三世	458
 yalishandayishi	亞歷山大|一世	458
 yanandiqu	沿岸|地區	467
 yananzhuanqu	延安|專區	457
+yanbancanzhuo	岩板|餐桌	487
+yanbantaimian	岩板|檯面	456
 yanbianzhuanqu	延邊|專區	465
 yanbohaomiao	煙波|浩渺	458
 yanbudaizhuangpaozhen	眼部|帶狀皰疹	440
@@ -18867,6 +18912,7 @@ yingyutingli	英語|聽力	440
 yingyuxiezuo	英語|寫作	470
 yingyuyouxi	英語|遊戲	499
 yingzhengruwu	應徵|入伍	464
+yingzhetoupi	硬著|頭皮	465
 yingzichuanshuo	影子|傳說	464
 yingzineige	影子|內閣	468
 yinhangdaikuan	銀行|貸款	505
@@ -19188,6 +19234,7 @@ yiyuzhuangtai	抑鬱|狀態	470
 yizhengweiji	疫症|危機	464
 yizhidanbai	抑制|蛋白	486
 yizhidanbaimei	抑制|蛋白酶	486
+yizhidaowei	一直|到尾	516
 yizhijiyin	抑制|基因	472
 yizhijiyintubian	抑制|基因|突變	483
 yizhimianyi	移植|免疫	449
@@ -19212,7 +19259,7 @@ yonganzhuanqu	永安|專區	465
 yongbaojijie	擁抱|季節	464
 yongbugudan	永不|孤單	467
 yongbumomie	永不|磨滅	447
-yongcanaoshi	用餐|凹室	438
+yongcanaoshi	用餐|凹室	439
 yongcundongmaigan	永存|動脈乾	453
 yongcunpeitai	永存|胚胎	397
 yongcunpeitaixueguan	永存|胚胎|血管	479
@@ -20061,7 +20108,7 @@ zhenduanshiji	診斷|試劑	399
 zhenduanxuejichu	診斷學|基礎	457
 zhenfenrenxin	振奮|人心	488
 zhengceleixing	政策|類型	476
-zhengcezhiding	政策|制定	486
+zhengcezhiding	政策|制定	463
 zhengchaihuyinkeli	正柴胡飲|顆粒	457
 zhengchangchengben	正常|成本	469
 zhengchangrenti	正常|人體	374
@@ -20310,7 +20357,7 @@ zhijianshumu	只見|樹木	478
 zhijianzhanzheng	指尖|戰爭	464
 zhijiaozhuanwan	直角|轉彎	383
 zhijiaozhuanwanjieti	直角|轉彎|階梯	465
-zhijiaozuobiao	直角|座標	466
+zhijiaozuobiao	直角|座標	474
 zhijiecanyu	直接|參與	480
 zhijiedanhongsu	直接|膽紅素	457
 zhijiedianli	直接|電離	417
@@ -20999,6 +21046,7 @@ zhuliyishi	助理|醫師	463
 zhuliyundong	助力|運動	408
 zhuluzhongyuan	逐鹿|中原	439
 zhumadianzhuanqu	駐馬店|專區	443
+zhumuxianweiban	竹木|纖維板	467
 zhunbeichangjing	準備|場景	505
 zhunbeijiuxu	準備|就緒	479
 zhunbeipengzhuang	準備|碰撞	505
