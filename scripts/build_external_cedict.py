@@ -525,7 +525,7 @@ CURATED_DAILY_ASPECT_VISIBILITY_CAP = 760
 # Quantity-classifier snippets are useful exact matches, but they are not
 # necessarily more common than same-pinyin lexical words. Keep them visible
 # without giving them the full daily/chat priority floor.
-DAILY_COUNT_MEASURE_CHARS = set("把部对栋副幅根幢件轮盘匹批片篇瓶扇双台条桶页项只爿间間套房厅廳卫衛室厨廚")
+DAILY_COUNT_MEASURE_CHARS = set("把部对栋副幅根幢件轮盘匹批片篇瓶扇双台条桶页项只爿间間套房厅廳卫衛室厨廚种種")
 DAILY_HOUSING_COUNT_MEASURE_CHARS = set("间間套房厅廳卫衛室厨廚")
 DAILY_COUNT_PREFIX_CHARS = set("一二两三四五六七八九十几每")
 # Fiction entities and public/historical people names are supplemental named
@@ -682,6 +682,9 @@ SINGLE_CHAR_READING_DELTA_OVERRIDES: Dict[Tuple[str, str], int] = {
     # support can keep 南 visible, but should not outrank the common adjective.
     ("难", "nan"): 180,
     ("難", "nan"): 180,
+    # Keep the common function-word reading above same-pinyin content roots.
+    ("与", "yu"): 100,
+    ("與", "yu"): 100,
 }
 
 MULTI_CHAR_TERM_DROP_OVERRIDES: Set[str] = {
@@ -758,6 +761,9 @@ MULTI_CHAR_TERM_DROP_OVERRIDES: Set[str] = {
     "郵件轉給",
     "昨日状况",
     "昨日狀況",
+    # Low-signal CEDICT noise; the standard everyday target is 花费/花費.
+    "华废",
+    "華廢",
 }
 
 MULTI_CHAR_TERM_DROP_SUBSTRINGS: Set[str] = {
