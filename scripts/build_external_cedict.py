@@ -14839,6 +14839,135 @@ def _cap_curated_daily_supplement_exact_weights(
     return stats
 
 
+def _cap_low_signal_competitors_against_curated_supplement_terms(
+    mapping: Dict[Tuple[str, str], int],
+    supplement_terms: Set[str],
+    protected_terms: Set[str],
+    usage_score_map: Dict[str, float],
+    source_hits_map: Dict[str, int],
+    pageviews_signal_map: Dict[str, float],
+    jieba_direct_signal_map: Dict[str, float],
+    jieba_pos_map: Dict[str, str],
+    char_frequency_prior: Dict[str, float] | None,
+    wiki_titles: Set[str],
+    wiki_augmented_terms: Set[str] | None,
+    stats_prefix: str,
+    bucket_pinyin_map: Dict[Tuple[str, str], str] | None = None,
+) -> Dict[str, int]:
+    """Keep obscure same-pinyin competitors below curated low-frequency supplements.
+
+    Curated daily supplements intentionally have a low cap so they remain
+    selectable without crowding common words.  A derived/rare entry in the same
+    pinyin bucket should not keep an inherited high weight above that explicit
+    supplement when it has no direct usage evidence.
+    """
+    stats = {
+        f"{stats_prefix}_supplement_low_signal_competitor_buckets": 0,
+        f"{stats_prefix}_supplement_low_signal_competitors_capped": 0,
+    }
+    if not mapping or not supplement_terms:
+        return stats
+
+    protected_terms = protected_terms or set()
+    wiki_augmented_terms = wiki_augmented_terms or set()
+    bucket_pinyin_map = bucket_pinyin_map or {}
+    char_prior = _build_effective_char_prior(mapping, char_frequency_prior)
+    buckets: Dict[str, List[Tuple[str, str, int]]] = {}
+    for (pinyin, text), weight in mapping.items():
+        bucket_pinyin = bucket_pinyin_map.get((pinyin, text), pinyin)
+        if not bucket_pinyin:
+            continue
+        buckets.setdefault(bucket_pinyin, []).append((pinyin, text, weight))
+        if "'" in bucket_pinyin:
+            compact_bucket = bucket_pinyin.replace("'", "")
+            if (
+                compact_bucket
+                and compact_bucket != bucket_pinyin
+                and PINYIN_RE.fullmatch(compact_bucket)
+            ):
+                buckets.setdefault(compact_bucket, []).append((pinyin, text, weight))
+
+    capped_keys: Set[Tuple[str, str]] = set()
+    for _bucket_pinyin, items in buckets.items():
+        supplement_weights = [
+            weight
+            for _pinyin, text, weight in items
+            if text in supplement_terms and 2 <= _cjk_len(text) <= 4
+        ]
+        if not supplement_weights:
+            continue
+
+        supplement_weight = min(
+            CURATED_DAILY_SUPPLEMENT_WEIGHT_CAP,
+            max(supplement_weights),
+        )
+        if supplement_weight <= 0:
+            continue
+        cap = max(1, supplement_weight - 24)
+        bucket_touched = False
+
+        for pinyin, text, weight in items:
+            text_len = _cjk_len(text)
+            if (
+                text in protected_terms
+                or text_len < 2
+                or text_len > 3
+                or _is_pure_daily_number_word(text)
+                or weight <= cap
+            ):
+                continue
+
+            usage_score = min(1.0, max(0.0, usage_score_map.get(text, 0.0)))
+            source_hits = max(0, source_hits_map.get(text, 0))
+            pageview_score = min(1.0, max(0.0, pageviews_signal_map.get(text, 0.0)))
+            jieba_score = min(1.0, max(0.0, jieba_direct_signal_map.get(text, 0.0)))
+            pos_tag = jieba_pos_map.get(text, "")
+            char_score = _compute_text_single_char_prior(text, char_prior)
+            min_char_prior = _compute_min_char_prior(text, char_prior)
+            wiki_support = _has_effective_wiki_support(
+                text,
+                wiki_titles,
+                pageview_score=pageview_score,
+                source_hits=source_hits,
+                wiki_augmented_terms=wiki_augmented_terms,
+            )
+            rare_title_visibility_only = (
+                usage_score < 0.45
+                and jieba_score < 0.04
+                and source_hits <= 4
+                and min_char_prior < 0.08
+                and char_score < 0.45
+            )
+            has_independent_signal = (
+                not rare_title_visibility_only
+                and (
+                    usage_score >= 0.18
+                    or jieba_score >= 0.12
+                    or pageview_score >= 0.08
+                    or source_hits >= 2
+                    or (wiki_support and (pageview_score >= 0.04 or source_hits >= 1))
+                )
+            )
+            if has_independent_signal:
+                continue
+            if _is_named_entity_pos(pos_tag) and (wiki_support or pageview_score >= 0.03):
+                continue
+            if min_char_prior >= 0.10 or char_score >= 0.42:
+                continue
+
+            key = (pinyin, text)
+            mapping[key] = cap
+            if key not in capped_keys:
+                stats[f"{stats_prefix}_supplement_low_signal_competitors_capped"] += 1
+                capped_keys.add(key)
+            bucket_touched = True
+
+        if bucket_touched:
+            stats[f"{stats_prefix}_supplement_low_signal_competitor_buckets"] += 1
+
+    return stats
+
+
 def _restore_strong_curated_daily_exact_weights(
     mapping: Dict[Tuple[str, str], int],
     curated_entries: List[Tuple[str, str, float, str]],
@@ -20849,6 +20978,40 @@ def main() -> int:
             curated_daily_entries,
             use_traditional=True,
             stats_prefix="tc_final_post",
+        )
+    )
+    stats.update(
+        _cap_low_signal_competitors_against_curated_supplement_terms(
+            sc_map,
+            curated_daily_supplement_sc_terms,
+            curated_daily_sc_terms | curated_daily_supplement_sc_terms,
+            usage_score_map,
+            source_hits_map,
+            pageviews_signal_map,
+            jieba_direct_signal_map,
+            jieba_pos_map,
+            char_frequency_prior,
+            wiki_titles,
+            wiki_alias_sc_terms,
+            "sc_final_post",
+            bucket_pinyin_map=sc_output_pinyin_bucket_map,
+        )
+    )
+    stats.update(
+        _cap_low_signal_competitors_against_curated_supplement_terms(
+            tc_map,
+            curated_daily_supplement_tc_terms,
+            curated_daily_tc_terms | curated_daily_supplement_tc_terms,
+            tc_usage_score_map,
+            tc_source_hits_map,
+            tc_pageviews_signal_map,
+            tc_jieba_direct_signal_map,
+            tc_jieba_pos_map,
+            tc_char_frequency_prior,
+            wiki_titles,
+            wiki_alias_tc_terms,
+            "tc_final_post",
+            bucket_pinyin_map=tc_output_pinyin_bucket_map,
         )
     )
 

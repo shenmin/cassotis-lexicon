@@ -514,7 +514,7 @@ baoxiaozuguo	報效|祖國	421
 baoyingbushuang	報應|不爽	480
 baoyulunli	保育|倫理	486
 baoyupeiyang	保育|培養	471
-baoyushaji	暴雨|殺機	408
+baoyushaji	暴雨|殺機	464
 baozhangbaodie	暴漲|暴跌	452
 baozhatouwushi	爆炸頭|武士	417
 baoziqiyuan	孢子|起源	467
@@ -545,6 +545,7 @@ beidouwushuang	北斗|無雙	450
 beifangwenyi	北方|文藝	384
 beifangwenyifuxing	北方|文藝|復興	466
 beifangzhenyelin	北方|針葉林	486
+beifurongjiebang	被覆溶|接棒	439
 beigaoshijian	被告|事件	416
 beiguanyanshi	悲觀|厭世	457
 beiguanzhuyi	悲觀|主義	473
@@ -3421,6 +3422,7 @@ dongmaiyinghua	動脈|硬化	438
 dongmaizhouyangyinghua	動脈|粥樣硬化	442
 dongmaizhushe	動脈|注射	469
 dongmanyouxi	動漫|遊戲	499
+dongnanjifeng	東南|季風	453
 dongnantongjiqu	東南|統計區	454
 dongqianbuchang	動遷|補償	476
 dongqianxieyi	動遷|協議	491
@@ -3706,7 +3708,7 @@ elingshilixilie	惡靈勢力|系列	456
 eluosibaigong	俄羅斯|白宮	462
 eluosidiguo	俄羅斯|帝國	454
 eluosijianzhu	俄羅斯|建築	466
-emaodaxue	鵝毛|大雪	409
+emaodaxue	鵝毛|大雪	462
 emengpohuaizhe	惡夢|破壞者	456
 emengsanwei	噩夢|三維	452
 emochengchuanshuo	惡魔城|傳說	456
@@ -4296,6 +4298,7 @@ fengshigutong	風濕|骨痛	469
 fengshigutongjiaonang	風濕|骨痛|膠囊	457
 fengshigutongyaojiu	風濕|骨痛|藥酒	457
 fengshouzhiyuexilie	豐收之月|系列	456
+fengshuangyuxue	風霜|雨雪	483
 fengshuixiansheng	風水|先生	467
 fengsurenqing	風俗|人情	411
 fengtianchengyun	奉天|承運	426
@@ -4803,7 +4806,7 @@ gaojizhanzheng	高級|戰爭	464
 gaojizhongxue	高級|中學	501
 gaokejijianzhu	高科技|建築	468
 gaokongzuoye	高空|作業	467
-gaoliangzidi	膏粱|子弟	467
+gaoliangzidi	膏粱|子弟	442
 gaolingchanfu	高齡|產婦	412
 gaoliyixue	高麗|醫學	483
 gaomianjianzhu	高棉|建築	478
@@ -5083,6 +5086,7 @@ gongshangpeichang	工傷|賠償	420
 gongshangshigu	工傷|事故	446
 gongshangyinhang	工商|銀行	487
 gongshengbingzheng	共生|病症	429
+gongshenggudan	共生|固氮	386
 gongshengshengwu	共生|生物	460
 gongshengxijun	共生|細菌	419
 gongshigongban	公事|公辦	452
@@ -5747,7 +5751,7 @@ haimianzhuangxueguanliu	海綿狀|血管瘤	458
 haimianzuzhi	海綿|組織	469
 hainanhangkong	海南|航空	437
 haipingmianshangsheng	海平面|上升	486
-haishafengyun	海沙|風雲	464
+haishafengyun	海沙|風雲	462
 haishafengyun	海砂|風雲	456
 haishangjiaoyisuo	海上|交易所	431
 haishangjiayuan	海上|家園	467
@@ -6276,7 +6280,7 @@ huangqikeli	黃芪|顆粒	468
 huangqishengmaiyin	黃芪|生脈飲	457
 huangquexingdong	黃雀|行動	413
 huangqumeidusu	黃麴黴|毒素	460
-huangrandawu	恍然|大悟	497
+huangrandawu	恍然|大悟	444
 huangrebingyimiao	黃熱病|疫苗	441
 huangrugeshi	恍如|隔世	423
 huangrumengjing	恍如|夢境	472
@@ -7453,8 +7457,8 @@ jifaxingpinxue	繼發性|貧血	440
 jifaxingqingguangyan	繼發性|青光眼	426
 jifaxingtangniaobing	繼發性|糖尿病	457
 jifaxingtongjing	繼發性|痛經	436
-jifengbaoyu	疾風|暴雨	403
-jifengzhouyu	疾風|驟雨	425
+jifengbaoyu	疾風|暴雨	457
+jifengzhouyu	疾風|驟雨	410
 jifudaxue	基輔|大學	470
 jifuguoli	基輔|國立	380
 jifuguolidaxue	基輔|國立|大學	462
@@ -8741,15 +8745,15 @@ konglongweijixilie	恐龍|危機|系列	456
 konglongxinshiji	恐龍|新世紀	438
 kongqianjuehou	空前|絕後	485
 kongqidiaojiexitong	空氣調節|系統	483
-kongqiliutong	空氣|流通	442
-kongqilvqingqi	空氣|濾清器	438
-kongqishidu	空氣|濕度	421
-kongqishuansai	空氣|栓塞	432
+kongqiliutong	空氣|流通	466
+kongqilvqingqi	空氣|濾清器	462
+kongqishidu	空氣|濕度	445
+kongqishuansai	空氣|栓塞	456
 kongqitiaojie	空氣|調節	497
 kongqitoushi	空氣|透視	468
-kongqiwuran	空氣|污染	461
+kongqiwuran	空氣|污染	484
 kongqiwuranwu	空氣|污染物	486
-kongqizuli	空氣|阻力	466
+kongqizuli	空氣|阻力	467
 kongquewuqu	孔雀|舞曲	430
 kongshoudaoguanjun	空手道|冠軍	458
 kongtouzhipiao	空頭|支票	497
@@ -8853,7 +8857,7 @@ kuangbaodanzhu	狂暴|彈珠	410
 kuangbaoxiaozi	狂暴|小子	466
 kuangbiaoqishi	狂飆|騎士	464
 kuangchanziyuan	礦產|資源	511
-kuangfengbaoyu	狂風|暴雨	423
+kuangfengbaoyu	狂風|暴雨	488
 kuangfengelang	狂風|惡浪	445
 kuangfengzhouyu	狂風|驟雨	439
 kuanggongweili	礦工|威利	416
@@ -13213,7 +13217,7 @@ shengandongnijiaotang	聖安東尼|教堂	462
 shengaotizhong	身高|體重	401
 shengaotizhongzhishu	身高|體重|指數	483
 shengbidexiudaoyuan	聖彼得|修道院	401
-shengbidezhongxue	聖彼得|中學	417
+shengbidezhongxue	聖彼得|中學	453
 shengcaiyoudao	生財|有道	434
 shengchanguanxi	生產|關係	481
 shengchanhuanjing	生產|環境	489
@@ -14973,7 +14977,7 @@ taobifanying	逃避|反應	483
 taobizeren	逃避|責任	436
 taohaomaiguai	討好|賣乖	447
 taohongsiwutang	桃紅|四物湯	437
-taolibuyan	桃李|不言	485
+taolibuyan	桃李|不言	452
 taolichaoxinxing	逃離|超新星	454
 taolifangkuai	逃離|方塊	374
 taolifangkuaixilie	逃離|方塊|系列	456
@@ -17075,6 +17079,7 @@ xilixiya	西里|西亞	380
 xilixiyajuyuan	西里|西亞|劇院	462
 xinanjida	西南|極大	372
 xinanjidagongguo	西南|極大|公國	454
+xinanjifeng	西南|季風	457
 xinantongjiqu	西南|統計區	454
 xinaoguandao	洗腦|管道	447
 xinbaluokefengge	新巴洛克|風格	466
@@ -17599,6 +17604,7 @@ xirumazuiji	吸入|麻醉劑	483
 xirunongyan	吸入|濃煙	467
 xiruquanshen	吸入|全身	401
 xiruquanshenmazui	吸入|全身|麻醉	483
+xishenbeitai	西伸|北抬	512
 xishidama	吸食|大麻	478
 xishoubuliang	吸收|不良	486
 xishoujiliang	吸收|劑量	469
@@ -19575,6 +19581,7 @@ youximoshi	遊戲|模式	499
 youximozu	遊戲|模組	496
 youxingshengzhi	有性|生殖	478
 youxingshidai	有性|世代	471
+youxinrongjiebang	有心溶|接棒	440
 youxinvwang	遊戲|女王	499
 youxinwuli	有心|無力	455
 youxipaiming	遊戲|排名	499
@@ -19883,9 +19890,9 @@ yuxianyiliao	預先|醫療	401
 yuxianyiliaozhiling	預先|醫療|指令	483
 yuxianzhishi	預先|指示	486
 yuxingcaodiyanye	魚腥草|滴眼液	456
-yuxuechuanzhang	浴血|船長	399
-yuxuefenzhan	浴血|奮戰	459
-yuxueheibang	浴血|黑幫	420
+yuxuechuanzhang	浴血|船長	464
+yuxuefenzhan	浴血|奮戰	484
+yuxueheibang	浴血|黑幫	494
 yuyanceshi	語言|測試	483
 yuyanchengxu	語言|程序	490
 yuyanchengxusheji	語言|程序|設計	468
