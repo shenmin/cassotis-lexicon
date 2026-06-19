@@ -15239,7 +15239,7 @@ chananzhuanqu	察南專區	583
 chanbiao	覘標	198
 chanbing	顫病	353
 chanchan	潺潺	560
-chanche	鏟車	316
+chanche	鏟車	313
 chancheng	產程	200
 chanchengqu	禪城區	379
 chanchengyanzhang	產程延長	540
@@ -15952,7 +15952,7 @@ chanong	茶農	632
 chanpibing	蟾皮病	470
 chanpin	產品	536
 chanpinceshi	產品測試	673
-chanping	剷平	395
+chanping	剷平	389
 chanpinjiegou	產品結構	260
 chanpinjingli	產品經理	260
 chanpinsheji	產品設計	280
@@ -15970,8 +15970,7 @@ chanqianjiancha	產前檢查	570
 chanqianshengchan	產鉗生產	570
 chanqianzhenduan	產前診斷	570
 chanqianzixian	產前子癇	540
-chanqiu	剷球	325
-chanqiu	鏟球	313
+chanqiu	鏟球	345
 chanqu	產區	689
 chanquan	產權	464
 chanquanzhuanrang	產權轉讓	260
@@ -20072,7 +20071,7 @@ chugan	觸感	305
 chugang	出港	396
 chugangdating	出港大廳	260
 chuganjishu	觸感技術	570
-chugao	初稿	404
+chugao	初稿	700
 chugaozeng'er	蒭藁增二	258
 chugaozenger	蒭藁增二	258
 chuge	出格	1000
@@ -21727,6 +21726,7 @@ cuicuo	璀錯	198
 cuidaixun	崔代勛	620
 cuifei	催肥	313
 cuifeiji	催肥劑	228
+cuigao	催稿	700
 cuigeng	催更	198
 cuigu	脆骨	440
 cuiguanyu	翠冠玉	230
@@ -29260,6 +29260,7 @@ dinggan	丁肝	440
 dinggang	頂崗	401
 dinggang	頂缸	400
 dingganren	丁甘仁	470
+dinggao	定稿	700
 dingge	定格	480
 dinggede'er	丁咯地爾	540
 dinggedeer	丁咯地爾	540
@@ -35121,7 +35122,7 @@ fafu	發福	517
 fafu	法服	173
 fagaiwei	發改委	362
 fagan	發紺	428
-fagao	發稿	982
+fagao	發稿	700
 fagei	發給	473
 fagongziri	發工資日	260
 fagu	發箍	201
@@ -41844,7 +41845,7 @@ gaiexiangshan	改噁向善	343
 gaifan	蓋飯	523
 gaifang	蓋房	401
 gaigai	改改	700
-gaigao	改稿	359
+gaigao	改稿	700
 gaige	改革	561
 gaigejia	改革家	506
 gaigejishuqi	蓋革計數器	289
@@ -43285,7 +43286,7 @@ gaofa	告發	698
 gaofan	高反	137
 gaofang	膏方	198
 gaofarenqun	高發人羣	218
-gaofei	稿費	449
+gaofei	稿費	450
 gaofeijiazu	高飛家族	538
 gaofeiyuanzou	高飛遠走	437
 gaofen	高分	458
@@ -43910,7 +43911,7 @@ gaozhou	高州	253
 gaozhoushi	高州市	165
 gaozhu	高洙	630
 gaozhuang	告狀	457
-gaozi	稿子	710
+gaozi	稿子	712
 gaozong	高總	280
 gaozong	高宗	1
 gaozu	高祖	510
@@ -62116,7 +62117,9 @@ jiaoganshenjingxingjingzhuibing	交感神經型頸椎病	680
 jiaoganshenjingxitong	交感神經系統	680
 jiaoganshenjingyizhiji	交感神經抑制劑	700
 jiaoganxingyanyan	交感性眼炎	640
-jiaogao	較高	700
+jiaogao	交稿	700
+jiaogao	校稿	700
+jiaogao	較高	550
 jiaoge	交割	983
 jiaogei	交給	914
 jiaogeini	交給你	1000
@@ -62397,7 +62400,7 @@ jiaomujunrengongranseti	酵母菌人工染色體	700
 jiaomujunshuangzahexitong	酵母菌雙雜合系統	700
 jiaomujutang	酵母聚糖	570
 jiaona	繳納	829
-jiaona	交納	687
+jiaona	交納	688
 jiaonan	較難	700
 jiaonang	膠囊	752
 jiaonangji	膠囊劑	500
@@ -64284,7 +64287,7 @@ jiegan	飢餓感	857
 jiegan	秸稈	109
 jiegan'erqi	揭竿而起	638
 jieganerqi	揭竿而起	638
-jiegao	截稿	503
+jiegao	截稿	700
 jiegei	借給	448
 jiegeng	桔梗	399
 jiegenshu	截根術	470
@@ -67280,7 +67283,7 @@ jingzhunyixue	精准醫學	250
 jingzi	鏡子	1000
 jingzi	精子	931
 jingzi	徑自	730
-jingzi	逕自	716
+jingzi	逕自	723
 jingzifasheng	精子發生	540
 jingzihuodongli	精子活動力	640
 jingzihuoli	精子活力	570
@@ -76479,6 +76482,7 @@ laifuqiang	來復槍	538
 laifuxian	來復線	1000
 laifuzi	萊菔子	198
 laigang	來港	198
+laigao	來稿	700
 laiguang	來逛	700
 laiguanlin	賴冠霖	700
 laiguo	來過	700
@@ -90189,7 +90193,7 @@ mianhongerchi	面紅耳赤	496
 mianhongerre	面紅耳熱	616
 mianhu	面糊	1000
 mianhu	麵糊	1000
-mianhu	麪糊	955
+mianhu	麪糊	860
 mianhua	棉花	536
 mianhuabang	棉花棒	230
 mianhuai	緬懷	300
@@ -96110,7 +96114,7 @@ nifuji	泥敷劑	228
 nifujiaoganshenjingyao	擬副交感神經藥	898
 nifujiaoganshenjingyao	擬副交感神經葯	367
 nigande	你幹的	800
-nigao	擬稿	381
+nigao	擬稿	700
 nige	你哥	1000
 nigedimu	尼哥底母	260
 nigeiwodexihuan	你給我的喜歡	560
@@ -103532,7 +103536,7 @@ qigan	豈敢	904
 qigan	旗杆	1
 qigang	氣缸	419
 qigang	汽缸	415
-qigao	起稿	372
+qigao	起稿	700
 qigaoyizhao	棋高一著	387
 qige	七個	1036
 qigefeifangxian	齊格菲防綫	289
@@ -104166,7 +104170,8 @@ qingganlidankoufuye	清肝利膽口服液	647
 qingganxingjingshenbing	情感性精神病	680
 qingganzhang'ai	情感障礙	570
 qingganzhangai	情感障礙	570
-qinggao	清高	447
+qinggao	清稿	700
+qinggao	清高	520
 qingge	情歌	405
 qinggemanwu	輕歌曼舞	632
 qinggong	輕工	843
@@ -105095,7 +105100,7 @@ qinse	琴瑟	248
 qinsebutiao	琴瑟不調	405
 qinseheming	琴瑟和鳴	405
 qinsehexie	琴瑟和諧	621
-qinshan	親善	830
+qinshan	親善	829
 qinshandashi	親善大使	387
 qinshanhedianzhan	秦山核電站	280
 qinshanzhenkuai	寢苫枕塊	383
@@ -113112,6 +113117,7 @@ shangan	陝甘	518
 shangang	山岡	266
 shanganning	陝甘寧	458
 shanganningbianqu	陝甘寧邊區	405
+shangao	刪稿	700
 shangaohaishen	山高海深	218
 shangaohuangdiyuan	山高皇帝遠	275
 shangaoshuichang	山高水長	15
@@ -115301,8 +115307,8 @@ shengandelu	聖安德魯	228
 shengandongni	聖安東尼	706
 shengang	伸港	358
 shengangxiang	伸港鄉	228
-shengao	身高	998
-shengao	審稿	603
+shengao	審稿	700
+shengao	身高	580
 shengaomada	身高馬大	417
 shengaopin	甚高頻	430
 shengaoren	審稿人	379
@@ -120810,7 +120816,8 @@ shoufutuolaji	手扶拖拉機	488
 shougan	手感	905
 shougangzonggongsi	首鋼總公司	288
 shouganshang	手感上	800
-shougao	手稿	710
+shougao	收稿	700
+shougao	手稿	308
 shouge	收割	1000
 shouge	首個	700
 shougeji	收割機	499
@@ -128943,6 +128950,7 @@ tengdaiyuan	滕代遠	469
 tengde	疼得	700
 tengdelihai	疼得厲害	1018
 tengfei	騰飛	453
+tenggao	謄稿	700
 tenggeli	騰格里	208
 tenggelishamo	騰格里沙漠	283
 tenghu	藤壺	383
@@ -132147,7 +132155,7 @@ toufenzhen	頭份鎮	379
 toufu	頭伏	323
 tougai	頭蓋	387
 tougaigu	頭蓋骨	492
-tougao	投稿	390
+tougao	投稿	700
 tougong	頭功	400
 tougongjianliao	偷工減料	471
 tougoupixie	頭垢皮屑	570
@@ -132813,6 +132821,7 @@ tuifeng	頹風	305
 tuifu	推服	323
 tuigan	推桿	374
 tuigan	推杆	373
+tuigao	退稿	700
 tuige	退格	280
 tuigei	推給	280
 tuigejian	退格鍵	232
@@ -134513,6 +134522,7 @@ wangan	望安	225
 wanganshi	王安石	369
 wanganxiang	望安鄉	230
 wanganyu	王安宇	700
+wangao	完稿	700
 wangba	王八	842
 wangba	網吧	440
 wangbadan	王八蛋	226
@@ -144923,6 +144933,7 @@ xiefu	褻服	438
 xiegaisu	攜鈣素	500
 xiegang	斜槓	293
 xiegangqingnian	斜槓青年	218
+xiegao	寫稿	700
 xiege	寫歌	700
 xiegeci	寫歌詞	800
 xiegen	鞋跟	383
@@ -145082,7 +145093,7 @@ xieshixingruoshi	斜視性弱視	610
 xieshiyan	謝師宴	198
 xieshizhuyi	寫實主義	680
 xieshou	攜手	1000
-xieshou	寫手	158
+xieshou	寫手	159
 xieshoubingjian	攜手並肩	427
 xieshouge	寫首歌	800
 xieshoushi	寫首詩	800
@@ -148937,6 +148948,7 @@ xiugai	修改	502
 xiugaigao	修改稿	394
 xiugaiziduan	修改字段	698
 xiuganshouqi	嗅感受器	570
+xiugao	修稿	700
 xiugeng	休耕	323
 xiugengde	休耕地	640
 xiugounaomoliu	嗅溝腦膜瘤	610
@@ -155103,7 +155115,7 @@ yexiangsepu	液相色譜	610
 yexiangsepufa	液相色譜法	640
 yexiangsepuyi	液相色譜儀	406
 yexiao	夜宵	560
-yexiao	夜校	62
+yexiao	夜校	63
 yexiaohui	野小茴	230
 yexiaor	夜宵兒	230
 yexibie	耶洗別	230
@@ -160391,7 +160403,7 @@ yixiang	已向	605
 yixiang	一向	584
 yixiang	一項	499
 yixiang	意向	445
-yixiang	臆想	130
+yixiang	臆想	172
 yixiang	遺像	29
 yixiang	意象	1
 yixiang	異鄉	1
@@ -163361,8 +163373,8 @@ yuanfu	淵富	219
 yuanfufei	圓腹鯡	228
 yuanfuhua	袁富華	768
 yuangan	院感	198
-yuangao	原告	637
-yuangao	原稿	274
+yuangao	原告	636
+yuangao	原稿	275
 yuange	原鴿	319
 yuangegongzuo	遠隔工作	570
 yuangeqianli	遠隔千里	260
@@ -164087,6 +164099,7 @@ yuefu	樂府	156
 yuefushiji	樂府詩集	258
 yuegan	樂感	372
 yuegang'aodawanqu	粵港澳大灣區	318
+yuegao	約稿	700
 yuegen	約根	198
 yuegong	越共	957
 yuegongzhuoqiu	月宮桌球	538
@@ -169066,8 +169079,8 @@ zhengfuzuzhi	政府組織	570
 zhenggai	整改	993
 zhenggai	政改	1
 zhenggang	政綱	544
-zhenggao	徵稿	477
-zhenggao	征稿	474
+zhenggao	徵稿	478
+zhenggao	征稿	475
 zhengge	整個	994
 zhenggen	整根	1000
 zhenggengchun	正庚醇	500
@@ -172405,7 +172418,8 @@ zhonggangtai	中港台	214
 zhongganlingpian	重感靈片	540
 zhongganyidan	忠肝義膽	626
 zhonggao	中高	700
-zhonggao	忠告	117
+zhonggao	終稿	520
+zhonggao	忠告	125
 zhonggaoduan	中高端	1000
 zhonggaodufangkong	中高度防空	289
 zhongge	中隔	198
@@ -173556,7 +173570,7 @@ zhongshaojun	鍾紹軍	777
 zhongshaoyu	中杓鷸	228
 zhongshaqundao	中沙羣島	228
 zhongshen	終身	1000
-zhongshen	中腎	331
+zhongshen	中腎	330
 zhongshen	終審	319
 zhongshenchengjiujiang	終身成就獎	1000
 zhongshenchengjiujiang	終身成就奬	456
@@ -174609,8 +174623,8 @@ zhuanfang	專訪	446
 zhuanfenhua	轉分化	500
 zhuanfuxi'anmei	轉麩醯胺酶	640
 zhuangan	轉幹	314
-zhuangao	轉告	718
-zhuangao	撰稿	717
+zhuangao	轉告	719
+zhuangao	撰稿	718
 zhuangaoren	撰稿人	494
 zhuangban	裝扮	974
 zhuangban	妝扮	128
@@ -178387,6 +178401,7 @@ zufen	祖墳	389
 zufu	祖父	536
 zufubei	祖父輩	167
 zufumu	祖父母	287
+zugao	組稿	700
 zugaoqiyang	足高氣揚	387
 zuge	阻隔	996
 zuge	組閣	1

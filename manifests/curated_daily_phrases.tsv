@@ -5651,6 +5651,32 @@
 有戏	有戲	0.78	youxi
 有救	有救	0.78	youjiu
 
+# writing and editing workflow additions 2026-06-19
+定稿	定稿	0.82	dinggao
+完稿	完稿	0.78	wangao
+修稿	修稿	0.76	xiugao
+誊稿	謄稿	0.58	tenggao
+收稿	收稿	0.72	shougao
+删稿	刪稿	0.64	shangao
+改稿	改稿	0.78	gaigao
+审稿	審稿	0.80	shengao
+初稿	初稿	0.78	chugao
+终稿	終稿	0.78	zhonggao
+投稿	投稿	0.78	tougao
+约稿	約稿	0.72	yuegao
+退稿	退稿	0.70	tuigao
+发稿	發稿	0.78	fagao
+截稿	截稿	0.74	jiegao
+交稿	交稿	0.74	jiaogao
+催稿	催稿	0.70	cuigao
+校稿	校稿	0.68	jiaogao
+清稿	清稿	0.62	qinggao
+写稿	寫稿	0.78	xiegao
+拟稿	擬稿	0.70	nigao
+起稿	起稿	0.68	qigao
+组稿	組稿	0.64	zugao
+来稿	來稿	0.70	laigao
+
 # daily exact anchors 2026-06-19: common homophones that should outrank narrower variants
 权限	權限	0.94	quanxian
 上课	上課	0.94	shangke
