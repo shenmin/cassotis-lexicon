@@ -19,6 +19,10 @@
 跳跃	跳躍	0.90	tiaoyue
 店里取	店裏取	0.92
 酱紫	醬紫	0.94
+记忆	記憶	0.88	jiyi
+邮件	郵件	0.88	youjian
+风险	風險	0.88	fengxian
+异常	異常	0.86	yichang
 一个	一個	0.96
 一股	一股	0.90	yigu
 两个	兩個	0.96
@@ -5567,3 +5571,7 @@
 有缘	有緣	0.78	youyuan
 有戏	有戲	0.78	youxi
 有救	有救	0.78	youjiu
+
+# daily exact anchors 2026-06-19: common homophones that should outrank narrower variants
+权限	權限	0.94	quanxian
+上课	上課	0.94	shangke

@@ -1993,7 +1993,7 @@ chongxinzhuangxiu	重新|裝修	520
 chongxinzuoren	重新|做人	487
 chongxizhiliao	沖洗|治療	446
 chongyingquesun	充盈|缺損	469
-chongzhengqigu	重整|旗鼓	451
+chongzhengqigu	重整|旗鼓	423
 chongzikuaicandian	蟲子|快餐店	446
 choudongzhangai	抽動|障礙	452
 choudongzonghezheng	抽動|綜合症	483
@@ -3003,7 +3003,7 @@ dianzixiaoshuo	電子|小說	464
 dianzixinhao	電子|信號	498
 dianzixinxiang	電子|信箱	466
 dianziyizhiyouxi	電子|益智遊戲	499
-dianziyoujian	電子|郵件	488
+dianziyoujian	電子|郵件	513
 dianziyouxi	電子|遊戲	516
 dianziyouxiang	電子|郵箱	463
 dianziyouxibaocun	電子|遊戲|保存	499
@@ -4181,7 +4181,7 @@ feixingjulebu	飛行|俱樂部	456
 feixingmoni	飛行|模擬	374
 feixingmoniyouxi	飛行|模擬|遊戲	456
 feixingsheji	飛行|射擊	431
-feixingshigu	飛行|事故	485
+feixingshigu	飛行|事故	481
 feixingtanke	飛行|坦克	442
 feixinlaoli	費心|勞力	470
 feixinlaoshen	費心|勞神	418
@@ -5083,7 +5083,7 @@ gongrenwuyu	工人|物語	453
 gongrenwuyuxilie	工人|物語|系列	456
 gongshangguanli	工商|管理	453
 gongshangpeichang	工傷|賠償	420
-gongshangshigu	工傷|事故	446
+gongshangshigu	工傷|事故	443
 gongshangyinhang	工商|銀行	487
 gongshengbingzheng	共生|病症	429
 gongshenggudan	共生|固氮	386
@@ -5791,9 +5791,9 @@ hangjialishou	行家|里手	422
 hangkongbaye	航空|霸業	437
 hangkonggongsi	航空|公司	477
 hangkonghangtian	航空|航天	445
-hangkongshigu	航空|事故	484
+hangkongshigu	航空|事故	480
 hangkongshiye	航空|事業	467
-hangkongyoujian	航空|郵件	405
+hangkongyoujian	航空|郵件	467
 hangkongzainan	航空|災難	459
 hangtianfeiji	航天|飛機	479
 hangtianxinlixue	航天|心理學	460
@@ -8169,7 +8169,7 @@ jiyazonghezheng	擠壓|綜合徵	459
 jiyibianjing	記憶|邊境	464
 jiyibiaoxiang	記憶|表象	468
 jiyidianlu	記憶|電路	439
-jiyigaochao	技藝|高超	432
+jiyigaochao	技藝|高超	412
 jiyihaike	記憶|駭客	459
 jiyihejin	記憶|合金	483
 jiyihenji	記憶|痕跡	469
@@ -8950,7 +8950,7 @@ lajihuishoujizhi	垃圾|回收|機制	436
 lajihuishousuanfa	垃圾|回收|算法	469
 lajinjuli	拉近|距離	467
 lajiqingyun	垃圾|清運	453
-lajiyoujian	垃圾|郵件	438
+lajiyoujian	垃圾|郵件	463
 lajiyouxi	垃圾|遊戲	499
 lalisaiyishu	拉力賽|藝術	417
 lamaochuli	拉毛|處理	491
@@ -9111,7 +9111,7 @@ laoyingzhuituzi	老鷹追|兔子	437
 laoyingzhuomaque	老鷹捉|麻雀	409
 laoyinyongshi	烙印|勇士	452
 laoyinyongshiwushuang	烙印|勇士|無雙	456
-laoyushigu	老於|世故	461
+laoyushigu	老於|世故	424
 laozizhizao	老子|製造	467
 lapishoushu	拉皮|手術	443
 lashenqiangdu	拉伸|強度	447
@@ -11806,7 +11806,7 @@ qiguanyanyimiao	氣管炎|疫苗	457
 qiguanyizhi	器官|移植	486
 qiguanzhaichu	器官|摘除	480
 qiguanzhijia	氣管|支架	415
-qiguxiangdang	旗鼓|相當	490
+qiguxiangdang	旗鼓|相當	470
 qiheiyituan	漆黑|一團	483
 qihoubiandong	氣候|變動	401
 qihoubiandongmoshi	氣候|變動|模式	483
@@ -12148,7 +12148,7 @@ quanwushouna	全屋|收納	457
 quanwuxufaxilie	拳無虛發|系列	448
 quanwuzhineng	全屋|智能	520
 quanwuzhuangxiu	全屋|裝修	457
-quanxianduixiang	權限|對象	420
+quanxianduixiang	權限|對象	485
 quanxijingjichang	全息|競技場	456
 quanxinquanli	全心|全力	404
 quanxisheying	全息|攝影	486
@@ -12424,7 +12424,7 @@ renminzhengfu	人民|政府	520
 renouqingyuan	人偶|情緣	402
 renouyiji	人偶|遺蹟	416
 renqinglengnuan	人情|冷暖	444
-renqingshigu	人情|世故	447
+renqingshigu	人情|世故	410
 renqingweir	人情|味兒	416
 renquanqinfan	人權|侵犯	486
 renqunguanli	人羣|管理	474
@@ -18560,7 +18560,7 @@ yichangnaodiantu	異常|腦電圖	457
 yichangqingkuang	異常|情況	479
 yichangxianxiang	異常|現象	479
 yichangxuehongdanbai	異常|血紅蛋白	457
-yichangzhuanqu	宜昌|專區	444
+yichangzhuanqu	宜昌|專區	440
 yichanyouxi	遺產|遊戲	499
 yichengbubian	一成|不變	511
 yichengbuyi	一成|不易	469
@@ -18752,7 +18752,7 @@ yiliaopinzhi	醫療|品質	483
 yiliaoqixie	醫療|器械	447
 yiliaorenleixue	醫療|人類學	483
 yiliaosheshi	醫療|設施	460
-yiliaoshigu	醫療|事故	463
+yiliaoshigu	醫療|事故	459
 yiliaoshushi	醫療|疏失	464
 yiliaoticao	醫療|體操	437
 yiliaotiyu	醫療|體育	470
@@ -20031,7 +20031,7 @@ zenmehuishi	怎麼|回事	520
 zenmekeneng	怎麼|可能	457
 zerenbaoxian	責任|保險	497
 zerenbianji	責任|編輯	463
-zerenshigu	責任|事故	466
+zerenshigu	責任|事故	462
 zezechengzan	嘖嘖|稱讚	484
 zhadanrendazhan	炸彈人|大戰	458
 zhadanrenjieke	炸彈人|傑克	456
@@ -20463,7 +20463,7 @@ zhijianshumu	只見|樹木	478
 zhijianzhanzheng	指尖|戰爭	464
 zhijiaozhuanwan	直角|轉彎	383
 zhijiaozhuanwanjieti	直角|轉彎|階梯	465
-zhijiaozuobiao	直角|座標	466
+zhijiaozuobiao	直角|座標	474
 zhijiecanyu	直接|參與	480
 zhijiedanhongsu	直接|膽紅素	457
 zhijiedianli	直接|電離	417
