@@ -5872,3 +5872,29 @@
 权限	權限	0.94	quanxian
 上课	上課	0.94	shangke
 短时间	短時間	0.92	duanshijian
+
+# long-sentence attribution 2026-06-20: broadly useful short words that were
+# repeatedly cut into lower-quality paths. Keep this list general, not
+# benchmark-specific names or full sentences.
+症结	癥結	0.82	zhengjie
+心思	心思	0.80	xinsi
+昨晚	昨晚	0.84	zuowan
+证据	證據	0.90	zhengju
+经历	經歷	0.84	jingli
+受到	受到	0.78	shoudao
+掀起	掀起	0.78	xianqi
+新兴	新興	0.78	xinxing
+园区	園區	0.78	yuanqu
+做出	做出	0.82	zuochu
+同事们	同事們	0.78	tongshimen
+交付	交付	0.94	jiaofu
+为何	為何	0.92	weihe
+不安	不安	0.78	buan
+探索	探索	0.82	tansuo
+内核	內核	0.80	neihe
+十分	十分	0.90	shifen
+通知	通知	0.88	tongzhi
+认知	認知	0.86	renzhi
+成了	成了	0.86	chengle
+变化	變化	0.86	bianhua
+提及	提及	0.82	tiji

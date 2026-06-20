@@ -5483,8 +5483,8 @@ guanjunquanji	冠军|拳击	467
 guanjuntaojinzhe	冠军|淘金者	458
 guanjunzaixian	冠军|在线	467
 guanjunzhilu	冠军|之路	436
-guanjunzuqiu	冠军|足球	312
-guanjunzuqiujingli	冠军|足球|经理	394
+guanjunzuqiu	冠军|足球	315
+guanjunzuqiujingli	冠军|足球|经理	397
 guankabianjiqi	关卡|编辑器	502
 guankasheji	关卡|设计	520
 guanlianchaxun	关联|查询	490
@@ -9365,7 +9365,7 @@ leidaxinhaotezheng	雷达|信号|特征	498
 leidianfengbao	雷电|风暴	467
 leidianpingpang	雷电|乒乓	467
 leidianxilie	雷电|系列	466
-leidianxinxing	雷电|新星	433
+leidianxinxing	雷电|新星	432
 leidunjiaoshouxilie	雷顿教授|系列	449
 leidusuyimiao	类毒素|疫苗	418
 leiguchunjisu	类固醇|激素	454
@@ -10734,7 +10734,7 @@ mifengxueyuan	蜜蜂|学园	442
 migezoulang	米格|走廊	426
 migongdianzi	迷宫|电子	374
 migongdianziyouxi	迷宫|电子|游戏	456
-migongtansuo	迷宫|探索	454
+migongtansuo	迷宫|探索	467
 mihuandianzi	迷幻|电子	374
 mihuandianziyouxi	迷幻|电子|游戏	456
 mihuobujie	迷惑|不解	488
@@ -11278,13 +11278,13 @@ neigezonglidachen	内阁|总理|大臣	504
 neihandanbai	内涵|蛋白	483
 neihebianyi	内核|编译	490
 neihechengxu	内核|程序	490
-neiheduixiang	内核|对象	479
+neiheduixiang	内核|对象	491
 neihehanshu	内核|函数	490
 neihepeizhi	内核|配置	491
 neihequdong	内核|驱动	490
 neiheshuju	内核|数据	387
 neiheshujujiegou	内核|数据|结构	469
-neihexiancheng	内核|线程	487
+neihexiancheng	内核|线程	491
 neihezhongxinbianyi	内核|重新编译	467
 neihuanjingwending	内环境|稳定	460
 neijiangzhuanqu	内江|专区	458
@@ -12534,7 +12534,7 @@ quweishejixilie	趣味|射击|系列	429
 quweiyouxi	趣味|游戏	477
 quxiangbuming	去向|不明	469
 quxianjiuguo	曲线|救国	467
-quxiannihe	曲线|拟合	444
+quxiannihe	曲线|拟合	469
 quxiaozhiding	取消|置顶	516
 quyangdansuan	去氧|胆酸	452
 quyanghetang	去氧|核糖	453
@@ -15301,7 +15301,7 @@ taikongpaopaolong	太空|泡泡龙	423
 taikongqingwa	太空|青蛙	434
 taikongqinlvezhe	太空|侵略者	458
 taikongsibadaren	太空|斯巴达人	453
-taikongtansuo	太空|探索	466
+taikongtansuo	太空|探索	469
 taikongtanxian	太空|探险	458
 taikongwubu	太空|舞步	408
 taikongwulixue	太空|物理学	501
@@ -16131,7 +16131,7 @@ waiyuanningjisu	外源|凝集素	460
 waizhanshenjingmabi	外展神经|麻痹	430
 waizhanshenjingsunshang	外展神经|损伤	483
 waiziqiye	外资|企业	467
-wakongxinsi	挖空|心思	438
+wakongxinsi	挖空|心思	483
 wakuangzhengba	挖矿|争霸	415
 wananpubu	万安|瀑布	419
 wananxiaoji	晚安|小鸡	394
@@ -18016,7 +18016,7 @@ xinxijishu	信息|技术	520
 xinximianban	信息|面板	491
 xinxinbaibei	信心|百倍	455
 xinxingchuanranbing	新兴|传染病	486
-xinxingguanzhuangbingdu	新型|冠状病毒	439
+xinxingguanzhuangbingdu	新型|冠状病毒	436
 xinxinliaofa	信心|疗法	444
 xinxiongxiaai	心胸|狭隘	425
 xinxiongxiazhai	心胸|狭窄	437
@@ -19086,7 +19086,7 @@ yibanyiliaoyishi	一般|医疗|医师	483
 yibeiwudao	以北|五道	468
 yibenzhengjing	一本|正经	520
 yibiangenghao	以便|更好	520
-yibianyouyibian	一遍又|一遍	447
+yibianyouyibian	一遍又|一遍	442
 yibiaotangtang	仪表|堂堂	483
 yibigouxiao	一笔|勾销	489
 yibiliyalianmeng	伊比利亚|联盟	454
@@ -19119,7 +19119,7 @@ yibushuaxin	异步|刷新	387
 yibusuanfa	异步|算法	484
 yibutongbu	异步|同步	475
 yibutongxin	异步|通信	479
-yibutongzhi	异步|通知	479
+yibutongzhi	异步|通知	486
 yibuxiancheng	异步|线程	455
 yibuxiaoxi	异步|消息	488
 yibuyige	一步|一个	387
@@ -19429,8 +19429,8 @@ yinduyixue	印度|医学	486
 yinerduotang	银耳|多糖	422
 yingaobianbie	音高|辨别	463
 yingbianguanli	应变|管理	486
-yingchaozuqiu	英超|足球	312
-yingchaozuqiujingli	英超|足球|经理	394
+yingchaozuqiu	英超|足球	315
+yingchaozuqiujingli	英超|足球|经理	397
 yingduicelve	应对|策略	486
 yingduijiqiao	应对|技巧	486
 yingfengzhaozhan	迎风|招展	453
@@ -20880,7 +20880,7 @@ zhengheyixue	整合|医学	486
 zhengjiaoheyi	政教|合一	489
 zhengjingbabai	正经|八百	436
 zhengjiukonglong	拯救|恐龙	434
-zhengjuquezao	证据|确凿	484
+zhengjuquezao	证据|确凿	503
 zhengkaiyanjing	睁开|眼睛	491
 zhenglihuodong	整理|活动	473
 zhengmashurufa	郑码|输入法	501
@@ -21342,7 +21342,7 @@ zhongduyouyu	重度|忧郁	432
 zhongerdanzhiliu	中耳|胆脂瘤	451
 zhongerjiezou	中二|节奏	435
 zhongfengkangfu	中风|康复	422
-zhonggeneihe	中隔|内核	450
+zhonggeneihe	中隔|内核	471
 zhonggongbada	中共|八大	421
 zhonggongbadayuanlao	中共|八大|元老	503
 zhonggongzhongyang	中共|中央	520

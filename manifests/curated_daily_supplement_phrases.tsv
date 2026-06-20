@@ -556,12 +556,12 @@
 多大	多大	0.46	duoda
 孤例	孤例	0.32	guli
 来说	來說	0.46	laishuo
-一丝	一絲	0.46	yisi
+一丝	一絲	0.54	yisi
 脑海中	腦海中	0.42	naohaizhong
 星河	星河	0.46	xinghe
 窗外	窗外	0.46	chuangwai
-一场	一場	0.46	yichang
-答道	答道	0.46	dadao
+一场	一場	0.54	yichang
+答道	答道	0.54	dadao
 手中	手中	0.46	shouzhong
 十分钟	十分鐘	0.42	shifenzhong
 黑衣	黑衣	0.46	heiyi
@@ -945,7 +945,7 @@
 挑眉	挑眉	0.46	tiaomei
 听出	聽出	0.46	tingchu
 听后	聽後	0.46	tinghou
-投向	投向	0.46	touxiang
+投向	投向	0.58	touxiang
 推给	推給	0.46	tuigei
 推门	推門	0.46	tuimen
 往下	往下	0.46	wangxia
@@ -3194,3 +3194,14 @@
 八股	八股	0.36	bagu
 九股	九股	0.36	jiugu
 十股	十股	0.36	shigu
+
+# benchmark attribution 2026-06-20: common short spans that were repeatedly cut
+# in long-sentence decoding, kept out of high-priority daily when they are
+# narrative/technical/contextual rather than everyday first-choice words.
+说道	說道	0.58	shuodao
+问道	問道	0.56	wendao
+一边	一邊	0.58	yibian
+烧钱	燒錢	0.56	shaoqian
+暗网	暗網	0.56	anwang
+算力	算力	0.56	suanli
+拟合	擬合	0.56	nihe
