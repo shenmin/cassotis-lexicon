@@ -664,6 +664,7 @@ bianpingshiyou	扁平|湿疣	397
 bianpingtaixian	扁平|苔藓	430
 bianpingxibao	扁平|细胞	472
 bianselongxiaozi	变色龙|小子	458
+bianshenrenzhe	变身|忍者	442
 biantaifanying	变态|反应	479
 biantaifayu	变态|发育	486
 biantaijianyu	变态|监狱	467
@@ -720,7 +721,7 @@ bianyuanpiceng	边缘|皮层	486
 bianyuanshijie	边缘|世界	467
 bianyuanxitong	边缘|系统	500
 bianyuanyundong	边缘|运动	486
-bianyuanzhanshi	边缘|战士	459
+bianyuanzhanshi	边缘|战士	451
 bianzhengweiwu	辩证|唯物	487
 bianzhengweiwuzhuyi	辩证|唯物主义	374
 bianzhengxingwei	辩证|行为	401
@@ -1747,7 +1748,7 @@ charupianduan	插入|片段	411
 charutubian	插入|突变	486
 charuxulie	插入|序列	444
 chaweisizhuyi	查韦斯|主义	463
-chaxunbianliang	查询|变量	489
+chaxunbianliang	查询|变量	485
 chaxunbiaodashi	查询|表达式	471
 chaxunfenxiqi	查询|分析器	451
 chaxunguanjianzi	查询|关键字	461
@@ -2364,8 +2365,8 @@ cuguangzhuyi	粗犷|主义	436
 cuicanduomu	璀璨|夺目	417
 cuichansuyinchan	催产素|引产	439
 cuihuafanying	催化|反应	474
-cuihuaqinghua	催化|氢化	331
-cuihuaqinghuafanying	催化|氢化|反应	413
+cuihuaqinghua	催化|氢化	332
+cuihuaqinghuafanying	催化|氢化|反应	414
 cuihuazuoyong	催化|作用	460
 cuileiwasi	催泪|瓦斯	437
 cuimianmaikefeng	催眠|麦克风	395
@@ -2409,6 +2410,7 @@ cuxindayi	粗心|大意	490
 cuxitanxin	促膝|谈心	425
 cuyezhuyi	粗野|主义	447
 dabaishataotuo	大白鲨|逃脱	458
+dabianhuoren	大变|活人	515
 dabianqianxue	大便|潜血	473
 dabianshijin	大便|失禁	474
 dachangaixishijun	大肠|埃希氏菌	483
@@ -5184,7 +5186,7 @@ gongjuchajian	工具|插件	488
 gongjuechengbao	公爵|城堡	475
 gongjupeizhi	工具|配置	489
 gongkaichanghe	公开|场合	497
-gonglibianyuan	公理|边缘	442
+gonglibianyuan	公理|边缘	435
 gonglixuexiao	公立|学校	467
 gonglizhuyi	功利|主义	451
 gonglukuangbiao	公路|狂飙	467
@@ -10481,7 +10483,7 @@ meijiechuanbo	媒介|传播	401
 meijiechuanbojibing	媒介|传播|疾病	483
 meijielizi	媒介|粒子	501
 meijieshengwu	媒介|生物	474
-meijubianliang	枚举|变量	485
+meijubianliang	枚举|变量	471
 meijuleixing	枚举|类型	467
 meijundusu	霉菌|毒素	435
 meijunganran	霉菌|感染	433
@@ -15130,7 +15132,7 @@ siyingjingji	私营|经济	500
 siyingqiye	私营|企业	467
 siyingyiyuan	私营|医院	486
 siyiwangwei	肆意|妄为	487
-siyoubianliang	私有|变量	491
+siyoubianliang	私有|变量	480
 siyouchengxuji	私有|程序集	469
 sizhitanhuan	四肢|瘫痪	436
 sizhuguanxian	丝竹|管弦	497
@@ -17786,7 +17788,7 @@ xingxiangyishu	形象|艺术	467
 xingxianjisu	性腺|激素	444
 xingxijiandui	星系|舰队	410
 xingxingbianji	行星|边际	458
-xingxingbianyuan	行星|边缘	467
+xingxingbianyuan	行星|边缘	462
 xingxingbianyuanxilie	行星|边缘|系列	456
 xingxingdiandian	星星|点点	478
 xingxinggedou	星星|格斗	441
@@ -19954,7 +19956,7 @@ yongcundongmaigan	永存|动脉干	457
 yongcunpeitai	永存|胚胎	397
 yongcunpeitaixueguan	永存|胚胎|血管	479
 yongdingmenchenglou	永定门|城楼	422
-yonghengbianyuan	永恒|边缘	467
+yonghengbianyuan	永恒|边缘	461
 yonghengchuanqi	永恒|传奇	458
 yonghengchuanshuo	永恒|传说	429
 yonghengdoushi	永恒|斗士	395
@@ -20347,7 +20349,7 @@ yubianyiwenjian	预编译|文件	470
 yubianyizhiling	预编译|指令	471
 yuchulichengxu	预处理|程序	471
 yuchulimingling	预处理|命令	471
-yudingyibianliang	预定义|变量	464
+yudingyibianliang	预定义|变量	450
 yueduchengxu	阅读|程序	504
 yuedukuangjia	阅读|框架	486
 yuedukunnan	阅读|困难	486
@@ -20912,7 +20914,7 @@ zhengxiangsikao	正向|思考	486
 zhengxiangtiaojian	正像|条件	469
 zhengxianxinhao	正弦|信号	479
 zhengxiehuanxiangqu	正邪|幻想曲	458
-zhengxingbianliang	整型|变量	491
+zhengxingbianliang	整型|变量	485
 zhengxingshoushu	整形|手术	445
 zhengxingwaike	整形|外科	463
 zhengyilianmeng	正义|联盟	374
@@ -21297,7 +21299,7 @@ zhizaoyezhe	制造|业者	467
 zhizaoziyuan	制造|资源	416
 zhizaoziyuanjihua	制造|资源|计划	498
 zhizeyouxi	指责|游戏	502
-zhizhenbianliang	指针|变量	492
+zhizhenbianliang	指针|变量	481
 zhizhenhanshu	指针|函数	490
 zhizhibishi	直至|彼时	467
 zhizhigundong	吱吱|滚动	417
