@@ -2677,8 +2677,8 @@ danshuifuyoushengwu	淡水|浮游|生物	483
 dantaoqueshi	单套|缺失	422
 dantouqibing	弹头|奇兵	400
 danwanzhidi	弹丸|之地	465
-danweijiliang	单位|剂量	401
-danweijiliangbaozhuang	单位|剂量|包装	483
+danweijiliang	单位|剂量	400
+danweijiliangbaozhuang	单位|剂量|包装	482
 danweixiangliang	单位|向量	466
 danxianghanshu	单向|函数	488
 danxiangtuoliang	单向|托梁	383
@@ -6399,7 +6399,7 @@ huanbingxingwei	患病|行为	486
 huanchongrongye	缓冲|溶液	458
 huancuncelve	缓存|策略	457
 huancunfuwuqi	缓存|服务器	472
-huancunjizhi	缓存|机制	485
+huancunjizhi	缓存|机制	470
 huancunkuangjia	缓存|框架	449
 huancunmingzhong	缓存|命中	507
 huancunshixiao	缓存|失效	493
@@ -7388,7 +7388,7 @@ jibenyuanli	基本|原理	472
 jibenzaishengshu	基本|再生数	486
 jibenzujian	基本|组件	491
 jibenzuzhi	基本|组织	474
-jibianruci	即便|如此	483
+jibianruci	即便|如此	482
 jibingchuanbo	疾病|传播	486
 jibingguanli	疾病|管理	486
 jibingjiance	疾病|监测	467
@@ -7397,8 +7397,8 @@ jibingkongzhizhongxin	疾病|控制|中心	460
 jibingshuxing	疾病|属性	448
 jibingzhengzhuang	疾病|症状	444
 jibudegongheguo	吉布地|共和国	454
-jicengchuli	基层|处理	494
-jicengzhaoping	基层|找平	494
+jicengchuli	基层|处理	488
+jicengzhaoping	基层|找平	479
 jicharenyuan	稽查|人员	454
 jichefengbao	机车|风暴	467
 jichefengbaoxilie	机车|风暴|系列	456
@@ -7452,13 +7452,13 @@ jidingzhihechengmei	几丁质|合成酶	483
 jidiqiannao	基底|前脑	442
 jidishenjingjie	基底|神经节	486
 jidixibaoai	基底|细胞癌	486
-jidongcheliang	机动|车辆	451
-jiduanfenzi	极端|分子	445
+jidongcheliang	机动|车辆	446
+jiduanfenzi	极端|分子	448
 jiduanganzao	极端|干燥	486
 jiduanhuanjing	极端|环境	486
 jiduanqihou	极端|气候	486
 jiduantianqi	极端|天气	486
-jiduanzhuyi	极端|主义	429
+jiduanzhuyi	极端|主义	432
 jiduhunluan	极度|混乱	467
 jidujiaotu	基督|教徒	475
 jidukonghuang	极度|恐慌	467
@@ -7740,10 +7740,10 @@ jiledisike	极乐|迪斯科	458
 jileshijie	极乐|世界	501
 jilianchaxun	级联|查询	458
 jilianfanying	级联|反应	472
-jiliangdanwei	剂量|单位	439
-jiliangfanying	剂量|反应	463
+jiliangdanwei	剂量|单位	437
+jiliangfanying	剂量|反应	461
 jiliangjingji	计量|经济	474
-jiliangxiaoying	剂量|效应	435
+jiliangxiaoying	剂量|效应	433
 jilijizhi	激励|机制	467
 jilindonghua	吉林|动画	471
 jilvfenbu	机率|分布	461
@@ -8223,7 +8223,7 @@ jisutianlong	极速|天龙	449
 jisutidai	激素|替代	401
 jisutidailiaofa	激素|替代|疗法	483
 jitagaoshou	吉他|高手	467
-jitangjimei	己糖|激酶	421
+jitangjimei	己糖|激酶	424
 jitanlangan	祭坛|栏杆	480
 jitanzujian	祭坛|组件	462
 jitayingxiong	吉他|英雄	448
@@ -8409,7 +8409,7 @@ jiyingongcheng	基因|工程	488
 jiyinjianding	基因|鉴定	486
 jiyinjiazu	基因|家族	473
 jiyinjiehe	基因|结合	486
-jiyinjiliang	基因|剂量	475
+jiyinjiliang	基因|剂量	473
 jiyinjingmo	基因|静默	482
 jiyinkaobei	基因|拷贝	472
 jiyinkuozeng	基因|扩增	472
@@ -9430,7 +9430,7 @@ lengquefengshan	冷却|风扇	482
 lengquesudu	冷却|速度	473
 lengshuigongyu	冷水|公寓	482
 lengshuijiaotou	冷水|浇头	496
-lengshuijizu	冷水|机组	467
+lengshuijizu	冷水|机组	450
 lengxuedongwu	冷血|动物	498
 lengyanpangguan	冷眼|旁观	489
 lengyanxiangdai	冷眼|相待	485
@@ -11433,7 +11433,7 @@ ningmengsuanxunhuan	柠檬酸|循环	483
 ningmengzhidaheng	柠檬汁|大亨	414
 ningxuegongneng	凝血|功能	373
 ningxuegongnengzhangai	凝血|功能|障碍	455
-ningxuejizhi	凝血|机制	466
+ningxuejizhi	凝血|机制	450
 ningxuemeishijian	凝血酶|时间	459
 ningxuemeiyuan	凝血|酶原	457
 ningxueshijian	凝血|时间	486
@@ -14194,7 +14194,7 @@ shijianguanliyouxi	时间|管理|游戏	456
 shijianguolvqi	事件|过滤器	453
 shijianhanshu	时间|函数	490
 shijianjianting	事件|监听	429
-shijianjizhi	事件|机制	459
+shijianjizhi	事件|机制	444
 shijiankongzhi	事件|控制	468
 shijianlanjie	事件|拦截	469
 shijianleixing	时间|类型	490
@@ -18142,7 +18142,7 @@ xishenbeitai	西伸|北抬	512
 xishidama	吸食|大麻	477
 xishoubugan	洗手|不干	486
 xishoubuliang	吸收|不良	486
-xishoujiliang	吸收|剂量	471
+xishoujiliang	吸收|剂量	469
 xishouyichang	吸收|异常	486
 xishouzuoyong	吸收|作用	474
 xishunxianchongbing	吸吮|线虫病	460
@@ -20113,7 +20113,7 @@ youxianyuanfenxi	有限元|分析	486
 youxianzhuangtaiji	有限|状态机	501
 youxianzizai	悠闲|自在	435
 youxiaocuoshi	有效|措施	469
-youxiaojiliang	有效|剂量	463
+youxiaojiliang	有效|剂量	461
 youxiaopengzhuang	有效|碰撞	501
 youxibiancheng	游戏|编程	502
 youxicaozong	游戏|操纵	417

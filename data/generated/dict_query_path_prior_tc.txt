@@ -2629,8 +2629,8 @@ danshuifuyoushengwu	淡水|浮游生物	483
 dantaoqueshi	單套|缺失	430
 dantouqibing	彈頭|奇兵	397
 danwanzhidi	彈丸|之地	465
-danweijiliang	單位|劑量	400
-danweijiliangbaozhuang	單位|劑量|包裝	482
+danweijiliang	單位|劑量	398
+danweijiliangbaozhuang	單位|劑量|包裝	480
 danweixiangliang	單位|向量	467
 danxianghanshu	單向|函數	485
 danxiangtuoliang	單向|托梁	383
@@ -6232,7 +6232,7 @@ huanbaozhanshi	環保|戰士	456
 huanbaozhuyi	環保|主義	473
 huanchongrongye	緩衝|溶液	497
 huancuncelve	緩存|策略	457
-huancunjizhi	緩存|機制	421
+huancunjizhi	緩存|機制	408
 huancunkuangjia	緩存|框架	446
 huancunshuju	緩存|數據	497
 huancunwenjian	緩存|文件	491
@@ -7213,7 +7213,7 @@ jibenyuanli	基本|原理	472
 jibenzaishengshu	基本|再生數	486
 jibenzujian	基本|組件	491
 jibenzuzhi	基本|組織	470
-jibianruci	即便|如此	483
+jibianruci	即便|如此	482
 jibingchuanbo	疾病|傳播	483
 jibingguanli	疾病|管理	486
 jibingjiance	疾病|監測	463
@@ -7274,13 +7274,13 @@ jidingzhihechengmei	幾丁質|合成酶	483
 jidiqiannao	基底|前腦	449
 jidishenjingjie	基底|神經節	483
 jidixibaoai	基底|細胞癌	486
-jidongcheliang	機動|車輛	439
+jidongcheliang	機動|車輛	437
 jiduanfenzi	極端|分子	469
 jiduanganzao	極端|乾燥	483
 jiduanhuanjing	極端|環境	483
 jiduanqihou	極端|氣候	483
 jiduantianqi	極端|天氣	483
-jiduanzhuyi	極端|主義	457
+jiduanzhuyi	極端|主義	454
 jiduhunluan	極度|混亂	464
 jidujiaotu	基督|教徒	475
 jidukonghuang	極度|恐慌	464
@@ -7536,10 +7536,10 @@ jiledisike	極樂|迪斯科	456
 jileshijie	極樂|世界	497
 jilianchaxun	級聯|查詢	454
 jilianfanying	級聯|反應	469
-jiliangdanwei	劑量|單位	434
-jiliangfanying	劑量|反應	452
+jiliangdanwei	劑量|單位	432
+jiliangfanying	劑量|反應	450
 jiliangjingji	計量|經濟	470
-jiliangxiaoying	劑量|效應	416
+jiliangxiaoying	劑量|效應	415
 jilijizhi	激勵|機制	463
 jilindonghua	吉林|動畫	468
 jilvfenbu	機率|分佈	452
@@ -8015,7 +8015,7 @@ jisutianlong	極速|天龍	441
 jisutidai	激素|替代	401
 jisutidailiaofa	激素|替代|療法	483
 jitagaoshou	吉他|高手	467
-jitangjimei	己糖|激酶	427
+jitangjimei	己糖|激酶	432
 jitanlangan	祭壇|欄杆	477
 jitanzujian	祭壇|組件	456
 jitayingxiong	吉他|英雄	451
@@ -8197,7 +8197,7 @@ jiyingongcheng	基因|工程	488
 jiyinjianding	基因|鑑定	486
 jiyinjiazu	基因|家族	473
 jiyinjiehe	基因|結合	486
-jiyinjiliang	基因|劑量	473
+jiyinjiliang	基因|劑量	471
 jiyinjingmo	基因|靜默	482
 jiyinkaobei	基因|拷貝	469
 jiyinkuozeng	基因|擴增	472
@@ -8253,7 +8253,7 @@ jizhidanbai	基質|蛋白	461
 jizhixibao	基質|細胞	458
 jizhiyisheng	機智|醫生	366
 jizhiyishengshenghuo	機智|醫生|生活	448
-jizhongqushi	集中|趨勢	470
+jizhongqushi	集中|趨勢	466
 jizhongyaohai	擊中|要害	484
 jizhuguanjieyan	脊柱|關節炎	483
 jizhuidongwu	脊椎|動物	495
@@ -9207,7 +9207,7 @@ lengquedinglv	冷卻|定律	478
 lengquefengshan	冷卻|風扇	481
 lengquesudu	冷卻|速度	473
 lengshuigongyu	冷水|公寓	482
-lengshuijizu	冷水|機組	454
+lengshuijizu	冷水|機組	439
 lengxuedongwu	冷血|動物	498
 lengyanpangguan	冷眼|旁觀	485
 lengyanxiangdai	冷眼|相待	485
@@ -10978,7 +10978,7 @@ neicunjiance	內存|檢測	486
 neicunjiegou	內存|結構	487
 neicunjinggao	內存|警告	491
 neicunjisuan	內存|計算	487
-neicunjizhi	內存|機制	436
+neicunjizhi	內存|機制	431
 neicunkaobei	內存|拷貝	479
 neicunkongjian	內存|空間	490
 neicunmokuai	內存|模塊	486
@@ -13861,7 +13861,7 @@ shijianguanliyouxi	時間|管理|遊戲	456
 shijianguolvqi	事件|過濾器	454
 shijianhanshu	時間|函數	487
 shijianjianting	事件|監聽	431
-shijianjizhi	事件|機制	402
+shijianjizhi	事件|機制	388
 shijiankongzhi	事件|控制	472
 shijianlanjie	事件|攔截	473
 shijianleixing	時間|類型	487
@@ -14601,7 +14601,7 @@ sifangbamian	四方|八面	461
 sifangliangting	四房|兩廳	450
 sifarenyuan	司法|人員	467
 sifaxinlixue	司法|心理學	459
-sifenyinfu	四分|音符	433
+sifenyinfu	四分|音符	432
 sigexiaoshi	四個|小時	520
 siguozhanji	四國|戰機	464
 sihaishengping	四海|升平	451
@@ -17621,7 +17621,7 @@ xiruquanshenmazui	吸入|全身|麻醉	483
 xishenbeitai	西伸|北抬	512
 xishidama	吸食|大麻	478
 xishoubuliang	吸收|不良	486
-xishoujiliang	吸收|劑量	469
+xishoujiliang	吸收|劑量	468
 xishouyichang	吸收|異常	486
 xishouzuoyong	吸收|作用	474
 xishunxianchongbing	吸吮|線蟲病	457
@@ -19528,7 +19528,7 @@ youxianyuanfenxi	有限元|分析	486
 youxianzhuangtaiji	有限|狀態機	498
 youxianzizai	悠閒|自在	433
 youxiaocuoshi	有效|措施	469
-youxiaojiliang	有效|劑量	461
+youxiaojiliang	有效|劑量	459
 youxiaopengzhuang	有效|碰撞	501
 youxibiancheng	遊戲|編程	499
 youxicaozong	遊戲|操縱	417
