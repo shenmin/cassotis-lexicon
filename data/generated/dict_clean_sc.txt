@@ -2084,6 +2084,8 @@ anzhuangbao	安装包	379
 anzhuangbushu	安装部署	700
 anzhuangchajian	安装插件	705
 anzhuangchengxu	安装程序	709
+anzhuanghao	安装好	800
+anzhuanghaode	安装好的	800
 anzhuangpeizhi	安装配置	709
 anzhuangwan	安装完	280
 anzhuo	安卓	137
@@ -12523,10 +12525,10 @@ bushenyishoujiaonang	补肾益寿胶囊	667
 bushezhouye	不舍昼夜	703
 bushi	不是	1054
 bushi	不失	580
-bushi	不时	580
 bushi	不识	580
 bushi	不适	580
 bushi	捕食	580
+bushi	不时	577
 bushi	布施	574
 bushi	补时	306
 bushi	不事	291
@@ -12877,6 +12879,7 @@ buxingfan	不行犯	640
 buxingjie	步行街	921
 buxingjie	不行届	653
 buxingle	不行了	640
+buxinglucheng	步行路程	800
 buxingmoniqi	步行模拟器	613
 buxingqu	步行区	167
 buxingren	不醒人	556
@@ -16269,7 +16272,7 @@ chaoshanzhuanqu	潮汕专区	482
 chaoshao	炒勺	319
 chaoshen	抄身	323
 chaosheng	超声	1000
-chaosheng	超生	658
+chaosheng	超生	657
 chaosheng	朝圣	119
 chaoshengbo	超声波	660
 chaoshengbocuiqu	超声波萃取	640
@@ -18427,6 +18430,7 @@ chixujiaofu	持续交付	693
 chixujicheng	持续集成	704
 chixujichengxitong	持续集成系统	790
 chixushijian	持续时间	405
+chixutisheng	持续提升	800
 chixutong	持续痛	470
 chixuxingfare	持续性发热	610
 chixuxingtairxunhuanzonghezheng	持续性胎儿循环综合征	700
@@ -22102,7 +22106,7 @@ dabo	大伯	188
 dabosiju	大波斯菊	249
 dabu	大部	1000
 dabu	大步	758
-dabudao	达不到	232
+dabudao	达不到	800
 dabufen	大部分	727
 dabuguo	打不过	232
 dabuliao	大不了	648
@@ -32401,7 +32405,7 @@ duodaochengxusheji	多道程序设计	790
 duodaoqu	掇刀区	483
 duode	多的	700
 duode	多得	676
-duode	夺得	576
+duode	夺得	559
 duodeduo	多得多	800
 duodengxingxinhaoji	多灯型信号机	801
 duodeshi	多得是	706
@@ -39023,9 +39027,9 @@ fu'ai	抚爱	467
 fu'ai	父碍	293
 fu'ai	父爱	154
 fu'aizhuyi	父爱主义	570
-fu'an	腐胺	362
-fu'an	伏案	182
+fu'an	腐胺	361
 fu'an	福安	182
+fu'an	伏案	181
 fu'anding	氟安定	470
 fu'anjiliu	麸氨基硫	570
 fu'anshi	福安市	169
@@ -39055,9 +39059,9 @@ fuai	抚爱	467
 fuai	父碍	293
 fuai	父爱	154
 fuaizhuyi	父爱主义	570
-fuan	腐胺	362
-fuan	伏案	182
+fuan	腐胺	361
 fuan	福安	182
+fuan	伏案	181
 fuanding	氟安定	470
 fuanjiliu	麸氨基硫	570
 fuanshi	福安市	169
@@ -42282,8 +42286,9 @@ gaodingle	搞定了	1018
 gaodong	搞懂	280
 gaodongtaiguangzhaoxuanran	高动态光照渲染	724
 gaodu	高度	536
-gaoduan	高端	834
-gaoduan	高段	57
+gaoduan	高端	883
+gaoduan	高段	1
+gaoduandaqi	高端大气	800
 gaoduchangpengzhuang	高度场碰撞	796
 gaodudequ	高度地区	597
 gaodujinshi	高度近视	540
@@ -43423,6 +43428,7 @@ gengdong	更动	418
 gengdu	耕读	409
 gengduan	更短	1000
 gengduo	更多	1000
+gengduode	更多的	800
 gengduode	更多地	280
 gengfa	更乏	280
 gengfan	更烦	1000
@@ -43607,7 +43613,7 @@ gengzi	埂子	157
 gengziguobian	庚子国变	260
 gengzu	梗阻	982
 gengzuo	更左	1000
-gengzuo	耕作	566
+gengzuo	耕作	565
 gengzuodao	更做到	620
 gengzuodao	更做道	620
 gengzuode	耕作地	640
@@ -45049,6 +45055,7 @@ gongzuoyiwai	工作意外	570
 gongzuozhan	工作站	659
 gongzuozhe	工作者	575
 gongzuozheng	工作证	444
+gongzuozhuangtai	工作状态	800
 gongzuozhuo	工作桌	1000
 gongzuozhuoqian	工作桌前	1000
 gongzuozu	工作组	606
@@ -67161,6 +67168,7 @@ jishukaifa	技术开发	775
 jishukaifaqu	技术开发区	575
 jishulvyi	计数率仪	218
 jishumimi	技术秘密	775
+jishunengli	技术能力	800
 jishuqi	计数器	497
 jishuqianshui	技术潜水	260
 jishuquan	技术圈	800
@@ -78037,6 +78045,8 @@ liangzihu	梁子湖	458
 liangzihua	量子化	454
 liangzihuqu	梁子湖区	375
 liangzijing	量子阱	232
+liangzijisuan	量子计算	779
+liangzijisuanji	量子计算机	823
 liangzijiuchan	量子纠缠	260
 liangziliehen	量子裂痕	538
 liangzilixue	量子力学	512
@@ -79456,6 +79466,7 @@ lilungongzuozhe	理论工作者	461
 lilunhua	理论化	280
 lilunjia	理论家	519
 lilunjichu	理论基础	260
+lilunshang	理论上	800
 lilunshengwuxue	理论生物学	606
 liluntiantiwulixue	理论天体物理学	724
 lilunwuli	理论物理	708
@@ -82762,7 +82773,7 @@ lucaoxiang	鹿草乡	174
 luceliang	颅测量	230
 luchaibang	芦柴棒	228
 luchangxuan	鲁常泫	620
-lucheng	路程	743
+lucheng	路程	843
 luchengqu	鹿城区	160
 luchi	露齿	560
 luchi	路痴	147
@@ -89006,7 +89017,7 @@ mihuobujie	迷惑不解	471
 mihuolong	迷惑龙	230
 miji	密集	918
 miji	秘笈	150
-miji	秘籍	9
+miji	秘籍	8
 mijia	米家	424
 mijian	蜜饯	1000
 mijian	密件	1
@@ -90988,6 +90999,7 @@ moxingqudong	模型驱动	695
 moxingqudongfangfa	模型驱动方法	772
 moxingshenbing	膜性肾病	540
 moxingshenxiaoqiushenyan	膜性肾小球肾炎	687
+moxingsuanfa	模型算法	764
 moxingxingneng	模型性能	800
 moxingxunlian	模型训练	819
 moxingzhizuoshijie	模型制作世界	648
@@ -98287,9 +98299,10 @@ pingmiantu	平面图	447
 pingmianwanggezhenliefengzhuang	平面网格阵列封装	754
 pingmin	平民	487
 pingming	平明	400
-pingmu	屏幕	691
+pingmu	屏幕	896
 pingmubaohuchengxu	屏幕保护程序	318
 pingmuduquzheseqi	屏幕读取着色器	769
+pingmushang	屏幕上	800
 pingmuxianshi	屏幕显示	775
 pingnan	平南	305
 pingnanxian	平南县	85
@@ -101717,7 +101730,7 @@ qijuan	起圈	198
 qijudehuangkoufuye	杞菊地黄口服液	630
 qijudehuangwan	杞菊地黄丸	610
 qijue	气绝	941
-qijue	奇绝	245
+qijue	奇绝	244
 qijue	弃绝	150
 qijue	奇崛	119
 qijujian	起居间	232
@@ -111373,8 +111386,8 @@ shangliushehui	上流社会	249
 shanglixian	上栗县	165
 shanglong	上龙	198
 shanglou	上楼	299
-shanglu	商路	516
-shanglu	上路	391
+shanglu	商路	515
+shanglu	上路	392
 shangluo	商洛	266
 shangluodequ	商洛地区	395
 shangluoshi	商洛市	176
@@ -114748,7 +114761,7 @@ shenjingyan	神经炎	800
 shenjingyapozhenghouqun	神经压迫症候群	687
 shenjingyingyangyinzi	神经营养因子	664
 shenjingyiweishu	神经移位术	603
-shenjingyuan	神经元	863
+shenjingyuan	神经元	951
 shenjingyuanlayangzhihezhichujizheng	神经元蜡样脂褐质储积症	700
 shenjingyuannianfufenzi	神经元黏附分子	687
 shenjingyuanteyixingxichunhuamei	神经元特异性烯醇化酶	665
@@ -115852,7 +115865,7 @@ shibule	使不了	640
 shibuliangli	势不两立	726
 shibuliangli	誓不两立	118
 shibushi	是不是	1000
-shibushi	时不时	22
+shibushi	时不时	280
 shibushide	是不是的	597
 shibuwodai	时不我待	429
 shibuxiangman	实不相瞒	387
@@ -116437,7 +116450,7 @@ shijianchuli	事件处理	714
 shijianchulijizhi	事件处理机制	816
 shijianchuo	时间戳	232
 shijiandaili	事件代理	693
-shijiandian	时间点	232
+shijiandian	时间点	280
 shijianduan	时间段	280
 shijianduilie	事件队列	701
 shijianduixiang	事件对象	727
@@ -139774,6 +139787,7 @@ xianshiwu	先事物	640
 xianshixianbao	现世现报	646
 xianshixin	限时信	198
 xianshiyiyi	现实意义	280
+xianshizhe	显示着	800
 xianshizhiliaofa	现实治疗法	640
 xianshizhuyi	现实主义	627
 xianshizhuyizhe	现实主义者	458
@@ -140371,10 +140385,11 @@ xiaoche	校车	1
 xiaochen	消沉	640
 xiaochen	小陈	280
 xiaocheng	小程	280
-xiaocheng	小城	3
+xiaocheng	小城	1
 xiaochengdajie	小惩大诫	387
 xiaochengqitang	小承气汤	540
 xiaochengwang	孝成王	232
+xiaochengxu	小程序	673
 xiaochengxuchakanqi	小程序查看器	772
 xiaochi	小吃	700
 xiaochibaihezi	小池百合子	289
@@ -140519,7 +140534,7 @@ xiaofanzhuo	小饭桌	232
 xiaofei	消费	1000
 xiaofei	小费	1
 xiaofeichuandamaoxian	小飞船大冒险	648
-xiaofeiji	消费级	232
+xiaofeiji	消费级	280
 xiaofeijiagezhishu	消费价格指数	318
 xiaofeijinrong	消费金融	260
 xiaofeipin	消费品	600
@@ -143985,7 +144000,7 @@ xingransetibing	性染色体病	603
 xingren	行人	809
 xingren	杏仁	629
 xingren	兴仁	404
-xingren	星刃	126
+xingren	星刃	125
 xingrendoufu	杏仁豆腐	401
 xingrenguo	杏仁果	230
 xingrenhe	杏仁核	371
@@ -146164,7 +146179,7 @@ xitongloudong	系统漏洞	775
 xitongmen	系统门	620
 xitongmingling	系统命令	731
 xitongpeizhi	系统配置	736
-xitongrizhi	系统日志	775
+xitongrizhi	系统日志	800
 xitongshengwuxue	系统生物学	610
 xitongshiyongchengxu	系统实用程序	779
 xitongtixijiegou	系统体系结构	790
@@ -147974,7 +147989,7 @@ xuhuanzhimeng	虚幻之梦	538
 xuhuiqu	徐汇区	187
 xuhun	许婚	395
 xuhuo	虚火	631
-xuji	续集	653
+xuji	续集	654
 xuji	蓄积	1
 xujia	虚假	1000
 xujia	续假	1
@@ -159601,7 +159616,7 @@ youxiaode	有效地	800
 youxiaofuzai	有效负载	260
 youxiaoguo	有效果	1000
 youxiaojiliang	有效剂量	540
-youxiaolv	有效氯	428
+youxiaolv	有效氯	399
 youxiaolv	有效率	280
 youxiaolvguoya	有效滤过压	603
 youxiaopengzhuang	有效碰撞	680
@@ -159994,7 +160009,7 @@ youzegaizhiwuzejiamian	有则改之无则加勉	728
 youzeixinmeizeidan	有贼心没贼胆	702
 youzengwujian	有增无减	476
 youzengwuyi	有增无已	402
-youzeren	有责任	232
+youzeren	有责任	800
 youzha	油炸	996
 youzha	油渣	1
 youzhagui	油炸鬼	375
@@ -161719,7 +161734,7 @@ yumizhixiang	鱼米之乡	472
 yumo	迂磨	198
 yumou	预谋	431
 yumousharen	预谋杀人	260
-yumu	雨幕	344
+yumu	雨幕	345
 yumude	芋目地	640
 yumugeda	榆木疙瘩	642
 yumuhunzhu	鱼目混珠	442
@@ -162086,7 +162101,7 @@ yunxingcheng	陨星城	386
 yunxingfangshi	运行方式	260
 yunxinghuanjing	运行环境	714
 yunxingqi	运行期	1000
-yunxingrizhi	运行日志	775
+yunxingrizhi	运行日志	792
 yunxingshi	运行时	232
 yunxingshicuowu	运行时错误	289
 yunxingzhuangkuang	运行状况	387
@@ -163748,7 +163763,7 @@ zeou	择偶	436
 zepu	泽普	194
 zepuxian	泽普县	165
 zeqishanzhe'ercongzhi	择其善者而从之	526
-zeren	责任	536
+zeren	责任	822
 zerenbaoxian	责任保险	570
 zerenbianji	责任编辑	405
 zerengan	责任感	558
@@ -175856,8 +175871,8 @@ zuoquanzaiwo	左券在握	597
 zuoqujia	作曲家	553
 zuoquzhe	作曲者	388
 zuor	昨儿	933
-zuoren	做人	649
-zuoren	作人	289
+zuoren	做人	648
+zuoren	作人	290
 zuorenjia	做人家	232
 zuorenke	做人客	620
 zuorenqing	做人情	379

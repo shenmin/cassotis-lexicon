@@ -5978,3 +5978,17 @@
 换墙纸	換牆紙	0.74	huanqiangzhi
 换墙布	換牆布	0.74	huanqiangbu
 重装	重裝	0.78	chongzhuang
+# long-sentence attribution 2026-06-22: general daily phrases split in long decoding
+技术能力	技術能力	0.78	jishunengli
+工作状态	工作狀態	0.80	gongzuozhuangtai
+屏幕上	屏幕上	0.78	pingmushang
+显示着	顯示著	0.76	xianshizhe
+步行路程	步行路程	0.78	buxinglucheng
+高端大气	高端大氣	0.72	gaoduandaqi
+安装好	安裝好	0.78	anzhuanghao
+安装好的	安裝好的	0.76	anzhuanghaode
+更多的	更多的	0.78	gengduode
+理论上	理論上	0.78	lilunshang
+持续提升	持續提升	0.76	chixutisheng
+有责任	有責任	0.76	youzeren
+达不到	達不到	0.78	dabudao

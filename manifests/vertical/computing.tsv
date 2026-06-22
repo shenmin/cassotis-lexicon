@@ -265,3 +265,14 @@
 意识指纹	意識指紋	0.56	yishizhiwen
 电极片	電極片	0.60	dianjipian
 导电胶	導電膠	0.60	daodianjiao
+# long-sentence attribution 2026-06-22: general technical phrases that were repeatedly split
+量子计算	量子計算	0.72	liangzijisuan
+量子计算机	量子計算機	0.70	liangzijisuanji
+神经元	神經元	0.72	shenjingyuan
+系统日志	系統日誌	0.70	xitongrizhi
+运行日志	運行日誌	0.68	yunxingrizhi
+模型算法	模型算法	0.68	moxingsuanfa
+技术团队	技術團隊	0.68	jishutuandui
+数据格式	數據格式	0.68	shujugeshi
+数据集	數據集	0.70	shujuji
+小程序	小程式	0.72	xiaochengxu

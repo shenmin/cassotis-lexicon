@@ -145,6 +145,7 @@ anyingzhixin	暗影|之心	430
 anyunbiannianshi	暗雲|編年史	456
 anzhuangbushu	安裝|部署	490
 anzhuangchengxu	安裝|程序	492
+anzhuanghaode	安裝|好的	457
 anzhuangpeizhi	安裝|配置	492
 anzhuoceshi	安卓|測試	465
 anzhuodaima	安卓|代碼	471
@@ -1260,7 +1261,7 @@ bushitaiju	不識|抬舉	434
 bushitaishan	不識|泰山	424
 bushiweir	不是|味兒	470
 bushiyingxiong	不是|英雄	467
-bushizhixu	不時|之需	448
+bushizhixu	不時|之需	447
 bushiziwei	不是|滋味	464
 bushoushurufa	部首|輸入法	489
 bushuhuanjing	部署|環境	490
@@ -1289,6 +1290,7 @@ buxiangronghe	不相|融和	370
 buxiangshangxia	不相|上下	430
 buxiaozisun	不肖|子孫	412
 buxielihui	不屑|理會	457
+buxinglucheng	步行|路程	518
 buxingmoniqi	步行|模擬器	458
 buxingshangban	步行|上班	520
 buxuekoufuye	補血|口服液	459
@@ -1957,6 +1959,7 @@ chixujiaofu	持續|交付	489
 chixujicheng	持續|集成	491
 chixujichengxitong	持續|集成|系統	468
 chixushijian	持續|時間	463
+chixutisheng	持續|提升	457
 chiyibuding	遲疑|不定	483
 chiyiguanwang	遲疑|觀望	443
 chizhafengyun	叱吒|風雲	486
@@ -2912,7 +2915,7 @@ diannaofuzhugoutong	電腦|輔助|溝通	499
 diannaofuzhusheji	電腦|輔助|設計	483
 diannaofuzhuzhenduan	電腦|輔助|診斷	483
 diannaopeizhi	電腦|配置	487
-diannaopingmu	電腦|屏幕	464
+diannaopingmu	電腦|屏幕	479
 diannaotianshi	電腦|天使	464
 diannaowangqiu	電腦|網球	464
 diannaowanjia	電腦|玩家	499
@@ -3869,7 +3872,7 @@ falanxishaonv	法蘭西|少女	458
 falanxishi	法蘭|西式	318
 falanxishipinggong	法蘭|西式|平拱	400
 faliwubian	法力|無邊	456
-falvzeren	法律|責任	443
+falvzeren	法律|責任	466
 falvzhicai	法律|制裁	435
 famugongren	伐木|工人	467
 fananweijixiaoying	反安慰劑|效應	482
@@ -4586,7 +4589,7 @@ fuyaoguoliang	服藥|過量	463
 fuyaoyicongxing	服藥|依從性	483
 fuyingongzhu	福音|公主	442
 fuyongfengya	附庸|風雅	410
-fuyouzeren	負有|責任	462
+fuyouzeren	負有|責任	463
 fuyunsaiche	浮雲|賽車	464
 fuyuxiangxiang	富於|想像	469
 fuzabufen	複雜|部分	401
@@ -4792,6 +4795,7 @@ gaodawushuang	高達|無雙	464
 gaodawushuangxilie	高達|無雙|系列	456
 gaodengjiaoyu	高等|教育	520
 gaodengxuexiao	高等|學校	490
+gaoduandaqi	高端|大氣	457
 gaodujinshi	高度|近視	474
 gaoduzhongshi	高度|重視	483
 gaoerfuwuyu	高爾夫|物語	441
@@ -5065,7 +5069,7 @@ gongmingfugui	功名|富貴	483
 gongminquanli	公民|權利	500
 gongminshenfen	公民|身分	444
 gongmintoupiao	公民|投票	444
-gongminzeren	公民|責任	463
+gongminzeren	公民|責任	486
 gongnengceshi	功能|測試	488
 gongnengdingwei	功能|定位	497
 gongnengjiegou	功能|結構	486
@@ -5175,6 +5179,7 @@ gongzuotiaojian	工作|條件	486
 gongzuoxiaolv	工作|效率	520
 gongzuoyali	工作|壓力	486
 gongzuoyiwai	工作|意外	486
+gongzuozhuangtai	工作|狀態	453
 gongzuozhuoqian	工作|桌前	520
 gouchengweixie	構成|威脅	459
 gouchengzhuyi	構成|主義	435
@@ -7964,12 +7969,13 @@ jishuguifan	技術|規範	465
 jishukaifa	技術|開發	497
 jishukaifaqu	技術|開發區	436
 jishumimi	技術|祕密	497
+jishunengli	技術|能力	457
 jishurenyuan	技術|人員	474
 jishushebei	技術|設備	497
 jishushili	技術|實力	485
 jishushouduan	技術|手段	500
 jishushuiping	技術|水平	517
-jishutuandui	技術|團隊	453
+jishutuandui	技術|團隊	498
 jishuwenti	技術|問題	453
 jishuxijie	技術|細節	497
 jishuxuexiao	技術|學校	470
@@ -9277,6 +9283,8 @@ liangxingzhongliu	良性|腫瘤	470
 liangyaokukou	良藥|苦口	461
 liangzhezhijian	兩者|之間	479
 liangzichanglun	量子|場論	427
+liangzijisuan	量子|計算	504
+liangzijisuanji	量子|計算機	499
 liangziliehen	量子|裂痕	431
 liangzilixue	量子|力學	462
 liangzimiti	量子|謎題	421
@@ -10587,7 +10595,7 @@ minshengdiaobi	民生|凋敝	485
 minshengzhuyi	民生|主義	431
 minshidengji	民事|登記	486
 minshifanghu	民事|防護	472
-minshizeren	民事|責任	457
+minshizeren	民事|責任	467
 minyiceyan	民意|測驗	444
 minyingqiye	民營|企業	463
 minyuanfeiteng	民怨|沸騰	469
@@ -10780,6 +10788,7 @@ moxigehezhongguo	墨西哥|合眾國	448
 moxingcailiao	模型|材料	487
 moxingqudong	模型|驅動	486
 moxingqudongfangfa	模型|驅動|方法	467
+moxingsuanfa	模型|算法	501
 moxingxingneng	模型|性能	520
 moxingxunlian	模型|訓練	506
 moxingzhizuo	模型|製作	374
@@ -11458,7 +11467,7 @@ pifuxitong	皮膚|系統	483
 pifuyingqubing	皮膚|蠅蛆病	457
 pifuyizhi	皮膚|移植	470
 pifuyizhishu	皮膚|移植術	457
-pifuyouze	匹夫|有責	419
+pifuyouze	匹夫|有責	468
 pifuyuanweiai	皮膚|原位癌	459
 pifuzaisheng	皮膚|再生	374
 pifuzaishengbuliang	皮膚|再生|不良	456
@@ -14252,7 +14261,7 @@ shousuoqigaoxueya	收縮期|高血壓	483
 shoutidanbaizhi	受體|蛋白質	458
 shoutidiannao	手提|電腦	431
 shoutituomin	受體|脫敏	414
-shoutuyouze	守土|有責	432
+shoutuyouze	守土|有責	481
 shouwangchuanshuo	守望|傳說	426
 shouwangxiangzhu	守望|相助	488
 shouweiliangduan	首尾|兩端	426
@@ -14424,7 +14433,7 @@ shujufenxi	數據|分析	470
 shujufuwu	數據|服務	479
 shujugaosu	數據|高速	386
 shujugaosuhuancun	數據|高速|緩存	468
-shujugeshi	數據|格式	479
+shujugeshi	數據|格式	498
 shujuguanli	數據|管理	485
 shujuguanlichengxu	數據|管理|程序	467
 shujuhuancun	數據|緩存	488
@@ -14987,7 +14996,7 @@ tanxinbuzu	貪心|不足	504
 tanzangwangfa	貪贓|枉法	460
 tanzhizhijian	彈指|之間	480
 taobifanying	逃避|反應	483
-taobizeren	逃避|責任	436
+taobizeren	逃避|責任	459
 taohaomaiguai	討好|賣乖	447
 taohongsiwutang	桃紅|四物湯	437
 taolibuyan	桃李|不言	452
@@ -17649,7 +17658,7 @@ xitongjiepouxue	系統|解剖學	457
 xitongloudong	系統|漏洞	493
 xitongmingling	系統|命令	491
 xitongpeizhi	系統|配置	492
-xitongrizhi	系統|日誌	497
+xitongrizhi	系統|日誌	499
 xitongshengwuxue	系統|生物學	461
 xitongshiyong	系統|實用	385
 xitongshiyongchengxu	系統|實用|程序	467
@@ -19873,7 +19882,7 @@ yuntongceding	孕酮|測定	421
 yuntouzhuanxiang	暈頭|轉向	485
 yunxingceshi	運行|測試	488
 yunxinghuanjing	運行|環境	489
-yunxingrizhi	運行|日誌	497
+yunxingrizhi	運行|日誌	498
 yunxingzhuangkuang	運行|狀況	463
 yunyongbuneng	運用|不能	486
 yunzaihuojian	運載|火箭	465
@@ -20045,7 +20054,7 @@ zenmehuishi	怎麼|回事	520
 zenmekeneng	怎麼|可能	457
 zerenbaoxian	責任|保險	497
 zerenbianji	責任|編輯	463
-zerenshigu	責任|事故	462
+zerenshigu	責任|事故	468
 zezechengzan	嘖嘖|稱讚	484
 zhadanrendazhan	炸彈人|大戰	458
 zhadanrenjieke	炸彈人|傑克	456
@@ -20477,7 +20486,7 @@ zhijianshumu	只見|樹木	478
 zhijianzhanzheng	指尖|戰爭	464
 zhijiaozhuanwan	直角|轉彎	383
 zhijiaozhuanwanjieti	直角|轉彎|階梯	465
-zhijiaozuobiao	直角|座標	474
+zhijiaozuobiao	直角|座標	466
 zhijiecanyu	直接|參與	480
 zhijiedanhongsu	直接|膽紅素	457
 zhijiedianli	直接|電離	417

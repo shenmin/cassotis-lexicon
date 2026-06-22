@@ -2125,6 +2125,8 @@ anzhuangbao	安裝包	379
 anzhuangbushu	安裝部署	700
 anzhuangchajian	安裝插件	705
 anzhuangchengxu	安裝程序	709
+anzhuanghao	安裝好	800
+anzhuanghaode	安裝好的	800
 anzhuangpeizhi	安裝配置	709
 anzhuangwan	安裝完	280
 anzhuo	安卓	137
@@ -12734,7 +12736,7 @@ bushi	不失	634
 bushi	不適	634
 bushi	捕食	634
 bushi	布施	598
-bushi	不時	566
+bushi	不時	556
 bushi	佈施	382
 bushi	不似	280
 bushi	不濕	280
@@ -13088,6 +13090,7 @@ buxingfan	不行犯	640
 buxingjie	步行街	1000
 buxingjie	不行屆	351
 buxingle	不行了	640
+buxinglucheng	步行路程	800
 buxingmoniqi	步行模擬器	613
 buxingqu	步行區	167
 buxingren	不醒人	556
@@ -16506,7 +16509,7 @@ chaoshanzhuanqu	潮汕專區	583
 chaoshao	炒勺	319
 chaoshen	抄身	323
 chaosheng	超聲	1000
-chaosheng	超生	709
+chaosheng	超生	708
 chaosheng	朝聖	105
 chaoshengbo	超聲波	660
 chaoshengbocuiqu	超聲波萃取	640
@@ -18652,6 +18655,7 @@ chixujiaofu	持續交付	693
 chixujicheng	持續集成	704
 chixujichengxitong	持續集成系統	790
 chixushijian	持續時間	405
+chixutisheng	持續提升	800
 chixutong	持續痛	470
 chixuxingfare	持續性發熱	610
 chixuxingtairxunhuanzonghezheng	持續性胎兒循環綜合徵	897
@@ -22372,7 +22376,7 @@ dabo	大伯	256
 dabosiju	大波斯菊	249
 dabu	大部	1000
 dabu	大步	793
-dabudao	達不到	232
+dabudao	達不到	800
 dabufen	大部分	727
 dabuguo	打不過	232
 dabuliao	大不了	648
@@ -32793,7 +32797,7 @@ duodaochengxusheji	多道程序設計	790
 duodaoqu	掇刀區	483
 duode	多的	700
 duode	多得	676
-duode	奪得	555
+duode	奪得	564
 duodeduo	多得多	800
 duodengxingxinhaoji	多燈型信號機	821
 duodeshi	多得是	706
@@ -43343,8 +43347,9 @@ gaodingle	搞定了	1018
 gaodong	搞懂	280
 gaodongtaiguangzhaoxuanran	高動態光照渲染	744
 gaodu	高度	536
-gaoduan	高端	834
-gaoduan	高段	57
+gaoduan	高端	883
+gaoduan	高段	1
+gaoduandaqi	高端大氣	800
 gaoduchangpengzhuang	高度場碰撞	816
 gaodudequ	高度地區	597
 gaodujinshi	高度近視	540
@@ -44498,6 +44503,7 @@ gengdong	更動	418
 gengdu	耕讀	409
 gengduan	更短	1000
 gengduo	更多	1000
+gengduode	更多的	800
 gengduode	更多地	280
 gengfa	更乏	280
 gengfan	更煩	1000
@@ -46116,6 +46122,7 @@ gongzuoyiwai	工作意外	570
 gongzuozhan	工作站	659
 gongzuozhe	工作者	575
 gongzuozheng	工作證	444
+gongzuozhuangtai	工作狀態	800
 gongzuozhuo	工作桌	1000
 gongzuozhuoqian	工作桌前	1000
 gongzuozu	工作組	606
@@ -68723,6 +68730,7 @@ jishukaifa	技術開發	775
 jishukaifaqu	技術開發區	575
 jishulvyi	計數率儀	258
 jishumimi	技術祕密	775
+jishunengli	技術能力	800
 jishuqi	計數器	660
 jishuqianshui	技術潛水	260
 jishuquan	技術圈	800
@@ -79867,6 +79875,8 @@ liangzihu	梁子湖	458
 liangzihua	量子化	454
 liangzihuqu	梁子湖區	375
 liangzijing	量子阱	232
+liangzijisuan	量子計算	799
+liangzijisuanji	量子計算機	843
 liangzijiuchan	量子糾纏	260
 liangziliehen	量子裂痕	538
 liangzilixue	量子力學	512
@@ -81325,6 +81335,7 @@ lilungongzuozhe	理論工作者	461
 lilunhua	理論化	280
 lilunjia	理論家	519
 lilunjichu	理論基礎	260
+lilunshang	理論上	800
 lilunshengwuxue	理論生物學	610
 liluntiantiwulixue	理論天體物理學	744
 lilunwuli	理論物理	708
@@ -84660,7 +84671,7 @@ lucaoxiang	鹿草鄉	228
 luceliang	顱測量	230
 luchaibang	蘆柴棒	228
 luchangxuan	魯常泫	768
-lucheng	路程	743
+lucheng	路程	843
 luchengqu	鹿城區	160
 luchi	露齒	560
 luchi'erxiao	露齒而笑	260
@@ -92982,6 +92993,7 @@ moxingqudong	模型驅動	695
 moxingqudongfangfa	模型驅動方法	772
 moxingshenbing	膜性腎病	540
 moxingshenxiaoqiushenyan	膜性腎小球腎炎	700
+moxingsuanfa	模型算法	784
 moxingxingneng	模型性能	800
 moxingxunlian	模型訓練	834
 moxingzhizuoshijie	模型製作世界	789
@@ -100404,8 +100416,9 @@ pingmiantu	平面圖	620
 pingmianwanggezhenliefengzhuang	平面網格陣列封裝	774
 pingmin	平民	487
 pingming	平明	400
-pingmu	屏幕	691
+pingmu	屏幕	896
 pingmubaohuchengxu	屏幕保護程序	318
+pingmushang	屏幕上	800
 pingmuxianshi	屏幕顯示	775
 pingnan	平南	305
 pingnanxian	平南縣	85
@@ -105546,9 +105559,9 @@ qiqiguaijie	奇奇怪界	538
 qiqiha'er	齊齊哈爾	328
 qiqiha'ershi	齊齊哈爾市	308
 qiqihaer	齊齊哈爾	328
-qiqing	七情	620
-qiqing	悽清	220
-qiqing	淒清	220
+qiqing	七情	609
+qiqing	悽清	216
+qiqing	淒清	216
 qiqingliuyu	七情六慾	648
 qiqingliuyu	七情六欲	601
 qiqinqizong	七擒七縱	616
@@ -116266,7 +116279,7 @@ shengque	省卻	409
 shengquyouxi	盛趣遊戲	755
 shengre	生熱	430
 shengren	升任	942
-shengren	聖人	137
+shengren	聖人	136
 shengren	勝任	51
 shengren	生人	1
 shengrennengli	勝任能力	260
@@ -117120,7 +117133,7 @@ shenjingyan	神經炎	800
 shenjingyapozhenghouqun	神經壓迫症候羣	700
 shenjingyingyangyinzi	神經營養因子	680
 shenjingyiweishu	神經移位術	610
-shenjingyuan	神經元	863
+shenjingyuan	神經元	951
 shenjingyuanlayangzhihezhichujizheng	神經元蠟樣脂褐質儲積症	700
 shenjingyuannianfufenzi	神經元黏附分子	700
 shenjingyuanteyixingxichunhuamei	神經元特異性烯醇化酶	680
@@ -118243,7 +118256,7 @@ shibule	使不了	640
 shibuliangli	勢不兩立	715
 shibuliangli	誓不兩立	129
 shibushi	是不是	1000
-shibushi	時不時	22
+shibushi	時不時	280
 shibushide	是不是的	597
 shibuwodai	時不我待	429
 shibuxiangman	實不相瞞	387
@@ -118832,7 +118845,7 @@ shijianchuli	事件處理	714
 shijianchulijizhi	事件處理機制	816
 shijianchuo	時間戳	232
 shijiandaili	事件代理	693
-shijiandian	時間點	232
+shijiandian	時間點	280
 shijianduan	時間段	280
 shijianduilie	事件隊列	701
 shijianduixiang	事件對象	755
@@ -142490,6 +142503,7 @@ xianshiwu	先事物	640
 xianshixianbao	現世現報	646
 xianshixin	限時信	198
 xianshiyiyi	現實意義	280
+xianshizhe	顯示著	768
 xianshizhiliaofa	現實治療法	640
 xianshizhuyi	現實主義	680
 xianshizhuyizhe	現實主義者	458
@@ -143133,10 +143147,11 @@ xiaochen	消沉	667
 xiaochen	小陳	280
 xiaochen	消沈	123
 xiaocheng	小程	280
-xiaocheng	小城	3
+xiaocheng	小城	1
 xiaochengdajie	小懲大誡	387
 xiaochengqitang	小承氣湯	540
 xiaochengwang	孝成王	232
+xiaochengxu	小程式	1000
 xiaochengxuchakanqi	小程序查看器	772
 xiaochi	小喫	560
 xiaochibaihezi	小池百合子	289
@@ -143281,7 +143296,7 @@ xiaofanzhuo	小飯桌	232
 xiaofei	消費	1000
 xiaofei	小費	1
 xiaofeichuandamaoxian	小飛船大冒險	648
-xiaofeiji	消費級	232
+xiaofeiji	消費級	280
 xiaofeijiagezhishu	消費價格指數	318
 xiaofeijinrong	消費金融	260
 xiaofeipin	消費品	600
@@ -149872,7 +149887,7 @@ xuanpin	選品	319
 xuanpu	玄圃	198
 xuanqianji	旋前肌	232
 xuanqianyuanji	旋前圓肌	540
-xuanqianzhuankun	旋乾轉坤	401
+xuanqianzhuankun	旋乾轉坤	383
 xuanqing	選情	849
 xuanqu	選取	830
 xuanqu	選區	524
@@ -162882,7 +162897,7 @@ youxiaode	有效地	800
 youxiaofuzai	有效負載	260
 youxiaoguo	有效果	1000
 youxiaojiliang	有效劑量	540
-youxiaolv	有效氯	428
+youxiaolv	有效氯	399
 youxiaolv	有效率	280
 youxiaolvguoya	有效濾過壓	610
 youxiaopengzhuang	有效碰撞	700
@@ -163287,7 +163302,7 @@ youzegaizhiwuzejiamian	有則改之無則加勉	728
 youzeixinmeizeidan	有賊心沒賊膽	702
 youzengwujian	有增無減	476
 youzengwuyi	有增無已	402
-youzeren	有責任	232
+youzeren	有責任	800
 youzha	油炸	996
 youzha	油渣	1
 youzhagui	油炸鬼	375
@@ -167096,7 +167111,7 @@ zeou	擇偶	436
 zepu	澤普	194
 zepuxian	澤普縣	198
 zeqishanzhe'ercongzhi	擇其善者而從之	526
-zeren	責任	536
+zeren	責任	822
 zerenbaoxian	責任保險	570
 zerenbianji	責任編輯	405
 zerengan	責任感	558
@@ -179198,8 +179213,8 @@ zuobianju	左邊距	800
 zuobiankuang	左邊框	800
 zuobianqi	坐便器	362
 zuobianr	左邊兒	167
-zuobiao	坐標	941
-zuobiao	座標	896
+zuobiao	坐標	843
+zuobiao	座標	798
 zuobiaofa	座標法	760
 zuobiaokongjian	坐標空間	260
 zuobiaokongjian	座標空間	258
