@@ -19090,7 +19090,8 @@ chongzhika	充值卡	415
 chongzhou	崇州	172
 chongzhoushi	崇州市	178
 chongzhu	蟲蛀	305
-chongzhuang	衝撞	831
+chongzhuang	重裝	700
+chongzhuang	衝撞	185
 chongzhudebian	蟲蛀的扁	523
 chongzhudebiandan	蟲蛀的扁擔	566
 chongzhudeping	蟲蛀的蘋	523
@@ -42399,6 +42400,7 @@ ganggushuini	鋼骨水泥	260
 ganghao	剛好	487
 ganghua	鋼花	293
 ganghuaboli	鋼化玻璃	458
+ganghuan	剛換	700
 gangji	鋼季	302
 gangji	綱紀	285
 gangjia	剛架	305
@@ -42590,6 +42592,7 @@ gangzhouyan	肛周炎	470
 gangzhu	鋼珠	560
 gangzhu'ao	港珠澳	230
 gangzhu'aodaqiao	港珠澳大橋	289
+gangzhuang	剛裝	700
 gangzhuao	港珠澳	230
 gangzi	槓子	77
 ganhai	干咳	440
@@ -55868,6 +55871,7 @@ huanbingzhiji	緩兵之計	473
 huanbohai	環渤海	624
 huanbohaidequ	環渤海地區	282
 huanbohaiwandiqu	環渤海灣地區	318
+huanboli	換玻璃	800
 huanbu	緩步	473
 huanbujiji	緩不濟急	479
 huanbupao	緩步跑	500
@@ -55892,7 +55896,8 @@ huanchongrongye	緩衝溶液	580
 huanchongrongye	緩沖溶液	250
 huanchongye	緩衝液	510
 huanchu	患處	603
-huanchuang	環創	198
+huanchuang	換窗	700
+huanchuanghu	換窗戶	800
 huanchun	環醇	427
 huancui	環翠	198
 huancuiqu	環翠區	379
@@ -55907,7 +55912,7 @@ huancunshuju	緩存數據	775
 huancunwenjian	緩存文件	706
 huancunxitong	緩存系統	702
 huandai	還貸	777
-huandai	換代	597
+huandai	換代	598
 huandan	換單	198
 huandang	換擋	323
 huandanggan	換擋杆	238
@@ -55919,11 +55924,13 @@ huande	換的	700
 huande	換得	676
 huandehuan	患得患	556
 huandehuanshi	患得患失	779
-huandeng	幻燈	380
+huandeng	換燈	700
+huandeng	幻燈	391
 huandengji	幻燈機	379
 huandengpian	幻燈片	439
 huandi	浣滌	305
 huandiao	換掉	700
+huandiban	換地板	800
 huandingjihuahewu	環丁基化合物	700
 huandong	緩動	198
 huandu	歡度	263
@@ -56769,8 +56776,10 @@ huanman	緩慢	914
 huanmande	緩慢地	800
 huanmanrenzhifengge	緩慢認知風格	700
 huanmao	換毛	216
+huanmen	換門	700
 huanmen	宦門	313
 huanmeng	幻夢	341
+huanmensuo	換門鎖	800
 huanmian	環面	319
 huanmie	幻滅	414
 huanmu	環幕	319
@@ -56808,6 +56817,8 @@ huanqi	喚起	784
 huanqi	緩期	604
 huanqian	還錢	700
 huanqian	換錢	58
+huanqiangbu	換牆布	800
+huanqiangzhi	換牆紙	800
 huanqibujia	換氣不佳	570
 huanqifukuan	緩期付款	260
 huanqing	還清	981
@@ -56835,6 +56846,7 @@ huanreqi	換熱器	243
 huanrong	歡容	198
 huansan	渙散	439
 huansha	浣紗	305
+huanshachuang	換紗窗	800
 huanshaji	浣紗記	228
 huanshang	患上	1
 huansheng	歡聲	420
@@ -56860,6 +56872,7 @@ huansong	歡送	420
 huansonghui	歡送會	400
 huansu	還俗	428
 huansuan	換算	437
+huansuo	換鎖	700
 huanta	幻塔	286
 huantai	換台	364
 huantaipingyang	環太平洋	637
@@ -56876,7 +56889,7 @@ huanting	幻聽	588
 huantou	喚頭	563
 huanwanting	環烷烴	371
 huanwei	換位	1000
-huanwei	環衛	534
+huanwei	環衛	533
 huanweigongren	環衛工人	405
 huanweisikao	換位思考	570
 huanweizhuyi	環衛主義	570
@@ -56885,9 +56898,10 @@ huanwuxi	環戊烯	228
 huanxi	歡喜	1000
 huanxi	換洗	1
 huanxian	環線	1000
+huanxian	換線	700
 huanxiang	幻想	858
 huanxiang	還鄉	718
-huanxiang	換向	177
+huanxiang	換向	178
 huanxiang	幻象	1
 huanxiangansuan	環腺苷酸	540
 huanxiangansuanshouti	環腺苷酸受體	700
@@ -56955,7 +56969,9 @@ huanyangyiwan	環氧乙烷	491
 huanyanzhi	換言之	535
 huanyaodeyumao	幻耀的羽毛	613
 huanyaoshi	換藥室	510
-huanyi	浣衣	305
+huanyi	換衣	700
+huanyi	浣衣	1
+huanyifu	換衣服	800
 huanying	幻影	280
 huanying	歡迎	166
 huanyingban	幻影般	280
@@ -57672,7 +57688,7 @@ huhu	忽忽	464
 huhu	糊糊	464
 huhua	胡話	483
 huhuan	互換	988
-huhuan	呼喚	275
+huhuan	呼喚	274
 huhuanglian	胡黃連	360
 huhuashizhe	護花使者	280
 huhubule	忽忽不樂	362
@@ -67393,7 +67409,7 @@ jingzhunyixue	精准醫學	250
 jingzi	鏡子	1000
 jingzi	精子	931
 jingzi	徑自	730
-jingzi	逕自	723
+jingzi	逕自	716
 jingzifasheng	精子發生	540
 jingzihuodongli	精子活動力	640
 jingzihuoli	精子活力	570
@@ -90325,7 +90341,7 @@ mianhongerchi	面紅耳赤	496
 mianhongerre	面紅耳熱	616
 mianhu	面糊	1000
 mianhu	麵糊	1000
-mianhu	麪糊	955
+mianhu	麪糊	860
 mianhua	棉花	536
 mianhuabang	棉花棒	230
 mianhuai	緬懷	300
@@ -102122,7 +102138,7 @@ qiangjishang	槍擊傷	500
 qiangjiu	搶救	1000
 qiangjiuche	搶救車	470
 qiangjiyu	腔棘魚	228
-qiangjue	槍決	675
+qiangjue	槍決	674
 qiangjue	牆橛	469
 qiangjuezi	牆橛仔	1000
 qiangkou	槍口	435
@@ -102324,7 +102340,7 @@ qiangzhannvwushen	槍戰女武神	613
 qiangzhen	強震	375
 qiangzheng	強徵	511
 qiangzhi	強制	1000
-qiangzhi	牆紙	366
+qiangzhi	牆紙	415
 qiangzhi	牆質	166
 qiangzhi	槍支	1
 qiangzhijueyu	強制絕育	570
@@ -112876,7 +112892,7 @@ shachongmi	殺蟲脒	470
 shachongshui	殺蟲水	500
 shachongyao	殺蟲藥	443
 shachu	殺出	280
-shachuang	紗窗	626
+shachuang	紗窗	826
 shachuchongwei	殺出重圍	1
 shachui	沙錘	253
 shachuzhongwei	殺出重圍	538
@@ -113095,7 +113111,7 @@ shamate	殺馬特	232
 shameiteluo	沙美特羅	540
 shameiteluotikasong	沙美特羅替卡松	651
 shamen	紗門	1000
-shamen	沙門	240
+shamen	沙門	239
 shamenhangkonggongsi	廈門航空公司	313
 shamenjingjitequ	廈門經濟特區	309
 shamenjun	沙門菌	167
@@ -128578,7 +128594,7 @@ taohongsiwutang	桃紅四物湯	610
 taohua	桃花	1000
 taohua	套話	1
 taohualiushui	桃花流水	507
-taohuan	討還	555
+taohuan	討還	554
 taohuang	逃荒	444
 taohuashan	桃花扇	375
 taohuashuimu	桃花水母	260
@@ -130184,8 +130200,8 @@ tiaodashen	跳大神	232
 tiaode	跳得	1000
 tiaode	挑的	700
 tiaode	挑得	676
-tiaodeng	挑燈	789
-tiaodeng	條凳	87
+tiaodeng	挑燈	790
+tiaodeng	條凳	86
 tiaodengbohuo	挑燈撥火	387
 tiaodengyezhan	挑燈夜戰	439
 tiaodian	跳電	198
@@ -132350,7 +132366,7 @@ touhong	透紅	198
 touhu	投壺	335
 touhuaisongbao	投懷送抱	387
 touhualiao	頭花蓼	470
-touhuan	偷換	795
+touhuan	偷換	796
 touhuanziyi	投繯自縊	258
 touhui	頭回	198
 touhun	頭昏	511
@@ -146026,6 +146042,7 @@ xinchaojijiqirendazhan	新超級機器人大戰	662
 xinchaojijiqirendazhandazhan	新超級機器人大戰大戰	662
 xinchaojimali'aoxiongdi	新超級馬里奧兄弟	662
 xinchaopengpai	心潮澎湃	462
+xinche	新車	700
 xinchendaixie	新陳代謝	570
 xincheng	新城	943
 xincheng	新成	854
@@ -146044,6 +146061,8 @@ xinchoujiuhen	新愁舊恨	100
 xinchoutiaoyue	辛丑條約	218
 xinchuan	薪傳	305
 xinchuandaozuzhizheng	心傳導阻滯症	700
+xinchuang	新窗	700
+xinchuanghu	新窗戶	800
 xinchulu	新出爐	232
 xinchun	新春	400
 xinchun	辛醇	233
@@ -146088,6 +146107,7 @@ xindean	心得安	510
 xindefangjiedao	新地方街道	639
 xindeguo	信得過	535
 xindeli	新德里	552
+xindeng	新燈	700
 xindesheng	信德省	184
 xindeshuijinggushitaikongzhanshi	新的水晶故事太空戰士	662
 xindeshuijinggushizuizhonghuanxiang	新的水晶故事最終幻想	662
@@ -146137,8 +146157,8 @@ xineicefurendai	膝內側副韌帶	700
 xineifan	膝內翻	500
 xinen	細嫩	457
 xinfan	心煩	439
-xinfang	新房	910
-xinfang	信訪	490
+xinfang	新房	700
+xinfang	信訪	576
 xinfang	心房	440
 xinfang	心放	280
 xinfangbiyanjiaonang	辛芳鼻炎膠囊	668
@@ -147319,7 +147339,8 @@ xinhuai	心懷	440
 xinhuaiguitai	心懷鬼胎	637
 xinhuaipoce	心懷叵測	439
 xinhuaitante	心懷忐忑	694
-xinhuan	新歡	396
+xinhuan	新換	700
+xinhuan	新歡	459
 xinhuang	心慌	440
 xinhuangdongzuzizhixian	新晃侗族自治縣	348
 xinhuangpian	新癀片	470
@@ -147368,12 +147389,14 @@ xiniuwangyue	犀牛望月	619
 xinixian	悉尼綫	470
 xiniya'erdeweihu	希尼亞爾德維湖	651
 xinji	心肌	470
-xinji	心悸	374
-xinji	心急	290
-xinji	心計	290
+xinji	心悸	402
+xinji	心急	353
+xinji	心計	353
+xinji	新機	290
 xinji	心跡	73
 xinji	薪給	57
 xinji	心機	1
+xinjia	新家	700
 xinjialan	新加蘭	492
 xinjian	新建	627
 xinjian	信件	475
@@ -147530,7 +147553,7 @@ xinku	辛苦	497
 xinkuai	欣快	280
 xinkuaigan	欣快感	280
 xinkuaizheng	欣快症	500
-xinkuan	新款	403
+xinkuan	新款	700
 xinkuangshenyi	心曠神怡	509
 xinkuantipan	心寬體胖	1
 xinkuantipang	心寬體胖	528
@@ -147682,7 +147705,7 @@ xinmeimiaoshijie	新美妙世界	613
 xinmeisu	新黴素	540
 xinmeisudiyanji	新黴素滴眼劑	664
 xinmeisuruangao	新黴素軟膏	610
-xinmen	新門	579
+xinmen	新門	700
 xinmen	囟門	1
 xinmi	新密	156
 xinmikelayifuka	新米科拉伊夫卡	651
@@ -148247,10 +148270,11 @@ xinye	新野	422
 xinyeduan	心葉椴	230
 xinyelusalengxiudaoyuan	新耶路撒冷修道院	660
 xinyexian	新野縣	179
-xinyi	信義	441
-xinyi	心意	407
-xinyi	新意	218
-xinyi	心儀	50
+xinyi	新衣	700
+xinyi	信義	498
+xinyi	心意	398
+xinyi	新意	232
+xinyi	心儀	25
 xinyibiyanwan	辛夷鼻炎丸	610
 xinyidai	新一代	362
 xinyihua	辛夷花	470
@@ -148424,7 +148448,7 @@ xinzhongyuan	新中源	520
 xinzhou	新洲	597
 xinzhoushi	忻州市	174
 xinzhu	新竹	493
-xinzhuang	新莊	178
+xinzhuang	新裝	700
 xinzhuangshi	新莊市	165
 xinzhuokouben	心拙口笨	361
 xinzhushi	新竹市	183
@@ -148600,8 +148624,8 @@ xiongqi	雄起	577
 xiongqi	胸鰭	387
 xiongqi	兇器	291
 xiongqian	胸前	433
-xiongqiang	胸牆	622
-xiongqiang	胸腔	442
+xiongqiang	胸牆	621
+xiongqiang	胸腔	441
 xiongqiangbishiyinliu	胸腔閉式引流	680
 xiongqiangbishiyinliushu	胸腔閉式引流術	663
 xiongqiangchuanci	胸腔穿刺	570
@@ -149848,7 +149872,7 @@ xuanpin	選品	319
 xuanpu	玄圃	198
 xuanqianji	旋前肌	232
 xuanqianyuanji	旋前圓肌	540
-xuanqianzhuankun	旋乾轉坤	383
+xuanqianzhuankun	旋乾轉坤	401
 xuanqing	選情	849
 xuanqu	選取	830
 xuanqu	選區	524
@@ -160582,7 +160606,7 @@ yixiang	已向	605
 yixiang	一向	584
 yixiang	一項	499
 yixiang	意向	445
-yixiang	臆想	172
+yixiang	臆想	130
 yixiang	遺像	29
 yixiang	意象	1
 yixiang	異鄉	1
