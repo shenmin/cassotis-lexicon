@@ -741,7 +741,7 @@ biaodianfuhao	標點|符號	469
 biaoganfenxifa	標杆|分析法	486
 biaoguanjiyin	表觀|基因	485
 biaojibianliang	標記|變量	486
-biaojileixing	標記|類型	483
+biaojileixing	標記|類型	485
 biaolianglizi	標量|粒子	501
 biaolibuyi	表裏|不一	476
 biaoliruyi	表裏|如一	431
@@ -2414,8 +2414,11 @@ dafengdalang	大風|大浪	472
 dafenlanzhuyi	大芬蘭|主義	419
 dafuwengxilie	大富翁|系列	408
 dafuwengxingqiu	大富翁|星球	440
+dagebiaoji	打個|標記	453
+dagebifang	打個|比方	453
+dagedianhua	打個|電話	453
 dagezhaohu	打個|招呼	483
-dagezhaomian	打個|照面	453
+dagezhaomian	打個|照面	479
 dagonglingmu	大公|陵墓	480
 dagongwusi	大公|無私	489
 daguanmeisu	大觀|黴素	456
@@ -2751,6 +2754,7 @@ daxueyingyukouyu	大學|英語|口語	457
 daxueyiyuan	大學|醫院	483
 daxueyuke	大學|預科	463
 dayezhuanqu	大冶|專區	465
+dayixinsheng	大一|新生	515
 dayupangtuo	大雨|滂沱	476
 dayuqingpen	大雨|傾盆	484
 dayuruzhu	大雨|如注	486
@@ -3386,7 +3390,7 @@ dongganyingxiong	動感|英雄	423
 dongganzhihuijia	動感|指揮家	453
 dongguoxiansheng	東郭|先生	472
 donghaiangongyuan	東海岸|公園	409
-donghuabiaoji	動畫|標記	483
+donghuabiaoji	動畫|標記	499
 donghuabofang	動畫|播放	423
 donghuabofangguidao	動畫|播放|軌道	505
 donghuaduanpian	動畫|短片	435
@@ -11834,6 +11838,8 @@ qifashihanshu	啓發式|函數	468
 qifashisousuo	啓發式|搜索	483
 qifashisuanfa	啓發式|算法	483
 qigaimoniqi	乞丐|模擬器	456
+qigebiaoti	起個|標題	443
+qigemingzi	起個|名字	457
 qigexiaoshi	七個|小時	520
 qigongliaofa	氣功|療法	428
 qiguaideshi	奇怪|的是	483
@@ -12329,7 +12335,7 @@ rendaozhuyi	人道|主義	464
 rendaozhuyiyuanzhu	人道主義|援助	413
 rendongganmao	忍冬|感冒	374
 rendongganmaokeli	忍冬|感冒|顆粒	456
-renengbiaoji	熱能|標記	436
+renengbiaoji	熱能|標記	452
 rengejieti	人格|解體	431
 rengepingjian	人格|評鑑	446
 rengexinlixue	人格|心理學	460
@@ -16145,7 +16151,7 @@ wenroucike	溫柔|刺客	398
 wenroudunhou	溫柔|敦厚	442
 wenrutaishan	穩如|泰山	460
 wenshiqiti	溫室|氣體	483
-wenshixiaoying	溫室|效應	435
+wenshixiaoying	溫室|效應	432
 wenshixiaoyingqiti	溫室|效應|氣體	483
 wenshuchuli	文書|處理	463
 wentidaoxiang	問題|導向	401
@@ -20531,7 +20537,7 @@ zhijianshumu	只見|樹木	478
 zhijianzhanzheng	指尖|戰爭	464
 zhijiaozhuanwan	直角|轉彎	383
 zhijiaozhuanwanjieti	直角|轉彎|階梯	465
-zhijiaozuobiao	直角|座標	466
+zhijiaozuobiao	直角|座標	474
 zhijiecanyu	直接|參與	480
 zhijiedanhongsu	直接|膽紅素	457
 zhijiedianli	直接|電離	417
@@ -21550,6 +21556,7 @@ zonggenongzhong	縱隔|膿腫	395
 zonggexiongmo	縱隔|胸膜	423
 zonggezhongliu	縱隔|腫瘤	442
 zonggezigong	縱隔|子宮	463
+zongheceping	綜合|測評	449
 zongheceshi	綜合|測試	486
 zonghefangzhi	綜合|防治	474
 zonghefenxi	綜合|分析	486
@@ -21557,6 +21564,10 @@ zonghengchicheng	縱橫|馳騁	484
 zonghengjiaocuo	縱橫|交錯	475
 zonghengshurufa	縱橫|輸入法	498
 zonghengtianxia	縱橫|天下	469
+zonghepingding	綜合|評定	453
+zonghepingfen	綜合|評分	453
+zonghepinggu	綜合|評估	453
+zonghepingjia	綜合|評價	453
 zongheweishengsu	綜合|維生素	483
 zongjiaofating	宗教|法庭	467
 zongjiaojianzhu	宗教|建筑	467
@@ -21567,6 +21578,8 @@ zongjiechulai	總結|出來	453
 zongliyamen	總理|衙門	463
 zonglvqundao	棕櫚|羣島	475
 zongpaizhuyi	宗派|主義	427
+zongpingchengji	綜評|成績	453
+zongpingxitong	綜評|系統	453
 zongsechenai	棕色|塵埃	427
 zongsezhifang	棕色|脂肪	401
 zongsezhifangzuzhi	棕色|脂肪|組織	483

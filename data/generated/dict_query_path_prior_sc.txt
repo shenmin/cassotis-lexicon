@@ -2458,8 +2458,11 @@ dafayilun	大发|议论	497
 dafeikangyuan	达菲|抗原	429
 dafuwengxilie	大富翁|系列	408
 dafuwengxingqiu	大富翁|星球	440
+dagebiaoji	打个|标记	512
+dagebifang	打个|比方	516
+dagedianhua	打个|电话	520
 dagezhaohu	打个|招呼	503
-dagezhaomian	打个|照面	453
+dagezhaomian	打个|照面	479
 dagonglingmu	大公|陵墓	480
 dagongwusi	大公|无私	489
 daguanmeisu	大观|霉素	459
@@ -2798,6 +2801,7 @@ daxueyingyukouyu	大学|英语|口语	457
 daxueyiyuan	大学|医院	486
 daxueyuke	大学|预科	467
 dayezhuanqu	大冶|专区	468
+dayixinsheng	大一|新生	515
 dayupangtuo	大雨|滂沱	480
 dayuqingpen	大雨|倾盆	502
 dayuruzhu	大雨|如注	486
@@ -3447,7 +3451,7 @@ dongganxiaozi	动感|小子	444
 dongganyimiao	冻干|疫苗	373
 dongganyingxiong	动感|英雄	407
 dongganzhihuijia	动感|指挥家	416
-donghuabiaoji	动画|标记	493
+donghuabiaoji	动画|标记	502
 donghuabofang	动画|播放	423
 donghuabofangguidao	动画|播放|轨道	505
 donghuaduanpian	动画|短片	452
@@ -12130,6 +12134,8 @@ qifashisousuo	启发式|搜索	486
 qifashisuanfa	启发式|算法	486
 qifashiyansuanfa	启发式|演算法	436
 qigaimoniqi	乞丐|模拟器	458
+qigebiaoti	起个|标题	512
+qigemingzi	起个|名字	518
 qigexiaoshi	七个|小时	520
 qigongliaofa	气功|疗法	431
 qiguaideshi	奇怪|的是	483
@@ -12637,7 +12643,7 @@ rendaozhuyi	人道|主义	469
 rendaozhuyiyuanzhu	人道主义|援助	381
 rendongganmao	忍冬|感冒	374
 rendongganmaokeli	忍冬|感冒|颗粒	456
-renengbiaoji	热能|标记	446
+renengbiaoji	热能|标记	455
 rengepingjian	人格|评鉴	450
 rengexinlixue	人格|心理学	460
 rengeyichang	人格|异常	486
@@ -16603,7 +16609,7 @@ wenroucike	温柔|刺客	401
 wenrutaishan	稳如|泰山	443
 wenshenxiaochu	纹身|消除	457
 wenshiqiti	温室|气体	486
-wenshixiaoying	温室|效应	441
+wenshixiaoying	温室|效应	436
 wenshixiaoyingqiti	温室|效应|气体	483
 wenshuchuli	文书|处理	467
 wensibudong	纹丝|不动	486
@@ -22181,6 +22187,7 @@ zonggenongzhong	纵隔|脓肿	395
 zonggexiongmo	纵隔|胸膜	426
 zonggezhongliu	纵隔|肿瘤	445
 zonggezigong	纵隔|子宫	467
+zongheceping	综合|测评	511
 zongheceshi	综合|测试	503
 zonghefangzhi	综合|防治	474
 zonghefenxi	综合|分析	486
@@ -22188,6 +22195,10 @@ zonghengchicheng	纵横|驰骋	484
 zonghengjiaocuo	纵横|交错	478
 zonghengshurufa	纵横|输入法	501
 zonghengtianxia	纵横|天下	472
+zonghepingding	综合|评定	514
+zonghepingfen	综合|评分	515
+zonghepinggu	综合|评估	516
+zonghepingjia	综合|评价	517
 zongheweishengsu	综合|维生素	486
 zongjiaofating	宗教|法庭	467
 zongjiaojianzhu	宗教|建筑	499
@@ -22197,6 +22208,8 @@ zongjiechulai	总结|出来	520
 zongliyamen	总理|衙门	467
 zonglvqundao	棕榈|群岛	408
 zongpaizhuyi	宗派|主义	433
+zongpingchengji	综评|成绩	513
+zongpingxitong	综评|系统	510
 zongsechenai	棕色|尘埃	430
 zongsezhifang	棕色|脂肪	401
 zongsezhifangzuzhi	棕色|脂肪|组织	483
