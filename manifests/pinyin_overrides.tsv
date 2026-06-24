@@ -16,6 +16,8 @@
 您好	ninhao	common
 世界	shijie	common
 便宜	pianyi	common
+重点	zhongdian	common	重读zhong，避免单字读音扩展生成chongdian
+重點	zhongdian	common	重读zhong，避免单字读音扩展生成chongdian
 柏林	bolin	place	地名专读，柏读bo
 都柏林	dubolin	place	地名专读，柏读bo
 柏林电视塔	bolindianshita	place	柏林专读

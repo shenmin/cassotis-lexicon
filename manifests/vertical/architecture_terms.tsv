@@ -68,6 +68,15 @@
 腻子	膩子	0.80
 腻子粉	膩子粉	0.78
 刷漆	刷漆	0.80
+上漆	上漆	0.76	shangqi
+补漆	補漆	0.74	buqi
+喷漆	噴漆	0.76	penqi
+滚漆	滾漆	0.72	gunqi
+调漆	調漆	0.70	tiaoqi
+墙面漆	牆面漆	0.74	qiangmianqi
+刷底漆	刷底漆	0.74	shuadiqi
+刷面漆	刷面漆	0.74	shuamianqi
+刷乳胶漆	刷乳膠漆	0.76	shuarujiaoqi
 挂网	掛網	0.78
 网格布	網格布	0.78
 乳胶漆	乳膠漆	0.80
@@ -162,6 +171,8 @@
 涂刷	塗刷	0.76
 滚涂	滾塗	0.76
 喷涂	噴塗	0.76
+滚涂乳胶漆	滾塗乳膠漆	0.70	gunturujiaoqi
+喷涂乳胶漆	噴塗乳膠漆	0.70	penturujiaoqi
 刷墙	刷牆	0.78
 防水层	防水層	0.78
 防水涂料	防水塗料	0.78
@@ -174,6 +185,17 @@
 铺砖	鋪磚	0.78
 贴砖	貼磚	0.78
 瓷砖胶	瓷磚膠	0.78
+结构胶	結構膠	0.74	jiegoujiao
+免钉胶	免釘膠	0.74	miandingjiao
+密封胶	密封膠	0.74	mifengjiao
+发泡胶	發泡膠	0.72	fapaojiao
+硅酮胶	硅酮膠	0.70	guitongjiao
+中性胶	中性膠	0.70	zhongxingjiao
+耐候胶	耐候膠	0.70	naihoujiao
+云石胶	雲石膠	0.68	yunshijiao
+白乳胶	白乳膠	0.70	bairujiao
+万能胶	萬能膠	0.68	wannengjiao
+热熔胶	熱熔膠	0.68	rerongjiao
 美缝	美縫	0.78
 勾缝	勾縫	0.76
 填缝	填縫	0.76
@@ -238,6 +260,9 @@
 木龙骨	木龍骨	0.76
 封边	封邊	0.76
 收口	收口	0.76
+收边	收邊	0.72	shoubian
+收口条	收口條	0.70	shoukoutiao
+压边条	壓邊條	0.68	yabiantiao
 踢脚线	踢腳線	0.78
 阴角	陰角	0.76
 阳角	陽角	0.76
@@ -305,12 +330,54 @@
 排气管	排氣管	0.72	paiqiguan
 烟道	煙道	0.74	yandao
 玻璃胶	玻璃膠	0.74	bolijiao
+打胶	打膠	0.78	dajiao
+涂胶	塗膠	0.76	tujiao
+刷胶	刷膠	0.74	shuajiao
+上胶	上膠	0.74	shangjiao
+抹胶	抹膠	0.72	mojiao
+补胶	補膠	0.72	bujiao
+封胶	封膠	0.72	fengjiao
+收胶	收膠	0.70	shoujiao
+压胶	壓膠	0.70	yajiao
+胶枪	膠槍	0.72	jiaoqiang
+打胶枪	打膠槍	0.72	dajiaoqiang
+胶条	膠條	0.72	jiaotiao
+密封条	密封條	0.72	mifengtiao
+密封胶条	密封膠條	0.70	mifengjiaotiao
+门窗胶条	門窗膠條	0.70	menchuangjiaotiao
+门窗密封条	門窗密封條	0.70	menchuangmifengtiao
+橡胶条	橡膠條	0.68	xiangjiaotiao
+防撞条	防撞條	0.68	fangzhuangtiao
+防尘条	防塵條	0.68	fangchentiao
+防水胶条	防水膠條	0.68	fangshuijiaotiao
+挡水条	擋水條	0.72	dangshuitiao
+止水条	止水條	0.68	zhishuitiao
+嵌条	嵌條	0.66	qiantiao
+胶缝	膠縫	0.68	jiaofeng
+胶痕	膠痕	0.66	jiaohen
+溢胶	溢膠	0.66	yijiao
+防霉胶	防霉膠	0.68	fangmeijiao
+磁吸	磁吸	0.76	cixi
+磁吸门	磁吸門	0.72	ciximen
+磁吸锁	磁吸鎖	0.70	cixisuo
+磁吸灯	磁吸燈	0.70	cixideng
+磁吸轨道	磁吸軌道	0.68	cixiguidao
+磁吸轨道灯	磁吸軌道燈	0.68	cixiguidaodeng
+磁吸条	磁吸條	0.68	cixitiao
 美缝剂	美縫劑	0.74	meifengji
 填缝剂	填縫劑	0.72	tianfengji
 勾缝剂	勾縫劑	0.72	goufengji
 踢脚线	踢腳線	0.76	tijiaoxian
 收边条	收邊條	0.72	shoubiantiao
 压条	壓條	0.72	yatiao
+卡扣	卡扣	0.76	kakou
+卡槽	卡槽	0.72	kacao
+卡条	卡條	0.70	katiao
+扣条	扣條	0.70	koutiao
+扣板	扣板	0.70	kouban
+卡扣条	卡扣條	0.68	kakoutiao
+卡扣板	卡扣板	0.68	kakouban
+卡扣式	卡扣式	0.66	kakoushi
 阴角	陰角	0.72	yinjiao
 阳角	陽角	0.72	yangjiao
 找坡	找坡	0.72	zhaopo
