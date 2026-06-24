@@ -1616,7 +1616,7 @@ anjijiasuanzhi	氨基甲酸酯	602
 anjijiasuanzhileihuahewu	氨基甲酸酯類化合物	378
 anjijiasuanzhileinongyao	氨基甲酸酯類農藥	841
 anjijiasuanzhileinongyao	氨基甲酸酯類農葯	384
-anjing	安靜	653
+anjing	安靜	676
 anjingde	安靜地	1000
 anjingxialai	安靜下來	280
 anjinhuangminkeli	氨金黃敏顆粒	680
@@ -6342,7 +6342,7 @@ bashiyi	八十一	520
 bashiyinan	八十一難	540
 bashizhan	巴士站	160
 bashou	把手	937
-bashou	把守	594
+bashou	把守	593
 bashou	罷手	527
 bashu	巴蜀	354
 basi	拔絲	39
@@ -30167,6 +30167,7 @@ diuhunluopo	丟魂落魄	383
 diukai	丟開	429
 diukuiqijia	丟盔棄甲	424
 diukuixiejia	丟盔卸甲	618
+diule	丟了	700
 diulebang	丟了棒	470
 diulian	丟臉	445
 diulunchepao	丟輪扯炮	266
@@ -59882,8 +59883,8 @@ huzuofeiwei	胡作非爲	686
 huzuofeiwei	胡作非為	635
 ji'ai	極愛	1000
 ji'ai	極矮	1000
-ji'an	吉安	511
-ji'an	几案	391
+ji'an	吉安	512
+ji'an	几案	392
 ji'an	季胺	175
 ji'an	集安	125
 ji'andequ	吉安地區	587
@@ -61472,7 +61473,7 @@ jianle	建了	700
 jianle	減了	700
 jianlezhimadiulexigua	揀了芝麻丟了西瓜	938
 jianli	建立	1000
-jianli	監利	661
+jianli	監利	660
 jianli	簡歷	630
 jianli	尖利	526
 jianli	監理	89
@@ -70454,7 +70455,7 @@ jizhi	幾隻	605
 jizhi	機製	548
 jizhi	及至	497
 jizhi	極致	495
-jizhi	急智	184
+jizhi	急智	88
 jizhi	基址	84
 jizhi	極值	74
 jizhi	基質	1
@@ -79563,8 +79564,8 @@ lianggongchunridezhilie	涼宮春日的直列	632
 lianggongchunridezhuiyi	涼宮春日的追憶	632
 lianggongxinku	良工心苦	387
 lianggu	兩股	280
-liangguang	亮光	479
-liangguang	兩廣	383
+liangguang	亮光	480
+liangguang	兩廣	384
 liangguangzhi	亮光紙	600
 liangguangzongdu	兩廣總督	405
 lianggui	量規	352
@@ -90434,7 +90435,7 @@ mianhongerchi	面紅耳赤	496
 mianhongerre	面紅耳熱	616
 mianhu	面糊	1000
 mianhu	麵糊	1000
-mianhu	麪糊	860
+mianhu	麪糊	955
 mianhua	棉花	536
 mianhuabang	棉花棒	230
 mianhuai	緬懷	300
@@ -91427,7 +91428,7 @@ mingli'anli	明里暗里	314
 mingliang	明亮	473
 mingliangci	名量詞	232
 minglianli	明里暗里	314
-mingliao	明了	178
+mingliao	明了	179
 minglichang	名利場	423
 minglie	名列	465
 minglieqianmao	名列前茅	542
@@ -97213,7 +97214,8 @@ nongdai	農貸	338
 nongdan	濃淡	418
 nongdao	弄到	198
 nongdaoshou	弄到手	362
-nongde	弄得	1242
+nongde	弄的	700
+nongde	弄得	676
 nongdemeng	農德孟	228
 nongdi	農地	349
 nongdiu	弄丟	198
@@ -104023,7 +104025,7 @@ qilewuqiong	其樂無窮	447
 qili	起立	783
 qili	綺麗	765
 qili	淒厲	761
-qili	奇麗	387
+qili	奇麗	386
 qili	氣力	130
 qilian	祁連	641
 qilian	乞憐	367
@@ -104563,7 +104565,7 @@ qingjin	傾盡	566
 qingjin	青筋	455
 qingjing	情景	1000
 qingjing	情境	839
-qingjing	清淨	492
+qingjing	清淨	493
 qingjing	清靜	473
 qingjingfan	青精飯	470
 qingjingjiaorong	情景交融	661
@@ -116756,7 +116758,7 @@ shengxiaoshuxiang	生肖屬相	260
 shengxiashi	省轄市	598
 shengxichi	聖洗池	600
 shengxide	生息地	640
-shengxin	省心	332
+shengxin	省心	430
 shengxing	盛行	1000
 shengxing	生性	1
 shengxinglv	盛行率	167
@@ -120322,9 +120324,9 @@ shixian	時限	1
 shixiang	試想	656
 shixiang	石像	655
 shixiang	識相	544
-shixiang	事項	529
+shixiang	事項	528
 shixiang	駛向	488
-shixiang	實相	409
+shixiang	實相	408
 shixiangdingtongwan	十香定痛丸	610
 shixianggui	石像鬼	676
 shixiangnuanqigao	十香暖臍膏	610
@@ -123574,7 +123576,7 @@ shunshifushe	瞬時輻射	260
 shunshiliaofa	順勢療法	540
 shunshishoutidianwei	瞬時受體電位	700
 shunshizhen	順時針	379
-shunshou	順手	490
+shunshou	順手	818
 shunshouqianyang	順手牽羊	470
 shunshour	順手兒	232
 shunshui	順水	408
@@ -131011,15 +131013,18 @@ ting'erbuwen	聽而不聞	475
 ting'erzouxian	挺而走險	111
 tingai	挺矮	700
 tingan	挺暗	700
+tinganjing	挺安靜	800
 tingba	挺拔	443
 tingbai	挺白	700
 tingbai	停擺	1
 tingbaketu	廷巴克圖	260
 tingban	停辦	428
+tingbang	挺棒	700
 tingbiao	停表	311
 tingbo	停泊	456
 tingbu	停步	1000
 tingbu	廷布	1
+tingbucuo	挺不錯	800
 tingbudao	聽不到	232
 tingbudong	聽不懂	406
 tingbujian	聽不見	406
@@ -131047,6 +131052,7 @@ tingdan	挺淡	700
 tingdang	停當	1000
 tingdao	聽到	1000
 tingdaode	聽到的	1000
+tingdaqi	挺大氣	800
 tingde	聽的	1000
 tingde	聽得	976
 tingde	停的	700
@@ -131068,10 +131074,13 @@ tingerzouxian	挺而走險	111
 tingfang	停放	999
 tingfangbian	挺方便	800
 tingfei	停飛	414
+tingfeijin	挺費勁	800
 tingfeng	停俸	198
 tingfengjiushiyu	聽風就是雨	289
 tingfu	停服	198
+tingfuza	挺複雜	800
 tinggan	挺杆	848
+tingganjing	挺乾淨	800
 tinggao	挺搞	700
 tinggao	挺高	700
 tinggaoxing	挺高興	800
@@ -131084,7 +131093,10 @@ tinggulian	聽骨鏈	230
 tingguo	聽過	700
 tinghang	停航	390
 tinghao	挺好	700
+tinghaokan	挺好看	800
+tinghaoyong	挺好用	800
 tinghei	挺黑	700
+tingheshi	挺合適	800
 tinghou	聽候	774
 tinghou	聽後	280
 tinghu	亭湖	144
@@ -131100,6 +131112,7 @@ tinghuqu	亭湖區	379
 tingji	停機	638
 tingjiaban	艇甲板	230
 tingjian	聽見	502
+tingjiandan	挺簡單	800
 tingjianfengjiushiyu	聽見風就是雨	318
 tingjiang	聽講	426
 tingjin	挺進	463
@@ -131122,6 +131135,7 @@ tingkaixin	挺開心	800
 tingkan	停刊	430
 tingkao	停靠	449
 tingkaogang	停靠港	230
+tingkaopu	挺靠譜	800
 tingkaozhan	停靠站	375
 tingke	聽課	922
 tingke	停課	254
@@ -131138,6 +131152,7 @@ tingli	挺立	929
 tingli	聽力	80
 tingliang	挺亮	700
 tinglicaokeli	葶藶草顆粒	610
+tinglihai	挺厲害	800
 tinglijiancha	聽力檢查	570
 tinglijiantui	聽力減退	570
 tinglijiguan	聽力機關	538
@@ -131148,12 +131163,15 @@ tinglixiang	挺理想	800
 tinglizi	葶藶子	470
 tingmafan	挺麻煩	800
 tingman	挺慢	700
+tingmanyi	挺滿意	800
 tingmei	挺美	700
 tingming	聽命	611
+tingmingxian	挺明顯	800
 tingmingyu	聽命於	280
 tingnile	聽膩了	230
 tingpai	聽牌	198
 tingpan	停盤	198
+tingpiaoliang	挺漂亮	800
 tingping	聽憑	427
 tingqi	挺起	280
 tingqianggen	聽墻根	232
@@ -131162,6 +131180,7 @@ tingqianggenr	聽牆根兒	258
 tingqiao	挺翹	280
 tingqilai	聽起來	232
 tingqing	聽清	323
+tingqingchu	挺清楚	800
 tingqiong	挺窮	700
 tingqiyan'erguanqixing	聽其言而觀其行	504
 tingqiyanguanqixing	聽其言觀其行	318
@@ -131179,6 +131198,7 @@ tingshen	挺身	833
 tingshen	庭審	85
 tingshen'erchu	挺身而出	609
 tingshenerchu	挺身而出	609
+tingshengxin	挺省心	800
 tingshenhui	聽審會	232
 tingshenjingliu	聽神經瘤	570
 tingshenjingsunshang	聽神經損傷	640
@@ -131191,12 +131211,16 @@ tingshifang	停尸房	441
 tingshijian	停屍間	831
 tingshijianzhushou	停屍間助手	750
 tingshijianzhushou	停尸間助手	339
+tingshiyong	挺實用	800
 tingshou	停手	406
 tingshu	聽書	198
 tingshuai	挺帥	700
+tingshuang	挺爽	700
+tingshuangkuai	挺爽快	800
 tingshufu	挺舒服	800
 tingshui	挺水	700
 tingshui	停水	383
+tingshunshou	挺順手	800
 tingshuo	聽說	914
 tingshuode	聽說的	1000
 tingshuoduxie	聽說讀寫	387
@@ -131274,11 +131298,12 @@ tingzhe	停著	700
 tingzhe	聽著	700
 tingzhe	聽者	481
 tingzhen	聽診	440
+tingzhengchang	挺正常	800
 tingzhenghui	聽證會	501
 tingzhenqi	聽診器	500
 tingzhi	停止	928
 tingzhi	停滯	508
-tingzhi	挺直	451
+tingzhi	挺直	452
 tingzhi	停職	261
 tingzhibuqian	停滯不前	484
 tingzhipailuan	停止排卵	570
@@ -131289,6 +131314,7 @@ tingzhixinhao	停止信號	710
 tingzhixinhaodeng	停止信號燈	765
 tingzhixinhaoji	停止信號機	765
 tingzhong	聽眾	450
+tingzhongyao	挺重要	800
 tingzhou	汀州	258
 tingzhu	停住	450
 tingzi	亭子	434
@@ -131296,6 +131322,7 @@ tingzijiao	亭仔跤	753
 tingzijiao	停仔腳	569
 tingzijiao	亭仔腳	563
 tingziqiao	亭仔骹	600
+tingziran	挺自然	800
 tinian	體念	595
 tipei	提賠	198
 tipen	嚏噴	313
@@ -160784,7 +160811,7 @@ yixiang	已向	605
 yixiang	一向	584
 yixiang	一項	499
 yixiang	意向	445
-yixiang	臆想	172
+yixiang	臆想	130
 yixiang	遺像	29
 yixiang	意象	1
 yixiang	異鄉	1
@@ -179430,8 +179457,8 @@ zuobianju	左邊距	800
 zuobiankuang	左邊框	800
 zuobianqi	坐便器	362
 zuobianr	左邊兒	167
-zuobiao	坐標	941
-zuobiao	座標	896
+zuobiao	坐標	843
+zuobiao	座標	798
 zuobiaofa	座標法	760
 zuobiaokongjian	坐標空間	260
 zuobiaokongjian	座標空間	258
