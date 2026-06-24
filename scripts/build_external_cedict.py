@@ -7436,7 +7436,7 @@ def _boost_high_productivity_short_roots(
             continue
         candidates_by_text.setdefault(text, []).append((pinyin, weight))
 
-    support: Dict[Tuple[str, str], List[Tuple[str, int]]] = {}
+    support: Dict[Tuple[str, str], List[int]] = {}
     for (term_pinyin, term_text), term_weight in mapping.items():
         term_len = _cjk_len(term_text)
         if term_len <= 2 or term_weight < 600 or not CJK_FULL_RE.fullmatch(term_text):
@@ -7449,47 +7449,31 @@ def _boost_high_productivity_short_roots(
             prefix_text = term_text[:root_len]
             for root_pinyin, _root_weight in candidates_by_text.get(prefix_text, []):
                 if term_pinyin.startswith(root_pinyin) and len(term_pinyin) > len(root_pinyin):
-                    support.setdefault((root_pinyin, prefix_text), []).append(("prefix", term_weight))
+                    support.setdefault((root_pinyin, prefix_text), []).append(term_weight)
 
             suffix_text = term_text[-root_len:]
             for root_pinyin, _root_weight in candidates_by_text.get(suffix_text, []):
                 if term_pinyin.endswith(root_pinyin) and len(term_pinyin) > len(root_pinyin):
-                    support.setdefault((root_pinyin, suffix_text), []).append(("suffix", term_weight))
+                    support.setdefault((root_pinyin, suffix_text), []).append(term_weight)
 
-    for key, support_entries in support.items():
+    for key, weights in support.items():
         current = mapping.get(key, 0)
         if current <= 0:
             continue
 
         pinyin, text = key
         text_len = _cjk_len(text)
-        weights = [weight for _side, weight in support_entries]
         support_count = len(weights)
         support_total = sum(weights)
         min_count = 12 if text_len == 2 else 16
-        prefix_count = sum(1 for side, _weight in support_entries if side == "prefix")
-        suffix_count = support_count - prefix_count
-        bidirectional_short_root = (
-            text_len == 2
-            and prefix_count >= 2
-            and suffix_count >= 2
-            and support_count >= 7
-            and support_total >= 7 * 620
-        )
-        if (
-            not bidirectional_short_root
-            and (support_count < min_count or support_total < min_count * 620)
-        ):
+        if support_count < min_count or support_total < min_count * 620:
             continue
 
         source_hits = max(0, source_hits_map.get(text, 0))
         base_target = 560 + min(160, (support_count - min_count) * 6)
-        if bidirectional_short_root:
-            average_support = support_total / max(1, support_count)
-            base_target = max(base_target, min(760, int(round(average_support + 100))))
         if source_hits >= 2:
             base_target += min(80, (source_hits - 1) * 16)
-        elif not bidirectional_short_root:
+        else:
             base_target = min(base_target, 660)
         target = min(780, max(current, base_target))
         if target <= current:
@@ -20927,20 +20911,6 @@ def main() -> int:
     )
     stats.update(sc_single_char_final_input_stats)
     stats.update(tc_single_char_final_input_stats)
-    sc_final_productive_short_root_stats = _boost_high_productivity_short_roots(
-        sc_map,
-        source_hits_map,
-        jieba_pos_map,
-        "sc_final_post",
-    )
-    tc_final_productive_short_root_stats = _boost_high_productivity_short_roots(
-        tc_map,
-        tc_source_hits_map,
-        tc_jieba_pos_map,
-        "tc_final_post",
-    )
-    stats.update(sc_final_productive_short_root_stats)
-    stats.update(tc_final_productive_short_root_stats)
     tc_final_sc_guided_homophone_stats = _propagate_tc_homophone_preference_from_sc(
         sc_map,
         tc_map,

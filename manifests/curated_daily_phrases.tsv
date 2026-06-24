@@ -4342,6 +4342,9 @@
 林间	林間	0.86	linjian
 溪水	溪水	0.86	xishui
 # High-frequency two-character exact terms.
+复制	複製	0.92	fuzhi
+物质	物質	0.90	wuzhi
+实际	實際	0.92	shiji
 技术	技術	0.90	jishu
 普通	普通	0.90	putong
 感到	感到	0.90	gandao
