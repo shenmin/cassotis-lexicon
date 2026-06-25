@@ -3269,3 +3269,21 @@
 凉起来	涼起來	0.50	liangqilai
 暖起来	暖起來	0.50	nuanqilai
 冻起来	凍起來	0.46	dongqilai
+我们家	我們家	0.01	womenjia
+你们家	你們家	0.01	nimenjia
+他们家	他們家	0.01	tamenjia
+她们家	她們家	0.01	tamenjia
+咱们家	咱們家	0.01	zanmenjia
+自己家	自己家	0.01	zijijia
+自个家	自個家	0.01	zigejia
+
+# low-frequency modal "吧" supplements 2026-06-25
+不吧	不吧	0.28	buba
+甜吧	甜吧	0.30	tianba
+舔吧	舔吧	0.34	tianba
+爽吧	爽吧	0.34	shuangba
+操吧	操吧	0.24	caoba
+肏吧	肏吧	0.20	caoba
+摸吧	摸吧	0.34	moba
+忍吧	忍吧	0.36	renba
+跪吧	跪吧	0.30	guiba

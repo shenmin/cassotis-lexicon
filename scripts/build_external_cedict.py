@@ -522,6 +522,20 @@ CURATED_DAILY_SUPPLEMENT_WEIGHT_CAP = 280
 CURATED_DAILY_SUPPLEMENT_NUMBER_WEIGHT_CAP = 520
 CURATED_DAILY_ASPECT_VISIBILITY_CAP = 760
 
+
+def _curated_daily_supplement_weight_cap(usage_score: float, text: str) -> int:
+    """Cap low-frequency exact supplements without letting visibility imply priority."""
+    bounded_usage = max(0.0, min(1.0, usage_score))
+    if _is_pure_daily_number_word(text):
+        return CURATED_DAILY_SUPPLEMENT_NUMBER_WEIGHT_CAP
+
+    # Ultra-low scores are for useful exact-match words that should remain
+    # inputable but should not become attractive long-sentence path chunks.
+    if bounded_usage < 0.10:
+        return 8 + int(round(bounded_usage * 240.0))
+
+    return CURATED_DAILY_SUPPLEMENT_WEIGHT_CAP
+
 # Quantity-classifier snippets are useful exact matches, but they are not
 # necessarily more common than same-pinyin lexical words. Keep them visible
 # without giving them the full daily/chat priority floor.
@@ -14069,11 +14083,17 @@ def _finalize_curated_daily_weight(
         if is_number_word:
             number_floor = 400 + int(round(bounded_usage * 120.0))
             return min(
-                CURATED_DAILY_SUPPLEMENT_NUMBER_WEIGHT_CAP,
+                _curated_daily_supplement_weight_cap(usage_score, text),
                 max(weight, number_floor),
             )
-        supplement_floor = 220 + int(round(bounded_usage * 80.0))
-        return min(CURATED_DAILY_SUPPLEMENT_WEIGHT_CAP, max(weight, supplement_floor))
+        if bounded_usage < 0.10:
+            supplement_floor = 1 + int(round(bounded_usage * 120.0))
+        else:
+            supplement_floor = 220 + int(round(bounded_usage * 80.0))
+        return min(
+            _curated_daily_supplement_weight_cap(usage_score, text),
+            max(weight, supplement_floor),
+        )
 
     if not is_number_word:
         if _is_daily_count_measure_phrase(text):
@@ -14875,11 +14895,7 @@ def _cap_curated_daily_supplement_exact_weights(
 
         key = (pinyin, text)
         weight = mapping.get(key)
-        cap = (
-            CURATED_DAILY_SUPPLEMENT_NUMBER_WEIGHT_CAP
-            if _is_pure_daily_number_word(text)
-            else CURATED_DAILY_SUPPLEMENT_WEIGHT_CAP
-        )
+        cap = _curated_daily_supplement_weight_cap(usage_score, text)
         if weight is None or weight <= cap:
             continue
 
