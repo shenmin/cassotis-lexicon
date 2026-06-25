@@ -9257,6 +9257,7 @@ bijiaocha	比較差	1036
 bijiaochang	比較長	1000
 bijiaoda	比較大	1036
 bijiaodi	比較低	1036
+bijiaodong	比較凍	280
 bijiaoduan	比較短	1000
 bijiaoduo	比較多	1018
 bijiaoeryan	比較而言	387
@@ -9269,6 +9270,8 @@ bijiaojiu	比較久	1000
 bijiaojiyinzuzajiao	比較基因組雜交	700
 bijiaokuai	比較快	1018
 bijiaolakua	比較拉胯	1000
+bijiaoleng	比較冷	280
+bijiaoliang	比較涼	280
 bijiaolihai	比較厲害	1018
 bijiaolixiang	比較理想	1000
 bijiaoluan	比較亂	1018
@@ -9277,8 +9280,10 @@ bijiaomanyi	比較滿意	280
 bijiaomeiyou	比較沒有	1000
 bijiaomianyixue	比較免疫學	610
 bijiaonan	比較難	1018
+bijiaonuan	比較暖	280
 bijiaoqian	比較淺	1000
 bijiaoqiang	比較強	1018
+bijiaore	比較熱	280
 bijiaoruo	比較弱	1018
 bijiaoshao	比較少	1018
 bijiaoshen	比較深	1000
@@ -9809,14 +9814,14 @@ binglangxishi	檳榔西施	258
 binglangyu	檳榔嶼	228
 bingle	病了	700
 bingleichuanranbing	丙類傳染病	610
-bingleng	冰冷	423
+bingleng	冰冷	280
 bingli	病歷	440
 bingli	兵力	356
 bingli	病理	276
 bingli	病例	244
 bingli	並立	114
 binglian	並聯	264
-bingliang	冰涼	417
+bingliang	冰涼	280
 bingliangongsheng	並聯共生	570
 binglianhuojie	兵連禍結	436
 binglianjixiebi	並聯機械臂	791
@@ -11551,7 +11556,7 @@ budingya	不定芽	640
 budingyuan	不定元	232
 budiya	布迪亞	232
 budong	不動	1000
-budong	不懂	442
+budong	不懂	441
 budong	不凍	152
 budongchan	不動產	647
 budongchanchaxun	不動產查詢	590
@@ -12573,7 +12578,7 @@ buqi	不騎	1000
 buqi	補齊	1000
 buqi	不期	580
 buqi	不齊	280
-buqi	不起	251
+buqi	不起	252
 buqi	補漆	53
 buqi'an	不欺暗	556
 buqi'anshi	不欺暗室	597
@@ -23158,9 +23163,11 @@ daigou	代購	565
 daigua	呆瓜	198
 daiguan	代管	404
 daiguo	帶過	700
+daiguolai	帶過來	800
+daiguoqu	帶過去	800
 daihaizi	帶孩子	232
-daihao	代號	663
-daihao	帶好	483
+daihao	代號	662
+daihao	帶好	482
 daihasan	黛蛤散	470
 daiheshu'er	代赫舒爾	583
 daiheshuer	代赫舒爾	583
@@ -23168,9 +23175,10 @@ daihongse	帶紅色	232
 daihu	怠忽	323
 daihuai	帶壞	323
 daihuan	代換	397
+daihui	帶回	700
 daihui	待會	700
-daihui	帶回	580
 daihuier	待會兒	800
+daihuilai	帶回來	800
 daihuiqu	帶回去	280
 daihuir	待會兒	800
 daihuo	帶貨	198
@@ -28784,7 +28792,8 @@ diditi	滴滴涕	415
 didiwei	敵敵畏	420
 didixiuyanniao	低地綉眼鳥	289
 didixiuyanniao	低地繡眼鳥	288
-didong	地洞	560
+didong	地凍	280
+didong	地洞	79
 didongshanyao	地動山搖	298
 didongyi	地動儀	442
 didu	帝都	401
@@ -30713,6 +30722,7 @@ dongdao	東道	451
 dongdaoxiwai	東倒西歪	486
 dongdaozhu	東道主	284
 dongde	懂得	1000
+dongdehen	凍得很	280
 dongdian	動點	198
 dongdiwen	東帝汶	532
 dongdong	咚咚	560
@@ -30799,7 +30809,8 @@ dongfeidadiqian	東非大地塹	289
 dongfeidaliegu	東非大裂谷	331
 dongfeigongtongti	東非共同體	289
 dongfen	冬粉	305
-dongfeng	東風	1000
+dongfeng	凍瘋	280
+dongfeng	東風	200
 dongfenghaodang	東風浩蕩	887
 dongfenghaodang	東風浩盪	308
 dongfengju	東風桔	470
@@ -30893,6 +30904,8 @@ donghuaguidaoleixing	動畫軌道類型	868
 donghuahepifu	動畫和皮膚	812
 donghuahua	動畫化	621
 donghuahuayitiaoyu	動畫化一條魚	868
+donghuai	凍壞	280
+donghuaile	凍壞了	280
 donghuajia	動畫家	621
 donghuajiaose	動畫角色	695
 donghuajiemu	動畫節目	695
@@ -30944,7 +30957,7 @@ dongjiachangxijiaduan	東家長西家短	318
 dongjiahe	棟加河	492
 dongjialeibiyuan	東加勒比元	280
 dongjian	洞見	397
-dongjiang	凍僵	654
+dongjiang	凍僵	656
 dongjianguanzhan	動見觀瞻	260
 dongjiangzhuanqu	東江專區	583
 dongjianhua	董建華	283
@@ -31059,7 +31072,7 @@ dongliwaiguge	動力外骨骼	760
 donglixitong	動力系統	362
 donglixue	動力學	1000
 donglixue	動理學	295
-dongluan	動亂	737
+dongluan	動亂	736
 dongluomadiguo	東羅馬帝國	289
 dongmai	動脈	736
 dongmaidaoguan	動脈導管	570
@@ -31144,6 +31157,7 @@ dongqigangguilai	咚奇剛歸來	613
 dongqigangjiaoliquankai	咚奇剛蕉力全開	632
 dongqigangredaijidong	咚奇剛熱帶急凍	632
 dongqigangxilie	咚奇剛系列	613
+dongqilai	凍起來	280
 dongqing	動情	1000
 dongqingjisu	動情激素	260
 dongqingqi	動情期	379
@@ -31153,7 +31167,8 @@ dongqingsushouti	動情素受體	640
 dongqingzhouqi	動情週期	806
 dongqingzhouqi	動情周期	250
 dongqu	東區	288
-dongren	動人	936
+dongren	凍人	280
+dongren	動人	184
 dongrenxinpo	動人心魄	450
 dongrenxinxian	動人心絃	906
 dongrenxinxian	動人心弦	319
@@ -31188,9 +31203,11 @@ dongshou	動手	487
 dongshoudongjiao	動手動腳	490
 dongshoujiao	動手腳	379
 dongshoushu	動手術	455
-dongsi	凍死	441
+dongsi	凍死	280
 dongsilawoniya	東斯拉沃尼亞	309
+dongsile	凍死了	280
 dongsinandajie	東四南大街	253
+dongsiren	凍死人	280
 dongsongtingxinhaochang	東松汀信號場	811
 dongsun	冬筍	605
 dongtai	動態	1000
@@ -37472,6 +37489,7 @@ feichanggaoxing	非常高興	800
 feichangguai	非常乖	1000
 feichanggui	非常規	280
 feichangguishiyong	非常規使用	640
+feichanghanleng	非常寒冷	280
 feichanghao	非常好	1000
 feichanghei	非常黑	1000
 feichanghou	非常厚	1000
@@ -37489,17 +37507,21 @@ feichangkuai	非常快	1000
 feichangkuaile	非常快樂	800
 feichangkuan	非常寬	1000
 feichanglao	非常老	1000
+feichangleng	非常冷	280
+feichangliang	非常涼	280
 feichanglihai	非常厲害	1018
 feichanglvshiyuyingwu	非常律師禹英禑	581
 feichangman	非常慢	1000
 feichangmingxian	非常明顯	280
 feichangnan	非常難	1000
 feichangnen	非常嫩	1000
+feichangnuan	非常暖	280
 feichangpa	非常怕	1000
 feichangputongdelu	非常普通的鹿	648
 feichangqian	非常淺	1000
 feichangqiang	非常強	1000
 feichangqiong	非常窮	1000
+feichangre	非常熱	280
 feichangrongxing	非常榮幸	800
 feichangrongyi	非常容易	1018
 feichangruo	非常弱	1000
@@ -37523,6 +37545,7 @@ feichangxinwei	非常欣慰	800
 feichangxiwang	非常希望	1018
 feichangyan'e	非常厭噁	448
 feichangyane	非常厭噁	448
+feichangyanre	非常炎熱	280
 feichangyanwu	非常厭惡	1018
 feichangyihan	非常遺憾	800
 feichangyou	非常右	1000
@@ -39074,7 +39097,7 @@ fengtai	豐臺	381
 fengtai	丰台	380
 fengtaiqu	丰台區	190
 fengtaixian	鳳台縣	101
-fengtan	風癱	412
+fengtan	風癱	411
 fengtan	瘋癱	270
 fengtang	楓糖	305
 fengtangniaozheng	楓糖尿症	570
@@ -39329,8 +39352,8 @@ fengzhuangqi	封裝器	626
 fengzhuangxing	封裝性	638
 fengzhucannian	風燭殘年	448
 fengzhui	縫綴	387
-fengzi	瘋子	506
-fengzi	丰姿	361
+fengzi	瘋子	507
+fengzi	丰姿	362
 fengzi	風姿	40
 fengzicai	馮子材	469
 fengzicheng	奉子成	556
@@ -42066,7 +42089,7 @@ gaihuaxingjijianyan	鈣化性肌腱炎	664
 gaihuaying	鈣化影	470
 gaihuazao	鈣化竈	470
 gaihui	蓋回	280
-gaihui	改悔	55
+gaihui	改悔	54
 gaihuoguo	蓋火鍋	228
 gaihuohuajializitongdao	鈣活化鉀離子通道	700
 gaijia	改嫁	434
@@ -49614,7 +49637,7 @@ guokong	過孔	319
 guoku	國庫	676
 guokui	鍋盔	305
 guokuquan	國庫券	469
-guolai	過來	462
+guolai	過來	830
 guolairen	過來人	482
 guolao	過勞	198
 guolaofei	過勞肥	232
@@ -51283,7 +51306,8 @@ hanbeixin	汗背心	370
 hanbi	寒痺	373
 hanbi	寒痹	193
 hanbin	漢濱	198
-hanbing	罕病	440
+hanbing	寒冰	280
+hanbing	罕病	200
 hanbing	旱冰	1
 hanbinqu	漢濱區	165
 hance	旱廁	720
@@ -51557,7 +51581,7 @@ hanlaobaoshou	旱澇保收	444
 hanlazi	含啦子	640
 hanle	喊了	700
 hanlei	含淚	432
-hanleng	寒冷	440
+hanleng	寒冷	280
 hanlengxingduoxinghongban	寒冷性多形紅斑	653
 hanlengxingxunmazhen	寒冷性蕁麻疹	680
 hanlengxingzhimoyan	寒冷性脂膜炎	680
@@ -51933,7 +51957,8 @@ haodeha	好的哈	800
 haodene	好的呢	800
 haodi	好睇	198
 haodian	耗電	419
-haodong	好動	433
+haodong	好動	607
+haodong	好凍	280
 haodou	好斗	822
 haodou	好鬥	764
 haodoudegong	好斗的公	610
@@ -52072,9 +52097,11 @@ haoleba	好了吧	800
 haolechuangbawangletong	好了瘡疤忘了痛	348
 haoleha	好了哈	800
 haolema	好了嗎	1000
+haoleng	好冷	280
 haoleshangbawangleteng	好了傷疤忘了疼	348
 haoli	好立	883
 haoli	耗力	1
+haoliang	好涼	280
 haoliao	好料	438
 haolibushuang	毫釐不爽	387
 haolike	好立克	640
@@ -52111,6 +52138,7 @@ haone	好呢	700
 haoneng	耗能	402
 haoniao	好鳥	198
 haonong	好弄	578
+haonuan	好暖	280
 haonvjia	好女嫁	501
 haonvjiachou	好女嫁丑	527
 haonvjiachouhan	好女嫁丑漢	569
@@ -52141,7 +52169,8 @@ haoqizheduo	好騎者墮	619
 haoqu	好去	600
 haoran	浩然	411
 haoranzhiqi	浩然之氣	637
-haore	好惹	323
+haore	好熱	280
+haore	好惹	1
 haoren	好人	564
 haorenhan	好人喊	556
 haorenhanyuan	好人喊冤	597
@@ -53495,6 +53524,7 @@ henchou	很臭	1000
 henchou	很醜	908
 henda	很大	1018
 hendi	很低	700
+hendong	很凍	280
 hendu	狠毒	440
 henduan	很短	700
 henduo	很多	700
@@ -53825,6 +53855,7 @@ henlakua	很拉胯	1000
 henlao	很老	700
 henlei	很累	1000
 henleng	很冷	1000
+henliang	很涼	280
 henliang'anxiangguanshouti	痕量胺相關受體	700
 henliangjinshu	痕量金屬	570
 henliangyuansu	痕量元素	540
@@ -53838,6 +53869,7 @@ henming	狠命	442
 hennan	很難	1000
 hennen	很嫩	700
 hennianqing	很年輕	1018
+hennuan	很暖	280
 henpianyi	很便宜	1000
 henpiaoliang	很漂亮	1000
 henqian	很前	1000
@@ -55136,7 +55168,7 @@ houlaizhejushang	后來者居上	90
 houlangtuiqianlang	後浪推前浪	579
 houlangtuiqianlang	后浪推前浪	519
 houli	厚禮	286
-houliang	后梁	240
+houliang	后梁	239
 houlianhe	後連合	960
 houlianpi	厚臉皮	423
 houliu	喉瘤	353
@@ -55696,7 +55728,7 @@ huaianxian	懷安縣	160
 huaiba	耲耙	176
 huaibao	懷抱	473
 huaibaor	壞包兒	232
-huaibei	壞北	427
+huaibei	壞北	428
 huaibeishi	淮北市	183
 huaibiao	懷錶	967
 huaibin	淮濱	175
@@ -58220,7 +58252,7 @@ huilishi	會理市	174
 huiliu	回流	774
 huiliu	迴流	716
 huiliu	匯流	52
-huiliufa	迴流法	897
+huiliufa	迴流法	896
 huiliuhuan	匯流環	232
 huiliuliu	灰溜溜	434
 huiliuying	灰柳鶯	228
@@ -62339,7 +62371,8 @@ jiaodianpingguchuangshangchaoyinbo	焦點評估創傷超音波	700
 jiaodianrenwu	焦點人物	280
 jiaodidi	嬌滴滴	450
 jiaoding	校訂	978
-jiaodong	攪動	425
+jiaodong	較凍	280
+jiaodong	攪動	256
 jiaodongliang	角動量	500
 jiaodoushi	角鬥士	642
 jiaodoushi	角斗士	567
@@ -62564,12 +62597,14 @@ jiaolao	較老	1000
 jiaole	叫了	700
 jiaole	交了	280
 jiaolei	噍類	198
+jiaoleng	較冷	280
 jiaolengshui	澆冷水	360
 jiaoli	教理	817
 jiaolian	教練	1000
 jiaolian	鉸鏈	1
 jiaolianchuang	鉸鏈窗	600
-jiaoliang	較量	493
+jiaoliang	較量	971
+jiaoliang	較涼	280
 jiaoliangben	交糧本	232
 jiaolianji	教練機	529
 jiaolianmen	鉸鏈門	600
@@ -62681,6 +62716,7 @@ jiaonimen	叫你們	800
 jiaoningsu	膠凝素	500
 jiaoniu	絞扭	323
 jiaonong	攪弄	280
+jiaonuan	較暖	280
 jiaopai	教派	853
 jiaopai	叫牌	1
 jiaopan	絞盤	426
@@ -62725,6 +62761,7 @@ jiaoquchi	角曲尺	232
 jiaoran	較然	198
 jiaorang	叫嚷	451
 jiaorao	攪擾	416
+jiaore	較熱	280
 jiaoren	驕人	1000
 jiaorong	交融	421
 jiaorou	絞肉	480
@@ -79112,6 +79149,7 @@ lengdan	冷淡	459
 lengdanguanxi	冷淡關系	232
 lengde	冷的	700
 lengde	冷得	676
+lengdehen	冷得很	280
 lengdeli	冷地裏	765
 lengdeli	冷地里	749
 lengdong	冷凍	1000
@@ -79134,13 +79172,16 @@ lengdongzhihuan	冷凍置換	540
 lengdongzhiliao	冷凍治療	570
 lengfaguang	冷發光	500
 lengfang	冷房	137
-lengfeng	冷鋒	248
+lengfeng	冷瘋	280
+lengfeng	冷鋒	193
 lengfu	冷敷	230
 lengfubu	冷敷布	167
 lenggan	愣干	251
 lenggong	冷宮	353
 lenghan	冷汗	409
 lenghua	冷話	305
+lenghuai	冷壞	280
+lenghuaile	冷壞了	280
 lengji	冷寂	406
 lengjia	楞迦	198
 lengjiadao	楞迦島	228
@@ -79187,6 +79228,7 @@ lengqiang	冷槍	371
 lengqidong	冷啟動	192
 lengqie	冷切	137
 lengqiji	冷氣機	379
+lengqilai	冷起來	280
 lengqing	冷清	295
 lengqingqing	冷清清	243
 lengqishan	冷氣衫	317
@@ -79225,6 +79267,9 @@ lengshuijizu	冷水機組	405
 lengshuitan	冷水灘	458
 lengshuitanqu	冷水灘區	369
 lengshuo	愣說	198
+lengsi	冷死	280
+lengsile	冷死了	280
+lengsiren	冷死人	280
 lengsisi	冷絲絲	202
 lengsousou	冷颼颼	406
 lengsuo	冷縮	280
@@ -79601,6 +79646,7 @@ liangde	涼的	1000
 liangde	亮的	700
 liangde	亮得	676
 liangdechi	量地尺	640
+liangdehen	涼得很	280
 liangdeng	亮燈	293
 liangdian	兩點	1000
 liangdian	亮點	1
@@ -79727,8 +79773,8 @@ liangkongchazuo	兩孔插座	680
 liangkour	兩口兒	456
 liangkouzi	兩口子	524
 liangku	糧庫	386
-liangkuai	涼快	1000
 liangkuai	兩塊	280
+liangkuai	涼快	280
 liangkuyongxin	良苦用心	450
 lianglan	亮藍	198
 lianglang	涼廊	260
@@ -79807,6 +79853,7 @@ liangqichao	梁啓超	405
 liangqichao	梁啟超	405
 liangqidongwu	兩棲動物	570
 liangqigang	兩棲綱	500
+liangqilai	涼起來	280
 liangqilei	兩棲類	362
 liangqin	兩親	198
 liangqing	兩清	376
@@ -79833,7 +79880,7 @@ liangsannian	兩三年	800
 liangsantian	兩三天	280
 liangshai	晾曬	414
 liangshan	良善	848
-liangshan	梁山	691
+liangshan	梁山	690
 liangshan	涼山	378
 liangshanbo	梁山伯	458
 liangshanboyuzhuyingtai	梁山伯與祝英台	348
@@ -88232,7 +88279,7 @@ maoshu	冒暑	198
 maoshua	毛刷	313
 maoshuyouxi	貓鼠遊戲	755
 maosi	貌似	979
-maosi	冒死	306
+maosi	冒死	307
 maosuanjiang	毛酸漿	167
 maosui	毛遂	194
 maosuizijian	毛遂自薦	632
@@ -91530,7 +91577,7 @@ mingli'anli	明里暗里	314
 mingliang	明亮	473
 mingliangci	名量詞	232
 minglianli	明里暗里	314
-mingliao	明了	178
+mingliao	明了	179
 minglichang	名利場	423
 minglie	名列	465
 minglieqianmao	名列前茅	542
@@ -97536,6 +97583,7 @@ nu'erhachi	努爾哈赤	249
 nu'erlaqingzhensi	努爾拉清真寺	660
 nuanbaobao	暖寶寶	232
 nuanchaoguanjia	暖巢管家	260
+nuandehen	暖得很	280
 nuandiao	暖調	198
 nuandong	暖冬	369
 nuanfang	暖房	364
@@ -97561,13 +97609,15 @@ nuanpeng	暖棚	328
 nuanping	暖瓶	381
 nuanqi	暖氣	536
 nuanqiji	暖氣機	379
+nuanqilai	暖起來	280
 nuanqipian	暖氣片	394
+nuanren	暖人	280
 nuanrongrong	暖融融	434
 nuanse	暖色	345
 nuanshuiping	暖水瓶	412
 nuantong	暖通	420
 nuanwendai	暖溫帶	470
-nuanxin	暖心	198
+nuanxin	暖心	280
 nuanxue	暖雪	286
 nuanyangyang	暖洋洋	443
 nuanyi	暖意	401
@@ -106333,7 +106383,7 @@ qiweixiaokejiaonang	七味消渴膠囊	668
 qiwen	氣溫	649
 qiwen	奇聞	526
 qiwengongshang	奇文共賞	387
-qiwu	欺侮	412
+qiwu	欺侮	411
 qiwu	起舞	280
 qiwu	器物	14
 qiwucheng	齊武成	230
@@ -108324,6 +108374,7 @@ redaolv	熱導率	500
 redaoxiaoying	熱島效應	260
 rede	熱的	700
 rede	熱得	676
+redehen	熱得很	280
 redekuai	熱得快	406
 redeqi	惹得起	640
 redian	熱點	440
@@ -108345,7 +108396,8 @@ refaguang	熱發光	470
 refei	熱痱	440
 refei	熱疿	366
 refeichaji	熱痱搽劑	540
-refeng	熱風	440
+refeng	熱瘋	280
+refeng	熱風	146
 refengqiang	熱風槍	362
 refu	熱敷	415
 refubu	熱敷布	230
@@ -108369,6 +108421,8 @@ rehetebiequ	熱河特別區	635
 rehewuqi	熱核武器	444
 rehongjiu	熱紅酒	232
 rehu	熱乎	440
+rehuai	熱壞	280
+rehuaile	熱壞了	280
 rehuhu	熱乎乎	510
 rehuhu	熱呼呼	127
 rehun	熱昏	323
@@ -109559,6 +109613,7 @@ reqi	熱氣	470
 reqi	惹起	1
 reqian	熱錢	198
 reqie	熱切	440
+reqilai	熱起來	280
 reqing	熱情	470
 reqingchuanqi	熱情傳奇	538
 reqingkuandai	熱情款待	260
@@ -109600,6 +109655,9 @@ reshuiqi	熱水器	510
 reshuixunhuanbeng	熱水循環泵	760
 reshuizao	熱水澡	438
 reshushixing	熱舒適性	570
+resi	熱死	280
+resile	熱死了	280
+resiren	熱死人	280
 resou	熱搜	198
 resuoguan	熱縮管	379
 resuolengzhang	熱縮冷脹	280
@@ -115266,7 +115324,7 @@ shegu	舌骨	430
 sheguan	蛇管	198
 sheguanlengqueqi	蛇管冷卻器	822
 sheguguzhe	舌骨骨折	540
-sheguo	涉過	333
+sheguo	涉過	334
 shegushangjiqun	舌骨上肌羣	610
 shehao	折耗	406
 shehebazhou	舍赫巴州	587
@@ -127271,8 +127329,9 @@ taidie	臺諜	124
 taidiejia	態疊加	232
 taiding'anrugao	酞丁安乳膏	610
 taidixiong	泰迪熊	246
-taidong	臺東	674
-taidong	胎動	480
+taidong	臺東	469
+taidong	太凍	280
+taidong	胎動	1
 taidongbu'an	胎動不安	540
 taidongbuan	胎動不安	540
 taidongshi	臺東市	120
@@ -127483,9 +127542,11 @@ taileihuanjingchengjiujiang	泰勒環境成就獎	1000
 taileihuanjingchengjiujiang	泰勒環境成就奬	422
 taileijisu	肽類激素	570
 taileisi	泰勒斯	300
+taileng	太冷	280
 taili	檯曆	343
 tailian	肽鏈	305
 tailiang	太亮	1000
+tailiang	太涼	280
 tailibituo	泰利必妥	540
 tailihai	太厲害	1000
 tailimeisu	泰利黴素	540
@@ -127532,6 +127593,7 @@ tainicikayata	泰尼茨卡婭塔	660
 taining	泰寧	232
 tainingxian	泰寧縣	160
 tainisijihuayuan	泰尼斯基花園	660
+tainuan	太暖	280
 tainuolin	泰諾林	470
 taipa	太怕	1000
 taipan	胎盤	482
@@ -127610,6 +127672,7 @@ taiquandao	跆拳道	471
 tairan	泰然	367
 tairanchuzhi	泰然處之	450
 tairanziruo	泰然自若	469
+taire	太熱	280
 tairgongneishengzhangchihuan	胎兒宮內生長遲緩	680
 tairgongneizhixi	胎兒宮內窒息	700
 tairjing	胎兒鏡	500
@@ -129772,10 +129835,11 @@ tianguo	天國	480
 tianguoyilu	天國異路	538
 tianhai	填海	323
 tianhaizaode	填海造地	677
-tianhan	天漢	560
-tianhan	天旱	355
-tianhandedong	天寒地凍	652
-tianhandidong	天寒地凍	312
+tianhan	天寒	280
+tianhan	天漢	185
+tianhan	天旱	51
+tianhandedong	天寒地凍	719
+tianhandidong	天寒地凍	280
 tianhe	天河	779
 tianhe	恬和	3
 tianhechuanshuo	天河傳說	556
@@ -129907,11 +129971,12 @@ tianlaor	天老兒	198
 tianlaoye	天老爺	217
 tianle	甜了	700
 tianle	舔了	280
-tianleng	天冷	161
+tianleng	天冷	280
 tianli	天理	1000
 tianli	田麗	172
-tianliang	天亮	482
-tianliang	天良	344
+tianliang	天亮	301
+tianliang	天涼	280
+tianliang	天良	1
 tianlianqianmo	田連阡陌	614
 tianliao	填料	385
 tianliburong	天理不容	632
@@ -130015,6 +130080,7 @@ tiannian	天年	216
 tianning	天寧	161
 tianningqu	天寧區	165
 tianniu	天牛	255
+tiannuan	天暖	280
 tiannvsanhua	天女散花	669
 tianpaochuang	天皰瘡	540
 tianpeng	天篷	549
@@ -130080,6 +130146,7 @@ tianranyaowuxue	天然藥物學	759
 tianranyaowuxue	天然葯物學	325
 tianranyou	天然鈾	232
 tianranziyuan	天然資源	570
+tianre	天熱	280
 tianren	天人	1000
 tianren	提案人	1
 tianrenganying	天人感應	260
@@ -138005,7 +138072,8 @@ wenlan	溫嵐	632
 wenli	文理	560
 wenli	紋理	560
 wenlian	穩練	242
-wenliang	溫良	418
+wenliang	溫涼	280
+wenliang	溫良	184
 wenlianggongjian	溫良恭儉	249
 wenlianggongjianrang	溫良恭儉讓	452
 wenliangrenrang	溫良忍讓	258
@@ -138051,7 +138119,7 @@ wenna	穩拿	368
 wenni	問你	700
 wennibo	溫尼伯	224
 wennimen	問你們	800
-wennuan	溫暖	502
+wennuan	溫暖	280
 wenpiguchangsan	溫脾固腸散	610
 wenping	文憑	447
 wenpo	穩婆	437
@@ -138070,7 +138138,7 @@ wenquannvhai	溫泉女孩	538
 wenquantoukandazuozhan	溫泉偷看大作戰	632
 wenquanxian	溫泉縣	160
 wenquxing	文曲星	202
-wenre	溫熱	440
+wenre	溫熱	280
 wenrejingwei	溫熱經緯	540
 wenren	問人	1000
 wenren	文人	874
@@ -138123,6 +138191,7 @@ wenshu	文書	1000
 wenshu	文殊	310
 wenshuchuli	文書處理	405
 wenshui	問誰	1000
+wenshui	溫水	280
 wenshui	文水	1
 wenshuixian	文水縣	180
 wenshun	溫順	286
@@ -153627,7 +153696,7 @@ yanr	沿兒	349
 yanran	儼然	980
 yanran	嫣然	252
 yanranyixiao	嫣然一笑	501
-yanre	炎熱	440
+yanre	炎熱	280
 yanren	閹人	364
 yanren'ermu	掩人耳目	467
 yanrenermu	掩人耳目	467

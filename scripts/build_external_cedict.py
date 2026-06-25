@@ -12999,6 +12999,12 @@ def _rebalance_single_char_homophones_by_leading_support(
             if pinlu > max(leader_pinlu * 3.2, leader_pinlu + 4200):
                 continue
 
+            # Absolute compound-head support can grow when a batch of related
+            # words is added.  Do not let a broader root suppress a candidate
+            # whose support is more concentrated in the same-pinyin head role.
+            if leading_ratio >= leader_ratio + 0.08 and leading_support >= leader_support * 0.42:
+                continue
+
             if leading_ratio >= leader_ratio * 0.72 and leading_support >= leader_support * 0.82:
                 continue
 
@@ -13039,6 +13045,8 @@ def _promote_single_char_homophones_by_head_productivity(
         f"{stats_prefix}_single_char_head_productive_buckets": 0,
         f"{stats_prefix}_single_char_input_signal_promoted": 0,
         f"{stats_prefix}_single_char_input_signal_buckets": 0,
+        f"{stats_prefix}_single_char_concentrated_head_restored": 0,
+        f"{stats_prefix}_single_char_concentrated_head_buckets": 0,
     }
     if not mapping:
         return stats
@@ -13260,6 +13268,50 @@ def _promote_single_char_homophones_by_head_productivity(
 
         if signal_touched:
             stats[f"{stats_prefix}_single_char_input_signal_buckets"] += 1
+
+        restore_touched = False
+        current_leader = max(
+            records,
+            key=lambda item: int(mapping.get((pinyin, str(item["text"])), int(item["weight"]))),
+        )
+        leader_text = str(current_leader["text"])
+        leader_weight = int(
+            mapping.get((pinyin, leader_text), int(current_leader["weight"]))
+        )
+        leader_leading = float(current_leader["leading"])
+        leader_ratio = float(current_leader["leading_ratio"])
+        for record in records:
+            text = str(record["text"])
+            if text == leader_text:
+                continue
+
+            weight = int(mapping.get((pinyin, text), int(record["weight"])))
+            if weight >= leader_weight - 32:
+                continue
+
+            pinlu = int(record["pinlu"])
+            leading = float(record["leading"])
+            leading_count = int(record["leading_count"])
+            leading_ratio = float(record["leading_ratio"])
+            if pinlu < 80:
+                continue
+            if leading < 3600.0 or leading_count < 18 or leading_ratio < 0.50:
+                continue
+            if leading_ratio < leader_ratio + 0.02:
+                continue
+            if leader_leading > 0.0 and leading < leader_leading * 0.42:
+                continue
+
+            target = max(weight, min(780, leader_weight - 8))
+            if target <= weight:
+                continue
+
+            mapping[(pinyin, text)] = target
+            stats[f"{stats_prefix}_single_char_concentrated_head_restored"] += 1
+            restore_touched = True
+
+        if restore_touched:
+            stats[f"{stats_prefix}_single_char_concentrated_head_buckets"] += 1
 
     return stats
 

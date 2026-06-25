@@ -3461,7 +3461,7 @@ dongqianbuchang	動遷|補償	476
 dongqianxieyi	動遷|協議	491
 dongqingsushouti	動情素|受體	434
 dongqingzhouqi	動情|週期	483
-dongrenxinxian	動人|心絃	478
+dongrenxinxian	動人|心絃	432
 dongrikuangxiangqu	冬日|狂想曲	458
 dongriruanjian	東日|軟件	459
 dongshanzaiqi	東山|再起	476
@@ -4141,6 +4141,7 @@ feichanggandong	非常|感動	457
 feichangganxie	非常|感謝	520
 feichanggaoxing	非常|高興	457
 feichangguishiyong	非常規|使用	486
+feichanghanleng	非常|寒冷	481
 feichangjiandan	非常|簡單	520
 feichangjidong	非常|激動	457
 feichangkaixin	非常|開心	457
@@ -4157,6 +4158,7 @@ feichangxingyun	非常|幸運	520
 feichangxinhao	非常|信號	502
 feichangxinwei	非常|欣慰	520
 feichangxiwang	非常|希望	520
+feichangyanre	非常|炎熱	490
 feichangyanwu	非常|厭惡	520
 feichangyihan	非常|遺憾	453
 feichangyukuai	非常|愉快	520
@@ -4561,8 +4563,8 @@ fuqiangjingjiancha	腹腔鏡|檢查	483
 fuqiangjingshoushu	腹腔鏡|手術	470
 fuqiangnongzhong	腹腔|膿腫	370
 fuqiangrenshen	腹腔|妊娠	441
-fuqiangwenre	腹腔|溫熱	368
-fuqiangwenrehualiao	腹腔|溫熱|化療	450
+fuqiangwenre	腹腔|溫熱	356
+fuqiangwenrehualiao	腹腔|溫熱|化療	438
 fuqiangzhushe	腹腔|注射	461
 fuqifanmu	夫妻|反目	497
 furongchushui	芙蓉|出水	483
@@ -11971,7 +11973,7 @@ qingxiangpingfen	傾向|評分	401
 qingxiangpingfenpipei	傾向|評分|匹配	483
 qingxianzizai	清閒|自在	483
 qingxieshidai	傾斜|飾帶	456
-qingxingguolai	清醒|過來	475
+qingxingguolai	清醒|過來	479
 qingxisizhi	清洗|四肢	423
 qingxubiaolu	情緒|表露	401
 qingxubiaoluxingwei	情緒|表露|行為	483
@@ -14901,7 +14903,7 @@ tafangyouxi	塔防|遊戲	485
 taianzhuanqu	泰安|專區	462
 taibeidangju	臺北|當局	465
 taibeigugong	台北|故宮	472
-taidongbuan	胎動|不安	473
+taidongbuan	胎動|不安	448
 taiduliangbiao	態度|量表	465
 taifengyujing	颱風|預警	416
 taifengyujingxinhao	颱風|預警|信號	498
@@ -15115,6 +15117,7 @@ tianfuhaiwan	天賦|海灣	499
 tianfuhangkong	天賦|航空	502
 tianfurenquan	天賦|人權	499
 tiangongdidao	天公|地道	497
+tianhandidong	天寒|地凍	502
 tianhechuanshuo	天河|傳說	456
 tianhejichang	天河|機場	436
 tianhuabanxiaoying	天花板|效應	461
@@ -15982,7 +15985,7 @@ weilianyishi	威廉|一世	437
 weilisidasha	威利斯|大廈	447
 weiliwangqiu	威力|網球	467
 weilizirishi	微粒子|日食	502
-weilongguolai	圍攏|過來	440
+weilongguolai	圍攏|過來	469
 weimengyingxiong	威猛|英雄	431
 weimibuzhen	萎靡|不振	488
 weineiruilaweiji	委內瑞拉|危機	445
@@ -16159,7 +16162,7 @@ wenmingxilie	文明|系列	445
 wenmingzhengzhan	文明|爭戰	461
 wenqingmomo	溫情|脈脈	424
 wenquannvhai	溫泉|女孩	455
-wenrejingwei	溫熱|經緯	420
+wenrejingwei	溫熱|經緯	408
 wenrenmoke	文人|墨客	480
 wenrenxueshi	文人|學士	484
 wenroucike	溫柔|刺客	398

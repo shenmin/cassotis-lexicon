@@ -3523,7 +3523,7 @@ dongqianbuchang	动迁|补偿	480
 dongqianxieyi	动迁|协议	496
 dongqingsushouti	动情素|受体	435
 dongqingzhouqi	动情|周期	500
-dongrenxinxian	动人|心弦	486
+dongrenxinxian	动人|心弦	448
 dongrikuangxiangqu	冬日|狂想曲	458
 dongriruanjian	东日|软件	463
 dongshanzaiqi	东山|再起	481
@@ -4238,6 +4238,7 @@ feichanggandong	非常|感动	520
 feichangganxie	非常|感谢	520
 feichanggaoxing	非常|高兴	520
 feichangguishiyong	非常规|使用	486
+feichanghanleng	非常|寒冷	481
 feichangjiandan	非常|简单	520
 feichangjidong	非常|激动	520
 feichangkaixin	非常|开心	520
@@ -4253,6 +4254,7 @@ feichangxingyun	非常|幸运	520
 feichangxinhao	非常|信号	502
 feichangxinwei	非常|欣慰	520
 feichangxiwang	非常|希望	520
+feichangyanre	非常|炎热	490
 feichangyanwu	非常|厌恶	520
 feichangyihan	非常|遗憾	520
 feichangyukuai	非常|愉快	520
@@ -4664,8 +4666,8 @@ fuqiangjingjiancha	腹腔镜|检查	486
 fuqiangjingshoushu	腹腔镜|手术	478
 fuqiangnongzhong	腹腔|脓肿	370
 fuqiangrenshen	腹腔|妊娠	441
-fuqiangwenre	腹腔|温热	368
-fuqiangwenrehualiao	腹腔|温热|化疗	450
+fuqiangwenre	腹腔|温热	356
+fuqiangwenrehualiao	腹腔|温热|化疗	438
 fuqiangzhushe	腹腔|注射	461
 fuqifanmu	夫妻|反目	497
 furongchushui	芙蓉|出水	483
@@ -12269,7 +12271,7 @@ qingxiangpingfen	倾向|评分	401
 qingxiangpingfenpipei	倾向|评分|匹配	483
 qingxianzizai	清闲|自在	483
 qingxieshidai	倾斜|饰带	459
-qingxingguolai	清醒|过来	479
+qingxingguolai	清醒|过来	483
 qingxisizhi	清洗|四肢	426
 qingxubiaolu	情绪|表露	354
 qingxubiaoluxingwei	情绪|表露|行为	436
@@ -13182,7 +13184,7 @@ sanfentianxia	三分|天下	443
 sangeheshang	三个|和尚	487
 sangengbanye	三更|半夜	431
 sangexiaoshi	三个|小时	520
-sangjintianliang	丧尽|天良	418
+sangjintianliang	丧尽|天良	399
 sangqinfudaoyuan	丧亲|辅导员	449
 sangshiweichengxilie	丧尸围城|系列	449
 sangshizhijue	丧失|知觉	486
@@ -15325,7 +15327,7 @@ taibeigugong	台北|故宫	472
 taidawuli	台大|物理	416
 taidawulixi	台大|物理系	490
 taidawulizhiye	台大|物理|之夜	498
-taidongbuan	胎动|不安	473
+taidongbuan	胎动|不安	448
 taiduliangbiao	态度|量表	465
 taifengfenghuang	台风|凤凰	428
 taifengshanzhu	台风|山竹	429
@@ -15546,6 +15548,7 @@ tianfuhaiwan	天赋|海湾	502
 tianfuhangkong	天赋|航空	502
 tianfurenquan	天赋|人权	504
 tiangongdidao	天公|地道	497
+tianhandidong	天寒|地冻	502
 tianhechuanshuo	天河|传说	473
 tianhejichang	天河|机场	503
 tianhuabanxiaoying	天花板|效应	461
@@ -16436,7 +16439,7 @@ weiliansanshi	威廉|三世	396
 weilianyishi	威廉|一世	437
 weiliwangqiu	威力|网球	467
 weilizirishi	微粒子|日食	502
-weilongguolai	围拢|过来	444
+weilongguolai	围拢|过来	473
 weimengyingxiong	威猛|英雄	431
 weimibuzhen	萎靡|不振	488
 weinanzhuanqu	渭南|专区	468
@@ -16618,7 +16621,7 @@ wenmingxilie	文明|系列	442
 wenmingzhengzhan	文明|争战	460
 wenqingmomo	温情|脉脉	427
 wenquannvhai	温泉|女孩	458
-wenrejingwei	温热|经纬	434
+wenrejingwei	温热|经纬	422
 wenrenmoke	文人|墨客	476
 wenrenxueshi	文人|学士	500
 wenroucike	温柔|刺客	401
