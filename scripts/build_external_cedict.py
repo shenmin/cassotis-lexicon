@@ -3161,7 +3161,46 @@ def _apply_word_pinyin_overrides(
     overrides: Dict[str, str],
     stat_prefix: str,
 ) -> Tuple[Dict[Tuple[str, str], int], Dict[str, int]]:
-    return _apply_explicit_term_pinyin_overrides(mapping, overrides, stat_prefix)
+    if (not mapping) or (not overrides):
+        return _apply_explicit_term_pinyin_overrides(mapping, overrides, stat_prefix)
+
+    single_char_overrides = {
+        text: pinyin
+        for text, pinyin in overrides.items()
+        if _cjk_len(text) == 1
+    }
+    multi_char_overrides = {
+        text: pinyin
+        for text, pinyin in overrides.items()
+        if _cjk_len(text) != 1
+    }
+
+    remapped, stats = _apply_explicit_term_pinyin_overrides(
+        mapping,
+        multi_char_overrides,
+        stat_prefix,
+    )
+    stats[f"{stat_prefix}_single_char_readings_added"] = 0
+    if not single_char_overrides:
+        return remapped, stats
+
+    best_text_weight: Dict[str, int] = {}
+    for (_pinyin, text), weight in remapped.items():
+        if text not in single_char_overrides:
+            continue
+        best_text_weight[text] = max(best_text_weight.get(text, 0), weight)
+
+    for text, pinyin in single_char_overrides.items():
+        weight = best_text_weight.get(text, 0)
+        if weight <= 0:
+            continue
+        key = (pinyin, text)
+        if key in remapped:
+            continue
+        remapped[key] = weight
+        stats[f"{stat_prefix}_single_char_readings_added"] += 1
+
+    return remapped, stats
 
 
 def _collect_preferred_unihan_readings(
@@ -10467,6 +10506,8 @@ def _load_char_family_support_from_generated_dict(
                 continue
             if exclude_texts and text in exclude_texts:
                 continue
+            if _is_productive_suffix_support_phrase(text):
+                continue
 
             try:
                 weight = int(parts[2].strip())
@@ -10493,6 +10534,25 @@ def _load_char_family_support_from_generated_dict(
                 support_sum_map[ch] = support_sum_map.get(ch, 0.0) + support
 
     return term_count_map, support_sum_map
+
+
+PRODUCTIVE_SUFFIX_SUPPORT_CHARS = frozenset(
+    {
+        "\u4e86",  # le/liao
+        "\u7740",  # zhe
+        "\u7684",  # de
+        "\u5f97",  # de/dei
+        "\u5427",  # ba
+        "\u5417",  # ma
+        "\u5566",  # la
+        "\u554a",  # a
+    }
+)
+
+
+def _is_productive_suffix_support_phrase(text: str) -> bool:
+    units = _split_text_units(text)
+    return len(units) == 2 and units[1] in PRODUCTIVE_SUFFIX_SUPPORT_CHARS
 
 
 def _collect_unihan_constituent_reading_alignments(
@@ -10694,6 +10754,8 @@ def _load_char_reading_support_from_generated_dict(
                 continue
             if exclude_texts and text in exclude_texts:
                 continue
+            if _is_productive_suffix_support_phrase(text):
+                continue
 
             units = _split_text_units(text)
             if not any(len(unihan_readings_map.get(ch, set())) >= 2 for ch in units):
@@ -10773,6 +10835,8 @@ def _load_char_inferred_reading_support_from_generated_dict(
                 continue
             if exclude_texts and text in exclude_texts:
                 continue
+            if _is_productive_suffix_support_phrase(text):
+                continue
 
             try:
                 weight = int(parts[2].strip())
@@ -10840,6 +10904,8 @@ def _load_char_leading_reading_support_from_generated_dict(
             if _cjk_len(text) < 2 or not CJK_FULL_RE.fullmatch(text):
                 continue
             if exclude_texts and text in exclude_texts:
+                continue
+            if _is_productive_suffix_support_phrase(text):
                 continue
 
             first_char = text[0]
