@@ -6438,7 +6438,7 @@ huanbingxingwei	患病|行为	486
 huanchongrongye	缓冲|溶液	458
 huancuncelve	缓存|策略	457
 huancunfuwuqi	缓存|服务器	472
-huancunjizhi	缓存|机制	470
+huancunjizhi	缓存|机制	463
 huancunkuangjia	缓存|框架	449
 huancunmingzhong	缓存|命中	507
 huancunshixiao	缓存|失效	493
@@ -9104,10 +9104,10 @@ kuaiganqueshi	快感|缺失	444
 kuaihunanke	块魂|安可	397
 kuaijikemu	会计|科目	467
 kuaijizhidu	会计|制度	467
-kuailelunzi	快乐|轮子	458
+kuailelunzi	快乐|轮子	467
 kuailewudao	快乐|舞蹈	374
 kuailewudaojingxuan	快乐|舞蹈|精选	456
-kuailexiaojing	快乐|小径	429
+kuailexiaojing	快乐|小径	444
 kuailexiyou	快乐|西游	467
 kuaisubushu	快速|部署	490
 kuaisuchaxun	快速|查询	490
@@ -11298,7 +11298,7 @@ neicunjiance	内存|检测	490
 neicunjiegou	内存|结构	491
 neicunjinggao	内存|警告	491
 neicunjisuan	内存|计算	490
-neicunjizhi	内存|机制	490
+neicunjizhi	内存|机制	485
 neicunkaobei	内存|拷贝	483
 neicunkongjian	内存|空间	507
 neicunmokuai	内存|模块	503
@@ -11480,7 +11480,7 @@ ningmengsuanxunhuan	柠檬酸|循环	483
 ningmengzhidaheng	柠檬汁|大亨	414
 ningxuegongneng	凝血|功能	373
 ningxuegongnengzhangai	凝血|功能|障碍	455
-ningxuejizhi	凝血|机制	450
+ningxuejizhi	凝血|机制	444
 ningxuemeishijian	凝血酶|时间	459
 ningxuemeiyuan	凝血|酶原	457
 ningxueshijian	凝血|时间	486
@@ -13648,7 +13648,7 @@ shengdaixirou	声带|息肉	447
 shengdandianzi	圣诞|电子	374
 shengdandianziyouxi	圣诞|电子|游戏	456
 shengdanguaijie	圣诞|怪杰	426
-shengdankuaile	圣诞|快乐	465
+shengdankuaile	圣诞|快乐	467
 shengdanlaoren	圣诞|老人	448
 shengdayouxi	盛大|游戏	502
 shengdianchunqiu	圣殿|春秋	452
@@ -14248,7 +14248,7 @@ shijianguanliyouxi	时间|管理|游戏	456
 shijianguolvqi	事件|过滤器	453
 shijianhanshu	时间|函数	490
 shijianjianting	事件|监听	429
-shijianjizhi	事件|机制	444
+shijianjizhi	事件|机制	437
 shijiankongzhi	事件|控制	468
 shijianlanjie	事件|拦截	469
 shijianleixing	时间|类型	490
@@ -22355,7 +22355,7 @@ zuoyeliaofa	作业|疗法	474
 zuoyexitong	作业|系统	467
 zuoyeyanjiu	作业|研究	486
 zuoyingxialu	左营|下路	502
-zuoyongjizhi	作用|机制	474
+zuoyongjizhi	作用|机制	470
 zuoyouliangnan	左右|两难	445
 zuoyouweinan	左右|为难	490
 zuozuozhangai	做作|障碍	442

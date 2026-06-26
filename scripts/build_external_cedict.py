@@ -14326,12 +14326,11 @@ def _cap_curated_daily_aspect_visibility_weights(
     if not mapping or not curated_entries:
         return stats
 
-    aspect_terms: Set[str] = set()
+    aspect_terms: Dict[str, float] = {}
     for sc_word, tc_word, usage_score, _explicit_pinyin in curated_entries:
         text = tc_word if use_traditional and tc_word else sc_word
-        effective_usage = max(usage_score, usage_score_map.get(text, 0.0))
-        if _is_curated_aspect_visibility_term(text, effective_usage):
-            aspect_terms.add(text)
+        if _is_curated_aspect_visibility_term(text, usage_score):
+            aspect_terms[text] = max(aspect_terms.get(text, 0.0), usage_score)
     if not aspect_terms:
         return stats
 
@@ -14360,7 +14359,11 @@ def _cap_curated_daily_aspect_visibility_weights(
         return min(1.0, signal)
 
     for pinyin, items in buckets.items():
-        aspects = [(text, weight) for text, weight in items if text in aspect_terms]
+        aspects = [
+            (text, weight, aspect_terms[text])
+            for text, weight in items
+            if text in aspect_terms
+        ]
         if not aspects:
             continue
         leaders = [
@@ -14374,20 +14377,41 @@ def _cap_curated_daily_aspect_visibility_weights(
             item for item in leaders
             if item[1] >= 520 and item[2] >= 0.16
         ]
-        if not leaders:
-            continue
-        leader_text, leader_weight, leader_signal = max(
-            leaders,
-            key=lambda item: (item[2], item[1]),
-        )
-        del leader_text, leader_signal
-        cap = min(CURATED_DAILY_ASPECT_VISIBILITY_CAP, max(520, leader_weight - 64))
-        for text, weight in aspects:
-            if weight <= cap:
-                continue
-            mapping[(pinyin, text)] = cap
-            capped_terms.add(text)
-            stats[f"{stats_prefix}_curated_daily_aspect_cap_rows"] += 1
+        if leaders:
+            leader_text, leader_weight, leader_signal = max(
+                leaders,
+                key=lambda item: (item[2], item[1]),
+            )
+            del leader_text, leader_signal
+            cap = min(CURATED_DAILY_ASPECT_VISIBILITY_CAP, max(520, leader_weight - 64))
+            for text, weight, usage_score in aspects:
+                if usage_score >= 0.80:
+                    continue
+                if weight <= cap:
+                    continue
+                mapping[(pinyin, text)] = cap
+                capped_terms.add(text)
+                stats[f"{stats_prefix}_curated_daily_aspect_cap_rows"] += 1
+
+        if len(aspects) >= 2:
+            best_usage = max(usage_score for _text, _weight, usage_score in aspects)
+            best_weight = max(
+                mapping.get((pinyin, text), weight)
+                for text, weight, usage_score in aspects
+                if usage_score + 0.015 >= best_usage
+            )
+            for text, weight, usage_score in aspects:
+                if usage_score + 0.015 >= best_usage:
+                    continue
+                current_weight = mapping.get((pinyin, text), weight)
+                usage_gap = best_usage - usage_score
+                cap_margin = 32 + int(round(usage_gap * 240.0))
+                cap = max(420, min(CURATED_DAILY_ASPECT_VISIBILITY_CAP, best_weight - cap_margin))
+                if current_weight <= cap:
+                    continue
+                mapping[(pinyin, text)] = cap
+                capped_terms.add(text)
+                stats[f"{stats_prefix}_curated_daily_aspect_cap_rows"] += 1
 
     stats[f"{stats_prefix}_curated_daily_aspect_cap_terms"] = len(capped_terms)
     return stats
@@ -21082,6 +21106,32 @@ def main() -> int:
     )
     stats.update(sc_strong_curated_daily_exact_stats)
     stats.update(tc_strong_curated_daily_exact_stats)
+    stats.update(
+        _cap_curated_daily_aspect_visibility_weights(
+            sc_map,
+            curated_daily_entries,
+            usage_score_map,
+            source_hits_map,
+            pageviews_signal_map,
+            jieba_direct_signal_map,
+            jieba_pos_map,
+            use_traditional=False,
+            stats_prefix="sc_final_post",
+        )
+    )
+    stats.update(
+        _cap_curated_daily_aspect_visibility_weights(
+            tc_map,
+            curated_daily_entries,
+            tc_usage_score_map,
+            tc_source_hits_map,
+            tc_pageviews_signal_map,
+            tc_jieba_direct_signal_map,
+            tc_jieba_pos_map,
+            use_traditional=True,
+            stats_prefix="tc_final_post",
+        )
+    )
     stats.update(
         _restore_project_proper_noun_exact_floor(
             sc_map,
