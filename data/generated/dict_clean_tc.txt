@@ -6031,6 +6031,7 @@ baoshuibiao	報稅表	232
 baoshuidan	報稅單	232
 baoshuiqu	保稅區	459
 baoshupi	包書皮	379
+baoshuya	鮑叔牙	316
 baosi	抱死	457
 baosi	暴死	451
 baosinang	飽私囊	228
@@ -12473,7 +12474,7 @@ bumeibing	不寐病	470
 bumeitani	布美他尼	540
 bumeiwuyu	步美物語	538
 bumeizheng	不寐症	510
-bumen	部門	707
+bumen	部門	813
 bumian	不免	1000
 bumian	不眠	673
 bumianbu	不眠不	556
@@ -21218,7 +21219,7 @@ chuzhen	觸診	440
 chuzhen	出診	288
 chuzheng	出征	500
 chuzhi	處置	1000
-chuzhi	處治	693
+chuzhi	處治	692
 chuzhika	儲值卡	379
 chuzhishengfapian	除脂生發片	603
 chuzhitairan	處之泰然	431
@@ -26692,7 +26693,7 @@ deleiyuan	地雷原	640
 deli	得力	700
 deli	得利	539
 deli	德里	1
-deliao	得了	1
+deliao	得了	198
 delibururenhe	地利不如人和	706
 delida	德里達	198
 delifen	地理分	556
@@ -29764,7 +29765,7 @@ dingzhiti	頂質體	500
 dingzhou	定州	265
 dingzhoushi	定州市	185
 dingzhu	頂住	646
-dingzhu	盯住	642
+dingzhu	盯住	643
 dingzhu	叮囑	577
 dingzhu	鼎助	489
 dingzhuan	丁磚	260
@@ -30213,7 +30214,7 @@ ditan	地毯	849
 ditan	地攤	762
 ditan	地壇	358
 ditang	低糖	700
-ditang	地躺	478
+ditang	地躺	479
 ditang	嫡堂	1
 ditangquan	地躺拳	671
 ditanshihongzha	地毯式轟炸	289
@@ -43609,7 +43610,7 @@ gaogouli	高句麗	440
 gaogu	高估	423
 gaoguai	搞怪	323
 gaoguaixingren	搞怪星人	538
-gaoguan	高官	853
+gaoguan	高官	852
 gaoguang	高光	137
 gaoguang'ansuanniaozheng	高胱胺酸尿症	700
 gaoguangpuyingxiang	高光譜影像	640
@@ -46877,11 +46878,15 @@ guanbin	館賓	198
 guanbing	官兵	487
 guanbitongbu	關閉同步	800
 guanbixitong	關閉系統	280
+guanbuhao	管不好	800
 guanbuliao	管不了	280
+guanbumen	管部門	800
 guanbuzhao	管不著	406
+guanbuzhu	管不住	800
 guancai	棺材	536
 guancaiban	棺材板	375
 guancairangzi	棺材瓤子	426
+guancaiwu	管財務	800
 guancang	館藏	290
 guance	觀測	551
 guanceqiqiusheshou	觀測氣球射手	831
@@ -46928,12 +46933,18 @@ guandaomaoxian	管道冒險	538
 guandaoxiangyue	觀島香月	538
 guandaoyunshu	管道運輸	260
 guande	關的	1000
+guande	管的	700
+guande	管得	676
+guandeliao	管得了	800
 guandeng	管燈	198
 guandezhao	管得著	232
-guandi	官邸	560
+guandezhu	管得住	800
+guandi	管地	700
+guandi	官邸	254
 guandian	觀點	487
 guandianxieye	關店歇業	258
 guandiao	關掉	700
+guandifang	管地方	800
 guandiguangchang	官邸廣場	583
 guandong	關東	493
 guandongdizhen	關東地震	258
@@ -47280,6 +47291,7 @@ guangningxian	廣寧縣	169
 guangong	關公	469
 guangong	管工	150
 guangongmianqianshuadadao	關公面前耍大刀	348
+guangongsi	管公司	800
 guangou	光耦	198
 guangouheqi	光耦合器	260
 guangpan	光盤	443
@@ -47355,8 +47367,9 @@ guanguangqu	觀光區	379
 guanguanxianghu	官官相護	262
 guanguanxiangwei	官官相衛	519
 guangui	官桂	198
-guanguo	棺槨	495
-guanguo	關過	315
+guanguo	棺槨	493
+guanguo	管過	313
+guanguo	關過	313
 guangwai	廣外	331
 guangwei	廣為	299
 guangwulixue	光物理學	700
@@ -47506,6 +47519,7 @@ guangzongxian	廣宗縣	193
 guangzongyaozu	光宗耀祖	296
 guanhaique	冠海雀	232
 guanhanqing	關漢卿	251
+guanhao	管好	700
 guanhougan	觀後感	420
 guanhoujing	觀后鏡	251
 guanhu	關乎	448
@@ -47624,6 +47638,7 @@ guankasheji	關卡設計	855
 guankashiqiao	關卡石橋	755
 guanke	官客	416
 guankong	管控	385
+guankongqi	管空氣	800
 guankou	關口	458
 guankui	管窺	214
 guankuisuoji	管窺所及	260
@@ -47723,7 +47738,8 @@ guannei	關內	426
 guanneng	官能	401
 guannengji	官能基	232
 guannengtuan	官能團	488
-guanni	關你	700
+guanni	管你	700
+guanni	關你	513
 guannian	觀念	487
 guanniao	觀鳥	198
 guannipishi	關你屁事	280
@@ -47736,6 +47752,8 @@ guanqie	關切	1000
 guanqing	管情	198
 guanqu	灌區	450
 guanqu	灌渠	271
+guanren	管人	700
+guanrenshi	管人事	800
 guanru	灌入	280
 guansai	關塞	319
 guansha	管紗	305
@@ -47748,7 +47766,7 @@ guanshanhuqu	觀山湖區	258
 guanshanzhen	關山鎮	228
 guanshanzuge	關山阻隔	646
 guanshe	關涉	428
-guanshi	貫時	198
+guanshi	管事	700
 guanshide	管事的	640
 guanshixingyanjiu	貫時性研究	640
 guanshiyin	觀世音	504
@@ -47771,8 +47789,10 @@ guansiheying	官私合營	405
 guansuan	穀氨酸	510
 guansuan	谷氨酸	452
 guansuanna	穀氨酸鈉	260
-guanta	關他	700
-guanta	關她	700
+guanta	管他	700
+guanta	管她	700
+guanta	關他	515
+guanta	關她	514
 guantade	管他的	232
 guantanamo	關塔那摩	220
 guantanamo	關塔納摩	193
@@ -47784,7 +47804,8 @@ guantaoxian	館陶縣	180
 guantapishi	關他屁事	280
 guantapishi	關她屁事	280
 guantasanqi'ershiyi	管他三七二十一	348
-guantian	官田	399
+guantian	管天	700
+guantian	官田	1
 guanting	關停	395
 guantingshuiku	官廳水庫	267
 guantong	貫通	464
@@ -47795,6 +47816,7 @@ guantou	關頭	197
 guantouqizi	罐頭起子	260
 guantoushaonvdezhongmoshijie	罐頭少女的終末世界	662
 guantouxiaosheng	罐頭笑聲	405
+guantuandui	管團隊	800
 guanwai	關外	427
 guanwang	官網	1000
 guanwang	觀望	457
@@ -47802,7 +47824,8 @@ guanwei	官位	735
 guanweihui	管委會	447
 guanwen	關文	391
 guanwenliuying	冠紋柳鶯	258
-guanwo	關我	700
+guanwo	管我	700
+guanwo	關我	513
 guanwopishi	關我屁事	280
 guanxi	關係	905
 guanxi	關系	860
@@ -47817,6 +47840,7 @@ guanxian	管線	273
 guanxian	官銜	152
 guanxianan	穀氨酰胺	580
 guanxiang	觀想	848
+guanxiangmu	管項目	800
 guanxiangtai	觀象臺	596
 guanxianshi	管閒事	620
 guanxianyue	管絃樂	963
@@ -47877,6 +47901,7 @@ guanyan	關嚴	351
 guanyang	官樣	280
 guanyangwenzhang	官樣文章	274
 guanyangxian	灌陽縣	165
+guanyewu	管業務	800
 guanyi	冠以	463
 guanyin	觀音	1000
 guanyin	官印	1
@@ -47894,6 +47919,7 @@ guanyu	關於	1000
 guanyu	關羽	373
 guanyuan	官員	1000
 guanyuan	關原	1
+guanyuangong	管員工	800
 guanyuanxianchong	管圓綫蟲	260
 guanyuanxianchong	管圓線蟲	258
 guanyuanxue	關元穴	470
@@ -47918,6 +47944,7 @@ guanzhan	觀瞻	1
 guanzhanfei	關棧費	228
 guanzhang	關張	389
 guanzhao	關照	484
+guanzhe	管著	700
 guanzhe	關著	700
 guanzhen	官箴	198
 guanzheng	關征	198
@@ -47934,8 +47961,9 @@ guanzhilin	關之琳	198
 guanzhiyongyao	管制用藥	580
 guanzhiyongyao	管制用葯	250
 guanzhong	觀眾	1000
-guanzhong	關中	599
+guanzhong	關中	481
 guanzhong	罐中	280
+guanzhong	管仲	1
 guanzhongde	官中的	640
 guanzhongdetan	觀眾地毯	680
 guanzhongdiqu	關中地區	228
@@ -47945,10 +47973,10 @@ guanzhongpingyuan	關中平原	329
 guanzhongxi	觀衆席	280
 guanzhongxiaoying	觀眾效應	540
 guanzhouyan	冠周炎	500
-guanzhu	關注	1000
-guanzhu	管住	517
-guanzhu	冠珠	420
-guanzhu	灌注	324
+guanzhu	關注	862
+guanzhu	管住	700
+guanzhu	灌注	394
+guanzhu	冠珠	252
 guanzhu	貫注	1
 guanzhuang	罐裝	480
 guanzhuang	冠狀	300
@@ -48160,6 +48188,8 @@ gudaotanmi	孤島探祕	538
 gudaoweiji	孤島危機	538
 gudaoweijixilie	孤島危機系列	648
 gudapaqiajiao	古搭帕恰膠	640
+gude	顧的	700
+gude	顧得	676
 gudejin	古地金	640
 gudengbao	古登堡	169
 gudepeijitebing	骨的佩吉特病	700
@@ -48346,6 +48376,7 @@ gugujingguzhe	股骨頸骨折	610
 gugukeshangguzhe	股骨髁上骨折	664
 guguluode	呱呱落地	597
 gugunangnang	鼓鼓囊囊	445
+guguo	顧過	700
 guguo	古國	344
 gugutou	股骨頭	500
 gugutouguruangubing	股骨頭骨軟骨病	700
@@ -48929,6 +48960,7 @@ gulaolao	姑姥姥	228
 gulaorou	咕咾肉	942
 gulashu	古拉梳	496
 gulasuo	古拉索	496
+gule	顧了	700
 gulei	穀類	537
 guleqiming	鼓樂齊鳴	636
 gulexuantian	鼓樂喧天	633
@@ -49134,7 +49166,9 @@ guodadang	國大黨	289
 guodang	過噹	205
 guodao	過道	945
 guodao	國道	66
-guode	裹得	280
+guode	過的	505
+guode	過得	481
+guode	裹得	252
 guodequ	過得去	523
 guodi	鍋底	378
 guodian	鍋墊	198
@@ -50082,7 +50116,7 @@ guoyiminweiben	國以民為本	392
 guoyin	過癮	105
 guoyin	國音	9
 guoying	國營	1000
-guoying	過硬	600
+guoying	過硬	601
 guoying	果蠅	1
 guoyingqiye	國營企業	531
 guoyonghuai	郭永懷	240
@@ -50115,6 +50149,7 @@ guozhai	國債	456
 guozhandating	過站大廳	260
 guozhang	過帳	198
 guozhao	過招	448
+guozhe	過著	700
 guozhen	果真	491
 guozheng	國政	657
 guozhengliang	郭正亮	776
@@ -50502,6 +50537,7 @@ guzhangxian	古丈縣	198
 guzhangyulie	鼓脹欲裂	690
 guzhangzhishang	股掌之上	624
 guzhe	骨折	726
+guzhe	顧著	260
 guzhebing	骨折病	470
 guzhebuyuhe	骨折不癒合	610
 guzhejixingyuhe	骨折畸形癒合	678
@@ -61321,7 +61357,7 @@ jiangtianyise	江天一色	621
 jiangtu	疆土	426
 jiangtun	江豚	449
 jiangu	兼顧	788
-jiangu	堅固	736
+jiangu	堅固	735
 jiangu	薦骨	440
 jianguai	見怪	434
 jianguaibuguai	見怪不怪	476
@@ -70667,7 +70703,7 @@ jizhi	機制	584
 jizhi	及至	497
 jizhi	機製	497
 jizhi	極致	495
-jizhi	急智	81
+jizhi	急智	69
 jizhi	基址	60
 jizhi	極值	50
 jizhi	基質	1
@@ -84407,7 +84443,7 @@ longfengchengxiang	龍鳳呈祥	499
 longfengqu	龍鳳區	198
 longfengtai	龍鳳胎	198
 longganfengdan	龍肝鳳膽	258
-longgang	龍崗	240
+longgang	龍崗	241
 longgangqu	龍崗區	552
 longgenuoteshan	隆戈諾特山	639
 longgong	攏共	319
@@ -90684,7 +90720,7 @@ mianhongerchi	面紅耳赤	496
 mianhongerre	面紅耳熱	616
 mianhu	面糊	1000
 mianhu	麵糊	1000
-mianhu	麪糊	860
+mianhu	麪糊	955
 mianhua	棉花	536
 mianhuabang	棉花棒	230
 mianhuai	緬懷	300
@@ -120238,7 +120274,7 @@ shishen	失神	1
 shishenfazuo	失神發作	570
 shishenfen	失身分	232
 shisheng	失聲	1000
-shisheng	師生	421
+shisheng	師生	420
 shishenjing	視神經	665
 shishenjingbingbian	視神經病變	640
 shishenjingguan	視神經管	540
@@ -135407,7 +135443,7 @@ wanggeyuan	網格員	621
 wanggong	王公	461
 wanggou	網購	198
 wanggu	枉顧	454
-wanggu	亡故	386
+wanggu	亡故	385
 wangguan	閘道	875
 wangguanjiekou	網管接口	260
 wangguanlianhe	王冠聯合	587
@@ -139441,7 +139477,7 @@ wuguai	無怪	430
 wuguaihu	無怪乎	503
 wuguaizhide	唔怪之得	597
 wuguan	無關	1000
-wuguan	武官	178
+wuguan	武官	177
 wuguan	五官	1
 wuguanchaweihaifanyingjiliang	無觀察危害反應劑量	700
 wuguandaju	無關大局	630
@@ -155947,7 +155983,7 @@ yewen	也問	700
 yeweng	蠮螉	137
 yewenjie	葉文潔	458
 yewo	腋窩	399
-yewu	業務	513
+yewu	業務	809
 yewuliucheng	業務流程	518
 yewushouru	業務收入	280
 yewuyuan	業務員	505
@@ -161259,7 +161295,7 @@ yixiang	已向	605
 yixiang	一向	584
 yixiang	一項	499
 yixiang	意向	445
-yixiang	臆想	130
+yixiang	臆想	172
 yixiang	遺像	29
 yixiang	意象	1
 yixiang	異鄉	1
@@ -166426,7 +166462,7 @@ yuxian	預先	978
 yuxian	遇險	798
 yuxian	閾限	1
 yuxiang	預想	1000
-yuxiang	玉響	159
+yuxiang	玉響	158
 yuxiangning	餘香凝	1000
 yuxiangning	余香凝	595
 yuxiangraoliang	餘響繞梁	432
@@ -169102,7 +169138,7 @@ zhaogongming	趙公明	207
 zhaogongyuanshuai	趙公元帥	253
 zhaogou	趙構	250
 zhaogu	照顧	1000
-zhaogu	招股	725
+zhaogu	招股	724
 zhaoguan	照管	419
 zhaoguo	找過	700
 zhaoguo	趙國	436
@@ -177469,8 +177505,8 @@ zhuzhu	蛛蛛	1
 zhuzhua	主抓	385
 zhuzhuangtu	柱狀圖	379
 zhuzhuomuniao	竹啄木鳥	258
-zhuzi	柱子	639
-zhuzi	諸子	440
+zhuzi	柱子	638
+zhuzi	諸子	439
 zhuzi	逐字	280
 zhuzi	主子	79
 zhuzi	注資	25
@@ -179946,8 +179982,8 @@ zuobianju	左邊距	800
 zuobiankuang	左邊框	800
 zuobianqi	坐便器	362
 zuobianr	左邊兒	167
-zuobiao	坐標	941
-zuobiao	座標	896
+zuobiao	坐標	843
+zuobiao	座標	798
 zuobiaofa	座標法	760
 zuobiaokongjian	坐標空間	260
 zuobiaokongjian	座標空間	258
