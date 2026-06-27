@@ -64,6 +64,15 @@
 阴郁	陰鬱	0.20	yinyu
 禀报	稟報	0.20	bingbao
 
+# low-priority aspect/function-word supplements. Keep exact-match visibility
+# without letting these phrase fragments steer long-sentence 的/得 paths.
+管的	管的	0.00	guande
+管得	管得	0.00	guande
+顾的	顧的	0.00	gude
+顾得	顧得	0.00	gude
+过的	過的	0.00	guode
+过得	過得	0.00	guode
+
 # address/title supplements 2026-06-05
 李总	李總	0.55	lizong
 王总	王總	0.55	wangzong
