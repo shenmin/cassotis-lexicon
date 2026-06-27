@@ -531,6 +531,8 @@ def _curated_daily_supplement_weight_cap(usage_score: float, text: str) -> int:
 
     # Ultra-low scores are for useful exact-match words that should remain
     # inputable but should not become attractive long-sentence path chunks.
+    if bounded_usage <= 0.0:
+        return 1
     if bounded_usage < 0.10:
         return 8 + int(round(bounded_usage * 240.0))
 
@@ -17230,6 +17232,7 @@ def _write_dict(
     path: pathlib.Path,
     mapping: Dict[Tuple[str, str], int],
     preferred_terms: Set[str] | None = None,
+    low_priority_output_terms: Set[str] | None = None,
     preserve_pinyin_keys: Set[Tuple[str, str]] | None = None,
     unihan_map: Dict[str, str] | None = None,
     unihan_readings_map: Dict[str, Set[str]] | None = None,
@@ -17237,6 +17240,7 @@ def _write_dict(
     unihan_pinlu_detail_map: Dict[Tuple[str, str], int] | None = None,
 ) -> None:
     preferred_terms = preferred_terms or set()
+    low_priority_output_terms = low_priority_output_terms or set()
     preserve_pinyin_keys = preserve_pinyin_keys or set()
     valid_single_syllables: Set[str] = set()
     if unihan_readings_map:
@@ -17287,6 +17291,7 @@ def _write_dict(
         for (output_pinyin, text), weight in sorted(
             output_rows.items(),
             key=lambda kv: (
+                1 if kv[0][1] in low_priority_output_terms else 0,
                 kv[0][0],
                 -kv[1],
                 0 if kv[0][1] in preferred_terms else 1,
@@ -21199,10 +21204,22 @@ def main() -> int:
         )
     )
 
+    low_priority_supplement_sc_terms = {
+        sc_word
+        for sc_word, _tc_word, usage_score, _explicit_pinyin in curated_daily_supplement_entries
+        if usage_score <= 0.0
+    }
+    low_priority_supplement_tc_terms = {
+        tc_word
+        for _sc_word, tc_word, usage_score, _explicit_pinyin in curated_daily_supplement_entries
+        if usage_score <= 0.0
+    }
+
     _write_dict(
         output_sc,
         sc_map,
         preferred_terms=curated_daily_sc_terms,
+        low_priority_output_terms=low_priority_supplement_sc_terms,
         preserve_pinyin_keys=curated_daily_explicit_pinyin_keys,
         unihan_map=output_unihan_map,
         unihan_readings_map=output_unihan_readings_map,
@@ -21213,6 +21230,7 @@ def main() -> int:
         output_tc,
         tc_map,
         preferred_terms=curated_daily_tc_terms,
+        low_priority_output_terms=low_priority_supplement_tc_terms,
         preserve_pinyin_keys=curated_daily_explicit_pinyin_keys,
         unihan_map=output_unihan_map,
         unihan_readings_map=output_unihan_readings_map,

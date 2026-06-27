@@ -10162,7 +10162,7 @@ manxingzhichangyan	慢性|直腸炎	459
 manxingzhiqiguanyan	慢性|支氣管炎	483
 manxingzhongeryan	慢性|中耳炎	460
 manxinhuanxi	滿心|歡喜	484
-manyouyizhan	漫遊|驛站	420
+manyouyizhan	漫遊|驛站	394
 manzhanmoniqi	漫展|模擬器	455
 manzutiaojian	滿足|條件	479
 manzuyaoqiu	滿足|要求	483
@@ -15624,8 +15624,8 @@ tuoyimaque	脫衣|麻雀	458
 tuoyuanhanshu	橢圓|函數	463
 tuozhishabu	脫脂|紗布	431
 tupianhuancun	圖片|緩存	488
-tupianyibu	圖片|異步	364
-tupianyibujiazai	圖片|異步|加載	446
+tupianyibu	圖片|異步	376
+tupianyibujiazai	圖片|異步|加載	458
 tupoxingganran	突破性|感染	481
 turangdongwu	土壤|動物	472
 turangliushi	土壤|流失	461
@@ -16296,7 +16296,7 @@ wuhuaxiruji	霧化|吸入劑	456
 wuhuaxiruqi	霧化|吸入器	460
 wujiancheshou	無間|車手	422
 wujiangzhengba	武將|爭霸	457
-wujianyizhan	無間|一戰	415
+wujianyizhan	無間|一戰	390
 wujianzhanshen	無間|戰神	395
 wujiaodalou	五角|大樓	436
 wujiapengzhang	物價|膨脹	483
@@ -18627,8 +18627,8 @@ yibufuwei	異步|復位	476
 yibugongzuoliu	異步|工作流	406
 yibuguocheng	異步|過程	386
 yibuguochengdiaoyong	異步|過程|調用	468
-yibujiazai	異步|加載	477
-yibujiazaitupian	異步|加載|圖片	446
+yibujiazai	異步|加載	479
+yibujiazaitupian	異步|加載|圖片	458
 yibukongzhi	異步|控制	479
 yibuqingqiu	異步|請求	441
 yiburenwu	異步|任務	479
@@ -21663,6 +21663,7 @@ zuihoutongdie	最後|通牒	466
 zuihouyiren	最後|一人	467
 zuihouyishanmen	最後|一扇門	456
 zuihouyizhan	最後|一戰	464
+zuihouyizhan	最後|一站	467
 zuihouyizhanxilie	最後|一戰|系列	456
 zuihouzhenduan	最後|診斷	470
 zuijiashiji	最佳|時機	463

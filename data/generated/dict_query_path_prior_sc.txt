@@ -1147,8 +1147,8 @@ buheluoji	不合|逻辑	483
 buheshiyi	不合|时宜	461
 buheyaoqiu	不合|要求	520
 buhuangbumang	不慌|不忙	494
-bujianjingzhuan	不见|经传	477
-bujianzongying	不见|踪影	477
+bujianjingzhuan	不见|经传	483
+bujianzongying	不见|踪影	483
 bujiasisuo	不假|思索	491
 bujiasisuo	不加|思索	469
 bujinggejia	布景|格架	386
@@ -10405,7 +10405,7 @@ manxingzhichangyan	慢性|直肠炎	459
 manxingzhiqiguanyan	慢性|支气管炎	483
 manxingzhongeryan	慢性|中耳炎	460
 manxinhuanxi	满心|欢喜	487
-manyouyizhan	漫游|驿站	422
+manyouyizhan	漫游|驿站	397
 manzhanmoniqi	漫展|模拟器	457
 manzutiaojian	满足|条件	483
 manzuyaoqiu	满足|要求	483
@@ -16067,8 +16067,8 @@ tuoyimaque	脱衣|麻雀	461
 tuoyuanhanshu	椭圆|函数	467
 tuozhishabu	脱脂|纱布	434
 tupianhuancun	图片|缓存	491
-tupianyibu	图片|异步	267
-tupianyibujiazai	图片|异步|加载	349
+tupianyibu	图片|异步	387
+tupianyibujiazai	图片|异步|加载	469
 tupoxingganran	突破性|感染	481
 turangdongwu	土壤|动物	472
 turangliushi	土壤|流失	460
@@ -16760,7 +16760,7 @@ wuhuaxiruqi	雾化|吸入器	460
 wuhuzhuanqu	芜湖|专区	468
 wujiancheshou	无间|车手	415
 wujiangzhengba	武将|争霸	462
-wujianyizhan	无间|一战	398
+wujianyizhan	无间|一战	384
 wujianzhanshen	无间|战神	388
 wujiapengzhang	物价|膨胀	486
 wujiazhishu	物价|指数	475
@@ -19181,8 +19181,8 @@ yibufuwei	异步|复位	484
 yibugongzuoliu	异步|工作流	410
 yibuguocheng	异步|过程	386
 yibuguochengdiaoyong	异步|过程|调用	468
-yibujiazai	异步|加载	466
-yibujiazaitupian	异步|加载|图片	349
+yibujiazai	异步|加载	488
+yibujiazaitupian	异步|加载|图片	469
 yibukongzhi	异步|控制	498
 yibuqingqiu	异步|请求	448
 yiburenwu	异步|任务	487
@@ -22295,6 +22295,7 @@ zuihoutongdie	最后|通牒	469
 zuihouyiren	最后|一人	467
 zuihouyishanmen	最后|一扇门	458
 zuihouyizhan	最后|一战	467
+zuihouyizhan	最后|一站	467
 zuihouyizhanxilie	最后|一战|系列	456
 zuihouzhenduan	最后|诊断	474
 zuijiashiji	最佳|时机	472
