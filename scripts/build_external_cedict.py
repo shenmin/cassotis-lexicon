@@ -18403,9 +18403,13 @@ def _remove_known_incorrect_jiancha_entries(
 
     sc_lexical_blocklist = {
         ("haoxiang", "好象"),
+        ("jieyue", "阶越"),
+        ("jieyuexingchen", "阶越星辰"),
     }
     tc_lexical_blocklist = {
         ("haoxiang", "好象"),
+        ("jieyue", "階越"),
+        ("jieyuexingchen", "階越星辰"),
     }
     sc_variant_caps = {
         # In simplified Chinese, standalone `象` is uncommon in modern IME use;
@@ -20613,6 +20617,7 @@ def main() -> int:
     )
     stats.update(sc_negated_predicate_stats)
     stats.update(tc_negated_predicate_stats)
+    stats.update(_remove_known_incorrect_jiancha_entries(sc_map, tc_map))
     sc_query_path_priors: Dict[Tuple[str, str], int] = {}
     tc_query_path_priors: Dict[Tuple[str, str], int] = {}
     if output_query_path_sc is not None:
@@ -20652,7 +20657,6 @@ def main() -> int:
         jieba_pos_map=jieba_pos_map,
         char_frequency_prior=char_frequency_prior,
     )
-    stats.update(_remove_known_incorrect_jiancha_entries(sc_map, tc_map))
     sc_curated_daily_visibility_cap_stats = _cap_curated_daily_visibility_exact_weights(
         sc_map,
         curated_daily_entries,
