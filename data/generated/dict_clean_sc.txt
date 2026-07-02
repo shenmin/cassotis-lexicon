@@ -1791,7 +1791,7 @@ anniudianjishijian	按钮点击事件	818
 anniuleixing	按钮类型	673
 annvwangfuxingshi	安女王复兴式	760
 annvwangfuxingshijianzhu	安女王复兴式建筑	760
-anpai	安排	502
+anpai	安排	826
 anpaotai	暗炮台	600
 anpei	安培	493
 anpeibiao	安培表	167
@@ -20971,10 +20971,10 @@ chuyingzhanchi	雏鹰展翅	651
 chuyinweilaiweilaijihua	初音未来未来计划	662
 chuyou	出游	468
 chuyouceng	储油层	500
+chuyu	处于	1018
 chuyu	出于	1000
 chuyu	初遇	700
-chuyu	处于	700
-chuyu	出狱	304
+chuyu	出狱	313
 chuyuan	出院	439
 chuyuanmen	出远门	379
 chuyue	出月	198
@@ -22951,7 +22951,7 @@ daidianlizi	带电粒子	707
 daidianweilizi	帯电微粒子	750
 daidiao	带调	323
 daiding	待定	466
-daidong	带动	496
+daidong	带动	813
 daidu	歹毒	427
 daidui	带队	441
 daidun	代顿	220
@@ -25134,7 +25134,7 @@ daoshanxuehai	道山学海	249
 daoshen	刀身	385
 daosheng	刀圣	286
 daoshi	道士	625
-daoshi	导师	343
+daoshi	导师	344
 daoshicha	倒时差	362
 daoshihou	到时候	800
 daoshizhiwunv	刀使之巫女	613
@@ -28142,7 +28142,7 @@ diaodianr	掉点儿	232
 diaoding	吊顶	341
 diaodingdeng	吊顶灯	620
 diaodingdian	调定点	470
-diaodong	调动	500
+diaodong	调动	813
 diaodou	吊斗	973
 diaodou	刁斗	523
 diaodu	调度	454
@@ -34869,7 +34869,7 @@ fading	法定	483
 fadingdaibiaoren	法定代表人	289
 fadinghuobi	法定货币	260
 fadingrenshu	法定人数	426
-fadong	发动	520
+fadong	发动	809
 fadongji	发动机	615
 fadongli	发动力	232
 fadou	发抖	469
@@ -38449,8 +38449,8 @@ fengsao	风骚	384
 fengsehuanxiangxilie	风色幻想系列	648
 fengsha	封杀	945
 fengsha	风沙	3
-fengshan	凤山	778
-fengshan	风扇	560
+fengshan	风扇	700
+fengshan	凤山	421
 fengshang	封上	700
 fengshang	奉上	280
 fengshang	风尚	59
@@ -56887,7 +56887,7 @@ huicui	荟萃	440
 huicuifenxi	荟萃分析	570
 huicuiyitang	荟萃一堂	695
 huicuoyi	会错意	519
-huida	回答	502
+huida	回答	1000
 huidai	会带	1000
 huidan	回单	364
 huidang	回荡	934
@@ -66569,7 +66569,7 @@ jinlijiao	浸礼教	232
 jinlin	近邻	979
 jinlin	紧邻	32
 jinling	金翎	1000
-jinling	禁令	704
+jinling	禁令	705
 jinling	金铃	520
 jinling	金陵	411
 jinling	金领	266
@@ -67306,10 +67306,10 @@ jipufa	记谱法	372
 jipufenxifa	极谱分析法	640
 jipusairen	吉普赛人	292
 jipusikua	吉普斯夸	98
-jiqi	及其	840
-jiqi	极其	780
-jiqi	激起	774
-jiqi	机器	760
+jiqi	机器	1000
+jiqi	及其	863
+jiqi	极其	641
+jiqi	激起	583
 jiqi	祭器	1
 jiqian	极前	1000
 jiqian	极浅	1000
@@ -70815,7 +70815,7 @@ kaidan	开单	387
 kaidangku	开裆裤	576
 kaidangyikang	慨当以慷	619
 kaidao	开道	802
-kaidao	开导	634
+kaidao	开导	635
 kaidao	开刀	577
 kaidaoche	开倒车	377
 kaidayoumen	开大油门	260
@@ -101412,8 +101412,8 @@ qianye	前夜	560
 qianye	千叶	1
 qianyexian	千叶县	172
 qianyi	前一	1000
+qianyi	歉意	700
 qianyi	迁移	580
-qianyi	歉意	109
 qianyibaishun	千依百顺	452
 qianyibu	前一步	1000
 qianyici	前一次	800
@@ -104131,6 +104131,7 @@ qishengyinjie	七声音阶	260
 qishengzhaohuan	七圣召唤	538
 qishi	其实	1000
 qishi	启示	850
+qishi	祈使	700
 qishi	起始	700
 qishi	骑士	676
 qishi	七十	472
@@ -104768,7 +104769,7 @@ qiyouzhongdu	汽油中毒	540
 qiyu	其余	1000
 qiyu	奇遇	1
 qiyu	气宇	1
-qiyuan	起源	958
+qiyuan	起源	957
 qiyuan	祈愿	1
 qiyuanyinqing	起源引擎	742
 qiyuanyouxiyinqing	起源游戏引擎	811
@@ -105024,7 +105025,7 @@ quanhenglibi	权衡利弊	474
 quanhongchan	全红婵	774
 quanhouqiechushu	全喉切除术	610
 quanhu	全乎	255
-quanhua	劝化	434
+quanhua	劝化	435
 quanhuang	拳皇	311
 quanhuangjixianchongji	拳皇极限冲击	648
 quanhui	全会	498
@@ -105038,8 +105039,8 @@ quanjia	劝架	1
 quanjiafu	全家福	346
 quanjiahuan	全家欢	460
 quanjiahuandianziyouxi	全家欢电子游戏	632
-quanjian	全歼	757
-quanjian	劝谏	657
+quanjian	全歼	756
+quanjian	劝谏	658
 quanjiao	全角	700
 quanjiao	全椒	466
 quanjiao	拳脚	329
@@ -105343,7 +105344,7 @@ quanshu	拳术	309
 quanshu	权术	237
 quanshudan	全熟蛋	167
 quanshui	泉水	619
-quanshuo	劝说	468
+quanshuo	劝说	801
 quansu	全速	980
 quansuguolidianyingxueyuan	全苏国立电影学院	660
 quansun	全损	137
@@ -105380,7 +105381,7 @@ quanwang	全网	1
 quanwang	拳王	1
 quanwanggongdi	全网公敌	538
 quanwei	权位	1000
-quanwei	劝慰	505
+quanwei	劝慰	506
 quanwei	权威	478
 quanweichangwaiyingyang	全胃肠外营养	700
 quanweiqiechushu	全胃切除术	610
@@ -106066,8 +106067,8 @@ qushepao	曲射炮	340
 qushi	去试	700
 qushi	去世	580
 qushi	驱使	580
-qushi	趋势	568
-qushi	去势	24
+qushi	趋势	559
+qushi	去势	51
 qushi	趣事	1
 qushishi	去试试	1018
 qushou	癯瘦	198
@@ -114481,7 +114482,7 @@ shengmiao	圣庙	227
 shengmie	生灭	323
 shengming	生命	1018
 shengming	声明	857
-shengming	盛名	366
+shengming	盛名	365
 shengming	圣明	1
 shengming	声名	1
 shengmingbaoxian	生命保险	570
@@ -116799,7 +116800,8 @@ shidishuiruanjiaonang	十滴水软胶囊	651
 shidiwei	史迪威	247
 shidiwen	史蒂文	213
 shidiwensi	史蒂文斯	258
-shidong	石洞	283
+shidong	使动	700
+shidong	石洞	1
 shidongfanshe	视动反射	570
 shidongfeidong	似懂非懂	640
 shidongranju	十动然拒	260
@@ -119390,7 +119392,7 @@ shoujin	手巾	1
 shoujin	手紧	1
 shoujing	受精	1000
 shoujing	受惊	862
-shoujing	授精	244
+shoujing	授精	274
 shoujingluan	受精卵	472
 shoujingluanshuluanguanneiyizhi	受精卵输卵管内移植	700
 shoujingnang	受精囊	232
@@ -119811,9 +119813,9 @@ shouyangmingdachangjing	手阳明大肠经	663
 shouyangxian	寿阳县	169
 shouyantongtian	手眼通天	633
 shouyanxietiao	手眼协调	260
-shouyao	首要	521
-shouyao	兽药	385
-shouyao	手摇	205
+shouyao	首要	522
+shouyao	兽药	384
+shouyao	手摇	204
 shouyaobing	手摇柄	230
 shouyaofengqin	手摇风琴	387
 shouyaorenwu	首要任务	280
@@ -119854,7 +119856,7 @@ shouyong	手用	1
 shouyou	手游	605
 shouyouceshi	手游测试	659
 shouyu	授予	1000
-shouyu	守御	634
+shouyu	守御	633
 shouyu	授与	172
 shouyu	兽欲	1
 shouyu	手语	1
@@ -131246,7 +131248,7 @@ tuide	推得	700
 tuidiao	退掉	280
 tuiding	推定	995
 tuiding	退订	1
-tuidong	推动	502
+tuidong	推动	822
 tuidongli	推动力	501
 tuiduan	推断	905
 tuiduanchu	推断出	800
@@ -134865,7 +134867,7 @@ weinongzhong	微脓肿	470
 weinuo	韦诺	286
 weinuozhizhan	韦诺之战	538
 weiou	围殴	323
-weipai	委派	449
+weipai	委派	801
 weipaikong	胃排空	470
 weipang	微胖	323
 weipanglushoushu	胃旁路手术	640
@@ -137286,7 +137288,7 @@ wujiandao	无间道	620
 wujiandian	五间店	391
 wujiandiyu	无间地狱	260
 wujianduxuexi	无监督学习	640
-wujiang	武将	896
+wujiang	武将	897
 wujiang	吴江	1
 wujiangqu	武江区	107
 wujiangshangxia'erqiusuo	吾将上下而求索	456
@@ -140449,7 +140451,7 @@ xianjun	先君	334
 xianjunzi	先君子	640
 xianjuxian	仙居县	165
 xianjuzhudi	现居住地	523
-xianka	显卡	397
+xianka	显卡	700
 xiankai	掀开	467
 xiankan	闲侃	198
 xiankao	显考	394
@@ -140486,8 +140488,8 @@ xianlilun	弦理论	232
 xianlin'ai	腺鳞癌	500
 xianlinai	腺鳞癌	500
 xianlinbaliu	腺淋巴瘤	536
-xianling	先令	490
-xianling	显灵	371
+xianling	先令	491
+xianling	显灵	370
 xianling	县令	363
 xianlinggubaojiaonang	仙灵骨葆胶囊	660
 xianlingpi	仙灵脾	671
@@ -141440,6 +141442,7 @@ xiaofeichuandamaoxian	小飞船大冒险	648
 xiaofeiji	消费级	280
 xiaofeijiagezhishu	消费价格指数	318
 xiaofeijinrong	消费金融	260
+xiaofeijixianka	消费级显卡	800
 xiaofeipin	消费品	600
 xiaofeiquan	消费券	232
 xiaofeiqun	消费群	434
@@ -151863,8 +151866,10 @@ yaoai	要爱	1000
 yaoai	要隘	1
 yaoaitiao	药艾条	470
 yaoan	姚安	216
+yaoanpai	要安排	800
 yaoanxian	姚安县	160
 yaoanzi	要暗仔	640
+yaoba	要把	1000
 yaoba	要吧	700
 yaobai	摇摆	442
 yaobaibuding	摇摆不定	455
@@ -151876,7 +151881,8 @@ yaoban	腰板	422
 yaoban	耀斑	362
 yaobao	腰包	420
 yaobeitong	腰背痛	470
-yaobi	摇臂	328
+yaobi	要逼	700
+yaobi	摇臂	1
 yaobigan	摇笔杆	230
 yaobin	姚滨	233
 yaobing	姚兵	629
@@ -151912,8 +151918,10 @@ yaochuanci	腰穿刺	500
 yaochungushe	摇唇鼓舌	617
 yaochunyao	姚淳耀	772
 yaochunzhuang	咬唇妆	248
+yaocushi	要促使	800
 yaoda	要打	1000
 yaodai	腰带	444
+yaodaidong	要带动	800
 yaodaidonglixue	药代动力学	640
 yaodaji	腰大肌	470
 yaodao	要到	1000
@@ -151929,6 +151937,7 @@ yaodian	要点	700
 yaodian	药店	440
 yaodian	药典	1
 yaodianhua	摇电话	382
+yaodiaodong	要调动	800
 yaoding	咬定	416
 yaodingqingshanbufangsong	咬定青山不放松	445
 yaodingyagen	咬定牙根	387
@@ -151941,17 +151950,19 @@ yaodongxue	药动学	500
 yaodongyingzaojiyi	窑洞营造技艺	760
 yaodu	尧都	198
 yaoduan	要端	198
+yaoducu	要督促	800
 yaoduo	要多	1000
 yaoduoshao	要多少	1000
 yaoduqu	尧都区	165
 yaoerduo	咬耳朵	403
 yaoeryanzhi	要而言之	688
 yaofa	要发	1000
+yaofadong	要发动	800
 yaofan	要反	1000
 yaofan	要犯	272
 yaofan	要饭	78
 yaofang	要放	1000
-yaofang	药方	361
+yaofang	药方	360
 yaofang	药房	232
 yaofangji	腰方肌	470
 yaofangr	药方儿	232
@@ -151964,11 +151975,11 @@ yaogai	要改	700
 yaogaicheng	要改成	800
 yaogaidiao	要改掉	800
 yaogan	要干	1000
-yaogan	遥感	496
+yaogan	遥感	495
 yaogan	腰杆	1
 yaoganzi	腰杆子	432
 yaogao	药膏	403
-yaogong	邀功	807
+yaogong	邀功	806
 yaogou	咬钩	198
 yaogu	腰鼓	414
 yaogu	腰骨	278
@@ -152025,9 +152036,11 @@ yaojia	要价	546
 yaojian	要件	1000
 yaojian	腰间	189
 yaojian	药检	86
-yaojiang	摇奖	387
+yaojiang	要将	700
+yaojiang	摇奖	1
 yaojianrou	腰间肉	232
-yaojiao	咬嚼	566
+yaojiao	要叫	700
+yaojiao	咬嚼	1
 yaojiapi	咬甲癖	228
 yaojiar	要价儿	640
 yaojie	窑姐	287
@@ -152035,6 +152048,7 @@ yaojier	窑姐儿	375
 yaojigongyi	药剂工艺	538
 yaojijianxiganran	咬肌间隙感染	648
 yaojilaosun	腰肌劳损	540
+yaojili	要激励	800
 yaojin	要紧	834
 yaojin	要津	714
 yaojin	咬紧	280
@@ -152074,7 +152088,8 @@ yaoli	药理	440
 yaolian	要怜	1000
 yaolian	要脸	431
 yaoliao	药疗	335
-yaoling	要领	459
+yaoling	要令	700
+yaoling	要领	520
 yaolirong	摇粒绒	198
 yaoliu	药流	198
 yaolixiaoying	药理效应	540
@@ -152096,8 +152111,9 @@ yaomian	药棉	1
 yaomianzi	要面子	678
 yaomiao	杳渺	466
 yaoming	要命	1000
-yaoming	姚明	180
+yaoming	姚明	175
 yaominggui	要命鬼	640
+yaomingling	要命令	800
 yaominshiyan	药敏试验	540
 yaomo	要摸	1000
 yaomo	妖魔	440
@@ -152111,6 +152127,8 @@ yaonie	咬啮	571
 yaonie	妖孽	268
 yaonv	妖女	305
 yaopa	要趴	1000
+yaopai	要派	700
+yaopairen	要派人	800
 yaopang	要胖	1000
 yaopao	要跑	1000
 yaopian	药片	405
@@ -152128,6 +152146,7 @@ yaopinshiyongshenzha	药品使用审査	842
 yaopintongyongming	药品通用名	610
 yaopinyouxiaoqi	药品有效期	610
 yaopinzhiliangbiaozhun	药品质量标准	673
+yaoposhi	要迫使	800
 yaoqi	妖气	390
 yaoqian	要钱	1000
 yaoqiang	要强	438
@@ -152142,7 +152161,11 @@ yaoqiu	要求	914
 yaoqiuguo	要求过	1000
 yaoqixue	腰奇穴	470
 yaoqu	要去	1000
+yaoquan	要劝	700
+yaoquanshuo	要劝说	800
+yaoqushi	要驱使	800
 yaoran	杳然	394
+yaorang	要让	1000
 yaorao	妖娆	416
 yaoren	要人	1000
 yaoren	妖人	1
@@ -152169,6 +152192,7 @@ yaoshen	摇身	282
 yaosheng	要生	1000
 yaoshenyibian	摇身一变	497
 yaoshezijin	咬舌自尽	260
+yaoshi	要使	700
 yaoshi	要是	700
 yaoshi	钥匙	518
 yaoshi	药师	470
@@ -152188,6 +152212,7 @@ yaoshou	要瘦	1000
 yaoshou	摇手	630
 yaoshou	夭寿	1
 yaoshoujia	咬手甲	500
+yaoshouquan	要授权	800
 yaoshouzhanji	妖兽战记	571
 yaoshouzhanji	妖兽戦记	537
 yaoshouzhijia	咬手指甲	570
@@ -152236,6 +152261,7 @@ yaotouhuangnao	摇头晃脑	643
 yaotoutanxi	摇头叹息	642
 yaotouwan	摇头丸	375
 yaotu	要图	417
+yaotuidong	要推动	800
 yaotuitong	腰腿痛	470
 yaotuitongtie	腰腿痛贴	540
 yaotuitongwan	腰腿痛丸	540
@@ -152247,6 +152273,7 @@ yaowan	药丸	432
 yaowang	遥望	968
 yaowang	夭亡	110
 yaowei	腰围	390
+yaoweipai	要委派	800
 yaoweiqilian	摇尾乞怜	427
 yaoweishengaobi	腰围身高比	640
 yaowen	要闻	380
@@ -152397,6 +152424,7 @@ yaoyeduozi	摇曳多姿	420
 yaoyi	摇椅	993
 yaoyi	徭役	119
 yaoyi	要义	96
+yaoyindao	要引导	800
 yaoyinfen	要因分	556
 yaoyinfenxi	要因分析	597
 yaoying	要赢	1000
@@ -152425,6 +152453,7 @@ yaoyue	要约	974
 yaoyue	邀约	70
 yaoyun	摇匀	323
 yaoyuxue	腰俞穴	470
+yaozeling	要责令	797
 yaozha	药渣	305
 yaozhai	要债	198
 yaozhan	要站	1000
@@ -152441,8 +152470,10 @@ yaozhi	要职	1000
 yaozhi	要旨	119
 yaozhi	腰肢	75
 yaozhidao	要知道	640
+yaozhihui	要指挥	800
 yaozhijia	咬指甲	500
 yaozhipu	瑶之圃	228
+yaozhishi	要指使	797
 yaozhong	要重	1000
 yaozhou	耀州	144
 yaozhouqu	耀州区	165
@@ -158448,10 +158479,10 @@ yixiang	一项	420
 yixiang	已向	372
 yixiang	一向	324
 yixiang	意向	239
+yixiang	臆想	55
 yixiang	异乡	1
 yixiang	异香	1
 yixiang	意象	1
-yixiang	臆想	1
 yixiang	遗像	1
 yixiangbinying	衣香鬓影	628
 yixiangbudao	意想不到	544
@@ -169257,7 +169288,7 @@ zhinayu	支那语	640
 zhinei	之内	280
 zhinen	稚嫩	431
 zhineng	只能	1027
-zhineng	智能	1000
+zhineng	智能	1018
 zhineng	职能	167
 zhinengbuzu	智能不足	570
 zhinengdixia	智能低下	570
@@ -169535,7 +169566,7 @@ zhishiyueduoyuefandong	知识越多越反动	348
 zhishizhizhong	至始至终	260
 zhishizi	指事字	232
 zhishou	之手	280
-zhishou	制售	40
+zhishou	制售	39
 zhishou	值守	1
 zhishou	纸兽	1
 zhishou	职守	1
@@ -171994,10 +172025,10 @@ zhongzhenglianhemianyiquexian	重症联合免疫缺陷	665
 zhongzhengqigu	重整旗鼓	642
 zhongzhengqu	中正区	174
 zhongzhenqigu	重振旗鼓	637
-zhongzhi	种植	1000
-zhongzhi	终止	890
-zhongzhi	中止	622
-zhongzhi	中指	122
+zhongzhi	终止	1018
+zhongzhi	种植	888
+zhongzhi	中止	523
+zhongzhi	中指	45
 zhongzhichengcheng	众志成城	473
 zhongzhichengxu	终止程序	702
 zhongzhichuangjiadengta	中知床岬灯塔	660
@@ -176825,7 +176856,7 @@ zuochuo	作辍	198
 zuoci	作词	700
 zuoci	座次	515
 zuociren	作词人	800
-zuocuo	做错	198
+zuocuo	做错	700
 zuocuoshi	做错事	280
 zuoda	作答	1000
 zuoda	做大	480

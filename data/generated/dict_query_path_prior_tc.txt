@@ -220,7 +220,7 @@ baibianjingang	百變|金剛	410
 baibianqiaji	百變|恰吉	386
 baibingcongsheng	百病|叢生	421
 baichengzhuanqu	白城|專區	464
-baichuanzhineng	百川|智能	463
+baichuanzhineng	百川|智能	465
 baidaguagaoxueya	白大褂|高血壓	483
 baidaiyichang	白帶|異常	470
 baidezhimenxilie	柏德之門|系列	449
@@ -773,7 +773,7 @@ biaopixitong	表皮|系統	478
 biaopizengsheng	表皮|增生	469
 biaoshiganji	表示|感激	483
 biaoshiganxie	表示|感謝	483
-biaoshiqianyi	表示|歉意	482
+biaoshiqianyi	表示|歉意	503
 biaotixinwen	標題|新聞	463
 biaoxianchuse	表現|出色	483
 biaoxianxulie	表現|序列	401
@@ -2381,7 +2381,7 @@ cusuanquannaide	醋酸|曲安奈德	450
 cusuanqupuruilin	醋酸|曲普瑞林	449
 cusuanxianweisu	醋酸|纖維素	458
 cuxindayi	粗心|大意	490
-cuxitanxin	促膝|談心	427
+cuxitanxin	促膝|談心	426
 cuyezhuyi	粗野|主義	427
 dabaishataotuo	大白鯊|逃脫	404
 dabianhuoren	大變|活人	457
@@ -7275,7 +7275,7 @@ jichengdiaoding	集成|吊頂	490
 jichengkaifa	集成|開發	388
 jichengkaifahuanjing	集成|開發|環境	470
 jichengmoshi	集成|模式	489
-jichengxianka	集成|顯卡	461
+jichengxianka	集成|顯卡	467
 jichengxiezhen	集成|寫真	437
 jichengxuexi	集成|學習	497
 jichengyibo	繼承|衣缽	463
@@ -7957,7 +7957,7 @@ jiqirendazhan	機器人|大戰	458
 jiqirendonghua	機器人|動畫	498
 jiqirenshoushu	機器人|手術	486
 jiqixuexi	機器|學習	483
-jiqizhuankuai	機器|磚塊	455
+jiqizhuankuai	機器|磚塊	464
 jiquanzhuyi	極權|主義	431
 jiquanzhuyijianzhu	極權|主義|建築	434
 jiqunbushu	集羣|部署	467
@@ -8478,7 +8478,7 @@ jushiwenming	舉世|聞名	492
 jushiwushuang	舉世|無雙	485
 jushixibaoxitong	鉅噬細胞|系統	457
 jushizhumu	舉世|矚目	490
-jutianpai	具體|安排	457
+jutianpai	具體|安排	483
 juticaozuo	具體|操作	500
 jutifangfa	具體|方法	475
 jutiqingkuang	具體|情況	479
@@ -9257,7 +9257,7 @@ lengkuzhanlve	冷酷|戰略	450
 lenglianxitong	冷鏈|系統	438
 lengliaoshoushu	冷療|手術	444
 lengquedinglv	冷卻|定律	478
-lengquefengshan	冷卻|風扇	481
+lengquefengshan	冷卻|風扇	499
 lengquesudu	冷卻|速度	473
 lengshuigongyu	冷水|公寓	482
 lengshuijizu	冷水|機組	439
@@ -16101,7 +16101,7 @@ weixinghetanghesuan	微型|核糖核酸	461
 weixinghuaxue	微型|化學	486
 weixingjiaozhi	衛星|膠質	401
 weixingjiaozhixibao	衛星|膠質|細胞	483
-weixingjiqi	微型|機器	466
+weixingjiqi	微型|機器	467
 weixingsuliao	微型|塑料	486
 weixingwaike	微型|外科	374
 weixingwaikeyisheng	微型|外科|醫生	456
@@ -16871,6 +16871,7 @@ xiaofangduiyuan	消防|隊員	465
 xiaofanglouti	消防|樓梯	481
 xiaofangtongdao	消防|通道	467
 xiaofanrensheng	小販|人生	467
+xiaofeijixianka	消費級|顯卡	447
 xiaofeizhetaolunqu	消費者|討論區	483
 xiaofeizhezuzhi	消費者|組織	483
 xiaofeiziliao	消費|資料	477
@@ -17217,7 +17218,7 @@ xinfeiyizhishoushu	心肺|移植|手術	432
 xinfengxitong	新風|系統	491
 xinfukoufu	心服|口服	438
 xingaijiaosebanyan	性愛|角色扮演	499
-xingaijiqi	性愛|機器	478
+xingaijiqi	性愛|機器	484
 xinganbaobei	心肝|寶貝	408
 xinganqingyuan	心甘|情願	427
 xingbiebili	性別|比例	486
@@ -20638,7 +20639,7 @@ zhinengbuzu	智能|不足	486
 zhinengdixia	智能|低下	486
 zhinengfuzhu	智能|輔助	457
 zhinengjishu	智能|技術	520
-zhinengshouhuan	智能|手環	480
+zhinengshouhuan	智能|手環	481
 zhinengshouji	智能|手機	467
 zhinengsuanfa	智能|算法	514
 zhinengyanjing	智能|眼鏡	486

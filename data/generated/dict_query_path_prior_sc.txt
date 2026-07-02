@@ -214,7 +214,7 @@ baibianjingang	百变|金刚	413
 baibianqiaji	百变|恰吉	389
 baibingcongsheng	百病|丛生	435
 baichengzhuanqu	白城|专区	467
-baichuanzhineng	百川|智能	463
+baichuanzhineng	百川|智能	465
 baidaguagaoxueya	白大褂|高血压	483
 baidaiyichang	白带|异常	474
 baidezhimenxilie	柏德之门|系列	449
@@ -772,7 +772,7 @@ biaopixitong	表皮|系统	478
 biaopizengsheng	表皮|增生	469
 biaoshiganji	表示|感激	483
 biaoshiganxie	表示|感谢	483
-biaoshiqianyi	表示|歉意	482
+biaoshiqianyi	表示|歉意	503
 biaotixinwen	标题|新闻	467
 biaoxianchuse	表现|出色	497
 biaoxianxulie	表现|序列	401
@@ -7451,7 +7451,7 @@ jichengfuleichengyuan	继承|父类|成员	467
 jichengkaifa	集成|开发	388
 jichengkaifahuanjing	集成|开发|环境	470
 jichengmoshi	集成|模式	489
-jichengxianka	集成|显卡	461
+jichengxianka	集成|显卡	467
 jichengxiezhen	集成|写真	469
 jichengxuexi	集成|学习	500
 jichengyibo	继承|衣钵	467
@@ -8164,7 +8164,7 @@ jiqirendazhan	机器人|大战	458
 jiqirendonghua	机器人|动画	501
 jiqirenshoushu	机器人|手术	486
 jiqixuexi	机器|学习	486
-jiqizhuankuai	机器|砖块	456
+jiqizhuankuai	机器|砖块	467
 jiquanzhuyi	极权|主义	446
 jiquanzhuyijianzhu	极权|主义|建筑	466
 jiqunbushu	集群|部署	467
@@ -8691,7 +8691,7 @@ jushiwushuang	举世|无双	488
 jushixibaoxitong	巨噬细胞|系统	457
 jushiyishu	巨石|艺术	466
 jushizhumu	举世|瞩目	493
-jutianpai	具体|安排	471
+jutianpai	具体|安排	497
 juticaozuo	具体|操作	500
 jutifangfa	具体|方法	475
 jutiqingkuang	具体|情况	484
@@ -9476,7 +9476,7 @@ lengkuzhanlve	冷酷|战略	453
 lenglianxitong	冷链|系统	442
 lengliaoshoushu	冷疗|手术	445
 lengquedinglv	冷却|定律	477
-lengquefengshan	冷却|风扇	482
+lengquefengshan	冷却|风扇	502
 lengquesudu	冷却|速度	473
 lengshuigongyu	冷水|公寓	482
 lengshuijiaotou	冷水|浇头	496
@@ -12711,7 +12711,7 @@ rengongshenjingwangluo	人工|神经|网络	491
 rengongshenzang	人工|肾脏	483
 rengongshexiang	人工|麝香	472
 rengongshoujing	人工|受精	486
-rengongshoujing	人工|授精	459
+rengongshoujing	人工|授精	461
 rengongshouyun	人工|受孕	463
 rengongtianweiji	人工|甜味剂	486
 rengongxibao	人工|细胞	486
@@ -15104,7 +15104,7 @@ sijiganmaojiaonang	四季|感冒|胶囊	457
 sikaidankong	四开|单控	494
 sikaishuangkong	四开|双控	459
 sikaohunluan	思考|混乱	486
-sikaojiqi	思考|机器	466
+sikaojiqi	思考|机器	467
 sikaowenti	思考|问题	497
 sikedaodi	死磕|到底	517
 sikexitong	思科|系统	473
@@ -16566,7 +16566,7 @@ weixinghetanghesuan	微型|核糖核酸	461
 weixinghuaxue	微型|化学	486
 weixingjiaozhi	卫星|胶质	401
 weixingjiaozhixibao	卫星|胶质|细胞	483
-weixingjiqi	微型|机器	463
+weixingjiqi	微型|机器	467
 weixingsuliao	微型|塑料	486
 weixingwaike	微型|外科	374
 weixingwaikeyisheng	微型|外科|医生	456
@@ -16781,7 +16781,7 @@ wuhuaxiruji	雾化|吸入剂	459
 wuhuaxiruqi	雾化|吸入器	460
 wuhuzhuanqu	芜湖|专区	468
 wujiancheshou	无间|车手	415
-wujiangzhengba	武将|争霸	462
+wujiangzhengba	武将|争霸	463
 wujianyizhan	无间|一战	364
 wujianzhanshen	无间|战神	388
 wujiapengzhang	物价|膨胀	486
@@ -17395,6 +17395,7 @@ xiaofangduiyuan	消防|队员	469
 xiaofanglouti	消防|楼梯	484
 xiaofangtongdao	消防|通道	467
 xiaofanrensheng	小贩|人生	467
+xiaofeijixianka	消费级|显卡	520
 xiaofeixingwei	消费|行为	500
 xiaofeizhetaolunqu	消费者|讨论区	483
 xiaofeizhexingwei	消费者|行为	486
@@ -17744,7 +17745,7 @@ xinfeiyizhishoushu	心肺|移植|手术	432
 xinfengxitong	新风|系统	495
 xinfukoufu	心服|口服	442
 xingaijiaosebanyan	性爱|角色扮演	499
-xingaijiqi	性爱|机器	479
+xingaijiqi	性爱|机器	487
 xinganbaobei	心肝|宝贝	421
 xinganqingyuan	心甘|情愿	427
 xingbiebili	性别|比例	486
@@ -21277,7 +21278,7 @@ zhinengbuzu	智能|不足	486
 zhinengdixia	智能|低下	486
 zhinengfuzhu	智能|辅助	520
 zhinengjishu	智能|技术	520
-zhinengshouhuan	智能|手环	480
+zhinengshouhuan	智能|手环	481
 zhinengshouji	智能|手机	467
 zhinengsuanfa	智能|算法	514
 zhinengyanjing	智能|眼镜	486
