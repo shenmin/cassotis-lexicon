@@ -4567,8 +4567,8 @@ bande	般地	1000
 bande	般的	1000
 bandeng	板凳	438
 bandi	班底	370
-bandian	半点	276
-bandian	斑点	180
+bandian	半点	277
+bandian	斑点	181
 bandiangou	斑点狗	375
 bandianshi	办点事	1000
 bandiaozi	半吊子	413
@@ -4583,7 +4583,8 @@ banfa	办法	1000
 banfa	颁发	232
 banfan	拌饭	198
 banfang	班房	560
-banfen	半分	433
+banfen	半份	700
+banfen	半分	141
 banfenghe	半枫荷	470
 banfengjian	半封建	289
 banfengjianbanzhimindi	半封建半殖民地	348
@@ -7563,6 +7564,7 @@ bendezhili	本地治里	597
 bendi	本地	1000
 bendi	本底	1
 bendidiaocha	本底调查	260
+bendifenzhi	本地分支	280
 bendifushe	本底辐射	249
 bendiguanlijiemian	本地管理界面	318
 bendihua	本地化	645
@@ -14766,6 +14768,7 @@ ceshidian	测试点	670
 ceshidieshiyuetai	侧式叠式月台	760
 ceshidieshizhantai	侧式叠式站台	760
 ceshifangfa	测试方法	577
+ceshifenzhi	测试分支	280
 ceshifugai	测试覆盖	673
 ceshigongchengshi	测试工程师	769
 ceshigongju	测试工具	735
@@ -15698,7 +15701,9 @@ changweizei'ou	长尾贼鸥	260
 changweizeiou	长尾贼鸥	260
 changweizhuanqu	昌潍专区	482
 changweizhuque	长尾朱雀	260
-changwen	常温	427
+changwen	长文	280
+changwen	常温	29
+changwenben	长文本	280
 changwenwenti	常问问题	218
 changwu	常务	1000
 changwu	长物	560
@@ -16047,6 +16052,7 @@ chaochang	超长	280
 chaochang	超常	1
 chaochangfahui	超常发挥	405
 chaochangqi	超常期	470
+chaochangwen	超长文	280
 chaochao	吵吵	323
 chaochaomumu	朝朝暮暮	623
 chaochaorangrang	吵吵嚷嚷	528
@@ -23979,6 +23985,7 @@ danfei	单非	473
 danfei	单飞	270
 danfei'emeng	弹飞噩梦	538
 danfeiemeng	弹飞噩梦	538
+danfen	单份	700
 danfeng	丹凤	493
 danfengchaoyang	丹凤朝阳	526
 danfengtuo	单峰驼	390
@@ -24124,6 +24131,7 @@ dangqi	档期	425
 dangqian	当前	914
 dangqianbanben	当前版本	707
 dangqianduixiang	当前对象	710
+dangqianfenzhi	当前分支	280
 dangqiangshi	当枪使	232
 dangqianxuanranqi	当前渲染器	796
 dangqianye	当前页	800
@@ -24777,7 +24785,7 @@ danzhutaizhuankuai	弹珠台砖块	613
 danzhuye	淡竹叶	470
 danzi	胆子	431
 danzi	单字	280
-danzi	担子	164
+danzi	担子	163
 danzi	弹子	72
 danzi	单子	1
 danzifang	弹子房	600
@@ -31571,7 +31579,7 @@ duanhunjiao	断魂椒	230
 duanhuo	断货	198
 duanjian	短剑	373
 duanjian	断剑	256
-duanjian	断箭	239
+duanjian	断箭	238
 duanjian	短见	193
 duanjianlengqueqi	段间冷却器	802
 duanjiao	断交	434
@@ -31699,6 +31707,7 @@ duanweizeiou	短尾贼鸥	258
 duanweizhi	段位制	736
 duanwen	短文	646
 duanwen'e	短吻鳄	371
+duanwenben	短文本	280
 duanwene	短吻鳄	371
 duanwenzhi	缎纹织	228
 duanwu	端午	1000
@@ -32673,6 +32682,7 @@ duofaxingyinghua	多发性硬化	640
 duofaxingyinghuazheng	多发性硬化症	700
 duofaxingzhifangliu	多发性脂肪瘤	644
 duofeikoushe	多费口舌	628
+duofen	多份	700
 duofen	多芬	198
 duofeng	躲风	418
 duofenyanghuamei	多酚氧化酶	640
@@ -38870,7 +38880,7 @@ fenleiyuanxianchongbing	粪类圆线虫病	700
 fenleizhang	分类帐	379
 fenli	分离	1000
 fenli	分力	655
-fenli	分立	551
+fenli	分立	552
 fenli	奋力	454
 fenliang	分量	1000
 fenliang	份量	1
@@ -39182,6 +39192,9 @@ fenzhiganjun	分枝杆菌	716
 fenzhijiegou	分支结构	698
 fenzhijigou	分支机构	280
 fenzhijunsuan	分枝菌酸	570
+fenzhili	分支里	280
+fenzhiming	分支名	280
+fenzhishang	分支上	280
 fenzhisuan	分支酸	500
 fenzhisuanbianweimei	分支酸变位酶	700
 fenzhitalai	纷至沓来	485
@@ -44955,7 +44968,7 @@ gongshengxijun	共生细菌	540
 gongshi	公室	1000
 gongshi	公式	827
 gongshi	公使	817
-gongshi	公示	713
+gongshi	公示	712
 gongshi	拱石	239
 gongshi	攻势	232
 gongshi	工事	133
@@ -50196,7 +50209,7 @@ haiyoujige	还有几个	1018
 haiyouxiatan	骇游侠探	538
 haiyu	海域	980
 haiyu	海鱼	477
-haiyuan	还愿	687
+haiyuan	还愿	686
 haiyuan	还远	280
 haiyuan	海员	1
 haiyuangujingwan	还原固精丸	610
@@ -51520,6 +51533,7 @@ hebin	河滨	190
 hebing	合并	888
 hebingchongfu	合并重复	800
 hebingdanyuange	合并单元格	764
+hebingfenzhi	合并分支	280
 hebingganran	合并感染	570
 hebingshang	合并伤	470
 hebingxingzhongshuzhoubianshenjingtuosuiqiaozheng	合并性中枢周边神经脱髓鞘症	700
@@ -70843,6 +70857,7 @@ kaifachengben	开发成本	746
 kaifadaimaku	开发代码库	727
 kaifadan	开罚单	379
 kaifadiaoshi	开发调试	700
+kaifafenzhi	开发分支	280
 kaifagongjupeizhi	开发工具配置	774
 kaifahuanjing	开发环境	811
 kaifahuanjingdajian	开发环境搭建	817
@@ -70899,6 +70914,7 @@ kaifengfu	开封府	287
 kaifengquyu	开丰区域	482
 kaifengshi	开封市	214
 kaifengzhuanqu	开封专区	482
+kaifenzhi	开分支	280
 kaifu	开赴	998
 kaifula	凯芙拉	191
 kaifulaweike	凯夫拉维克	274
@@ -76265,6 +76281,7 @@ laofangzi	老房子	800
 laofangzi	老方子	339
 laofanzhiwanyingshenqu	老范志万应神曲	627
 laofeimao	佬肥猫	780
+laofenzhi	老分支	280
 laofoye	老佛爷	350
 laofu	老夫	696
 laofu	老父	347
@@ -80873,6 +80890,7 @@ linshiduixiang	临时对象	706
 linshierju	临事而惧	620
 linshifangwu	临时房屋	570
 linshifenju	临时分居	260
+linshifenzhi	临时分支	280
 linshigong	临时工	491
 linshinanyou	临时男友	538
 linshinvyou	临时女友	538
@@ -89238,7 +89256,7 @@ mianyoucaise	面有菜色	405
 mianyounanse	面有难色	433
 mianyu	免于	1000
 mianyu	面谕	1
-mianyuan	绵远	383
+mianyuan	绵远	384
 mianyueshihou	眠月石猴	482
 mianzao	免遭	442
 mianze	免责	403
@@ -91241,6 +91259,7 @@ moran	漠然	191
 moranzhizhi	漠然置之	362
 moren	默认	997
 morendaohangdetu	默认导航地图	848
+morenfenzhi	默认分支	280
 morengouzaohanshu	默认构造函数	825
 morenheshiluodewangguo	魔人和失落的王国	662
 morenwangluo	默认网络	570
@@ -91682,6 +91701,7 @@ mubiao	目标	536
 mubiaochengxu	目标程序	731
 mubiaodizhi	目标地址	260
 mubiaoduixiang	目标对象	709
+mubiaofenzhi	目标分支	280
 mubiaojiance	目标检测	260
 mubiaoqudong	目标驱动	666
 mubiaoshichang	目标市场	260
@@ -96703,7 +96723,7 @@ paipozi	拍婆子	232
 paiqi	排气	536
 paiqian	排前	700
 paiqian	派遣	580
-paiqian	排遣	386
+paiqian	排遣	385
 paiqiang	排枪	341
 paiqianmian	排前面	800
 paiqichangdui	排起长队	260
@@ -102040,6 +102060,7 @@ qieerbushe	锲而不舍	477
 qieershibaxingpiaochong	茄二十八星瓢虫	348
 qieerxi	切尔西	284
 qiefenyin	切分音	379
+qiefenzhi	切分支	280
 qiefu	切腹	305
 qiefujiangchu	挈妇将雏	616
 qiefuzhitong	切肤之痛	440
@@ -118629,7 +118650,7 @@ shixuexingxiuke	失血性休克	610
 shixueyin	嗜血印	458
 shixuezhisi	失血致死	570
 shixuezhizhan	逝血之战	538
-shixun	视讯	502
+shixun	视讯	501
 shixushujuku	时序数据库	731
 shiya	是呀	700
 shiya	施压	455
@@ -120136,6 +120157,7 @@ shuangfangxiangxing	双方向性	597
 shuangfangzhongyuanfen	双方中圆坟	731
 shuangfanxiangji	双反相机	680
 shuangfei	双飞	262
+shuangfen	双份	700
 shuangfeng	双峰	493
 shuangfengchayun	双峰插云	482
 shuangfengta	双峰塔	391
@@ -122610,7 +122632,7 @@ sifaxinlixue	司法心理学	610
 sifayuan	司法院	198
 sifei	死飞	198
 sifen	四份	1000
-sifen	四分	527
+sifen	四分	526
 sifenggong	四风宫	590
 sifengxue	四缝穴	470
 sifenkesi	斯芬克斯	257
@@ -134981,7 +135003,7 @@ weishakapatenan	维沙卡帕特南	579
 weishan	伪善	1000
 weishan	微山	1
 weishanchu	微删除	500
-weishang	为上	323
+weishang	为上	324
 weishangsuodefangjian	未上锁的房间	648
 weishanjieban	未删节版	260
 weishanxian	微山县	107
@@ -139001,8 +139023,8 @@ xiada	下达	496
 xiadadewa	夏大的袜	527
 xiadadewazi	夏大的袜子	569
 xiadai	夏代	416
-xiadan	下蛋	767
-xiadan	下单	93
+xiadan	下蛋	766
+xiadan	下单	94
 xiadang	下档	305
 xiadao	吓倒	683
 xiadao	狭道	235
@@ -144383,6 +144405,7 @@ xinfengxian	信丰县	106
 xinfengxiang	新丰乡	174
 xinfengxitong	新风系统	680
 xinfengzhigu	新枫之谷	538
+xinfenzhi	新分支	280
 xinfo	信佛	387
 xinfu	信服	700
 xinfu	心腹	107
@@ -157449,7 +157472,7 @@ yinzheng	引证	937
 yinzheng	印证	360
 yinzhenzhike	饮鸩止渴	431
 yinzhi	印制	556
-yinzhi	印支	295
+yinzhi	印支	296
 yinzhi	引至	280
 yinzhi	因之	160
 yinzhi	阴鸷	80
@@ -161276,6 +161299,7 @@ yuanchengdaohangxitong	远程导航系统	791
 yuanchengdenglu	远程登录	260
 yuanchengdengluxieyi	远程登录协议	785
 yuanchengdiaoshi	远程调试	701
+yuanchengfenzhi	远程分支	280
 yuanchenghuizhen	远程会诊	540
 yuanchengjiankong	远程监控	260
 yuanchengjiaoben	远程脚本	680
@@ -167100,6 +167124,7 @@ zhengfaqi	蒸发器	470
 zhengfare	蒸发热	379
 zhengfawei	政法委	449
 zhengfaweiyuanhui	政法委员会	292
+zhengfen	整份	700
 zhengfenduomiao	争分夺秒	455
 zhengfeng	整风	1000
 zhengfeng	争锋	149
@@ -167393,8 +167418,8 @@ zhengrenxi	证人席	379
 zhengrenzhengnian	郑人争年	249
 zhengri	整日	210
 zhengri	正日	120
-zhengrong	峥嵘	499
-zhengrong	整容	333
+zhengrong	峥嵘	498
+zhengrong	整容	334
 zhengronghe	郑容和	620
 zhengrongsuiyue	峥嵘岁月	412
 zhengru	正如	455
@@ -169289,7 +169314,7 @@ zhimou	智谋	422
 zhimoyan	脂膜炎	470
 zhimu	知母	405
 zhina	只拿	700
-zhina	支那	417
+zhina	支那	418
 zhina	滞纳	3
 zhinajin	滞纳金	415
 zhinan	指南	1000
@@ -173291,6 +173316,7 @@ zhufei	猪肺	280
 zhufeilinzhizhusheye	猪肺磷脂注射液	635
 zhufen	朱粉	137
 zhufeng	主峰	1000
+zhufenzhi	主分支	280
 zhufu	嘱咐	970
 zhufu	祝福	280
 zhufu	主妇	1

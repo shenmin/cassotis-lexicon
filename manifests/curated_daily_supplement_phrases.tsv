@@ -3344,3 +3344,26 @@
 刚关门	剛關門	0.36	gangguanmen
 刚停下	剛停下	0.34	gangtingxia
 刚倒下	剛倒下	0.34	gangdaoxia
+
+# text length and source-control branch supplements 2026-07-03
+长文	長文	0.40	changwen
+长文本	長文本	0.40	changwenben
+超长文	超長文	0.36	chaochangwen
+短文本	短文本	0.38	duanwenben
+主分支	主分支	0.46	zhufenzhi
+新分支	新分支	0.44	xinfenzhi
+老分支	老分支	0.40	laofenzhi
+当前分支	當前分支	0.46	dangqianfenzhi
+本地分支	本地分支	0.44	bendifenzhi
+远程分支	遠程分支	0.44	yuanchengfenzhi
+默认分支	默認分支	0.44	morenfenzhi
+开发分支	開發分支	0.42	kaifafenzhi
+测试分支	測試分支	0.42	ceshifenzhi
+临时分支	臨時分支	0.40	linshifenzhi
+目标分支	目標分支	0.40	mubiaofenzhi
+合并分支	合併分支	0.40	hebingfenzhi
+切分支	切分支	0.38	qiefenzhi
+开分支	開分支	0.36	kaifenzhi
+分支名	分支名	0.40	fenzhiming
+分支上	分支上	0.34	fenzhishang
+分支里	分支裏	0.34	fenzhili

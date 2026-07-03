@@ -17676,6 +17676,401 @@ def _build_curated_daily_prefix_restore_blocklist(
     return blocked
 
 
+LM_CORPUS_SENTENCE_SPLIT_RE = re.compile(
+    r"[\s\u3000\u3001\u3002\uff0c\uff01\uff1f\uff1b\uff1a,.!?;:"
+    r"\uff08\uff09()\[\]\u3010\u3011\u300a\u300b"
+    r"\u201c\u201d\u2018\u2019\u2026\u2014\-/\\|]+"
+)
+
+LM_CORPUS_ASCII_RE = re.compile(r"[A-Za-z0-9]")
+
+LM_FUNCTION_SINGLE_CHARS: Set[str] = set(
+    "的一是在我你他她它了着也都就不没很还又再才把被给让向从和或与及而并"
+    "这那哪有无来去上下载里内外中前后大小游戏多"
+)
+
+
+def _decode_lm_corpus_file(path: pathlib.Path) -> str:
+    data = path.read_bytes()
+    for encoding in ("utf-8-sig", "utf-8", "gb18030"):
+        try:
+            return data.decode(encoding)
+        except UnicodeDecodeError:
+            continue
+    return data.decode("utf-8", errors="ignore")
+
+
+def _iter_lm_corpus_sentences(
+    corpus_dir: pathlib.Path,
+    *,
+    min_units: int,
+    max_units: int,
+    convert_text,
+) -> Tuple[List[Tuple[str, str]], Dict[str, int]]:
+    stats: Dict[str, int] = {
+        "lm_corpus_files": 0,
+        "lm_corpus_fragments": 0,
+        "lm_corpus_accepted": 0,
+        "lm_corpus_rejected_ascii_or_digit": 0,
+        "lm_corpus_rejected_non_cjk": 0,
+        "lm_corpus_rejected_length": 0,
+    }
+    sentences: List[Tuple[str, str]] = []
+    if not corpus_dir.exists():
+        stats["lm_corpus_missing_dir"] = 1
+        return sentences, stats
+
+    for path in sorted(corpus_dir.glob("*.txt")):
+        stats["lm_corpus_files"] += 1
+        text = _decode_lm_corpus_file(path)
+        for raw_fragment in LM_CORPUS_SENTENCE_SPLIT_RE.split(text):
+            fragment = raw_fragment.strip()
+            if not fragment:
+                continue
+            stats["lm_corpus_fragments"] += 1
+            if LM_CORPUS_ASCII_RE.search(fragment):
+                stats["lm_corpus_rejected_ascii_or_digit"] += 1
+                continue
+            cjk_text = "".join(CJK_RE.findall(fragment))
+            if cjk_text != fragment or not CJK_FULL_RE.fullmatch(fragment):
+                stats["lm_corpus_rejected_non_cjk"] += 1
+                continue
+            if _cjk_len(fragment) < min_units or _cjk_len(fragment) > max_units:
+                stats["lm_corpus_rejected_length"] += 1
+                continue
+            normalized = convert_text(fragment)
+            if not normalized or not CJK_FULL_RE.fullmatch(normalized):
+                stats["lm_corpus_rejected_non_cjk"] += 1
+                continue
+            sentences.append((normalized, path.name))
+            stats["lm_corpus_accepted"] += 1
+    return sentences, stats
+
+
+def _build_lm_entry_indexes(
+    mapping: Dict[Tuple[str, str], int],
+    *,
+    max_segment_units: int,
+    single_char_readings_map: Dict[str, Set[str]] | None = None,
+    char_frequency_prior: Dict[str, float] | None = None,
+) -> Tuple[Dict[str, List[Tuple[str, str, int, int, int]]], Dict[Tuple[str, str], Tuple[int, int]]]:
+    entry_weight_by_key: Dict[Tuple[str, str], int] = {}
+    by_pinyin: Dict[str, List[Tuple[str, int]]] = {}
+    entries_by_text: Dict[str, List[Tuple[str, str, int, int, int]]] = {}
+    rank_info: Dict[Tuple[str, str], Tuple[int, int]] = {}
+    single_char_readings_map = single_char_readings_map or {}
+    char_frequency_prior = char_frequency_prior or {}
+
+    for (pinyin, text), weight in mapping.items():
+        normalized_pinyin = _normalize_compact_pinyin_key(pinyin)
+        text_units = _cjk_len(text)
+        if weight <= 0 or not normalized_pinyin or text_units <= 0 or text_units > max_segment_units:
+            continue
+        if not CJK_FULL_RE.fullmatch(text):
+            continue
+        key = (normalized_pinyin, text)
+        entry_weight_by_key[key] = max(entry_weight_by_key.get(key, 0), weight)
+
+    # `dict_clean` is a word dictionary and usually does not contain all
+    # single-character readings. LM training still needs single-character
+    # fallback to segment corpus sentences with the same broad capability as
+    # the engine. These synthetic single-character entries are used only for
+    # training segmentation; transition emission still filters non-function
+    # single characters.
+    for ch, readings in single_char_readings_map.items():
+        if _cjk_len(ch) != 1 or not CJK_FULL_RE.fullmatch(ch):
+            continue
+        char_prior = min(1.0, max(0.0, char_frequency_prior.get(ch, 0.0)))
+        if ch in LM_FUNCTION_SINGLE_CHARS:
+            synthetic_weight = max(360, int(round(420 + char_prior * 260)))
+        else:
+            synthetic_weight = max(96, int(round(130 + char_prior * 180)))
+        for raw_pinyin in readings:
+            pinyin = _normalize_compact_pinyin_key(raw_pinyin)
+            if not pinyin:
+                continue
+            key = (pinyin, ch)
+            entry_weight_by_key[key] = max(entry_weight_by_key.get(key, 0), synthetic_weight)
+
+    for (pinyin, text), weight in entry_weight_by_key.items():
+        by_pinyin.setdefault(pinyin, []).append((text, weight))
+
+    for pinyin, items in by_pinyin.items():
+        items.sort(key=lambda item: (-item[1], item[0]))
+        top_weight = items[0][1]
+        for rank, (text, weight) in enumerate(items, start=1):
+            rank_info[(pinyin, text)] = (rank, top_weight)
+
+    for (pinyin, text), weight in entry_weight_by_key.items():
+        info = rank_info.get((pinyin, text))
+        if info is None:
+            continue
+        exact_rank, top_weight = info
+        entries_by_text.setdefault(text, []).append((pinyin, text, weight, exact_rank, top_weight))
+
+    for text, entries in entries_by_text.items():
+        entries.sort(key=lambda item: (-item[2], item[3], item[0]))
+        entries_by_text[text] = entries[:4]
+    return entries_by_text, rank_info
+
+
+def _segment_lm_sentence(
+    sentence: str,
+    entries_by_text: Dict[str, List[Tuple[str, str, int, int, int]]],
+    *,
+    max_segment_units: int,
+) -> List[Tuple[str, str, int, int, int]] | None:
+    text_len = len(sentence)
+    best_score: List[int] = [-10**12] * (text_len + 1)
+    best_edge: List[Tuple[int, Tuple[str, str, int, int, int]] | None] = [None] * (text_len + 1)
+    best_score[0] = 0
+
+    for start in range(text_len):
+        if best_score[start] <= -10**11:
+            continue
+        for end in range(start + 1, min(text_len, start + max_segment_units) + 1):
+            text = sentence[start:end]
+            entries = entries_by_text.get(text)
+            if not entries:
+                continue
+            units = end - start
+            for entry in entries[:2]:
+                pinyin, _text, weight, exact_rank, top_weight = entry
+                del pinyin
+                score = best_score[start]
+                score += min(1200, max(1, weight))
+                score += units * units * 210
+                if units >= 2:
+                    score += 520
+                if units >= 3:
+                    score += 160
+                if units == 1:
+                    score -= 300
+                if exact_rank > 1:
+                    score -= min(420, (exact_rank - 1) * 55)
+                if top_weight > weight:
+                    score -= min(480, (top_weight - weight) // 2)
+                if score > best_score[end]:
+                    best_score[end] = score
+                    best_edge[end] = (start, entry)
+
+    if best_edge[text_len] is None:
+        return None
+
+    output: List[Tuple[str, str, int, int, int]] = []
+    pos = text_len
+    while pos > 0:
+        edge = best_edge[pos]
+        if edge is None:
+            return None
+        start, entry = edge
+        output.append(entry)
+        pos = start
+    output.reverse()
+    return output
+
+
+def _lm_segment_allowed(
+    entry: Tuple[str, str, int, int, int],
+    *,
+    max_exact_rank: int,
+    max_top_gap: int,
+    min_single_weight: int,
+    min_multi_weight: int,
+) -> bool:
+    _pinyin, text, weight, exact_rank, top_weight = entry
+    text_len = _cjk_len(text)
+    if exact_rank > max_exact_rank:
+        return False
+    if top_weight - weight > max_top_gap:
+        return False
+    if text_len <= 1:
+        return text in LM_FUNCTION_SINGLE_CHARS and weight >= min_single_weight
+    return weight >= min_multi_weight
+
+
+def _collect_lm_transition_priors(
+    sentences: List[Tuple[str, str]],
+    entries_by_text: Dict[str, List[Tuple[str, str, int, int, int]]],
+    *,
+    max_segment_units: int = 4,
+    min_bigram_count: int = 5,
+    min_trigram_count: int = 4,
+    max_exact_rank: int = 4,
+    max_top_gap: int = 360,
+    min_single_weight: int = 300,
+    min_multi_weight: int = 180,
+    max_weight: int = 520,
+) -> Tuple[Dict[Tuple[str, str], int], Dict[str, int]]:
+    transition_counts: Dict[Tuple[str, str], int] = {}
+    transition_sources: Dict[Tuple[str, str], Set[str]] = {}
+    segment_counts: Dict[str, int] = {}
+    transition_weight_sum: Dict[Tuple[str, str], int] = {}
+    transition_rank_max: Dict[Tuple[str, str], int] = {}
+    transition_gap_max: Dict[Tuple[str, str], int] = {}
+    stats: Dict[str, int] = {
+        "lm_corpus_segmented": 0,
+        "lm_corpus_unsegmented": 0,
+        "lm_corpus_bigram_windows": 0,
+        "lm_corpus_trigram_windows": 0,
+        "lm_corpus_priors_emitted": 0,
+    }
+
+    def _window_allowed(window: List[Tuple[str, str, int, int, int]]) -> bool:
+        if len(window) < 2:
+            return False
+        single_count = 0
+        for entry in window:
+            if not _lm_segment_allowed(
+                entry,
+                max_exact_rank=max_exact_rank,
+                max_top_gap=max_top_gap,
+                min_single_weight=min_single_weight,
+                min_multi_weight=min_multi_weight,
+            ):
+                return False
+            if _cjk_len(entry[1]) <= 1:
+                single_count += 1
+        if single_count >= len(window):
+            return False
+        if single_count > 1:
+            return False
+        return True
+
+    def _window_emittable(segments: List[str]) -> bool:
+        for text in segments:
+            if _cjk_len(text) <= 1:
+                return False
+        return True
+
+    for sentence, source_name in sentences:
+        segments = _segment_lm_sentence(
+            sentence,
+            entries_by_text,
+            max_segment_units=max_segment_units,
+        )
+        if not segments:
+            stats["lm_corpus_unsegmented"] += 1
+            continue
+        stats["lm_corpus_segmented"] += 1
+        for _pinyin, text, _weight, _exact_rank, _top_weight in segments:
+            segment_counts[text] = segment_counts.get(text, 0) + 1
+        for start in range(len(segments)):
+            for window_size in (2, 3):
+                window = segments[start : start + window_size]
+                if len(window) != window_size:
+                    continue
+                if not _window_allowed(window):
+                    continue
+                query = "".join(item[0] for item in window)
+                path = QUERY_PATH_FILE_SEPARATOR.join(item[1] for item in window)
+                key = (query, path)
+                transition_counts[key] = transition_counts.get(key, 0) + 1
+                transition_sources.setdefault(key, set()).add(source_name)
+                transition_weight_sum[key] = transition_weight_sum.get(key, 0) + sum(item[2] for item in window)
+                transition_rank_max[key] = max(transition_rank_max.get(key, 0), *(item[3] for item in window))
+                transition_gap_max[key] = max(transition_gap_max.get(key, 0), *(item[4] - item[2] for item in window))
+                if window_size == 2:
+                    stats["lm_corpus_bigram_windows"] += 1
+                else:
+                    stats["lm_corpus_trigram_windows"] += 1
+
+    priors: Dict[Tuple[str, str], int] = {}
+    total_windows = max(1, sum(transition_counts.values()))
+    for key, count in transition_counts.items():
+        segments = key[1].split(QUERY_PATH_FILE_SEPARATOR)
+        if not _window_emittable(segments):
+            continue
+        min_count = min_trigram_count if len(segments) >= 3 else min_bigram_count
+        source_count = len(transition_sources.get(key, set()))
+        if count < min_count:
+            continue
+        if source_count < 2 and count < (min_count + 4):
+            continue
+        segment_product = 1
+        for text in segments:
+            segment_product *= max(1, segment_counts.get(text, 1))
+        pmi = math.log2((count * total_windows) / max(1, segment_product))
+        avg_weight = transition_weight_sum[key] / max(1, count * len(segments))
+        rank_penalty = max(0, transition_rank_max.get(key, 1) - 1) * 10
+        gap_penalty = min(60, max(0, transition_gap_max.get(key, 0)) // 8)
+        score = 92
+        score += int(round(math.log2(count + 1) * 34))
+        score += int(round(max(-1.0, min(4.0, pmi)) * 18))
+        score += int(round(min(82.0, avg_weight * 0.035)))
+        score += min(42, source_count * 14)
+        score -= rank_penalty + gap_penalty
+        if len(segments) >= 3:
+            score += 18
+        base_score = max(96, min(360, score))
+        score = min(max_weight, max(base_score, int(round(base_score * 1.45 + 40))))
+        priors[key] = score
+
+    stats["lm_corpus_priors_emitted"] = len(priors)
+    return priors, stats
+
+
+def _build_lm_corpus_query_path_prior_map(
+    mapping: Dict[Tuple[str, str], int],
+    corpus_dir: pathlib.Path,
+    *,
+    convert_text,
+    single_char_readings_map: Dict[str, Set[str]] | None,
+    char_frequency_prior: Dict[str, float] | None,
+    stats_prefix: str,
+) -> Tuple[Dict[Tuple[str, str], int], Dict[str, int]]:
+    entries_by_text, _rank_info = _build_lm_entry_indexes(
+        mapping,
+        max_segment_units=4,
+        single_char_readings_map=single_char_readings_map,
+        char_frequency_prior=char_frequency_prior,
+    )
+    sentences, sentence_stats = _iter_lm_corpus_sentences(
+        corpus_dir,
+        min_units=4,
+        max_units=40,
+        convert_text=convert_text,
+    )
+    priors, prior_stats = _collect_lm_transition_priors(
+        sentences,
+        entries_by_text,
+    )
+    stats: Dict[str, int] = {}
+    for key, value in sentence_stats.items():
+        stats[f"{stats_prefix}_{key}"] = value
+    for key, value in prior_stats.items():
+        stats[f"{stats_prefix}_{key}"] = value
+    return priors, stats
+
+
+def _merge_query_path_prior_maps(
+    base_priors: Dict[Tuple[str, str], int],
+    extra_priors: Dict[Tuple[str, str], int],
+    *,
+    stats_prefix: str,
+) -> Dict[str, int]:
+    added = 0
+    boosted = 0
+    skipped = 0
+    for key, weight in extra_priors.items():
+        previous = base_priors.get(key, 0)
+        if previous <= 0:
+            base_priors[key] = weight
+            added += 1
+        elif weight > previous:
+            # Corpus LM priors are statistical hints. They may fill missing
+            # transition edges, but should not override existing curated or
+            # dictionary-derived priors that have already been tuned.
+            skipped += 1
+        else:
+            skipped += 1
+    return {
+        f"{stats_prefix}_lm_query_path_added": added,
+        f"{stats_prefix}_lm_query_path_boosted": boosted,
+        f"{stats_prefix}_lm_query_path_skipped": skipped,
+    }
+
+
 def _build_query_path_prior_map(
     mapping: Dict[Tuple[str, str], int],
     usage_score_map: Dict[str, float],
@@ -18488,6 +18883,11 @@ def main() -> int:
     parser.add_argument("--output-tc", default="data/generated/dict_clean_tc.txt")
     parser.add_argument("--query-path-output-sc", default="")
     parser.add_argument("--query-path-output-tc", default="")
+    parser.add_argument(
+        "--query-path-lm-corpus-dir",
+        default="",
+        help="Optional internal plain-text corpus directory for conservative query-path transition priors.",
+    )
     parser.add_argument("--support-dict-sc", default="")
     parser.add_argument("--support-dict-tc", default="")
     parser.add_argument("--manifest", default="manifests/sources.public.yml")
@@ -20620,6 +21020,7 @@ def main() -> int:
     stats.update(_remove_known_incorrect_jiancha_entries(sc_map, tc_map))
     sc_query_path_priors: Dict[Tuple[str, str], int] = {}
     tc_query_path_priors: Dict[Tuple[str, str], int] = {}
+    query_path_lm_corpus_dir = repo_root / args.query_path_lm_corpus_dir if args.query_path_lm_corpus_dir else None
     if output_query_path_sc is not None:
         sc_query_path_priors, sc_query_path_stats = _build_query_path_prior_map(
             sc_map,
@@ -20632,6 +21033,23 @@ def main() -> int:
             stats_prefix="sc",
         )
         stats.update(sc_query_path_stats)
+        if query_path_lm_corpus_dir is not None:
+            sc_lm_query_path_priors, sc_lm_query_path_stats = _build_lm_corpus_query_path_prior_map(
+                sc_map,
+                query_path_lm_corpus_dir,
+                convert_text=lambda text: _convert_text_with_char_map(text, trad_to_simp_char_map),
+                single_char_readings_map=output_unihan_readings_map,
+                char_frequency_prior=char_frequency_prior,
+                stats_prefix="sc",
+            )
+            stats.update(sc_lm_query_path_stats)
+            stats.update(
+                _merge_query_path_prior_maps(
+                    sc_query_path_priors,
+                    sc_lm_query_path_priors,
+                    stats_prefix="sc",
+                )
+            )
         stats["sc_query_path_prior_rows"] = len(sc_query_path_priors)
     if output_query_path_tc is not None:
         tc_query_path_priors, tc_query_path_stats = _build_query_path_prior_map(
@@ -20645,6 +21063,28 @@ def main() -> int:
             stats_prefix="tc",
         )
         stats.update(tc_query_path_stats)
+        if query_path_lm_corpus_dir is not None:
+            opencc_sc_to_tc_for_lm = _build_opencc_sc_to_tc_map(opencc_entries) if opencc_entries else {}
+            tc_lm_query_path_priors, tc_lm_query_path_stats = _build_lm_corpus_query_path_prior_map(
+                tc_map,
+                query_path_lm_corpus_dir,
+                convert_text=lambda text: _convert_sc_text_to_tc_with_phrase_hints(
+                    text,
+                    opencc_sc_to_tc_for_lm,
+                    simp_to_trad_char_map,
+                ),
+                single_char_readings_map=output_unihan_readings_map,
+                char_frequency_prior=tc_char_frequency_prior,
+                stats_prefix="tc",
+            )
+            stats.update(tc_lm_query_path_stats)
+            stats.update(
+                _merge_query_path_prior_maps(
+                    tc_query_path_priors,
+                    tc_lm_query_path_priors,
+                    stats_prefix="tc",
+                )
+            )
         stats["tc_query_path_prior_rows"] = len(tc_query_path_priors)
     suspicious_sc_entries = _collect_suspicious_high_weight_entries(
         sc_map,

@@ -20,6 +20,7 @@ param(
     [string]$AttributionRequired = "",
     [string]$SourceNotes = "",
     [string]$PinyinOverrides = "",
+    [string]$QueryPathLmCorpusDir = "",
     [switch]$SkipReadmeSnapshot
 )
 
@@ -179,6 +180,7 @@ if ($RedistributionClass -ne "") { $buildArgs["RedistributionClass"] = $Redistri
 if ($AttributionRequired -ne "") { $buildArgs["AttributionRequired"] = $AttributionRequired }
 if ($SourceNotes -ne "") { $buildArgs["SourceNotes"] = $SourceNotes }
 if ($PinyinOverrides -ne "") { $buildArgs["PinyinOverrides"] = $PinyinOverrides }
+if ($QueryPathLmCorpusDir -ne "") { $buildArgs["QueryPathLmCorpusDir"] = $QueryPathLmCorpusDir }
 
 & $buildScript @buildArgs
 if ($LASTEXITCODE -ne 0) {

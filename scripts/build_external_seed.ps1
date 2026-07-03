@@ -21,6 +21,7 @@ param(
     [string]$OutputTc = "",
     [string]$OutputQueryPathSc = "",
     [string]$OutputQueryPathTc = "",
+    [string]$QueryPathLmCorpusDir = "",
     [string]$SupportDictSc = "",
     [string]$SupportDictTc = "",
     [string]$Manifest = "",
@@ -118,6 +119,7 @@ if ($OutputSc -ne "") { $args += @("--output-sc", $OutputSc) }
 if ($OutputTc -ne "") { $args += @("--output-tc", $OutputTc) }
 if ($OutputQueryPathSc -ne "") { $args += @("--query-path-output-sc", $OutputQueryPathSc) }
 if ($OutputQueryPathTc -ne "") { $args += @("--query-path-output-tc", $OutputQueryPathTc) }
+if ($QueryPathLmCorpusDir -ne "") { $args += @("--query-path-lm-corpus-dir", $QueryPathLmCorpusDir) }
 if ($SupportDictSc -ne "") { $args += @("--support-dict-sc", $SupportDictSc) }
 if ($SupportDictTc -ne "") { $args += @("--support-dict-tc", $SupportDictTc) }
 if ($Manifest -ne "") { $args += @("--manifest", $Manifest) }

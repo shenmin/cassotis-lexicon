@@ -4665,7 +4665,8 @@ banfa	辦法	1000
 banfa	頒發	222
 banfan	拌飯	198
 banfang	班房	560
-banfen	半分	433
+banfen	半份	700
+banfen	半分	141
 banfenghe	半楓荷	470
 banfengjian	半封建	289
 banfengjianbanzhimindi	半封建半殖民地	348
@@ -7656,6 +7657,7 @@ bendezhili	本地治里	597
 bendi	本地	1000
 bendi	本底	1
 bendidiaocha	本底調查	260
+bendifenzhi	本地分支	280
 bendifushe	本底輻射	249
 bendiguanlijiemian	本地管理界面	318
 bendihua	本地化	645
@@ -15004,6 +15006,7 @@ ceshidieshiyuetai	側式疊式月台	440
 ceshidieshizhantai	側式疊式站臺	978
 ceshidieshizhantai	側式疊式站台	440
 ceshifangfa	測試方法	577
+ceshifenzhi	測試分支	280
 ceshifugai	測試覆蓋	673
 ceshigongchengshi	測試工程師	769
 ceshigongju	測試工具	735
@@ -15908,7 +15911,9 @@ changweiyingwu	長尾鸚鵡	258
 changweizei'ou	長尾賊鷗	260
 changweizeiou	長尾賊鷗	260
 changweizhuque	長尾朱雀	260
-changwen	常溫	427
+changwen	長文	280
+changwen	常溫	1
+changwenben	長文本	280
 changwenwenti	常問問題	218
 changwu	常務	1000
 changwulishi	常務理事	405
@@ -16258,9 +16263,10 @@ chaocaidetieguo	炒菜的鐵鍋	569
 chaocha	抄查	368
 chaochan	超產	378
 chaochang	超長	280
-chaochang	超常	176
+chaochang	超常	117
 chaochangfahui	超常發揮	405
 chaochangqi	超常期	470
+chaochangwen	超長文	280
 chaochao	吵吵	323
 chaochaomumu	朝朝暮暮	623
 chaochaorangrang	吵吵嚷嚷	528
@@ -24249,6 +24255,7 @@ danfanxiangji	單反相機	724
 danfei	單非	459
 danfei'emeng	彈飛噩夢	538
 danfeiemeng	彈飛噩夢	538
+danfen	單份	700
 danfeng	丹鳳	493
 danfengchaoyang	丹鳳朝陽	526
 danfengtuo	單峰駝	390
@@ -24441,6 +24448,7 @@ dangqianbanben	當前版本	1000
 dangqianbanben	噹前版本	387
 dangqianduixiang	當前對象	1000
 dangqianduixiang	噹前對象	390
+dangqianfenzhi	當前分支	280
 dangqiangshi	噹槍使	234
 dangqianxuanranqi	當前渲染器	1000
 dangqianxuanranqi	噹前渲染器	476
@@ -32066,6 +32074,7 @@ duanweizeiou	短尾賊鷗	258
 duanweizhi	段位制	756
 duanwen	短文	646
 duanwen'e	短吻鱷	413
+duanwenben	短文本	280
 duanwene	短吻鱷	413
 duanwenzhi	緞紋織	228
 duanwu	端午	1000
@@ -33029,7 +33038,7 @@ duofaxingyinghua	多發性硬化	640
 duofaxingyinghuazheng	多發性硬化症	700
 duofaxingzhifangliu	多發性脂肪瘤	664
 duofeikoushe	多費口舌	628
-duofen	多芬	198
+duofen	多份	700
 duofeng	躲風	418
 duofenyanghuamei	多酚氧化酶	640
 duofo	多佛	418
@@ -39831,6 +39840,9 @@ fenzhiganjun	分枝杆菌	698
 fenzhijiegou	分支結構	698
 fenzhijigou	分支機構	280
 fenzhijunsuan	分枝菌酸	570
+fenzhili	分支裏	280
+fenzhiming	分支名	280
+fenzhishang	分支上	280
 fenzhisuan	分支酸	500
 fenzhisuanbianweimei	分支酸變位酶	700
 fenzhitalai	紛至沓來	485
@@ -52608,6 +52620,7 @@ hebing	合並	800
 hebingchongfu	合併重複	800
 hebingdanyuange	合併單元格	1000
 hebingdanyuange	合並單元格	444
+hebingfenzhi	合併分支	280
 hebingganran	合併感染	818
 hebingganran	合並感染	250
 hebingshang	合併傷	915
@@ -70020,8 +70033,8 @@ jiuyou	舊友	1
 jiuyouyingde	咎有應得	387
 jiuyouziqu	咎由自取	454
 jiuyu	舊雨	335
-jiuyuan	救援	975
-jiuyuan	久遠	856
+jiuyuan	救援	974
+jiuyuan	久遠	855
 jiuyuan	九怨	119
 jiuyuandui	救援隊	415
 jiuyuangouxiang	韭園溝鄉	583
@@ -72379,6 +72392,7 @@ kaifachengben	開發成本	762
 kaifadaimaku	開發代碼庫	727
 kaifadan	開罰單	379
 kaifadiaoshi	開發調試	700
+kaifafenzhi	開發分支	280
 kaifagongjupeizhi	開發工具配置	774
 kaifahuanjing	開發環境	826
 kaifahuanjingdajian	開發環境搭建	817
@@ -72438,6 +72452,7 @@ kaifengquyu	開豐區域	758
 kaifengquyu	開丰區域	193
 kaifengshi	開封市	214
 kaifengzhuanqu	開封專區	583
+kaifenzhi	開分支	280
 kaifu	開赴	998
 kaifula	凱芙拉	191
 kaifulaweike	凱夫拉維克	274
@@ -77947,6 +77962,7 @@ laofangzi	老房子	800
 laofangzi	老方子	313
 laofanzhiwanyingshenqu	老范志萬應神曲	647
 laofeimao	佬肥貓	780
+laofenzhi	老分支	280
 laofoye	老佛爺	350
 laofu	老夫	696
 laofu	老父	347
@@ -82636,6 +82652,7 @@ linshiduixiang	臨時對象	706
 linshierju	臨事而懼	620
 linshifangwu	臨時房屋	570
 linshifenju	臨時分居	260
+linshifenzhi	臨時分支	280
 linshigong	臨時工	491
 linshinanyou	臨時男友	538
 linshinvyou	臨時女友	538
@@ -90771,7 +90788,7 @@ mianhongerchi	面紅耳赤	496
 mianhongerre	面紅耳熱	616
 mianhu	面糊	1000
 mianhu	麵糊	1000
-mianhu	麪糊	860
+mianhu	麪糊	955
 mianhua	棉花	536
 mianhuabang	棉花棒	230
 mianhuai	緬懷	300
@@ -93096,6 +93113,7 @@ moran	漠然	191
 moranzhizhi	漠然置之	362
 moren	默認	997
 morendaohangdetu	默認導航地圖	868
+morenfenzhi	默認分支	280
 morengouzaohanshu	默認構造函數	825
 morenheshiluodewangguo	魔人和失落的王國	662
 morenwangluo	默認網絡	570
@@ -93546,6 +93564,7 @@ mubiao	目標	536
 mubiaochengxu	目標程序	731
 mubiaodizhi	目標地址	260
 mubiaoduixiang	目標對象	709
+mubiaofenzhi	目標分支	280
 mubiaojiance	目標檢測	260
 mubiaoqudong	目標驅動	666
 mubiaoshichang	目標市場	260
@@ -104055,6 +104074,7 @@ qieerbushe	鍥而不捨	769
 qieershibaxingpiaochong	茄二十八星瓢蟲	348
 qieerxi	切爾西	284
 qiefenyin	切分音	379
+qiefenzhi	切分支	280
 qiefu	切腹	305
 qiefujiangchu	挈婦將雛	616
 qiefuzhitong	切膚之痛	440
@@ -113959,7 +113979,7 @@ shangfang	上房	21
 shangfangbaojian	尚方寶劍	274
 shangfangjian	尚方劍	252
 shangfatiao	上發條	379
-shangfen	上墳	560
+shangfen	上墳	559
 shangfeng	上風	961
 shangfeng	傷風	91
 shangfeng	上峰	1
@@ -115462,7 +115482,7 @@ shazhe	傻著	700
 shazhenjun	殺真菌	232
 shazhenjunji	殺真菌劑	260
 shazhi	砂紙	878
-shazhi	沙質	222
+shazhi	沙質	221
 shazhijiaozi	殺彘教子	249
 shazhiqi	紗之器	460
 shazhou	沙洲	299
@@ -122421,6 +122441,7 @@ shuangfangxiangxing	雙方向性	597
 shuangfangzhongyuanfen	雙方中圓墳	760
 shuangfanxiangji	雙反相機	695
 shuangfei	雙飛	214
+shuangfen	雙份	700
 shuangfeng	雙峰	641
 shuangfeng	雙峯	285
 shuangfengchayun	雙峯插雲	748
@@ -133342,8 +133363,8 @@ touyunyanhua	頭暈眼花	485
 touzhang	頭脹	323
 touzhao	頭罩	380
 touzhen	頭枕	370
-touzhi	投擲	730
-touzhi	透支	729
+touzhi	投擲	731
+touzhi	透支	730
 touzhide	投至得	642
 touzhide	投至的	638
 touzhong	投中	718
@@ -138385,7 +138406,7 @@ wenlvr	紋縷兒	230
 wenmaizhuyi	文脈主義	680
 wenmang	文盲	432
 wenmi	文祕	418
-wenmian	文面	299
+wenmian	文面	300
 wenmiaodachengdian	文廟大成殿	279
 wenming	文明	619
 wenming	聞名	539
@@ -146981,6 +147002,7 @@ xinfengxian	信丰縣	172
 xinfengxiang	新豐鄉	216
 xinfengxitong	新風系統	680
 xinfengzhigu	新楓之谷	538
+xinfenzhi	新分支	280
 xinfo	信佛	387
 xinfu	信服	700
 xinfu	心腹	107
@@ -150648,7 +150670,7 @@ xuanpin	選品	319
 xuanpu	玄圃	198
 xuanqianji	旋前肌	232
 xuanqianyuanji	旋前圓肌	540
-xuanqianzhuankun	旋乾轉坤	401
+xuanqianzhuankun	旋乾轉坤	383
 xuanqing	選情	849
 xuanqu	選取	830
 xuanqu	選區	524
@@ -160407,7 +160429,7 @@ yinzheng	印證	362
 yinzhenzhike	飲鴆止渴	431
 yinzhi	印製	372
 yinzhi	印制	324
-yinzhi	印支	295
+yinzhi	印支	296
 yinzhi	引至	248
 yinzhi	因之	160
 yinzhi	音質	79
@@ -164358,6 +164380,7 @@ yuanchengdaohangxitong	遠程導航系統	811
 yuanchengdenglu	遠程登錄	260
 yuanchengdengluxieyi	遠程登錄協議	785
 yuanchengdiaoshi	遠程調試	701
+yuanchengfenzhi	遠程分支	280
 yuanchenghuizhen	遠程會診	540
 yuanchengjiankong	遠程監控	260
 yuanchengjiaoben	遠程腳本	695
@@ -168388,7 +168411,7 @@ zhanganjiang	張安疆	776
 zhanganshijian	長按事件	698
 zhangbao	張寶	176
 zhangbashemao	丈八蛇矛	387
-zhangbei	長輩	639
+zhangbei	長輩	640
 zhangbeihai	章北海	458
 zhangbeitu	長輩圖	232
 zhangbeixian	張北縣	215
@@ -170208,6 +170231,7 @@ zhengfaqi	蒸發器	470
 zhengfare	蒸發熱	379
 zhengfawei	政法委	449
 zhengfaweiyuanhui	政法委員會	292
+zhengfen	整份	700
 zhengfenduomiao	爭分奪秒	455
 zhengfeng	整風	1000
 zhengfeng	爭鋒	99
@@ -172397,7 +172421,7 @@ zhimou	智謀	422
 zhimoyan	脂膜炎	470
 zhimu	知母	467
 zhina	只拿	700
-zhina	支那	474
+zhina	支那	475
 zhinajin	滯納金	415
 zhinan	指南	1000
 zhinan'ai	直男癌	232
@@ -173264,7 +173288,7 @@ zhizhong	之中	280
 zhizhongduiqi	置中對齊	260
 zhizhou	知州	319
 zhizhu	支柱	880
-zhizhu	蜘蛛	587
+zhizhu	蜘蛛	586
 zhizhu	止住	280
 zhizhu	枝助	259
 zhizhu	植株	118
@@ -176556,6 +176580,7 @@ zhufei	豬肺	280
 zhufeilinzhizhusheye	豬肺磷脂注射液	655
 zhufen	朱粉	137
 zhufeng	主峰	1000
+zhufenzhi	主分支	280
 zhufu	囑咐	965
 zhufu	祝福	280
 zhufu	主婦	1
