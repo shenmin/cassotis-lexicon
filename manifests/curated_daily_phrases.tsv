@@ -6774,6 +6774,24 @@
 字间距	字間距	0.52	zijianju
 行高	行高	0.58	hanggao
 行距	行距	0.60	hangju
+衬线	襯線	0.54	chenxian
+无衬线	無襯線	0.54	wuchenxian
+衬线体	襯線體	0.48	chenxianti
+无衬线体	無襯線體	0.48	wuchenxianti
+等宽	等寬	0.54	dengkuan
+等宽字体	等寬字體	0.52	dengkuanziti
+等宽体	等寬體	0.46	dengkuanti
+非等宽	非等寬	0.42	feidengkuan
+非等宽字体	非等寬字體	0.40	feidengkuanziti
+中文字体	中文字體	0.50	zhongwenziti
+西文字体	西文字體	0.46	xiwenziti
+正文字体	正文字體	0.46	zhengwenziti
+标题字体	標題字體	0.46	biaotiziti
+字体大小	字體大小	0.56	zitidaxiao
+字体列表	字體列表	0.42	zitiliebiao
+字体风格	字體風格	0.42	zitifengge
+默认字体	默認字體	0.48	morenziti
+系统字体	系統字體	0.46	xitongziti
 行楷	行楷	0.56	xingkai
 行草	行草	0.52	xingcao
 篆体	篆體	0.52	zhuanti
@@ -6796,6 +6814,11 @@
 视频通话	視頻通話	0.74	shipintonghua
 甚至是	甚至是	0.72	shenzhishi
 编译运行	編譯運行	0.72	bianyiyunxing
+
+# daily homophone corrections 2026-07-04
+格式	格式	0.92	geshi
+字样	字樣	0.90	ziyang
+滋养	滋養	0.90	ziyang
 
 # common single-character aspect additions 2026-07-04
 花了	花了	0.72	huale

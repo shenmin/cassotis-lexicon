@@ -21,8 +21,8 @@ Cassotis IME 的词库构建与发布仓库。
 
 | 文件 | 变体 | 词条数 |
 |------|------|--------|
-| `data/generated/dict_clean_sc.txt` | 简体主词库 | 177,613 |
-| `data/generated/dict_clean_tc.txt` | 繁体主词库 | 180,939 |
+| `data/generated/dict_clean_sc.txt` | 简体主词库 | 177,791 |
+| `data/generated/dict_clean_tc.txt` | 繁体主词库 | 181,117 |
 | `data/generated/dict_unihan_sc.txt` | 简体单字（Unihan） | 23,905 |
 | `data/generated/dict_unihan_tc.txt` | 繁体单字（Unihan） | 24,166 |
 
