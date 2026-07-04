@@ -169,8 +169,39 @@
 百得	百得	0.56	baide
 喜利得	喜利得	0.56	xilide
 史丹利	史丹利	0.58	shidanli
+# adhesive and building-material brand additions 2026-07-03
+邓白氏	鄧白氏	0.58	dengbaishi
+瓦克	瓦克	0.56	wake
+瓦克胶	瓦克膠	0.52	wakejiao
+汉高	漢高	0.56	hangao
+汉高百得	漢高百得	0.54	hangaobaide
+百得胶	百得膠	0.52	baidejiao
+西卡	西卡	0.56	xika
+西卡胶	西卡膠	0.52	xikajiao
+德高胶	德高膠	0.52	degaojiao
+马贝胶	馬貝膠	0.50	mabeijiao
+东方雨虹	東方雨虹	0.60	dongfangyuhong
+道康宁	道康寧	0.54	daokangning
+道康宁胶	道康寧膠	0.50	daokangningjiao
+硅宝胶	硅寶膠	0.50	guibaojiao
+安泰胶	安泰膠	0.50	antaijiao
+回天胶	回天膠	0.50	huitianjiao
+之江胶	之江膠	0.50	zhijiangjiao
+白云胶	白雲膠	0.50	baiyunjiao
+科顺	科順	0.52	keshun
+科顺防水	科順防水	0.50	keshunfangshui
+卓宝	卓寶	0.48	zhuobao
 # lighting and renovation brand additions 2026-06-18
 欧司朗	歐司朗	0.68	ousilang
+
+# font family and typeface proper-name additions 2026-07-04
+霞鹜	霞鶩	0.50	xiawu
+霞鹜文楷	霞鶩文楷	0.56	xiawuwenkai
+霞鹜文楷等宽	霞鶩文楷等寬	0.48	xiawuwenkaidengkuan
+霞鹜新晰黑	霞鶩新晰黑	0.54	xiawuxinxihei
+霞鹜新致宋	霞鶩新致宋	0.54	xiawuxinzhisong
+霞鹜晰黑	霞鶩晰黑	0.50	xiawuxihei
+霞鹜漫黑	霞鶩漫黑	0.50	xiawumanhei
 
 # finance/proper noun additions 2026-06-18: reviewed import from D:/words.txt
 股指期货	股指期貨	0.46	guzhiqihuo

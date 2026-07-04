@@ -6744,3 +6744,63 @@
 智能	智能	0.92	zhineng
 消费级	消費級	0.82	xiaofeiji
 消费级显卡	消費級顯卡	0.82	xiaofeijixianka
+
+# edit/layout and typography daily additions 2026-07-04
+谨慎	謹慎	0.90	jinshen
+紧身	緊身	0.74	jinshen
+截掉	截掉	0.62	jiediao
+揭下	揭下	0.56	jiexia
+接下	接下	0.76	jiexia
+截下	截下	0.56	jiexia
+揭掉	揭掉	0.54	jiediao
+截去	截去	0.50	jiequ
+揭去	揭去	0.50	jiequ
+取下	取下	0.74	quxia
+撕下	撕下	0.62	sixia
+扯下	扯下	0.58	chexia
+会被	會被	0.82	huibei
+不被	不被	0.78	bubei
+不全	不全	0.82	buquan
+往上	往上	0.84	wangshang
+往下	往下	0.82	wangxia
+往左	往左	0.72	wangzuo
+往右	往右	0.72	wangyou
+往前	往前	0.76	wangqian
+字重	字重	0.58	zizhong
+字距	字距	0.54	ziju
+字形	字形	0.62	zixing
+字号	字號	0.62	zihao
+字体名	字體名	0.50	zitiming
+字间距	字間距	0.52	zijianju
+行高	行高	0.58	hanggao
+行距	行距	0.60	hangju
+行楷	行楷	0.56	xingkai
+行草	行草	0.52	xingcao
+篆体	篆體	0.52	zhuanti
+自画	自畫	0.46	zihua
+自绘	自繪	0.46	zihui
+金句	金句	0.68	jinju
+
+# broad frequency corrections from full-corpus review 2026-07-04
+登录	登錄	0.94	denglu
+视频	視頻	0.94	shipin
+又是	又是	0.88	youshi
+产品线	產品線	0.70	chanpinxian
+初始状态	初始狀態	0.68	chushizhuangtai
+额度	額度	0.78	edu
+提到过	提到過	0.76	tidaoguo
+提起过	提起過	0.64	tiqiguo
+接受了	接受了	0.82	jieshoule
+无法接受	無法接受	0.82	wufajieshou
+主力产品	主力產品	0.76	zhulichanpin
+视频通话	視頻通話	0.74	shipintonghua
+甚至是	甚至是	0.72	shenzhishi
+编译运行	編譯運行	0.72	bianyiyunxing
+
+# common single-character aspect additions 2026-07-04
+花了	花了	0.72	huale
+靠着	靠著	0.58	kaozhe
+靠了	靠了	0.48	kaole
+卡着	卡著	0.50	kazhe
+卡了	卡了	0.50	kale
+盖了	蓋了	0.58	gaile

@@ -3367,3 +3367,46 @@
 分支名	分支名	0.40	fenzhiming
 分支上	分支上	0.34	fenzhishang
 分支里	分支裏	0.34	fenzhili
+
+# lower-frequency edit/font/literary supplements 2026-07-04
+进深	進深	0.20	jinshen
+孤鹜	孤鶩	0.36	guwu
+汇文	匯文	0.38	huiwen
+皮革厂	皮革廠	0.34	pigechang
+
+# lower-frequency single-character aspect additions 2026-07-04
+觉着	覺著	0.46	juezhe
+搅着	攪著	0.38	jiaozhe
+搅了	攪了	0.38	jiaole
+嚼着	嚼著	0.36	jiaozhe
+嚼了	嚼了	0.34	jiaole
+滴着	滴著	0.46	dizhe
+滴了	滴了	0.50	dile
+沉了	沉了	0.52	chenle
+淹着	淹著	0.40	yanzhe
+淹了	淹了	0.48	yanle
+截了	截了	0.46	jiele
+揭了	揭了	0.46	jiele
+泡着	泡著	0.46	paozhe
+拖着	拖著	0.52	tuozhe
+拖了	拖了	0.50	tuole
+托着	託著	0.42	tuozhe
+托了	託了	0.42	tuole
+垫着	墊著	0.42	dianzhe
+垫了	墊了	0.44	dianle
+压着	壓著	0.50	yazhe
+压了	壓了	0.50	yale
+夹着	夾著	0.46	jiazhe
+夹了	夾了	0.46	jiale
+堵着	堵著	0.46	duzhe
+堵了	堵了	0.48	dule
+裹着	裹著	0.42	guozhe
+裹了	裹了	0.42	guole
+飘着	飄著	0.42	piaozhe
+飘了	飄了	0.42	piaole
+扣着	扣著	0.44	kouzhe
+扣了	扣了	0.44	koule
+蹭着	蹭著	0.40	cengzhe
+蹭了	蹭了	0.40	cengle
+摁着	摁著	0.38	enzhe
+摁了	摁了	0.38	enle

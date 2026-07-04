@@ -2,6 +2,7 @@
 # Word-level overrides for clean_permissive profile.
 # Used before character-level Unihan fallback.
 勒	le
+嚼	jiao
 文件	wenjian
 人工智能	rengongzhineng
 智能	zhineng
