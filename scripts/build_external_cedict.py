@@ -2205,37 +2205,37 @@ def _cap_medicine_vertical_weight(weight: int, text: str, source_id: str) -> int
 
     if source == "project-curated-vertical-medicine":
         if text_len <= 2:
-            cap = 460
+            cap = 320
         elif text_len == 3:
-            cap = 520
+            cap = 400
         elif text_len == 4:
-            cap = 590
+            cap = 480
         elif text_len == 5:
-            cap = 660
+            cap = 560
         else:
-            cap = 720
+            cap = 640
     elif source == "wikidata-medical-mesh-zh":
         if text_len <= 2:
-            cap = 430
+            cap = 300
         elif text_len == 3:
-            cap = 500
+            cap = 380
         elif text_len == 4:
-            cap = 570
+            cap = 460
         elif text_len == 5:
-            cap = 640
+            cap = 540
         else:
-            cap = 700
+            cap = 620
     else:
         if text_len <= 2:
-            cap = 400
+            cap = 260
         elif text_len == 3:
-            cap = 470
+            cap = 340
         elif text_len == 4:
-            cap = 540
+            cap = 420
         elif text_len == 5:
-            cap = 610
+            cap = 500
         else:
-            cap = 680
+            cap = 580
 
     return min(weight, cap)
 
@@ -2436,14 +2436,14 @@ def _cap_medical_specific_term_weights(
             continue
 
         if text_len <= 2:
-            cap = 440
+            cap = 220
         elif text_len == 3:
-            cap = 510
+            cap = 300
         else:
-            cap = 580
+            cap = 380
 
         if source_hits >= 3 or jieba_direct_score >= 0.50:
-            cap += 30
+            cap += 20
         if weight > cap:
             mapping[key] = cap
             stats[f"{stats_prefix}_medical_specific_capped"] += 1
