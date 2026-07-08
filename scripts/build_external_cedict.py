@@ -707,7 +707,17 @@ SINGLE_CHAR_READING_DELTA_OVERRIDES: Dict[Tuple[str, str], int] = {
     # Keep the common function-word reading above same-pinyin content roots.
     ("与", "yu"): 100,
     ("與", "yu"): 100,
+    # `图/圖` is the everyday standalone target for tu more often than `土`.
+    ("\u56fe", "tu"): 320,
+    ("\u5716", "tu"): 280,
 }
+SINGLE_CHAR_RELATIVE_ORDER_OVERRIDES: Tuple[
+    Tuple[Tuple[str, str], Tuple[str, str], int], ...
+] = (
+    # Prefer everyday standalone "图/圖" over "土" for tu.
+    (("tu", "图"), ("tu", "土"), 16),
+    (("tu", "圖"), ("tu", "土"), 16),
+)
 
 MULTI_CHAR_TERM_DROP_OVERRIDES: Set[str] = {
     # Legacy orthography no longer preferred in modern IME usage.
@@ -13404,6 +13414,25 @@ def _promote_single_char_homophones_by_head_productivity(
     return stats
 
 
+def _enforce_single_char_relative_order_overrides(
+    mapping: Dict[Tuple[str, str], int],
+    stats_prefix: str,
+) -> Dict[str, int]:
+    """Apply final audited ordering for rare single-character tie failures."""
+    stats = {f"{stats_prefix}_single_char_relative_order_adjusted": 0}
+    for preferred_key, competitor_key, margin in SINGLE_CHAR_RELATIVE_ORDER_OVERRIDES:
+        if preferred_key not in mapping or competitor_key not in mapping:
+            continue
+        preferred_weight = mapping[preferred_key]
+        competitor_weight = mapping[competitor_key]
+        target_weight = min(1000, competitor_weight + margin)
+        if preferred_weight >= target_weight:
+            continue
+        mapping[preferred_key] = target_weight
+        stats[f"{stats_prefix}_single_char_relative_order_adjusted"] += 1
+    return stats
+
+
 def _dampen_compound_root_inflated_single_chars(
     mapping: Dict[Tuple[str, str], int],
     leading_support_sum_map: Dict[Tuple[str, str], float] | None,
@@ -22286,6 +22315,19 @@ def main() -> int:
         "揭的",
         "揭得",
     }
+
+    stats.update(
+        _enforce_single_char_relative_order_overrides(
+            sc_map,
+            "sc_final_post",
+        )
+    )
+    stats.update(
+        _enforce_single_char_relative_order_overrides(
+            tc_map,
+            "tc_final_post",
+        )
+    )
 
     _write_dict(
         output_sc,

@@ -6856,6 +6856,29 @@
 挪一步	挪一步	0.48	nuoyibu
 挪步	挪步	0.42	nuobu
 
+# daily exact phrase additions 2026-07-07
+下方	下方	0.94	xiafang
+页脚	頁腳	0.82	yejiao
+页眉	頁眉	0.82	yemei
+表头	表頭	0.78	biaotou
+列头	列頭	0.72	lietou
+行头	行頭	0.58	hangtou
+固定行	固定行	0.72	gudinghang
+固定列	固定列	0.72	gudinglie
+冻结行	凍結行	0.66	dongjiehang
+冻结列	凍結列	0.66	dongjielie
+固定表头	固定表頭	0.66	gudingbiaotou
+请问	請問	0.94	qingwen
+请看	請看	0.86	qingkan
+请你	請你	0.92	qingni
+请他	請他	0.84	qingta
+请她	請她	0.84	qingta
+请用	請用	0.82	qingyong
+请把	請把	0.80	qingba
+请吧	請吧	0.70	qingba
+请大家	請大家	0.86	qingdajia
+请所有人	請所有人	0.74	qingsuoyouren
+
 # BEGIN words_new_import_2026_07_07
 # Imported from D:/_/words_new.txt on 2026-07-07; bucket=high; reviewed by rule-based classifier.
 # END words_new_import_2026_07_07

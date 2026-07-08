@@ -5652,7 +5652,7 @@ baogong	包工	1000
 baogong	包公	1
 baogongtou	包工头	487
 baogu	保固	470
-baogu	包谷	166
+baogu	包谷	165
 baoguagua	薄瓜瓜	767
 baoguan	保管	968
 baoguan	报关	674
@@ -8023,7 +8023,7 @@ benyangji	苯氧基	230
 benyangjiyichun	苯氧基乙醇	602
 benyangyichun	苯氧乙醇	540
 benye	本页	700
-benye	本业	61
+benye	本业	60
 benyi	本意	1000
 benyi	本义	1
 benyi'anyanshengwu	苯乙胺衍生物	700
@@ -8917,6 +8917,7 @@ biaotidang	标题党	392
 biaotilan	标题栏	529
 biaotixinwen	标题新闻	405
 biaotiyu	标题语	232
+biaotou	表头	700
 biaotu	表土	692
 biaotu	标图	106
 biaowei	表位	198
@@ -18275,7 +18276,7 @@ chenliang	陈亮	241
 chenliangyu	陈良宇	770
 chenliao	臣僚	401
 chenlie	陈列	650
-chenliechuchuang	陈列橱窗	665
+chenliechuchuang	陈列橱窗	669
 chenlieshi	陈列室	375
 chenlietai	陈列台	317
 chenlihua	陈丽华	620
@@ -18954,8 +18955,8 @@ chiqiangqiangjie	持枪抢劫	260
 chiqiangsongshu	持枪松鼠	538
 chiqiangyao	吃枪药	232
 chiqiaocai	吃敲才	635
-chiqing	吃请	549
-chiqing	痴情	372
+chiqing	吃请	550
+chiqing	痴情	371
 chiqingchunfan	吃青春饭	260
 chiqu	齿龋	198
 chire	炽热	440
@@ -31599,7 +31600,9 @@ dongjiaominxiang	东交民巷	554
 dongjie	冻结	1000
 dongjie	冬节	1
 dongjiedeqiu	冻结地球	505
+dongjiehang	冻结行	800
 dongjiejian	冻结肩	470
+dongjielie	冻结列	800
 dongjifangtan	动机访谈	570
 dongjin	东晋	429
 dongjing	动静	459
@@ -38881,7 +38884,7 @@ feiyatejituan	菲亚特集团	286
 feiye	肺叶	440
 feiye	肺野	353
 feiye	扉页	196
-feiye	废液	147
+feiye	废液	146
 feiyechuanqi	绯夜传奇	534
 feiyeqiechushu	肺叶切除术	610
 feiyeshide	飞也似的	260
@@ -48602,15 +48605,18 @@ gudichongyou	故地重游	444
 gudici	古地磁	640
 gudie	姑爹	305
 guding	固定	1000
+gudingbiaotou	固定表头	800
 gudingchuang	固定窗	600
 gudingcizu	固定词组	260
 gudingdian	固定点	437
 gudingdianhua	固定电话	260
+gudinghang	固定行	800
 gudinghuilv	固定汇率	602
 gudinghuilvzhi	固定汇率制	400
 gudingji	骨顶鸡	230
 gudingjiaozhiqi	固定矫治器	610
 gudingjingtouxiangji	固定镜头相机	791
+gudinglie	固定列	800
 gudingqi	固定器	470
 gudingqiao	固定桥	470
 gudingshejiyouxi	固定射击游戏	811
@@ -51974,7 +51980,7 @@ hangtianyuan	航天员	505
 hangtianzhongxin	航天中心	249
 hangtingdunshiwudaobing	杭廷顿氏舞蹈病	687
 hangtingdunwudaobing	杭廷顿舞蹈病	700
-hangtou	行头	136
+hangtou	行头	700
 hangtu	夯土	417
 hangtu	航图	322
 hangtuji	夯土机	232
@@ -66033,7 +66039,7 @@ jiezhulian'ai	借住恋爱	538
 jiezhulianai	借住恋爱	538
 jiezi	芥子	887
 jiezi	介子	560
-jiezi	结子	428
+jiezi	结子	429
 jiezikazigan	杰兹卡兹甘	279
 jiezikaziganzhou	杰兹卡兹甘州	579
 jieziqi	芥子气	423
@@ -71228,10 +71234,10 @@ jizhi	机制	589
 jizhi	几只	420
 jizhi	及至	310
 jizhi	极致	309
-jizhi	急智	26
 jizhi	基址	12
 jizhi	极值	2
 jizhi	基质	1
+jizhi	急智	1
 jizhi	机智	1
 jizhibao	鸡汁包	10
 jizhidanbai	基质蛋白	570
@@ -81935,7 +81941,8 @@ lietaojinghun	猎逃惊魂	538
 lietianshimonv	猎天使魔女	613
 lietianshimonvxilie	猎天使魔女系列	632
 lietixichong	裂体吸虫	260
-lietou	猎头	437
+lietou	列头	700
+lietou	猎头	102
 lietouren	猎头人	232
 lietoutaochongbing	裂头绦虫病	606
 lietoutaochongzheng	裂头绦虫症	640
@@ -105558,6 +105565,8 @@ qingan	氰胺	440
 qingang	秦刚	638
 qinganhuagai	氰氨化钙	249
 qinganxian	庆安县	174
+qingba	请吧	700
+qingba	请把	700
 qingba	轻吧	280
 qingbai	清白	1000
 qingbai	青白	1
@@ -105672,6 +105681,7 @@ qingcui	轻脆	1
 qingda	轻打	198
 qingdai	清代	1000
 qingdaitongshi	清代通史	260
+qingdajia	请大家	800
 qingdajiangwan	青大将丸	540
 qingdameisu	庆大霉素	471
 qingdameisudiyanye	庆大霉素滴眼液	631
@@ -105944,9 +105954,10 @@ qingkailingkoufuye	清开灵口服液	666
 qingkailingpian	清开灵片	540
 qingkailingruanjiaonang	清开灵软胶囊	657
 qingkailingzhusheye	清开灵注射液	668
+qingkan	请看	700
 qingkan	轻看	204
-qingke	请客	757
-qingke	顷刻	577
+qingke	请客	758
+qingke	顷刻	578
 qingke	青稞	1
 qingkejian	顷刻间	519
 qingkejiu	青稞酒	470
@@ -106072,6 +106083,7 @@ qingnaofushenye	清脑复神液	603
 qingnaojiangyakeli	清脑降压颗粒	644
 qingnaojiangyapian	清脑降压片	603
 qingnengyuan	氢能源	232
+qingni	请你	1018
 qingnian	青年	511
 qingnianchengjiu	青年成就	740
 qingniandianyingzhipianchang	青年电影制片厂	334
@@ -106270,6 +106282,9 @@ qingsuangen	氰酸根	500
 qingsuanhang	清算行	232
 qingsuanyan	氰酸盐	464
 qingsuishiqian	情随事迁	387
+qingsuoyouren	请所有人	800
+qingta	请他	700
+qingta	请她	700
 qingtai	情态	447
 qingtai	青苔	353
 qingtaizong	清太宗	217
@@ -106298,8 +106313,8 @@ qingtianzhongde'ouranluoyu	晴天中的偶然落雨	662
 qingtiao	轻挑	280
 qingtiao	轻窕	204
 qingtiao	轻佻	124
-qingtie	请帖	393
-qingtie	轻铁	317
+qingtie	请帖	394
+qingtie	轻铁	316
 qingting	倾听	973
 qingting	蜻蜓	395
 qingting	清廷	355
@@ -106345,7 +106360,7 @@ qingwei	轻微	803
 qingwei	倾危	683
 qingweihuanglianwan	清胃黄连丸	610
 qingweitang	清胃汤	470
-qingwen	请问	471
+qingwen	请问	1036
 qingwenbaiduyin	清瘟败毒饮	610
 qingwenjiedu	清瘟解毒	540
 qingwenjiedupian	清瘟解毒片	607
@@ -106480,13 +106495,14 @@ qingyiji	氰乙基	500
 qingyimianmian	情意绵绵	635
 qingyin	清音	394
 qingying	轻盈	470
-qingying	请缨	414
+qingying	请缨	415
 qingyingliangxue	清营凉血	540
 qingyingtang	清营汤	470
 qingyingyoujiduihuojupian	庆应游击队活剧篇	662
 qingyinyue	轻音乐	443
 qingyise	清一色	756
 qingyitang	清胰汤	470
+qingyong	请用	700
 qingyou	清幽	1000
 qingyouduzhong	情有独钟	474
 qingyoukeyuan	情有可原	465
@@ -106494,7 +106510,7 @@ qingyu	情欲	843
 qingyu	青鱼	293
 qingyu	清淤	200
 qingyuan	请愿	1000
-qingyuan	情愿	202
+qingyuan	情愿	201
 qingyuan	清远	100
 qingyuan	庆元	1
 qingyuan	情缘	1
@@ -116150,6 +116166,7 @@ shaobujingshi	少不经事	387
 shaobuliao	少不了	799
 shaocai	烧菜	305
 shaocha	烧茶	323
+shaochang	稍长	280
 shaochengduo	少成多	640
 shaochi	少吃	700
 shaochongxue	少冲穴	470
@@ -116428,7 +116445,6 @@ shaozao	稍早	323
 shaozaoshi	稍早时	232
 shaoze	少则	10
 shaozexue	少泽穴	470
-shaozhang	稍长	10
 shaozhe	烧着	700
 shaozhi	烧制	684
 shaozhi	烧纸	588
@@ -119050,7 +119066,7 @@ shenqinanhai	神奇男孩	538
 shenqinanhaiguaiwudalu	神奇男孩怪物大陆	662
 shenqinanhailongzhixianjing	神奇男孩龙之陷阱	662
 shenqing	申请	1000
-shenqing	深情	498
+shenqing	深情	497
 shenqing	神情	27
 shenqingbiao	申请表	462
 shenqinghouyi	深情厚谊	674
@@ -128424,7 +128440,7 @@ suoyongfeiren	所用非人	260
 suoyou	所有	462
 suoyouge	所有格	534
 suoyouquan	所有权	569
-suoyouren	所有人	572
+suoyouren	所有人	806
 suoyouwu	所有物	500
 suoyouzhe	所有者	608
 suoyouzhi	所有制	707
@@ -128838,7 +128854,7 @@ taidie	台谍	198
 taidiejia	态叠加	232
 taiding'anrugao	酞丁安乳膏	602
 taidixiong	泰迪熊	246
-taidong	台东	656
+taidong	台东	655
 taidong	太冻	280
 taidong	胎动	1
 taidongbu'an	胎动不安	540
@@ -134026,8 +134042,8 @@ tongxinceshi	通信测试	663
 tongxinchuliji	通信处理机	392
 tongxindizhi	通信地址	615
 tongxinfen	通心粉	211
-tongxing	通行	755
-tongxing	同性	575
+tongxing	通行	756
+tongxing	同性	576
 tongxing	同行	570
 tongxing'ai	同性爱	362
 tongxingai	同性爱	362
@@ -143064,8 +143080,8 @@ xiaeryiti	遐迩一体	387
 xiafa	下发	487
 xiafan	下饭	1000
 xiafan	下凡	472
-xiafang	下放	937
-xiafang	下方	808
+xiafang	下方	1036
+xiafang	下放	626
 xiafang	遐方	560
 xiafei	霞飞	198
 xiafeiji	下飞机	232
@@ -149274,7 +149290,7 @@ xingtaizhuanqu	邢台专区	482
 xingtalvren	星塔旅人	538
 xingtang	行唐	383
 xingtangxian	行唐县	165
-xingti	形体	795
+xingti	形体	794
 xingti	星体	554
 xingtian	刑天	307
 xingtiaoqi	星条旗	439
@@ -149283,8 +149299,7 @@ xingtong	形同	433
 xingtongmolu	形同陌路	432
 xingtongxushe	形同虚设	477
 xingtongyixingzhang'ai	性同一性障碍	318
-xingtou	行头	1000
-xingtou	兴头	508
+xingtou	兴头	446
 xingtouzhuomuniao	星头啄木鸟	289
 xingtu	星图	397
 xingtuan	星团	432
@@ -157373,6 +157388,7 @@ yejiangchuan	叶江川	247
 yejianjinshizonghezheng	夜间进食综合征	687
 yejianying	叶剑英	822
 yejianyiniaozheng	夜间遗尿症	640
+yejiao	页脚	700
 yejiaoteng	夜交藤	470
 yejiayu	叶家妤	620
 yejidaxue	野鸡大学	249
@@ -157502,6 +157518,7 @@ yemaozi	夜猫子	244
 yemazhui	野马追	470
 yemege	也么哥	640
 yemei	也没	1000
+yemei	页眉	700
 yemeibanfa	也没办法	800
 yemeifa	也没法	800
 yemeiguanxi	也没关系	800
@@ -157742,7 +157759,7 @@ yeyiyang	也一样	10
 yeyong	也用	1000
 yeyonglie	叶永烈	202
 yeyou	也有	1000
-yeyou	页游	339
+yeyou	页游	370
 yeyou	夜游	1
 yeyou	椰油	1
 yeyoubanhua	野鼬瓣花	258
@@ -168167,7 +168184,7 @@ yuqici	语气词	400
 yuqie	余切	405
 yuqifukuanxitong	预期付款系统	700
 yuqiguanli	预期管理	570
-yuqing	吁请	367
+yuqing	吁请	368
 yuqing	舆情	59
 yuqing	淤青	10
 yuqinguzong	欲擒故纵	431
