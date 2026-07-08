@@ -11759,6 +11759,7 @@ buduijin	不对劲	502
 buduijinr	不对劲儿	260
 buduipan	不对盘	232
 buduitou	不对头	502
+buduiwei	不对味	788
 buduiyiyuan	部队医院	570
 buduo	不多	700
 buduo	补裰	404
@@ -17618,8 +17619,8 @@ chengjia	撑架	513
 chengjia	成家	401
 chengjialishi	成家立室	218
 chengjialiye	成家立业	472
-chengjian	成见	710
-chengjian	承建	666
+chengjian	成见	794
+chengjian	承建	536
 chengjiancefei	乘坚策肥	405
 chengjiang	澄江	230
 chengjiangshi	澄江市	54
@@ -19617,7 +19618,7 @@ chouhuo	臭货	198
 chouji	筹集	1000
 choujia	仇家	422
 choujian	筹建	810
-choujian	瞅见	675
+choujian	瞅见	676
 choujian	抽检	235
 choujiang	抽奖	257
 choujiazi	臭架子	412
@@ -21511,7 +21512,7 @@ chuxie	除邪	323
 chuxin	出新	1000
 chuxin	初心	1
 chuxing	出行	1000
-chuxing	处刑	107
+chuxing	处刑	77
 chuxing	雏型	1
 chuxing	雏形	1
 chuxingchanpin	雏形产品	260
@@ -33137,7 +33138,8 @@ duiwaimaoyijingjihezuobu	对外贸易经济合作部	391
 duiwaizhaiwu	对外债务	570
 duiwaizhengce	对外政策	260
 duiwang	对望	323
-duiwei	对位	560
+duiwei	对味	700
+duiwei	对位	67
 duiweikou	对胃口	340
 duiweir	对味儿	232
 duiwolaishuo	对我来说	260
@@ -36010,7 +36012,7 @@ fahuizuoyong	发挥作用	280
 fahun	发昏	411
 fahuo	发火	965
 fahuo	发货	1
-faji	发急	621
+faji	发急	620
 faji	发迹	356
 faji	发髻	348
 faji	法纪	133
@@ -40129,8 +40131,8 @@ fenping	分屏	559
 fenpu	粉扑	313
 fenpuni	芬普尼	620
 fenqi	分歧	1000
-fenqi	奋起	701
-fenqi	分期	227
+fenqi	奋起	628
+fenqi	分期	132
 fenqian	粉芡	1000
 fenqian	分钱	259
 fenqiang	粉墙	384
@@ -52056,7 +52058,7 @@ hanipao	哈尼炮	460
 hanizu	哈尼族	375
 hanjia	寒假	405
 hanjian	罕见	1000
-hanjian	汉奸	292
+hanjian	汉奸	291
 hanjian	函件	1
 hanjian	汉简	1
 hanjianbing	罕见病	500
@@ -54060,6 +54062,7 @@ hendi	很低	700
 hendong	很冻	280
 hendu	狠毒	440
 henduan	很短	700
+henduiwei	很对味	772
 henduo	很多	700
 henduohenduonian	很多很多年	400
 henduonian	很多年	280
@@ -55857,7 +55860,7 @@ houtui	后退	842
 houtui	后腿	10
 houwang	厚望	982
 houwei	后魏	774
-houwei	后卫	278
+houwei	后卫	277
 houwen	后文	137
 houwenshi	候问室	280
 houxi	猴戏	564
@@ -73498,8 +73501,8 @@ kaneiji	卡内基	629
 kaneijimeilongdaxue	卡内基梅隆大学	348
 kaneijiyinleting	卡内基音乐厅	313
 kanfa	看法	1000
-kanfa	砍伐	379
-kanfa	刊发	340
+kanfa	砍伐	277
+kanfa	刊发	213
 kanfang	看房	286
 kanfengshiduo	看风使舵	616
 kang'ai	抗癌	440
@@ -89668,6 +89671,7 @@ meichaowei	美超微	547
 meichaoweidiannao	美超微电脑	809
 meicheng	没成	1000
 meicheng	美称	1
+meichengjian	没成见	280
 meichi	没吃	700
 meichibuwang	没齿不忘	616
 meichimeichuan	没吃没穿	387
@@ -89742,8 +89746,8 @@ meifashi	美发师	220
 meifating	美发厅	216
 meifeikang	美菲康	470
 meifeisewu	眉飞色舞	487
-meifen	美分	281
 meifen	每分	280
+meifen	美分	265
 meifen	没分	232
 meifencun	没分寸	232
 meifeng	美缝	448
@@ -89751,6 +89755,7 @@ meifeng	每逢	352
 meifengji	美缝剂	620
 meifengjiajiebeisiqin	每逢佳节倍思亲	469
 meifenmeimiao	每分每秒	260
+meifenqi	没分歧	280
 meifu	没付	1000
 meifu	每副	420
 meifu	每幅	420
@@ -90167,6 +90172,7 @@ meikailong	美凯龙	490
 meikaiyanxiao	眉开眼笑	480
 meikan	没看	1000
 meikande	袂堪得	631
+meikanfa	没看法	280
 meikanike	梅卡妮可	538
 meike	每刻	280
 meike'erqishi	梅克尔憩室	610
@@ -90325,6 +90331,7 @@ meipi	每匹	420
 meipi	每批	420
 meipi	眉批	215
 meipian	每片	420
+meipianjian	没偏见	280
 meipici	每批次	420
 meipin	没品	198
 meiping	每瓶	420
@@ -90451,6 +90458,7 @@ meishaonvyouxidashang	美少女游戏大赏	742
 meishaonvzhanchedui	美少女战车队	648
 meishaonvzhanshi	美少女战士	613
 meishatong	美沙酮	198
+meishayijian	没啥意见	280
 meishen	美神	198
 meisheng	没升	700
 meisheng	没省	700
@@ -90596,6 +90604,7 @@ meixiang	每项	420
 meixiang	没想	280
 meixiang	煤箱	198
 meixiangdao	没想到	720
+meixiangfa	没想法	280
 meixianqu	梅县区	167
 meixianzhuanqu	梅县专区	482
 meixiao	没小	700
@@ -90633,7 +90642,7 @@ meiyan	眉眼	414
 meiyan	美艳	406
 meiyan	没眼	319
 meiyan	媚眼	286
-meiyan	美言	43
+meiyan	美言	42
 meiyanchuanqing	眉眼传情	260
 meiyanfang	梅艳芳	620
 meiyangr	没样儿	640
@@ -90664,6 +90673,7 @@ meiyifu	每一副	420
 meiyifu	每一幅	420
 meiyige	每一个	1000
 meiyigen	每一根	420
+meiyijian	没意见	280
 meiyike	每一刻	280
 meiyilei	每一类	800
 meiyilun	每一轮	420
@@ -90688,6 +90698,7 @@ meiyitian	每一天	1000
 meiyitiao	每一条	420
 meiyitong	每一桶	420
 meiyixiang	每一项	420
+meiyiyi	没异议	280
 meiyizhi	每一只	420
 meiyizhiji	酶抑制剂	810
 meiyizhong	每一种	420
@@ -96122,6 +96133,7 @@ naoyanhoupajinsenzhenghouqun	脑炎后帕金森症候群	700
 naoyanhouyizheng	脑炎后遗症	610
 naoye	脑液	400
 naoyegongsi	脑叶公司	538
+naoyijian	闹意见	280
 naoyingmo	脑硬膜	500
 naoyixue	脑溢血	500
 naozaoying	脑造影	500
@@ -107300,7 +107312,7 @@ qiufa	球阀	328
 qiufan	囚犯	436
 qiufankunjing	囚犯困境	570
 qiufazu	裘法祖	360
-qiufen	秋分	493
+qiufen	秋分	482
 qiufendian	秋分点	394
 qiufengguo'er	秋风过耳	362
 qiufengguoer	秋风过耳	362
@@ -132914,6 +132926,7 @@ tingdian	停电	422
 tingdong	听懂	448
 tingduan	挺短	700
 tingduan	听断	198
+tingduiwei	挺对味	755
 tingdun	停顿	460
 tingdunxialai	停顿下来	280
 tingduo	挺多	700
@@ -133376,6 +133389,7 @@ tiyi	提议	1000
 tiyi	题意	1
 tiyijian	提意见	280
 tiyin	蹄印	305
+tiyiyi	提异议	280
 tiyou	悌友	438
 tiyu	体育	1000
 tiyubisai	体育比赛	405
@@ -164526,6 +164540,7 @@ youcheng	又称	154
 youcheng	有成	14
 youchengguo	有成果	1000
 youchenghuanjianlu	幽城幻剑录	613
+youchengjian	有成见	280
 youchengxiao	有成效	1000
 youchenyou	有沉有	556
 youchenyoufu	有沉有浮	597
@@ -164656,6 +164671,7 @@ youfeng	有风	280
 youfenggan	有风感	280
 youfenglaiyi	有凤来仪	523
 youfenjiao	有分教	640
+youfenqi	有分歧	280
 youfu	有福	280
 youfu	幽浮	1
 youfude	有服的	640
@@ -164880,6 +164896,7 @@ youkalailidamaoxian	尤卡莱莉大冒险	632
 youkalailiyuwuwangchaoxue	尤卡莱莉与无妄巢穴	662
 youkan	又看	700
 youkan	尤坎	78
+youkanfa	有看法	280
 youkatan	尤卡坦	244
 youkatanbandao	尤卡坦半岛	302
 youke	游客	743
@@ -165120,6 +165137,7 @@ youpao	油泡	198
 youpengziyuanfanglai	有朋自远方来	459
 youpi	幽僻	383
 youpian	诱骗	433
+youpianjian	有偏见	280
 youpianyou	有偏有	556
 youpianyouxiang	有偏有向	597
 youpiao	邮票	442
@@ -165439,6 +165457,7 @@ youxiang	油箱	64
 youxiang	邮箱	31
 youxiang	幽香	1
 youxiangdangbiaoziyouxianglipaifang	又想当婊子又想立牌坊	378
+youxiangfa	有想法	280
 youxiangji	有向集	556
 youxiangjihe	有向集合	597
 youxiangong	有限公	556
@@ -165771,6 +165790,7 @@ youyige	有一个	1000
 youyige	右一个	280
 youyihui	有一回	1000
 youyihui	游艺会	1
+youyijian	有意见	280
 youyijiang	优异奖	232
 youyijumeiyiju	有一句没一句	318
 youyiku	优衣库	382
@@ -165806,6 +165826,7 @@ youyixian	友谊县	165
 youyixie	有一些	640
 youyiyan	有一眼	640
 youyiyi	有意义	822
+youyiyi	有异议	280
 youyizhi	有意志	640
 youyong	有用	700
 youyong	游泳	546

@@ -11907,6 +11907,7 @@ buduijin	不對勁	502
 buduijinr	不對勁兒	260
 buduipan	不對盤	232
 buduitou	不對頭	502
+buduiwei	不對味	788
 buduiyiyuan	部隊醫院	570
 buduo	不多	700
 buduobushao	不多不少	555
@@ -17831,8 +17832,8 @@ chengjia	撐架	467
 chengjia	成家	287
 chengjialishi	成家立室	218
 chengjialiye	成家立業	472
-chengjian	成見	729
-chengjian	承建	728
+chengjian	成見	782
+chengjian	承建	586
 chengjiancefei	乘堅策肥	405
 chengjiang	澄江	265
 chengjiangxue	承漿穴	470
@@ -21739,7 +21740,7 @@ chuxie	除邪	323
 chuxin	出新	1000
 chuxin	初心	1
 chuxing	出行	1000
-chuxing	處刑	72
+chuxing	處刑	57
 chuxing	雛形	1
 chuxingchanpin	雛形產品	260
 chuxingtu	雛形土	232
@@ -33464,7 +33465,8 @@ duiwaimaoyijingjihezuobu	對外貿易經濟合作部	391
 duiwaizhaiwu	對外債務	570
 duiwaizhengce	對外政策	260
 duiwang	對望	323
-duiwei	對位	560
+duiwei	對味	700
+duiwei	對位	350
 duiweikou	對胃口	340
 duiweir	對味兒	232
 duiwolaishuo	對我來說	260
@@ -40741,8 +40743,8 @@ fenpin	分頻	386
 fenping	分屏	559
 fenpu	粉撲	313
 fenqi	分歧	1000
-fenqi	奮起	669
-fenqi	分期	221
+fenqi	奮起	592
+fenqi	分期	124
 fenqian	粉芡	1000
 fenqian	分錢	237
 fenqiang	粉牆	558
@@ -53123,7 +53125,7 @@ hanlu	寒露	392
 hanlvshihui	含氯石灰	540
 hanlvxiaoduji	含氯消毒劑	610
 hanma	悍馬	352
-hanma	汗馬	128
+hanma	汗馬	99
 hanmagonglao	汗馬功勞	486
 hanman	汗漫	305
 hanmao	汗毛	799
@@ -55120,6 +55122,7 @@ hendi	很低	700
 hendong	很凍	280
 hendu	狠毒	440
 henduan	很短	700
+henduiwei	很對味	772
 henduo	很多	700
 henduohenduonian	很多很多年	400
 henduonian	很多年	280
@@ -56999,7 +57002,7 @@ houtui	後腿	10
 houwang	厚望	982
 houwei	后魏	733
 houwei	後魏	724
-houwei	後衛	218
+houwei	後衛	217
 houwen	后文	199
 houwenshi	候問室	280
 houxi	猴戲	564
@@ -58431,7 +58434,7 @@ huangyaoshi	黃藥師	510
 huangyaotaiyangniao	黃腰太陽鳥	289
 huangyaoxiangmilie	黃腰響蜜鴷	288
 huangyaozi	黃葯子	360
-huangye	荒野	184
+huangye	荒野	159
 huangye	黃葉	10
 huangye	黃頁	1
 huangyebarenzu	荒野八人組	613
@@ -64434,7 +64437,7 @@ jiaojiwu	交際舞	379
 jiaojixing	交集性	500
 jiaoju	教具	446
 jiaoju	焦距	417
-jiaoju	攪局	325
+jiaoju	攪局	349
 jiaojuan	膠卷	539
 jiaojuan	膠捲	494
 jiaojuan	交卷	307
@@ -69614,7 +69617,7 @@ jingzhunyixue	精准醫學	250
 jingzi	鏡子	1000
 jingzi	精子	931
 jingzi	徑自	730
-jingzi	逕自	716
+jingzi	逕自	723
 jingzifasheng	精子發生	540
 jingzihuodongli	精子活動力	640
 jingzihuoli	精子活力	570
@@ -74983,8 +74986,8 @@ kaneiji	卡內基	629
 kaneijimeilongdaxue	卡內基梅隆大學	348
 kaneijiyinleting	卡內基音樂廳	313
 kanfa	看法	1000
-kanfa	砍伐	426
-kanfa	刊發	300
+kanfa	砍伐	329
+kanfa	刊發	170
 kanfang	看房	286
 kanfengshiduo	看風使舵	616
 kang'ai	抗癌	440
@@ -88555,7 +88558,7 @@ luwangda	盧旺達	488
 luwangdagongheguo	盧旺達共和國	304
 luwangong'anfenju	盧灣公安分局	402
 luwei	滷味	999
-luwei	蘆葦	184
+luwei	蘆葦	183
 luweibianjiu	鹿尾鞭酒	540
 luweiguo	盧偉國	771
 luweihui	陸委會	222
@@ -91363,6 +91366,7 @@ meichaowei	美超微	540
 meichaoweidiannao	美超微電腦	809
 meicheng	沒成	1000
 meicheng	美稱	1
+meichengjian	沒成見	280
 meichi	沒喫	700
 meichibuwang	沒齒不忘	616
 meichimeichuan	沒喫沒穿	387
@@ -91432,8 +91436,8 @@ meifar	沒法兒	646
 meifashi	美髮師	246
 meifeikang	美菲康	470
 meifeisewu	眉飛色舞	487
-meifen	每分	321
-meifen	美分	320
+meifen	每分	312
+meifen	美分	311
 meifen	沒分	105
 meifencun	沒分寸	232
 meifeng	美縫	412
@@ -91441,6 +91445,7 @@ meifeng	每逢	316
 meifengji	美縫劑	620
 meifengjiajiebeisiqin	每逢佳節倍思親	469
 meifenmeimiao	每分每秒	260
+meifenqi	沒分歧	280
 meifu	沒付	1000
 meifu	每副	420
 meifu	每幅	420
@@ -91884,6 +91889,7 @@ meikailong	美凱龍	490
 meikaiyanxiao	眉開眼笑	480
 meikan	沒看	1000
 meikande	袂堪得	631
+meikanfa	沒看法	280
 meikanike	梅卡妮可	538
 meike	每刻	280
 meike'erqishi	梅克爾憩室	610
@@ -92043,6 +92049,7 @@ meipi	每匹	420
 meipi	每批	420
 meipi	眉批	215
 meipian	每片	420
+meipianjian	沒偏見	280
 meipici	每批次	420
 meipin	沒品	198
 meiping	每瓶	420
@@ -92167,6 +92174,7 @@ meishaonvyouxidashang	美少女遊戲大賞	762
 meishaonvzhanchedui	美少女戰車隊	648
 meishaonvzhanshi	美少女戰士	613
 meishatong	美沙酮	198
+meishayijian	沒啥意見	280
 meishen	美神	198
 meisheng	沒升	700
 meisheng	沒省	499
@@ -92310,6 +92318,7 @@ meixiandequ	梅縣地區	583
 meixiang	沒想	280
 meixiang	每項	136
 meixiangdao	沒想到	720
+meixiangfa	沒想法	280
 meixianqu	梅縣區	167
 meixianzhuanqu	梅縣專區	583
 meixiao	媚笑	282
@@ -92347,7 +92356,7 @@ meiyan	眉眼	584
 meiyan	美艷	576
 meiyan	沒眼	480
 meiyan	媚眼	450
-meiyan	美言	158
+meiyan	美言	157
 meiyanchuanqing	眉眼傳情	260
 meiyanfang	梅艷芳	779
 meiyangr	沒樣兒	620
@@ -92378,6 +92387,7 @@ meiyifu	每一副	420
 meiyifu	每一幅	420
 meiyige	每一個	1000
 meiyigen	每一根	420
+meiyijian	沒意見	280
 meiyike	每一刻	280
 meiyilei	每一類	800
 meiyilun	每一輪	1000
@@ -92402,6 +92412,7 @@ meiyitian	每一天	1000
 meiyitiao	每一條	1000
 meiyitong	每一桶	420
 meiyixiang	每一項	800
+meiyiyi	沒異議	280
 meiyizhi	每一隻	1000
 meiyizhiji	酶抑制劑	810
 meiyizhong	每一種	420
@@ -97958,6 +97969,7 @@ naoyanhouyizheng	腦炎後遺症	767
 naoyanhouyizheng	腦炎后遺症	321
 naoye	腦液	440
 naoyegongsi	腦葉公司	538
+naoyijian	鬧意見	280
 naoyingmo	腦硬膜	500
 naoyixue	腦溢血	500
 naozaoying	腦造影	500
@@ -119551,8 +119563,8 @@ shengguangdianshifangkuai	聲光電飾方塊	648
 shengguo	勝過	479
 shenghaizhe	生還者	460
 shenghaizi	生孩子	232
-shenghao	生蠔	329
-shenghao	升號	228
+shenghao	生蠔	159
+shenghao	升號	110
 shenghaxintuo	聖哈辛托	260
 shenghecheng	生合成	640
 shengheleina	聖赫勒拿	260
@@ -135241,6 +135253,7 @@ tingdi	挺低	700
 tingdian	停電	422
 tingdong	聽懂	448
 tingduan	挺短	700
+tingduiwei	挺對味	755
 tingdun	停頓	460
 tingdunxialai	停頓下來	280
 tingduo	挺多	700
@@ -135703,6 +135716,7 @@ tiyetiaojie	體液調節	590
 tiyi	提議	1000
 tiyijian	提意見	280
 tiyin	蹄印	305
+tiyiyi	提異議	280
 tiyou	悌友	438
 tiyu	體育	1000
 tiyubisai	體育比賽	405
@@ -146967,8 +146981,8 @@ xianlaihoudao	先來后到	372
 xianlaiwushi	閒來無事	538
 xianlaiwushi	閑來無事	390
 xianlan	線纜	982
-xianlao	顯老	323
-xianlao	賢勞	223
+xianlao	顯老	156
+xianlao	賢勞	108
 xianle	閒了	700
 xianlechuanshuo	仙樂傳說	538
 xianlexiongjiaonang	仙樂雄膠囊	610
@@ -150357,8 +150371,8 @@ xifeizheng	矽肺症	500
 xifen	戲份	941
 xifen	細分	121
 xifen	細粉	43
-xifeng	西峰	385
 xifeng	細縫	10
+xifeng	西峰	1
 xifeng	隙縫	1
 xifengqu	西峰區	165
 xifengxian	西丰縣	153
@@ -154846,7 +154860,7 @@ xuanpin	選品	319
 xuanpu	玄圃	198
 xuanqianji	旋前肌	232
 xuanqianyuanji	旋前圓肌	540
-xuanqianzhuankun	旋乾轉坤	383
+xuanqianzhuankun	旋乾轉坤	401
 xuanqing	選情	849
 xuanqu	選取	830
 xuanqu	選區	524
@@ -167445,6 +167459,7 @@ youcheng	又稱	109
 youcheng	有成	1
 youchengguo	有成果	1000
 youchenghuanjianlu	幽城幻劍錄	613
+youchengjian	有成見	280
 youchengxiao	有成效	1000
 youchenyou	有沉有	556
 youchenyoufu	有沉有浮	597
@@ -167571,6 +167586,7 @@ youfeng	有風	280
 youfenggan	有風感	280
 youfenglaiyi	有鳳來儀	523
 youfenjiao	有分教	640
+youfenqi	有分歧	280
 youfu	有福	280
 youfu	幽浮	1
 youfude	有服的	640
@@ -167802,6 +167818,7 @@ youjuxieyi	郵局協議	673
 youkalailidamaoxian	尤卡萊莉大冒險	632
 youkalailiyuwuwangchaoxue	尤卡萊莉與無妄巢穴	662
 youkan	又看	700
+youkanfa	有看法	280
 youkatan	尤卡坦	244
 youkatanbandao	尤卡坦半島	302
 youke	遊客	624
@@ -168052,6 +168069,7 @@ youpao	又跑	700
 youpengziyuanfanglai	有朋自遠方來	459
 youpi	幽僻	383
 youpian	誘騙	433
+youpianjian	有偏見	280
 youpianyou	有偏有	556
 youpianyouxiang	有偏有向	597
 youpiao	郵票	442
@@ -168375,6 +168393,7 @@ youxiang	郵箱	25
 youxiang	幽香	1
 youxiangdangbiaoziyouxianglipaifang	又想噹婊子又想立牌坊	378
 youxiangdangbiaoziyouxianglipaifang	又想當婊子又想立牌坊	378
+youxiangfa	有想法	280
 youxiangji	有向集	556
 youxiangjihe	有向集合	597
 youxiangong	有限公	556
@@ -168720,6 +168739,7 @@ youyige	有一個	1000
 youyige	右一個	280
 youyihui	有一回	1000
 youyihui	遊藝會	1
+youyijian	有意見	280
 youyijiang	優異奬	232
 youyijumeiyiju	有一句沒一句	318
 youyiku	優衣庫	382
@@ -168754,7 +168774,7 @@ youyiwuyi	有意無意	604
 youyixian	友誼縣	165
 youyixie	有一些	640
 youyiyan	有一眼	640
-youyiyi	有意義	822
+youyiyi	有異議	280
 youyizhi	有意志	640
 youyong	有用	700
 youyong	又用	280
@@ -174733,8 +174753,8 @@ zhenbaimudan	真白牡丹	538
 zhenban	偵辦	439
 zhenban	砧板	438
 zhenbang	真棒	305
-zhenbao	珍寶	168
-zhenbao	鎮暴	116
+zhenbao	珍寶	82
+zhenbao	鎮暴	56
 zhenbaowan	珍寶丸	470
 zhenbaozhuxiaozi	真寳珠小子	613
 zhenbaozouhuoguichechuanshuo	真爆走貨櫃車傳說	662
@@ -184548,8 +184568,8 @@ zouweishang	走為上	232
 zouweishangce	走為上策	625
 zouweishangji	走為上計	437
 zouxialai	走下來	10
-zouxian	走線	355
-zouxian	走險	246
+zouxian	走線	172
+zouxian	走險	119
 zouxiang	走向	1000
 zouxiang	奏響	10
 zouxiangduanceng	走向斷層	260
@@ -185288,8 +185308,8 @@ zuobianju	左邊距	800
 zuobiankuang	左邊框	800
 zuobianqi	坐便器	362
 zuobianr	左邊兒	167
-zuobiao	坐標	843
-zuobiao	座標	798
+zuobiao	坐標	941
+zuobiao	座標	896
 zuobiaofa	座標法	760
 zuobiaokongjian	坐標空間	260
 zuobiaokongjian	座標空間	258

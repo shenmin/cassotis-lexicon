@@ -3794,6 +3794,25 @@
 # low-frequency explicit pinyin additions 2026-07-07
 稍长	稍長	0.34	shaochang
 
+# opinion-related exact phrase additions 2026-07-08
+有意见	有意見	0.42	youyijian
+没意见	沒意見	0.40	meiyijian
+没啥意见	沒啥意見	0.32	meishayijian
+有成见	有成見	0.36	youchengjian
+没成见	沒成見	0.30	meichengjian
+有偏见	有偏見	0.38	youpianjian
+没偏见	沒偏見	0.32	meipianjian
+有看法	有看法	0.38	youkanfa
+没看法	沒看法	0.30	meikanfa
+有想法	有想法	0.40	youxiangfa
+没想法	沒想法	0.32	meixiangfa
+有异议	有異議	0.36	youyiyi
+没异议	沒異議	0.34	meiyiyi
+提异议	提異議	0.30	tiyiyi
+闹意见	鬧意見	0.24	naoyijian
+有分歧	有分歧	0.34	youfenqi
+没分歧	沒分歧	0.32	meifenqi
+
 # BEGIN words_new_import_2026_07_07
 # Imported from D:/_/words_new.txt on 2026-07-07; bucket=low; reviewed by rule-based classifier.
 百岁	百歲	0.01

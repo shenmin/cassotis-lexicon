@@ -3929,8 +3929,8 @@ erkaishuangkong	二開|雙控	446
 erkuojiaxing	耳廓|假性	360
 erkuojiaxingnangzhong	耳廓|假性|囊腫	442
 erkuoquesun	耳廓|缺損	421
-erkuoruangu	耳廓|軟骨	363
-erkuoruangumoyan	耳廓|軟骨|膜炎	445
+erkuoruangu	耳廓|軟骨	371
+erkuoruangumoyan	耳廓|軟骨|膜炎	453
 erlongjiaonang	耳聾|膠囊	434
 erlvyiwanzhongdu	二氯乙烷|中毒	435
 ermiaozhanzheng	鴯鶓|戰爭	413
@@ -4535,7 +4535,7 @@ fenmukongjian	墳墓|空間	479
 fennuguanli	憤怒|管理	486
 fenpaichengxu	分派|程序	488
 fenpairenwu	分派|任務	483
-fenqifukuan	分期|付款	446
+fenqifukuan	分期|付款	439
 fensanchengfen	分散|成分	469
 fensantixi	分散|體系	473
 fenshaolaji	焚燒|垃圾	483
@@ -6044,7 +6044,7 @@ hanguozhizao	韓國|製造	487
 hangxieyiqi	沆瀣|一氣	441
 hanjianjibing	罕見|疾病	483
 hankongjiaohuazheng	汗孔|角化症	467
-hanmagonglao	汗馬|功勞	449
+hanmagonglao	汗馬|功勞	426
 hanrebingyiqing	汗熱病|疫情	466
 hanshoudaxue	函授|大學	470
 hanshubangding	函數|綁定	487
@@ -10332,7 +10332,7 @@ maijiaozhongdu	麥角|中毒	435
 mailuofenming	脈絡|分明	443
 mailuomotuoli	脈絡膜|脫離	457
 mailuomoxueguanliu	脈絡膜|血管瘤	456
-mailuomoyan	脈絡|膜炎	416
+mailuomoyan	脈絡|膜炎	424
 maimaigongping	買賣|公平	453
 mainongfengsao	賣弄|風騷	455
 maishentoukao	賣身|投靠	455
@@ -10619,6 +10619,7 @@ meirongwaikexue	美容|外科學	416
 meirongxinlixue	美容|心理學	459
 meirongyaowuxue	美容|藥物學	456
 meirongyixue	美容|醫學	470
+meishayijian	沒啥|意見	477
 meishengchangfa	美聲|唱法	455
 meishidawawa	沒事打|娃娃	437
 meishidonghua	美式|動畫	433
@@ -12016,7 +12017,7 @@ puliangjibing	普利昂|疾病	470
 pulongdegongheguo	蒲隆地|共和國	454
 pupingdaolu	鋪平|道路	478
 pushuomili	撲朔|迷離	466
-putaomoyan	葡萄|膜炎	495
+putaomoyan	葡萄|膜炎	500
 putaoqiujun	葡萄|球菌	520
 putaoqiujunganran	葡萄|球菌|感染	458
 putaotangdai	葡萄|糖甙	471
@@ -13068,7 +13069,7 @@ ronglianghanshu	容量|函數	488
 ronglumilin	熔爐|密林	416
 rongmakongzong	戎馬|倥傯	422
 rongmaodexiacheng	絨毛|地下城	458
-rongmaomoyan	絨毛|膜炎	431
+rongmaomoyan	絨毛|膜炎	440
 rongmashengya	戎馬|生涯	472
 rongmeitizhujizheng	溶酶體|貯積症	457
 rongqikongjian	容器|控件	449
@@ -21137,7 +21138,7 @@ zhijianshumu	只見|樹木	478
 zhijianzhanzheng	指尖|戰爭	464
 zhijiaozhuanwan	直角|轉彎	383
 zhijiaozhuanwanjieti	直角|轉彎|階梯	465
-zhijiaozuobiao	直角|座標	466
+zhijiaozuobiao	直角|座標	474
 zhijiecanyu	直接|參與	480
 zhijiedanhongsu	直接|膽紅素	457
 zhijiedianli	直接|電離	417
@@ -21477,8 +21478,8 @@ zhonghuaminzu	中華|民族	520
 zhonghuataibei	中華|臺北	465
 zhongjiandaima	中間|代碼	487
 zhongjianlengqueqi	中間|冷卻器	502
-zhongjianputao	中間|葡萄	391
-zhongjianputaomoyan	中間|葡萄|膜炎	473
+zhongjianputao	中間|葡萄	401
+zhongjianputaomoyan	中間|葡萄|膜炎	483
 zhongjianqueshi	中間|缺失	473
 zhongjianshenjingyuan	中間|神經元	486
 zhongjiansuzhu	中間|宿主	449
@@ -21870,7 +21871,7 @@ zhutoudingban	柱頭|頂板	480
 zhutougongdun	柱頭|拱墩	457
 zhuwangmokeli	蛛網膜|顆粒	457
 zhuwangmonangzhong	蛛網膜|囊腫	463
-zhuwangmoyan	蛛網|膜炎	437
+zhuwangmoyan	蛛網|膜炎	446
 zhuxianjiedajiaotang	主顯節|大教堂	454
 zhuxingfenxi	逐行|分析	385
 zhuxingfenxidaima	逐行|分析|代碼	467
