@@ -18876,7 +18876,8 @@ chileling	吃了灵	501
 chilelingzhi	吃了灵芝	527
 chilelingzhicao	吃了灵芝草	569
 chilema	吃了吗	1000
-chilemei	吃了煤	556
+chilemei	吃了煤	600
+chilemei	吃了没	280
 chilemeitan	吃了煤炭	597
 chileng	齿冷	305
 chileniao	吃了鸟	501
@@ -18924,7 +18925,8 @@ chiman	吃慢	700
 chiman	迟慢	1
 chimao	耻毛	198
 chimaya	赤麻鸭	228
-chimei	魑魅	354
+chimei	吃没	280
+chimei	魑魅	1
 chimeiwangliang	魑魅魍魉	422
 chimeng	鸱甍	176
 chimi	痴迷	984
@@ -19036,6 +19038,7 @@ chitun	笞臀	198
 chituozanbi	持橐簪笔	249
 chiwan	吃完	914
 chiwanle	吃完了	800
+chiwanmei	吃完没	280
 chiwapian	吃瓦片	620
 chiwapianr	吃瓦片儿	690
 chiwei	吃味	198
@@ -25800,7 +25803,8 @@ daomangquan	导盲犬	375
 daomangzhuan	导盲砖	230
 daomao'anran	道貌岸然	469
 daomaoanran	道貌岸然	469
-daomei	倒霉	1000
+daomei	倒霉	985
+daomei	到没	280
 daomei	倒楣	1
 daomeidan	倒霉蛋	375
 daomeidanr	倒霉蛋儿	260
@@ -29992,8 +29996,8 @@ dingerxianan	丁二酰胺	570
 dingezu	定额组	232
 dingfa	顶阀	198
 dingfang	订房	286
-dingfei	鼎沸	717
-dingfei	订费	150
+dingfei	鼎沸	716
+dingfei	订费	151
 dingfen	定分	198
 dingfeng	顶峰	451
 dingfeng	顶风	375
@@ -30085,6 +30089,8 @@ dingle	盯了	658
 dingle	订了	658
 dingle	叮了	639
 dinglei	丁磊	234
+dinglemei	定了没	280
+dinglemei	订了没	280
 dingli	定理	797
 dingli	鼎立	775
 dingli	订立	766
@@ -30121,6 +30127,8 @@ dingmao	丁卯	960
 dingmao	顶冒	1
 dingmaohuluan	丁卯胡乱	218
 dingmaozhanzheng	丁卯战争	218
+dingmei	定没	280
+dingmei	订没	280
 dingmenzhuanghu	顶门壮户	387
 dingmian	顶面	305
 dingmihanxian	顶泌汗腺	540
@@ -32278,6 +32286,7 @@ doumai	兜卖	198
 doumanjiang	豆满江	174
 doumao	逗猫	10
 doumao	兜帽	1
+doumei	都没	280
 doumen	斗门	377
 doumenqu	斗门区	165
 doumenzi	逗闷子	384
@@ -36012,7 +36021,7 @@ fahuizuoyong	发挥作用	280
 fahun	发昏	411
 fahuo	发火	965
 fahuo	发货	1
-faji	发急	620
+faji	发急	621
 faji	发迹	356
 faji	发髻	348
 faji	法纪	133
@@ -36098,6 +36107,7 @@ falaosao	发牢骚	524
 falaowang	法老王	339
 falasheng	法拉盛	198
 fale	发了	280
+falemei	发了没	280
 faleng	发愣	906
 faleng	发冷	281
 faleshisilianzheng	法乐氏四联症	700
@@ -36141,7 +36151,8 @@ fama	法马	300
 famagusita	法马古斯塔	274
 famang	法盲	328
 famao	发毛	417
-famei	发霉	428
+famei	发霉	784
+famei	发没	280
 famen	法门	664
 famen	阀门	263
 fameng	发蒙	418
@@ -42486,6 +42497,7 @@ gaikuo	概括	1000
 gaikuohua	概括化	232
 gailan	概览	997
 gaile	改了	700
+gailemei	改了没	280
 gaili	改隶	198
 gailiang	改良	561
 gailiangmao	改良毛	640
@@ -42508,6 +42520,7 @@ gaima	改吗	700
 gaiman	盖满	700
 gaimao	盖帽	398
 gaimaor	盖帽儿	198
+gaimei	改没	280
 gaimen	盖门	377
 gaiming	改名	513
 gaiminganshouti	钙敏感受体	640
@@ -45075,6 +45088,7 @@ gengman	更慢	1000
 gengmang	更忙	1000
 gengmaxian	耿马县	167
 gengmei	更美	1000
+gengmei	更没	280
 gengmeiyouren	更没有人	800
 gengming	更名	502
 gengmingde	更名地	640
@@ -48032,6 +48046,7 @@ guanlanhu	观澜湖	333
 guanlaoye	官老爷	241
 guanle	关了	700
 guanle	管了	649
+guanlemei	关了没	280
 guanli	惯例	1000
 guanli	管理	1000
 guanli	官吏	1
@@ -48095,7 +48110,8 @@ guanmaitongpian	冠脉通片	540
 guanmaixunhuan	冠脉循环	570
 guanmaozongxieding	关贸总协定	283
 guanmaya	冠麻鸭	228
-guanmei	官媒	418
+guanmei	关没	280
+guanmei	官媒	160
 guanmen	关门	834
 guanmenbihu	关门闭户	663
 guanmendagou	关门打狗	430
@@ -52528,7 +52544,7 @@ haohaoxiangxiang	好好想想	1018
 haohaoxiansheng	好好先生	601
 haohe	好喝	455
 haohua	豪华	850
-haohua	好话	552
+haohua	好话	553
 haohua	好滑	280
 haohuai	好坏	453
 haohuajiaoche	豪华轿车	405
@@ -52607,6 +52623,7 @@ haolechuangbawangletong	好了疮疤忘了痛	348
 haoleha	好了哈	800
 haolei	好嘞	10
 haolema	好了吗	1000
+haolemei	好了没	280
 haoleng	好冷	280
 haoleshangbawangleteng	好了伤疤忘了疼	348
 haoli	好立	930
@@ -52633,6 +52650,7 @@ haomazao	好马遭	501
 haomazaobian	好马遭鞭	527
 haomazaobianda	好马遭鞭打	569
 haomaziyuanzuzhi	号码资源组织	791
+haomei	好没	280
 haomen	豪门	425
 haomeng	好梦	10
 haomengnancheng	好梦难成	387
@@ -53941,6 +53959,7 @@ helebuwei	何乐不为	599
 heleisidejiaodouchang	赫雷斯的角斗场	632
 heleisidejiaodouchangxilie	赫雷斯的角斗场系列	662
 heleixiadikejie	赫雷夏蒂克街	579
+helemei	喝了没	280
 helemi	喝了迷	501
 helemihun	喝了迷魂	527
 helemihuntang	喝了迷魂汤	569
@@ -54005,7 +54024,8 @@ hemantan	河漫滩	481
 hemanxi	何曼希	788
 hemaxinhaotonglu	河马信号通路	791
 hemei	合酶	560
-hemei	褐煤	204
+hemei	喝没	280
+hemei	褐煤	100
 hemeijie	和美街	391
 hemeizhen	和美镇	167
 hemian	河面	439
@@ -54729,6 +54749,7 @@ hetundusu	河豚毒素	432
 hewaixingxi	河外星系	296
 hewaixingyun	河外星云	260
 hewan	喝完	280
+hewanmei	喝完没	280
 hewei	何为	793
 hewei	合为	776
 hewei	合围	119
@@ -58829,6 +58850,7 @@ huimangbu	回盲部	470
 huimangchangbanmo	回盲肠瓣膜	640
 huimao	灰毛	10
 huimaqiang	回马枪	222
+huimei	回没	280
 huimen	回门	740
 huimeng	会盟	1000
 huimengmeng	灰蒙蒙	443
@@ -63224,6 +63246,7 @@ jiaolao	较老	1000
 jiaole	叫了	700
 jiaole	交了	280
 jiaolei	噍类	198
+jiaolemei	交了没	280
 jiaoleng	较冷	280
 jiaolengshui	浇冷水	360
 jiaoli	教理	811
@@ -63279,8 +63302,9 @@ jiaomaiya	焦麦芽	470
 jiaoman	较慢	700
 jiaomanzhiwen	娇蛮之吻	552
 jiaomanzhiwen	骄蛮之吻	552
-jiaomei	娇美	705
-jiaomei	娇媚	663
+jiaomei	娇美	675
+jiaomei	娇媚	605
+jiaomei	交没	280
 jiaomen	角门	499
 jiaomen	脚门	351
 jiaomian	脚面	378
@@ -73066,6 +73090,7 @@ kailasashenmiao	凯拉萨神庙	526
 kaile	开了	700
 kaile	揩了	606
 kailege	开了个	280
+kailemei	开了没	280
 kaili	开立	783
 kaili	凯里	416
 kailian	开脸	358
@@ -73092,6 +73117,7 @@ kaima	开骂	1
 kaimaila	开麦拉	165
 kaiman	开满	323
 kaimanqundao	开曼群岛	228
+kaimei	开没	280
 kaimen	开门	834
 kaimen'e	凯门鳄	375
 kaimene	凯门鳄	375
@@ -73919,9 +73945,11 @@ kanle	看了	700
 kanle	侃了	606
 kanleba	看了吧	800
 kanlema	看了吗	800
+kanlemei	看了没	280
 kanlin	瞰临	198
 kanma	看吗	280
-kanmei	龛楣	260
+kanmei	看没	280
+kanmei	龛楣	145
 kanmeiqi	看袂起	635
 kanmeishang	看袂上	556
 kanmeishangmu	看袂上目	597
@@ -74019,6 +74047,7 @@ kanute	喀奴特	230
 kanwan	看完	10
 kanwan	莰烷	1
 kanwang	看望	1000
+kanwanmei	看完没	280
 kanwu	刊物	888
 kanwubiao	勘误表	508
 kanwubiao	刊误表	368
@@ -77553,6 +77582,7 @@ lailaiwangwang	来来往往	536
 laile	来了	700
 laileba	来了吧	800
 lailema	来了吗	800
+lailemei	来了没	280
 lailene	来了呢	800
 laili	来历	481
 lailian	赖脸	137
@@ -77569,6 +77599,7 @@ lailunshizonghezheng	莱伦氏综合征	700
 lailunzonghezheng	莱伦综合征	640
 laima	来吗	700
 laimaidan	莱麦丹	230
+laimei	来没	280
 laimu	莱姆	389
 laimubing	莱姆病	464
 laimujiu	莱姆酒	230
@@ -79839,6 +79870,7 @@ leligai	乐力钙	470
 leling	勒令	560
 lema	了吗	1018
 lema	勒马	511
+lemei	了没	280
 lene	了呢	1000
 leng'ao	冷傲	385
 lengao	冷傲	385
@@ -87796,7 +87828,7 @@ maihua	卖画	10
 maihui	买回	323
 maiji	麦积	198
 maijia	麦加	621
-maijia	买家	443
+maijia	买家	444
 maijia	卖家	417
 maijia	卖价	103
 maijiachaoxiangbi	麦加朝向壁	723
@@ -87862,6 +87894,8 @@ maikuli	卖苦力	362
 mailang	麦浪	218
 maile	买了	1000
 maile	卖了	700
+mailemei	买了没	280
+mailemei	卖了没	280
 maili	卖力	479
 maili	麦粒	338
 mailian	卖脸	10
@@ -87892,6 +87926,8 @@ maimai	买卖	502
 maimaigongping	买卖公平	626
 maimaihanqing	脉脉含情	651
 maimateng	买麻藤	470
+maimei	买没	280
+maimei	卖没	280
 maimen	脉门	402
 maimendong	麦门冬	193
 maimendongtang	麦门冬汤	449
@@ -90152,8 +90188,8 @@ meijingyan	没经验	232
 meijinr	没劲儿	707
 meijishequ	美济社区	482
 meijitedao	梅吉特岛	482
-meijiu	美酒	463
-meijiu	没救	283
+meijiu	美酒	462
+meijiu	没救	284
 meiju	枚举	168
 meiju	美剧	10
 meijubianliang	枚举变量	698
@@ -90597,7 +90633,7 @@ meiwenhua	没文化	10
 meiwenti	没问题	1018
 meiwenzhijiaodai	美纹纸胶带	289
 meiwo	没我	700
-meixi	没戏	685
+meixi	没戏	686
 meixian	梅县	371
 meixiandequ	梅县地区	482
 meixiang	每项	420
@@ -94143,7 +94179,7 @@ moxiang	默想	969
 moxiangjing	抹香鲸	432
 moxiao	抹消	198
 moxidelvfa	摩西的律法	289
-moxie	默写	575
+moxie	默写	576
 moxie	摹写	437
 moxiezuo	摩蟹座	228
 moxige	墨西哥	660
@@ -97635,7 +97671,8 @@ nimaijiaolin	尼麦角林	540
 nimaijiaolinzhusheye	尼麦角林注射液	638
 nimanpikezheng	尼曼匹克症	640
 nimaxian	尼玛县	160
-nimei	你妹	1000
+nimei	你没	1018
+nimei	你妹	700
 nimei	泥煤	1
 nimeishuli	尼美舒利	540
 nimeishulifensanpian	尼美舒利分散片	635
@@ -100006,6 +100043,7 @@ paoleheshangpaobulemiao	跑了和尚跑不了庙	720
 paoleheshangpaobuliaomiao	跑了和尚跑不了庙	378
 paolei	跑垒	482
 paoleiyuan	跑垒员	375
+paolemei	跑了没	280
 paoli	抛离	393
 paolian	炮炼	202
 paolongtao	跑龙套	240
@@ -100022,6 +100060,7 @@ paomao	抛锚	651
 paomaquandi	跑马圈地	260
 paomashan	跑马山	165
 paomating	跑马厅	232
+paomei	跑没	280
 paomeiyan	抛媚眼	353
 paomian	泡面	378
 paomo	泡沫	1000
@@ -103907,6 +103946,7 @@ qianlaxingshiwangmotuoli	牵拉性视网膜脱离	664
 qianle	浅了	700
 qianle	牵了	663
 qianlei	牵累	416
+qianlemei	签了没	280
 qianli	潜力	1009
 qianli	千里	795
 qianli'emao	千里鹅毛	387
@@ -103995,6 +104035,7 @@ qianma	荨麻	127
 qianmaichongyizhi	前脉冲抑制	640
 qianmao	前茅	391
 qianmaxianmei	钳马衔枚	383
+qianmei	签没	280
 qianmen	前门	1000
 qianmen	遣闷	1
 qianmenwanhu	千门万户	625
@@ -108926,6 +108967,7 @@ qula	去啦	700
 qulaichuan	去来川	640
 qule	去了	700
 qule	取乐	321
+qulemei	去了没	280
 qulemin	区乐民	470
 qulene	去了呢	800
 quleng	趋冷	198
@@ -108950,6 +108992,7 @@ qumai	去卖	700
 qumalai	曲麻莱	193
 qumalaixian	曲麻莱县	243
 qumang	去忙	700
+qumei	去没	280
 qumei	去魅	240
 qumeibing	曲霉病	500
 qumeidusu	曲霉毒素	218
@@ -115819,6 +115862,7 @@ shanlanke	山榄科	169
 shanlanxianweng	山蓝仙鹟	218
 shanle	删了	1000
 shanleba	删了吧	1018
+shanlemei	删了没	280
 shanli	山梨	184
 shanli	山里	10
 shanlian	讪脸	248
@@ -115862,6 +115906,7 @@ shanmaidong	山麦冬	470
 shanmao	山猫	401
 shanmaoju	山毛榉	244
 shanmaque	山麻雀	167
+shanmei	删没	280
 shanmei	擅美	222
 shanmeijiaonang	山玫胶囊	540
 shanmen	扇门	280
@@ -124465,6 +124510,7 @@ shuilao	水牢	583
 shuilaoya	水老鸦	167
 shuile	睡了	1000
 shuilei	水雷	440
+shuilemei	睡了没	280
 shuileng	水冷	194
 shuili	水利	1000
 shuili	水力	915
@@ -124522,7 +124568,8 @@ shuilv	税率	464
 shuilv	水绿	303
 shuima	水马	377
 shuimanjinshan	水漫金山	673
-shuimei	水湄	313
+shuimei	睡没	280
+shuimei	水湄	183
 shuimeibing	水媒病	500
 shuimeichuanranbing	水媒传染病	640
 shuimeijibing	水媒疾病	570
@@ -125463,7 +125510,8 @@ shuoli	说理	1000
 shuoliuzui	说溜嘴	232
 shuolou	说漏	280
 shuolouzui	说漏嘴	415
-shuomei	说媒	413
+shuomei	说没	280
+shuomei	说媒	276
 shuomenghua	说梦话	643
 shuoming	说明	742
 shuominghui	说明会	444
@@ -126503,6 +126551,7 @@ simazanti	驷马攒蹄	10
 simazhao	司马昭	629
 simazhaozhixin	司马昭之心	416
 simazhaozhixinlurenjiezhi	司马昭之心路人皆知	378
+simei	死没	280
 simeigelutai	司美格鲁肽	289
 simenjiaoche	四门轿车	260
 simi	司米	420
@@ -129612,8 +129661,10 @@ tamaer	塔玛尔	230
 tamagezi	拓麻歌子	538
 tamakeji	塔麻可吉	538
 tamakejidedianzijixiaoshangdian	塔麻可吉的电子鸡小商店	662
-tamei	他妹	1000
-tamei	她妹	1000
+tamei	他没	1000
+tamei	她没	1000
+tamei	他妹	700
+tamei	她妹	700
 tamen	他们	1000
 tamen	她们	580
 tamen	它们	580
@@ -133033,6 +133084,7 @@ tingmafan	挺麻烦	800
 tingman	挺慢	700
 tingmanyi	挺满意	800
 tingmei	挺美	700
+tingmei	听没	280
 tingming	听命	611
 tingmingxian	挺明显	800
 tingmingyu	听命于	280
@@ -137637,6 +137689,7 @@ wanle	玩了	1000
 wanle	晚了	700
 wanle	弯了	649
 wanle	玩乐	10
+wanlemei	完了没	280
 wanli	万里	1000
 wanli	万历	210
 wanlian	挽联	446
@@ -140465,8 +140518,8 @@ womayadasi	倭马亚大寺	660
 womayajianzhu	倭马亚建筑	731
 womayaqingzhensi	倭马亚清真寺	660
 womayawangchao	倭马亚王朝	289
-womei	我妹	1000
-womei	我没	1000
+womei	我没	1018
+womei	我妹	700
 women	我们	914
 womenbixu	我们必须	800
 womenbushishenme	我们不是什么	596
@@ -144206,7 +144259,7 @@ xiangta	向他	700
 xiangta	向她	700
 xiangta	向它	700
 xiangta	想他	700
-xiangta	想她	677
+xiangta	想她	678
 xiangtai	相态	539
 xiangtan	详谈	280
 xiangtan	湘潭	184
@@ -147572,6 +147625,7 @@ xiele	泄了	10
 xieleba	歇了吧	108
 xielehu	蝎了虎	547
 xielehuzi	蝎了虎子	597
+xielemei	写了没	280
 xielengyan	斜愣眼	167
 xielengyanr	斜愣眼儿	218
 xieli	协力	936
@@ -147599,7 +147653,8 @@ xiema	斜吗	280
 xiema	邪吗	280
 xieman	写满	280
 xieman	亵慢	1
-xiemei	谐美	391
+xiemei	写没	280
+xiemei	谐美	1
 xiemen	邪门	305
 xiemeng	蟹獴	198
 xiemenwaidao	邪门歪道	427
@@ -147727,7 +147782,7 @@ xiewa	鞋袜	663
 xiewa'erdena	谢瓦尔德纳	274
 xiewa'erdenaze	谢瓦尔德纳泽	355
 xiewan	亵玩	280
-xiewan	写完	126
+xiewanmei	写完没	280
 xiewanwen	谢婉雯	470
 xiewei	写为	1000
 xiewei	些微	93
@@ -149050,6 +149105,7 @@ xingle	行了	700
 xingle	醒了	700
 xingleiguchun	性类固醇	570
 xingleiqi	性蕾期	232
+xinglemei	醒了没	280
 xinglengdan	性冷淡	379
 xinglenggan	性冷感	232
 xingli	行李	1000
@@ -149094,6 +149150,7 @@ xingmanzu	性满足	379
 xingmao	形貌	430
 xingmashurufa	形码输入法	740
 xingmatai	星马泰	232
+xingmei	醒没	280
 xingmian	幸免	1000
 xingmianzhe	幸免者	500
 xingmiejijue	兴灭继绝	369
@@ -151628,7 +151685,8 @@ xiuluo	修罗	194
 xiuluochang	修罗场	165
 xiuluozhimen	修罗之门	538
 xiulvche	休旅车	232
-xiumei	秀美	439
+xiumei	秀美	812
+xiumei	修没	280
 xiumian	休眠	1000
 xiumian	修面	1
 xiumianhuoshan	休眠火山	446
@@ -168878,6 +168936,7 @@ zaima	在吗	1036
 zaimai	再买	1000
 zaimai	再卖	1000
 zaimaiyetianbuxinteng	崽卖爷田不心疼	348
+zaimei	再没	280
 zaimeiguode'anninvwangfenggejianzhu	在美国的安妮女王风格建筑	760
 zaimin	灾民	441
 zaiming	载明	588
@@ -181353,6 +181412,7 @@ zoulang	走廊	460
 zoule	走了	700
 zouleba	走了吧	800
 zoulema	走了吗	800
+zoulemei	走了没	280
 zouliang	走量	198
 zoulou	走漏	660
 zoulouxiaoxi	走漏消息	387
@@ -181369,6 +181429,7 @@ zoumaling	走马岭	552
 zoumashangren	走马上任	467
 zoumayagan	走马牙疳	536
 zoumazhangtai	走马章台	387
+zoumei	走没	280
 zoumenlu	走门路	379
 zoumenzi	走门子	340
 zoumingqu	奏鸣曲	579
@@ -182289,9 +182350,10 @@ zuolailinsuanzhusheye	唑来膦酸注射液	627
 zuolao	坐牢	431
 zuole	做了	700
 zuole	坐了	654
-zuole	作乐	68
+zuole	作乐	12
 zuolei	左肋	10
 zuoleifeika'er	佐勒菲卡尔	283
+zuolemei	做了没	280
 zuolengbandeng	坐冷板凳	448
 zuoli	坐力	547
 zuolian	左联	314
@@ -182315,8 +182377,9 @@ zuoma	作马	138
 zuomaimai	做买卖	375
 zuoman	坐满	280
 zuomanyue	做满月	362
-zuomei	做媒	400
-zuomei	做眉	288
+zuomei	做没	280
+zuomei	做眉	184
+zuomei	做媒	1
 zuomeizuo	做眉做	556
 zuomeizuoxiang	坐没坐相	535
 zuomeizuoyan	做眉做眼	432
@@ -182447,6 +182510,7 @@ zuotui	左腿	10
 zuowan	做完	1018
 zuowan	昨晚	700
 zuowanle	做完了	1036
+zuowanmei	做完没	280
 zuowanyouguai	左弯右拐	218
 zuowei	作为	1000
 zuowei	做为	156
