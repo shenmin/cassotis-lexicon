@@ -8503,7 +8503,12 @@ def _compute_cedict_style_penalty(defs: str) -> int:
             or ("classical" in sense)
             or ("archaic" in sense)
         )
-        is_variant = sense.startswith(("variant of ", "old variant of ", "see also "))
+        # CC-CEDICT also uses definitions such as
+        # "used for X (in Taiwan)" for regional alternative spellings.  These
+        # should stay visible, but should not outrank the mainstream exact term
+        # in a homophone bucket.
+        is_regional_used_for = sense.startswith("used for ") and "taiwan" in sense
+        is_variant = sense.startswith(("variant of ", "old variant of ", "see also ")) or is_regional_used_for
         # CEDICT definitions such as "Yue state" describe historical/geographic
         # proper terms, not the everyday abstract sense "state/condition".
         is_geopolitical_state = (
@@ -8550,6 +8555,11 @@ def _compute_cedict_style_penalty(defs: str) -> int:
     if variant_senses > 0:
         if plain_senses <= 0:
             return 180
+        if any(
+            sense.startswith("used for ") and "taiwan" in sense
+            for sense in senses
+        ):
+            return 96
         if variant_senses * 2 >= total_senses:
             return 120
         return 64
@@ -8645,7 +8655,9 @@ def _compute_cedict_ime_seed_adjustment(text: str, defs: str) -> int:
     )
 
     for sense in senses:
-        if sense.startswith(("variant of ", "old variant of ", "see also ")):
+        if sense.startswith(("variant of ", "old variant of ", "see also ")) or (
+            sense.startswith("used for ") and "taiwan" in sense
+        ):
             variant_senses += 1
         if any(clue in sense for clue in place_clues):
             place_senses += 1
