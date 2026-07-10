@@ -63,3 +63,36 @@
 止咳药	止咳藥	0.12
 止疼药	止疼藥	0.12
 # END words_new_import_2026_07_09
+
+# BEGIN words_source_import_2026_07_10 (reviewed medical)
+异物感	異物感	0.38	yiwugan
+便意	便意	0.38	bianyi
+硬结	硬結	0.38	yingjie
+棉条	棉條	0.38	miantiao
+心理障碍	心理障礙	0.34	xinlizhangai
+肛检	肛檢	0.38	gangjian
+术中	術中	0.38	shuzhong
+扩肛	擴肛	0.38	kuogang
+排卵期	排卵期	0.38	pailuanqi
+护理液	護理液	0.38	huliye
+推药	推藥	0.38	tuiyao
+观察室	觀察室	0.38	guanchashi
+大阴唇	大陰唇	0.38	dayinchun
+趴卧	趴臥	0.38	pawo
+用药	用藥	0.38	yongyao
+灌肠液	灌腸液	0.38	guanchangye
+性唤起	性喚起	0.38	xinghuanqi
+润湿	潤濕	0.38	runshi
+凯格尔	凱格爾	0.38	kaigeer
+屈伸	屈伸	0.38	qushen
+奇痒	奇癢	0.38	qiyang
+口唇	口脣	0.38	kouchun
+上颚	上顎	0.38	shange
+体脂率	體脂率	0.38	tizhilv
+体脂	體脂	0.38	tizhi
+碘伏	碘伏	0.38	dianfu
+体前屈	體前屈	0.38	tiqianqu
+对侧	對側	0.38	duice
+阴道哑铃	陰道啞鈴	0.34	yindaoyaling
+缩阴球	縮陰球	0.38	suoyinqiu
+# END words_source_import_2026_07_10
