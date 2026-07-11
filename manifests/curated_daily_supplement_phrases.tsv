@@ -11714,4 +11714,16 @@
 报备	報備	0.38	baobei
 不限	不限	0.42	buxian
 这身	這身	0.34	zheshen
+# Useful related exact phrases kept below broad daily defaults.
+分片	分片	0.62	fenpian
+留不住	留不住	0.56	liubuzhu
+留不下	留不下	0.54	liubuxia
+占着	佔著	0.50	zhanzhe
+占满	佔滿	0.52	zhanman
+便宜一点	便宜一點	0.58	pianyidian
+贵一些	貴一些	0.56	guiyixie
+便宜一些	便宜一些	0.58	pianyixie
+空一点	空一點	0.54	kongyidian
+满一点	滿一點	0.54	manyidian
+
 # END words_source_import_2026_07_10

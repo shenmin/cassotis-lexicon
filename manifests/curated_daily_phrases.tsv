@@ -7187,4 +7187,15 @@
 爬楼	爬樓	0.84	palou
 第一人称	第一人稱	0.84	diyirencheng
 圈外	圈外	0.84	quanwai
+# Modern daily-frequency anchors for source corpora skewed toward formal/news usage.
+过期	過期	0.92	guoqi
+文案	文案	0.91	wenan
+接着	接著	0.94	jiezhe
+
+# Common short daily phrases.
+不留	不留	0.86	buliu
+占了	佔了	0.84	zhanle
+很空	很空	0.82	henkong
+贵一点	貴一點	0.84	guiyidian
+
 # END words_source_import_2026_07_10
