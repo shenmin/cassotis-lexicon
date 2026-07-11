@@ -11726,4 +11726,27 @@
 空一点	空一點	0.54	kongyidian
 满一点	滿一點	0.54	manyidian
 
+# Productive "才 + word" combinations remain exact-selectable without
+# contributing broad high-frequency priors to unrelated long-sentence paths.
+才可	才可	0.52	caike
+才走	才走	0.54	caizou
+才到	才到	0.58	caidao
+才肯	才肯	0.52	caiken
+才把	才把	0.54	caiba
+才让	才讓	0.54	cairang
+才给	才給	0.52	caigei
+才被	才被	0.52	caibei
+才说	才說	0.54	caishuo
+才做	才做	0.52	caizuo
+才用	才用	0.52	caiyong
+才知道	才知道	0.62	caizhidao
+才发现	才發現	0.60	caifaxian
+才明白	才明白	0.58	caimingbai
+才觉得	才覺得	0.60	caijuede
+才开始	才開始	0.58	caikaishi
+才回来	才回來	0.54	caihuilai
+才出去	才出去	0.52	caichuqu
+才进去	才進去	0.52	caijinqu
+才回家	才回家	0.54	caihuijia
+
 # END words_source_import_2026_07_10

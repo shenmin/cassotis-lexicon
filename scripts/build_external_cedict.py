@@ -541,9 +541,10 @@ def _curated_daily_supplement_weight_cap(usage_score: float, text: str) -> int:
 # Quantity-classifier snippets are useful exact matches, but they are not
 # necessarily more common than same-pinyin lexical words. Keep them visible
 # without giving them the full daily/chat priority floor.
-DAILY_COUNT_MEASURE_CHARS = set("把部对栋副幅根幢件轮盘匹批片篇瓶扇双台条桶页项只爿间間套房厅廳卫衛室厨廚种種")
+DAILY_COUNT_MEASURE_CHARS = set("把本部对栋副幅根幢件轮盘匹批片篇瓶扇双台条桶页项只爿间間套房厅廳卫衛室厨廚种種")
 DAILY_HOUSING_COUNT_MEASURE_CHARS = set("间間套房厅廳卫衛室厨廚")
 DAILY_COUNT_PREFIX_CHARS = set("一二两三四五六七八九十几每")
+DAILY_TRADITIONAL_COUNT_PREFIX_CHARS = set("兩幾")
 # Fiction entities and public/historical people names are supplemental named
 # entities and should not inherit everyday-word priors. Product/platform proper
 # nouns have their own conservative cap: exact matches should stay visible, but
@@ -14268,10 +14269,20 @@ def _is_daily_count_measure_phrase(text: str) -> bool:
         rest = text[1:]
     elif text[0] in DAILY_COUNT_PREFIX_CHARS:
         rest = text[1:]
+    elif (
+        text[0] in DAILY_TRADITIONAL_COUNT_PREFIX_CHARS
+        and len(text) > 1
+        and text[1] == "本"
+    ):
+        rest = text[1:]
 
     if not rest:
         return False
-    return rest[0] in DAILY_COUNT_MEASURE_CHARS
+    if rest[0] not in DAILY_COUNT_MEASURE_CHARS:
+        return False
+    if rest[0] == "本":
+        return len(rest) == 1 or (len(rest) == 2 and rest[1] in {"书", "書"})
+    return True
 
 
 def _is_daily_housing_count_measure_phrase(text: str) -> bool:
