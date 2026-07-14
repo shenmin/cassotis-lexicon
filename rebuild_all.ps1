@@ -180,7 +180,11 @@ if ($RedistributionClass -ne "") { $buildArgs["RedistributionClass"] = $Redistri
 if ($AttributionRequired -ne "") { $buildArgs["AttributionRequired"] = $AttributionRequired }
 if ($SourceNotes -ne "") { $buildArgs["SourceNotes"] = $SourceNotes }
 if ($PinyinOverrides -ne "") { $buildArgs["PinyinOverrides"] = $PinyinOverrides }
-if ($QueryPathLmCorpusDir -ne "") { $buildArgs["QueryPathLmCorpusDir"] = $QueryPathLmCorpusDir }
+if ($QueryPathLmCorpusDir -ne "") {
+    $buildArgs["QueryPathLmCorpusDir"] = $QueryPathLmCorpusDir
+    $buildArgs["OutputLmTransitionSc"] = "data/generated/dict_lm_transition_sc.txt"
+    $buildArgs["OutputLmTransitionTc"] = "data/generated/dict_lm_transition_tc.txt"
+}
 
 & $buildScript @buildArgs
 if ($LASTEXITCODE -ne 0) {

@@ -17971,6 +17971,7 @@ def _collect_lm_transition_priors(
     segment_counts: Dict[str, int] = {}
     transition_weight_sum: Dict[Tuple[str, str], int] = {}
     transition_rank_max: Dict[Tuple[str, str], int] = {}
+    transition_multi_rank_max: Dict[Tuple[str, str], int] = {}
     transition_gap_max: Dict[Tuple[str, str], int] = {}
     stats: Dict[str, int] = {
         "lm_corpus_segmented": 0,
@@ -17978,6 +17979,10 @@ def _collect_lm_transition_priors(
         "lm_corpus_bigram_windows": 0,
         "lm_corpus_trigram_windows": 0,
         "lm_corpus_priors_emitted": 0,
+        "lm_corpus_priors_skipped_query_rank": 0,
+        "lm_corpus_priors_skipped_weak_runner_up": 0,
+        "lm_corpus_priors_skipped_weak_single": 0,
+        "lm_corpus_priors_skipped_ambiguous_function_bigram": 0,
     }
 
     def _window_allowed(window: List[Tuple[str, str, int, int, int]]) -> bool:
@@ -18002,10 +18007,10 @@ def _collect_lm_transition_priors(
         return True
 
     def _window_emittable(segments: List[str]) -> bool:
-        for text in segments:
-            if _cjk_len(text) <= 1:
-                return False
-        return True
+        single_segments = [text for text in segments if _cjk_len(text) <= 1]
+        if len(single_segments) > 1:
+            return False
+        return all(text in LM_FUNCTION_SINGLE_CHARS for text in single_segments)
 
     for sentence, source_name in sentences:
         segments = _segment_lm_sentence(
@@ -18033,11 +18038,22 @@ def _collect_lm_transition_priors(
                 transition_sources.setdefault(key, set()).add(source_name)
                 transition_weight_sum[key] = transition_weight_sum.get(key, 0) + sum(item[2] for item in window)
                 transition_rank_max[key] = max(transition_rank_max.get(key, 0), *(item[3] for item in window))
+                multi_ranks = [item[3] for item in window if _cjk_len(item[1]) > 1]
+                if multi_ranks:
+                    transition_multi_rank_max[key] = max(
+                        transition_multi_rank_max.get(key, 0), *multi_ranks
+                    )
                 transition_gap_max[key] = max(transition_gap_max.get(key, 0), *(item[4] - item[2] for item in window))
                 if window_size == 2:
                     stats["lm_corpus_bigram_windows"] += 1
                 else:
                     stats["lm_corpus_trigram_windows"] += 1
+
+    query_contenders: Dict[str, List[Tuple[str, int]]] = {}
+    for (query, path), count in transition_counts.items():
+        query_contenders.setdefault(query, []).append((path, count))
+    for contenders in query_contenders.values():
+        contenders.sort(key=lambda item: (-item[1], item[0]))
 
     priors: Dict[Tuple[str, str], int] = {}
     total_windows = max(1, sum(transition_counts.values()))
@@ -18051,6 +18067,61 @@ def _collect_lm_transition_priors(
             continue
         if source_count < 2 and count < (min_count + 4):
             continue
+
+        contenders = query_contenders.get(key[0], [])
+        contender_rank = next(
+            (rank for rank, (path, _count) in enumerate(contenders, start=1) if path == key[1]),
+            len(contenders) + 1,
+        )
+        best_count = contenders[0][1] if contenders else count
+        competitor_count = max(
+            (other_count for other_path, other_count in contenders if other_path != key[1]),
+            default=0,
+        )
+        query_total_count = max(1, sum(item_count for _path, item_count in contenders))
+        query_share = count / query_total_count
+
+        # Runtime bonuses are positive-only. Keep only paths with defensible
+        # evidence inside the same pinyin bucket; otherwise a rare homophone
+        # can only distort the decoder and can never express negative evidence.
+        if contender_rank > 2:
+            stats["lm_corpus_priors_skipped_query_rank"] += 1
+            continue
+        if contender_rank == 2 and (
+            count < (min_count + 3) or count * 100 < best_count * 45
+        ):
+            stats["lm_corpus_priors_skipped_weak_runner_up"] += 1
+            continue
+
+        has_function_single = any(_cjk_len(text) <= 1 for text in segments)
+        if has_function_single:
+            if len(segments) == 2:
+                # A two-token transition such as `的|经历` has too little
+                # context to safely overturn a stronger homophone. Keep this
+                # class only when its multi-character token is itself the
+                # lexical winner for the exact pinyin bucket. A trigram may
+                # still support an ambiguous token with real context.
+                if transition_multi_rank_max.get(key, 1) > 1:
+                    stats["lm_corpus_priors_skipped_ambiguous_function_bigram"] += 1
+                    continue
+                weak_single = (
+                    source_count < 2
+                    or count < max(8, min_count + 3)
+                    or (competitor_count > 0 and count * 100 < competitor_count * 70)
+                )
+            else:
+                # Large independent corpora often partition a valid narrative
+                # trigram into one source. Permit it only with substantially
+                # stronger count and same-pinyin dominance evidence.
+                weak_single = (
+                    count < max(10, min_count + 6)
+                    or (source_count < 2 and count < 16)
+                    or (competitor_count > 0 and count * 100 < competitor_count * 85)
+                )
+            if weak_single:
+                stats["lm_corpus_priors_skipped_weak_single"] += 1
+                continue
+
         segment_product = 1
         for text in segments:
             segment_product *= max(1, segment_counts.get(text, 1))
@@ -18058,17 +18129,20 @@ def _collect_lm_transition_priors(
         avg_weight = transition_weight_sum[key] / max(1, count * len(segments))
         rank_penalty = max(0, transition_rank_max.get(key, 1) - 1) * 10
         gap_penalty = min(60, max(0, transition_gap_max.get(key, 0)) // 8)
-        score = 92
-        score += int(round(math.log2(count + 1) * 34))
-        score += int(round(max(-1.0, min(4.0, pmi)) * 18))
-        score += int(round(min(82.0, avg_weight * 0.035)))
-        score += min(42, source_count * 14)
+        dominance = math.log2((count + 2) / (competitor_count + 2))
+        score = 72
+        score += int(round(math.log2(count + 1) * 30))
+        score += int(round(max(-1.0, min(5.0, pmi)) * 14))
+        score += int(round(min(62.0, avg_weight * 0.026)))
+        score += min(36, source_count * 12)
+        score += int(round(query_share * 72))
+        score += int(round(max(-1.5, min(4.0, dominance)) * 30))
+        if contender_rank == 2:
+            score -= 24
         score -= rank_penalty + gap_penalty
         if len(segments) >= 3:
             score += 18
-        base_score = max(96, min(360, score))
-        score = min(max_weight, max(base_score, int(round(base_score * 1.45 + 40))))
-        priors[key] = score
+        priors[key] = max(96, min(max_weight, score))
 
     stats["lm_corpus_priors_emitted"] = len(priors)
     return priors, stats
@@ -18107,31 +18181,49 @@ def _build_lm_corpus_query_path_prior_map(
     return priors, stats
 
 
-def _merge_query_path_prior_maps(
+def _select_dedicated_lm_transitions(
     base_priors: Dict[Tuple[str, str], int],
-    extra_priors: Dict[Tuple[str, str], int],
+    corpus_priors: Dict[Tuple[str, str], int],
     *,
     stats_prefix: str,
-) -> Dict[str, int]:
-    added = 0
-    boosted = 0
-    skipped = 0
-    for key, weight in extra_priors.items():
-        previous = base_priors.get(key, 0)
-        if previous <= 0:
-            base_priors[key] = weight
-            added += 1
-        elif weight > previous:
-            # Corpus LM priors are statistical hints. They may fill missing
-            # transition edges, but should not override existing curated or
-            # dictionary-derived priors that have already been tuned.
-            skipped += 1
+) -> Tuple[Dict[Tuple[str, str], int], Dict[str, int]]:
+    min_model_weight = 340
+    best_by_bucket: Dict[Tuple[str, int], Tuple[Tuple[str, str], int]] = {}
+    overlapping_existing = 0
+    skipped_unsupported_ngram = 0
+    skipped_low_weight = 0
+    skipped_runner_up = 0
+    for key, weight in corpus_priors.items():
+        if key in base_priors:
+            # The legacy query-path prior and the dedicated LM serve different
+            # runtime stages. Keep corpus-backed transitions in the LM table
+            # even when the decoder already has a prior for the same path, so
+            # final-candidate reranking sees the strongest evidence as well.
+            overlapping_existing += 1
+        ngram_order = len(key[1].split(QUERY_PATH_FILE_SEPARATOR))
+        if ngram_order not in (2, 3):
+            skipped_unsupported_ngram += 1
+            continue
+        if weight < min_model_weight:
+            skipped_low_weight += 1
+            continue
+        bucket = (key[0], ngram_order)
+        previous = best_by_bucket.get(bucket)
+        if previous is None or weight > previous[1] or (
+            weight == previous[1] and key[1] < previous[0][1]
+        ):
+            if previous is not None:
+                skipped_runner_up += 1
+            best_by_bucket[bucket] = (key, weight)
         else:
-            skipped += 1
-    return {
-        f"{stats_prefix}_lm_query_path_added": added,
-        f"{stats_prefix}_lm_query_path_boosted": boosted,
-        f"{stats_prefix}_lm_query_path_skipped": skipped,
+            skipped_runner_up += 1
+    selected = {key: weight for key, weight in best_by_bucket.values()}
+    return selected, {
+        f"{stats_prefix}_lm_transition_rows": len(selected),
+        f"{stats_prefix}_lm_transition_overlapping_existing": overlapping_existing,
+        f"{stats_prefix}_lm_transition_skipped_unsupported_ngram": skipped_unsupported_ngram,
+        f"{stats_prefix}_lm_transition_skipped_low_weight": skipped_low_weight,
+        f"{stats_prefix}_lm_transition_skipped_runner_up": skipped_runner_up,
     }
 
 
@@ -18434,6 +18526,8 @@ def _write_report(
     output_tc: pathlib.Path,
     output_query_path_sc: pathlib.Path | None,
     output_query_path_tc: pathlib.Path | None,
+    output_lm_transition_sc: pathlib.Path | None,
+    output_lm_transition_tc: pathlib.Path | None,
     stats: Dict[str, int],
     count_sc: int,
     count_tc: int,
@@ -18486,7 +18580,19 @@ def _write_report(
         lines.append(f"- sc_query_path_file: {_format_report_path(output_query_path_sc)}")
     if output_query_path_tc is not None:
         lines.append(f"- tc_query_path_file: {_format_report_path(output_query_path_tc)}")
-    if (output_query_path_sc is not None) or (output_query_path_tc is not None):
+    if output_lm_transition_sc is not None:
+        lines.append(f"- sc_lm_transition_file: {_format_report_path(output_lm_transition_sc)}")
+    if output_lm_transition_tc is not None:
+        lines.append(f"- tc_lm_transition_file: {_format_report_path(output_lm_transition_tc)}")
+    if any(
+        path is not None
+        for path in (
+            output_query_path_sc,
+            output_query_path_tc,
+            output_lm_transition_sc,
+            output_lm_transition_tc,
+        )
+    ):
         lines.append("")
 
     if suspicious_sc:
@@ -18953,6 +19059,8 @@ def main() -> int:
     parser.add_argument("--output-tc", default="data/generated/dict_clean_tc.txt")
     parser.add_argument("--query-path-output-sc", default="")
     parser.add_argument("--query-path-output-tc", default="")
+    parser.add_argument("--lm-transition-output-sc", default="")
+    parser.add_argument("--lm-transition-output-tc", default="")
     parser.add_argument(
         "--query-path-lm-corpus-dir",
         default="",
@@ -19001,6 +19109,12 @@ def main() -> int:
     )
     output_query_path_tc = (
         repo_root / args.query_path_output_tc if args.query_path_output_tc else None
+    )
+    output_lm_transition_sc = (
+        repo_root / args.lm_transition_output_sc if args.lm_transition_output_sc else None
+    )
+    output_lm_transition_tc = (
+        repo_root / args.lm_transition_output_tc if args.lm_transition_output_tc else None
     )
     previous_snapshot_sc = _load_existing_dict_snapshot(output_sc)
     previous_snapshot_tc = _load_existing_dict_snapshot(output_tc)
@@ -21090,8 +21204,12 @@ def main() -> int:
     stats.update(_remove_known_incorrect_jiancha_entries(sc_map, tc_map))
     sc_query_path_priors: Dict[Tuple[str, str], int] = {}
     tc_query_path_priors: Dict[Tuple[str, str], int] = {}
+    sc_lm_transition_priors: Dict[Tuple[str, str], int] = {}
+    tc_lm_transition_priors: Dict[Tuple[str, str], int] = {}
     query_path_lm_corpus_dir = repo_root / args.query_path_lm_corpus_dir if args.query_path_lm_corpus_dir else None
-    if output_query_path_sc is not None:
+    if (output_lm_transition_sc is not None or output_lm_transition_tc is not None) and query_path_lm_corpus_dir is None:
+        raise ValueError("LM transition output requires --query-path-lm-corpus-dir")
+    if output_query_path_sc is not None or output_lm_transition_sc is not None:
         sc_query_path_priors, sc_query_path_stats = _build_query_path_prior_map(
             sc_map,
             usage_score_map=usage_score_map,
@@ -21103,7 +21221,7 @@ def main() -> int:
             stats_prefix="sc",
         )
         stats.update(sc_query_path_stats)
-        if query_path_lm_corpus_dir is not None:
+        if output_lm_transition_sc is not None and query_path_lm_corpus_dir is not None:
             sc_lm_query_path_priors, sc_lm_query_path_stats = _build_lm_corpus_query_path_prior_map(
                 sc_map,
                 query_path_lm_corpus_dir,
@@ -21113,15 +21231,14 @@ def main() -> int:
                 stats_prefix="sc",
             )
             stats.update(sc_lm_query_path_stats)
-            stats.update(
-                _merge_query_path_prior_maps(
-                    sc_query_path_priors,
-                    sc_lm_query_path_priors,
-                    stats_prefix="sc",
-                )
+            sc_lm_transition_priors, sc_lm_transition_stats = _select_dedicated_lm_transitions(
+                sc_query_path_priors,
+                sc_lm_query_path_priors,
+                stats_prefix="sc",
             )
+            stats.update(sc_lm_transition_stats)
         stats["sc_query_path_prior_rows"] = len(sc_query_path_priors)
-    if output_query_path_tc is not None:
+    if output_query_path_tc is not None or output_lm_transition_tc is not None:
         tc_query_path_priors, tc_query_path_stats = _build_query_path_prior_map(
             tc_map,
             usage_score_map=tc_usage_score_map,
@@ -21133,7 +21250,7 @@ def main() -> int:
             stats_prefix="tc",
         )
         stats.update(tc_query_path_stats)
-        if query_path_lm_corpus_dir is not None:
+        if output_lm_transition_tc is not None and query_path_lm_corpus_dir is not None:
             opencc_sc_to_tc_for_lm = _build_opencc_sc_to_tc_map(opencc_entries) if opencc_entries else {}
             tc_lm_query_path_priors, tc_lm_query_path_stats = _build_lm_corpus_query_path_prior_map(
                 tc_map,
@@ -21148,13 +21265,12 @@ def main() -> int:
                 stats_prefix="tc",
             )
             stats.update(tc_lm_query_path_stats)
-            stats.update(
-                _merge_query_path_prior_maps(
-                    tc_query_path_priors,
-                    tc_lm_query_path_priors,
-                    stats_prefix="tc",
-                )
+            tc_lm_transition_priors, tc_lm_transition_stats = _select_dedicated_lm_transitions(
+                tc_query_path_priors,
+                tc_lm_query_path_priors,
+                stats_prefix="tc",
             )
+            stats.update(tc_lm_transition_stats)
         stats["tc_query_path_prior_rows"] = len(tc_query_path_priors)
     suspicious_sc_entries = _collect_suspicious_high_weight_entries(
         sc_map,
@@ -22380,6 +22496,10 @@ def main() -> int:
         _write_query_path_prior(output_query_path_sc, sc_query_path_priors)
     if output_query_path_tc is not None:
         _write_query_path_prior(output_query_path_tc, tc_query_path_priors)
+    if output_lm_transition_sc is not None:
+        _write_query_path_prior(output_lm_transition_sc, sc_lm_transition_priors)
+    if output_lm_transition_tc is not None:
+        _write_query_path_prior(output_lm_transition_tc, tc_lm_transition_priors)
     manifest_sources = list(sources)
     manifest_source_ids = {str(source.get("id", "")).strip() for source in manifest_sources}
     for vertical_source in vertical_source_configs:
@@ -22397,6 +22517,8 @@ def main() -> int:
         output_tc,
         output_query_path_sc,
         output_query_path_tc,
+        output_lm_transition_sc,
+        output_lm_transition_tc,
         stats,
         len(sc_map),
         len(tc_map),

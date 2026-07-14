@@ -21,6 +21,8 @@ param(
     [string]$OutputTc = "",
     [string]$OutputQueryPathSc = "",
     [string]$OutputQueryPathTc = "",
+    [string]$OutputLmTransitionSc = "",
+    [string]$OutputLmTransitionTc = "",
     [string]$QueryPathLmCorpusDir = "",
     [string]$SupportDictSc = "",
     [string]$SupportDictTc = "",
@@ -119,6 +121,8 @@ if ($OutputSc -ne "") { $args += @("--output-sc", $OutputSc) }
 if ($OutputTc -ne "") { $args += @("--output-tc", $OutputTc) }
 if ($OutputQueryPathSc -ne "") { $args += @("--query-path-output-sc", $OutputQueryPathSc) }
 if ($OutputQueryPathTc -ne "") { $args += @("--query-path-output-tc", $OutputQueryPathTc) }
+if ($OutputLmTransitionSc -ne "") { $args += @("--lm-transition-output-sc", $OutputLmTransitionSc) }
+if ($OutputLmTransitionTc -ne "") { $args += @("--lm-transition-output-tc", $OutputLmTransitionTc) }
 if ($QueryPathLmCorpusDir -ne "") { $args += @("--query-path-lm-corpus-dir", $QueryPathLmCorpusDir) }
 if ($SupportDictSc -ne "") { $args += @("--support-dict-sc", $SupportDictSc) }
 if ($SupportDictTc -ne "") { $args += @("--support-dict-tc", $SupportDictTc) }
