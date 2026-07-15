@@ -7199,3 +7199,36 @@
 贵一点	貴一點	0.84	guiyidian
 
 # END words_source_import_2026_07_10
+
+# Common number, comparison, interaction, and editing phrases.
+号码	號碼	0.94	haoma
+也算	也算	0.88	yesuan
+裁掉	裁掉	0.82	caidiao
+被裁	被裁	0.78	beicai
+可供	可供	0.84	kegong
+别对	別對	0.84	biedui
+别对我	別對我	0.80	bieduiwo
+别对你	別對你	0.76	bieduini
+别对他	別對他	0.76	bieduita
+别对她	別對她	0.76	bieduita
+对我	對我	0.88	duiwo
+对你	對你	0.88	duini
+对他	對他	0.86	duita
+对她	對她	0.86	duita
+舔狗	舔狗	0.64	tiangou
+很想很想	很想很想	0.82	henxianghenxiang
+很像很像	很像很像	0.76	henxianghenxiang
+吃一下	吃一下	0.84	chiyixia
+吃一口	吃一口	0.84	chiyikou
+对一下	對一下	0.82	duiyixia
+对一遍	對一遍	0.78	duiyibian
+对对看	對對看	0.72	duiduikan
+对一对	對一對	0.76	duiyidui
+被裁掉	被裁掉	0.72	beicaidiao
+裁下来	裁下來	0.78	caixialai
+
+# Common exact words protected from lower-frequency homophones above.
+彩霞	彩霞	0.74	caixia
+吃腻	吃膩	0.82	chini
+甜腻	甜膩	0.80	tianni
+列明	列明	0.80	lieming

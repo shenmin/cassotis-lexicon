@@ -2574,7 +2574,6 @@ daimashixian	代碼|實現	489
 daimatishi	代碼|提示	491
 daimatongji	代碼|統計	485
 daimatuoguan	代碼|託管	487
-daimaxingshu	代碼|行數	487
 daimayidong	代碼|移動	486
 daimayincang	代碼|隱藏	385
 daimayincangwenjian	代碼|隱藏|文件	467
@@ -2763,8 +2762,8 @@ danweijiliang	單位|劑量	398
 danweijiliangbaozhuang	單位|劑量|包裝	480
 danweixiangliang	單位|向量	467
 danxianghanshu	單向|函數	485
-danxiangtuoliang	單向|托梁	383
-danxiangtuoliangxitong	單向|托梁|系統	465
+danxiangtuoliang	單向|托樑	383
+danxiangtuoliangxitong	單向|托樑|系統	465
 danxiaopashi	膽小|怕事	450
 danxibaofenxi	單細胞|分析	483
 danxibaoshengwu	單細胞|生物	458
@@ -3011,7 +3010,7 @@ diandongwanju	電動|玩具	463
 dianduidianxieyi	點對點|協議	468
 dianfengliesha	巔峰|獵殺	428
 dianfenmeikoufuye	澱粉酶|口服液	456
-dianhuahaoma	電話|號碼	454
+dianhuahaoma	電話|號碼	479
 dianhuahuiyi	電話|會議	472
 dianjiedianrong	電解|電容	463
 dianjiezhibupingheng	電解質|不平衡	483
@@ -4733,7 +4732,6 @@ fukuanzhanghao	付款|賬號	488
 fukuanzhanghu	付款|賬戶	488
 fulanguodu	腐爛|國度	439
 fuleixijiazu	富勒烯|家族	471
-fuliangzhuanqu	浮梁|專區	465
 fulingduotang	茯苓|多糖	451
 fumasuantongtifen	富馬酸|酮替芬	451
 fumasuanyatie	富馬酸|亞鐵	426
@@ -5825,6 +5823,7 @@ guojiabaihuo	國家|百貨	380
 guojiabaihuoshangchang	國家|百貨|商場	462
 guojiabiaozhun	國家|標準	502
 guojiadianli	國家|電力	470
+guojiadongliang	國家|棟樑	411
 guojiaduma	國家|杜馬	380
 guojiadumadalou	國家|杜馬|大樓	462
 guojiagongyuan	國家|公園	481
@@ -6373,6 +6372,8 @@ hengxingwuli	恆星|物理	495
 hengxingwulixue	恆星|物理學	498
 hengxingzhanyi	恆星|戰役	458
 henjiuhenjiu	很久|很久	465
+henxianghenxiang	很像|很像	517
+henxianghenxiang	很想|很想	520
 henyouyisi	很有|意思	520
 henyouyiyi	很有|意義	520
 hepingjingying	和平|精英	431
@@ -7063,7 +7064,7 @@ huxijirou	呼吸|肌肉	486
 huxijiroujirou	呼吸|肌肉|肌肉	483
 huxikunnan	呼吸|困難	483
 huxineike	呼吸|內科	471
-huxingtianhuaban	弧形|天花板	465
+huxingtianhuaban	弧形|天花板	466
 huxipinlv	呼吸|頻率	483
 huxishangpi	呼吸|上皮	486
 huxishuaijie	呼吸|衰竭	500
@@ -10728,7 +10729,7 @@ meijubianliang	枚舉|變量	481
 meijuleixing	枚舉|類型	463
 meijundusu	黴菌|毒素	435
 meijunganran	黴菌|感染	432
-meiliangshidai	楣梁|飾帶	397
+meiliangshidai	楣樑|飾帶	434
 meilidaoshijian	美麗島|事件	469
 meilidekuaihun	美麗的|塊魂	453
 meilijianhezhongguo	美利堅|合眾國	419
@@ -13650,8 +13651,8 @@ shangyipici	上一|批次	516
 shanjisaiche	山脊|賽車	464
 shanjisaichexilie	山脊|賽車|系列	456
 shankouzhizi	山口|智子	457
-shanliangshizijun	閃亮|十字軍	452
-shanliangxiaoyaojing	閃亮|小妖精	422
+shanliangshizijun	閃亮|十字軍	454
+shanliangxiaoyaojing	閃亮|小妖精	424
 shanlvchajiangyapian	山綠茶|降壓片	456
 shanqianggouzao	山牆|構造	481
 shanqiangshiwu	山牆|飾物	447
@@ -15284,7 +15285,7 @@ sihaixiongdixilie	四海|兄弟|系列	456
 sihaiyijia	四海|一家	485
 sihuansuruangao	四環素|軟膏	431
 sihuoshengxilie	死或生|系列	440
-sijiaohaoma	四角|號碼	409
+sijiaohaoma	四角|號碼	466
 sijiayiyuan	私家|醫院	486
 sijichangqing	四季|常青	476
 sijiganmao	四季|感冒	375
@@ -16658,9 +16659,9 @@ weilaizhuyijianzhu	未來|主義|建築	466
 weilandangan	蔚藍|檔案	449
 weilansefaze	蔚藍色|法則	430
 weilianershi	威廉|二世	397
-weiliangyingyangsu	微量|營養素	448
-weiliangyuansu	微量|元素	448
-weiliangyuansufeiliao	微量元素|肥料	457
+weiliangyingyangsu	微量|營養素	458
+weiliangyuansu	微量|元素	457
+weiliangyuansufeiliao	微量元素|肥料	419
 weiliansanshi	威廉|三世	396
 weilianyishi	威廉|一世	437
 weilisidasha	威利斯|大廈	447
@@ -18514,7 +18515,7 @@ xizhenchouxihuojian	細針抽吸|活檢	464
 xizhenchouxiyangben	細針抽吸|樣本	477
 xizhiruwei	細緻|入微	477
 xuanbitaijie	懸臂|臺階	481
-xuanbituoliang	懸臂|托梁	462
+xuanbituoliang	懸臂|托樑	481
 xuanbiwuding	懸臂|屋頂	481
 xuanchengzhuanqu	宣城|專區	440
 xuanchuangongshi	宣傳|攻勢	413
@@ -20025,7 +20026,7 @@ yiqukangzuojiaonang	伊曲康唑|膠囊	455
 yiranguwo	依然|故我	451
 yiranjueran	毅然|決然	452
 yiranrugu	依然|如故	488
-yiranshanliang	依然|閃亮	447
+yiranshanliang	依然|閃亮	448
 yiranzide	怡然|自得	466
 yirendedao	一人|得道	484
 yirenzhixia	一人|之下	486
@@ -20256,7 +20257,7 @@ yizhongyizhiwu	異種|移植物	437
 yizhuangjiechangniuzhuan	乙狀結腸|扭轉	456
 yiziqianjin	一字|千金	454
 yiziyidun	一字|一頓	416
-yiziyiju	一字|一句	447
+yiziyiju	一字|一句	448
 yonganzhuanqu	永安|專區	465
 yongbaojijie	擁抱|季節	464
 yongbugudan	永不|孤單	467
@@ -21366,7 +21367,6 @@ zhichangyali	職場|壓力	459
 zhichangzhanmo	直腸|粘膜	375
 zhichangzhanmotuochui	直腸|粘膜|脫垂	457
 zhichengbuzhu	支撐|不住	478
-zhichengxiaoliang	支撐|小梁	481
 zhichichengxu	支持|程序	489
 zhichitianya	咫尺|天涯	461
 zhichitongyong	支持|通用	423
@@ -21429,7 +21429,7 @@ zhijianshumu	只見|樹木	478
 zhijianzhanzheng	指尖|戰爭	464
 zhijiaozhuanwan	直角|轉彎	383
 zhijiaozhuanwanjieti	直角|轉彎|階梯	465
-zhijiaozuobiao	直角|座標	474
+zhijiaozuobiao	直角|座標	466
 zhijiecanyu	直接|參與	480
 zhijiedanhongsu	直接|膽紅素	457
 zhijiedianli	直接|電離	417
@@ -22525,7 +22525,7 @@ zuchengbufen	組成|部分	499
 zudanbaimima	組蛋白|密碼	475
 zudanbaiyixihua	組蛋白|乙醯化	483
 zuedanbai	阻遏|蛋白	471
-zuhebanliang	組合|板梁	484
+zuhebanliang	組合|板樑	481
 zuhechaxun	組合|查詢	487
 zuhejingang	組合|金剛	464
 zuheshuaijiao	組合|摔跤	464

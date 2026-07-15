@@ -4906,7 +4906,7 @@
 滴水观音	滴水觀音	0.01
 办公区	辦公區	0.01
 查字典	查字典	0.01
-行数	行數	0.01
+行数	行數	0.58	hangshu
 刨掉	刨掉	0.01
 课设	課設	0.01
 颗星	顆星	0.01
@@ -11750,3 +11750,31 @@
 才回家	才回家	0.54	caihuijia
 
 # END words_source_import_2026_07_10
+
+
+# Low-frequency food, table-layout, identifier, and action supplements.
+蘸酱	蘸醬	0.62	zhanjiang
+蘸着	蘸著	0.52	zhanzhe
+蘸一下	蘸一下	0.54	zhanyixia
+蘸汁	蘸汁	0.50	zhanzhi
+蘸水	蘸水	0.48	zhanshui
+蘸一蘸	蘸一蘸	0.50	zhanyizhan
+蘸着吃	蘸著吃	0.52	zhanzhechi
+列名	列名	0.62	lieming
+列标题	列標題	0.54	liebiaoti
+行名	行名	0.58	hangming
+行标题	行標題	0.54	hangbiaoti
+列宽	列寬	0.62	liekuan
+列距	列距	0.48	lieju
+列数	列數	0.58	lieshu
+炮机	炮機	0.36	paoji
+号段	號段	0.60	haoduan
+号码段	號碼段	0.56	haomaduan
+裁下	裁下	0.54	caixia
+吃我	吃我	0.52	chiwo
+吃你	吃你	0.52	chini
+舔你	舔你	0.40	tianni
+舔我	舔我	0.40	tianwo
+舔一下	舔一下	0.48	tianyixia
+舔一舔	舔一舔	0.46	tianyitian
+舔一口	舔一口	0.44	tianyikou
