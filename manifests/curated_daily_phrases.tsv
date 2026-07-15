@@ -3900,7 +3900,6 @@
 他女	他女	0.90	tanv
 她男	她男	0.90	tanan
 我们也	我們也	0.90	womenye
-延时	延時	0.90	yanshi
 延绵	延綿	0.90	yanmian
 短时	短時	0.90	duanshi
 自组词	自組詞	0.90	zizuci
@@ -7197,6 +7196,30 @@
 占了	佔了	0.84	zhanle
 很空	很空	0.82	henkong
 贵一点	貴一點	0.84	guiyidian
+
+# Common exact words and productive conversational phrases.
+演示	演示	0.92	yanshi
+接受	接受	0.94	jieshou
+新加	新加	0.82	xinjia
+说清楚	說清楚	0.90	shuoqingchu
+讲清楚	講清楚	0.86	jiangqingchu
+谈清楚	談清楚	0.82	tanqingchu
+又会	又會	0.88	youhui
+拖不动	拖不動	0.84	tuobudong
+拉不动	拉不動	0.84	labudong
+推不动	推不動	0.84	tuibudong
+同一行	同一行	0.82	tongyihang
+都和	都和	0.86	douhe
+都这样	都這樣	0.88	douzheyang
+都跟	都跟	0.84	dougen
+都去	都去	0.84	douqu
+都来	都來	0.84	doulai
+都走	都走	0.82	douzou
+都给	都給	0.82	dougei
+都加	都加	0.80	doujia
+都把	都把	0.82	douba
+都让	都讓	0.82	dourang
+都要	都要	0.86	douyao
 
 # END words_source_import_2026_07_10
 

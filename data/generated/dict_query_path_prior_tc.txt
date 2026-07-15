@@ -3688,6 +3688,7 @@ duanboliaofa	短波|療法	426
 duancengsaomiao	斷層|掃描	491
 duandaoduanceshi	端到端|測試	498
 duanduanjitian	短短|幾天	454
+duanjianlengqueqi	段間|冷卻器	502
 duanjuewanglai	斷絕|往來	481
 duankoupengzhuang	端口|碰撞	465
 duanlianfubu	鍛鍊|腹部	401
@@ -7798,7 +7799,7 @@ jieshichengxu	解釋|程序	490
 jieshixinchun	街市|新春	417
 jieshixinchungonglve	街市|新春|攻略	499
 jieshiyixia	解釋|一下	483
-jieshoubule	接受|不了	447
+jieshoubule	接受|不了	455
 jiesuxiade	借宿|下的	374
 jiesuxiadelianai	借宿|下的|戀愛	456
 jietijiaoshi	階梯|教室	463
@@ -19044,9 +19045,9 @@ yanshenyinzi	延伸|因子	486
 yanshichengxu	演示|程序	490
 yanshidiaoke	岩石|雕刻	384
 yanshidiaokejianzhu	岩石|雕刻|建築	466
-yanshihanshu	延時|函數	487
+yanshihanshu	延時|函數	473
 yanshimoniqi	驗屍|模擬器	443
-yanshixianweijing	延時|顯微鏡	483
+yanshixianweijing	延時|顯微鏡	422
 yanshouceshi	驗收|測試	487
 yansuanameisu	鹽酸|阿黴素	456
 yansuanamitilin	鹽酸|阿米替林	456
@@ -22157,7 +22158,7 @@ zhushengouzao	柱身|構造	467
 zhusheyimiao	注射|疫苗	461
 zhusheyizhong	注射|一種	401
 zhusheyizhongjiaosu	注射|一種|酵素	483
-zhushibushun	諸事|不順	465
+zhushibushun	諸事|不順	464
 zhushidianxuanran	注視點|渲染	488
 zhutiejianzhu	鑄鐵|建築	479
 zhutigongyuan	主題|公園	447
@@ -22221,6 +22222,7 @@ zidongfuti	自動|扶梯	459
 zidonggengxin	自動|更新	482
 zidonghuabushu	自動化|部署	471
 zidonghuaceshi	自動化|測試	470
+zidonghuanhang	自動|換行	505
 zidongjiance	自動|檢測	497
 zidongkongzhi	自動|控制	467
 zidonglouti	自動|樓梯	463

@@ -3,6 +3,20 @@
 # Add only stable computing terms, product names, framework names, protocol names, and other
 # high-value vertical vocabulary that should not receive the same preferred-term treatment as
 # everyday chat phrases.
+行间距	行間距	0.80	hangjianju
+段间距	段間距	0.76	duanjianju
+段间	段間	0.58	duanjian
+列间距	列間距	0.68	liejianju
+注释掉	註釋掉	0.74	zhushidiao
+默认值	默認值	0.84	morenzhi
+默认项	默認項	0.72	morenxiang
+句柄	句柄	0.80	jubing
+防抖	防抖	0.74	fangdou
+折行	折行	0.68	zhehang
+软换行	軟換行	0.70	ruanhuanhang
+自动换行	自動換行	0.80	zidonghuanhang
+预训练	預訓練	0.82	yuxunlian
+后训练	後訓練	0.64	houxunlian
 命令行	命令列	0.80
 环境变量	環境變量	0.82
 配置文件	配置檔案	0.80
@@ -38,7 +52,8 @@
 事务	事務	0.76
 权重	權重	0.80	quanzhong
 读取	讀取	0.78	duqu
-接收	接收	0.78	jieshou
+延时	延時	0.64	yanshi
+硬件	硬件	0.84	yingjian
 响应	響應	0.78	xiangying
 提交	提交	0.82	tijiao
 推送	推送	0.82	tuisong

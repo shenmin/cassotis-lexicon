@@ -11749,6 +11749,26 @@
 才进去	才進去	0.52	caijinqu
 才回家	才回家	0.54	caihuijia
 
+# Lower-frequency clarification, motion, and coordination combinations.
+聊清楚	聊清楚	0.54	liaoqingchu
+讲不清楚	講不清楚	0.54	jiangbuqingchu
+拉不了	拉不了	0.58	labuliao
+拖不了	拖不了	0.58	tuobuliao
+推不了	推不了	0.58	tuibuliao
+拽不动	拽不動	0.56	zhuaibudong
+拉得动	拉得動	0.52	ladedong
+拖得动	拖得動	0.52	tuodedong
+推得动	推得動	0.52	tuidedong
+拽得动	拽得動	0.48	zhuaidedong
+都与	都與	0.54	douyu
+全都与	全都與	0.46	quandouyu
+全都和	全都和	0.54	quandouhe
+全都跟	全都跟	0.54	quandougen
+全都给	全都給	0.50	quandougei
+全都去	全都去	0.50	quandouqu
+全都来	全都來	0.50	quandoulai
+全都走	全都走	0.48	quandouzou
+
 # END words_source_import_2026_07_10
 
 

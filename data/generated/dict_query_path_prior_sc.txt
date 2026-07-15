@@ -3800,6 +3800,7 @@ duandaoduanceshi	端到端|测试	501
 duandiankaiguan	断点|开关	480
 duandianxiazai	断点|下载	490
 duanduanjitian	短短|几天	474
+duanjianlengqueqi	段间|冷却器	506
 duanjuewanglai	断绝|往来	485
 duankoupengzhuang	端口|碰撞	463
 duanlianfubu	锻炼|腹部	401
@@ -8074,7 +8075,7 @@ jieshixinchun	街市|新春	417
 jieshixinchungonglve	街市|新春|攻略	499
 jieshiyixia	解释|一下	483
 jieshizhixing	解释|执行	506
-jieshoubule	接受|不了	464
+jieshoubule	接受|不了	472
 jiesuoshujuku	解锁|数据库	469
 jiesuxiade	借宿|下的	374
 jiesuxiadelianai	借宿|下的|恋爱	456
@@ -19766,9 +19767,9 @@ yanshenyinzi	延伸|因子	486
 yanshichengxu	演示|程序	490
 yanshidiaoke	岩石|雕刻	384
 yanshidiaokejianzhu	岩石|雕刻|建筑	466
-yanshihanshu	延时|函数	490
+yanshihanshu	延时|函数	476
 yanshimoniqi	验尸|模拟器	446
-yanshixianweijing	延时|显微镜	486
+yanshixianweijing	延时|显微镜	425
 yanshouceshi	验收|测试	490
 yanshukuangre	鼹鼠|狂热	408
 yansuanameisu	盐酸|阿霉素	459
@@ -21126,7 +21127,7 @@ youhaiyiwu	有害|异物	443
 youhuawenti	优化|问题	486
 youhuiyiliao	优惠|医疗	401
 youhuiyiliaobaoxian	优惠|医疗|保险	483
-youhuizhengce	优惠|政策	478
+youhuizhengce	优惠|政策	475
 youhunchuanqi	幽魂|传奇	431
 youhuozhengduo	诱惑|争夺	455
 youjiancaidan	右键|菜单	520
@@ -23007,7 +23008,7 @@ zhushengouzao	柱身|构造	467
 zhusheyimiao	注射|疫苗	461
 zhusheyizhong	注射|一种	401
 zhusheyizhongjiaosu	注射|一种|酵素	483
-zhushibushun	诸事|不顺	469
+zhushibushun	诸事|不顺	467
 zhushidianxuanran	注视点|渲染	494
 zhutiejianzhu	铸铁|建筑	485
 zhutigongyuan	主题|公园	455
@@ -23074,6 +23075,7 @@ zidongfuti	自动|扶梯	453
 zidonggengxin	自动|更新	482
 zidonghuabushu	自动化|部署	471
 zidonghuaceshi	自动化|测试	472
+zidonghuanhang	自动|换行	508
 zidongjiance	自动|检测	514
 zidongkongzhi	自动|控制	467
 zidonglouti	自动|楼梯	467
