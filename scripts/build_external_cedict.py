@@ -18188,11 +18188,16 @@ def _select_dedicated_lm_transitions(
     stats_prefix: str,
 ) -> Tuple[Dict[Tuple[str, str], int], Dict[str, int]]:
     min_model_weight = 340
-    best_by_bucket: Dict[Tuple[str, int], Tuple[Tuple[str, str], int]] = {}
+    runner_up_min_weight = 400
+    runner_up_min_percent = 90
+    candidates_by_bucket: Dict[
+        Tuple[str, int], List[Tuple[Tuple[str, str], int]]
+    ] = {}
     overlapping_existing = 0
     skipped_unsupported_ngram = 0
     skipped_low_weight = 0
     skipped_runner_up = 0
+    selected_runner_up = 0
     for key, weight in corpus_priors.items():
         if key in base_priors:
             # The legacy query-path prior and the dedicated LM serve different
@@ -18208,22 +18213,32 @@ def _select_dedicated_lm_transitions(
             skipped_low_weight += 1
             continue
         bucket = (key[0], ngram_order)
-        previous = best_by_bucket.get(bucket)
-        if previous is None or weight > previous[1] or (
-            weight == previous[1] and key[1] < previous[0][1]
-        ):
-            if previous is not None:
-                skipped_runner_up += 1
-            best_by_bucket[bucket] = (key, weight)
-        else:
+        candidates_by_bucket.setdefault(bucket, []).append((key, weight))
+
+    selected: Dict[Tuple[str, str], int] = {}
+    for bucket_candidates in candidates_by_bucket.values():
+        bucket_candidates.sort(key=lambda item: (-item[1], item[0][1]))
+        top_weight = bucket_candidates[0][1]
+        for rank, (key, weight) in enumerate(bucket_candidates):
+            if rank == 0:
+                selected[key] = weight
+                continue
+            if (
+                rank == 1
+                and weight >= runner_up_min_weight
+                and weight * 100 >= top_weight * runner_up_min_percent
+            ):
+                selected[key] = weight
+                selected_runner_up += 1
+                continue
             skipped_runner_up += 1
-    selected = {key: weight for key, weight in best_by_bucket.values()}
     return selected, {
         f"{stats_prefix}_lm_transition_rows": len(selected),
         f"{stats_prefix}_lm_transition_overlapping_existing": overlapping_existing,
         f"{stats_prefix}_lm_transition_skipped_unsupported_ngram": skipped_unsupported_ngram,
         f"{stats_prefix}_lm_transition_skipped_low_weight": skipped_low_weight,
         f"{stats_prefix}_lm_transition_skipped_runner_up": skipped_runner_up,
+        f"{stats_prefix}_lm_transition_selected_runner_up": selected_runner_up,
     }
 
 
@@ -18477,6 +18492,70 @@ def _write_query_path_prior(path: pathlib.Path, mapping: Dict[Tuple[str, str], i
             mapping.items(), key=lambda kv: (kv[0][0], kv[0][1], -kv[1])
         ):
             f.write(f"{query_pinyin}\t{path_text}\t{weight}\n")
+
+
+def _load_query_path_prior(path: pathlib.Path | None) -> Dict[Tuple[str, str], int]:
+    priors: Dict[Tuple[str, str], int] = {}
+    if path is None or not path.exists():
+        return priors
+    with path.open("r", encoding="utf-8-sig") as f:
+        for line_number, raw_line in enumerate(f, start=1):
+            line = raw_line.rstrip("\r\n")
+            if not line or line.startswith("#"):
+                continue
+            parts = line.split("\t")
+            if len(parts) != 3:
+                raise ValueError(f"Malformed query-path row at {path}:{line_number}")
+            query_pinyin = _normalize_compact_pinyin_key(parts[0])
+            path_text = parts[1].strip()
+            try:
+                weight = int(parts[2])
+            except ValueError as exc:
+                raise ValueError(
+                    f"Invalid query-path weight at {path}:{line_number}"
+                ) from exc
+            if (
+                not query_pinyin
+                or len(path_text.split(QUERY_PATH_FILE_SEPARATOR)) < 2
+                or weight <= 0
+            ):
+                raise ValueError(f"Invalid query-path row at {path}:{line_number}")
+            key = (query_pinyin, path_text)
+            priors[key] = max(priors.get(key, 0), weight)
+    return priors
+
+
+def _merge_frozen_lm_transitions(
+    baseline: Dict[Tuple[str, str], int],
+    trained: Dict[Tuple[str, str], int],
+    *,
+    stats_prefix: str,
+) -> Tuple[Dict[Tuple[str, str], int], Dict[str, int]]:
+    if not baseline:
+        return dict(trained), {
+            f"{stats_prefix}_lm_transition_rows": len(trained),
+            f"{stats_prefix}_lm_transition_baseline_rows": 0,
+            f"{stats_prefix}_lm_transition_incremental_added": len(trained),
+            f"{stats_prefix}_lm_transition_frozen_reweights": 0,
+        }
+
+    merged = dict(baseline)
+    incremental_added = 0
+    frozen_reweights = 0
+    for key, weight in trained.items():
+        baseline_weight = baseline.get(key)
+        if baseline_weight is not None:
+            if baseline_weight != weight:
+                frozen_reweights += 1
+            continue
+        merged[key] = weight
+        incremental_added += 1
+    return merged, {
+        f"{stats_prefix}_lm_transition_rows": len(merged),
+        f"{stats_prefix}_lm_transition_baseline_rows": len(baseline),
+        f"{stats_prefix}_lm_transition_incremental_added": incremental_added,
+        f"{stats_prefix}_lm_transition_frozen_reweights": frozen_reweights,
+    }
 
 
 def _write_manifest(path: pathlib.Path, profile: str, sources: List[Dict[str, object]]) -> None:
@@ -19062,6 +19141,16 @@ def main() -> int:
     parser.add_argument("--lm-transition-output-sc", default="")
     parser.add_argument("--lm-transition-output-tc", default="")
     parser.add_argument(
+        "--lm-transition-base-sc",
+        default="",
+        help="Optional frozen simplified LM baseline. Existing transition weights are preserved.",
+    )
+    parser.add_argument(
+        "--lm-transition-base-tc",
+        default="",
+        help="Optional frozen traditional LM baseline. Existing transition weights are preserved.",
+    )
+    parser.add_argument(
         "--query-path-lm-corpus-dir",
         default="",
         help="Optional internal plain-text corpus directory for conservative query-path transition priors.",
@@ -19116,6 +19205,14 @@ def main() -> int:
     output_lm_transition_tc = (
         repo_root / args.lm_transition_output_tc if args.lm_transition_output_tc else None
     )
+    lm_transition_base_sc = (
+        repo_root / args.lm_transition_base_sc if args.lm_transition_base_sc else None
+    )
+    lm_transition_base_tc = (
+        repo_root / args.lm_transition_base_tc if args.lm_transition_base_tc else None
+    )
+    baseline_lm_transition_sc = _load_query_path_prior(lm_transition_base_sc)
+    baseline_lm_transition_tc = _load_query_path_prior(lm_transition_base_tc)
     previous_snapshot_sc = _load_existing_dict_snapshot(output_sc)
     previous_snapshot_tc = _load_existing_dict_snapshot(output_tc)
     support_dict_sc = repo_root / args.support_dict_sc if args.support_dict_sc else None
@@ -21237,6 +21334,12 @@ def main() -> int:
                 stats_prefix="sc",
             )
             stats.update(sc_lm_transition_stats)
+            sc_lm_transition_priors, sc_lm_merge_stats = _merge_frozen_lm_transitions(
+                baseline_lm_transition_sc,
+                sc_lm_transition_priors,
+                stats_prefix="sc",
+            )
+            stats.update(sc_lm_merge_stats)
         stats["sc_query_path_prior_rows"] = len(sc_query_path_priors)
     if output_query_path_tc is not None or output_lm_transition_tc is not None:
         tc_query_path_priors, tc_query_path_stats = _build_query_path_prior_map(
@@ -21271,6 +21374,12 @@ def main() -> int:
                 stats_prefix="tc",
             )
             stats.update(tc_lm_transition_stats)
+            tc_lm_transition_priors, tc_lm_merge_stats = _merge_frozen_lm_transitions(
+                baseline_lm_transition_tc,
+                tc_lm_transition_priors,
+                stats_prefix="tc",
+            )
+            stats.update(tc_lm_merge_stats)
         stats["tc_query_path_prior_rows"] = len(tc_query_path_priors)
     suspicious_sc_entries = _collect_suspicious_high_weight_entries(
         sc_map,

@@ -687,6 +687,7 @@ aozhouzuida	澳洲|最大	412
 apianshouti	阿片|受体	393
 asitangjia	阿斯|汤加	466
 ayide	阿姨|的	401
+baanquan	把|安全	352
 babaili	八百|里	471
 babamama	爸爸|妈妈	520
 babamamade	爸爸|妈妈|的	380
@@ -894,7 +895,10 @@ banbode	斑驳|的	460
 banbude	颁布|的	511
 banbule	颁布|了	510
 bancaide	板材|的	421
+bandaochengshi	半岛|城市	420
+bandaode	半岛|的	468
 bandaoguojia	半岛|国家	359
+bandaohe	半岛|和	399
 bandaojushi	半岛|局势	389
 bandaonanduan	半岛|南端	359
 bandaoshangde	半岛|上的	419
@@ -914,6 +918,8 @@ bandaotixinpian	半导体|芯片	430
 bandaotixuqiu	半导体|需求	384
 bandaotiyuanjian	半导体|元件	454
 bandaotizhizao	半导体|制造	434
+bandaoxibu	半岛|西部	407
+bandaozhongbu	半岛|中部	414
 bandecunzai	般的|存在	419
 banfade	办法|的	496
 banfadetongzhi	办法|的|通知	485
@@ -1297,8 +1303,10 @@ banzhurenhe	班主任|和	370
 banzhurenjiaoshi	班主任|教师	385
 banzhurenlaoshi	班主任|老师	474
 banzichengyuan	班子|成员	520
+banzide	班子|的	350
 banzidongbuqiang	半自动|步枪	451
 banzidongshouqiang	半自动|手枪	415
+banzijianshe	班子|建设	415
 banzilingdao	班子|领导	432
 banzuguanli	班组|管理	390
 baoanfuwu	保安|服务	482
@@ -1709,6 +1717,7 @@ baokuochuantong	包括|传统	389
 baokuocong	包括|从	418
 baokuodaliang	包括|大量	399
 baokuode	包括|的	434
+baokuodeguo	包括|德国	357
 baokuodianying	包括|电影	349
 baokuodianzi	包括|电子	402
 baokuodiyi	包括|第一	374
@@ -2246,6 +2255,7 @@ bayinguolengmengguzizhizhou	巴音郭楞|蒙古|自治州	406
 bayiqie	把|一切	493
 bayiqing	把|疫情	383
 bayixie	把|一些	453
+bayizi	把|椅子	453
 bayuede	八月|的	404
 bayueershi	八月|二十	403
 bayueshiba	八月|十八	423
@@ -2359,6 +2369,7 @@ beidiren	被|敌人	432
 beidongde	被动|的	438
 beidongjie	被|冻结	518
 beidongjieshou	被动|接受	411
+beidongshouru	被动|收入	458
 beidongyutai	被动|语态	450
 beidouweixing	北斗|卫星	419
 beidouweixingdaohangxitong	北斗|卫星|导航系统	417
@@ -2873,6 +2884,7 @@ beiweide	卑微|的	342
 beiweishiqi	北魏|时期	418
 beiwoguo	被|我国	344
 beiwomen	被|我们	467
+beiwujie	被|误解	503
 beiwuran	被|污染	488
 beiwurenwei	被|误认为	450
 beiwushu	被|无数	434
@@ -3139,6 +3151,7 @@ benqituijian	本期|推荐	403
 benqiwenzhang	本期|文章	391
 benqiwomen	本期|我们	463
 benqizhaiquan	本期|债券	411
+benrenbu	本人|不	378
 benrenchengdan	本人|承担	423
 benrencongshi	本人|从事	384
 benrende	本人|的	518
@@ -3277,6 +3290,7 @@ bianchengle	变成|了	520
 bianchengleyige	变成|了|一个	454
 bianchengshenme	变成|什么	368
 bianchengshenmeyang	变成|什么样	438
+bianchengyi	变成|一	379
 bianchengyige	变成|一个	520
 bianchengyuyande	编程语言|的	391
 bianchengyuyanzhong	编程语言|中	404
@@ -3584,6 +3598,7 @@ biaomianzhijian	表面|之间	397
 biaomianzhiliang	表面|质量	462
 biaomianzhuangshi	表面|装饰	389
 biaomingle	表明|了	509
+biaomingmeiguo	表明|美国	383
 biaomingni	表明|你	381
 biaomingtaidu	表明|态度	408
 biaomingzai	表明|在	386
@@ -4316,6 +4331,7 @@ bingbuxuyao	并不|需要	520
 bingbuyaoyuan	并不|遥远	408
 bingbuyiding	并不|一定	520
 bingbuyidingshi	并不|一定|是	408
+bingbuyidingyao	并不|一定要	372
 bingbuyingxiang	并不|影响	477
 bingbuyiwai	并不|意外	465
 bingbuyiweizhe	并不|意味着	520
@@ -5946,6 +5962,7 @@ buhaodehua	不好|的话	500
 buhaodeshihou	不好|的时候	481
 buhaohao	不|好好	520
 buhaojiu	不好|就	378
+buhaojiushi	不好|就是	346
 buhaoma	不|好吗	438
 buhaoyingyu	不好|英语	389
 buhaozenmeban	不好|怎么办	464
@@ -6144,6 +6161,7 @@ bujinrongyi	不仅|容易	390
 bujinrurenyi	不|尽如人意	491
 bujinshi	不仅|是	520
 bujinshihe	不仅|适合	415
+bujinshiwo	不仅|是我	385
 bujinshixian	不仅|实现	344
 bujinshiyige	不仅|是一个	520
 bujinshiyinwei	不仅|是因为	486
@@ -6454,6 +6472,7 @@ bumenjianli	部门|建立	358
 bumenjiaqiang	部门|加强	367
 bumenjiedao	部门|接到	378
 bumenjiji	部门|积极	446
+bumenjinding	部门|紧盯	359
 bumenjingli	部门|经理	445
 bumenjinxing	部门|进行	499
 bumenjiu	部门|就	378
@@ -6470,6 +6489,7 @@ bumenpizhun	部门|批准	520
 bumenqianghua	部门|强化	358
 bumenqiantou	部门|牵头	380
 bumenqueding	部门|确定	402
+bumenqueren	部门|确认	369
 bumenrending	部门|认定	444
 bumenrenke	部门|认可	390
 bumenrenyuan	部门|人员	369
@@ -6880,6 +6900,7 @@ bushijuedui	不是|绝对	416
 bushilai	不是|来	351
 bushilaizi	不是|来自	371
 bushilaoshi	不是|老师	346
+bushime	不是|没	397
 bushimeige	不是|每个	444
 bushimeigeren	不是|每个人	479
 bushimeiyi	不是|每一	414
@@ -7018,6 +7039,7 @@ busuishijian	不随|时间	416
 butaiduijin	不太|对劲	418
 butaifangbian	不太|方便	417
 butaihaode	不太|好的	495
+butaihaoguo	不太|好过	384
 butaihui	不|太会	500
 butaijianyi	不太|建议	386
 butaikeneng	不太|可能	520
@@ -7645,6 +7667,7 @@ buzhuyijiuhui	不注意|就会	441
 buzhuzhang	不|主张	411
 buzhuzhong	不|注重	477
 buzhuziji	不住|自己	405
+buzhuzijide	不住|自己的	413
 buzijindi	不自|禁地	463
 buzijuede	不自觉|的	472
 buzixi	不|仔细	444
@@ -8085,6 +8108,7 @@ caiwukuaiji	财务|会计	520
 caiwukuaijizhidu	财务|会计制度	411
 caiwupiaoju	财务|票据	396
 caiwurenyuan	财务|人员	520
+caiwuruanjian	财务|软件	490
 caiwushenji	财务|审计	438
 caiwushuju	财务|数据	470
 caiwuwenti	财务|问题	350
@@ -9439,6 +9463,7 @@ chanshengshi	产生|是	340
 chanshengshouyi	产生|收益	404
 chanshengsunhai	产生|损害	420
 chanshengwei	产生|有	349
+chanshengweihai	产生|危害	369
 chanshengxiangying	产生|相应	451
 chanshengxiangyingde	产生|相应|的	385
 chanshengxinde	产生|新的	487
@@ -9704,6 +9729,7 @@ chaoxianminzhuzhuyi	朝鲜|民主主义	501
 chaoxianminzhuzhuyirenmin	朝鲜|民主主义|人民	460
 chaoxianminzu	朝鲜|民族	378
 chaoxianrenmin	朝鲜|人民	420
+chaoxianwangchao	朝鲜|王朝	438
 chaoxianwenti	朝鲜|问题	348
 chaoxianzhanchang	朝鲜|战场	389
 chaoxianzuigao	朝鲜|最高	389
@@ -9870,6 +9896,7 @@ chengbaojingying	承包|经营	500
 chengbaole	承包|了	461
 chengbaotudi	承包|土地	426
 chengbaoxiangmu	承包|项目	429
+chengbeizengzhang	成倍|增长	382
 chengbenbijiaogao	成本|比较高	402
 chengbenbuduan	成本|不断	368
 chengbendafu	成本|大幅	399
@@ -9948,6 +9975,7 @@ chengdaode	称道|的	421
 chengdebishushanzhuang	承德|避暑山庄	417
 chengdeshangshi	称得上|是	520
 chengdihou	称帝|后	456
+chengdoushilongquanyi	成都市|龙泉驿	409
 chengdoushilongquanyiqu	成都市|龙泉驿区	410
 chengdoushirenminzhengfu	成都市|人民政府	414
 chengdubuduan	程度|不断	476
@@ -12653,6 +12681,7 @@ chuxianxinde	出现|新的	445
 chuxianxuduo	出现|许多	376
 chuxianyanzhong	出现|严重	517
 chuxianyanzhongde	出现|严重|的	395
+chuxianyi	出现|一	342
 chuxianyichang	出现|异常	520
 chuxianyici	出现|一次	458
 chuxianyiding	出现|一定	398
@@ -12731,6 +12760,7 @@ chuxuezhede	初学者|的	386
 chuxuezhelaishuo	初学者|来说	433
 chuxuyinhang	储蓄|银行	486
 chuyanle	出演|了	441
+chuyikaishi	初一|开始	376
 chuyishang	除以|上	451
 chuyoude	出游|的	439
 chuyourenshu	出游|人数	389
@@ -13183,6 +13213,7 @@ conglaijiubu	从来|就不	465
 conglaijiumeiyou	从来|就|没有	379
 conglaimeijianguo	从来没|见过	400
 conglaimeixiangguo	从来没|想过	400
+conglaimeiyouguo	从来没|有过	455
 conglaimeiyouren	从来|没有人	413
 conglaimeiyouxiangguo	从来没有|想过	398
 congliangge	从|两个	498
@@ -13351,6 +13382,7 @@ congsimianbafang	从|四面八方	460
 congsixiang	从|思想	423
 congtade	从|他的	509
 congtamen	从|他们	482
+congtianjian	从|田间	417
 congtianshang	从|天上	431
 congtigao	从|提高	384
 congtoukaishi	从头|开始	459
@@ -13825,6 +13857,7 @@ cuoguobaoming	错过|报名	389
 cuoguode	错过|的	503
 cuoguojihui	错过|机会	412
 cuoguomeitian	错过|每天	386
+cuoguorenhe	错过|任何	386
 cuoguowenzhang	错过|文章	400
 cuoguozhege	错过|这个	437
 cuoguozhongyao	错过|重要	384
@@ -14284,6 +14317,7 @@ daguimoshiyong	大规模|使用	389
 daguimoyanxi	大规模|演习	391
 daguimoyingyong	大规模|应用	430
 daguimozhanzheng	大规模|战争	430
+daguoji	大|国际	358
 daguojia	大|国家	396
 dahaide	大海|的	467
 dahaili	大|海里	449
@@ -15206,6 +15240,7 @@ dalibao	大|礼包	520
 dalichangdao	大力|倡导	451
 dalicujin	大力|促进	443
 dalidu	大|力度	397
+daliegu	大|裂谷	417
 dalifazhan	大力|发展	520
 dalifuchi	大力|扶持	473
 dalihongyang	大力|弘扬	520
@@ -15342,6 +15377,7 @@ dangaopeixun	蛋糕|培训	382
 dangbingde	当兵|的	435
 dangchangbei	当场|被	435
 dangchangchahuo	当场|查获	439
+dangchanglvxing	当场|履行	346
 dangchangsiwang	当场|死亡	439
 dangchangzhuahuo	当场|抓获	382
 dangchengshi	当成|是	467
@@ -15356,6 +15392,7 @@ dangcide	档次|的	445
 dangdaidaxuesheng	当代|大学生	513
 dangdaidaxueshengde	当代|大学生|的	369
 dangdaide	当代|的	443
+dangdaigongbi	当代|工笔	390
 dangdaiguohua	当代|国画	385
 dangdaihuijingshen	党代会|精神	501
 dangdaijiaoyu	当代|教育	363
@@ -15662,6 +15699,7 @@ dangzhengdaibiaotuan	党政|代表团	419
 dangzhengganbu	党政|干部	439
 dangzhengjiguangongzuo	党政机关|工作	411
 dangzhenglingdao	党政|领导	520
+dangzhenglingdaobanzi	党政|领导|班子	353
 dangzhenglingdaobanzi	党政|领导班子	419
 dangzhenglingdaoganbu	党政|领导|干部	426
 dangzhengzhuyao	党政|主要	447
@@ -15697,6 +15735,7 @@ danhexibao	单核|细胞	447
 danianchuer	大年|初二	401
 danianchusi	大年|初四	395
 danianchuwu	大年|初五	395
+danianchuyi	大年|初一	500
 daniansanshi	大年|三十	485
 danjiangkoushuiku	丹江口|水库	408
 danmaide	丹麦|的	376
@@ -16009,6 +16048,7 @@ danweishiji	单位|实际	415
 danweishijian	单位|时间	448
 danweishijianna	单位|时间|内	404
 danweitigong	单位|提供	379
+danweitiji	单位|体积	455
 danweitongyi	单位|同意	459
 danweituijian	单位|推荐	365
 danweiwei	单位|有	431
@@ -16202,6 +16242,9 @@ daodizenmeyang	到底|怎么样	484
 daodizenyang	到底|怎样	485
 daoguangershi	道光|二十	369
 daoguangnianjian	道光|年间	464
+daoguohenduo	到过|很多	426
+daoguoyige	到过|一个	401
+daoguozheyang	到过|这样	419
 daohangdingwei	导航|定位	401
 daohanghe	导航|和	383
 daojiade	道家|的	432
@@ -16378,6 +16421,7 @@ daozhidanao	导致|大脑	389
 daozhide	导致|的	520
 daozhidianchi	导致|电池	382
 daozhiduifang	导致|对方	367
+daozhiduo	导致|多	360
 daozhifasheng	导致|发生	389
 daozhifuqi	导致|夫妻	418
 daozhifuxie	导致|腹泻	361
@@ -16470,6 +16514,8 @@ dapeishenme	搭配|什么	372
 dapeishiyong	搭配|使用	429
 dapeiyixie	搭配|一些	355
 dapeizaiyiqi	搭配|在一起	437
+dapengli	大棚|里	460
+dapengna	大棚|内	448
 dapengshucai	大棚|蔬菜	354
 dapengyou	大|朋友	352
 dapengzhongzhi	大棚|种植	393
@@ -16527,6 +16573,7 @@ dasaihuodong	大赛|活动	385
 dasaihuojiang	大赛|获奖	401
 dasaijuesai	大赛|决赛	451
 dasaishang	大赛|上	413
+dasaishi	大赛|是	347
 dasaiyidengjiang	大赛|一等奖	483
 dasaiyouxiu	大赛|优秀	385
 dasaizhong	大赛|中	498
@@ -17001,6 +17048,7 @@ dayingdiguode	大英帝国|的	393
 dayingjia	大|赢家	443
 dayingle	答应|了	498
 dayingwo	答应|我	438
+dayingxiang	大|影响	341
 dayinhang	大|银行	380
 dayinjide	打印机|的	414
 dayinjigongxiang	打印机|共享	385
@@ -17066,6 +17114,7 @@ dazaoshuzi	打造|数字	389
 dazaotese	打造|特色	475
 dazaowangluo	打造|网络	354
 dazaowanmei	打造|完美	396
+dazaowei	打造|有	353
 dazaoxiandaihua	打造|现代化	390
 dazaoxiangcun	打造|乡村	465
 dazaoxiangcunzhenxing	打造|乡村|振兴	364
@@ -17212,6 +17261,7 @@ debanan	的|办案	345
 debanben	的|版本	520
 debanbijiangshan	的|半壁江山	410
 debancai	的|板材	409
+debandao	的|半岛	381
 debandaoti	的|半导体	491
 debande	地板|的	387
 debanfa	的|办法	520
@@ -17924,6 +17974,7 @@ dechuxue	的|出血	418
 dechuxuezhe	的|初学者	355
 dechuyige	得出|一个	399
 dechuzhi	的|处置	389
+dechuzu	的|出租	347
 dechuzuche	的|出租车	398
 decibei	的|慈悲	367
 decichang	的|磁场	493
@@ -18047,6 +18098,7 @@ dedanguchun	的|胆固醇	395
 dedangxia	的|当下	498
 dedangyuan	的|党员	457
 dedangzhongyang	的|党中央	467
+dedanian	的|大年	365
 dedanshen	的|单身	402
 dedansheng	的|诞生	520
 dedanshui	的|淡水	431
@@ -18120,6 +18172,7 @@ dedaolechongfen	得到了|充分	417
 dedaolefeisu	得到了|飞速	387
 dedaolegaishan	得到了|改善	392
 dedaolegengduode	得到了|更多的	406
+dedaoleguangda	得到了|广大	394
 dedaoleguangfan	得到了|广泛	519
 dedaoleguangfande	得到了|广泛|的	446
 dedaoleguangfanyingyong	得到了|广泛应用	435
@@ -18194,6 +18247,7 @@ dedapi	的|大批	340
 dedapian	的|大片	401
 dedaqi	的|大气	455
 dedaqiceng	的|大气层	415
+dedare	的|大热	376
 dedaren	的|大人	488
 dedasan	的|大三	358
 dedashen	的|大神	388
@@ -18429,6 +18483,7 @@ dedongtian	的|冬天	504
 dedongwu	的|动物	520
 dedongwuyuan	的|动物园	395
 dedongxi	的|东西	520
+dedongxiang	的|动向	425
 dedongxidoushi	的|东西|都是	383
 dedongxue	的|洞穴	429
 dedongyin	的|动因	396
@@ -19122,6 +19177,7 @@ degongpingxing	的|公平性	381
 degongqiu	的|供求	371
 degongren	的|工人	475
 degongshang	的|工商	349
+degongshi	的|公式	356
 degongsi	的|公司	520
 degongting	的|宫廷	429
 degongtong	的|共同	520
@@ -19411,6 +19467,9 @@ deguozhexue	德国|哲学	384
 deguozhexuejia	德国|哲学家	449
 deguozhizao	德国|制造	409
 deguozhuming	德国|著名	461
+deguozi	的|果子	459
+deguozongli	德国|总理	481
+deguozonglimokeer	德国|总理|默克尔	423
 deguozonglimokeer	德国总理|默克尔	433
 deguozongtong	德国|总统	385
 deguozuojia	德国|作家	401
@@ -19791,6 +19850,7 @@ dehuxidao	的|呼吸道	426
 dehuxing	的|户型	377
 dehuyu	的|呼吁	363
 deiyouduo	得有|多	447
+deiyouyiyi	得有|意义	377
 dejiabin	的|嘉宾	483
 dejiachangcai	的|家常菜	388
 dejiachi	的|加持	497
@@ -20137,6 +20197,7 @@ dejilupian	的|纪录片	479
 dejilv	的|纪律	477
 dejimi	的|机密	400
 dejiming	的|几名	393
+dejimo	的|寂寞	360
 dejinbu	的|进步	520
 dejinchukou	的|进出口	370
 dejincou	的|紧凑	358
@@ -20206,6 +20267,7 @@ dejingtiguan	的|晶体管	377
 dejingtou	的|镜头	497
 dejingwai	的|境外	408
 dejingwen	的|经文	358
+dejingwu	的|景物	342
 dejingxiang	的|景象	520
 dejingxiaoshang	的|经销商	379
 dejingxihua	的|精细化	384
@@ -21031,6 +21093,7 @@ demenghuan	的|梦幻	388
 demengjing	的|梦境	437
 demengxiang	的|梦想	520
 demengya	的|萌芽	395
+demengzhong	的|梦中	360
 demenhu	的|门户	455
 demenkan	的|门槛	510
 demenkou	的|门口	417
@@ -21820,6 +21883,7 @@ dequanwen	的|全文	342
 dequanxian	的|权限	380
 dequanxin	的|全新	510
 dequanyi	的|权益	489
+dequanzhi	的|全职	407
 dequanzhong	的|权重	486
 dequbie	的|区别	520
 dequbiejiushi	的|区别|就是	394
@@ -22744,6 +22808,7 @@ desichuan	的|四川	415
 desida	的|四大	520
 desifa	的|司法	472
 desifenzhiyi	的|四分之一	457
+desifu	的|伺服	377
 desige	的|四个	520
 desigexuanxiang	的|四个|选项	397
 desijia	的|私家	396
@@ -22901,6 +22966,7 @@ detianfu	的|天赋	508
 detianhuaban	的|天花板	451
 detianjia	的|添加	364
 detianjiaji	的|添加剂	364
+detianjian	的|田间	377
 detianjin	的|天津	350
 detiankong	的|天空	520
 detianliao	的|填料	364
@@ -23117,11 +23183,13 @@ dewangchao	的|王朝	424
 dewangge	的|网格	354
 dewanggou	的|网购	369
 dewanghong	的|网红	462
+dewangji	的|旺季	346
 dewangke	的|网课	360
 dewangluo	的|网络	520
 dewangluoanquan	的|网络|安全	456
 dewangluohuanjing	的|网络|环境	389
 dewangluolianjie	的|网络|连接	385
+dewangluoyingxiao	的|网络|营销	376
 dewangpai	的|王牌	406
 dewangsheng	的|旺盛	344
 dewangsu	的|网速	394
@@ -23163,6 +23231,7 @@ deweifafanzui	的|违法|犯罪	389
 deweifaxingwei	的|违法|行为	482
 deweiguan	的|微观	487
 deweigui	的|违规	408
+deweihai	的|危害	520
 deweihaixing	的|危害性	440
 deweihaiyounaxie	的|危害|有哪些	382
 deweihu	的|维护	494
@@ -23193,6 +23262,7 @@ deweixiao	的|微笑	513
 deweixin	的|微信	514
 deweixiu	的|维修	465
 deweiyang	的|喂养	360
+deweiyibiaozhun	的|唯一|标准	366
 deweiyitujing	的|唯一|途径	398
 deweiyuanhui	的|委员会	358
 deweiyue	的|违约	389
@@ -23262,6 +23332,7 @@ dewuhou	的|午后	484
 dewuji	的|无机	472
 dewujia	的|物价	395
 dewujiang	的|武将	392
+dewujie	的|误解	479
 dewukelan	的|乌克兰	414
 dewulianwang	的|物联网	422
 dewuliliang	的|物理量	432
@@ -23447,6 +23518,7 @@ dexiaoqiu	的|小球	396
 dexiaoqu	的|小区	423
 dexiaoren	的|小人	412
 dexiaorong	的|笑容	520
+dexiaoshan	的|小山	409
 dexiaoshengchu	的|小升初	361
 dexiaoshi	的|小事	393
 dexiaoshou	的|销售	520
@@ -23966,6 +24038,7 @@ deyicixing	的|一次性	413
 deyicizhongda	的|一次|重大	420
 deyicizhongyao	的|一次重要	431
 deyida	的|一大	520
+deyidai	的|一代	447
 deyidali	的|意大利	428
 deyidaosu	的|胰岛素	372
 deyidatese	的|一大|特色	391
@@ -23991,6 +24064,7 @@ deyigeduli	的|一个|独立	388
 deyigefangmian	的|一个|方面	390
 deyigefenzhi	的|一个|分支	493
 deyigegainian	的|一个|概念	434
+deyigege	的|一个个	343
 deyigeguanjian	的|一个|关键	454
 deyigeguocheng	的|一个|过程	414
 deyigehuati	的|一个|话题	450
@@ -24374,6 +24448,7 @@ deyueqiu	的|月球	345
 deyuequ	的|乐曲	496
 deyuer	的|育儿	464
 deyueshu	的|约束	491
+deyuezhang	的|乐章	381
 deyufang	的|预防	490
 deyufangcuoshi	的|预防措施	373
 deyuhangyuan	的|宇航员	360
@@ -24617,6 +24692,7 @@ dezhenshi	的|真实	520
 dezhenshianli	的|真实|案例	379
 dezhenshigan	的|真实感	386
 dezhenshigushi	的|真实|故事	395
+dezhenshiqingkuang	的|真实|情况	412
 dezhenshiqingkuang	的|真实情况	446
 dezhenshishenghuo	的|真实|生活	389
 dezhenshixiangfa	的|真实|想法	372
@@ -24669,6 +24745,7 @@ dezhihou	得知|后	343
 dezhihuiguan	的|指挥官	364
 dezhijie	的|直接	520
 dezhijieyuanyin	的|直接|原因	402
+dezhijing	的|直径	475
 dezhikong	的|指控	374
 dezhileng	的|制冷	451
 dezhili	的|智力	386
@@ -24693,8 +24770,10 @@ dezhimingdu	的|知名度	520
 dezhinan	的|指南	386
 dezhinengshouji	的|智能|手机	434
 dezhinian	的|执念	397
+dezhiniaoku	的|纸尿裤	366
 dezhipei	的|支配	409
 dezhipin	的|制品	360
+dezhiqing	的|知情	416
 dezhiqingquan	的|知情权	415
 dezhishichanquan	的|知识产权	458
 dezhishichubei	的|知识|储备	382
@@ -24969,6 +25048,7 @@ dezhuguanbumen	的|主管|部门	386
 dezhuhe	的|祝贺	422
 dezhuhou	的|诸侯	365
 dezhuhu	的|住户	375
+dezhuimeng	的|追梦	350
 dezhuipeng	的|追捧	500
 dezhuiqiu	的|追求	520
 dezhuiwen	的|追问	401
@@ -25302,6 +25382,7 @@ dianciganyingyuanli	电磁感应|原理	429
 diancihuanjing	电磁|环境	447
 diancijianrong	电磁|兼容	492
 dianciliuliangji	电磁|流量计	520
+diancitanshe	电磁|弹射	402
 diancixianquan	电磁|线圈	425
 diancizhuanju	电磁|转矩	384
 diandechengyu	点的|成语	376
@@ -25339,6 +25420,7 @@ diandongqichedianchi	电动|汽车|电池	362
 diandongqicheshichang	电动|汽车|市场	353
 diandongsanlunche	电动|三轮车	466
 diandongzixingche	电动|自行车	520
+diandongzixingchechongdian	电动|自行车|充电	348
 diandongzixingchedengji	电动|自行车|登记	369
 diandongzixingcheguanli	电动|自行车|管理	359
 dianfanchengshi	典范|城市	404
@@ -26467,6 +26549,7 @@ diqubeibu	地区|北部	422
 diqubijiao	地区|比较	380
 diqubufen	地区|部分	364
 diqubutong	地区|不同	391
+diquchangjian	地区|常见	343
 diquchayi	地区|差异	396
 diquchixu	地区|持续	346
 diquchuxian	地区|出现	460
@@ -26675,6 +26758,7 @@ ditiede	地铁|的	419
 ditiegongsi	地铁|公司	426
 ditieguihua	地铁|规划	386
 ditiehe	地铁|和	363
+ditiejituan	地铁|集团	387
 ditieli	地铁|里	420
 ditieshang	地铁|上	465
 ditiexianlu	地铁|线路	484
@@ -26746,6 +26830,7 @@ diyadanbao	抵押|担保	447
 diyade	抵押|的	425
 diyadengji	抵押|登记	459
 diyagei	抵押|给	476
+diyiba	第一|把	371
 diyibaisanshi	第一百|三十	404
 diyibaisishi	第一百|四十	404
 diyibufen	第一|部分	520
@@ -27049,6 +27134,7 @@ dongjingaoyunhui	东京|奥运会	498
 dongjingdaxue	东京|大学	520
 dongjingde	东京|的	478
 dongjingdiguo	东京|帝国	419
+dongjingdou	东京|都	520
 dongjingguoli	东京|国立	407
 dongjinshiqi	东晋|时期	443
 dongjipifu	冬季|皮肤	394
@@ -27592,6 +27678,7 @@ doumeile	都|没了	449
 doumeineng	都|没能	444
 doumeiren	都|没人	415
 doumeiting	都|没听	441
+doumeitingguo	都没|听过	395
 doumeiwenti	都|没问题	433
 doumeixiangdao	都没|想到	420
 doumeiyong	都|没用	481
@@ -27879,6 +27966,7 @@ douxiangdeng	都|相等	440
 douxiangdui	都|相对	376
 douxiangqu	都|想去	407
 douxiangshi	都|像是	487
+douxiangtong	都|相同	382
 douxiangwang	都|向往	439
 douxiangxin	都|相信	406
 douxiangyao	都|想要	515
@@ -27927,6 +28015,7 @@ douyinzhibo	抖音|直播	429
 douyiwei	都|以为	503
 douyiyang	都|一样	520
 douyizhi	都|一直	418
+douyongguo	都|用过	452
 douyongle	都用|了	395
 douyongshangle	都用|上了	418
 douyongyou	都|拥有	520
@@ -27954,6 +28043,8 @@ douyougezide	都有|各自的	520
 douyouguanxi	都有|关系	407
 douyouguding	都有|固定	415
 douyouguiding	都有|规定	377
+douyouguo	都|有过	520
+douyouguozheyangde	都|有过|这样的	420
 douyouhaochu	都有|好处	428
 douyouhenda	都有|很大	520
 douyouhendade	都有|很大|的	431
@@ -28059,6 +28150,7 @@ douzuoguo	都|做过	448
 douzuole	都|做了	497
 duanboziwaixian	短波|紫外线	394
 duandaigongcheng	断代|工程	392
+duandaoduande	端到端|的	385
 duandeshijian	短的|时间	520
 duandeshijianna	短的|时间|内	415
 duanduanjifenzhong	短短|几分钟	400
@@ -28229,6 +28321,7 @@ duimanle	堆满|了	447
 duimiande	对面|的	495
 duimianshi	对面|是	375
 duishoude	对手|的	462
+duishude	对数|的	359
 duishuxuede	对数|学的	442
 duiwaichengbao	对外|承包	419
 duiwaichuanbo	对外|传播	401
@@ -28867,6 +28960,7 @@ duoniandefazhan	多年|的|发展	433
 duoniandelishi	多年|的|历史	487
 duoniandeyanjiu	多年|的|研究	395
 duonianfazhan	多年|发展	386
+duonianguoqu	多年|过去	419
 duonianhou	多年|后	520
 duonianjiaoxue	多年|教学	383
 duonianjingyan	多年|经验	398
@@ -29388,6 +29482,7 @@ erjujue	而|拒绝	396
 erjuyou	而|具有	432
 erkaifa	而|开发	475
 erkefuzhuren	儿科|副主任	392
+erkexuehui	儿科|学会	384
 erkunao	而|苦恼	403
 erlaide	而|来的	520
 erlaideshi	而来|的是	498
@@ -29426,6 +29521,7 @@ erputong	而|普通	366
 erqianduonian	二千|多年	437
 erqianwubai	二千|五百	427
 erqianwubaiduonian	二千|五百|多年	349
+erqiebijiao	而且|比较	343
 erqiebixu	而且|必须	420
 erqiebu	而且|不	430
 erqiebuhui	而且|不会	422
@@ -30001,6 +30097,7 @@ fabushipin	发布|视频	440
 fabushuju	发布|数据	448
 fabushujuxianshi	发布|数据|显示	379
 fabutixing	发布|提醒	437
+fabutongbao	发布|通报	404
 fabutonggao	发布|通告	501
 fabutongzhi	发布|通知	520
 fabuweizhun	发布|为准	400
@@ -30411,6 +30508,7 @@ fangande	方案|的	520
 fangandetongzhi	方案|的|通知	502
 fangangongbu	方案|公布	421
 fangangonggao	方案|公告	375
+fangangongshi	方案|公示	368
 fanganguiding	方案|规定	362
 fanganhe	方案|和	483
 fanganji	方案|及	459
@@ -31235,6 +31333,7 @@ fansheyuanli	反射|原理	406
 fantande	反弹|的	462
 fantanhangqing	反弹|行情	449
 fantankedaodan	反坦克|导弹	396
+fantianfudede	翻天覆地|的	520
 fantianfudedebianhua	翻天覆地|的|变化	470
 fantizhongwen	繁体|中文	476
 fanweibaohan	范围|包含	396
@@ -32406,6 +32505,7 @@ feichangyouxiu	非常|优秀	474
 feichangyouyi	非常|有益	471
 feichangyouyisi	非常有|意思	466
 feichangyouyiyi	非常|有意义	469
+feichangyouyiyi	非常有|意义	453
 feichangyouyong	非常|有用	471
 feichangyouyongde	非常有|用的	428
 feichangzaogao	非常|糟糕	422
@@ -32812,6 +32912,7 @@ fengjingxiuli	风景|秀丽	520
 fengjingxiulide	风景|秀丽|的	415
 fengjingxiumei	风景|秀美	394
 fengjingyuanlin	风景|园林	520
+fengjingyuanlinzhuanye	风景|园林|专业	342
 fengjuezhidu	封爵|制度	371
 fengkuangde	疯狂|的	520
 fengkuangqianggou	疯狂|抢购	382
@@ -33618,6 +33719,7 @@ fulitixi	福利|体系	418
 fuliyebianhuan	傅立叶|变换	408
 fulizhengce	福利|政策	369
 fulizhidu	福利|制度	412
+fuluolidadaxue	佛罗里达|大学	427
 fumiande	负面|的	475
 fumianpingjia	负面|评价	417
 fumianqingdan	负面|清单	488
@@ -34037,6 +34139,7 @@ fuyinjianhe	复印件|和	395
 fuyinjianyifen	复印件|一份	432
 fuyongbiyunyao	服用|避孕药	388
 fuyongfangfa	服用|方法	415
+fuyongjiangya	服用|降压	406
 fuyongjiangyayao	服用|降压药	387
 fuyongyaowu	服用|药物	473
 fuyongyesuan	服用|叶酸	402
@@ -34727,6 +34830,7 @@ ganjueshufu	感觉|舒服	379
 ganjuetebie	感觉|特别	414
 ganjuetonghe	感觉|统合	492
 ganjuetongheshitiao	感觉|统合|失调	394
+ganjuetouyun	感觉|头晕	396
 ganjuewei	感觉|有	406
 ganjuexiangdang	感觉|相当	380
 ganjuexiangshi	感觉|像是	465
@@ -35559,6 +35663,7 @@ gegechengshi	各个|城市	476
 gegedaxue	各个|大学	349
 gegedifang	各个|地方	516
 gegediqu	各个|地区	496
+gegedoushi	个个|都是	369
 gegefangmian	各个|方面	520
 gegefangmiande	各个|方面|的	422
 gegefangxiang	各个|方向	418
@@ -35624,6 +35729,7 @@ geichujianyi	给出|建议	390
 geichule	给出|了	520
 geichuledaan	给出|了|答案	416
 geichuleyige	给出|了|一个	377
+geichumingque	给出|明确	395
 geichuxiangying	给出|相应	398
 geichuyige	给出|一个	497
 geichuyixie	给出|一些	383
@@ -37890,11 +37996,18 @@ gongshangzhucedengji	工商|注册|登记	359
 gongshangzongju	工商|总局	484
 gongshede	公社|的	372
 gongshigonggao	公示|公告	349
+gongshihe	公式|和	382
+gongshijieduan	公示|阶段	356
+gongshijieshu	公示|结束	358
 gongshijinxing	公式|进行	380
 gongshijisuan	公式|计算	463
+gongshikeyi	公式|可以	368
+gongshilai	公式|来	397
 gongshimingdan	公示|名单	389
+gongshineirong	公示|内容	350
 gongshiqijian	公示|期间	383
 gongshiruxia	公示|如下	344
+gongshishi	公式|是	403
 gongshishishenme	公式|是什么	405
 gongshixinxi	公示|信息	366
 gongshixitong	公示|系统	396
@@ -37947,6 +38060,7 @@ gongsideyuangong	公司|的|员工	389
 gongsidezhuyao	公司|的|主要	395
 gongsidiaoyan	公司|调研	364
 gongsidingwei	公司|定位	383
+gongsidiyi	公司|第一	347
 gongsidiyici	公司|第一次	341
 gongsidizhi	公司|地址	433
 gongsidongshi	公司|董事	458
@@ -38032,6 +38146,7 @@ gongsili	公司|里	482
 gongsilianhe	公司|联合	457
 gongsiliaojie	公司|了解	346
 gongsilingdao	公司|领导	514
+gongsilingdaobanzi	公司|领导|班子	347
 gongsilingdaobanzi	公司|领导班子	414
 gongsiliyi	公司|利益	381
 gongsiliyong	公司|利用	367
@@ -39332,6 +39447,7 @@ guanfangshuju	官方|数据	514
 guanfangshujuxianshi	官方|数据|显示	372
 guanfangshuoshi	官方|硕士	396
 guanfangtigong	官方|提供	374
+guanfangtongbao	官方|通报	342
 guanfangtongji	官方|统计	446
 guanfangtongzhi	官方|通知	396
 guanfangwangzhande	官方网站|的	353
@@ -39608,6 +39724,7 @@ guangqijituan	广汽|集团	394
 guangrongchuantong	光荣|传统	497
 guangrongde	光荣|的	493
 guangshouguanzhu	广受|关注	447
+guangshouhaoping	广受|好评	484
 guangshouhuanying	广受|欢迎	520
 guangshouhuanyingde	广受|欢迎|的	371
 guangshouzanyu	广受|赞誉	397
@@ -39679,6 +39796,7 @@ guangzhouchengshi	广州|城市	353
 guangzhoudaxue	广州|大学	455
 guangzhoude	广州|的	485
 guangzhoudiqu	广州|地区	450
+guangzhouditie	广州|地铁	419
 guangzhoufenhang	广州|分行	419
 guangzhouguoji	广州|国际	435
 guangzhouhuadu	广州|花都	383
@@ -40048,6 +40166,7 @@ guanwangfabu	官网|发布	520
 guanwangfabule	官网|发布|了	389
 guanwanggongbu	官网|公布	471
 guanwanggonggao	官网|公告	419
+guanwanggongshi	官网|公示	358
 guanwangjietu	官网|截图	396
 guanwangjinxing	官网|进行	387
 guanwangliaojie	官网|了解	377
@@ -40734,6 +40853,7 @@ guihuafanwei	规划|范围	470
 guihuafazhan	规划|发展	362
 guihuafeichang	规划|非常	344
 guihuagangyao	规划|纲要	520
+guihuagongshi	规划|公示	370
 guihuagongzuo	规划|工作	376
 guihuaguanli	规划|管理	490
 guihuaguotu	规划|国土	440
@@ -40824,6 +40944,7 @@ guimoxiao	规模|小	425
 guimoxiaoying	规模|效应	439
 guimoxuexiao	规模|学校	349
 guimoxunsu	规模|迅速	398
+guimoyangzhi	规模|养殖	390
 guimoye	规模|也	364
 guimoyiji	规模|以及	361
 guimoyishang	规模|以上	510
@@ -40956,6 +41077,7 @@ guntongxiyiji	滚筒|洗衣机	466
 guoanlihui	国安|理会	519
 guobaodaxiongmao	国宝|大熊猫	389
 guobiaodaima	国标|代码	390
+guobuqude	过不去|的	427
 guochande	国产|的	417
 guochandianshiju	国产|电视剧	390
 guochandianying	国产|电影	419
@@ -41114,6 +41236,7 @@ guofenzhuiqiu	过分|追求	410
 guofujinianguan	国父|纪念馆	384
 guogaokaode	过高|考的	401
 guogongneizhanshiqi	国共内战|时期	386
+guoguande	过关|的	361
 guohoude	过后|的	477
 guohuazuopin	国画|作品	430
 guohude	过户|的	376
@@ -41121,6 +41244,7 @@ guohuidasha	国会|大厦	506
 guohuide	国会|的	344
 guohuitongguo	国会|通过	474
 guohuituan	国徽|图案	379
+guohuizhuxi	国会|主席	406
 guohushouxu	过户|手续	460
 guojiaaizheng	国家|癌症	392
 guojiaanquande	国家安全|的	466
@@ -41440,6 +41564,7 @@ guojiaxiangguanzhengce	国家|相关|政策	368
 guojiaxiangzheng	国家|象征	365
 guojiaxianzhi	国家|限制	342
 guojiaxiaofang	国家|消防	429
+guojiaxiaofangjiuyuan	国家|消防|救援	352
 guojiaxingcheng	国家|形成	351
 guojiaxingzheng	国家|行政	520
 guojiaxingzhengjiguan	国家|行政|机关	432
@@ -41476,6 +41601,7 @@ guojiayouguanguiding	国家|有关|规定	458
 guojiayouzhengju	国家|邮政局	474
 guojiayu	国家|或	406
 guojiayuanlin	国家|园林	392
+guojiayuanlinchengshi	国家|园林|城市	342
 guojiayuanshou	国家|元首	520
 guojiayudiqu	国家|或|地区	402
 guojiayunxu	国家|允许	351
@@ -41772,8 +41898,10 @@ guojizuixin	国际|最新	350
 guojizuzhi	国际|组织	520
 guojizuzhide	国际|组织|的	379
 guokujizhong	国库|集中	387
+guolaide	过来|的	519
 guolaijiushi	过来|就是	371
 guolaikankan	过来|看看	394
+guolaile	过来|了	478
 guolairende	过来|人的	489
 guolairendejingyan	过来|人的|经验	352
 guolaizixun	过来|咨询	394
@@ -41996,6 +42124,7 @@ guoquhenchang	过去|很长	393
 guoquhexianzai	过去|和|现在	389
 guoqujinian	过去|几年	520
 guoqujishinian	过去|几十年	448
+guoqule	过去|了	520
 guoquliangnian	过去|两年	520
 guoqusannian	过去|三年	480
 guoqushi	过去|是	440
@@ -42014,10 +42143,12 @@ guoquyizhi	过去|一直	376
 guoquyizhou	过去|一周	436
 guoquzai	过去|在	374
 guoranshi	果然|是	452
+guorede	过热|的	358
 guorenlaishuo	国人|来说	367
 guorenzhichu	过人|之处	401
 guoshengchanneng	过剩|产能	464
 guoshengde	过剩|的	443
+guoshengride	过生日|的	366
 guoshichengshu	果实|成熟	419
 guoshinengli	果实|能力	379
 guoshipengda	果实|膨大	379
@@ -42672,6 +42803,7 @@ haishijuede	还是|觉得	464
 haishijueding	还是|决定	451
 haishikeyi	还是|可以	506
 haishikeyide	还是|可以的	463
+haishilai	还是|来	343
 haishilaizi	还是|来自	376
 haishilaoyangzi	还是|老样子	402
 haishilihun	还是|离婚	355
@@ -42967,6 +43099,7 @@ haiyouyitiao	还有|一条	372
 haiyouyiwei	还有|一位	456
 haiyouyixie	还有|一些	520
 haiyouyizhang	还有|一张	387
+haiyouyong	还|有用	420
 haiyouzai	还有|在	351
 haiyouzhao	还有|着	438
 haiyouzhe	还有|这	418
@@ -43310,6 +43443,7 @@ hangbanquxiao	航班|取消	422
 hangbanyanwu	航班|延误	419
 hanghaijiade	航海|家的	401
 hangkonganquan	航空|安全	379
+hangkongchanye	航空|产业	421
 hangkongdaxue	航空|大学	424
 hangkongfadongji	航空|发动机	454
 hangkongfeixing	航空|飞行	384
@@ -43621,7 +43755,9 @@ hanyoukafeiyin	含有|咖啡因	389
 hanyouqita	含有|其他	376
 hanyourenti	含有|人体	416
 hanyoushaoliang	含有|少量	458
+hanyouyi	含有|一	405
 hanyouyiding	含有|一定	477
+hanyouyidingliang	含有|一|定量	373
 hanyouyige	含有|一个	443
 hanyouyixie	含有|一些	409
 hanyouyoudu	含有|有毒	401
@@ -44123,6 +44259,7 @@ hechuqu	何处|去	435
 hechuxu	和|储蓄	410
 hechuzhi	和|处置	422
 hechuzhong	和|初中	416
+hechuzu	和|出租	366
 hecichang	和|磁场	454
 heciji	和|刺激	378
 hecongshi	和|从事	350
@@ -45443,6 +45580,7 @@ henduowangzhan	很多|网站	401
 henduowanjia	很多|玩家	407
 henduowanlu	很多|弯路	448
 henduowei	很多|有	412
+henduoweihai	很多|危害	363
 henduowenhua	很多|文化	347
 henduowenti	很多|问题	520
 henduowenzhang	很多|文章	354
@@ -45658,6 +45796,7 @@ hennande	很难|的	384
 hennandedao	很难|得到	459
 hennanfaxian	很难|发现	440
 hennangaibian	很难|改变	382
+hennanguo	很|难过	506
 hennanhuida	很难|回答	438
 hennanhuode	很难|获得	371
 hennanjianchi	很难|坚持	422
@@ -46629,6 +46768,7 @@ heyanghua	和|氧化	453
 heyanglaojin	和|养老金	352
 heyangpin	和|样品	410
 heyangsheng	和|养生	380
+heyangzhi	和|养殖	362
 heyanhua	和|演化	473
 heyanjin	和|严谨	406
 heyanjing	和|眼睛	375
@@ -46649,6 +46789,7 @@ heyaowu	和|药物	469
 heyaredai	和|亚热带	446
 heyasuo	和|压缩	379
 heyazhou	和|亚洲	497
+heyeji	和|业绩	364
 heyejie	和|业界	396
 heyesheng	和|野生	429
 heyeshengdongwu	和|野生|动物	376
@@ -47137,6 +47278,7 @@ houchansheng	后|产生	491
 houchengli	后|成立	388
 houchengwei	后|成为	435
 houchixu	后|持续	390
+houchongjian	后|重建	520
 houchongxin	后|重新	456
 houchuli	后|处理	472
 houchuxian	后|出现	520
@@ -47182,6 +47324,7 @@ houhaiyao	后|还要	379
 houhaiyou	后|还有	349
 houhaizi	后|孩子	357
 houhuide	后悔|的	463
+houhuifu	后|恢复	466
 houhuile	后悔|了	451
 houhuimeiyou	后悔|没有	415
 houhuiyibeizi	后悔|一辈子	402
@@ -47638,6 +47781,7 @@ huangmiude	荒谬|的	392
 huangmohuafangzhi	荒漠化|防治	347
 huangsede	黄色|的	508
 huangsefenmo	黄色|粉末	407
+huangsehe	黄色|和	358
 huangseyu	黄色|或	490
 huangseyujing	黄色|预警	520
 huangseyujingxinhao	黄色|预警|信号	367
@@ -48260,6 +48404,8 @@ huifuyingye	恢复|营业	393
 huifuyu	恢复|与	388
 huifuyuanzhuang	恢复|原状	464
 huifuyunying	恢复|运营	386
+huifuzhengchang	恢复|正常	520
+huifuzhengchangshenghuo	恢复|正常|生活	342
 huifuzhengchangshenghuo	恢复正常|生活	411
 huiguguoqu	回顾|过去	486
 huiguhe	回顾|和	450
@@ -48356,6 +48502,7 @@ huishangjieshao	会上|介绍	446
 huishangliaojie	会上|了解	437
 huishangqiangdiao	会上|强调	457
 huishangtichu	会上|提出	423
+huishangtongbao	会上|通报	373
 huishangtoulu	会上|透露	417
 huishangxuanbu	会上|宣布	410
 huishangzhichu	会上|指出	414
@@ -48973,6 +49120,7 @@ huodonger	活动|而	393
 huodongfangan	活动|方案	520
 huodongfangshi	活动|方式	399
 huodongfeichang	活动|非常	348
+huodongfeichangyou	活动|非常有	382
 huodongfenwei	活动|分为	447
 huodonggongyou	活动|共有	372
 huodongguangchang	活动|广场	360
@@ -49605,6 +49753,7 @@ jiagoutiaozheng	架构|调整	440
 jiagouyiji	架构|以及	372
 jiagouyu	架构|与	366
 jiagouzhong	架构|中	455
+jiaguogaokao	加过|高考	395
 jiaguwenzixing	甲骨文|字形	390
 jiajiadouyou	家家|都有	415
 jiajiahuhudou	家家户户|都	492
@@ -50257,6 +50406,7 @@ jianguobushao	见过|不少	408
 jianguode	见过|的	491
 jianguohenduo	见过|很多	424
 jianguoxuduo	见过|许多	385
+jianguozheme	见过|这么	408
 jianguozheyangde	见过|这样的	396
 jianguozhezhong	见过|这种	386
 jiangwende	降温|的	473
@@ -50295,6 +50445,7 @@ jiangyuguocheng	降雨|过程	446
 jiangyuqiangdu	降雨|强度	412
 jiangyutianqi	降雨|天气	477
 jiangyuyingxiang	降雨|影响	429
+jiangzheyidai	江浙|一带	371
 jiangzuode	讲座|的	446
 jiangzuohe	讲座|和	427
 jiangzuohuodong	讲座|活动	410
@@ -51275,6 +51426,7 @@ jiaoliunengli	交流|能力	416
 jiaoliupingtai	交流|平台	520
 jiaoliushi	交流|是	343
 jiaoliushiyong	交流|使用	416
+jiaoliusifu	交流|伺服	447
 jiaoliusixiang	交流|思想	393
 jiaoliutantao	交流|探讨	440
 jiaoliutaolun	交流|讨论	423
@@ -52456,6 +52608,8 @@ jiawude	家务|的	349
 jiawulaodong	家务|劳动	438
 jiaxiangjianshe	家乡|建设	401
 jiaxide	加息|的	411
+jiaxingliugan	甲型|流感	359
+jiaxingliuganbingdu	甲型|流感病毒	372
 jiaxingliuganbingdu	甲型流感|病毒	417
 jiaxingnanhu	嘉兴|南湖	408
 jiaxingshinanhuqu	嘉兴|市南|湖区	403
@@ -52717,6 +52871,7 @@ jibenguoqing	基本|国情	445
 jibenhangai	基本|涵盖	414
 jibenhanyi	基本|含义	425
 jibenhe	基本|和	375
+jibenhuifu	基本|恢复	359
 jibenhuodong	基本|活动	390
 jibenjiancheng	基本|建成	495
 jibenjianli	基本|建立	457
@@ -53164,6 +53319,7 @@ jidongchejiashiyuanpeixun	机动车|驾驶员|培训	382
 jidongchejiashizheng	机动车|驾驶证	520
 jidongchelianganquanguanli	机动车辆|安全管理	416
 jidongchepaifang	机动车|排放	389
+jidongchexingshi	机动车|行驶	365
 jidongchexingshizheng	机动车|行驶证	396
 jidongchezai	机动车|在	384
 jidongde	激动|的	505
@@ -55079,6 +55235,7 @@ jingfangjiedao	警方|接到	399
 jingfangjingguo	警方|经过	404
 jingfangpohuo	警方|破获	426
 jingfangtixing	警方|提醒	371
+jingfangtongbao	警方|通报	414
 jingfangzhengzai	警方|正在	392
 jingfangzhuahuo	警方|抓获	420
 jingfeibaozhang	经费|保障	465
@@ -56925,6 +57082,7 @@ jinxingjinyibude	进行|进一步|的	414
 jinxingjishu	进行|技术	413
 jinxingjisuan	进行|计算	520
 jinxingjiti	进行|集体	400
+jinxingjiuyuan	进行|救援	360
 jinxingjiyin	进行|基因	374
 jinxingjizhong	进行|集中	484
 jinxingjubao	进行|举报	397
@@ -57097,6 +57255,7 @@ jinxingtiqian	进行|提前	369
 jinxingtiqu	进行|提取	347
 jinxingtisheng	进行|提升	378
 jinxingtiyan	进行|体验	342
+jinxingtongbao	进行|通报	378
 jinxingtongji	进行|统计	454
 jinxingtongxin	进行|通信	441
 jinxingtoupiao	进行|投票	428
@@ -57359,6 +57518,7 @@ jinyicishishenme	近义词|是什么	389
 jinyincaibao	金银|财宝	429
 jinyinhuacha	金银|花茶	392
 jinyinjinianbi	金银|纪念币	460
+jinyongde	禁用|的	380
 jinyongxiansheng	金庸|先生	420
 jinyongxiaoshuo	金庸|小说	432
 jinyoude	仅有|的	520
@@ -57881,6 +58041,7 @@ jishutuiguang	技术|推广	520
 jishutuiguangzhongxin	技术|推广|中心	387
 jishutupo	技术|突破	502
 jishuwei	技术|有	348
+jishuweilai	技术|未来	346
 jishuweiyuanhui	技术|委员会	502
 jishuweizhu	技术|为主	368
 jishuwendang	技术|文档	376
@@ -57978,6 +58139,7 @@ jisuanfuzaxing	计算|复杂性	402
 jisuangongcheng	计算|工程	364
 jisuangongju	计算|工具	411
 jisuangongshi	计算|公式	520
+jisuangongshiruxia	计算|公式|如下	341
 jisuanguocheng	计算|过程	409
 jisuanhe	计算|和	505
 jisuanhou	计算|后	362
@@ -58199,6 +58361,7 @@ jiubiande	就|变得	520
 jiubianle	就|变了	433
 jiubiaoshi	就|表示	457
 jiubiaoxian	就|表现	430
+jiubiexiang	就|别想	420
 jiubijiao	就|比较	520
 jiubiran	就|必然	399
 jiubirushuo	就|比如说	416
@@ -58265,6 +58428,7 @@ jiucijieshu	就此|结束	408
 jiuciwenti	就此|问题	445
 jiucizhankai	就此|展开	408
 jiucunzai	就|存在	506
+jiucuole	就|错了	410
 jiudadao	就|达到	426
 jiudaibiao	就|代表	520
 jiudailai	就|带来	349
@@ -58330,6 +58494,7 @@ jiugenzhexiaobian	就|跟着|小编	375
 jiugeren	就|个人	343
 jiuguanzhu	就|关注	386
 jiuguifan	就|规范	376
+jiuguoqu	就|过去	506
 jiuhaobi	就|好比	520
 jiuhaohao	就|好好	418
 jiuhaowu	就|毫无	401
@@ -58623,6 +58788,7 @@ jiumeiren	就|没人	421
 jiumeishenme	就没|什么	403
 jiumeiyou	就|没有	520
 jiumeiyoule	就没|有了	508
+jiumeiyouname	就|没有|那么	389
 jiumeiyoushenme	就没|有什么	461
 jiumeiyouwenti	就没|有问题	414
 jiumianlin	就|面临	416
@@ -58943,6 +59109,7 @@ jiushizuohao	就是|做好	361
 jiushizuowei	就是|作为	371
 jiushoudao	就|受到	410
 jiushoudaole	就收|到了	473
+jiushuoguo	就|说过	415
 jiushuole	就|说了	437
 jiushuoming	就|说明	491
 jiushuyu	就|属于	496
@@ -59026,6 +59193,7 @@ jiuyaochongxin	就要|重新	393
 jiuyaocong	就要|从	469
 jiuyaodao	就|要到	486
 jiuyaodaole	就要|到了	501
+jiuyaoguoqu	就要|过去	386
 jiuyaohaohao	就要|好好	438
 jiuyaojieshu	就要|结束	482
 jiuyaojieshule	就要|结束|了	390
@@ -59833,6 +60001,7 @@ jubudayu	局部|大雨	397
 jubude	局部|的	475
 jubudiqu	局部|地区	500
 jubufangdian	局部|放电	440
+jubuguore	局部|过热	389
 jubupifu	局部|皮肤	446
 jubuquyu	局部|区域	393
 jubutengtong	局部|疼痛	412
@@ -59924,6 +60093,7 @@ juedebutai	觉得|不太	416
 juedechi	觉得|她	414
 juededuifang	觉得|对方	446
 juedefeichang	觉得|非常	439
+juedefeichangyou	觉得|非常有	384
 juedehaishi	觉得|还是	410
 juedehaizi	觉得|孩子	397
 juedehaoxiang	觉得|好像	403
@@ -60340,6 +60510,7 @@ junweizhengzhigongzuo	军委|政治工作	402
 junweizhuxi	军委|主席	520
 junweizhuxixijinping	军委|主席|习近平	441
 junxianxitong	均线|系统	407
+junxiaode	军校|的	364
 junxunde	军训|的	398
 junyidaxue	军医|大学	520
 junyidaxuexijingyiyuan	军医|大学|西京医院	374
@@ -60706,6 +60877,7 @@ juyoutiaojie	具有|调节	454
 juyoutiaozhan	具有|挑战	354
 juyoutiaozhanxing	具有|挑战性	502
 juyoutiaozhanxingde	具有|挑战性|的	389
+juyoutiji	具有|体积	399
 juyoutongdeng	具有|同等	498
 juyoutongyang	具有|同样	410
 juyoutouzi	具有|投资	364
@@ -61663,6 +61835,8 @@ kanguolai	看过|来	520
 kanguole	看过|了	435
 kanguoyibu	看过|一部	384
 kanguoyige	看过|一个	421
+kanguoyixie	看过|一些	381
+kanguozhege	看过|这个	359
 kanguozheyang	看过|这样	450
 kanguozheyangyige	看过|这样|一个	340
 kanguozhihou	看过|之后	384
@@ -61686,6 +61860,7 @@ kangzhanlaobing	抗战|老兵	469
 kangzhanqijian	抗战|期间	464
 kangzhanshiqi	抗战|时期	520
 kanhaode	看好|的	477
+kanjianbieren	看见|别人	391
 kanjianchi	看见|她	454
 kanjiande	看见|的	472
 kanjianle	看见|了	516
@@ -61777,6 +61952,7 @@ kanqilaijiushi	看起来|就是	351
 kanqilaijiuxiang	看起来|就像	441
 kanqilaimeishenme	看起来|没什么	390
 kanqilainame	看起来|那么	398
+kanqilaipingpingwuqi	看起来|平平|无奇	366
 kanqilaishi	看起来|是	419
 kanqilaishifen	看起来|十分	404
 kanqilaisihu	看起来|似乎	424
@@ -61883,6 +62059,7 @@ kaogufajue	考古|发掘	520
 kaogufaxian	考古|发现	520
 kaogugongzuo	考古|工作	401
 kaogugongzuozhe	考古|工作者	425
+kaoguode	考过|的	357
 kaogurenyuan	考古|人员	465
 kaogushiye	考古|事业	367
 kaoguxuehui	考古|学会	402
@@ -62582,6 +62759,7 @@ kendinghenduo	肯定|很多	358
 kendinghuiyou	肯定|会有	520
 kendingjiushi	肯定|就是	396
 kendingle	肯定|了	510
+kendingme	肯定|没	423
 kendingmeiyou	肯定|没有	359
 kendingshaobuliao	肯定|少不了	405
 kendingshi	肯定|是	520
@@ -62672,6 +62850,7 @@ kenengjuede	可能|觉得	479
 kenengjuyou	可能|具有	389
 kenengkanqilai	可能|看起来	388
 kenenglaizi	可能|来自	359
+kenengme	可能|没	373
 kenengmeitian	可能|每天	374
 kenengmeiyou	可能|没有	512
 kenengmianlin	可能|面临	514
@@ -64017,6 +64196,7 @@ kuaidigongsi	快递|公司	520
 kuaidihangye	快递|行业	470
 kuaidiqiye	快递|企业	491
 kuaidiwuliu	快递|物流	439
+kuaidixiao	快递|小	520
 kuaidixiaoge	快递|小哥	518
 kuaidiyewu	快递|业务	445
 kuaidushu	酷爱|读书	396
@@ -64474,6 +64654,7 @@ laiguanzhu	来|关注	417
 laiguding	来|固定	381
 laiguihua	来|规划	374
 laiguli	来|鼓励	392
+laiguozhongguo	来过|中国	389
 laihaohao	来|好好	429
 laihengliang	来|衡量	520
 laihuafen	来|划分	520
@@ -64622,6 +64803,7 @@ laishuowei	来说|有	395
 laishuowuyi	来说|无疑	421
 laishuoye	来说|也	366
 laishuoyeshi	来说|也是	461
+laishuoyi	来说|一	424
 laishuoyijing	来说|已经	416
 laishuoyixia	来说|一下	460
 laishuozhende	来|说真的	423
@@ -64684,6 +64866,8 @@ laiyingdui	来|应对	504
 laiyingguo	来|英国	385
 laiyingjie	来|迎接	407
 laiyiqi	来|一起	465
+laiyishengcun	赖以|生存	509
+laiyishengcunde	赖以|生存|的	418
 laiyiyuan	来|医院	381
 laiyizhi	来|一直	518
 laiyouhua	来|优化	385
@@ -64770,6 +64954,8 @@ laiziqita	来自|其他	379
 laiziquanguo	来自|全国	485
 laiziquanguogede	来自|全国各地	520
 laiziquanguogedede	来自|全国各地|的	427
+laiziquanguogedi	来自|全国各地	520
+laiziquanguogedide	来自|全国各地|的	427
 laiziquanqiu	来自|全球	445
 laiziquanshijie	来自|全世界	394
 laizirenmin	来自|人民	366
@@ -64792,6 +64978,7 @@ laizitongyige	来自|同一个	384
 laiziwaijie	来自|外界	407
 laiziwangluo	来自|网络	520
 laiziwo	来|自我	375
+laiziwoguo	来自|我国	342
 laiziwomen	来自|我们	380
 laiziwuhusihai	来自|五湖四海	431
 laizixianggang	来自|香港	398
@@ -65360,6 +65547,7 @@ leerzhan	了|二战	364
 lefalv	了|法律	469
 lefangxiang	了|方向	469
 lefangzi	了|房子	354
+lefantianfude	了|翻天覆地	520
 lefazhan	了|发展	450
 lefeichang	了|非常	500
 lefeichangda	了|非常大	402
@@ -66050,6 +66238,7 @@ leyiceng	了|一层	483
 leyichangjingcai	了|一场|精彩	353
 leyici	了|一次	520
 leyida	了|一大	498
+leyidai	了|一代	486
 leyidali	了|意大利	396
 leyidian	了|一点	473
 leyiding	了|一定	492
@@ -66063,6 +66252,7 @@ leyifen	了|一份	520
 leyifeng	了|一封	401
 leyifu	了|衣服	358
 leyige	了|一个	520
+leyigeduoyue	了|一个多月	395
 leyigefeichang	了|一个|非常	417
 leyigege	了|一个个	434
 leyigejiandan	了|一个|简单	384
@@ -66744,6 +66934,7 @@ lianheguoxitong	联合国|系统	396
 lianheguozhuanmen	联合国|专门	404
 lianhehuide	联合|会的	494
 lianhehuihe	联合会|和	399
+lianhehuihui	联合|会会	450
 lianhehuihuizhang	联合会|会长	439
 lianhehuizhuban	联合会|主办	383
 lianhehuizhuxi	联合会|主席	390
@@ -67510,6 +67701,7 @@ lilvxiatiao	利率|下调	439
 lilvxiaxing	利率|下行	382
 lilvye	利率|也	376
 lilvzhengce	利率|政策	417
+limancaixiang	黎曼|猜想	389
 limeiyou	里|没有	517
 limianbaohan	里面|包含	459
 limianbaokuo	里面|包括	349
@@ -67599,7 +67791,10 @@ lingchensandian	凌晨|三点	439
 lingchensidian	凌晨|四点	412
 lingchenyidian	凌晨|一点	422
 lingdaoanpai	领导|安排	416
+lingdaobanzi	领导|班子	520
+lingdaobanzichengyuan	领导|班子|成员	484
 lingdaobanzichengyuan	领导班子|成员	520
+lingdaobanzihe	领导|班子|和	417
 lingdaocanjia	领导|参加	411
 lingdaochengyuan	领导|成员	392
 lingdaochuanxiao	领导|传销	446
@@ -67716,6 +67911,7 @@ lingqiaode	灵巧|的	381
 lingqude	领取|的	388
 lingqufangshi	领取|方式	491
 lingqujiangli	领取|奖励	396
+lingqumianfei	领取|免费	396
 lingqushijian	领取|时间	378
 lingquyanglaojin	领取|养老金	462
 lingquyingyezhizhao	领取|营业执照	394
@@ -68276,6 +68472,7 @@ liudongxinghe	流动性|和	445
 liudongxingheli	流动性|合理	413
 liudongxinghelichongyu	流动性|合理|充裕	362
 liuganbingdude	流感病毒|的	382
+liuganbingduganran	流感|病毒感染	406
 liuganbingduyinqi	流感病毒|引起	421
 liugande	流感|的	419
 liugangaofa	流感|高发	434
@@ -69149,6 +69346,7 @@ lvseshenghuo	绿色|生活	446
 lvseshengtai	绿色|生态	490
 lvseshi	绿色|是	374
 lvseshucai	绿色|蔬菜	400
+lvsetongdao	绿色|通道	520
 lvsexiaofei	绿色|消费	445
 lvsexuexiao	绿色|学校	376
 lvseyingguang	绿色|荧光	420
@@ -69299,6 +69497,7 @@ maidedongxi	买的|东西	382
 maidefangzi	买的|房子	483
 maidefeicui	买的|翡翠	372
 maideshihou	买的|时候	404
+maifangshichang	买方|市场	415
 maihuilaide	买回|来的	463
 maijiagoumai	买家|购买	349
 maijialaishuo	卖家|来说	356
@@ -69664,6 +69863,7 @@ mayijituanzanhuan	蚂蚁|集团|暂缓	353
 mayisenlin	蚂蚁|森林	438
 mayunde	马云|的	455
 mebenshi	没|本事	454
+mechiguo	没|吃过	469
 mechuli	没|处理	389
 medifang	没|地方	391
 meduoda	没|多大	479
@@ -69870,6 +70070,7 @@ meiguofangmian	美国|方面	402
 meiguofeixingyuan	美国|飞行员	391
 meiguofoluolida	美国|佛罗里达	454
 meiguofujiniya	美国|弗吉尼亚	433
+meiguofuluolida	美国|佛罗里达	450
 meiguofuzongtong	美国|副总统	448
 meiguogaozhong	美国|高中	443
 meiguogeda	美国|各大	363
@@ -70081,6 +70282,8 @@ meiguoyu	美国|与	406
 meiguoyuhangju	美国|宇航局	509
 meiguozai	美国|在	494
 meiguozazhi	美国|杂志	404
+meiguozhengfu	美国|政府	520
+meiguozhengfude	美国|政府|的	362
 meiguozhengfude	美国政府|的	380
 meiguozhengke	美国|政客	389
 meiguozhengquan	美国|证券	417
@@ -70915,9 +71118,11 @@ meizhouyici	每周|一次	429
 meizhouyuanzhumin	美洲|原住民	430
 meizhouzhimindi	美洲|殖民地	377
 meizide	妹子|的	408
+mejianguo	没|见过	520
 mejihui	没|机会	476
 mejitian	没|几天	472
 mekandao	没|看到	514
+mekanguo	没|看过	496
 mekaoshang	没|考上	454
 melaideji	没|来得及	449
 memaobing	没|毛病	459
@@ -70993,20 +71198,25 @@ menzhenfeiyong	门诊|费用	422
 menzhenjiuzhen	门诊|就诊	432
 menzhenkanbing	门诊|看病	382
 menzhentongchou	门诊|统筹	493
+mequguo	没|去过	460
 metaida	没|太大	424
+metingguo	没|听过	421
 metongguo	没|通过	380
 meweikou	没|胃口	434
 mewenhua	没|文化	376
+mexiangguo	没|想过	448
 mexingqu	没|兴趣	433
 mexueguo	没|学过	445
 meyongde	没|用的	506
 meyoucuo	没|有错	519
 meyouguanxide	没|有关系的	454
+meyouguo	没|有过	520
 meyoule	没|有了	520
 meyouqian	没|有钱	520
 meyoushui	没|有水	472
 mezhaodao	没|找到	520
 mezheme	没|这么	441
+mezuoguo	没|做过	433
 mezuohao	没|做好	423
 mianbande	面板|的	408
 mianbanshang	面板|上	398
@@ -71113,6 +71323,7 @@ mianfeikecheng	免费|课程	379
 mianfeilingqu	免费|领取	520
 mianfeipeixun	免费|培训	378
 mianfeipinchang	免费|品尝	401
+mianfeiruanjian	免费|软件	369
 mianfeishiduan	免费|时段	390
 mianfeishijian	免费|时间	370
 mianfeishiyong	免费|使用	430
@@ -71545,6 +71756,7 @@ mingquebiaoda	明确|表达	431
 mingquebiaoming	明确|表明	416
 mingquebiaoshi	明确|表示	520
 mingquebingyin	明确|病因	411
+mingquedafu	明确|答复	414
 mingquededaan	明确的|答案	374
 mingquededingyi	明确的|定义	376
 mingquedefangxiang	明确的|方向	363
@@ -71746,6 +71958,7 @@ minjindangdangju	民进党|当局	418
 minjingbangzhu	民警|帮助	386
 minjingchahuo	民警|查获	394
 minjingdangchang	民警|当场	394
+minjingdangchangchahuo	民警|当场|查获	343
 minjingde	民警|的	446
 minjingfaxian	民警|发现	501
 minjingfujing	民警|辅警	411
@@ -72493,6 +72706,7 @@ nailaide	哪|来的	481
 nailide	哪|里的	490
 naimoxingneng	耐磨|性能	410
 nainaizai	奶奶|在	369
+nainiuyangzhi	奶牛|养殖	385
 naiqule	哪|去了	423
 nairenxunweide	耐人寻味|的	397
 naishuibuzu	奶水|不足	408
@@ -72808,6 +73022,7 @@ nanjingshenji	南京|审计	418
 nanjingshenjidaxue	南京|审计|大学	352
 nanjingshifandaxue	南京|师范大学	519
 nanjingshigonganju	南京市|公安局	415
+nanjingshimin	南京|市民	386
 nanjingxinxi	南京|信息	356
 nanjingyikedaxue	南京|医科大学	487
 nanjingyishuxueyuan	南京|艺术学院	453
@@ -73344,6 +73559,7 @@ neizaiyinsu	内在|因素	382
 neizaizhiliang	内在|质量	416
 neizangqiguan	内脏|器官	456
 neizangzhifang	内脏|脂肪	427
+neizhanbaofa	内战|爆发	389
 neizhande	内战|的	392
 neizhanqijian	内战|期间	390
 neizhanzhong	内战|中	400
@@ -74160,6 +74376,7 @@ nidezhege	你的|这个	366
 nidezhenshi	你的|真实	374
 nidezhi	你|得知	402
 nidezhichi	你的|支持	356
+nidezhishi	你的|知识	351
 nidezhiye	你的|职业	424
 nidezhuangtai	你的|状态	346
 nidezhuanye	你的|专业	443
@@ -74286,6 +74503,7 @@ nikanbujian	你看|不见	458
 nikandao	你|看到	517
 nikandaode	你|看到的	457
 nikandaole	你看|到了	445
+nikanguo	你|看过	468
 nikanjian	你|看见	462
 nikanle	你|看了	398
 nikanqilai	你看|起来	404
@@ -74321,6 +74539,7 @@ nilijie	你|理解	396
 niluoheliuyu	尼罗河|流域	441
 nimaile	你|买了	421
 nimama	你|妈妈	493
+nimeijianguo	你没|见过	396
 nimeiwei	你没|有	520
 nimenbuyao	你们|不要	384
 nimende	你们|的	520
@@ -74437,6 +74656,7 @@ niqidai	你|期待	438
 niqingsong	你|轻松	442
 niqishi	你|其实	351
 niqueding	你|确定	464
+niquguo	你|去过	466
 nirangwo	你|让我	408
 nirengran	你|仍然	408
 nirensheng	你|人生	422
@@ -74546,6 +74766,7 @@ nixiangbuxiang	你想|不想	446
 nixiangchengwei	你想|成为	413
 nixiangdao	你|想到	414
 nixiangde	你想|的	440
+nixiangguo	你|想过	453
 nixianghao	你|想好	433
 nixiangliaojie	你想|了解	442
 nixiangxiang	你|想象	520
@@ -74627,9 +74848,11 @@ niyouduojiu	你有|多久	470
 niyouduojiumeiyou	你有|多久|没有	367
 niyouduome	你有|多么	390
 niyouduoshao	你有|多少	390
+niyouguo	你|有过	414
 niyoukunnan	你有|困难	408
 niyoule	你有|了	396
 niyouliaojie	你有|了解	372
+niyoume	你有|没	454
 niyoumeiyou	你有|没有	520
 niyoumeiyoufaxian	你有|没有|发现	399
 niyoumeiyouxiangguo	你有|没有|想过	416
@@ -75229,6 +75452,7 @@ ouzhoude	欧洲|的	520
 ouzhoudiqu	欧洲|地区	424
 ouzhoudiyi	欧洲|第一	376
 ouzhoudongnanbu	欧洲|东南部	386
+ouzhouduo	欧洲|多	372
 ouzhougeda	欧洲|各大	431
 ouzhougedi	欧洲|各地	389
 ouzhougeguo	欧洲|各国	520
@@ -75472,6 +75696,7 @@ paobuxunlian	跑步|训练	396
 paobuyundong	跑步|运动	413
 paobuzishi	跑步|姿势	408
 paochede	跑车|的	387
+paochulai	跑出|来	433
 paodaoshang	跑道|上	421
 paomode	泡沫|的	373
 paomosuliao	泡沫|塑料	477
@@ -76192,6 +76417,8 @@ pingmushangkandao	屏幕上|看到	406
 pingmushangxianshi	屏幕上|显示	451
 pingpangqiubisai	乒乓球|比赛	392
 pingpangqiuyundong	乒乓球|运动	386
+pingpingwuqi	平平|无奇	506
+pingpingwuqide	平平|无奇|的	390
 pingpingwuqide	平平无奇|的	435
 pingride	平日|的	409
 pingrili	平日|里	520
@@ -76290,6 +76517,7 @@ pingxingde	平行|的	493
 pingxingpailie	平行|排列	395
 pingxingshijie	平行|世界	478
 pingxingsibianxing	平行|四边形	520
+pingxingyuzhou	平行|宇宙	447
 pingxingzhiyuan	平行|志愿	497
 pingxuanbanfa	评选|办法	404
 pingxuanbiaozhang	评选|表彰	415
@@ -76842,6 +77070,7 @@ qiangshihuigui	强势|回归	411
 qiangshijueqi	强势|崛起	406
 qiangshilaixi	强势|来袭	439
 qianguade	牵挂|的	391
+qianguangchang	前|广场	417
 qiangude	千古|的	358
 qianguyi	千古|一	427
 qiangxianjiuyuan	抢险|救援	430
@@ -77696,6 +77925,7 @@ qingkuangdaozhi	情况|导致	343
 qingkuangde	情况|的	520
 qingkuangdebaogao	情况|的|报告	464
 qingkuangdehua	情况|的话	380
+qingkuangdetongbao	情况|的|通报	350
 qingkuangdeyuanyin	情况|的|原因	383
 qingkuangdiaocha	情况|调查	391
 qingkuangdou	情况|都	465
@@ -77708,6 +77938,7 @@ qingkuangfenxi	情况|分析	435
 qingkuangfuza	情况|复杂	398
 qingkuanggei	情况|给	348
 qingkuanggengjia	情况|更加	393
+qingkuanggongshi	情况|公示	347
 qingkuanghai	情况|还	348
 qingkuanghaishi	情况|还是	367
 qingkuanghe	情况|和	520
@@ -77728,6 +77959,7 @@ qingkuangjiu	情况|就	415
 qingkuangjiuhui	情况|就会	350
 qingkuangjiushi	情况|就是	441
 qingkuangjueding	情况|决定	375
+qingkuangjuti	情况|具体	345
 qingkuangjuxing	情况|举行	386
 qingkuangkaizhan	情况|开展	385
 qingkuangkeneng	情况|可能	465
@@ -77748,7 +77980,9 @@ qingkuangshifen	情况|十分	363
 qingkuangshifou	情况|是否	407
 qingkuangshiyoufasheng	情况|时有发生	399
 qingkuangshuoming	情况|说明	455
+qingkuangtianxie	情况|填写	369
 qingkuangtichu	情况|提出	362
+qingkuangtongbao	情况|通报	464
 qingkuangtongji	情况|统计	388
 qingkuangwei	情况|有	419
 qingkuangwo	情况|我	349
@@ -77814,6 +78048,7 @@ qingmingxiaochangjia	清明|小|长假	381
 qingmominguo	清末|民国	394
 qingnengyuanqiche	氢能源|汽车	398
 qingnianboshi	青年|博士	376
+qingniancai	青年|才	408
 qingnianchengzhang	青年|成长	406
 qingnianchuangxin	青年|创新	411
 qingnianchuangye	青年|创业	506
@@ -79133,6 +79368,8 @@ quanguogaokao	全国|高考	448
 quanguogeda	全国|各大	502
 quanguogedede	全国各地|的	505
 quanguogedeluxu	全国各地|陆续	397
+quanguogedide	全国各地|的	505
+quanguogediluxu	全国各地|陆续	397
 quanguogege	全国|各个	373
 quanguogeji	全国|各级	435
 quanguogezurenmin	全国|各族人民	477
@@ -79292,11 +79529,13 @@ quanguozuixin	全国|最新	346
 quanguozuizao	全国|最早	417
 quanhuihe	全会|和	462
 quanhuijingshen	全会|精神	520
+quanhuishang	全会|上	408
 quanhuishenyi	全会|审议	400
 quanhuitichu	全会|提出	434
 quanhuitongguo	全会|通过	372
 quanjiabianlishangdian	全家|便利商店	421
 quanjiadou	全家|都	405
+quanjialaoxiao	全家|老小	389
 quanjiarende	全家|人的	429
 quanjude	全局|的	440
 quanjuguangzhao	全局|光照	413
@@ -79782,6 +80021,7 @@ quanyuanhesuan	全员|核酸	437
 quanyuanhesuanjiance	全员|核酸|检测	377
 quanyuanpeixun	全员|培训	384
 quanzhibeikao	全职|备考	381
+quanzhide	全职|的	342
 quanzhigongzuo	全职|工作	415
 quanzhimama	全职|妈妈	501
 quanzhitaitai	全职|太太	422
@@ -81202,6 +81442,7 @@ rendegongtong	人的|共同	434
 rendegongzi	人的|工资	398
 rendegongzuo	人的|工作	430
 rendegoutong	人的|沟通	373
+rendeguanai	人的|关爱	386
 rendeguandian	人的|观点	506
 rendeguanhuai	人的|关怀	392
 rendeguannian	人的|观念	456
@@ -81246,6 +81487,7 @@ rendelinghun	人的|灵魂	399
 rendelishi	人的|历史	368
 rendelixiang	人的|理想	421
 rendeliyi	人的|利益	468
+rendelvxing	人的|旅行	364
 rendemeili	人的|魅力	446
 rendemengxiang	人的|梦想	520
 rendemimi	人的|秘密	389
@@ -81286,6 +81528,7 @@ renderizi	人的|日子	398
 renderuqin	人的|入侵	383
 rendesanguan	人的|三观	347
 rendeshanghai	人的|伤害	370
+rendeshehui	人的|社会	346
 rendeshencai	人的|身材	380
 rendeshenfen	人的|身份	520
 rendeshenfenzheng	人的|身份证	411
@@ -81294,6 +81537,7 @@ rendeshengcun	人的|生存	463
 rendeshenghuo	人的|生活	520
 rendeshenghuofangshi	人的|生活|方式	399
 rendeshenghuojiezou	人的|生活|节奏	363
+rendeshenghuoxiguan	人的|生活|习惯	342
 rendeshenghuozhiliang	人的|生活质量	402
 rendeshengli	人的|生理	388
 rendeshengming	人的|生命	520
@@ -81328,6 +81572,7 @@ rendetongbing	人的|通病	400
 rendetongku	人的|痛苦	402
 rendetoufa	人的|头发	391
 rendetouzi	人的|投资	350
+rendetuandui	人的|团队	344
 rendewaimao	人的|外貌	408
 rendeweixin	人的|微信	440
 rendewenhua	人的|文化	384
@@ -81367,6 +81612,7 @@ rendeyanshen	人的|眼神	345
 rendeyanzhong	人的|眼中	422
 rendeyaoqiu	人的|要求	361
 rendeyibeizi	人的|一辈子	383
+rendeyichan	人的|遗产	386
 rendeyige	人的|一个	406
 rendeyijian	人的|意见	405
 rendeyingwen	人的|英文	375
@@ -81383,6 +81629,7 @@ rendeyuanwang	人的|愿望	427
 rendeyuwang	人的|欲望	400
 rendeyuyan	人的|语言	393
 rendezeren	人的|责任	466
+rendezhaogu	人的|照顾	376
 rendezhaopian	人的|照片	373
 rendezhengchang	人的|正常	360
 rendezhengti	人的|整体	349
@@ -81759,6 +82006,8 @@ renleikechixu	人类|可持续	373
 renleikexue	人类|科学	346
 renleikeyi	人类|可以	399
 renleilaishuo	人类|来说	391
+renleilaiyi	人类|赖以	416
+renleilaiyishengcun	人类|赖以|生存	353
 renleilishi	人类|历史	520
 renleilishide	人类|历史|的	385
 renleilishishang	人类|历史|上	494
@@ -82519,6 +82768,7 @@ renweitashi	认为|他是	467
 renweiwei	认为|有	471
 renweiweilai	认为|未来	375
 renweiwo	认为|我	378
+renweiwoguo	认为|我国	341
 renweiyige	认为|一个	373
 renweiyijing	认为|已经	359
 renweiyinggai	认为|应该	459
@@ -82948,6 +83198,7 @@ ribendiguozhuyi	日本|帝国主义	463
 ribendiyi	日本|第一	403
 ribendongbei	日本|东北	401
 ribendongjing	日本|东京	520
+ribendongjingdou	日本|东京|都	404
 ribendongjingdou	日本|东京都	466
 ribendongman	日本|动漫	418
 ribenfangwei	日本|防卫	372
@@ -83003,6 +83254,7 @@ ribenshiyige	日本|是一个	360
 ribenshouxiang	日本|首相	520
 ribenshouxianganbeijinsan	日本|首相|安倍晋三	433
 ribenshouxiangantianwenxiong	日本|首相|岸田文雄	375
+ribentouxiang	日本|投降	446
 ribentuili	日本|推理	392
 ribenweishenme	日本|为什么	341
 ribenwenhua	日本|文化	404
@@ -83315,6 +83567,7 @@ ruanjianji	软件|及	394
 ruanjianjiagou	软件|架构	483
 ruanjianjiemian	软件|界面	423
 ruanjianjinxing	软件|进行	437
+ruanjianjishu	软件|技术	427
 ruanjiankaifanengli	软件开发|能力	388
 ruanjiankaifazhe	软件|开发者	431
 ruanjiankeyi	软件|可以	432
@@ -83330,6 +83583,8 @@ ruanjianshixian	软件|实现	347
 ruanjianshiyong	软件|使用	397
 ruanjiantigong	软件|提供	351
 ruanjiantongguo	软件|通过	343
+ruanjianwei	软件|有	345
+ruanjianxiangmu	软件|项目	340
 ruanjianxianshi	软件|显示	359
 ruanjianxiazai	软件|下载	399
 ruanjianxitongde	软件系统|的	367
@@ -84137,6 +84392,7 @@ sanbailiushi	三百|六十	401
 sanbaiyunian	三百|余年	416
 sanbeigongzi	三倍|工资	390
 sanbeiyishang	三倍|以上	401
+sanbuyaoyan	散布|谣言	344
 sanchashenjingtong	三叉|神经痛	520
 sancihuiyi	三次|会议	520
 sancihuode	三次|获得	429
@@ -84496,6 +84752,7 @@ shandiaole	删掉|了	421
 shandihe	山地|和	419
 shandingshang	山顶|上	418
 shandiqiuling	山地|丘陵	442
+shandongbandao	山东|半岛	513
 shandongbandaochengshi	山东半岛|城市	399
 shandongbandaozhongbu	山东半岛|中部	383
 shandongdaxue	山东|大学	520
@@ -84736,6 +84993,7 @@ shangdeyaoqiu	上的|要求	372
 shangdeyida	上的|一大	399
 shangdeyige	上的|一个	520
 shangdeyigezhongyao	上的|一个|重要	347
+shangdeyike	上的|一颗	343
 shangdeyingxiang	上的|影响	372
 shangdeyingxiangli	上的|影响力	376
 shangdeyingyong	上的|应用	487
@@ -84750,6 +85008,7 @@ shangdezhici	上的|致辞	384
 shangdezhishi	上的|知识	405
 shangdezhongyao	上的|重要	520
 shangdezhongyaojianghua	上的|重要|讲话	413
+shangdezhuanye	上的|专业	345
 shangdezhuiqiu	上的|追求	351
 shangdezhuyao	上的|主要	341
 shangdezuigao	上的|最高	405
@@ -85151,6 +85410,7 @@ shangrenwei	上|认为	417
 shangresoule	上热搜|了	432
 shangricheng	上|日程	520
 shangsaiji	上|赛季	442
+shangshanxiaxiang	上山|下乡	454
 shangshaoshu	上|少数	384
 shangsheji	上|设计	341
 shangshengdao	上|升到	520
@@ -85339,6 +85599,7 @@ shangxingcheng	上|形成	504
 shangxingkongjian	上行|空间	396
 shangxinnanguo	伤心|难过	412
 shangxinyuemude	赏心悦目|的	409
+shangxinyujue	伤心|欲绝	389
 shangxuanbu	上|宣布	396
 shangxuduo	上|许多	442
 shangxuedeshihou	上学|的时候	492
@@ -85446,6 +85707,7 @@ shangyezhongxin	商业|中心	509
 shangyezonghe	商业|综合	427
 shangyezuzhi	商业|组织	374
 shangyiban	上|一般	444
+shangyidai	上|一代	505
 shangyidian	上|一点	387
 shangyidingyao	上|一定要	358
 shangyiduan	上|一段	429
@@ -87107,6 +87369,7 @@ shengwuduoyangxing	生物|多样性	520
 shengwuduoyangxingbaohu	生物|多样性|保护	492
 shengwuduoyangxingde	生物|多样性|的	408
 shengwuduoyangxinghe	生物|多样性|和	420
+shengwufangzhi	生物|防治	392
 shengwufanying	生物|反应	476
 shengwufenlei	生物|分类	464
 shengwufenleixue	生物|分类学	490
@@ -87117,6 +87380,7 @@ shengwugongcheng	生物|工程	520
 shengwugongchenggongsi	生物|工程|公司	342
 shengwugongchengxueyuan	生物|工程|学院	342
 shengwuguocheng	生物|过程	379
+shengwuguolv	生物|过滤	395
 shengwuhe	生物|和	460
 shengwuhecheng	生物|合成	514
 shengwuhuaxue	生物|化学	520
@@ -87804,6 +88068,7 @@ shenrutanjiu	深入|探究	470
 shenrutansuo	深入|探索	444
 shenrutantaoyixia	深入探讨|一下	387
 shenrutaolun	深入|讨论	454
+shenrutianjian	深入|田间	389
 shenrutianjianditou	深入|田间地头	386
 shenrutuidong	深入|推动	413
 shenrutuijin	深入|推进	520
@@ -88026,6 +88291,7 @@ shenzaode	深造|的	411
 shenzhangzhengyi	伸张|正义	403
 shenzhanyundong	伸展|运动	432
 shenzhenchengshi	深圳|城市	347
+shenzhendapeng	深圳|大鹏	359
 shenzhendaxue	深圳|大学	479
 shenzhendazao	深圳|打造	407
 shenzhende	深圳|的	504
@@ -88048,6 +88314,7 @@ shenzhenshilonggangqu	深圳市|龙岗区	409
 shenzhenshiluohuqu	深圳市|罗湖区	381
 shenzhenshinan	深圳|市南	452
 shenzhenshinanshanqu	深圳|市南|山区	365
+shenzhenshinanshanqu	深圳市|南山区	431
 shenzhenshirenminzhengfu	深圳市|人民政府	419
 shenzhenshizhengfu	深圳市|政府	385
 shenzhenshizhufang	深圳市|住房	397
@@ -88858,6 +89125,7 @@ shidaixinren	时代|新人	442
 shidaixuqiu	时代|需求	349
 shidaiyaoqiu	时代|要求	420
 shidaiyijing	时代|已经	511
+shidaiyijingguoqu	时代|已经|过去	343
 shidaiyilai	时代|以来	402
 shidaiyiyi	时代|意义	369
 shidaizai	时代|在	388
@@ -89779,6 +90047,7 @@ shijianguiding	时间|规定	353
 shijianguihua	时间|规划	383
 shijianguochang	时间|过长	520
 shijianguochengzhong	实践|过程中	411
+shijianguoqu	时间|过去	401
 shijiangxisheng	是|江西省	426
 shijianhai	时间|还	373
 shijianhaishi	时间|还是	391
@@ -89997,6 +90266,7 @@ shijiebolanhui	世界|博览会	392
 shijiechengshi	世界|城市	374
 shijiechongman	世界|充满	441
 shijiedailai	世界|带来	432
+shijiedasai	世界|大赛	363
 shijiedatong	世界|大同	397
 shijiedaxue	世界|大学	507
 shijiedaxuepaiming	世界|大学|排名	433
@@ -90029,6 +90299,7 @@ shijiediyi	世界|第一	520
 shijiediyida	世界|第一|大	403
 shijiedongwu	世界|动物	342
 shijiedou	世界|都	417
+shijieduo	世界|多	360
 shijiedushu	世界|读书	469
 shijiefanfaxisi	世界|反法西斯	435
 shijiefanfaxisizhanzheng	世界|反法西斯|战争	357
@@ -91778,6 +92049,7 @@ shiyichangjia	十一|长假	377
 shiyici	是|一次	520
 shiyicixing	是|一次性	385
 shiyida	是|一大	402
+shiyidai	是|一代	431
 shiyidali	是|意大利	507
 shiyidian	是|一点	349
 shiyiding	是|一定	422
@@ -92302,6 +92574,7 @@ shiyouyidingde	是有|一定的	460
 shiyouyige	是有|一个	399
 shiyouyishi	是有|意识	391
 shiyouyixie	是有|一些	451
+shiyouyiyi	是有|意义	364
 shiyouyongde	是有|用的	438
 shiyouyu	是|由于	520
 shiyouyuanyin	是有|原因	467
@@ -92447,6 +92720,7 @@ shizhenkong	是|真空	371
 shizhenshi	是|真实	425
 shizhenzheng	是|真正	520
 shizhenzhengyiyi	是|真正|意义	370
+shizhequ	试着|去	424
 shizhexie	是|这些	480
 shizhexue	是|哲学	428
 shizheyang	是|这样	520
@@ -92533,6 +92807,7 @@ shizhongbaochi	始终|保持	520
 shizhongbaochizhao	始终|保持|着	365
 shizhongbingcheng	始终|秉承	394
 shizhongbuneng	始终|不能	363
+shizhongbushi	始终|不是	344
 shizhongchuyu	始终|处于	467
 shizhongcunzai	始终|存在	391
 shizhongda	是|重大	376
@@ -94122,6 +94397,7 @@ shuoguode	说过|的	446
 shuoguodehua	说过|的话	408
 shuoguole	说过|了	370
 shuoguoyijuhua	说过|一句话	461
+shuoguozhege	说过|这个	390
 shuoguozheyang	说过|这样	477
 shuoguozheyangyijuhua	说过|这样|一句话	392
 shuohaode	说好|的	435
@@ -94317,6 +94593,7 @@ shuxuefudao	数学|辅导	452
 shuxuefuhao	数学|符号	471
 shuxuefuxi	数学|复习	465
 shuxuegongju	数学|工具	364
+shuxuegongshi	数学|公式	462
 shuxuehe	数学|和	520
 shuxuehexin	数学|核心	429
 shuxuehuodong	数学|活动	372
@@ -94641,6 +94918,9 @@ sifaxitong	司法|系统	386
 sifazerenzhi	司法|责任制	390
 sifazhidu	司法|制度	377
 sifenzhiyide	四分之一|的	484
+sifudiandongji	伺服|电动机	441
+sifudianji	伺服|电机	505
+sifuxitong	伺服|系统	436
 sigebenke	四个|本科	389
 sigebufen	四个|部分	520
 sigebutong	四个|不同	370
@@ -94969,6 +95249,7 @@ songgeiwo	送给|我	421
 songgeiwomen	送给|我们	399
 songgeiziji	送给|自己	417
 songhuajiangpan	松花|江畔	380
+songhuhuizhan	淞沪|会战	449
 songhuoshangmen	送货|上门	477
 songjiangweishou	宋江|为首	408
 songjiaolunwen	送交|论文	401
@@ -95844,6 +96125,7 @@ suweiailianbang	苏维埃|联邦	387
 suweiaishehuizhuyi	苏维埃|社会主义	478
 suweiaishehuizhuyigongheguo	苏维埃|社会主义|共和国	402
 suweiaizhengfu	苏维埃|政府	429
+suxingguolai	苏醒|过来	411
 suyishiyunhe	苏伊士|运河	505
 suyuandiaocha	溯源|调查	406
 suzaode	塑造|的	473
@@ -95914,6 +96196,7 @@ tacunzai	它|存在	380
 tadaibiao	它|代表	389
 tadaigei	它|带给	341
 tadailing	他|带领	484
+tadangnian	他|当年	361
 tadangshi	他|当时	427
 tadanren	他|担任	457
 tadechenggong	他的|成功	358
@@ -96018,6 +96301,7 @@ tageren	他|个人	373
 taguangfan	它|广泛	389
 taguangfanyingyong	它|广泛应用	380
 taguojiade	他国|家的	407
+taguoqu	他|过去	360
 tahaikeyi	它|还可以	485
 tahaishi	他|还是	406
 tahaiyou	它|还有	340
@@ -96133,6 +96417,8 @@ taiwandequde	台湾地区|的	390
 taiwandianshi	台湾|电视	350
 taiwandianshiju	台湾|电视剧	368
 taiwandianying	台湾|电影	412
+taiwandiqu	台湾|地区	520
+taiwandiqude	台湾|地区|的	350
 taiwandiyi	台湾|第一	422
 taiwandongbu	台湾|东部	370
 taiwanduli	台湾|独立	399
@@ -96866,6 +97152,7 @@ tebieshinongcun	特别是|农村	376
 tebieshiruguo	特别是|如果	378
 tebieshisuizhe	特别是|随着	378
 tebieshiwanshang	特别是|晚上	387
+tebieshiwo	特别|是我	388
 tebieshixianzai	特别是|现在	377
 tebieshiyixie	特别是|一些	520
 tebieshiyou	特别|是有	409
@@ -97363,6 +97650,7 @@ tianwangxingde	天王星|的	415
 tianwenguance	天文|观测	506
 tianwenhe	天文|和	393
 tianwenkepu	天文|科普	389
+tianwenshuzi	天文|数字	404
 tianwenwangyuanjing	天文|望远镜	438
 tianwenxiehui	天文|协会	420
 tianwenxuede	天文|学的	494
@@ -98105,7 +98393,11 @@ tijiaoxiangguan	提交|相关	480
 tijiaoziliao	提交|资料	423
 tijiaozuoye	提交|作业	396
 tijide	提及|的	500
+tijijiaoda	体积|较大	443
 tijile	提及|了	420
+tijiliuliang	体积|流量	516
+tijizuida	体积|最大	409
+tijizuixiao	体积|最小	386
 tilianchulai	提炼|出来	446
 tilianhe	提炼|和	379
 tilianle	提炼|了	384
@@ -98536,6 +98828,7 @@ tiyanle	体验|了	493
 tiyanshenghuo	体验|生活	442
 tiyanshi	体验|是	369
 tiyanye	体验|也	358
+tiyanyi	体验|一	378
 tiyanyiba	体验|一把	400
 tiyanyici	体验|一次	376
 tiyanyixia	体验|一下	456
@@ -98625,7 +98918,10 @@ tizhongjianqing	体重|减轻	431
 tizhongxiajiang	体重|下降	477
 tizhongzengjia	体重|增加	447
 tizhongzhishu	体重|指数	395
+tongbaobiaoyang	通报|表扬	410
 tongbaode	同胞|的	387
+tongbaopiping	通报|批评	384
+tongbaoruxia	通报|如下	432
 tongbixiahua	同比|下滑	392
 tongbixiajiang	同比|下降	478
 tongbizengsu	同比|增速	475
@@ -98829,6 +99125,7 @@ tongguofajiao	通过|发酵	366
 tongguofalv	通过|法律	467
 tongguofalvtujing	通过|法律|途径	357
 tongguofanfu	通过|反复	402
+tongguofangwen	通过|访问	347
 tongguofasong	通过|发送	379
 tongguofazhan	通过|发展	399
 tongguofenxi	通过|分析	520
@@ -98917,6 +99214,7 @@ tongguokexue	通过|科学	396
 tongguokexuede	通过|科学的	372
 tongguokongqi	通过|空气	426
 tongguokongzhi	通过|控制	471
+tongguokoufu	通过|口服	426
 tongguokuaidi	通过|快递	354
 tongguokuaisu	通过|快速	427
 tongguolangdu	通过|朗读	394
@@ -99016,6 +99314,7 @@ tongguowangluo	通过|网络	520
 tongguowangluojinxing	通过|网络|进行	352
 tongguowangluopingtai	通过|网络|平台	367
 tongguowangxian	通过|网线	407
+tongguowangzhan	通过|网站	369
 tongguowanshan	通过|完善	356
 tongguowei	通过|有	348
 tongguoweishengwu	通过|微生物	352
@@ -99025,6 +99324,7 @@ tongguowenzi	通过|文字	481
 tongguowomen	通过|我们	448
 tongguowomende	通过|我们|的	406
 tongguowuli	通过|物理	389
+tongguoxialie	通过|下列	340
 tongguoxiamian	通过|下面	389
 tongguoxianchang	通过|现场	472
 tongguoxiang	通过|向	497
@@ -99053,6 +99353,8 @@ tongguoyanshou	通过|验收	461
 tongguoyanzheng	通过|验证	405
 tongguoyaowu	通过|药物	365
 tongguoyaowuzhiliao	通过|药物治疗	401
+tongguoyi	通过|一	340
+tongguoyici	通过|一次	342
 tongguoyiding	通过|一定	352
 tongguoyidingde	通过|一定的	474
 tongguoyidong	通过|移动	445
@@ -99064,6 +99366,7 @@ tongguoyinhang	通过|银行	434
 tongguoyinjin	通过|引进	389
 tongguoyinru	通过|引入	395
 tongguoyinshi	通过|饮食	473
+tongguoyinyue	通过|音乐	357
 tongguoyishang	通过|以上	349
 tongguoyitiao	通过|一条	376
 tongguoyixie	通过|一些	520
@@ -99506,6 +99809,7 @@ tongyizhaoshengjihua	统一招生|计划	386
 tongyongbiaozhun	通用|标准	393
 tongyongdianqigongsi	通用电气|公司	418
 tongyongguifan	通用|规范	447
+tongyonghangkong	通用|航空	491
 tongyongjichang	通用|机场	428
 tongyongjishu	通用|技术	433
 tongyongjisuanji	通用|计算机	425
@@ -100358,6 +100662,7 @@ tuozhantuopingongjian	拓展|脱贫|攻坚	423
 tuozhanxuesheng	拓展|学生	388
 tuozhanxunlian	拓展|训练	507
 tuozhanyanshen	拓展|延伸	408
+tuozhanzhishi	拓展|知识	412
 tuozhanzhishimian	拓展|知识面	382
 tuozhanzijide	拓展|自己的	374
 tuozhiniunai	脱脂|牛奶	418
@@ -100654,6 +100959,7 @@ waimaihongbao	外卖|红包	417
 waimaipeisong	外卖|配送	454
 waimaipingtai	外卖|平台	510
 waimaiqishou	外卖|骑手	411
+waimaixiao	外卖|小	511
 waimaixiaoge	外卖|小哥	508
 waimaomiaoxie	外貌|描写	413
 waimeibaodao	外媒|报道	476
@@ -101505,6 +101811,7 @@ weiduoliyanvwang	维多利亚|女王	496
 weiduoliyashidai	维多利亚|时代	446
 weiduoliyashiqi	维多利亚|时期	416
 weiduome	有|多么	520
+weiduoming	有|多名	398
 weiduonian	有|多年	421
 weiduoshao	有|多少	520
 weiduoshaoqian	有|多少钱	420
@@ -101550,6 +101857,7 @@ weifangzi	有|房子	358
 weifanjiaotong	违反|交通	446
 weifanlaodong	违反|劳动	413
 weifanle	违反|了	520
+weifanmeiguo	违反|美国	370
 weifanshehui	违反|社会	371
 weifanxiangguan	违反|相关	433
 weifanzhengzhi	违反|政治	389
@@ -101652,16 +101960,21 @@ weiguojia	有|国家	434
 weiguozhanzheng	卫国|战争	470
 weigushi	有|故事	448
 weihaichengdu	危害|程度	425
+weihaida	危害|大	418
+weihaide	危害|的	406
 weihaifeichangda	危害|非常大	385
 weihaigengda	危害|更大	412
 weihaigonggong	危害|公共	446
 weihaigonggonganquan	危害|公共|安全	381
 weihaigongzhong	危害|公众	362
+weihaiguojia	危害|国家	350
 weihaiguojiaanquan	危害|国家安全	414
+weihaihe	危害|和	390
 weihaihenda	危害|很大	431
 weihaijiankang	危害|健康	432
 weihaijida	危害|极大	403
 weihaijuda	危害|巨大	351
+weihaile	危害|了	349
 weihainvxing	危害|女性	348
 weihairenlei	危害|人类	406
 weihairenmen	危害|人们	342
@@ -101669,8 +101982,11 @@ weihairenmin	危害|人民	373
 weihairenti	危害|人体	449
 weihairentijiankang	危害|人体|健康	359
 weihaishehui	危害|社会	421
+weihaishi	危害|是	479
+weihaiwei	危害|有	385
 weihaiyanzhong	危害|严重	360
 weihaiyounaxie	危害|有哪些	472
+weihaizhao	危害|着	389
 weihaizi	有|孩子	480
 weihaizuida	危害|最大	355
 weihaochu	有|好处	520
@@ -102573,6 +102889,7 @@ weiwanchengde	未完成|的	467
 weiwanzheng	有|完整	376
 weiweidao	有|味道	436
 weiweifa	有|违法	357
+weiweihai	有|危害	409
 weiweixian	有|危险	412
 weiweiyixiao	微微|一笑	444
 weiwending	有|稳定	489
@@ -102942,6 +103259,7 @@ weiyudongnan	位于|东南	424
 weiyudongnanya	位于|东南亚	437
 weiyudongou	位于|东欧	400
 weiyudongya	位于|东亚	458
+weiyueding	有|约定	444
 weiyuefengxian	违约|风险	434
 weiyuejinde	违约金|的	378
 weiyuelaiyue	有|越来越	473
@@ -103006,6 +103324,7 @@ weiyuqinghaisheng	位于|青海省	448
 weiyuqingzanggaoyuan	位于|青藏高原	423
 weiyurenti	位于|人体	401
 weiyuriben	位于|日本	520
+weiyuribendongjing	位于|日本|东京	389
 weiyuribendongjingdou	位于|日本|东京都	347
 weiyuruishi	位于|瑞士	431
 weiyushandong	位于|山东	365
@@ -103104,6 +103423,7 @@ weizhikeyi	位置|可以	365
 weizhilai	位置|来	411
 weizhiliang	有|质量	429
 weizhipianpi	位置|偏僻	389
+weizhiqing	有|知情	403
 weizhiruxia	位置|如下	444
 weizhishang	位置|上	520
 weizhishangde	位置|上的	412
@@ -104099,6 +104419,7 @@ wodepengyou	我的|朋友	520
 wodepengyoumen	我的|朋友们	436
 wodepengyouquan	我的|朋友圈	418
 wodeqianbao	我的|钱包	387
+wodeqingchun	我的|青春	500
 wodeqingkuang	我的|情况	369
 wodeqingxu	我的|情绪	436
 wodequedian	我的|缺点	394
@@ -104178,6 +104499,7 @@ wodiyici	我|第一次	518
 wodouhui	我|都会	516
 wodoushi	我|都是	428
 wodouyou	我|都有	350
+woduguo	我|读过	407
 woduiyu	我|对于	421
 wodule	我读|了	504
 woduoci	我|多次	371
@@ -104360,6 +104682,7 @@ woguozonghe	我国|综合	346
 woguozuida	我国|最大	393
 woguozuizao	我国|最早	520
 woguozuizaode	我国|最早|的	403
+woguozuowei	我国|作为	340
 wohaibuzhidao	我还|不知道	426
 wohaihui	我|还会	455
 wohaijide	我还|记得	458
@@ -104496,6 +104819,7 @@ wokanbudong	我看|不懂	358
 wokandao	我|看到	520
 wokandaode	我|看到的	448
 wokandaole	我看|到了	520
+wokanguo	我|看过	457
 wokanjian	我|看见	518
 wokanjianle	我看|见了	413
 wokanle	我|看了	520
@@ -104889,6 +105213,7 @@ womenlaitantan	我们来|谈谈	401
 womenlaitaolun	我们来|讨论	400
 womenlaixiangxi	我们来|详细	417
 womenlaixuexi	我们来|学习	390
+womenlaiyi	我们|赖以	357
 womenlaiyiqi	我们来|一起	451
 womenlaobaixing	我们|老百姓	352
 womenle	我们|了	348
@@ -105372,6 +105697,7 @@ woshifou	我|是否	399
 woshijuede	我是|觉得	410
 woshilai	我是|来	404
 woshilaizi	我是|来自	472
+woshini	我|是你	380
 woshinide	我是|你的	437
 woshinimen	我是|你们	513
 woshinimende	我是|你们|的	434
@@ -105464,6 +105790,7 @@ woxianzaiyijing	我现在|已经	429
 woxianzaizai	我现在|在	391
 woxiaoshihou	我|小时候	520
 woxiede	我写|的	429
+woxieguo	我|写过	415
 woxiele	我|写了	476
 woxieyipian	我写|一篇	378
 woxiguan	我|习惯	383
@@ -105635,6 +105962,7 @@ wozixun	我|咨询	374
 wozonghui	我|总会	434
 wozongjie	我|总结	478
 wozongshi	我|总是	520
+wozouguo	我|走过	426
 wozoujin	我|走进	351
 wozoule	我走|了	418
 wozuiai	我|最爱	468
@@ -105644,6 +105972,7 @@ wozuijin	我|最近	517
 wozuixiai	我|最喜爱	423
 wozuixiang	我|最想	433
 wozuixihuan	我|最喜欢	520
+wozuoguo	我|做过	422
 wozuole	我|做了	479
 wozuoqi	我|做起	414
 wozuowei	我|作为	489
@@ -105897,6 +106226,7 @@ wuhanligong	武汉|理工	496
 wuhanligongdaxue	武汉|理工|大学	421
 wuhanshengwu	武汉|生物	431
 wuhanshi	武汉|是	343
+wuhanshimin	武汉|市民	387
 wuhanshixinzhou	武汉市|新洲	385
 wuhanshiziranziyuan	武汉市|自然资源	386
 wuhanyiqing	武汉|疫情	382
@@ -105910,6 +106240,9 @@ wujiandu	无|监督	431
 wujiashangzhang	物价|上涨	478
 wujicailiao	无机|材料	434
 wujiechu	无|接触	422
+wujiede	误解|的	379
+wujiehe	误解|和	408
+wujiele	误解|了	383
 wujifeijinshu	无机|非金属	423
 wujifeijinshucailiao	无机|非金属|材料	363
 wujifeiliao	无机|肥料	390
@@ -106034,6 +106367,7 @@ wulunduiyu	无论|对于	371
 wulunduo	无论|多	427
 wulunduome	无论|多么	440
 wulunfasheng	无论|发生	379
+wulunguoqu	无论|过去	372
 wulunhezhong	无论|何种	417
 wulunnai	无论|哪	454
 wulunnannv	无论|男女	425
@@ -106099,6 +106433,7 @@ wuqidanyao	武器|弹药	388
 wuqide	武器|的	457
 wuqihe	武器|和	399
 wuqingde	无情|的	504
+wuqiongda	无穷|大	443
 wuqiongde	无穷|的	502
 wuqiongduoge	无穷|多个	390
 wuqiongmeili	无穷|魅力	390
@@ -106425,6 +106760,7 @@ xiadefakuan	下的|罚款	461
 xiadefangfa	下的|方法	344
 xiadehaizi	下的|孩子	389
 xiadejige	下的|几个	406
+xiadeshihou	下的|时候	374
 xiadeshijie	下的|世界	352
 xiadeyige	下的|一个	488
 xiadeyouxiu	下的|优秀	454
@@ -107357,6 +107693,7 @@ xiangguoji	向|国际	454
 xiangguojia	向|国家	460
 xiangguoweishenme	想过|为什么	429
 xiangguowuyuan	向|国务院	408
+xiangguoyige	想过|一个	362
 xiangguoziji	想过|自己	434
 xianghaizi	向|孩子	364
 xianghaizimen	向|孩子们	454
@@ -108560,6 +108897,7 @@ xianzaiyiran	现在|依然	347
 xianzaiyixie	现在|一些	348
 xianzaiyixue	现在|医学	352
 xianzaiyiyou	现在|已有	389
+xianzaiyongde	现在|用的	351
 xianzaiyou	现在|又	460
 xianzaiyouge	现在|有个	363
 xianzaiyoule	现在|有了	396
@@ -109068,6 +109406,7 @@ xiaomaishougou	小麦|收购	389
 xiaomanjieqi	小满|节气	358
 xiaomaode	小猫|的	375
 xiaomayi	小|蚂蚁	475
+xiaomende	校门|的	370
 xiaomiaozhao	小|妙招	520
 xiaomide	小米|的	430
 xiaomiede	消灭|的	377
@@ -109687,6 +110026,7 @@ xibuzhanqu	西部|战区	369
 xicede	西侧|的	419
 xichangweixing	西昌|卫星	403
 xichangweixingfashe	西昌|卫星|发射	382
+xidianjunxiao	西点|军校	443
 xidurenyuan	吸毒|人员	431
 xiebande	协办|的	499
 xiechengde	写成|的	443
@@ -109717,6 +110057,7 @@ xiedingtanpan	协定|谈判	413
 xieede	邪恶|的	491
 xieguode	写过|的	382
 xieguoyipian	写过|一篇	479
+xieguoyipianwenzhang	写过|一篇|文章	346
 xiehaode	写好|的	359
 xiehaoyipian	写好|一篇	390
 xiehexueyuan	协和|学院	383
@@ -110159,6 +110500,7 @@ xinanbude	西南部|的	478
 xinancaijing	西南|财经	478
 xinancaijingdaxue	西南|财经|大学	409
 xinandaxue	西南|大学	520
+xinande	西南|的	376
 xinandiqu	西南|地区	520
 xinanfangde	西南|方的	389
 xinanfangxiang	西南|方向	415
@@ -110387,6 +110729,7 @@ xingchengxianmingduibi	形成|鲜明|对比	441
 xingchengxiao	形成|小	369
 xingchengxinde	形成|新的	379
 xingchengxueshuan	形成|血栓	389
+xingchengyi	形成|一	368
 xingchengyiceng	形成|一层	497
 xingchengyidingde	形成|一定的	381
 xingchengyige	形成|一个	520
@@ -111253,6 +111596,7 @@ xinxigongkaigongzuo	信息|公开|工作	498
 xinxigongkaimulu	信息|公开|目录	349
 xinxigongkaizhinan	信息|公开|指南	427
 xinxigongshi	信息|公示	444
+xinxigongshixitong	信息|公示|系统	355
 xinxigongxiang	信息|共享	520
 xinxigongzuo	信息|工作	383
 xinxigoutong	信息|沟通	355
@@ -111461,6 +111805,7 @@ xinyongshede	信用社|的	362
 xinyongtixi	信用|体系	520
 xinyongtixijianshe	信用|体系|建设	482
 xinyongxinxi	信用|信息	520
+xinyongxinxigongshi	信用|信息|公示	346
 xinyongxiufu	信用|修复	395
 xinyongyuanze	信用|原则	396
 xinyongzhengjiaoyi	信用证|交易	422
@@ -111946,6 +112291,7 @@ xiyingengduo	吸引|更多	520
 xiyingengduode	吸引|更多的	520
 xiyinguanzhong	吸引|观众	483
 xiyinguoji	吸引|国际	376
+xiyinguolai	吸引|过来	394
 xiyinguoqu	吸引|过去	412
 xiyinhaizi	吸引|孩子	365
 xiyinhe	吸引|和	433
@@ -112758,6 +113104,7 @@ xueshengdexuexi	学生|的|学习	504
 xueshengdeyingyu	学生|的|英语	446
 xueshengdeyuedu	学生|的|阅读	395
 xueshengdeyuwen	学生|的|语文	401
+xueshengdezhishi	学生|的|知识	373
 xueshengdezhitimei	学生|德智体美	386
 xueshengdezhuti	学生|的|主体	395
 xueshengdezonghe	学生|的|综合	421
@@ -113178,6 +113525,7 @@ xuexiaoli	学校|里	520
 xuexiaolide	学校|里的	499
 xuexiaolimian	学校|里面	395
 xuexiaolingdao	学校|领导	520
+xuexiaolingdaobanzi	学校|领导|班子	366
 xuexiaolingdaobanzi	学校|领导班子	433
 xuexiaoluqu	学校|录取	472
 xuexiaomeiyou	学校|没有	404
@@ -113591,6 +113939,7 @@ xueyuankaoyan	学院|考研	388
 xueyuankezuojiaoshou	学院|客座教授	458
 xueyuankuaiji	学院|会计	418
 xueyuanlianhe	学院|联合	439
+xueyuanlingdao	学院|领导	407
 xueyuanluqu	学院|录取	382
 xueyuanmeishu	学院|美术	383
 xueyuanmeishuguan	学院|美术馆	451
@@ -115295,6 +115644,7 @@ yaoqingwo	邀请|我	421
 yaoqingzhongguo	邀请|中国	366
 yaoqingzhuanjia	邀请|专家	433
 yaoqiuba	要求|把	398
+yaoqiubanli	要求|办理	340
 yaoqiubei	要求|被	381
 yaoqiubeigao	要求|被告	402
 yaoqiubenke	要求|本科	444
@@ -115589,6 +115939,7 @@ yebugai	也|不该	410
 yebugao	也|不高	482
 yebugou	也|不够	455
 yebuguan	也|不管	443
+yebuguo	也|不过	505
 yebuguoruci	也|不过如此	417
 yebuhao	也|不好	520
 yebuhui	也|不会	520
@@ -116320,6 +116671,7 @@ yeshoudaole	也|收到了	445
 yeshouhuo	也|收获	411
 yeshuobuqing	也说|不清	399
 yeshuobuqingchu	也说|不清楚	390
+yeshuoguo	也|说过	465
 yeshuoming	也|说明	444
 yeshuomingle	也说|明了	486
 yeshuyu	也|属于	520
@@ -116451,6 +116803,7 @@ yewuyunying	业务|运营	380
 yewuzai	业务|在	353
 yewuzengzhang	业务|增长	382
 yewuzhishi	业务|知识	478
+yewuzhiyin	业务|指引	390
 yewuzhong	业务|中	464
 yewuzhuanxing	业务|转型	427
 yewuzhuguan	业务|主管	469
@@ -116559,6 +116912,7 @@ yeyoufasheng	也有|发生	344
 yeyoufenbu	也有|分布	451
 yeyouge	也|有个	412
 yeyouguanxi	也有|关系	364
+yeyouguo	也|有过	483
 yeyouhenda	也有|很大	520
 yeyouhendade	也有|很大|的	417
 yeyouhenduo	也有|很多	520
@@ -116657,6 +117011,7 @@ yezonghui	也|总会	441
 yezongshi	也|总是	457
 yezugou	也|足够	401
 yezuihao	也|最好	358
+yezuoguo	也|做过	400
 yezuole	也|做了	453
 yezuowei	也|作为	442
 yezuyi	也|足以	442
@@ -117026,6 +117381,7 @@ yidadui	一|大队	431
 yidaichuanqi	一代|传奇	362
 yidairende	一代|人的	508
 yidaiyidai	一代|一代	381
+yidaiyou	一代|又	509
 yidaiyouyidai	一代|又|一代	425
 yidaleshi	一大|乐事	400
 yidalibandao	意大利|半岛	400
@@ -117211,6 +117567,8 @@ yidingjuli	一定|距离	411
 yidingkanguo	一定|看过	388
 yidingkeyi	一定|可以	468
 yidingkunnan	一定|困难	366
+yidingle	一|定了	398
+yidingliang	一|定量	520
 yidinglianxi	一定|联系	372
 yidingliaojie	一定|了解	403
 yidingliaoxiao	一定|疗效	389
@@ -117236,6 +117594,7 @@ yidingshuliangde	一定|数量|的	481
 yidingshunxu	一定|顺序	429
 yidingtiaojian	一定|条件	390
 yidingtiaojianxia	一定|条件下	520
+yidingtiji	一定|体积	364
 yidingtingguo	一定|听过	416
 yidingtingshuo	一定|听说	385
 yidingwei	一定|有	514
@@ -117273,6 +117632,7 @@ yidingyaojishi	一定要|及时	488
 yidingyaojizhu	一定要|记住	441
 yidingyaokan	一定|要看	520
 yidingyaokankan	一定要|看看	449
+yidingyaokanwan	一定要|看完	380
 yidingyaokongzhi	一定要|控制	388
 yidingyaolai	一定|要来	446
 yidingyaolaoji	一定要|牢记	391
@@ -117778,6 +118138,7 @@ yigejinrong	一个|金融	343
 yigejishu	一个|技术	405
 yigejisuan	一个|计算	383
 yigejisuanji	一个|计算机	385
+yigejiu	一|个旧	366
 yigejiushi	一个|就是	442
 yigejiwei	一个|极为	351
 yigejiyu	一个|基于	460
@@ -118215,6 +118576,7 @@ yigeyuduoge	一个|或|多个	507
 yigeyuede	一个月|的	520
 yigeyuedeshijian	一个月|的|时间	457
 yigeyuegongzi	一个月|工资	427
+yigeyueguoqu	一个月|过去	406
 yigeyuehou	一个月|后	520
 yigeyuejiu	一个月|就	442
 yigeyuele	一个月|了	418
@@ -118387,6 +118749,7 @@ yijianfenqi	意见|分歧	408
 yijianhejianyi	意见|和|建议	457
 yijianjianyi	意见|建议	520
 yijianjinxing	意见|进行	372
+yijianlingxiu	意见|领袖	409
 yijianmingque	意见|明确	371
 yijianrenwei	意见|认为	369
 yijianshide	一件事|的	359
@@ -118623,6 +118986,7 @@ yijingguangfan	已经|广泛	420
 yijingguangfanyingyong	已经|广泛应用	410
 yijingguole	已经|过了	520
 yijingguoqu	已经|过去	520
+yijingguoqule	已经|过去|了	478
 yijinghe	已经|和	388
 yijinghen	已经|很	520
 yijinghenbu	已经|很不	385
@@ -120413,6 +120777,7 @@ yinhangkeyi	银行|可以	384
 yinhanglicai	银行|理财	506
 yinhanglicaichanpin	银行|理财产品	490
 yinhanglilv	银行|利率	431
+yinhanglingdao	银行|领导	368
 yinhangqianding	银行|签订	416
 yinhangqisu	银行|起诉	395
 yinhangshanghai	银行|上海	407
@@ -120472,6 +120837,7 @@ yinianduole	一年|多了	479
 yinianduoshijian	一年多|时间	460
 yinianduoyilai	一年多|以来	408
 yinianfengshou	一年|丰收	389
+yinianguoqu	一年|过去	372
 yinianhou	一年|后	520
 yinianjide	一年级|的	480
 yinianjishuxue	一年级|数学	449
@@ -121296,6 +121662,7 @@ yiqingshiqi	疫情|时期	344
 yiqingshuju	疫情|数据	359
 yiqingshuru	疫情|输入	492
 yiqingsinve	疫情|肆虐	456
+yiqingtongbao	疫情|通报	343
 yiqingxia	疫情|下	453
 yiqingxiade	疫情|下的	485
 yiqingxijuan	疫情|席卷	381
@@ -122466,6 +122833,7 @@ yiyebaofude	一夜暴富|的	384
 yiyerudong	一夜|入冬	350
 yiyibuda	意义|不大	428
 yiyibushi	意义|不是	348
+yiyideshiqing	意义|的|事情	411
 yiyifeifan	意义|非凡	466
 yiyiguanzhide	一以贯之|的	421
 yiyijieda	一一|解答	487
@@ -122485,6 +122853,7 @@ yiyizaiyu	意义|在于	508
 yiyizhongda	意义|重大	520
 yiyoubushao	已有|不少	459
 yiyoude	已有|的	514
+yiyouduo	已有|多	424
 yiyouduoge	已有|多个	396
 yiyoukong	一|有空	425
 yiyoule	已有|了	402
@@ -122533,6 +122902,7 @@ yiyuankanbing	医院|看病	422
 yiyuanli	医院|里	501
 yiyuanliaojie	医院|了解	393
 yiyuanlide	医院|里的	385
+yiyuanlingdao	医院|领导	381
 yiyuanlingdaobanzi	医院|领导班子	391
 yiyuanmenzhen	医院|门诊	422
 yiyuanna	医院|内	430
@@ -122763,6 +123133,7 @@ yizhoushijian	一周|时间	485
 yizhousui	一|周岁	453
 yizhoutianqi	一周|天气	497
 yizhoutianqiyubao	一周|天气|预报	424
+yizhouyi	一|周一	415
 yizhouyici	一周|一次	444
 yizhouzhihou	一周|之后	421
 yizhouzhinei	一周|之内	384
@@ -122811,6 +123182,7 @@ yongdaota	用到|它	416
 yongdaoyixie	用到|一些	372
 yongdaozijide	用到|自己的	392
 yongdebiaozhun	用的|标准	393
+yongdebijiao	用的|比较	373
 yongdecailiao	用的|材料	442
 yongdedanwei	用的|单位	351
 yongdedongxi	用的|东西	516
@@ -122844,6 +123216,7 @@ yongdeyuyan	用的|语言	419
 yongdezhiliao	用的|治疗	382
 yongdezhishi	用的|知识	360
 yongdeziliao	用的|资料	363
+yongdezuiduo	用的|最多	398
 yongdiananquan	用电|安全	494
 yongdiande	用电|的	411
 yongdianjiage	用电|价格	426
@@ -123545,12 +123918,18 @@ youguanzhuanjia	有关|专家	517
 youguanzhuanye	有关|专业	414
 youguanziliao	有关|资料	485
 youguode	有过|的	346
+youguoduoci	有过|多次	404
 youguoduode	有过|多的	413
+youguojici	有过|几次	394
+youguoleisi	有过|类似	425
+youguoqu	又|过去	368
 youguoyiduan	有过|一段	418
 youguoyige	有过|一个	373
 youguoyixie	有过|一些	419
+youguozheyang	有过|这样	436
 youguozheyangde	有过|这样的	506
 youguozheyangdejingli	有过|这样的|经历	366
+youguozhezhong	有过|这种	450
 youhaichengfen	有害|成分	405
 youhaide	有害|的	518
 youhaidewuzhi	有害|的|物质	371
@@ -124533,6 +124912,7 @@ youyichangshi	有益|尝试	394
 youyici	又|一次	520
 youyicizai	有一次|在	400
 youyida	又|一大	370
+youyidai	又|一代	509
 youyide	有益|的	520
 youyidiandian	有一|点点	455
 youyidingde	有一|定的	520
@@ -124602,6 +124982,7 @@ youyixiepengyou	有一些|朋友	381
 youyixieshi	有一些|是	377
 youyixiexiao	有一些|小	393
 youyixilie	有一|系列	422
+youyiyide	有异议|的	420
 youyiyide	有意义|的	520
 youyiyideshiqing	有意义|的|事情	388
 youyizhenzi	有一|阵子	410
@@ -125737,6 +126118,7 @@ yuguifan	与|规范	355
 yuguihua	与|规划	466
 yuguilv	与|规律	372
 yuguize	与|规则	353
+yuguohou	雨过|后	423
 yuguoji	与|国际	507
 yuguojia	与|国家	433
 yuguojijiegui	与|国际|接轨	372
@@ -126325,6 +126707,7 @@ yuqingnian	与|青年	354
 yuqinren	与|亲人	387
 yuqishuoshi	与其|说是	433
 yuqita	与|其他	464
+yuqita	或|其他	449
 yuqitade	与其|他的	396
 yuqitaguo	与其|他国	378
 yuqitaren	与其|他人	358
@@ -126701,6 +127084,7 @@ yuyigonggao	予以|公告	426
 yuyigongkai	予以|公开	410
 yuyigongshi	予以|公示	446
 yuyilang	与|伊朗	418
+yuyimingque	予以|明确	393
 yuyinde	语音|的	440
 yuyindu	与|印度	474
 yuyinggelan	与|英格兰	371
@@ -126735,6 +127119,7 @@ yuyonghu	与|用户	454
 yuyongren	与|用人	432
 yuyongrendanwei	与|用人|单位	380
 yuyouhua	与|优化	409
+yuyousange	育有|三个	410
 yuyouya	与|优雅	383
 yuyuanfang	与|远方	382
 yuyuangong	与|员工	387
@@ -127329,6 +127714,7 @@ zaifudao	在|辅导	349
 zaifujian	在|福建	431
 zaifujiansheng	在|福建省	367
 zaifujin	在|附近	459
+zaifuluolida	在|佛罗里达	437
 zaifumu	在|父母	498
 zaifuqi	在|夫妻	368
 zaifuqin	在|父亲	488
@@ -128126,6 +128512,7 @@ zaiqizhong	在|其中	520
 zaiquanguo	在|全国	520
 zaiquanguofanwei	在|全国|范围	495
 zaiquanguogede	在|全国各地	505
+zaiquanguogedi	在|全国各地	505
 zaiquanguoshuaixian	在|全国|率先	442
 zaiquanmian	在|全面	470
 zaiquanmin	在|全民	390
@@ -128292,6 +128679,7 @@ zaishenyang	在|沈阳	491
 zaishenye	在|深夜	435
 zaishenzhen	在|深圳	520
 zaishenzhenjuxing	在|深圳|举行	372
+zaishenzhenshi	在|深圳市	354
 zaishequ	在|社区	496
 zaishequn	在|社群	385
 zaisheying	在|摄影	398
@@ -128643,6 +129031,7 @@ zaixiaoxuesheng	在校|学生	520
 zaixiaoxueshuxue	在|小学|数学	376
 zaixiaoxuexi	在校|学习	475
 zaixiaoyuan	在|校园	514
+zaixiaozu	在|小组	375
 zaixiari	在|夏日	432
 zaixiatian	在|夏天	510
 zaixiaweiyi	在|夏威夷	404
@@ -129928,6 +130317,7 @@ zhanfuxunhangdaodan	战斧|巡航导弹	372
 zhangaide	障碍|的	452
 zhangaishi	障碍|是	381
 zhangbeide	长辈|的	403
+zhangchengle	长成|了	417
 zhangchulaide	长出|来的	432
 zhangchule	长出|了	478
 zhangdabange	长达|半个	425
@@ -130622,6 +131012,7 @@ zhaoshenmeyangde	着|什么样的	437
 zhaoshenti	着|身体	409
 zhaoshexia	照射|下	520
 zhaoshijie	着|世界	472
+zhaoshoude	招收|的	342
 zhaoshouji	着|手机	364
 zhaoshouquanrizhi	招收|全日制	384
 zhaoshuyu	着|属于	362
@@ -130654,6 +131045,7 @@ zhaoyangguang	着|阳光	422
 zhaoyangkeyi	照样|可以	419
 zhaoyanzhong	着|严重	379
 zhaoyiceng	着|一层	426
+zhaoyidai	着|一代	451
 zhaoyidingde	着|一定的	497
 zhaoyiduan	着|一段	451
 zhaoyifen	着|一份	383
@@ -131472,6 +131864,7 @@ zhelimianfei	这里|免费	382
 zhelimianyou	这|里面有	476
 zhelishenghuo	这里|生活	356
 zhelishi	这里|是	520
+zhelishiwo	这里|是我	371
 zhelishiyige	这里|是一个	435
 zhelishuode	这里|说的	479
 zhelisuoshuo	这里|所说	509
@@ -131811,6 +132204,7 @@ zhengchangcaozuo	正常|操作	362
 zhengchangchuxing	正常|出行	404
 zhengchangdaixie	正常|代谢	394
 zhengchangde	正常|的	520
+zhengchangdegongzuo	正常|的|工作	377
 zhengchangdeshenghuo	正常|的|生活	444
 zhengchangdeshengli	正常|的|生理	444
 zhengchangdexianxiang	正常|的|现象	416
@@ -131837,7 +132231,9 @@ zhengchangqingkuangxia	正常|情况|下	478
 zhengchangrende	正常|人的	489
 zhengchangrenti	正常|人体	369
 zhengchangrenyiyang	正常人|一样	395
+zhengchangshangwang	正常|上网	425
 zhengchangshengchan	正常|生产	470
+zhengchangshengchanshenghuo	正常|生产|生活	353
 zhengchangshenghuo	正常|生活	520
 zhengchangshengli	正常|生理	459
 zhengchangshengzhang	正常|生长	518
@@ -132134,6 +132530,7 @@ zhengjifanwei	征集|范围	408
 zhengjigongzuo	征集|工作	391
 zhengjihuodong	征集|活动	512
 zhengjingde	正经|的	450
+zhengjiudiqiu	拯救|地球	389
 zhengjiushengming	拯救|生命	431
 zhengjiushijie	拯救|世界	413
 zhengjiyijian	征集|意见	404
@@ -132811,6 +133208,7 @@ zhenshilishi	真实|历史	412
 zhenshimianmao	真实|面貌	357
 zhenshimianmu	真实|面目	452
 zhenshiqingjing	真实|情境	356
+zhenshiqingkuang	真实|情况	520
 zhenshirangren	真是|让人	487
 zhenshiruci	真是|如此	413
 zhenshishenfen	真实|身份	483
@@ -133718,6 +134116,7 @@ zheyicide	这一次|的	482
 zheyicishi	这一次|是	408
 zheyicuowu	这一|错误	383
 zheyida	这一|大	409
+zheyidai	这|一代	454
 zheyidian	这|一点	520
 zheyidiande	这一|点的	426
 zheyiding	这|一定	417
@@ -134769,6 +135168,7 @@ zhijiezixun	直接|咨询	359
 zhijiezuoyong	直接|作用	392
 zhijinde	至今|的	493
 zhijindou	至今|都	474
+zhijingde	直径|的	379
 zhijinhai	至今|还	503
 zhijinhaimeiyou	至今|还没有	420
 zhijinhaishi	至今|还是	405
@@ -134786,6 +135186,7 @@ zhijinweineng	至今|未能	406
 zhijinweizhi	至今|为止	418
 zhijinwufa	至今|无法	379
 zhijinwuren	至今|无人	415
+zhijinye	至今|也	378
 zhijinyijing	至今|已经	494
 zhijinyiran	至今|依然	449
 zhijinyiyou	至今|已有	520
@@ -134794,6 +135195,7 @@ zhijinzai	至今|在	355
 zhijuede	知觉|的	471
 zhikandaole	只看|到了	461
 zhikaozhao	炙烤|着	418
+zhikehuatan	止咳|化痰	371
 zhikongbeigaoren	指控|被告人	404
 zhikongde	指控|的	365
 zhileidedongxi	之类的|东西	417
@@ -135099,6 +135501,7 @@ zhinengcangchu	智能|仓储	377
 zhinengchanpin	智能|产品	374
 zhinengchengshi	智能|城市	361
 zhinengchezai	智能|车载	390
+zhinengchongdian	智能|充电	382
 zhinengchuanganqi	智能|传感器	436
 zhinengcong	只能|从	489
 zhinengdiandong	智能|电动	427
@@ -135254,6 +135657,7 @@ zhishengjide	直升机|的	366
 zhishengxiale	只剩|下了	460
 zhishengxiayige	只剩下|一个	414
 zhishenqizhong	置身|其中	397
+zhishenyiren	只身|一人	401
 zhishiba	只是|把	425
 zhishibei	只是|被	357
 zhishibiaomian	只是|表面	379
@@ -135437,6 +135841,7 @@ zhitide	肢体|的	358
 zhitidongzuo	肢体|动作	452
 zhitihuodong	肢体|活动	388
 zhitijiechu	肢体|接触	423
+zhitiyuyan	肢体|语言	488
 zhitongdaohede	志同道合|的	520
 zhitongdaohedepengyou	志同道合|的|朋友	396
 zhiwaide	之外|的	520
@@ -136576,8 +136981,10 @@ zhongguogaodengjiaoyu	中国|高等教育	520
 zhongguogaodengjiaoyuxuehui	中国|高等教育|学会	358
 zhongguogaodengjiaoyuxuesheng	中国|高等教育|学生	357
 zhongguogaotie	中国|高铁	457
+zhongguogeda	中国|各大	340
 zhongguogedi	中国|各地	475
 zhongguogemingde	中国革命|的	372
+zhongguogongbi	中国|工笔	410
 zhongguogongchandang	中国|共产党	520
 zhongguogongchandangchengli	中国|共产党|成立	379
 zhongguogongchandangdangyuan	中国|共产党|党员	374
@@ -137117,6 +137524,7 @@ zhongguoye	中国|也	455
 zhongguoyesheng	中国|野生	347
 zhongguoyeshi	中国|也是	387
 zhongguoyeyou	中国|也有	359
+zhongguoyi	中国|一	373
 zhongguoyidonghulianwang	中国移动|互联网	388
 zhongguoyidongtongxin	中国移动|通信	426
 zhongguoyige	中国|一个	343
@@ -137264,6 +137672,7 @@ zhonghuaminguode	中华民国|的	456
 zhonghuaminguolinshi	中华民国|临时	474
 zhonghuaminguolinshidazongtong	中华民国|临时|大总统	356
 zhonghuaminguoshiqi	中华民国|时期	407
+zhonghuaminguotaiwan	中华民国|台湾	396
 zhonghuaminguoxianfa	中华民国|宪法	407
 zhonghuaminguozhengfu	中华民国|政府	493
 zhonghuaminguozhongyang	中华民国|中央	418
@@ -137493,6 +137902,7 @@ zhongmouxie	中|某些	405
 zhongmouyi	中|某一	379
 zhongnage	中|那个	355
 zhongname	中|那么	434
+zhongnanbandao	中南|半岛	478
 zhongnancaijing	中南|财经	512
 zhongnancaijingzhengfa	中南|财经|政法	442
 zhongnandaxue	中南|大学	520
@@ -137516,6 +137926,7 @@ zhongniannvren	中年|女人	423
 zhongniannvxing	中年|女性	446
 zhongnianrende	中年|人的	446
 zhongnianweiji	中年|危机	456
+zhongnvxing	中|女性	343
 zhongpaihang	中|排行	482
 zhongpaiming	中|排名	508
 zhongpeiyang	中|培养	451
@@ -137953,6 +138364,7 @@ zhongyangcaijing	中央|财经	520
 zhongyangcaijingdaxue	中央|财经|大学	469
 zhongyangcaijingweiyuanhui	中央|财经|委员会	361
 zhongyangcaizheng	中央|财政	520
+zhongyangchufang	中央|厨房	443
 zhongyangchuliqi	中央|处理器	485
 zhongyangdaxue	中央|大学	520
 zhongyangde	中央|的	458
@@ -138362,6 +138774,7 @@ zhongyiban	中|一般	395
 zhongyibianzheng	中医|辨证	344
 zhongyide	中医|的	483
 zhongyiding	中|一定	389
+zhongyidingyao	中|一定要	346
 zhongyidong	中|移动	437
 zhongyige	中|一个	492
 zhongyigushang	中医|骨伤	420
@@ -138415,6 +138828,7 @@ zhongyiyaoxuehui	中医药|学会	502
 zhongyiyaoyanjiuyuan	中医药|研究院	402
 zhongyiyaozai	中医药|在	392
 zhongyiyaozhiliao	中医药|治疗	416
+zhongyiyaozhuanjia	中医药|专家	423
 zhongyiyiyuan	中医|医院	520
 zhongyiyou	中|已有	355
 zhongyiyuan	中|医院	520
@@ -140302,6 +140716,7 @@ zhuyaotuidongli	主要|推动力	400
 zhuyaotujing	主要|途径	520
 zhuyaowancheng	主要|完成	369
 zhuyaowei	主要|有	520
+zhuyaoweihai	主要|危害	404
 zhuyaoweiliangge	主要|有|两个	461
 zhuyaoweiliangzhong	主要|有|两种	439
 zhuyaoweirao	主要|围绕	520
@@ -141094,6 +141509,7 @@ zijigengjia	自己|更加	349
 zijigongzuo	自己|工作	403
 zijigoumai	自己|购买	385
 zijiguandian	自己|观点	400
+zijiguobuqu	自己|过不去	413
 zijiguojia	自己|国家	373
 zijiguoqu	自己|过去	405
 zijihai	自己|还	450
@@ -142242,6 +142658,7 @@ zonglidachen	总理|大臣	389
 zonglide	总理|的	441
 zonglilikeqiang	总理|李克强	483
 zongliliqiang	总理|李强	440
+zonglimokeer	总理|默克尔	435
 zongliteluduo	总理|特鲁多	427
 zonglitichu	总理|提出	407
 zongliwenjiabao	总理|温家宝	426
@@ -142417,6 +142834,7 @@ zoufangle	走访|了	502
 zoufangpaicha	走访|排查	398
 zoufangweiwen	走访|慰问	519
 zouguode	走过|的	509
+zouguohenduo	走过|很多	369
 zouguolai	走过|来	444
 zouguolaide	走过|来的	444
 zouguole	走过|了	518
@@ -142992,6 +143410,7 @@ zuixinde	最新|的	520
 zuixindeyanjiu	最新|的|研究	426
 zuixindiaocha	最新|调查	480
 zuixindongtai	最新|动态	520
+zuixindongxiang	最新|动向	393
 zuixinfabu	最新|发布	520
 zuixinfabude	最新|发布|的	471
 zuixinfaxian	最新|发现	399
@@ -143020,6 +143439,7 @@ zuixinshuju	最新|数据	520
 zuixinshujuxianshi	最新|数据|显示	448
 zuixintianqi	最新|天气	390
 zuixintixing	最新|提醒	428
+zuixintongbao	最新|通报	405
 zuixintonggao	最新|通告	457
 zuixintongji	最新|统计	477
 zuixintongzhi	最新|通知	520
@@ -143335,6 +143755,9 @@ zuogexiao	做个|小	408
 zuogezongjie	做个|总结	398
 zuogongde	做功|的	385
 zuoguode	做过|的	433
+zuoguoduode	做过|多的	394
+zuoguohenduo	做过|很多	374
+zuoguonaxie	做过|哪些	364
 zuoguoshenme	做过|什么	428
 zuoguoyici	做过|一次	380
 zuoguoyige	做过|一个	459
