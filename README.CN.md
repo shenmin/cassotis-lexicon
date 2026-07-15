@@ -14,6 +14,7 @@ Cassotis IME 的词库构建与发布仓库。
 
 ## 仓库职责
 - 维护词库构建脚本、清单文件和生成产物。
+- 发布供 Cassotis IME 使用的版本化词库和本地语言模型产物。
 - 支持外部来源引导构建和可复现的生成词库构建流程。
 - 保持署名文件与生成产物一致。
 
@@ -25,6 +26,19 @@ Cassotis IME 的词库构建与发布仓库。
 | `data/generated/dict_clean_tc.txt` | 繁体主词库 | 190,552 |
 | `data/generated/dict_unihan_sc.txt` | 简体单字（Unihan） | 23,906 |
 | `data/generated/dict_unihan_tc.txt` | 繁体单字（Unihan） | 24,166 |
+
+## AI 语料训练模型数据
+
+Cassotis Lexicon v1.1.0 开始在词汇词库之外发布本地统计语言模型数据。本版本的重点是增加上下文排序能力，而不是大幅增加可直接输入的词条数量。
+
+| Version | 词路径转移关系（简体 / 繁体） | 字符 n-gram 参数（简体 / 繁体） |
+|---|---:|---:|
+| `v1.1.0` | 152,729 / 145,284 | 558,645 / 559,128 |
+| `v1.0.0` | — | — |
+
+以上记录不是可直接输入的词条，因此不计入前述词库快照。词级二元、三元转移关系由 Lexicon 语料构建流程生成；带平滑回退的字符级三元模型由 IME 训练工具生成，再由本仓库统一版本化和发布。Cassotis IME 会将两类产物导入本地 SQLite 词库，用于长句 lattice/N-best 路径打分和完整候选的保守重排。
+
+模型只保存短距离词语转移和字符 n-gram，不保存完整训练句子。“长句基准测试-16300”语料不参与训练。运行时评分完全在本地完成，不需要网络连接、GPU 或神经网络运行环境。评测方法见 [IME 基准测试说明](https://github.com/shenmin/cassotis-ime/blob/v1.1.0/BENCHMARK.CN.md)。
 
 ## 外部来源与项目维护补充层（`external_broad`）
 
@@ -113,7 +127,7 @@ Cassotis IME 的词库构建与发布仓库。
 - medicine 层目前结合了项目维护医学术语、MeSH 描述符目录、MeSH 关联 Wikidata 医学实体，以及过滤后的 `THUOCL_medical` 子集，并始终与日常/聊天优先路径隔离。
 
 ## 目录结构
-- `data/generated/`：生成的词库文件。
+- `data/generated/`：生成的词库文件和版本化语言模型产物。
 - `manifests/`：来源/许可证清单与回归样本。
 - `manifests/pinyin_overrides.tsv`：项目维护的词条级读音覆盖表。
 - `manifests/vertical/`：项目维护的隔离式 vertical 词表。
