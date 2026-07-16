@@ -22,9 +22,9 @@ Lexicon build and release repository for Cassotis IME.
 
 | File | Variant | Entries |
 |------|---------|---------|
-| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 187,507 |
-| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 190,601 |
-| `data/generated/dict_unihan_sc.txt` | Simplified single-char (Unihan) | 23,906 |
+| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 187,602 |
+| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 190,691 |
+| `data/generated/dict_unihan_sc.txt` | Simplified single-char (Unihan) | 23,907 |
 | `data/generated/dict_unihan_tc.txt` | Traditional single-char (Unihan) | 24,166 |
 
 ## Corpus-trained AI model data

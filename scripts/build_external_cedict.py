@@ -712,6 +712,7 @@ SINGLE_CHAR_READING_DELTA_OVERRIDES: Dict[Tuple[str, str], int] = {
     ("\u56fe", "tu"): 320,
     ("\u5716", "tu"): 280,
 }
+SINGLE_CHAR_ADDED_READING_WEIGHT_CAP = 280
 SINGLE_CHAR_RELATIVE_ORDER_OVERRIDES: Tuple[
     Tuple[Tuple[str, str], Tuple[str, str], int], ...
 ] = (
@@ -3216,7 +3217,9 @@ def _apply_word_pinyin_overrides(
         key = (pinyin, text)
         if key in remapped:
             continue
-        remapped[key] = weight
+        # An explicitly restored secondary reading must stay selectable without
+        # inheriting the dominant reading's standalone rank.
+        remapped[key] = min(weight, SINGLE_CHAR_ADDED_READING_WEIGHT_CAP)
         stats[f"{stat_prefix}_single_char_readings_added"] += 1
 
     return remapped, stats
