@@ -6101,6 +6101,7 @@ baomuchuanshuo	薄暮传说	538
 baomuchuanshuofukeban	薄暮传说复刻版	632
 baomuxiameng	薄暮夏梦	534
 baonang	包囊	338
+baonei	保内	280
 baoneicun	爆内存	712
 baoneigongsheng	胞内共生	540
 baonu	暴怒	926
@@ -6275,6 +6276,7 @@ baotuihuan	包退换	167
 baotunzuoyong	胞吞作用	570
 baotuoshi	保妥适	500
 baotuzuoyong	胞吐作用	570
+baowai	保外	280
 baowaijiuyi	保外就医	433
 baowaijizhi	胞外基质	570
 baowei	包围	700
@@ -15957,7 +15959,7 @@ chancheng	禅城	266
 chanchengqu	禅城区	379
 chanchengyanzhang	产程延长	540
 chanchu	产出	822
-chanchu	铲除	646
+chanchu	铲除	645
 chanchu	蟾蜍	1
 chanchudu	蟾蜍毒	470
 chanchuzhongdu	蟾蜍中毒	540
@@ -20917,7 +20919,8 @@ chubanshang	出版商	459
 chubanshe	出版社	600
 chubanwu	出版物	529
 chubanzhe	出版者	432
-chubao	除暴	418
+chubao	出保	280
+chubao	除暴	98
 chubao'anliang	除暴安良	437
 chubaoanliang	除暴安良	437
 chubaoshurufa	触宝输入法	740
@@ -24580,7 +24583,7 @@ daji	大忌	280
 daji	大吉	1
 daji	大计	1
 dajia	大家	1000
-dajia	打架	647
+dajia	打架	580
 dajia	大加	568
 dajia	打假	455
 dajiadebaokemengmuchang	大家的宝可梦牧场	662
@@ -24635,6 +24638,7 @@ dajiaoxing	大角星	232
 dajiaozhi	大脚趾	10
 dajiaqiu	打假球	232
 dajiashu	大家鼠	470
+dajiashuo	大家说	800
 dajiating	大家庭	288
 dajiazi	搭架子	379
 dajiazuixihuandekuaihun	大家最喜欢的块魂	662
@@ -33117,6 +33121,7 @@ doushu	豆薯	338
 doushuang'aoxue	斗霜傲雪	383
 doushuangaoxue	斗霜傲雪	383
 doushuisi	都水司	640
+doushuo	都说	700
 doushushu	豆薯属	230
 dousikong	都司空	640
 dousipixiu	斗私批修	405
@@ -33609,8 +33614,8 @@ dudong	独栋	280
 dudong	读懂	3
 dudou	肚兜	560
 dudu	独独	560
-dudu	都督	246
-dudu	嘟嘟	150
+dudu	都督	247
+dudu	嘟嘟	151
 duduan	独断	569
 duduanduxing	独断独行	387
 duduanzhuanxing	独断专行	464
@@ -50664,8 +50669,9 @@ guobaiyan	郭柏妍	769
 guoban	过半	1000
 guoban	国办	728
 guobang	过磅	313
-guobao	国宝	967
-guobao	果报	230
+guobao	国宝	943
+guobao	过保	280
+guobao	果报	1
 guobaohe	过饱和	506
 guobaorou	锅包肉	713
 guobeishuang	果倍爽	230
@@ -99941,6 +99947,7 @@ nimenlai	你们来	800
 nimenlia	你们俩	1000
 nimenneng	你们能	800
 nimenqu	你们去	800
+nimenshuo	你们说	800
 nimenshuode	你们说的	800
 nimenxiang	你们想	800
 nimenyao	你们要	800
@@ -100240,6 +100247,7 @@ nishuihan	逆水寒	460
 nishuijiang	泥水匠	434
 nishuile	你睡了	1000
 nishuixingzhou	逆水行舟	442
+nishuo	你说	1000
 nishuode	你说的	1000
 nisi	溺死	772
 nisi	你死	612
@@ -125465,8 +125473,9 @@ shouban	手办	250
 shoubanhulu	手板葫芦	266
 shoubanhulu	手扳葫芦	252
 shoubanmaoxiantuan	手办冒险团	613
-shoubao	收报	82
+shoubao	首保	280
 shoubao	手包	10
+shoubao	收报	1
 shoubaoji	收报机	340
 shoubaoren	受保人	379
 shoubaoren	收报人	379
@@ -126108,8 +126117,8 @@ shouwanshi	手腕式	232
 shouwansuidaozheng	手腕隧道症	640
 shouwanzi	手腕子	423
 shouwei	守卫	1000
-shouwei	首位	298
-shouwei	首尾	150
+shouwei	首位	299
+shouwei	首尾	151
 shouwei	收尾	1
 shouweiliangduan	首尾两端	652
 shouweixiangjie	首尾相接	387
@@ -132711,6 +132720,8 @@ tamenjia	他们家	10
 tamenjia	她们家	10
 tamenlia	他们俩	1000
 tamenlia	她们俩	1000
+tamenshuo	他们说	800
+tamenshuo	她们说	800
 tamenshuode	他们说的	800
 tamian	踏面	260
 tamianyouyunse	她面有愠色	613
@@ -133860,6 +133871,9 @@ tashishui	她是谁	800
 tashou	他手	280
 tashuile	他睡了	800
 tashuile	她睡了	800
+tashuo	他说	700
+tashuo	她说	700
+tashuo	它说	280
 tashuode	他说的	800
 tashuode	她说的	800
 tasiganzhushi	塔司干柱式	731
@@ -138770,6 +138784,7 @@ tuoba	拓跋	382
 tuoba	脱靶	370
 tuoba	拖把	10
 tuoban	脱班	381
+tuobao	脱保	280
 tuobei	驼背	536
 tuobeijing	驼背鲸	228
 tuobeiren	驼背人	629
@@ -143838,6 +143853,7 @@ womenmeiyouyuyi	我们没有羽翼	648
 womenneng	我们能	800
 womenqu	我们去	800
 womenshenbiandelang	我们身边的狼	648
+womenshuo	我们说	800
 womenshuode	我们说的	800
 womenxiang	我们想	800
 womenyao	我们要	800
@@ -143912,6 +143928,7 @@ woshouxinhao	握手信号	680
 woshouyanhuan	握手言欢	634
 woshui	沃水	17
 woshuile	我睡了	1018
+woshuo	我说	1018
 woshuocuole	我说错了	1018
 woshuode	我说的	1018
 wosi	我司	198
@@ -146915,7 +146932,7 @@ xiangban	响板	1
 xiangbanfa	想办法	800
 xiangbanfengge	镶板风格	674
 xiangbang	相帮	428
-xiangbao	香包	391
+xiangbao	香包	390
 xiangbapingcuo	向巴平措	249
 xiangbei	相悖	797
 xiangbei	向背	500
@@ -156121,7 +156138,8 @@ xuanzhuoye	悬浊液	500
 xuanzi	旋子	1000
 xuanzi	选自	10
 xuba	序跋	373
-xubao	虚报	560
+xubao	续保	280
+xubao	虚报	15
 xubei	续杯	198
 xubeihong	徐悲鸿	251
 xubeihongjinianguan	徐悲鸿纪念馆	318
@@ -172751,6 +172769,7 @@ zaiba	再把	700
 zaibai	再拜	439
 zaiban	再版	561
 zaibanben	再版本	640
+zaibao	在保	280
 zaibaoxian	再保险	362
 zaibaozheng	再保证	232
 zaibian	灾变	473
@@ -177706,10 +177725,12 @@ zhibang	志邦	420
 zhibanshi	值班室	10
 zhibanxia	制半夏	470
 zhibanyouxi	纸板游戏	740
-zhibao	至宝	404
-zhibao	治保	380
-zhibao	植保	127
+zhibao	质保	280
+zhibao	治保	184
+zhibao	植保	1
+zhibao	至宝	1
 zhibaobuzhuhuo	纸包不住火	441
+zhibaoqi	质保期	280
 zhibaosanbianjiu	至宝三鞭酒	607
 zhibaosanbianwan	至宝三鞭丸	610
 zhibaoyinpin	纸包饮品	260

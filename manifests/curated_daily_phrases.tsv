@@ -7267,3 +7267,15 @@
 走得动	走得動	0.80	zoudedong
 走得了	走得了	0.72	zoudeliao
 跑得了	跑得了	0.70	paodeliao
+
+# Common subject + speech-verb phrases.
+我说	我說	0.92	woshuo
+你说	你說	0.90	nishuo
+他说	他說	0.86	tashuo
+她说	她說	0.86	tashuo
+我们说	我們說	0.84	womenshuo
+你们说	你們說	0.82	nimenshuo
+他们说	他們說	0.82	tamenshuo
+她们说	她們說	0.80	tamenshuo
+大家说	大家說	0.78	dajiashuo
+都说	都說	0.84	doushuo

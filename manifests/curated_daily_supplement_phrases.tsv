@@ -11815,3 +11815,16 @@
 弃之	棄之	0.38	qizhi
 极长	極長	0.42	jichang
 几场	幾場	0.48	jichang
+
+# Less frequent speech and warranty/service terms kept exact-match visible.
+它说	它說	0.44	tashuo
+首保	首保	0.56	shoubao
+出保	出保	0.48	chubao
+在保	在保	0.48	zaibao
+过保	過保	0.54	guobao
+脱保	脫保	0.44	tuobao
+续保	續保	0.58	xubao
+质保	質保	0.62	zhibao
+质保期	質保期	0.54	zhibaoqi
+保内	保內	0.44	baonei
+保外	保外	0.44	baowai
