@@ -10010,8 +10010,8 @@ linsuanboankui	磷酸|伯氨喹	438
 linsuanchuanxiongqin	磷酸|川芎嗪	418
 linsuandanjian	磷酸|膽鹼	419
 linsuangaijieshi	磷酸鈣|結石	397
-linsuanguotang	磷酸|果糖	379
-linsuanguotangjimei	磷酸|果糖|激酶	461
+linsuanguotang	磷酸|果糖	380
+linsuanguotangjimei	磷酸|果糖|激酶	462
 linsuanhuameijimei	磷酸化酶|激酶	461
 linsuanjisuan	磷酸|肌酸	421
 linsuankedaiyin	磷酸|可待因	461
@@ -12640,6 +12640,7 @@ qiyuexingwei	契約|行為	483
 qiyuxuanang	氣宇|軒昂	400
 qizhayouxi	欺詐|遊戲	499
 qizhichuanshuo	旗幟|傳說	456
+qizhikexi	棄之|可惜	485
 qizhiweitong	氣滯|胃痛	374
 qizhiweitongkeli	氣滯|胃痛|顆粒	456
 qizhixianming	旗幟|鮮明	490
@@ -12790,6 +12791,7 @@ quehunmajiang	雀魂|麻將	410
 querenyixia	確認|一下	520
 queyouyoudian	卻又|有點	453
 quezhenbingli	確診|病例	415
+quezhibugong	卻之|不恭	462
 quhuayinzishouti	趨化因子|受體	476
 qujianchaxun	區間|查詢	463
 qujiantongzhi	取件|通知	516
@@ -12832,7 +12834,8 @@ quyifengying	曲意|逢迎	464
 quyifujiu	曲意|俯就	413
 quyupingwen	趨於|平穩	480
 quzhengsheying	取證|攝影	483
-quzhikeshu	屈指|可數	420
+quzhibujin	取之|不盡	489
+quzhikeshu	屈指|可數	418
 quzhongxinhuashibie	去中心化|識別	476
 quzhouzhuanqu	衢州|專區	465
 quzhuchujing	驅逐|出境	452
@@ -14454,7 +14457,7 @@ shifanxueyuan	師範|學院	497
 shifeideshi	是非|得失	484
 shifeidiandao	是非|顛倒	484
 shifeifenming	是非|分明	486
-shifeiquzhi	是非|曲直	491
+shifeiquzhi	是非|曲直	466
 shifeizhixin	是非|之心	484
 shifeiziyou	是非|自有	260
 shifeiziyougonglun	是非|自有|公論	342
@@ -14841,6 +14844,7 @@ shizhengyixue	實證|醫學	483
 shizhengzhuyi	實證|主義	464
 shizhenzhengfu	市鎮|政府	475
 shizherusi	逝者|如斯	394
+shizhijiaobi	失之|交臂	467
 shizhizuzhi	實質|組織	483
 shizhongbaochi	始終|保持	483
 shizhongbuxie	始終|不懈	481
@@ -17563,6 +17567,8 @@ xiaofeizhetaolunqu	消費者|討論區	483
 xiaofeizhezuzhi	消費者|組織	483
 xiaofeiziliao	消費|資料	477
 xiaoganzhuanqu	孝感|專區	465
+xiaoguobucuo	效果|不錯	457
+xiaoguobujia	效果|不佳	518
 xiaoguoxianzhu	效果|顯著	483
 xiaohaoxingjibing	消耗|性疾病	461
 xiaohehetanghesuan	小核|核糖核酸	461
@@ -19963,7 +19969,7 @@ yinsuxiaoziduizhan	音速|小子|對戰	392
 yinsuxiaoziqunxiong	音速|小子|羣雄	392
 yinsuxiaoziwuli	音速|小子|武力	392
 yinsuxiaozixilie	音速|小子|系列	392
-yinxiangbujia	印象|不佳	466
+yinxiangbujia	印象|不佳	478
 yinxiangshebei	音響|設備	451
 yinxiangshenke	印象|深刻	476
 yinxiangxiaoguo	音響|效果	473
@@ -21430,7 +21436,7 @@ zhijianshumu	只見|樹木	478
 zhijianzhanzheng	指尖|戰爭	464
 zhijiaozhuanwan	直角|轉彎	383
 zhijiaozhuanwanjieti	直角|轉彎|階梯	465
-zhijiaozuobiao	直角|座標	466
+zhijiaozuobiao	直角|座標	474
 zhijiecanyu	直接|參與	480
 zhijiedanhongsu	直接|膽紅素	457
 zhijiedianli	直接|電離	417

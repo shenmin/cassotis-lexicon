@@ -5174,7 +5174,7 @@ ganxinqingyuan	甘心|情愿	426
 ganyanbingdu	肝炎|病毒	464
 ganyihangaiyihang	干一行|爱一行	520
 ganyouguanchangji	甘油|灌肠剂	447
-ganyouguotang	甘油|果糖	415
+ganyouguotang	甘油|果糖	417
 ganyoulinzhi	甘油|磷脂	486
 ganzangduxing	肝脏|毒性	440
 ganzangyizhi	肝脏|移植	458
@@ -6933,7 +6933,7 @@ huanongxingxinbaoyan	化脓性|心包炎	457
 huanongxingxiongmoyan	化脓性|胸膜炎	457
 huanongxingyanneiyan	化脓性|眼内炎	457
 huanongxingzhongeryan	化脓性|中耳炎	449
-huanqibujia	换气|不佳	435
+huanqibujia	换气|不佳	448
 huanqiushibao	环球|时报	467
 huanraozoulang	环绕|走廊	433
 huanweigongren	环卫|工人	467
@@ -10340,8 +10340,8 @@ linsuanchuanxiongqin	磷酸|川芎嗪	418
 linsuandanjian	磷酸|胆碱	420
 linsuanerqiangbingtong	磷酸|二羟丙酮	480
 linsuangaijieshi	磷酸钙|结石	399
-linsuanguotang	磷酸|果糖	377
-linsuanguotangjimei	磷酸|果糖|激酶	459
+linsuanguotang	磷酸|果糖	380
+linsuanguotangjimei	磷酸|果糖|激酶	462
 linsuanhuameijimei	磷酸化酶|激酶	459
 linsuanjisuan	磷酸|肌酸	419
 linsuankedaiyin	磷酸|可待因	461
@@ -11292,7 +11292,7 @@ mianyitaobi	免疫|逃避	454
 mianyitiaojie	免疫|调节	520
 mianyituchu	免疫|突触	454
 mianyiwangluo	免疫|网络	472
-mianyixiaoguo	免疫|效果	471
+mianyixiaoguo	免疫|效果	474
 mianyixibao	免疫|细胞	474
 mianyixifu	免疫|吸附	500
 mianyixitong	免疫|系统	511
@@ -12476,7 +12476,7 @@ pingpangqiupai	乒乓|球拍	457
 pingpangqiutai	乒乓|球台	459
 pingpingdandan	平平|淡淡	471
 pingpingjingjing	平平|静静	453
-pingpuxiaoguo	平铺|效果	479
+pingpuxiaoguo	平铺|效果	483
 pingpuzhuanwa	平铺|砖瓦	439
 pingrangsaiche	平壤|赛车	467
 pingtaidongzuo	平台|动作	417
@@ -13022,7 +13022,7 @@ qiweixiangtou	气味|相投	485
 qixiangdaohang	气象|导航	501
 qixiangwanqian	气象|万千	488
 qixiangweixing	气象|卫星	475
-qixiaoliangfang	奇效|良方	399
+qixiaoliangfang	奇效|良方	400
 qixieticao	器械|体操	465
 qixinheli	齐心|合力	465
 qixinxieli	齐心|协力	493
@@ -13051,6 +13051,7 @@ qiyuexingwei	契约|行为	437
 qiyuxuanang	气宇|轩昂	404
 qizhayouxi	欺诈|游戏	502
 qizhichuanshuo	旗帜|传说	466
+qizhikexi	弃之|可惜	486
 qizhiweitong	气滞|胃痛	374
 qizhiweitongkeli	气滞|胃痛|颗粒	456
 qizhixianming	旗帜|鲜明	493
@@ -13210,6 +13211,7 @@ querenyixia	确认|一下	520
 quexianchanpin	缺陷|产品	464
 queyouyoudian	却又|有点	520
 quezhenbingli	确诊|病例	413
+quezhibugong	却之|不恭	462
 quhuayinzishouti	趋化因子|受体	476
 qujianchaxun	区间|查询	466
 qujiantongzhi	取件|通知	516
@@ -13254,6 +13256,7 @@ quyanghetang	去氧|核糖	453
 quyangshenshangxiansu	去氧|肾上腺素	457
 quyupingwen	趋于|平稳	483
 quzhengsheying	取证|摄影	486
+quzhibujin	取之|不尽	489
 quzhikeshu	屈指|可数	418
 quzhongxinhuashibie	去中心化|识别	476
 quzhouzhuanqu	衢州|专区	468
@@ -14912,7 +14915,7 @@ shifanxueyuan	师范|学院	491
 shifeideshi	是非|得失	484
 shifeidiandao	是非|颠倒	484
 shifeifenming	是非|分明	486
-shifeiquzhi	是非|曲直	491
+shifeiquzhi	是非|曲直	466
 shifeizhixin	是非|之心	484
 shifeiziyou	是非|自有	259
 shifeiziyougonglun	是非|自有|公论	341
@@ -15319,6 +15322,7 @@ shizhengyixue	实证|医学	486
 shizhengzhuyi	实证|主义	474
 shizhenzhengfu	市镇|政府	482
 shizherusi	逝者|如斯	394
+shizhijiaobi	失之|交臂	461
 shizhizuzhi	实质|组织	486
 shizhongbaochi	始终|保持	483
 shizhongbuxie	始终|不懈	481
@@ -18243,6 +18247,8 @@ xiaofeizhexingwei	消费者|行为	486
 xiaofeizhezuzhi	消费者|组织	486
 xiaofeiziliao	消费|资料	480
 xiaoganzhuanqu	孝感|专区	468
+xiaoguobucuo	效果|不错	520
+xiaoguobujia	效果|不佳	518
 xiaoguoxianzhu	效果|显著	497
 xiaohaizuoxi	小孩|做戏	437
 xiaohaoxingjibing	消耗|性疾病	461
@@ -20732,7 +20738,7 @@ yinsuxiaoziduizhan	音速|小子|对战	380
 yinsuxiaoziqunxiong	音速|小子|群雄	380
 yinsuxiaoziwuli	音速|小子|武力	380
 yinsuxiaozixilie	音速|小子|系列	380
-yinxiangbujia	印象|不佳	462
+yinxiangbujia	印象|不佳	474
 yinxiangshebei	音响|设备	455
 yinxiangshenke	印象|深刻	472
 yinxiangxiaoguo	音响|效果	473
