@@ -7185,6 +7185,12 @@
 圈外	圈外	0.84	quanwai
 # Modern daily-frequency anchors for source corpora skewed toward formal/news usage.
 过期	過期	0.92	guoqi
+过低	過低	0.80	guodi
+过高	過高	0.80	guogao
+过快	過快	0.74	guokuai
+过慢	過慢	0.74	guoman
+过好	過好	0.66	guohao
+过不好	過不好	0.64	guobuhao
 文案	文案	0.91	wenan
 接着	接著	0.94	jiezhe
 

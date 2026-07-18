@@ -10204,6 +10204,30 @@ def _compute_unihan_single_char_reading_delta(
         if pinyin == phrase_preferred_reading:
             return 260 if not is_primary else 40
 
+        # A secondary reading can still be independently common even when
+        # another pronunciation has broader aggregate phrase coverage.
+        reading_ratio = reading_pinlu / max(1, max_pinlu_freq)
+        established_secondary_reading = (
+            not is_primary
+            and reading_pinlu >= 40
+            and reading_pinlu <= 100
+            and reading_ratio >= 0.12
+            and phrase_term_count >= 24
+            and phrase_support >= 1800.0
+            and leading_term_count >= 10
+            and leading_support >= 700.0
+            and leading_ratio >= 0.60
+        )
+        if established_secondary_reading:
+            if (
+                phrase_term_count >= 30
+                and phrase_support >= 3000.0
+                and leading_term_count >= 12
+                and leading_support >= 1000.0
+            ):
+                return 96
+            return 64
+
         if phrase_support <= 0.0 or phrase_term_count <= 0:
             return -220
 
