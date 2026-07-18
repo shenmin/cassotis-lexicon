@@ -572,7 +572,7 @@ aihamaideyishi	艾哈邁德一世	645
 aihamaidi	艾哈邁迪	488
 aihamaidineijiade	艾哈邁迪內賈德	348
 aihao	愛好	1000
-aihao	哀嚎	54
+aihao	哀嚎	53
 aihao	哀號	1
 aihaozhe	愛好者	555
 aihe	愛喝	700
@@ -1611,8 +1611,8 @@ anhua	安化	413
 anhuangbili	氨磺必利	540
 anhuar	暗花兒	232
 anhuaxian	安化縣	178
-anhui	安徽	876
-anhui	暗灰	37
+anhui	安徽	875
+anhui	暗灰	38
 anhuidaxue	安徽大學	275
 anhuijiaoyuxueyuan	安徽教育學院	304
 anhuijuanju	暗灰鵑鵙	258
@@ -56322,7 +56322,8 @@ hen'ai	很矮	700
 hen'e	很餓	1000
 henai	很愛	1000
 henai	很矮	700
-henan	河南	493
+henan	很暗	700
+henan	河南	458
 henandaxuedui	河南大學隊	274
 henanfulu	河南府路	587
 henanjianyedui	河南建業隊	304
@@ -56709,13 +56710,16 @@ henkuaile	很快樂	800
 henkuan	很寬	1000
 henkun	很困	1000
 henla	很辣	1000
+henla	很拉	280
 henla	狠辣	10
 henlakua	很拉胯	1000
+henlan	很爛	700
 henlao	很老	700
 henlei	很累	1000
 henleng	很冷	1000
 henli	狠厲	259
 henli	狠力	10
+henliang	很亮	700
 henliang	很涼	280
 henliang'anxiangguanshouti	痕量胺相關受體	700
 henliangjinshu	痕量金屬	570
@@ -65537,6 +65541,7 @@ jiao'er	嬌兒	290
 jiaoai	較矮	700
 jiaoaitang	膠艾湯	470
 jiaoan	教案	700
+jiaoan	較暗	468
 jiaoao	驕傲	472
 jiaoaoziman	驕傲自滿	642
 jiaobai	較白	1000
@@ -65912,10 +65917,12 @@ jiaokubudie	叫苦不迭	472
 jiaokujiaolei	叫苦叫累	555
 jiaokuliantian	叫苦連天	452
 jiaokun	交困	323
+jiaola	較拉	280
 jiaolaba	交拉吧	640
 jiaolai	蕉賴	261
 jiaolai	叫來	10
 jiaolai	狡賴	8
+jiaolan	較爛	700
 jiaolang	郊狼	198
 jiaolao	較老	1000
 jiaole	叫了	700
@@ -65932,6 +65939,7 @@ jiaolianche	教練車	10
 jiaolianchuang	鉸鏈窗	600
 jiaoliang	較量	971
 jiaoliang	較涼	280
+jiaoliang	較亮	142
 jiaoliangben	交糧本	232
 jiaolianji	教練機	529
 jiaolianmen	鉸鏈門	600
@@ -66280,7 +66288,8 @@ jiaou	佳偶	377
 jiaoutiancheng	佳偶天成	512
 jiaowai	郊外	957
 jiaowaimai	叫外賣	280
-jiaowan	腳腕	366
+jiaowan	較晚	700
+jiaowan	腳腕	184
 jiaowang	交往	502
 jiaowangguozheng	矯枉過正	440
 jiaowangguozhi	矯枉過直	387
@@ -66398,7 +66407,7 @@ jiaoyizhe	交易者	429
 jiaoyizhongxin	交易中心	459
 jiaoyou	較右	1000
 jiaoyou	教友	501
-jiaoyou	交友	42
+jiaoyou	交友	41
 jiaoyou	交由	41
 jiaoyou	交遊	1
 jiaoyou	焦油	1
@@ -66446,6 +66455,7 @@ jiaoyuxinlixue	教育心理學	640
 jiaoyuxue	教育學	508
 jiaoyuyoufang	教育有方	10
 jiaozao	焦躁	1000
+jiaozao	較早	700
 jiaozaobu'an	焦躁不安	644
 jiaozaobuan	焦躁不安	644
 jiaozha	狡詐	436
@@ -67878,10 +67888,10 @@ jiedan	接單	436
 jiedang	結黨	319
 jiedangyingsi	結黨營私	480
 jiedanr	借單兒	232
+jiedao	接到	1054
 jiedao	街道	1000
-jiedao	接到	837
 jiedao	接道	280
-jiedao	戒刀	1
+jiedao	戒刀	10
 jiedaobanshichu	街道辦事處	289
 jiedaosharen	借刀殺人	460
 jiedashou	解大手	167
@@ -93992,7 +94002,7 @@ meikuyingchi	沒苦硬喫	260
 meilai	沒來	1000
 meilaiyanqu	眉來眼去	447
 meilaiyou	沒來由	785
-meilan	黴爛	401
+meilan	黴爛	402
 meilandedong	黴爛的冬	527
 meilandedonggua	黴爛的冬瓜	569
 meilandeli	黴爛的栗	523
@@ -95350,7 +95360,7 @@ mianhongerchi	面紅耳赤	496
 mianhongerre	面紅耳熱	616
 mianhu	面糊	1000
 mianhu	麵糊	1000
-mianhu	麪糊	955
+mianhu	麪糊	860
 mianhua	棉花	536
 mianhuabang	棉花棒	230
 mianhuai	緬懷	300
@@ -120998,6 +121008,7 @@ shao'anwuzao	少安無躁	150
 shao'er	少兒	511
 shao'erbuyi	少兒不宜	387
 shaoai	稍矮	10
+shaoan	稍暗	700
 shaoan	稍安	10
 shaoanwuzao	少安毋躁	672
 shaoanwuzao	少安無躁	150
@@ -121073,6 +121084,8 @@ shaoguo	燒鍋	378
 shaohaixue	少海穴	470
 shaohan	燒焊	305
 shaohanxingwaipeicengfayubuliangzheng	少汗性外胚層發育不良症	700
+shaohao	稍好	700
+shaohao	燒好	507
 shaohe	少喝	700
 shaohong	燒紅	198
 shaohou	稍后	781
@@ -121114,10 +121127,13 @@ shaola	稍辣	10
 shaola	燒臘	1
 shaolai	少來	700
 shaolai	捎來	64
+shaolan	燒爛	700
+shaolan	稍爛	700
 shaole	少了	700
 shaole	燒了	644
 shaoleng	稍冷	10
-shaoliang	少量	458
+shaoliang	稍亮	700
+shaoliang	少量	323
 shaolin	少林	513
 shaolindiedazhitonggao	少林跌打止痛膏	647
 shaolinfengshidiedagao	少林風濕跌打膏	650
@@ -121210,7 +121226,7 @@ shaoqia	哨卡	369
 shaoqian	稍前	700
 shaoqian	少錢	502
 shaoqian	燒錢	280
-shaoqian	少前	71
+shaoqian	少前	70
 shaoqing	少頃	390
 shaorchubanshe	少兒出版社	279
 shaore	稍熱	10
@@ -138584,6 +138600,7 @@ tingkou	聽口	538
 tingku	挺苦	700
 tingkuai	挺快	700
 tingla	挺辣	700
+tingla	挺拉	280
 tinglai	聽來	323
 tingle	聽了	700
 tingle	停了	658
@@ -158580,7 +158597,7 @@ xuanpin	選品	319
 xuanpu	玄圃	198
 xuanqianji	旋前肌	232
 xuanqianyuanji	旋前圓肌	540
-xuanqianzhuankun	旋乾轉坤	401
+xuanqianzhuankun	旋乾轉坤	383
 xuanqing	選情	849
 xuanqu	選取	830
 xuanqu	選區	524
@@ -168286,7 +168303,7 @@ yinlian	銀鏈	10
 yinlianchangweishanque	銀臉長尾山雀	318
 yinliang	銀兩	261
 yinliang	蔭涼	213
-yinliang	音量	138
+yinliang	音量	137
 yinliangchu	陰涼處	404
 yinliangongyuan	銀蓮公園	538
 yinlianhua	銀蓮花	198
@@ -169202,7 +169219,7 @@ yiranguwo	依然故我	598
 yiranjueran	毅然決然	455
 yiranrugu	依然如故	447
 yiransezhi	異染色質	570
-yiranshanliang	依然閃亮	788
+yiranshanliang	依然閃亮	792
 yiranwu	易燃物	583
 yiranwupin	易燃物品	369
 yiranxing	異染性	470

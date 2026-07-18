@@ -7339,3 +7339,20 @@
 越弱	越弱	0.78	yueruo
 越难	越難	0.82	yuenan
 越容易	越容易	0.78	yuerongyi
+
+# Common arrival/receipt verb and degree-result phrases.
+接到	接到	0.96	jiedao
+较早	較早	0.88	jiaozao
+较晚	較晚	0.86	jiaowan
+较亮	較亮	0.72	jiaoliang
+较暗	較暗	0.72	jiaoan
+较烂	較爛	0.54	jiaolan
+很烂	很爛	0.70	henlan
+稍好	稍好	0.80	shaohao
+稍烂	稍爛	0.52	shaolan
+烧烂	燒爛	0.54	shaolan
+烧好	燒好	0.68	shaohao
+很亮	很亮	0.78	henliang
+很暗	很暗	0.74	henan
+稍亮	稍亮	0.66	shaoliang
+稍暗	稍暗	0.66	shaoan

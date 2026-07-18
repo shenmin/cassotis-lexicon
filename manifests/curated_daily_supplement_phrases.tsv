@@ -11961,3 +11961,9 @@
 她强	她強	0.46	taqiang
 他弱	他弱	0.40	taruo
 她弱	她弱	0.40	taruo
+
+# Colloquial evaluations that should remain selectable without receiving the
+# preferred daily/chat weight floor.
+较拉	較拉	0.24	jiaola
+很拉	很拉	0.32	henla
+挺拉	挺拉	0.30	tingla
