@@ -1470,7 +1470,7 @@ caobardazhang	草把兒|打仗	411
 caobenzhiwu	草本|植物	465
 caocaoliaoshi	草草|了事	475
 caocaoshoubing	草草|收兵	441
-caocaoshouchang	草草|收場	391
+caocaoshouchang	草草|收場	393
 caokongfusu	操控|復甦	464
 caokongyouxi	操控|遊戲	452
 caomangyingxiong	草莽|英雄	452
@@ -3769,8 +3769,8 @@ duixiangzhizhen	對象|指針	451
 duixiangzhuangtai	對象|狀態	488
 duixiangzidian	對象|字典	451
 duiyichuanqi	對弈|傳奇	455
-duizhangedou	對戰|格鬥	343
-duizhangedouyouxi	對戰|格鬥|遊戲	425
+duizhangedou	對戰|格鬥	342
+duizhangedouyouxi	對戰|格鬥|遊戲	424
 duizhangongzhu	對戰|公主	464
 duizhanjiaohuan	對戰|交換	374
 duizhanjiaohuanfangkuai	對戰|交換|方塊	456
@@ -12860,7 +12860,7 @@ ransetihuhuan	染色體|互換	483
 ransetijibian	染色體|畸變	453
 ransetijibing	染色體|疾病	486
 ransetiyichang	染色體|異常	459
-ranshaogedou	燃燒|格鬥	441
+ranshaogedou	燃燒|格鬥	440
 ranshaotanke	燃燒|坦克	441
 ranshaozhanche	燃燒|戰車	464
 ranzhichuixian	染指|垂涎	467
@@ -16924,7 +16924,7 @@ wonengtizuqiu	我能|踢足球	432
 woniuxinshi	蝸牛|信使	408
 woniuyouxi	蝸牛|遊戲	499
 woshimianbao	我是|麵包	465
-woshouxinhao	握手|信號	492
+woshouxinhao	握手|信號	499
 woshuocuole	我說|錯了	520
 woxihuanlaoshi	我喜歡|老師	456
 woyaofengle	我要|瘋了	520
@@ -19107,6 +19107,8 @@ yansuanshanlangdangjian	鹽酸|山莨菪鹼	456
 yansuanshenshangxiansu	鹽酸|腎上腺素	458
 yansuansihuansu	鹽酸|四環素	458
 yansuantelazuoqin	鹽酸|特拉唑嗪	456
+yansuantoubao	鹽酸|頭孢	374
+yansuantoubaotamei	鹽酸|頭孢|他美	456
 yansuantuowansiqiong	鹽酸|托烷司瓊	456
 yansuanwangu	鹽酸|萬古	317
 yansuanwangumeisu	鹽酸|萬古|黴素	399
@@ -20673,9 +20675,11 @@ yudingyibianliang	預定義|變量	461
 yueduchengxu	閱讀|程序	487
 yuedukuangjia	閱讀|框架	483
 yuedukunnan	閱讀|困難	483
+yueduoyuehao	越多|越好	478
 yueduzhangai	閱讀|障礙	497
 yueguangjianianhua	月光|嘉年華	416
 yueguangzhenghouqun	月光|症候羣	458
+yueguoyuehao	越過|越好	478
 yuehanyishi	約翰|一世	455
 yuejigedou	月姬|格鬥	413
 yuejingchaoqian	月經|超前	471
@@ -20690,12 +20694,12 @@ yuejingzhouqi	月經|週期	470
 yuelaiyueheian	越來越|黑暗	458
 yueliangcuojue	月亮|錯覺	434
 yuemayangbian	躍馬|揚鞭	458
-yuenandazhan	越南|大戰	449
+yuenandazhan	越南|大戰	467
 yuenandiguo	越南|帝國	468
 yuenanjianzhu	越南|建築	485
-yuenantufu	越南|屠夫	416
-yuenantufushijian	越南|屠夫|事件	442
-yuenanzhanzheng	越南|戰爭	514
+yuenantufu	越南|屠夫	436
+yuenantufushijian	越南|屠夫|事件	444
+yuenanzhanzheng	越南|戰爭	520
 yueqiujinghun	月球|驚魂	464
 yueqiujiuyuan	月球|救援	467
 yueqiumaoxian	月球|冒險	464
@@ -20827,7 +20831,7 @@ yushengdiwei	語聲|低微	436
 yusheyiliao	預設|醫療	401
 yusheyiliaozhishi	預設|醫療|指示	483
 yushizhiruangao	魚石脂|軟膏	431
-yuwanggedou	慾望|格鬥	461
+yuwanggedou	慾望|格鬥	460
 yuwangyouxi	慾望|遊戲	499
 yuweishigongyuan	魚尾獅|公園	415
 yuweiwuqiong	餘味|無窮	424
@@ -21438,7 +21442,7 @@ zhijianshumu	只見|樹木	478
 zhijianzhanzheng	指尖|戰爭	464
 zhijiaozhuanwan	直角|轉彎	383
 zhijiaozhuanwanjieti	直角|轉彎|階梯	465
-zhijiaozuobiao	直角|座標	466
+zhijiaozuobiao	直角|座標	474
 zhijiecanyu	直接|參與	480
 zhijiedanhongsu	直接|膽紅素	457
 zhijiedianli	直接|電離	417

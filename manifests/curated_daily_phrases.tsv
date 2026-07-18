@@ -767,7 +767,6 @@
 投过	投過	0.86	touguo
 约过	約過	0.86	yueguo
 哭过	哭過	0.86	kuguo
-笑过	笑過	0.86	xiaoguo
 这就	這就	0.84
 这就是	這就是	0.82
 这就是说	這就是說	0.78
@@ -7323,3 +7322,20 @@
 劝他	勸他	0.74	quanta
 劝她	勸她	0.74	quanta
 返工	返工	0.90	fangong
+
+# Common comparative structures. These are productive daily phrases rather
+# than one-off sentence fragments, so they belong in the preferred layer.
+都比	都比	0.88	doubi
+越多	越多	0.92	yueduo
+越好	越好	0.94	yuehao
+越少	越少	0.86	yueshao
+越大	越大	0.88	yueda
+越小	越小	0.86	yuexiao
+越高	越高	0.86	yuegao
+越低	越低	0.84	yuedi
+越快	越快	0.86	yuekuai
+越慢	越慢	0.82	yueman
+越强	越強	0.82	yueqiang
+越弱	越弱	0.78	yueruo
+越难	越難	0.82	yuenan
+越容易	越容易	0.78	yuerongyi
