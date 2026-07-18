@@ -11122,7 +11122,8 @@ boka	波卡	198
 bokai	拨开	1000
 bokai	剥开	10
 bokaobing	薄烤饼	167
-boke	博客	664
+boke	博客	630
+boke	剥壳	280
 boke	播客	10
 bokebi	波克比	490
 bokehuaju	博客话剧	260
@@ -11371,7 +11372,7 @@ boshan	博山	228
 boshanqu	博山区	165
 boshengelun	波什格伦	140
 boshi	博士	1000
-boshi	剥蚀	571
+boshi	剥蚀	572
 boshi	博世	360
 boshicha	博士茶	382
 boshidaoshi	博士导师	260
@@ -21294,8 +21295,8 @@ chujiao	触角	720
 chujiao	触礁	140
 chujiaren	出家人	524
 chujibaojianyisheng	初级保健医生	700
-chujie	出借	471
-chujie	出界	423
+chujie	出借	472
+chujie	出界	422
 chujifeilong	出击飞龙	538
 chujijiankangzhaohu	初级健康照护	700
 chujijieduanlun	初级阶段论	371
@@ -21343,6 +21344,7 @@ chujuhuahuan	雏菊花环	260
 chujun	储君	233
 chukai	除开	416
 chukan	出刊	10
+chuke	出壳	280
 chukepai'anjingqi	初刻拍案惊奇	318
 chukeqi	楚科奇	458
 chukeqizizhiquzhouzhang	楚科奇自治区州长	600
@@ -24259,7 +24261,8 @@ daijunzhe	带菌者	470
 daikan	带看	297
 daikao	待考	553
 daikao	代考	339
-daike	代课	48
+daike	带壳	280
+daike	代课	108
 daike	带课	10
 daike	待客	10
 daikeboche	代客泊车	260
@@ -58843,6 +58846,7 @@ huannanjianzhenqing	患难见真情	430
 huannanxiangxu	患难相恤	616
 huannanyugong	患难与共	648
 huannanzhijiao	患难之交	458
+huannei	环内	700
 huannengqi	换能器	464
 huanniaogandanlinsuan	环鸟苷单磷酸	700
 huanniaogansuan	环鸟苷酸	570
@@ -58949,6 +58953,7 @@ huantianxidi	欢天喜地	603
 huantie	换帖	305
 huanting	幻听	559
 huantou	唤头	563
+huanwai	环外	700
 huanwanting	环烷烃	371
 huanwei	换位	1000
 huanwei	环卫	558
@@ -58959,7 +58964,7 @@ huanwujihuahewu	环戊基化合物	700
 huanwuxi	环戊烯	228
 huanxi	欢喜	1000
 huanxi	换洗	1
-huanxian	环线	846
+huanxian	环线	802
 huanxian	换线	700
 huanxiang	幻想	735
 huanxiang	还乡	595
@@ -72898,10 +72903,10 @@ jizhi	机制	589
 jizhi	几只	420
 jizhi	及至	310
 jizhi	极致	309
+jizhi	急智	26
 jizhi	基址	12
 jizhi	极值	2
 jizhi	基质	1
-jizhi	急智	1
 jizhi	机智	1
 jizhibao	鸡汁包	10
 jizhidanbai	基质蛋白	570
@@ -88980,7 +88985,7 @@ luyaozhimali	路遥知马力	661
 luyating	陆雅婷	449
 luye	鹿野	214
 luyexiang	鹿野乡	174
-luyi	路易	996
+luyi	路易	1000
 luyigang	路易港	184
 luyiguiwuxilie	路易鬼屋系列	648
 luyiji	路易吉	339
@@ -98819,10 +98824,13 @@ neihua	内化	383
 neihuada	内华达	277
 neihuai	内踝	341
 neihuaijian	内踝尖	470
+neihuan	内环	700
 neihuang	内黄	381
 neihuangxian	内黄县	165
 neihuanjing	内环境	470
 neihuanjingwending	内环境稳定	610
+neihuanlu	内环路	280
+neihuanxian	内环线	800
 neihumian	内弧面	600
 neihuqu	内湖区	165
 neiji	内急	532
@@ -104950,6 +104958,7 @@ pokai	泼开	10
 pokai	破开	1
 poke	破壳	370
 pokechi	破壳齿	230
+pokeerchu	破壳而出	280
 pokeri	破壳日	232
 pokou	破口	409
 pokoudama	破口大骂	512
@@ -111632,6 +111641,7 @@ qukan	去看	700
 qukanfang	去看房	620
 qukang	去扛	280
 qukankan	去看看	1018
+quke	去壳	280
 qukeluding	曲克芦丁	540
 qukeludingjiaonang	曲克芦丁胶囊	648
 qukeludingpian	曲克芦丁片	610
@@ -133770,6 +133780,9 @@ taojinre	淘金热	415
 taojinzhe	淘金者	404
 taojiu	讨究	323
 taoke	逃课	1000
+taoke	套壳	280
+taokeruanjian	套壳软件	280
+taokeyingyong	套壳应用	280
 taokong	掏空	423
 taokougong	套口供	406
 taoku	套裤	324
@@ -139049,7 +139062,6 @@ tuokai	脱开	116
 tuokai	拖开	10
 tuokamake	托卡马克	267
 tuokata	托卡塔	212
-tuoke	脱壳	402
 tuokelao	托克劳	213
 tuoketuo	托克托	211
 tuoketuoxian	托克托县	243
@@ -139158,6 +139170,7 @@ tuoqi	脱期	96
 tuoqi	托起	10
 tuoqian	拖欠	999
 tuoqiansuodao	拖牵索道	260
+tuoqiao	脱壳	280
 tuoqing	脱氢	427
 tuoqingmei	脱氢酶	207
 tuoqiu	椭球	406
@@ -139755,8 +139768,10 @@ waihao	外号	459
 waihuabei	外花被	640
 waihuai	外踝	198
 waihuaijian	外踝尖	470
-waihuan	外患	399
-waihuanxian	外环线	554
+waihuan	外环	700
+waihuan	外患	1
+waihuanlu	外环路	280
+waihuanxian	外环线	800
 waihui	外汇	1000
 waihuichubei	外汇储备	405
 waihuicundi	外汇存底	405
@@ -180669,7 +180684,9 @@ zhonghuaminzu	中华民族	693
 zhonghuaminzujiefangxianfengdui	中华民族解放先锋队	376
 zhonghuaminzujiefangxingdongweiyuanhui	中华民族解放行动委员会	378
 zhonghuaminzuwenhuacujinhui	中华民族文化促进会	373
-zhonghuan	中环	252
+zhonghuan	中环	700
+zhonghuanlu	中环路	280
+zhonghuanxian	中环线	800
 zhonghuapanque	中华攀雀	260
 zhonghuaqiushaya	中华秋沙鸭	289
 zhonghuaquan	中华圈	391

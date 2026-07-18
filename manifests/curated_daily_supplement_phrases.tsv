@@ -11967,3 +11967,19 @@
 较拉	較拉	0.24	jiaola
 很拉	很拉	0.32	henla
 挺拉	挺拉	0.30	tingla
+
+# Technical shell-wrapper terms, shell-removal actions, and less common road
+# forms stay in the supplemental layer so they remain selectable without
+# crowding common exact words such as 逃课.
+套壳	套殼	0.32	taoke
+套壳软件	套殼軟件	0.28	taokeruanjian
+套壳应用	套殼應用	0.28	taokeyingyong
+脱壳	脫殼	0.34	tuoqiao
+出壳	出殼	0.28	chuke
+去壳	去殼	0.32	quke
+剥壳	剝殼	0.34	boke
+带壳	帶殼	0.32	daike
+破壳而出	破殼而出	0.36	pokeerchu
+内环路	內環路	0.30	neihuanlu
+外环路	外環路	0.30	waihuanlu
+中环路	中環路	0.28	zhonghuanlu

@@ -7356,3 +7356,13 @@
 很暗	很暗	0.74	henan
 稍亮	稍亮	0.66	shaoliang
 稍暗	稍暗	0.66	shaoan
+
+# Common urban ring-road and inside/outside-ring expressions.
+内环	內環	0.86	neihuan
+外环	外環	0.86	waihuan
+中环	中環	0.72	zhonghuan
+环内	環內	0.68	huannei
+环外	環外	0.68	huanwai
+内环线	內環線	0.72	neihuanxian
+外环线	外環線	0.74	waihuanxian
+中环线	中環線	0.66	zhonghuanxian

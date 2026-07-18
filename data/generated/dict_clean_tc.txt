@@ -11259,7 +11259,8 @@ boka	波卡	198
 bokai	剝開	10
 bokai	撥開	1
 bokaobing	薄烤餅	167
-boke	博客	664
+boke	博客	845
+boke	剝殼	280
 boke	播客	10
 bokebi	波克比	490
 bokehuaju	博客話劇	260
@@ -11506,7 +11507,7 @@ boshan	博山	228
 boshanqu	博山區	165
 boshengelun	波什格倫	140
 boshi	博士	1000
-boshi	剝蝕	529
+boshi	剝蝕	530
 boshi	博世	360
 boshicha	博士茶	382
 boshidaoshi	博士導師	260
@@ -21564,6 +21565,7 @@ chujuhuahuan	雛菊花環	260
 chujun	儲君	233
 chukai	除開	416
 chukan	出刊	10
+chuke	出殼	280
 chukepai'anjingqi	初刻拍案驚奇	318
 chukongban	觸控板	379
 chukongbi	觸控筆	375
@@ -24477,7 +24479,8 @@ daijunzhe	帶菌者	470
 daikan	帶看	286
 daikao	待考	552
 daikao	代考	339
-daike	代課	32
+daike	帶殼	280
+daike	代課	108
 daike	帶課	10
 daike	待客	10
 daikeboche	代客泊車	260
@@ -59991,6 +59994,7 @@ huannanjianzhenqing	患難見真情	430
 huannanxiangxu	患難相卹	616
 huannanyugong	患難與共	648
 huannanzhijiao	患難之交	458
+huannei	環內	700
 huannengqi	換能器	464
 huanniaogandanlinsuan	環鳥苷單磷酸	700
 huanniaogansuan	環鳥苷酸	570
@@ -60094,6 +60098,7 @@ huantianxidi	歡天喜地	603
 huantie	換帖	305
 huanting	幻聽	589
 huantou	喚頭	563
+huanwai	環外	700
 huanwanting	環烷烴	371
 huanwei	換位	1000
 huanwei	環衛	533
@@ -66678,9 +66683,9 @@ jiaqiangwusuan	甲羥戊酸	222
 jiaqiangyuntong	甲羥孕酮	540
 jiaqiangyuntongpian	甲羥孕酮片	610
 jiaqiangzhen	加強針	500
-jiaqiao	甲殼	264
-jiaqiao	甲殻	204
-jiaqiao	架橋	199
+jiaqiao	甲殼	263
+jiaqiao	甲殻	203
+jiaqiao	架橋	198
 jiaqiaochong	甲殼蟲	1000
 jiaqiaodongwu	甲殼動物	562
 jiaqiaodongwu	甲殻動物	396
@@ -74308,7 +74313,7 @@ jizhi	機制	584
 jizhi	及至	497
 jizhi	機製	497
 jizhi	極致	495
-jizhi	急智	69
+jizhi	急智	81
 jizhi	基址	60
 jizhi	極值	50
 jizhi	基質	1
@@ -95360,7 +95365,7 @@ mianhongerchi	面紅耳赤	496
 mianhongerre	面紅耳熱	616
 mianhu	面糊	1000
 mianhu	麵糊	1000
-mianhu	麪糊	860
+mianhu	麪糊	955
 mianhua	棉花	536
 mianhuabang	棉花棒	230
 mianhuai	緬懷	300
@@ -100611,10 +100616,13 @@ neihua	內化	383
 neihuada	內華達	277
 neihuai	內踝	341
 neihuaijian	內踝尖	470
+neihuan	內環	700
 neihuang	內黃	381
 neihuangxian	內黃縣	165
 neihuanjing	內環境	470
 neihuanjingwending	內環境穩定	610
+neihuanlu	內環路	280
+neihuanxian	內環線	800
 neihumian	內弧面	600
 neihuqu	內湖區	165
 neiji	內急	602
@@ -106784,6 +106792,7 @@ poju	頗具	999
 pokai	破開	323
 pokai	潑開	10
 poke	破殼	524
+pokeerchu	破殼而出	280
 pokou	破口	409
 pokoudama	破口大罵	512
 pola	潑辣	437
@@ -113473,7 +113482,7 @@ quhuazuoyong	趨化作用	570
 quhui	取回	445
 quhuilingtangjiang	驅蛔靈糖漿	610
 quhuipiao	去回票	232
-quhuo	取火	429
+quhuo	取火	428
 quji	屈肌	229
 quji	闃寂	152
 qujia	曲家	260
@@ -113525,6 +113534,7 @@ qukan	去看	700
 qukanfang	去看房	620
 qukang	去扛	280
 qukankan	去看看	1018
+quke	去殼	280
 qukeluding	曲克蘆丁	540
 qukeludingjiaonang	曲克蘆丁膠囊	668
 qukeludingpian	曲克蘆丁片	610
@@ -136023,6 +136033,9 @@ taojinre	淘金熱	415
 taojinzhe	淘金者	404
 taojiu	討究	323
 taoke	逃課	1000
+taoke	套殼	280
+taokeruanjian	套殼軟件	280
+taokeyingyong	套殼應用	280
 taokong	掏空	423
 taokougong	套口供	406
 taoku	套褲	324
@@ -141315,7 +141328,6 @@ tuokai	脫開	135
 tuokai	拖開	10
 tuokamake	托卡馬克	267
 tuokata	托卡塔	212
-tuoke	脫殼	438
 tuokelao	托克勞	213
 tuoketuo	托克托	211
 tuoketuoxian	托克托縣	264
@@ -141419,6 +141431,7 @@ tuoqi	托起	10
 tuoqi	唾棄	1
 tuoqian	拖欠	999
 tuoqiansuodao	拖牽索道	260
+tuoqiao	脫殼	280
 tuoqing	脫氫	427
 tuoqingmei	脫氫酶	207
 tuoqiu	橢球	406
@@ -142024,8 +142037,10 @@ waihao	外號	459
 waihuabei	外花被	640
 waihuai	外踝	198
 waihuaijian	外踝尖	470
-waihuan	外患	399
-waihuanxian	外環線	941
+waihuan	外患	356
+waihuan	外環	244
+waihuanlu	外環路	280
+waihuanxian	外環線	800
 waihui	外匯	1000
 waihuichubei	外匯儲備	405
 waihuicundi	外匯存底	405
@@ -158597,7 +158612,7 @@ xuanpin	選品	319
 xuanpu	玄圃	198
 xuanqianji	旋前肌	232
 xuanqianyuanji	旋前圓肌	540
-xuanqianzhuankun	旋乾轉坤	383
+xuanqianzhuankun	旋乾轉坤	401
 xuanqing	選情	849
 xuanqu	選取	830
 xuanqu	選區	524
@@ -165883,8 +165898,8 @@ yihuadufangbushichun	一花獨放不是春	425
 yihuaerguo	一劃而過	10
 yihuajiemu	移花接木	445
 yihuakaitian	一畫開天	616
-yihuan	異環	607
-yihuan	已換	559
+yihuan	異環	608
+yihuan	已換	560
 yihuan	一環	280
 yihuan	乙琥胺	145
 yihuan	一換	10
@@ -170936,7 +170951,7 @@ yongbao	擁抱	458
 yongbaojijie	擁抱季節	538
 yongbi	壅蔽	376
 yongbie	永別	662
-yongbing	用兵	713
+yongbing	用兵	714
 yongbing'aigewunvyuqishaxing	傭兵哀歌巫女與七煞星	662
 yongbingrushen	用兵如神	458
 yongbingyishi	用兵一時	10
@@ -178104,7 +178119,7 @@ zhanqindaigu	霑親帶故	442
 zhanqing	嶄晴	198
 zhanqishen	站起身	280
 zhanqizhiyouxi	戰棋制遊戲	791
-zhanqu	佔去	666
+zhanqu	佔去	667
 zhanqu	戰區	414
 zhanqu	霑取	280
 zhanqu	展區	10
@@ -183633,7 +183648,9 @@ zhonghuaminzu	中華民族	693
 zhonghuaminzujiefangxianfengdui	中華民族解放先鋒隊	376
 zhonghuaminzujiefangxingdongweiyuanhui	中華民族解放行動委員會	378
 zhonghuaminzuwenhuacujinhui	中華民族文化促進會	373
-zhonghuan	中環	252
+zhonghuan	中環	700
+zhonghuanlu	中環路	280
+zhonghuanxian	中環線	800
 zhonghuapanque	中華攀雀	260
 zhonghuaqiushaya	中華秋沙鴨	289
 zhonghuaquan	中華圈	492
@@ -184049,7 +184066,7 @@ zhongren	中人	144
 zhongrenjingyang	眾人敬仰	260
 zhongrenshichaihuoyangao	眾人拾柴火焰高	463
 zhongri	中日	941
-zhongri	終日	619
+zhongri	終日	618
 zhongriguanxi	中日關係	256
 zhongriguanxi	中日關系	242
 zhongrihan	中日韓	165
