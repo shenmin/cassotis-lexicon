@@ -7372,3 +7372,21 @@
 内环线	內環線	0.72	neihuanxian
 外环线	外環線	0.74	waihuanxian
 中环线	中環線	0.66	zhonghuanxian
+
+# Common capability, context, pronoun-object, and removal phrases.
+打不开	打不開	0.90	dabukai
+用得了	用得了	0.78	yongdeliao
+会是	會是	0.90	huishi
+我加	我加	0.82	wojia
+有必要	有必要	0.94	youbiyao
+前文	前文	0.78	qianwen
+将我	將我	0.80	jiangwo
+将你	將你	0.80	jiangni
+将他	將他	0.76	jiangta
+将她	將她	0.76	jiangta
+将它	將它	0.74	jiangta
+不带	不帶	0.86	budai
+不戴	不戴	0.76	budai
+撤了	撤了	0.78	chele
+撤不了	撤不了	0.72	chebuliao
+不撤	不撤	0.72	buche

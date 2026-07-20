@@ -11985,3 +11985,8 @@
 内环路	內環路	0.30	neihuanlu
 外环路	外環路	0.30	waihuanlu
 中环路	中環路	0.28	zhonghuanlu
+
+# Useful written and technical exact terms that should stay below more common
+# same-pinyin everyday words.
+用例	用例	0.48	yongli
+助益	助益	0.36	zhuyi

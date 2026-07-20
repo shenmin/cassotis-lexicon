@@ -7081,6 +7081,7 @@ def _cap_short_exact_homophones_by_direct_signal(
         f"{stats_prefix}_short_exact_direct_signal_buckets": 0,
         f"{stats_prefix}_short_exact_direct_signal_capped": 0,
         f"{stats_prefix}_short_exact_direct_evidence_dominated_capped": 0,
+        f"{stats_prefix}_short_exact_direct_signal_restored": 0,
     }
     if not mapping:
         return stats
@@ -7172,6 +7173,95 @@ def _cap_short_exact_homophones_by_direct_signal(
             enriched.append((pinyin, text, weight, parts(pinyin, text)))
         if len(enriched) < 2:
             continue
+
+        # Earlier semantic/family passes can over-promote a valid but less
+        # common homophone, or suppress the direct-frequency leader to a
+        # visibility-only weight. Only repair low-confidence buckets, and only
+        # from independent aggregate-usage and Jieba evidence; established
+        # high-confidence winners must not be reshuffled here.
+        direct_evidence_candidates = [
+            item
+            for item in enriched
+            if item[1] not in weak_leader_terms
+            and item[3][6] < 120
+            and not _is_named_entity_pos(item[3][4])
+        ]
+        if len(direct_evidence_candidates) >= 2:
+            bucket_peak_weight = max(item[2] for item in enriched)
+            direct_evidence_candidates.sort(
+                key=lambda item: (
+                    item[3][1]
+                    + item[3][2]
+                    + item[3][5]
+                    + min(1.0, item[3][3] / 6.0),
+                    item[2],
+                ),
+                reverse=True,
+            )
+            evidence_leader = direct_evidence_candidates[0]
+            evidence_runner_up = direct_evidence_candidates[1]
+            evidence_leader_total = (
+                evidence_leader[3][1]
+                + evidence_leader[3][2]
+                + evidence_leader[3][5]
+                + min(1.0, evidence_leader[3][3] / 6.0)
+            )
+            evidence_runner_up_total = (
+                evidence_runner_up[3][1]
+                + evidence_runner_up[3][2]
+                + evidence_runner_up[3][5]
+                + min(1.0, evidence_runner_up[3][3] / 6.0)
+            )
+            evidence_margin = evidence_leader_total - evidence_runner_up_total
+            evidence_leader_pinyin = evidence_leader[0]
+            evidence_leader_text = evidence_leader[1]
+            evidence_leader_weight = evidence_leader[2]
+            evidence_leader_usage = evidence_leader[3][1]
+            evidence_leader_jieba = evidence_leader[3][2]
+            evidence_runner_up_usage = evidence_runner_up[3][1]
+            evidence_runner_up_jieba = evidence_runner_up[3][2]
+            protected_competitor = any(
+                text != evidence_leader_text
+                and text in preferred_terms
+                and weight >= evidence_leader_weight
+                for _pinyin, text, weight, item_parts in enriched
+            )
+            if (
+                not protected_competitor
+                and bucket_peak_weight <= 640
+                and evidence_leader_total >= 0.28
+                and evidence_margin >= 0.045
+                and evidence_leader_usage >= evidence_runner_up_usage + 0.015
+                and evidence_leader_jieba >= evidence_runner_up_jieba + 0.010
+            ):
+                strongest_competitor_weight = max(
+                    weight
+                    for _pinyin, text, weight, _item_parts in enriched
+                    if text != evidence_leader_text
+                )
+                restore_margin = 32 + min(
+                    48,
+                    int(round((evidence_margin - 0.045) * 220.0)),
+                )
+                restored_weight = min(
+                    1000,
+                    max(
+                        evidence_leader_weight,
+                        strongest_competitor_weight + restore_margin,
+                    ),
+                )
+                if restored_weight > evidence_leader_weight:
+                    mapping[(evidence_leader_pinyin, evidence_leader_text)] = restored_weight
+                    stats[f"{stats_prefix}_short_exact_direct_signal_restored"] += 1
+                    enriched = [
+                        (
+                            pinyin,
+                            text,
+                            mapping.get((pinyin, text), weight),
+                            item_parts,
+                        )
+                        for pinyin, text, weight, item_parts in enriched
+                    ]
 
         leaders = [
             item
