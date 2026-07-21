@@ -4452,6 +4452,9 @@
 观众	觀眾	0.90	guanzhong
 只是	只是	0.90	zhishi
 含义	含義	0.92	hanyi
+歧义	歧義	0.92	qiyi
+奇异	奇異	0.91	qiyi
+棋艺	棋藝	0.45	qiyi
 各个	各個	0.92	gege
 哥哥	哥哥	0.88	gege
 妹妹	妹妹	0.88	meimei
@@ -7416,3 +7419,28 @@
 
 # Common display and motion action.
 弹出	彈出	0.90	tanchu
+
+# Common understanding responses and pronoun-led statements.
+懂吗	懂嗎	0.82	dongma
+懂吧	懂吧	0.72	dongba
+我懂	我懂	0.80	wodong
+你懂	你懂	0.78	nidong
+
+# Common pull directions used in both physical actions and interfaces.
+下拉	下拉	0.82	xiala
+上拉	上拉	0.76	shangla
+往下拉	往下拉	0.70	wangxiala
+拉下来	拉下來	0.76	laxialai
+
+# Common comprehension, import, drawing, and proportional-operation phrases.
+看懂	看懂	0.88	kandong
+看得懂	看得懂	0.92	kandedong
+听懂	聽懂	0.86	tingdong
+听得懂	聽得懂	0.88	tingdedong
+读懂	讀懂	0.82	dudong
+读得懂	讀得懂	0.82	dudedong
+读入	讀入	0.78	duru
+加一个	加一個	0.90	jiayige
+加进去	加進去	0.82	jiajinqu
+画上去	畫上去	0.70	huashangqu
+按比例	按比例	0.88	anbili

@@ -392,3 +392,10 @@
 拼音方案	拼音方案	0.72	pinyinfangan
 双拼方案	雙拼方案	0.70	shuangpinfangan
 全拼方案	全拼方案	0.68	quanpinfangan
+
+# Common dropdown and pull-to-refresh interface terminology.
+下拉框	下拉框	0.72	xialakuang
+下拉菜单	下拉菜單	0.74	xialacaidan
+下拉列表	下拉列表	0.68	xialaliebiao
+下拉刷新	下拉刷新	0.58	xialashuaxin
+上拉加载	上拉加載	0.54	shanglajiazai

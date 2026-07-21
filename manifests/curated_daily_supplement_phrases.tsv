@@ -12014,3 +12014,31 @@
 去不	去不	0.05	qubu
 来不	來不	0.05	laibu
 走不	走不	0.05	zoubu
+
+# Productive understanding phrases remain selectable without displacing
+# established lexical words such as 懂得, 抖动, and 震动.
+懂的	懂的	0.48	dongde
+都懂	都懂	0.46	doudong
+真懂	真懂	0.40	zhendong
+他懂	他懂	0.38	tadong
+她懂	她懂	0.38	tadong
+
+# Valid qiyi homophones with lower independent everyday frequency. 起义 stays
+# exact-selectable as a historical/written term; 歧异 is retained only as an
+# ultra-low-frequency alternative so it cannot displace the common 歧义.
+起义	起義	0.42	qiyi
+歧异	歧異	0.01	qiyi
+
+# Productive add/subtract fragments remain exact-selectable without
+# displacing established complete homophones such as 要价, 要件, and 再见.
+画上	畫上	0.44	huashang
+也加	也加	0.42	yejia
+要加	要加	0.46	yaojia
+必加	必加	0.01	bijia
+要减	要減	0.42	yaojian
+也减	也減	0.36	yejian
+必减	必減	0.01	bijian
+更减	更減	0.01	gengjian
+还减	還減	0.32	haijian
+就加	就加	0.42	jiujia
+就减	就減	0.38	jiujian
