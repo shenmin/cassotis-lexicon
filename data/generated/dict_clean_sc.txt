@@ -19812,6 +19812,7 @@ chongnage	冲那个	800
 chongni	冲你	700
 chongni	宠溺	198
 chongpai	重排	430
+chongpaiqi	重排器	673
 chongpao	冲泡	626
 chongpei	充沛	683
 chongping	重评	198
@@ -32145,7 +32146,7 @@ dongduoxicang	东躲西藏	648
 dongduoxishan	东躲西闪	218
 dongerji	动耳肌	500
 dongfang	东方	1000
-dongfang	洞房	137
+dongfang	洞房	136
 dongfangachufo	东方阿閦佛	289
 dongfangbaiguan	东方白鹳	218
 dongfangbanji	东方斑䳭	218
@@ -41264,8 +41265,8 @@ fenyan	粉艳	377
 fenyang	汾阳	263
 fenyangshi	汾阳市	165
 fenyangzhuanqu	汾阳专区	482
-fenye	分野	324
-fenye	分页	212
+fenye	分页	788
+fenye	分野	1
 fenyechaxun	分页查询	703
 fenyechengxu	分页程序	668
 fenyefu	分页符	232
@@ -44882,7 +44883,7 @@ gaoerjiya	高尔吉亚	413
 gaofa	高发	711
 gaofa	告发	696
 gaofan	高反	137
-gaofang	膏方	197
+gaofang	膏方	198
 gaofarenqun	高发人群	218
 gaofei	稿费	465
 gaofeijiazu	高飞家族	538
@@ -47756,7 +47757,9 @@ gongzuoliucheng	工作流程	260
 gongzuomanyidu	工作满意度	640
 gongzuomian	工作面	438
 gongzuomoniqi	工作模拟器	613
+gongzuomulu	工作目录	787
 gongzuonengli	工作能力	10
+gongzuoqu	工作区	712
 gongzuoquan	工作权	500
 gongzuoquan	工作犬	1
 gongzuorenyuan	工作人员	614
@@ -47814,7 +47817,7 @@ goudai	狗带	198
 goudailaoshu	狗逮老鼠	432
 goudanbaotian	狗胆包天	420
 goudang	勾当	465
-goudao	沟道	436
+goudao	沟道	435
 goudao	够到	10
 goude	购得	432
 goudeshang	够得上	362
@@ -57204,6 +57207,7 @@ houxixue	后溪穴	470
 houxiyouji	后西游记	218
 houxu	后续	450
 houxuan	候选	809
+houxuanchongpai	候选重排	746
 houxuanren	候选人	619
 houxue	后学	348
 houxueshuanzonghezheng	后血栓综合症	700
@@ -57915,7 +57919,7 @@ huancha	换茬	311
 huanchang	欢畅	418
 huanchen	环衬	305
 huancheng	环城	1000
-huancheng	换成	789
+huancheng	换成	834
 huanchong	缓冲	446
 huanchongcunchuqi	缓冲存储器	440
 huanchongde	缓冲地	540
@@ -104626,6 +104630,8 @@ pinxuezhi	贫血痣	470
 pinye	贫液	198
 pinyi	品议	319
 pinyin	拼音	536
+pinyinfang'an	拼音方案	779
+pinyinfangan	拼音方案	779
 pinyinjiajiashurufa	拼音加加输入法	724
 pinyinpaixu	拼音排序	10
 pinyinshurufa	拼音输入法	740
@@ -107621,7 +107627,11 @@ qieguzhichou	切骨之仇	387
 qiehanufuchengbao	切哈努夫城堡	579
 qiehe	切合	676
 qieheshiji	切合实际	387
-qiehuan	切换	430
+qiehuan	切换	914
+qiehuancheng	切换成	800
+qiehuandao	切换到	800
+qiehuanwei	切换为	800
+qiehui	切回	700
 qieji	切忌	1000
 qieji	切记	789
 qiejieshu	切结书	232
@@ -111001,7 +111011,9 @@ quanpantuochu	全盘托出	663
 quanpei	全陪	137
 quanpiao	全票	381
 quanpiaochu	圈票处	232
-quanpin	全拼	525
+quanpin	全拼	480
+quanpinfang'an	全拼方案	764
+quanpinfangan	全拼方案	764
 quanping	全屏	305
 quanputaomoyan	全葡萄膜炎	640
 quanqi	蜷起	280
@@ -126901,6 +126913,8 @@ shuangpai	双牌	305
 shuangpaixian	双牌县	340
 shuangpaoshi	双跑狮	600
 shuangpin	双拼	404
+shuangpinfang'an	双拼方案	771
+shuangpinfangan	双拼方案	771
 shuangpoding	双坡顶	600
 shuangposhui	双坡水	600
 shuangpowuding	双坡屋顶	669
@@ -127715,8 +127729,8 @@ shuiniujiaonongsuofen	水牛角浓缩粉	656
 shuiniur	水牛儿	198
 shuinizhaoping	水泥找平	680
 shuinuangong	水暖工	202
-shuipao	水泡	435
-shuipao	水炮	320
+shuipao	水泡	315
+shuipao	水炮	200
 shuipao	水疱	72
 shuipaoche	水炮车	317
 shuipaoxingkouyan	水疱性口炎	640
@@ -132945,9 +132959,9 @@ tanchichongdamaoxian	贪吃虫大冒险	648
 tanchigui	贪吃鬼	357
 tanchimao	贪吃猫	453
 tanchishe	贪吃蛇	453
+tanchu	弹出	1000
 tanchu	探出	280
 tanchu	探触	10
-tanchu	弹出	1
 tanchuang	弹窗	545
 tanci	叹词	481
 tanci	弹词	109
@@ -149389,6 +149403,7 @@ xiaohaopin	消耗品	379
 xiaohaoxingjibing	消耗性疾病	610
 xiaohaozhan	消耗战	449
 xiaohe	小盒	700
+xiaohe	小鹤	564
 xiaohe	小核	557
 xiaohe	小河	326
 xiaohe	小何	280
@@ -149398,6 +149413,7 @@ xiaohehetanghesuan	小核核糖核酸	700
 xiaoheilingzaomei	小黑领噪鹛	289
 xiaoheiwu	小黑屋	460
 xiaohejixing	小颌畸形	570
+xiaoheshuangpin	小鹤双拼	738
 xiaohong	萧红	221
 xiaohongcan	小红参	360
 xiaohonghua	小红花	10
@@ -184839,6 +184855,8 @@ zirankexueshi	自然科学史	430
 ziranliaofa	自然疗法	387
 ziranlishi	自然历史	260
 ziranliuchan	自然流产	540
+ziranma	自然码	665
+ziranmashuangpin	自然码双拼	790
 ziranpindu	自然拼读	260
 ziranqin	孜然芹	371
 ziranren	自然人	452

@@ -7390,3 +7390,12 @@
 撤了	撤了	0.78	chele
 撤不了	撤不了	0.72	chebuliao
 不撤	不撤	0.72	buche
+
+# Common mode-switching actions.
+切换到	切換到	0.88	qiehuandao
+切换为	切換為	0.82	qiehuanwei
+切换成	切換成	0.82	qiehuancheng
+切回	切回	0.78	qiehui
+
+# Common display and motion action.
+弹出	彈出	0.90	tanchu

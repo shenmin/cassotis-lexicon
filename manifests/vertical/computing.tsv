@@ -376,3 +376,19 @@
 密度矩阵	密度矩陣	0.40
 量子化学	量子化學	0.40
 # END words_new_import_2026_07_09
+
+# Input-method, editor, and workspace terminology 2026-07-21.
+# Keep these in the computing layer so exact matches remain visible without
+# granting technical terms the broad daily/chat priority floor.
+分页	分頁	0.86	fenye
+小鹤	小鶴	0.62	xiaohe
+小鹤双拼	小鶴雙拼	0.64	xiaoheshuangpin
+自然码	自然碼	0.70	ziranma
+自然码双拼	自然碼雙拼	0.64	ziranmashuangpin
+重排器	重排器	0.72	chongpaiqi
+候选重排	候選重排	0.66	houxuanchongpai
+工作区	工作區	0.82	gongzuoqu
+工作目录	工作目錄	0.74	gongzuomulu
+拼音方案	拼音方案	0.72	pinyinfangan
+双拼方案	雙拼方案	0.70	shuangpinfangan
+全拼方案	全拼方案	0.68	quanpinfangan

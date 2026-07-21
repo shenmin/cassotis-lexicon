@@ -4756,7 +4756,7 @@ fenximoxing	分析|模型	514
 fenxingjihe	分形|几何	486
 fenxixibaoxue	分析|细胞学	459
 fenyangzhuanqu	汾阳|专区	458
-fenyechaxun	分页|查询	452
+fenyechaxun	分页|查询	485
 fenyechengxu	分页|程序	488
 fenzhiganjun	分枝|杆菌	433
 fenzhijiegou	分支|结构	490
@@ -5612,6 +5612,7 @@ gongzuojiyi	工作|记忆	487
 gongzuoliaofa	工作|疗法	472
 gongzuomanyidu	工作|满意度	485
 gongzuomoniqi	工作|模拟器	458
+gongzuomulu	工作|目录	505
 gongzuorenyuan	工作|人员	513
 gongzuotiaojian	工作|条件	486
 gongzuoxiancheng	工作|线程	492
@@ -6744,6 +6745,7 @@ houtaixiancheng	后台|线程	492
 houtoujingjiancha	喉头镜|检查	486
 houtoujingluan	喉头|痉挛	370
 houtoushuizhong	喉头|水肿	375
+houxuanchongpai	候选|重排	488
 houyigeyue	后一|个月	520
 houyuanqihuo	后院|起火	469
 houyuanyundong	后院|运动	467
@@ -12495,6 +12497,7 @@ pintushijie	拼图|世界	467
 pinxingduanzheng	品行|端正	472
 pinxingzhangai	品行|障碍	472
 pinxuejianyou	品学|兼优	439
+pinyinfangan	拼音|方案	504
 pinyinshurufa	拼音|输入法	501
 pinzhiguanzhi	品质|管制	500
 pinzhikongzhi	品质|控制	486
@@ -13122,6 +13125,7 @@ quanminyiliaobaojian	全民|医疗保健	403
 quannaideruangao	曲安奈德|软膏	442
 quannengganxibao	全能|干细胞	486
 quannengxibao	全能|细胞	472
+quanpinfangan	全拼|方案	497
 quanqiubiannuan	全球|变暖	473
 quanqiubiannuanyouxi	全球变暖|游戏	442
 quanqiudingwei	全球|定位	417
@@ -15458,6 +15462,7 @@ shuangjielongxilie	双截龙|系列	418
 shuangjielongzailin	双截龙|再临	395
 shuangjishijian	双击|事件	414
 shuangmangshiyan	双盲|实验	441
+shuangpinfangan	双拼|方案	491
 shuangrenchengxing	双人|成行	467
 shuangrenwangqiu	双人|网球	467
 shuangrenyouxi	双人|游戏	502
@@ -18255,6 +18260,7 @@ xiaoguoxianzhu	效果|显著	497
 xiaohaizuoxi	小孩|做戏	437
 xiaohaoxingjibing	消耗|性疾病	461
 xiaohehetanghesuan	小核|核糖核酸	461
+xiaoheshuangpin	小鹤|双拼	467
 xiaohuabuliang	消化|不良	486
 xiaohuadaochuanranbing	消化道|传染病	459
 xiaohuadaochuxue	消化道|出血	458
@@ -23172,6 +23178,7 @@ ziranjingguan	自然|景观	520
 ziranjingji	自然|经济	464
 zirankexue	自然|科学	514
 ziranliuchan	自然|流产	474
+ziranmashuangpin	自然码|双拼	496
 ziranshashang	自然|杀伤	376
 ziranshashangxibao	自然|杀伤|细胞	458
 ziranshengtai	自然|生态	486

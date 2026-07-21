@@ -4611,6 +4611,8 @@ fenximoxing	分析|模型	514
 fenxingjihe	分形|幾何	486
 fenxixibaoxue	分析|細胞學	456
 fenyangzhuanqu	汾陽|專區	455
+fenyechaxun	分頁|查詢	482
+fenyechengxu	分頁|程序	488
 fenzhiganjun	分枝|杆菌	433
 fenzhiganjun	分枝|桿菌	429
 fenzhijiegou	分支|結構	487
@@ -5429,6 +5431,7 @@ gongzuojiyi	工作|記憶	484
 gongzuoliaofa	工作|療法	472
 gongzuomanyidu	工作|滿意度	485
 gongzuomoniqi	工作|模擬器	458
+gongzuomulu	工作|目錄	505
 gongzuorenyuan	工作|人員	513
 gongzuotiaojian	工作|條件	486
 gongzuoxiaolv	工作|效率	520
@@ -6519,6 +6522,7 @@ houtaitongbu	後台|同步	440
 houtoujingjiancha	喉頭鏡|檢查	483
 houtoujingluan	喉頭|痙攣	456
 houtoushuizhong	喉頭|水腫	409
+houxuanchongpai	候選|重排	488
 houyigeyue	後一|個月	520
 houyuanqihuo	后院|起火	469
 houyuanqihuo	後院|起火	469
@@ -12114,6 +12118,7 @@ pintushijie	拼圖|世界	467
 pinxingduanzheng	品行|端正	472
 pinxingzhangai	品行|障礙	472
 pinxuejianyou	品學|兼優	436
+pinyinfangan	拼音|方案	504
 pinyinshurufa	拼音|輸入法	501
 pinzhiguanzhi	品質|管制	500
 pinzhikongzhi	品質|控制	486
@@ -12722,6 +12727,7 @@ quanminyiliaobaojian	全民|醫療保健	367
 quannaideruangao	曲安奈德|軟膏	442
 quannengganxibao	全能|幹細胞	483
 quannengxibao	全能|細胞	472
+quanpinfangan	全拼|方案	497
 quanqiubiannuan	全球|變暖	473
 quanqiubiannuanyouxi	全球變暖|遊戲	442
 quanqiudingwei	全球|定位	417
@@ -14988,6 +14994,7 @@ shuangjielongxilie	雙截龍|系列	422
 shuangjielongzailin	雙截龍|再臨	398
 shuangjishijian	雙擊|事件	415
 shuangmangshiyan	雙盲|實驗	424
+shuangpinfangan	雙拼|方案	491
 shuangrenchengxing	雙人|成行	467
 shuangrenwangqiu	雙人|網球	464
 shuangrenyouxi	雙人|遊戲	499
@@ -17589,6 +17596,7 @@ xiaoguobujia	效果|不佳	518
 xiaoguoxianzhu	效果|顯著	483
 xiaohaoxingjibing	消耗|性疾病	461
 xiaohehetanghesuan	小核|核糖核酸	461
+xiaoheshuangpin	小鶴|雙拼	461
 xiaohuabuliang	消化|不良	486
 xiaohuadaochuanranbing	消化道|傳染病	459
 xiaohuadaochuxue	消化道|出血	458
@@ -21462,7 +21470,7 @@ zhijianshumu	只見|樹木	478
 zhijianzhanzheng	指尖|戰爭	464
 zhijiaozhuanwan	直角|轉彎	383
 zhijiaozhuanwanjieti	直角|轉彎|階梯	465
-zhijiaozuobiao	直角|座標	466
+zhijiaozuobiao	直角|座標	474
 zhijiecanyu	直接|參與	480
 zhijiedanhongsu	直接|膽紅素	457
 zhijiedianli	直接|電離	417
@@ -22333,6 +22341,7 @@ ziranjihuashengyu	自然|計劃|生育	483
 ziranjingguan	自然|景觀	457
 zirankexue	自然|科學	514
 ziranliuchan	自然|流產	474
+ziranmashuangpin	自然碼|雙拼	493
 ziranshashang	自然|殺傷	376
 ziranshashangxibao	自然|殺傷|細胞	458
 ziranshengtai	自然|生態	486
