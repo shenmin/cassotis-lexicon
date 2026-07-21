@@ -1154,6 +1154,11 @@
 搞两个	搞兩個	0.86
 搞一下	搞一下	0.88
 搞搞看	搞搞看	0.84
+弄一下	弄一下	0.90	nongyixia
+弄一弄	弄一弄	0.86	nongyinong
+弄一次	弄一次	0.84	nongyici
+弄一遍	弄一遍	0.84	nongyibian
+弄一个	弄一個	0.86	nongyige
 很奇怪	很奇怪	0.88
 很神奇	很神奇	0.86
 很怪异	很怪異	0.82
@@ -5131,6 +5136,16 @@
 不上	不上	0.82	bushang
 上不去	上不去	0.82	shangbuqu
 下不来	下不來	0.82	xiabulai
+出不来	出不來	0.88	chubulai
+进不来	進不來	0.86	jinbulai
+回不来	回不來	0.88	huibulai
+上不来	上不來	0.84	shangbulai
+出不去	出不去	0.86	chubuqu
+进不去	進不去	0.86	jinbuqu
+出不出	出不出	0.84	chubuchu
+来不来	來不來	0.86	laibulai
+走不走	走不走	0.86	zoubuzou
+回不回	回不回	0.84	huibuhui
 七上	七上	0.72	qishang
 七上八下	七上八下	0.78	qishangbaxia
 连不上	連不上	0.86	lianbushang
@@ -6112,6 +6127,8 @@
 变暗	變暗	0.86	bianan
 变窄	變窄	0.82	bianzhai
 变宽	變寬	0.82	biankuan
+变粗	變粗	0.82	biancu
+变细	變細	0.82	bianxi
 变大	變大	0.86	bianda
 变小	變小	0.86	bianxiao
 变高	變高	0.84	biangao

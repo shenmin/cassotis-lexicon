@@ -593,6 +593,8 @@
 那一刻	那一刻	0.42	nayike
 凝视着	凝視着	0.42	ningshizhe
 弄清楚	弄清楚	0.42	nongqingchu
+弄一回	弄一回	0.42	nongyihui
+弄一	弄一	0.18	nongyi
 闪烁着	閃爍着	0.42	shanshuozhe
 十七天	十七天	0.42	shiqitian
 项目组	項目組	0.42	xiangmuzu
@@ -11990,3 +11992,25 @@
 # same-pinyin everyday words.
 用例	用例	0.48	yongli
 助益	助益	0.36	zhuyi
+
+# Complete but less frequent directional complements and repetition questions
+# remain exact-selectable without becoming preferred long-sentence chunks.
+出得来	出得來	0.42	chudelai
+进得来	進得來	0.40	jindelai
+出得去	出得去	0.40	chudequ
+进得去	進得去	0.38	jindequ
+回得来	回得來	0.42	huidelai
+上得来	上得來	0.38	shangdelai
+下得来	下得來	0.38	xiadelai
+进不进	進不進	0.42	jinbujin
+上不上	上不上	0.42	shangbushang
+下不下	下不下	0.40	xiabuxia
+撸管	擼管	0.34	luguan
+
+# Incomplete colloquial prefixes are useful as exact input, but their very low
+# score prevents them from competing as arbitrary long-sentence path pieces.
+行不	行不	0.05	xingbu
+能不	能不	0.05	nengbu
+去不	去不	0.05	qubu
+来不	來不	0.05	laibu
+走不	走不	0.05	zoubu
