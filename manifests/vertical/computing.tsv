@@ -399,3 +399,17 @@
 下拉列表	下拉列表	0.68	xialaliebiao
 下拉刷新	下拉刷新	0.58	xialashuaxin
 上拉加载	上拉加載	0.54	shanglajiazai
+
+# Interface column and side-panel terminology.
+中栏	中欄	0.44	zhonglan
+左栏	左欄	0.54	zuolan
+上栏	上欄	0.48	shanglan
+下栏	下欄	0.48	xialan
+右栏	右欄	0.54	youlan
+左边栏	左邊欄	0.72	zuobianlan
+右边栏	右邊欄	0.72	youbianlan
+上边栏	上邊欄	0.48	shangbianlan
+下边栏	下邊欄	0.48	xiabianlan
+第一栏	第一欄	0.60	diyilan
+第二栏	第二欄	0.60	dierlan
+第三栏	第三欄	0.58	disanlan

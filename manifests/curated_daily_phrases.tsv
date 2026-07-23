@@ -7444,3 +7444,25 @@
 加进去	加進去	0.82	jiajinqu
 画上去	畫上去	0.70	huashangqu
 按比例	按比例	0.88	anbili
+
+# Common completed actions, conversational wording, and ordering/media phrases.
+找了	找了	0.88	zhaole
+人话	人話	0.82	renhua
+说人话	說人話	0.84	shuorenhua
+一大堆	一大堆	0.88	yidadui
+刷视频	刷視頻	0.86	shuashipin
+点外卖	點外賣	0.88	dianwaimai
+订酒店	訂酒店	0.78	dingjiudian
+
+# Established common exact words retained as frequency anchors when narrower
+# same-pinyin supplements are present.
+大队	大隊	0.84	dadui
+打对	打對	0.82	dadui
+顶级	頂級	0.94	dingji
+定级	定級	0.64	dingji
+教材	教材	0.90	jiaocai
+商贩	商販	0.62	shangfan
+瞎猜	瞎猜	0.76	xiacai
+养成	養成	0.92	yangcheng
+游览	遊覽	0.78	youlan
+上篮	上籃	0.68	shanglan

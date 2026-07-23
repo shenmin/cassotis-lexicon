@@ -603,3 +603,7 @@
 装修费	裝修費	0.34
 掉漆	掉漆	0.34
 # END words_new_import_2026_07_09
+
+# Building-services and pump-system terminology.
+扬程	揚程	0.68	yangcheng
+泵水	泵水	0.52	bengshui

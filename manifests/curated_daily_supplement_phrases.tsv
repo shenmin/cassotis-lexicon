@@ -12042,3 +12042,30 @@
 还减	還減	0.32	haijian
 就加	就加	0.42	jiujia
 就减	就減	0.38	jiujian
+
+# Narrower action/order phrases stay selectable below established homophones.
+大堆	大堆	0.38	dadui
+点饭	點飯	0.46	dianfan
+订饭	訂飯	0.48	dingfan
+订酒	訂酒	0.34	dingjiu
+点酒	點酒	0.32	dianjiu
+订桌	訂桌	0.46	dingzhuo
+订饭店	訂飯店	0.30	dingfandian
+订菜	訂菜	0.42	dingcai
+叫饭	叫飯	0.42	jiaofan
+叫菜	叫菜	0.42	jiaocai
+叫酒	叫酒	0.30	jiaojiu
+订飞机	訂飛機	0.24	dingfeiji
+订车	訂車	0.48	dingche
+订外卖	訂外賣	0.50	dingwaimai
+下菜	下菜	0.38	xiacai
+上酒	上酒	0.44	shangjiu
+上饭	上飯	0.42	shangfan
+烂根	爛根	0.44	langen
+
+# Visibility-only fragments stay selectable without becoming ranking anchors.
+不不	不不	0.08	bubu
+订机	訂機	0.05	dingji
+蓝盖	藍蓋	0.05	langai
+蓝根	藍根	0.03	langen
+毙了	斃了	0.08	bile

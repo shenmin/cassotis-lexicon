@@ -15194,7 +15194,9 @@ def _cap_low_signal_competitors_against_curated_supplement_terms(
     Curated daily supplements intentionally have a low cap so they remain
     selectable without crowding common words.  A derived/rare entry in the same
     pinyin bucket should not keep an inherited high weight above that explicit
-    supplement when it has no direct usage evidence.
+    supplement when it has no direct usage evidence.  Entries below the
+    low-frequency scoring threshold are visibility-only and must not become
+    anchors that suppress established exact words.
     """
     stats = {
         f"{stats_prefix}_supplement_low_signal_competitor_buckets": 0,
@@ -15227,7 +15229,11 @@ def _cap_low_signal_competitors_against_curated_supplement_terms(
         supplement_weights = [
             weight
             for _pinyin, text, weight in items
-            if text in supplement_terms and 2 <= _cjk_len(text) <= 4
+            if (
+                text in supplement_terms
+                and 2 <= _cjk_len(text) <= 4
+                and usage_score_map.get(text, 0.0) >= 0.10
+            )
         ]
         if not supplement_weights:
             continue

@@ -7986,6 +7986,7 @@ bengpan	崩盘	411
 bengpu	泵浦	198
 bengqilai	蹦起来	10
 bengr	蹦儿	198
+bengshui	泵水	420
 bengshuo	甭说	10
 bengta	崩塌	442
 bengtan	崩坍	368
@@ -8278,8 +8279,8 @@ bianbing	鞭柄	10
 bianbo	辩驳	429
 bianbu	遍布	473
 bianbuzou	便步走	362
-biancai	辩才	401
-biancai	边材	280
+biancai	辩才	400
+biancai	边材	281
 biancaitian	弁才天	1000
 biancaiwu'ai	辩才无碍	624
 biancaiwuai	辩才无碍	624
@@ -9703,7 +9704,8 @@ bilanhuanxiang	碧蓝幻想	538
 bilatisi	彼拉提斯	226
 bilaxitan	吡拉西坦	540
 bilaxitanpian	吡拉西坦片	603
-bile	吡叻	396
+bile	吡叻	471
+bile	毙了	27
 bilefeierde	比勒费尔德	169
 bilei	壁垒	441
 bilei	避雷	321
@@ -11698,7 +11700,8 @@ bubiyaodeyiliaoweisheng	不必要的医疗卫生	700
 bubo	布帛	258
 bubodianjing	卟啵电竞	735
 buboshusu	布帛菽粟	249
-bubu	步步	536
+bubu	步步	560
+bubu	不不	27
 bubudenggao	步步登高	527
 bubugaosheng	步步高升	249
 bubujinbi	步步紧逼	280
@@ -12295,6 +12298,7 @@ buji	不急	580
 buji	不羁	580
 buji	不计	580
 buji	补给	580
+buji	补剂	320
 buji	不即	312
 buji	不疾	310
 buji	簿记	20
@@ -23777,9 +23781,11 @@ daduanzhibailing	大短趾百灵	289
 dadubaorong	大度包容	405
 daduhe	大渡河	283
 daduhui	大都会	253
-dadui	大队	839
-dadui	打对	743
-dadui	答对	87
+dadui	大队	700
+dadui	打对	700
+dadui	大堆	280
+dadui	打兑	160
+dadui	答对	1
 daduitai	打对台	640
 daduizhang	打对仗	232
 daduizhang	大队长	10
@@ -28642,6 +28648,7 @@ di'erji	滴耳剂	25
 di'erjidu	第二季度	387
 di'erju	第二局	10
 di'erjunyidaxue	第二军医大学	304
+di'erlan	第二栏	606
 di'erleicuowu	第二类错误	640
 di'erleizhuyaozuzhixiangrongxingfuheti	第二类主要组织相容性复合体	700
 di'erlun	第二轮	486
@@ -28868,7 +28875,8 @@ dianduidianjiami	点对点加密	289
 dianduidianxieyi	点对点协议	745
 dianduzi	垫肚子	10
 dianfa	点发	198
-dianfan	典范	660
+dianfan	典范	1000
+dianfan	点饭	280
 dianfanbao	电饭煲	670
 dianfang	电访	418
 dianfanguo	电饭锅	575
@@ -29048,7 +29056,9 @@ dianjishimaoxianyouxi	点击式冒险游戏	742
 dianjishu	点击数	340
 dianjisunshang	电击损伤	570
 dianjita	电吉他	340
-dianjiu	奠酒	393
+dianjiu	碘酒	460
+dianjiu	点酒	280
+dianjiu	奠酒	106
 dianjiwu	淀积物	232
 dianjixia	点几下	800
 dianjiyingxiong	点击英雄	538
@@ -29336,6 +29346,7 @@ diantubian	点突变	470
 diantuchu	电突触	500
 diantunwu	电臀舞	370
 dianwaikeshoushu	电外科手术	640
+dianwaimai	点外卖	800
 dianwan	电玩	364
 dianwang	电网	448
 dianwanyouxizhandui	电玩游戏战队	811
@@ -30187,6 +30198,7 @@ dierjian	第二件	280
 dierjidu	第二季度	387
 dierju	第二局	10
 dierjuan	第二卷	800
+dierlan	第二栏	606
 dierlun	第二轮	486
 dierming	第二名	10
 dierqi	第二期	280
@@ -30675,12 +30687,14 @@ dingbo	碇泊	198
 dingbu	顶部	1000
 dingbugedou	丁布各都	597
 dingbuguangzhaokaikou	顶部光照开口	760
+dingcai	订菜	280
 dingcan	订餐	10
 dingcang	定舱	198
 dingceng	顶层	403
 dingchangbai	定场白	406
 dingchangshi	定场诗	379
 dingchangtai	定常态	252
+dingche	订车	280
 dingcheng	鼎城	161
 dingchengqu	鼎城区	160
 dingchongjiating	丁宠家庭	218
@@ -30738,9 +30752,12 @@ dingerxi	丁二烯	247
 dingerxianan	丁二酰胺	570
 dingezu	定额组	232
 dingfa	顶阀	198
+dingfan	订饭	280
+dingfandian	订饭店	280
 dingfang	订房	286
 dingfei	鼎沸	719
 dingfei	订费	149
+dingfeiji	订飞机	280
 dingfen	定分	198
 dingfeng	顶峰	450
 dingfeng	顶风	376
@@ -30795,9 +30812,10 @@ dinghunyan	订婚宴	10
 dinghuo	订货	543
 dinghuo	定货	267
 dinghuqu	鼎湖区	165
-dingji	顶级	737
-dingji	定级	341
-dingji	丁基	121
+dingji	顶级	1036
+dingji	定级	700
+dingji	订机	20
+dingji	丁基	1
 dingjia	定价	463
 dingjiadeniu	顶架的牛	597
 dingjian	顶尖	873
@@ -30819,6 +30837,8 @@ dingjing	定睛	430
 dingjingshoutao	丁腈手套	218
 dingjingxiangjiao	丁腈橡胶	440
 dingjishiyizuqiujingli	顶级十一足球经理	662
+dingjiu	订酒	280
+dingjiudian	订酒店	800
 dingju	定居	1000
 dingju	定局	1
 dingjudian	定居点	483
@@ -30968,6 +30988,7 @@ dingtou	钉头	138
 dingtoushangsi	顶头上司	499
 dingtunzhang	顶臀长	500
 dingtuolietuo	丁托列托	507
+dingwaimai	订外卖	280
 dingwan	丁烷	257
 dingwei	定位	1000
 dingwei	订位	1
@@ -31083,6 +31104,7 @@ dingzhu	鼎助	558
 dingzhuan	丁砖	260
 dingzhuang	顶撞	436
 dingzhun	盯准	10
+dingzhuo	订桌	280
 dingzi	钉子	1000
 dingzi	丁字	442
 dingzi	定子	1
@@ -31273,6 +31295,7 @@ disanjidu	第三季度	387
 disanju	第三局	10
 disanjuan	第三卷	800
 disanjunyidaxue	第三军医大学	304
+disanlan	第三栏	597
 disanleichaominfanying	第三类超敏反应	687
 disanlun	第三轮	280
 disanmoya	第三磨牙	462
@@ -31863,6 +31886,7 @@ diyiju	第一句	10
 diyiju	第一局	10
 diyijuan	第一卷	800
 diyijunyidaxue	第一军医大学	316
+diyilan	第一栏	606
 diyileicuowu	第一类错误	640
 diyili	第一例	567
 diyiling'erhui	第一零二回	371
@@ -45076,7 +45100,7 @@ gaokongtantiao	高空弹跳	218
 gaokongzuoye	高空作业	414
 gaokua	搞垮	10
 gaokuang	高旷	186
-gaolan	高栏	530
+gaolan	高栏	531
 gaolang	高朗	256
 gaolanxian	皋兰县	169
 gaolaohaixiang	告老还乡	634
@@ -64432,7 +64456,8 @@ jiaobusheng	脚步声	10
 jiaobushengfeng	脚步生风	10
 jiaobuzhande	脚不沾地	634
 jiaobuzhandi	脚不沾地	228
-jiaocai	教材	696
+jiaocai	教材	1000
+jiaocai	叫菜	280
 jiaocai	脚踩	10
 jiaocailiangzhichuan	脚踩两只船	289
 jiaocang	窖藏	423
@@ -64535,6 +64560,7 @@ jiaoer	娇儿	417
 jiaofa	教法	988
 jiaofa	角阀	110
 jiaofa	叫法	3
+jiaofan	叫饭	280
 jiaofanfan	焦凡凡	620
 jiaofangdan	交房单	10
 jiaofei	剿匪	744
@@ -64719,6 +64745,7 @@ jiaojinziao	骄矜自傲	10
 jiaojiquan	交际圈	10
 jiaojirufen	焦急如焚	535
 jiaojiu	较久	700
+jiaojiu	叫酒	280
 jiaojiu	交九	227
 jiaojiwanfen	焦急万分	280
 jiaojiwu	交际舞	379
@@ -65310,7 +65337,7 @@ jiaozhao	脚爪	543
 jiaozhe	叫着	700
 jiaozhebibai	骄者必败	387
 jiaozhen	较真	735
-jiaozhen	叫阵	480
+jiaozhen	叫阵	481
 jiaozheng	校正	99
 jiaozhengbupaxiewai	脚正不怕鞋歪	318
 jiaozhengjing	矫正镜	500
@@ -68559,7 +68586,7 @@ jindian	进店	10
 jindiao	金雕	369
 jindidian	近地点	642
 jindiguidao	近地轨道	260
-jinding	金顶	747
+jinding	金顶	746
 jinding	紧盯	280
 jindingdaiju	金顶戴菊	218
 jindingdaijuniao	金顶戴菊鸟	289
@@ -71576,8 +71603,8 @@ jiubaiwushiliuwanqiqian'erbailiushiyihu	九百五十六万七千二百六十一�
 jiubaiyuwanyuan	九百余万元	371
 jiuban	究办	435
 jiubanben	旧版本	1000
-jiubao	酒保	499
-jiubao	久保	205
+jiubao	酒保	500
+jiubao	久保	204
 jiubei	酒杯	1000
 jiubei	就被	700
 jiubian	就便	198
@@ -71652,7 +71679,7 @@ jiudi	就地	704
 jiudi	旧地	1
 jiudian	九点	1000
 jiudian	就点	700
-jiudian	酒店	594
+jiudian	酒店	600
 jiudianban	九点半	1000
 jiudiansanke	九点三刻	1000
 jiudianye	酒店业	447
@@ -72223,7 +72250,7 @@ jiuyeyuchuangyezhidao	就业与创业指导	639
 jiuyezhidao	就业指导	10
 jiuyi	久已	1000
 jiuyi	就义	720
-jiuyi	就医	712
+jiuyi	就医	711
 jiuyi	九亿	472
 jiuyi	酒意	16
 jiuyiba	九一八	547
@@ -72962,10 +72989,10 @@ jizhi	机制	589
 jizhi	几只	420
 jizhi	及至	310
 jizhi	极致	309
-jizhi	急智	26
 jizhi	基址	12
 jizhi	极值	2
 jizhi	基质	1
+jizhi	急智	1
 jizhi	机智	1
 jizhibao	鸡汁包	10
 jizhidanbai	基质蛋白	570
@@ -79806,6 +79833,7 @@ lanfa	滥伐	398
 lanfeicui	蓝翡翠	193
 lanfeng	阑风	198
 lanfumu	蓝肤木	167
+langai	蓝盖	20
 langan	栏杆	916
 langan	阑干	1
 langangyouxi	蓝港游戏	740
@@ -79844,6 +79872,8 @@ langdu	朗读	427
 langduoroushao	狼多肉少	387
 langehanxibaozuzhiqiuzengshengzheng	兰格汉细胞组织球增生症	701
 langehanxibaozuzhiqiuzengshengzheng	兰格罕细胞组织球增生症	699
+langen	烂根	280
+langen	蓝根	15
 langeng	烂梗	198
 langequ	蓝歌鸲	167
 langfang	廊坊	263
@@ -79943,7 +79973,7 @@ langtuteng	狼图腾	357
 langu	览古	198
 languang	蓝光	285
 languangguangpan	蓝光光盘	218
-langui	懒鬼	404
+langui	懒鬼	403
 languifang	兰桂坊	264
 langutou	懒骨头	379
 langwang	狼王	10
@@ -80057,8 +80087,8 @@ lanmei	蓝莓	305
 lanmeiguoyuan	蓝莓果园	538
 lanmeilinqu	蓝眉林鸲	218
 lanmeizhi	蓝莓汁	10
-lanmu	兰姆	614
-lanmu	栏目	435
+lanmu	兰姆	613
+lanmu	栏目	436
 lanmuda	兰姆打	232
 lanmujiu	兰姆酒	232
 lanni	烂泥	536
@@ -99819,7 +99849,7 @@ nidesiqijijiaodaotan	你的四骑姬教导谭	662
 nideyouqi	你的幼妻	538
 nidi	你弟	1000
 nidianzi	泥点子	10
-niding	拟定	829
+niding	拟定	828
 niding	拟订	624
 nidingli	逆定理	379
 nidong	你懂	700
@@ -112887,7 +112917,8 @@ renheren	任何人	800
 renheshi	任何事	10
 renhexian	仁和县	174
 renhou	仁厚	264
-renhua	仁化	319
+renhua	人话	700
+renhua	仁化	1
 renhuai	仁怀	229
 renhuaishi	仁怀市	174
 renhuaixian	仁怀县	160
@@ -117905,6 +117936,7 @@ shangbi	上臂	700
 shangbian	上边	914
 shangbianju	上边距	800
 shangbiankuang	上边框	800
+shangbianlan	上边栏	552
 shangbianr	上边儿	232
 shangbiao	商标	713
 shangbiao	上标	297
@@ -118007,7 +118039,8 @@ shangen	山根	256
 shangequanchi	上颚犬齿	570
 shangfa	赏罚	427
 shangfafenming	赏罚分明	637
-shangfan	商贩	107
+shangfan	商贩	700
+shangfan	上饭	280
 shangfan	赏饭	10
 shangfang	上方	1000
 shangfang	上访	556
@@ -118255,6 +118288,7 @@ shangjinlieren	赏金猎人	260
 shangjinqibingxilie	赏金奇兵系列	648
 shangjinxin	上进心	244
 shangjinzhanshi	赏金战士	538
+shangjiu	上酒	280
 shangjiuyisecunwuyu	上九一色村物语	632
 shangjiwugu	伤及无辜	260
 shangjunshu	商君书	198
@@ -118277,7 +118311,8 @@ shangkuan	上款	372
 shangla	上拉	700
 shanglai	上来	834
 shanglajiazai	上拉加载	695
-shanglan	上篮	436
+shanglan	上篮	700
+shanglan	上栏	24
 shangle	上了	700
 shanglenianji	上了年纪	260
 shangli	上栗	198
@@ -121616,7 +121651,7 @@ shenhoushi	身后事	1
 shenhu	神户	381
 shenhua	神话	1000
 shenhua	申花	296
-shenhua	深化	260
+shenhua	深化	259
 shenhua	神化	1
 shenhuachuanshuo	神话传说	538
 shenhuagushi	神话故事	387
@@ -122011,8 +122046,8 @@ shenmiguyu	神秘古域	538
 shenmihaiyuxilie	神秘海域系列	648
 shenmimiansha	神秘面纱	260
 shenmimoce	神秘莫测	474
+shenmin	申旻	135
 shenmin	神民	10
-shenmin	申旻	1
 shenming	申明	1000
 shenming	神明	834
 shenmingdayi	深明大义	299
@@ -122240,7 +122275,7 @@ shenshezhangjihua	申社长计划	807
 shenshi	审视	776
 shenshi	肾石	437
 shenshi	申时	223
-shenshi	身世	137
+shenshi	身世	136
 shenshi	甚是	10
 shenshi	绅士	1
 shenshi'erjingzhong	慎始而敬终	400
@@ -127206,6 +127241,7 @@ shuaqian	耍钱	323
 shuaqiang	刷墙	420
 shuaru	刷入	198
 shuarujiaoqi	刷乳胶漆	680
+shuashipin	刷视频	800
 shuashizi	耍狮子	230
 shuashouji	刷手机	232
 shuashouwan	耍手腕	357
@@ -128695,6 +128731,7 @@ shuoqing	说情	280
 shuoqingchu	说清楚	1000
 shuoqingr	说情儿	640
 shuoqishuoba	说七说八	260
+shuorenhua	说人话	800
 shuori	朔日	349
 shuosandaosi	说三道四	476
 shuosha	说啥	700
@@ -131574,8 +131611,8 @@ suolisibao	索利斯堡	538
 suoliya	索里亚	193
 suolongqi	索隆齐	386
 suolun	梭伦	241
+suoluo	桫椤	18
 suoluo	梭罗	10
-suoluo	桫椤	1
 suoluobabo	所罗巴伯	260
 suoluomen	所罗门	842
 suoluomenmeibang	所罗门美邦	253
@@ -139968,7 +140005,7 @@ wailu	歪路	10
 wailuchuan	外露椽	600
 wailuloutiji	外露楼梯基	723
 wailuowen	外螺纹	620
-waimai	外卖	636
+waimai	外卖	834
 waimaiyuan	外卖员	382
 waimanzhou	外满洲	252
 waimao	外貌	1000
@@ -146684,6 +146721,7 @@ xiabian	下边	985
 xiabian	瞎编	1
 xiabianju	下边距	800
 xiabiankuang	下边框	800
+xiabianlan	下边栏	552
 xiabianluanzao	瞎编乱造	260
 xiabianr	下边儿	232
 xiabiao	下标	399
@@ -146705,7 +146743,8 @@ xiabuwei	下不为	556
 xiabuweili	下不为例	599
 xiabuxia	下不下	280
 xiabuyanyu	瑕不掩瑜	392
-xiacai	瞎猜	409
+xiacai	瞎猜	700
+xiacai	下菜	280
 xiacailianbei	夏彩恋呗	534
 xiacailiange	夏彩恋歌	538
 xiaceng	下层	460
@@ -146790,7 +146829,7 @@ xiaerwenming	遐迩闻名	392
 xiaeryiti	遐迩一体	387
 xiafa	下发	487
 xiafan	下饭	1000
-xiafan	下凡	474
+xiafan	下凡	473
 xiafang	下方	1036
 xiafang	下放	626
 xiafang	遐方	560
@@ -146934,6 +146973,7 @@ xialacaidan	下拉菜单	816
 xialai	下来	834
 xialakuang	下拉框	709
 xialaliebiao	下拉列表	764
+xialan	下栏	376
 xialashuaxin	下拉刷新	712
 xiale	下了	700
 xialeyitiao	吓了一跳	280
@@ -158605,7 +158645,8 @@ yangchangxiaodao	羊肠小道	466
 yangchangxiaojing	羊肠小径	405
 yangchaoyue	杨超越	458
 yangche	洋车	387
-yangcheng	养成	1000
+yangcheng	养成	1018
+yangcheng	扬程	129
 yangcheng	阳城	1
 yangchengbajing	羊城八景	482
 yangchenghu	阳澄湖	352
@@ -158931,7 +158972,7 @@ yangqiangyangdiao	洋腔洋调	260
 yangqiao	洋壳	198
 yangqibaohedu	氧气饱和度	640
 yangqiliaofa	氧气疗法	570
-yangqin	扬琴	342
+yangqin	扬琴	343
 yangqin	洋琴	202
 yangqingjizhuo	扬清激浊	249
 yangqingyizhuo	扬清抑浊	520
@@ -162650,6 +162691,7 @@ yidabang	一大帮	10
 yidabiqian	一大笔钱	1018
 yidabixing	伊达比星	540
 yidaduan	一大段	10
+yidadui	一大堆	800
 yidai	一代	696
 yidai	一带	693
 yidai	衣带	489
@@ -168724,6 +168766,7 @@ youbiancheng	又变成	1000
 youbianji	诱变剂	211
 youbianju	右边距	800
 youbiankuang	右边框	800
+youbianlan	右边栏	673
 youbianr	有边儿	240
 youbianyuzhong	诱变育种	540
 youbianzhi	有编制	292
@@ -169188,7 +169231,8 @@ youlaiwuhui	有来无回	625
 youlaiyijiu	由来已久	661
 youlaiyouwang	有来有往	635
 youlaiyu	有赖于	552
-youlan	游览	473
+youlan	游览	700
+youlan	右栏	1
 youlanqu	游览区	497
 youlao	有劳	442
 youlaohu	油老虎	232
@@ -169431,7 +169475,7 @@ youqibingyouxigongzuoshi	游骑兵游戏工作室	772
 youqifubiyouqizi	有其父必有其子	474
 youqihuo	有起霍	640
 youqing	有情	947
-youqing	右倾	352
+youqing	右倾	353
 youqing	友情	32
 youqing	有请	10
 youqingren	有情人	642
@@ -171183,7 +171227,7 @@ yudi	雨滴	72
 yudian	雨点	560
 yudiao	语调	377
 yuding	预定	973
-yuding	预订	576
+yuding	预订	577
 yudingyi	预定义	232
 yudingyibianliang	预定义变量	766
 yudiyuguomenzhiwai	御敌于国门之外	485
@@ -175710,6 +175754,7 @@ zhaolai	招徕	110
 zhaolaizhaoqu	找来找去	1018
 zhaolan	招揽	436
 zhaolanshengyi	招揽生意	387
+zhaole	找了	700
 zhaole	招了	10
 zhaolei	赵磊	241
 zhaoleji	赵乐际	781
@@ -180980,6 +181025,7 @@ zhongkuai	肿块	734
 zhongkui	钟馗	260
 zhongkuohao	中括号	213
 zhongla	中辣	209
+zhonglan	中栏	282
 zhonglangjiang	中郎将	501
 zhonglao	终老	392
 zhonglaonian	中老年	453
@@ -186825,6 +186871,7 @@ zuobi	左臂	280
 zuobian	左边	914
 zuobianju	左边距	800
 zuobiankuang	左边框	800
+zuobianlan	左边栏	673
 zuobianqi	坐便器	362
 zuobianr	左边儿	167
 zuobiao	坐标	1000
@@ -186978,7 +187025,7 @@ zuojia	作家	858
 zuojia	作假	26
 zuojia	座驾	10
 zuojiachubanshe	作家出版社	293
-zuojian	作践	620
+zuojian	作践	619
 zuojian	左键	280
 zuojianfanke	作奸犯科	467
 zuojiangluosan	坐降落伞	260
@@ -187007,6 +187054,7 @@ zuola	坐蜡	973
 zuola	左拉	1
 zuolailinsuan	唑来膦酸	540
 zuolailinsuanzhusheye	唑来膦酸注射液	627
+zuolan	左栏	398
 zuolao	坐牢	431
 zuole	做了	700
 zuole	坐了	654
