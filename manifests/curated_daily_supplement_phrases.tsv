@@ -12044,7 +12044,6 @@
 就减	就減	0.38	jiujian
 
 # Narrower action/order phrases stay selectable below established homophones.
-大堆	大堆	0.38	dadui
 点饭	點飯	0.46	dianfan
 订饭	訂飯	0.48	dingfan
 订酒	訂酒	0.34	dingjiu
@@ -12064,8 +12063,9 @@
 烂根	爛根	0.44	langen
 
 # Visibility-only fragments stay selectable without becoming ranking anchors.
-不不	不不	0.08	bubu
+不记	不記	0.34	buji
 订机	訂機	0.05	dingji
 蓝盖	藍蓋	0.05	langai
 蓝根	藍根	0.03	langen
-毙了	斃了	0.08	bile
+毙了	斃了	0.10	bile
+吡叻	吡叻	0.01	bile

@@ -2896,7 +2896,6 @@
 忘家	忘家	0.90	wangjia
 忘去	忘去	0.90	wangqu
 忘事	忘事	0.90	wangshi
-不记	不記	0.90	buji
 不记得	不記得	0.90	bujide
 不记事	不記事	0.90	bujishi
 记不记得	記不記得	0.90	jibujide
@@ -7447,8 +7446,10 @@
 
 # Common completed actions, conversational wording, and ordering/media phrases.
 找了	找了	0.88	zhaole
+不不	不不	0.70	bubu
 人话	人話	0.82	renhua
 说人话	說人話	0.84	shuorenhua
+大堆	大堆	0.92	dadui
 一大堆	一大堆	0.88	yidadui
 刷视频	刷視頻	0.86	shuashipin
 点外卖	點外賣	0.88	dianwaimai
