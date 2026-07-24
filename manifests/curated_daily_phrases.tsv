@@ -7467,3 +7467,19 @@
 养成	養成	0.92	yangcheng
 游览	遊覽	0.78	youlan
 上篮	上籃	0.68	shanglan
+
+# Common reservation, quantity, negative-modal, and deletion phrases.
+走到头	走到頭	0.82	zoudaotou
+一两百	一兩百	0.74	yiliangbai
+都不会	都不會	0.92	doubuhui
+并不会	並不會	0.90	bingbuhui
+都不要	都不要	0.88	doubuyao
+都不是	都不是	0.94	doubushi
+都不好	都不好	0.86	doubuhao
+都不去	都不去	0.78	doubuqu
+都不来	都不來	0.78	doubulai
+都不灵	都不靈	0.74	doubuling
+都不行	都不行	0.94	doubuxing
+并不能	並不能	0.92	bingbuneng
+都不能	都不能	0.92	doubuneng
+永久删除	永久刪除	0.78	yongjiushanchu

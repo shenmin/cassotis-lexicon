@@ -12069,3 +12069,14 @@
 蓝根	藍根	0.03	langen
 毙了	斃了	0.10	bile
 吡叻	吡叻	0.01	bile
+
+# Productive colloquial and incomplete negative phrases stay exact-selectable
+# without becoming generic long-sentence ranking anchors.
+挤爆	擠爆	0.58	jibao
+挤死	擠死	0.52	jisi
+不挂	不掛	0.58	bugua
+留出	留出	0.80	liuchu
+都不	都不	0.48	doubu
+全不会	全不會	0.56	quanbuhui
+全不行	全不行	0.54	quanbuxing
+并不行	並不行	0.52	bingbuxing
