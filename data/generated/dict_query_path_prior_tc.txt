@@ -206,6 +206,7 @@ bachubaijia	罷黜|百家	450
 badacaixi	八大|菜系	452
 badalingchangcheng	八達嶺|長城	456
 badeerzuzhi	巴德爾|組織	434
+badiansanke	八點|三刻	520
 badianyike	八點|一刻	520
 badouzhongdu	巴豆|中毒	438
 bafanglvren	八方|旅人	401
@@ -8457,6 +8458,7 @@ jiubucuole	就不|錯了	520
 jiuchanbuqing	糾纏|不清	471
 jiudequcai	就地|取材	482
 jiudezhengfa	就地|正法	405
+jiudiansanke	九點|三刻	520
 jiudianyike	九點|一刻	520
 jiudiqucai	就地|取材	489
 jiudizhengfa	就地|正法	439
@@ -9726,6 +9728,7 @@ lianbuyizhi	臉部|移植	464
 liangansuanlalian	亮氨酸|拉鏈	442
 liangbashuazi	兩把|刷子	401
 liangcaoxianxing	糧草|先行	484
+liangdiansanke	兩點|三刻	520
 liangdianshifen	兩點|十分	416
 liangdianshifendonghua	兩點|十分|動畫	498
 liangdianyike	兩點|一刻	520
@@ -10099,6 +10102,7 @@ liuansuquefazheng	硫胺素|缺乏症	483
 liubaiduoge	六百|多個	483
 liubangyouxuean	劉邦友|血案	419
 liubianxingwangge	六邊形|網格	469
+liudiansanke	六點|三刻	520
 liudianyike	六點|一刻	520
 liudongrenkou	流動|人口	445
 liudongzijin	流動|資金	474
@@ -12365,6 +12369,7 @@ qichuanxuxu	氣喘|吁吁	464
 qidaiganran	臍帶|感染	408
 qidaiyijiu	期待|已久	467
 qidaozuli	氣道|阻力	433
+qidiansanke	七點|三刻	520
 qidianyike	七點|一刻	520
 qidongdaima	啓動|代碼	487
 qidongshiwu	啓動|事務	458
@@ -13448,6 +13453,7 @@ sanbaojiaonang	三寶|膠囊	457
 sanchashenjing	三叉|神經	501
 sanchashenjingjie	三叉|神經節	483
 sanchashenjingtong	三叉|神經痛	486
+sandiansanke	三點|三刻	520
 sandianyike	三點|一刻	520
 sanfangliangting	三房|兩廳	453
 sanfanliangci	三番|兩次	486
@@ -14460,9 +14466,11 @@ shidaixiaoying	世代|效應	473
 shidangxingwei	失當|行為	483
 shidaokuiyang	食道|潰瘍	483
 shidaoxiazhai	食道|狹窄	483
+shidiansanke	十點|三刻	520
 shidianshiwu	十點|十五	457
 shidianyike	十點|一刻	520
 shidishuiruanjiaonang	十滴水|軟膠囊	457
+shierdiansanke	十二點|三刻	520
 shierdianyike	十二點|一刻	520
 shierdizhi	十二|地支	444
 shiergexiaoshi	十二個|小時	520
@@ -14824,6 +14832,7 @@ shiyeruhejiejue	失業|如何|解決	483
 shiyewenti	失業|問題	483
 shiyeyoucheng	事業|有成	487
 shiyiciji	適宜|刺激	468
+shiyidiansanke	十一點|三刻	520
 shiyidianyike	十一點|一刻	520
 shiyingnengli	適應|能力	479
 shiyingshitaimian	石英石|檯面	447
@@ -15297,6 +15306,7 @@ sichouzhilu	絲綢|之路	466
 sichuanjianzhu	四川|建築	485
 sidalinjianzhu	斯大林|建築	468
 sidazujian	四大|組件	491
+sidiansanke	四點|三刻	520
 sidianyike	四點|一刻	520
 sifajiguan	司法|機關	463
 sifajingshen	司法|精神	401
@@ -16970,6 +16980,7 @@ wuchanjieji	無產|階級	501
 wudaojinhua	舞蹈|進化	464
 wudaoliaofa	舞蹈|療法	480
 wudaozhongxin	舞蹈|中心	467
+wudiansanke	五點|三刻	520
 wudianyike	五點|一刻	520
 wudikangzhuyi	無抵抗|主義	401
 wudingdenglong	屋頂|燈籠	480
@@ -19501,6 +19512,7 @@ yidaoxibaoai	胰島|細胞癌	466
 yidaoyidao	一道|一道	430
 yidaoyizhi	胰島|移植	414
 yidianbandian	一點|半點	481
+yidiansanke	一點|三刻	520
 yidianyidi	一點|一滴	492
 yidianyidian	一點|一點	465
 yidianyike	一點|一刻	520
@@ -19580,7 +19592,7 @@ yijuyidong	一舉|一動	495
 yikaidankong	一開|單控	492
 yikaishuangkong	一開|雙控	460
 yikedaxue	醫科|大學	447
-yikeyike	一顆|一顆	478
+yikeyike	一顆|一顆	460
 yikouyaoding	一口|咬定	491
 yikouyisheng	一口|一聲	483
 yikuimenjing	一窺|門徑	435
@@ -20097,6 +20109,7 @@ yishihunzhuo	意識|混濁	483
 yishimohu	意識|模糊	486
 yishiricheng	議事|日程	423
 yishisangshi	意識|喪失	483
+yishisanke	一時|三刻	483
 yishishici	醫師|誓詞	390
 yishixingqi	一時|興起	475
 yishixingtai	意識|形態	495
@@ -21483,7 +21496,7 @@ zhijianshumu	只見|樹木	478
 zhijianzhanzheng	指尖|戰爭	464
 zhijiaozhuanwan	直角|轉彎	383
 zhijiaozhuanwanjieti	直角|轉彎|階梯	465
-zhijiaozuobiao	直角|座標	474
+zhijiaozuobiao	直角|座標	466
 zhijiecanyu	直接|參與	480
 zhijiedanhongsu	直接|膽紅素	457
 zhijiedianli	直接|電離	417

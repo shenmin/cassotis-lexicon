@@ -756,7 +756,6 @@
 睡过	睡過	0.86	shuiguo
 洗过	洗過	0.86	xiguo
 拍过	拍過	0.86	paiguo
-录过	錄過	0.86	luguo
 存过	存過	0.86	cunguo
 删过	刪過	0.86	shanguo
 传过	傳過	0.86	chuanguo
@@ -7532,7 +7531,6 @@
 拍伤	拍傷	0.72	paishang
 拍中	拍中	0.74	paizhong
 这首	這首	0.86	zheshou
-首歌	首歌	0.88	shouge
 这首歌	這首歌	0.90	zheshouge
 一首歌	一首歌	0.90	yishouge
 唱首歌	唱首歌	0.84	changshouge
@@ -7547,3 +7545,16 @@
 听首歌	聽首歌	0.82	tingshouge
 放首歌	放首歌	0.80	fangshouge
 换首歌	換首歌	0.76	huanshouge
+
+# Common quality and behavior descriptions.
+劣化	劣化	0.72	liehua
+
+# Common waiting, absence, age, and elapsed-time expressions.
+等会儿	等會兒	0.88	denghuier
+等一会儿	等一會兒	0.90	dengyihuir
+等一会儿	等一會兒	0.90	dengyihuier
+又没有	又沒有	0.86	youmeiyou
+又没	又沒	0.88	youmei
+又没了	又沒了	0.84	youmeile
+年轻时	年輕時	0.86	nianqingshi
+一刻钟	一刻鐘	0.86	yikezhong

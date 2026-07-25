@@ -549,7 +549,7 @@
 
 # word1 curated import 2026-06-03 (daily_supplement); reviewed from D:/word1.txt
 多大	多大	0.46	duoda
-孤例	孤例	0.32	guli
+孤例	孤例	0.05	guli
 来说	來說	0.46	laishuo
 一丝	一絲	0.54	yisi
 脑海中	腦海中	0.42	naohaizhong
@@ -3570,11 +3570,11 @@
 建吧	建吧	0.28	jianba
 夹吗	夾嗎	0.28	jiama
 夹吧	夾吧	0.26	jiaba
-接吗	接嗎	0.32	jiema
+接吗	接嗎	0.05	jiema
 接吧	接吧	0.30	jieba
-截吗	截嗎	0.28	jiema
+截吗	截嗎	0.01	jiema
 截吧	截吧	0.26	jieba
-揭吗	揭嗎	0.28	jiema
+揭吗	揭嗎	0.01	jiema
 揭吧	揭吧	0.26	jieba
 急的	急的	0.32	jide
 加的	加的	0.32	jiade
@@ -6771,7 +6771,7 @@
 和它	和它	0.05	heta
 跟它	跟它	0.05	genta
 因我	因我	0.42	yinwo
-因你	因你	0.42	yinni
+因你	因你	0.05	yinni
 因他	因他	0.42	yinta
 因她	因她	0.40	yinta
 因它	因它	0.34	yinta
@@ -12084,7 +12084,7 @@
 要加	要加	0.46	yaojia
 必加	必加	0.01	bijia
 要减	要減	0.42	yaojian
-也减	也減	0.36	yejian
+也减	也減	0.05	yejian
 必减	必減	0.01	bijian
 更减	更減	0.01	gengjian
 还减	還減	0.32	haijian
@@ -12154,3 +12154,16 @@
 多首	多首	0.44	duoshou
 每一首	每一首	0.46	meiyishou
 几首	幾首	0.01	jishou
+
+# Lower-frequency exact terms that should remain visible without outranking
+# common homophones.
+录过	錄過	0.40	luguo
+钝化	鈍化	0.42	dunhua
+首歌	首歌	0.48	shouge
+
+# Lower-frequency clock-duration expressions remain exact-selectable without
+# receiving the high-daily ranking floor.
+刻钟	刻鐘	0.24	kezhong
+两刻钟	兩刻鐘	0.28	liangkezhong
+三刻钟	三刻鐘	0.32	sankezhong
+三刻	三刻	0.12	sanke
