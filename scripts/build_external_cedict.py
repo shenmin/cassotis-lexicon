@@ -705,6 +705,9 @@ SINGLE_CHAR_READING_DELTA_OVERRIDES: Dict[Tuple[str, str], int] = {
     # support can keep 南 visible, but should not outrank the common adjective.
     ("难", "nan"): 180,
     ("難", "nan"): 180,
+    # `付/fu` is a common standalone action target (payment, delivery, handing
+    # over). Broad compound evidence understates that standalone usefulness.
+    ("付", "fu"): 140,
     # Keep the common function-word reading above same-pinyin content roots.
     ("与", "yu"): 100,
     ("與", "yu"): 100,

@@ -6749,7 +6749,55 @@
 独步江湖	獨步江湖	0.01
 上世纪	上世紀	0.34
 两年多	兩年多	0.01
-重写	重寫	0.01
+两字	兩字	0.05	liangzi
+三字	三字	0.05	sanzi
+四字	四字	0.05	sizi
+五字	五字	0.05	wuzi
+六字	六字	0.05	liuzi
+七字	七字	0.05	qizi
+九字	九字	0.05	jiuzi
+就也	就也	0.34	jiuye
+这也是	這也是	0.05	zheyeshi
+这也	這也	0.05	zheye
+这也太	這也太	0.05	zheyetai
+也与	也與	0.42	yeyu
+不就	不就	0.05	bujiu
+比我	比我	0.05	biwo
+比你	比你	0.05	bini
+比他	比他	0.05	bita
+比她	比她	0.05	bita
+比它	比它	0.05	bita
+与它	與它	0.38	yuta
+和它	和它	0.05	heta
+跟它	跟它	0.05	genta
+因我	因我	0.42	yinwo
+因你	因你	0.42	yinni
+因他	因他	0.42	yinta
+因她	因她	0.40	yinta
+因它	因它	0.34	yinta
+为我	為我	0.46	weiwo
+为他	為他	0.46	weita
+为她	為她	0.44	weita
+为它	為它	0.38	weita
+听我	聽我	0.05	tingwo
+听你	聽你	0.05	tingni
+听他	聽他	0.05	tingta
+听她	聽她	0.05	tingta
+不还	不還	0.42	buhai
+砍我	砍我	0.46	kanwo
+砍你	砍你	0.46	kanni
+砍他	砍他	0.44	kanta
+砍她	砍她	0.42	kanta
+去他	去他	0.46	quta
+去她	去她	0.40	quta
+逼我	逼我	0.46	biwo
+逼你	逼你	0.46	bini
+逼他	逼他	0.44	bita
+逼她	逼她	0.42	bita
+揍我	揍我	0.44	zouwo
+揍你	揍你	0.44	zouni
+揍他	揍他	0.42	zouta
+揍她	揍她	0.40	zouta
 要数	要數	0.01
 超大	超大	0.01
 大纲化	大綱化	0.01

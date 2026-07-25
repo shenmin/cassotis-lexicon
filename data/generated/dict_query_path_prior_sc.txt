@@ -1207,7 +1207,7 @@ bujinrenqing	不近|人情	423
 bujinruci	不仅|如此	489
 bujinxiangtong	不尽|相同	478
 bujiqianxian	不计|前嫌	428
-bujiucuoshi	补救|措施	479
+bujiucuoshi	补救|措施	483
 bujiujiwang	不咎|既往	388
 bujurongqi	布局|容器	462
 bujuxiaojie	不拘|小节	488
@@ -1696,7 +1696,7 @@ changyongzujian	常用|组件	471
 changyuanliyi	长远|利益	497
 changzhanliansongjieshu	肠粘连|松解术	457
 changzhouzhuanqu	常州|专区	468
-changziyangle	肠子|痒了	460
+changziyangle	肠子|痒了	465
 chanhouchuxue	产后|出血	453
 chanhouhuli	产后|护理	483
 chanhoujiazhuangxianyan	产后|甲状腺炎	483
@@ -5194,6 +5194,7 @@ gaodawushuangxilie	高达|无双|系列	456
 gaodengjiaoyu	高等|教育	520
 gaodengshuxue	高等|数学	465
 gaodengxuexiao	高等|学校	490
+gaodibujiu	高低|不就	469
 gaodiguijian	高低|贵贱	479
 gaoduandaqi	高端|大气	515
 gaodujinshi	高度|近视	474
@@ -8766,7 +8767,7 @@ jiuquanzhuanqu	酒泉|专区	468
 jiushichuanshuo	救世|传说	442
 jiushigeju	旧式|歌剧	434
 jiushiqishidai	旧石器|时代	468
-jiuwangtucun	救亡|图存	462
+jiuwangtucun	救亡|图存	461
 jiuwosuozhi	就我|所知	469
 jiuxianzheyang	就先|这样	520
 jiuxianzheyangba	就先|这样吧	520
@@ -10057,14 +10058,14 @@ liangxingyixing	两性|异形	467
 liangxingzhongliu	良性|肿瘤	473
 liangyaokukou	良药|苦口	461
 liangzhezhijian	两者|之间	483
-liangzichanglun	量子|场论	430
+liangzichanglun	量子|场论	466
 liangzihuaxue	量子|化学	488
 liangzijisuan	量子|计算	504
 liangzijisuanji	量子|计算机	503
-liangzijiucuo	量子|纠错	450
-liangziliehen	量子|裂痕	431
-liangzilixue	量子|力学	464
-liangzimiti	量子|谜题	424
+liangzijiucuo	量子|纠错	485
+liangziliehen	量子|裂痕	467
+liangzilixue	量子|力学	468
+liangzimiti	量子|谜题	460
 liangziwuli	量子|物理	501
 liangziwulixue	量子|物理学	501
 lianhechaxun	联合|查询	491
@@ -10389,7 +10390,7 @@ lishizhuyi	历史|主义	501
 lishizhuyijianzhu	历史|主义|建筑	466
 lishuizhuanqu	丽水|专区	468
 litaxingwei	利他|行为	467
-litazhuyi	利他|主义	465
+litazhuyi	利他|主义	444
 litidanzhutai	立体|弹珠台	458
 litidazuozhan	立体|大作战	458
 litidingxiang	立体|定向	376
@@ -10710,7 +10711,7 @@ luoriqishi	落日|骑士	445
 luoriyuhui	落日|余晖	470
 luoshanjidaoqi	洛杉矶|道奇	416
 luoshidaowei	落实|到位	518
-luosiqizi	螺丝|起子	431
+luosiqizi	螺丝|起子	432
 luotuobuji	落拓|不羁	423
 luoxuanmeisu	螺旋|霉素	487
 luoxuanshenjingjie	螺旋|神经节	486
@@ -11659,6 +11660,7 @@ mouzhongyiyi	某种|意义	502
 mowangmigong	魔王|迷宫	424
 mowangwuyu	魔王|物语	327
 mowangwuyuwuyu	魔王|物语|物语	409
+mowangyuwo	魔王|与我	449
 mowulierenhuangye	魔物猎人|荒野	429
 mowulierenjueqi	魔物猎人|崛起	456
 mowulierenwuyu	魔物猎人|物语	422
@@ -19254,7 +19256,7 @@ xuanfulizi	悬浮|粒子	501
 xuanfupeiyang	悬浮|培养	472
 xuangaopochan	宣告|破产	448
 xuangualoumian	悬挂|楼面	420
-xuanguangliangzi	玄光|量子	451
+xuanguangliangzi	玄光|量子	477
 xuanliduocai	绚丽|多彩	490
 xuanliduomu	绚丽|夺目	467
 xuanranfangcheng	渲染|方程	501
@@ -21628,6 +21630,7 @@ yunduanyouxifuwu	云端|游戏|服务	499
 yunfugaoxueya	孕妇|高血压	486
 yunhedazhan	运河|大战	467
 yunianyouxi	欲念|游戏	479
+yuniyiqi	与你|一起	467
 yunjueqianqi	晕厥|前期	486
 yunlvdashi	韵律|大师	433
 yunmuchenfei	云母|尘肺	418
@@ -21996,6 +21999,7 @@ zhaozhangbanshi	照章|办事	492
 zhaqiyouxi	诈欺|游戏	502
 zhatingzhixia	乍听|之下	498
 zhayanfanshe	眨眼|反射	472
+zhebutaixiang	这不|太像	483
 zhedenade	这的|那的	492
 zhegeyangzi	这个|样子	520
 zhehuoaibanzi	着火挨|板子	413
