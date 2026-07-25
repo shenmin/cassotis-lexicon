@@ -722,6 +722,9 @@ SINGLE_CHAR_RELATIVE_ORDER_OVERRIDES: Tuple[
     # Prefer everyday standalone "图/圖" over "土" for tu.
     (("tu", "图"), ("tu", "土"), 16),
     (("tu", "圖"), ("tu", "土"), 16),
+    # Simplified-source conversion overstates 简 relative to the much more
+    # common standalone verb 见. Keep the correction local to SC output.
+    (("jian", "见"), ("jian", "简"), 16),
 )
 
 MULTI_CHAR_TERM_DROP_OVERRIDES: Set[str] = {

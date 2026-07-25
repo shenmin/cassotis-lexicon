@@ -7523,3 +7523,27 @@
 离你	離你	0.76	lini
 离他	離他	0.72	lita
 离她	離她	0.70	lita
+
+# Common photo, queue, and song-selection expressions.
+小云朵	小雲朵	0.72	xiaoyunduo
+拍到	拍到	0.88	paidao
+排了	排了	0.80	paile
+排上	排上	0.82	paishang
+拍伤	拍傷	0.72	paishang
+拍中	拍中	0.74	paizhong
+这首	這首	0.86	zheshou
+首歌	首歌	0.88	shouge
+这首歌	這首歌	0.90	zheshouge
+一首歌	一首歌	0.90	yishouge
+唱首歌	唱首歌	0.84	changshouge
+那首	那首	0.80	nashou
+上一首	上一首	0.78	shangyishou
+下一首	下一首	0.82	xiayishou
+每首	每首	0.72	meishou
+这几首	這幾首	0.70	zhejishou
+那几首	那幾首	0.66	najishou
+哪几首	哪幾首	0.72	najishou
+唱一首	唱一首	0.80	changyishou
+听首歌	聽首歌	0.82	tingshouge
+放首歌	放首歌	0.80	fangshouge
+换首歌	換首歌	0.76	huanshouge

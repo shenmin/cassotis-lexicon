@@ -6607,8 +6607,9 @@ bashiyi	八十一	520
 bashiyinan	八十一难	540
 bashizhan	巴士站	160
 bashou	把手	937
-bashou	罢手	554
-bashou	把守	552
+bashou	罢手	612
+bashou	把守	580
+bashou	八首	280
 bashu	巴蜀	354
 basi	拔丝	39
 basi	巴斯	1
@@ -16435,6 +16436,7 @@ changshibanzuowei	唱诗班座位	723
 changshicuowu	尝试错误	260
 changshigexibao	肠嗜铬细胞	640
 changshou	长寿	349
+changshouge	唱首歌	800
 changshouqu	长寿区	160
 changshu	常熟	895
 changshu	常数	114
@@ -16596,6 +16598,7 @@ changyin	畅饮	427
 changyinyu	长印鱼	232
 changyiqu	昌邑区	165
 changyishi	昌邑市	165
+changyishou	唱一首	800
 changyishu	倡议书	452
 changyong	常用	462
 changyongchajian	常用插件	693
@@ -26255,7 +26258,7 @@ daodao	叨叨	323
 daodaodede	道道地地	615
 daodayiba	倒打一耙	642
 daodayipa	倒打一耙	205
-daode	道德	775
+daode	道德	774
 daodebaihuai	道德败坏	387
 daodebangjia	道德绑架	260
 daodefazhan	道德发展	570
@@ -34875,7 +34878,8 @@ duoshili	多实例	633
 duoshilixuexi	多示例学习	640
 duoshizheng	多食症	500
 duoshizhiqiu	多事之秋	446
-duoshou	舵手	382
+duoshou	多首	280
+duoshou	舵手	1
 duoshoudang	剁手党	230
 duoshouduojiao	多手多脚	260
 duoshoujie	剁手节	230
@@ -37833,6 +37837,7 @@ fangshishu	房室束	500
 fangshizhefanxingxindongguosu	房室折返性心动过速	700
 fangshou	防守	798
 fangshou	放手	702
+fangshouge	放首歌	800
 fangshouyibo	放手一搏	429
 fangshouzhe	防守者	232
 fangshu	方术	416
@@ -39702,7 +39707,7 @@ feishierguo	飞驶而过	10
 feishiqingsu	肺失清肃	540
 feishisanxueyuan	妃十三学园	613
 feishisujiang	肺失肃降	540
-feishou	匪首	528
+feishou	匪首	529
 feishoushuzhiliao	非手术治疗	426
 feishu	飞书	897
 feishu	飞鼠	1
@@ -45886,7 +45891,7 @@ gejixian	革吉县	165
 gejiyanyongniudao	割鸡焉用牛刀	318
 geju	歌剧	890
 geju	割据	722
-geju	格局	191
+geju	格局	190
 gejue	隔绝	454
 gejumeiying	歌剧魅影	779
 gejuwujuyuan	歌剧舞剧院	429
@@ -59019,6 +59024,7 @@ huanshijiaonang	缓释胶囊	744
 huanshijie	环世界	460
 huanshizhiji	缓释制剂	540
 huanshou	还手	998
+huanshouge	换首歌	800
 huanshoupalu	幻兽帕鲁	534
 huanshu	还书	687
 huanshu	幻术	440
@@ -64016,7 +64022,7 @@ jianshiyan	碱式盐	411
 jianshizhandoumoni	简氏战斗模拟	648
 jianshizhe	监视者	460
 jianshou	坚守	966
-jianshou	监守	487
+jianshou	监守	486
 jianshoubingxu	兼收并蓄	462
 jianshouzidao	监守自盗	412
 jianshouzonghezheng	肩手综合征	610
@@ -71285,9 +71291,10 @@ jishizhanshuyouxi	即时战术游戏	811
 jishizhanzheng	即时战争	538
 jishizhen	几十针	10
 jishizhi	即时制	232
-jishou	棘手	505
-jishou	吉首	416
-jishou	疾首	325
+jishou	棘手	272
+jishou	吉首	192
+jishou	疾首	115
+jishou	几首	10
 jishoushi	吉首市	182
 jishouxinshijigangtiechongji	机兽新世纪钢铁冲击	662
 jishouzhanshu	机兽战术	538
@@ -72147,6 +72154,7 @@ jiushizhu	救世主	490
 jiushizhuxianshengrongjiaotang	救世主显圣容教堂	660
 jiushizhuxinxiudaoyuan	救世主新修道院	660
 jiushou	就收	700
+jiushou	九首	280
 jiushour	就手儿	640
 jiushu	旧书	348
 jiushu	救赎	327
@@ -73030,10 +73038,10 @@ jizhi	机制	589
 jizhi	几只	420
 jizhi	及至	310
 jizhi	极致	309
+jizhi	急智	26
 jizhi	基址	12
 jizhi	极值	2
 jizhi	基质	1
-jizhi	急智	1
 jizhi	机智	1
 jizhibao	鸡汁包	10
 jizhidanbai	基质蛋白	570
@@ -74285,7 +74293,7 @@ jushizhumu	举世瞩目	491
 jushizhuqun	巨石柱群	260
 jushou	据守	1000
 jushou	举手	828
-jushou	聚首	321
+jushou	聚首	322
 jushou	拒收	264
 jushou	居首	27
 jushou	巨兽	1
@@ -82750,7 +82758,8 @@ liangshiyishi	良十一世	507
 liangshiyiting	两室一厅	523
 liangshiyiyou	良师益友	460
 liangshizuowu	粮食作物	553
-liangshou	两手	440
+liangshou	两首	280
+liangshou	两手	184
 liangshoubuzhanyangchunshui	两手不沾阳春水	348
 liangshoucelve	两手策略	260
 liangshoukongkong	两手空空	499
@@ -86481,7 +86490,8 @@ liushixibaoshu	流式细胞术	640
 liushixibaoyi	流式细胞仪	640
 liushiyi	六十一	520
 liushiyimeiyuan	六十亿美元	371
-liushou	留守	462
+liushou	留守	824
+liushou	六首	280
 liushou'ertong	留守儿童	260
 liushoucheng	刘守成	466
 liushouertong	留守儿童	260
@@ -92791,6 +92801,7 @@ meishizhaoshi	没事找事	10
 meishizi	没食子	640
 meishizisuan	没食子酸	580
 meishizuqiu	美式足球	405
+meishou	每首	700
 meishouzhi	没手指	501
 meishouzhihemian	没手指和面	569
 meishu	美术	470
@@ -92989,6 +93000,7 @@ meiyipi	每一批	420
 meiyipian	每一片	420
 meiyiping	每一瓶	420
 meiyiri	每一日	1000
+meiyishou	每一首	280
 meiyishuang	每一双	420
 meiyisi	没意思	467
 meiyitai	每一台	420
@@ -97493,6 +97505,8 @@ najige	那几个	1000
 najige	哪几个	745
 najigen	哪几根	800
 najigen	那几根	800
+najishou	哪几首	800
+najishou	那几首	800
 najitiao	哪几条	800
 najitiao	那几条	800
 najiu	那就	700
@@ -98637,8 +98651,9 @@ nashi	那是	734
 nashi	纳什	144
 nashihou	那时候	167
 nashiting	雫石町	382
-nashou	那手	700
-nashou	哪手	602
+nashou	那首	700
+nashou	那手	694
+nashou	哪手	535
 nashou	拿手	520
 nashoucai	拿手菜	415
 nashouhaocai	拿手好菜	10
@@ -98755,8 +98770,10 @@ nayipian	哪一篇	800
 nayipian	那一片	800
 nayipian	那一篇	800
 nayipian	哪一片	792
+nayishou	哪一手	800
 nayishou	那一手	800
-nayishou	哪一手	761
+nayishou	哪一首	280
+nayishou	那一首	280
 nayitai	那一台	800
 nayitai	哪一台	798
 nayitian	那一天	800
@@ -101919,6 +101936,7 @@ paidan	派单	198
 paidang	排档	1000
 paidang	拍档	602
 paidangjianshi	排档间饰	669
+paidao	拍到	700
 paidao	排到	700
 paidazhe	拍打着	280
 paide	拍的	700
@@ -101973,7 +101991,7 @@ paihuaiguanwang	徘徊观望	621
 paihuanggua	拍黄瓜	230
 paihupai	拍沪牌	280
 paiji	排挤	779
-paiji	拍击	697
+paiji	拍击	698
 paiji	牌技	10
 paijia	排架	804
 paijia	牌价	1
@@ -102002,6 +102020,7 @@ pailaxilinna	哌拉西林钠	607
 pailaxilinnashubatanna	哌拉西林钠舒巴坦钠	666
 pailaxilinshubatan	哌拉西林舒巴坦	634
 paile	拍了	700
+paile	排了	700
 pailei	排雷	408
 pailepai	拍了拍	280
 paili'ao	派力奥	198
@@ -102065,6 +102084,8 @@ pairen	派任	133
 pairen	派人	10
 pairu	排入	428
 paishandaohai	排山倒海	483
+paishang	拍伤	700
+paishang	排上	700
 paishanghao	排上号	10
 paishangyongchang	派上用场	405
 paishe	拍摄	1000
@@ -102139,6 +102160,7 @@ paizhao	拍照	559
 paizhe	拍着	700
 paizhen	排针	198
 paizhibu	拍纸簿	371
+paizhong	拍中	700
 paizhu	派驻	445
 paizhuan	拍砖	305
 paizhuo	牌桌	1000
@@ -110042,9 +110064,10 @@ qishiyudanche	骑士与单车	613
 qishiyushangren	骑士与商人	613
 qishiyuwanjin	七十余万斤	371
 qishizhe	启示者	232
-qishou	棋手	466
-qishou	骑手	343
-qishou	旗手	286
+qishou	棋手	332
+qishou	七首	280
+qishou	旗手	1
+qishou	骑手	1
 qishoubajiao	七手八脚	473
 qishounan	戚寿南	470
 qishu	漆树	591
@@ -116924,6 +116947,7 @@ sanshiyiting	三室一厅	524
 sanshiyiwanqiqianyu	三十一万七千余	425
 sanshiyuwanhu	三十余万户	371
 sanshiyuwanpi	三十余万匹	371
+sanshou	三首	280
 sanshoubing	三手病	232
 sanshu	散束	198
 sanshui	散水	1000
@@ -118094,7 +118118,7 @@ shangdui	商队	461
 shangdui	商兑	270
 shangduxian	商都县	165
 shange	上颚	460
-shange	山歌	298
+shange	山歌	299
 shangen	山根	256
 shangequanchi	上颚犬齿	570
 shangfa	赏罚	427
@@ -118746,6 +118770,7 @@ shangyinian	上亿年	10
 shangyipai	上一排	1000
 shangyipici	上一批次	800
 shangyiqiwuji	伤益气雾剂	607
+shangyishou	上一首	800
 shangyitiao	上一条	1000
 shangyixian	尚义县	179
 shangyixiang	上一项	800
@@ -124806,6 +124831,7 @@ shishou	石首	923
 shishou	试手	803
 shishou	失手	564
 shishou	失守	527
+shishou	十首	280
 shishou	市售	280
 shishou	实收	47
 shishou	尸首	47
@@ -125971,6 +125997,7 @@ shougao	收稿	700
 shougao	手稿	77
 shougao	瘦高	10
 shouge	首个	700
+shouge	首歌	700
 shouge	收割	590
 shougeji	收割机	499
 shougeng	守更	198
@@ -126457,7 +126484,7 @@ shouxia	收下	287
 shouxiabaijiang	手下败将	387
 shouxialiuqing	手下留情	497
 shouxian	首先	1018
-shouxian	受限	267
+shouxian	受限	266
 shouxian	寿限	1
 shouxian	寿险	1
 shouxiang	首相	833
@@ -126537,7 +126564,7 @@ shouyangmingdachangjing	手阳明大肠经	663
 shouyangxian	寿阳县	169
 shouyantongtian	手眼通天	633
 shouyanxietiao	手眼协调	260
-shouyao	首要	545
+shouyao	首要	546
 shouyao	兽药	386
 shouyao	手摇	270
 shouyao	受邀	10
@@ -126612,7 +126639,7 @@ shouzha	手闸	347
 shouzha	手札	207
 shouzhai	守斋	198
 shouzhang	手掌	700
-shouzhang	首长	38
+shouzhang	首长	39
 shouzhang	收账	10
 shouzhang	手杖	1
 shouzhangaojie	首战告捷	273
@@ -130094,6 +130121,7 @@ sishiyuwanjin	四十余万斤	371
 sishizhugong	四十柱宫	600
 sishou	死守	771
 sishou	厮守	755
+sishou	四首	280
 sishourenyuan	司售人员	405
 sishu	私塾	519
 sishu	四书	480
@@ -136629,6 +136657,7 @@ tingshijian	停尸间	379
 tingshijianzhushou	停尸间助手	613
 tingshiyong	挺实用	800
 tingshou	停手	406
+tingshouge	听首歌	800
 tingshu	听书	198
 tingshuai	挺帅	700
 tingshuang	挺爽	700
@@ -141134,7 +141163,8 @@ wangyudianjing	网鱼电竞	740
 wangyue	王悦	396
 wangyue	望月	302
 wangyueche	网约车	1018
-wangyun	王云	241
+wangyun	王云	620
+wangyun	王芸	1
 wangyunfei	王云飞	316
 wangyuwen	王玉雯	700
 wangyuxuan	王渝萱	1000
@@ -145956,6 +145986,7 @@ wushiyuwanpingfanggongli	五十余万平方公里	455
 wushizhikuntepai	巫师之昆特牌	648
 wushizhinu	巫师之怒	538
 wushizitong	无师自通	273
+wushou	五首	280
 wushu	无数	782
 wushu	巫术	440
 wushu	武术	440
@@ -150235,7 +150266,7 @@ xiaoshizhiyihao	晓试制一号	613
 xiaoshizhongxin	小食中心	260
 xiaoshizuo	小狮座	232
 xiaoshou	销售	1000
-xiaoshou	枭首	856
+xiaoshou	枭首	857
 xiaoshou	消瘦	623
 xiaoshou	消受	583
 xiaoshou	小手	280
@@ -150620,7 +150651,10 @@ xiaoyuanmoshilu	校园默示录	613
 xiaoyuantai	小圆台	10
 xiaoyuelanjian	小阅览间	651
 xiaoyueyuanwuqu	晓月圆舞曲	613
-xiaoyun	小韵	198
+xiaoyun	小云	280
+xiaoyun	小韵	124
+xiaoyun	小芸	84
+xiaoyunduo	小云朵	800
 xiaoyunhui	校运会	379
 xiaoyunque	小云雀	232
 xiaoyusan	小雨伞	232
@@ -150912,6 +150946,7 @@ xiayinian	下一年	1000
 xiayipai	下一排	1000
 xiayipici	下一批次	800
 xiayishi	下意识	554
+xiayishou	下一首	800
 xiayitiao	下一条	1000
 xiayitiao	吓一跳	1
 xiayixian	夏邑县	165
@@ -167011,12 +167046,13 @@ yishou	一手	580
 yishou	一首	280
 yishou	易受	280
 yishou	已收	232
-yishou	易手	31
+yishou	易手	208
 yishou	异兽	1
 yishoubaoban	一手包办	450
 yishoubaolan	一手包揽	626
 yishoudabujiu	益寿大补酒	603
 yishoudaida	一手带大	10
+yishouge	一首歌	1000
 yishouhuo	已收货	800
 yishoukuan	已收款	800
 yishoulong	翼手龙	340
@@ -176333,6 +176369,7 @@ zhejiedushu	折节读书	405
 zhejige	这几个	1018
 zhejigeci	这几个词	1018
 zhejigen	这几根	800
+zhejishou	这几首	800
 zhejitian	这几天	232
 zhejitiao	这几条	800
 zhejiu	这就	700
@@ -177986,8 +178023,10 @@ zheshiwodezhanzheng	这是我的战争	648
 zheshiyige	这是一个	1036
 zheshiyizhong	这是一种	1036
 zheshou	这手	700
+zheshou	这首	700
 zheshou	折寿	214
 zheshouba	折手把	640
+zheshouge	这首歌	1000
 zheshu	谪戍	631
 zheshuilu	着水路	556
 zheshuiludeng	着水路灯	597
@@ -178107,6 +178146,7 @@ zheyipi	这一批	1018
 zheyipian	这一片	800
 zheyipian	这一篇	800
 zheyishou	这一手	800
+zheyishou	这一首	280
 zheyitai	这一台	800
 zheyitan	这一摊	1000
 zheyitanzi	这一摊子	1000
@@ -187303,7 +187343,7 @@ zuoshishang	做市商	388
 zuoshishenghuoxingtai	坐式生活型态	700
 zuoshiwudu	坐视无睹	260
 zuoshou	左手	916
-zuoshou	左首	391
+zuoshou	左首	392
 zuoshou	做寿	217
 zuoshoujiao	做手脚	445
 zuoshouyuli	坐收渔利	402

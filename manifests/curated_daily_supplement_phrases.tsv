@@ -12135,3 +12135,22 @@
 咋这	咋這	0.38	zazhe
 咋的	咋的	0.46	zade
 咋地	咋地	0.44	zadi
+
+# Number classifiers and lower-frequency references remain exact-selectable
+# without inheriting the high-daily ranking floor.
+小云	小雲	0.44	xiaoyun
+两首	兩首	0.48	liangshou
+三首	三首	0.46	sanshou
+四首	四首	0.44	sishou
+五首	五首	0.44	wushou
+六首	六首	0.42	liushou
+七首	七首	0.40	qishou
+八首	八首	0.40	bashou
+九首	九首	0.40	jiushou
+十首	十首	0.42	shishou
+这一首	這一首	0.50	zheyishou
+那一首	那一首	0.46	nayishou
+哪一首	哪一首	0.50	nayishou
+多首	多首	0.44	duoshou
+每一首	每一首	0.46	meiyishou
+几首	幾首	0.01	jishou
