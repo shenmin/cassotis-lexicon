@@ -12128,3 +12128,10 @@
 全不会	全不會	0.56	quanbuhui
 全不行	全不行	0.54	quanbuxing
 并不行	並不行	0.52	bingbuxing
+
+# Colloquial 咋X fragments remain selectable without inheriting the high-daily floor.
+咋呀	咋呀	0.44	zaya
+咋好	咋好	0.44	zahao
+咋这	咋這	0.38	zazhe
+咋的	咋的	0.46	zade
+咋地	咋地	0.44	zadi

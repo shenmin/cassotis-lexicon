@@ -29826,7 +29826,7 @@ dianzhong	點鐘	145
 dianzhong	點中	10
 dianzhongle	點中了	10
 dianzhu	店主	730
-dianzhu	電珠	136
+dianzhu	電珠	160
 dianzhui	點綴	704
 dianzhuoshu	電灼術	470
 dianzi	電子	1000
@@ -32450,6 +32450,7 @@ dongbubingqiujingli	東部冰球經理	648
 dongbude	懂不得	640
 dongbudong	懂不懂	800
 dongbudong	動不動	656
+dongbudongjiu	動不動就	1000
 dongbudongjiushengqi	動不動就生氣	318
 dongbula	冬不拉	215
 dongbuliao	動不了	1000
@@ -32890,7 +32891,7 @@ dongmengziyoumaoyiqu	東盟自由貿易區	334
 dongmenr	懂門兒	232
 dongmi	東密	198
 dongmian	冬眠	926
-dongmian	東面	626
+dongmian	東面	624
 dongmiangaoyuan	東緬高原	258
 dongmianling	冬眠靈	470
 dongmidelan	東密德蘭	258
@@ -43048,7 +43049,7 @@ fujinshi	富錦市	169
 fujinsixi	撫今思昔	621
 fujinzhuixi	撫今追昔	643
 fujiu	俯就	498
-fujiu	復舊	349
+fujiu	復舊	348
 fujiu	負疚	267
 fujizhili	縛雞之力	485
 fuju	複句	331
@@ -71824,7 +71825,7 @@ jinse	金色	1000
 jinsedating	金色大廳	10
 jinselinqu	金色林鴝	218
 jinseyaque	金色鴉雀	218
-jinsha	金沙	771
+jinsha	金沙	770
 jinsha	錦紗	10
 jinshajiang	金沙江	289
 jinshajiangliuyu	金沙江流域	267
@@ -74434,7 +74435,7 @@ jizhi	機制	584
 jizhi	及至	497
 jizhi	機製	497
 jizhi	極致	495
-jizhi	急智	81
+jizhi	急智	69
 jizhi	基址	60
 jizhi	極值	50
 jizhi	基質	1
@@ -95507,7 +95508,7 @@ mianhongerchi	面紅耳赤	496
 mianhongerre	面紅耳熱	616
 mianhu	面糊	1000
 mianhu	麵糊	1000
-mianhu	麪糊	955
+mianhu	麪糊	860
 mianhua	棉花	536
 mianhuabang	棉花棒	230
 mianhuai	緬懷	300
@@ -99313,7 +99314,7 @@ nalvtongxiangzhuanyunti	鈉氯同向轉運體	700
 nama	拿嗎	1000
 name	那麼	1000
 name	那麽	800
-name	那末	133
+name	那末	107
 nameduo	那麼多	1000
 namen	納悶	461
 namenr	納悶兒	467
@@ -122089,7 +122090,7 @@ shenan	深諳	421
 shenao	深奧	339
 shenba	深吧	280
 shenbaiminglie	身敗名裂	486
-shenban	申辦	414
+shenban	申辦	415
 shenban	身板	321
 shenbanr	身板兒	340
 shenbao	申報	457
@@ -171180,7 +171181,7 @@ yongbao	擁抱	458
 yongbaojijie	擁抱季節	538
 yongbi	壅蔽	376
 yongbie	永別	662
-yongbing	用兵	713
+yongbing	用兵	714
 yongbing'aigewunvyuqishaxing	傭兵哀歌巫女與七煞星	662
 yongbingrushen	用兵如神	458
 yongbingyishi	用兵一時	10
@@ -176060,9 +176061,11 @@ yuzunjianggui	紆尊降貴	383
 yuzuocheng	御座成	640
 zaba	咂巴	10
 zaba	砸吧	10
-zaban	雜拌	359
+zaban	咋辦	700
+zaban	雜拌	44
 zabanr	雜拌兒	404
 zabing	雜病	353
+zabu	咋不	700
 zacao	雜草	435
 zacaokongzhi	雜草控制	570
 zachang	砸場	10
@@ -176070,6 +176073,8 @@ zachangzi	砸場子	232
 zachu	雜處	319
 zacou	雜湊	305
 zadao	匝道	328
+zade	咋的	280
+zadi	咋地	280
 zadian	雜店	198
 zaduo	雜多	198
 zaduoxian	雜多縣	160
@@ -176080,7 +176085,9 @@ zagong	雜工	349
 zagunao	雜谷腦	112
 zaguo	砸鍋	387
 zaguomaitie	砸鍋賣鐵	416
+zahai	咋還	700
 zahang	砸夯	198
+zahao	咋好	280
 zahexingdiushi	雜合性丟失	640
 zahezi	雜合子	470
 zahezixiaoshi	雜合子消失	640
@@ -176089,7 +176096,7 @@ zahuan	雜環	401
 zahuanhuahewu	雜環化合物	640
 zahuashengshu	雜花生樹	10
 zahui	雜燴	523
-zahui	砸毀	259
+zahui	砸毀	210
 zahuijun	雜燴君	453
 zahuishi	咋回事	800
 zahun	雜婚	305
@@ -176516,11 +176523,13 @@ zajiaopaidui	雜交派對	260
 zajiaori	雜交日	460
 zajiaoxibao	雜交細胞	570
 zajiaozhiwu	雜交植物	260
+zajiu	咋就	700
 zajiyanyuan	雜技演員	405
 zaju	雜劇	430
 zaju	雜居	274
 zajudiqu	雜居地區	258
 zajusidajia	雜劇四大家	289
+zakan	咋看	700
 zala	咋啦	700
 zalan	砸爛	429
 zale	咋了	700
@@ -176535,6 +176544,7 @@ zaluanwuzhang	雜亂無章	480
 zamalading	紮馬剌丁	249
 zamaluding	紮馬魯丁	249
 zamo	咂摸	375
+zaname	咋那麼	800
 zanba	糌粑	617
 zanbiya	讚比亞	767
 zanbiya	贊比亞	500
@@ -176553,6 +176563,7 @@ zande	咱的	600
 zanding	暫定	431
 zandong	攢動	10
 zanduan	暫短	323
+zaneng	咋能	700
 zang'ao	藏獒	194
 zangao	藏獒	194
 zangbian	臟辮	202
@@ -177012,7 +177023,7 @@ zashu	雜書	10
 zashua	雜耍	401
 zashui	雜稅	363
 zashuo	咋說	700
-zashuo	雜說	138
+zashuo	雜說	137
 zasi	砸死	323
 zasui	砸碎	783
 zasui	雜碎	401
@@ -177025,15 +177036,20 @@ zaxi	雜戲	198
 zaxiang	雜項	370
 zaxing	砸醒	198
 zaxun	雜訊	305
+zaya	咋呀	280
 zayan	雜鹽	198
 zayang	咋樣	700
 zayi	雜役	640
 zayin	雜音	394
+zayong	咋用	700
+zayou	咋又	700
 zayue	匝月	305
 zazahuhu	咋咋呼呼	550
 zazai	砸在	10
 zazao	雜噪	198
 zazha	拶榨	198
+zazhe	咋這	280
+zazheme	咋這麼	800
 zazheng	咋整	700
 zazheyang	咋這樣	800
 zazhi	雜誌	1000
@@ -177331,7 +177347,7 @@ zhahahadide	扎哈哈蒂	920
 zhahe	閘盒	305
 zhahu	詐和	834
 zhahu	詐胡	816
-zhahu	咋呼	188
+zhahu	咋呼	189
 zhahuang	札幌	188
 zhahuangyangqiulewangtai	札幌羊丘瞭望臺	775
 zhahuangyangqiulewangtai	札幌羊丘了望台	327
