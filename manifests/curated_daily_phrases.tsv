@@ -7558,3 +7558,24 @@
 又没了	又沒了	0.84	youmeile
 年轻时	年輕時	0.86	nianqingshi
 一刻钟	一刻鐘	0.86	yikezhong
+
+# Common descriptions, quantity-state phrases, and visible-light wording.
+很傻	很傻	0.80	hensha
+挺傻	挺傻	0.74	tingsha
+非常傻	非常傻	0.76	feichangsha
+较傻	較傻	0.60	jiaosha
+比较傻	比較傻	0.72	bijiaosha
+有点傻	有點傻	0.78	youdiansha
+还挺	還挺	0.82	haiting
+就挺	就挺	0.72	jiuting
+是一种	是一種	0.88	shiyizhong
+有一种	有一種	0.88	youyizhong
+加一种	加一種	0.70	jiayizhong
+添一种	添一種	0.62	tianyizhong
+剩一种	剩一種	0.68	shengyizhong
+剩一个	剩一個	0.82	shengyige
+剩一条	剩一條	0.74	shengyitiao
+就剩	就剩	0.84	jiusheng
+还剩	還剩	0.84	haisheng
+不剩	不剩	0.70	busheng
+绿光	綠光	0.68	lvguang

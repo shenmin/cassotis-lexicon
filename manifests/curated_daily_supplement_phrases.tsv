@@ -12167,3 +12167,13 @@
 两刻钟	兩刻鐘	0.28	liangkezhong
 三刻钟	三刻鐘	0.32	sankezhong
 三刻	三刻	0.12	sanke
+
+# Exact-selectable UI gestures, slang, and project terminology that should not
+# inherit the high-daily ranking floor.
+左划	左劃	0.42	zuohua
+右划	右劃	0.42	youhua
+上划	上劃	0.40	shanghua
+下划	下劃	0.40	xiahua
+寸止	寸止	0.34	cunzhi
+主项	主項	0.42	zhuxiang
+主项目	主項目	0.38	zhuxiangmu
