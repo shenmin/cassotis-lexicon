@@ -7391,6 +7391,138 @@ def _cap_short_exact_homophones_by_direct_signal(
     return stats
 
 
+def _promote_short_exact_homophones_by_pairwise_direct_signal(
+    mapping: Dict[Tuple[str, str], int],
+    jieba_direct_signal_map: Dict[str, float],
+    jieba_pos_map: Dict[str, str],
+    preferred_terms: Set[str],
+    weak_leader_terms: Set[str],
+    stats_prefix: str,
+    bucket_pinyin_map: Dict[Tuple[str, str], str] | None = None,
+    term_style_penalty_map: Dict[Tuple[str, str], int] | None = None,
+    thuocl_corroborated_signal_map: Dict[str, float] | None = None,
+) -> Dict[str, int]:
+    """Repair small final two-character inversions without lowering candidates.
+
+    This pass deliberately runs after every existing weight rule. It promotes
+    only terms backed by strict direct-frequency dominance, or by independently
+    corroborated THUOCL evidence, so earlier ranking decisions cannot react to
+    the new floor and indirectly suppress another candidate.
+    """
+    stats = {
+        f"{stats_prefix}_short_exact_pairwise_buckets": 0,
+        f"{stats_prefix}_short_exact_pairwise_rebalanced": 0,
+    }
+    if not mapping:
+        return stats
+
+    bucket_pinyin_map = bucket_pinyin_map or {}
+    term_style_penalty_map = term_style_penalty_map or {}
+    thuocl_corroborated_signal_map = thuocl_corroborated_signal_map or {}
+    buckets: Dict[str, List[Tuple[str, str, int]]] = {}
+    for (pinyin, text), weight in mapping.items():
+        if _cjk_len(text) != 2 or _is_pure_daily_number_word(text):
+            continue
+        bucket_pinyin = bucket_pinyin_map.get((pinyin, text), pinyin)
+        if not bucket_pinyin:
+            continue
+        buckets.setdefault(bucket_pinyin, []).append((pinyin, text, weight))
+
+    for items in buckets.values():
+        if len(items) < 2:
+            continue
+
+        required_floors: Dict[Tuple[str, str], int] = {}
+        for strong_pinyin, strong_text, strong_weight in items:
+            strong_jieba = min(
+                1.0,
+                max(0.0, jieba_direct_signal_map.get(strong_text, 0.0)),
+            )
+            strong_pos = jieba_pos_map.get(strong_text, "")
+            strong_style = term_style_penalty_map.get(
+                (strong_pinyin, strong_text),
+                0,
+            )
+            if strong_style >= 120 or _is_named_entity_pos(strong_pos):
+                continue
+            strong_thuocl = thuocl_corroborated_signal_map.get(strong_text, 0.0)
+
+            for _weak_pinyin, weak_text, weak_weight in items:
+                if strong_text == weak_text:
+                    continue
+                weak_jieba = min(
+                    1.0,
+                    max(0.0, jieba_direct_signal_map.get(weak_text, 0.0)),
+                )
+                weak_pos = jieba_pos_map.get(weak_text, "")
+                weak_style = term_style_penalty_map.get(
+                    (_weak_pinyin, weak_text),
+                    0,
+                )
+                if weak_style >= 120 or _is_named_entity_pos(weak_pos):
+                    continue
+                if weak_text in preferred_terms or weak_weight >= 900:
+                    continue
+
+                inversion = weak_weight + 12 - strong_weight
+                if inversion <= 0:
+                    continue
+
+                weak_thuocl = thuocl_corroborated_signal_map.get(weak_text, 0.0)
+                large_jieba_dominance = (
+                    inversion <= 92
+                    and strong_jieba >= 0.12
+                    and strong_jieba >= weak_jieba + 0.08
+                    and strong_jieba >= max(0.01, weak_jieba) * 8.0
+                )
+                small_jieba_dominance = (
+                    inversion <= 48
+                    and strong_jieba >= 0.055
+                    and strong_jieba >= weak_jieba + 0.015
+                    and strong_jieba >= max(0.01, weak_jieba) * 1.40
+                )
+                corroborated_thuocl_dominance = (
+                    inversion <= 24
+                    and strong_thuocl >= 0.65
+                    and strong_thuocl >= weak_thuocl + 0.45
+                    and strong_jieba >= 0.12
+                    and strong_jieba + 0.012 >= weak_jieba
+                )
+                if not (
+                    large_jieba_dominance
+                    or small_jieba_dominance
+                    or corroborated_thuocl_dominance
+                ):
+                    continue
+                if (
+                    weak_text in weak_leader_terms
+                    and not (weak_jieba > 0.0 and large_jieba_dominance)
+                ):
+                    continue
+
+                margin = 12
+                if large_jieba_dominance:
+                    margin += min(12, int(round(min(0.24, strong_jieba) * 50.0)))
+                strong_key = (strong_pinyin, strong_text)
+                required_floors[strong_key] = max(
+                    required_floors.get(strong_key, strong_weight),
+                    min(1000, weak_weight + margin),
+                )
+
+        changed_keys = set()
+        for key, floor in required_floors.items():
+            current = mapping.get(key, 0)
+            if floor <= current:
+                continue
+            mapping[key] = floor
+            changed_keys.add(key)
+        if changed_keys:
+            stats[f"{stats_prefix}_short_exact_pairwise_buckets"] += 1
+            stats[f"{stats_prefix}_short_exact_pairwise_rebalanced"] += len(changed_keys)
+
+    return stats
+
+
 def _cap_weak_exact_homophones_against_curated_daily_leaders(
     mapping: Dict[Tuple[str, str], int],
     usage_score_map: Dict[str, float],
@@ -12451,6 +12583,33 @@ def _build_direct_frequency_signal_map(
     return normalized
 
 
+def _build_thuocl_jieba_corroborated_signal_map(
+    thuocl_max_df_map: Dict[str, int],
+    thuocl_coverage_map: Dict[str, int],
+    jieba_direct_signal_map: Dict[str, float],
+) -> Dict[str, float]:
+    """Keep strong single-list THUOCL evidence only when Jieba corroborates it.
+
+    The regular THUOCL signal intentionally requires cross-list coverage so
+    domain tails cannot influence general ranking. That conservative filter
+    also drops genuinely common terms which occur in one THUOCL list. Retain a
+    separate, short-word-only signal for the subset independently supported by
+    a strong Jieba frequency; it is never used to add entries or globally
+    rescore the dictionary.
+    """
+    raw_signal_map = _build_normalized_signal_map(thuocl_max_df_map)
+    corroborated: Dict[str, float] = {}
+    for word, signal in raw_signal_map.items():
+        if thuocl_coverage_map.get(word, 0) != 1:
+            continue
+        if signal < 0.55:
+            continue
+        if jieba_direct_signal_map.get(word, 0.0) < 0.14:
+            continue
+        corroborated[word] = signal
+    return corroborated
+
+
 def _build_char_frequency_prior(
     source_frequency_map: Dict[str, int],
     power: float = 1.6,
@@ -12663,6 +12822,37 @@ def _build_tc_signal_map(
             tc_signal[tc_word] = best
 
     return tc_signal
+
+
+def _build_tc_signal_map_with_char_fallback(
+    source_signal_map: Dict[str, float],
+    tc_to_sc_map: Dict[str, Set[str]],
+    trad_to_simp_char_map: Dict[str, str],
+    tc_terms: Set[str],
+) -> Tuple[Dict[str, float], int]:
+    """Map strict SC signals to TC terms missing from phrase-level maps.
+
+    OpenCC and CEDICT phrase mappings do not cover every productive modern
+    phrase. For final same-pinyin correction only, fall back to conservative
+    character-level TC->SC conversion so terms such as 聞到 can reuse the
+    direct corpus signal for 闻到 without changing global TC rescoring.
+    """
+    tc_signal = _build_tc_signal_map(source_signal_map, tc_to_sc_map)
+    fallback_count = 0
+    if not source_signal_map or not trad_to_simp_char_map or not tc_terms:
+        return tc_signal, fallback_count
+
+    for tc_term in tc_terms:
+        sc_term = "".join(trad_to_simp_char_map.get(ch, ch) for ch in tc_term)
+        if sc_term == tc_term:
+            continue
+        signal = source_signal_map.get(sc_term, 0.0)
+        if signal <= tc_signal.get(tc_term, 0.0):
+            continue
+        tc_signal[tc_term] = signal
+        fallback_count += 1
+
+    return tc_signal, fallback_count
 
 
 def _build_tc_source_hits_map(
@@ -19388,6 +19578,7 @@ def main() -> int:
     usage_score_map: Dict[str, float] = {}
     source_hits_map: Dict[str, int] = {}
     jieba_direct_signal_map: Dict[str, float] = {}
+    thuocl_corroborated_signal_map: Dict[str, float] = {}
     jieba_pos_map: Dict[str, str] = {}
     char_frequency_prior: Dict[str, float] = {}
     pageviews_signal_map: Dict[str, float] = {}
@@ -19786,6 +19977,11 @@ def main() -> int:
         thuocl_signal_map = _build_normalized_signal_map(thuocl_entries)
         jieba_signal_map = _build_normalized_signal_map(jieba_entries)
         jieba_direct_signal_map = _build_direct_frequency_signal_map(jieba_entries)
+        thuocl_corroborated_signal_map = _build_thuocl_jieba_corroborated_signal_map(
+            thuocl_max_df,
+            thuocl_coverage,
+            jieba_direct_signal_map,
+        )
         char_frequency_prior = _build_char_frequency_prior(jieba_entries)
         pageviews_signal_map = _build_normalized_signal_map(pageviews_entries_sc)
         pageviews_persistence_signal_map = _build_normalized_signal_map(
@@ -20301,6 +20497,9 @@ def main() -> int:
         stats["pageviews_sc_normalized_terms"] = len(pageviews_entries_sc)
         stats["usage_score_terms"] = len(usage_score_map)
         stats["jieba_direct_score_terms"] = len(jieba_direct_signal_map)
+        stats["thuocl_jieba_corroborated_terms"] = len(
+            thuocl_corroborated_signal_map
+        )
         stats["jieba_pos_terms"] = len(jieba_pos_map)
         stats["char_frequency_prior_terms"] = len(char_frequency_prior)
         stats["pageviews_persistence_terms"] = len(pageviews_persistence_signal_map)
@@ -22692,6 +22891,54 @@ def main() -> int:
         "揭的",
         "揭得",
     }
+
+    stats.update(
+        _promote_short_exact_homophones_by_pairwise_direct_signal(
+            sc_map,
+            jieba_direct_signal_map,
+            jieba_pos_map,
+            curated_daily_sc_terms,
+            curated_daily_supplement_sc_terms,
+            "sc_final_post",
+            bucket_pinyin_map=sc_output_pinyin_bucket_map,
+            term_style_penalty_map=cedict_style_penalty_map,
+            thuocl_corroborated_signal_map=thuocl_corroborated_signal_map,
+        )
+    )
+    tc_final_terms = {text for _pinyin, text in tc_map.keys()}
+    (
+        tc_final_jieba_direct_signal_map,
+        tc_final_jieba_char_fallback_terms,
+    ) = _build_tc_signal_map_with_char_fallback(
+        jieba_direct_signal_map,
+        tc_to_sc_map,
+        trad_to_simp_char_map,
+        tc_final_terms,
+    )
+    (
+        tc_final_thuocl_corroborated_signal_map,
+        tc_final_thuocl_char_fallback_terms,
+    ) = _build_tc_signal_map_with_char_fallback(
+        thuocl_corroborated_signal_map,
+        tc_to_sc_map,
+        trad_to_simp_char_map,
+        tc_final_terms,
+    )
+    stats["tc_final_jieba_char_fallback_terms"] = tc_final_jieba_char_fallback_terms
+    stats["tc_final_thuocl_char_fallback_terms"] = tc_final_thuocl_char_fallback_terms
+    stats.update(
+        _promote_short_exact_homophones_by_pairwise_direct_signal(
+            tc_map,
+            tc_final_jieba_direct_signal_map,
+            tc_jieba_pos_map,
+            curated_daily_tc_terms,
+            curated_daily_supplement_tc_terms,
+            "tc_final_post",
+            bucket_pinyin_map=tc_output_pinyin_bucket_map,
+            term_style_penalty_map=cedict_style_penalty_map,
+            thuocl_corroborated_signal_map=tc_final_thuocl_corroborated_signal_map,
+        )
+    )
 
     stats.update(
         _enforce_single_char_relative_order_overrides(
