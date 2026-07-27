@@ -33,7 +33,9 @@ Cassotis Lexicon publishes local ranking artifacts alongside its lexical diction
 
 | Version | Query-path priors (SC / TC) | Word-path transitions (SC / TC) | Character n-gram parameters (SC / TC) |
 |---|---:|---:|---:|
-| `v1.4.0` | 23,544 / 22,696 | 152,729 / 145,284 | 698,695 / 698,778 |
+| `v1.6.0` | 23,557 / 22,669 | 152,729 / 145,284 | 698,695 / 698,778 |
+| `v1.5.0` | 23,550 / 22,702 | 152,729 / 145,284 | 698,695 / 698,778 |
+| `v1.4.0` | 23,545 / 22,697 | 152,729 / 145,284 | 698,695 / 698,778 |
 | `v1.3.0` | 23,541 / 22,676 | 152,729 / 145,284 | 698,695 / 698,778 |
 | `v1.2.0` | 23,529 / 22,663 | 152,729 / 145,284 | 698,695 / 698,778 |
 | `v1.1.0` | 23,521 / 22,655 | 152,729 / 145,284 | 558,645 / 559,128 |
@@ -44,6 +46,10 @@ These records are not directly inputable dictionary entries and are therefore ex
 Starting with Cassotis IME v1.3.0, these lexical constraints and statistical signals also support its first deployable neural residual reranker for complete long-sentence candidates. The compact neural model itself is trained, exported, and deployed by the IME project, so it is not counted as a dictionary entry or in the model-data table above. The unchanged v1.3.0 word-transition and character n-gram counts are therefore intentional.
 
 Cassotis IME v1.4.0 adds a separate short-word context reranker that reuses the published character n-gram evidence. This compact model is also trained, exported, and deployed by the IME project, so the feature does not add another category to the table above.
+
+Cassotis IME v1.5.0 extends short-word context ranking with an independently trained residual review stage. The residual model is likewise maintained by the IME project; the unchanged word-transition and character n-gram counts in the v1.5.0 row are therefore intentional.
+
+Cassotis IME v1.6.0 advances long-sentence decoding with separately trained search-state, second-stage, and final-candidate rankers plus a learned fallback policy. These compact models are trained and deployed by the IME project, so they do not add another category to this table. The v1.6.0 row reflects the updated query-path priors published by Lexicon; its word-transition and character n-gram artifacts are unchanged from v1.5.0.
 
 The statistical model stores only short word transitions and character n-grams, not complete training sentences. The independent long-sentence and short-word benchmark cases are excluded from training. At runtime, IME evaluates the statistical signals and compact native rerankers locally; it starts no PyTorch/ONNX runtime or external model service and requires no network connection or GPU. See the [IME benchmark documentation](https://github.com/shenmin/cassotis-ime/blob/master/BENCHMARK.md) for the long-sentence evaluation protocol.
 
