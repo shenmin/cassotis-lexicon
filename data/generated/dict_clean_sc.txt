@@ -1639,6 +1639,7 @@ anjialuohu	安家落户	452
 anjian	按键	1018
 anjian	安检	1009
 anjian	案件	1000
+anjian	按件	27
 anjian	暗箭	1
 anjiankou	安检口	10
 anjianmen	安检门	10
@@ -12330,6 +12331,7 @@ bujialesite	布加勒斯特	335
 bujialicai	不加理睬	260
 bujian	不见	1000
 bujian	部件	580
+bujian	补件	25
 bujianbusan	不见不散	387
 bujiandan	不简单	232
 bujiandangnian	不减当年	461
@@ -23196,7 +23198,8 @@ cuoguyanghui	挫骨扬灰	642
 cuohe	撮合	426
 cuohua	错话	10
 cuohuojixin	厝火积薪	258
-cuojian	撮尖	260
+cuojian	撮尖	379
+cuojian	错件	18
 cuojiao	错角	198
 cuojie	错解	198
 cuoju	措举	198
@@ -24301,6 +24304,7 @@ daijiaergu	待价而沽	429
 daijiahanshu	代价函数	699
 daijian	待见	443
 daijie	待解	198
+daijijian	待寄件	22
 daijin	殆尽	810
 daijin	带劲	39
 daijin	带进	10
@@ -24453,6 +24457,7 @@ daipian	带偏	10
 daiqi	带气	438
 daiqili	黛绮莉	228
 daiqu	带去	323
+daiqujian	待取件	27
 dair	带儿	198
 dairen	待人	757
 dairen	歹人	246
@@ -25668,10 +25673,11 @@ danjia	单价	13
 danjia	弹夹	1
 danjiabing	担架兵	232
 danjiachuang	担架床	232
-danjian	胆碱	63
-danjian	单键	21
+danjian	胆碱	91
+danjian	单键	49
 danjian	单肩	10
 danjian	单间	10
+danjian	单件	9
 danjianbao	单肩包	167
 danjiancha	单间差	167
 danjiang	丹江	493
@@ -26388,7 +26394,8 @@ daohuosuo	导火索	487
 daohuoxian	导火线	499
 daojia	道家	1000
 daojia	到家	1
-daojian	刀剑	448
+daojian	刀剑	158
+daojian	到件	25
 daojianfengmolu	刀剑封魔录	613
 daojianfu	刀剑斧	453
 daojianluanwu	刀剑乱舞	538
@@ -31660,6 +31667,7 @@ diufenzi	丢份子	232
 diuguan	丢官	402
 diuhun	丢魂	198
 diuhunluopo	丢魂落魄	383
+diujian	丢件	22
 diukai	丢开	429
 diukuiqijia	丢盔弃甲	424
 diukuixiejia	丢盔卸甲	618
@@ -34629,7 +34637,8 @@ duohunju	夺魂锯	453
 duoji	多级	280
 duojia	多加	280
 duojia	多家	280
-duojian	多减	280
+duojian	多减	138
+duojian	多件	27
 duojiao	跺脚	449
 duojiaodu	多角度	280
 duojiaoti	多角体	232
@@ -57721,6 +57730,7 @@ huaihuashi	怀化市	180
 huaihuaxian	怀化县	167
 huaiji	怀集	359
 huaijiahuo	坏家伙	232
+huaijian	坏件	22
 huaijiaogan	槐角苷	470
 huaijiaowan	槐角丸	470
 huaijiu	怀旧	497
@@ -63619,6 +63629,7 @@ jianjia	减价	192
 jianjiagu	肩胛骨	500
 jianjian	渐渐	873
 jianjian	见见	280
+jianjian	件件	18
 jianjian	剑尖	10
 jianjiang	健将	375
 jianjianjian	箭箭剑	458
@@ -68079,6 +68090,7 @@ jijian	击剑	244
 jijian	基建	244
 jijian	纪检	244
 jijian	机件	232
+jijian	计件	30
 jijian	及肩	10
 jijian	极简	10
 jijian	己见	1
@@ -74242,7 +74254,7 @@ juqi	举起	1000
 juqi	掬起	10
 juqi	聚齐	1
 juqian	拒签	614
-juqian	拘牵	235
+juqian	拘牵	234
 juqiangjidingsuanzhi	聚羟基丁酸酯	700
 juqiangjiwansuanzhi	聚羟基烷酸酯	700
 juqiangjizhifangsuanzhi	聚羟基脂肪酸酯	687
@@ -74319,9 +74331,10 @@ jushizhuqun	巨石柱群	260
 jushou	据守	1000
 jushou	举手	828
 jushou	聚首	322
-jushou	拒收	264
+jushou	拒收	268
 jushou	居首	27
 jushou	巨兽	1
+jushoujian	拒收件	22
 jushoutouzu	举手投足	469
 jushouzhilao	举手之劳	461
 jushu	拘束	988
@@ -80111,6 +80124,7 @@ lani	拉尼	325
 lanina	拉尼娜	232
 laniya	拉尼娅	230
 lanjia	栏架	364
+lanjian	揽件	30
 lanjiao	滥交	439
 lanjidong	蓝矶鸫	167
 lanjie	拦截	1000
@@ -87669,6 +87683,7 @@ louguxue	漏谷穴	470
 louhu	漏壶	617
 louhua	楼花	319
 louji	漏记	280
+loujian	漏件	20
 loujige	漏几个	800
 louju	陋居	198
 loujunshuo	娄峻硕	620
@@ -92449,6 +92464,7 @@ meijia	美甲	182
 meijiaming	美加明	470
 meijian	没见	1000
 meijian	每间	420
+meijian	每件	30
 meijian	眉尖	1
 meijian	眉间	1
 meijiang	没降	1000
@@ -102028,7 +102044,8 @@ paiji	拍击	698
 paiji	牌技	10
 paijia	排架	804
 paijia	牌价	1
-paijian	排检	323
+paijian	派件	30
+paijian	排检	1
 paijie	排解	424
 paijing	排精	198
 paijipao	迫击炮	556
@@ -105251,6 +105268,7 @@ posuiyinhexi	破碎银河系	613
 posuizhilu	破碎之路	538
 posuizuyi	破碎族裔	538
 posun	破损	449
+posunjian	破损件	25
 posuo	婆娑	387
 posuoqiwu	婆娑起舞	620
 poti	破题	576
@@ -108126,6 +108144,7 @@ qijian	器件	497
 qijian	起见	485
 qijian	其间	438
 qijian	七间	420
+qijian	弃件	15
 qijiandian	旗舰店	800
 qijiang	起降	1000
 qijiangqu	綦江区	174
@@ -116583,6 +116602,7 @@ sanjiajilvguiwan	三甲基氯硅烷	320
 sanjiamache	三驾马车	260
 sanjian	三级胺	372
 sanjian	三间	297
+sanjian	散件	22
 sanjian	散见	1
 sanjianban	三尖瓣	408
 sanjianbanbisuobuquan	三尖瓣闭锁不全	687
@@ -127026,8 +127046,9 @@ shuanghuanzahuanhuahewu	双环杂环化合物	687
 shuanghuxian	双湖县	167
 shuangji	双击	311
 shuangjia	双颊	10
-shuangjian	双键	13
+shuangjian	双键	44
 shuangjian	双肩	10
+shuangjian	双件	9
 shuangjianbao	双肩包	198
 shuangjiang	霜降	425
 shuangjiangedou	双键格斗	538
@@ -138819,6 +138840,7 @@ tuihuo	退火	466
 tuihuo	退货	448
 tuiji	推及	380
 tuijian	推荐	1000
+tuijian	退件	27
 tuijianshu	推荐书	379
 tuijianxin	推荐信	429
 tuijiao	腿脚	560
@@ -143829,6 +143851,7 @@ wentian	问天	1000
 wentianxiang	文天祥	287
 wentidaoxiangxuexi	问题导向学习	700
 wentie	稳贴	198
+wentijian	问题件	22
 wentijieda	问题解答	626
 wentijiejue	问题解决	570
 wentikongjian	问题空间	540
@@ -149766,8 +149789,9 @@ xiaojia	小贾	280
 xiaojia	销假	140
 xiaojia	效价	134
 xiaojiabiyu	小家碧玉	292
-xiaojian	削尖	867
-xiaojian	小建	88
+xiaojian	削尖	699
+xiaojian	小建	69
+xiaojian	小件	27
 xiaojianeng	效价能	232
 xiaojiang	小将	339
 xiaojiang	小姜	280
@@ -162647,6 +162671,7 @@ yichangdequ	宜昌地区	482
 yichangdian	异常点	500
 yichangdiaoshi	异常调试	661
 yichangfu	宜昌府	391
+yichangjian	异常件	22
 yichangkong	一场空	447
 yichangleixing	异常类型	704
 yichangnaodiantu	异常脑电图	610
@@ -170782,8 +170807,8 @@ yuanjiacuoan	冤假错案	499
 yuanjiaduitou	冤家对头	451
 yuanjiajun	袁家军	780
 yuanjialuzhai	冤家路窄	437
-yuanjian	元件	770
-yuanjian	远见	689
+yuanjian	元件	1000
+yuanjian	远见	853
 yuanjian	原件	88
 yuanjiang	沅江	493
 yuanjianghanizuyizudaizuzizhixian	元江哈尼族彝族傣族自治县	373
@@ -183634,6 +183659,7 @@ zhuji	祝姬	1
 zhujia	住家	560
 zhujian	逐渐	1000
 zhujian	主键	580
+zhujian	逐件	25
 zhujian	主见	13
 zhujian	竹简	13
 zhujian	铸件	1

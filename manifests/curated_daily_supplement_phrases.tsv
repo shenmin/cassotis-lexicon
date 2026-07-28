@@ -12189,3 +12189,32 @@
 次选	次選	0.42	cixuan
 优解	優解	0.20	youjie
 全优	全優	0.18	quanyou
+
+# Item counters, piecework terms, and parcel-status vocabulary remain exact-selectable
+# without outranking common homophones such as 没见, 单间, 按键, and 双肩.
+每件	每件	0.09	meijian
+单件	單件	0.004	danjian
+双件	雙件	0.004	shuangjian
+多件	多件	0.08	duojian
+按件	按件	0.08	anjian
+计件	計件	0.09	jijian
+逐件	逐件	0.07	zhujian
+件件	件件	0.04	jianjian
+小件	小件	0.08	xiaojian
+散件	散件	0.06	sanjian
+坏件	壞件	0.06	huaijian
+补件	補件	0.07	bujian
+揽件	攬件	0.09	lanjian
+派件	派件	0.09	paijian
+退件	退件	0.08	tuijian
+到件	到件	0.07	daojian
+待取件	待取件	0.08	daiqujian
+待寄件	待寄件	0.06	daijijian
+破损件	破損件	0.07	posunjian
+异常件	異常件	0.06	yichangjian
+问题件	問題件	0.06	wentijian
+拒收件	拒收件	0.06	jushoujian
+丢件	丟件	0.06	diujian
+漏件	漏件	0.05	loujian
+错件	錯件	0.04	cuojian
+弃件	棄件	0.03	qijian
