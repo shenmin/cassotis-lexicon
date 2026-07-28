@@ -13320,6 +13320,7 @@ def _rebalance_single_char_homophones_by_leading_support(
     family_support_sum_map: Dict[str, float] | None,
     unihan_pinlu_detail_map: Dict[Tuple[str, str], int] | None,
     stats_prefix: str,
+    single_char_frequency_map: Dict[str, float] | None = None,
 ) -> Dict[str, int]:
     """Prefer modern compound-head evidence over raw Unihan frequency for single chars.
 
@@ -13340,6 +13341,7 @@ def _rebalance_single_char_homophones_by_leading_support(
     leading_support_sum_map = leading_support_sum_map or {}
     family_support_sum_map = family_support_sum_map or {}
     unihan_pinlu_detail_map = unihan_pinlu_detail_map or {}
+    single_char_frequency_map = single_char_frequency_map or {}
 
     buckets: Dict[str, List[Tuple[str, int]]] = {}
     for (pinyin, text), weight in mapping.items():
@@ -13366,6 +13368,9 @@ def _rebalance_single_char_homophones_by_leading_support(
                     "leading_count": leading_count,
                     "leading_ratio": leading_ratio,
                     "pinlu": max(0, unihan_pinlu_detail_map.get(pair, 0)),
+                    "standalone_frequency": max(
+                        0.0, single_char_frequency_map.get(text, 0.0)
+                    ),
                 }
             )
 
@@ -13395,6 +13400,7 @@ def _rebalance_single_char_homophones_by_leading_support(
         leader_count = int(leader["leading_count"])
         leader_ratio = float(leader["leading_ratio"])
         leader_pinlu = int(leader["pinlu"])
+        leader_frequency = float(leader["standalone_frequency"])
 
         bucket_touched = False
         for record in records:
@@ -13407,6 +13413,14 @@ def _rebalance_single_char_homophones_by_leading_support(
             leading_count = int(record["leading_count"])
             leading_ratio = float(record["leading_ratio"])
             pinlu = int(record["pinlu"])
+            standalone_frequency = float(record["standalone_frequency"])
+
+            leader_independent_usage_dominant = (
+                leader_frequency
+                >= max(standalone_frequency * 5.0, standalone_frequency + 30000.0)
+                and leader_pinlu >= max(pinlu * 1.25, pinlu + 240)
+                and leader_support >= max(1200.0, leading_support * 0.70)
+            )
 
             clear_leading_advantage = (
                 leader_support >= max(leading_support * 1.35, leading_support + 900.0)
@@ -13415,6 +13429,7 @@ def _rebalance_single_char_homophones_by_leading_support(
                     and leader_support >= leading_support + 600.0
                 )
                 or (leader_count >= leading_count + 28 and leader_support >= leading_support + 600.0)
+                or leader_independent_usage_dominant
             )
             if not clear_leading_advantage:
                 continue
@@ -13426,10 +13441,18 @@ def _rebalance_single_char_homophones_by_leading_support(
             # Absolute compound-head support can grow when a batch of related
             # words is added.  Do not let a broader root suppress a candidate
             # whose support is more concentrated in the same-pinyin head role.
-            if leading_ratio >= leader_ratio + 0.08 and leading_support >= leader_support * 0.42:
+            if (
+                not leader_independent_usage_dominant
+                and leading_ratio >= leader_ratio + 0.08
+                and leading_support >= leader_support * 0.42
+            ):
                 continue
 
-            if leading_ratio >= leader_ratio * 0.72 and leading_support >= leader_support * 0.82:
+            if (
+                not leader_independent_usage_dominant
+                and leading_ratio >= leader_ratio * 0.72
+                and leading_support >= leader_support * 0.82
+            ):
                 continue
 
             cap = max(1, leader_weight - 24)
@@ -13542,6 +13565,7 @@ def _promote_single_char_homophones_by_head_productivity(
             text = str(record["text"])
             weight = int(record["weight"])
             pinlu = int(record["pinlu"])
+            standalone_frequency = float(record["standalone_frequency"])
             leading = float(record["leading"])
             leading_count = int(record["leading_count"])
             leading_ratio = float(record["leading_ratio"])
@@ -13563,11 +13587,20 @@ def _promote_single_char_homophones_by_head_productivity(
                     continue
 
                 competitor_pinlu = int(competitor["pinlu"])
+                competitor_frequency = float(competitor["standalone_frequency"])
                 competitor_leading = float(competitor["leading"])
                 competitor_count = int(competitor["leading_count"])
                 competitor_ratio = float(competitor["leading_ratio"])
 
                 if competitor_ratio >= leading_ratio - 0.12:
+                    continue
+                if (
+                    competitor_frequency
+                    >= max(standalone_frequency * 5.0, standalone_frequency + 30000.0)
+                    and competitor_pinlu >= max(pinlu * 1.25, pinlu + 240)
+                ):
+                    # Productive compound heads must not overtake a character
+                    # with overwhelmingly stronger independent usage evidence.
                     continue
                 if leading < max(competitor_leading * 0.50, 3600.0):
                     continue
@@ -13655,6 +13688,14 @@ def _promote_single_char_homophones_by_head_productivity(
                     + float(input_pos_bonus(competitor_pos))
                     + float(competitor_head_bonus)
                 )
+
+                if (
+                    competitor_frequency
+                    >= max(standalone_frequency * 5.0, standalone_frequency + 30000.0)
+                    and competitor_pinlu >= max(pinlu * 1.25, pinlu + 240)
+                ):
+                    better_than_all_heavier = False
+                    break
 
                 if (
                     competitor_pinlu >= max(pinlu * 3.8, pinlu + 420)
@@ -22068,6 +22109,7 @@ def main() -> int:
         sc_family_support_sum_map,
         unihan_pinlu_detail_map,
         "sc_final",
+        single_char_frequency_map=single_char_frequency_map,
     )
     tc_single_char_rebalance_stats = _rebalance_single_char_homophones_by_leading_support(
         tc_map,
@@ -22076,6 +22118,7 @@ def main() -> int:
         tc_family_support_sum_map,
         unihan_pinlu_detail_map,
         "tc_final",
+        single_char_frequency_map=tc_single_char_frequency_map,
     )
     stats.update(sc_single_char_rebalance_stats)
     stats.update(tc_single_char_rebalance_stats)

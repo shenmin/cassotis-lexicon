@@ -7579,3 +7579,17 @@
 还剩	還剩	0.84	haisheng
 不剩	不剩	0.70	busheng
 绿光	綠光	0.68	lvguang
+
+# Common availability, replacement, knowledge, and monthly-usage expressions.
+不卡	不卡	0.86	buka
+没人用	沒人用	0.78	meirenyong
+换新	換新	0.76	huanxin
+谁知道	誰知道	0.90	shuizhidao
+他知道	他知道	0.80	tazhidao
+她知道	她知道	0.78	tazhidao
+每个月	每個月	0.88	meigeyue
+有人用	有人用	0.78	yourenyong
+卡不卡	卡不卡	0.76	kabuka
+就不卡	就不卡	0.70	jiubuka
+会卡	會卡	0.74	huika
+全没	全沒	0.76	quanmei
