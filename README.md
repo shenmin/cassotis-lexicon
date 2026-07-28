@@ -33,6 +33,7 @@ Cassotis Lexicon publishes local ranking artifacts alongside its lexical diction
 
 | Version | Query-path priors (SC / TC) | Word-path transitions (SC / TC) | Character n-gram parameters (SC / TC) |
 |---|---:|---:|---:|
+| `v1.7.0` | 23,570 / 22,722 | 152,729 / 145,284 | 698,695 / 698,778 |
 | `v1.6.0` | 23,557 / 22,669 | 152,729 / 145,284 | 698,695 / 698,778 |
 | `v1.5.0` | 23,550 / 22,702 | 152,729 / 145,284 | 698,695 / 698,778 |
 | `v1.4.0` | 23,545 / 22,697 | 152,729 / 145,284 | 698,695 / 698,778 |
@@ -50,6 +51,8 @@ Cassotis IME v1.4.0 adds a separate short-word context reranker that reuses the 
 Cassotis IME v1.5.0 extends short-word context ranking with an independently trained residual review stage. The residual model is likewise maintained by the IME project; the unchanged word-transition and character n-gram counts in the v1.5.0 row are therefore intentional.
 
 Cassotis IME v1.6.0 advances long-sentence decoding with separately trained search-state, second-stage, and final-candidate rankers plus a learned fallback policy. These compact models are trained and deployed by the IME project, so they do not add another category to this table. The v1.6.0 row reflects the updated query-path priors published by Lexicon; its word-transition and character n-gram artifacts are unchanged from v1.5.0.
+
+Cassotis IME v1.7.0 uses the published word-transition evidence to admit reliable two-phrase combinations in four-syllable input while rejecting unsupported combinations. The v1.7.0 row reflects the latest query-path priors generated with the updated lexicon; the word-transition and character n-gram artifacts remain unchanged from v1.6.0.
 
 The statistical model stores only short word transitions and character n-grams, not complete training sentences. The independent long-sentence and short-word benchmark cases are excluded from training. At runtime, IME evaluates the statistical signals and compact native rerankers locally; it starts no PyTorch/ONNX runtime or external model service and requires no network connection or GPU. See the [IME benchmark documentation](https://github.com/shenmin/cassotis-ime/blob/master/BENCHMARK.md) for the long-sentence evaluation protocol.
 
