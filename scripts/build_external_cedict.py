@@ -716,6 +716,16 @@ SINGLE_CHAR_READING_DELTA_OVERRIDES: Dict[Tuple[str, str], int] = {
     ("\u5716", "tu"): 280,
 }
 SINGLE_CHAR_ADDED_READING_WEIGHT_CAP = 280
+
+# Audited pronunciation aliases whose lexical weight should not depend on the
+# selected standard reading. Apply these only after filtering and ranking so an
+# alias cannot revive a rejected term or influence another pinyin bucket.
+LEADING_TEXT_PINYIN_ALIAS_RULES: Tuple[Tuple[str, str, str], ...] = (
+    ("谁", "shei", "shui"),
+    ("谁", "shui", "shei"),
+    ("誰", "shei", "shui"),
+    ("誰", "shui", "shei"),
+)
 SINGLE_CHAR_RELATIVE_ORDER_OVERRIDES: Tuple[
     Tuple[Tuple[str, str], Tuple[str, str], int], ...
 ] = (
@@ -3229,6 +3239,41 @@ def _apply_word_pinyin_overrides(
         stats[f"{stat_prefix}_single_char_readings_added"] += 1
 
     return remapped, stats
+
+
+def _expand_leading_text_pinyin_aliases(
+    mapping: Dict[Tuple[str, str], int],
+    stats_prefix: str,
+) -> Tuple[Dict[Tuple[str, str], int], Dict[str, int]]:
+    expanded = dict(mapping)
+    stats = {
+        f"{stats_prefix}_pinyin_alias_rows_considered": 0,
+        f"{stats_prefix}_pinyin_alias_rows_added": 0,
+        f"{stats_prefix}_pinyin_alias_rows_equalized": 0,
+    }
+
+    for (pinyin, text), weight in mapping.items():
+        for text_prefix, source_prefix, target_prefix in LEADING_TEXT_PINYIN_ALIAS_RULES:
+            if not text.startswith(text_prefix) or not pinyin.startswith(source_prefix):
+                continue
+
+            stats[f"{stats_prefix}_pinyin_alias_rows_considered"] += 1
+            alias_pinyin = target_prefix + pinyin[len(source_prefix):]
+            alias_key = (alias_pinyin, text)
+            alias_weight = expanded.get(alias_key)
+            if alias_weight is None:
+                expanded[alias_key] = weight
+                stats[f"{stats_prefix}_pinyin_alias_rows_added"] += 1
+                continue
+
+            shared_weight = max(weight, alias_weight)
+            source_key = (pinyin, text)
+            if expanded[source_key] != shared_weight or expanded[alias_key] != shared_weight:
+                expanded[source_key] = shared_weight
+                expanded[alias_key] = shared_weight
+                stats[f"{stats_prefix}_pinyin_alias_rows_equalized"] += 1
+
+    return expanded, stats
 
 
 def _collect_preferred_unihan_readings(
@@ -22995,6 +23040,17 @@ def main() -> int:
             "tc_final_post",
         )
     )
+
+    sc_map, sc_pinyin_alias_stats = _expand_leading_text_pinyin_aliases(
+        sc_map,
+        "sc_final_post",
+    )
+    tc_map, tc_pinyin_alias_stats = _expand_leading_text_pinyin_aliases(
+        tc_map,
+        "tc_final_post",
+    )
+    stats.update(sc_pinyin_alias_stats)
+    stats.update(tc_pinyin_alias_stats)
 
     _write_dict(
         output_sc,
