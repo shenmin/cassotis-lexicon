@@ -4465,7 +4465,8 @@ bajisitanrenmindang	巴基斯坦人民黨	348
 bajisitanyisilangongheguo	巴基斯坦伊斯蘭共和國	380
 bajisitanzhengfu	巴基斯坦政府	316
 bajitian	巴戟天	360
-bajiu	把酒	440
+bajiu	把酒	657
+bajiu	八九	10
 bajiubulishi	八九不離十	477
 bajiuqishi'er	八九七十二	400
 bajiuyanhuan	把酒言歡	420
@@ -4753,8 +4754,8 @@ banchang	伴唱	452
 banchangzhou	半長軸	232
 banchanlama	班禪喇嘛	218
 banchao	班超	375
-banche	班車	375
-banche	板車	341
+banche	班車	374
+banche	板車	340
 bancheng	半成	521
 banchengpin	半成品	682
 banchifengtoujuan	斑翅鳳頭鵑	289
@@ -11223,6 +11224,7 @@ boguang	剝光	10
 boguang	波光	1
 boguanglinlin	波光粼粼	642
 boguhe	勃固河	54
+boguiyunjue	波詭雲譎	1000
 boguo	博國	288
 bogushanmai	勃固山脈	260
 bogutongjin	博古通今	440
@@ -12646,6 +12648,7 @@ bujuyi	不拘一	556
 bujuyige	不拘一格	601
 bujuzu	不具足	640
 buka	不卡	700
+bukai	不開	1000
 bukaiqiao	不開竅	432
 bukaiteshilinbaliu	布凱特氏淋巴瘤	700
 bukan	不看	700
@@ -24019,8 +24022,8 @@ dadouyihuangtong	大豆異黃酮	640
 dadouyou	大豆油	464
 dadouyouxi	打鬥遊戲	1000
 dadouyouxi	打斗遊戲	420
-dadu	大都	900
-dadu	打賭	551
+dadu	大都	901
+dadu	打賭	550
 dadu	大肚	78
 dadu	大度	1
 daduan	打斷	632
@@ -33423,6 +33426,7 @@ doujiang	都將	700
 doujiangyoutiao	豆漿油條	10
 doujiao	豆角	942
 doujiaor	豆角兒	379
+doujiashang	都加上	800
 doujichang	鬥雞場	1000
 doujichangde'alina	鬥技場的阿利娜	775
 doujichangde'alina	斗技場的阿利娜	357
@@ -41000,6 +41004,7 @@ fengju	蜂聚	311
 fengjuancanyun	風捲殘雲	892
 fengjuancanyun	風卷殘云	314
 fengjue	封爵	297
+fengjueyungui	風譎雲詭	993
 fengkai	封開	331
 fengkaixian	封開縣	198
 fengkong	風控	417
@@ -41478,6 +41483,7 @@ fengyunbianhuan	風雲變幻	773
 fengyunbianhuan	風云變幻	162
 fengyunbianse	風雲變色	876
 fengyunbianse	風云變色	303
+fengyunguijue	風雲詭譎	1000
 fengyunjihui	風雲際會	935
 fengyunjihui	風云際會	349
 fengyunlu	風雲錄	10
@@ -51382,7 +51388,7 @@ guixiang	歸想	10
 guixiang	歸向	2
 guixiangjiao	硅橡膠	433
 guixianxiaoquxinhao	帰線消去信號	1000
-guixiao	詭笑	430
+guixiao	詭笑	431
 guixiaobiewuwei	龜笑鱉無尾	289
 guixijunfa	桂系軍閥	218
 guixin	歸心	440
@@ -71342,7 +71348,7 @@ jingzhunyixue	精准醫學	250
 jingzi	鏡子	1000
 jingzi	精子	931
 jingzi	徑自	730
-jingzi	逕自	717
+jingzi	逕自	723
 jingzi	靚仔	25
 jingzifasheng	精子發生	540
 jingzihuodongli	精子活動力	640
@@ -84355,6 +84361,7 @@ liangri	兩日	700
 liangrubaizhou	亮如白晝	10
 liangruweichu	量入爲出	646
 liangruweichu	量入為出	560
+liangsan	兩三	10
 liangsanci	兩三次	800
 liangsange	兩三個	800
 liangsangpangdahaiqingyantang	亮嗓胖大海清嚥糖	680
@@ -88096,7 +88103,7 @@ liupingde	流平地	640
 liupu	劉蒲	10
 liupuluoning	硫普羅寧	570
 liupuluoningzhusheye	硫普羅寧注射液	657
-liuqi	柳杞	137
+liuqi	六七	10
 liuqian	六千	520
 liuqiang	劉強	241
 liuqianliubaibashiliuwanyuan	六千六百八十六萬元	455
@@ -95567,7 +95574,7 @@ mianhongerchi	面紅耳赤	496
 mianhongerre	面紅耳熱	616
 mianhu	面糊	1000
 mianhu	麵糊	1000
-mianhu	麪糊	955
+mianhu	麪糊	860
 mianhua	棉花	536
 mianhuabang	棉花棒	230
 mianhuai	緬懷	300
@@ -98468,8 +98475,8 @@ muban	模板	280
 muban	木版	1
 mubanhua	木版畫	443
 mubei	墓碑	434
-muben	母本	476
-muben	木本	464
+muben	母本	489
+muben	木本	477
 mubenzhiwu	木本植物	481
 mubiao	目標	536
 mubiaochengxu	目標程序	731
@@ -112920,6 +112927,7 @@ quanjiao	全椒	502
 quanjiao	拳腳	305
 quanjiaoxian	全椒縣	379
 quanjiaoxiangxiang	拳腳相向	387
+quanjiashang	全加上	800
 quanjiazuo	全跏坐	307
 quanjie	勸解	936
 quanjie	勸誡	164
@@ -118993,6 +119001,7 @@ sanshu	散束	198
 sanshui	散水	1000
 sanshui	三水	1
 sanshuiqu	三水區	165
+sansi	三四	10
 sansi	三思	10
 sansi'erhouxing	三思而後行	635
 sansi'erhouxing	三思而后行	573
@@ -119438,6 +119447,7 @@ sehanzheng	色汗症	470
 sehao	色號	198
 sehuang	色荒	198
 sejian	色鍵	198
+sejie	色戒	360
 sejue	色覺	388
 sejuejiancha	色覺檢查	540
 sela	色拉	227
@@ -124439,7 +124449,7 @@ shenshejianzhu	神社建筑	354
 shenshelidemaowunv	神社裏的貓巫女	774
 shenshelidemaowunv	神社里的貓巫女	358
 shenshen	深深	700
-shenshen	審慎	453
+shenshen	審慎	452
 shenshen	嬸嬸	1
 shenshendaodao	神神道道	466
 shenshendaodao	神神叨叨	190
@@ -135785,6 +135795,7 @@ tangwan	湯碗	788
 tangwan	糖丸	185
 tangwanghe	湯旺河	169
 tangwanghequ	湯旺河區	228
+tangwei	湯唯	241
 tangweijiaonang	糖維膠囊	540
 tangwenzong	唐文宗	212
 tangwu	堂屋	798
@@ -147876,7 +147887,8 @@ wulitankuang	物理探鉱	710
 wulitanzha	物理探査	710
 wulitexing	物理特性	700
 wulitou	無釐頭	362
-wuliu	物流	463
+wuliu	物流	41
+wuliu	五六	10
 wuliuceng	五六層	280
 wuliuguanli	物流管理	260
 wuliupingfangmi	五六平方米	371
@@ -164348,6 +164360,7 @@ yejianying	葉劍英	822
 yejianyiniaozheng	夜間遺尿症	640
 yejiao	頁腳	700
 yejiaoteng	夜交藤	470
+yejiashang	也加上	800
 yejiayu	葉家妤	768
 yejidaxue	野雞大學	249
 yejie	業界	455
