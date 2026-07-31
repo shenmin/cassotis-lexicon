@@ -521,6 +521,7 @@ CURATED_DAILY_VISIBILITY_WEIGHT_CAP_LONG = 800
 CURATED_DAILY_SUPPLEMENT_WEIGHT_CAP = 280
 CURATED_DAILY_SUPPLEMENT_NUMBER_WEIGHT_CAP = 520
 CURATED_DAILY_ASPECT_VISIBILITY_CAP = 760
+CURATED_DAILY_POST_RANK_EXACT_USAGE_MAX = -2.0
 
 
 def _curated_daily_supplement_weight_cap(usage_score: float, text: str) -> int:
@@ -541,6 +542,54 @@ def _curated_daily_supplement_weight_cap(usage_score: float, text: str) -> int:
         return 8 + int(round(bounded_usage * 240.0))
 
     return CURATED_DAILY_SUPPLEMENT_WEIGHT_CAP
+
+
+def _partition_curated_daily_post_rank_exact_entries(
+    entries: List[Tuple[str, str, float, str]],
+) -> Tuple[
+    List[Tuple[str, str, float, str]],
+    List[Tuple[str, str, float, str]],
+]:
+    """Keep exact-only visibility rows out of global ranking calculations."""
+    regular_entries: List[Tuple[str, str, float, str]] = []
+    post_rank_entries: List[Tuple[str, str, float, str]] = []
+    for entry in entries:
+        if entry[2] <= CURATED_DAILY_POST_RANK_EXACT_USAGE_MAX:
+            post_rank_entries.append(entry)
+        else:
+            regular_entries.append(entry)
+    return regular_entries, post_rank_entries
+
+
+def _inject_curated_daily_post_rank_exact_entries(
+    sc_map: Dict[Tuple[str, str], int],
+    tc_map: Dict[Tuple[str, str], int],
+    entries: List[Tuple[str, str, float, str]],
+) -> Dict[str, int]:
+    """Add exact-only rows after every ranking and path-prior stage."""
+    stats = {
+        "curated_daily_post_rank_exact_rows": len(entries),
+        "curated_daily_post_rank_exact_sc_added": 0,
+        "curated_daily_post_rank_exact_tc_added": 0,
+        "curated_daily_post_rank_exact_invalid_pinyin": 0,
+    }
+    for sc_word, tc_word, _usage_score, explicit_pinyin in entries:
+        pinyin = _normalize_pinyin(explicit_pinyin)
+        if not pinyin:
+            stats["curated_daily_post_rank_exact_invalid_pinyin"] += 1
+            continue
+
+        sc_key = (pinyin, sc_word)
+        if sc_key not in sc_map:
+            sc_map[sc_key] = 0
+            stats["curated_daily_post_rank_exact_sc_added"] += 1
+
+        tc_text = tc_word or sc_word
+        tc_key = (pinyin, tc_text)
+        if tc_key not in tc_map:
+            tc_map[tc_key] = 0
+            stats["curated_daily_post_rank_exact_tc_added"] += 1
+    return stats
 
 # Quantity-classifier snippets are useful exact matches, but they are not
 # necessarily more common than same-pinyin lexical words. Keep them visible
@@ -9700,10 +9749,14 @@ def _parse_curated_daily_phrase_entries(
         explicit_pinyin = parts[3].strip().lower() if len(parts) >= 4 else ""
         if explicit_pinyin and not PINYIN_RE.fullmatch(explicit_pinyin):
             explicit_pinyin = ""
-        # Preserve the visibility-only marker; ordinary usage remains bounded.
-        normalized_usage_score = (
-            -1.0 if usage_score < 0.0 else min(1.0, usage_score)
-        )
+        # Keep the legacy visibility marker and the isolated post-rank marker
+        # distinct; ordinary usage remains bounded.
+        if usage_score <= CURATED_DAILY_POST_RANK_EXACT_USAGE_MAX:
+            normalized_usage_score = CURATED_DAILY_POST_RANK_EXACT_USAGE_MAX
+        elif usage_score < 0.0:
+            normalized_usage_score = -1.0
+        else:
+            normalized_usage_score = min(1.0, usage_score)
         entries.append(
             (
                 sc_word,
@@ -19699,6 +19752,7 @@ def main() -> int:
     curated_daily_supplement_sc_terms: Set[str] = set()
     curated_daily_supplement_tc_terms: Set[str] = set()
     curated_daily_supplement_entries: List[Tuple[str, str, float, str]] = []
+    curated_daily_post_rank_exact_entries: List[Tuple[str, str, float, str]] = []
     curated_daily_supplement_parse_stats: Dict[str, int] = {}
     curated_usage_score_map: Dict[str, float] = {}
     curated_source_hits_map: Dict[str, int] = {}
@@ -19823,6 +19877,15 @@ def main() -> int:
                     args.min_hanzi,
                     stats_prefix="curated_daily_supplement_phrase",
                 )
+                (
+                    curated_daily_supplement_entries,
+                    curated_daily_post_rank_exact_entries,
+                ) = _partition_curated_daily_post_rank_exact_entries(
+                    curated_daily_supplement_entries
+                )
+                curated_daily_supplement_parse_stats[
+                    "curated_daily_supplement_phrase_post_rank_exact"
+                ] = len(curated_daily_post_rank_exact_entries)
             (
                 curated_unihan_map,
                 curated_unihan_readings_map,
@@ -20142,6 +20205,15 @@ def main() -> int:
                 args.min_hanzi,
                 stats_prefix="curated_daily_supplement_phrase",
             )
+            (
+                curated_daily_supplement_entries,
+                curated_daily_post_rank_exact_entries,
+            ) = _partition_curated_daily_post_rank_exact_entries(
+                curated_daily_supplement_entries
+            )
+            curated_daily_supplement_parse_stats[
+                "curated_daily_supplement_phrase_post_rank_exact"
+            ] = len(curated_daily_post_rank_exact_entries)
         for word, score in wiktionary_usage_score_map.items():
             usage_score_map[word] = max(score, usage_score_map.get(word, 0.0))
             source_hits_map[word] = max(1, source_hits_map.get(word, 0))
@@ -23061,6 +23133,31 @@ def main() -> int:
     )
     stats.update(sc_pinyin_alias_stats)
     stats.update(tc_pinyin_alias_stats)
+
+    stats.update(
+        _inject_curated_daily_post_rank_exact_entries(
+            sc_map,
+            tc_map,
+            curated_daily_post_rank_exact_entries,
+        )
+    )
+    post_rank_exact_sc_terms = {
+        sc_word
+        for sc_word, _tc_word, _usage_score, _explicit_pinyin
+        in curated_daily_post_rank_exact_entries
+    }
+    post_rank_exact_tc_terms = {
+        tc_word or sc_word
+        for sc_word, tc_word, _usage_score, _explicit_pinyin
+        in curated_daily_post_rank_exact_entries
+    }
+    low_priority_supplement_sc_terms.update(post_rank_exact_sc_terms)
+    low_priority_supplement_tc_terms.update(post_rank_exact_tc_terms)
+    curated_daily_explicit_pinyin_keys.update(
+        _build_curated_daily_explicit_pinyin_key_set(
+            curated_daily_post_rank_exact_entries
+        )
+    )
 
     _write_dict(
         output_sc,

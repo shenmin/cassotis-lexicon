@@ -12087,7 +12087,8 @@ bufasong	不发送	1000
 bufaxianli	不乏先例	635
 bufazhitu	不法之徒	598
 bufei	不飞	1000
-bufei	不菲	827
+bufei	不费	700
+bufei	不菲	520
 bufeibufa	不悱不发	387
 bufeichuihuizhili	不费吹灰之力	519
 bufeihuoxuejiaonang	补肺活血胶囊	644
@@ -22715,7 +22716,7 @@ congmang	匆忙	421
 congmei	从没	493
 congmin	聪敏	427
 congming	聪明	1000
-congming	从命	234
+congming	从命	233
 congmingcaizhi	聪明才智	506
 congmingfanbeicongmingwu	聪明反被聪明误	495
 congmingguoren	聪明过人	630
@@ -70701,6 +70702,7 @@ jintianhe	今天和	1036
 jintianhe	金天翮	209
 jintiankaishi	今天开始	573
 jintiankaishishirenlei	今天开始是人类	600
+jintianlai	今天来	800
 jintianqiyi	金田起义	334
 jintianshangwu	今天上午	280
 jintianxiawu	今天下午	280
@@ -95141,6 +95143,7 @@ mingtiandexuezhicheng	明天的雪之丞	648
 mingtiandezhongfeng	明天的重逢	526
 mingtianhe	明天和	1018
 mingtianjian	明天见	317
+mingtianlai	明天来	800
 mingtianqi	明天启	167
 mingtie	名帖	400
 mingtiluoji	命题逻辑	405
@@ -113023,6 +113026,7 @@ renggei	扔给	10
 rengjide	仍记得	1000
 rengjin	扔进	280
 rengjiu	仍旧	520
+rengle	扔了	700
 rengong	人工	914
 rengong'ertinggu	人工耳听骨	640
 rengong'erwo	人工耳蜗	570
@@ -126942,13 +126946,14 @@ shuaikaibangzi	甩开膀子	387
 shuailaishuaiqu	甩来甩去	280
 shuailao	衰老	462
 shuailaoxiangguanfenmibiaoxing	衰老相关分泌表型	700
+shuaile	甩了	700
 shuailian	甩脸	10
 shuailianzi	甩脸子	232
 shuailing	率领	502
 shuailuo	衰落	1000
 shuailuo	摔落	10
-shuaimai	甩卖	426
-shuaimai	衰迈	280
+shuaimai	甩卖	427
+shuaimai	衰迈	279
 shuaimen	摔门	198
 shuaimen'erchu	摔门而出	10
 shuaimenerchu	摔门而出	10
@@ -134955,7 +134960,7 @@ tianbusuirenyi	天不遂人意	546
 tianbuzhichi	恬不知耻	448
 tianbuzuomei	天不作美	623
 tiancai	天才	872
-tiancai	甜菜	664
+tiancai	甜菜	663
 tiancaibaobeixiong	天才宝贝熊	613
 tiancaijian	甜菜碱	470
 tiancaijiangaobanguang'ansuanjiajizhuanyimei	甜菜碱高半胱氨酸甲基转移酶	700
@@ -187928,6 +187933,9 @@ buzuo	不坐	1
 chenzhe	抻着	1
 erdang	二挡	1
 fajiao	发胶	1
+fenle	分了	0
+gangban	港版	0
+gangfu	港服	0
 gaodiao	高吊	1
 guande	管得	1
 guande	管的	1
@@ -187935,6 +187943,9 @@ gude	顾得	1
 gude	顾的	1
 guode	过得	1
 guode	过的	1
+guohang	国行	0
+guoqu	国区	0
+henfei	很费	0
 huale	化了	1
 huale	画了	1
 jingshi	晶石	13
@@ -187944,7 +187955,10 @@ jiushi	就失	1
 jutou	剧透	1
 kaobei	靠背	1
 liangle	晾了	1
+meiban	美版	0
+meifu	美服	0
 meigan	没干	1
+meiqu	美区	0
 meitian	没舔	1
 meixi	没洗	0
 mianrong	棉绒	1
@@ -187993,6 +188007,9 @@ tahua	他画	1
 tahua	他花	1
 tahua	她画	1
 tahua	她花	1
+taiban	台版	0
+taifu	台服	0
+taiqu	台区	0
 tajiang	他讲	1
 tajiang	她讲	1
 tajie	他借	1
@@ -188019,6 +188036,7 @@ tazu	他租	1
 tazu	她租	1
 tazuo	他坐	1
 tazuo	她坐	1
+tingfei	挺费	0
 tishang	踢伤	1
 woban	我搬	1
 wobao	我饱	1
@@ -188044,6 +188062,7 @@ wozu	我租	1
 wozuo	我坐	1
 xiamo	夏末	1
 xiekua	斜挎	1
+xiexiu	邪修	0
 xinpin	新聘	1
 xinwo	心窝	1
 xuanzai	悬在	1
@@ -188053,6 +188072,7 @@ yinhuan	阴环	1
 yinwei	淫猥	1
 yinyu	银鱼	34
 yuxue	雨血	1
+zhongfu	中服	0
 aicao	挨操	20
 aicao	挨肏	20
 aile	挨了	280

@@ -12230,6 +12230,7 @@ bufaxianli	不乏先例	635
 bufazhitu	不法之徒	598
 bufei	不飛	1000
 bufei	不菲	819
+bufei	不費	700
 bufeibufa	不悱不發	387
 bufeichuihuizhili	不費吹灰之力	519
 bufeihuoxuejiaonang	補肺活血膠囊	664
@@ -40043,9 +40044,9 @@ feileiguchunxiaoyanyao	非類固醇消炎葯	367
 feileiguchunxiaoyanzhitongyao	非類固醇消炎止痛藥	898
 feileiguchunxiaoyanzhitongyao	非類固醇消炎止痛葯	380
 feilengcui	翡冷翠	423
-feili	費力	714
+feili	費力	715
 feili	肥力	379
-feili	非禮	171
+feili	非禮	170
 feili'ershi	腓力二世	413
 feilian	蜚蠊	341
 feiliangxingzhongliu	肺良性腫瘤	610
@@ -72056,6 +72057,7 @@ jintiancun	金田村	187
 jintianhe	今天和	1036
 jintiankaishi	今天開始	573
 jintiankaishishirenlei	今天開始是人類	600
+jintianlai	今天來	800
 jintianqiyi	金田起義	334
 jintianshangwu	今天上午	280
 jintianxiawu	今天下午	280
@@ -96877,6 +96879,7 @@ mingtiandexuezhicheng	明天的雪之丞	648
 mingtiandezhongfeng	明天的重逢	526
 mingtianhe	明天和	1018
 mingtianjian	明天見	317
+mingtianlai	明天來	800
 mingtianqi	明天啓	167
 mingtie	名帖	400
 mingtiluoji	命題邏輯	405
@@ -98536,8 +98539,8 @@ muban	模板	280
 muban	木版	1
 mubanhua	木版畫	443
 mubei	墓碑	434
-muben	母本	515
-muben	木本	503
+muben	母本	495
+muben	木本	483
 mubenzhiwu	木本植物	481
 mubiao	目標	536
 mubiaochengxu	目標程序	731
@@ -108043,8 +108046,8 @@ qianfangjiao	前房角	232
 qianfangjinong	前房積膿	540
 qianfangjixue	前房積血	570
 qianfaren	簽發人	10
-qianfei	遷飛	571
-qianfei	欠費	327
+qianfei	遷飛	570
+qianfei	欠費	304
 qianfen	芡粉	305
 qianfenchi	千分尺	425
 qianfeng	前鋒	457
@@ -114928,6 +114931,7 @@ renggei	扔給	10
 rengjide	仍記得	1000
 rengjin	扔進	280
 rengjiu	仍舊	520
+rengle	扔了	700
 rengong	人工	914
 rengong'ertinggu	人工耳聽骨	640
 rengong'erwo	人工耳蝸	570
@@ -129040,6 +129044,7 @@ shuaikaibangzi	甩開膀子	387
 shuailaishuaiqu	甩來甩去	280
 shuailao	衰老	462
 shuailaoxiangguanfenmibiaoxing	衰老相關分泌表型	700
+shuaile	甩了	700
 shuailian	甩臉	10
 shuailianzi	甩臉子	232
 shuailing	率領	502
@@ -190327,8 +190332,8 @@ zuobiankuang	左邊框	800
 zuobianlan	左邊欄	673
 zuobianqi	坐便器	362
 zuobianr	左邊兒	167
-zuobiao	坐標	843
-zuobiao	座標	798
+zuobiao	坐標	941
+zuobiao	座標	896
 zuobiaofa	座標法	760
 zuobiaokongjian	坐標空間	260
 zuobiaokongjian	座標空間	258
@@ -190995,6 +191000,9 @@ buzuo	不坐	1
 chenzhe	抻著	1
 erdang	二擋	1
 fajiao	髮膠	1
+fenle	分了	0
+gangban	港版	0
+gangfu	港服	0
 gaodiao	高吊	1
 guande	管得	1
 guande	管的	1
@@ -191002,6 +191010,9 @@ gude	顧得	1
 gude	顧的	1
 guode	過得	1
 guode	過的	1
+guohang	國行	0
+guoqu	國區	0
+henfei	很費	0
 huale	化了	1
 huale	畫了	1
 jingshi	晶石	13
@@ -191011,7 +191022,10 @@ jiushi	就失	1
 jutou	劇透	1
 kaobei	靠背	158
 liangle	晾了	1
+meiban	美版	0
+meifu	美服	0
 meigan	沒幹	25
+meiqu	美區	0
 meitian	沒舔	1
 meixi	沒洗	0
 mianrong	棉絨	1
@@ -191060,6 +191074,9 @@ tahua	他畫	1
 tahua	他花	1
 tahua	她畫	1
 tahua	她花	1
+taiban	臺版	0
+taifu	臺服	0
+taiqu	臺區	0
 tajiang	他講	1
 tajiang	她講	1
 tajie	他借	1
@@ -191086,6 +191103,7 @@ tazu	他租	1
 tazu	她租	1
 tazuo	他坐	1
 tazuo	她坐	1
+tingfei	挺費	0
 tishang	踢傷	1
 woban	我搬	1
 wobao	我飽	1
@@ -191111,6 +191129,7 @@ wozu	我租	1
 wozuo	我坐	1
 xiamo	夏末	1
 xiekua	斜挎	1
+xiexiu	邪修	0
 xinpin	新聘	1
 xinwo	心窩	1
 xuanzai	懸在	1
@@ -191120,6 +191139,7 @@ yinhuan	陰環	1
 yinwei	淫猥	1
 yinyu	銀魚	34
 yuxue	雨血	1
+zhongfu	中服	0
 aicao	挨操	20
 aicao	挨肏	20
 aile	挨了	280

@@ -12368,3 +12368,23 @@
 你下	你下	0.0	nixia
 他下	他下	0.0	taxia
 她下	她下	0.0	taxia
+
+# Usage -2 defers exact-only rows until all global ranking stages are complete.
+# Region, edition, and game-server terms kept below general homophones 2026-07-31.
+国行	國行	-2.0	guohang
+美区	美區	-2.0	meiqu
+国区	國區	-2.0	guoqu
+台区	臺區	-2.0	taiqu
+港版	港版	-2.0	gangban
+美版	美版	-2.0	meiban
+台版	臺版	-2.0	taiban
+台服	臺服	-2.0	taifu
+美服	美服	-2.0	meifu
+中服	中服	-2.0	zhongfu
+港服	港服	-2.0	gangfu
+邪修	邪修	-2.0	xiexiu
+
+# Useful colloquial fragments that should not dominate longer segmentation paths.
+很费	很費	-2.0	henfei
+挺费	挺費	-2.0	tingfei
+分了	分了	-2.0	fenle
