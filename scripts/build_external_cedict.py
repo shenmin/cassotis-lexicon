@@ -525,6 +525,10 @@ CURATED_DAILY_ASPECT_VISIBILITY_CAP = 760
 
 def _curated_daily_supplement_weight_cap(usage_score: float, text: str) -> int:
     """Cap low-frequency exact supplements without letting visibility imply priority."""
+    # Negative usage is a build-only marker: keep the exact entry visible at
+    # runtime while giving residual rankers a distinct zero-weight sentinel.
+    if usage_score < 0.0:
+        return 0
     bounded_usage = max(0.0, min(1.0, usage_score))
     if _is_pure_daily_number_word(text):
         return CURATED_DAILY_SUPPLEMENT_NUMBER_WEIGHT_CAP
@@ -9696,11 +9700,15 @@ def _parse_curated_daily_phrase_entries(
         explicit_pinyin = parts[3].strip().lower() if len(parts) >= 4 else ""
         if explicit_pinyin and not PINYIN_RE.fullmatch(explicit_pinyin):
             explicit_pinyin = ""
+        # Preserve the visibility-only marker; ordinary usage remains bounded.
+        normalized_usage_score = (
+            -1.0 if usage_score < 0.0 else min(1.0, usage_score)
+        )
         entries.append(
             (
                 sc_word,
                 tc_word,
-                min(1.0, max(0.0, usage_score)),
+                normalized_usage_score,
                 explicit_pinyin,
             )
         )
@@ -14593,6 +14601,8 @@ def _finalize_curated_daily_weight(
     low_frequency: bool = False,
     text: str = "",
 ) -> int:
+    if low_frequency and usage_score < 0.0:
+        return 0
     bounded_usage = max(0.0, min(1.0, usage_score))
     if low_frequency:
         if is_number_word:
