@@ -614,6 +614,7 @@ CJK_FULL_RE = re.compile(
 )
 CJK_WINDOWS_FULL_RE = re.compile("^[\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff]+$")
 PINYIN_RE = re.compile(r"^[a-z]+$")
+EXPLICIT_PINYIN_RE = re.compile(r"^[a-z]+(?:'[a-z]+)*$")
 UNIHAN_SOURCE_HANYU_EXTRA = 1
 UNIHAN_SOURCE_MANDARIN = 2
 UNIHAN_SOURCE_PINLU = 3
@@ -1294,6 +1295,23 @@ def _normalize_pinyin(raw: str) -> str:
     if not PINYIN_RE.fullmatch(merged):
         return ""
     return merged
+
+
+def _normalize_explicit_pinyin(raw: str) -> str:
+    """Normalize a manifest override without discarding explicit boundaries."""
+    value = raw.strip().lower()
+    value = value.replace("\u2018", "'").replace("\u2019", "'").replace("\u02bc", "'")
+    raw_parts = value.split("'")
+    if not raw_parts or any(not part.strip() for part in raw_parts):
+        return ""
+
+    normalized_parts = [_normalize_pinyin(part) for part in raw_parts]
+    if any(not part for part in normalized_parts):
+        return ""
+    normalized = "'".join(normalized_parts)
+    if not EXPLICIT_PINYIN_RE.fullmatch(normalized):
+        return ""
+    return normalized
 
 
 def _normalize_compact_pinyin_key(raw: str) -> str:
@@ -2243,6 +2261,20 @@ def _build_curated_daily_explicit_pinyin_key_set(
     keys: Set[Tuple[str, str]] = set()
     for sc_word, tc_word, _usage_score, explicit_pinyin in entries:
         if not explicit_pinyin:
+            continue
+        if sc_word:
+            keys.add((explicit_pinyin, sc_word))
+        if tc_word:
+            keys.add((explicit_pinyin, tc_word))
+    return keys
+
+
+def _build_vertical_explicit_pinyin_key_set(
+    entries: List[VerticalEntry],
+) -> Set[Tuple[str, str]]:
+    keys: Set[Tuple[str, str]] = set()
+    for sc_word, tc_word, _usage_score, explicit_pinyin, _layer_id, _source_id in entries:
+        if not explicit_pinyin or "'" not in explicit_pinyin:
             continue
         if sc_word:
             keys.add((explicit_pinyin, sc_word))
@@ -9804,7 +9836,7 @@ def _parse_vertical_term_entries(
         except ValueError:
             usage_score = default_usage_score
         explicit_pinyin = (
-            _normalize_pinyin(parts[3].strip())
+            _normalize_explicit_pinyin(parts[3].strip())
             if len(parts) >= 4 and parts[3].strip()
             else ""
         )
@@ -11438,7 +11470,7 @@ def _load_pinyin_overrides(path: pathlib.Path) -> Dict[str, str]:
                 f"invalid override text at {path}:{line_no}, expected CJK text: '{text}'"
             )
 
-        pinyin = _normalize_pinyin(parts[1])
+        pinyin = _normalize_explicit_pinyin(parts[1])
         if not pinyin:
             raise ValueError(
                 f"invalid override pinyin at {path}:{line_no}: '{parts[1]}'"
@@ -22048,6 +22080,14 @@ def main() -> int:
     stats.update(tc_styled_competitor_cap_stats)
     curated_daily_explicit_pinyin_keys = _build_curated_daily_explicit_pinyin_key_set(
         curated_daily_entries + curated_daily_supplement_entries
+    )
+    curated_daily_explicit_pinyin_keys.update(
+        _build_vertical_explicit_pinyin_key_set(vertical_entries)
+    )
+    curated_daily_explicit_pinyin_keys.update(
+        (pinyin, text)
+        for text, pinyin in word_pinyin_overrides.items()
+        if text and "'" in pinyin
     )
     sc_output_pinyin_bucket_map = _build_output_pinyin_bucket_map(
         sc_map,

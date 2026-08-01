@@ -9550,7 +9550,7 @@ bihua	比画	1
 bihuabizhi	壁画壁纸	669
 bihuajianzibiao	笔划检字表	289
 bihuajianzibiao	笔画检字表	289
-bihuan	闭环	751
+bihuan	闭环	750
 bihuashu	笔画数	379
 bihuashurufa	笔划输入法	740
 bihuashurufa	笔画输入法	740
@@ -17705,6 +17705,7 @@ chechu	撤除	663
 chechuang	车窗	1000
 chechuang	车床	1
 checi	车次	398
+cheda	扯大	280
 chedai	车贷	817
 chedai	车带	1
 chedan	扯淡	971
@@ -24044,7 +24045,7 @@ dagouqizhu	打狗欺主	260
 dagu	打鼓	949
 dagu	大沽	664
 dagu	打谷	460
-dagu	大谷	61
+dagu	大谷	62
 dagu	大鼓	13
 dagu	大姑	1
 dagua	大褂	280
@@ -45968,7 +45969,7 @@ gejin	葛巾	186
 gejingfangxue	割颈放血	570
 gejinsuoneng	各尽所能	454
 gejiu	个旧	1000
-gejiu	各就	350
+gejiu	各就	349
 gejiucai	割韭菜	228
 gejiuge	各就各	556
 gejiugewei	各就各位	600
@@ -52456,7 +52457,9 @@ hai'er	海尔	299
 hai'erdelan	海尔德兰	140
 hai'ou	海鸥	404
 hai'ouzhaoxiangji	海鸥照相机	740
+haiai	还矮	280
 haian	海岸	1000
+haian	还暗	280
 haian	海安	1
 haiancheng	海岸城	391
 haiandemao	海岸地貌	597
@@ -52464,6 +52467,7 @@ haianshi	海安市	54
 haianxian	海岸线	564
 haiba	海拔	431
 haiba	还把	280
+haibai	还白	280
 haibaihe	海百合	224
 haibaihelei	海百合类	540
 haibao	海豹	788
@@ -52507,6 +52511,7 @@ haicha	还差	1000
 haicha	还查	700
 haichadian	还差点	800
 haichan	海产	455
+haichang	还长	700
 haichang	海肠	198
 haichangzi	海肠子	232
 haichanpin	海产品	500
@@ -52519,6 +52524,7 @@ haichengqu	海城区	165
 haichengshi	海城市	183
 haichi	还吃	700
 haichong	害虫	448
+haichou	还丑	280
 haichu	害处	423
 haichuan	海船	445
 haichuan	咳喘	234
@@ -52529,7 +52535,9 @@ haichuanningkoufuye	咳喘宁口服液	648
 haichuanshupian	咳喘舒片	540
 haichuantinggao	咳喘停膏	540
 haiciqin	海刺芹	230
+haicu	还粗	700
 haicuo	海错	198
+haida	还大	700
 haidai	海带	560
 haidan	海胆	402
 haidancishang	海胆刺伤	540
@@ -52564,8 +52572,9 @@ haidekaishi	海的开始	505
 haidelaba	海得拉巴	395
 haideng	海登	186
 haideren	海地人	676
+haidi	还低	700
 haidi	海地	631
-haidi	海底	536
+haidi	海底	551
 haidi	海堤	63
 haidian	海淀	493
 haidianqu	海淀区	288
@@ -52592,9 +52601,11 @@ haidizongdongyuan	海底总动员	613
 haidong	海东	183
 haidongqing	海东青	241
 haidongshi	海东市	54
-haiduan	海端	319
+haiduan	还短	700
+haiduan	海端	1
 haiduanxiang	海端乡	174
 haidun	海顿	258
+haiduo	还多	700
 haiduzi	害肚子	232
 haie	还饿	1000
 haier	海尔	299
@@ -52612,6 +52623,7 @@ haifushi	海浮石	360
 haigan	还干	700
 haigang	海港	373
 haigangqu	海港区	160
+haigao	还高	700
 haige	海哥	10
 haigelisidamaoxian	海格力斯大冒险	632
 haigelisiderongguanghundezhengming	海格力斯的荣光魂的证明	662
@@ -52635,6 +52647,7 @@ haihang	海航	401
 haihao	还好	834
 haihe	还喝	700
 haihe	海河	1
+haihei	还黑	280
 haihong	海虹	231
 haihuanggeng	海皇羹	232
 haihui	还会	1000
@@ -52654,14 +52667,17 @@ haijiaotianya	海角天涯	430
 haijiar	还价儿	640
 haijide	还记得	1000
 haijihui	海基会	222
-haijin	海禁	398
+haijin	还近	280
+haijin	海禁	1
 haijing	海景	441
 haijing	海警	311
 haijingde'aipeiliya	海景的艾佩莉雅	632
 haijingfang	海景房	10
 haijingju	海警局	232
 haijinsha	海金沙	360
+haijiu	还旧	700
 haijiu	海鹫	305
+haijiu	还久	280
 haijun	海军	536
 haijunbudasha	海军部大厦	660
 haijundaxiao	海军大校	260
@@ -52689,6 +52705,7 @@ haikongjunjidi	海空军基地	289
 haikou	海口	984
 haikou	害口	1
 haikoushi	海口市	281
+haikuai	还快	700
 haikui	海葵	389
 haikunshenxijiaonang	海昆肾喜胶囊	653
 haikuopingyuyue	海阔凭鱼跃	412
@@ -52707,11 +52724,12 @@ hailang	骇浪	219
 hailang	海浪	149
 hailangjingtao	骇浪惊涛	643
 hailanse	海蓝色	10
+hailao	还老	280
 hailaxibao	海拉细胞	570
 haile	嗨了	700
 haili	海里	1000
 haili	海狸	222
-hailiang	海量	401
+hailiang	海量	27
 hailidejiao	海里的礁	527
 hailidejiaoshi	海里的礁石	569
 hailifushengji	海狸浮生记	613
@@ -52725,6 +52743,7 @@ hailiu	海榴	198
 hailizi	海蛎子	198
 hailong	海龙	439
 hailu	海陆	1000
+hailuan	还乱	280
 hailubao	海陆煲	230
 hailuci	海鸬鹚	228
 hailujun	海陆军	202
@@ -52745,10 +52764,12 @@ haimahui	海马回	232
 haimai	还买	700
 haimai	还卖	700
 haimajiegou	海马结构	540
+haiman	还慢	700
 haimapanghui	海马旁回	570
 haimati	海马体	232
 haimayinghua	海马硬化	570
 haimei	还没	1036
+haimei	还美	280
 haimeilai	还没来	1000
 haimeiwan	还没完	1036
 haimeiyou	还没有	1018
@@ -52778,8 +52799,9 @@ haimuda'er	海姆达尔	538
 haimudaer	海姆达尔	538
 hainabaichuan	海纳百川	264
 hainaijiguangqi	氦氖激光器	610
-hainan	海南	879
-hainan	海难	112
+hainan	海南	950
+hainan	还难	280
+hainan	海难	1
 hainanchubanshe	海南出版社	286
 hainandao	海南岛	373
 hainandaxue	海南大学	268
@@ -52804,6 +52826,7 @@ hainayang	还那样	800
 hainei	海内	409
 haineicunzhiji	海内存知己	400
 haineiwai	海内外	528
+hainen	还嫩	280
 haineng	还能	1000
 hainiao	海鸟	535
 hainiao	害鸟	204
@@ -52824,7 +52847,10 @@ haipiaoshao	海螵蛸	470
 haipiaoxiao	海螵蛸	379
 haipingmian	海平面	516
 haipingmianshangsheng	海平面上升	640
+haipo	还破	280
 haiqi	氦气	377
+haiqian	还浅	280
+haiqiang	还强	700
 haiqiao	海鞘	385
 haiqingtian	海青天	232
 haiqiqiu	氦气球	230
@@ -52842,6 +52868,7 @@ hairentingwen	骇人听闻	509
 hairi	海日	58
 hairui	海瑞	373
 hairuibaguan	海瑞罢官	249
+hairuo	还弱	700
 haisao	害臊	429
 haisenbao	海森堡	187
 haisenbo	海森伯	246
@@ -52861,8 +52888,9 @@ haishangshijie	海上世界	482
 haishangzhengxiong	海上争雄	538
 haishao	还少	700
 haishawu	海砂屋	232
-haishen	海参	402
-haishen	海神	222
+haishen	海参	321
+haishen	还深	280
+haishen	海神	41
 haishendehuisheng	海神的回声	613
 haisheng	还剩	700
 haishenmiao	海神庙	264
@@ -52882,6 +52910,7 @@ haishou	害兽	335
 haishouzhili	还手之力	10
 haishu	海曙	135
 haishu	还书	10
+haishuang	还爽	280
 haishudezuzhou	海鼠的诅咒	608
 haishui	海水	536
 haishuibukedouliang	海水不可斗量	318
@@ -52956,7 +52985,8 @@ haiwo	害我	10
 haiwoheshan	还我河山	628
 haiwumunuomiejueying	海乌姆诺灭绝营	660
 haiwumuzhatianzhushengsanshengdiangongzhujiaozuotang	海乌姆扎天主圣三圣殿共主教座堂	660
-haixi	海西	677
+haixi	还细	700
+haixi	海西	604
 haixi	害喜	3
 haixia	海峡	699
 haixia	海虾	10
@@ -52966,20 +52996,21 @@ haixialiang'anguanxixiehui	海峡两岸关系协会	382
 haixialiangan	海峡两岸	602
 haixian	海鲜	295
 haixiang	还想	700
-haixiang	海相	20
+haixiang	海相	19
 haixiang	海象	1
 haixiangchenjiwu	海相沉积物	289
 haixiangsibing	害相思病	260
 haixianjiang	海鲜酱	232
 haixianyan	海鲜宴	10
-haixiao	海啸	430
+haixiao	海啸	65
 haixiaqundao	海峡群岛	226
 haixiashibao	海峡时报	260
 haixie	还写	700
 haixie	海蟹	10
 haixiehui	海协会	207
 haiximengguzuzangzuzizhizhou	海西蒙古族藏族自治州	391
-haixin	海信	296
+haixin	还新	700
+haixin	海信	1
 haixing	还行	1000
 haixing	海星	71
 haixingjichang	海星机场	260
@@ -55487,7 +55518,7 @@ hen'e	很饿	1000
 henai	很爱	1000
 henai	很矮	700
 henan	很暗	700
-henan	河南	459
+henan	河南	458
 henandaxuedui	河南大学队	274
 henanfulu	河南府路	482
 henanjianyedui	河南建业队	304
@@ -55519,6 +55550,7 @@ henchang	很长	700
 henchou	很丑	1000
 henchou	很臭	1000
 henchuai	狠踹	10
+hencu	很粗	700
 henda	很大	1018
 hendachengdu	很大程度	10
 hendi	很低	700
@@ -55853,6 +55885,7 @@ henjin	很进	700
 henjin	狠劲	156
 henjing	很静	10
 henjiu	很久	700
+henjiu	很旧	700
 henjiuhenjiu	很久很久	10
 henjiuyilai	很久以来	10
 henjue	狠绝	198
@@ -55898,6 +55931,7 @@ hennianqing	很年轻	1018
 hennuan	很暖	280
 henpianyi	很便宜	1000
 henpiaoliang	很漂亮	1000
+henpo	很破	700
 henqian	很前	1000
 henqian	很浅	1000
 henqiang	很强	700
@@ -55951,6 +55985,7 @@ henxianran	很显然	1000
 henxiao	很小	1018
 henxiaxin	狠下心	10
 henxihuan	很喜欢	1000
+henxin	很新	700
 henxin	狠心	440
 henxingyun	很幸运	800
 henxinwei	很欣慰	800
@@ -58067,7 +58102,7 @@ huanayouxi	华纳游戏	740
 huanba	换吧	700
 huanban	缓办	51
 huanbao	环保	1000
-huanbao	环抱	191
+huanbao	环抱	190
 huanbaodoushi	环保斗士	260
 huanbaoju	环保局	451
 huanbaojunsu	环孢菌素	455
@@ -58142,7 +58177,7 @@ huancunshuju	缓存数据	775
 huancunwenjian	缓存文件	706
 huancunxitong	缓存系统	702
 huandai	还贷	783
-huandai	换代	534
+huandai	换代	533
 huandan	换单	198
 huandang	换档	10
 huandang	换挡	1
@@ -71784,8 +71819,8 @@ jiubaiwushiliuwanqiqian'erbailiushiyihu	九百五十六万七千二百六十一�
 jiubaiyuwanyuan	九百余万元	371
 jiuban	究办	435
 jiubanben	旧版本	1000
-jiubao	酒保	500
-jiubao	久保	204
+jiubao	酒保	499
+jiubao	久保	205
 jiubei	酒杯	1000
 jiubei	就被	700
 jiubian	就便	198
@@ -71844,6 +71879,7 @@ jiuchu	揪出	40
 jiuci	就此	1000
 jiucuo	纠错	416
 jiucuoma	纠错码	10
+jiuda	就大	700
 jiuda	就打	700
 jiudalu	旧大陆	208
 jiudan	酒单	198
@@ -72398,6 +72434,7 @@ jiuxiangshi	就像是	1018
 jiuxiangshi	旧相识	10
 jiuxianzheyang	就先这样	800
 jiuxianzheyangba	就先这样吧	800
+jiuxiao	就小	700
 jiuxiaolianmeng	九校联盟	260
 jiuxiaoshi	九小时	1009
 jiuxiaoyunwai	九霄云外	470
@@ -75464,6 +75501,7 @@ kanchu	看出	1000
 kanchuan	看穿	405
 kanchulai	看出来	1000
 kancuo	看错	323
+kanda	看大	280
 kandaha	坎大哈	220
 kandahasheng	坎大哈省	140
 kandai	看待	1000
@@ -76052,8 +76090,10 @@ kanwu	刊物	888
 kanwubiao	勘误表	508
 kanwubiao	刊误表	368
 kanxi	看戏	1000
+kanxia	看下	700
 kanxiang	看向	700
 kanxiang	看相	196
+kanxiao	看小	280
 kanxiaohua	看笑话	398
 kanxiliu	看戏流	501
 kanxiliuyan	看戏流眼	527
@@ -79494,6 +79534,7 @@ lachong	蜡虫	305
 lachouhen	拉仇恨	230
 lachu	拉出	10
 lachulai	拉出来	800
+lada	拉大	700
 ladabian	拉大便	232
 ladadang	啦嗒当	453
 ladake	拉达克	213
@@ -87889,6 +87930,7 @@ louzi	楼子	209
 louzui	漏嘴	323
 louzuo	楼座	328
 lu'alu	撸啊撸	453
+lu'an	六安	352
 lu'anda	卢安达	202
 lu'ang	鲁昂	231
 lu'enfuwen	卢恩符文	740
@@ -87898,7 +87940,6 @@ lu'erdao	鹿儿岛	275
 lu'erhe	鲁尔河	182
 lu'erqu	鲁尔区	209
 lualu	撸啊撸	453
-luan	六安	283
 luanbaidanbai	卵白蛋白	570
 luanchan	乱缠	10
 luanchao	卵巢	572
@@ -98497,8 +98538,8 @@ nanzhixingyouyuzheng	难治型忧郁症	700
 nanzhongyin	男中音	400
 nanzhou	南州	144
 nanzhouxiang	南州乡	174
-nanzhu	楠竹	544
-nanzhu	难住	491
+nanzhu	楠竹	545
+nanzhu	难住	492
 nanzhu	男主	10
 nanzhuang	男装	871
 nanzhuang	难装	700
@@ -103724,6 +103765,7 @@ pianchang	片长	115
 pianchong	偏宠	438
 pianchou	片酬	328
 pianci	偏辞	323
+pianda	偏大	700
 piandai	偏待	438
 piandang	偏宕	198
 piandaoshu	偏导数	10
@@ -103861,6 +103903,7 @@ pianxianglv	偏向率	640
 pianxiangzhi	偏向制	501
 pianxiangzhiyu	偏向制御	527
 pianxiangzhiyuguan	偏向制御管	569
+pianxiao	偏小	700
 pianxie	偏斜	834
 pianxiebuzheng	偏邪不正	260
 pianxin	偏心	401
@@ -107138,7 +107181,7 @@ qianshe	牵涉	453
 qianshedao	牵涉到	362
 qianshen	前身	1000
 qianshen	欠身	804
-qianshen	前肾	403
+qianshen	前肾	402
 qianshen	前伸	280
 qiansheng	前生	996
 qianshenglaishi	前生来世	1000
@@ -122027,7 +122070,7 @@ shenhoushi	身后事	1
 shenhu	神户	381
 shenhua	神话	1000
 shenhua	申花	296
-shenhua	深化	259
+shenhua	深化	260
 shenhua	神化	1
 shenhuachuanshuo	神话传说	538
 shenhuagushi	神话故事	387
@@ -134283,8 +134326,8 @@ taohongsiwutang	桃红四物汤	610
 taohua	桃花	1000
 taohua	套话	1
 taohualiushui	桃花流水	507
-taohuan	讨还	622
-taohuan	套换	234
+taohuan	讨还	623
+taohuan	套换	233
 taohuang	逃荒	444
 taohuashan	桃花扇	375
 taohuashuimu	桃花水母	260
@@ -154805,7 +154848,7 @@ xintaohuanjiufu	新桃换旧符	397
 xintebaochuanshuo	辛特堡传说	613
 xintelinida	新特里尼达	526
 xinteng	心疼	440
-xintian	新田	695
+xintian	新田	696
 xintian	新添	10
 xintian	心田	1
 xintian'ebao	新天鹅堡	482
@@ -169343,7 +169386,8 @@ youcixu	有次序	640
 youcunjiachun	有村架纯	504
 youcuo	有错	700
 youcuozaixian	有错在先	10
-youda	犹大	868
+youda	有大	280
+youda	犹大	184
 youdai	有待	700
 youdai	优待	520
 youdaijiaqiang	有待加强	10
@@ -184110,7 +184154,8 @@ zhulou	主楼	414
 zhulu	诛戮	923
 zhulu	著录	141
 zhulu	逐鹿	1
-zhuluo	侏罗	233
+zhuluo	猪猡	280
+zhuluo	侏罗	200
 zhuluoji	侏罗纪	607
 zhuluojigongyuanhudong	侏罗纪公园互动	632
 zhuluojigongyuanyouxi	侏罗纪公园游戏	632
@@ -188140,6 +188185,8 @@ guode	过得	1
 guode	过的	1
 guohang	国行	0
 guoqu	国区	0
+hailiang	还亮	1
+haixiao	还小	1
 henfei	很费	0
 huale	化了	1
 huale	画了	1
@@ -188267,6 +188314,7 @@ yinbi	荫庇	1
 yinhuan	阴环	1
 yinwei	淫猥	1
 yinyu	银鱼	34
+youxiao	有小	1
 yuxue	雨血	1
 zhongfu	中服	0
 aicao	挨操	20

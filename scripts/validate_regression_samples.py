@@ -51,7 +51,11 @@ def load_dict(path: pathlib.Path) -> Dict[str, List[Tuple[str, int]]]:
             if not pinyin or not text:
                 raise ValueError(f"{path}:{line_no} empty pinyin/text")
 
-            for key in {pinyin, exact_pinyin}:
+            # Explicit syllable boundaries are distinct exact keys.  Folding
+            # lu'an into luan here would validate a candidate set the engine
+            # deliberately no longer returns for a direct luan query.
+            keys = {exact_pinyin} if "'" in exact_pinyin else {pinyin}
+            for key in keys:
                 if not key:
                     continue
                 if key not in bucket:
