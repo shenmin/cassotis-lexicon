@@ -4223,7 +4223,6 @@
 没见	沒見	0.90	meijian
 没写	沒寫	0.90	meixie
 没开	沒開	0.90	meikai
-没关	沒關	0.90	meiguan
 没我	沒我	0.88	meiwo
 没你	沒你	0.88	meini
 没他	沒他	0.88	meita
@@ -7658,3 +7657,18 @@
 不费	不費	0.86	bufei
 扔了	扔了	0.84	rengle
 甩了	甩了	0.82	shuaile
+
+# Common connective, reference, and editing phrases 2026-08-01.
+明文	明文	0.88	mingwen
+简洁	簡潔	0.94	jianjie
+美观	美觀	0.94	meiguan
+并把	並把	0.86	bingba
+又把	又把	0.88	youba
+别把	別把	0.92	bieba
+前一个	前一個	0.90	qianyige
+后一个	後一個	0.90	houyige
+而不要	而不要	0.82	erbuyao
+而不	而不	0.86	erbu
+且不	且不	0.82	qiebu
+近似于	近似於	0.84	jinsiyu
+原版	原版	0.88	yuanban
