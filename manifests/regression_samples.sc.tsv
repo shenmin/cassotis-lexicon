@@ -1,4 +1,20 @@
 # pinyin<TAB>expected_text<TAB>max_rank(optional)
+bei	臂	9
+bo	蕃	27
+jiao	嚼	9
+jiao	校	9
+jue	角	9
+en	嗯	9
+hu	和	9
+ji	系	9
+la	落	9
+lin	拎	18
+lv	捋	27
+shi	什	9
+sou	嗖	27
+tan	昙	27
+tuo	拓	27
+xin	寻	18
 jian	见	1
 fangong	返工	1
 fangong	反攻	5
@@ -303,7 +319,6 @@ shoubao	首保	1
 chubao	出保	1
 xubao	续保	1
 zhibao	质保	1
-jiao	校	40
 saoma	扫码	1
 bawomen	把我们	3
 shinimen	使你们	8

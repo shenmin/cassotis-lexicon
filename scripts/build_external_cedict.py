@@ -10317,7 +10317,8 @@ def _load_unihan_readings_detail(
                 if pinlu_count > previous_detail:
                     pinlu_detail_map[detail_key] = pinlu_count
 
-    # Keep pragmatic override from historical Unihan import behavior.
+    # Modern pinyin input treats "en" as the primary spelling for this
+    # interjection even when Unihan happens to list another reading first.
     _add_unihan_reading(
         readings_map,
         source_rank_map,
@@ -10325,8 +10326,7 @@ def _load_unihan_readings_detail(
         "en",
         UNIHAN_SOURCE_PINLU,
     )
-    if "嗯" not in mandarin_map:
-        mandarin_map["嗯"] = "en"
+    mandarin_map["嗯"] = "en"
 
     for override_char, override_pinyin, min_detail in (
         ("\u5e62", "zhuang", 1),  # 幢
@@ -14067,6 +14067,421 @@ def _dampen_compound_root_inflated_single_chars(
 
         if bucket_touched:
             stats[f"{stats_prefix}_single_char_compound_root_buckets"] += 1
+
+    return stats
+
+
+def _restore_common_polyphonic_reading_visibility(
+    mapping: Dict[Tuple[str, str], int],
+    competing_single_char_map: Dict[Tuple[str, str], int] | None,
+    unihan_readings_map: Dict[str, Set[str]] | None,
+    unihan_mandarin_map: Dict[str, str] | None,
+    unihan_pinlu_detail_map: Dict[Tuple[str, str], int] | None,
+    phrase_term_count_map: Dict[Tuple[str, str], int] | None,
+    phrase_support_sum_map: Dict[Tuple[str, str], float] | None,
+    visibility_phrase_term_count_map: Dict[Tuple[str, str], int] | None,
+    visibility_phrase_support_sum_map: Dict[Tuple[str, str], float] | None,
+    inferred_phrase_term_count_map: Dict[Tuple[str, str], int] | None,
+    inferred_phrase_support_sum_map: Dict[Tuple[str, str], float] | None,
+    visibility_inferred_phrase_term_count_map: Dict[Tuple[str, str], int] | None,
+    visibility_inferred_phrase_support_sum_map: Dict[Tuple[str, str], float] | None,
+    family_term_count_map: Dict[str, int] | None,
+    visibility_family_term_count_map: Dict[str, int] | None,
+    single_char_frequency_map: Dict[str, float] | None,
+    single_char_pos_map: Dict[str, str] | None,
+    explicit_pinyin_overrides: Dict[str, str] | None,
+    stats_prefix: str,
+    visible_rank: int = 9,
+    common_char_min_frequency: float = 150.0,
+) -> Dict[str, int]:
+    """Keep valid readings of common polyphonic characters visibly ranked.
+
+    A cold reading can be rare while its character remains familiar to users.
+    Treat the character's standalone frequency and modern phrase alignments as
+    separate signals, and also honor audited single-character reading aliases.
+    High-confidence readings use the first page, while weaker evidence is
+    limited to the second or third page. The final adjustment is bucket-local
+    and runs after global calibration.
+    """
+    stats = {
+        f"{stats_prefix}_common_polyphonic_readings_eligible": 0,
+        f"{stats_prefix}_common_polyphonic_readings_explicit": 0,
+        f"{stats_prefix}_common_polyphonic_readings_direct": 0,
+        f"{stats_prefix}_common_polyphonic_readings_modern_primary": 0,
+        f"{stats_prefix}_common_polyphonic_readings_sparse_pinlu": 0,
+        f"{stats_prefix}_common_polyphonic_readings_corpus_pinlu": 0,
+        f"{stats_prefix}_common_polyphonic_readings_inferred": 0,
+        f"{stats_prefix}_common_polyphonic_readings_first_page": 0,
+        f"{stats_prefix}_common_polyphonic_readings_second_page": 0,
+        f"{stats_prefix}_common_polyphonic_readings_third_page": 0,
+        f"{stats_prefix}_common_polyphonic_readings_visibility_overflow": 0,
+        f"{stats_prefix}_common_polyphonic_readings_restored": 0,
+        f"{stats_prefix}_common_polyphonic_reading_buckets": 0,
+        f"{stats_prefix}_common_polyphonic_readings_unresolved": 0,
+    }
+    if not mapping or visible_rank <= 0:
+        return stats
+
+    competing_single_char_map = competing_single_char_map or {}
+    unihan_readings_map = unihan_readings_map or {}
+    unihan_mandarin_map = unihan_mandarin_map or {}
+    unihan_pinlu_detail_map = unihan_pinlu_detail_map or {}
+    phrase_term_count_map = phrase_term_count_map or {}
+    phrase_support_sum_map = phrase_support_sum_map or {}
+    visibility_phrase_term_count_map = visibility_phrase_term_count_map or {}
+    visibility_phrase_support_sum_map = visibility_phrase_support_sum_map or {}
+    inferred_phrase_term_count_map = inferred_phrase_term_count_map or {}
+    inferred_phrase_support_sum_map = inferred_phrase_support_sum_map or {}
+    visibility_inferred_phrase_term_count_map = (
+        visibility_inferred_phrase_term_count_map or {}
+    )
+    visibility_inferred_phrase_support_sum_map = (
+        visibility_inferred_phrase_support_sum_map or {}
+    )
+    family_term_count_map = family_term_count_map or {}
+    visibility_family_term_count_map = visibility_family_term_count_map or {}
+    single_char_frequency_map = single_char_frequency_map or {}
+    single_char_pos_map = single_char_pos_map or {}
+    explicit_pinyin_overrides = explicit_pinyin_overrides or {}
+
+    bucket_maps: Dict[str, Dict[str, int]] = {}
+    for source_map in (competing_single_char_map, mapping):
+        for (pinyin, text), weight in source_map.items():
+            if _cjk_len(text) != 1:
+                continue
+            bucket = bucket_maps.setdefault(pinyin, {})
+            bucket[text] = max(bucket.get(text, 0), weight)
+
+    for pinyin, bucket in bucket_maps.items():
+        items = list(bucket.items())
+        if len(items) <= visible_rank:
+            continue
+
+        ordered = sorted(items, key=lambda item: (-item[1], item[0]))
+        eligible: List[Tuple[int, str, int, float, int, float, int]] = []
+        for rank_index, (text, current_weight) in enumerate(ordered):
+            if (pinyin, text) not in mapping:
+                continue
+            pair = (text, pinyin)
+            readings = unihan_readings_map.get(text, set())
+            if len(readings) < 2 or unihan_mandarin_map.get(text, "") == pinyin:
+                continue
+            if single_char_frequency_map.get(text, 0.0) < common_char_min_frequency:
+                continue
+
+            phrase_term_count = max(0, phrase_term_count_map.get(pair, 0))
+            phrase_support = max(0.0, phrase_support_sum_map.get(pair, 0.0))
+            visibility_phrase_term_count = max(
+                phrase_term_count, visibility_phrase_term_count_map.get(pair, 0)
+            )
+            visibility_phrase_support = max(
+                phrase_support, visibility_phrase_support_sum_map.get(pair, 0.0)
+            )
+            inferred_phrase_term_count = max(
+                0, inferred_phrase_term_count_map.get(pair, 0)
+            )
+            inferred_phrase_support = max(
+                0.0, inferred_phrase_support_sum_map.get(pair, 0.0)
+            )
+            visibility_inferred_phrase_term_count = max(
+                inferred_phrase_term_count,
+                visibility_inferred_phrase_term_count_map.get(pair, 0),
+            )
+            visibility_inferred_phrase_support = max(
+                inferred_phrase_support,
+                visibility_inferred_phrase_support_sum_map.get(pair, 0.0),
+            )
+            family_term_count = max(
+                0,
+                family_term_count_map.get(text, 0),
+                visibility_family_term_count_map.get(text, 0),
+            )
+            standalone_frequency = max(
+                0.0, single_char_frequency_map.get(text, 0.0)
+            )
+            primary_pinyin = unihan_mandarin_map.get(text, "")
+            primary_phrase_term_count = max(
+                0, phrase_term_count_map.get((text, primary_pinyin), 0)
+            )
+            primary_phrase_support = max(
+                0.0, phrase_support_sum_map.get((text, primary_pinyin), 0.0)
+            )
+            visibility_primary_phrase_term_count = max(
+                primary_phrase_term_count,
+                visibility_phrase_term_count_map.get((text, primary_pinyin), 0),
+            )
+            visibility_primary_phrase_support = max(
+                primary_phrase_support,
+                visibility_phrase_support_sum_map.get((text, primary_pinyin), 0.0),
+            )
+            pos_tag = single_char_pos_map.get(text, "")
+            reading_pinlu = max(0, unihan_pinlu_detail_map.get(pair, 0))
+            explicitly_audited = explicit_pinyin_overrides.get(text, "") == pinyin
+            has_modern_phrase_support = (
+                reading_pinlu > 0
+                and phrase_term_count >= 2
+                and phrase_support >= 48.0
+            )
+            has_strong_phrase_support = (
+                phrase_term_count >= 4 and phrase_support >= 240.0
+            )
+            has_sparse_pinlu_support = (
+                reading_pinlu > 0
+                and standalone_frequency >= 3000.0
+                and phrase_term_count >= 1
+                and phrase_support >= 32.0
+            )
+            has_corpus_pinlu_support = (
+                reading_pinlu >= 8
+                and standalone_frequency >= 1000.0
+            )
+            has_filtered_inferred_modern_phrase_support = (
+                (
+                    standalone_frequency >= 250.0
+                    and family_term_count_map.get(text, 0) >= 5
+                    and inferred_phrase_term_count >= 2
+                    and inferred_phrase_support >= 96.0
+                )
+                or (
+                    family_term_count_map.get(text, 0) >= 10
+                    and inferred_phrase_term_count >= 4
+                    and inferred_phrase_support >= 160.0
+                )
+            )
+            has_inferred_modern_phrase_support = (
+                (
+                    standalone_frequency >= 250.0
+                    and family_term_count >= 5
+                    and visibility_inferred_phrase_term_count >= 2
+                    and visibility_inferred_phrase_support >= 96.0
+                )
+                or (
+                    family_term_count >= 10
+                    and visibility_inferred_phrase_term_count >= 4
+                    and visibility_inferred_phrase_support >= 160.0
+                )
+            )
+            has_sparse_inferred_modern_phrase_support = (
+                standalone_frequency >= 500.0
+                and family_term_count >= 5
+                and visibility_inferred_phrase_term_count >= 1
+                and visibility_inferred_phrase_support >= 12.0
+            )
+            has_modern_primary_correction = (
+                visibility_phrase_term_count >= 2
+                and visibility_phrase_support >= 36.0
+                and visibility_primary_phrase_term_count == 0
+                and visibility_primary_phrase_support <= 0.0
+                and (
+                    (
+                        standalone_frequency >= 300.0
+                        and pos_tag not in {"nr", "nrt", "ns", "nz"}
+                    )
+                    or (standalone_frequency >= 150.0 and pos_tag == "o")
+                )
+            )
+            has_filtered_modern_primary_correction = (
+                phrase_term_count >= 2
+                and phrase_support >= 36.0
+                and primary_phrase_term_count == 0
+                and primary_phrase_support <= 0.0
+            )
+            if not (
+                explicitly_audited
+                or has_modern_phrase_support
+                or has_strong_phrase_support
+                or has_sparse_pinlu_support
+                or has_corpus_pinlu_support
+                or has_inferred_modern_phrase_support
+                or has_sparse_inferred_modern_phrase_support
+                or has_modern_primary_correction
+            ):
+                continue
+
+            if explicitly_audited:
+                evidence_priority = 4
+            elif has_modern_phrase_support or has_strong_phrase_support:
+                evidence_priority = 3
+            elif has_sparse_pinlu_support:
+                evidence_priority = 2
+            elif has_corpus_pinlu_support:
+                evidence_priority = 2
+            elif has_modern_primary_correction:
+                evidence_priority = 2
+            else:
+                evidence_priority = 1
+            evidence_support = max(
+                phrase_support,
+                visibility_inferred_phrase_support,
+            )
+            isolated_layer_only = (
+                (
+                    has_modern_primary_correction
+                    and not has_filtered_modern_primary_correction
+                )
+                or (
+                    has_inferred_modern_phrase_support
+                    and not has_filtered_inferred_modern_phrase_support
+                )
+                or (
+                    has_sparse_inferred_modern_phrase_support
+                    and not has_filtered_inferred_modern_phrase_support
+                )
+            ) and not (
+                explicitly_audited
+                or has_modern_phrase_support
+                or has_strong_phrase_support
+                or has_sparse_pinlu_support
+                or has_corpus_pinlu_support
+            )
+            if isolated_layer_only:
+                # Evidence from an isolated layer validates the reading, but
+                # must not by itself consume a first-page slot.
+                desired_rank = visible_rank * 3
+                stats[f"{stats_prefix}_common_polyphonic_readings_third_page"] += 1
+            elif has_corpus_pinlu_support and not (
+                explicitly_audited
+                or has_modern_phrase_support
+                or has_strong_phrase_support
+                or has_sparse_pinlu_support
+                or has_filtered_inferred_modern_phrase_support
+                or has_filtered_modern_primary_correction
+            ):
+                # kHanyuPinlu is independent corpus evidence. Very common
+                # characters receive first-page visibility; less common ones
+                # stay on page two so a cold reading cannot crowd out the
+                # primary readings of that syllable.
+                if standalone_frequency >= 10000.0:
+                    desired_rank = visible_rank
+                    stats[f"{stats_prefix}_common_polyphonic_readings_first_page"] += 1
+                else:
+                    desired_rank = visible_rank * 2
+                    stats[f"{stats_prefix}_common_polyphonic_readings_second_page"] += 1
+            elif explicitly_audited or standalone_frequency >= 1000.0:
+                desired_rank = visible_rank
+                stats[f"{stats_prefix}_common_polyphonic_readings_first_page"] += 1
+            elif standalone_frequency >= 500.0:
+                desired_rank = visible_rank * 2
+                stats[f"{stats_prefix}_common_polyphonic_readings_second_page"] += 1
+            else:
+                desired_rank = visible_rank * 3
+                stats[f"{stats_prefix}_common_polyphonic_readings_third_page"] += 1
+            eligible.append(
+                (
+                    rank_index,
+                    text,
+                    current_weight,
+                    standalone_frequency,
+                    evidence_priority,
+                    evidence_support,
+                    desired_rank,
+                )
+            )
+            if explicitly_audited:
+                stats[f"{stats_prefix}_common_polyphonic_readings_explicit"] += 1
+            elif has_modern_phrase_support or has_strong_phrase_support:
+                stats[f"{stats_prefix}_common_polyphonic_readings_direct"] += 1
+            elif has_sparse_pinlu_support:
+                stats[f"{stats_prefix}_common_polyphonic_readings_sparse_pinlu"] += 1
+            elif has_corpus_pinlu_support:
+                stats[f"{stats_prefix}_common_polyphonic_readings_corpus_pinlu"] += 1
+            elif has_modern_primary_correction:
+                stats[f"{stats_prefix}_common_polyphonic_readings_modern_primary"] += 1
+            else:
+                stats[f"{stats_prefix}_common_polyphonic_readings_inferred"] += 1
+
+        stats[f"{stats_prefix}_common_polyphonic_readings_eligible"] += len(eligible)
+        adjusted_texts: Set[str] = set()
+        protected_deadlines: Dict[str, int] = {}
+        for rank_limit in sorted({item[6] for item in eligible}, reverse=True):
+            protected = [item for item in eligible if item[6] <= rank_limit]
+            effective_limit = min(rank_limit, len(items))
+            if len(protected) > effective_limit:
+                stats[
+                    f"{stats_prefix}_common_polyphonic_readings_visibility_overflow"
+                ] += len(protected) - effective_limit
+                protected = sorted(
+                    protected,
+                    key=lambda item: (
+                        -item[3],
+                        -item[4],
+                        -item[5],
+                        -item[2],
+                        item[1],
+                    ),
+                )[:effective_limit]
+            for item in protected:
+                protected_deadlines[item[1]] = min(
+                    rank_limit, protected_deadlines.get(item[1], rank_limit)
+                )
+
+            current_ordered = sorted(
+                (
+                    (
+                        text,
+                        max(
+                            mapping.get((pinyin, text), 0),
+                            competing_single_char_map.get((pinyin, text), 0),
+                        ),
+                    )
+                    for text, _weight in items
+                ),
+                key=lambda item: (-item[1], item[0]),
+            )
+            current_ranks = {
+                text: idx for idx, (text, _weight) in enumerate(current_ordered, 1)
+            }
+            if all(
+                current_ranks.get(item[1], effective_limit + 1) <= effective_limit
+                for item in protected
+            ):
+                continue
+
+            cutoff_index = max(0, effective_limit - len(protected))
+            target_weight = min(1000, current_ordered[cutoff_index][1] + 1)
+            for (
+                _rank_index,
+                text,
+                _weight,
+                _frequency,
+                _priority,
+                _support,
+                _desired_rank,
+            ) in protected:
+                current_weight = max(
+                    mapping.get((pinyin, text), 0),
+                    competing_single_char_map.get((pinyin, text), 0),
+                )
+                if current_weight >= target_weight:
+                    continue
+                mapping[(pinyin, text)] = target_weight
+                adjusted_texts.add(text)
+
+        stats[f"{stats_prefix}_common_polyphonic_readings_restored"] += len(
+            adjusted_texts
+        )
+        updated = sorted(
+            (
+                (
+                    text,
+                    max(
+                        mapping.get((pinyin, text), 0),
+                        competing_single_char_map.get((pinyin, text), 0),
+                    ),
+                )
+                for text, _weight in items
+            ),
+            key=lambda item: (-item[1], item[0]),
+        )
+        updated_ranks = {text: idx for idx, (text, _weight) in enumerate(updated, 1)}
+        unresolved = sum(
+            1
+            for text, rank_limit in protected_deadlines.items()
+            if updated_ranks.get(text, rank_limit + 1) > rank_limit
+        )
+        stats[f"{stats_prefix}_common_polyphonic_readings_unresolved"] += unresolved
+        if adjusted_texts:
+            stats[f"{stats_prefix}_common_polyphonic_reading_buckets"] += 1
 
     return stats
 
@@ -19717,6 +20132,24 @@ def main() -> int:
     previous_snapshot_tc = _load_existing_dict_snapshot(output_tc)
     support_dict_sc = repo_root / args.support_dict_sc if args.support_dict_sc else None
     support_dict_tc = repo_root / args.support_dict_tc if args.support_dict_tc else None
+    support_single_char_sc_map = {
+        key: weight
+        for key, weight in (
+            _load_existing_dict_snapshot(support_dict_sc)
+            if support_dict_sc is not None
+            else {}
+        ).items()
+        if _cjk_len(key[1]) == 1
+    }
+    support_single_char_tc_map = {
+        key: weight
+        for key, weight in (
+            _load_existing_dict_snapshot(support_dict_tc)
+            if support_dict_tc is not None
+            else {}
+        ).items()
+        if _cjk_len(key[1]) == 1
+    }
     manifest = repo_root / args.manifest
     report = repo_root / args.report
     vertical_manifest = repo_root / args.vertical_manifest if args.vertical_manifest else None
@@ -19810,14 +20243,24 @@ def main() -> int:
     sc_family_support_sum_map: Dict[str, float] = {}
     tc_family_term_count_map: Dict[str, int] = {}
     tc_family_support_sum_map: Dict[str, float] = {}
+    sc_visibility_family_term_count_map: Dict[str, int] = {}
+    tc_visibility_family_term_count_map: Dict[str, int] = {}
     sc_reading_term_count_map: Dict[Tuple[str, str], int] = {}
     sc_reading_support_sum_map: Dict[Tuple[str, str], float] = {}
     tc_reading_term_count_map: Dict[Tuple[str, str], int] = {}
     tc_reading_support_sum_map: Dict[Tuple[str, str], float] = {}
+    sc_visibility_reading_term_count_map: Dict[Tuple[str, str], int] = {}
+    sc_visibility_reading_support_sum_map: Dict[Tuple[str, str], float] = {}
+    tc_visibility_reading_term_count_map: Dict[Tuple[str, str], int] = {}
+    tc_visibility_reading_support_sum_map: Dict[Tuple[str, str], float] = {}
     sc_inferred_reading_term_count_map: Dict[Tuple[str, str], int] = {}
     sc_inferred_reading_support_sum_map: Dict[Tuple[str, str], float] = {}
     tc_inferred_reading_term_count_map: Dict[Tuple[str, str], int] = {}
     tc_inferred_reading_support_sum_map: Dict[Tuple[str, str], float] = {}
+    sc_visibility_inferred_reading_term_count_map: Dict[Tuple[str, str], int] = {}
+    sc_visibility_inferred_reading_support_sum_map: Dict[Tuple[str, str], float] = {}
+    tc_visibility_inferred_reading_term_count_map: Dict[Tuple[str, str], int] = {}
+    tc_visibility_inferred_reading_support_sum_map: Dict[Tuple[str, str], float] = {}
     admin_place_alias_stats = {
         "admin_place_alias_source_terms": 0,
         "admin_place_alias_skipped_short": 0,
@@ -21035,6 +21478,76 @@ def main() -> int:
             unihan_pinlu_detail_map,
             exclude_texts=vertical_tc_support_excludes,
         )
+        if vertical_sc_support_excludes:
+            (
+                sc_visibility_family_term_count_map,
+                _sc_visibility_family_support_sum_map,
+            ) = _load_char_family_support_from_generated_dict(support_dict_sc)
+            (
+                sc_visibility_reading_term_count_map,
+                sc_visibility_reading_support_sum_map,
+            ) = _load_char_reading_support_from_generated_dict(
+                support_dict_sc,
+                unihan_readings_map,
+                unihan_reading_source_map,
+                unihan_map,
+                unihan_pinlu_detail_map,
+            )
+            (
+                sc_visibility_inferred_reading_term_count_map,
+                sc_visibility_inferred_reading_support_sum_map,
+            ) = _load_char_inferred_reading_support_from_generated_dict(
+                support_dict_sc,
+                unihan_readings_map,
+                unihan_reading_source_map,
+                unihan_map,
+                unihan_pinlu_detail_map,
+            )
+        else:
+            sc_visibility_family_term_count_map = dict(sc_family_term_count_map)
+            sc_visibility_reading_term_count_map = dict(sc_reading_term_count_map)
+            sc_visibility_reading_support_sum_map = dict(sc_reading_support_sum_map)
+            sc_visibility_inferred_reading_term_count_map = dict(
+                sc_inferred_reading_term_count_map
+            )
+            sc_visibility_inferred_reading_support_sum_map = dict(
+                sc_inferred_reading_support_sum_map
+            )
+        if vertical_tc_support_excludes:
+            (
+                tc_visibility_family_term_count_map,
+                _tc_visibility_family_support_sum_map,
+            ) = _load_char_family_support_from_generated_dict(support_dict_tc)
+            (
+                tc_visibility_reading_term_count_map,
+                tc_visibility_reading_support_sum_map,
+            ) = _load_char_reading_support_from_generated_dict(
+                support_dict_tc,
+                unihan_readings_map,
+                unihan_reading_source_map,
+                unihan_map,
+                unihan_pinlu_detail_map,
+            )
+            (
+                tc_visibility_inferred_reading_term_count_map,
+                tc_visibility_inferred_reading_support_sum_map,
+            ) = _load_char_inferred_reading_support_from_generated_dict(
+                support_dict_tc,
+                unihan_readings_map,
+                unihan_reading_source_map,
+                unihan_map,
+                unihan_pinlu_detail_map,
+            )
+        else:
+            tc_visibility_family_term_count_map = dict(tc_family_term_count_map)
+            tc_visibility_reading_term_count_map = dict(tc_reading_term_count_map)
+            tc_visibility_reading_support_sum_map = dict(tc_reading_support_sum_map)
+            tc_visibility_inferred_reading_term_count_map = dict(
+                tc_inferred_reading_term_count_map
+            )
+            tc_visibility_inferred_reading_support_sum_map = dict(
+                tc_inferred_reading_support_sum_map
+            )
         (
             sc_leading_term_count_map,
             sc_leading_support_sum_map,
@@ -21079,6 +21592,20 @@ def main() -> int:
             unihan_pinlu_detail_map,
             exclude_texts=vertical_tc_support_excludes,
         )
+        if not vertical_sc_support_excludes:
+            sc_visibility_inferred_reading_term_count_map = dict(
+                sc_inferred_reading_term_count_map
+            )
+            sc_visibility_inferred_reading_support_sum_map = dict(
+                sc_inferred_reading_support_sum_map
+            )
+        if not vertical_tc_support_excludes:
+            tc_visibility_inferred_reading_term_count_map = dict(
+                tc_inferred_reading_term_count_map
+            )
+            tc_visibility_inferred_reading_support_sum_map = dict(
+                tc_inferred_reading_support_sum_map
+            )
         sc_map, tc_map, stats = _build_from_unihan_only(
             unihan_payload,
             args.min_hanzi,
@@ -21106,6 +21633,12 @@ def main() -> int:
         stats["unihan_family_support_terms_tc"] = len(tc_family_term_count_map)
         stats["unihan_reading_support_terms_sc"] = len(sc_reading_term_count_map)
         stats["unihan_reading_support_terms_tc"] = len(tc_reading_term_count_map)
+        stats["unihan_visibility_reading_support_terms_sc"] = len(
+            sc_visibility_reading_term_count_map
+        )
+        stats["unihan_visibility_reading_support_terms_tc"] = len(
+            tc_visibility_reading_term_count_map
+        )
         stats["unihan_leading_support_terms_sc"] = len(sc_leading_term_count_map)
         stats["unihan_leading_support_terms_tc"] = len(tc_leading_term_count_map)
         stats["unihan_inferred_reading_support_terms_sc"] = len(sc_inferred_reading_term_count_map)
@@ -23196,6 +23729,53 @@ def main() -> int:
     curated_daily_explicit_pinyin_keys.update(
         _build_curated_daily_explicit_pinyin_key_set(
             curated_daily_post_rank_exact_entries
+        )
+    )
+
+    stats.update(
+        _restore_common_polyphonic_reading_visibility(
+            mapping=sc_map,
+            competing_single_char_map=support_single_char_sc_map,
+            unihan_readings_map=unihan_readings_map,
+            unihan_mandarin_map=unihan_map,
+            unihan_pinlu_detail_map=unihan_pinlu_detail_map,
+            phrase_term_count_map=sc_reading_term_count_map,
+            phrase_support_sum_map=sc_reading_support_sum_map,
+            visibility_phrase_term_count_map=sc_visibility_reading_term_count_map,
+            visibility_phrase_support_sum_map=sc_visibility_reading_support_sum_map,
+            inferred_phrase_term_count_map=sc_inferred_reading_term_count_map,
+            inferred_phrase_support_sum_map=sc_inferred_reading_support_sum_map,
+            visibility_inferred_phrase_term_count_map=sc_visibility_inferred_reading_term_count_map,
+            visibility_inferred_phrase_support_sum_map=sc_visibility_inferred_reading_support_sum_map,
+            family_term_count_map=sc_family_term_count_map,
+            visibility_family_term_count_map=sc_visibility_family_term_count_map,
+            single_char_frequency_map=single_char_frequency_map,
+            single_char_pos_map=single_char_pos_map,
+            explicit_pinyin_overrides=word_pinyin_overrides,
+            stats_prefix="sc_final_post",
+        )
+    )
+    stats.update(
+        _restore_common_polyphonic_reading_visibility(
+            mapping=tc_map,
+            competing_single_char_map=support_single_char_tc_map,
+            unihan_readings_map=unihan_readings_map,
+            unihan_mandarin_map=unihan_map,
+            unihan_pinlu_detail_map=unihan_pinlu_detail_map,
+            phrase_term_count_map=tc_reading_term_count_map,
+            phrase_support_sum_map=tc_reading_support_sum_map,
+            visibility_phrase_term_count_map=tc_visibility_reading_term_count_map,
+            visibility_phrase_support_sum_map=tc_visibility_reading_support_sum_map,
+            inferred_phrase_term_count_map=tc_inferred_reading_term_count_map,
+            inferred_phrase_support_sum_map=tc_inferred_reading_support_sum_map,
+            visibility_inferred_phrase_term_count_map=tc_visibility_inferred_reading_term_count_map,
+            visibility_inferred_phrase_support_sum_map=tc_visibility_inferred_reading_support_sum_map,
+            family_term_count_map=tc_family_term_count_map,
+            visibility_family_term_count_map=tc_visibility_family_term_count_map,
+            single_char_frequency_map=tc_single_char_frequency_map,
+            single_char_pos_map=tc_single_char_pos_map,
+            explicit_pinyin_overrides=word_pinyin_overrides,
+            stats_prefix="tc_final_post",
         )
     )
 
