@@ -33,6 +33,8 @@ Cassotis Lexicon publishes local ranking artifacts alongside its lexical diction
 
 | Version | Query-path priors (SC / TC) | Word-path transitions (SC / TC) | Character n-gram parameters (SC / TC) |
 |---|---:|---:|---:|
+| `v1.9.0` | 23,593 / 22,717 | 152,729 / 145,284 | 698,695 / 698,778 |
+| `v1.8.1` | 23,580 / 22,732 | 152,729 / 145,284 | 698,695 / 698,778 |
 | `v1.7.0` | 23,570 / 22,722 | 152,729 / 145,284 | 698,695 / 698,778 |
 | `v1.6.0` | 23,557 / 22,669 | 152,729 / 145,284 | 698,695 / 698,778 |
 | `v1.5.0` | 23,550 / 22,702 | 152,729 / 145,284 | 698,695 / 698,778 |
@@ -53,6 +55,8 @@ Cassotis IME v1.5.0 extends short-word context ranking with an independently tra
 Cassotis IME v1.6.0 advances long-sentence decoding with separately trained search-state, second-stage, and final-candidate rankers plus a learned fallback policy. These compact models are trained and deployed by the IME project, so they do not add another category to this table. The v1.6.0 row reflects the updated query-path priors published by Lexicon; its word-transition and character n-gram artifacts are unchanged from v1.5.0.
 
 Cassotis IME v1.7.0 uses the published word-transition evidence to admit reliable two-phrase combinations in four-syllable input while rejecting unsupported combinations. The v1.7.0 row reflects the latest query-path priors generated with the updated lexicon; the word-transition and character n-gram artifacts remain unchanged from v1.6.0.
+
+Cassotis IME v1.9.0 uses these lexical constraints and statistical artifacts to construct a diverse pool of complete long-sentence paths and rank them with a unified corpus-trained model. The compact complete-pool and residual rankers remain part of the IME project; the v1.9.0 row therefore reflects updated query-path priors, while word-transition and character n-gram counts remain unchanged.
 
 The statistical model stores only short word transitions and character n-grams, not complete training sentences. The independent long-sentence and short-word benchmark cases are excluded from training. At runtime, IME evaluates the statistical signals and compact native rerankers locally; it starts no PyTorch/ONNX runtime or external model service and requires no network connection or GPU. See the [IME benchmark documentation](https://github.com/shenmin/cassotis-ime/blob/master/BENCHMARK.md) for the long-sentence evaluation protocol.
 
