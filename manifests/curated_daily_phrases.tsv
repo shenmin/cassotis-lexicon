@@ -7732,3 +7732,29 @@
 该改	該改	0.78	gaigai
 好改	好改	0.78	haogai
 可改	可改	0.76	kegai
+
+# Common relation, action, and document-reference phrases 2026-08-04.
+情形下	情形下	0.80	qingxingxia
+有关系	有關係	0.92	youguanxi
+去干	去幹	0.78	qugan
+这段话	這段話	0.92	zheduanhua
+这篇稿	這篇稿	0.76	zhepiangao
+
+# Common "enough to" combinations and line work 2026-08-04.
+拉线	拉線	0.72	laxian
+够用	夠用	0.86	gouyong
+够好	夠好	0.78	gouhao
+够大	夠大	0.80	gouda
+够小	夠小	0.78	gouxiao
+够高	夠高	0.76	gougao
+够低	夠低	0.72	goudi
+够长	夠長	0.78	gouchang
+够短	夠短	0.76	gouduan
+够多	夠多	0.80	gouduo
+够少	夠少	0.76	goushao
+够强	夠強	0.72	gouqiang
+够热	夠熱	0.72	goure
+够冷	夠冷	0.72	gouleng
+够快	夠快	0.76	goukuai
+够慢	夠慢	0.72	gouman
+个位数	個位數	0.52	geweishu

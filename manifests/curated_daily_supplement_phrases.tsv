@@ -6962,7 +6962,6 @@
 浮起	浮起	0.01
 掉下来	掉下來	0.01
 犯了	犯了	0.01
-够长	夠長	0.01
 够到	夠到	0.01
 臂力器	臂力器	0.01
 扯落	扯落	0.01
@@ -9292,7 +9291,6 @@
 桀骜	桀驁	0.01
 前五项	前五項	0.01
 请听题	請聽題	0.01
-个位数	個位數	0.01
 三位数	三位數	0.01
 对碰	對碰	0.01
 服了	服了	0.01
@@ -12478,3 +12476,45 @@
 改细	改細	-2.0	gaixi
 改强	改強	-2.0	gaiqiang
 改弱	改弱	-2.0	gairuo
+
+# Lower-frequency line descriptions and incomplete document fragments 2026-08-04.
+我为	我為	-1.99	wowei
+来干	來幹	-1.99	laigan
+黑线	黑線	0.48	heixian
+黄线	黃線	0.50	huangxian
+单线	單線	0.50	danxian
+双线	雙線	0.52	shuangxian
+这个文	這個文	-1.99	zhegewen
+
+# Less common "enough to" combinations 2026-08-04.
+够宽	夠寬	0.42	goukuan
+够窄	夠窄	0.36	gouzhai
+够深	夠深	0.42	goushen
+够浅	夠淺	0.38	gouqian
+够黑	夠黑	0.42	gouhei
+够细	夠細	0.44	gouxi
+够粗	夠粗	0.40	goucu
+够老	夠老	0.36	goulao
+够嫩	夠嫩	0.36	gounen
+够弱	夠弱	0.42	gouruo
+够亮	夠亮	0.44	gouliang
+够暗	夠暗	0.40	gouan
+够白	夠白	0.40	goubai
+够甜	夠甜	0.38	goutian
+够富	夠富	0.34	goufu
+够穷	夠窮	0.34	gouqiong
+够吃	夠吃	0.42	gouchi
+够喝	夠喝	0.40	gouhe
+够睡	夠睡	0.40	goushui
+够躺	夠躺	0.34	goutang
+够急	夠急	0.38	gouji
+够响	夠響	0.42	gouxiang
+够轻	夠輕	0.40	gouqing
+够重	夠重	0.42	gouzhong
+够硬	夠硬	0.42	gouying
+够软	夠軟	0.40	gouruan
+够近	夠近	0.36	goujin
+够远	夠遠	0.36	gouyuan
+够跑	夠跑	-1.99	goupao
+够人	夠人	-1.99	gouren
+够付	夠付	-1.99	goufu

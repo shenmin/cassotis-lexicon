@@ -521,13 +521,13 @@ CURATED_DAILY_VISIBILITY_WEIGHT_CAP_LONG = 800
 CURATED_DAILY_SUPPLEMENT_WEIGHT_CAP = 280
 CURATED_DAILY_SUPPLEMENT_NUMBER_WEIGHT_CAP = 520
 CURATED_DAILY_ASPECT_VISIBILITY_CAP = 760
-CURATED_DAILY_POST_RANK_EXACT_USAGE_MAX = -2.0
+CURATED_DAILY_POST_RANK_EXACT_USAGE_MAX = -1.99
+CURATED_DAILY_POST_RANK_ZERO_WEIGHT_USAGE_MAX = -2.0
 
 
 def _curated_daily_supplement_weight_cap(usage_score: float, text: str) -> int:
     """Cap low-frequency exact supplements without letting visibility imply priority."""
-    # Negative usage is a build-only marker: keep the exact entry visible at
-    # runtime while giving residual rankers a distinct zero-weight sentinel.
+    # Negative usage is a build-only marker handled by the post-rank injector.
     if usage_score < 0.0:
         return 0
     bounded_usage = max(0.0, min(1.0, usage_score))
@@ -573,21 +573,30 @@ def _inject_curated_daily_post_rank_exact_entries(
         "curated_daily_post_rank_exact_tc_added": 0,
         "curated_daily_post_rank_exact_invalid_pinyin": 0,
     }
-    for sc_word, tc_word, _usage_score, explicit_pinyin in entries:
+    for sc_word, tc_word, usage_score, explicit_pinyin in entries:
         pinyin = _normalize_pinyin(explicit_pinyin)
         if not pinyin:
             stats["curated_daily_post_rank_exact_invalid_pinyin"] += 1
             continue
 
+        # Keep the legacy -2.0 zero-weight sentinel intact.  The -1.99 marker
+        # is the lowest positive exact weight: it remains visible without
+        # triggering runtime zero-weight fallback behavior in long paths.
+        exact_weight = (
+            0
+            if usage_score <= CURATED_DAILY_POST_RANK_ZERO_WEIGHT_USAGE_MAX
+            else 1
+        )
+
         sc_key = (pinyin, sc_word)
         if sc_key not in sc_map:
-            sc_map[sc_key] = 0
+            sc_map[sc_key] = exact_weight
             stats["curated_daily_post_rank_exact_sc_added"] += 1
 
         tc_text = tc_word or sc_word
         tc_key = (pinyin, tc_text)
         if tc_key not in tc_map:
-            tc_map[tc_key] = 0
+            tc_map[tc_key] = exact_weight
             stats["curated_daily_post_rank_exact_tc_added"] += 1
     return stats
 
@@ -9781,9 +9790,11 @@ def _parse_curated_daily_phrase_entries(
         explicit_pinyin = parts[3].strip().lower() if len(parts) >= 4 else ""
         if explicit_pinyin and not PINYIN_RE.fullmatch(explicit_pinyin):
             explicit_pinyin = ""
-        # Keep the legacy visibility marker and the isolated post-rank marker
-        # distinct; ordinary usage remains bounded.
-        if usage_score <= CURATED_DAILY_POST_RANK_EXACT_USAGE_MAX:
+        # Keep the two isolated post-rank exact markers distinct.  Ordinary
+        # negative usage retains its legacy visibility-only normalization.
+        if usage_score <= CURATED_DAILY_POST_RANK_ZERO_WEIGHT_USAGE_MAX:
+            normalized_usage_score = CURATED_DAILY_POST_RANK_ZERO_WEIGHT_USAGE_MAX
+        elif usage_score <= CURATED_DAILY_POST_RANK_EXACT_USAGE_MAX:
             normalized_usage_score = CURATED_DAILY_POST_RANK_EXACT_USAGE_MAX
         elif usage_score < 0.0:
             normalized_usage_score = -1.0
@@ -18262,21 +18273,57 @@ def _write_dict(
             alias_key = (output_pinyin.replace("'", ""), text)
             output_rows[alias_key] = max(output_rows.get(alias_key, 0), weight)
 
+    def output_sort_key(item: Tuple[Tuple[str, str], int]) -> Tuple[object, ...]:
+        (output_pinyin, text), weight = item
+        return (
+            1
+            if text in low_priority_output_terms
+            or text in post_low_priority_output_terms
+            else 0,
+            1 if text in post_low_priority_output_terms else 0,
+            output_pinyin,
+            -weight,
+            0 if text in preferred_terms else 1,
+            text,
+        )
+
+    # dict_base IDs follow import order and dict_jianpin references those IDs.
+    # Preserve surviving rows in their previous order so an additive vocabulary
+    # update cannot renumber every later entry and perturb otherwise tied query
+    # results. New rows remain deterministic and are appended in normal order.
+    existing_keys: List[Tuple[str, str]] = []
+    existing_seen: Set[Tuple[str, str]] = set()
+    if path.exists():
+        with path.open("r", encoding="utf-8") as existing_file:
+            for raw_line in existing_file:
+                parts = raw_line.rstrip("\n").split("\t")
+                if len(parts) < 2:
+                    continue
+                existing_key = (
+                    parts[0].replace("\ufeff", "").strip(),
+                    parts[1].replace("\ufeff", "").strip(),
+                )
+                if (
+                    existing_key in output_rows
+                    and existing_key not in existing_seen
+                ):
+                    existing_keys.append(existing_key)
+                    existing_seen.add(existing_key)
+
+    new_items = sorted(
+        (
+            (key, weight)
+            for key, weight in output_rows.items()
+            if key not in existing_seen
+        ),
+        key=output_sort_key,
+    )
+    ordered_items = [
+        (key, output_rows[key]) for key in existing_keys
+    ] + new_items
+
     with path.open("w", encoding="utf-8", newline="\n") as f:
-        for (output_pinyin, text), weight in sorted(
-            output_rows.items(),
-            key=lambda kv: (
-                1
-                if kv[0][1] in low_priority_output_terms
-                or kv[0][1] in post_low_priority_output_terms
-                else 0,
-                1 if kv[0][1] in post_low_priority_output_terms else 0,
-                kv[0][0],
-                -kv[1],
-                0 if kv[0][1] in preferred_terms else 1,
-                kv[0][1],
-            ),
-        ):
+        for (output_pinyin, text), weight in ordered_items:
             f.write(f"{output_pinyin}\t{text}\t{weight}\n")
 
 
