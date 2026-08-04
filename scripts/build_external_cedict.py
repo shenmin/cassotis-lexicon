@@ -19063,6 +19063,250 @@ def _collect_lm_transition_priors(
     return priors, stats
 
 
+def _collect_short_exact_pair_transition_priors(
+    sentences: List[Tuple[str, str]],
+    entries_by_text: Dict[str, List[Tuple[str, str, int, int, int]]],
+    *,
+    min_count: int = 5,
+    min_single_source_count: int = 12,
+    max_weight: int = 520,
+) -> Tuple[Dict[Tuple[str, str], int], Dict[str, int]]:
+    """Collect conservative 1+2 and 2+1 transitions from three-character spans.
+
+    The general LM transition collector intentionally limits single-character
+    bigrams to function words. Short-word prediction needs a separate channel
+    for lexical single characters such as ``this-section + words``. Both sides
+    still have to be exact dictionary entries and corpus evidence must dominate
+    alternatives with the same pinyin, so this does not enable arbitrary word
+    composition at runtime.
+    """
+
+    transition_counts: Dict[Tuple[str, str], int] = {}
+    transition_sources: Dict[Tuple[str, str], Set[str]] = {}
+    component_counts: Dict[str, int] = {}
+    transition_rank_penalty: Dict[Tuple[str, str], int] = {}
+    transition_gap_penalty: Dict[Tuple[str, str], int] = {}
+    transition_left_contexts: Dict[Tuple[str, str], Dict[str, int]] = {}
+    transition_right_contexts: Dict[Tuple[str, str], Dict[str, int]] = {}
+    transition_exact_extension_count: Dict[Tuple[str, str], int] = {}
+    stats: Dict[str, int] = {
+        "short_exact_pair_windows": 0,
+        "short_exact_pair_viable_windows": 0,
+        "short_exact_pair_priors_emitted": 0,
+        "short_exact_pair_skipped_count": 0,
+        "short_exact_pair_skipped_source_count": 0,
+        "short_exact_pair_skipped_query_rank": 0,
+        "short_exact_pair_skipped_weak_runner_up": 0,
+        "short_exact_pair_skipped_weak_association": 0,
+        "short_exact_pair_skipped_embedded_fragment": 0,
+        "short_exact_pair_skipped_exact_extension": 0,
+    }
+
+    def _best_viable_entry(
+        text: str,
+        *,
+        single: bool,
+    ) -> Tuple[str, str, int, int, int] | None:
+        entries = entries_by_text.get(text)
+        if not entries:
+            return None
+        min_weight = 200 if single else 420
+        max_exact_rank = 8 if single else 2
+        max_top_gap = 300 if single else 240
+        for entry in entries:
+            _pinyin, _text, weight, exact_rank, top_weight = entry
+            if weight < min_weight or (
+                max_exact_rank > 0 and exact_rank > max_exact_rank
+            ):
+                continue
+            if top_weight - weight > max_top_gap:
+                continue
+            return entry
+        return None
+
+    def _has_source_support(count: int, source_count: int) -> bool:
+        return not (
+            (source_count < 2 and count < min_single_source_count)
+            or (source_count == 2 and count < min_count + 5)
+            or (source_count < 3 and count < min_count + 1)
+        )
+
+    for sentence, source_name in sentences:
+        if len(sentence) < 3:
+            continue
+        for start in range(len(sentence) - 2):
+            text = sentence[start : start + 3]
+            stats["short_exact_pair_windows"] += 1
+            # A full exact term needs no composed short-word transition.
+            if text in entries_by_text:
+                continue
+            if text[0] == text[1] or text[1] == text[2]:
+                continue
+            for split_at in (1, 2):
+                left_text = text[:split_at]
+                right_text = text[split_at:]
+                single_text = left_text if split_at == 1 else right_text
+                # Function-word singles are already handled by the general LM
+                # collector. Keeping this channel lexical avoids duplicating
+                # tens of thousands of weak `word + de/le/yi` fragments.
+                if single_text in LM_FUNCTION_SINGLE_CHARS:
+                    continue
+                left_entry = _best_viable_entry(
+                    left_text,
+                    single=(split_at == 1),
+                )
+                right_entry = _best_viable_entry(
+                    right_text,
+                    single=(split_at == 2),
+                )
+                if left_entry is None or right_entry is None:
+                    continue
+
+                stats["short_exact_pair_viable_windows"] += 1
+                query = left_entry[0] + right_entry[0]
+                path = QUERY_PATH_FILE_SEPARATOR.join((left_text, right_text))
+                key = (query, path)
+                transition_counts[key] = transition_counts.get(key, 0) + 1
+                transition_sources.setdefault(key, set()).add(source_name)
+                component_counts[left_text] = component_counts.get(left_text, 0) + 1
+                component_counts[right_text] = component_counts.get(right_text, 0) + 1
+                transition_rank_penalty[key] = max(
+                    transition_rank_penalty.get(key, 0),
+                    max(left_entry[3] - 1, right_entry[3] - 1),
+                )
+                transition_gap_penalty[key] = max(
+                    transition_gap_penalty.get(key, 0),
+                    max(
+                        left_entry[4] - left_entry[2],
+                        right_entry[4] - right_entry[2],
+                    ),
+                )
+
+    # Context histograms are needed only for transitions that pass the basic
+    # count/source gates. Building them in a second streaming pass keeps peak
+    # memory bounded when the corpus contains millions of distinct trigrams.
+    context_key_by_span: Dict[Tuple[str, int], Tuple[str, str]] = {}
+    for key, count in transition_counts.items():
+        source_count = len(transition_sources.get(key, set()))
+        if count < min_count or not _has_source_support(count, source_count):
+            continue
+        segments = key[1].split(QUERY_PATH_FILE_SEPARATOR)
+        if len(segments) != 2:
+            continue
+        context_key_by_span[("".join(segments), len(segments[0]))] = key
+
+    for sentence, _source_name in sentences:
+        if len(sentence) < 3:
+            continue
+        for start in range(len(sentence) - 2):
+            text = sentence[start : start + 3]
+            for split_at in (1, 2):
+                key = context_key_by_span.get((text, split_at))
+                if key is None:
+                    continue
+                left_context = sentence[start - 1] if start > 0 else "^"
+                right_pos = start + 3
+                right_context = sentence[right_pos] if right_pos < len(sentence) else "$"
+                left_contexts = transition_left_contexts.setdefault(key, {})
+                right_contexts = transition_right_contexts.setdefault(key, {})
+                left_contexts[left_context] = left_contexts.get(left_context, 0) + 1
+                right_contexts[right_context] = right_contexts.get(right_context, 0) + 1
+                extends_exact = False
+                if split_at == 1 and left_context != "^":
+                    extends_exact = (left_context + text[0]) in entries_by_text
+                elif split_at == 2 and right_context != "$":
+                    extends_exact = (text[2] + right_context) in entries_by_text
+                if extends_exact:
+                    transition_exact_extension_count[key] = (
+                        transition_exact_extension_count.get(key, 0) + 1
+                    )
+
+    contenders_by_query: Dict[str, List[Tuple[str, int]]] = {}
+    for (query, path), count in transition_counts.items():
+        contenders_by_query.setdefault(query, []).append((path, count))
+    for contenders in contenders_by_query.values():
+        contenders.sort(key=lambda item: (-item[1], item[0]))
+
+    priors: Dict[Tuple[str, str], int] = {}
+    total_windows = max(1, sum(transition_counts.values()))
+    for key, count in transition_counts.items():
+        if count < min_count:
+            stats["short_exact_pair_skipped_count"] += 1
+            continue
+        source_count = len(transition_sources.get(key, set()))
+        if not _has_source_support(count, source_count):
+            stats["short_exact_pair_skipped_source_count"] += 1
+            continue
+        left_context_peak = max(
+            transition_left_contexts.get(key, {"^": 0}).values(),
+            default=0,
+        )
+        right_context_peak = max(
+            transition_right_contexts.get(key, {"$": 0}).values(),
+            default=0,
+        )
+        if max(left_context_peak, right_context_peak) * 100 >= count * 80:
+            stats["short_exact_pair_skipped_embedded_fragment"] += 1
+            continue
+        if transition_exact_extension_count.get(key, 0) * 100 >= count * 60:
+            stats["short_exact_pair_skipped_exact_extension"] += 1
+            continue
+
+        contenders = contenders_by_query.get(key[0], [])
+        contender_rank = next(
+            (
+                rank
+                for rank, (path, _count) in enumerate(contenders, start=1)
+                if path == key[1]
+            ),
+            len(contenders) + 1,
+        )
+        if contender_rank > 2:
+            stats["short_exact_pair_skipped_query_rank"] += 1
+            continue
+        best_count = contenders[0][1] if contenders else count
+        competitor_count = max(
+            (
+                other_count
+                for other_path, other_count in contenders
+                if other_path != key[1]
+            ),
+            default=0,
+        )
+        if contender_rank == 2 and (
+            count < min_count + 7 or count * 100 < best_count * 80
+        ):
+            stats["short_exact_pair_skipped_weak_runner_up"] += 1
+            continue
+
+        segments = key[1].split(QUERY_PATH_FILE_SEPARATOR)
+        segment_product = 1
+        for segment in segments:
+            segment_product *= max(1, component_counts.get(segment, 1))
+        pmi = math.log2((count * total_windows) / max(1, segment_product))
+        query_total = max(1, sum(value for _path, value in contenders))
+        query_share = count / query_total
+        dominance = math.log2((count + 2) / (competitor_count + 2))
+        if pmi < 0.75 or (competitor_count > 0 and query_share < 0.55):
+            stats["short_exact_pair_skipped_weak_association"] += 1
+            continue
+
+        score = 344
+        score += int(round(math.log2(count + 1) * 18))
+        score += min(32, source_count * 8)
+        score += int(round(query_share * 40))
+        score += int(round(max(-1.0, min(3.0, dominance)) * 18))
+        score += int(round(max(-1.0, min(4.0, pmi)) * 8))
+        score -= min(42, transition_rank_penalty.get(key, 0) * 7)
+        score -= min(48, max(0, transition_gap_penalty.get(key, 0)) // 10)
+        if contender_rank == 2:
+            score -= 20
+        priors[key] = max(390, min(max_weight, score))
+
+    stats["short_exact_pair_priors_emitted"] = len(priors)
+    return priors, stats
+
+
 def _build_lm_corpus_query_path_prior_map(
     mapping: Dict[Tuple[str, str], int],
     corpus_dir: pathlib.Path,
@@ -19088,10 +19332,18 @@ def _build_lm_corpus_query_path_prior_map(
         sentences,
         entries_by_text,
     )
+    short_pair_priors, short_pair_stats = _collect_short_exact_pair_transition_priors(
+        sentences,
+        entries_by_text,
+    )
+    for key, weight in short_pair_priors.items():
+        priors[key] = max(priors.get(key, 0), weight)
     stats: Dict[str, int] = {}
     for key, value in sentence_stats.items():
         stats[f"{stats_prefix}_{key}"] = value
     for key, value in prior_stats.items():
+        stats[f"{stats_prefix}_{key}"] = value
+    for key, value in short_pair_stats.items():
         stats[f"{stats_prefix}_{key}"] = value
     return priors, stats
 
