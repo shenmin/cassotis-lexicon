@@ -12535,3 +12535,10 @@
 够跑	夠跑	-1.99	goupao
 够人	夠人	-1.99	gouren
 够付	夠付	-1.99	goufu
+
+# Incomplete pronoun-led fragments kept visible without dominating longer paths 2026-08-05.
+你这	你這	0.44	nizhe
+他这	他這	0.0	tazhe
+她这	她這	0.0	tazhe
+他就	他就	0.0	tajiu
+她就	她就	0.0	tajiu
