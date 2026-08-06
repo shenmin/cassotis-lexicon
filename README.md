@@ -34,6 +34,7 @@ Cassotis Lexicon publishes local ranking artifacts alongside its lexical diction
 | Version | Query-path priors (SC / TC) | Word-path transitions (SC / TC) | Character n-gram parameters (SC / TC) |
 |---|---:|---:|---:|
 | Current development | 23,593 / 22,717 | 281,091 / 250,354 | 698,695 / 698,778 |
+| `v1.11.0` | 23,593 / 22,717 | 281,091 / 250,354 | 698,695 / 698,778 |
 | `v1.10.0` | 23,593 / 22,717 | 161,543 / 151,204 | 698,695 / 698,778 |
 | `v1.9.0` | 23,593 / 22,717 | 152,729 / 145,284 | 698,695 / 698,778 |
 | `v1.8.1` | 23,580 / 22,732 | 152,729 / 145,284 | 698,695 / 698,778 |
@@ -50,7 +51,7 @@ These records are not directly inputable dictionary entries and are therefore ex
 
 The v1.10.0 artifacts add conservative exact 1+2 and 2+1 word transitions backed by corpus evidence, improving three-syllable short-word continuation without admitting unsupported combinations.
 
-The current development artifacts preserve all existing transition weights and add independently counted exact 1+2, 2+1, 2+2, 2+3, and 3+2 transitions from cleaned novel, chat, and large-scale Chinese corpora. Source support, competing paths, and observed homophones are checked before an addition is retained.
+The v1.11.0 artifacts preserve all existing transition weights and expand independently counted exact 1+2, 2+1, 2+2, 2+3, and 3+2 transitions from cleaned novel, chat, and large-scale Chinese corpora. Source support, competing paths, and observed homophones are checked before an addition is retained.
 
 Starting with Cassotis IME v1.3.0, these lexical constraints and statistical signals also support its first deployable neural residual reranker for complete long-sentence candidates. The compact neural model itself is trained, exported, and deployed by the IME project, so it is not counted as a dictionary entry or in the model-data table above. The unchanged v1.3.0 word-transition and character n-gram counts are therefore intentional.
 
