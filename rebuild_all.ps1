@@ -21,6 +21,7 @@ param(
     [string]$SourceNotes = "",
     [string]$PinyinOverrides = "",
     [string]$QueryPathLmCorpusDir = "",
+    [switch]$LmTransitionExactPairsOnly,
     [switch]$SkipReadmeSnapshot
 )
 
@@ -192,6 +193,9 @@ if ($QueryPathLmCorpusDir -ne "") {
     if (Test-Path -LiteralPath $lmTransitionTc) {
         $buildArgs["LmTransitionBaseTc"] = "data/generated/dict_lm_transition_tc.txt"
     }
+}
+if ($LmTransitionExactPairsOnly) {
+    $buildArgs["LmTransitionExactPairsOnly"] = $true
 }
 
 & $buildScript @buildArgs

@@ -24,7 +24,7 @@ import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
 import zipfile
-from typing import Dict, List, Set, Tuple
+from typing import Dict, Iterable, Iterator, List, Set, Tuple
 
 
 CEDICT_DEFAULT_URL = (
@@ -18709,6 +18709,10 @@ LM_CORPUS_SENTENCE_SPLIT_RE = re.compile(
 )
 
 LM_CORPUS_ASCII_RE = re.compile(r"[A-Za-z0-9]")
+LM_CORPUS_CJK_RUN_RE = re.compile(
+    r"[\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\U00020000-\U0002A6DF]+"
+)
+LM_CORPUS_CHUNK_OVERLAP = 4
 
 LM_FUNCTION_SINGLE_CHARS: Set[str] = set(
     "的一是在我你他她它了着也都就不没很还又再才把被给让向从和或与及而并"
@@ -18726,6 +18730,158 @@ def _decode_lm_corpus_file(path: pathlib.Path) -> str:
     return data.decode("utf-8", errors="ignore")
 
 
+def _iter_lm_json_record_texts(record: object) -> List[str]:
+    texts: List[str] = []
+    if not isinstance(record, dict):
+        return texts
+
+    messages = record.get("messages")
+    if isinstance(messages, list):
+        for message in messages:
+            if not isinstance(message, dict):
+                continue
+            content = message.get("content")
+            if isinstance(content, str) and content.strip():
+                texts.append(content)
+        return texts
+
+    for key in ("text", "content"):
+        value = record.get(key)
+        if isinstance(value, str) and value.strip():
+            texts.append(value)
+            break
+    return texts
+
+
+def _new_lm_corpus_stats() -> Dict[str, int]:
+    return {
+        "lm_corpus_files": 0,
+        "lm_corpus_fragments": 0,
+        "lm_corpus_accepted": 0,
+        "lm_corpus_rejected_ascii_or_digit": 0,
+        "lm_corpus_rejected_non_cjk": 0,
+        "lm_corpus_rejected_length": 0,
+        "lm_corpus_mixed_ascii_or_digit": 0,
+        "lm_corpus_salvaged_mixed_fragments": 0,
+        "lm_corpus_split_long_runs": 0,
+        "lm_corpus_text_files": 0,
+        "lm_corpus_jsonl_files": 0,
+        "lm_corpus_jsonl_records": 0,
+        "lm_corpus_jsonl_malformed": 0,
+        "lm_corpus_jsonl_skipped_holdout_files": 0,
+    }
+
+
+def _stream_lm_corpus_sentences(
+    corpus_dir: pathlib.Path,
+    *,
+    min_units: int,
+    max_units: int,
+    convert_text,
+    stats: Dict[str, int] | None = None,
+) -> Iterator[Tuple[str, str]]:
+    active_stats = stats if stats is not None else _new_lm_corpus_stats()
+    if not corpus_dir.exists():
+        active_stats["lm_corpus_missing_dir"] = 1
+        return
+
+    def _iter_fragments(
+        raw_text: str,
+        source_name: str,
+        seen_in_record: Set[str] | None = None,
+    ) -> Iterator[Tuple[str, str]]:
+        for raw_fragment in LM_CORPUS_SENTENCE_SPLIT_RE.split(raw_text):
+            fragment = raw_fragment.strip()
+            if not fragment:
+                continue
+            active_stats["lm_corpus_fragments"] += 1
+            has_ascii_or_digit = LM_CORPUS_ASCII_RE.search(fragment) is not None
+            if has_ascii_or_digit:
+                active_stats["lm_corpus_mixed_ascii_or_digit"] += 1
+
+            cjk_runs = LM_CORPUS_CJK_RUN_RE.findall(fragment)
+            if not cjk_runs:
+                if has_ascii_or_digit:
+                    active_stats["lm_corpus_rejected_ascii_or_digit"] += 1
+                active_stats["lm_corpus_rejected_non_cjk"] += 1
+                continue
+            if len(cjk_runs) != 1 or cjk_runs[0] != fragment:
+                active_stats["lm_corpus_salvaged_mixed_fragments"] += 1
+
+            for cjk_run in cjk_runs:
+                run_units = _cjk_len(cjk_run)
+                if run_units < min_units:
+                    active_stats["lm_corpus_rejected_length"] += 1
+                    continue
+
+                if run_units <= max_units:
+                    chunk_starts: Iterable[int] = (0,)
+                else:
+                    active_stats["lm_corpus_split_long_runs"] += 1
+                    step = max(1, max_units - LM_CORPUS_CHUNK_OVERLAP)
+                    chunk_starts = (
+                        start
+                        for start in range(0, run_units, step)
+                        if run_units - start >= min_units
+                    )
+
+                for start in chunk_starts:
+                    chunk = cjk_run[start : start + max_units]
+                    normalized = convert_text(chunk)
+                    if not normalized or not CJK_FULL_RE.fullmatch(normalized):
+                        active_stats["lm_corpus_rejected_non_cjk"] += 1
+                        continue
+                    if seen_in_record is not None:
+                        if normalized in seen_in_record:
+                            continue
+                        seen_in_record.add(normalized)
+                    active_stats["lm_corpus_accepted"] += 1
+                    yield normalized, source_name
+
+    for path in sorted(corpus_dir.glob("*.txt")):
+        active_stats["lm_corpus_files"] += 1
+        active_stats["lm_corpus_text_files"] += 1
+        text = _decode_lm_corpus_file(path)
+        yield from _iter_fragments(text, path.name)
+
+    holdout_names = {"dev.jsonl", "test.jsonl", "validation.jsonl"}
+    for path in sorted(corpus_dir.rglob("*.jsonl")):
+        if path.name.lower() in holdout_names:
+            active_stats["lm_corpus_jsonl_skipped_holdout_files"] += 1
+            continue
+        active_stats["lm_corpus_files"] += 1
+        active_stats["lm_corpus_jsonl_files"] += 1
+        relative_name = path.relative_to(corpus_dir).as_posix()
+        with path.open("r", encoding="utf-8-sig", errors="replace") as handle:
+            for line_number, raw_line in enumerate(handle, start=1):
+                line = raw_line.strip()
+                if not line:
+                    continue
+                try:
+                    record = json.loads(line)
+                except json.JSONDecodeError:
+                    active_stats["lm_corpus_jsonl_malformed"] += 1
+                    continue
+                active_stats["lm_corpus_jsonl_records"] += 1
+                record_source = ""
+                if isinstance(record, dict):
+                    for key in ("source", "id", "doc_id"):
+                        value = record.get(key)
+                        if isinstance(value, str) and value.strip():
+                            record_source = value.strip()
+                            break
+                if not record_source:
+                    record_source = str(line_number)
+                source_name = f"{relative_name}:{record_source}"
+                seen_in_record: Set[str] = set()
+                for record_text in _iter_lm_json_record_texts(record):
+                    yield from _iter_fragments(
+                        record_text,
+                        source_name,
+                        seen_in_record,
+                    )
+
+
 def _iter_lm_corpus_sentences(
     corpus_dir: pathlib.Path,
     *,
@@ -18733,43 +18889,16 @@ def _iter_lm_corpus_sentences(
     max_units: int,
     convert_text,
 ) -> Tuple[List[Tuple[str, str]], Dict[str, int]]:
-    stats: Dict[str, int] = {
-        "lm_corpus_files": 0,
-        "lm_corpus_fragments": 0,
-        "lm_corpus_accepted": 0,
-        "lm_corpus_rejected_ascii_or_digit": 0,
-        "lm_corpus_rejected_non_cjk": 0,
-        "lm_corpus_rejected_length": 0,
-    }
-    sentences: List[Tuple[str, str]] = []
-    if not corpus_dir.exists():
-        stats["lm_corpus_missing_dir"] = 1
-        return sentences, stats
-
-    for path in sorted(corpus_dir.glob("*.txt")):
-        stats["lm_corpus_files"] += 1
-        text = _decode_lm_corpus_file(path)
-        for raw_fragment in LM_CORPUS_SENTENCE_SPLIT_RE.split(text):
-            fragment = raw_fragment.strip()
-            if not fragment:
-                continue
-            stats["lm_corpus_fragments"] += 1
-            if LM_CORPUS_ASCII_RE.search(fragment):
-                stats["lm_corpus_rejected_ascii_or_digit"] += 1
-                continue
-            cjk_text = "".join(CJK_RE.findall(fragment))
-            if cjk_text != fragment or not CJK_FULL_RE.fullmatch(fragment):
-                stats["lm_corpus_rejected_non_cjk"] += 1
-                continue
-            if _cjk_len(fragment) < min_units or _cjk_len(fragment) > max_units:
-                stats["lm_corpus_rejected_length"] += 1
-                continue
-            normalized = convert_text(fragment)
-            if not normalized or not CJK_FULL_RE.fullmatch(normalized):
-                stats["lm_corpus_rejected_non_cjk"] += 1
-                continue
-            sentences.append((normalized, path.name))
-            stats["lm_corpus_accepted"] += 1
+    stats = _new_lm_corpus_stats()
+    sentences = list(
+        _stream_lm_corpus_sentences(
+            corpus_dir,
+            min_units=min_units,
+            max_units=max_units,
+            convert_text=convert_text,
+            stats=stats,
+        )
+    )
     return sentences, stats
 
 
@@ -18778,6 +18907,9 @@ def _build_lm_entry_indexes(
     *,
     max_segment_units: int,
     single_char_readings_map: Dict[str, Set[str]] | None = None,
+    single_char_default_pinyin_map: Dict[str, str] | None = None,
+    single_char_source_rank_map: Dict[Tuple[str, str], int] | None = None,
+    single_char_pinlu_detail_map: Dict[Tuple[str, str], int] | None = None,
     char_frequency_prior: Dict[str, float] | None = None,
 ) -> Tuple[Dict[str, List[Tuple[str, str, int, int, int]]], Dict[Tuple[str, str], Tuple[int, int]]]:
     entry_weight_by_key: Dict[Tuple[str, str], int] = {}
@@ -18785,6 +18917,9 @@ def _build_lm_entry_indexes(
     entries_by_text: Dict[str, List[Tuple[str, str, int, int, int]]] = {}
     rank_info: Dict[Tuple[str, str], Tuple[int, int]] = {}
     single_char_readings_map = single_char_readings_map or {}
+    single_char_default_pinyin_map = single_char_default_pinyin_map or {}
+    single_char_source_rank_map = single_char_source_rank_map or {}
+    single_char_pinlu_detail_map = single_char_pinlu_detail_map or {}
     char_frequency_prior = char_frequency_prior or {}
 
     for (pinyin, text), weight in mapping.items():
@@ -18811,12 +18946,25 @@ def _build_lm_entry_indexes(
             synthetic_weight = max(360, int(round(420 + char_prior * 260)))
         else:
             synthetic_weight = max(96, int(round(130 + char_prior * 180)))
-        for raw_pinyin in readings:
+        ordered_readings = _candidate_unihan_readings_for_char(
+            ch,
+            single_char_default_pinyin_map,
+            single_char_readings_map,
+            single_char_source_rank_map,
+            single_char_pinlu_detail_map,
+        )
+        if not ordered_readings:
+            ordered_readings = sorted(readings)
+        for reading_rank, raw_pinyin in enumerate(ordered_readings):
             pinyin = _normalize_compact_pinyin_key(raw_pinyin)
             if not pinyin:
                 continue
             key = (pinyin, ch)
-            entry_weight_by_key[key] = max(entry_weight_by_key.get(key, 0), synthetic_weight)
+            reading_weight = max(1, synthetic_weight - min(96, reading_rank * 24))
+            entry_weight_by_key[key] = max(
+                entry_weight_by_key.get(key, 0),
+                reading_weight,
+            )
 
     for (pinyin, text), weight in entry_weight_by_key.items():
         by_pinyin.setdefault(pinyin, []).append((text, weight))
@@ -19111,31 +19259,34 @@ def _collect_lm_transition_priors(
 
 
 def _collect_short_exact_pair_transition_priors(
-    sentences: List[Tuple[str, str]],
+    sentences: Iterable[Tuple[str, str]],
     entries_by_text: Dict[str, List[Tuple[str, str, int, int, int]]],
     *,
+    second_pass_sentences: Iterable[Tuple[str, str]] | None = None,
     min_count: int = 5,
     min_single_source_count: int = 12,
     max_weight: int = 520,
 ) -> Tuple[Dict[Tuple[str, str], int], Dict[str, int]]:
-    """Collect conservative 1+2 and 2+1 transitions from three-character spans.
+    """Collect conservative exact pair transitions from short corpus spans.
 
     The general LM transition collector intentionally limits single-character
     bigrams to function words. Short-word prediction needs a separate channel
-    for lexical single characters such as ``this-section + words``. Both sides
-    still have to be exact dictionary entries and corpus evidence must dominate
-    alternatives with the same pinyin, so this does not enable arbitrary word
-    composition at runtime.
+    for lexical 1+2/2+1 pairs and stronger direct evidence for 2+2/2+3/3+2
+    pairs. Both sides still have to be exact dictionary entries and corpus
+    evidence must dominate alternatives with the same pinyin, so this does not
+    enable arbitrary word composition at runtime.
     """
 
+    pair_layouts = ((3, 1), (3, 2), (4, 2), (5, 2), (5, 3))
     transition_counts: Dict[Tuple[str, str], int] = {}
-    transition_sources: Dict[Tuple[str, str], Set[str]] = {}
+    transition_source_counts: Dict[Tuple[str, str], int] = {}
     component_counts: Dict[str, int] = {}
     transition_rank_penalty: Dict[Tuple[str, str], int] = {}
     transition_gap_penalty: Dict[Tuple[str, str], int] = {}
     transition_left_contexts: Dict[Tuple[str, str], Dict[str, int]] = {}
     transition_right_contexts: Dict[Tuple[str, str], Dict[str, int]] = {}
     transition_exact_extension_count: Dict[Tuple[str, str], int] = {}
+    transition_ambiguous_alternative_count: Dict[Tuple[str, str], int] = {}
     stats: Dict[str, int] = {
         "short_exact_pair_windows": 0,
         "short_exact_pair_viable_windows": 0,
@@ -19147,6 +19298,22 @@ def _collect_short_exact_pair_transition_priors(
         "short_exact_pair_skipped_weak_association": 0,
         "short_exact_pair_skipped_embedded_fragment": 0,
         "short_exact_pair_skipped_exact_extension": 0,
+        "short_exact_pair_skipped_observed_homophone_alternative": 0,
+    }
+    for total_units, split_at in pair_layouts:
+        stats[f"short_exact_pair_{split_at}_{total_units - split_at}_windows"] = 0
+        stats[f"short_exact_pair_{split_at}_{total_units - split_at}_viable"] = 0
+
+    strong_multi_terms_by_pinyin: Dict[str, Set[str]] = {}
+    for entries in entries_by_text.values():
+        for pinyin, text, weight, _exact_rank, _top_weight in entries:
+            if _cjk_len(text) <= 1 or weight < 500:
+                continue
+            strong_multi_terms_by_pinyin.setdefault(pinyin, set()).add(text)
+    ambiguous_multi_pinyins = {
+        pinyin
+        for pinyin, texts in strong_multi_terms_by_pinyin.items()
+        if len(texts) >= 2
     }
 
     def _best_viable_entry(
@@ -19171,50 +19338,96 @@ def _collect_short_exact_pair_transition_priors(
             return entry
         return None
 
-    def _has_source_support(count: int, source_count: int) -> bool:
-        return not (
-            (source_count < 2 and count < min_single_source_count)
-            or (source_count == 2 and count < min_count + 5)
-            or (source_count < 3 and count < min_count + 1)
-        )
+    def _evidence_requirements(key: Tuple[str, str]) -> Tuple[int, int]:
+        segment_lengths = [
+            _cjk_len(segment)
+            for segment in key[1].split(QUERY_PATH_FILE_SEPARATOR)
+        ]
+        if 1 in segment_lengths:
+            return min_count, 3
+        if max(segment_lengths, default=0) >= 3:
+            return max(10, min_count), 4
+        return max(8, min_count), 4
+
+    def _has_source_support(
+        key: Tuple[str, str],
+        count: int,
+        source_count: int,
+    ) -> bool:
+        required_count, required_sources = _evidence_requirements(key)
+        if count < required_count:
+            return False
+        if source_count >= required_sources:
+            return True
+        if source_count == 3:
+            return count >= required_count + 4
+        if source_count == 2:
+            return count >= required_count + 8
+        return count >= max(min_single_source_count, required_count + 14)
+
+    current_source = ""
+    current_source_keys: Set[Tuple[str, str]] = set()
+
+    def _flush_source_keys() -> None:
+        for source_key in current_source_keys:
+            transition_source_counts[source_key] = min(
+                min_single_source_count,
+                transition_source_counts.get(source_key, 0) + 1,
+            )
+        current_source_keys.clear()
 
     for sentence, source_name in sentences:
+        if source_name != current_source:
+            if current_source:
+                _flush_source_keys()
+            current_source = source_name
         if len(sentence) < 3:
             continue
-        for start in range(len(sentence) - 2):
-            text = sentence[start : start + 3]
-            stats["short_exact_pair_windows"] += 1
-            # A full exact term needs no composed short-word transition.
-            if text in entries_by_text:
+        for total_units, split_at in pair_layouts:
+            if len(sentence) < total_units:
                 continue
-            if text[0] == text[1] or text[1] == text[2]:
-                continue
-            for split_at in (1, 2):
+            layout_name = f"{split_at}_{total_units - split_at}"
+            for start in range(len(sentence) - total_units + 1):
+                text = sentence[start : start + total_units]
+                stats["short_exact_pair_windows"] += 1
+                stats[f"short_exact_pair_{layout_name}_windows"] += 1
+                # A full exact term needs no composed transition.
+                if text in entries_by_text:
+                    continue
+                if total_units == 3 and (
+                    text[0] == text[1] or text[1] == text[2]
+                ):
+                    continue
                 left_text = text[:split_at]
                 right_text = text[split_at:]
-                single_text = left_text if split_at == 1 else right_text
+                single_text = ""
+                if len(left_text) == 1:
+                    single_text = left_text
+                elif len(right_text) == 1:
+                    single_text = right_text
                 # Function-word singles are already handled by the general LM
                 # collector. Keeping this channel lexical avoids duplicating
                 # tens of thousands of weak `word + de/le/yi` fragments.
-                if single_text in LM_FUNCTION_SINGLE_CHARS:
+                if single_text and single_text in LM_FUNCTION_SINGLE_CHARS:
                     continue
                 left_entry = _best_viable_entry(
                     left_text,
-                    single=(split_at == 1),
+                    single=(len(left_text) == 1),
                 )
                 right_entry = _best_viable_entry(
                     right_text,
-                    single=(split_at == 2),
+                    single=(len(right_text) == 1),
                 )
                 if left_entry is None or right_entry is None:
                     continue
 
                 stats["short_exact_pair_viable_windows"] += 1
+                stats[f"short_exact_pair_{layout_name}_viable"] += 1
                 query = left_entry[0] + right_entry[0]
                 path = QUERY_PATH_FILE_SEPARATOR.join((left_text, right_text))
                 key = (query, path)
                 transition_counts[key] = transition_counts.get(key, 0) + 1
-                transition_sources.setdefault(key, set()).add(source_name)
+                current_source_keys.add(key)
                 component_counts[left_text] = component_counts.get(left_text, 0) + 1
                 component_counts[right_text] = component_counts.get(right_text, 0) + 1
                 transition_rank_penalty[key] = max(
@@ -19228,45 +19441,89 @@ def _collect_short_exact_pair_transition_priors(
                         right_entry[4] - right_entry[2],
                     ),
                 )
+    if current_source:
+        _flush_source_keys()
 
     # Context histograms are needed only for transitions that pass the basic
     # count/source gates. Building them in a second streaming pass keeps peak
     # memory bounded when the corpus contains millions of distinct trigrams.
-    context_key_by_span: Dict[Tuple[str, int], Tuple[str, str]] = {}
+    context_keys_by_span: Dict[str, List[Tuple[int, Tuple[str, str]]]] = {}
+    context_candidate_keys: Set[Tuple[str, str]] = set()
     for key, count in transition_counts.items():
-        source_count = len(transition_sources.get(key, set()))
-        if count < min_count or not _has_source_support(count, source_count):
+        source_count = transition_source_counts.get(key, 0)
+        if not _has_source_support(key, count, source_count):
             continue
         segments = key[1].split(QUERY_PATH_FILE_SEPARATOR)
         if len(segments) != 2:
             continue
-        context_key_by_span[("".join(segments), len(segments[0]))] = key
+        context_keys_by_span.setdefault("".join(segments), []).append(
+            (len(segments[0]), key)
+        )
+        context_candidate_keys.add(key)
 
-    for sentence, _source_name in sentences:
+    ambiguous_keys_by_span: Dict[str, Set[Tuple[str, str]]] = {}
+    for key in context_candidate_keys:
+        segments = key[1].split(QUERY_PATH_FILE_SEPARATOR)
+        if len(segments) != 2:
+            continue
+        for segment_index, segment in enumerate(segments):
+            if _cjk_len(segment) <= 1:
+                continue
+            entry = _best_viable_entry(segment, single=False)
+            if entry is None or entry[0] not in ambiguous_multi_pinyins:
+                continue
+            for alternative in strong_multi_terms_by_pinyin.get(entry[0], set()):
+                if alternative == segment:
+                    continue
+                alternative_segments = list(segments)
+                alternative_segments[segment_index] = alternative
+                alternative_text = "".join(alternative_segments)
+                ambiguous_keys_by_span.setdefault(alternative_text, set()).add(key)
+
+    if second_pass_sentences is None:
+        if isinstance(sentences, (list, tuple)):
+            second_pass_sentences = sentences
+        else:
+            raise ValueError(
+                "streamed short exact pair collection requires a second corpus pass"
+            )
+
+    for sentence, _source_name in second_pass_sentences:
         if len(sentence) < 3:
             continue
-        for start in range(len(sentence) - 2):
-            text = sentence[start : start + 3]
-            for split_at in (1, 2):
-                key = context_key_by_span.get((text, split_at))
-                if key is None:
+        for total_units in (3, 4, 5):
+            if len(sentence) < total_units:
+                continue
+            for start in range(len(sentence) - total_units + 1):
+                text = sentence[start : start + total_units]
+                for key in ambiguous_keys_by_span.get(text, ()):
+                    transition_ambiguous_alternative_count[key] = (
+                        transition_ambiguous_alternative_count.get(key, 0) + 1
+                    )
+                context_keys = context_keys_by_span.get(text)
+                if not context_keys:
                     continue
                 left_context = sentence[start - 1] if start > 0 else "^"
-                right_pos = start + 3
-                right_context = sentence[right_pos] if right_pos < len(sentence) else "$"
-                left_contexts = transition_left_contexts.setdefault(key, {})
-                right_contexts = transition_right_contexts.setdefault(key, {})
-                left_contexts[left_context] = left_contexts.get(left_context, 0) + 1
-                right_contexts[right_context] = right_contexts.get(right_context, 0) + 1
-                extends_exact = False
-                if split_at == 1 and left_context != "^":
-                    extends_exact = (left_context + text[0]) in entries_by_text
-                elif split_at == 2 and right_context != "$":
-                    extends_exact = (text[2] + right_context) in entries_by_text
-                if extends_exact:
-                    transition_exact_extension_count[key] = (
-                        transition_exact_extension_count.get(key, 0) + 1
-                    )
+                right_pos = start + total_units
+                right_context = (
+                    sentence[right_pos] if right_pos < len(sentence) else "$"
+                )
+                for split_at, key in context_keys:
+                    left_contexts = transition_left_contexts.setdefault(key, {})
+                    right_contexts = transition_right_contexts.setdefault(key, {})
+                    left_contexts[left_context] = left_contexts.get(left_context, 0) + 1
+                    right_contexts[right_context] = right_contexts.get(right_context, 0) + 1
+                    left_text = text[:split_at]
+                    right_text = text[split_at:]
+                    extends_exact = False
+                    if len(left_text) == 1 and left_context != "^":
+                        extends_exact = (left_context + left_text) in entries_by_text
+                    elif len(right_text) == 1 and right_context != "$":
+                        extends_exact = (right_text + right_context) in entries_by_text
+                    if extends_exact:
+                        transition_exact_extension_count[key] = (
+                            transition_exact_extension_count.get(key, 0) + 1
+                        )
 
     contenders_by_query: Dict[str, List[Tuple[str, int]]] = {}
     for (query, path), count in transition_counts.items():
@@ -19277,19 +19534,28 @@ def _collect_short_exact_pair_transition_priors(
     priors: Dict[Tuple[str, str], int] = {}
     total_windows = max(1, sum(transition_counts.values()))
     for key, count in transition_counts.items():
-        if count < min_count:
+        required_count, _required_sources = _evidence_requirements(key)
+        if count < required_count:
             stats["short_exact_pair_skipped_count"] += 1
             continue
-        source_count = len(transition_sources.get(key, set()))
-        if not _has_source_support(count, source_count):
+        source_count = transition_source_counts.get(key, 0)
+        if not _has_source_support(key, count, source_count):
             stats["short_exact_pair_skipped_source_count"] += 1
             continue
         left_context_peak = max(
-            transition_left_contexts.get(key, {"^": 0}).values(),
+            (
+                value
+                for context, value in transition_left_contexts.get(key, {}).items()
+                if context != "^"
+            ),
             default=0,
         )
         right_context_peak = max(
-            transition_right_contexts.get(key, {"$": 0}).values(),
+            (
+                value
+                for context, value in transition_right_contexts.get(key, {}).items()
+                if context != "$"
+            ),
             default=0,
         )
         if max(left_context_peak, right_context_peak) * 100 >= count * 80:
@@ -19321,7 +19587,7 @@ def _collect_short_exact_pair_transition_priors(
             default=0,
         )
         if contender_rank == 2 and (
-            count < min_count + 7 or count * 100 < best_count * 80
+            count < required_count + 7 or count * 100 < best_count * 80
         ):
             stats["short_exact_pair_skipped_weak_runner_up"] += 1
             continue
@@ -19334,21 +19600,64 @@ def _collect_short_exact_pair_transition_priors(
         query_total = max(1, sum(value for _path, value in contenders))
         query_share = count / query_total
         dominance = math.log2((count + 2) / (competitor_count + 2))
-        if pmi < 0.75 or (competitor_count > 0 and query_share < 0.55):
+        strong_absolute_evidence = (
+            count >= max(12, required_count + 5)
+            and source_count >= 6
+            and query_share >= 0.70
+            and (
+                competitor_count == 0
+                or count * 100 >= competitor_count * 140
+            )
+        )
+        has_single_component = any(_cjk_len(segment) == 1 for segment in segments)
+        independent_single_evidence = (
+            has_single_component
+            and count >= required_count
+            and source_count >= 5
+            and source_count * 100 >= min(count, min_single_source_count) * 80
+            and query_share >= 0.75
+            and (
+                competitor_count == 0
+                or count * 100 >= competitor_count * 160
+            )
+        )
+        if (
+            pmi < 0.75
+            and not strong_absolute_evidence
+            and not independent_single_evidence
+        ) or (competitor_count > 0 and query_share < 0.55):
             stats["short_exact_pair_skipped_weak_association"] += 1
             continue
 
-        score = 344
-        score += int(round(math.log2(count + 1) * 18))
-        score += min(32, source_count * 8)
-        score += int(round(query_share * 40))
-        score += int(round(max(-1.0, min(3.0, dominance)) * 18))
-        score += int(round(max(-1.0, min(4.0, pmi)) * 8))
+        ambiguous_multi_count = 0
+        for segment in segments:
+            if _cjk_len(segment) <= 1:
+                continue
+            entry = _best_viable_entry(segment, single=False)
+            if entry is not None and entry[0] in ambiguous_multi_pinyins:
+                ambiguous_multi_count += 1
+        if (
+            ambiguous_multi_count > 0
+            and transition_ambiguous_alternative_count.get(key, 0) >= 2
+        ):
+            stats["short_exact_pair_skipped_observed_homophone_alternative"] += 1
+            continue
+
+        score = 300
+        score += int(round(math.log2(count + 1) * 14))
+        score += min(28, source_count * 5)
+        score += int(round(query_share * 28))
+        score += int(round(max(-1.0, min(3.0, dominance)) * 10))
+        score += int(round(max(-1.0, min(4.0, pmi)) * 6))
         score -= min(42, transition_rank_penalty.get(key, 0) * 7)
         score -= min(48, max(0, transition_gap_penalty.get(key, 0)) // 10)
         if contender_rank == 2:
             score -= 20
-        priors[key] = max(390, min(max_weight, score))
+        minimum_effective_score = 390 if has_single_component else 350
+        priors[key] = max(
+            minimum_effective_score,
+            min(min(max_weight, 480), score),
+        )
 
     stats["short_exact_pair_priors_emitted"] = len(priors)
     return priors, stats
@@ -19360,29 +19669,62 @@ def _build_lm_corpus_query_path_prior_map(
     *,
     convert_text,
     single_char_readings_map: Dict[str, Set[str]] | None,
+    single_char_default_pinyin_map: Dict[str, str] | None,
+    single_char_source_rank_map: Dict[Tuple[str, str], int] | None,
+    single_char_pinlu_detail_map: Dict[Tuple[str, str], int] | None,
     char_frequency_prior: Dict[str, float] | None,
     stats_prefix: str,
+    exact_pairs_only: bool = False,
 ) -> Tuple[Dict[Tuple[str, str], int], Dict[str, int]]:
     entries_by_text, _rank_info = _build_lm_entry_indexes(
         mapping,
         max_segment_units=4,
         single_char_readings_map=single_char_readings_map,
+        single_char_default_pinyin_map=single_char_default_pinyin_map,
+        single_char_source_rank_map=single_char_source_rank_map,
+        single_char_pinlu_detail_map=single_char_pinlu_detail_map,
         char_frequency_prior=char_frequency_prior,
     )
-    sentences, sentence_stats = _iter_lm_corpus_sentences(
-        corpus_dir,
-        min_units=4,
-        max_units=40,
-        convert_text=convert_text,
-    )
-    priors, prior_stats = _collect_lm_transition_priors(
-        sentences,
-        entries_by_text,
-    )
-    short_pair_priors, short_pair_stats = _collect_short_exact_pair_transition_priors(
-        sentences,
-        entries_by_text,
-    )
+    if exact_pairs_only:
+        sentence_stats = _new_lm_corpus_stats()
+        sentence_stats["lm_corpus_streaming_exact_pairs_only"] = 1
+        priors: Dict[Tuple[str, str], int] = {}
+        prior_stats: Dict[str, int] = {}
+        short_pair_priors, short_pair_stats = (
+            _collect_short_exact_pair_transition_priors(
+                _stream_lm_corpus_sentences(
+                    corpus_dir,
+                    min_units=4,
+                    max_units=40,
+                    convert_text=convert_text,
+                    stats=sentence_stats,
+                ),
+                entries_by_text,
+                second_pass_sentences=_stream_lm_corpus_sentences(
+                    corpus_dir,
+                    min_units=4,
+                    max_units=40,
+                    convert_text=convert_text,
+                ),
+            )
+        )
+    else:
+        sentences, sentence_stats = _iter_lm_corpus_sentences(
+            corpus_dir,
+            min_units=4,
+            max_units=40,
+            convert_text=convert_text,
+        )
+        priors, prior_stats = _collect_lm_transition_priors(
+            sentences,
+            entries_by_text,
+        )
+        short_pair_priors, short_pair_stats = (
+            _collect_short_exact_pair_transition_priors(
+                sentences,
+                entries_by_text,
+            )
+        )
     for key, weight in short_pair_priors.items():
         priors[key] = max(priors.get(key, 0), weight)
     stats: Dict[str, int] = {}
@@ -20368,6 +20710,14 @@ def main() -> int:
         "--query-path-lm-corpus-dir",
         default="",
         help="Optional internal plain-text corpus directory for conservative query-path transition priors.",
+    )
+    parser.add_argument(
+        "--lm-transition-exact-pairs-only",
+        action="store_true",
+        help=(
+            "Stream the corpus and train only exact 1+2/2+1/2+2/2+3/3+2 "
+            "transition additions against the frozen LM baseline."
+        ),
     )
     parser.add_argument("--support-dict-sc", default="")
     parser.add_argument("--support-dict-tc", default="")
@@ -22684,8 +23034,12 @@ def main() -> int:
                 query_path_lm_corpus_dir,
                 convert_text=lambda text: _convert_text_with_char_map(text, trad_to_simp_char_map),
                 single_char_readings_map=output_unihan_readings_map,
+                single_char_default_pinyin_map=output_unihan_map,
+                single_char_source_rank_map=output_unihan_source_rank_map,
+                single_char_pinlu_detail_map=output_unihan_pinlu_detail_map,
                 char_frequency_prior=char_frequency_prior,
                 stats_prefix="sc",
+                exact_pairs_only=args.lm_transition_exact_pairs_only,
             )
             stats.update(sc_lm_query_path_stats)
             sc_lm_transition_priors, sc_lm_transition_stats = _select_dedicated_lm_transitions(
@@ -22724,8 +23078,12 @@ def main() -> int:
                     simp_to_trad_char_map,
                 ),
                 single_char_readings_map=output_unihan_readings_map,
+                single_char_default_pinyin_map=output_unihan_map,
+                single_char_source_rank_map=output_unihan_source_rank_map,
+                single_char_pinlu_detail_map=output_unihan_pinlu_detail_map,
                 char_frequency_prior=tc_char_frequency_prior,
                 stats_prefix="tc",
+                exact_pairs_only=args.lm_transition_exact_pairs_only,
             )
             stats.update(tc_lm_query_path_stats)
             tc_lm_transition_priors, tc_lm_transition_stats = _select_dedicated_lm_transitions(

@@ -26,6 +26,7 @@ param(
     [string]$LmTransitionBaseSc = "",
     [string]$LmTransitionBaseTc = "",
     [string]$QueryPathLmCorpusDir = "",
+    [switch]$LmTransitionExactPairsOnly,
     [string]$SupportDictSc = "",
     [string]$SupportDictTc = "",
     [string]$Manifest = "",
@@ -128,6 +129,7 @@ if ($OutputLmTransitionTc -ne "") { $args += @("--lm-transition-output-tc", $Out
 if ($LmTransitionBaseSc -ne "") { $args += @("--lm-transition-base-sc", $LmTransitionBaseSc) }
 if ($LmTransitionBaseTc -ne "") { $args += @("--lm-transition-base-tc", $LmTransitionBaseTc) }
 if ($QueryPathLmCorpusDir -ne "") { $args += @("--query-path-lm-corpus-dir", $QueryPathLmCorpusDir) }
+if ($LmTransitionExactPairsOnly) { $args += "--lm-transition-exact-pairs-only" }
 if ($SupportDictSc -ne "") { $args += @("--support-dict-sc", $SupportDictSc) }
 if ($SupportDictTc -ne "") { $args += @("--support-dict-tc", $SupportDictTc) }
 if ($Manifest -ne "") { $args += @("--manifest", $Manifest) }
