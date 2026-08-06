@@ -8,7 +8,7 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-CC%20BY--SA%204.0-blue" alt="License: CC BY-SA 4.0"></a>
 </p>
 
-[English](README.md) | 简体中文
+[English](README.md) | 简体中文 | [繁體中文](README.zh-Hant.md)
 
 Cassotis IME 的词库构建与发布仓库。
 

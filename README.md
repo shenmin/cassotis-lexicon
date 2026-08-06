@@ -8,7 +8,7 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-CC%20BY--SA%204.0-blue" alt="License: CC BY-SA 4.0"></a>
 </p>
 
-English | [简体中文](README.CN.md)
+English | [简体中文](README.zh-Hans.md) | [繁體中文](README.zh-Hant.md)
 
 Lexicon build and release repository for Cassotis IME.
 

@@ -21,7 +21,7 @@ SNAPSHOT_FILES = (
     "data/generated/dict_unihan_tc.txt",
 )
 
-README_FILES = ("README.md", "README.CN.md")
+README_FILES = ("README.md", "README.zh-Hans.md", "README.zh-Hant.md")
 
 
 def count_rows(path: Path) -> int:
@@ -32,7 +32,11 @@ def count_rows(path: Path) -> int:
 def replace_snapshot_date(text: str, build_date: str) -> str:
     lines = []
     for line in text.splitlines(keepends=True):
-        if "Current dictionary snapshot" in line or "\u5f53\u524d\u8bcd\u5e93\u5feb\u7167" in line:
+        if (
+            "Current dictionary snapshot" in line
+            or "\u5f53\u524d\u8bcd\u5e93\u5feb\u7167" in line
+            or "\u76ee\u524d\u8a5e\u5eab\u5feb\u7167" in line
+        ):
             line = re.sub(r"\d{4}-\d{2}-\d{2}", build_date, line, count=1)
         lines.append(line)
     return "".join(lines)
