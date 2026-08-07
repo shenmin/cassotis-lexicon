@@ -18,6 +18,222 @@ import prepare_lm_transition_corpus as preparer  # noqa: E402
 
 
 class LmTransitionTrainingTests(unittest.TestCase):
+    @staticmethod
+    def _ensure_test_single_entries(
+        entries: dict[str, list[tuple[str, str, int, int, int]]],
+        rows: list[tuple[str, str]],
+    ) -> None:
+        for sentence, _source_name in rows:
+            for char in sentence:
+                if char in entries:
+                    continue
+                entries[char] = [
+                    (f"ctx{ord(char):x}", char, 700, 1, 700)
+                ]
+
+    def test_strong_single_pairs_require_sparse_independent_dominant_evidence(
+        self,
+    ) -> None:
+        def entry(
+            pinyin: str,
+            text: str,
+            weight: int,
+            rank: int = 1,
+            top_weight: int | None = None,
+        ) -> tuple[str, str, int, int, int]:
+            return pinyin, text, weight, rank, top_weight or weight
+
+        entries = {
+            "\u4f60": [entry("ni", "\u4f60", 700)],
+            "\u8bf4": [entry("shuo", "\u8bf4", 680)],
+            "\u8fd8": [entry("hai", "\u8fd8", 660)],
+            "\u6765": [entry("lai", "\u6765", 650)],
+            "\u67d0": [entry("mou", "\u67d0", 180, 12, 700)],
+            "\u4eba": [entry("ren", "\u4eba", 700)],
+            "\u5206": [entry("fen", "\u5206", 700)],
+            "\u4e86": [entry("le", "\u4e86", 700)],
+            # Existing exact words must remain in the ordinary dictionary path.
+            "\u4f60\u597d": [entry("nihao", "\u4f60\u597d", 1000)],
+            "\u597d": [entry("hao", "\u597d", 700)],
+        }
+        rows: list[tuple[str, str]] = []
+        left_contexts = "\u7532\u4e59\u4e19\u4e01\u620a\u5df1\u5e9a\u8f9b"
+        right_contexts = "\u5b50\u4e11\u5bc5\u536f\u8fb0\u5df3\u5348\u672a"
+        for index in range(20):
+            rows.append(
+                (
+                    left_contexts[index % len(left_contexts)]
+                    + "\u4f60\u8bf4"
+                    + right_contexts[(index + 1) % len(right_contexts)],
+                    f"say-{index % 6}",
+                )
+            )
+        for index in range(12):
+            rows.append(
+                (
+                    left_contexts[index % len(left_contexts)]
+                    + "\u8fd8\u6765"
+                    + right_contexts[(index + 2) % len(right_contexts)],
+                    "one-source",
+                )
+            )
+        for index in range(20):
+            rows.append(
+                (
+                    left_contexts[index % len(left_contexts)]
+                    + "\u4f60\u597d"
+                    + right_contexts[index % len(right_contexts)],
+                    f"exact-{index}",
+                )
+            )
+        for index in range(20):
+            rows.append(
+                (
+                    left_contexts[index % len(left_contexts)]
+                    + "\u67d0\u4eba"
+                    + right_contexts[index % len(right_contexts)],
+                    f"rare-{index}",
+                )
+            )
+        for index in range(20):
+            rows.append(
+                (
+                    left_contexts[index % len(left_contexts)]
+                    + "\u5206\u4e86"
+                    + right_contexts[index % len(right_contexts)],
+                    f"hidden-exact-{index}",
+                )
+            )
+        self._ensure_test_single_entries(entries, rows)
+
+        priors, stats = builder._collect_strong_single_pair_transition_priors(
+            rows,
+            entries,
+            exact_texts={"\u5206\u4e86"},
+        )
+        separator = builder.QUERY_PATH_FILE_SEPARATOR
+        self.assertIn(
+            ("nishuo", f"\u4f60{separator}\u8bf4"),
+            priors,
+            str(stats),
+        )
+        self.assertNotIn(("hailai", f"\u8fd8{separator}\u6765"), priors)
+        self.assertNotIn(("nihao", f"\u4f60{separator}\u597d"), priors)
+        self.assertNotIn(("mouren", f"\u67d0{separator}\u4eba"), priors)
+        self.assertNotIn(("fenle", f"\u5206{separator}\u4e86"), priors)
+        self.assertEqual(1, stats["strong_single_pair_priors_emitted"])
+
+    def test_strong_single_pairs_keep_one_path_per_query_without_clear_winner(
+        self,
+    ) -> None:
+        def entry(pinyin: str, text: str) -> tuple[str, str, int, int, int]:
+            return pinyin, text, 700, 1, 700
+
+        entries = {
+            "\u4f60": [entry("ni", "\u4f60")],
+            "\u8bf4": [entry("shuo", "\u8bf4")],
+            "\u502a": [entry("ni", "\u502a")],
+            "\u6714": [entry("shuo", "\u6714")],
+        }
+        rows: list[tuple[str, str]] = []
+        for index in range(20):
+            rows.append(
+                (
+                    f"{chr(0x4e70 + (index % 8))}\u4f60\u8bf4{chr(0x4e10 + index)}",
+                    f"a-{index}",
+                )
+            )
+        for index in range(15):
+            rows.append(
+                (
+                    f"{chr(0x4e90 + (index % 8))}\u502a\u6714{chr(0x4e30 + index)}",
+                    f"b-{index}",
+                )
+            )
+        self._ensure_test_single_entries(entries, rows)
+
+        priors, stats = builder._collect_strong_single_pair_transition_priors(
+            rows,
+            entries,
+        )
+        self.assertLessEqual(
+            sum(1 for query, _path in priors if query == "nishuo"),
+            1,
+        )
+        self.assertGreater(stats["strong_single_pair_skipped_query_dominance"], 0)
+
+    def test_strong_single_pairs_allow_only_an_exceptional_second_path(
+        self,
+    ) -> None:
+        def entry(pinyin: str, text: str) -> tuple[str, str, int, int, int]:
+            return pinyin, text, 700, 1, 700
+
+        entries = {
+            "\u4f60": [entry("ni", "\u4f60")],
+            "\u8bf4": [entry("shuo", "\u8bf4")],
+            "\u502a": [entry("ni", "\u502a")],
+            "\u6714": [entry("shuo", "\u6714")],
+        }
+        rows: list[tuple[str, str]] = []
+        for index in range(48):
+            rows.append(
+                (
+                    f"{chr(0x4e10 + (index % 12))}\u4f60\u8bf4"
+                    f"{chr(0x4e40 + (index % 12))}",
+                    f"top-{index % 12}",
+                )
+            )
+        for index in range(40):
+            rows.append(
+                (
+                    f"{chr(0x4e70 + (index % 12))}\u502a\u6714"
+                    f"{chr(0x4ea0 + (index % 12))}",
+                    f"runner-{index % 12}",
+                )
+            )
+        self._ensure_test_single_entries(entries, rows)
+
+        priors, stats = builder._collect_strong_single_pair_transition_priors(
+            rows,
+            entries,
+        )
+        separator = builder.QUERY_PATH_FILE_SEPARATOR
+        self.assertIn(("nishuo", f"\u4f60{separator}\u8bf4"), priors)
+        self.assertIn(("nishuo", f"\u502a{separator}\u6714"), priors)
+        self.assertEqual(
+            2,
+            sum(1 for query, _path in priors if query == "nishuo"),
+        )
+        self.assertEqual(1, stats["strong_single_pair_runner_up_emitted"])
+
+    def test_strong_single_pairs_do_not_cross_dictionary_word_boundaries(
+        self,
+    ) -> None:
+        def entry(pinyin: str, text: str) -> tuple[str, str, int, int, int]:
+            return pinyin, text, 700, 1, 700
+
+        entries = {
+            "\u5e73": [entry("ping", "\u5e73")],
+            "\u5b89": [entry("an", "\u5b89")],
+            "\u4e0d": [entry("bu", "\u4e0d")],
+            "\u884c": [entry("xing", "\u884c")],
+            "\u5e73\u5b89": [entry("pingan", "\u5e73\u5b89")],
+            "\u4e0d\u884c": [entry("buxing", "\u4e0d\u884c")],
+        }
+        rows = [
+            (f"{chr(0x4e10 + index)}\u5e73\u5b89\u4e0d\u884c{chr(0x4e40 + index)}", f"source-{index % 6}")
+            for index in range(18)
+        ]
+        self._ensure_test_single_entries(entries, rows)
+
+        priors, stats = builder._collect_strong_single_pair_transition_priors(
+            rows,
+            entries,
+        )
+        separator = builder.QUERY_PATH_FILE_SEPARATOR
+        self.assertNotIn(("anbu", f"\u5b89{separator}\u4e0d"), priors)
+        self.assertGreater(stats["strong_single_pair_skipped_count"], 0)
+
     def test_single_character_lm_entries_use_stable_primary_reading(self) -> None:
         char = "\u5dee"
         entries, _rank_info = builder._build_lm_entry_indexes(

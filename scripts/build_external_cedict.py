@@ -18738,6 +18738,14 @@ LM_STRONG_PRODUCTIVE_RUNNER_UP_WEIGHT = 400
 LM_STRONG_PRODUCTIVE_RUNNER_UP_MIN_DIRECT_COUNT = 7
 LM_STRONG_PRODUCTIVE_RUNNER_UP_MIN_DIRECT_SOURCES = 7
 
+# Adjacent single-character transitions are intentionally much stricter than
+# productive 1+2/2+1 pairs. They are learned offline only and never expanded
+# from the runtime homophone Cartesian product.
+LM_STRONG_SINGLE_PAIR_MIN_COUNT = 12
+LM_STRONG_SINGLE_PAIR_MIN_SOURCES = 5
+LM_STRONG_SINGLE_PAIR_RUNNER_UP_MIN_COUNT = 36
+LM_STRONG_SINGLE_PAIR_RUNNER_UP_MIN_SOURCES = 10
+
 
 def _is_productive_predicate_pos(pos_tag: str) -> bool:
     normalized = pos_tag.strip().lower()
@@ -19897,11 +19905,371 @@ def _collect_short_exact_pair_transition_priors(
     return priors, stats
 
 
+def _collect_strong_single_pair_transition_priors(
+    sentences: Iterable[Tuple[str, str]],
+    entries_by_text: Dict[str, List[Tuple[str, str, int, int, int]]],
+    *,
+    second_pass_sentences: Iterable[Tuple[str, str]] | None = None,
+    exact_texts: Set[str] | None = None,
+    jieba_pos_map: Dict[str, str] | None = None,
+    min_count: int = LM_STRONG_SINGLE_PAIR_MIN_COUNT,
+    min_source_count: int = LM_STRONG_SINGLE_PAIR_MIN_SOURCES,
+    max_weight: int = 468,
+) -> Tuple[Dict[Tuple[str, str], int], Dict[str, int]]:
+    """Collect sparse corpus-backed 1+1 transitions.
+
+    Raw adjacent characters are used only as a cheap count prefilter. Final
+    evidence is collected from adjacent one-character segments in Cassotis
+    dictionary-constrained DP paths, so a boundary such as ``\u5e73\u5b89|\u4e0d\u884c``
+    cannot create the synthetic pair ``\u5b89|\u4e0d``. Full two-character dictionary
+    entries are excluded, and both character readings must be common exact
+    candidates. One (exceptionally two) paths are retained for each compact
+    pinyin query.
+    """
+
+    jieba_pos_map = jieba_pos_map or {}
+    known_exact_texts = set(entries_by_text)
+    if exact_texts:
+        known_exact_texts.update(exact_texts)
+    stats: Dict[str, int] = {
+        "strong_single_pair_windows": 0,
+        "strong_single_pair_nonexact_windows": 0,
+        "strong_single_pair_viable_windows": 0,
+        "strong_single_pair_segmented_sentences": 0,
+        "strong_single_pair_unsegmented_sentences": 0,
+        "strong_single_pair_segmented_windows": 0,
+        "strong_single_pair_segmented_viable_windows": 0,
+        "strong_single_pair_preliminary": 0,
+        "strong_single_pair_skipped_exact": 0,
+        "strong_single_pair_skipped_uncommon_reading": 0,
+        "strong_single_pair_skipped_count": 0,
+        "strong_single_pair_skipped_source_count": 0,
+        "strong_single_pair_skipped_named_fragment": 0,
+        "strong_single_pair_skipped_concentrated_context": 0,
+        "strong_single_pair_skipped_query_dominance": 0,
+        "strong_single_pair_runner_up_emitted": 0,
+        "strong_single_pair_priors_emitted": 0,
+    }
+
+    common_entries_by_char: Dict[
+        str, List[Tuple[str, str, int, int, int]]
+    ] = {}
+    for text, entries in entries_by_text.items():
+        if _cjk_len(text) != 1:
+            continue
+        viable: List[Tuple[str, str, int, int, int]] = []
+        seen_pinyin: Set[str] = set()
+        for entry in entries:
+            pinyin, _text, weight, exact_rank, top_weight = entry
+            if (
+                not pinyin
+                or pinyin in seen_pinyin
+                or weight < 270
+                or exact_rank > 6
+                or top_weight - weight > 160
+            ):
+                continue
+            viable.append(entry)
+            seen_pinyin.add(pinyin)
+            if len(viable) >= 2:
+                break
+        if viable:
+            common_entries_by_char[text] = viable
+
+    raw_pair_counts: Dict[str, int] = {}
+
+    for sentence, _source_name in sentences:
+        if len(sentence) < 2:
+            continue
+        for start in range(len(sentence) - 1):
+            stats["strong_single_pair_windows"] += 1
+            pair_text = sentence[start : start + 2]
+            if pair_text in known_exact_texts:
+                stats["strong_single_pair_skipped_exact"] += 1
+                continue
+            stats["strong_single_pair_nonexact_windows"] += 1
+            if _is_named_entity_pos(jieba_pos_map.get(pair_text, "")):
+                stats["strong_single_pair_skipped_named_fragment"] += 1
+                continue
+            left_entries = common_entries_by_char.get(pair_text[0], ())
+            right_entries = common_entries_by_char.get(pair_text[1], ())
+            if not left_entries or not right_entries:
+                stats["strong_single_pair_skipped_uncommon_reading"] += 1
+                continue
+
+            raw_pair_counts[pair_text] = raw_pair_counts.get(pair_text, 0) + 1
+            stats["strong_single_pair_viable_windows"] += 1
+
+    preliminary_pair_texts = {
+        pair_text: count
+        for pair_text, count in raw_pair_counts.items()
+        if count >= min_count
+    }
+    del raw_pair_counts
+    if not preliminary_pair_texts:
+        return {}, stats
+
+    if second_pass_sentences is None:
+        if isinstance(sentences, (list, tuple)):
+            second_pass_sentences = sentences
+        else:
+            raise ValueError(
+                "streamed strong single-pair collection requires a second corpus pass"
+            )
+    pair_counts: Dict[str, int] = {}
+    transition_source_fingerprints: Dict[str, List[int]] = {}
+    # [left candidate, left balance, right candidate, right balance]
+    majority_states: Dict[str, List[object]] = {}
+    left_component_counts: Dict[str, int] = {}
+    right_component_counts: Dict[str, int] = {}
+
+    def update_majority_candidate(
+        state: List[object], candidate_idx: int, balance_idx: int, context: str
+    ) -> None:
+        candidate = str(state[candidate_idx])
+        balance = int(state[balance_idx])
+        if balance <= 0:
+            state[candidate_idx] = context
+            state[balance_idx] = 1
+        elif candidate == context:
+            state[balance_idx] = balance + 1
+        else:
+            state[balance_idx] = balance - 1
+
+    for sentence, source_name in second_pass_sentences:
+        if len(sentence) < 2:
+            continue
+        segments = _segment_lm_sentence(
+            sentence,
+            entries_by_text,
+            max_segment_units=4,
+        )
+        if not segments:
+            stats["strong_single_pair_unsegmented_sentences"] += 1
+            continue
+        stats["strong_single_pair_segmented_sentences"] += 1
+        stats["strong_single_pair_segmented_windows"] += max(
+            0, len(segments) - 1
+        )
+        source_fingerprint = hash(source_name)
+        for segment_idx in range(len(segments) - 1):
+            left_text = segments[segment_idx][1]
+            right_text = segments[segment_idx + 1][1]
+            if _cjk_len(left_text) != 1 or _cjk_len(right_text) != 1:
+                continue
+            left_entries = common_entries_by_char.get(left_text, ())
+            right_entries = common_entries_by_char.get(right_text, ())
+            if not left_entries or not right_entries:
+                continue
+            stats["strong_single_pair_segmented_viable_windows"] += 1
+            for left_entry in left_entries:
+                left_component = left_entry[0] + "\0" + left_text
+                left_component_counts[left_component] = (
+                    left_component_counts.get(left_component, 0) + 1
+                )
+            for right_entry in right_entries:
+                right_component = right_entry[0] + "\0" + right_text
+                right_component_counts[right_component] = (
+                    right_component_counts.get(right_component, 0) + 1
+                )
+
+            pair_text = left_text + right_text
+            if pair_text not in preliminary_pair_texts:
+                continue
+            pair_counts[pair_text] = pair_counts.get(pair_text, 0) + 1
+            left_context = "^"
+            if segment_idx > 0:
+                left_context = segments[segment_idx - 1][1][-1]
+            right_context = "$"
+            if segment_idx + 2 < len(segments):
+                right_context = segments[segment_idx + 2][1][0]
+            source_fingerprints = transition_source_fingerprints.get(pair_text)
+            if source_fingerprints is None:
+                source_fingerprints = []
+                transition_source_fingerprints[pair_text] = source_fingerprints
+            if (
+                len(source_fingerprints)
+                < LM_STRONG_SINGLE_PAIR_RUNNER_UP_MIN_SOURCES
+                and source_fingerprint not in source_fingerprints
+            ):
+                source_fingerprints.append(source_fingerprint)
+            majority_state = majority_states.get(pair_text)
+            if majority_state is None:
+                majority_state = ["", 0, "", 0]
+                majority_states[pair_text] = majority_state
+            update_majority_candidate(
+                majority_state, 0, 1, left_context
+            )
+            update_majority_candidate(
+                majority_state, 2, 3, right_context
+            )
+
+    eligible_pair_counts = {
+        pair_text: count
+        for pair_text, count in pair_counts.items()
+        if count >= min_count
+    }
+    stats["strong_single_pair_skipped_count"] += (
+        len(preliminary_pair_texts) - len(eligible_pair_counts)
+    )
+
+    transition_metadata: Dict[
+        Tuple[str, str], Tuple[int, int, str, str]
+    ] = {}
+    preliminary_keys: Set[Tuple[str, str]] = set()
+    for pair_text in eligible_pair_counts:
+        left_entries = common_entries_by_char.get(pair_text[0], ())
+        right_entries = common_entries_by_char.get(pair_text[1], ())
+        for left_entry in left_entries:
+            for right_entry in right_entries:
+                query = left_entry[0] + right_entry[0]
+                path = QUERY_PATH_FILE_SEPARATOR.join(pair_text)
+                key = (query, path)
+                preliminary_keys.add(key)
+                transition_metadata[key] = (
+                    max(left_entry[3] - 1, right_entry[3] - 1),
+                    max(
+                        left_entry[4] - left_entry[2],
+                        right_entry[4] - right_entry[2],
+                    ),
+                    left_entry[0] + "\0" + pair_text[0],
+                    right_entry[0] + "\0" + pair_text[1],
+                )
+    stats["strong_single_pair_preliminary"] = len(preliminary_keys)
+    if not preliminary_keys:
+        return {}, stats
+
+    qualified_by_query: Dict[
+        str, List[Tuple[Tuple[str, str], int, int, float, int]]
+    ] = {}
+    total_windows = max(
+        1, stats["strong_single_pair_segmented_viable_windows"]
+    )
+    for key in preliminary_keys:
+        pair_text = key[1].replace(QUERY_PATH_FILE_SEPARATOR, "")
+        count = eligible_pair_counts[pair_text]
+        source_count = len(transition_source_fingerprints.get(pair_text, ()))
+        if source_count < min_source_count:
+            stats["strong_single_pair_skipped_source_count"] += 1
+            continue
+        rank_penalty, gap_penalty, left_component, right_component = (
+            transition_metadata[key]
+        )
+        if (
+            rank_penalty > 3
+            or gap_penalty > 120
+        ):
+            stats["strong_single_pair_skipped_uncommon_reading"] += 1
+            continue
+
+        majority_state = majority_states[pair_text]
+        left_candidate = str(majority_state[0])
+        right_candidate = str(majority_state[2])
+        left_peak_signal = 0
+        if left_candidate != "^":
+            left_peak_signal = int(majority_state[1])
+        right_peak_signal = 0
+        if right_candidate != "$":
+            right_peak_signal = int(majority_state[3])
+        # Boyer-Moore balance is a conservative fixed-context signal. An
+        # actual 80% majority leaves at least a 60% balance; rejecting at that
+        # point can only make this sparse generated layer more conservative.
+        context_peak_signal = max(left_peak_signal, right_peak_signal)
+        if context_peak_signal * 100 >= count * 60:
+            stats["strong_single_pair_skipped_concentrated_context"] += 1
+            continue
+
+        component_product = max(
+            1, left_component_counts.get(left_component, 1)
+        ) * max(
+            1, right_component_counts.get(right_component, 1)
+        )
+        pmi = math.log2((count * total_windows) / component_product)
+        qualified_by_query.setdefault(key[0], []).append(
+            (key, count, source_count, pmi, context_peak_signal)
+        )
+
+    priors: Dict[Tuple[str, str], int] = {}
+    for contenders in qualified_by_query.values():
+        contenders.sort(key=lambda item: (-item[1], -item[2], item[0][1]))
+        query_total = sum(item[1] for item in contenders)
+        top_count = contenders[0][1]
+        second_count = contenders[1][1] if len(contenders) > 1 else 0
+        third_count = contenders[2][1] if len(contenders) > 2 else 0
+        top_key, _top_count, top_source_count, top_pmi, _top_context = (
+            contenders[0]
+        )
+        top_share = top_count / max(1, query_total)
+        normal_top_admitted = (
+            top_share >= 0.58
+            and (second_count == 0 or top_count * 100 >= second_count * 160)
+            and (top_pmi >= 0.75 or top_count >= 24)
+        )
+        exceptional_runner_admitted = False
+        if len(contenders) > 1:
+            runner_key, runner_count, runner_source_count, runner_pmi, _ = (
+                contenders[1]
+            )
+            exceptional_runner_admitted = (
+                runner_count >= LM_STRONG_SINGLE_PAIR_RUNNER_UP_MIN_COUNT
+                and runner_source_count
+                >= LM_STRONG_SINGLE_PAIR_RUNNER_UP_MIN_SOURCES
+                and runner_count / max(1, query_total) >= 0.30
+                and runner_count * 100 >= top_count * 75
+                and (third_count == 0 or runner_count >= third_count * 2)
+                and transition_metadata[runner_key][0] <= 1
+                and transition_metadata[runner_key][1] <= 60
+                and runner_pmi >= 1.5
+                and top_count >= LM_STRONG_SINGLE_PAIR_RUNNER_UP_MIN_COUNT
+                and top_source_count
+                >= LM_STRONG_SINGLE_PAIR_RUNNER_UP_MIN_SOURCES
+                and transition_metadata[top_key][0] <= 1
+                and transition_metadata[top_key][1] <= 60
+                and top_pmi >= 1.5
+                and (top_count + runner_count) / max(1, query_total) >= 0.85
+            )
+        top_admitted = normal_top_admitted or exceptional_runner_admitted
+
+        for contender_idx, (key, count, source_count, pmi, _context_peak) in enumerate(
+            contenders[:2]
+        ):
+            query_share = count / max(1, query_total)
+            competitor_count = max(
+                (item[1] for item in contenders if item[0] != key),
+                default=0,
+            )
+            if contender_idx == 0:
+                admitted = top_admitted
+            else:
+                admitted = top_admitted and exceptional_runner_admitted
+            if not admitted:
+                stats["strong_single_pair_skipped_query_dominance"] += 1
+                continue
+
+            dominance = math.log2((count + 2) / (competitor_count + 2))
+            score = 382
+            score += int(round(math.log2(count + 1) * 5))
+            score += min(18, source_count * 2)
+            score += int(round(query_share * 12))
+            score += int(round(max(-1.0, min(3.0, dominance)) * 4))
+            score += int(round(max(0.0, min(4.0, pmi)) * 3))
+            score -= min(18, transition_metadata[key][0] * 6)
+            score -= min(20, transition_metadata[key][1] // 8)
+            if contender_idx == 1:
+                score -= 10
+                stats["strong_single_pair_runner_up_emitted"] += 1
+            priors[key] = max(420, min(max_weight, score))
+
+    stats["strong_single_pair_priors_emitted"] = len(priors)
+    return priors, stats
+
+
 def _build_lm_corpus_query_path_prior_map(
     mapping: Dict[Tuple[str, str], int],
     corpus_dir: pathlib.Path,
     *,
     convert_text,
+    additional_exact_texts: Set[str] | None,
     single_char_readings_map: Dict[str, Set[str]] | None,
     single_char_default_pinyin_map: Dict[str, str] | None,
     single_char_source_rank_map: Dict[Tuple[str, str], int] | None,
@@ -19920,6 +20288,17 @@ def _build_lm_corpus_query_path_prior_map(
         single_char_pinlu_detail_map=single_char_pinlu_detail_map,
         char_frequency_prior=char_frequency_prior,
     )
+    exact_two_character_texts = {
+        text
+        for _pinyin, text in mapping
+        if _cjk_len(text) == 2 and CJK_FULL_RE.fullmatch(text)
+    }
+    if additional_exact_texts:
+        exact_two_character_texts.update(
+            text
+            for text in additional_exact_texts
+            if _cjk_len(text) == 2 and CJK_FULL_RE.fullmatch(text)
+        )
     if exact_pairs_only:
         sentence_stats = _new_lm_corpus_stats()
         sentence_stats["lm_corpus_streaming_exact_pairs_only"] = 1
@@ -19944,6 +20323,25 @@ def _build_lm_corpus_query_path_prior_map(
                 jieba_pos_map=jieba_pos_map,
             )
         )
+        strong_single_pair_priors, strong_single_pair_stats = (
+            _collect_strong_single_pair_transition_priors(
+                _stream_lm_corpus_sentences(
+                    corpus_dir,
+                    min_units=4,
+                    max_units=40,
+                    convert_text=convert_text,
+                ),
+                entries_by_text,
+                second_pass_sentences=_stream_lm_corpus_sentences(
+                    corpus_dir,
+                    min_units=4,
+                    max_units=40,
+                    convert_text=convert_text,
+                ),
+                exact_texts=exact_two_character_texts,
+                jieba_pos_map=jieba_pos_map,
+            )
+        )
     else:
         sentences, sentence_stats = _iter_lm_corpus_sentences(
             corpus_dir,
@@ -19962,7 +20360,17 @@ def _build_lm_corpus_query_path_prior_map(
                 jieba_pos_map=jieba_pos_map,
             )
         )
+        strong_single_pair_priors, strong_single_pair_stats = (
+            _collect_strong_single_pair_transition_priors(
+                sentences,
+                entries_by_text,
+                exact_texts=exact_two_character_texts,
+                jieba_pos_map=jieba_pos_map,
+            )
+        )
     for key, weight in short_pair_priors.items():
+        priors[key] = max(priors.get(key, 0), weight)
+    for key, weight in strong_single_pair_priors.items():
         priors[key] = max(priors.get(key, 0), weight)
     stats: Dict[str, int] = {}
     for key, value in sentence_stats.items():
@@ -19970,6 +20378,8 @@ def _build_lm_corpus_query_path_prior_map(
     for key, value in prior_stats.items():
         stats[f"{stats_prefix}_{key}"] = value
     for key, value in short_pair_stats.items():
+        stats[f"{stats_prefix}_{key}"] = value
+    for key, value in strong_single_pair_stats.items():
         stats[f"{stats_prefix}_{key}"] = value
     return priors, stats
 
@@ -23287,6 +23697,11 @@ def main() -> int:
                 sc_map,
                 query_path_lm_corpus_dir,
                 convert_text=lambda text: _convert_text_with_char_map(text, trad_to_simp_char_map),
+                additional_exact_texts={
+                    sc_word
+                    for sc_word, _tc_word, _usage_score, _explicit_pinyin
+                    in curated_daily_post_rank_exact_entries
+                },
                 single_char_readings_map=output_unihan_readings_map,
                 single_char_default_pinyin_map=output_unihan_map,
                 single_char_source_rank_map=output_unihan_source_rank_map,
@@ -23332,6 +23747,11 @@ def main() -> int:
                     opencc_sc_to_tc_for_lm,
                     simp_to_trad_char_map,
                 ),
+                additional_exact_texts={
+                    tc_word or sc_word
+                    for sc_word, tc_word, _usage_score, _explicit_pinyin
+                    in curated_daily_post_rank_exact_entries
+                },
                 single_char_readings_map=output_unihan_readings_map,
                 single_char_default_pinyin_map=output_unihan_map,
                 single_char_source_rank_map=output_unihan_source_rank_map,
