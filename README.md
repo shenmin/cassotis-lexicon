@@ -33,6 +33,7 @@ Cassotis Lexicon publishes local ranking artifacts alongside its lexical diction
 
 | Version | Query-path priors (SC / TC) | Word-path transitions (SC / TC) | Character n-gram parameters (SC / TC) |
 |---|---:|---:|---:|
+| `v1.12.0` | 23,593 / 22,717 | 289,955 / 257,125 | 698,695 / 698,778 |
 | `v1.11.0` | 23,593 / 22,717 | 281,091 / 250,354 | 698,695 / 698,778 |
 | `v1.10.0` | 23,593 / 22,717 | 161,543 / 151,204 | 698,695 / 698,778 |
 | `v1.9.0` | 23,593 / 22,717 | 152,729 / 145,284 | 698,695 / 698,778 |
@@ -63,6 +64,8 @@ Cassotis IME v1.9.0 uses these lexical constraints and statistical artifacts to 
 The v1.10.0 artifacts add conservative exact 1+2 and 2+1 word transitions backed by corpus evidence, improving three-syllable short-word continuation without admitting unsupported combinations.
 
 The v1.11.0 artifacts preserve all existing transition weights and expand independently counted exact 1+2, 2+1, 2+2, 2+3, and 3+2 transitions from cleaned novel, chat, and large-scale Chinese corpora. Source support, competing paths, and observed homophones are checked before an addition is retained.
+
+The v1.12.0 artifacts further expand productive word transitions and add corpus-backed 1+1 relations between adjacent single-character lexical segments. Existing exact two-character words are excluded; retained 1+1 relations require common readings and support from multiple independent sources.
 
 The statistical model stores only short word transitions and character n-grams, not complete training sentences. The independent long-sentence and short-word benchmark cases are excluded from training. At runtime, IME evaluates the statistical signals and compact native rerankers locally; it starts no PyTorch/ONNX runtime or external model service and requires no network connection or GPU. See the [IME benchmark documentation](https://github.com/shenmin/cassotis-ime/blob/master/BENCHMARK.md) for the long-sentence evaluation protocol.
 
