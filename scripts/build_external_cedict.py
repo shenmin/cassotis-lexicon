@@ -18731,6 +18731,13 @@ LM_PRODUCTIVE_PREDICATE_ONLY_HEADS: Set[str] = set(
     "可会會能敢肯很更最太挺稍较較"
 )
 
+# Keep rigorously validated productive 1+2 runner-ups in a distinct low band.
+# This lets the dedicated selector retain a useful same-pinyin alternative
+# without admitting the general population of weak runner-up paths.
+LM_STRONG_PRODUCTIVE_RUNNER_UP_WEIGHT = 400
+LM_STRONG_PRODUCTIVE_RUNNER_UP_MIN_DIRECT_COUNT = 7
+LM_STRONG_PRODUCTIVE_RUNNER_UP_MIN_DIRECT_SOURCES = 7
+
 
 def _is_productive_predicate_pos(pos_tag: str) -> bool:
     normalized = pos_tag.strip().lower()
@@ -19330,6 +19337,7 @@ def _collect_short_exact_pair_transition_priors(
         "short_exact_pair_productive_prefix_insufficient_direct_skipped": 0,
         "short_exact_pair_productive_prefix_named_tail_skipped": 0,
         "short_exact_pair_productive_prefix_nonpredicate_tail_skipped": 0,
+        "short_exact_pair_productive_prefix_strong_runner_up_emitted": 0,
     }
     for total_units, split_at in pair_layouts:
         stats[f"short_exact_pair_{split_at}_{total_units - split_at}_windows"] = 0
@@ -19351,13 +19359,14 @@ def _collect_short_exact_pair_transition_priors(
         text: str,
         *,
         single: bool,
+        productive_tail: bool = False,
     ) -> Tuple[str, str, int, int, int] | None:
         entries = entries_by_text.get(text)
         if not entries:
             return None
         min_weight = 200 if single else 420
         max_exact_rank = 8 if single else 2
-        max_top_gap = 300 if single else 240
+        max_top_gap = 300 if single else (480 if productive_tail else 240)
         for entry in entries:
             _pinyin, _text, weight, exact_rank, top_weight = entry
             if weight < min_weight or (
@@ -19470,6 +19479,7 @@ def _collect_short_exact_pair_transition_priors(
                 right_entry = _best_viable_entry(
                     right_text,
                     single=(len(right_text) == 1),
+                    productive_tail=productive_single_prefix,
                 )
                 if left_entry is None or right_entry is None:
                     continue
@@ -19648,13 +19658,28 @@ def _collect_short_exact_pair_transition_priors(
             ),
             default=0,
         )
-        if contender_rank == 2 and (
+        segments = key[1].split(QUERY_PATH_FILE_SEPARATOR)
+        is_productive_single_prefix = (
+            len(segments) == 2
+            and _cjk_len(segments[0]) == 1
+            and _cjk_len(segments[1]) == 2
+            and segments[0] in LM_PRODUCTIVE_SINGLE_PREFIX_CHARS
+        )
+        potential_strong_productive_runner_up = (
+            is_productive_single_prefix
+            and contender_rank == 2
+            and count >= max(10, required_count + 6)
+            and source_count >= 8
+            and count * 100 >= best_count * 5
+            and transition_rank_penalty.get(key, 0) <= 1
+            and transition_gap_penalty.get(key, 0) <= 480
+        )
+        if contender_rank == 2 and not potential_strong_productive_runner_up and (
             count < required_count + 7 or count * 100 < best_count * 80
         ):
             stats["short_exact_pair_skipped_weak_runner_up"] += 1
             continue
 
-        segments = key[1].split(QUERY_PATH_FILE_SEPARATOR)
         segment_product = 1
         for segment in segments:
             segment_product *= max(1, component_counts.get(segment, 1))
@@ -19662,12 +19687,7 @@ def _collect_short_exact_pair_transition_priors(
         query_total = max(1, sum(value for _path, value in contenders))
         query_share = count / query_total
         dominance = math.log2((count + 2) / (competitor_count + 2))
-        is_productive_single_prefix = (
-            len(segments) == 2
-            and _cjk_len(segments[0]) == 1
-            and _cjk_len(segments[1]) == 2
-            and segments[0] in LM_PRODUCTIVE_SINGLE_PREFIX_CHARS
-        )
+        right_pos_tag = ""
         if is_productive_single_prefix:
             right_pos_tag = jieba_pos_map.get(segments[1], "")
             if _is_named_entity_pos(right_pos_tag):
@@ -19681,11 +19701,23 @@ def _collect_short_exact_pair_transition_priors(
                     "short_exact_pair_productive_prefix_nonpredicate_tail_skipped"
                 ] += 1
                 continue
+            if contender_rank == 2 and not _is_productive_predicate_pos(
+                right_pos_tag
+            ):
+                stats[
+                    "short_exact_pair_productive_prefix_nonpredicate_tail_skipped"
+                ] += 1
+                continue
         exact_extension_count = transition_exact_extension_count.get(key, 0)
         direct_count = max(0, count - exact_extension_count)
         direct_source_count = transition_unextended_source_counts.get(key, 0)
         has_independent_direct_evidence = (
             direct_count >= 12 and direct_source_count >= 6
+        )
+        has_strong_runner_up_direct_evidence = (
+            direct_count >= LM_STRONG_PRODUCTIVE_RUNNER_UP_MIN_DIRECT_COUNT
+            and direct_source_count
+            >= LM_STRONG_PRODUCTIVE_RUNNER_UP_MIN_DIRECT_SOURCES
         )
         strong_absolute_productive_evidence = (
             is_productive_single_prefix
@@ -19715,6 +19747,16 @@ def _collect_short_exact_pair_transition_priors(
                 or count * 100 >= competitor_count * 160
             )
         )
+        strong_productive_runner_up_evidence = (
+            potential_strong_productive_runner_up
+            and has_strong_runner_up_direct_evidence
+            and query_share >= 0.05
+            and _is_productive_predicate_pos(right_pos_tag)
+        )
+        admitted_productive_prefix_evidence = (
+            strong_productive_prefix_evidence
+            or strong_productive_runner_up_evidence
+        )
 
         left_context_peak = max(
             (
@@ -19735,14 +19777,17 @@ def _collect_short_exact_pair_transition_priors(
         if max(left_context_peak, right_context_peak) * 100 >= count * 80:
             stats["short_exact_pair_skipped_embedded_fragment"] += 1
             continue
-        if is_productive_single_prefix and not strong_productive_prefix_evidence:
+        if is_productive_single_prefix and not admitted_productive_prefix_evidence:
             stats["short_exact_pair_productive_prefix_weak_skipped"] += 1
             stats["short_exact_pair_skipped_weak_association"] += 1
             continue
         if exact_extension_count * 100 >= count * 60:
             if (
-                strong_productive_prefix_evidence
-                and has_independent_direct_evidence
+                admitted_productive_prefix_evidence
+                and (
+                    has_independent_direct_evidence
+                    or has_strong_runner_up_direct_evidence
+                )
             ):
                 stats["short_exact_pair_productive_prefix_extension_bypassed"] += 1
             else:
@@ -19778,7 +19823,12 @@ def _collect_short_exact_pair_transition_priors(
             pmi < 0.75
             and not strong_absolute_evidence
             and not independent_single_evidence
-        ) or (competitor_count > 0 and query_share < 0.55):
+            and not strong_productive_runner_up_evidence
+        ) or (
+            competitor_count > 0
+            and query_share < 0.55
+            and not strong_productive_runner_up_evidence
+        ):
             stats["short_exact_pair_skipped_weak_association"] += 1
             continue
 
@@ -19797,12 +19847,19 @@ def _collect_short_exact_pair_transition_priors(
         for segment in segments:
             if _cjk_len(segment) <= 1:
                 continue
-            entry = _best_viable_entry(segment, single=False)
+            entry = _best_viable_entry(
+                segment,
+                single=False,
+                productive_tail=(
+                    is_productive_single_prefix and segment == segments[1]
+                ),
+            )
             if entry is not None and entry[0] in ambiguous_multi_pinyins:
                 ambiguous_multi_count += 1
         if (
             ambiguous_multi_count > 0
             and transition_ambiguous_alternative_count.get(key, 0) >= 2
+            and not strong_productive_runner_up_evidence
         ):
             stats["short_exact_pair_skipped_observed_homophone_alternative"] += 1
             continue
@@ -19827,6 +19884,11 @@ def _collect_short_exact_pair_transition_priors(
             # can recall an exact 1+2/2+1 composition without carrying the
             # same ranking strength as better-supported transitions.
             effective_score = min(399, effective_score)
+        if strong_productive_runner_up_evidence:
+            effective_score = LM_STRONG_PRODUCTIVE_RUNNER_UP_WEIGHT
+            stats[
+                "short_exact_pair_productive_prefix_strong_runner_up_emitted"
+            ] += 1
         priors[key] = effective_score
         if is_productive_single_prefix:
             stats["short_exact_pair_productive_prefix_emitted"] += 1
@@ -19929,6 +19991,7 @@ def _select_dedicated_lm_transitions(
     skipped_low_weight = 0
     skipped_runner_up = 0
     selected_runner_up = 0
+    selected_strong_productive_runner_up = 0
     for key, weight in corpus_priors.items():
         if key in base_priors:
             # The legacy query-path prior and the dedicated LM serve different
@@ -19954,6 +20017,19 @@ def _select_dedicated_lm_transitions(
             if rank == 0:
                 selected[key] = weight
                 continue
+            path_segments = key[1].split(QUERY_PATH_FILE_SEPARATOR)
+            is_strong_productive_runner_up = (
+                rank == 1
+                and weight == LM_STRONG_PRODUCTIVE_RUNNER_UP_WEIGHT
+                and len(path_segments) == 2
+                and _cjk_len(path_segments[0]) == 1
+                and path_segments[0] in LM_PRODUCTIVE_SINGLE_PREFIX_CHARS
+                and _cjk_len(path_segments[1]) == 2
+            )
+            if is_strong_productive_runner_up:
+                selected[key] = weight
+                selected_strong_productive_runner_up += 1
+                continue
             if (
                 rank == 1
                 and weight >= runner_up_min_weight
@@ -19970,6 +20046,9 @@ def _select_dedicated_lm_transitions(
         f"{stats_prefix}_lm_transition_skipped_low_weight": skipped_low_weight,
         f"{stats_prefix}_lm_transition_skipped_runner_up": skipped_runner_up,
         f"{stats_prefix}_lm_transition_selected_runner_up": selected_runner_up,
+        f"{stats_prefix}_lm_transition_selected_strong_productive_runner_up": (
+            selected_strong_productive_runner_up
+        ),
     }
 
 

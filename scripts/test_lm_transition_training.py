@@ -150,6 +150,11 @@ class LmTransitionTrainingTests(unittest.TestCase):
             "\u5c06\u8981": [entry("jiangyao", "\u5c06\u8981", 900)],
             "\u5feb\u8981": [entry("kuaiyao", "\u5feb\u8981", 900)],
             "\u4e0d": [entry("bu", "\u4e0d", 800)],
+            "\u5e76\u4e0d": [entry("bingbu", "\u5e76\u4e0d", 720)],
+            "\u80fd\u4e0d": [entry("nengbu", "\u80fd\u4e0d", 700)],
+            "\u5c31\u4e0d": [entry("jiubu", "\u5c31\u4e0d", 760)],
+            "\u4f7f\u7528": [entry("shiyong", "\u4f7f\u7528", 1036)],
+            "\u5b9e\u7528": [entry("shiyong", "\u5b9e\u7528", 628, 2, 1036)],
             "\u597d\u5403": [entry("haochi", "\u597d\u5403", 1000)],
             "\u5403\u996d": [entry("chifan", "\u5403\u996d", 1000)],
             "\u5c31": [entry("jiu", "\u5c31", 760)],
@@ -277,6 +282,33 @@ class LmTransitionTrainingTests(unittest.TestCase):
                     f"negative-tasty-{index}",
                 )
             )
+        for index in range(120):
+            rows.append(
+                (
+                    left_contexts[index % len(left_contexts)]
+                    + "\u4e0d\u4f7f\u7528"
+                    + right_contexts[index % len(right_contexts)],
+                    f"not-use-{index}",
+                )
+            )
+        for index in range(7):
+            rows.append(
+                (
+                    left_contexts[index % len(left_contexts)]
+                    + "\u4e0d\u5b9e\u7528"
+                    + right_contexts[index % len(right_contexts)],
+                    f"not-practical-{index}",
+                )
+            )
+        for index, sentence in enumerate(
+            (
+                "\u5e76\u4e0d\u5b9e\u7528\u3002",
+                "\u80fd\u4e0d\u5b9e\u7528\u5417\u3002",
+                "\u5c31\u4e0d\u5b9e\u7528\u4e86\u3002",
+                "\u53c8\u5e76\u4e0d\u5b9e\u7528\u3002",
+            )
+        ):
+            rows.append((sentence, f"not-practical-extension-{index}"))
         for index in range(4):
             rows.append(
                 (
@@ -314,6 +346,8 @@ class LmTransitionTrainingTests(unittest.TestCase):
                 "\u9a8c\u8bc1": "v",
                 "\u5347\u7ea7": "v",
                 "\u597d\u5403": "a",
+                "\u4f7f\u7528": "v",
+                "\u5b9e\u7528": "a",
                 "\u5403\u996d": "v",
                 "\u7ea2\u8272": "n",
                 "\u671f\u95f4": "f",
@@ -342,6 +376,21 @@ class LmTransitionTrainingTests(unittest.TestCase):
         self.assertIn(
             ("buhaochi", f"\u4e0d{separator}\u597d\u5403"),
             priors,
+        )
+        not_practical_key = (
+            "bushiyong",
+            f"\u4e0d{separator}\u5b9e\u7528",
+        )
+        self.assertIn(not_practical_key, priors)
+        self.assertEqual(
+            builder.LM_STRONG_PRODUCTIVE_RUNNER_UP_WEIGHT,
+            priors[not_practical_key],
+        )
+        self.assertGreaterEqual(
+            stats[
+                "short_exact_pair_productive_prefix_strong_runner_up_emitted"
+            ],
+            1,
         )
         self.assertNotIn(
             ("kechifan", f"\u53ef{separator}\u5403\u996d"),
@@ -382,6 +431,26 @@ class LmTransitionTrainingTests(unittest.TestCase):
         self.assertIn(("tigaohenduo", f"\u63d0\u9ad8{separator}\u5f88\u591a"), priors)
         self.assertIn(("lunliyuanze", f"\u4f26\u7406{separator}\u539f\u5219"), priors)
         self.assertNotIn(("henkuaihuifu", f"\u5f88\u5feb{separator}\u6062\u590d"), priors)
+
+        not_use_key = (
+            "bushiyong",
+            f"\u4e0d{separator}\u4f7f\u7528",
+        )
+        selection_input = dict(priors)
+        selection_input[not_use_key] = 480
+        selected, selection_stats = builder._select_dedicated_lm_transitions(
+            {},
+            selection_input,
+            stats_prefix="test",
+        )
+        self.assertIn(not_use_key, selected)
+        self.assertIn(not_practical_key, selected)
+        self.assertGreaterEqual(
+            selection_stats[
+                "test_lm_transition_selected_strong_productive_runner_up"
+            ],
+            1,
+        )
 
 
 if __name__ == "__main__":

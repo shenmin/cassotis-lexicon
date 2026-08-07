@@ -100,3 +100,9 @@
 # Common medical supplies and supplement terminology.
 碘酒	碘酒	0.66	dianjiu
 补剂	補劑	0.52	buji
+
+# Common respiratory terminology and breathing fragments 2026-08-07.
+下呼吸	下呼吸	0.38	xiahuxi
+下呼吸道	下呼吸道	0.80	xiahuxidao
+上呼吸	上呼吸	0.38	shanghuxi
+双吸气	雙吸氣	0.38	shuangxiqi
