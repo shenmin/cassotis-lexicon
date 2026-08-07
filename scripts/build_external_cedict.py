@@ -18719,6 +18719,26 @@ LM_FUNCTION_SINGLE_CHARS: Set[str] = set(
     "这那哪有无来去上下载里内外中前后大小游戏多"
 )
 
+# Productive one-character heads can form useful 1+2 short candidates when
+# corpus evidence is independently strong. They remain subject to exact-entry,
+# homophone, association, and concentrated-context guards below.
+LM_PRODUCTIVE_SINGLE_PREFIX_CHARS: Set[str] = set(
+    "要可不没沒别別未无無就还還再又也都只才正已将將仍会會能该該需想敢肯"
+    "很更最太挺稍较較"
+)
+
+LM_PRODUCTIVE_PREDICATE_ONLY_HEADS: Set[str] = set(
+    "可会會能敢肯很更最太挺稍较較"
+)
+
+
+def _is_productive_predicate_pos(pos_tag: str) -> bool:
+    normalized = pos_tag.strip().lower()
+    return (
+        normalized.startswith(("v", "a", "z"))
+        or normalized in {"d", "i", "l"}
+    )
+
 
 def _decode_lm_corpus_file(path: pathlib.Path) -> str:
     data = path.read_bytes()
@@ -19263,7 +19283,8 @@ def _collect_short_exact_pair_transition_priors(
     entries_by_text: Dict[str, List[Tuple[str, str, int, int, int]]],
     *,
     second_pass_sentences: Iterable[Tuple[str, str]] | None = None,
-    min_count: int = 5,
+    jieba_pos_map: Dict[str, str] | None = None,
+    min_count: int = 4,
     min_single_source_count: int = 12,
     max_weight: int = 520,
 ) -> Tuple[Dict[Tuple[str, str], int], Dict[str, int]]:
@@ -19277,6 +19298,7 @@ def _collect_short_exact_pair_transition_priors(
     enable arbitrary word composition at runtime.
     """
 
+    jieba_pos_map = jieba_pos_map or {}
     pair_layouts = ((3, 1), (3, 2), (4, 2), (5, 2), (5, 3))
     transition_counts: Dict[Tuple[str, str], int] = {}
     transition_source_counts: Dict[Tuple[str, str], int] = {}
@@ -19286,6 +19308,7 @@ def _collect_short_exact_pair_transition_priors(
     transition_left_contexts: Dict[Tuple[str, str], Dict[str, int]] = {}
     transition_right_contexts: Dict[Tuple[str, str], Dict[str, int]] = {}
     transition_exact_extension_count: Dict[Tuple[str, str], int] = {}
+    transition_unextended_source_counts: Dict[Tuple[str, str], int] = {}
     transition_ambiguous_alternative_count: Dict[Tuple[str, str], int] = {}
     stats: Dict[str, int] = {
         "short_exact_pair_windows": 0,
@@ -19296,9 +19319,17 @@ def _collect_short_exact_pair_transition_priors(
         "short_exact_pair_skipped_query_rank": 0,
         "short_exact_pair_skipped_weak_runner_up": 0,
         "short_exact_pair_skipped_weak_association": 0,
+        "short_exact_pair_skipped_weak_medium_evidence": 0,
         "short_exact_pair_skipped_embedded_fragment": 0,
         "short_exact_pair_skipped_exact_extension": 0,
         "short_exact_pair_skipped_observed_homophone_alternative": 0,
+        "short_exact_pair_productive_prefix_windows": 0,
+        "short_exact_pair_productive_prefix_emitted": 0,
+        "short_exact_pair_productive_prefix_weak_skipped": 0,
+        "short_exact_pair_productive_prefix_extension_bypassed": 0,
+        "short_exact_pair_productive_prefix_insufficient_direct_skipped": 0,
+        "short_exact_pair_productive_prefix_named_tail_skipped": 0,
+        "short_exact_pair_productive_prefix_nonpredicate_tail_skipped": 0,
     }
     for total_units, split_at in pair_layouts:
         stats[f"short_exact_pair_{split_at}_{total_units - split_at}_windows"] = 0
@@ -19357,6 +19388,15 @@ def _collect_short_exact_pair_transition_priors(
         required_count, required_sources = _evidence_requirements(key)
         if count < required_count:
             return False
+        segment_lengths = [
+            _cjk_len(segment)
+            for segment in key[1].split(QUERY_PATH_FILE_SEPARATOR)
+        ]
+        if 1 in segment_lengths and count == 4:
+            # The new medium-confidence tier must be observed in four
+            # independent documents. Repeated mentions inside one source do
+            # not provide enough evidence to compose a new short candidate.
+            return source_count >= 4
         if source_count >= required_sources:
             return True
         if source_count == 3:
@@ -19405,10 +19445,23 @@ def _collect_short_exact_pair_transition_priors(
                     single_text = left_text
                 elif len(right_text) == 1:
                     single_text = right_text
+                productive_single_prefix = (
+                    len(left_text) == 1
+                    and len(right_text) == 2
+                    and left_text in LM_PRODUCTIVE_SINGLE_PREFIX_CHARS
+                )
+                if productive_single_prefix:
+                    stats["short_exact_pair_productive_prefix_windows"] += 1
                 # Function-word singles are already handled by the general LM
                 # collector. Keeping this channel lexical avoids duplicating
-                # tens of thousands of weak `word + de/le/yi` fragments.
-                if single_text and single_text in LM_FUNCTION_SINGLE_CHARS:
+                # tens of thousands of weak `word + de/le/yi` fragments. A
+                # productive 1+2 head is admitted here only if it later passes
+                # the dedicated strong-evidence gate.
+                if (
+                    single_text
+                    and single_text in LM_FUNCTION_SINGLE_CHARS
+                    and not productive_single_prefix
+                ):
                     continue
                 left_entry = _best_viable_entry(
                     left_text,
@@ -19488,7 +19541,22 @@ def _collect_short_exact_pair_transition_priors(
                 "streamed short exact pair collection requires a second corpus pass"
             )
 
-    for sentence, _source_name in second_pass_sentences:
+    context_source = ""
+    context_unextended_source_keys: Set[Tuple[str, str]] = set()
+
+    def _flush_context_unextended_source_keys() -> None:
+        for source_key in context_unextended_source_keys:
+            transition_unextended_source_counts[source_key] = min(
+                min_single_source_count,
+                transition_unextended_source_counts.get(source_key, 0) + 1,
+            )
+        context_unextended_source_keys.clear()
+
+    for sentence, source_name in second_pass_sentences:
+        if source_name != context_source:
+            if context_source:
+                _flush_context_unextended_source_keys()
+            context_source = source_name
         if len(sentence) < 3:
             continue
         for total_units in (3, 4, 5):
@@ -19516,14 +19584,31 @@ def _collect_short_exact_pair_transition_priors(
                     left_text = text[:split_at]
                     right_text = text[split_at:]
                     extends_exact = False
-                    if len(left_text) == 1 and left_context != "^":
-                        extends_exact = (left_context + left_text) in entries_by_text
-                    elif len(right_text) == 1 and right_context != "$":
-                        extends_exact = (right_text + right_context) in entries_by_text
+                    if len(left_text) == 1 and start > 0:
+                        for prefix_units in range(1, min(3, start) + 1):
+                            if (
+                                sentence[start - prefix_units : start] + left_text
+                                in entries_by_text
+                            ):
+                                extends_exact = True
+                                break
+                    elif len(right_text) == 1 and right_pos < len(sentence):
+                        remaining_units = len(sentence) - right_pos
+                        for suffix_units in range(1, min(3, remaining_units) + 1):
+                            if (
+                                right_text + sentence[right_pos : right_pos + suffix_units]
+                                in entries_by_text
+                            ):
+                                extends_exact = True
+                                break
                     if extends_exact:
                         transition_exact_extension_count[key] = (
                             transition_exact_extension_count.get(key, 0) + 1
                         )
+                    else:
+                        context_unextended_source_keys.add(key)
+    if context_source:
+        _flush_context_unextended_source_keys()
 
     contenders_by_query: Dict[str, List[Tuple[str, int]]] = {}
     for (query, path), count in transition_counts.items():
@@ -19542,29 +19627,6 @@ def _collect_short_exact_pair_transition_priors(
         if not _has_source_support(key, count, source_count):
             stats["short_exact_pair_skipped_source_count"] += 1
             continue
-        left_context_peak = max(
-            (
-                value
-                for context, value in transition_left_contexts.get(key, {}).items()
-                if context != "^"
-            ),
-            default=0,
-        )
-        right_context_peak = max(
-            (
-                value
-                for context, value in transition_right_contexts.get(key, {}).items()
-                if context != "$"
-            ),
-            default=0,
-        )
-        if max(left_context_peak, right_context_peak) * 100 >= count * 80:
-            stats["short_exact_pair_skipped_embedded_fragment"] += 1
-            continue
-        if transition_exact_extension_count.get(key, 0) * 100 >= count * 60:
-            stats["short_exact_pair_skipped_exact_extension"] += 1
-            continue
-
         contenders = contenders_by_query.get(key[0], [])
         contender_rank = next(
             (
@@ -19600,6 +19662,96 @@ def _collect_short_exact_pair_transition_priors(
         query_total = max(1, sum(value for _path, value in contenders))
         query_share = count / query_total
         dominance = math.log2((count + 2) / (competitor_count + 2))
+        is_productive_single_prefix = (
+            len(segments) == 2
+            and _cjk_len(segments[0]) == 1
+            and _cjk_len(segments[1]) == 2
+            and segments[0] in LM_PRODUCTIVE_SINGLE_PREFIX_CHARS
+        )
+        if is_productive_single_prefix:
+            right_pos_tag = jieba_pos_map.get(segments[1], "")
+            if _is_named_entity_pos(right_pos_tag):
+                stats["short_exact_pair_productive_prefix_named_tail_skipped"] += 1
+                continue
+            if (
+                segments[0] in LM_PRODUCTIVE_PREDICATE_ONLY_HEADS
+                and not _is_productive_predicate_pos(right_pos_tag)
+            ):
+                stats[
+                    "short_exact_pair_productive_prefix_nonpredicate_tail_skipped"
+                ] += 1
+                continue
+        exact_extension_count = transition_exact_extension_count.get(key, 0)
+        direct_count = max(0, count - exact_extension_count)
+        direct_source_count = transition_unextended_source_counts.get(key, 0)
+        has_independent_direct_evidence = (
+            direct_count >= 12 and direct_source_count >= 6
+        )
+        strong_absolute_productive_evidence = (
+            is_productive_single_prefix
+            and count >= max(24, required_count + 12)
+            and source_count >= min_single_source_count
+            and contender_rank == 1
+            and query_share >= 0.90
+            and has_independent_direct_evidence
+            and transition_rank_penalty.get(key, 0) <= 1
+            and transition_gap_penalty.get(key, 0) <= 120
+            and (
+                competitor_count == 0
+                or count * 100 >= competitor_count * 300
+            )
+        )
+        strong_productive_prefix_evidence = (
+            is_productive_single_prefix
+            and count >= max(12, required_count + 5)
+            and source_count >= 6
+            and contender_rank == 1
+            and query_share >= 0.75
+            and (pmi >= 1.25 or strong_absolute_productive_evidence)
+            and transition_rank_penalty.get(key, 0) <= 1
+            and transition_gap_penalty.get(key, 0) <= 120
+            and (
+                competitor_count == 0
+                or count * 100 >= competitor_count * 160
+            )
+        )
+
+        left_context_peak = max(
+            (
+                value
+                for context, value in transition_left_contexts.get(key, {}).items()
+                if context != "^"
+            ),
+            default=0,
+        )
+        right_context_peak = max(
+            (
+                value
+                for context, value in transition_right_contexts.get(key, {}).items()
+                if context != "$"
+            ),
+            default=0,
+        )
+        if max(left_context_peak, right_context_peak) * 100 >= count * 80:
+            stats["short_exact_pair_skipped_embedded_fragment"] += 1
+            continue
+        if is_productive_single_prefix and not strong_productive_prefix_evidence:
+            stats["short_exact_pair_productive_prefix_weak_skipped"] += 1
+            stats["short_exact_pair_skipped_weak_association"] += 1
+            continue
+        if exact_extension_count * 100 >= count * 60:
+            if (
+                strong_productive_prefix_evidence
+                and has_independent_direct_evidence
+            ):
+                stats["short_exact_pair_productive_prefix_extension_bypassed"] += 1
+            else:
+                if is_productive_single_prefix:
+                    stats[
+                        "short_exact_pair_productive_prefix_insufficient_direct_skipped"
+                    ] += 1
+                stats["short_exact_pair_skipped_exact_extension"] += 1
+                continue
         strong_absolute_evidence = (
             count >= max(12, required_count + 5)
             and source_count >= 6
@@ -19610,6 +19762,7 @@ def _collect_short_exact_pair_transition_priors(
             )
         )
         has_single_component = any(_cjk_len(segment) == 1 for segment in segments)
+        medium_single_evidence = has_single_component and count == 4
         independent_single_evidence = (
             has_single_component
             and count >= required_count
@@ -19627,6 +19780,17 @@ def _collect_short_exact_pair_transition_priors(
             and not independent_single_evidence
         ) or (competitor_count > 0 and query_share < 0.55):
             stats["short_exact_pair_skipped_weak_association"] += 1
+            continue
+
+        if medium_single_evidence and (
+            source_count < 4
+            or contender_rank != 1
+            or query_share < 0.75
+            or pmi < 1.25
+            or transition_rank_penalty.get(key, 0) > 3
+            or transition_gap_penalty.get(key, 0) > 120
+        ):
+            stats["short_exact_pair_skipped_weak_medium_evidence"] += 1
             continue
 
         ambiguous_multi_count = 0
@@ -19654,10 +19818,18 @@ def _collect_short_exact_pair_transition_priors(
         if contender_rank == 2:
             score -= 20
         minimum_effective_score = 390 if has_single_component else 350
-        priors[key] = max(
+        effective_score = max(
             minimum_effective_score,
             min(min(max_weight, 480), score),
         )
+        if medium_single_evidence:
+            # Keep count=4 evidence in the lowest runtime-supported band. It
+            # can recall an exact 1+2/2+1 composition without carrying the
+            # same ranking strength as better-supported transitions.
+            effective_score = min(399, effective_score)
+        priors[key] = effective_score
+        if is_productive_single_prefix:
+            stats["short_exact_pair_productive_prefix_emitted"] += 1
 
     stats["short_exact_pair_priors_emitted"] = len(priors)
     return priors, stats
@@ -19673,6 +19845,7 @@ def _build_lm_corpus_query_path_prior_map(
     single_char_source_rank_map: Dict[Tuple[str, str], int] | None,
     single_char_pinlu_detail_map: Dict[Tuple[str, str], int] | None,
     char_frequency_prior: Dict[str, float] | None,
+    jieba_pos_map: Dict[str, str] | None,
     stats_prefix: str,
     exact_pairs_only: bool = False,
 ) -> Tuple[Dict[Tuple[str, str], int], Dict[str, int]]:
@@ -19706,6 +19879,7 @@ def _build_lm_corpus_query_path_prior_map(
                     max_units=40,
                     convert_text=convert_text,
                 ),
+                jieba_pos_map=jieba_pos_map,
             )
         )
     else:
@@ -19723,6 +19897,7 @@ def _build_lm_corpus_query_path_prior_map(
             _collect_short_exact_pair_transition_priors(
                 sentences,
                 entries_by_text,
+                jieba_pos_map=jieba_pos_map,
             )
         )
     for key, weight in short_pair_priors.items():
@@ -23038,6 +23213,7 @@ def main() -> int:
                 single_char_source_rank_map=output_unihan_source_rank_map,
                 single_char_pinlu_detail_map=output_unihan_pinlu_detail_map,
                 char_frequency_prior=char_frequency_prior,
+                jieba_pos_map=jieba_pos_map,
                 stats_prefix="sc",
                 exact_pairs_only=args.lm_transition_exact_pairs_only,
             )
@@ -23082,6 +23258,7 @@ def main() -> int:
                 single_char_source_rank_map=output_unihan_source_rank_map,
                 single_char_pinlu_detail_map=output_unihan_pinlu_detail_map,
                 char_frequency_prior=tc_char_frequency_prior,
+                jieba_pos_map=tc_jieba_pos_map,
                 stats_prefix="tc",
                 exact_pairs_only=args.lm_transition_exact_pairs_only,
             )
