@@ -1364,7 +1364,6 @@
 互视	互視	0.46	hushi
 湖水	湖水	0.46	hushui
 互为	互爲	0.46	huwei
-夹在	夾在	0.36	jiazai
 夹菜	夾菜	0.46	jiacai
 降至	降至	0.46	jiangzhi
 捡起	撿起	0.46	jianqi
@@ -12614,3 +12613,10 @@
 还先	還先	0.34	haixian
 又先	又先	0.34	youxian
 不先	不先	0.36	buxian
+
+# Lower-frequency automotive expression 2026-08-09.
+点刹	點剎	0.48	diansha
+我便	我便	-2.0	wobian
+但也	但也	-2.0	danye
+加在	加在	-2.0	jiazai
+这有	這有	-2.0	zheyou

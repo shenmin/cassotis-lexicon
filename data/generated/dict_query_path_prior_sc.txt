@@ -3802,6 +3802,7 @@ duancengsaomiao	断层|扫描	494
 duandaoduanceshi	端到端|测试	501
 duandiankaiguan	断点|开关	480
 duandianxiazai	断点|下载	490
+duandianxuchuan	断点|续传	478
 duanduanjitian	短短|几天	474
 duanjianlengqueqi	段间|冷却器	506
 duanjuewanglai	断绝|往来	485
@@ -6949,7 +6950,7 @@ huanqiushibao	环球|时报	467
 huanraozoulang	环绕|走廊	433
 huanweigongren	环卫|工人	467
 huanweisikao	换位|思考	486
-huanweizhuyi	环卫|主义	454
+huanweizhuyi	环卫|主义	455
 huanxiangansuanshouti	环腺苷酸|受体	476
 huanxiangchuanqi	幻想|传奇	467
 huanxiangchuanshuo	幻想|传说	456
@@ -13010,7 +13011,7 @@ qipandianzi	棋盘|电子	374
 qipandianziyouxi	棋盘|电子|游戏	456
 qipanyouxi	棋盘|游戏	502
 qipiangongsi	欺骗|公司	467
-qiqiaoliuxue	七窍|流血	413
+qiqiaoliuxue	七窍|流血	418
 qiqibaba	七七|八八	455
 qiqishibian	七七|事变	520
 qiqiudazhan	气球|大战	402
@@ -13693,6 +13694,8 @@ rijingzhishu	日经|指数	468
 rijushidai	日据|时代	452
 riluoguozai	日落|过载	432
 riluoqishi	日落|骑士	455
+riluoxiade	日落|下的	364
+riluoxiadecaihong	日落|下的|彩虹	446
 rimianhuakai	日冕|花开	404
 riqihanshu	日期|函数	490
 riqujilie	日趋|激烈	483
@@ -13814,6 +13817,7 @@ runisuoshuo	如你|所说	520
 runisuoyuan	如你|所愿	467
 runiuruxianyan	乳牛|乳腺炎	486
 ruodianbuxian	弱电|布线	458
+ruodiandianwei	弱电|点位	490
 ruoshixunlian	弱视|训练	448
 ruowangbaoluershi	若望|保禄二世	423
 ruowangershi	若望|二十	359
@@ -14854,7 +14858,7 @@ shenzangsunshang	肾脏|损伤	438
 shenzangyizhi	肾脏|移植	458
 shenzhenjingji	深圳|经济	474
 shenzhibuqing	神志|不清	450
-shenzhiqingxing	神志|清醒	465
+shenzhiqingxing	神志|清醒	443
 shenzhisangshi	神志|丧失	486
 shepinxiaorong	射频|消融	443
 shequbaojian	社区|保健	456
@@ -17585,6 +17589,7 @@ woniuxinshi	蜗牛|信使	408
 woniuyouxi	蜗牛|游戏	502
 woshouxinhao	握手|信号	499
 woshuocuole	我说|错了	520
+woweiyurou	我为|鱼肉	435
 woxihuanlaoshi	我喜欢|老师	458
 woyaofengle	我要|疯了	520
 woyejuede	我也|觉得	520
@@ -18630,7 +18635,7 @@ xinbituya	信笔|涂鸦	430
 xinbotingzhi	心搏|停止	464
 xinbozhouting	心搏|骤停	397
 xinchaopengpai	心潮|澎湃	477
-xindetihui	心得|体会	428
+xindetihui	心得|体会	419
 xindianjiance	心电|监测	467
 xindianjianhu	心电|监护	488
 xindiantuyichang	心电图|异常	460
@@ -19125,7 +19130,7 @@ xiongjisushouti	雄激素|受体	475
 xiongjiujiuqiangang	雄赳赳|气昂昂	441
 xiongmofeiyan	胸膜|肺炎	431
 xiongmojianpiliu	胸膜|间皮瘤	445
-xiongmoqiangliuxue	胸膜腔|流血	470
+xiongmoqiangliuxue	胸膜腔|流血	474
 xiongmozenghou	胸膜|增厚	429
 xiongmozhanlian	胸膜|粘连	473
 xiongqiangchuanci	胸腔|穿刺	441
@@ -20128,7 +20133,7 @@ yetizhiji	液体|制剂	405
 yewaidingxiang	野外|定向	469
 yewuliucheng	业务|流程	470
 yewushouru	业务|收入	497
-yexiangsepufa	液相|色谱法	486
+yexiangsepufa	液相|色谱法	484
 yexingshenlong	夜行|神龙	425
 yexingzhanshi	野性|战士	385
 yeyenainai	爷爷|奶奶	497
@@ -20165,7 +20170,7 @@ yibenzhengjing	一本|正经	520
 yibiangenghao	以便|更好	520
 yibianyouyibian	一遍又|一遍	447
 yibiaotangtang	仪表|堂堂	483
-yibigouxiao	一笔|勾销	489
+yibigouxiao	一笔|勾销	465
 yibiliyalianmeng	伊比利亚|联盟	454
 yibimosha	一笔|抹杀	483
 yibimosha	一笔|抹煞	483
@@ -20329,7 +20334,7 @@ yihuyixue	医护|医学	486
 yijiaduda	一家|独大	470
 yijialaoxiao	一家|老小	486
 yijianfenxiao	已见|分晓	474
-yijianqingxin	一见|倾心	441
+yijianqingxin	一见|倾心	440
 yijianrugu	一见|如故	487
 yijianzhongqing	一见|钟情	433
 yijiaqianyan	一家|前沿	520
@@ -21611,7 +21616,7 @@ yulechangsuo	娱乐|场所	467
 yuleichanpin	鱼类|产品	486
 yulengshousuo	遇冷|收缩	508
 yulezhongxin	娱乐|中心	467
-yuliaozhizhong	预料|之中	487
+yuliaozhizhong	预料|之中	481
 yulinzhuanqu	玉林|专区	464
 yulonghunza	鱼龙|混杂	448
 yulujunzhan	雨露|均沾	424

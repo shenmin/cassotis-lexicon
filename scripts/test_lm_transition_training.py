@@ -18,6 +18,39 @@ import prepare_lm_transition_corpus as preparer  # noqa: E402
 
 
 class LmTransitionTrainingTests(unittest.TestCase):
+    def test_post_rank_zero_marker_overrides_existing_weight(self) -> None:
+        zero_text = "\u4f46\u4e5f"
+        natural_text = "\u81ea\u7136"
+        visible_text = "\u53ef\u89c1"
+        sc_map = {
+            ("danye", zero_text): 280,
+            ("ziran", natural_text): 400,
+        }
+        tc_map = dict(sc_map)
+
+        stats = builder._inject_curated_daily_post_rank_exact_entries(
+            sc_map,
+            tc_map,
+            [
+                (zero_text, zero_text, -2.0, "danye"),
+                (natural_text, natural_text, -1.99, "ziran"),
+                (visible_text, visible_text, -1.99, "kejian"),
+            ],
+        )
+
+        self.assertEqual(0, sc_map[("danye", zero_text)])
+        self.assertEqual(0, tc_map[("danye", zero_text)])
+        self.assertEqual(400, sc_map[("ziran", natural_text)])
+        self.assertEqual(400, tc_map[("ziran", natural_text)])
+        self.assertEqual(1, sc_map[("kejian", visible_text)])
+        self.assertEqual(1, tc_map[("kejian", visible_text)])
+        self.assertEqual(
+            1, stats["curated_daily_post_rank_exact_sc_forced_zero"]
+        )
+        self.assertEqual(
+            1, stats["curated_daily_post_rank_exact_tc_forced_zero"]
+        )
+
     @staticmethod
     def _ensure_test_single_entries(
         entries: dict[str, list[tuple[str, str, int, int, int]]],

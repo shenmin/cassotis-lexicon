@@ -972,7 +972,7 @@
 他们说的	他們說的	0.86
 我们说的	我們說的	0.86
 你们说的	你們說的	0.86
-新的	新的	0.88
+新的	新的	0.90
 旧的	舊的	0.88
 坏的	壞的	0.88
 高的	高的	0.86
@@ -7761,7 +7761,7 @@
 
 # Common pronoun-led colloquial fragments and quota term 2026-08-05.
 限额	限額	0.96	xian'e
-险恶	險惡	0.94	xian'e
+险恶	險惡	0.92	xian'e
 你太	你太	0.88	nitai
 我太	我太	0.88	wotai
 他太	他太	0.82	tatai
@@ -7782,3 +7782,12 @@
 新发	新發	0.78	xinfa
 又发	又發	0.74	youfa
 还发	還發	0.72	haifa
+
+# Common location, connective and colloquial expressions 2026-08-09.
+电位	電位	0.90	dianwei
+点位	點位	0.78	dianwei
+夹在	夾在	0.88	jiazai
+海鲜	海鮮	0.88	haixian
+这有啥	這有啥	0.88	zheyousha
+啥用	啥用	0.88	shayong
+切分	切分	0.78	qiefen

@@ -573,6 +573,8 @@ def _inject_curated_daily_post_rank_exact_entries(
         "curated_daily_post_rank_exact_rows": len(entries),
         "curated_daily_post_rank_exact_sc_added": 0,
         "curated_daily_post_rank_exact_tc_added": 0,
+        "curated_daily_post_rank_exact_sc_forced_zero": 0,
+        "curated_daily_post_rank_exact_tc_forced_zero": 0,
         "curated_daily_post_rank_exact_invalid_pinyin": 0,
     }
     for sc_word, tc_word, usage_score, explicit_pinyin in entries:
@@ -594,12 +596,20 @@ def _inject_curated_daily_post_rank_exact_entries(
         if sc_key not in sc_map:
             sc_map[sc_key] = exact_weight
             stats["curated_daily_post_rank_exact_sc_added"] += 1
+        elif usage_score <= CURATED_DAILY_POST_RANK_ZERO_WEIGHT_USAGE_MAX:
+            if sc_map[sc_key] != exact_weight:
+                stats["curated_daily_post_rank_exact_sc_forced_zero"] += 1
+            sc_map[sc_key] = exact_weight
 
         tc_text = tc_word or sc_word
         tc_key = (pinyin, tc_text)
         if tc_key not in tc_map:
             tc_map[tc_key] = exact_weight
             stats["curated_daily_post_rank_exact_tc_added"] += 1
+        elif usage_score <= CURATED_DAILY_POST_RANK_ZERO_WEIGHT_USAGE_MAX:
+            if tc_map[tc_key] != exact_weight:
+                stats["curated_daily_post_rank_exact_tc_forced_zero"] += 1
+            tc_map[tc_key] = exact_weight
     return stats
 
 # Quantity-classifier snippets are useful exact matches, but they are not
