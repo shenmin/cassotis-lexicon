@@ -22,6 +22,7 @@ param(
     [string]$PinyinOverrides = "",
     [string]$QueryPathLmCorpusDir = "",
     [switch]$LmTransitionExactPairsOnly,
+    [switch]$LmTransitionGeneralOnly,
     [switch]$SkipReadmeSnapshot
 )
 
@@ -196,6 +197,9 @@ if ($QueryPathLmCorpusDir -ne "") {
 }
 if ($LmTransitionExactPairsOnly) {
     $buildArgs["LmTransitionExactPairsOnly"] = $true
+}
+if ($LmTransitionGeneralOnly) {
+    $buildArgs["LmTransitionGeneralOnly"] = $true
 }
 
 & $buildScript @buildArgs

@@ -17,7 +17,9 @@ import math
 import fnmatch
 import pathlib
 import re
+import sqlite3
 import sys
+import tempfile
 import time
 import unicodedata
 import urllib.parse
@@ -19079,6 +19081,117 @@ def _segment_lm_sentence(
     return output
 
 
+def _segment_lm_sentence_nbest(
+    sentence: str,
+    entries_by_text: Dict[str, List[Tuple[str, str, int, int, int]]],
+    *,
+    max_segment_units: int,
+    path_limit: int = 5,
+    state_limit: int = 15,
+    max_score_gap: int = 1100,
+    confidence_temperature: float = 700.0,
+) -> List[Tuple[List[Tuple[str, str, int, int, int]], float]]:
+    """Return a small, confidence-weighted set of lexical segmentations.
+
+    The ordinary segmenter intentionally keeps one deterministic path.  LM
+    training needs a little more boundary diversity, but an unbounded lattice
+    would multiply both memory and noisy transition counts.  This decoder
+    therefore retains at most ``state_limit`` paths at every character
+    boundary and emits no more than ``path_limit`` near-best paths.
+    """
+
+    text_len = len(sentence)
+    states: List[
+        List[Tuple[int, Tuple[Tuple[str, str, int, int, int], ...]]]
+    ] = [[] for _ in range(text_len + 1)]
+    states[0] = [(0, tuple())]
+
+    def edge_score(
+        entry: Tuple[str, str, int, int, int], units: int
+    ) -> int:
+        _pinyin, _text, weight, exact_rank, top_weight = entry
+        score = min(1200, max(1, weight))
+        score += units * units * 210
+        if units >= 2:
+            score += 520
+        if units >= 3:
+            score += 160
+        if units == 1:
+            score -= 300
+        if exact_rank > 1:
+            score -= min(420, (exact_rank - 1) * 55)
+        if top_weight > weight:
+            score -= min(480, (top_weight - weight) // 2)
+        return score
+
+    def prune(
+        values: List[
+            Tuple[int, Tuple[Tuple[str, str, int, int, int], ...]]
+        ],
+    ) -> List[Tuple[int, Tuple[Tuple[str, str, int, int, int], ...]]]:
+        best_by_signature: Dict[
+            Tuple[Tuple[str, str], ...],
+            Tuple[int, Tuple[Tuple[str, str, int, int, int], ...]],
+        ] = {}
+        for score, path in values:
+            signature = tuple((entry[0], entry[1]) for entry in path)
+            previous = best_by_signature.get(signature)
+            if previous is None or score > previous[0]:
+                best_by_signature[signature] = (score, path)
+        ranked = sorted(
+            best_by_signature.values(),
+            key=lambda item: (
+                -item[0],
+                tuple((entry[1], entry[0]) for entry in item[1]),
+            ),
+        )
+        return ranked[: max(path_limit, state_limit)]
+
+    for start in range(text_len):
+        if not states[start]:
+            continue
+        touched_destinations: Set[int] = set()
+        for end in range(
+            start + 1, min(text_len, start + max_segment_units) + 1
+        ):
+            text = sentence[start:end]
+            entries = entries_by_text.get(text)
+            if not entries:
+                continue
+            units = end - start
+            for entry in entries[:2]:
+                increment = edge_score(entry, units)
+                for state_score, state_path in states[start]:
+                    states[end].append(
+                        (state_score + increment, state_path + (entry,))
+                    )
+            touched_destinations.add(end)
+        for destination in touched_destinations:
+            if len(states[destination]) > state_limit:
+                states[destination] = prune(states[destination])
+
+    if not states[text_len]:
+        return []
+    ranked_final = prune(states[text_len])
+    best_score = ranked_final[0][0]
+    output: List[
+        Tuple[List[Tuple[str, str, int, int, int]], float]
+    ] = []
+    for score, path in ranked_final:
+        score_gap = best_score - score
+        if score_gap > max_score_gap:
+            continue
+        confidence = math.exp(
+            -max(0, score_gap) / max(1.0, confidence_temperature)
+        )
+        if output and confidence < 0.20:
+            continue
+        output.append((list(path), confidence))
+        if len(output) >= path_limit:
+            break
+    return output
+
+
 def _lm_segment_allowed(
     entry: Tuple[str, str, int, int, int],
     *,
@@ -19099,7 +19212,7 @@ def _lm_segment_allowed(
 
 
 def _collect_lm_transition_priors(
-    sentences: List[Tuple[str, str]],
+    sentences: Iterable[Tuple[str, str]],
     entries_by_text: Dict[str, List[Tuple[str, str, int, int, int]]],
     *,
     max_segment_units: int = 4,
@@ -19111,15 +19224,45 @@ def _collect_lm_transition_priors(
     min_multi_weight: int = 180,
     max_weight: int = 520,
 ) -> Tuple[Dict[Tuple[str, str], int], Dict[str, int]]:
-    transition_counts: Dict[Tuple[str, str], int] = {}
-    transition_sources: Dict[Tuple[str, str], Set[str]] = {}
-    segment_counts: Dict[str, int] = {}
-    transition_weight_sum: Dict[Tuple[str, str], int] = {}
-    transition_rank_max: Dict[Tuple[str, str], int] = {}
-    transition_multi_rank_max: Dict[Tuple[str, str], int] = {}
-    transition_gap_max: Dict[Tuple[str, str], int] = {}
+    # Keep all statistics for one transition in one compact record. N-best
+    # segmentation produces millions of distinct windows; separate dictionaries
+    # and per-key source sets multiply Python object overhead without adding
+    # information. Record fields are count, source mask, weighted lexical sum,
+    # maximum exact rank, maximum multi-character rank and maximum weight gap.
+    transition_stats: Dict[str, List[float | int]] = {}
+    segment_counts: Dict[str, float] = {}
+    current_source: str | None = None
+    current_source_keys: Set[str] = set()
+    spill_limit = 250_000
+    total_windows = 0.0
+    spill_file = tempfile.NamedTemporaryFile(
+        prefix="cassotis_lm_transition_", suffix=".sqlite3", delete=False
+    )
+    spill_path = pathlib.Path(spill_file.name)
+    spill_file.close()
+    spill_db = sqlite3.connect(str(spill_path))
+    spill_db.execute("PRAGMA journal_mode=OFF")
+    spill_db.execute("PRAGMA synchronous=OFF")
+    spill_db.execute("PRAGMA temp_store=FILE")
+    spill_db.execute("PRAGMA cache_size=-131072")
+    spill_db.execute(
+        """
+        CREATE TABLE transition_stats (
+            query TEXT NOT NULL,
+            path TEXT NOT NULL,
+            count REAL NOT NULL,
+            source_count INTEGER NOT NULL,
+            weight_sum REAL NOT NULL,
+            rank_max INTEGER NOT NULL,
+            multi_rank_max INTEGER NOT NULL,
+            gap_max INTEGER NOT NULL,
+            PRIMARY KEY(query, path)
+        ) WITHOUT ROWID
+        """
+    )
     stats: Dict[str, int] = {
         "lm_corpus_segmented": 0,
+        "lm_corpus_segmentations": 0,
         "lm_corpus_unsegmented": 0,
         "lm_corpus_bigram_windows": 0,
         "lm_corpus_trigram_windows": 0,
@@ -19157,141 +19300,251 @@ def _collect_lm_transition_priors(
             return False
         return all(text in LM_FUNCTION_SINGLE_CHARS for text in single_segments)
 
+    def _flush_transition_stats() -> None:
+        if not transition_stats:
+            return
+
+        def _rows() -> Iterator[Tuple[object, ...]]:
+            for packed_key, record in transition_stats.items():
+                query, _separator, path = packed_key.partition("\0")
+                yield (
+                    query,
+                    path,
+                    float(record[0]),
+                    int(record[1]),
+                    float(record[2]),
+                    int(record[3]),
+                    int(record[4]),
+                    int(record[5]),
+                )
+
+        spill_db.executemany(
+            """
+            INSERT INTO transition_stats (
+                query, path, count, source_count, weight_sum,
+                rank_max, multi_rank_max, gap_max
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+            ON CONFLICT(query, path) DO UPDATE SET
+                count = count + excluded.count,
+                source_count = MIN(3, source_count + excluded.source_count),
+                weight_sum = weight_sum + excluded.weight_sum,
+                rank_max = MAX(rank_max, excluded.rank_max),
+                multi_rank_max = MAX(multi_rank_max, excluded.multi_rank_max),
+                gap_max = MAX(gap_max, excluded.gap_max)
+            """,
+            _rows(),
+        )
+        spill_db.commit()
+        transition_stats.clear()
+
+    def _finish_source() -> None:
+        if not current_source_keys:
+            return
+        for packed_key in current_source_keys:
+            record = transition_stats.get(packed_key)
+            if record is None:
+                record = [0.0, 0, 0.0, 0, 0, 0]
+                transition_stats[packed_key] = record
+            record[1] = min(3, int(record[1]) + 1)
+        current_source_keys.clear()
+        if len(transition_stats) >= spill_limit:
+            _flush_transition_stats()
+
     for sentence, source_name in sentences:
-        segments = _segment_lm_sentence(
+        if current_source is None:
+            current_source = source_name
+        elif source_name != current_source:
+            _finish_source()
+            current_source = source_name
+        segmentation_paths = _segment_lm_sentence_nbest(
             sentence,
             entries_by_text,
             max_segment_units=max_segment_units,
         )
-        if not segments:
+        if not segmentation_paths:
             stats["lm_corpus_unsegmented"] += 1
             continue
         stats["lm_corpus_segmented"] += 1
-        for _pinyin, text, _weight, _exact_rank, _top_weight in segments:
-            segment_counts[text] = segment_counts.get(text, 0) + 1
-        for start in range(len(segments)):
-            for window_size in (2, 3):
-                window = segments[start : start + window_size]
-                if len(window) != window_size:
-                    continue
-                if not _window_allowed(window):
-                    continue
-                query = "".join(item[0] for item in window)
-                path = QUERY_PATH_FILE_SEPARATOR.join(item[1] for item in window)
-                key = (query, path)
-                transition_counts[key] = transition_counts.get(key, 0) + 1
-                transition_sources.setdefault(key, set()).add(source_name)
-                transition_weight_sum[key] = transition_weight_sum.get(key, 0) + sum(item[2] for item in window)
-                transition_rank_max[key] = max(transition_rank_max.get(key, 0), *(item[3] for item in window))
-                multi_ranks = [item[3] for item in window if _cjk_len(item[1]) > 1]
-                if multi_ranks:
-                    transition_multi_rank_max[key] = max(
-                        transition_multi_rank_max.get(key, 0), *multi_ranks
+        stats["lm_corpus_segmentations"] += len(segmentation_paths)
+        for segments, path_confidence in segmentation_paths:
+            for _pinyin, text, _weight, _exact_rank, _top_weight in segments:
+                segment_counts[text] = (
+                    segment_counts.get(text, 0.0) + path_confidence
+                )
+            for start in range(len(segments)):
+                for window_size in (2, 3):
+                    window = segments[start : start + window_size]
+                    if len(window) != window_size:
+                        continue
+                    if not _window_allowed(window):
+                        continue
+                    query = "".join(item[0] for item in window)
+                    path = QUERY_PATH_FILE_SEPARATOR.join(
+                        item[1] for item in window
                     )
-                transition_gap_max[key] = max(transition_gap_max.get(key, 0), *(item[4] - item[2] for item in window))
-                if window_size == 2:
-                    stats["lm_corpus_bigram_windows"] += 1
-                else:
-                    stats["lm_corpus_trigram_windows"] += 1
+                    packed_key = query + "\0" + path
+                    record = transition_stats.get(packed_key)
+                    if record is None:
+                        record = [0.0, 0, 0.0, 0, 0, 0]
+                        transition_stats[packed_key] = record
+                    record[0] = float(record[0]) + path_confidence
+                    record[2] = float(record[2]) + path_confidence * sum(
+                        item[2] for item in window
+                    )
+                    record[3] = max(
+                        int(record[3]), *(item[3] for item in window)
+                    )
+                    multi_ranks = [
+                        item[3] for item in window if _cjk_len(item[1]) > 1
+                    ]
+                    if multi_ranks:
+                        record[4] = max(int(record[4]), *multi_ranks)
+                    record[5] = max(
+                        int(record[5]),
+                        *(item[4] - item[2] for item in window),
+                    )
+                    current_source_keys.add(packed_key)
+                    total_windows += path_confidence
+                    if len(transition_stats) >= spill_limit:
+                        _flush_transition_stats()
+                    if window_size == 2:
+                        stats["lm_corpus_bigram_windows"] += 1
+                    else:
+                        stats["lm_corpus_trigram_windows"] += 1
 
-    query_contenders: Dict[str, List[Tuple[str, int]]] = {}
-    for (query, path), count in transition_counts.items():
-        query_contenders.setdefault(query, []).append((path, count))
-    for contenders in query_contenders.values():
-        contenders.sort(key=lambda item: (-item[1], item[0]))
+    _finish_source()
+    _flush_transition_stats()
 
     priors: Dict[Tuple[str, str], int] = {}
-    total_windows = max(1, sum(transition_counts.values()))
-    for key, count in transition_counts.items():
-        segments = key[1].split(QUERY_PATH_FILE_SEPARATOR)
-        if not _window_emittable(segments):
-            continue
-        min_count = min_trigram_count if len(segments) >= 3 else min_bigram_count
-        source_count = len(transition_sources.get(key, set()))
-        if count < min_count:
-            continue
-        if source_count < 2 and count < (min_count + 4):
-            continue
+    total_windows = max(1.0, total_windows)
 
-        contenders = query_contenders.get(key[0], [])
-        contender_rank = next(
-            (rank for rank, (path, _count) in enumerate(contenders, start=1) if path == key[1]),
-            len(contenders) + 1,
-        )
-        best_count = contenders[0][1] if contenders else count
-        competitor_count = max(
-            (other_count for other_path, other_count in contenders if other_path != key[1]),
-            default=0,
-        )
-        query_total_count = max(1, sum(item_count for _path, item_count in contenders))
-        query_share = count / query_total_count
+    def _emit_query_rows(query: str, rows: List[Tuple[object, ...]]) -> None:
+        if not rows:
+            return
+        query_total_count = max(1.0, sum(float(row[2]) for row in rows))
+        best_path = str(rows[0][1])
+        best_count = float(rows[0][2])
+        second_path = str(rows[1][1]) if len(rows) > 1 else ""
+        second_count = float(rows[1][2]) if len(rows) > 1 else 0.0
 
-        # Runtime bonuses are positive-only. Keep only paths with defensible
-        # evidence inside the same pinyin bucket; otherwise a rare homophone
-        # can only distort the decoder and can never express negative evidence.
-        if contender_rank > 2:
-            stats["lm_corpus_priors_skipped_query_rank"] += 1
-            continue
-        if contender_rank == 2 and (
-            count < (min_count + 3) or count * 100 < best_count * 45
-        ):
-            stats["lm_corpus_priors_skipped_weak_runner_up"] += 1
-            continue
-
-        has_function_single = any(_cjk_len(text) <= 1 for text in segments)
-        if has_function_single:
-            if len(segments) == 2:
-                # A two-token transition such as `的|经历` has too little
-                # context to safely overturn a stronger homophone. Keep this
-                # class only when its multi-character token is itself the
-                # lexical winner for the exact pinyin bucket. A trigram may
-                # still support an ambiguous token with real context.
-                if transition_multi_rank_max.get(key, 1) > 1:
-                    stats["lm_corpus_priors_skipped_ambiguous_function_bigram"] += 1
-                    continue
-                weak_single = (
-                    source_count < 2
-                    or count < max(8, min_count + 3)
-                    or (competitor_count > 0 and count * 100 < competitor_count * 70)
-                )
-            else:
-                # Large independent corpora often partition a valid narrative
-                # trigram into one source. Permit it only with substantially
-                # stronger count and same-pinyin dominance evidence.
-                weak_single = (
-                    count < max(10, min_count + 6)
-                    or (source_count < 2 and count < 16)
-                    or (competitor_count > 0 and count * 100 < competitor_count * 85)
-                )
-            if weak_single:
-                stats["lm_corpus_priors_skipped_weak_single"] += 1
+        for row in rows:
+            path = str(row[1])
+            count = float(row[2])
+            source_count = int(row[3])
+            segments = path.split(QUERY_PATH_FILE_SEPARATOR)
+            if not _window_emittable(segments):
+                continue
+            min_count = (
+                min_trigram_count if len(segments) >= 3 else min_bigram_count
+            )
+            if count < min_count:
+                continue
+            if source_count < 2 and count < (min_count + 4):
                 continue
 
-        segment_product = 1
-        for text in segments:
-            segment_product *= max(1, segment_counts.get(text, 1))
-        pmi = math.log2((count * total_windows) / max(1, segment_product))
-        avg_weight = transition_weight_sum[key] / max(1, count * len(segments))
-        rank_penalty = max(0, transition_rank_max.get(key, 1) - 1) * 10
-        gap_penalty = min(60, max(0, transition_gap_max.get(key, 0)) // 8)
-        dominance = math.log2((count + 2) / (competitor_count + 2))
-        score = 72
-        score += int(round(math.log2(count + 1) * 30))
-        score += int(round(max(-1.0, min(5.0, pmi)) * 14))
-        score += int(round(min(62.0, avg_weight * 0.026)))
-        score += min(36, source_count * 12)
-        score += int(round(query_share * 72))
-        score += int(round(max(-1.5, min(4.0, dominance)) * 30))
-        if contender_rank == 2:
-            score -= 24
-        score -= rank_penalty + gap_penalty
-        if len(segments) >= 3:
-            score += 18
-        priors[key] = max(96, min(max_weight, score))
+            if path == best_path:
+                contender_rank = 1
+                competitor_count = second_count
+            elif path == second_path:
+                contender_rank = 2
+                competitor_count = best_count
+            else:
+                contender_rank = 3
+                competitor_count = best_count
+            query_share = count / query_total_count
+
+            # Positive-only runtime bonuses require defensible evidence inside
+            # the same pinyin bucket; weak homophone paths cannot be penalized.
+            if contender_rank > 2:
+                stats["lm_corpus_priors_skipped_query_rank"] += 1
+                continue
+            if contender_rank == 2 and (
+                count < (min_count + 3) or count * 100 < best_count * 45
+            ):
+                stats["lm_corpus_priors_skipped_weak_runner_up"] += 1
+                continue
+
+            has_function_single = any(
+                _cjk_len(text) <= 1 for text in segments
+            )
+            if has_function_single:
+                if len(segments) == 2:
+                    if int(row[6]) > 1:
+                        stats[
+                            "lm_corpus_priors_skipped_ambiguous_function_bigram"
+                        ] += 1
+                        continue
+                    weak_single = (
+                        source_count < 2
+                        or count < max(8, min_count + 3)
+                        or (
+                            competitor_count > 0
+                            and count * 100 < competitor_count * 70
+                        )
+                    )
+                else:
+                    weak_single = (
+                        count < max(10, min_count + 6)
+                        or (source_count < 2 and count < 16)
+                        or (
+                            competitor_count > 0
+                            and count * 100 < competitor_count * 85
+                        )
+                    )
+                if weak_single:
+                    stats["lm_corpus_priors_skipped_weak_single"] += 1
+                    continue
+
+            segment_product = 1.0
+            for text in segments:
+                segment_product *= max(1.0, segment_counts.get(text, 1.0))
+            pmi = math.log2(
+                (count * total_windows) / max(1.0, segment_product)
+            )
+            avg_weight = float(row[4]) / max(1.0, count * len(segments))
+            rank_penalty = max(0, int(row[5]) - 1) * 10
+            gap_penalty = min(60, max(0, int(row[7])) // 8)
+            dominance = math.log2((count + 2) / (competitor_count + 2))
+            score = 72
+            score += int(round(math.log2(count + 1) * 30))
+            score += int(round(max(-1.0, min(5.0, pmi)) * 14))
+            score += int(round(min(62.0, avg_weight * 0.026)))
+            score += min(36, source_count * 12)
+            score += int(round(query_share * 72))
+            score += int(round(max(-1.5, min(4.0, dominance)) * 30))
+            if contender_rank == 2:
+                score -= 24
+            score -= rank_penalty + gap_penalty
+            if len(segments) >= 3:
+                score += 18
+            priors[(query, path)] = max(96, min(max_weight, score))
+
+    try:
+        cursor = spill_db.execute(
+            """
+            SELECT query, path, count, source_count, weight_sum,
+                   rank_max, multi_rank_max, gap_max
+            FROM transition_stats
+            ORDER BY query, count DESC, path
+            """
+        )
+        current_query = ""
+        query_rows: List[Tuple[object, ...]] = []
+        for row in cursor:
+            query = str(row[0])
+            if current_query and query != current_query:
+                _emit_query_rows(current_query, query_rows)
+                query_rows.clear()
+            current_query = query
+            query_rows.append(row)
+        if current_query:
+            _emit_query_rows(current_query, query_rows)
+    finally:
+        spill_db.close()
+        spill_path.unlink(missing_ok=True)
 
     stats["lm_corpus_priors_emitted"] = len(priors)
     return priors, stats
-
 
 def _collect_short_exact_pair_transition_priors(
     sentences: Iterable[Tuple[str, str]],
@@ -20278,6 +20531,7 @@ def _build_lm_corpus_query_path_prior_map(
     jieba_pos_map: Dict[str, str] | None,
     stats_prefix: str,
     exact_pairs_only: bool = False,
+    general_transitions_only: bool = False,
 ) -> Tuple[Dict[Tuple[str, str], int], Dict[str, int]]:
     entries_by_text, _rank_info = _build_lm_entry_indexes(
         mapping,
@@ -20298,6 +20552,10 @@ def _build_lm_corpus_query_path_prior_map(
             text
             for text in additional_exact_texts
             if _cjk_len(text) == 2 and CJK_FULL_RE.fullmatch(text)
+        )
+    if exact_pairs_only and general_transitions_only:
+        raise ValueError(
+            "exact-pairs-only and general-transitions-only are mutually exclusive"
         )
     if exact_pairs_only:
         sentence_stats = _new_lm_corpus_stats()
@@ -20342,28 +20600,72 @@ def _build_lm_corpus_query_path_prior_map(
                 jieba_pos_map=jieba_pos_map,
             )
         )
-    else:
-        sentences, sentence_stats = _iter_lm_corpus_sentences(
-            corpus_dir,
-            min_units=4,
-            max_units=40,
-            convert_text=convert_text,
-        )
+    elif general_transitions_only:
+        sentence_stats = _new_lm_corpus_stats()
+        sentence_stats["lm_corpus_streaming_general_transitions_only"] = 1
         priors, prior_stats = _collect_lm_transition_priors(
-            sentences,
+            _stream_lm_corpus_sentences(
+                corpus_dir,
+                min_units=4,
+                max_units=40,
+                convert_text=convert_text,
+                stats=sentence_stats,
+            ),
+            entries_by_text,
+        )
+        short_pair_priors = {}
+        short_pair_stats = {}
+        strong_single_pair_priors = {}
+        strong_single_pair_stats = {}
+    else:
+        # The expanded training corpus contains millions of fragments.  Keep
+        # every collector streaming instead of materializing the corpus once:
+        # N-best segmentation intentionally expands each accepted sentence,
+        # so retaining the raw input list would otherwise dominate memory.
+        sentence_stats = _new_lm_corpus_stats()
+        priors, prior_stats = _collect_lm_transition_priors(
+            _stream_lm_corpus_sentences(
+                corpus_dir,
+                min_units=4,
+                max_units=40,
+                convert_text=convert_text,
+                stats=sentence_stats,
+            ),
             entries_by_text,
         )
         short_pair_priors, short_pair_stats = (
             _collect_short_exact_pair_transition_priors(
-                sentences,
+                _stream_lm_corpus_sentences(
+                    corpus_dir,
+                    min_units=4,
+                    max_units=40,
+                    convert_text=convert_text,
+                ),
                 entries_by_text,
+                second_pass_sentences=_stream_lm_corpus_sentences(
+                    corpus_dir,
+                    min_units=4,
+                    max_units=40,
+                    convert_text=convert_text,
+                ),
                 jieba_pos_map=jieba_pos_map,
             )
         )
         strong_single_pair_priors, strong_single_pair_stats = (
             _collect_strong_single_pair_transition_priors(
-                sentences,
+                _stream_lm_corpus_sentences(
+                    corpus_dir,
+                    min_units=4,
+                    max_units=40,
+                    convert_text=convert_text,
+                ),
                 entries_by_text,
+                second_pass_sentences=_stream_lm_corpus_sentences(
+                    corpus_dir,
+                    min_units=4,
+                    max_units=40,
+                    convert_text=convert_text,
+                ),
                 exact_texts=exact_two_character_texts,
                 jieba_pos_map=jieba_pos_map,
             )
@@ -21381,6 +21683,14 @@ def main() -> int:
         help=(
             "Stream the corpus and train only exact 1+2/2+1/2+2/2+3/3+2 "
             "transition additions against the frozen LM baseline."
+        ),
+    )
+    parser.add_argument(
+        "--lm-transition-general-only",
+        action="store_true",
+        help=(
+            "Stream the corpus and train only the general confidence-weighted "
+            "word bigram/trigram transitions against the frozen LM baseline."
         ),
     )
     parser.add_argument("--support-dict-sc", default="")
@@ -23710,6 +24020,7 @@ def main() -> int:
                 jieba_pos_map=jieba_pos_map,
                 stats_prefix="sc",
                 exact_pairs_only=args.lm_transition_exact_pairs_only,
+                general_transitions_only=args.lm_transition_general_only,
             )
             stats.update(sc_lm_query_path_stats)
             sc_lm_transition_priors, sc_lm_transition_stats = _select_dedicated_lm_transitions(
@@ -23760,6 +24071,7 @@ def main() -> int:
                 jieba_pos_map=tc_jieba_pos_map,
                 stats_prefix="tc",
                 exact_pairs_only=args.lm_transition_exact_pairs_only,
+                general_transitions_only=args.lm_transition_general_only,
             )
             stats.update(tc_lm_query_path_stats)
             tc_lm_transition_priors, tc_lm_transition_stats = _select_dedicated_lm_transitions(

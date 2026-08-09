@@ -31,6 +31,51 @@ class LmTransitionTrainingTests(unittest.TestCase):
                     (f"ctx{ord(char):x}", char, 700, 1, 700)
                 ]
 
+    def test_general_lm_keeps_near_best_segmentation_boundaries(self) -> None:
+        def entry(
+            pinyin: str, text: str
+        ) -> tuple[str, str, int, int, int]:
+            return pinyin, text, 800, 1, 800
+
+        sentence = "甲乙丙丁戊"
+        entries = {
+            "甲乙": [entry("jiayi", "甲乙")],
+            "丙丁戊": [entry("bingdingwu", "丙丁戊")],
+            "甲乙丙": [entry("jiayibing", "甲乙丙")],
+            "丁戊": [entry("dingwu", "丁戊")],
+        }
+
+        segmentations = builder._segment_lm_sentence_nbest(
+            sentence,
+            entries,
+            max_segment_units=4,
+        )
+        paths = {
+            tuple(item[1] for item in segments)
+            for segments, _confidence in segmentations
+        }
+        self.assertIn(("甲乙", "丙丁戊"), paths)
+        self.assertIn(("甲乙丙", "丁戊"), paths)
+
+        rows = [(sentence, f"source-{index}") for index in range(12)]
+        priors, stats = builder._collect_lm_transition_priors(
+            rows,
+            entries,
+            max_segment_units=4,
+        )
+        separator = builder.QUERY_PATH_FILE_SEPARATOR
+        self.assertIn(
+            ("jiayibingdingwu", f"甲乙{separator}丙丁戊"),
+            priors,
+            str(stats),
+        )
+        self.assertIn(
+            ("jiayibingdingwu", f"甲乙丙{separator}丁戊"),
+            priors,
+            str(stats),
+        )
+        self.assertEqual(24, stats["lm_corpus_segmentations"])
+
     def test_strong_single_pairs_require_sparse_independent_dominant_evidence(
         self,
     ) -> None:
