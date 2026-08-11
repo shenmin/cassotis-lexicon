@@ -65654,7 +65654,7 @@ jianzhashipin	煎炸食品	260
 jianzhaxian	尖扎縣	169
 jianzhayou	煎炸油	228
 jianzhen	減震	1000
-jianzhen	鑑真	498
+jianzhen	鑑真	499
 jianzhen	鑒真	436
 jianzhen	堅貞	179
 jianzhen	減振	1
@@ -73390,9 +73390,9 @@ jiujihu	究極虎	460
 jiujiliang	救濟糧	444
 jiujin	就近	983
 jiujin	酒勁	10
-jiujing	究竟	840
-jiujing	酒精	744
-jiujing	久經	705
+jiujing	究竟	914
+jiujing	酒精	616
+jiujing	久經	494
 jiujingcayu	酒精擦浴	540
 jiujingchongxian	舊景重現	260
 jiujingdeng	酒精燈	510
@@ -98608,8 +98608,8 @@ muban	模板	280
 muban	木版	1
 mubanhua	木版畫	443
 mubei	墓碑	434
-muben	母本	494
-muben	木本	482
+muben	母本	520
+muben	木本	508
 mubenzhiwu	木本植物	481
 mubiao	目標	536
 mubiaochengxu	目標程序	731
@@ -159146,7 +159146,7 @@ xuanpin	選品	319
 xuanpu	玄圃	198
 xuanqianji	旋前肌	232
 xuanqianyuanji	旋前圓肌	540
-xuanqianzhuankun	旋乾轉坤	401
+xuanqianzhuankun	旋乾轉坤	383
 xuanqing	選情	849
 xuanqu	選取	830
 xuanqu	選區	524
@@ -180369,7 +180369,7 @@ zhenguai	真怪	1
 zhenguan	針管	341
 zhengudakong	枕骨大孔	570
 zhengudakongshan	枕骨大孔疝	610
-zhengui	珍貴	566
+zhengui	珍貴	565
 zhenguo	榛果	198
 zhengur	針箍兒	230
 zhengushuojin	震古爍今	412
@@ -180665,10 +180665,10 @@ zhenhun	震昏	198
 zhenhundouluo	真魂鬥羅	700
 zhenhundouluo	真魂斗羅	258
 zheniantou	這年頭	362
-zhenji	賑濟	463
+zhenji	賑濟	74
 zhenji	震級	430
-zhenji	偵緝	210
-zhenji	真跡	81
+zhenji	偵緝	56
+zhenji	真跡	54
 zhenji	針劑	1
 zhenjia	真假	438
 zhenjian	診間	198
@@ -191781,3 +191781,12 @@ wobian	我便	0
 yijiuqiyi	一九七一	573
 zheyou	這有	0
 zheyousha	這有啥	800
+beiyongji	備用機	280
+ceshiji	測試機	800
+gongchengji	工程機	280
+jiujingshi	究竟是	1000
+kaifaji	開發機	280
+kelasi	克拉斯	280
+shiji	實機	280
+yanshiji	演示機	280
+zhenji	真機	318
