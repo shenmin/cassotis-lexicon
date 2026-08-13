@@ -18,12 +18,12 @@ Cassotis IME 的詞庫建置與發布儲存庫。
 - 支援以外部來源建立詞庫，以及可重現的詞庫生成流程。
 - 確保來源標示檔案與生成產物保持一致。
 
-## 目前詞庫快照（2026-08-12 建置）
+## 目前詞庫快照（2026-08-13 建置）
 
 | 檔案 | 變體 | 詞條數 |
 |------|------|--------|
-| `data/generated/dict_clean_sc.txt` | 簡體主詞庫 | 188,900 |
-| `data/generated/dict_clean_tc.txt` | 繁體主詞庫 | 191,798 |
+| `data/generated/dict_clean_sc.txt` | 簡體主詞庫 | 188,929 |
+| `data/generated/dict_clean_tc.txt` | 繁體主詞庫 | 191,824 |
 | `data/generated/dict_unihan_sc.txt` | 簡體單字（Unihan） | 23,908 |
 | `data/generated/dict_unihan_tc.txt` | 繁體單字（Unihan） | 24,168 |
 
@@ -179,6 +179,8 @@ v1.13.0 新增反向字元 n-gram 模型，用於雙向路徑評分；查詢路�
 # 直接建置單一 profile
 .\scripts\build_external_seed.ps1 -Profile external_broad
 ```
+
+僅修改詞組詞庫時，完整重建會維持現有 Unihan 單字權重穩定。只有明確需要重新校準單字排序層時，才使用 `-RefreshUnihanSingleCharWeights`。
 
 `external_broad` 和 `external_cedict` 在存在
 `manifests/vertical_layers.public.json` 時會自動載入該檔案。

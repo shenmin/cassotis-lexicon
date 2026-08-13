@@ -30,6 +30,7 @@ param(
     [switch]$LmTransitionGeneralOnly,
     [string]$SupportDictSc = "",
     [string]$SupportDictTc = "",
+    [switch]$RefreshUnihanSingleCharWeights,
     [string]$Manifest = "",
     [string]$Report = ""
 )
@@ -134,6 +135,7 @@ if ($LmTransitionExactPairsOnly) { $args += "--lm-transition-exact-pairs-only" }
 if ($LmTransitionGeneralOnly) { $args += "--lm-transition-general-only" }
 if ($SupportDictSc -ne "") { $args += @("--support-dict-sc", $SupportDictSc) }
 if ($SupportDictTc -ne "") { $args += @("--support-dict-tc", $SupportDictTc) }
+if ($RefreshUnihanSingleCharWeights) { $args += "--refresh-unihan-single-char-weights" }
 if ($Manifest -ne "") { $args += @("--manifest", $Manifest) }
 if ($Report -ne "") { $args += @("--report", $Report) }
 

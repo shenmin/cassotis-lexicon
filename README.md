@@ -18,12 +18,12 @@ Lexicon build and release repository for Cassotis IME.
 - Supports external-source bootstrap and reproducible generated dictionary builds.
 - Keeps attribution and release policy files aligned with generated artifacts.
 
-## Current dictionary snapshot (2026-08-12 build)
+## Current dictionary snapshot (2026-08-13 build)
 
 | File | Variant | Entries |
 |------|---------|---------|
-| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 188,900 |
-| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 191,798 |
+| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 188,929 |
+| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 191,824 |
 | `data/generated/dict_unihan_sc.txt` | Simplified single-char (Unihan) | 23,908 |
 | `data/generated/dict_unihan_tc.txt` | Traditional single-char (Unihan) | 24,168 |
 
@@ -179,6 +179,10 @@ See:
 # Build one profile directly
 .\scripts\build_external_seed.ps1 -Profile external_broad
 ```
+
+Full rebuilds keep existing Unihan single-character weights stable when only
+phrase dictionaries change. Use `-RefreshUnihanSingleCharWeights` only when
+deliberately recalibrating the single-character ranking layer.
 
 `external_broad` and `external_cedict` automatically load
 `manifests/vertical_layers.public.json` when present.

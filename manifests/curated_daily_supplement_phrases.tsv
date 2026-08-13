@@ -6741,7 +6741,6 @@
 决策层	決策層	0.01
 异常态	異常態	0.01
 警示牌	警示牌	0.01
-极简	極簡	0.01
 独步江湖	獨步江湖	0.01
 上世纪	上世紀	0.34
 两年多	兩年多	0.01
@@ -7427,7 +7426,6 @@
 腰际	腰際	0.01
 跳下	跳下	0.01
 存稿	存稿	0.01
-修仙	修仙	0.01
 仙缘	仙緣	0.01
 暖场	暖場	0.01
 小天使	小天使	0.01
@@ -12633,3 +12631,12 @@
 个话	個話	-1.99	gehua
 电插	電插	0.18	diancha
 电插板	電插板	0.48	dianchaban
+
+# Lower-frequency completion fragments, genre term, and personal name.
+完后	完後	0.46	wanhou
+装完后	裝完後	0.54	zhuangwanhou
+加完后	加完後	0.54	jiawanhou
+白洁	白潔	0.24	baijie
+东八	東八	0.34	dongba
+神了	神了	0.48	shenle
+新号	新號	0.24	xinhao

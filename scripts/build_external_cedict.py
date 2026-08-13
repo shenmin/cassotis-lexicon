@@ -18692,6 +18692,39 @@ def _restore_missing_texts_from_snapshot(
     return restored, stats
 
 
+def _preserve_existing_unihan_single_char_weights(
+    mapping: Dict[Tuple[str, str], int],
+    previous_snapshot: Dict[Tuple[str, str], int],
+    stats_prefix: str,
+) -> Dict[str, int]:
+    """Keep mature Unihan rows stable across unrelated phrase additions.
+
+    Phrase support can still add a missing character or reading. Reweighting an
+    existing row is explicit because a small curated phrase batch must not
+    reshuffle an entire same-pinyin bucket.
+    """
+    stats = {
+        f"{stats_prefix}_existing_single_char_rows_considered": 0,
+        f"{stats_prefix}_existing_single_char_weights_preserved": 0,
+    }
+    if not mapping or not previous_snapshot:
+        return stats
+
+    for key, previous_weight in previous_snapshot.items():
+        _pinyin, text = key
+        if _cjk_len(text) != 1 or key not in mapping:
+            continue
+
+        stats[f"{stats_prefix}_existing_single_char_rows_considered"] += 1
+        if mapping[key] == previous_weight:
+            continue
+
+        mapping[key] = previous_weight
+        stats[f"{stats_prefix}_existing_single_char_weights_preserved"] += 1
+
+    return stats
+
+
 def _build_curated_daily_prefix_restore_blocklist(
     curated_entries: List[Tuple[str, str, float, str]],
     use_traditional: bool,
@@ -21705,6 +21738,14 @@ def main() -> int:
     )
     parser.add_argument("--support-dict-sc", default="")
     parser.add_argument("--support-dict-tc", default="")
+    parser.add_argument(
+        "--refresh-unihan-single-char-weights",
+        action="store_true",
+        help=(
+            "Allow the unihan_single profile to recalculate weights of existing "
+            "single-character rows. By default only new rows are learned."
+        ),
+    )
     parser.add_argument("--manifest", default="manifests/sources.public.yml")
     parser.add_argument("--report", default="reports/external_build_report.md")
     parser.add_argument(
@@ -25433,6 +25474,22 @@ def main() -> int:
             stats_prefix="tc_final_post",
         )
     )
+
+    if parser_name == "unihan_only" and not args.refresh_unihan_single_char_weights:
+        stats.update(
+            _preserve_existing_unihan_single_char_weights(
+                sc_map,
+                previous_snapshot_sc,
+                "sc_unihan_stability",
+            )
+        )
+        stats.update(
+            _preserve_existing_unihan_single_char_weights(
+                tc_map,
+                previous_snapshot_tc,
+                "tc_unihan_stability",
+            )
+        )
 
     _write_dict(
         output_sc,

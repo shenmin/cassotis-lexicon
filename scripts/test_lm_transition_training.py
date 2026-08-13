@@ -18,6 +18,35 @@ import prepare_lm_transition_corpus as preparer  # noqa: E402
 
 
 class LmTransitionTrainingTests(unittest.TestCase):
+    def test_unihan_phrase_updates_preserve_existing_single_char_weights(self) -> None:
+        existing_char = "\u82f1"
+        new_char = "\u65b0"
+        removed_char = "\u65e7"
+        phrase = "\u5168\u82f1\u6587"
+        mapping = {
+            ("ying", existing_char): 459,
+            ("xin", new_char): 320,
+            ("quanyingwen", phrase): 800,
+        }
+        previous = {
+            ("ying", existing_char): 579,
+            ("jiu", removed_char): 401,
+            ("quanyingwen", phrase): 700,
+        }
+
+        stats = builder._preserve_existing_unihan_single_char_weights(
+            mapping,
+            previous,
+            "test",
+        )
+
+        self.assertEqual(579, mapping[("ying", existing_char)])
+        self.assertEqual(320, mapping[("xin", new_char)])
+        self.assertNotIn(("jiu", removed_char), mapping)
+        self.assertEqual(800, mapping[("quanyingwen", phrase)])
+        self.assertEqual(1, stats["test_existing_single_char_rows_considered"])
+        self.assertEqual(1, stats["test_existing_single_char_weights_preserved"])
+
     def test_post_rank_zero_marker_overrides_existing_weight(self) -> None:
         zero_text = "\u4f46\u4e5f"
         natural_text = "\u81ea\u7136"

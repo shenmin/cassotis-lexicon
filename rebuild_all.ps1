@@ -23,7 +23,8 @@ param(
     [string]$QueryPathLmCorpusDir = "",
     [switch]$LmTransitionExactPairsOnly,
     [switch]$LmTransitionGeneralOnly,
-    [switch]$SkipReadmeSnapshot
+    [switch]$SkipReadmeSnapshot,
+    [switch]$RefreshUnihanSingleCharWeights
 )
 
 $ErrorActionPreference = "Stop"
@@ -223,6 +224,9 @@ $unihanBuildArgs = @{
     Report = "reports/unihan_build_report.md"
 }
 if ($PinyinOverrides -ne "") { $unihanBuildArgs["PinyinOverrides"] = $PinyinOverrides }
+if ($RefreshUnihanSingleCharWeights) {
+    $unihanBuildArgs["RefreshUnihanSingleCharWeights"] = $true
+}
 
 Write-Host "Building dedicated lexicon Unihan outputs (dict_unihan_sc/tc)..."
 & $buildScript @unihanBuildArgs

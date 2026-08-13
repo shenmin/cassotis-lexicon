@@ -7636,7 +7636,7 @@
 指了	指了	0.78	zhile
 没讲	沒講	0.86	meijiang
 讲了	講了	0.86	jiangle
-不讲	不講	0.88	bujiang
+不讲	不講	0.90	bujiang
 没考	沒考	0.86	meikao
 考了	考了	0.86	kaole
 不考	不考	0.84	bukao
@@ -7803,3 +7803,29 @@
 照实	照實	0.78	zhaoshi
 拖线板	拖線板	0.74	tuoxianban
 拖线	拖線	0.60	tuoxian
+
+# Common completion, addition, and modern-language terms 2026-08-13.
+装上	裝上	0.88	zhuangshang
+装好	裝好	0.84	zhuanghao
+装完	裝完	0.84	zhuangwan
+各有	各有	0.88	geyou
+又加	又加	0.82	youjia
+又加了	又加了	0.84	youjiale
+又加上	又加上	0.80	youjiashang
+加完	加完	0.82	jiawan
+极简	極簡	0.88	jijian
+预警	預警	0.90	yujing
+语境	語境	0.90	yujing
+修仙	修仙	0.30	xiuxian
+不降	不降	0.20	bujiang
+
+# Common timezone, language-mode, and account expressions 2026-08-13.
+东八区	東八區	0.84	dongbaqu
+全中文	全中文	0.82	quanzhongwen
+纯中文	純中文	0.84	chunzhongwen
+全英文	全英文	0.80	quanyingwen
+新账号	新賬號	0.88	xinzhanghao
+旧账号	舊賬號	0.82	jiuzhanghao
+原账号	原賬號	0.80	yuanzhanghao
+新账户	新賬戶	0.84	xinzhanghu
+太神了	太神了	0.78	taishenle
