@@ -141,7 +141,7 @@ v1.13.0 新增反向字符 n-gram 模型，用于双向路径评分；查询路�
 ## 分层策略
 - `manifests/curated_daily_phrases.tsv` 只用于应获得日常输入优待的日常/聊天表达。
 - `manifests/curated_daily_supplement_phrases.tsv` 用于低频日常补充：保证完整输入可候选，但不继承日常/聊天短语的高优先级权重。
-- 该文件可在第五列使用 `exact_zero`，在排序和路径统计结束后生成真正的零权重精确词条，无需在清单中使用负权重。
+- 该文件的第五列可在排序和路径统计结束后生效：`exact_zero` 生成真正的零权重精确词条，`exact_rank` 则把清单中的非负分值作为固定的精确候选权重。
 - `manifests/vertical_layers.public.json` 声明隔离式 vertical 术语层。
 - `manifests/vertical/*.tsv` 存放项目维护的 vertical 词表，例如小说实体、一般专名、人名、地名、国家地区、世界城市、地标、成语典故、计算机术语、政务民生术语、建筑术语/建筑实体、游戏术语和游戏开发术语。
 - vertical 层可以补充领域词汇，但不会继承日常/聊天短语的优待偏置。

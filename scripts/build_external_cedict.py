@@ -148,6 +148,10 @@ MEDICAL_SHORT_TERM_HINTS = (
     "糖", "尿", "疫", "苗", "咳", "喘", "泻", "瀉", "疹", "疮", "瘡", "瘫", "癱",
     "栓", "醉", "麻", "痰", "疡", "疣", "癣", "癬", "膜", "骨", "脑", "腦", "心",
 )
+LOW_PRIORITY_MEDICAL_PROCEDURE_TERMS = {
+    "堕胎",
+    "墮胎",
+}
 VerticalEntry = Tuple[str, str, float, str, str, str]
 WIKIDATA_MEDICAL_MESH_QUERY = """
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -525,7 +529,9 @@ CURATED_DAILY_SUPPLEMENT_NUMBER_WEIGHT_CAP = 520
 CURATED_DAILY_ASPECT_VISIBILITY_CAP = 760
 CURATED_DAILY_POST_RANK_EXACT_USAGE_MAX = -1.99
 CURATED_DAILY_POST_RANK_ZERO_WEIGHT_USAGE_MAX = -2.0
+CURATED_DAILY_POST_RANK_FIXED_WEIGHT_USAGE_BASE = -3.0
 CURATED_DAILY_EXACT_ZERO_MODE = "exact_zero"
+CURATED_DAILY_EXACT_RANK_MODE = "exact_rank"
 
 
 def _curated_daily_supplement_weight_cap(usage_score: float, text: str) -> int:
@@ -576,6 +582,8 @@ def _inject_curated_daily_post_rank_exact_entries(
         "curated_daily_post_rank_exact_tc_added": 0,
         "curated_daily_post_rank_exact_sc_forced_zero": 0,
         "curated_daily_post_rank_exact_tc_forced_zero": 0,
+        "curated_daily_post_rank_exact_sc_forced_rank": 0,
+        "curated_daily_post_rank_exact_tc_forced_rank": 0,
         "curated_daily_post_rank_exact_invalid_pinyin": 0,
     }
     for sc_word, tc_word, usage_score, explicit_pinyin in entries:
@@ -584,19 +592,38 @@ def _inject_curated_daily_post_rank_exact_entries(
             stats["curated_daily_post_rank_exact_invalid_pinyin"] += 1
             continue
 
-        # Keep the legacy -2.0 zero-weight sentinel intact.  The -1.99 marker
-        # is the lowest positive exact weight: it remains visible without
-        # triggering runtime zero-weight fallback behavior in long paths.
-        exact_weight = (
-            0
-            if usage_score <= CURATED_DAILY_POST_RANK_ZERO_WEIGHT_USAGE_MAX
-            else 1
-        )
+        # Keep the legacy -2.0 zero-weight and -1.99 visibility sentinels
+        # intact. Values below -3 encode a fixed post-rank weight, allowing an
+        # exact candidate to rank naturally without entering path statistics.
+        if usage_score <= CURATED_DAILY_POST_RANK_FIXED_WEIGHT_USAGE_BASE:
+            exact_weight = max(
+                1,
+                min(
+                    1000,
+                    int(
+                        round(
+                            (
+                                -usage_score
+                                + CURATED_DAILY_POST_RANK_FIXED_WEIGHT_USAGE_BASE
+                            )
+                            * 1000.0
+                        )
+                    ),
+                ),
+            )
+        elif usage_score <= CURATED_DAILY_POST_RANK_ZERO_WEIGHT_USAGE_MAX:
+            exact_weight = 0
+        else:
+            exact_weight = 1
 
         sc_key = (pinyin, sc_word)
         if sc_key not in sc_map:
             sc_map[sc_key] = exact_weight
             stats["curated_daily_post_rank_exact_sc_added"] += 1
+        elif usage_score <= CURATED_DAILY_POST_RANK_FIXED_WEIGHT_USAGE_BASE:
+            if sc_map[sc_key] != exact_weight:
+                stats["curated_daily_post_rank_exact_sc_forced_rank"] += 1
+            sc_map[sc_key] = exact_weight
         elif usage_score <= CURATED_DAILY_POST_RANK_ZERO_WEIGHT_USAGE_MAX:
             if sc_map[sc_key] != exact_weight:
                 stats["curated_daily_post_rank_exact_sc_forced_zero"] += 1
@@ -607,6 +634,10 @@ def _inject_curated_daily_post_rank_exact_entries(
         if tc_key not in tc_map:
             tc_map[tc_key] = exact_weight
             stats["curated_daily_post_rank_exact_tc_added"] += 1
+        elif usage_score <= CURATED_DAILY_POST_RANK_FIXED_WEIGHT_USAGE_BASE:
+            if tc_map[tc_key] != exact_weight:
+                stats["curated_daily_post_rank_exact_tc_forced_rank"] += 1
+            tc_map[tc_key] = exact_weight
         elif usage_score <= CURATED_DAILY_POST_RANK_ZERO_WEIGHT_USAGE_MAX:
             if tc_map[tc_key] != exact_weight:
                 stats["curated_daily_post_rank_exact_tc_forced_zero"] += 1
@@ -2551,6 +2582,7 @@ def _cap_medical_specific_term_weights(
     """Cap medical-domain fragments that enter through generic sources."""
     stats = {
         f"{stats_prefix}_medical_specific_capped": 0,
+        f"{stats_prefix}_low_priority_medical_procedure_capped": 0,
     }
     if not mapping:
         return stats
@@ -2560,7 +2592,15 @@ def _cap_medical_specific_term_weights(
         text_len = _cjk_len(text)
         if text_len < 2 or text_len > 4:
             continue
-        if text in curated_daily_terms or not _is_medical_specific_term(text):
+        if text in curated_daily_terms:
+            continue
+        if text in LOW_PRIORITY_MEDICAL_PROCEDURE_TERMS:
+            if weight > 80:
+                mapping[key] = 80
+                stats[f"{stats_prefix}_medical_specific_capped"] += 1
+                stats[f"{stats_prefix}_low_priority_medical_procedure_capped"] += 1
+            continue
+        if not _is_medical_specific_term(text):
             continue
 
         usage_score = min(1.0, max(0.0, usage_score_map.get(text, 0.0)))
@@ -9775,6 +9815,7 @@ def _parse_curated_daily_phrase_entries(
         f"{stats_prefix}_skipped_non_cjk": 0,
         f"{stats_prefix}_skipped_malformed": 0,
         f"{stats_prefix}_exact_zero": 0,
+        f"{stats_prefix}_exact_rank": 0,
     }
     entries: List[Tuple[str, str, float, str]] = []
     text = _decode_text(payload)
@@ -9805,13 +9846,18 @@ def _parse_curated_daily_phrase_entries(
         if explicit_pinyin and not PINYIN_RE.fullmatch(explicit_pinyin):
             explicit_pinyin = ""
         output_mode = parts[4].strip().lower() if len(parts) >= 5 else ""
-        # Keep the two isolated post-rank exact markers distinct.  Ordinary
-        # negative usage retains its legacy visibility-only normalization.
-        # The optional exact_zero mode lets manifests use a non-negative
-        # source weight while still requesting a true zero-weight exact row.
+        # Keep isolated post-rank exact markers distinct. Ordinary negative
+        # usage retains its legacy visibility-only normalization. Post-rank
+        # modes do not feed their rows into ranking or path statistics.
         if output_mode == CURATED_DAILY_EXACT_ZERO_MODE:
             normalized_usage_score = CURATED_DAILY_POST_RANK_ZERO_WEIGHT_USAGE_MAX
             stats[f"{stats_prefix}_exact_zero"] += 1
+        elif output_mode == CURATED_DAILY_EXACT_RANK_MODE:
+            bounded_rank = max(0.001, min(1.0, usage_score))
+            normalized_usage_score = -(
+                -CURATED_DAILY_POST_RANK_FIXED_WEIGHT_USAGE_BASE + bounded_rank
+            )
+            stats[f"{stats_prefix}_exact_rank"] += 1
         elif usage_score <= CURATED_DAILY_POST_RANK_ZERO_WEIGHT_USAGE_MAX:
             normalized_usage_score = CURATED_DAILY_POST_RANK_ZERO_WEIGHT_USAGE_MAX
         elif usage_score <= CURATED_DAILY_POST_RANK_EXACT_USAGE_MAX:

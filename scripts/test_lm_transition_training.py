@@ -18,6 +18,57 @@ import prepare_lm_transition_corpus as preparer  # noqa: E402
 
 
 class LmTransitionTrainingTests(unittest.TestCase):
+    def test_audited_low_priority_medical_procedure_is_capped(self) -> None:
+        mapping = {
+            ("duotai", "堕胎"): 539,
+            ("duotai", "多态"): 347,
+            ("jibing", "疾病"): 660,
+        }
+
+        stats = builder._cap_medical_specific_term_weights(
+            mapping,
+            {"堕胎": 0.30, "疾病": 0.60},
+            {"堕胎": 2, "疾病": 3},
+            {},
+            {"堕胎": 0.50},
+            set(),
+            "test",
+        )
+
+        self.assertEqual(80, mapping[("duotai", "堕胎")])
+        self.assertEqual(347, mapping[("duotai", "多态")])
+        self.assertEqual(660, mapping[("jibing", "疾病")])
+        self.assertEqual(1, stats["test_low_priority_medical_procedure_capped"])
+
+    def test_curated_exact_rank_mode_injects_fixed_weight(self) -> None:
+        entries, stats = builder._parse_curated_daily_phrase_entries(
+            "多台\t多台\t0.347\tduotai\texact_rank\n".encode("utf-8"),
+            2,
+            stats_prefix="test_curated",
+        )
+        regular, post_rank = builder._partition_curated_daily_post_rank_exact_entries(
+            entries
+        )
+        sc_map = {("duotai", "多台"): 0, ("duotai", "多态"): 347}
+        tc_map = {("duotai", "多台"): 0, ("duotai", "多態"): 310}
+
+        self.assertEqual([], regular)
+        self.assertEqual(1, len(post_rank))
+        self.assertEqual(1, stats["test_curated_exact_rank"])
+        inject_stats = builder._inject_curated_daily_post_rank_exact_entries(
+            sc_map,
+            tc_map,
+            post_rank,
+        )
+        self.assertEqual(347, sc_map[("duotai", "多台")])
+        self.assertEqual(347, tc_map[("duotai", "多台")])
+        self.assertEqual(
+            1, inject_stats["curated_daily_post_rank_exact_sc_forced_rank"]
+        )
+        self.assertEqual(
+            1, inject_stats["curated_daily_post_rank_exact_tc_forced_rank"]
+        )
+
     def test_curated_exact_zero_mode_injects_true_zero_weight(self) -> None:
         entries, stats = builder._parse_curated_daily_phrase_entries(
             "多台\t多台\t0.00\tduotai\texact_zero\n".encode("utf-8"),

@@ -12642,7 +12642,7 @@
 新号	新號	0.24	xinhao
 
 # Common "multiple + measure word/noun" combinations 2026-08-14.
-多台	多台	0.00	duotai	exact_zero
+多台	多台	0.347	duotai	exact_rank
 多只	多隻	0.44	duozhi
 多水	多水	0.24	duoshui
 多套	多套	0.44	duotao
