@@ -18,6 +18,29 @@ import prepare_lm_transition_corpus as preparer  # noqa: E402
 
 
 class LmTransitionTrainingTests(unittest.TestCase):
+    def test_curated_exact_zero_mode_injects_true_zero_weight(self) -> None:
+        entries, stats = builder._parse_curated_daily_phrase_entries(
+            "多台\t多台\t0.00\tduotai\texact_zero\n".encode("utf-8"),
+            2,
+            stats_prefix="test_curated",
+        )
+        regular, post_rank = builder._partition_curated_daily_post_rank_exact_entries(
+            entries
+        )
+        sc_map = {("duotai", "多态"): 347}
+        tc_map = {("duotai", "多態"): 347}
+
+        self.assertEqual([], regular)
+        self.assertEqual(1, len(post_rank))
+        self.assertEqual(1, stats["test_curated_exact_zero"])
+        builder._inject_curated_daily_post_rank_exact_entries(
+            sc_map,
+            tc_map,
+            post_rank,
+        )
+        self.assertEqual(0, sc_map[("duotai", "多台")])
+        self.assertEqual(0, tc_map[("duotai", "多台")])
+
     def test_unihan_phrase_updates_preserve_existing_single_char_weights(self) -> None:
         existing_char = "\u82f1"
         new_char = "\u65b0"

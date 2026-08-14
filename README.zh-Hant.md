@@ -18,12 +18,12 @@ Cassotis IME 的詞庫建置與發布儲存庫。
 - 支援以外部來源建立詞庫，以及可重現的詞庫生成流程。
 - 確保來源標示檔案與生成產物保持一致。
 
-## 目前詞庫快照（2026-08-13 建置）
+## 目前詞庫快照（2026-08-14 建置）
 
 | 檔案 | 變體 | 詞條數 |
 |------|------|--------|
-| `data/generated/dict_clean_sc.txt` | 簡體主詞庫 | 188,929 |
-| `data/generated/dict_clean_tc.txt` | 繁體主詞庫 | 191,824 |
+| `data/generated/dict_clean_sc.txt` | 簡體主詞庫 | 188,961 |
+| `data/generated/dict_clean_tc.txt` | 繁體主詞庫 | 191,854 |
 | `data/generated/dict_unihan_sc.txt` | 簡體單字（Unihan） | 23,908 |
 | `data/generated/dict_unihan_tc.txt` | 繁體單字（Unihan） | 24,168 |
 
@@ -141,6 +141,7 @@ v1.13.0 新增反向字元 n-gram 模型，用於雙向路徑評分；查詢路�
 ## 分層策略
 - `manifests/curated_daily_phrases.tsv` 只收錄應在日常輸入中獲得優先加權的日常/聊天表達。
 - `manifests/curated_daily_supplement_phrases.tsv` 用於低頻日常補充：確保完整輸入可列入候選，但不沿用日常/聊天短語的較高權重。
+- 該檔案可在第五欄使用 `exact_zero`，於排序與路徑統計結束後產生真正的零權重精確詞條，無需在清單中使用負權重。
 - `manifests/vertical_layers.public.json` 宣告隔離式垂直領域術語層。
 - `manifests/vertical/*.tsv` 存放專案維護的垂直領域詞表，例如小說實體、一般專名、人名、地名、國家地區、世界城市、地標、成語典故、電腦術語、政務民生術語、建築術語/建築實體、遊戲術語和遊戲開發術語。
 - 垂直領域層可以補充領域詞彙，但不會沿用日常/聊天短語的優先加權。

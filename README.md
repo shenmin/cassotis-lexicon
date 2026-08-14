@@ -18,12 +18,12 @@ Lexicon build and release repository for Cassotis IME.
 - Supports external-source bootstrap and reproducible generated dictionary builds.
 - Keeps attribution and release policy files aligned with generated artifacts.
 
-## Current dictionary snapshot (2026-08-13 build)
+## Current dictionary snapshot (2026-08-14 build)
 
 | File | Variant | Entries |
 |------|---------|---------|
-| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 188,929 |
-| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 191,824 |
+| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 188,961 |
+| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 191,854 |
 | `data/generated/dict_unihan_sc.txt` | Simplified single-char (Unihan) | 23,908 |
 | `data/generated/dict_unihan_tc.txt` | Traditional single-char (Unihan) | 24,168 |
 
@@ -141,6 +141,7 @@ See:
 ## Layering policy
 - `manifests/curated_daily_phrases.tsv` is reserved for everyday/chat phrasing that should receive daily-use preference treatment.
 - `manifests/curated_daily_supplement_phrases.tsv` stores useful exact-match supplements with capped low-frequency weights; entries in this layer should remain selectable but should not inherit daily/chat priority.
+- Its optional fifth-column mode `exact_zero` emits a true zero-weight exact row after ranking and path statistics, without using a negative manifest weight.
 - `manifests/vertical_layers.public.json` declares isolated vertical terminology layers.
 - `manifests/vertical/*.tsv` stores project-authored vertical term lists such as fiction entities, proper nouns, people names, place names, countries/regions, world cities, landmarks, idioms/allusions, computing vocabulary, civic/public-service terminology, architecture terminology/entities, gaming terminology, and game-development terminology.
 - Vertical layers can add domain vocabulary without inheriting the same preferred-term bias used for daily/chat phrases.

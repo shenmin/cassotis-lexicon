@@ -525,6 +525,7 @@ CURATED_DAILY_SUPPLEMENT_NUMBER_WEIGHT_CAP = 520
 CURATED_DAILY_ASPECT_VISIBILITY_CAP = 760
 CURATED_DAILY_POST_RANK_EXACT_USAGE_MAX = -1.99
 CURATED_DAILY_POST_RANK_ZERO_WEIGHT_USAGE_MAX = -2.0
+CURATED_DAILY_EXACT_ZERO_MODE = "exact_zero"
 
 
 def _curated_daily_supplement_weight_cap(usage_score: float, text: str) -> int:
@@ -9773,6 +9774,7 @@ def _parse_curated_daily_phrase_entries(
         f"{stats_prefix}_skipped_short": 0,
         f"{stats_prefix}_skipped_non_cjk": 0,
         f"{stats_prefix}_skipped_malformed": 0,
+        f"{stats_prefix}_exact_zero": 0,
     }
     entries: List[Tuple[str, str, float, str]] = []
     text = _decode_text(payload)
@@ -9802,9 +9804,15 @@ def _parse_curated_daily_phrase_entries(
         explicit_pinyin = parts[3].strip().lower() if len(parts) >= 4 else ""
         if explicit_pinyin and not PINYIN_RE.fullmatch(explicit_pinyin):
             explicit_pinyin = ""
+        output_mode = parts[4].strip().lower() if len(parts) >= 5 else ""
         # Keep the two isolated post-rank exact markers distinct.  Ordinary
         # negative usage retains its legacy visibility-only normalization.
-        if usage_score <= CURATED_DAILY_POST_RANK_ZERO_WEIGHT_USAGE_MAX:
+        # The optional exact_zero mode lets manifests use a non-negative
+        # source weight while still requesting a true zero-weight exact row.
+        if output_mode == CURATED_DAILY_EXACT_ZERO_MODE:
+            normalized_usage_score = CURATED_DAILY_POST_RANK_ZERO_WEIGHT_USAGE_MAX
+            stats[f"{stats_prefix}_exact_zero"] += 1
+        elif usage_score <= CURATED_DAILY_POST_RANK_ZERO_WEIGHT_USAGE_MAX:
             normalized_usage_score = CURATED_DAILY_POST_RANK_ZERO_WEIGHT_USAGE_MAX
         elif usage_score <= CURATED_DAILY_POST_RANK_EXACT_USAGE_MAX:
             normalized_usage_score = CURATED_DAILY_POST_RANK_EXACT_USAGE_MAX
