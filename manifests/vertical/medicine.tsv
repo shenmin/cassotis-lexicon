@@ -106,3 +106,9 @@
 下呼吸道	下呼吸道	0.80	xiahuxidao
 上呼吸	上呼吸	0.38	shanghuxi
 双吸气	雙吸氣	0.38	shuangxiqi
+
+# Common colorectal clinic terminology 2026-08-17.
+肛肠	肛腸	0.52	gangchang
+肛肠外科	肛腸外科	0.60	gangchangwaike
+肛肠门诊	肛腸門診	0.52	gangchangmenzhen
+结直肠外科	結直腸外科	0.58	jiezhichangwaike

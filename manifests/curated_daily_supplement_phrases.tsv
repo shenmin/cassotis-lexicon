@@ -8581,7 +8581,7 @@
 清炒	清炒	0.01
 芦蒿	蘆蒿	0.01
 香干	香乾	0.01
-鸡蛋汤	雞蛋湯	0.01
+鸡蛋汤	雞蛋湯	0.460	jidantang	exact_rank
 志士不饮盗泉之水	志士不飲盜泉之水	0.01
 廉者不受嗟来之食	廉者不受嗟來之食	0.01
 饿晕	餓暈	0.01
@@ -12674,3 +12674,21 @@
 多盘	多盤	0.01	duopan
 多门	多門	0.01	duomen
 多桌	多桌	0.01	duozhuo
+
+# Common pepper-flavor and home-cooking terms 2026-08-17.
+# Keep exact ranks moderate so these remain visible without crowding unrelated
+# homophones such as 黑胶、单糖 and 淡化.
+黑椒	黑椒	0.350	heijiao	exact_rank
+黑椒汁	黑椒汁	0.400	heijiaozhi	exact_rank
+黑椒酱	黑椒醬	0.420	heijiaojiang	exact_rank
+黑椒牛排	黑椒牛排	0.440	heijiaoniupai	exact_rank
+黑椒牛柳	黑椒牛柳	0.420	heijiaoniuliu	exact_rank
+炖鸡	燉雞	0.420	dunji	exact_rank
+炖鸡汤	燉雞湯	0.440	dunjitang	exact_rank
+炖鸡块	燉雞塊	0.360	dunjikuai	exact_rank
+蛋汤	蛋湯	0.420	dantang	exact_rank
+炖蛋	燉蛋	0.360	dundan	exact_rank
+炖鸡蛋	燉雞蛋	0.360	dunjidan	exact_rank
+蛋花	蛋花	0.360	danhua	exact_rank
+蒸蛋	蒸蛋	0.460	zhengdan	exact_rank
+蒸鸡蛋	蒸雞蛋	0.440	zhengjidan	exact_rank
