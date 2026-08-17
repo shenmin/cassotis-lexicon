@@ -97,6 +97,48 @@ function Test-DictFile {
     }
 }
 
+function Test-TransitionCompletionFile {
+    param([string]$Path)
+
+    $lineNo = 0
+    $seenPrefixes = @{}
+    Get-Content -Encoding utf8 $Path | ForEach-Object {
+        $lineNo++
+        $line = $_.Trim()
+        if ($line -eq '') { return }
+
+        $parts = $line -split "`t"
+        if ($parts.Count -ne 5) {
+            throw "Invalid transition-completion column count at ${Path}:$lineNo"
+        }
+
+        $typedPrefix = $parts[0].Trim()
+        $fullPinyin = $parts[1].Trim()
+        $compactFullPinyin = $fullPinyin.Replace("'", '')
+        $text = $parts[2].Trim()
+        $pathParts = $parts[3].Trim() -split '\|'
+        $evidence = 0
+        if (($typedPrefix -notmatch '^[a-z]+$') -or
+            ($fullPinyin -notmatch "^[a-z]+(?:'[a-z]+)*$") -or
+            (-not $compactFullPinyin.StartsWith($typedPrefix)) -or
+            ($compactFullPinyin.Length -le $typedPrefix.Length)) {
+            throw "Invalid transition-completion pinyin at ${Path}:$lineNo"
+        }
+        if ($seenPrefixes.ContainsKey($typedPrefix)) {
+            throw "Duplicate transition-completion prefix at ${Path}:$lineNo -> $typedPrefix"
+        }
+        $seenPrefixes[$typedPrefix] = $true
+        if (($text -eq '') -or ($pathParts.Count -ne 2) -or
+            (($pathParts -join '') -ne $text)) {
+            throw "Invalid transition-completion path at ${Path}:$lineNo"
+        }
+        if ((-not [int]::TryParse($parts[4].Trim(), [ref]$evidence)) -or
+            ($evidence -le 0)) {
+            throw "Invalid transition-completion evidence at ${Path}:$lineNo"
+        }
+    }
+}
+
 function Test-PinyinOverrideFile {
     param([string]$Path)
 
@@ -166,6 +208,8 @@ $required = @(
     'data\generated\dict_clean_tc.txt',
     'data\generated\dict_query_path_prior_sc.txt',
     'data\generated\dict_query_path_prior_tc.txt',
+    'data\generated\dict_transition_completion_sc.txt',
+    'data\generated\dict_transition_completion_tc.txt',
     'data\generated\dict_unihan_sc.txt',
     'data\generated\dict_unihan_tc.txt',
     'manifests\sources.public.yml',
@@ -203,6 +247,8 @@ Test-DictFile (Join-Path $Root 'data\generated\dict_clean_sc.txt')
 Test-DictFile (Join-Path $Root 'data\generated\dict_clean_tc.txt')
 Test-DictFile (Join-Path $Root 'data\generated\dict_query_path_prior_sc.txt')
 Test-DictFile (Join-Path $Root 'data\generated\dict_query_path_prior_tc.txt')
+Test-TransitionCompletionFile (Join-Path $Root 'data\generated\dict_transition_completion_sc.txt')
+Test-TransitionCompletionFile (Join-Path $Root 'data\generated\dict_transition_completion_tc.txt')
 Test-DictFile (Join-Path $Root 'data\generated\dict_unihan_sc.txt')
 Test-DictFile (Join-Path $Root 'data\generated\dict_unihan_tc.txt')
 Test-PinyinOverrideFile (Join-Path $Root 'manifests\pinyin_overrides.tsv')

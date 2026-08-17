@@ -187,6 +187,8 @@ if ($QueryPathLmCorpusDir -ne "") {
     $buildArgs["QueryPathLmCorpusDir"] = $QueryPathLmCorpusDir
     $buildArgs["OutputLmTransitionSc"] = "data/generated/dict_lm_transition_sc.txt"
     $buildArgs["OutputLmTransitionTc"] = "data/generated/dict_lm_transition_tc.txt"
+    $buildArgs["OutputTransitionCompletionSc"] = "data/generated/dict_transition_completion_sc.txt"
+    $buildArgs["OutputTransitionCompletionTc"] = "data/generated/dict_transition_completion_tc.txt"
     $lmTransitionSc = Join-Path $Root "data\generated\dict_lm_transition_sc.txt"
     $lmTransitionTc = Join-Path $Root "data\generated\dict_lm_transition_tc.txt"
     if (Test-Path -LiteralPath $lmTransitionSc) {

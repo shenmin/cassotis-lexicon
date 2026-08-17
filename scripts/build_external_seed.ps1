@@ -23,6 +23,8 @@ param(
     [string]$OutputQueryPathTc = "",
     [string]$OutputLmTransitionSc = "",
     [string]$OutputLmTransitionTc = "",
+    [string]$OutputTransitionCompletionSc = "",
+    [string]$OutputTransitionCompletionTc = "",
     [string]$LmTransitionBaseSc = "",
     [string]$LmTransitionBaseTc = "",
     [string]$QueryPathLmCorpusDir = "",
@@ -128,6 +130,8 @@ if ($OutputQueryPathSc -ne "") { $args += @("--query-path-output-sc", $OutputQue
 if ($OutputQueryPathTc -ne "") { $args += @("--query-path-output-tc", $OutputQueryPathTc) }
 if ($OutputLmTransitionSc -ne "") { $args += @("--lm-transition-output-sc", $OutputLmTransitionSc) }
 if ($OutputLmTransitionTc -ne "") { $args += @("--lm-transition-output-tc", $OutputLmTransitionTc) }
+if ($OutputTransitionCompletionSc -ne "") { $args += @("--transition-completion-output-sc", $OutputTransitionCompletionSc) }
+if ($OutputTransitionCompletionTc -ne "") { $args += @("--transition-completion-output-tc", $OutputTransitionCompletionTc) }
 if ($LmTransitionBaseSc -ne "") { $args += @("--lm-transition-base-sc", $LmTransitionBaseSc) }
 if ($LmTransitionBaseTc -ne "") { $args += @("--lm-transition-base-tc", $LmTransitionBaseTc) }
 if ($QueryPathLmCorpusDir -ne "") { $args += @("--query-path-lm-corpus-dir", $QueryPathLmCorpusDir) }

@@ -1374,6 +1374,136 @@ def _normalize_compact_pinyin_key(raw: str) -> str:
     return value
 
 
+# Keep this compact-prefix parser aligned with nc_pinyin_parser.pas. Transition
+# completions are keyed by what the runtime parser sees, so a prefix that would
+# be split along different syllable boundaries must be rejected offline.
+_RUNTIME_PINYIN_INITIALS = (
+    "zh", "ch", "sh", "b", "p", "m", "f", "d", "t", "n", "l", "g",
+    "k", "h", "j", "q", "x", "r", "z", "c", "s", "y", "w",
+)
+_RUNTIME_PINYIN_FINALS = (
+    "iang", "iong", "uang", "uai", "uan", "iao", "ian", "ing", "ang",
+    "eng", "ong", "ai", "an", "ao", "ei", "en", "er", "ou", "ia",
+    "ie", "in", "iu", "ua", "ui", "un", "uo", "ve", "van", "vn",
+    "ue", "a", "e", "i", "o", "u", "v",
+)
+_RUNTIME_PINYIN_FINALS_NO_INITIAL = (
+    "ang", "eng", "ai", "an", "ao", "ei", "en", "er", "ou", "a", "e",
+    "o", "r",
+)
+
+
+def _runtime_initial_final_compatible(initial: str, final: str) -> bool:
+    if final == "er":
+        return False
+    if initial in {"b", "p", "m", "f", "w"} and len(final) > 1 and final[0] == "u":
+        return False
+    if initial == "y" and final not in {
+        "a", "an", "ang", "ao", "e", "i", "in", "ing", "o", "ong", "ou",
+        "u", "ue", "uan", "un",
+    }:
+        return False
+    if initial == "w" and final not in {
+        "a", "ai", "an", "ang", "ei", "en", "eng", "o", "u",
+    }:
+        return False
+    if initial in {"j", "q", "x"} and final in {"ua", "uai", "uang", "ui", "uo"}:
+        return False
+    if initial in {"zh", "ch", "sh", "r", "z", "c", "s"} and final in {
+        "ia", "in", "ing", "iu", "ie", "ian", "iang", "iao", "iong", "ue",
+        "ve", "van", "vn",
+    }:
+        return False
+    if initial in {"b", "p", "m", "f", "d", "t", "g", "k", "h"} and final in {
+        "iang", "iong",
+    }:
+        return False
+    return True
+
+
+def _runtime_parse_compact_pinyin(raw: str) -> List[str]:
+    """Mirror TncPinyinParser's deterministic best compact segmentation."""
+
+    text = raw.strip().lower()
+    if not text:
+        return []
+    memo: Dict[int, Tuple[int, int, str] | None] = {}
+
+    def no_initial_penalty(final: str, start: int) -> int:
+        if start <= 0 or text[start - 1] == "'":
+            return 0
+        if final in {"a", "e", "o"}:
+            return 160
+        if final == "er":
+            return 100
+        if final == "r":
+            return 1200 if start > 0 and text[start - 1] == "e" else 80
+        return 20
+
+    def solve(start: int) -> int:
+        if start >= len(text):
+            return 0
+        if start in memo:
+            value = memo[start]
+            return value[0] if value is not None else -(10**9)
+        if text[start] == "'":
+            score = solve(start + 1)
+            memo[start] = (score, start + 1, "")
+            return score
+
+        best_score = -(10**9)
+        best_next = start + 1
+        best_text = text[start]
+        for initial in _RUNTIME_PINYIN_INITIALS:
+            if not text.startswith(initial, start):
+                continue
+            final_start = start + len(initial)
+            for final in _RUNTIME_PINYIN_FINALS:
+                if (
+                    _runtime_initial_final_compatible(initial, final)
+                    and text.startswith(final, final_start)
+                ):
+                    token = initial + final
+                    next_index = start + len(token)
+                    score = solve(next_index) + len(token) * len(token) * 10
+                    if score > best_score:
+                        best_score, best_next, best_text = score, next_index, token
+
+        for final in _RUNTIME_PINYIN_FINALS_NO_INITIAL:
+            if not text.startswith(final, start):
+                continue
+            next_index = start + len(final)
+            score = (
+                solve(next_index)
+                + len(final) * len(final) * 10
+                - no_initial_penalty(final, start)
+            )
+            if score > best_score:
+                best_score, best_next, best_text = score, next_index, final
+
+        fallback_score = solve(start + 1) - 1000
+        if fallback_score > best_score:
+            best_score, best_next, best_text = fallback_score, start + 1, text[start]
+        memo[start] = (best_score, best_next, best_text)
+        return best_score
+
+    solve(0)
+    result: List[str] = []
+    cursor = 0
+    while cursor < len(text):
+        if text[cursor] == "'":
+            cursor += 1
+            continue
+        value = memo.get(cursor)
+        if value is None or value[1] <= cursor or not value[2]:
+            result.append(text[cursor])
+            cursor += 1
+            continue
+        result.append(value[2])
+        cursor = value[1]
+    return result
+
+
 def _unihan_reading_score_vector(
     ch: str,
     pinyin: str,
@@ -19652,6 +19782,10 @@ def _collect_short_exact_pair_transition_priors(
     min_count: int = 4,
     min_single_source_count: int = 12,
     max_weight: int = 520,
+    completion_evidence_out: Dict[
+        Tuple[str, str], Tuple[int, int, int, int, int, int, float, float, int]
+    ]
+    | None = None,
 ) -> Tuple[Dict[Tuple[str, str], int], Dict[str, int]]:
     """Collect conservative exact pair transitions from short corpus spans.
 
@@ -20177,30 +20311,11 @@ def _collect_short_exact_pair_transition_priors(
                 or count * 100 >= competitor_count * 160
             )
         )
-        if (
-            pmi < 0.75
-            and not strong_absolute_evidence
-            and not independent_single_evidence
-            and not strong_productive_runner_up_evidence
-        ) or (
-            competitor_count > 0
-            and query_share < 0.55
-            and not strong_productive_runner_up_evidence
-        ):
-            stats["short_exact_pair_skipped_weak_association"] += 1
-            continue
 
-        if medium_single_evidence and (
-            source_count < 4
-            or contender_rank != 1
-            or query_share < 0.75
-            or pmi < 1.25
-            or transition_rank_penalty.get(key, 0) > 3
-            or transition_gap_penalty.get(key, 0) > 120
-        ):
-            stats["short_exact_pair_skipped_weak_medium_evidence"] += 1
-            continue
-
+        # Reject observed homophone substitutions before exposing evidence to
+        # either the ordinary transition model or the stricter completion
+        # index. Completion may use stronger absolute evidence than the
+        # ordinary PMI gate, but it must not bypass lexical ambiguity checks.
         ambiguous_multi_count = 0
         for segment in segments:
             if _cjk_len(segment) <= 1:
@@ -20237,6 +20352,47 @@ def _collect_short_exact_pair_transition_priors(
             minimum_effective_score,
             min(min(max_weight, 480), score),
         )
+
+        # Completion has its own conservative gate. Preserve structurally
+        # valid raw evidence here instead of making it depend on the ordinary
+        # blue-candidate PMI admission below. This matters for common/common
+        # pairs whose PMI is modest despite broad, direct corpus support.
+        if completion_evidence_out is not None:
+            completion_evidence_out[key] = (
+                count,
+                source_count,
+                direct_count,
+                direct_source_count,
+                competitor_count,
+                contender_rank,
+                query_share,
+                pmi,
+                effective_score,
+            )
+
+        if (
+            pmi < 0.75
+            and not strong_absolute_evidence
+            and not independent_single_evidence
+            and not strong_productive_runner_up_evidence
+        ) or (
+            competitor_count > 0
+            and query_share < 0.55
+            and not strong_productive_runner_up_evidence
+        ):
+            stats["short_exact_pair_skipped_weak_association"] += 1
+            continue
+
+        if medium_single_evidence and (
+            source_count < 4
+            or contender_rank != 1
+            or query_share < 0.75
+            or pmi < 1.25
+            or transition_rank_penalty.get(key, 0) > 3
+            or transition_gap_penalty.get(key, 0) > 120
+        ):
+            stats["short_exact_pair_skipped_weak_medium_evidence"] += 1
+            continue
         if medium_single_evidence:
             # Keep count=4 evidence in the lowest runtime-supported band. It
             # can recall an exact 1+2/2+1 composition without carrying the
@@ -20629,6 +20785,10 @@ def _build_lm_corpus_query_path_prior_map(
     stats_prefix: str,
     exact_pairs_only: bool = False,
     general_transitions_only: bool = False,
+    completion_evidence_out: Dict[
+        Tuple[str, str], Tuple[int, int, int, int, int, int, float, float, int]
+    ]
+    | None = None,
 ) -> Tuple[Dict[Tuple[str, str], int], Dict[str, int]]:
     entries_by_text, _rank_info = _build_lm_entry_indexes(
         mapping,
@@ -20676,6 +20836,7 @@ def _build_lm_corpus_query_path_prior_map(
                     convert_text=convert_text,
                 ),
                 jieba_pos_map=jieba_pos_map,
+                completion_evidence_out=completion_evidence_out,
             )
         )
         strong_single_pair_priors, strong_single_pair_stats = (
@@ -20746,6 +20907,7 @@ def _build_lm_corpus_query_path_prior_map(
                     convert_text=convert_text,
                 ),
                 jieba_pos_map=jieba_pos_map,
+                completion_evidence_out=completion_evidence_out,
             )
         )
         strong_single_pair_priors, strong_single_pair_stats = (
@@ -21104,6 +21266,211 @@ def _build_query_path_prior_map(
     return priors, stats
 
 
+def _build_transition_completion_index(
+    mapping: Dict[Tuple[str, str], int],
+    completion_evidence: Dict[
+        Tuple[str, str], Tuple[int, int, int, int, int, int, float, float, int]
+    ],
+    *,
+    unihan_map: Dict[str, str],
+    unihan_readings_map: Dict[str, Set[str]],
+    unihan_source_rank_map: Dict[Tuple[str, str], int],
+    unihan_pinlu_detail_map: Dict[Tuple[str, str], int],
+    stats_prefix: str,
+) -> Tuple[Dict[Tuple[str, str, str, str], int], Dict[str, int]]:
+    """Build a sparse, deterministic prefix-completion index.
+
+    Runtime completion must never enumerate word combinations. This index
+    contains only exact 1+2, 2+1, 2+2 and 2+3 paths that already passed the
+    corpus transition collector and then pass a stricter completion gate.
+    Ambiguous prefixes are dropped instead of exposing an unstable guess.
+    """
+
+    min_transition_score = 420
+    # Ordinary short exact-pair transitions can enter the blue candidate path
+    # with four independent sources. Completion is deliberately stricter, but
+    # five sources still admits well-supported phrases such as `提高|很多`
+    # without requiring a sixth corpus family.
+    min_sources = 5
+    min_direct_sources = 4
+    min_direct_count = 8
+    min_prefix_evidence_gap = 24
+    min_prefix_count_ratio_percent = 130
+    allowed_layouts = {(1, 2), (2, 1), (2, 2), (2, 3)}
+    exact_keys = {
+        (_normalize_compact_pinyin_key(pinyin), text)
+        for (pinyin, text), weight in mapping.items()
+        if weight > 0
+    }
+    prefix_candidates: Dict[
+        str, List[Tuple[str, str, str, int, int, int]]
+    ] = {}
+    stats = {
+        f"{stats_prefix}_transition_completion_evidence_rows": len(
+            completion_evidence
+        ),
+        f"{stats_prefix}_transition_completion_strong_paths": 0,
+        f"{stats_prefix}_transition_completion_prefix_candidates": 0,
+        f"{stats_prefix}_transition_completion_rows": 0,
+        f"{stats_prefix}_transition_completion_skipped_layout": 0,
+        f"{stats_prefix}_transition_completion_skipped_full_exact": 0,
+        f"{stats_prefix}_transition_completion_skipped_weak_evidence": 0,
+        f"{stats_prefix}_transition_completion_skipped_pinyin_alignment": 0,
+        f"{stats_prefix}_transition_completion_skipped_runtime_prefix_boundary": 0,
+        f"{stats_prefix}_transition_completion_skipped_ambiguous_prefix": 0,
+    }
+
+    for (full_pinyin, path_text), evidence_values in completion_evidence.items():
+        segments = path_text.split(QUERY_PATH_FILE_SEPARATOR)
+        if len(segments) != 2:
+            stats[f"{stats_prefix}_transition_completion_skipped_layout"] += 1
+            continue
+        layout = (_cjk_len(segments[0]), _cjk_len(segments[1]))
+        if layout not in allowed_layouts:
+            stats[f"{stats_prefix}_transition_completion_skipped_layout"] += 1
+            continue
+
+        full_text = "".join(segments)
+        normalized_full_pinyin = _normalize_compact_pinyin_key(full_pinyin)
+        if (normalized_full_pinyin, full_text) in exact_keys:
+            stats[f"{stats_prefix}_transition_completion_skipped_full_exact"] += 1
+            continue
+
+        (
+            count,
+            source_count,
+            direct_count,
+            direct_source_count,
+            competitor_count,
+            contender_rank,
+            query_share,
+            pmi,
+            transition_score,
+        ) = evidence_values
+        required_count = 16 if sum(layout) >= 5 else 12
+        has_strong_absolute_completion_evidence = (
+            count >= max(20, required_count + 4)
+            and source_count >= min_sources
+            and direct_count >= max(16, required_count)
+            and direct_source_count >= min_sources
+            and contender_rank == 1
+            and query_share >= 0.90
+            and (
+                competitor_count == 0
+                or count * 100 >= competitor_count * 300
+            )
+        )
+        if (
+            count < required_count
+            or source_count < min_sources
+            or direct_count < min_direct_count
+            or direct_source_count < min_direct_sources
+            or contender_rank != 1
+            or transition_score < min_transition_score
+            or query_share < 0.70
+            # PMI systematically underrates useful pairs whose two components
+            # are both common (for example `提高|很多`). Counts, independent
+            # sources, direct observations and prefix dominance already make
+            # this gate stricter than ordinary transition admission.
+            or (pmi < 0.75 and not has_strong_absolute_completion_evidence)
+            or (
+                competitor_count > 0
+                and count * 100 < competitor_count * 160
+            )
+        ):
+            stats[f"{stats_prefix}_transition_completion_skipped_weak_evidence"] += 1
+            continue
+
+        syllables = _split_compact_pinyin_by_unihan(
+            full_text,
+            normalized_full_pinyin,
+            unihan_map,
+            unihan_readings_map,
+            unihan_source_rank_map,
+            unihan_pinlu_detail_map,
+        )
+        if syllables is None or len(syllables) != sum(layout):
+            stats[
+                f"{stats_prefix}_transition_completion_skipped_pinyin_alignment"
+            ] += 1
+            continue
+
+        # Preserve every syllable boundary in the payload. The runtime key is
+        # still the compact typed prefix, while explicit boundaries prevent a
+        # compact full spelling from being reparsed along a different path
+        # (for example jin'e as ji+ne).
+        canonical_full_pinyin = "'".join(syllables)
+
+        completion_score = transition_score
+        completion_score += min(88, int(round(math.log2(count + 1) * 15)))
+        completion_score += min(36, source_count * 3)
+        completion_score += min(24, direct_source_count * 4)
+        completion_score += int(round(query_share * 24))
+
+        total_units = len(syllables)
+        first_prefix_units = max(2, total_units - 3)
+        for prefix_units in range(first_prefix_units, total_units):
+            typed_prefix = "".join(syllables[:prefix_units])
+            if not typed_prefix:
+                continue
+            if _runtime_parse_compact_pinyin(typed_prefix) != syllables[:prefix_units]:
+                stats[
+                    f"{stats_prefix}_transition_completion_skipped_runtime_prefix_boundary"
+                ] += 1
+                continue
+            prefix_candidates.setdefault(typed_prefix, []).append(
+                (
+                    canonical_full_pinyin,
+                    full_text,
+                    path_text,
+                    completion_score,
+                    count,
+                    source_count,
+                )
+            )
+            stats[
+                f"{stats_prefix}_transition_completion_prefix_candidates"
+            ] += 1
+        stats[f"{stats_prefix}_transition_completion_strong_paths"] += 1
+
+    output: Dict[Tuple[str, str, str, str], int] = {}
+    for typed_prefix, candidates in prefix_candidates.items():
+        deduplicated: Dict[
+            Tuple[str, str], Tuple[str, str, str, int, int, int]
+        ] = {}
+        for candidate in candidates:
+            key = (candidate[0], candidate[1])
+            current = deduplicated.get(key)
+            if current is None or (candidate[3], candidate[4], candidate[5]) > (
+                current[3],
+                current[4],
+                current[5],
+            ):
+                deduplicated[key] = candidate
+        ordered = sorted(
+            deduplicated.values(),
+            key=lambda item: (-item[3], -item[4], -item[5], item[0], item[1]),
+        )
+        if not ordered:
+            continue
+        if len(ordered) > 1:
+            top = ordered[0]
+            runner = ordered[1]
+            if (
+                top[3] - runner[3] < min_prefix_evidence_gap
+                or top[4] * 100 < runner[4] * min_prefix_count_ratio_percent
+            ):
+                stats[
+                    f"{stats_prefix}_transition_completion_skipped_ambiguous_prefix"
+                ] += 1
+                continue
+        top = ordered[0]
+        output[(typed_prefix, top[0], top[1], top[2])] = top[3]
+
+    stats[f"{stats_prefix}_transition_completion_rows"] = len(output)
+    return output, stats
+
+
 def _write_query_path_prior(path: pathlib.Path, mapping: Dict[Tuple[str, str], int]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8", newline="\n") as f:
@@ -21111,6 +21478,112 @@ def _write_query_path_prior(path: pathlib.Path, mapping: Dict[Tuple[str, str], i
             mapping.items(), key=lambda kv: (kv[0][0], kv[0][1], -kv[1])
         ):
             f.write(f"{query_pinyin}\t{path_text}\t{weight}\n")
+
+
+def _write_transition_completion(
+    path: pathlib.Path,
+    mapping: Dict[Tuple[str, str, str, str], int],
+) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", encoding="utf-8", newline="\n") as f:
+        for (typed_prefix, full_pinyin, text, path_text), evidence in sorted(
+            mapping.items(),
+            key=lambda item: (
+                item[0][0],
+                -item[1],
+                item[0][1],
+                item[0][2],
+                item[0][3],
+            ),
+        ):
+            f.write(
+                f"{typed_prefix}\t{full_pinyin}\t{text}\t{path_text}\t{evidence}\n"
+            )
+
+
+def _filter_transition_completion_against_written_dictionary(
+    mapping: Dict[Tuple[str, str, str, str], int],
+    dictionary_path: pathlib.Path,
+    *,
+    single_char_readings_map: Dict[str, Set[str]] | None = None,
+    stats_prefix: str,
+) -> Tuple[Dict[Tuple[str, str, str, str], int], Dict[str, int]]:
+    """Keep only completions whose two segments are exact in the final output.
+
+    The build pipeline applies several final pinyin and visibility passes after
+    transition training. Validating against the file that will actually be
+    imported prevents a stale reading or a newly exact full phrase from leaking
+    into the separate completion index.
+    """
+
+    exact_keys: Set[Tuple[str, str]] = set()
+    pinyins_by_text: Dict[str, Set[str]] = {}
+    with dictionary_path.open("r", encoding="utf-8-sig") as handle:
+        for line_number, raw_line in enumerate(handle, start=1):
+            line = raw_line.rstrip("\r\n")
+            if not line or line.startswith("#"):
+                continue
+            parts = line.split("\t")
+            if len(parts) < 3:
+                raise ValueError(
+                    f"Malformed dictionary row at {dictionary_path}:{line_number}"
+                )
+            pinyin = _normalize_compact_pinyin_key(parts[0])
+            text = parts[1].strip()
+            try:
+                weight = int(parts[2])
+            except ValueError as exc:
+                raise ValueError(
+                    f"Invalid dictionary weight at {dictionary_path}:{line_number}"
+                ) from exc
+            if not pinyin or not text or weight <= 0:
+                continue
+            exact_keys.add((pinyin, text))
+            pinyins_by_text.setdefault(text, set()).add(pinyin)
+
+    for text, readings in (single_char_readings_map or {}).items():
+        if _cjk_len(text) != 1:
+            continue
+        normalized_readings = {
+            _normalize_compact_pinyin_key(reading)
+            for reading in readings
+            if _normalize_compact_pinyin_key(reading)
+        }
+        if normalized_readings:
+            pinyins_by_text.setdefault(text, set()).update(normalized_readings)
+
+    filtered: Dict[Tuple[str, str, str, str], int] = {}
+    dropped_full_exact = 0
+    dropped_component_reading = 0
+    for key, evidence in mapping.items():
+        typed_prefix, full_pinyin, text, path_text = key
+        segments = path_text.split(QUERY_PATH_FILE_SEPARATOR)
+        if len(segments) != 2 or "".join(segments) != text:
+            dropped_component_reading += 1
+            continue
+        if (full_pinyin, text) in exact_keys:
+            dropped_full_exact += 1
+            continue
+        left_pinyins = pinyins_by_text.get(segments[0], set())
+        right_pinyins = pinyins_by_text.get(segments[1], set())
+        if not any(
+            left_pinyin + right_pinyin == full_pinyin
+            for left_pinyin in left_pinyins
+            for right_pinyin in right_pinyins
+        ):
+            dropped_component_reading += 1
+            continue
+        filtered[(typed_prefix, full_pinyin, text, path_text)] = evidence
+
+    return filtered, {
+        f"{stats_prefix}_transition_completion_final_rows": len(filtered),
+        f"{stats_prefix}_transition_completion_final_dropped_full_exact": (
+            dropped_full_exact
+        ),
+        f"{stats_prefix}_transition_completion_final_dropped_component_reading": (
+            dropped_component_reading
+        ),
+    }
 
 
 def _load_query_path_prior(path: pathlib.Path | None) -> Dict[Tuple[str, str], int]:
@@ -21226,6 +21699,8 @@ def _write_report(
     output_query_path_tc: pathlib.Path | None,
     output_lm_transition_sc: pathlib.Path | None,
     output_lm_transition_tc: pathlib.Path | None,
+    output_transition_completion_sc: pathlib.Path | None,
+    output_transition_completion_tc: pathlib.Path | None,
     stats: Dict[str, int],
     count_sc: int,
     count_tc: int,
@@ -21282,6 +21757,16 @@ def _write_report(
         lines.append(f"- sc_lm_transition_file: {_format_report_path(output_lm_transition_sc)}")
     if output_lm_transition_tc is not None:
         lines.append(f"- tc_lm_transition_file: {_format_report_path(output_lm_transition_tc)}")
+    if output_transition_completion_sc is not None:
+        lines.append(
+            "- sc_transition_completion_file: "
+            f"{_format_report_path(output_transition_completion_sc)}"
+        )
+    if output_transition_completion_tc is not None:
+        lines.append(
+            "- tc_transition_completion_file: "
+            f"{_format_report_path(output_transition_completion_tc)}"
+        )
     if any(
         path is not None
         for path in (
@@ -21289,6 +21774,8 @@ def _write_report(
             output_query_path_tc,
             output_lm_transition_sc,
             output_lm_transition_tc,
+            output_transition_completion_sc,
+            output_transition_completion_tc,
         )
     ):
         lines.append("")
@@ -21759,6 +22246,8 @@ def main() -> int:
     parser.add_argument("--query-path-output-tc", default="")
     parser.add_argument("--lm-transition-output-sc", default="")
     parser.add_argument("--lm-transition-output-tc", default="")
+    parser.add_argument("--transition-completion-output-sc", default="")
+    parser.add_argument("--transition-completion-output-tc", default="")
     parser.add_argument(
         "--lm-transition-base-sc",
         default="",
@@ -21847,6 +22336,16 @@ def main() -> int:
     )
     output_lm_transition_tc = (
         repo_root / args.lm_transition_output_tc if args.lm_transition_output_tc else None
+    )
+    output_transition_completion_sc = (
+        repo_root / args.transition_completion_output_sc
+        if args.transition_completion_output_sc
+        else None
+    )
+    output_transition_completion_tc = (
+        repo_root / args.transition_completion_output_tc
+        if args.transition_completion_output_tc
+        else None
     )
     lm_transition_base_sc = (
         repo_root / args.lm_transition_base_sc if args.lm_transition_base_sc else None
@@ -24092,10 +24591,29 @@ def main() -> int:
     tc_query_path_priors: Dict[Tuple[str, str], int] = {}
     sc_lm_transition_priors: Dict[Tuple[str, str], int] = {}
     tc_lm_transition_priors: Dict[Tuple[str, str], int] = {}
+    sc_transition_completion_index: Dict[Tuple[str, str, str, str], int] = {}
+    tc_transition_completion_index: Dict[Tuple[str, str, str, str], int] = {}
+    sc_transition_completion_evidence: Dict[
+        Tuple[str, str], Tuple[int, int, int, int, int, int, float, float, int]
+    ] = {}
+    tc_transition_completion_evidence: Dict[
+        Tuple[str, str], Tuple[int, int, int, int, int, int, float, float, int]
+    ] = {}
     query_path_lm_corpus_dir = repo_root / args.query_path_lm_corpus_dir if args.query_path_lm_corpus_dir else None
-    if (output_lm_transition_sc is not None or output_lm_transition_tc is not None) and query_path_lm_corpus_dir is None:
-        raise ValueError("LM transition output requires --query-path-lm-corpus-dir")
-    if output_query_path_sc is not None or output_lm_transition_sc is not None:
+    if (
+        output_lm_transition_sc is not None
+        or output_lm_transition_tc is not None
+        or output_transition_completion_sc is not None
+        or output_transition_completion_tc is not None
+    ) and query_path_lm_corpus_dir is None:
+        raise ValueError(
+            "LM transition/completion output requires --query-path-lm-corpus-dir"
+        )
+    if (
+        output_query_path_sc is not None
+        or output_lm_transition_sc is not None
+        or output_transition_completion_sc is not None
+    ):
         sc_query_path_priors, sc_query_path_stats = _build_query_path_prior_map(
             sc_map,
             usage_score_map=usage_score_map,
@@ -24107,7 +24625,10 @@ def main() -> int:
             stats_prefix="sc",
         )
         stats.update(sc_query_path_stats)
-        if output_lm_transition_sc is not None and query_path_lm_corpus_dir is not None:
+        if (
+            output_lm_transition_sc is not None
+            or output_transition_completion_sc is not None
+        ) and query_path_lm_corpus_dir is not None:
             sc_lm_query_path_priors, sc_lm_query_path_stats = _build_lm_corpus_query_path_prior_map(
                 sc_map,
                 query_path_lm_corpus_dir,
@@ -24126,22 +24647,42 @@ def main() -> int:
                 stats_prefix="sc",
                 exact_pairs_only=args.lm_transition_exact_pairs_only,
                 general_transitions_only=args.lm_transition_general_only,
+                completion_evidence_out=sc_transition_completion_evidence,
             )
             stats.update(sc_lm_query_path_stats)
-            sc_lm_transition_priors, sc_lm_transition_stats = _select_dedicated_lm_transitions(
-                sc_query_path_priors,
-                sc_lm_query_path_priors,
-                stats_prefix="sc",
-            )
-            stats.update(sc_lm_transition_stats)
-            sc_lm_transition_priors, sc_lm_merge_stats = _merge_frozen_lm_transitions(
-                baseline_lm_transition_sc,
-                sc_lm_transition_priors,
-                stats_prefix="sc",
-            )
-            stats.update(sc_lm_merge_stats)
+            if output_transition_completion_sc is not None:
+                (
+                    sc_transition_completion_index,
+                    sc_transition_completion_stats,
+                ) = _build_transition_completion_index(
+                    sc_map,
+                    sc_transition_completion_evidence,
+                    unihan_map=output_unihan_map,
+                    unihan_readings_map=output_unihan_readings_map,
+                    unihan_source_rank_map=output_unihan_source_rank_map,
+                    unihan_pinlu_detail_map=output_unihan_pinlu_detail_map,
+                    stats_prefix="sc",
+                )
+                stats.update(sc_transition_completion_stats)
+            if output_lm_transition_sc is not None:
+                sc_lm_transition_priors, sc_lm_transition_stats = _select_dedicated_lm_transitions(
+                    sc_query_path_priors,
+                    sc_lm_query_path_priors,
+                    stats_prefix="sc",
+                )
+                stats.update(sc_lm_transition_stats)
+                sc_lm_transition_priors, sc_lm_merge_stats = _merge_frozen_lm_transitions(
+                    baseline_lm_transition_sc,
+                    sc_lm_transition_priors,
+                    stats_prefix="sc",
+                )
+                stats.update(sc_lm_merge_stats)
         stats["sc_query_path_prior_rows"] = len(sc_query_path_priors)
-    if output_query_path_tc is not None or output_lm_transition_tc is not None:
+    if (
+        output_query_path_tc is not None
+        or output_lm_transition_tc is not None
+        or output_transition_completion_tc is not None
+    ):
         tc_query_path_priors, tc_query_path_stats = _build_query_path_prior_map(
             tc_map,
             usage_score_map=tc_usage_score_map,
@@ -24153,7 +24694,10 @@ def main() -> int:
             stats_prefix="tc",
         )
         stats.update(tc_query_path_stats)
-        if output_lm_transition_tc is not None and query_path_lm_corpus_dir is not None:
+        if (
+            output_lm_transition_tc is not None
+            or output_transition_completion_tc is not None
+        ) and query_path_lm_corpus_dir is not None:
             opencc_sc_to_tc_for_lm = _build_opencc_sc_to_tc_map(opencc_entries) if opencc_entries else {}
             tc_lm_query_path_priors, tc_lm_query_path_stats = _build_lm_corpus_query_path_prior_map(
                 tc_map,
@@ -24177,20 +24721,36 @@ def main() -> int:
                 stats_prefix="tc",
                 exact_pairs_only=args.lm_transition_exact_pairs_only,
                 general_transitions_only=args.lm_transition_general_only,
+                completion_evidence_out=tc_transition_completion_evidence,
             )
             stats.update(tc_lm_query_path_stats)
-            tc_lm_transition_priors, tc_lm_transition_stats = _select_dedicated_lm_transitions(
-                tc_query_path_priors,
-                tc_lm_query_path_priors,
-                stats_prefix="tc",
-            )
-            stats.update(tc_lm_transition_stats)
-            tc_lm_transition_priors, tc_lm_merge_stats = _merge_frozen_lm_transitions(
-                baseline_lm_transition_tc,
-                tc_lm_transition_priors,
-                stats_prefix="tc",
-            )
-            stats.update(tc_lm_merge_stats)
+            if output_transition_completion_tc is not None:
+                (
+                    tc_transition_completion_index,
+                    tc_transition_completion_stats,
+                ) = _build_transition_completion_index(
+                    tc_map,
+                    tc_transition_completion_evidence,
+                    unihan_map=output_unihan_map,
+                    unihan_readings_map=output_unihan_readings_map,
+                    unihan_source_rank_map=output_unihan_source_rank_map,
+                    unihan_pinlu_detail_map=output_unihan_pinlu_detail_map,
+                    stats_prefix="tc",
+                )
+                stats.update(tc_transition_completion_stats)
+            if output_lm_transition_tc is not None:
+                tc_lm_transition_priors, tc_lm_transition_stats = _select_dedicated_lm_transitions(
+                    tc_query_path_priors,
+                    tc_lm_query_path_priors,
+                    stats_prefix="tc",
+                )
+                stats.update(tc_lm_transition_stats)
+                tc_lm_transition_priors, tc_lm_merge_stats = _merge_frozen_lm_transitions(
+                    baseline_lm_transition_tc,
+                    tc_lm_transition_priors,
+                    stats_prefix="tc",
+                )
+                stats.update(tc_lm_merge_stats)
         stats["tc_query_path_prior_rows"] = len(tc_query_path_priors)
     suspicious_sc_entries = _collect_suspicious_high_weight_entries(
         sc_map,
@@ -25569,6 +26129,26 @@ def main() -> int:
         unihan_source_rank_map=output_unihan_source_rank_map,
         unihan_pinlu_detail_map=output_unihan_pinlu_detail_map,
     )
+    if output_transition_completion_sc is not None:
+        sc_transition_completion_index, completion_stats = (
+            _filter_transition_completion_against_written_dictionary(
+                sc_transition_completion_index,
+                output_sc,
+                single_char_readings_map=output_unihan_readings_map,
+                stats_prefix="sc",
+            )
+        )
+        stats.update(completion_stats)
+    if output_transition_completion_tc is not None:
+        tc_transition_completion_index, completion_stats = (
+            _filter_transition_completion_against_written_dictionary(
+                tc_transition_completion_index,
+                output_tc,
+                single_char_readings_map=output_unihan_readings_map,
+                stats_prefix="tc",
+            )
+        )
+        stats.update(completion_stats)
     if output_query_path_sc is not None:
         _write_query_path_prior(output_query_path_sc, sc_query_path_priors)
     if output_query_path_tc is not None:
@@ -25577,6 +26157,16 @@ def main() -> int:
         _write_query_path_prior(output_lm_transition_sc, sc_lm_transition_priors)
     if output_lm_transition_tc is not None:
         _write_query_path_prior(output_lm_transition_tc, tc_lm_transition_priors)
+    if output_transition_completion_sc is not None:
+        _write_transition_completion(
+            output_transition_completion_sc,
+            sc_transition_completion_index,
+        )
+    if output_transition_completion_tc is not None:
+        _write_transition_completion(
+            output_transition_completion_tc,
+            tc_transition_completion_index,
+        )
     manifest_sources = list(sources)
     manifest_source_ids = {str(source.get("id", "")).strip() for source in manifest_sources}
     for vertical_source in vertical_source_configs:
@@ -25596,6 +26186,8 @@ def main() -> int:
         output_query_path_tc,
         output_lm_transition_sc,
         output_lm_transition_tc,
+        output_transition_completion_sc,
+        output_transition_completion_tc,
         stats,
         len(sc_map),
         len(tc_map),

@@ -18,6 +18,243 @@ import prepare_lm_transition_corpus as preparer  # noqa: E402
 
 
 class LmTransitionTrainingTests(unittest.TestCase):
+    def test_runtime_compact_parser_matches_completion_prefix_boundaries(self) -> None:
+        self.assertEqual(["ti", "gao", "hen"], builder._runtime_parse_compact_pinyin("tigaohen"))
+        self.assertEqual(["bian"], builder._runtime_parse_compact_pinyin("bian"))
+
+    def test_transition_completion_rejects_runtime_boundary_ambiguity(self) -> None:
+        mapping = {
+            ("bi'an", "\u5f7c\u5cb8"): 500,
+            ("hua", "\u82b1"): 600,
+        }
+        evidence = {
+            ("bianhua", "\u5f7c\u5cb8|\u82b1"): (
+                30, 8, 26, 7, 0, 1, 1.0, 2.0, 500
+            ),
+        }
+        readings = {
+            "\u5f7c": {"bi"},
+            "\u5cb8": {"an"},
+            "\u82b1": {"hua"},
+        }
+        completions, stats = builder._build_transition_completion_index(
+            mapping,
+            evidence,
+            unihan_map={text: next(iter(values)) for text, values in readings.items()},
+            unihan_readings_map=readings,
+            unihan_source_rank_map={},
+            unihan_pinlu_detail_map={},
+            stats_prefix="test",
+        )
+        self.assertEqual({}, completions)
+        self.assertEqual(
+            1,
+            stats[
+                "test_transition_completion_skipped_runtime_prefix_boundary"
+            ],
+        )
+
+    def test_transition_completion_index_is_strict_and_prefix_unambiguous(self) -> None:
+        mapping = {
+            ("tigao", "\u63d0\u9ad8"): 720,
+            ("henduo", "\u5f88\u591a"): 680,
+            ("zhiliang", "\u8d28\u91cf"): 690,
+        }
+        evidence = {
+            ("tigaohenduo", "\u63d0\u9ad8|\u5f88\u591a"): (
+                30, 8, 26, 7, 0, 1, 1.0, 0.8, 460
+            ),
+            ("tigaozhiliang", "\u63d0\u9ad8|\u8d28\u91cf"): (
+                29, 8, 25, 7, 0, 1, 1.0, 2.1, 460
+            ),
+        }
+        readings = {
+            "\u63d0": {"ti"},
+            "\u9ad8": {"gao"},
+            "\u5f88": {"hen"},
+            "\u591a": {"duo"},
+            "\u8d28": {"zhi"},
+            "\u91cf": {"liang"},
+        }
+        defaults = {text: next(iter(values)) for text, values in readings.items()}
+
+        completions, stats = builder._build_transition_completion_index(
+            mapping,
+            evidence,
+            unihan_map=defaults,
+            unihan_readings_map=readings,
+            unihan_source_rank_map={},
+            unihan_pinlu_detail_map={},
+            stats_prefix="test",
+        )
+
+        self.assertFalse(
+            any(key[0] == "tigao" for key in completions),
+            "equally strong completions must suppress the ambiguous prefix",
+        )
+        self.assertIn(
+            (
+                "tigaohen",
+                "ti'gao'hen'duo",
+                "\u63d0\u9ad8\u5f88\u591a",
+                "\u63d0\u9ad8|\u5f88\u591a",
+            ),
+            completions,
+        )
+        self.assertGreater(
+            stats["test_transition_completion_skipped_ambiguous_prefix"], 0
+        )
+
+    def test_transition_completion_excludes_exact_and_weak_paths(self) -> None:
+        mapping = {
+            ("tigao", "\u63d0\u9ad8"): 720,
+            ("henduo", "\u5f88\u591a"): 680,
+            ("tigaohenduo", "\u63d0\u9ad8\u5f88\u591a"): 500,
+            ("xiaolv", "\u6548\u7387"): 690,
+        }
+        evidence = {
+            ("tigaohenduo", "\u63d0\u9ad8|\u5f88\u591a"): (
+                30, 8, 26, 7, 0, 1, 1.0, 2.2, 460
+            ),
+            ("tigaoxiaolv", "\u63d0\u9ad8|\u6548\u7387"): (
+                30, 1, 26, 1, 0, 1, 1.0, 2.2, 460
+            ),
+        }
+        readings = {
+            "\u63d0": {"ti"},
+            "\u9ad8": {"gao"},
+            "\u5f88": {"hen"},
+            "\u591a": {"duo"},
+            "\u6548": {"xiao"},
+            "\u7387": {"lv"},
+        }
+        defaults = {text: next(iter(values)) for text, values in readings.items()}
+
+        completions, stats = builder._build_transition_completion_index(
+            mapping,
+            evidence,
+            unihan_map=defaults,
+            unihan_readings_map=readings,
+            unihan_source_rank_map={},
+            unihan_pinlu_detail_map={},
+            stats_prefix="test",
+        )
+
+        self.assertEqual({}, completions)
+        self.assertEqual(
+            1, stats["test_transition_completion_skipped_full_exact"]
+        )
+        self.assertEqual(
+            1, stats["test_transition_completion_skipped_weak_evidence"]
+        )
+
+    def test_transition_completion_requires_five_independent_sources(self) -> None:
+        mapping = {
+            ("tigao", "\u63d0\u9ad8"): 720,
+            ("henduo", "\u5f88\u591a"): 680,
+        }
+        readings = {
+            "\u63d0": {"ti"},
+            "\u9ad8": {"gao"},
+            "\u5f88": {"hen"},
+            "\u591a": {"duo"},
+        }
+        defaults = {text: next(iter(values)) for text, values in readings.items()}
+
+        def build(source_count: int):
+            evidence = {
+                ("tigaohenduo", "\u63d0\u9ad8|\u5f88\u591a"): (
+                    22,
+                    source_count,
+                    22,
+                    source_count,
+                    0,
+                    1,
+                    1.0,
+                    -0.5,
+                    443,
+                ),
+            }
+            return builder._build_transition_completion_index(
+                mapping,
+                evidence,
+                unihan_map=defaults,
+                unihan_readings_map=readings,
+                unihan_source_rank_map={},
+                unihan_pinlu_detail_map={},
+                stats_prefix="test",
+            )[0]
+
+        completions = build(5)
+        self.assertIn(
+            (
+                "tigaohen",
+                "ti'gao'hen'duo",
+                "\u63d0\u9ad8\u5f88\u591a",
+                "\u63d0\u9ad8|\u5f88\u591a",
+            ),
+            completions,
+        )
+        self.assertEqual({}, build(4))
+
+    def test_transition_completion_is_revalidated_against_final_dictionary(
+        self,
+    ) -> None:
+        rows = {
+            ("tigaohen", "tigaohenduo", "\u63d0\u9ad8\u5f88\u591a", "\u63d0\u9ad8|\u5f88\u591a"): 570,
+            ("aichi", "aichide", "\u7231\u5403\u7684", "\u7231|\u5403\u7684"): 580,
+            ("youxiang", "youxiangdizhi", "\u90ae\u7bb1\u5730\u5740", "\u90ae\u7bb1|\u5730\u5740"): 600,
+            ("cifudian", "cifudianji", "\u4f3a\u670d\u7535\u673a", "\u4f3a\u670d|\u7535\u673a"): 590,
+        }
+        with tempfile.TemporaryDirectory() as temp_dir:
+            dictionary_path = pathlib.Path(temp_dir) / "dict.txt"
+            dictionary_path.write_text(
+                "tigao\t\u63d0\u9ad8\t720\n"
+                "henduo\t\u5f88\u591a\t680\n"
+                "youxiang\t\u90ae\u7bb1\t600\n"
+                "dizhi\t\u5730\u5740\t700\n"
+                "youxiangdizhi\t\u90ae\u7bb1\u5730\u5740\t500\n"
+                "sifu\t\u4f3a\u670d\t500\n"
+                "dianji\t\u7535\u673a\t700\n"
+                "chide\t\u5403\u7684\t700\n",
+                encoding="utf-8",
+            )
+            filtered, stats = (
+                builder._filter_transition_completion_against_written_dictionary(
+                    rows,
+                    dictionary_path,
+                    single_char_readings_map={"\u7231": {"ai"}},
+                    stats_prefix="test",
+                )
+            )
+
+        self.assertEqual(
+            {
+                (
+                    "tigaohen",
+                    "tigaohenduo",
+                    "\u63d0\u9ad8\u5f88\u591a",
+                    "\u63d0\u9ad8|\u5f88\u591a",
+                ): 570,
+                (
+                    "aichi",
+                    "aichide",
+                    "\u7231\u5403\u7684",
+                    "\u7231|\u5403\u7684",
+                ): 580,
+            },
+            filtered,
+        )
+        self.assertEqual(
+            1, stats["test_transition_completion_final_dropped_full_exact"]
+        )
+        self.assertEqual(
+            1,
+            stats[
+                "test_transition_completion_final_dropped_component_reading"
+            ],
+        )
+
     def test_audited_low_priority_medical_procedure_is_capped(self) -> None:
         mapping = {
             ("duotai", "堕胎"): 539,
@@ -568,7 +805,10 @@ class LmTransitionTrainingTests(unittest.TestCase):
             "\u90fd": [entry("dou", "\u90fd", 780)],
             "\u5317\u4eac": [entry("beijing", "\u5317\u4eac", 1000)],
             "\u63d0\u9ad8": [entry("tigao", "\u63d0\u9ad8", 1000)],
+            "\u964d\u4f4e": [entry("jiangdi", "\u964d\u4f4e", 1000)],
             "\u5f88\u591a": [entry("henduo", "\u5f88\u591a", 700)],
+            "\u6548\u7387": [entry("xiaolv", "\u6548\u7387", 1000)],
+            "\u5927\u5bb6": [entry("dajia", "\u5927\u5bb6", 1000)],
             "\u5f88\u5feb": [entry("henkuai", "\u5f88\u5feb", 700)],
             "\u6062\u590d": [entry("huifu", "\u6062\u590d", 945)],
             "\u56de\u590d": [entry("huifu", "\u56de\u590d", 525, 2, 945)],
@@ -736,6 +976,25 @@ class LmTransitionTrainingTests(unittest.TestCase):
             right = right_contexts[(index + 2) % len(right_contexts)]
             rows.append((left + "\u63d0\u9ad8\u5f88\u591a" + right, f"improve-{index}"))
 
+        # Five independent sources and twenty direct observations are enough
+        # for completion, even when very common component marginals make PMI
+        # too weak for the ordinary blue transition channel.
+        for source_index in range(5):
+            for occurrence_index in range(4):
+                context_index = source_index + occurrence_index
+                rows.append(
+                    (
+                        left_contexts[context_index % len(left_contexts)]
+                        + "\u964d\u4f4e\u5f88\u591a"
+                        + right_contexts[(context_index + 3) % len(right_contexts)],
+                        f"lower-common-{source_index}",
+                    )
+                )
+        for index in range(80):
+            rows.append(("\u964d\u4f4e\u6548\u7387", f"lower-left-noise-{index}"))
+            rows.append(("\u5927\u5bb6\u5f88\u591a", f"lower-right-noise-{index}"))
+
+        completion_evidence = {}
         priors, stats = builder._collect_short_exact_pair_transition_priors(
             rows,
             entries,
@@ -751,6 +1010,7 @@ class LmTransitionTrainingTests(unittest.TestCase):
                 "\u6280\u672f": "n",
                 "\u5317\u4eac": "ns",
             },
+            completion_evidence_out=completion_evidence,
         )
 
         separator = builder.QUERY_PATH_FILE_SEPARATOR
@@ -826,6 +1086,12 @@ class LmTransitionTrainingTests(unittest.TestCase):
             1,
         )
         self.assertIn(("tigaohenduo", f"\u63d0\u9ad8{separator}\u5f88\u591a"), priors)
+        lower_common_key = (
+            "jiangdihenduo",
+            f"\u964d\u4f4e{separator}\u5f88\u591a",
+        )
+        self.assertNotIn(lower_common_key, priors)
+        self.assertIn(lower_common_key, completion_evidence)
         self.assertIn(("lunliyuanze", f"\u4f26\u7406{separator}\u539f\u5219"), priors)
         self.assertNotIn(("henkuaihuifu", f"\u5f88\u5feb{separator}\u6062\u590d"), priors)
 
