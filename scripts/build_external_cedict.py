@@ -26,7 +26,7 @@ import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
 import zipfile
-from typing import Dict, Iterable, Iterator, List, Set, Tuple
+from typing import Callable, Dict, Iterable, Iterator, List, Set, Tuple
 
 
 CEDICT_DEFAULT_URL = (
@@ -21505,6 +21505,428 @@ def _write_transition_completion(
             )
 
 
+def _completion_vertical_layer_kind(layer_id: str) -> int:
+    """Return a compact completion-only vertical classification."""
+    normalized = layer_id.strip().lower()
+    if not normalized:
+        return 0
+    if normalized == "medicine":
+        return 3
+    if normalized in {"proper_nouns", "place_names"} or (
+        normalized in NAMED_ENTITY_VERTICAL_LAYERS
+    ):
+        return 2
+    return 1
+
+
+def _build_completion_vertical_layer_maps(
+    vertical_entries: List[VerticalEntry],
+    *,
+    convert_sc_to_tc: Callable[[str], str] | None = None,
+) -> Tuple[Dict[str, int], Dict[str, int]]:
+    sc_layers: Dict[str, int] = {}
+    tc_layers: Dict[str, int] = {}
+    for sc_word, tc_word, _usage, _pinyin, layer_id, _source_id in vertical_entries:
+        layer_kind = _completion_vertical_layer_kind(layer_id)
+        if layer_kind <= 0:
+            continue
+        if sc_word:
+            sc_layers[sc_word] = max(sc_layers.get(sc_word, 0), layer_kind)
+        tc_candidate = tc_word
+        if (not tc_candidate) and convert_sc_to_tc is not None and sc_word:
+            tc_candidate = convert_sc_to_tc(sc_word)
+        if tc_candidate:
+            tc_layers[tc_candidate] = max(
+                tc_layers.get(tc_candidate, 0), layer_kind
+            )
+    return sc_layers, tc_layers
+
+
+def _build_completion_popularity_prior(
+    dictionary_path: pathlib.Path,
+    *,
+    usage_score_map: Dict[str, float],
+    corpus_frequency_map: Dict[str, float],
+    document_frequency_map: Dict[str, float],
+    persistence_map: Dict[str, float],
+    source_hits_map: Dict[str, int],
+    vertical_layer_map: Dict[str, int],
+    curated_hot_terms: Set[str],
+    curated_low_terms: Set[str],
+    path_score_map: Dict[str, int],
+    stats_prefix: str,
+) -> Tuple[Dict[Tuple[str, str], Tuple[int, int, int, int, int, int, int]], Dict[str, int]]:
+    """Build a completion popularity prior without reusing dictionary weight."""
+
+    output: Dict[Tuple[str, str], Tuple[int, int, int, int, int, int, int]] = {}
+    stats = {
+        f"{stats_prefix}_completion_prior_rows": 0,
+        f"{stats_prefix}_completion_prior_hot_rows": 0,
+        f"{stats_prefix}_completion_prior_vertical_rows": 0,
+        f"{stats_prefix}_completion_prior_cold_vertical_rows": 0,
+    }
+
+    with dictionary_path.open("r", encoding="utf-8-sig") as handle:
+        for line_number, raw_line in enumerate(handle, start=1):
+            line = raw_line.rstrip("\r\n")
+            if not line or line.startswith("#"):
+                continue
+            parts = line.split("\t")
+            if len(parts) < 3:
+                raise ValueError(
+                    f"Malformed dictionary row at {dictionary_path}:{line_number}"
+                )
+            pinyin = parts[0].strip()
+            text = parts[1].strip()
+            if not pinyin or not text:
+                continue
+
+            usage = min(1.0, max(0.0, usage_score_map.get(text, 0.0)))
+            corpus = min(1.0, max(0.0, corpus_frequency_map.get(text, 0.0)))
+            document = min(
+                1.0, max(0.0, document_frequency_map.get(text, 0.0))
+            )
+            persistence = min(1.0, max(0.0, persistence_map.get(text, 0.0)))
+            source_count = min(8, max(0, source_hits_map.get(text, 0)))
+            layer_kind = min(3, max(0, vertical_layer_map.get(text, 0)))
+            path_score = min(1000, max(0, path_score_map.get(text, 0)))
+
+            # Completion needs a broad familiarity prior, not a copy of the
+            # normal candidate weight. Shape direct corpus frequency less
+            # aggressively and retain document/source consensus separately.
+            corpus_component = math.sqrt(corpus)
+            document_component = max(document, persistence * 0.82)
+            source_component = min(1.0, float(source_count) / 3.0)
+            popularity = (
+                0.08
+                + usage * 0.26
+                + corpus_component * 0.31
+                + document_component * 0.18
+                + persistence * 0.07
+                + source_component * 0.10
+            )
+
+            if text in curated_hot_terms:
+                # Curated daily membership is useful weak evidence, but it is
+                # not an independent corpus source. Only real cross-source or
+                # document evidence may turn a term into a protected hot
+                # completion.
+                popularity += 0.06
+                if source_count >= 2 or max(
+                    corpus_component, document_component, persistence
+                ) >= 0.10:
+                    popularity = max(
+                        popularity, 0.45 + min(0.10, usage * 0.10)
+                    )
+                layer_kind = 0
+            elif text in curated_low_terms:
+                popularity = max(popularity, 0.20 + min(0.20, usage * 0.20))
+
+            vertical_penalty = 0
+            if layer_kind > 0:
+                base_penalty = {1: 150, 2: 240, 3: 340}[layer_kind]
+                general_support = max(
+                    usage * 0.85,
+                    corpus_component,
+                    document_component,
+                    min(1.0, float(source_count) / 3.0),
+                )
+                # Independent general evidence can rehabilitate a vertical
+                # word; a single-domain term retains most of the penalty.
+                relief = min(0.90, general_support * 0.82)
+                vertical_penalty = int(round(base_penalty * (1.0 - relief)))
+
+            popularity_prior = int(round(popularity * 1000.0)) - vertical_penalty
+            popularity_prior = min(1000, max(1, popularity_prior))
+            corpus_score = int(round(corpus_component * 1000.0))
+            document_score = int(round(document_component * 1000.0))
+            value = (
+                popularity_prior,
+                corpus_score,
+                document_score,
+                source_count,
+                vertical_penalty,
+                layer_kind,
+                path_score,
+            )
+            key = (pinyin, text)
+            current = output.get(key)
+            if current is None or value > current:
+                output[key] = value
+
+    for (
+        popularity_prior,
+        _corpus,
+        _document,
+        _sources,
+        _penalty,
+        layer_kind,
+        _path_score,
+    ) in output.values():
+        if popularity_prior >= 700:
+            stats[f"{stats_prefix}_completion_prior_hot_rows"] += 1
+        if layer_kind > 0:
+            stats[f"{stats_prefix}_completion_prior_vertical_rows"] += 1
+            if popularity_prior < 300:
+                stats[f"{stats_prefix}_completion_prior_cold_vertical_rows"] += 1
+    stats[f"{stats_prefix}_completion_prior_rows"] = len(output)
+    return output, stats
+
+
+def _write_completion_popularity_prior(
+    path: pathlib.Path,
+    mapping: Dict[Tuple[str, str], Tuple[int, int, int, int, int, int, int]],
+) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", encoding="utf-8", newline="\n") as handle:
+        for (pinyin, text), values in sorted(
+            mapping.items(), key=lambda item: (item[0][0], -item[1][0], item[0][1])
+        ):
+            handle.write(
+                f"{pinyin}\t{text}\t{values[0]}\t{values[1]}\t{values[2]}\t"
+                f"{values[3]}\t{values[4]}\t{values[5]}\t{values[6]}\n"
+            )
+
+
+def _build_completion_exact_lookup(
+    dictionary_path: pathlib.Path,
+    completion_prior: Dict[
+        Tuple[str, str], Tuple[int, int, int, int, int, int, int]
+    ],
+    *,
+    stats_prefix: str,
+    per_rank_limit: int = 8,
+) -> Tuple[
+    Dict[
+        Tuple[str, str, str],
+        Tuple[int, int, int, int, int, int, int, int, int, int],
+    ],
+    Dict[str, int],
+]:
+    """Precompute the bounded exact completion pool for every syllable prefix."""
+
+    entries: List[Tuple[str, str, int, List[str], List[str]]] = []
+    exact_keys: Set[Tuple[str, str]] = set()
+    stats = {
+        f"{stats_prefix}_completion_lookup_prefixes": 0,
+        f"{stats_prefix}_completion_lookup_raw_rows": 0,
+        f"{stats_prefix}_completion_lookup_rows": 0,
+        f"{stats_prefix}_completion_lookup_anchored_rows": 0,
+    }
+
+    with dictionary_path.open("r", encoding="utf-8-sig") as handle:
+        for line_number, raw_line in enumerate(handle, start=1):
+            line = raw_line.rstrip("\r\n")
+            if not line or line.startswith("#"):
+                continue
+            parts = line.split("\t")
+            if len(parts) < 3:
+                raise ValueError(
+                    f"Malformed dictionary row at {dictionary_path}:{line_number}"
+                )
+            pinyin = parts[0].strip()
+            text = parts[1].strip()
+            try:
+                weight = int(parts[2])
+            except ValueError as exc:
+                raise ValueError(
+                    f"Invalid dictionary weight at {dictionary_path}:{line_number}"
+                ) from exc
+            if not pinyin or not text or weight <= 0:
+                continue
+            syllables = _runtime_parse_compact_pinyin(pinyin)
+            text_units = _split_text_units(text)
+            # The runtime completion matcher does not expose an erhua marker
+            # parsed as a standalone ``r`` syllable. Excluding it here keeps
+            # the offline pool byte-for-byte equivalent to the legacy scan;
+            # explicit ``er`` readings remain eligible.
+            if "r" in syllables:
+                continue
+            if len(syllables) != len(text_units):
+                continue
+            compact_pinyin = _normalize_compact_pinyin_key(pinyin)
+            exact_keys.add((compact_pinyin, text))
+            if len(syllables) >= 3:
+                entries.append((pinyin, text, weight, syllables, text_units))
+
+    grouped: Dict[
+        str,
+        List[
+            Tuple[
+                str,
+                str,
+                int,
+                int,
+                int,
+                int,
+                int,
+                int,
+                int,
+                int,
+                int,
+            ]
+        ],
+    ] = {}
+    for pinyin, text, weight, syllables, text_units in entries:
+        prior = completion_prior.get((pinyin, text))
+        if prior is None:
+            prior = completion_prior.get(
+                (_normalize_compact_pinyin_key(pinyin), text),
+                (0, 0, 0, 0, 0, 0, 0),
+            )
+        (
+            popularity_prior,
+            corpus_score,
+            document_score,
+            source_count,
+            vertical_penalty,
+            layer_kind,
+            path_score,
+        ) = prior
+        for prefix_units in range(2, len(syllables)):
+            typed_prefix = "".join(syllables[:prefix_units])
+            prefix_text = "".join(text_units[:prefix_units])
+            anchored = int((typed_prefix, prefix_text) in exact_keys)
+            grouped.setdefault(typed_prefix, []).append(
+                (
+                    pinyin,
+                    text,
+                    weight,
+                    popularity_prior,
+                    corpus_score,
+                    document_score,
+                    source_count,
+                    path_score,
+                    vertical_penalty,
+                    layer_kind,
+                    anchored,
+                )
+            )
+            stats[f"{stats_prefix}_completion_lookup_raw_rows"] += 1
+
+    output: Dict[
+        Tuple[str, str, str],
+        Tuple[int, int, int, int, int, int, int, int, int, int],
+    ] = {}
+    for typed_prefix, candidates in grouped.items():
+        deduplicated: Dict[
+            Tuple[str, str],
+            Tuple[str, str, int, int, int, int, int, int, int, int, int],
+        ] = {}
+        for candidate in candidates:
+            candidate_key = (
+                _normalize_compact_pinyin_key(candidate[0]),
+                candidate[1],
+            )
+            current = deduplicated.get(candidate_key)
+            if current is None or (
+                candidate[2], candidate[3], candidate[10], candidate[0]
+            ) > (
+                current[2], current[3], current[10], current[0]
+            ):
+                deduplicated[candidate_key] = candidate
+        candidates = list(deduplicated.values())
+
+        def rank_key(
+            candidate: Tuple[
+                str, str, int, int, int, int, int, int, int, int, int
+            ],
+            *,
+            popularity: bool,
+        ) -> Tuple[int, int, str, str]:
+            primary = candidate[3] if popularity else candidate[2]
+            primary += 80 if candidate[10] else 0
+            return (-primary, len(_split_text_units(candidate[1])), candidate[1], candidate[0])
+
+        ranked_weight = sorted(
+            candidates, key=lambda item: rank_key(item, popularity=False)
+        )[:per_rank_limit]
+        ranked_popularity = sorted(
+            candidates, key=lambda item: rank_key(item, popularity=True)
+        )[:per_rank_limit]
+        selected: List[
+            Tuple[str, str, int, int, int, int, int, int, int, int, int]
+        ] = []
+        seen: Set[Tuple[str, str]] = set()
+        for candidate in ranked_weight + ranked_popularity:
+            candidate_key = (
+                _normalize_compact_pinyin_key(candidate[0]),
+                candidate[1],
+            )
+            if candidate_key in seen:
+                continue
+            seen.add(candidate_key)
+            selected.append(candidate)
+        for rank_order, candidate in enumerate(selected):
+            (
+                full_pinyin,
+                text,
+                weight,
+                popularity_prior,
+                corpus_score,
+                document_score,
+                source_count,
+                path_score,
+                vertical_penalty,
+                layer_kind,
+                anchored,
+            ) = candidate
+            output[(typed_prefix, full_pinyin, text)] = (
+                weight,
+                popularity_prior,
+                corpus_score,
+                document_score,
+                source_count,
+                path_score,
+                vertical_penalty,
+                layer_kind,
+                anchored,
+                rank_order,
+            )
+            if anchored:
+                stats[f"{stats_prefix}_completion_lookup_anchored_rows"] += 1
+
+    stats[f"{stats_prefix}_completion_lookup_prefixes"] = len(grouped)
+    stats[f"{stats_prefix}_completion_lookup_rows"] = len(output)
+    return output, stats
+
+
+def _write_completion_exact_lookup(
+    path: pathlib.Path,
+    mapping: Dict[
+        Tuple[str, str, str],
+        Tuple[int, int, int, int, int, int, int, int, int, int],
+    ],
+) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", encoding="utf-8", newline="\n") as handle:
+        for (typed_prefix, full_pinyin, text), values in sorted(
+            mapping.items(),
+            key=lambda item: (item[0][0], item[1][9], item[0][1], item[0][2]),
+        ):
+            handle.write(
+                f"{typed_prefix}\t{full_pinyin}\t{text}\t{values[0]}\t"
+                f"{values[1]}\t{values[2]}\t{values[3]}\t{values[4]}\t"
+                f"{values[5]}\t{values[6]}\t{values[7]}\t{values[8]}\t"
+                f"{values[9]}\n"
+            )
+
+
+def _build_completion_path_score_map(
+    *prior_maps: Dict[Tuple[str, str], int],
+) -> Dict[str, int]:
+    """Collapse corpus-trained local word paths into exact-text support."""
+
+    output: Dict[str, int] = {}
+    for priors in prior_maps:
+        for (_query, path_text), weight in priors.items():
+            text = path_text.replace(QUERY_PATH_FILE_SEPARATOR, "")
+            if not text or QUERY_PATH_FILE_SEPARATOR not in path_text:
+                continue
+            output[text] = max(output.get(text, 0), int(weight))
+    return output
+
+
 def _filter_transition_completion_against_written_dictionary(
     mapping: Dict[Tuple[str, str, str, str], int],
     dictionary_path: pathlib.Path,
@@ -22253,6 +22675,10 @@ def main() -> int:
     parser.add_argument("--lm-transition-output-tc", default="")
     parser.add_argument("--transition-completion-output-sc", default="")
     parser.add_argument("--transition-completion-output-tc", default="")
+    parser.add_argument("--completion-prior-output-sc", default="")
+    parser.add_argument("--completion-prior-output-tc", default="")
+    parser.add_argument("--completion-lookup-output-sc", default="")
+    parser.add_argument("--completion-lookup-output-tc", default="")
     parser.add_argument(
         "--lm-transition-base-sc",
         default="",
@@ -22352,6 +22778,26 @@ def main() -> int:
         if args.transition_completion_output_tc
         else None
     )
+    output_completion_prior_sc = (
+        repo_root / args.completion_prior_output_sc
+        if args.completion_prior_output_sc
+        else None
+    )
+    output_completion_prior_tc = (
+        repo_root / args.completion_prior_output_tc
+        if args.completion_prior_output_tc
+        else None
+    )
+    output_completion_lookup_sc = (
+        repo_root / args.completion_lookup_output_sc
+        if args.completion_lookup_output_sc
+        else None
+    )
+    output_completion_lookup_tc = (
+        repo_root / args.completion_lookup_output_tc
+        if args.completion_lookup_output_tc
+        else None
+    )
     lm_transition_base_sc = (
         repo_root / args.lm_transition_base_sc if args.lm_transition_base_sc else None
     )
@@ -22430,6 +22876,7 @@ def main() -> int:
     pageviews_signal_map: Dict[str, float] = {}
     pageviews_persistence_signal_map: Dict[str, float] = {}
     pageviews_burst_signal_map: Dict[str, float] = {}
+    thuocl_signal_map: Dict[str, float] = {}
     wiki_titles: Set[str] = set()
     wiktionary_titles: Set[str] = set()
     wiki_alias_sc_terms: Set[str] = set()
@@ -22471,6 +22918,8 @@ def main() -> int:
     tc_pageviews_signal_map: Dict[str, float] = {}
     tc_pageviews_persistence_signal_map: Dict[str, float] = {}
     tc_pageviews_burst_signal_map: Dict[str, float] = {}
+    tc_thuocl_signal_map: Dict[str, float] = {}
+    vertical_entries: List[VerticalEntry] = []
     sc_family_term_count_map: Dict[str, int] = {}
     sc_family_support_sum_map: Dict[str, float] = {}
     tc_family_term_count_map: Dict[str, int] = {}
@@ -22942,6 +23391,7 @@ def main() -> int:
         tc_jieba_pos_map = _build_tc_pos_map(jieba_pos_map, tc_to_sc_map)
         tc_char_frequency_prior = _build_tc_signal_map(char_frequency_prior, tc_to_sc_map)
         tc_pageviews_signal_map = _build_tc_signal_map(pageviews_signal_map, tc_to_sc_map)
+        tc_thuocl_signal_map = _build_tc_signal_map(thuocl_signal_map, tc_to_sc_map)
         tc_pageviews_persistence_signal_map = _build_tc_signal_map(
             pageviews_persistence_signal_map, tc_to_sc_map
         )
@@ -23650,7 +24100,7 @@ def main() -> int:
         }
         vertical_sc_support_excludes: Set[str] = set()
         vertical_tc_support_excludes: Set[str] = set()
-        vertical_entries: List[VerticalEntry] = []
+        vertical_entries = []
         if vertical_source_configs:
             for vertical_source in vertical_source_configs:
                 entries, parse_stats = _load_vertical_source_entries(
@@ -26154,6 +26604,97 @@ def main() -> int:
             )
         )
         stats.update(completion_stats)
+    if (
+        output_completion_prior_sc is not None
+        or output_completion_prior_tc is not None
+        or output_completion_lookup_sc is not None
+        or output_completion_lookup_tc is not None
+    ):
+        opencc_sc_to_tc_for_completion = (
+            _build_opencc_sc_to_tc_map(opencc_entries) if opencc_entries else {}
+        )
+        completion_sc_layers, completion_tc_layers = (
+            _build_completion_vertical_layer_maps(
+                vertical_entries,
+                convert_sc_to_tc=lambda text: _convert_sc_text_to_tc_with_phrase_hints(
+                    text,
+                    opencc_sc_to_tc_for_completion,
+                    simp_to_trad_char_map,
+                ),
+            )
+        )
+        completion_sc_path_scores = _build_completion_path_score_map(
+            baseline_lm_transition_sc, sc_lm_transition_priors
+        )
+        completion_tc_path_scores = _build_completion_path_score_map(
+            baseline_lm_transition_tc, tc_lm_transition_priors
+        )
+        if output_completion_prior_sc is not None or output_completion_lookup_sc is not None:
+            sc_completion_prior, completion_prior_stats = (
+                _build_completion_popularity_prior(
+                    output_sc,
+                    usage_score_map=usage_score_map,
+                    corpus_frequency_map=jieba_direct_signal_map,
+                    document_frequency_map=thuocl_signal_map,
+                    persistence_map=pageviews_persistence_signal_map,
+                    source_hits_map=source_hits_map,
+                    vertical_layer_map=completion_sc_layers,
+                    curated_hot_terms=curated_daily_sc_terms,
+                    curated_low_terms=curated_daily_supplement_sc_terms,
+                    path_score_map=completion_sc_path_scores,
+                    stats_prefix="sc",
+                )
+            )
+            if output_completion_prior_sc is not None:
+                _write_completion_popularity_prior(
+                    output_completion_prior_sc, sc_completion_prior
+                )
+            stats.update(completion_prior_stats)
+            if output_completion_lookup_sc is not None:
+                sc_completion_lookup, completion_lookup_stats = (
+                    _build_completion_exact_lookup(
+                        output_sc,
+                        sc_completion_prior,
+                        stats_prefix="sc",
+                    )
+                )
+                _write_completion_exact_lookup(
+                    output_completion_lookup_sc, sc_completion_lookup
+                )
+                stats.update(completion_lookup_stats)
+        if output_completion_prior_tc is not None or output_completion_lookup_tc is not None:
+            tc_completion_prior, completion_prior_stats = (
+                _build_completion_popularity_prior(
+                    output_tc,
+                    usage_score_map=tc_usage_score_map,
+                    corpus_frequency_map=tc_jieba_direct_signal_map,
+                    document_frequency_map=tc_thuocl_signal_map,
+                    persistence_map=tc_pageviews_persistence_signal_map,
+                    source_hits_map=tc_source_hits_map,
+                    vertical_layer_map=completion_tc_layers,
+                    curated_hot_terms=curated_daily_tc_terms,
+                    curated_low_terms=curated_daily_supplement_tc_terms,
+                    path_score_map=completion_tc_path_scores,
+                    stats_prefix="tc",
+                )
+            )
+            if output_completion_prior_tc is not None:
+                _write_completion_popularity_prior(
+                    output_completion_prior_tc, tc_completion_prior
+                )
+            stats.update(completion_prior_stats)
+            if output_completion_lookup_tc is not None:
+                tc_completion_lookup, completion_lookup_stats = (
+                    _build_completion_exact_lookup(
+                        output_tc,
+                        tc_completion_prior,
+                        stats_prefix="tc",
+                    )
+                )
+                _write_completion_exact_lookup(
+                    output_completion_lookup_tc, tc_completion_lookup
+                )
+                stats.update(completion_lookup_stats)
     if output_query_path_sc is not None:
         _write_query_path_prior(output_query_path_sc, sc_query_path_priors)
     if output_query_path_tc is not None:

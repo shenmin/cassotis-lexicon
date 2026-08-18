@@ -170,6 +170,10 @@ $buildArgs = @{
     MaxEntries = $MaxEntries
     OutputQueryPathSc = "data/generated/dict_query_path_prior_sc.txt"
     OutputQueryPathTc = "data/generated/dict_query_path_prior_tc.txt"
+    OutputCompletionPriorSc = "data/generated/dict_completion_prior_sc.txt"
+    OutputCompletionPriorTc = "data/generated/dict_completion_prior_tc.txt"
+    OutputCompletionLookupSc = "data/generated/dict_completion_lookup_sc.txt"
+    OutputCompletionLookupTc = "data/generated/dict_completion_lookup_tc.txt"
 }
 if ($CacheFile -ne "") { $buildArgs["CacheFile"] = $CacheFile }
 if ($CacheSourceId -ne "") { $buildArgs["CacheSourceId"] = $CacheSourceId }
@@ -183,20 +187,20 @@ if ($RedistributionClass -ne "") { $buildArgs["RedistributionClass"] = $Redistri
 if ($AttributionRequired -ne "") { $buildArgs["AttributionRequired"] = $AttributionRequired }
 if ($SourceNotes -ne "") { $buildArgs["SourceNotes"] = $SourceNotes }
 if ($PinyinOverrides -ne "") { $buildArgs["PinyinOverrides"] = $PinyinOverrides }
+$lmTransitionSc = Join-Path $Root "data\generated\dict_lm_transition_sc.txt"
+$lmTransitionTc = Join-Path $Root "data\generated\dict_lm_transition_tc.txt"
+if (Test-Path -LiteralPath $lmTransitionSc) {
+    $buildArgs["LmTransitionBaseSc"] = "data/generated/dict_lm_transition_sc.txt"
+}
+if (Test-Path -LiteralPath $lmTransitionTc) {
+    $buildArgs["LmTransitionBaseTc"] = "data/generated/dict_lm_transition_tc.txt"
+}
 if ($QueryPathLmCorpusDir -ne "") {
     $buildArgs["QueryPathLmCorpusDir"] = $QueryPathLmCorpusDir
     $buildArgs["OutputLmTransitionSc"] = "data/generated/dict_lm_transition_sc.txt"
     $buildArgs["OutputLmTransitionTc"] = "data/generated/dict_lm_transition_tc.txt"
     $buildArgs["OutputTransitionCompletionSc"] = "data/generated/dict_transition_completion_sc.txt"
     $buildArgs["OutputTransitionCompletionTc"] = "data/generated/dict_transition_completion_tc.txt"
-    $lmTransitionSc = Join-Path $Root "data\generated\dict_lm_transition_sc.txt"
-    $lmTransitionTc = Join-Path $Root "data\generated\dict_lm_transition_tc.txt"
-    if (Test-Path -LiteralPath $lmTransitionSc) {
-        $buildArgs["LmTransitionBaseSc"] = "data/generated/dict_lm_transition_sc.txt"
-    }
-    if (Test-Path -LiteralPath $lmTransitionTc) {
-        $buildArgs["LmTransitionBaseTc"] = "data/generated/dict_lm_transition_tc.txt"
-    }
 }
 if ($LmTransitionExactPairsOnly) {
     $buildArgs["LmTransitionExactPairsOnly"] = $true

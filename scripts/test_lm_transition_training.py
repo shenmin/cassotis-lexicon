@@ -18,9 +18,129 @@ import prepare_lm_transition_corpus as preparer  # noqa: E402
 
 
 class LmTransitionTrainingTests(unittest.TestCase):
+    def test_completion_popularity_prior_separates_common_and_vertical_exact(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            dictionary_path = pathlib.Path(temp_dir) / "dict.txt"
+            dictionary_path.write_text(
+                "remen\t\u70ed\u95e8\u8bcd\t1\n"
+                "lengmen\t\u51b7\u95e8\u533b\u5b66\u8bcd\t1000\n",
+                encoding="utf-8",
+            )
+            prior, _stats = builder._build_completion_popularity_prior(
+                dictionary_path,
+                usage_score_map={"\u70ed\u95e8\u8bcd": 0.82},
+                corpus_frequency_map={"\u70ed\u95e8\u8bcd": 0.64},
+                document_frequency_map={"\u70ed\u95e8\u8bcd": 0.58},
+                persistence_map={"\u70ed\u95e8\u8bcd": 0.52},
+                source_hits_map={"\u70ed\u95e8\u8bcd": 3},
+                vertical_layer_map={"\u51b7\u95e8\u533b\u5b66\u8bcd": 3},
+                curated_hot_terms=set(),
+                curated_low_terms=set(),
+                path_score_map={"\u70ed\u95e8\u8bcd": 480},
+                stats_prefix="test",
+            )
+
+        hot = prior[("remen", "\u70ed\u95e8\u8bcd")]
+        cold = prior[("lengmen", "\u51b7\u95e8\u533b\u5b66\u8bcd")]
+        self.assertGreaterEqual(hot[0], 700)
+        self.assertLess(cold[0], 200)
+        self.assertEqual(3, cold[5])
+        self.assertGreater(cold[4], 250)
+        self.assertEqual(480, hot[6])
+
+    def test_completion_popularity_prior_does_not_reuse_dictionary_weight(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            dictionary_path = pathlib.Path(temp_dir) / "dict.txt"
+            dictionary_path.write_text(
+                "tongpin\t\u7532\u8bcd\t1\n"
+                "tongpin\t\u4e59\u8bcd\t1000\n",
+                encoding="utf-8",
+            )
+            prior, _stats = builder._build_completion_popularity_prior(
+                dictionary_path,
+                usage_score_map={},
+                corpus_frequency_map={},
+                document_frequency_map={},
+                persistence_map={},
+                source_hits_map={},
+                vertical_layer_map={},
+                curated_hot_terms=set(),
+                curated_low_terms=set(),
+                path_score_map={},
+                stats_prefix="test",
+            )
+
+        self.assertEqual(prior[("tongpin", "\u7532\u8bcd")][0], prior[("tongpin", "\u4e59\u8bcd")][0])
+
+    def test_curated_daily_membership_does_not_fake_independent_sources(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            dictionary_path = pathlib.Path(temp_dir) / "dict.txt"
+            dictionary_path.write_text(
+                "rengong\t\u4eba\u5de5\u5c42\u8bcd\t1000\n",
+                encoding="utf-8",
+            )
+            prior, _stats = builder._build_completion_popularity_prior(
+                dictionary_path,
+                usage_score_map={"\u4eba\u5de5\u5c42\u8bcd": 0.50},
+                corpus_frequency_map={},
+                document_frequency_map={},
+                persistence_map={},
+                source_hits_map={"\u4eba\u5de5\u5c42\u8bcd": 1},
+                vertical_layer_map={},
+                curated_hot_terms={"\u4eba\u5de5\u5c42\u8bcd"},
+                curated_low_terms=set(),
+                path_score_map={},
+                stats_prefix="test",
+            )
+
+        item = prior[("rengong", "\u4eba\u5de5\u5c42\u8bcd")]
+        self.assertEqual(1, item[3])
+        self.assertLess(item[0], 700)
+
     def test_runtime_compact_parser_matches_completion_prefix_boundaries(self) -> None:
         self.assertEqual(["ti", "gao", "hen"], builder._runtime_parse_compact_pinyin("tigaohen"))
         self.assertEqual(["bian"], builder._runtime_parse_compact_pinyin("bian"))
+
+    def test_completion_exact_lookup_deduplicates_normalized_pinyin_and_erhua(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            dictionary_path = pathlib.Path(temp_dir) / "dict.txt"
+            dictionary_path.write_text(
+                "tigaohenduo\t\u63d0\u9ad8\u5f88\u591a\t500\n"
+                "ti'gao'hen'duo\t\u63d0\u9ad8\u5f88\u591a\t700\n"
+                "narqu\t\u54ea\u513f\u53bb\t900\n"
+                "naerqu\t\u54ea\u513f\u53bb\t800\n",
+                encoding="utf-8",
+            )
+            prior = {
+                ("tigaohenduo", "\u63d0\u9ad8\u5f88\u591a"): (700, 0, 0, 0, 0, 0, 0),
+                ("narqu", "\u54ea\u513f\u53bb"): (700, 0, 0, 0, 0, 0, 0),
+                ("naerqu", "\u54ea\u513f\u53bb"): (700, 0, 0, 0, 0, 0, 0),
+            }
+
+            lookup, stats = builder._build_completion_exact_lookup(
+                dictionary_path,
+                prior,
+                stats_prefix="test",
+            )
+
+        normalized_tigao_rows = [
+            key
+            for key in lookup
+            if key[0] == "tigao"
+            and builder._normalize_compact_pinyin_key(key[1]) == "tigaohenduo"
+            and key[2] == "\u63d0\u9ad8\u5f88\u591a"
+        ]
+        self.assertEqual(1, len(normalized_tigao_rows))
+        self.assertEqual(700, lookup[normalized_tigao_rows[0]][0])
+        self.assertFalse(
+            any(builder._normalize_compact_pinyin_key(key[1]) == "narqu" for key in lookup),
+            "standalone r erhua rows are not addressable by the runtime completion matcher",
+        )
+        self.assertTrue(
+            any(builder._normalize_compact_pinyin_key(key[1]) == "naerqu" for key in lookup),
+            "an explicit er reading must remain eligible",
+        )
+        self.assertEqual(len(lookup), stats["test_completion_lookup_rows"])
 
     def test_transition_completion_rejects_runtime_boundary_ambiguity(self) -> None:
         mapping = {
