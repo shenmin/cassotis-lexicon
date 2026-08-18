@@ -54,7 +54,7 @@ class LmTransitionTrainingTests(unittest.TestCase):
             ],
         )
 
-    def test_transition_completion_index_is_strict_and_prefix_unambiguous(self) -> None:
+    def test_transition_completion_index_retains_ambiguous_top_k(self) -> None:
         mapping = {
             ("tigao", "\u63d0\u9ad8"): 720,
             ("henduo", "\u5f88\u591a"): 680,
@@ -88,9 +88,10 @@ class LmTransitionTrainingTests(unittest.TestCase):
             stats_prefix="test",
         )
 
-        self.assertFalse(
-            any(key[0] == "tigao" for key in completions),
-            "equally strong completions must suppress the ambiguous prefix",
+        self.assertEqual(
+            2,
+            sum(1 for key in completions if key[0] == "tigao"),
+            "runtime context needs the reliable alternatives for an ambiguous prefix",
         )
         self.assertIn(
             (
@@ -101,8 +102,11 @@ class LmTransitionTrainingTests(unittest.TestCase):
             ),
             completions,
         )
-        self.assertGreater(
-            stats["test_transition_completion_skipped_ambiguous_prefix"], 0
+        self.assertEqual(
+            1, stats["test_transition_completion_retained_ambiguous_prefix"]
+        )
+        self.assertEqual(
+            0, stats["test_transition_completion_skipped_ambiguous_prefix"]
         )
 
     def test_transition_completion_excludes_exact_and_weak_paths(self) -> None:
@@ -201,9 +205,9 @@ class LmTransitionTrainingTests(unittest.TestCase):
         self,
     ) -> None:
         rows = {
-            ("tigaohen", "tigaohenduo", "\u63d0\u9ad8\u5f88\u591a", "\u63d0\u9ad8|\u5f88\u591a"): 570,
-            ("aichi", "aichide", "\u7231\u5403\u7684", "\u7231|\u5403\u7684"): 580,
-            ("youxiang", "youxiangdizhi", "\u90ae\u7bb1\u5730\u5740", "\u90ae\u7bb1|\u5730\u5740"): 600,
+            ("tigaohen", "ti'gao'hen'duo", "\u63d0\u9ad8\u5f88\u591a", "\u63d0\u9ad8|\u5f88\u591a"): 570,
+            ("aichi", "ai'chi'de", "\u7231\u5403\u7684", "\u7231|\u5403\u7684"): 580,
+            ("youxiang", "you'xiang'di'zhi", "\u90ae\u7bb1\u5730\u5740", "\u90ae\u7bb1|\u5730\u5740"): 600,
             ("cifudian", "cifudianji", "\u4f3a\u670d\u7535\u673a", "\u4f3a\u670d|\u7535\u673a"): 590,
         }
         with tempfile.TemporaryDirectory() as temp_dir:
@@ -232,13 +236,13 @@ class LmTransitionTrainingTests(unittest.TestCase):
             {
                 (
                     "tigaohen",
-                    "tigaohenduo",
+                    "ti'gao'hen'duo",
                     "\u63d0\u9ad8\u5f88\u591a",
                     "\u63d0\u9ad8|\u5f88\u591a",
                 ): 570,
                 (
                     "aichi",
-                    "aichide",
+                    "ai'chi'de",
                     "\u7231\u5403\u7684",
                     "\u7231|\u5403\u7684",
                 ): 580,

@@ -21283,7 +21283,8 @@ def _build_transition_completion_index(
     Runtime completion must never enumerate word combinations. This index
     contains only exact 1+2, 2+1, 2+2 and 2+3 paths that already passed the
     corpus transition collector and then pass a stricter completion gate.
-    Ambiguous prefixes are dropped instead of exposing an unstable guess.
+    Up to six reliable alternatives are retained for each prefix so runtime
+    context can resolve ambiguity without enumerating word combinations.
     """
 
     min_transition_score = 420
@@ -21296,6 +21297,7 @@ def _build_transition_completion_index(
     min_direct_count = 8
     min_prefix_evidence_gap = 24
     min_prefix_count_ratio_percent = 130
+    max_candidates_per_prefix = 6
     allowed_layouts = {(1, 2), (2, 1), (2, 2), (2, 3)}
     exact_keys = {
         (_normalize_compact_pinyin_key(pinyin), text)
@@ -21318,6 +21320,7 @@ def _build_transition_completion_index(
         f"{stats_prefix}_transition_completion_skipped_pinyin_alignment": 0,
         f"{stats_prefix}_transition_completion_skipped_runtime_prefix_boundary": 0,
         f"{stats_prefix}_transition_completion_skipped_ambiguous_prefix": 0,
+        f"{stats_prefix}_transition_completion_retained_ambiguous_prefix": 0,
     }
 
     for (full_pinyin, path_text), evidence_values in completion_evidence.items():
@@ -21461,11 +21464,12 @@ def _build_transition_completion_index(
                 or top[4] * 100 < runner[4] * min_prefix_count_ratio_percent
             ):
                 stats[
-                    f"{stats_prefix}_transition_completion_skipped_ambiguous_prefix"
+                    f"{stats_prefix}_transition_completion_retained_ambiguous_prefix"
                 ] += 1
-                continue
-        top = ordered[0]
-        output[(typed_prefix, top[0], top[1], top[2])] = top[3]
+        for candidate in ordered[:max_candidates_per_prefix]:
+            output[
+                (typed_prefix, candidate[0], candidate[1], candidate[2])
+            ] = candidate[3]
 
     stats[f"{stats_prefix}_transition_completion_rows"] = len(output)
     return output, stats
@@ -21557,17 +21561,18 @@ def _filter_transition_completion_against_written_dictionary(
     dropped_component_reading = 0
     for key, evidence in mapping.items():
         typed_prefix, full_pinyin, text, path_text = key
+        normalized_full_pinyin = _normalize_compact_pinyin_key(full_pinyin)
         segments = path_text.split(QUERY_PATH_FILE_SEPARATOR)
         if len(segments) != 2 or "".join(segments) != text:
             dropped_component_reading += 1
             continue
-        if (full_pinyin, text) in exact_keys:
+        if (normalized_full_pinyin, text) in exact_keys:
             dropped_full_exact += 1
             continue
         left_pinyins = pinyins_by_text.get(segments[0], set())
         right_pinyins = pinyins_by_text.get(segments[1], set())
         if not any(
-            left_pinyin + right_pinyin == full_pinyin
+            left_pinyin + right_pinyin == normalized_full_pinyin
             for left_pinyin in left_pinyins
             for right_pinyin in right_pinyins
         ):
