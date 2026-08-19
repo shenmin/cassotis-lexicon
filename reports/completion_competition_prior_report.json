@@ -1,0 +1,82 @@
+{
+  "domains": [
+    "novel",
+    "chat",
+    "gpt",
+    "fineweb"
+  ],
+  "input_hashes": {
+    "novel": "c2c4f32133e89595605bf072c279da692ad424f25741ef9f63505bc46689bfe1",
+    "chat": "6b9e582c24a2214f969b264d27b8f8f9d70597fc4ad6ddcd0d2a84f2a28dc62f",
+    "gpt": "828fc32f899543ffdea6addc8c3c86f684fe1370f07f27dc477b46243e486bdf",
+    "fineweb": "16dacec85045933759b0d37639e6516c4326bebc33f400835d5933edd4d4d2d9"
+  },
+  "retained_relations": {
+    "novel": 52508,
+    "chat": 32414,
+    "gpt": 14756,
+    "fineweb": 30982
+  },
+  "index_rows": 42453,
+  "index_rows_by_context_width": {
+    "0": 7082,
+    "1": 16611,
+    "2": 9336,
+    "3": 5256,
+    "4": 4168
+  },
+  "leave_one_domain_out": {
+    "novel": {
+      "groups": 49542,
+      "current_hits": 38052,
+      "output_hits": 38484,
+      "output_rate": 0.776795446287998,
+      "net": 432,
+      "rescues": 1865,
+      "regressions": 1433,
+      "switches": 4111
+    },
+    "chat": {
+      "groups": 30394,
+      "current_hits": 22304,
+      "output_hits": 23233,
+      "output_rate": 0.7643942883463841,
+      "net": 929,
+      "rescues": 1779,
+      "regressions": 850,
+      "switches": 3452
+    },
+    "gpt": {
+      "groups": 13741,
+      "current_hits": 10810,
+      "output_hits": 11123,
+      "output_rate": 0.8094752929190016,
+      "net": 313,
+      "rescues": 609,
+      "regressions": 296,
+      "switches": 1099
+    },
+    "fineweb": {
+      "groups": 28728,
+      "current_hits": 22023,
+      "output_hits": 22752,
+      "output_rate": 0.7919799498746867,
+      "net": 729,
+      "rescues": 1309,
+      "regressions": 580,
+      "switches": 2285
+    }
+  },
+  "validation": {
+    "report": "D:\\cassotis_ime\\out\\one_key_completion_official_diag_evidence",
+    "report_hash": "c65fb4ca62a9985c7afebb5da306942e04e2a29784d014f4ac51a6b3e4b2cc6d",
+    "groups": 7384,
+    "current_hits": 5835,
+    "output_hits": 6007,
+    "output_rate": 0.8135157096424702,
+    "net": 172,
+    "rescues": 356,
+    "regressions": 184,
+    "switches": 658
+  }
+}

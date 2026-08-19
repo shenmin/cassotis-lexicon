@@ -101,7 +101,8 @@ function Test-TransitionCompletionFile {
     param([string]$Path)
 
     $lineNo = 0
-    $seenPrefixes = @{}
+    $prefixCounts = @{}
+    $seenRows = @{}
     Get-Content -Encoding utf8 $Path | ForEach-Object {
         $lineNo++
         $line = $_.Trim()
@@ -124,10 +125,20 @@ function Test-TransitionCompletionFile {
             ($compactFullPinyin.Length -le $typedPrefix.Length)) {
             throw "Invalid transition-completion pinyin at ${Path}:$lineNo"
         }
-        if ($seenPrefixes.ContainsKey($typedPrefix)) {
-            throw "Duplicate transition-completion prefix at ${Path}:$lineNo -> $typedPrefix"
+        $rowKey = "$typedPrefix`0$fullPinyin`0$text`0$($parts[3].Trim())"
+        if ($seenRows.ContainsKey($rowKey)) {
+            throw "Duplicate transition-completion row at ${Path}:$lineNo -> $typedPrefix"
         }
-        $seenPrefixes[$typedPrefix] = $true
+        $seenRows[$rowKey] = $true
+
+        $prefixCount = 1
+        if ($prefixCounts.ContainsKey($typedPrefix)) {
+            $prefixCount = [int]$prefixCounts[$typedPrefix] + 1
+        }
+        if ($prefixCount -gt 6) {
+            throw "Too many transition-completion rows at ${Path}:$lineNo -> $typedPrefix"
+        }
+        $prefixCounts[$typedPrefix] = $prefixCount
         if (($text -eq '') -or ($pathParts.Count -ne 2) -or
             (($pathParts -join '') -ne $text)) {
             throw "Invalid transition-completion path at ${Path}:$lineNo"
@@ -136,6 +147,119 @@ function Test-TransitionCompletionFile {
             ($evidence -le 0)) {
             throw "Invalid transition-completion evidence at ${Path}:$lineNo"
         }
+    }
+}
+
+function Test-CompletionCompetitionFile {
+    param([string]$Path)
+
+    $lineNo = 0
+    $seenKeys = @{}
+    Get-Content -Encoding utf8 $Path | ForEach-Object {
+        $lineNo++
+        $line = $_.Trim()
+        if ($line -eq '') { return }
+
+        $parts = $line -split "`t"
+        if ($parts.Count -ne 8) {
+            throw "Invalid completion-competition column count at ${Path}:$lineNo"
+        }
+
+        $contextWidth = -1
+        $evidence = 0
+        $occurrenceCount = 0
+        $sourceCount = 0
+        $contextSuffix = $parts[1].Trim()
+        $typedPrefix = $parts[2].Trim()
+        $fullPinyin = $parts[3].Trim()
+        $compactFullPinyin = $fullPinyin.Replace("'", '')
+        $text = $parts[4].Trim()
+        if ((-not [int]::TryParse($parts[0].Trim(), [ref]$contextWidth)) -or
+            ($contextWidth -lt 0) -or ($contextWidth -gt 4) -or
+            (($contextWidth -eq 0) -and ($contextSuffix -ne '')) -or
+            (($contextWidth -gt 0) -and ($contextSuffix -eq '')) -or
+            ($typedPrefix -notmatch '^[a-z]+$') -or
+            ($fullPinyin -notmatch "^[a-z]+(?:'[a-z]+)*$") -or
+            (-not $compactFullPinyin.StartsWith($typedPrefix)) -or
+            ($compactFullPinyin.Length -le $typedPrefix.Length) -or
+            ($text -eq '') -or
+            (-not [int]::TryParse($parts[5].Trim(), [ref]$evidence)) -or
+            ($evidence -le 0) -or
+            (-not [int]::TryParse($parts[6].Trim(), [ref]$occurrenceCount)) -or
+            ($occurrenceCount -le 0) -or
+            (-not [int]::TryParse($parts[7].Trim(), [ref]$sourceCount)) -or
+            ($sourceCount -le 0) -or ($sourceCount -gt 16)) {
+            throw "Invalid completion-competition row at ${Path}:$lineNo"
+        }
+
+        $key = "$contextWidth`0$contextSuffix`0$typedPrefix`0$fullPinyin`0$text"
+        if ($seenKeys.ContainsKey($key)) {
+            throw "Duplicate completion-competition row at ${Path}:$lineNo"
+        }
+        $seenKeys[$key] = $true
+    }
+}
+
+function Test-CompletionPairAuditFile {
+    param([string]$Path)
+
+    $lineNo = 0
+    $seenKeys = @{}
+    Get-Content -Encoding utf8 $Path | ForEach-Object {
+        $lineNo++
+        $line = $_.TrimEnd()
+        if ($line -eq '') { return }
+
+        $parts = $line -split "`t"
+        if ($parts.Count -ne 13) {
+            throw "Invalid completion-pair-audit column count at ${Path}:$lineNo"
+        }
+
+        $contextWidth = -1
+        $pairDecision = -2
+        $keepCount = -1
+        $switchCount = -1
+        $keepSourceCount = -1
+        $switchSourceCount = -1
+        $confidence = -1
+        $contextSuffix = $parts[1].Trim()
+        $typedPrefix = $parts[2].Trim()
+        $baselinePinyin = $parts[3].Trim()
+        $baselineText = $parts[4].Trim()
+        $challengerPinyin = $parts[5].Trim()
+        $challengerText = $parts[6].Trim()
+        if ((-not [int]::TryParse($parts[0].Trim(), [ref]$contextWidth)) -or
+            ($contextWidth -lt 0) -or ($contextWidth -gt 4) -or
+            (($contextWidth -eq 0) -and ($contextSuffix -ne '')) -or
+            (($contextWidth -gt 0) -and ($contextSuffix -eq '')) -or
+            ($typedPrefix -notmatch '^[a-z]+$') -or
+            ($baselinePinyin -notmatch '^[a-z]+$') -or
+            ($challengerPinyin -notmatch '^[a-z]+$') -or
+            (-not $baselinePinyin.StartsWith($typedPrefix)) -or
+            (-not $challengerPinyin.StartsWith($typedPrefix)) -or
+            ($baselinePinyin.Length -le $typedPrefix.Length) -or
+            ($challengerPinyin.Length -le $typedPrefix.Length) -or
+            ($baselineText -eq '') -or ($challengerText -eq '') -or
+            (-not [int]::TryParse($parts[7].Trim(), [ref]$pairDecision)) -or
+            ($pairDecision -lt -1) -or ($pairDecision -gt 1) -or
+            (-not [int]::TryParse($parts[8].Trim(), [ref]$keepCount)) -or
+            ($keepCount -lt 0) -or
+            (-not [int]::TryParse($parts[9].Trim(), [ref]$switchCount)) -or
+            ($switchCount -lt 0) -or (($keepCount + $switchCount) -le 0) -or
+            (-not [int]::TryParse($parts[10].Trim(), [ref]$keepSourceCount)) -or
+            ($keepSourceCount -lt 0) -or ($keepSourceCount -gt 16) -or
+            (-not [int]::TryParse($parts[11].Trim(), [ref]$switchSourceCount)) -or
+            ($switchSourceCount -lt 0) -or ($switchSourceCount -gt 16) -or
+            (-not [int]::TryParse($parts[12].Trim(), [ref]$confidence)) -or
+            ($confidence -lt 0) -or ($confidence -gt 1000)) {
+            throw "Invalid completion-pair-audit row at ${Path}:$lineNo"
+        }
+
+        $key = "$contextWidth`0$contextSuffix`0$typedPrefix`0$baselinePinyin`0$baselineText`0$challengerPinyin`0$challengerText"
+        if ($seenKeys.ContainsKey($key)) {
+            throw "Duplicate completion-pair-audit row at ${Path}:$lineNo"
+        }
+        $seenKeys[$key] = $true
     }
 }
 
@@ -210,6 +334,10 @@ $required = @(
     'data\generated\dict_query_path_prior_tc.txt',
     'data\generated\dict_transition_completion_sc.txt',
     'data\generated\dict_transition_completion_tc.txt',
+    'data\generated\dict_completion_competition_sc.txt',
+    'data\generated\dict_completion_competition_tc.txt',
+    'data\generated\dict_completion_pair_audit_sc.txt',
+    'data\generated\dict_completion_pair_audit_tc.txt',
     'data\generated\dict_unihan_sc.txt',
     'data\generated\dict_unihan_tc.txt',
     'manifests\sources.public.yml',
@@ -249,6 +377,10 @@ Test-DictFile (Join-Path $Root 'data\generated\dict_query_path_prior_sc.txt')
 Test-DictFile (Join-Path $Root 'data\generated\dict_query_path_prior_tc.txt')
 Test-TransitionCompletionFile (Join-Path $Root 'data\generated\dict_transition_completion_sc.txt')
 Test-TransitionCompletionFile (Join-Path $Root 'data\generated\dict_transition_completion_tc.txt')
+Test-CompletionCompetitionFile (Join-Path $Root 'data\generated\dict_completion_competition_sc.txt')
+Test-CompletionCompetitionFile (Join-Path $Root 'data\generated\dict_completion_competition_tc.txt')
+Test-CompletionPairAuditFile (Join-Path $Root 'data\generated\dict_completion_pair_audit_sc.txt')
+Test-CompletionPairAuditFile (Join-Path $Root 'data\generated\dict_completion_pair_audit_tc.txt')
 Test-DictFile (Join-Path $Root 'data\generated\dict_unihan_sc.txt')
 Test-DictFile (Join-Path $Root 'data\generated\dict_unihan_tc.txt')
 Test-PinyinOverrideFile (Join-Path $Root 'manifests\pinyin_overrides.tsv')

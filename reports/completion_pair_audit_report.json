@@ -1,0 +1,85 @@
+{
+  "domains": [
+    "novel",
+    "chat",
+    "gpt",
+    "fineweb"
+  ],
+  "input_hashes": {
+    "novel": "53b177f27581c4fd463b9ce4c4f39f8458fac37d6e337d32cd7350f2ed60c0f3",
+    "chat": "9974d89c1e9f8544ed89f08ce6bbfff894e14777a8876b49efbb88808c02b3ea",
+    "gpt": "353b48880a7ef68cede1791a4ff89a1d60b2fd25142f0dde88c77f02f5f82213",
+    "fineweb": "f497fdd6357ee92f987eeebf840e72518f035df8b8c31c198912bd556b3eb403"
+  },
+  "events": {
+    "novel": 169291,
+    "chat": 116752,
+    "gpt": 49892,
+    "fineweb": 103064
+  },
+  "groups": {
+    "novel": 99471,
+    "chat": 60962,
+    "gpt": 27908,
+    "fineweb": 59246
+  },
+  "index_rows": 4379,
+  "switch_rows": 707,
+  "keep_blocker_rows": 0,
+  "abstain_blocker_rows": 3672,
+  "decision_policy": {
+    "minimum_decision_ratio": 0.85,
+    "minimum_events_by_context_width": {
+      "0": 3,
+      "1": 5,
+      "2-4": 4
+    }
+  },
+  "index_rows_by_context_width": {
+    "0": 697,
+    "1": 870,
+    "2": 916,
+    "3": 946,
+    "4": 950
+  },
+  "leave_one_domain_out": {
+    "novel": {
+      "groups": 99471,
+      "switch_actions": 1788,
+      "rescues": 945,
+      "regressions": 263,
+      "net": 682
+    },
+    "chat": {
+      "groups": 60962,
+      "switch_actions": 1809,
+      "rescues": 1052,
+      "regressions": 151,
+      "net": 901
+    },
+    "gpt": {
+      "groups": 27908,
+      "switch_actions": 528,
+      "rescues": 374,
+      "regressions": 42,
+      "net": 332
+    },
+    "fineweb": {
+      "groups": 59246,
+      "switch_actions": 926,
+      "rescues": 633,
+      "regressions": 55,
+      "net": 578
+    }
+  },
+  "validation": {
+    "report": "D:\\cassotis_ime\\out\\one_key_completion_current_candidates_20260819\\report",
+    "report_hash": "799ce15754138b8ee543441e96e0479a2513528ee69e5a6f62f98dce6c114403",
+    "events": 24386,
+    "groups": 12732,
+    "switch_actions": 228,
+    "rescues": 143,
+    "regressions": 16,
+    "net": 127
+  }
+}
