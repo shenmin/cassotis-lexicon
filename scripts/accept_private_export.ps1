@@ -150,6 +150,68 @@ function Test-TransitionCompletionFile {
     }
 }
 
+function Test-LongCompletionFile {
+    param([string]$Path)
+
+    $lineNo = 0
+    $anchorCounts = @{}
+    $seenRows = @{}
+    Get-Content -Encoding utf8 $Path | ForEach-Object {
+        $lineNo++
+        $line = $_.Trim()
+        if ($line -eq '') { return }
+
+        $parts = $line -split "`t"
+        if ($parts.Count -ne 6) {
+            throw "Invalid long-completion column count at ${Path}:$lineNo"
+        }
+
+        $anchorPath = $parts[0].Trim()
+        $suffixPinyin = $parts[1].Trim()
+        $suffixText = $parts[2].Trim()
+        $suffixPath = $parts[3].Trim()
+        $anchorParts = $anchorPath -split '\|'
+        $suffixParts = $suffixPath -split '\|'
+        $emptyAnchorParts = @($anchorParts | Where-Object {
+            [string]::IsNullOrWhiteSpace($_)
+        })
+        $emptySuffixParts = @($suffixParts | Where-Object {
+            [string]::IsNullOrWhiteSpace($_)
+        })
+        $evidence = 0
+        $sourceCount = 0
+        if (($anchorPath -eq '') -or ($suffixText -eq '') -or
+            ($emptyAnchorParts.Count -gt 0) -or
+            ($emptySuffixParts.Count -gt 0) -or
+            ($anchorParts.Count -lt 1) -or ($anchorParts.Count -gt 3) -or
+            ($suffixParts.Count -lt 1) -or ($suffixParts.Count -gt 3) -or
+            (($suffixParts -join '') -ne $suffixText) -or
+            ($suffixPinyin -notmatch "^[a-z]+(?:'[a-z]+){0,5}$")) {
+            throw "Invalid long-completion path at ${Path}:$lineNo"
+        }
+        if ((-not [int]::TryParse($parts[4].Trim(), [ref]$evidence)) -or
+            ($evidence -le 0) -or
+            (-not [int]::TryParse($parts[5].Trim(), [ref]$sourceCount)) -or
+            ($sourceCount -lt 5)) {
+            throw "Invalid long-completion evidence at ${Path}:$lineNo"
+        }
+
+        $rowKey = "$anchorPath`0$suffixPinyin`0$suffixText"
+        if ($seenRows.ContainsKey($rowKey)) {
+            throw "Duplicate long-completion row at ${Path}:$lineNo"
+        }
+        $seenRows[$rowKey] = $true
+        $anchorCount = 1
+        if ($anchorCounts.ContainsKey($anchorPath)) {
+            $anchorCount = [int]$anchorCounts[$anchorPath] + 1
+        }
+        if ($anchorCount -gt 8) {
+            throw "Too many long-completion rows at ${Path}:$lineNo -> $anchorPath"
+        }
+        $anchorCounts[$anchorPath] = $anchorCount
+    }
+}
+
 function Test-CompletionCompetitionFile {
     param([string]$Path)
 
@@ -334,6 +396,8 @@ $required = @(
     'data\generated\dict_query_path_prior_tc.txt',
     'data\generated\dict_transition_completion_sc.txt',
     'data\generated\dict_transition_completion_tc.txt',
+    'data\generated\dict_long_completion_sc.txt',
+    'data\generated\dict_long_completion_tc.txt',
     'data\generated\dict_completion_competition_sc.txt',
     'data\generated\dict_completion_competition_tc.txt',
     'data\generated\dict_completion_pair_audit_sc.txt',
@@ -377,6 +441,8 @@ Test-DictFile (Join-Path $Root 'data\generated\dict_query_path_prior_sc.txt')
 Test-DictFile (Join-Path $Root 'data\generated\dict_query_path_prior_tc.txt')
 Test-TransitionCompletionFile (Join-Path $Root 'data\generated\dict_transition_completion_sc.txt')
 Test-TransitionCompletionFile (Join-Path $Root 'data\generated\dict_transition_completion_tc.txt')
+Test-LongCompletionFile (Join-Path $Root 'data\generated\dict_long_completion_sc.txt')
+Test-LongCompletionFile (Join-Path $Root 'data\generated\dict_long_completion_tc.txt')
 Test-CompletionCompetitionFile (Join-Path $Root 'data\generated\dict_completion_competition_sc.txt')
 Test-CompletionCompetitionFile (Join-Path $Root 'data\generated\dict_completion_competition_tc.txt')
 Test-CompletionPairAuditFile (Join-Path $Root 'data\generated\dict_completion_pair_audit_sc.txt')

@@ -122,6 +122,7 @@ if (-not (Test-Path -LiteralPath $Root)) {
 $buildScript = Join-Path $Root "scripts\build_external_seed.ps1"
 $validateScript = Join-Path $Root "scripts\validate_regression_samples.py"
 $readmeSnapshotScript = Join-Path $Root "scripts\update_readme_snapshot.py"
+$longCompletionScript = Join-Path $Root "scripts\build_long_completion_index.py"
 
 if (-not (Test-Path -LiteralPath $buildScript)) {
     throw "Missing build script: $buildScript"
@@ -131,6 +132,10 @@ if ((-not $SkipRegression) -and (-not (Test-Path -LiteralPath $validateScript)))
 }
 if ((-not $SkipReadmeSnapshot) -and (-not (Test-Path -LiteralPath $readmeSnapshotScript))) {
     throw "Missing README snapshot updater: $readmeSnapshotScript"
+}
+if (($QueryPathLmCorpusDir -ne "") -and
+    (-not (Test-Path -LiteralPath $longCompletionScript))) {
+    throw "Missing long completion index builder: $longCompletionScript"
 }
 
 if ($CacheSourceId -eq "") {
@@ -212,6 +217,28 @@ if ($LmTransitionGeneralOnly) {
 & $buildScript @buildArgs
 if ($LASTEXITCODE -ne 0) {
     throw "Build step failed with exit code $LASTEXITCODE"
+}
+
+if ($QueryPathLmCorpusDir -ne "") {
+    $resolvedCorpusDir = (Resolve-Path -LiteralPath $QueryPathLmCorpusDir).Path
+    $longCompletionCommonArgs = @(
+        '--corpus-dir', $resolvedCorpusDir
+    )
+    $longCompletionScArgs = @(
+        '--transition-completion', (Join-Path $Root 'data\generated\dict_transition_completion_sc.txt'),
+        '--lm-transition', (Join-Path $Root 'data\generated\dict_lm_transition_sc.txt'),
+        '--dictionary', (Join-Path $Root 'data\generated\dict_clean_sc.txt'),
+        '--output', (Join-Path $Root 'data\generated\dict_long_completion_sc.txt')
+    ) + $longCompletionCommonArgs
+    Invoke-PythonScript -ScriptPath $longCompletionScript -ScriptArgs $longCompletionScArgs
+    $longCompletionTcArgs = @(
+        '--transition-completion', (Join-Path $Root 'data\generated\dict_transition_completion_tc.txt'),
+        '--lm-transition', (Join-Path $Root 'data\generated\dict_lm_transition_tc.txt'),
+        '--dictionary', (Join-Path $Root 'data\generated\dict_clean_tc.txt'),
+        '--output', (Join-Path $Root 'data\generated\dict_long_completion_tc.txt'),
+        '--traditional'
+    ) + $longCompletionCommonArgs
+    Invoke-PythonScript -ScriptPath $longCompletionScript -ScriptArgs $longCompletionTcArgs
 }
 
 # Always produce dedicated Unihan dictionaries from lexicon pipeline
