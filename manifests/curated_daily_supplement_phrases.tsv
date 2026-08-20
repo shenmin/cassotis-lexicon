@@ -4541,7 +4541,6 @@
 反扣	反扣 反釦	0.01
 水笔	水筆	0.01
 抢着	搶著	0.01
-页首	頁首	0.01
 大事件	大事件	0.34
 之余	之餘	0.01
 挂满	掛滿	0.01
@@ -8235,10 +8234,14 @@
 安安静静	安安靜靜	0.01
 白闪闪	白閃閃	0.01
 那本	那本	0.01
-整页	整頁	0.01
 半面	半面	0.01
 流云	流雲	0.01
 渐浓	漸濃	0.01
+
+# Low-frequency colloquial fragments retained for exact input without
+# promoting them as ordinary long-sentence path anchors.
+出花	出花	0.28	chuhua
+出花样	出花樣	0.54	chuhuayang
 艳阳	艷陽	0.01
 班里	班裏	0.01
 抽选	抽選	0.01

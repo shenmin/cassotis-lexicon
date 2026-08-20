@@ -29447,6 +29447,7 @@ chuhexin	chuhexinhao	出核信號	700	278	0	0	3	0	27	1	0	0
 chuhu	chuhuyiliao	出乎意料	507	293	300	0	1	0	82	1	1	0
 chuhu	chuhuyiwai	出乎意外	448	222	141	0	1	0	88	1	1	1
 chuhu	chuhuyuliao	出乎預料	442	225	127	0	1	0	86	1	1	2
+chuhua	chuhuayang	出花樣	280	504	0	0	4	413	0	0	1	0
 chuhuai	chuhuaiwang	楚懷王	249	183	195	0	1	0	0	0	0	0
 chuhuyi	chuhuyiliao	出乎意料	507	293	300	0	1	0	82	1	0	0
 chuhuyi	chuhuyiwai	出乎意外	448	222	141	0	1	0	88	1	0	1
@@ -143808,6 +143809,7 @@ natuoliwangzi	natuoliwangzigong	納托利王子宮	691	80	0	0	0	0	0	0	0	0
 nawa	nawate'eryu	納瓦特爾語	289	80	0	0	0	0	0	0	0	0
 nawa	nawahuo	納瓦霍	246	177	175	0	1	0	0	0	0	1
 nawa	nawasa	納瓦薩	230	80	0	0	0	0	0	0	0	2
+nawan	nawanyi	那玩意	800	530	0	0	4	0	0	0	0	0
 nawate	nawate'eryu	納瓦特爾語	289	80	0	0	0	0	0	0	0	0
 nawateer	nawate'eryu	納瓦特爾語	289	80	0	0	0	0	0	0	0	0
 nawei	naweisa'erke	納維薩爾科	635	12	0	0	1	0	174	2	0	0
@@ -172828,8 +172830,9 @@ shatou	shatoujiao	沙頭角	412	158	85	0	1	0	0	0	1	0
 shatou	shatoushanao	傻頭傻腦	437	201	117	0	1	0	92	1	0	1
 shatoushan	shatoushanao	傻頭傻腦	437	201	117	0	1	0	92	1	0	0
 shawa	shawama	沙瓦瑪	167	80	0	0	0	0	0	0	1	0
-shawan	shawandapanji	沙灣大盤雞	447	80	0	0	0	0	0	0	1	0
-shawan	shawanqu	沙灣區	165	128	40	0	1	0	0	0	1	1
+shawan	shawanyi	啥玩意	800	534	0	0	4	0	0	0	0	0
+shawan	shawandapanji	沙灣大盤雞	447	80	0	0	0	0	0	0	1	1
+shawan	shawanqu	沙灣區	165	128	40	0	1	0	0	0	1	2
 shawanda	shawandapanji	沙灣大盤雞	447	80	0	0	0	0	0	0	0	0
 shawandapan	shawandapanji	沙灣大盤雞	447	80	0	0	0	0	0	0	0	0
 shawei	shaweimachuanqi	沙威瑪傳奇	613	93	0	0	1	0	109	1	0	0
@@ -202101,7 +202104,12 @@ wancheng	wanchengshiming	完成使命	280	272	40	0	2	0	0	0	1	1
 wancheng	wanchengshi	完成時	232	80	0	0	0	0	0	0	1	2
 wancheng	wanchengqu	宛城區	169	131	50	0	1	0	0	0	0	3
 wanchengshi	wanchengshiming	完成使命	280	272	40	0	2	0	0	0	0	0
-wanchu	wanchutechengbao	萬楚特城堡	660	145	0	0	1	0	98	1	0	0
+wanchu	wanchuhua	玩出花	800	520	0	0	4	0	0	0	0	0
+wanchu	wanchuhualai	玩出花來	800	199	0	0	1	0	0	0	0	1
+wanchu	wanchuhuayang	玩出花樣	800	199	0	0	1	0	0	0	0	2
+wanchu	wanchutechengbao	萬楚特城堡	660	145	0	0	1	0	98	1	0	3
+wanchuhua	wanchuhualai	玩出花來	800	199	0	0	1	0	0	0	1	0
+wanchuhua	wanchuhuayang	玩出花樣	800	199	0	0	1	0	0	0	1	1
 wanchun	wanchunlei	萬春蕾	10	202	0	0	2	0	0	0	0	0
 wanchute	wanchutechengbao	萬楚特城堡	660	145	0	0	1	0	98	1	0	0
 wanchutecheng	wanchutechengbao	萬楚特城堡	660	145	0	0	1	0	98	1	0	0
@@ -232689,6 +232697,7 @@ yebai	yebaihejian	野百合鹼	540	1	0	0	1	0	247	3	0	0
 yebaihe	yebaihejian	野百合鹼	540	1	0	0	1	0	247	3	0	0
 yebi	yebidaxiongdeshenghuaweiji	野比大雄的生化危機	662	93	0	0	1	0	109	1	0	0
 yebi	yebifu	葉鼻蝠	228	80	0	0	0	0	0	0	0	1
+yebian	yebianju	頁邊距	800	199	0	0	1	0	0	0	1	0
 yebida	yebidaxiongdeshenghuaweiji	野比大雄的生化危機	662	93	0	0	1	0	109	1	0	0
 yebidaxiong	yebidaxiongdeshenghuaweiji	野比大雄的生化危機	662	93	0	0	1	0	109	1	0	0
 yebidaxiongde	yebidaxiongdeshenghuaweiji	野比大雄的生化危機	662	93	0	0	1	0	109	1	0	0
@@ -232850,10 +232859,11 @@ yejia	yejiashang	也加上	800	534	0	0	4	0	0	0	1	0
 yejia	yejiayu	葉家妤	768	212	0	292	1	0	0	0	0	1
 yejian	yejianjinshizonghezheng	夜間進食綜合徵	896	102	0	0	2	0	154	3	1	0
 yejian	yejianying	葉劍英	818	273	0	0	3	0	0	0	0	1
-yejian	yejianyiniaozheng	夜間遺尿症	640	102	0	0	2	0	154	3	1	2
-yejian	yejianbiaoche	夜間飆車	538	77	0	0	1	0	109	1	1	3
-yejian	yejianbu	夜間部	379	137	40	0	1	0	0	0	1	4
-yejian	yejianjinshizonghezheng	夜間進食綜合征	367	80	0	0	0	0	0	0	1	5
+yejian	yejianju	頁間距	764	199	0	0	1	0	0	0	0	2
+yejian	yejianyiniaozheng	夜間遺尿症	640	102	0	0	2	0	154	3	1	3
+yejian	yejianbiaoche	夜間飆車	538	77	0	0	1	0	109	1	1	4
+yejian	yejianbu	夜間部	379	137	40	0	1	0	0	0	1	5
+yejian	yejianjinshizonghezheng	夜間進食綜合征	367	80	0	0	0	0	0	0	1	6
 yejianbiao	yejianbiaoche	夜間飆車	538	77	0	0	1	0	109	1	0	0
 yejiang	yejiangchuan	葉江川	247	180	185	0	1	0	0	0	0	0
 yejianjin	yejianjinshizonghezheng	夜間進食綜合徵	896	102	0	0	2	0	154	3	0	0
@@ -233100,7 +233110,9 @@ yemen	yemengongheguo	也門共和國	277	80	0	0	0	0	0	0	1	0
 yemengong	yemengongheguo	也門共和國	277	80	0	0	0	0	0	0	0	0
 yemengonghe	yemengongheguo	也門共和國	277	80	0	0	0	0	0	0	0	0
 yemian	yemianxuanranyinqing	頁面渲染引擎	811	278	0	0	3	0	27	1	1	0
-yemian	yemianhuancun	頁面緩存	700	214	0	0	1	0	78	1	1	1
+yemian	yemianbianju	頁面邊距	800	199	0	0	1	0	0	0	1	1
+yemian	yemianhuancun	頁面緩存	700	214	0	0	1	0	78	1	1	2
+yemianbian	yemianbianju	頁面邊距	800	199	0	0	1	0	0	0	0	0
 yemianhuan	yemianhuancun	頁面緩存	700	214	0	0	1	0	78	1	0	0
 yemianxuan	yemianxuanranyinqing	頁面渲染引擎	811	278	0	0	3	0	27	1	0	0
 yemianxuanran	yemianxuanranyinqing	頁面渲染引擎	811	278	0	0	3	0	27	1	0	0
@@ -243330,7 +243342,7 @@ yizheng	yizhengge	一整個	1000	540	0	0	4	0	0	0	0	0
 yizheng	yizhengju	一整句	1000	540	0	0	4	0	0	0	0	1
 yizheng	yizhenggen	一整根	1000	540	0	0	4	0	0	0	0	2
 yizheng	yizhengpian	一整篇	1000	540	0	0	4	0	0	0	0	3
-yizheng	yizhengxing	一整行	1000	540	0	0	4	0	0	0	0	4
+yizheng	yizhenghang	一整行	1000	540	0	0	4	0	0	0	0	4
 yizheng	yizhengzhi	一整隻	1000	540	0	0	4	0	0	0	0	5
 yizheng	yizhengmian	一整面	1000	540	0	0	4	0	0	0	0	6
 yizheng	yizhengwan	一整晚	800	516	0	0	4	0	0	0	0	7
@@ -255624,6 +255636,7 @@ zhetianbi	zhetianbiri	遮天蔽日	464	242	177	0	1	0	86	1	0	0
 zhetiangai	zhetiangaide	遮天蓋地	598	80	0	0	0	0	0	0	0	0
 zhetiao	zhetiaotuiwen	這條推文	800	199	0	0	1	0	0	0	1	0
 zhetiaotui	zhetiaotuiwen	這條推文	800	199	0	0	1	0	0	0	0	0
+zhewan	zhewanyi	這玩意	1000	540	0	0	4	0	0	0	0	0
 zhexia	zhexiazi	這下子	453	214	215	0	1	0	0	0	1	0
 zhexia	zhexiagao	遮瑕膏	193	124	28	0	1	0	0	0	1	1
 zhexian	zhexiantu	折線圖	413	137	40	0	1	0	0	0	1	0

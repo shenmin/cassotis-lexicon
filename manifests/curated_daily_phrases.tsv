@@ -1807,7 +1807,7 @@
 很厌恶	很厭惡	0.92	henyanwu
 长句	長句	0.90	changju
 整句	整句	0.90
-整行	整行	0.90
+整行	整行	0.90	zhenghang
 整篇	整篇	0.90
 整面	整面	0.90
 整根	整根	0.90
@@ -1815,7 +1815,7 @@
 一整只	一整隻	0.90
 一整个	一整個	0.90
 一整句	一整句	0.90
-一整行	一整行	0.90
+一整行	一整行	0.90	yizhenghang
 一整篇	一整篇	0.90
 一整面	一整面	0.90
 一整根	一整根	0.90
@@ -6888,6 +6888,19 @@
 下方	下方	0.94	xiafang
 页脚	頁腳	0.82	yejiao
 页眉	頁眉	0.82	yemei
+页头	頁頭	0.74	yetou
+页尾	頁尾	0.74	yewei
+页首	頁首	0.72	yeshou
+页末	頁末	0.72	yemo
+页顶	頁頂	0.70	yeding
+页底	頁底	0.70	yedi
+页边距	頁邊距	0.86	yebianju
+页面边距	頁面邊距	0.74	yemianbianju
+页宽	頁寬	0.62	yekuan
+页高	頁高	0.62	yegao
+页间距	頁間距	0.56	yejianju
+整页	整頁	0.78	zhengye
+整列	整列	0.76	zhenglie
 表头	表頭	0.78	biaotou
 列头	列頭	0.72	lietou
 行头	行頭	0.58	hangtou
@@ -7830,3 +7843,14 @@
 原账号	原賬號	0.80	yuanzhanghao
 新账户	新賬戶	0.84	xinzhanghu
 太神了	太神了	0.78	taishenle
+
+# Common colloquial thing and creative-result expressions 2026-08-20.
+这玩意	這玩意	0.90	zhewanyi
+这玩意儿	這玩意兒	0.86	zhewanyir
+那玩意	那玩意	0.80	nawanyi
+那玩意儿	那玩意兒	0.76	nawanyir
+啥玩意	啥玩意	0.84	shawanyi
+啥玩意儿	啥玩意兒	0.80	shawanyir
+玩出花	玩出花	0.70	wanchuhua
+玩出花来	玩出花來	0.78	wanchuhualai
+玩出花样	玩出花樣	0.76	wanchuhuayang
