@@ -12695,3 +12695,7 @@
 蛋花	蛋花	0.360	danhua	exact_rank
 蒸蛋	蒸蛋	0.460	zhengdan	exact_rank
 蒸鸡蛋	蒸雞蛋	0.440	zhengjidan	exact_rank
+
+# Common technical exact term. Keep it ahead of the storage-brand abbreviation
+# without injecting it as a high-frequency long-sentence path signal.
+系数	係數	0.550	xishu	exact_rank

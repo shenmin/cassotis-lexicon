@@ -21442,8 +21442,10 @@ chuheridangwu	鋤禾日當午	80	0	0	0	0	0	0
 chuhexinhao	出核信號	278	0	0	3	27	1	0
 chuhu	出乎	264	340	0	1	0	0	0
 chuhu	儲戶	200	183	0	1	0	0	0
+chuhua	出花	478	0	0	4	0	0	0
 chuhuaiwang	楚懷王	183	195	0	1	0	0	0
 chuhuan	芻豢	80	0	0	0	0	0	0
+chuhuayang	出花樣	504	0	0	4	0	0	413
 chuhun	初婚	170	113	0	1	0	0	0
 chuhuo	出貨	205	195	0	1	0	0	0
 chuhuo	出火	80	0	0	0	0	0	0
@@ -30769,7 +30771,8 @@ difenziyouxuantanggan	低分子右旋糖酐	1	0	0	1	247	3	0
 difu	地府	223	237	0	1	0	0	0
 difu	弟婦	173	120	0	1	0	0	0
 difuliyidaqingzhensi	迪夫里伊大清真寺	80	0	0	0	0	0	0
-difuni	蒂芙尼	80	0	0	0	0	0	0
+difuni	蒂芙尼	236	0	0	3	43	2	0
+difunilan	蒂芙尼藍	199	0	0	1	0	0	0
 difuzai	低負載	316	0	0	2	0	0	0
 digaixuezheng	低鈣血症	102	0	0	2	154	3	0
 dige	的哥	210	207	0	1	0	0	0
@@ -46281,6 +46284,7 @@ gaojiepingfeng	告解屏風	175	0	0	1	89	1	0
 gaojieshi	告解室	175	0	0	1	89	1	0
 gaojieyuyan	高階語言	137	40	0	1	0	0	0
 gaojifuzhujiashixitong	高級輔助駕駛系統	283	0	0	3	27	1	0
+gaojihui	高級灰	199	0	0	1	0	0	399
 gaojijianzhu	高技建築	182	0	0	1	87	1	0
 gaojijunguan	高級軍官	80	0	0	0	0	0	0
 gaojingdu	高精度	152	73	0	1	0	0	0
@@ -53324,6 +53328,7 @@ gutaifumeng	故態復萌	215	105	0	1	87	1	0
 gutaijiguang	固態激光	102	0	0	2	154	3	0
 gutaijiguangqi	固態激光器	102	0	0	2	154	3	0
 gutaileishe	固態雷射	102	0	0	2	154	3	0
+gutaipan	固態盤	197	0	0	1	83	1	0
 gutaiwuli	固態物理	278	0	0	3	27	1	0
 gutaiwulixue	固態物理學	278	0	0	3	27	1	0
 gutaiyingpan	固態硬盤	80	0	0	0	0	0	0
@@ -65348,6 +65353,7 @@ jiankong	檢控	146	59	0	1	0	0	0
 jiankongchengxu	監控程序	212	0	0	1	79	1	0
 jiankongfang	檢控方	80	0	0	0	0	0	0
 jiankongguan	檢控官	146	59	0	1	0	0	0
+jiankongpan	監控盤	168	0	0	1	91	1	0
 jiankongshi	監控室	284	0	0	2	0	0	0
 jiankoubuyan	緘口不言	192	40	0	1	88	1	0
 jianku	艱苦	310	457	0	1	0	0	0
@@ -72332,6 +72338,7 @@ jinshi	津市	180	160	0	1	0	0	0
 jinshi	近視	126	263	0	2	154	3	0
 jinshi	進食	6	311	0	1	247	3	0
 jinshibutongwangri	今時不同往日	229	0	0	2	68	1	0
+jinshidun	金士頓	38	0	0	1	174	2	0
 jinshihu	金石斛	1	0	0	1	247	3	0
 jinshijiang	金獅獎	137	66	0	1	0	0	0
 jinshijinri	今時今日	80	0	0	0	0	0	0
@@ -74390,6 +74397,7 @@ jixiemicheng	機械迷城	77	0	0	1	109	1	0
 jixiemiyu	機械密語	77	0	0	1	109	1	0
 jixieneng	機械能	229	253	0	1	0	0	0
 jixiepaidang	機械拍檔	77	0	0	1	109	1	0
+jixiepan	機械盤	197	0	0	1	83	1	0
 jixiequanjishou	機械拳擊手	93	0	0	1	109	1	0
 jixierendazhanlianjizuozhan	機械人大戰聯機作戰	93	0	0	1	109	1	0
 jixierenzhanzheng	機械人戰爭	93	0	0	1	109	1	0
@@ -76990,6 +76998,7 @@ kaiwen	凱文	186	175	0	1	0	0	0
 kaiwu	開悟	137	40	0	1	0	0	0
 kaiwuchengwu	開物成務	172	0	0	1	90	1	0
 kaixi	開戲	137	40	0	1	0	0	0
+kaixia	鎧俠	17	0	0	1	174	2	0
 kaixian	開先	137	40	0	1	0	0	0
 kaixiang	開箱	190	158	0	1	0	0	0
 kaixiao	開銷	242	286	0	1	0	0	0
@@ -78628,6 +78637,7 @@ kelaisileigongsi	克萊斯勒公司	80	0	0	0	0	0	0
 kelaisitecheqi	克賴斯特徹奇	145	91	0	1	0	0	0
 kelaite	科萊特	38	0	0	1	174	2	0
 kelaiyin	克萊因	158	127	0	1	0	0	0
+kelaiyinlan	克萊因藍	514	0	0	4	0	0	0
 kelaiyinxingquxiangwangge	克萊因性取向網格	278	0	0	3	27	1	0
 kelake	克拉克	271	233	0	2	0	0	0
 kelakefu	克拉科夫	179	183	0	1	0	0	0
@@ -84131,6 +84141,7 @@ lengse	冷色	173	120	0	1	0	0	0
 lengse	冷澀	137	40	0	1	0	0	0
 lengsediao	冷色調	202	0	0	2	0	0	0
 lengsensen	冷森森	171	158	0	1	0	0	0
+lengsexi	冷色系	522	0	0	4	0	0	401
 lengsheng	冷聲	202	0	0	2	0	0	0
 lengshenr	愣神兒	149	66	0	1	0	0	0
 lengshui	冷水	349	343	0	3	0	0	0
@@ -92456,6 +92467,7 @@ majunwei	馬濬偉	263	0	0	3	0	0	0
 majuzi	馬駒子	124	28	0	1	0	0	0
 maka	瑪卡	80	0	0	0	0	0	0
 makalong	馬卡龍	80	0	0	0	0	0	0
+makalongse	馬卡龍色	199	0	0	1	0	0	0
 make	馬克	359	377	0	3	0	0	0
 makebei	馬克杯	128	40	0	1	0	0	0
 makebi	馬克筆	128	40	0	1	0	0	0
@@ -98294,6 +98306,9 @@ mokuaiyouxiyouxiangongsi	魔塊遊戲有限公司	93	0	0	1	109	1	0
 mokumaoxian	魔窟冒險	77	0	0	1	109	1	0
 molalaisi	莫拉萊斯	80	0	0	0	0	0	0
 molan	墨藍	202	0	0	2	0	0	0
+molandi	莫蘭迪	38	0	0	1	174	2	0
+molandise	莫蘭迪色	199	0	0	1	0	0	0
+molandisexi	莫蘭迪色系	199	0	0	1	0	0	0
 molanse	墨藍色	202	0	0	2	0	0	0
 molanse	墨蘭色	202	0	0	2	0	0	0
 molapi	默拉皮	80	0	0	0	0	0	0
@@ -99807,6 +99822,7 @@ naiyoujiaobanqita	奶油攪拌器塔	168	0	0	1	91	1	0
 naiyoujiaobanqitai	奶油攪拌器臺	168	0	0	1	91	1	0
 naiyoujiaobanqitai	奶油攪拌器台	80	0	0	0	0	0	0
 naiyoujidan	奶油雞蛋	137	40	0	1	0	0	0
+naiyouse	奶油色	518	40	0	4	0	0	451
 naiyouxiaosheng	奶油小生	137	40	0	1	0	0	0
 naiyuan	奶源	202	0	0	2	0	0	0
 naizhan	奶站	80	0	0	0	0	0	0
@@ -101059,6 +101075,8 @@ natuoligong	納托利宮	80	0	0	0	0	0	0
 natuolin	納托林	1	0	0	0	150	1	0
 natuoliwangzigong	納托利王子宮	80	0	0	0	0	0	0
 nawahuo	納瓦霍	177	175	0	1	0	0	0
+nawanyi	那玩意	530	0	0	4	0	0	0
+nawanyir	那玩意兒	199	0	0	1	0	0	437
 nawasa	納瓦薩	80	0	0	0	0	0	0
 nawate'eryu	納瓦特爾語	80	0	0	0	0	0	0
 nawei	那位	621	508	0	4	0	0	0
@@ -103601,6 +103619,7 @@ nuanqipian	暖氣片	146	59	0	1	0	0	0
 nuanren	暖人	292	0	0	2	0	0	0
 nuanrongrong	暖融融	180	136	0	1	0	0	0
 nuanse	暖色	167	105	0	1	0	0	0
+nuansexi	暖色系	522	0	0	4	0	0	0
 nuanshuiping	暖水瓶	158	85	0	1	0	0	0
 nuantong	暖通	249	28	0	1	71	1	0
 nuanwendai	暖溫帶	1	0	0	1	247	3	0
@@ -104931,7 +104950,8 @@ pantao	蟠桃	221	233	0	1	0	0	0
 pantao	叛逃	219	227	0	1	0	0	0
 panti	盤梯	137	40	0	1	0	0	0
 panting	潘婷	80	0	0	0	0	0	0
-pantong	潘通	80	0	0	0	0	0	0
+pantong	潘通	17	0	0	1	174	2	0
+pantongseka	潘通色卡	510	0	0	4	0	0	0
 pantou	盼頭	195	170	0	1	0	0	0
 pantoufa	盤頭發	202	0	0	2	0	0	0
 pantu	叛徒	277	373	0	1	0	0	0
@@ -113146,6 +113166,7 @@ qiyegan	七葉苷	97	0	0	2	154	3	0
 qiyeguanli	企業管理	242	0	0	3	0	0	520
 qiyeguanlishuoshi	企業管理碩士	80	0	0	0	0	0	342
 qiyeguanlizhe	企業管理者	80	0	0	0	0	0	477
+qiyeji	企業級	199	0	0	1	0	0	0
 qiyejia	企業家	286	395	0	1	0	0	0
 qiyejianwanglu	企業間網路	80	0	0	0	0	0	0
 qiyejingying	企業經營	199	0	0	2	0	0	520
@@ -113153,6 +113174,7 @@ qiyejingyingzhe	企業經營者	80	0	0	0	0	0	417
 qiyejituan	企業集團	80	0	0	0	0	0	520
 qiyelianhezuzhi	企業聯合組織	80	0	0	0	0	0	0
 qiyeneiwanglu	企業內網路	80	0	0	0	0	0	0
+qiyepan	企業盤	204	0	0	1	81	1	0
 qiyesepu	氣液色譜	102	0	0	2	154	3	0
 qiyeshehuizeren	企業社會責任	80	0	0	0	0	0	512
 qiyeshen'andiwan	七葉神安滴丸	1	0	0	1	247	3	0
@@ -120025,6 +120047,7 @@ se'erjuesanshi	色爾爵三世	38	0	0	1	174	2	0
 sean	色胺	1	28	0	1	247	3	0
 seansuan	色氨酸	137	130	0	2	154	3	0
 seansuan	色胺酸	97	0	0	2	154	3	0
+seban	色板	522	0	0	4	0	0	0
 seban	色斑	179	133	0	1	0	0	0
 secai	色彩	378	561	0	2	0	0	0
 secaibinfen	色彩繽紛	182	141	0	1	0	0	0
@@ -120055,6 +120078,7 @@ sejian	色鍵	80	0	0	0	0	0	0
 sejie	色戒	17	0	0	1	174	2	0
 sejue	色覺	1	180	0	1	247	3	0
 sejuejiancha	色覺檢查	1	0	0	1	247	3	0
+seka	色卡	526	80	0	4	0	0	0
 sela	色拉	161	117	0	1	0	0	0
 selajiang	色拉醬	80	0	0	0	0	0	0
 selang	色狼	195	171	0	1	0	0	0
@@ -120162,6 +120186,7 @@ sesuxingshiwangmoyan	色素性視網膜炎	1	0	0	1	247	3	0
 sesuzengduo	色素增多	102	0	0	2	154	3	0
 sesuzhi	色素痣	1	113	0	1	247	3	0
 sewei	澀味	158	85	0	1	0	0	0
+sexi	色系	532	80	0	4	0	0	0
 sexiang	色相	198	178	0	1	0	0	0
 sexiangcha	色像差	223	0	0	1	0	0	0
 sexiangwei	色香味	295	127	0	2	0	0	0
@@ -120552,6 +120577,7 @@ shandao	釤刀	80	0	0	0	0	0	0
 shandaonian	山道年	144	85	0	1	0	0	0
 shande	善的	216	0	0	2	0	0	0
 shandi	山地	355	594	0	1	0	0	0
+shandi	閃迪	17	0	0	1	174	2	0
 shandian	閃電	311	419	0	3	61	3	0
 shandian	山巔	223	238	0	1	0	0	0
 shandianchuanshuodawudedamaoxian	閃電傳說大悟的大冒險	93	0	0	1	109	1	0
@@ -122362,6 +122388,8 @@ shawan	沙灣	345	330	0	3	0	0	0
 shawandapanji	沙灣大盤雞	80	0	0	0	0	0	0
 shawang	紗網	202	0	0	2	0	0	0
 shawanqu	沙灣區	128	40	0	1	0	0	0
+shawanyi	啥玩意	534	0	0	4	0	0	0
+shawanyir	啥玩意兒	199	0	0	1	0	0	0
 shawei	煞尾	137	40	0	1	0	0	0
 shaweima	沙威瑪	80	0	0	0	0	0	0
 shaweimachuanqi	沙威瑪傳奇	93	0	0	1	109	1	0
@@ -140599,6 +140627,7 @@ tongru	通乳	80	0	0	0	0	0	0
 tongrugusui	痛入骨髓	206	120	0	1	91	1	0
 tongruzhenci	痛如針刺	1	0	0	1	247	3	0
 tongse	瞳色	48	0	0	2	154	3	0
+tongsexi	同色系	526	40	0	4	0	0	0
 tongseyouxi	同色遊戲	77	0	0	1	109	1	0
 tongshan	通山	252	173	0	2	0	0	0
 tongshang	通商	337	439	0	2	0	0	0
@@ -143545,6 +143574,9 @@ wanchengqu	宛城區	131	50	0	1	0	0	0
 wanchengshi	完成時	80	0	0	0	0	0	0
 wanchengshiming	完成使命	272	40	0	2	0	0	0
 wanchu	挽出	202	0	0	2	0	0	0
+wanchuhua	玩出花	520	0	0	4	0	0	0
+wanchuhualai	玩出花來	199	0	0	1	0	0	0
+wanchuhuayang	玩出花樣	199	0	0	1	0	0	0
 wanchunlei	萬春蕾	202	0	0	2	0	0	0
 wanchutechengbao	萬楚特城堡	145	0	0	1	98	1	0
 wanci	婉詞	131	28	0	1	0	0	0
@@ -148806,6 +148838,7 @@ wumafenshi	五馬分尸	80	0	0	0	0	0	0
 wumahe	烏馬河	80	0	0	0	0	0	0
 wumahequ	烏馬河區	80	0	0	0	0	0	0
 wumai	霧霾	534	0	0	4	0	0	0
+wumailan	霧霾藍	199	0	0	1	0	0	0
 wuman	侮慢	176	127	0	1	0	0	0
 wumangmang	霧茫茫	155	80	0	1	0	0	0
 wumangxing	五芒星	80	0	0	0	0	0	0
@@ -154492,6 +154525,7 @@ xibuniuzi	西部牛仔	77	0	0	1	109	1	0
 xibupian	西部片	170	113	0	1	0	0	0
 xibuquming	西布曲明	1	0	0	1	245	3	0
 xibushidao	西部侍道	77	0	0	1	109	1	0
+xibushuju	西部數據	70	0	0	1	163	2	457
 xibuzijin	喜不自禁	168	109	0	1	0	0	0
 xibuzisheng	喜不自勝	248	220	0	1	88	1	0
 xicai	洗菜	208	40	0	2	0	0	0
@@ -155320,6 +155354,7 @@ xijiayuduzhongdu	西加魚毒中毒	102	0	0	2	154	3	0
 xijidiannaodonghuatuandui	西基電腦動畫團隊	278	0	0	3	27	1	0
 xijie	細節	620	473	0	4	0	0	0
 xijie	洗劫	296	313	0	2	0	0	0
+xijie	希捷	17	0	0	1	174	2	0
 xijieji	洗潔劑	80	0	0	0	0	0	0
 xijiejing	洗潔精	147	96	0	1	0	0	0
 xijieliangyuan	喜結良緣	172	117	0	1	0	0	0
@@ -158762,6 +158797,7 @@ xishu	係數	289	403	0	1	0	0	0
 xishu	稀疏	267	348	0	1	0	0	0
 xishu	悉數	225	244	0	1	0	0	0
 xishu	細數	208	40	0	2	0	0	0
+xishu	西數	17	0	0	1	174	2	0
 xishua	洗刷	230	256	0	1	0	0	0
 xishua	戲耍	209	204	0	1	0	0	0
 xishuai	蟋蟀	294	309	0	2	0	0	0
@@ -165066,6 +165102,7 @@ yeban	夜班	120	238	0	1	109	1	0
 yebao	液胞	81	0	0	2	154	3	0
 yebei	也被	200	0	0	2	0	0	0
 yebian	頁邊	80	0	0	0	0	0	0
+yebianju	頁邊距	199	0	0	1	0	0	0
 yebidaxiongdeshenghuaweiji	野比大雄的生化危機	93	0	0	1	109	1	0
 yebifu	葉鼻蝠	80	0	0	0	0	0	0
 yebing	葉柄	1	259	0	1	247	3	0
@@ -165111,6 +165148,7 @@ yede	曳地	202	0	0	2	0	0	0
 yedeiyou	也得有	530	0	0	4	0	0	0
 yedeng	也等	524	0	0	4	0	0	0
 yedeng	夜燈	202	0	0	2	0	0	0
+yedi	頁底	520	0	0	4	0	0	0
 yedi	液滴	229	253	0	1	0	0	0
 yedi	野地	228	251	0	1	0	0	0
 yedian	也點	199	0	0	1	0	0	0
@@ -165119,6 +165157,7 @@ yedianqie	野顛茄	1	0	0	1	247	3	0
 yediao	野釣	80	0	0	0	0	0	0
 yediaowuqiang	野調無腔	137	40	0	1	0	0	0
 yedie	殗殜	80	0	0	0	0	0	0
+yeding	頁頂	199	0	0	1	0	0	0
 yedongmai	腋動脈	97	0	0	2	154	3	0
 yedongxinhaochang	業洞信號場	278	0	0	3	27	1	0
 yedou	也都	532	0	0	4	0	0	0
@@ -165132,6 +165171,7 @@ yefuta	耶弗他	223	0	0	1	0	0	0
 yegan	也幹	199	0	0	1	0	0	0
 yeganlan	野甘藍	80	0	0	0	0	0	0
 yegao	椰糕	202	0	0	2	0	0	0
+yegao	頁高	199	0	0	1	0	0	0
 yegei	也給	199	0	0	1	0	0	0
 yegelikoujiu	野格利口酒	80	0	0	0	0	0	0
 yegen	也跟	530	0	0	4	0	0	0
@@ -165199,6 +165239,7 @@ yejiang	也將	316	0	0	2	0	0	0
 yejiangchuan	葉江川	180	185	0	1	0	0	0
 yejianjinshizonghezheng	夜間進食綜合徵	102	0	0	2	154	3	0
 yejianjinshizonghezheng	夜間進食綜合征	80	0	0	0	0	0	0
+yejianju	頁間距	199	0	0	1	0	0	0
 yejianying	葉劍英	273	0	0	3	0	0	0
 yejianyiniaozheng	夜間遺尿症	102	0	0	2	154	3	0
 yejiao	頁腳	532	0	0	4	0	0	0
@@ -165257,6 +165298,7 @@ yekong	夜空	144	312	0	1	109	1	0
 yekou	野口	141	50	0	1	0	0	0
 yekoufuke	葉口蝠科	80	0	0	0	0	0	0
 yekouyingshi	野口英世	1	0	0	1	247	3	0
+yekuan	頁寬	199	0	0	1	0	0	0
 yekuang	頁框	80	0	0	0	0	0	0
 yekuangtiandishu	野曠天低樹	202	0	0	2	0	0	0
 yelai	也來	199	0	0	1	0	0	0
@@ -165359,9 +165401,11 @@ yemenr	爺們兒	172	117	0	1	0	0	0
 yemian	頁面	319	236	0	2	0	0	0
 yemian	液面	211	210	0	1	0	0	0
 yemian	液麪	211	210	0	1	0	0	0
+yemianbianju	頁面邊距	199	0	0	1	0	0	0
 yemianhuancun	頁面緩存	214	0	0	1	78	1	0
 yemianxuanranyinqing	頁面渲染引擎	278	0	0	3	27	1	0
 yemingqiandeliulise	夜明前的琉璃色	93	0	0	1	109	1	0
+yemo	頁末	199	0	0	1	0	0	0
 yemoge	也末哥	223	0	0	1	0	0	0
 yemu	夜幕	255	317	0	1	0	0	0
 yemudichui	夜幕低垂	146	59	0	1	0	0	0
@@ -165446,8 +165490,8 @@ yeshi	夜市	210	206	0	1	0	0	0
 yeshi	也試	199	0	0	1	0	0	0
 yeshijing	夜視鏡	97	0	0	2	154	3	0
 yeshiyi	夜視儀	213	213	0	1	0	0	0
-yeshou	野獸	287	397	0	1	0	0	0
 yeshou	頁首	522	0	0	4	0	0	0
+yeshou	野獸	287	397	0	1	0	0	0
 yeshu	葉姝	28	0	0	1	174	2	0
 yeshuhua	葉舒華	343	0	755	1	0	0	0
 yeshui	也睡	522	0	0	4	0	0	0
@@ -165495,6 +165539,7 @@ yetipeide	液體培地	80	0	0	0	0	0	0
 yetiyaoji	液體葯劑	80	0	0	0	0	0	0
 yetiyaoji	液體藥劑	1	0	0	1	247	3	0
 yetizhiji	液體制劑	1	0	0	1	245	3	0
+yetou	頁頭	199	0	0	1	0	0	0
 yetu	野兔	238	276	0	1	0	0	0
 yeture	野兔熱	1	0	0	1	247	3	0
 yewai	野外	370	411	0	3	0	0	0
@@ -165507,6 +165552,7 @@ yewandou	野豌豆	1	40	0	1	247	3	0
 yewang	夜王	324	0	678	1	0	0	0
 yewanpaihuaizaiwomendefudaojiaoshi	夜晚徘徊在我們的輔導教室	93	0	0	1	109	1	0
 yewei	野味	267	348	0	1	0	0	0
+yewei	頁尾	199	0	0	1	0	0	0
 yeweihu	曳尾鸌	80	0	0	0	0	0	0
 yeweimin	葉偉民	80	0	0	0	0	0	0
 yeweiwen	葉偉文	80	0	0	0	0	0	0
@@ -168767,6 +168813,7 @@ yingpai	硬派	137	40	0	1	0	0	0
 yingpai	鷹派	103	185	0	1	109	1	0
 yingpan	硬盤	307	348	0	2	0	0	0
 yingpan	營盤	219	228	0	1	0	0	0
+yingpanhe	硬盤盒	226	0	0	1	75	1	0
 yingpanjiekou	硬盤接口	205	0	0	1	81	1	0
 yingpanqu	營盤區	7	0	0	1	174	2	0
 yingpanqudongqi	硬盤驅動器	210	0	0	1	79	1	438
@@ -171911,6 +171958,7 @@ yizhengciyan	義正詞嚴	186	0	0	1	86	1	0
 yizhenggaoxia	一爭高下	202	0	0	2	0	0	0
 yizhengge	一整個	540	0	0	4	0	0	0
 yizhenggen	一整根	540	0	0	4	0	0	0
+yizhenghang	一整行	540	0	0	4	0	0	0
 yizhengju	一整句	540	0	0	4	0	0	0
 yizhengmian	一整面	540	0	0	4	0	0	0
 yizhengpian	一整篇	540	0	0	4	0	0	0
@@ -171919,7 +171967,6 @@ yizhengshiting	以正視聽	137	40	0	1	0	0	0
 yizhengtian	一整天	338	266	0	2	0	0	0
 yizhengwan	一整晚	516	0	0	4	0	0	0
 yizhengweiji	疫症危機	77	0	0	1	109	1	0
-yizhenghang	一整行	540	0	0	4	0	0	0
 yizhengxingjingshenbing	癔症性精神病	1	0	0	1	247	3	0
 yizhengye	一整夜	284	40	0	2	0	0	0
 yizhengzhi	一整隻	540	0	0	4	0	0	0
@@ -180760,6 +180807,7 @@ zhengguijun	正規軍	242	284	0	1	0	0	0
 zhengguliaofa	整骨療法	102	0	0	2	154	3	0
 zhengguo	蒸鍋	165	100	0	1	0	0	0
 zhengguoqu	鄭國渠	159	130	0	1	0	0	0
+zhenghang	整行	540	28	0	4	0	0	0
 zhenghao	正好	339	542	0	1	0	0	0
 zhenghaojun	鄭浩均	213	0	292	1	0	0	0
 zhenghe	整合	308	450	0	1	0	0	0
@@ -180857,6 +180905,7 @@ zhengliang	錚亮	146	59	0	1	0	0	0
 zhengliang'ansuan	正亮氨酸	102	0	0	2	154	3	0
 zhengliangansuan	正亮氨酸	102	0	0	2	154	3	0
 zhenglianwudu	征斂無度	128	40	0	1	0	0	0
+zhenglie	整列	526	73	0	4	0	0	0
 zhenglihuodong	整理活動	1	0	0	1	247	3	0
 zhenglijun	鄭麗君	259	0	463	1	0	0	0
 zhenglimian	正立面	175	0	0	1	89	1	0
@@ -181160,7 +181209,6 @@ zhengxiexiangzheng	正邪相爭	80	0	0	0	0	0	0
 zhengxin	征信	190	160	0	1	0	0	0
 zhengxin	徵信	190	160	0	1	0	0	0
 zhengxinchengyi	正心誠意	172	0	0	1	90	1	0
-zhenghang	整行	540	28	0	4	0	0	0
 zhengxing	整形	333	293	0	3	0	0	0
 zhengxing	整型	137	40	0	1	0	0	0
 zhengxingbianliang	整型變量	219	0	0	1	77	1	0
@@ -181955,6 +182003,8 @@ zhetiao	這條	199	0	0	1	0	0	0
 zhetiaotuiwen	這條推文	199	0	0	1	0	0	0
 zhetou	這頭	292	0	0	2	0	0	0
 zhetou	折頭	137	40	0	1	0	0	0
+zhewanyi	這玩意	540	0	0	4	0	0	0
+zhewanyir	這玩意兒	199	0	0	1	0	0	0
 zhewei	這位	672	654	0	4	0	0	0
 zhexia	這下	538	0	0	4	0	0	0
 zhexia	遮瑕	202	0	0	2	0	0	0
@@ -191873,25 +191923,3 @@ zuzi	租子	137	40	0	1	0	0	0
 zuzong	祖宗	304	453	0	1	0	0	0
 zuzu	足足	269	352	0	1	0	0	0
 zuzubeibei	祖祖輩輩	202	188	0	1	0	0	0
-chuhua	出花	478	0	0	4	0	0	0
-chuhuayang	出花樣	504	0	0	4	0	0	413
-nawanyi	那玩意	530	0	0	4	0	0	0
-nawanyir	那玩意兒	199	0	0	1	0	0	437
-shawanyi	啥玩意	534	0	0	4	0	0	0
-shawanyir	啥玩意兒	199	0	0	1	0	0	0
-wanchuhua	玩出花	520	0	0	4	0	0	0
-wanchuhualai	玩出花來	199	0	0	1	0	0	0
-wanchuhuayang	玩出花樣	199	0	0	1	0	0	0
-yebianju	頁邊距	199	0	0	1	0	0	0
-yedi	頁底	520	0	0	4	0	0	0
-yeding	頁頂	199	0	0	1	0	0	0
-yegao	頁高	199	0	0	1	0	0	0
-yejianju	頁間距	199	0	0	1	0	0	0
-yekuan	頁寬	199	0	0	1	0	0	0
-yemianbianju	頁面邊距	199	0	0	1	0	0	0
-yemo	頁末	199	0	0	1	0	0	0
-yetou	頁頭	199	0	0	1	0	0	0
-yewei	頁尾	199	0	0	1	0	0	0
-zhenglie	整列	526	73	0	4	0	0	0
-zhewanyi	這玩意	540	0	0	4	0	0	0
-zhewanyir	這玩意兒	199	0	0	1	0	0	0
