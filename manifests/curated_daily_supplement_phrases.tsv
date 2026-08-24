@@ -12699,3 +12699,26 @@
 # Common technical exact term. Keep it ahead of the storage-brand abbreviation
 # without injecting it as a high-frequency long-sentence path signal.
 系数	係數	0.550	xishu	exact_rank
+
+# Lower-frequency abbreviations, variants, and connective fragments 2026-08-24.
+风大	風大	0.620	fengda	exact_rank_no_contains
+雨大	雨大	0.620	yuda	exact_rank_no_contains
+雾大	霧大	0.420	wuda	exact_rank_no_contains
+云多	雲多	0.180	yunduo	exact_rank_no_contains
+太阳大	太陽大	0.500	taiyangda	exact_rank_no_contains
+雪大	雪大	0.560	xueda	exact_rank_no_contains
+家宽	家寬	0.520	jiakuan	exact_rank_no_contains
+就以	就以	0.680	jiuyi	exact_rank_no_contains
+其它页	其它頁	0.560	qitaye	exact_rank_no_contains
+是以	是以	0.001	shiyi	exact_rank_no_contains
+要以	要以	0.660	yaoyi	exact_rank_no_contains
+
+# Common reconsideration/action phrases and medicine-adjacent terms 2026-08-24.
+再想想	再想想	0.900	zaixiangxiang	exact_rank_no_contains
+再等等	再等等	0.820	zaidengdeng	exact_rank_no_contains
+再说说	再說說	0.780	zaishuoshuo	exact_rank_no_contains
+转出	轉出	0.680	zhuanchu	exact_rank_no_contains
+送出	送出	0.700	songchu	exact_rank_no_contains
+讲出	講出	0.620	jiangchu	exact_rank_no_contains
+开瑞坦	開瑞坦	0.420	kairuitan	exact_rank_no_contains
+洗剂	洗劑	0.001	xiji	exact_rank_no_contains

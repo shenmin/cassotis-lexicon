@@ -189031,3 +189031,29 @@ xibushuju	西部数据	607
 xijie	希捷	360
 xishu	西数	360
 yingpanhe	硬盘盒	700
+fengda	风大	620	no_contains
+yuda	雨大	620	no_contains
+wuda	雾大	420	no_contains
+yunduo	云多	180	no_contains
+taiyangda	太阳大	500	no_contains
+xueda	雪大	560	no_contains
+buzaiti	不再提	800	no_contains
+buzaiyao	不再要	800	no_contains
+jiakuan	家宽	520	no_contains
+jiuyi	就以	680	no_contains
+qitaye	其它页	560	no_contains
+qitaye	其他页	800	no_contains
+douyaoyi	都要以	800	no_contains
+doushiyi	都是以	800	no_contains
+shiyi	是以	1	no_contains
+yaoyi	要以	660	no_contains
+duochulai	多出来	1000	no_contains
+diaoba	掉吧	700	no_contains
+zaixiangxiang	再想想	900	no_contains
+zaidengdeng	再等等	820	no_contains
+zaishuoshuo	再说说	780	no_contains
+zhuanchu	转出	680	no_contains
+songchu	送出	700	no_contains
+jiangchu	讲出	620	no_contains
+kairuitan	开瑞坦	420	no_contains
+xiji	洗剂	1	no_contains

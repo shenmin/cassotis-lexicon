@@ -79,8 +79,11 @@ function Test-DictFile {
         if ($line -eq '') { return }
 
         $parts = $line -split "`t"
-        if ($parts.Count -ne 3) {
+        if (($parts.Count -ne 3) -and ($parts.Count -ne 4)) {
             throw "Invalid column count at ${Path}:$lineNo"
+        }
+        if (($parts.Count -eq 4) -and ($parts[3].Trim() -ne 'no_contains')) {
+            throw "Invalid dictionary scope at ${Path}:$lineNo -> $($parts[3].Trim())"
         }
 
         $pinyin = $parts[0].Trim()

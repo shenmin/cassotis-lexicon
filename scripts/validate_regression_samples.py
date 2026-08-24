@@ -3,7 +3,7 @@
 Validate regression samples against generated dictionary files.
 
 Dictionary format:
-  pinyin<TAB>text<TAB>weight
+  pinyin<TAB>text<TAB>weight[<TAB>scope]
 
 Sample format:
   pinyin<TAB>expected_text<TAB>max_rank(optional, default=10)
@@ -37,8 +37,10 @@ def load_dict(path: pathlib.Path) -> Dict[str, List[Tuple[str, int]]]:
                 continue
 
             parts = line.split("\t")
-            if len(parts) != 3:
+            if len(parts) not in {3, 4}:
                 raise ValueError(f"{path}:{line_no} invalid column count")
+            if len(parts) == 4 and parts[3].strip() != "no_contains":
+                raise ValueError(f"{path}:{line_no} invalid scope")
 
             exact_pinyin = normalize_exact_pinyin_key(parts[0])
             pinyin = normalize_pinyin_key(parts[0])

@@ -7872,3 +7872,12 @@
 奶油色	奶油色	0.68	naiyouse
 马卡龙色	馬卡龍色	0.62	makalongse
 潘通色卡	潘通色卡	0.60	pantongseka
+
+# Common weather descriptions, connective phrases, and page/action expressions 2026-08-24.
+不再提	不再提	0.86	buzaiti	no_contains
+不再要	不再要	0.84	buzaiyao	no_contains
+其他页	其他頁	0.78	qitaye	no_contains
+都要以	都要以	0.74	douyaoyi	no_contains
+都是以	都是以	0.76	doushiyi	no_contains
+多出来	多出來	0.90	duochulai	no_contains
+掉吧	掉吧	0.72	diaoba	no_contains

@@ -3,7 +3,7 @@
 Build public lexicon seed files from external sources.
 
 Output format:
-  pinyin<TAB>text<TAB>weight
+  pinyin<TAB>text<TAB>weight[<TAB>scope]
 """
 
 from __future__ import annotations
@@ -532,6 +532,8 @@ CURATED_DAILY_POST_RANK_ZERO_WEIGHT_USAGE_MAX = -2.0
 CURATED_DAILY_POST_RANK_FIXED_WEIGHT_USAGE_BASE = -3.0
 CURATED_DAILY_EXACT_ZERO_MODE = "exact_zero"
 CURATED_DAILY_EXACT_RANK_MODE = "exact_rank"
+CURATED_DAILY_NO_CONTAINS_MODE = "no_contains"
+CURATED_DAILY_EXACT_RANK_NO_CONTAINS_MODE = "exact_rank_no_contains"
 
 
 def _curated_daily_supplement_weight_cap(usage_score: float, text: str) -> int:
@@ -9982,7 +9984,10 @@ def _parse_curated_daily_phrase_entries(
         if output_mode == CURATED_DAILY_EXACT_ZERO_MODE:
             normalized_usage_score = CURATED_DAILY_POST_RANK_ZERO_WEIGHT_USAGE_MAX
             stats[f"{stats_prefix}_exact_zero"] += 1
-        elif output_mode == CURATED_DAILY_EXACT_RANK_MODE:
+        elif output_mode in {
+            CURATED_DAILY_EXACT_RANK_MODE,
+            CURATED_DAILY_EXACT_RANK_NO_CONTAINS_MODE,
+        }:
             bounded_rank = max(0.001, min(1.0, usage_score))
             normalized_usage_score = -(
                 -CURATED_DAILY_POST_RANK_FIXED_WEIGHT_USAGE_BASE + bounded_rank
@@ -10006,6 +10011,35 @@ def _parse_curated_daily_phrase_entries(
         )
         stats[f"{stats_prefix}_kept"] += 1
     return entries, stats
+
+
+def _parse_curated_contains_popularity_exclusions(
+    payload: bytes,
+) -> Tuple[Set[str], Set[str]]:
+    """Return terms explicitly scoped out of runtime substring popularity."""
+    sc_terms: Set[str] = set()
+    tc_terms: Set[str] = set()
+    text = _decode_text(payload)
+    for raw_line in text.splitlines():
+        line = raw_line.strip()
+        if not line or line.startswith("#"):
+            continue
+        parts = line.split("\t")
+        if len(parts) < 5:
+            continue
+        output_mode = parts[4].strip().lower()
+        if output_mode not in {
+            CURATED_DAILY_NO_CONTAINS_MODE,
+            CURATED_DAILY_EXACT_RANK_NO_CONTAINS_MODE,
+        }:
+            continue
+        sc_word = parts[0].strip()
+        tc_word = parts[1].strip() or sc_word
+        if sc_word and CJK_FULL_RE.fullmatch(sc_word):
+            sc_terms.add(sc_word)
+        if tc_word and CJK_FULL_RE.fullmatch(tc_word):
+            tc_terms.add(tc_word)
+    return sc_terms, tc_terms
 
 
 def _parse_vertical_term_entries(
@@ -11129,7 +11163,7 @@ def _load_char_family_support_from_generated_dict(
             if not line:
                 continue
             parts = line.split("\t")
-            if len(parts) != 3:
+            if len(parts) not in {3, 4}:
                 continue
 
             text = parts[1].strip()
@@ -11376,7 +11410,7 @@ def _load_char_reading_support_from_generated_dict(
                 continue
 
             parts = line.split("\t")
-            if len(parts) != 3:
+            if len(parts) not in {3, 4}:
                 continue
 
             pinyin = parts[0].strip()
@@ -11457,7 +11491,7 @@ def _load_char_inferred_reading_support_from_generated_dict(
                 continue
 
             parts = line.split("\t")
-            if len(parts) != 3:
+            if len(parts) not in {3, 4}:
                 continue
 
             pinyin = parts[0].strip()
@@ -11527,7 +11561,7 @@ def _load_char_leading_reading_support_from_generated_dict(
                 continue
 
             parts = line.split("\t")
-            if len(parts) != 3:
+            if len(parts) not in {3, 4}:
                 continue
 
             pinyin = parts[0].strip()
@@ -18419,11 +18453,13 @@ def _write_dict(
     unihan_readings_map: Dict[str, Set[str]] | None = None,
     unihan_source_rank_map: Dict[Tuple[str, str], int] | None = None,
     unihan_pinlu_detail_map: Dict[Tuple[str, str], int] | None = None,
+    contains_popularity_excluded_terms: Set[str] | None = None,
 ) -> None:
     preferred_terms = preferred_terms or set()
     low_priority_output_terms = low_priority_output_terms or set()
     post_low_priority_output_terms = post_low_priority_output_terms or set()
     preserve_pinyin_keys = preserve_pinyin_keys or set()
+    contains_popularity_excluded_terms = contains_popularity_excluded_terms or set()
     valid_single_syllables: Set[str] = set()
     if unihan_readings_map:
         for readings in unihan_readings_map.values():
@@ -18520,7 +18556,8 @@ def _write_dict(
 
     with path.open("w", encoding="utf-8", newline="\n") as f:
         for (output_pinyin, text), weight in ordered_items:
-            f.write(f"{output_pinyin}\t{text}\t{weight}\n")
+            scope = "\tno_contains" if text in contains_popularity_excluded_terms else ""
+            f.write(f"{output_pinyin}\t{text}\t{weight}{scope}\n")
 
 
 def _build_output_pinyin_bucket_map(
@@ -22897,6 +22934,8 @@ def main() -> int:
     curated_daily_supplement_tc_terms: Set[str] = set()
     curated_daily_supplement_entries: List[Tuple[str, str, float, str]] = []
     curated_daily_post_rank_exact_entries: List[Tuple[str, str, float, str]] = []
+    contains_popularity_excluded_sc_terms: Set[str] = set()
+    contains_popularity_excluded_tc_terms: Set[str] = set()
     curated_daily_supplement_parse_stats: Dict[str, int] = {}
     curated_usage_score_map: Dict[str, float] = {}
     curated_source_hits_map: Dict[str, int] = {}
@@ -23017,6 +23056,11 @@ def main() -> int:
                 curated_daily_payload,
                 args.min_hanzi,
             )
+            excluded_sc, excluded_tc = _parse_curated_contains_popularity_exclusions(
+                curated_daily_payload
+            )
+            contains_popularity_excluded_sc_terms.update(excluded_sc)
+            contains_popularity_excluded_tc_terms.update(excluded_tc)
             if "project-curated-daily-supplement-phrases" in source_ids:
                 curated_daily_supplement_payload = _require_source_payload(
                     payload_map,
@@ -23033,6 +23077,11 @@ def main() -> int:
                     args.min_hanzi,
                     stats_prefix="curated_daily_supplement_phrase",
                 )
+                excluded_sc, excluded_tc = _parse_curated_contains_popularity_exclusions(
+                    curated_daily_supplement_payload
+                )
+                contains_popularity_excluded_sc_terms.update(excluded_sc)
+                contains_popularity_excluded_tc_terms.update(excluded_tc)
                 (
                     curated_daily_supplement_entries,
                     curated_daily_post_rank_exact_entries,
@@ -23345,6 +23394,11 @@ def main() -> int:
             curated_daily_payload,
             args.min_hanzi,
         )
+        excluded_sc, excluded_tc = _parse_curated_contains_popularity_exclusions(
+            curated_daily_payload
+        )
+        contains_popularity_excluded_sc_terms.update(excluded_sc)
+        contains_popularity_excluded_tc_terms.update(excluded_tc)
         if "project-curated-daily-supplement-phrases" in source_ids:
             curated_daily_supplement_payload = _require_source_payload(
                 payload_map,
@@ -23361,6 +23415,11 @@ def main() -> int:
                 args.min_hanzi,
                 stats_prefix="curated_daily_supplement_phrase",
             )
+            excluded_sc, excluded_tc = _parse_curated_contains_popularity_exclusions(
+                curated_daily_supplement_payload
+            )
+            contains_popularity_excluded_sc_terms.update(excluded_sc)
+            contains_popularity_excluded_tc_terms.update(excluded_tc)
             (
                 curated_daily_supplement_entries,
                 curated_daily_post_rank_exact_entries,
@@ -26571,6 +26630,7 @@ def main() -> int:
         unihan_readings_map=output_unihan_readings_map,
         unihan_source_rank_map=output_unihan_source_rank_map,
         unihan_pinlu_detail_map=output_unihan_pinlu_detail_map,
+        contains_popularity_excluded_terms=contains_popularity_excluded_sc_terms,
     )
     _write_dict(
         output_tc,
@@ -26583,6 +26643,7 @@ def main() -> int:
         unihan_readings_map=output_unihan_readings_map,
         unihan_source_rank_map=output_unihan_source_rank_map,
         unihan_pinlu_detail_map=output_unihan_pinlu_detail_map,
+        contains_popularity_excluded_terms=contains_popularity_excluded_tc_terms,
     )
     if output_transition_completion_sc is not None:
         sc_transition_completion_index, completion_stats = (

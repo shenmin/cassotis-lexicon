@@ -430,6 +430,49 @@ class LmTransitionTrainingTests(unittest.TestCase):
             1, inject_stats["curated_daily_post_rank_exact_tc_forced_rank"]
         )
 
+    def test_curated_no_contains_scope_survives_dictionary_output(self) -> None:
+        sc_text = "\u98ce\u5927"
+        tc_text = "\u98a8\u5927"
+        payload = (
+            f"{sc_text}\t{tc_text}\t0.620\tfengda\t"
+            "exact_rank_no_contains\n"
+        ).encode("utf-8")
+        entries, stats = builder._parse_curated_daily_phrase_entries(
+            payload,
+            2,
+            stats_prefix="test_curated",
+        )
+        excluded_sc, excluded_tc = (
+            builder._parse_curated_contains_popularity_exclusions(payload)
+        )
+
+        self.assertEqual(1, stats["test_curated_exact_rank"])
+        self.assertEqual({sc_text}, excluded_sc)
+        self.assertEqual({tc_text}, excluded_tc)
+
+        regular, post_rank = builder._partition_curated_daily_post_rank_exact_entries(
+            entries
+        )
+        self.assertEqual([], regular)
+        sc_map = {}
+        tc_map = {}
+        builder._inject_curated_daily_post_rank_exact_entries(
+            sc_map,
+            tc_map,
+            post_rank,
+        )
+        with tempfile.TemporaryDirectory() as temp_dir:
+            output_path = pathlib.Path(temp_dir) / "dict.txt"
+            builder._write_dict(
+                output_path,
+                sc_map,
+                contains_popularity_excluded_terms=excluded_sc,
+            )
+            self.assertEqual(
+                f"fengda\t{sc_text}\t620\tno_contains\n",
+                output_path.read_text(encoding="utf-8"),
+            )
+
     def test_curated_exact_zero_mode_injects_true_zero_weight(self) -> None:
         entries, stats = builder._parse_curated_daily_phrase_entries(
             "多台\t多台\t0.00\tduotai\texact_zero\n".encode("utf-8"),
