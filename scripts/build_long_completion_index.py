@@ -2,10 +2,9 @@
 """Build a bounded long-sentence continuation index from trained transitions.
 
 The runtime must not enumerate word combinations or retain training sentences.
-This builder therefore derives only local two- to four-word paths whose every
-adjacent edge already passed the stricter multi-source transition-completion
-gate.  The output stores an anchor of one to three exact words and a suffix of
-one to three exact words (at most six syllables).
+This builder derives local two- to four-word paths only.  Strict rows are
+marked for the legacy visible index, while a lower-confidence corpus-backed
+tier is written only to the internal recall index used by Oracle evaluation.
 """
 
 from __future__ import annotations
@@ -23,12 +22,18 @@ from typing import Callable, Dict, Iterable, Iterator, List, Sequence, Tuple
 
 PATH_SEPARATOR = "|"
 MIN_PAIR_EVIDENCE = 560
-MIN_TRIGRAM_EVIDENCE = 430
+MIN_LM_EVIDENCE = 350
+MIN_VISIBLE_LM_EVIDENCE = 430
 MIN_CORPUS_COUNT = 12
 MIN_CORPUS_SOURCES = 5
 MIN_CORPUS_DOMAINS = 2
+BROAD_MIN_CORPUS_COUNT = 3
+BROAD_MIN_CORPUS_SOURCES = 2
+BROAD_MIN_CORPUS_DOMAINS = 1
+BROAD_MAX_EVIDENCE = MIN_PAIR_EVIDENCE - 1
 MAX_SUFFIX_UNITS = 6
-MAX_ROWS_PER_ANCHOR = 8
+MAX_VISIBLE_ROWS_PER_ANCHOR = 8
+MAX_RECALL_ROWS_PER_ANCHOR = 24
 KNOWN_PAIR_SOURCE_FLOOR = 5
 
 
@@ -154,7 +159,7 @@ def _iter_lm_paths(
                 lm_weight = int(weight_text)
             except ValueError:
                 continue
-            if lm_weight < MIN_TRIGRAM_EVIDENCE:
+            if lm_weight < MIN_LM_EVIDENCE:
                 continue
             reading_options = [readings.get(word, ())[:4] for word in words]
             if any(not options for options in reading_options):
@@ -283,6 +288,37 @@ def _scan_corpus_support(
     }
 
 
+def _score_corpus_path(
+    item: PathEvidence,
+    count: int,
+    source_count: int,
+    domain_count: int,
+) -> Tuple[PathEvidence | None, bool]:
+    """Return a corpus-backed path and whether it passed the strict gate."""
+    strict = (
+        count >= MIN_CORPUS_COUNT
+        and source_count >= MIN_CORPUS_SOURCES
+        and domain_count >= MIN_CORPUS_DOMAINS
+    )
+    broad = (
+        count >= BROAD_MIN_CORPUS_COUNT
+        and source_count >= BROAD_MIN_CORPUS_SOURCES
+        and domain_count >= BROAD_MIN_CORPUS_DOMAINS
+    )
+    if not broad:
+        return None, False
+
+    evidence = item.evidence
+    evidence += min(96, int(round(math.log2(count + 1) * 12)))
+    evidence += min(60, source_count * 4)
+    evidence += min(36, domain_count * 12)
+    if not strict:
+        # Rows below the strict multi-source gate are recall-only.  Keep their
+        # score below the legacy prompt threshold as an additional safeguard.
+        evidence = min(BROAD_MAX_EVIDENCE, evidence)
+    return PathEvidence(item.words, item.pinyin, evidence, source_count), strict
+
+
 def _parse_transition_completions(path: pathlib.Path) -> Dict[Tuple[str, str], List[PairEvidence]]:
     pairs: Dict[Tuple[str, str], Dict[Tuple[Tuple[str, ...], Tuple[str, ...]], PairEvidence]] = {}
     with path.open("r", encoding="utf-8-sig", errors="strict") as handle:
@@ -381,8 +417,12 @@ def _join_four_word_paths(trigrams: Sequence[PathEvidence]) -> Iterator[PathEvid
                 yield PathEvidence(words, pinyin, evidence, KNOWN_PAIR_SOURCE_FLOOR)
 
 
-def _completion_rows(paths: Iterable[PathEvidence]) -> List[CompletionRow]:
-    best: Dict[Tuple[Tuple[str, ...], Tuple[str, ...], Tuple[str, ...]], CompletionRow] = {}
+def _completion_rows(
+    paths: Iterable[PathEvidence], max_rows_per_anchor: int
+) -> List[CompletionRow]:
+    best: Dict[
+        Tuple[Tuple[str, ...], str, Tuple[str, ...]], CompletionRow
+    ] = {}
     for item in paths:
         word_count = len(item.words)
         for anchor_count in range(1, min(3, word_count - 1) + 1):
@@ -401,7 +441,9 @@ def _completion_rows(paths: Iterable[PathEvidence]) -> List[CompletionRow]:
             # changing the underlying transition confidence ordering.
             evidence = item.evidence + (anchor_count - 1) * 18 - (len(suffix) - 1) * 14
             row = CompletionRow(anchor, suffix, suffix_pinyin, evidence, item.source_count)
-            key = (anchor, suffix, suffix_pinyin)
+            # SQLite's lookup key intentionally ignores suffix segmentation.
+            # Keep the strongest path here instead of relying on import order.
+            key = (anchor, "".join(suffix), suffix_pinyin)
             previous = best.get(key)
             if previous is None or row.evidence > previous.evidence:
                 best[key] = row
@@ -422,7 +464,7 @@ def _completion_rows(paths: Iterable[PathEvidence]) -> List[CompletionRow]:
                 row.suffix_pinyin,
             ),
         )
-        output.extend(rows[:MAX_ROWS_PER_ANCHOR])
+        output.extend(rows[:max_rows_per_anchor])
     return output
 
 
@@ -436,7 +478,9 @@ def build_index(
 ) -> dict[str, int]:
     pairs = _parse_transition_completions(transition_completion_path)
     corpus_paths: List[PathEvidence] = []
+    broad_corpus_paths: List[PathEvidence] = []
     corpus_accepted = 0
+    broad_corpus_accepted = 0
     if dictionary_path is not None and corpus_dir is not None:
         readings = _load_dictionary_readings(dictionary_path)
         raw_lm_paths = list(_iter_lm_paths(lm_transition_path, readings))
@@ -456,20 +500,36 @@ def build_index(
             count, source_count, domain_count = support.get(
                 "".join(item.words), (0, 0, 0)
             )
-            if (
-                count < MIN_CORPUS_COUNT
-                or source_count < MIN_CORPUS_SOURCES
-                or domain_count < MIN_CORPUS_DOMAINS
-            ):
-                continue
-            evidence = item.evidence
-            evidence += min(96, int(round(math.log2(count + 1) * 12)))
-            evidence += min(60, source_count * 4)
-            evidence += min(36, domain_count * 12)
-            corpus_paths.append(
-                PathEvidence(item.words, item.pinyin, evidence, source_count)
+            scored_item, strict = _score_corpus_path(
+                item, count, source_count, domain_count
             )
+            if scored_item is None:
+                # The trained LM path itself is still useful as an internal
+                # recall hypothesis.  It is marked as single-source and kept
+                # below the visible-prompt threshold; runtime ranking may use
+                # it, but it can never become a prompt from evidence alone.
+                broad_corpus_paths.append(
+                    PathEvidence(
+                        item.words,
+                        item.pinyin,
+                        min(BROAD_MAX_EVIDENCE, item.evidence),
+                        1,
+                    )
+                )
+                continue
+            if strict and item.evidence >= MIN_VISIBLE_LM_EVIDENCE:
+                corpus_paths.append(scored_item)
+            else:
+                broad_corpus_paths.append(
+                    PathEvidence(
+                        scored_item.words,
+                        scored_item.pinyin,
+                        min(BROAD_MAX_EVIDENCE, scored_item.evidence),
+                        scored_item.source_count,
+                    )
+                )
         corpus_accepted = len(corpus_paths)
+        broad_corpus_accepted = len(broad_corpus_paths)
 
     pair_backed_trigrams = _parse_lm_trigrams(corpus_paths, pairs)
     accepted_by_key: Dict[
@@ -482,12 +542,32 @@ def build_index(
         previous = accepted_by_key.get(key)
         if previous is None or item.evidence > previous.evidence:
             accepted_by_key[key] = item
+    strict_accepted_by_key = dict(accepted_by_key)
+    for item in broad_corpus_paths:
+        key = (item.words, item.pinyin)
+        previous = accepted_by_key.get(key)
+        if previous is None or item.evidence > previous.evidence:
+            accepted_by_key[key] = item
+    strict_lm_paths = list(strict_accepted_by_key.values())
+    strict_trigrams = [item for item in strict_lm_paths if len(item.words) == 3]
+    strict_four_word_paths = list(_join_four_word_paths(strict_trigrams))
+    pair_paths = list(_pair_paths(pairs))
+    visible_rows = _completion_rows(
+        pair_paths + strict_lm_paths + strict_four_word_paths,
+        MAX_VISIBLE_ROWS_PER_ANCHOR,
+    )
+
     accepted_lm_paths = list(accepted_by_key.values())
     trigrams = [item for item in accepted_lm_paths if len(item.words) == 3]
     four_word_paths = list(_join_four_word_paths(trigrams))
-    rows = _completion_rows(
-        list(_pair_paths(pairs)) + accepted_lm_paths + four_word_paths
+    recall_rows = _completion_rows(
+        pair_paths + accepted_lm_paths + four_word_paths,
+        MAX_RECALL_ROWS_PER_ANCHOR,
     )
+    visible_keys = {
+        (row.anchor, row.suffix, row.suffix_pinyin) for row in visible_rows
+    }
+    rows = recall_rows
     output_path.parent.mkdir(parents=True, exist_ok=True)
     with output_path.open("w", encoding="utf-8", newline="\n") as handle:
         for row in rows:
@@ -500,6 +580,10 @@ def build_index(
                         PATH_SEPARATOR.join(row.suffix),
                         str(row.evidence),
                         str(row.source_count),
+                        "1"
+                        if (row.anchor, row.suffix, row.suffix_pinyin)
+                        in visible_keys
+                        else "0",
                     )
                 )
                 + "\n"
@@ -507,8 +591,10 @@ def build_index(
     return {
         "strong_pair_paths": sum(len(items) for items in pairs.values()),
         "corpus_validated_lm_paths": corpus_accepted,
+        "broad_recall_lm_paths": broad_corpus_accepted,
         "strong_trigram_paths": len(trigrams),
         "strong_four_word_paths": len(four_word_paths),
+        "visible_rows": len(visible_rows),
         "anchors": len({row.anchor for row in rows}),
         "rows": len(rows),
     }

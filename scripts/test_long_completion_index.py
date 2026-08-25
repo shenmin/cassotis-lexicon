@@ -10,6 +10,31 @@ import build_long_completion_index as builder
 
 
 class LongCompletionIndexTests(unittest.TestCase):
+    def test_corpus_scoring_keeps_broad_rows_below_prompt_threshold(self) -> None:
+        source = builder.PathEvidence(
+            ("anchor", "suffix"), (("an",), ("su",)), 430, 0
+        )
+
+        broad, strict = builder._score_corpus_path(source, 4, 2, 1)
+
+        self.assertIsNotNone(broad)
+        self.assertFalse(strict)
+        assert broad is not None
+        self.assertLess(broad.evidence, builder.MIN_PAIR_EVIDENCE)
+        self.assertEqual(2, broad.source_count)
+
+    def test_corpus_scoring_preserves_strict_rows(self) -> None:
+        source = builder.PathEvidence(
+            ("anchor", "suffix"), (("an",), ("su",)), 520, 0
+        )
+
+        strict_row, strict = builder._score_corpus_path(source, 20, 7, 2)
+
+        self.assertIsNotNone(strict_row)
+        self.assertTrue(strict)
+        assert strict_row is not None
+        self.assertGreaterEqual(strict_row.evidence, builder.MIN_PAIR_EVIDENCE)
+
     def test_completion_rows_keep_local_suffixes_and_bound_each_anchor(self) -> None:
         paths = [
             builder.PathEvidence(
@@ -18,12 +43,14 @@ class LongCompletionIndexTests(unittest.TestCase):
                 800 - index,
                 9,
             )
-            for index in range(12)
+            for index in range(32)
         ]
 
-        rows = builder._completion_rows(paths)
+        rows = builder._completion_rows(
+            paths, builder.MAX_RECALL_ROWS_PER_ANCHOR
+        )
 
-        self.assertEqual(builder.MAX_ROWS_PER_ANCHOR, len(rows))
+        self.assertEqual(builder.MAX_RECALL_ROWS_PER_ANCHOR, len(rows))
         self.assertTrue(all(row.anchor == ("anchor",) for row in rows))
         self.assertEqual(
             sorted((row.evidence for row in rows), reverse=True),
@@ -39,10 +66,32 @@ class LongCompletionIndexTests(unittest.TestCase):
                     900,
                     12,
                 )
-            ]
+            ],
+            builder.MAX_RECALL_ROWS_PER_ANCHOR,
         )
 
         self.assertEqual([], rows)
+
+    def test_completion_rows_keep_strongest_suffix_segmentation(self) -> None:
+        rows = builder._completion_rows(
+            [
+                builder.PathEvidence(
+                    ("anchor", "suffix"), (("an",), ("su", "fix")), 720, 8
+                ),
+                builder.PathEvidence(
+                    ("anchor", "suf", "fix"),
+                    (("an",), ("su",), ("fix",)),
+                    640,
+                    7,
+                ),
+            ],
+            builder.MAX_RECALL_ROWS_PER_ANCHOR,
+        )
+
+        anchor_rows = [row for row in rows if row.anchor == ("anchor",)]
+        self.assertEqual(1, len(anchor_rows))
+        self.assertEqual(("suffix",), anchor_rows[0].suffix)
+        self.assertEqual(720, anchor_rows[0].evidence)
 
     def test_pair_only_build_writes_local_paths_without_sentence_data(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
@@ -61,7 +110,7 @@ class LongCompletionIndexTests(unittest.TestCase):
 
             self.assertEqual(1, stats["rows"])
             self.assertEqual(
-                "甲\tyi\t乙\t乙\t712\t5",
+                "甲\tyi\t乙\t乙\t712\t5\t1",
                 output.read_text(encoding="utf-8").strip(),
             )
 

@@ -158,6 +158,7 @@ function Test-LongCompletionFile {
 
     $lineNo = 0
     $anchorCounts = @{}
+    $visibleAnchorCounts = @{}
     $seenRows = @{}
     Get-Content -Encoding utf8 $Path | ForEach-Object {
         $lineNo++
@@ -165,7 +166,7 @@ function Test-LongCompletionFile {
         if ($line -eq '') { return }
 
         $parts = $line -split "`t"
-        if ($parts.Count -ne 6) {
+        if (($parts.Count -ne 6) -and ($parts.Count -ne 7)) {
             throw "Invalid long-completion column count at ${Path}:$lineNo"
         }
 
@@ -183,6 +184,7 @@ function Test-LongCompletionFile {
         })
         $evidence = 0
         $sourceCount = 0
+        $visible = 1
         if (($anchorPath -eq '') -or ($suffixText -eq '') -or
             ($emptyAnchorParts.Count -gt 0) -or
             ($emptySuffixParts.Count -gt 0) -or
@@ -195,8 +197,13 @@ function Test-LongCompletionFile {
         if ((-not [int]::TryParse($parts[4].Trim(), [ref]$evidence)) -or
             ($evidence -le 0) -or
             (-not [int]::TryParse($parts[5].Trim(), [ref]$sourceCount)) -or
-            ($sourceCount -lt 5)) {
+            ($sourceCount -lt 1)) {
             throw "Invalid long-completion evidence at ${Path}:$lineNo"
+        }
+        if (($parts.Count -eq 7) -and
+            ((-not [int]::TryParse($parts[6].Trim(), [ref]$visible)) -or
+            (($visible -ne 0) -and ($visible -ne 1)))) {
+            throw "Invalid long-completion visibility at ${Path}:$lineNo"
         }
 
         $rowKey = "$anchorPath`0$suffixPinyin`0$suffixText"
@@ -208,10 +215,21 @@ function Test-LongCompletionFile {
         if ($anchorCounts.ContainsKey($anchorPath)) {
             $anchorCount = [int]$anchorCounts[$anchorPath] + 1
         }
-        if ($anchorCount -gt 8) {
+        if ($anchorCount -gt 24) {
             throw "Too many long-completion rows at ${Path}:$lineNo -> $anchorPath"
         }
         $anchorCounts[$anchorPath] = $anchorCount
+        if ($visible -eq 1) {
+            $visibleAnchorCount = 1
+            if ($visibleAnchorCounts.ContainsKey($anchorPath)) {
+                $visibleAnchorCount =
+                    [int]$visibleAnchorCounts[$anchorPath] + 1
+            }
+            if ($visibleAnchorCount -gt 8) {
+                throw "Too many visible long-completion rows at ${Path}:$lineNo -> $anchorPath"
+            }
+            $visibleAnchorCounts[$anchorPath] = $visibleAnchorCount
+        }
     }
 }
 

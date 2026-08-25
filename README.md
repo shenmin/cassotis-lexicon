@@ -18,7 +18,7 @@ Lexicon build and release repository for Cassotis IME.
 - Supports external-source bootstrap and reproducible generated dictionary builds.
 - Keeps attribution and release policy files aligned with generated artifacts.
 
-## Current dictionary snapshot (2026-08-24 build)
+## Current dictionary snapshot (2026-08-25 build)
 
 | File | Variant | Entries |
 |------|---------|---------|
@@ -85,7 +85,7 @@ The v1.14.0 artifacts refresh query-path priors for the expanded exact-anchor an
 
 The v1.16.0 query-path, word-transition, and character n-gram artifacts remain unchanged from v1.14.0. Its new model data is the one-key completion popularity and prefix lookup index listed above.
 
-The statistical model stores only short word transitions and character n-grams, not complete training sentences. The independent long-sentence and short-word benchmark cases are excluded from training. At runtime, IME evaluates the statistical signals and compact native rerankers locally; it starts no PyTorch/ONNX runtime or external model service and requires no network connection or GPU. See the [IME benchmark documentation](https://github.com/shenmin/cassotis-ime/blob/master/BENCHMARK.md) for the long-sentence evaluation protocol.
+The statistical model stores only short word transitions and character n-grams, not complete training sentences. The independent long-sentence and short-word benchmark cases are excluded from training. At runtime, IME evaluates these statistical signals and most compact native rerankers locally. Starting with v1.18.0, the constrained long-sentence one-key-completion fallback uses an INT8 weight-quantized, mixed-precision ONNX model loaded only by the external host process; it requires no network or GPU and safely falls back when unavailable. See the [IME benchmark documentation](https://github.com/shenmin/cassotis-ime/blob/master/BENCHMARK.md) for the long-sentence evaluation protocol.
 
 ## External sources and project-maintained supplements (`external_broad`)
 
