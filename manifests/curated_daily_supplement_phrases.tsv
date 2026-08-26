@@ -12722,3 +12722,24 @@
 讲出	講出	0.620	jiangchu	exact_rank_no_contains
 开瑞坦	開瑞坦	0.420	kairuitan	exact_rank_no_contains
 洗剂	洗劑	0.001	xiji	exact_rank_no_contains
+
+# Common wonton dishes, colloquial expressions, and work/action phrases 2026-08-26.
+# Keep these exact-only so useful daily entries do not become synthetic long-sentence path signals.
+小馄饨	小餛飩	0.680	xiaohuntun	exact_rank_no_contains
+小云吞	小雲吞	0.600	xiaoyuntun	exact_rank_no_contains
+炸馄饨	炸餛飩	0.620	zhahuntun	exact_rank_no_contains
+炸云吞	炸雲吞	0.580	zhayuntun	exact_rank_no_contains
+大馄饨	大餛飩	0.520	dahuntun	exact_rank_no_contains
+大云吞	大雲吞	0.500	dayuntun	exact_rank_no_contains
+馄饨汤	餛飩湯	0.600	huntuntang	exact_rank_no_contains
+云吞面	雲吞麵	0.620	yuntunmian	exact_rank_no_contains
+鲜肉馄饨	鮮肉餛飩	0.560	xianrouhuntun	exact_rank_no_contains
+鲜肉云吞	鮮肉雲吞	0.500	xianrouyuntun	exact_rank_no_contains
+洒洒水	灑灑水	0.560	sasashui	exact_rank_no_contains
+发版	發版	0.840	faban	exact_rank_no_contains
+发版了	發版了	0.720	fabanle	exact_rank_no_contains
+送了	送了	0.820	songle	exact_rank_no_contains
+放的	放的	0.780	fangde	exact_rank_no_contains
+那两个	那兩個	0.860	naliangge	exact_rank_no_contains
+热辣	熱辣	0.680	rela	exact_rank_no_contains
+就位	就位	0.880	jiuwei	exact_rank_no_contains
