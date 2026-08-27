@@ -12743,3 +12743,20 @@
 那两个	那兩個	0.860	naliangge	exact_rank_no_contains
 热辣	熱辣	0.680	rela	exact_rank_no_contains
 就位	就位	0.880	jiuwei	exact_rank_no_contains
+
+# Common colloquial classifier and comparative fragments 2026-08-28.
+# Keep fixed exact ranks so these fragments do not become synthetic long-sentence path signals.
+弄个	弄個	0.880	nongge	exact_rank_no_contains
+寻个	尋個	0.420	xunge	exact_rank_no_contains
+干个	幹個	0.760	gange	exact_rank_no_contains
+来个	來個	0.920	laige	exact_rank_no_contains
+买个	買個	0.860	maige	exact_rank_no_contains
+选个	選個	0.820	xuange	exact_rank_no_contains
+也比	也比	0.820	yebi	exact_rank_no_contains
+更比	更比	0.360	gengbi	exact_rank_no_contains
+偏比	偏比	0.240	pianbi	exact_rank_no_contains
+还比	還比	0.800	haibi	exact_rank_no_contains
+就比	就比	0.820	jiubi	exact_rank_no_contains
+要比	要比	0.920	yaobi	exact_rank_no_contains
+不比	不比	0.820	bubi	exact_rank_no_contains
+再比	再比	0.660	zaibi	exact_rank_no_contains
