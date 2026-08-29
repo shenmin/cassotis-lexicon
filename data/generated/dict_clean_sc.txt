@@ -77142,7 +77142,7 @@ keneng	可能	834
 kenenglv	可能率	640
 kenengxing	可能性	717
 kenfende	肯分的	640
-kengan	肯干	10
+kengan	肯干	700	no_contains
 kengchi	吭哧	376
 kengdao	坑道	446
 kengdie	坑爹	418
@@ -189089,3 +189089,20 @@ jiubi	就比	820	no_contains
 yaobi	要比	920	no_contains
 bubi	不比	820	no_contains
 zaibi	再比	660	no_contains
+baigan	白干	820	no_contains
+laogan	老干	480	no_contains
+jiugan	就干	840	no_contains
+gangan	敢干	760	no_contains
+hugan	胡干	360	no_contains
+luangan	乱干	620	no_contains
+huigan	会干	780	no_contains
+xianggan	想干	820	no_contains
+zhengan	真干	720	no_contains
+biegan	别干	860	no_contains
+zhigan	只干	720	no_contains
+xiangan	先干	760	no_contains
+dougan	都干	720	no_contains
+duogan	多干	660	no_contains
+shaogan	少干	640	no_contains
+zhaogan	照干	480	no_contains
+xiagan	瞎干	460	no_contains

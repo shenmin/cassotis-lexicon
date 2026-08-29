@@ -4956,7 +4956,7 @@
 力壮	力壯	0.01
 鬼混	鬼混	0.01
 实习期	實習期	0.01
-肯干	肯幹	0.01
+肯干	肯幹	0.700	kengan	exact_rank_no_contains
 密集型	密集型	0.01
 交际圈	交際圈	0.01
 健身指南	健身指南	0.01
@@ -12760,3 +12760,24 @@
 要比	要比	0.920	yaobi	exact_rank_no_contains
 不比	不比	0.820	bubi	exact_rank_no_contains
 再比	再比	0.660	zaibi	exact_rank_no_contains
+
+# Common colloquial action fragments ending in 干 2026-08-29.
+# Keep fixed exact ranks so they remain directly selectable without becoming
+# synthetic long-sentence path or substring-popularity signals.
+白干	白幹	0.820	baigan	exact_rank_no_contains
+老干	老幹	0.480	laogan	exact_rank_no_contains
+就干	就幹	0.840	jiugan	exact_rank_no_contains
+敢干	敢幹	0.760	gangan	exact_rank_no_contains
+胡干	胡幹	0.360	hugan	exact_rank_no_contains
+乱干	亂幹	0.620	luangan	exact_rank_no_contains
+会干	會幹	0.780	huigan	exact_rank_no_contains
+想干	想幹	0.820	xianggan	exact_rank_no_contains
+真干	真幹	0.720	zhengan	exact_rank_no_contains
+别干	別幹	0.860	biegan	exact_rank_no_contains
+只干	只幹	0.720	zhigan	exact_rank_no_contains
+先干	先幹	0.760	xiangan	exact_rank_no_contains
+都干	都幹	0.720	dougan	exact_rank_no_contains
+多干	多幹	0.660	duogan	exact_rank_no_contains
+少干	少幹	0.640	shaogan	exact_rank_no_contains
+照干	照幹	0.480	zhaogan	exact_rank_no_contains
+瞎干	瞎幹	0.460	xiagan	exact_rank_no_contains
