@@ -12781,3 +12781,19 @@
 少干	少幹	0.640	shaogan	exact_rank_no_contains
 照干	照幹	0.480	zhaogan	exact_rank_no_contains
 瞎干	瞎幹	0.460	xiagan	exact_rank_no_contains
+
+# Common directional complements ending in 入 / 进 2026-08-29.
+# Keep these as exact candidates without feeding substring popularity into
+# synthetic long-sentence paths. Less common literary forms stay low-ranked.
+填入	填入	0.860	tianru	exact_rank_no_contains
+点入	點入	0.340	dianru	exact_rank_no_contains
+点进	點進	0.820	dianjin	exact_rank_no_contains
+填进	填進	0.000	tianjin	exact_rank_no_contains
+追入	追入	0.280	zhuiru	exact_rank_no_contains
+追进	追進	0.360	zhuijin	exact_rank_no_contains
+揽入	攬入	0.240	lanru	exact_rank_no_contains
+揽进	攬進	0.300	lanjin	exact_rank_no_contains
+搬入	搬入	0.600	banru	exact_rank_no_contains
+拖入	拖入	0.560	tuoru	exact_rank_no_contains
+移入	移入	0.620	yiru	exact_rank_no_contains
+落进	落進	0.600	luojin	exact_rank_no_contains
