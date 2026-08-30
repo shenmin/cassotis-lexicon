@@ -4086,7 +4086,7 @@
 金耳环	金耳環	0.01
 一碗	一碗	0.01
 背起	背起	0.01
-刷碗	刷碗	0.01
+刷碗	刷碗	0.720	shuawan	exact_rank_no_contains
 天光	天光	0.01
 初升	初升	0.01
 浅金色	淺金色	0.01
@@ -10757,7 +10757,7 @@
 弃局	棄局	0.01
 草莓派	草莓派	0.01
 池沿	池沿	0.01
-刷到	刷到	0.01
+刷到	刷到	0.780	shuadao	exact_rank_no_contains
 多方打听	多方打聽	0.01
 不吃这一套	不喫這一套	0.01
 配不上	配不上	0.01
@@ -10951,7 +10951,7 @@
 纪梵希	紀梵希	0.01
 黑锅	黑鍋	0.01
 碎瓷片	碎瓷片	0.01
-刷锅	刷鍋	0.01
+刷锅	刷鍋	0.620	shuaguo	exact_rank_no_contains
 主城区	主城區	0.01
 铜版纸	銅版紙	0.01
 城市景观	城市景觀	0.01
@@ -12797,3 +12797,40 @@
 拖入	拖入	0.560	tuoru	exact_rank_no_contains
 移入	移入	0.620	yiru	exact_rank_no_contains
 落进	落進	0.600	luojin	exact_rank_no_contains
+
+# Common brushing/action fragments and pronoun-directed phrases 2026-08-30.
+# Keep exact ranks differentiated by everyday frequency. Specialized forms
+# remain low, and no entry contributes substring popularity to synthetic paths.
+免密	免密	0.900	mianmi	exact_rank_no_contains
+免刷	免刷	0.420	mianshua	exact_rank_no_contains
+无刷	無刷	0.620	wushua	exact_rank_no_contains
+狂刷	狂刷	0.560	kuangshua	exact_rank_no_contains
+可刷	可刷	0.620	keshua	exact_rank_no_contains
+不刷	不刷	0.840	bushua	exact_rank_no_contains
+就刷	就刷	0.760	jiushua	exact_rank_no_contains
+还刷	還刷	0.700	haishua	exact_rank_no_contains
+别刷	別刷	0.860	bieshua	exact_rank_no_contains
+反刷	反刷	0.320	fanshua	exact_rank_no_contains
+会刷	會刷	0.720	huishua	exact_rank_no_contains
+滚刷	滾刷	0.420	gunshua	exact_rank_no_contains
+喷刷	噴刷	0.300	penshua	exact_rank_no_contains
+白刷	白刷	0.720	baishua	exact_rank_no_contains
+刷刷	刷刷	0.560	shuashua	exact_rank_no_contains
+要刷	要刷	0.820	yaoshua	exact_rank_no_contains
+想刷	想刷	0.800	xiangshua	exact_rank_no_contains
+能刷	能刷	0.740	nengshua	exact_rank_no_contains
+只刷	只刷	0.700	zhishua	exact_rank_no_contains
+再刷	再刷	0.780	zaishua	exact_rank_no_contains
+先刷	先刷	0.700	xianshua	exact_rank_no_contains
+都刷	都刷	0.720	doushua	exact_rank_no_contains
+刷了	刷了	0.840	shuale	exact_rank_no_contains
+刷着	刷著	0.560	shuazhe	exact_rank_no_contains
+刷完	刷完	0.820	shuawan	exact_rank_no_contains
+按你	按你	0.820	anni	exact_rank_no_contains
+按我	按我	0.820	anwo	exact_rank_no_contains
+按他	按他	0.620	anta	exact_rank_no_contains
+按她	按她	0.600	anta	exact_rank_no_contains
+照你	照你	0.680	zhaoni	exact_rank_no_contains
+照我	照我	0.680	zhaowo	exact_rank_no_contains
+照他	照他	0.580	zhaota	exact_rank_no_contains
+照她	照她	0.560	zhaota	exact_rank_no_contains

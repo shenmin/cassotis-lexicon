@@ -127091,12 +127091,12 @@ shu'eryisanqian'erbaisanshiwuwanyuliang	数二亿三千二百三十五万余两	
 shuabao	耍宝	1000
 shuabigan	耍笔杆	353
 shuadan	刷单	428
-shuadao	刷到	10
+shuadao	刷到	780	no_contains
 shuadetuantuanzhuan	耍得团团转	289
 shuadiqi	刷底漆	620
 shuafei	耍废	198
 shuaguo	刷过	700
-shuaguo	刷锅	10
+shuaguo	刷锅	620	no_contains
 shuahou	耍猴	640
 shuahua	耍滑	396
 shuahuaqiang	耍花枪	357
@@ -127707,7 +127707,7 @@ shuasiqing	耍私情	230
 shuatanzi	耍坛子	232
 shuati	刷题	418
 shuatou	刷头	198
-shuawan	刷碗	10
+shuawan	刷碗	720	no_contains
 shuawande	耍碗的	631
 shuawulai	耍无赖	415
 shuaxi	刷洗	407
@@ -189118,3 +189118,36 @@ banru	搬入	600	no_contains
 tuoru	拖入	560	no_contains
 yiru	移入	620	no_contains
 luojin	落进	600	no_contains
+anni	按你	820	no_contains
+anta	按他	620	no_contains
+anta	按她	600	no_contains
+anwo	按我	820	no_contains
+baishua	白刷	720	no_contains
+bieshua	别刷	860	no_contains
+bushua	不刷	840	no_contains
+doushua	都刷	720	no_contains
+fanshua	反刷	320	no_contains
+gunshua	滚刷	420	no_contains
+haishua	还刷	700	no_contains
+huishua	会刷	720	no_contains
+jiushua	就刷	760	no_contains
+keshua	可刷	620	no_contains
+kuangshua	狂刷	560	no_contains
+mianmi	免密	900	no_contains
+mianshua	免刷	420	no_contains
+nengshua	能刷	740	no_contains
+penshua	喷刷	300	no_contains
+shuale	刷了	840	no_contains
+shuashua	刷刷	560	no_contains
+shuawan	刷完	820	no_contains
+shuazhe	刷着	560	no_contains
+wushua	无刷	620	no_contains
+xiangshua	想刷	800	no_contains
+xianshua	先刷	700	no_contains
+yaoshua	要刷	820	no_contains
+zaishua	再刷	780	no_contains
+zhaoni	照你	680	no_contains
+zhaota	照他	580	no_contains
+zhaota	照她	560	no_contains
+zhaowo	照我	680	no_contains
+zhishua	只刷	700	no_contains
