@@ -5634,7 +5634,7 @@
 叉开	叉開	0.01
 蛤蟆吊	蛤蟆吊	0.01
 下部	下部	0.01
-捆住	捆住	0.01
+捆住	捆住	0.620	kunzhu	exact_rank_no_contains
 不习惯	不習慣	0.01
 捆吊	捆吊	0.01
 遮着	遮著	0.01
@@ -6887,7 +6887,7 @@
 第二道	第二道	0.01
 不能太滑	不能太滑	0.01
 紧绑	緊綁	0.01
-绑好	綁好	0.01
+绑好	綁好	0.660	banghao	exact_rank_no_contains
 紧勒	緊勒	0.01
 磨断	磨斷	0.01
 终断	終斷	0.01
@@ -12834,3 +12834,26 @@
 照我	照我	0.680	zhaowo	exact_rank_no_contains
 照他	照他	0.580	zhaota	exact_rank_no_contains
 照她	照她	0.560	zhaota	exact_rank_no_contains
+
+# Common binding and fastening phrases 2026-08-31.
+# Everyday actions receive moderate exact ranks; technical and literary forms
+# remain conservative and do not contribute substring popularity.
+绑扎	綁紮	0.660	bangza	exact_rank_no_contains
+电偶	電偶	0.240	dianou	exact_rank_no_contains
+捆扎	捆紮	0.600	kunza	exact_rank_no_contains
+扎紧	紮緊	0.720	zajin	exact_rank_no_contains
+捆紧	捆緊	0.640	kunjin	exact_rank_no_contains
+绑紧	綁緊	0.680	bangjin	exact_rank_no_contains
+捆起	捆起	0.520	kunqi	exact_rank_no_contains
+束扎	束紮	0.220	shuza	exact_rank_no_contains
+束起	束起	0.320	shuqi	exact_rank_no_contains
+缚扎	縛紮	0.180	fuza	exact_rank_no_contains
+缚起	縛起	0.260	fuqi	exact_rank_no_contains
+缚紧	縛緊	0.280	fujin	exact_rank_no_contains
+捆束	捆束	0.220	kunshu	exact_rank_no_contains
+扎牢	紮牢	0.660	zalao	exact_rank_no_contains
+捆牢	捆牢	0.580	kunlao	exact_rank_no_contains
+绑牢	綁牢	0.620	banglao	exact_rank_no_contains
+束紧	束緊	0.520	shujin	exact_rank_no_contains
+扎好	紮好	0.660	zahao	exact_rank_no_contains
+捆好	捆好	0.580	kunhao	exact_rank_no_contains

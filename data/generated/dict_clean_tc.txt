@@ -4939,7 +4939,7 @@ bangguangzaoying	膀胱造影	540
 bangguangzhongliu	膀胱腫瘤	540
 bangguo	幫過	700
 bangguo	綁過	10
-banghao	綁好	10
+banghao	綁好	660	no_contains
 banghe	棒喝	598
 banghei	傍黑	305
 banghu'erli	傍戶而立	260
@@ -5062,7 +5062,7 @@ bangyidage	榜一大哥	260
 bangying	邦硬	198
 bangyong	幫傭	368
 bangyuehan	棒約翰	228
-bangza	綁紮	660
+bangza	綁紮	660	no_contains
 bangzai	綁在	280
 bangzhe	綁著	700
 bangzhu	幫助	1000
@@ -80788,12 +80788,12 @@ kunyi	困意	241
 kunyinfu	捆陰縛	10
 kunyu	崑玉	198
 kunza	捆扎	499
-kunza	捆紮	499
+kunza	捆紮	600	no_contains
 kunzai	困在	280
 kunzhe	捆著	10
 kunzhong	崑仲	353
 kunzhu	困住	700
-kunzhu	捆住	10
+kunzhu	捆住	620	no_contains
 kuoban	擴版	311
 kuobian	擴編	428
 kuobiao	擴表	198
@@ -130578,7 +130578,7 @@ shujichu	書記處	520
 shujie	疏解	653
 shujiegou	樹結構	674
 shujiguan	書記官	379
-shujin	束緊	332
+shujin	束緊	520	no_contains
 shujindingtong	舒筋定痛	540
 shujindingtongpian	舒筋定痛片	610
 shujing	豎井	361
@@ -192043,3 +192043,19 @@ zhaota	照他	580	no_contains
 zhaota	照她	560	no_contains
 zhaowo	照我	680	no_contains
 zhishua	只刷	700	no_contains
+bangjin	綁緊	680	no_contains
+banglao	綁牢	620	no_contains
+dianou	電偶	240	no_contains
+fujin	縛緊	280	no_contains
+fuqi	縛起	260	no_contains
+fuza	縛紮	180	no_contains
+kunhao	捆好	580	no_contains
+kunjin	捆緊	640	no_contains
+kunlao	捆牢	580	no_contains
+kunqi	捆起	520	no_contains
+kunshu	捆束	220	no_contains
+shuqi	束起	320	no_contains
+shuza	束紮	220	no_contains
+zahao	紮好	660	no_contains
+zajin	紮緊	720	no_contains
+zalao	紮牢	660	no_contains
