@@ -12857,3 +12857,8 @@
 束紧	束緊	0.520	shujin	exact_rank_no_contains
 扎好	紮好	0.660	zahao	exact_rank_no_contains
 捆好	捆好	0.580	kunhao	exact_rank_no_contains
+
+# Low-frequency personal names imported by broad external sources 2026-09-02.
+# Keep them exact-visible without allowing generic source popularity to make
+# them dominate ordinary phrases or anchored prefix completions.
+陈清龙	陳清龍	0.080	chenqinglong	exact_rank_no_contains

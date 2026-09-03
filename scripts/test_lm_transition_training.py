@@ -430,6 +430,35 @@ class LmTransitionTrainingTests(unittest.TestCase):
             1, inject_stats["curated_daily_post_rank_exact_tc_forced_rank"]
         )
 
+    def test_external_low_frequency_person_name_keeps_conservative_rank(self) -> None:
+        manifest_path = (
+            SCRIPT_DIR.parent / "manifests" / "curated_daily_supplement_phrases.tsv"
+        )
+        entries, _stats = builder._parse_curated_daily_phrase_entries(
+            manifest_path.read_bytes(),
+            2,
+            stats_prefix="test_curated",
+        )
+        _regular, post_rank = builder._partition_curated_daily_post_rank_exact_entries(
+            entries
+        )
+        target_entries = [
+            entry
+            for entry in post_rank
+            if entry[0] == "陈清龙" and entry[3] == "chenqinglong"
+        ]
+        self.assertEqual(1, len(target_entries))
+
+        sc_map = {("chenqinglong", "陈清龙"): 620}
+        tc_map = {("chenqinglong", "陳清龍"): 767}
+        builder._inject_curated_daily_post_rank_exact_entries(
+            sc_map,
+            tc_map,
+            target_entries,
+        )
+        self.assertEqual(80, sc_map[("chenqinglong", "陈清龙")])
+        self.assertEqual(80, tc_map[("chenqinglong", "陳清龍")])
+
     def test_curated_no_contains_scope_survives_dictionary_output(self) -> None:
         sc_text = "\u98ce\u5927"
         tc_text = "\u98a8\u5927"
