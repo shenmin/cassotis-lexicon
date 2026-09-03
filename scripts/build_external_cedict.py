@@ -844,6 +844,12 @@ SINGLE_CHAR_RELATIVE_ORDER_OVERRIDES: Tuple[
     # Simplified-source conversion overstates 简 relative to the much more
     # common standalone verb 见. Keep the correction local to SC output.
     (("jian", "见"), ("jian", "简"), 16),
+    # 咯 is the everyday sentence-final particle for lo; keep it ahead of the
+    # uncommon variant 囖. Its other secondary readings should remain visible.
+    (("lo", "咯"), ("lo", "囖"), 16),
+    (("ka", "咯"), ("ka", "佧"), 16),
+    (("luo", "咯"), ("luo", "箩"), 16),
+    (("luo", "咯"), ("luo", "籮"), 16),
 )
 
 MULTI_CHAR_TERM_DROP_OVERRIDES: Set[str] = {
@@ -10579,6 +10585,9 @@ def _load_unihan_readings_detail(
         ("\u5265", "bao", 1),     # 剥
         ("\u54ea", "nei", 1),     # 哪
         ("\u5594", "wo", 1),      # 喔
+        ("\u54af", "lo", 1),      # 咯（句末语气词）
+        ("\u54af", "ka", 1),      # 咯（咯血等）
+        ("\u54af", "luo", 1),     # 咯（咯血等）
     ):
         _add_unihan_reading(
             readings_map,
@@ -26507,19 +26516,6 @@ def main() -> int:
         )
     )
 
-    stats.update(
-        _enforce_single_char_relative_order_overrides(
-            sc_map,
-            "sc_final_post",
-        )
-    )
-    stats.update(
-        _enforce_single_char_relative_order_overrides(
-            tc_map,
-            "tc_final_post",
-        )
-    )
-
     sc_map, sc_pinyin_alias_stats = _expand_leading_text_pinyin_aliases(
         sc_map,
         "sc_final_post",
@@ -26618,6 +26614,22 @@ def main() -> int:
                 "tc_unihan_stability",
             )
         )
+
+    # Stability preservation deliberately restores prior weights. Apply the
+    # small audited relative-order rules last so they remain effective in the
+    # normal non-refresh build as well as a full Unihan refresh.
+    stats.update(
+        _enforce_single_char_relative_order_overrides(
+            sc_map,
+            "sc_final_post",
+        )
+    )
+    stats.update(
+        _enforce_single_char_relative_order_overrides(
+            tc_map,
+            "tc_final_post",
+        )
+    )
 
     _write_dict(
         output_sc,
