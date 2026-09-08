@@ -12878,3 +12878,21 @@
 转给你	轉給你	0.620	zhuangeini	exact_rank_no_contains
 转给他	轉給他	0.480	zhuangeita	exact_rank_no_contains
 转给她	轉給她	0.460	zhuangeita	exact_rank_no_contains
+
+# Everyday changes and replacements 2026-09-08.
+# Deictic fragments and uncommon objects stay below established homophones.
+变久	變久	0.320	bianjiu	exact_rank_no_contains
+换车	換車	0.720	huanche	exact_rank_no_contains
+变笨	變笨	0.620	bianben	exact_rank_no_contains
+变这	變這	0.100	bianzhe	exact_rank_no_contains
+变那	變那	0.120	bianna	exact_rank_no_contains
+变清	變清	0.420	bianqing	exact_rank_no_contains
+变浑	變渾	0.280	bianhun	exact_rank_no_contains
+换老婆	換老婆	0.100	huanlaopo	exact_rank_no_contains
+变傻	變傻	0.520	biansha	exact_rank_no_contains
+变聪明	變聰明	0.600	biancongming	exact_rank_no_contains
+变清楚	變清楚	0.520	bianqingchu	exact_rank_no_contains
+变浑浊	變渾濁	0.260	bianhunzhuo	exact_rank_no_contains
+换辆车	換輛車	0.460	huanliangche	exact_rank_no_contains
+# Requested safety expression; a dictionary phrase, not synthetic LM evidence.
+小心安全	小心安全	0.320	xiaoxinanquan	exact_rank_no_contains
