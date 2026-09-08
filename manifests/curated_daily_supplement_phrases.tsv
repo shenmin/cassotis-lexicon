@@ -12861,3 +12861,20 @@
 # Keep them exact-visible without allowing generic source popularity to make
 # them dominate ordinary phrases or anchored prefix completions.
 陈清龙	陳清龍	0.080	chenqinglong	exact_rank_no_contains
+
+# Everyday understanding, transfer and messaging phrases 2026-09-07.
+# Messaging shorthand stays below ordinary homophones such as wei/ni (for you).
+撅起	撅起	0.520	jueqi	exact_rank_no_contains
+没懂	沒懂	0.720	meidong	exact_rank_no_contains
+转你	轉你	0.460	zhuanni	exact_rank_no_contains
+转我	轉我	0.460	zhuanwo	exact_rank_no_contains
+转他	轉他	0.360	zhuanta	exact_rank_no_contains
+转她	轉她	0.340	zhuanta	exact_rank_no_contains
+微我	微我	0.220	weiwo	exact_rank_no_contains
+微你	微你	0.200	weini	exact_rank_no_contains
+微他	微他	0.140	weita	exact_rank_no_contains
+微她	微她	0.130	weita	exact_rank_no_contains
+转给我	轉給我	0.620	zhuangeiwo	exact_rank_no_contains
+转给你	轉給你	0.620	zhuangeini	exact_rank_no_contains
+转给他	轉給他	0.480	zhuangeita	exact_rank_no_contains
+转给她	轉給她	0.460	zhuangeita	exact_rank_no_contains
