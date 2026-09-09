@@ -12896,3 +12896,65 @@
 换辆车	換輛車	0.460	huanliangche	exact_rank_no_contains
 # Requested safety expression; a dictionary phrase, not synthetic LM evidence.
 小心安全	小心安全	0.320	xiaoxinanquan	exact_rank_no_contains
+
+# Everyday transfers and n/g-boundary phrases 2026-09-09.
+# Explicit daily ranks do not inflate substring popularity or LM evidence.
+# Short fragments stay below established words such as jian/ge (interval).
+换乘	換乘	0.740	huancheng	exact_rank_no_contains
+复刻	復刻	0.720	fuke	exact_rank_no_contains
+漏网	漏網	0.640	louwang	exact_rank_no_contains
+先给	先給	0.800	xiangei	exact_rank_no_contains
+先给你	先給你	0.680	xiangeini	exact_rank_no_contains
+见个	見個	0.460	jiange	exact_rank_no_contains
+签给	簽給	0.320	qiangei	exact_rank_no_contains
+签个	簽個	0.420	qiange	exact_rank_no_contains
+现给	現給	0.200	xiangei	exact_rank_no_contains
+晚给	晚給	0.360	wangei	exact_rank_no_contains
+玩个	玩個	0.600	wange	exact_rank_no_contains
+不包	不包	0.540	bubao	exact_rank_no_contains
+衬底	襯底	0.340	chendi	exact_rank_no_contains
+先给我	先給我	0.680	xiangeiwo	exact_rank_no_contains
+先给他	先給他	0.540	xiangeita	exact_rank_no_contains
+先给她	先給她	0.520	xiangeita	exact_rank_no_contains
+先给您	先給您	0.500	xiangeinin	exact_rank_no_contains
+现给你	現給你	0.180	xiangeini	exact_rank_no_contains
+晚给我	晚給我	0.280	wangeiwo	exact_rank_no_contains
+晚给你	晚給你	0.280	wangeini	exact_rank_no_contains
+签给我	簽給我	0.240	qiangeiwo	exact_rank_no_contains
+签给你	簽給你	0.240	qiangeini	exact_rank_no_contains
+签个字	簽個字	0.540	qiangezi	exact_rank_no_contains
+见个面	見個面	0.640	jiangemian	exact_rank_no_contains
+剪个	剪個	0.300	jiange	exact_rank_no_contains
+先改	先改	0.640	xiangai	exact_rank_no_contains
+先搞	先搞	0.420	xiangao	exact_rank_no_contains
+先关	先關	0.500	xianguan	exact_rank_no_contains
+先过	先過	0.440	xianguo	exact_rank_no_contains
+玩个够	玩個夠	0.520	wangegou	exact_rank_no_contains
+
+# Brief everyday actions 2026-09-09.
+# Keep ordinary homophones zuo (do) and cha (check) ahead of the new actions.
+# Fixed exact ranks do not contribute to substring popularity or LM counts.
+关一下	關一下	0.760	guanyixia	exact_rank_no_contains
+开一下	開一下	0.780	kaiyixia	exact_rank_no_contains
+来一下	來一下	0.780	laiyixia	exact_rank_no_contains
+去一下	去一下	0.640	quyixia	exact_rank_no_contains
+瞄一下	瞄一下	0.620	miaoyixia	exact_rank_no_contains
+站一下	站一下	0.640	zhanyixia	exact_rank_no_contains
+坐一下	坐一下	0.700	zuoyixia	exact_rank_no_contains
+搬一下	搬一下	0.480	banyixia	exact_rank_no_contains
+插一下	插一下	0.460	chayixia	exact_rank_no_contains
+抽一下	抽一下	0.380	chouyixia	exact_rank_no_contains
+吸一下	吸一下	0.460	xiyixia	exact_rank_no_contains
+踩一下	踩一下	0.500	caiyixia	exact_rank_no_contains
+蹦一下	蹦一下	0.340	bengyixia	exact_rank_no_contains
+跳一下	跳一下	0.540	tiaoyixia	exact_rank_no_contains
+按一下	按一下	0.760	anyixia	exact_rank_no_contains
+点一下	點一下	0.780	dianyixia	exact_rank_no_contains
+推一下	推一下	0.620	tuiyixia	exact_rank_no_contains
+拉一下	拉一下	0.640	layixia	exact_rank_no_contains
+拖一下	拖一下	0.560	tuoyixia	exact_rank_no_contains
+换一下	換一下	0.780	huanyixia	exact_rank_no_contains
+挪一下	挪一下	0.580	nuoyixia	exact_rank_no_contains
+敲一下	敲一下	0.540	qiaoyixia	exact_rank_no_contains
+停一下	停一下	0.740	tingyixia	exact_rank_no_contains
+走一下	走一下	0.680	zouyixia	exact_rank_no_contains
