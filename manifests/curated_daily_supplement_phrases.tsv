@@ -13021,3 +13021,23 @@
 防盗网	防盜網	0.560	fangdaowang	exact_rank_no_contains
 扎丝	紮絲	0.260	zasi	exact_rank_no_contains
 扎丝钩	紮絲鉤	0.180	zasigou	exact_rank_no_contains
+
+# Everyday meals, shopping and conversational fragments 2026-09-10.
+# Common food/actions lead; repetitions and regional address forms stay lower.
+# Preserve stronger established homophones and do not invent corpus evidence.
+送饭	送飯	0.620	songfan	exact_rank_no_contains
+送菜	送菜	0.600	songcai	exact_rank_no_contains
+买米	買米	0.540	maimi	exact_rank_no_contains
+买面	買麵	0.520	maimian	exact_rank_no_contains
+垫一下	墊一下	0.420	dianyixia	exact_rank_no_contains
+从他	從他	0.320	congta	exact_rank_no_contains
+从她	從她	0.300	congta	exact_rank_no_contains
+送米	送米	0.460	songmi	exact_rank_no_contains
+垫垫	墊墊	0.220	diandian	exact_rank_no_contains
+阿祖	阿祖	0.240	azu	exact_rank_no_contains
+阿爷	阿爺	0.320	aye	exact_rank_no_contains
+好点	好點	0.700	haodian	exact_rank_no_contains
+汤团	湯糰	0.520	tangtuan	exact_rank_no_contains
+汤圆	湯圓	0.760	tangyuan	exact_rank_no_contains
+省掉	省掉	0.620	shengdiao	exact_rank_no_contains
+省了	省了	0.620	shengle	exact_rank_no_contains
