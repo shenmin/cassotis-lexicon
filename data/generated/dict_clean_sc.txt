@@ -18298,6 +18298,7 @@ chengse	成色	374
 chengseji	橙色剂	230
 chengsejingbao	橙色警报	10
 chengsezhanji	橙色战剂	260
+chengshang	撑上	240	no_contains
 chengshang	呈上	10
 chengshangqixia	承上启下	950
 chengshangqixia	承上起下	94
@@ -49736,6 +49737,7 @@ guaren	寡人	438
 guaru	挂入	10
 guasapa	瓜萨帕	382
 guasha	刮痧	420
+guashang	挂上	660	no_contains
 guashang	刮伤	323
 guashao	刮勺	198
 guasheng	挂绳	305
@@ -187723,10 +187725,12 @@ zuosha	做啥	700
 zuoshading'anchun	左沙丁胺醇	640
 zuoshang	坐上	700
 zuoshang	左上	541
+zuoshang	做上	420	no_contains
 zuoshang	坐商	47
 zuoshangbin	座上宾	400
 zuoshangjiao	左上角	1018
 zuoshangke	座上客	429
+zuoshangqu	做上去	380	no_contains
 zuoshanguanhudou	坐山观虎斗	460
 zuoshen	座身	260
 zuosheng	做声	130

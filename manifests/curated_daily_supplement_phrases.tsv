@@ -13041,3 +13041,10 @@
 汤圆	湯圓	0.760	tangyuan	exact_rank_no_contains
 省掉	省掉	0.620	shengdiao	exact_rank_no_contains
 省了	省了	0.620	shengle	exact_rank_no_contains
+
+# Everyday directional actions 2026-09-10.
+# Keep zuo action fragments below the established seated/directional homophones.
+做上	做上	0.420	zuoshang	exact_rank_no_contains
+做上去	做上去	0.380	zuoshangqu	exact_rank_no_contains
+挂上	掛上	0.660	guashang	exact_rank_no_contains
+撑上	撐上	0.240	chengshang	exact_rank_no_contains
