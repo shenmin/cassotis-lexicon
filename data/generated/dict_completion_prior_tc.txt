@@ -9317,7 +9317,6 @@ biaozhunwu	標準誤	1	0	0	1	247	3	0
 biaozhunwucha	標准誤差	80	0	0	0	0	0	0
 biaozhunwucha	標準誤差	1	0	0	1	247	3	0
 biaozhunxiang	標准像	80	0	0	0	0	0	0
-biaozhunxinhaofashengqi	標準信號発生器	283	0	0	3	27	1	0
 biaozhunyichuanmima	標準遺傳密碼	102	0	0	2	154	3	0
 biaozhunyichuanmima	標准遺傳密碼	80	0	0	0	0	0	0
 biaozhunyin	標準音	163	96	0	1	0	0	0
@@ -20047,7 +20046,6 @@ chongjiejing	重結晶	1	40	0	1	247	3	0
 chongjili	衝擊力	237	272	0	1	0	0	0
 chongjiliaofa	衝擊療法	102	0	0	2	154	3	0
 chongjiliaofa	沖擊療法	80	0	0	0	0	0	0
-chongjilizi	衝撃粒子	283	0	0	3	27	1	0
 chongjin	衝勁	189	156	0	1	0	0	0
 chongjin	沖筋	4	0	0	1	109	1	0
 chongjing	崇敬	256	320	0	1	0	0	0
@@ -24544,7 +24542,6 @@ daidao	帶刀	202	0	0	2	0	0	0
 daide	呆的	532	0	0	4	0	0	0
 daidian	帶電	269	351	0	1	0	0	0
 daidianlizi	帶電粒子	295	40	0	3	27	1	0
-daidianweilizi	帯電微粒子	283	0	0	3	27	1	0
 daidiao	帶調	137	40	0	1	0	0	0
 daiding	待定	265	342	0	1	0	0	0
 daidong	帶動	310	457	0	1	0	0	0
@@ -26389,7 +26386,6 @@ danxianghanshu	單向函數	200	0	0	1	82	1	0
 danxiangsi	單相思	158	127	0	1	0	0	0
 danxiangtuoliangxitong	單向托樑系統	175	0	0	1	89	1	0
 danxiangtuoliangxitong	單向托梁系統	80	0	0	0	0	0	0
-danxianshixinhaoji	単線式信號機	283	0	0	3	27	1	0
 danxiao	膽小	262	334	0	1	0	0	0
 danxiaoguan	膽小管	97	0	0	2	154	3	0
 danxiaogui	膽小鬼	216	221	0	1	0	0	0
@@ -44777,7 +44773,6 @@ gaizaotingrenling	改造町人零	93	0	0	1	109	1	0
 gaize	改則	80	0	0	0	0	0	0
 gaizexian	改則縣	128	40	0	1	0	0	0
 gaizhai	改窄	80	0	0	0	0	0	0
-gaizhakou	改札口	223	0	0	1	0	0	0
 gaizhandanbai	鈣粘蛋白	80	0	0	0	0	0	0
 gaizhang	蓋章	230	282	0	1	0	0	0
 gaizhe	蓋著	199	0	0	1	0	0	0
@@ -52821,7 +52816,6 @@ guominyuan	過敏源	228	0	0	3	61	3	0
 guominyuan	過敏原	175	124	0	1	0	0	0
 guominzhengfu	國民政府	346	474	0	2	0	0	0
 guominzhengfujunshiweiyuanhui	國民政府軍事委員會	80	0	0	0	0	0	367
-guominzhengzhuankeyisheng	過敏症専科醫生	102	0	0	2	154	3	0
 guominzhishengdang	國民之聲黨	80	0	0	0	0	0	0
 guominzhongxue	國民中學	128	40	0	1	0	0	0
 guomoruo	郭沫若	227	307	0	1	0	0	0
@@ -62248,7 +62242,6 @@ huizhuan	迴轉	261	333	0	1	0	0	0
 huizhuangtoupi	回狀頭皮	1	0	0	1	247	3	0
 huizhuanshousi	回轉壽司	80	0	0	0	0	0	0
 huizhuanshousi	迴轉壽司	80	0	0	0	0	0	0
-huizhuanxinhaoji	回転信號機	283	0	0	3	27	1	0
 huizi	惠子	131	40	0	1	0	0	0
 huizixing	回字形	202	0	0	2	0	0	0
 huizong	彙總	288	287	0	2	0	0	0
@@ -66789,7 +66782,6 @@ jiaotongdaxue	交通大學	80	0	0	0	0	0	520
 jiaotongdeng	交通燈	141	50	0	1	0	0	0
 jiaotongduse	交通堵塞	137	40	0	1	0	0	431
 jiaotongfei	交通費	197	175	0	1	0	0	0
-jiaotongganyingxinhao	交通感応信號	283	0	0	3	27	1	0
 jiaotonggongju	交通工具	253	312	0	1	0	0	520
 jiaotonggongjumoniyouxi	交通工具模擬遊戲	283	0	0	3	27	1	0
 jiaotongguanliju	交通管理局	80	0	0	0	0	0	489
@@ -89378,7 +89370,6 @@ lizijiaohuansepufa	離子交換色譜法	102	0	0	2	154	3	0
 lizijiaohuanzhu	離子交換柱	1	0	0	1	247	3	0
 lizijiasuqi	粒子加速器	283	0	0	3	27	1	406
 lizijiedian	粒子節點	309	0	0	3	27	1	0
-lizijinglu	粒子経路	283	0	0	3	27	1	0
 lizijishu	粒子技術	278	0	0	3	27	1	0
 liziliebiao	粒子列表	278	0	0	3	27	1	0
 liziliu	粒子流	330	151	0	3	27	1	0
@@ -110951,7 +110942,6 @@ qingbao	情報	362	507	0	2	0	0	0
 qingbao	清包	240	0	0	1	71	1	0
 qingbaochu	情報處	160	91	0	1	0	0	0
 qingbaolaiyuan	情報來源	272	0	0	2	0	0	420
-qingbaoyundalizi	情報伝達粒子	283	0	0	3	27	1	0
 qingbei	清北	202	0	0	2	0	0	0
 qingbian	輕便	241	283	0	1	0	0	0
 qingbian	請便	210	206	0	1	0	0	0
@@ -123261,7 +123251,6 @@ shengdemitelidajiaotang	聖德米特里大教堂	145	0	0	1	98	1	0
 shengdemitu	生的米突	197	0	0	1	0	0	0
 shengdengchuanshuo	聖燈傳說	77	0	0	1	109	1	0
 shengdeshi	生地仕	181	0	0	1	0	0	0
-shengdeshishang	生地仕上	197	0	0	1	0	0	0
 shengdetaizi	聖德太子	80	0	0	0	0	0	0
 shengdeyagedelafulongtela	聖地亞哥德拉弗龍特拉	12	0	0	1	174	2	0
 shengdeyageshi	聖地亞哥市	80	0	0	0	0	0	0
@@ -125201,7 +125190,6 @@ shentichuanhuan	身體穿環	102	0	0	2	154	3	0
 shentifafu	身體髮膚	205	80	0	1	88	1	0
 shentifafu	身體發膚	80	0	0	0	0	0	0
 shentijiancha	身體檢查	114	40	0	2	154	3	395
-shentijianzha	身體檢査	102	0	0	2	154	3	0
 shentijixingkongjuzheng	身體畸形恐懼症	102	0	0	2	154	3	0
 shentilixing	身體力行	278	251	0	1	82	1	0
 shentingxue	神庭穴	1	0	0	1	247	3	0
@@ -126888,7 +126876,6 @@ shijueshang	視覺上	199	0	0	1	0	0	0
 shijueshiying	視覺適應	1	40	0	1	247	3	0
 shijuexiaoguo	視覺效果	272	0	0	2	0	0	520
 shijuexiaoshuo	視覺小說	77	0	0	1	109	1	0
-shijuexinhao	視覚信號	283	0	0	3	27	1	0
 shijueyoufadianwei	視覺誘發電位	1	0	0	1	247	3	0
 shijuezaosheng	視覺噪聲	1	0	0	1	247	3	0
 shijuezhang'ai	視覺障礙	1	0	0	1	245	3	0
@@ -127648,7 +127635,6 @@ shishizai	實實在	80	0	0	0	0	0	0
 shishizaizai	實實在在	80	0	0	0	0	0	0
 shishizaoyingxiong	時勢造英雄	210	91	0	1	87	1	0
 shishizhanlve	實時戰略	77	0	0	1	109	1	0
-shishizhe	施事者	137	40	0	1	0	0	0
 shishizi	石獅子	221	288	0	1	0	0	0
 shishou	石首	457	812	0	2	0	0	0
 shishou	十首	292	117	0	2	0	0	0
@@ -128255,7 +128241,6 @@ shiyingsheng	侍應生	131	50	0	1	0	0	0
 shiyingshi	石英石	109	40	0	2	154	3	0
 shiyingshitaimian	石英石檯面	204	0	0	1	81	1	0
 shiyingxing	適應性	287	397	0	1	0	0	0
-shiyingxinhaochuli	適応信號処理	283	0	0	3	27	1	0
 shiyingzhang'ai	適應障礙	1	0	0	1	245	3	0
 shiyingzhangai	適應障礙	1	0	0	1	245	3	0
 shiyingzheng	適應症	20	212	0	1	247	3	0
@@ -130872,7 +130857,6 @@ shuishuo	誰說	284	0	0	2	0	0	0
 shuishuode	誰說的	540	0	0	4	0	0	0
 shuisi	水絲	80	0	0	0	0	0	0
 shuisongyongni	誰慫恿你	540	0	0	4	0	0	0
-shuisulengquefadianji	水素冷卻発電機	299	0	0	3	27	1	0
 shuita	水獺	215	218	0	1	0	0	0
 shuita	水塔	194	168	0	1	0	0	0
 shuitaishen	水太深	526	0	0	4	0	0	0
@@ -138500,7 +138484,6 @@ tianting	天庭	197	120	0	1	94	1	0
 tianting	田町	1	0	0	1	174	2	0
 tiantishengwuxue	天體生物學	102	0	0	2	154	3	0
 tiantiwuli	天體物理	283	0	0	3	27	1	0
-tiantiwuliguancesuo	天體物理観測所	283	0	0	3	27	1	0
 tiantiwulishujuxitong	天體物理數據系統	278	0	0	3	27	1	0
 tiantiwulixue	天體物理學	283	0	0	3	27	1	520
 tiantiwulixuebao	天體物理學報	278	0	0	3	27	1	0
@@ -140602,7 +140585,6 @@ tongqingzhe	同情者	168	109	0	1	0	0	0
 tongqinshi	同寢室	284	0	0	2	0	0	0
 tongqixiangqiu	同氣相求	199	73	0	1	89	1	0
 tongqixinhao	同期信號	283	0	0	3	27	1	0
-tongqixinhaofashengqi	同期信號発生器	283	0	0	3	27	1	0
 tongqu	童趣	173	120	0	1	0	0	0
 tongquandabian	通權達變	160	91	0	1	0	0	0
 tongransezhi	同染色質	102	0	0	2	154	3	0
@@ -148654,7 +148636,6 @@ wulihui	無力回	80	0	0	0	0	0	0
 wulihuitian	無力回天	80	0	0	0	0	0	0
 wulihuitian	無力迴天	80	0	0	0	0	0	0
 wulijia	物理家	295	40	0	3	27	1	0
-wulijianceng	物理検層	283	0	0	3	27	1	0
 wulijiaoshi	物理教師	278	0	0	3	27	1	0
 wulijiaoyu	物理教育	278	0	0	3	27	1	0
 wulijiegou	物理結構	283	0	0	3	27	1	0
@@ -157042,7 +157023,6 @@ xinhaochuandao	信號傳導	244	0	0	3	61	3	0
 xinhaochuandi	信號傳遞	102	0	0	2	154	3	0
 xinhaochuanshu	信號傳輸	278	0	0	3	27	1	0
 xinhaochuli	信號處理	381	232	0	5	27	1	0
-xinhaochulihuilu	信號処理迴路	283	0	0	3	27	1	0
 xinhaochuliqi	信號處理器	80	0	0	0	0	0	460
 xinhaodan	信號彈	202	0	0	2	0	0	0
 xinhaodeng	信號燈	342	191	0	3	27	1	0
@@ -157050,11 +157030,8 @@ xinhaodezhucehechufa	信號的註冊和觸發	309	0	0	3	27	1	0
 xinhaodezhucehechufa	信號的注冊和觸發	80	0	0	0	0	0	0
 xinhaodiaozhi	信號調製	278	0	0	3	27	1	0
 xinhaodiaozhi	信號調制	80	0	0	0	0	0	0
-xinhaoduizayinbi	信號対雑音比	283	0	0	3	27	1	0
 xinhaofashe	信號發射	309	0	0	3	27	1	0
-xinhaofashengqi	信號発生器	283	0	0	3	27	1	0
 xinhaofashengqi	信號發生器	278	0	0	3	27	1	0
-xinhaofazhenqi	信號発振器	283	0	0	3	27	1	0
 xinhaofenzi	信號分子	278	0	0	3	27	1	0
 xinhaohuilu	信號迴路	283	0	0	3	27	1	0
 xinhaoji	信號機	288	0	0	5	27	1	0
@@ -159697,7 +159674,6 @@ xuangong	旋工	80	0	0	0	0	0	0
 xuangou	選購	255	318	0	1	0	0	0
 xuangua	懸掛	330	511	0	1	0	0	0
 xuangualoumian	懸掛樓面	175	0	0	1	89	1	0
-xuanguan	玄関	160	0	0	1	94	1	0
 xuanguang	玄光	28	0	0	1	174	2	0
 xuanguangdelunwu	旋光的輪舞	93	0	0	1	109	1	0
 xuanguangdu	旋光度	1	0	0	1	247	3	0
@@ -160679,7 +160655,6 @@ xueyeguanliuqi	血液灌流器	1	0	0	1	247	3	0
 xueyeguolv	血液過濾	102	0	0	2	154	3	0
 xueyejiancha	血液檢查	102	0	0	2	154	3	0
 xueyejianyan	血液檢驗	102	0	0	2	154	3	0
-xueyejianzha	血液檢査	102	0	0	2	154	3	0
 xueyejibing	血液疾病	102	0	0	2	154	3	0
 xueyekongbuzheng	血液恐怖症	80	0	0	0	0	0	0
 xueyeliubianxue	血液流變學	102	0	0	2	154	3	0
@@ -168451,7 +168426,6 @@ yingdanbai	硬蛋白	97	0	0	2	154	3	0
 yingdang	應當	368	636	0	1	0	0	0
 yingdao	應道	292	0	0	2	0	0	0
 yingdaruliu	應答如流	172	0	0	1	90	1	0
-yingdaxinhao	応答信號	283	0	0	3	27	1	0
 yingde	硬的	540	0	0	4	0	0	0
 yingde	硬得	532	0	0	4	0	0	0
 yingde	贏得	313	463	0	1	0	0	0
@@ -169188,7 +169162,6 @@ yingyongwen	應用文	162	139	0	1	0	0	0
 yingyongwenxiezuo	應用文寫作	1	0	0	1	246	3	399
 yingyongwuli	應用物理	283	0	0	3	27	1	0
 yingyongwulishiyanshi	應用物理實驗室	278	0	0	3	27	1	0
-yingyongwulixue	応用物理學	283	0	0	3	27	1	0
 yingyongwulixue	應用物理學	278	0	0	3	27	1	462
 yingyongwulixuekuaibao	應用物理學快報	278	0	0	3	27	1	0
 yingyongwulixuezazhi	應用物理學雜誌	278	0	0	3	27	1	0
@@ -182398,7 +182371,6 @@ zhidaolaoshi	指導老師	540	0	0	4	0	0	0
 zhidaole	知道了	544	0	0	4	0	0	0
 zhidaoliming	直到黎明	77	0	0	1	109	1	0
 zhidaoxianzai	直到現在	137	40	0	1	0	0	0
-zhidaoxinhao	鉄道信號	283	0	0	3	27	1	0
 zhidaoyiyi	指導意義	199	0	0	1	0	0	0
 zhidaoyuan	指導員	286	395	0	1	0	0	0
 zhidaozhe	指導者	180	136	0	1	0	0	0

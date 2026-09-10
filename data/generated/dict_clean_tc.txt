@@ -9300,7 +9300,6 @@ biaozhunwu	標準誤	898
 biaozhunwucha	標準誤差	733
 biaozhunwucha	標准誤差	233
 biaozhunxiang	標准像	248
-biaozhunxinhaofashengqi	標準信號発生器	1000
 biaozhunyichuanmima	標準遺傳密碼	895
 biaozhunyichuanmima	標准遺傳密碼	380
 biaozhunyin	標準音	448
@@ -19997,7 +19996,6 @@ chongjiejing	重結晶	362
 chongjili	衝擊力	620
 chongjiliaofa	衝擊療法	580
 chongjiliaofa	沖擊療法	250
-chongjilizi	衝撃粒子	1000
 chongjin	衝勁	361
 chongjin	沖筋	265
 chongjing	崇敬	771
@@ -24485,7 +24483,6 @@ daidao	逮到	10
 daide	呆的	700
 daidian	帶電	468
 daidianlizi	帶電粒子	723
-daidianweilizi	帯電微粒子	765
 daidiao	帶調	323
 daiding	待定	466
 daidong	帶動	813
@@ -26326,7 +26323,6 @@ danxianghanshu	單向函數	667
 danxiangsi	單相思	221
 danxiangtuoliangxitong	單向托樑系統	973
 danxiangtuoliangxitong	單向托梁系統	440
-danxianshixinhaoji	単線式信號機	1000
 danxiao	膽小	440
 danxiaoguan	膽小管	500
 danxiaogui	膽小鬼	455
@@ -44605,7 +44601,6 @@ gaizao	改造	502
 gaizaotingrenling	改造町人零	613
 gaize	改則	198
 gaizexian	改則縣	165
-gaizhakou	改札口	640
 gaizhandanbai	鈣粘蛋白	250
 gaizhang	蓋章	294
 gaizhe	蓋著	700
@@ -52576,7 +52571,6 @@ guominyuan	過敏源	520
 guominyuan	過敏原	1
 guominzhengfu	國民政府	632
 guominzhengfujunshiweiyuanhui	國民政府軍事委員會	421
-guominzhengzhuankeyisheng	過敏症専科醫生	700
 guominzhishengdang	國民之聲黨	406
 guominzhongxue	國民中學	249
 guomoruo	郭沫若	289
@@ -61961,7 +61955,6 @@ huizhuan	回轉	662
 huizhuangtoupi	回狀頭皮	540
 huizhuanshousi	回轉壽司	273
 huizhuanshousi	迴轉壽司	269
-huizhuanxinhaoji	回転信號機	765
 huizi	惠子	621
 huizixing	回字形	10
 huizong	彙總	1000
@@ -66482,7 +66475,6 @@ jiaotongdaxue	交通大學	260
 jiaotongdeng	交通燈	388
 jiaotongduse	交通堵塞	405
 jiaotongfei	交通費	455
-jiaotongganyingxinhao	交通感応信號	821
 jiaotonggongju	交通工具	510
 jiaotonggongjumoniyouxi	交通工具模擬遊戲	792
 jiaotongguanliju	交通管理局	289
@@ -88992,7 +88984,6 @@ lizijiaohuansepufa	離子交換色譜法	700
 lizijiaohuanzhu	離子交換柱	610
 lizijiasuqi	粒子加速器	770
 lizijiedian	粒子節點	758
-lizijinglu	粒子経路	710
 lizijishu	粒子技術	610
 liziliebiao	粒子列表	700
 liziliu	粒子流	676
@@ -110491,7 +110482,6 @@ qingbao	清包	295
 qingbao	情報	199
 qingbaochu	情報處	555
 qingbaolaiyuan	情報來源	280
-qingbaoyundalizi	情報伝達粒子	821
 qingbei	清北	10
 qingbian	輕便	804
 qingbian	請便	688
@@ -122774,7 +122764,6 @@ shengdemitelidajiaotang	聖德米特里大教堂	660
 shengdemitu	生的米突	597
 shengdengchuanshuo	聖燈傳說	538
 shengdeshi	生地仕	556
-shengdeshishang	生地仕上	597
 shengdetaizi	聖德太子	140
 shengdeyagedelafulongtela	聖地亞哥德拉弗龍特拉	681
 shengdeyageshi	聖地亞哥市	258
@@ -124712,7 +124701,6 @@ shentichuanhuan	身體穿環	570
 shentifafu	身體髮膚	931
 shentifafu	身體發膚	344
 shentijiancha	身體檢查	570
-shentijianzha	身體檢査	570
 shentijixingkongjuzheng	身體畸形恐懼症	700
 shentilixing	身體力行	520
 shentingxue	神庭穴	470
@@ -126395,7 +126383,6 @@ shijueshang	視覺上	800
 shijueshiying	視覺適應	540
 shijuexiaoguo	視覺效果	280
 shijuexiaoshuo	視覺小說	538
-shijuexinhao	視覚信號	705
 shijueyoufadianwei	視覺誘發電位	669
 shijuezaosheng	視覺噪聲	540
 shijuezhang'ai	視覺障礙	540
@@ -127154,7 +127141,7 @@ shishizai	實實在	540
 shishizaizai	實實在在	629
 shishizaoyingxiong	時勢造英雄	450
 shishizhanlve	實時戰略	538
-shishizhe	施事者	379
+shishizhe	實施者	460	no_contains
 shishizi	石獅子	286
 shishou	石首	932
 shishou	失手	608
@@ -127761,7 +127748,6 @@ shiyingsheng	侍應生	202
 shiyingshi	石英石	464
 shiyingshitaimian	石英石檯面	760
 shiyingxing	適應性	564
-shiyingxinhaochuli	適応信號処理	821
 shiyingzhang'ai	適應障礙	540
 shiyingzhangai	適應障礙	540
 shiyingzheng	適應症	510
@@ -130374,7 +130360,6 @@ shuishuo	誰說	280
 shuishuode	誰說的	1000
 shuisi	水絲	137
 shuisongyongni	誰慫恿你	1000
-shuisulengquefadianji	水素冷卻発電機	783
 shuita	水塔	1000
 shuita	水獺	1
 shuitaishen	水太深	800
@@ -137931,7 +137916,6 @@ tianting	天庭	763
 tianting	田町	66
 tiantishengwuxue	天體生物學	640
 tiantiwuli	天體物理	710
-tiantiwuliguancesuo	天體物理観測所	752
 tiantiwulishujuxitong	天體物理數據系統	774
 tiantiwulixue	天體物理學	770
 tiantiwulixuebao	天體物理學報	811
@@ -140026,7 +140010,6 @@ tongqingzhe	同情者	425
 tongqinshi	同寢室	280
 tongqixiangqiu	同氣相求	630
 tongqixinhao	同期信號	710
-tongqixinhaofashengqi	同期信號発生器	752
 tongqu	童趣	606
 tongquandabian	通權達變	423
 tongransezhi	同染色質	570
@@ -148029,7 +148012,6 @@ wulihui	無力回	556
 wulihuitian	無力迴天	598
 wulihuitian	無力回天	464
 wulijia	物理家	676
-wulijianceng	物理検層	705
 wulijiaoshi	物理教師	700
 wulijiaoyu	物理教育	700
 wulijiegou	物理結構	705
@@ -156393,7 +156375,6 @@ xinhaochuandao	信號傳導	695
 xinhaochuandi	信號傳遞	570
 xinhaochuanshu	信號傳輸	695
 xinhaochuli	信號處理	810
-xinhaochulihuilu	信號処理迴路	1000
 xinhaochuliqi	信號處理器	429
 xinhaodan	信號彈	10
 xinhaodeng	信號燈	667
@@ -156401,11 +156382,8 @@ xinhaodezhucehechufa	信號的註冊和觸發	1000
 xinhaodezhucehechufa	信號的注冊和觸發	479
 xinhaodiaozhi	信號調製	976
 xinhaodiaozhi	信號調制	360
-xinhaoduizayinbi	信號対雑音比	821
 xinhaofashe	信號發射	758
-xinhaofashengqi	信號発生器	770
 xinhaofashengqi	信號發生器	755
-xinhaofazhenqi	信號発振器	765
 xinhaofenzi	信號分子	700
 xinhaohuilu	信號迴路	993
 xinhaoji	信號機	810
@@ -159038,7 +159016,7 @@ xuangong	旋工	242
 xuangou	選購	451
 xuangua	懸掛	502
 xuangualoumian	懸掛樓面	680
-xuanguan	玄関	659
+xuanguan	玄關	461
 xuanguang	玄光	515
 xuanguangdelunwu	旋光的輪舞	613
 xuanguangdu	旋光度	470
@@ -160018,7 +159996,6 @@ xueyeguanliuqi	血液灌流器	610
 xueyeguolv	血液過濾	570
 xueyejiancha	血液檢查	570
 xueyejianyan	血液檢驗	570
-xueyejianzha	血液檢査	570
 xueyejibing	血液疾病	570
 xueyekongbuzheng	血液恐怖症	289
 xueyeliubianxue	血液流變學	640
@@ -167765,7 +167742,6 @@ yingdanbai	硬蛋白	500
 yingdang	應當	1000
 yingdao	應道	280
 yingdaruliu	應答如流	625
-yingdaxinhao	応答信號	705
 yingde	硬的	1000
 yingde	硬得	676
 yingde	贏得	579
@@ -168501,7 +168477,6 @@ yingyongwen	應用文	337
 yingyongwenxiezuo	應用文寫作	610
 yingyongwuli	應用物理	710
 yingyongwulishiyanshi	應用物理實驗室	744
-yingyongwulixue	応用物理學	776
 yingyongwulixue	應用物理學	754
 yingyongwulixuekuaibao	應用物理學快報	744
 yingyongwulixuezazhi	應用物理學雜誌	987
@@ -181606,7 +181581,6 @@ zhidaolaoshi	指導老師	1000
 zhidaole	知道了	1036
 zhidaoliming	直到黎明	538
 zhidaoxianzai	直到現在	387
-zhidaoxinhao	鉄道信號	705
 zhidaoyiyi	指導意義	800
 zhidaoyuan	指導員	564
 zhidaozhe	指導者	438
@@ -192294,3 +192268,47 @@ xiyixia	吸一下	460	no_contains
 zhanyixia	站一下	640	no_contains
 zouyixia	走一下	680	no_contains
 zuoyixia	坐一下	700	no_contains
+bapian	八篇	180	no_contains
+jiupian	九篇	160	no_contains
+liangpian	兩篇	440	no_contains
+liupian	六篇	220	no_contains
+qipian	七篇	180	no_contains
+sanpian	三篇	380	no_contains
+shipian	十篇	240	no_contains
+sipian	四篇	300	no_contains
+wengaoxiang	文稿箱	420	no_contains
+wupian	五篇	300	no_contains
+youbapian	有八篇	220	no_contains
+youjipian	有幾篇	500	no_contains
+youjiupian	有九篇	200	no_contains
+youliangpian	有兩篇	520	no_contains
+youliupian	有六篇	280	no_contains
+youqipian	有七篇	240	no_contains
+yousanpian	有三篇	440	no_contains
+youshipian	有十篇	260	no_contains
+yousipian	有四篇	360	no_contains
+youwupian	有五篇	360	no_contains
+youyipian	有一篇	600	no_contains
+najipian	那幾篇	560	no_contains
+najipian	哪幾篇	500	no_contains
+naliangpian	那兩篇	600	no_contains
+naliangpian	哪兩篇	460	no_contains
+nasanpian	那三篇	420	no_contains
+nasipian	那四篇	320	no_contains
+nawupian	那五篇	320	no_contains
+zhejipian	這幾篇	600	no_contains
+zheliangpian	這兩篇	620	no_contains
+zhesanpian	這三篇	440	no_contains
+zhesipian	這四篇	340	no_contains
+zhewupian	這五篇	340	no_contains
+chuhu	出戶	1	no_contains
+fangdaowang	防盜網	560	no_contains
+haogao	好搞	640	no_contains
+houpian	後篇	260	no_contains
+jinhu	進戶	480	no_contains
+qianpian	前篇	300	no_contains
+qianxu	前序	300	no_contains
+shiwei	是為	1	no_contains
+shiweixu	是為序	120	no_contains
+zasi	紮絲	260	no_contains
+zasigou	紮絲鉤	180	no_contains

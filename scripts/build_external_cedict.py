@@ -826,6 +826,12 @@ SINGLE_CHAR_READING_DELTA_OVERRIDES: Dict[Tuple[str, str], int] = {
 }
 SINGLE_CHAR_ADDED_READING_WEIGHT_CAP = 280
 
+# Simplification may merge characters with different modern readings. Restore
+# only audited pairs, not every reading of every historical variant.
+SINGLE_CHAR_SIMPLIFIED_READING_ALIASES: Tuple[Tuple[str, str, str], ...] = (
+    ("\u7d2e", "\u624e", "za"),  # Binding/bundling: TC 紮 -> SC 扎.
+)
+
 # Audited pronunciation aliases whose lexical weight should not depend on the
 # selected standard reading. Apply these only after filtering and ranking so an
 # alias cannot revive a rejected term or influence another pinyin bucket.
@@ -853,6 +859,59 @@ SINGLE_CHAR_RELATIVE_ORDER_OVERRIDES: Tuple[
 )
 
 MULTI_CHAR_TERM_DROP_OVERRIDES: Set[str] = {
+    # Exclude a Japanese title import and an out-of-scope linguistics term.
+    # The everyday shishizhe entry is the separately curated 实施者/實施者.
+    "仕事着",
+    "施事者",
+    # Audited Japanese imports and mixed Japanese/Chinese spellings. Keep
+    # standard Chinese spellings and unrelated Japanese proper names.
+    "生地仕上",
+    "改札口",
+    "玄関",
+    "信号発生器",
+    "信號発生器",
+    "标准信号発生器",
+    "標準信號発生器",
+    "帯電微粒子",
+    "適応信號処理",
+    # Complete SC/TC spellings for the reviewed technical imports.
+    "交通感応信号",
+    "交通感応信號",
+    "信号処理回路",
+    "信号対雑音比",
+    "信号発振器",
+    "信號処理迴路",
+    "信號対雑音比",
+    "信號発振器",
+    "冲撃粒子",
+    "単線式信號機",
+    "単线式信号机",
+    "同期信号発生器",
+    "同期信號発生器",
+    "回転信号机",
+    "回転信號機",
+    "天体物理観测所",
+    "天體物理観測所",
+    "帯电微粒子",
+    "応用物理学",
+    "応用物理學",
+    "応答信号",
+    "応答信號",
+    "情報伝達粒子",
+    "情报伝达粒子",
+    "水素冷却発电机",
+    "水素冷卻発電機",
+    "物理検层",
+    "物理検層",
+    "粒子経路",
+    "衝撃粒子",
+    "視覚信號",
+    "视覚信号",
+    "过敏症専科医生",
+    "适応信号処理",
+    "過敏症専科醫生",
+    "鉄道信号",
+    "鉄道信號",
     # Legacy orthography no longer preferred in modern IME usage.
     "补钉",
     "補釘",
@@ -932,6 +991,9 @@ MULTI_CHAR_TERM_DROP_OVERRIDES: Set[str] = {
 }
 
 MULTI_CHAR_TERM_DROP_SUBSTRINGS: Set[str] = {
+    # Remove inspection-phrase variants, not the character or standard 查 words.
+    "检査",
+    "檢査",
     # Deprecated or erroneous orthographic variants. Drop compounds containing
     # these fragments as well; keep the standard forms `片段` and `模板`.
     "片断",
@@ -14169,6 +14231,24 @@ def _promote_single_char_homophones_by_head_productivity(
     return stats
 
 
+def _restore_audited_simplified_single_char_readings(
+    sc_map: Dict[Tuple[str, str], int],
+    tc_map: Dict[Tuple[str, str], int],
+    stats_prefix: str,
+) -> Dict[str, int]:
+    """Restore merged SC readings without changing existing SC/TC weights."""
+    stats = {f"{stats_prefix}_simplified_readings_restored": 0}
+    sc_chars = {text for _pinyin, text in sc_map if _cjk_len(text) == 1}
+    for traditional, simplified, pinyin in SINGLE_CHAR_SIMPLIFIED_READING_ALIASES:
+        key = (pinyin, simplified)
+        weight = tc_map.get((pinyin, traditional), 0)
+        if simplified not in sc_chars or key in sc_map or weight <= 0:
+            continue
+        sc_map[key] = min(weight, SINGLE_CHAR_ADDED_READING_WEIGHT_CAP)
+        stats[f"{stats_prefix}_simplified_readings_restored"] += 1
+    return stats
+
+
 def _enforce_single_char_relative_order_overrides(
     mapping: Dict[Tuple[str, str], int],
     stats_prefix: str,
@@ -18507,6 +18587,9 @@ def _write_dict(
         output_pinyin = output_pinyin.replace("\ufeff", "").strip()
         text = text.replace("\ufeff", "").strip()
         if not output_pinyin or not text:
+            continue
+        # The artifact boundary must also reject late injections and aliases.
+        if _is_explicit_multi_char_drop_text(text):
             continue
         key = (output_pinyin, text)
         output_rows[key] = max(output_rows.get(key, 0), weight)
@@ -26615,6 +26698,14 @@ def main() -> int:
             )
         )
 
+    # Run after script filtering and snapshot preservation. A merged character
+    # can otherwise lose a modern reading owned by its traditional counterpart.
+    stats.update(
+        _restore_audited_simplified_single_char_readings(
+            sc_map, tc_map, "sc_final_post",
+        )
+    )
+
     # Stability preservation deliberately restores prior weights. Apply the
     # small audited relative-order rules last so they remain effective in the
     # normal non-refresh build as well as a full Unihan refresh.
@@ -26630,6 +26721,17 @@ def main() -> int:
             "tc_final_post",
         )
     )
+
+    # Curated reinforcements and aliases run after the first exclusion pass.
+    # Reapply the policy before exporting the dictionary and completion data.
+    sc_map, sc_final_explicit_drop_rows = _drop_explicit_multi_char_terms(
+        sc_map, MULTI_CHAR_TERM_DROP_OVERRIDES,
+    )
+    tc_map, tc_final_explicit_drop_rows = _drop_explicit_multi_char_terms(
+        tc_map, MULTI_CHAR_TERM_DROP_OVERRIDES,
+    )
+    stats["sc_final_explicit_multi_char_drop_rows"] = sc_final_explicit_drop_rows
+    stats["tc_final_explicit_multi_char_drop_rows"] = tc_final_explicit_drop_rows
 
     _write_dict(
         output_sc,

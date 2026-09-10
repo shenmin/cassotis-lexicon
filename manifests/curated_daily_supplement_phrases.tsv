@@ -12958,3 +12958,66 @@
 敲一下	敲一下	0.540	qiaoyixia	exact_rank_no_contains
 停一下	停一下	0.740	tingyixia	exact_rank_no_contains
 走一下	走一下	0.680	zouyixia	exact_rank_no_contains
+
+# Article counts and draft storage 2026-09-09.
+# Common small counts lead; qi/jiu/shi-pian stay below established homophones.
+# Fixed exact ranks do not inflate substring popularity or LM evidence.
+文稿箱	文稿箱	0.420	wengaoxiang	exact_rank_no_contains
+有一篇	有一篇	0.600	youyipian	exact_rank_no_contains
+有两篇	有兩篇	0.520	youliangpian	exact_rank_no_contains
+两篇	兩篇	0.440	liangpian	exact_rank_no_contains
+有几篇	有幾篇	0.500	youjipian	exact_rank_no_contains
+三篇	三篇	0.380	sanpian	exact_rank_no_contains
+四篇	四篇	0.300	sipian	exact_rank_no_contains
+五篇	五篇	0.300	wupian	exact_rank_no_contains
+六篇	六篇	0.220	liupian	exact_rank_no_contains
+七篇	七篇	0.180	qipian	exact_rank_no_contains
+有三篇	有三篇	0.440	yousanpian	exact_rank_no_contains
+有四篇	有四篇	0.360	yousipian	exact_rank_no_contains
+有五篇	有五篇	0.360	youwupian	exact_rank_no_contains
+有六篇	有六篇	0.280	youliupian	exact_rank_no_contains
+有七篇	有七篇	0.240	youqipian	exact_rank_no_contains
+八篇	八篇	0.180	bapian	exact_rank_no_contains
+九篇	九篇	0.160	jiupian	exact_rank_no_contains
+十篇	十篇	0.240	shipian	exact_rank_no_contains
+有八篇	有八篇	0.220	youbapian	exact_rank_no_contains
+有九篇	有九篇	0.200	youjiupian	exact_rank_no_contains
+有十篇	有十篇	0.260	youshipian	exact_rank_no_contains
+
+# Everyday article references 2026-09-09.
+# Small-count and indefinite references lead; less frequent counts stay lower.
+这两篇	這兩篇	0.620	zheliangpian	exact_rank_no_contains
+那两篇	那兩篇	0.600	naliangpian	exact_rank_no_contains
+这几篇	這幾篇	0.600	zhejipian	exact_rank_no_contains
+那几篇	那幾篇	0.560	najipian	exact_rank_no_contains
+这三篇	這三篇	0.440	zhesanpian	exact_rank_no_contains
+那三篇	那三篇	0.420	nasanpian	exact_rank_no_contains
+这四篇	這四篇	0.340	zhesipian	exact_rank_no_contains
+那四篇	那四篇	0.320	nasipian	exact_rank_no_contains
+这五篇	這五篇	0.340	zhewupian	exact_rank_no_contains
+那五篇	那五篇	0.320	nawupian	exact_rank_no_contains
+哪两篇	哪兩篇	0.460	naliangpian	exact_rank_no_contains
+哪几篇	哪幾篇	0.500	najipian	exact_rank_no_contains
+
+# Everyday agent noun; do not reuse evidence from the removed homophones.
+实施者	實施者	0.460	shishizhe	exact_rank_no_contains
+
+# Retain the established SC weight and supply the standard TC spelling.
+玄关	玄關	0.461	xuanguan	exact_rank
+
+# Household actions, article references and binding wire 2026-09-10.
+# General actions lead; literary fragments and specialized tools stay lower.
+# Keep existing homophones and substring/LM evidence unchanged.
+进户	進戶	0.480	jinhu	exact_rank_no_contains
+# Keep this compositional action below the established chuhu lexical senses.
+出户	出戶	0.001	chuhu	exact_rank_no_contains
+好搞	好搞	0.640	haogao	exact_rank_no_contains
+前篇	前篇	0.300	qianpian	exact_rank_no_contains
+后篇	後篇	0.260	houpian	exact_rank_no_contains
+前序	前序	0.300	qianxu	exact_rank_no_contains
+是为序	是為序	0.120	shiweixu	exact_rank_no_contains
+# Literary fragment: keep inputable without favoring a split inside shi-weile.
+是为	是為	0.001	shiwei	exact_rank_no_contains
+防盗网	防盜網	0.560	fangdaowang	exact_rank_no_contains
+扎丝	紮絲	0.260	zasi	exact_rank_no_contains
+扎丝钩	紮絲鉤	0.180	zasigou	exact_rank_no_contains

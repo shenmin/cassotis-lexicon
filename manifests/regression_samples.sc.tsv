@@ -928,3 +928,81 @@ qiaoyixia	敲一下	1
 tingyixia	听一下	1
 tingyixia	停一下	2
 zouyixia	走一下	1
+
+# Article counts and draft storage (2026-09-09).
+wengaoxiang	文稿箱	1
+youyipian	有一篇	1
+youliangpian	有两篇	1
+liangpian	两篇	1
+youjipian	有几篇	1
+sanpian	三篇	1
+sipian	四篇	1
+wupian	五篇	1
+liupian	六篇	1
+qipian	欺骗	1
+qipian	七篇	2
+yousanpian	有三篇	1
+yousipian	有四篇	1
+youwupian	有五篇	1
+youliupian	有六篇	1
+youqipian	有七篇	1
+bapian	八篇	1
+jiupian	纠偏	1
+jiupian	九篇	2
+shipian	诗篇	1
+shipian	十篇	2
+youbapian	有八篇	1
+youjiupian	有九篇	1
+youshipian	有十篇	1
+
+# Everyday article references (2026-09-09).
+zheliangpian	这两篇	1
+naliangpian	那两篇	1
+zhejipian	这几篇	1
+najipian	那几篇	1
+zhesanpian	这三篇	1
+nasanpian	那三篇	1
+zhesipian	这四篇	1
+nasipian	那四篇	1
+zhewupian	这五篇	1
+nawupian	那五篇	1
+naliangpian	哪两篇	2
+najipian	哪几篇	2
+
+# Everyday shishizhe target; removed entries must not reappear.
+shishizhe	实施者	1
+shishizhe	!仕事着
+shishizhe	!施事者
+
+# Standard Chinese forms survive removal of Japanese spellings.
+xuanguan	玄关	1
+xuanguan	!玄関
+xinhaofashengqi	信号发生器	1
+xinhaofashengqi	!信号発生器
+
+# Standard Chinese terms retained by the mixed-spelling cleanup (2026-09-10).
+yingyongwulixue	应用物理学	1
+jiankangjiancha	健康检查	1
+tigejiancha	体格检查	1
+jianchashurujiaodian	检查输入焦点	1
+shentijiancha	身体检查	1
+xueyejiancha	血液检查	1
+
+# Household/article phrases; preserve established everyday homophones.
+jinhu	进户	2
+jinhu	近乎	1
+chuhu	出户	3
+chuhu	储户	2
+chuhu	出乎	1
+haogao	好搞	1
+qianpian	前篇	1
+houpian	后篇	2
+qianxu	前序	2
+qianxu	谦虚	1
+shiweixu	是为序	1
+shiwei	是为	9
+fangdaowang	防盗网	1
+zasi	扎丝	2
+zasigou	扎丝钩	1
+za	扎	4
+zha	扎	9
