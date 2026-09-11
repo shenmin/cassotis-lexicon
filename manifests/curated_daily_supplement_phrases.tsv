@@ -13048,3 +13048,22 @@
 做上去	做上去	0.380	zuoshangqu	exact_rank_no_contains
 挂上	掛上	0.660	guashang	exact_rank_no_contains
 撑上	撐上	0.240	chengshang	exact_rank_no_contains
+
+# Everyday food, clothing and proofreading 2026-09-11.
+# Keep common homophones ahead of specialized foods; no synthetic LM evidence.
+# Both spoken and written readings of exposed shoulders/legs remain inputable.
+露肩	露肩	0.420	lujian	exact_rank_no_contains
+露肩	露肩	0.400	loujian	exact_rank_no_contains
+露腿	露腿	0.400	lutui	exact_rank_no_contains
+露腿	露腿	0.380	loutui	exact_rank_no_contains
+蟹肉棒	蟹肉棒	0.500	xieroubang	exact_rank_no_contains
+蛋饺	蛋餃	0.560	danjiao	exact_rank_no_contains
+濑尿虾	瀨尿蝦	0.480	lainiaoxia	exact_rank_no_contains
+虾蛄	蝦蛄	0.380	xiagu	exact_rank_no_contains
+鸭血	鴨血	0.600	yaxue	exact_rank_no_contains
+粉丝汤	粉絲湯	0.600	fensitang	exact_rank_no_contains
+煲仔饭	煲仔飯	0.700	baozaifan	exact_rank_no_contains
+意面	意麵	0.440	yimian	exact_rank_no_contains
+虾饼	蝦餅	0.520	xiabing	exact_rank_no_contains
+盒马	盒馬	0.680	hema	exact_rank_no_contains
+审校	審校	0.560	shenjiao	exact_rank_no_contains

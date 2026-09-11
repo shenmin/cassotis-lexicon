@@ -10713,7 +10713,8 @@ baoyumi	baoyumihua	爆玉米花	405	137	40	0	1	0	0	0	0	0
 baoyupei	baoyupeiyang	保育培養	540	1	0	0	1	0	247	3	0	0
 baoyusha	baoyushaji	暴雨殺機	538	77	0	0	1	0	109	1	0	0
 baoyuzhi	baoyuzhisi	鮑魚之肆	628	173	0	0	1	0	90	1	0	0
-baozai	baozaiwoshenshang	包在我身上	289	80	0	0	0	0	0	0	0	0
+baozai	baozaifan	煲仔飯	700	202	0	0	2	0	0	0	0	0
+baozai	baozaiwoshenshang	包在我身上	289	80	0	0	0	0	0	0	0	1
 baozaiwo	baozaiwoshenshang	包在我身上	289	80	0	0	0	0	0	0	0	0
 baozaiwoshen	baozaiwoshenshang	包在我身上	289	80	0	0	0	0	0	0	0	0
 baozang	baozangzuoyong	胞葬作用	570	102	0	0	2	0	154	3	0	0
@@ -10784,7 +10785,6 @@ baozi	baozinang	孢子囊	500	171	239	0	2	0	154	3	1	4
 baozi	baozijun	孢子菌	470	1	0	0	1	0	247	3	1	5
 baozi	baoziti	孢子體	470	1	0	0	1	0	247	3	1	6
 baozi	baoziyouroubuzaizheshang	包子有肉不在褶上	378	80	0	0	0	0	0	0	1	7
-baozi	baozifan	煲仔飯	10	202	0	0	2	0	0	0	0	8
 baozichong	baozichongbing	孢子蟲病	716	254	0	0	5	0	61	3	0	0
 baoziqi	baoziqiyuan	孢子起源	538	77	0	0	1	0	109	1	0	0
 baozisi	baozisijunbing	孢子絲菌病	640	102	0	0	2	0	154	3	0	0

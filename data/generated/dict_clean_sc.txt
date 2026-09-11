@@ -6491,7 +6491,7 @@ baozi	孢子	825
 baozi	包子	813
 baozi	豹子	123
 baozichongbing	孢子虫病	716
-baozifan	煲仔饭	10
+baozaifan	煲仔饭	700	no_contains
 baozijun	孢子菌	470
 baozinang	孢子囊	500
 baoziqiyuan	孢子起源	538
@@ -189376,3 +189376,17 @@ songfan	送饭	620	no_contains
 songmi	送米	460	no_contains
 tangtuan	汤团	520	no_contains
 tangyuan	汤圆	760	no_contains
+danjiao	蛋饺	560	no_contains
+fensitang	粉丝汤	600	no_contains
+hema	盒马	680	no_contains
+lainiaoxia	濑尿虾	480	no_contains
+loujian	露肩	400	no_contains
+loutui	露腿	380	no_contains
+lujian	露肩	420	no_contains
+lutui	露腿	400	no_contains
+shenjiao	审校	560	no_contains
+xiabing	虾饼	520	no_contains
+xiagu	虾蛄	380	no_contains
+xieroubang	蟹肉棒	500	no_contains
+yaxue	鸭血	600	no_contains
+yimian	意面	440	no_contains
