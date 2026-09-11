@@ -55,5 +55,28 @@ class DailyActionTests(unittest.TestCase):
         self.assertEqual(self.maps, (sc, tc))
 
 
+class DailyJiahaoTests(unittest.TestCase):
+    def test_manifest_and_generated_rows_preserve_existing_homophone(self):
+        marker = '# Everyday action completion 2026-09-12.'
+        payload = (ROOT / 'manifests/curated_daily_supplement_phrases.tsv').read_text(
+            encoding='utf-8').split(marker, 1)[1].split('\n\n', 1)[0]
+        entries, _ = builder._parse_curated_daily_phrase_entries(payload.encode('utf-8'), 2)
+        regular, exact = builder._partition_curated_daily_post_rank_exact_entries(entries)
+        self.assertFalse(regular)
+        self.assertEqual(1, len(exact))
+        maps = ({}, {})
+        builder._inject_curated_daily_post_rank_exact_entries(*maps, exact)
+        word = '\u52a0\u597d'
+        self.assertEqual(({('jiahao', word): 360}, {('jiahao', word): 360}), maps)
+        builder._inject_curated_daily_post_rank_exact_entries(*maps, exact)
+        for variant, plus in (('sc', '\u52a0\u53f7'), ('tc', '\u52a0\u865f')):
+            with self.subTest(variant=variant):
+                path = ROOT / f'data/generated/dict_clean_{variant}.txt'
+                generated = path.read_text(encoding='utf-8').splitlines()
+                self.assertEqual(1, generated.count(f'jiahao\t{word}\t360\tno_contains'))
+                rows = load_merged_dict([path, ROOT / f'data/generated/dict_unihan_{variant}.txt'])
+                self.assertEqual([(plus, 390), (word, 360)], rows['jiahao'])
+
+
 if __name__ == '__main__':
     unittest.main()

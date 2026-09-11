@@ -13067,3 +13067,7 @@
 虾饼	蝦餅	0.520	xiabing	exact_rank_no_contains
 盒马	盒馬	0.680	hema	exact_rank_no_contains
 审校	審校	0.560	shenjiao	exact_rank_no_contains
+
+# Everyday action completion 2026-09-12.
+# Keep the established plus-sign homophone ahead without inventing LM evidence.
+加好	加好	0.360	jiahao	exact_rank_no_contains
