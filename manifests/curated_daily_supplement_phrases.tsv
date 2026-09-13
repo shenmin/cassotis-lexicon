@@ -13071,3 +13071,23 @@
 # Everyday action completion 2026-09-12.
 # Keep the established plus-sign homophone ahead without inventing LM evidence.
 加好	加好	0.360	jiahao	exact_rank_no_contains
+
+# Everyday accidental actions 2026-09-12.
+# Common recognition/action phrases lead; uncommon fragments remain lower.
+# Keep lexical weights separate from substring and corpus-transition evidence.
+误换	誤換	0.240	wuhuan	exact_rank_no_contains
+误将	誤將	0.480	wujiang	exact_rank_no_contains
+误把	誤把	0.520	wuba	exact_rank_no_contains
+误认	誤認	0.600	wuren	exact_rank_no_contains
+误作	誤作	0.460	wuzuo	exact_rank_no_contains
+误做	誤做	0.260	wuzuo	exact_rank_no_contains
+误入	誤入	0.640	wuru	exact_rank_no_contains
+误吃	誤吃	0.360	wuchi	exact_rank_no_contains
+误喝	誤喝	0.320	wuhe	exact_rank_no_contains
+
+# Everyday mistaken actions 2026-09-12.
+# Keep the less usual cuoru below common mistaken-recognition/action phrases.
+错把	錯把	0.520	cuoba	exact_rank_no_contains
+错将	錯將	0.460	cuojiang	exact_rank_no_contains
+错认	錯認	0.560	cuoren	exact_rank_no_contains
+错入	錯入	0.320	cuoru	exact_rank_no_contains

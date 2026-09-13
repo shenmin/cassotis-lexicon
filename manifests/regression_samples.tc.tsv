@@ -1039,3 +1039,24 @@ shenxiao	!審校
 # Everyday action completion (2026-09-12).
 jiahao	加號	1
 jiahao	加好	2
+
+# Everyday accidental actions (2026-09-12).
+wuhuan	誤換	1
+wujiang	武將	1
+wujiang	誤將	2
+wuba	誤把	1
+wuren	無人	1
+wuren	誤認	3
+wuzuo	誤作	2
+wuzuo	誤做	3
+wuru	侮辱	1
+wuru	誤入	2
+wuchi	無恥	1
+wuchi	誤吃	2
+wuhe	誤喝	3
+
+# Everyday mistaken actions (2026-09-12).
+cuoba	錯把	1
+cuojiang	錯將	1
+cuoren	錯認	1
+cuoru	錯入	1

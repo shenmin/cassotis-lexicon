@@ -78,5 +78,80 @@ class DailyJiahaoTests(unittest.TestCase):
                 self.assertEqual([(plus, 390), (word, 360)], rows['jiahao'])
 
 
+class DailyAccidentalActionTests(unittest.TestCase):
+    def test_reproducible_positive_exact_entries_without_synthetic_evidence(self):
+        marker = '# Everyday accidental actions 2026-09-12.'
+        payload = (ROOT / 'manifests/curated_daily_supplement_phrases.tsv').read_text(
+            encoding='utf-8').split(marker, 1)[1].split('\n\n', 1)[0]
+        entries, _ = builder._parse_curated_daily_phrase_entries(payload.encode('utf-8'), 2)
+        regular, exact = builder._partition_curated_daily_post_rank_exact_entries(entries)
+        self.assertFalse(regular)
+        self.assertEqual(9, len(exact))
+        maps = ({}, {})
+        builder._inject_curated_daily_post_rank_exact_entries(*maps, exact)
+        before = tuple(dict(mapping) for mapping in maps)
+        builder._inject_curated_daily_post_rank_exact_entries(*maps, exact)
+        self.assertEqual(before, maps)
+        expected = [
+            ('wuhuan', '\u6362', '\u63db', 240),
+            ('wujiang', '\u5c06', '\u5c07', 480),
+            ('wuba', '\u628a', '\u628a', 520),
+            ('wuren', '\u8ba4', '\u8a8d', 600),
+            ('wuzuo', '\u4f5c', '\u4f5c', 460),
+            ('wuzuo', '\u505a', '\u505a', 260),
+            ('wuru', '\u5165', '\u5165', 640),
+            ('wuchi', '\u5403', '\u5403', 360),
+            ('wuhe', '\u559d', '\u559d', 320),
+        ]
+        for index, variant in enumerate(('sc', 'tc')):
+            expected_map = {(py, ('\u8bef' if index == 0 else '\u8aa4') + (sc if index == 0 else tc)): weight
+                            for py, sc, tc, weight in expected}
+            self.assertEqual(expected_map, maps[index])
+            found = {}
+            with (ROOT / f'data/generated/dict_clean_{variant}.txt').open(encoding='utf-8') as stream:
+                for line in stream:
+                    fields = line.rstrip('\r\n').split('\t')
+                    key = tuple(fields[:2])
+                    if key in expected_map:
+                        self.assertNotIn(key, found)
+                        found[key] = fields[2:]
+            self.assertEqual({key: [str(w), 'no_contains'] for key, w in expected_map.items()}, found)
+
+
+class DailyMistakenActionTests(unittest.TestCase):
+    def test_cuo_entries_are_reproducible_and_keep_uncommon_usage_lower(self):
+        marker = '# Everyday mistaken actions 2026-09-12.'
+        payload = (ROOT / 'manifests/curated_daily_supplement_phrases.tsv').read_text(
+            encoding='utf-8').split(marker, 1)[1].split('\n\n', 1)[0]
+        entries, _ = builder._parse_curated_daily_phrase_entries(payload.encode('utf-8'), 2)
+        regular, exact = builder._partition_curated_daily_post_rank_exact_entries(entries)
+        self.assertFalse(regular)
+        self.assertEqual(4, len(exact))
+        maps = ({}, {})
+        builder._inject_curated_daily_post_rank_exact_entries(*maps, exact)
+        before = tuple(dict(mapping) for mapping in maps)
+        builder._inject_curated_daily_post_rank_exact_entries(*maps, exact)
+        self.assertEqual(before, maps)
+        expected = [
+            ('cuoba', '\u9519\u628a', '\u932f\u628a', 520),
+            ('cuojiang', '\u9519\u5c06', '\u932f\u5c07', 460),
+            ('cuoren', '\u9519\u8ba4', '\u932f\u8a8d', 560),
+            ('cuoru', '\u9519\u5165', '\u932f\u5165', 320),
+        ]
+        for index, variant in enumerate(('sc', 'tc')):
+            expected_map = {(py, sc if index == 0 else tc): weight
+                            for py, sc, tc, weight in expected}
+            self.assertEqual(expected_map, maps[index])
+            found = {}
+            with (ROOT / f'data/generated/dict_clean_{variant}.txt').open(encoding='utf-8') as stream:
+                for line in stream:
+                    fields = line.rstrip('\r\n').split('\t')
+                    key = tuple(fields[:2])
+                    if key in expected_map:
+                        self.assertNotIn(key, found)
+                        found[key] = fields[2:]
+            self.assertEqual({key: [str(w), 'no_contains'] for key, w in expected_map.items()}, found)
+
+
 if __name__ == '__main__':
     unittest.main()

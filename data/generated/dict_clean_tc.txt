@@ -23407,6 +23407,7 @@ cuo'an	錯案	596
 cuo'e	錯愕	430
 cuoai	錯愛	374
 cuoan	錯案	596
+cuoba	錯把	520	no_contains
 cuobai	挫敗	457
 cuoban	措辦	372
 cuoban	搓板	336
@@ -23441,6 +23442,7 @@ cuohua	錯話	10
 cuohuojixin	厝火積薪	258
 cuojian	撮尖	439
 cuojian	錯件	18
+cuojiang	錯將	460	no_contains
 cuojiao	錯角	198
 cuojie	錯解	198
 cuoju	措舉	198
@@ -23463,7 +23465,9 @@ cuopeixiufu	錯配修復	570
 cuopiao	錯票	198
 cuoqin	措勤	313
 cuoqinxian	措勤縣	340
+cuoren	錯認	560	no_contains
 cuorou	搓揉	305
+cuoru	錯入	320	no_contains
 cuoshang	磋商	828
 cuoshang	挫傷	10
 cuoshangjiacuo	錯上加錯	640
@@ -147034,6 +147038,7 @@ wuai	無礙	988
 wuan	武安	318
 wuanqi	吳安琪	768
 wuanshi	武安市	165
+wuba	誤把	520	no_contains
 wuba	五霸	454
 wubabituo	戊巴比妥	540
 wubabituona	戊巴比妥鈉	610
@@ -147160,6 +147165,7 @@ wuchengxian	武城縣	165
 wuchengzi	毋成子	640
 wuchenshi	無塵室	600
 wuchi	無恥	1000
+wuchi	誤吃	360	no_contains
 wuchi	舞池	1
 wuchiyilong	無齒翼龍	260
 wuchizhiyou	無恥之尤	598
@@ -147534,6 +147540,7 @@ wuhaodi	唔好睇	228
 wuhaodianchi	五號電池	260
 wuhe	無核	840
 wuhe	無何	560
+wuhe	誤喝	320	no_contains
 wuhedianlizi	無荷電粒子	765
 wuhehua	無核化	382
 wuhei	烏黑	300
@@ -147578,6 +147585,7 @@ wuhuaguodanbaimei	無花果蛋白酶	700
 wuhuaizai	嗚呼哀哉	455
 wuhuaji	霧化機	232
 wuhuakeshuo	無話可說	505
+wuhuan	誤換	240	no_contains
 wuhuandantie	無環單萜	570
 wuhuanhuihui	五環會徽	260
 wuhuanxingyi	物換星移	627
@@ -147643,6 +147651,7 @@ wujiandian	五間店	487
 wujiandiyu	無間地獄	260
 wujianduxuexi	無監督學習	640
 wujiang	武將	859
+wujiang	誤將	480	no_contains
 wujiangqu	吳江區	191
 wujiangshangxia'erqiusuo	吾將上下而求索	456
 wujiangsimei	五講四美	573
@@ -148388,6 +148397,7 @@ wuranyuan	污染源	10
 wure	無熱	353
 wuren	無人	869
 wuren	吾人	637
+wuren	誤認	600	no_contains
 wurenbao	吳仁寶	193
 wurenbu	無人不	232
 wurenbuxiao	無人不曉	453
@@ -148419,6 +148429,7 @@ wurongheshengzhi	無融合生殖	640
 wurongshenzhide	無容身之地	416
 wurongzhiyi	無容置疑	362
 wuru	侮辱	1000
+wuru	誤入	640	no_contains
 wuru	悟入	315
 wuru	污辱	1
 wuruqitu	誤入歧途	463
@@ -149319,6 +149330,8 @@ wuzuixiao	捂嘴笑	280
 wuzuizhiting	無罪之庭	538
 wuzun	吳尊	198
 wuzuo	仵作	503
+wuzuo	誤作	460	no_contains
+wuzuo	誤做	260	no_contains
 wuzuochun	戊唑醇	228
 wuzuodong	吳作棟	217
 wuzuozuo	無做作	232
