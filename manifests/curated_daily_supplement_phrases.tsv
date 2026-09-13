@@ -13091,3 +13091,37 @@
 错将	錯將	0.460	cuojiang	exact_rank_no_contains
 错认	錯認	0.560	cuoren	exact_rank_no_contains
 错入	錯入	0.320	cuoru	exact_rank_no_contains
+
+# Everyday mistaken handling 2026-09-13.
+# Rank ordinary actions above rare fragments; protect established common homophones.
+# Keep accidental sending selectable without displacing the dominant inability path.
+# Exact lexical entries do not synthesize substring popularity or LM evidence.
+插板	插板	0.700	chaban	exact_rank_no_contains
+误放	誤放	0.220	wufang	exact_rank_no_contains
+错放	錯放	0.480	cuofang	exact_rank_no_contains
+误拿	誤拿	0.460	wuna	exact_rank_no_contains
+错拿	錯拿	0.540	cuona	exact_rank_no_contains
+错哪	錯哪	0.220	cuona	exact_rank_no_contains
+误取	誤取	0.340	wuqu	exact_rank_no_contains
+错取	錯取	0.400	cuoqu	exact_rank_no_contains
+误填	誤填	0.400	wutian	exact_rank_no_contains
+错填	錯填	0.500	cuotian	exact_rank_no_contains
+错写	錯寫	0.560	cuoxie	exact_rank_no_contains
+误碰	誤碰	0.440	wupeng	exact_rank_no_contains
+错碰	錯碰	0.180	cuopeng	exact_rank_no_contains
+误装	誤裝	0.320	wuzhuang	exact_rank_no_contains
+错装	錯裝	0.420	cuozhuang	exact_rank_no_contains
+误想	誤想	0.140	wuxiang	exact_rank_no_contains
+错想	錯想	0.160	cuoxiang	exact_rank_no_contains
+误回	誤回	0.220	wuhui	exact_rank_no_contains
+错回	錯回	0.360	cuohui	exact_rank_no_contains
+误发	誤發	0.001	wufa	exact_rank_no_contains
+错发	錯發	0.600	cuofa	exact_rank_no_contains
+误开	誤開	0.360	wukai	exact_rank_no_contains
+误关	誤關	0.320	wuguan	exact_rank_no_contains
+错关	錯關	0.360	cuoguan	exact_rank_no_contains
+误打	誤打	0.380	wuda	exact_rank_no_contains
+错打	錯打	0.460	cuoda	exact_rank_no_contains
+误洗	誤洗	0.180	wuxi	exact_rank_no_contains
+误吸	誤吸	0.260	wuxi	exact_rank_no_contains
+错洗	錯洗	0.280	cuoxi	exact_rank_no_contains
