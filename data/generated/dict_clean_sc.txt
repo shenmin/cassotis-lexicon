@@ -154192,7 +154192,7 @@ xinjia	新家	700
 xinjia	新加	620
 xinjialan	新加兰	391
 xinjian	信件	690
-xinjian	新建	633
+xinjian	新建	780	no_contains
 xinjian	信笺	38
 xinjian	心间	10
 xinjian	心尖	8
@@ -189433,3 +189433,7 @@ wuxi	误吸	260	no_contains
 wuxi	误洗	180	no_contains
 wuxiang	误想	140	no_contains
 wuzhuang	误装	320	no_contains
+huangei	换给	380	no_contains
+zhanwei	占位	620	no_contains
+meiye	每页	620	no_contains
+meigaomei	美高梅	480	no_contains

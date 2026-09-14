@@ -133128,7 +133128,8 @@ meifushiyougong	meifushiyougongsi	美孚石油公司	327	149	100	0	1	0	0	0	0	0
 meigai	meigaihao	沒改好	800	199	0	0	1	0	0	0	1	0
 meigan	meigancai	黴乾菜	415	137	40	0	1	0	0	0	0	0
 meigan	meiganshi	煤矸石	403	158	85	0	1	0	0	0	0	1
-meigao	meigaotou	沒搞頭	232	80	0	0	0	0	0	0	0	0
+meigao	meigaomei	美高梅	480	80	0	0	0	0	0	0	0	0
+meigao	meigaotou	沒搞頭	232	80	0	0	0	0	0	0	0	1
 meige	meigesizonghezheng	梅格斯綜合徵	896	102	0	0	2	0	154	3	0	0
 meige	meigeyue	每個月	800	538	0	0	4	0	0	0	1	1
 meige	meigesizonghezheng	梅格斯綜合征	380	80	0	0	0	0	0	0	0	2
@@ -253208,7 +253209,7 @@ zhanwangzhuang	zhanwangzhuangtai	譫妄狀態	540	1	0	0	1	0	247	3	0	0
 zhanwei	zhanweijiyou	佔爲己有	658	209	40	0	1	0	0	0	1	0
 zhanwei	zhanweijiyou	佔為己有	647	209	40	0	1	0	0	0	0	1
 zhanwei	zhanweiji	佔爲己	540	80	0	0	0	0	0	0	1	2
-zhanwei	zhanweifu	佔位符	232	80	0	0	0	0	0	0	0	3
+zhanwei	zhanweifu	佔位符	232	80	0	0	0	0	0	0	1	3
 zhanweiji	zhanweijiyou	佔爲己有	658	209	40	0	1	0	0	0	1	0
 zhanweiji	zhanweijiyou	佔為己有	647	209	40	0	1	0	0	0	0	1
 zhanwen	zhanwenjiaobu	站穩腳步	405	137	40	0	1	0	0	0	1	0

@@ -13125,3 +13125,13 @@
 误洗	誤洗	0.180	wuxi	exact_rank_no_contains
 误吸	誤吸	0.260	wuxi	exact_rank_no_contains
 错洗	錯洗	0.280	cuoxi	exact_rank_no_contains
+
+# Common UI and handover phrases 2026-09-14.
+# New/create should lead xinjian; mail remains a common, unchanged homophone.
+新建	新建	0.780	xinjian	exact_rank_no_contains
+占位	佔位	0.620	zhanwei	exact_rank_no_contains
+换给	換給	0.380	huangei	exact_rank_no_contains
+
+# Page navigation and a familiar brand, 2026-09-14.
+每页	每頁	0.620	meiye	exact_rank_no_contains
+美高梅	美高梅	0.480	meigaomei	exact_rank_no_contains
