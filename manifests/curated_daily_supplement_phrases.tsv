@@ -13151,3 +13151,8 @@
 
 # Common pronoun/preposition phrase; match the existing ni-dui weight range.
 我对	我對	0.700	wodui	exact_rank_no_contains
+
+# Common UI action and a moderately frequent descriptive phrase, 2026-09-15.
+# Do not turn short substrings into popularity evidence for unrelated terms.
+标红	標紅	0.620	biaohong	exact_rank_no_contains
+反直觉	反直覺	0.460	fanzhijue	exact_rank_no_contains

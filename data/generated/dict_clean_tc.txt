@@ -9046,6 +9046,7 @@ biaohan	表寒	193
 biaohanlire	表寒里熱	540
 biaohanlirezheng	表寒里熱證	610
 biaohao	標號	378
+biaohong	標紅	620	no_contains
 biaohu	裱糊	410
 biaohuadai	裱花袋	228
 biaohuan	彪煥	198
@@ -39221,6 +39222,7 @@ fanzhi	反之	876
 fanzhi	反制	616
 fanzhi	泛指	39
 fanzhifangdepianjian	反脂肪的偏見	700
+fanzhijue	反直覺	460	no_contains
 fanzhilun	反智論	232
 fanzhishi	反知識	232
 fanzhiti	繁殖體	232
