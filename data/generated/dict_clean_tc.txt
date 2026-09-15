@@ -4881,6 +4881,8 @@ bangding	綁定	650
 bangdingbianliang	綁定變量	699
 bangdingshijian	綁定事件	704
 bange	半個	914
+bange	辦個	620	no_contains
+bange	拌個	320	no_contains
 bangei	頒給	323
 bangeren	半個人	232
 bangexiaoshi	半個小時	1009
@@ -16380,7 +16382,9 @@ changganxunhuan	腸肝循環	570
 changgaodiao	唱高調	559
 changgaodiaor	唱高調兒	260
 changge	唱歌	738
+changge	唱個	520	no_contains
 changge	長葛	464
+changge	嘗個	360	no_contains
 changgeng	長庚	214
 changgengzu	腸梗阻	716
 changgeshi	長葛市	183
@@ -25683,6 +25687,7 @@ dangduanzeduan	當斷則斷	426
 dangduanzeduan	噹斷則斷	344
 dange	耽擱	968
 dange	單個	752
+dange	擔個	320	no_contains
 dangejingshujiaonang	丹葛頸舒膠囊	668
 dangendumiao	單根獨苗	249
 danger	單個兒	379
@@ -37990,6 +37995,8 @@ fangdushoutao	防毒手套	260
 fangdutongdao	防毒通道	260
 fangduweiqun	防毒圍裙	260
 fangduxuetao	防毒靴套	260
+fange	翻個	580	no_contains
+fange	反個	260	no_contains
 fange	反戈	10
 fangeming	反革命	606
 fangemingxuanchuanshandongzui	反革命宣傳煽動罪	378
@@ -44894,6 +44901,7 @@ gangdu	剛度	759
 gangdu	港督	639
 gangduola	剛朵拉	230
 gange	干戈	260
+gange	乾哥	180	no_contains
 gangfabu	剛發布	800
 gangfangxia	剛放下	800
 gangfangxue	剛放學	280
@@ -54291,6 +54299,9 @@ hangdao	航道	471
 hangdingdunshiwudaozheng	杭丁頓氏舞蹈症	700
 hangdingdunwudaozheng	杭丁頓舞蹈症	700
 hangduan	航段	198
+hange	喊個	480	no_contains
+hange	含個	280	no_contains
+hange	焊個	220	no_contains
 hangfeng	絎縫	198
 hangge	夯歌	305
 hanghai	航海	536
@@ -64413,6 +64424,8 @@ jiangdoushi	江都市	506
 jiangdu	江都	610
 jiangduqu	江都區	167
 jiange	間隔	856
+jiange	建個	640	no_contains
+jiange	減個	420	no_contains
 jiangechongfu	間隔重復	260
 jiangechongfu	間隔重複	258
 jiangehao	間隔號	340
@@ -64432,6 +64445,7 @@ jianggaisujiyinxiangguantai	降鈣素基因相關肽	677
 jianggaisuxiangguanjiyintaishoutijiekangji	降鈣素相關基因肽受體拮抗劑	700
 jianggang	醬缸	10
 jianggaotai	講稿臺	1000
+jiangge	講個	640	no_contains
 jiangge	降格	391
 jianggeyiqiu	降格以求	635
 jianggong	蔣公	198
@@ -77002,6 +77016,9 @@ kangdongdanbai	抗凍蛋白	570
 kangdongqingsuyaowu	抗動情素藥物	897
 kangdongqingsuyaowu	抗動情素葯物	380
 kangdusu	抗毒素	380
+kange	看個	640	no_contains
+kange	砍個	300	no_contains
+kange	侃個	260	no_contains
 kangfeipangyao	抗肥胖藥	580
 kangfeipangyao	抗肥胖葯	250
 kangfeipangyaowu	抗肥胖藥物	837
@@ -81621,6 +81638,8 @@ langdehaihuayuanchangjing	郎德海花園場景	744
 langdexuming	浪得虛名	387
 langdu	朗讀	427
 langduoroushao	狼多肉少	387
+lange	攔個	320	no_contains
+lange	攬個	280	no_contains
 langehanxibaozuzhiqiuzengshengzheng	蘭格罕細胞組織球增生症	701
 langehanxibaozuzhiqiuzengshengzheng	蘭格漢細胞組織球增生症	699
 langen	爛根	280
@@ -99720,6 +99739,8 @@ nangbing	饢餅	198
 nangchongkangti	囊蟲抗體	540
 nangchuai	囊膪	1000
 nangdai	囊袋	198
+nange	難哥	180	no_contains
+nange	難個	120	no_contains
 nangeha'ersheng	楠格哈爾省	169
 nangen	男根	305
 nangengnvzhi	男耕女織	634
@@ -104318,6 +104339,9 @@ pangdiniyagongguo	龐蒂尼亞公國	691
 pangdudu	胖嘟嘟	382
 pangdundun	胖墩墩	389
 pangdunr	胖墩兒	357
+pange	盤個	420	no_contains
+pange	盼個	260	no_contains
+pange	攀個	180	no_contains
 pangen	盤亙	323
 pangencuojie	盤根錯節	792
 pangenjiudi	盤根究底	405
@@ -108224,6 +108248,8 @@ qiangdu	強度	487
 qiangduan	搶斷	427
 qiangdui	強隊	431
 qiangduo	搶奪	456
+qiange	欠個	380	no_contains
+qiange	牽個	320	no_contains
 qiangeng	淺耕	214
 qiangfa	槍法	431
 qiangfanchi	搶飯喫	10
@@ -135745,7 +135771,12 @@ tangdixi	堂弟媳	230
 tangdou	燙斗	438
 tangdouren	糖豆人	460
 tangdunzhuangyuan	唐頓莊園	549
+tange	探戈	580	no_contains
+tange	談個	520	no_contains
+tange	彈個	480	no_contains
 tange	糖萼	440
+tange	嘆個	280	no_contains
+tange	貪個	240	no_contains
 tangeli	碳隔離	230
 tangelianai	談個戀愛	280
 tangendoule	唐恩都樂	218
@@ -143119,6 +143150,7 @@ wangduomuguangchang	旺多姆廣場	635
 wangduxian	望都縣	160
 wange	輓歌	894
 wange	挽歌	677
+wange	完個	180	no_contains
 wangen	忘恩	401
 wangenfuyi	忘恩負義	496
 wangeng	頑梗	305
@@ -150137,6 +150169,8 @@ xiangduo	想多	700
 xiangduqu	襄都區	228
 xiange	弦歌	1000
 xiange	絃歌	441
+xiange	獻個	360	no_contains
+xiange	嫌個	180	no_contains
 xiangei	獻給	10
 xiangeishenmingbandeni	獻給神明般的你	632
 xiangeiweilanzhihaidexinniang	獻給蔚藍之海的新娘	662
@@ -150236,6 +150270,7 @@ xianggangzhongwendaxue	香港中文大學	362
 xianggangzhongzhi	香港眾志	260
 xianggangzuqiuzonghui	香港足球總會	318
 xianggao	相告	280
+xiangge	想個	640	no_contains
 xiangge	相隔	459
 xianggebanfa	想個辦法	800
 xianggebuting	響個不停	10
@@ -161638,6 +161673,8 @@ yangduzishoujin	羊肚子手巾	289
 yange	嚴格	1000
 yange	閹割	712
 yange	沿革	483
+yange	驗個	380	no_contains
+yange	嚥個	220	no_contains
 yangegeli	嚴格隔離	258
 yangejiaolv	閹割焦慮	570
 yangekongzhi	嚴格控制	280

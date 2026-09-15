@@ -4823,6 +4823,8 @@ bangding	绑定	194	168	0	1	0	0	0
 bangdingbianliang	绑定变量	214	0	0	1	78	1	0
 bangdingshijian	绑定事件	218	0	0	1	77	1	0
 bange	半个	418	524	0	2	0	0	0
+bange	办个	80	0	0	0	0	0	0
+bange	拌个	80	0	0	0	0	0	0
 bangei	颁给	137	40	0	1	0	0	0
 bangeren	半个人	80	0	0	0	0	0	0
 bangexian	班戈县	137	66	0	1	0	0	0
@@ -16234,6 +16236,8 @@ changgaodiao	唱高调	163	96	0	1	0	0	0
 changgaodiaor	唱高调儿	80	0	0	0	0	0	0
 changge	唱歌	267	347	0	1	0	0	0
 changge	长葛	187	180	0	1	0	0	0
+changge	唱个	80	0	0	0	0	0	0
+changge	尝个	80	0	0	0	0	0	0
 changgeng	长庚	147	80	0	1	0	0	0
 changgengzu	肠梗阻	310	180	0	4	61	3	0
 changgeshi	长葛市	149	100	0	1	0	0	0
@@ -25505,6 +25509,7 @@ dangduanjiduan	当断即断	80	0	0	0	0	0	0
 dangduanzeduan	当断则断	137	40	0	1	0	0	0
 dange	单个	299	428	0	1	0	0	0
 dange	耽搁	283	388	0	1	0	0	0
+dange	担个	80	0	0	0	0	0	0
 dangejingshujiaonang	丹葛颈舒胶囊	1	0	0	1	247	3	0
 dangendumiao	单根独苗	128	40	0	1	0	0	0
 danger	单个儿	137	40	0	1	0	0	0
@@ -37689,6 +37694,8 @@ fangdutongdao	防毒通道	80	0	0	0	0	0	0
 fangduweiqun	防毒围裙	80	0	0	0	0	0	0
 fangduxuetao	防毒靴套	80	0	0	0	0	0	0
 fange	反戈	216	105	0	2	0	0	0
+fange	反个	80	0	0	0	0	0	0
+fange	翻个	80	0	0	0	0	0	0
 fangeming	反革命	343	467	0	2	0	0	0
 fangemingxuanchuanshandongzui	反革命宣传煽动罪	80	0	0	0	0	0	0
 fangen	翻跟	202	0	0	1	0	0	0
@@ -44220,6 +44227,7 @@ gangdu	刚度	208	203	0	1	0	0	0
 gangdu	港督	149	66	0	1	0	0	0
 gangduola	刚朵拉	80	0	0	0	0	0	0
 gange	干戈	193	193	0	1	0	0	0
+gange	干哥	80	0	0	0	0	0	0
 gangfabu	刚发布	528	0	0	4	0	0	0
 gangfangxia	刚放下	528	0	0	4	0	0	0
 gangfangxue	刚放学	268	0	0	2	0	0	0
@@ -53583,6 +53591,9 @@ hangdao	航道	305	442	0	1	0	0	0
 hangdingdunshiwudaozheng	杭丁顿氏舞蹈症	102	0	0	2	154	3	0
 hangdingdunwudaozheng	杭丁顿舞蹈症	102	0	0	2	154	3	0
 hangduan	航段	80	0	0	0	0	0	0
+hange	含个	80	0	0	0	0	0	0
+hange	喊个	80	0	0	0	0	0	0
+hange	焊个	80	0	0	0	0	0	0
 hangfeng	绗缝	80	0	0	0	0	0	0
 hanggao	行高	508	0	0	4	0	0	0
 hangge	夯歌	137	40	0	1	0	0	0
@@ -63572,6 +63583,8 @@ jiangdoushi	江都市	247	80	0	1	0	0	0
 jiangdu	江都	286	270	0	1	0	0	0
 jiangduqu	江都区	80	0	0	0	0	0	0
 jiange	间隔	279	377	0	1	0	0	0
+jiange	减个	80	0	0	0	0	0	0
+jiange	建个	80	0	0	0	0	0	0
 jiangechongfu	间隔重复	80	0	0	0	0	0	0
 jiangehao	间隔号	131	28	0	1	0	0	0
 jiangeliedao	尖阁列岛	80	0	0	0	0	0	0
@@ -63591,6 +63604,7 @@ jianggaisuxiangguanjiyintaishoutijiekangji	降钙素相关基因肽受体拮抗�
 jianggang	酱缸	215	96	0	2	0	0	0
 jianggaotai	讲稿台	175	0	0	1	89	1	0
 jiangge	降格	203	191	0	1	0	0	0
+jiangge	讲个	80	0	0	0	0	0	0
 jianggeyiqiu	降格以求	192	40	0	1	88	1	0
 jianggong	蒋公	80	0	0	0	0	0	0
 jianggongbuguo	将功补过	214	120	0	1	89	1	0
@@ -75949,6 +75963,9 @@ kangdingshi	康定市	80	0	0	0	0	0	0
 kangdongdanbai	抗冻蛋白	114	40	0	2	154	3	0
 kangdongqingsuyaowu	抗动情素药物	102	0	0	2	154	3	0
 kangdusu	抗毒素	10	177	0	1	247	3	0
+kange	侃个	80	0	0	0	0	0	0
+kange	看个	80	0	0	0	0	0	0
+kange	砍个	80	0	0	0	0	0	0
 kangfeipangyao	抗肥胖药	102	0	0	2	154	3	0
 kangfeipangyaowu	抗肥胖药物	102	0	0	2	154	3	0
 kangfen	亢奋	532	248	584	3	0	0	0
@@ -80484,6 +80501,8 @@ langdehaihuayuanchangjing	郎德海花园场景	278	0	0	3	27	1	0
 langdexuming	浪得虚名	137	40	0	1	0	0	0
 langdu	朗读	217	222	0	1	0	0	0
 langduoroushao	狼多肉少	137	40	0	1	0	0	0
+lange	拦个	80	0	0	0	0	0	0
+lange	揽个	80	0	0	0	0	0	0
 langehanxibaozuzhiqiuzengshengzheng	兰格汉细胞组织球增生症	102	0	0	2	154	3	0
 langehanxibaozuzhiqiuzengshengzheng	兰格罕细胞组织球增生症	102	0	0	2	154	3	0
 langen	烂根	288	0	0	2	0	0	0
@@ -98441,6 +98460,8 @@ nangbing	馕饼	80	0	0	0	0	0	0
 nangchongkangti	囊虫抗体	1	0	0	1	247	3	0
 nangchuai	囊膪	137	40	0	1	0	0	0
 nangdai	囊袋	80	0	0	0	0	0	0
+nange	难个	80	0	0	0	0	0	0
+nange	难哥	80	0	0	0	0	0	0
 nangeha'ersheng	楠格哈尔省	80	0	0	0	0	0	0
 nangen	男根	137	40	0	1	0	0	0
 nangengnvzhi	男耕女织	207	91	0	1	88	1	0
@@ -103011,6 +103032,9 @@ pangdiniyagongguo	庞蒂尼亚公国	12	0	0	1	174	2	0
 pangdudu	胖嘟嘟	155	80	0	1	0	0	0
 pangdundun	胖墩墩	160	91	0	1	0	0	0
 pangdunr	胖墩儿	137	40	0	1	0	0	0
+pange	攀个	80	0	0	0	0	0	0
+pange	盘个	80	0	0	0	0	0	0
+pange	盼个	80	0	0	0	0	0	0
 pangen	盘亘	137	40	0	1	0	0	0
 pangencuojie	盘根错节	254	198	0	1	84	1	0
 pangencuojie	蟠根错节	80	0	0	0	0	0	0
@@ -106914,6 +106938,8 @@ qiangdu	强度	127	503	0	1	200	3	0
 qiangduan	抢断	217	222	0	1	0	0	0
 qiangdui	强队	229	253	0	1	0	0	0
 qiangduo	抢夺	264	340	0	1	0	0	0
+qiange	欠个	80	0	0	0	0	0	0
+qiange	牵个	80	0	0	0	0	0	0
 qiangeng	浅耕	147	80	0	1	0	0	0
 qiangfa	枪法	248	299	0	1	0	0	0
 qiangfanchi	抢饭吃	202	0	0	2	0	0	0
@@ -134114,6 +134140,11 @@ tangdouren	糖豆人	62	0	0	1	109	1	0
 tangdunzhuangyuan	唐顿庄园	44	0	0	1	173	2	0
 tange	塘鹅	137	40	0	1	0	0	0
 tange	糖萼	93	40	0	2	154	3	0
+tange	叹个	80	0	0	0	0	0	0
+tange	弹个	80	0	0	0	0	0	0
+tange	探戈	80	0	0	0	0	0	0
+tange	谈个	80	0	0	0	0	0	0
+tange	贪个	80	0	0	0	0	0	0
 tangeli	碳隔离	80	0	0	0	0	0	0
 tangelianai	谈个恋爱	288	0	0	2	0	0	0
 tangendoule	唐恩都乐	80	0	0	0	0	0	0
@@ -141535,6 +141566,7 @@ wangdun	王敦	203	221	0	1	0	0	0
 wangduomuguangchang	旺多姆广场	80	0	0	0	0	0	0
 wangduxian	望都县	124	28	0	1	0	0	0
 wange	挽歌	96	160	0	1	109	1	0
+wange	完个	80	0	0	0	0	0	0
 wangen	忘恩	184	144	0	1	0	0	0
 wangenfuyi	忘恩负义	267	267	0	1	87	1	0
 wangeng	顽梗	137	40	0	1	0	0	0
@@ -148539,6 +148571,8 @@ xiangduji	响度级	97	0	0	2	154	3	0
 xiangduo	想多	524	0	0	4	0	0	0
 xiangduqu	襄都区	80	0	0	0	0	0	0
 xiange	弦歌	168	109	0	1	0	0	0
+xiange	嫌个	80	0	0	0	0	0	0
+xiange	献个	80	0	0	0	0	0	0
 xiangei	献给	306	360	0	2	0	0	0
 xiangeishenmingbandeni	献给神明般的你	93	0	0	1	109	1	0
 xiangeiweilanzhihaidexinniang	献给蔚蓝之海的新娘	93	0	0	1	109	1	0
@@ -148653,6 +148687,7 @@ xianggangzhongzhi	香港众志	80	0	0	0	0	0	0
 xianggangzuqiuzonghui	香港足球总会	80	0	0	0	0	0	0
 xianggao	相告	292	40	0	2	0	0	0
 xiangge	相隔	271	357	0	1	0	0	0
+xiangge	想个	80	0	0	0	0	0	0
 xianggebanfa	想个办法	530	40	0	4	0	0	0
 xianggebuting	响个不停	202	0	0	2	0	0	0
 xianggelila	香格里拉	298	178	0	3	0	0	0
@@ -159840,6 +159875,8 @@ yangduzimaojin	羊肚子毛巾	80	0	0	0	0	0	0
 yangduzishoujin	羊肚子手巾	80	0	0	0	0	0	0
 yange	严格	358	602	0	1	0	0	0
 yange	沿革	331	514	0	1	0	0	0
+yange	咽个	80	0	0	0	0	0	0
+yange	验个	80	0	0	0	0	0	0
 yange	阉割	1	242	0	1	247	3	0
 yangegeli	严格隔离	80	0	0	0	0	0	0
 yangejiaolv	阉割焦虑	102	0	0	2	154	3	0

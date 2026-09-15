@@ -4814,6 +4814,8 @@ bangding	绑定	650
 bangdingbianliang	绑定变量	699
 bangdingshijian	绑定事件	704
 bange	半个	914
+bange	办个	620	no_contains
+bange	拌个	320	no_contains
 bangei	颁给	323
 bangeren	半个人	232
 bangexian	班戈县	174
@@ -16191,7 +16193,9 @@ changganxunhuan	肠肝循环	570
 changgaodiao	唱高调	559
 changgaodiaor	唱高调儿	260
 changge	唱歌	658
+changge	唱个	520	no_contains
 changge	长葛	416
+changge	尝个	360	no_contains
 changgeng	长庚	214
 changgengzu	肠梗阻	716
 changgeshi	长葛市	183
@@ -25451,6 +25455,7 @@ dangduanjiduan	当断即断	260
 dangduanzeduan	当断则断	387
 dange	耽搁	951
 dange	单个	791
+dange	担个	320	no_contains
 dangejingshujiaonang	丹葛颈舒胶囊	648
 dangendumiao	单根独苗	249
 danger	单个儿	379
@@ -37552,6 +37557,8 @@ fangdushoutao	防毒手套	260
 fangdutongdao	防毒通道	260
 fangduweiqun	防毒围裙	260
 fangduxuetao	防毒靴套	260
+fange	翻个	580	no_contains
+fange	反个	260	no_contains
 fange	反戈	10
 fangeming	反革命	606
 fangemingxuanchuanshandongzui	反革命宣传煽动罪	378
@@ -44049,6 +44056,7 @@ gangdu	刚度	759
 gangdu	港督	639
 gangduola	刚朵拉	230
 gange	干戈	260
+gange	干哥	180	no_contains
 gangfabu	刚发布	800
 gangfangxia	刚放下	800
 gangfangxue	刚放学	280
@@ -53335,6 +53343,9 @@ hangdao	航道	471
 hangdingdunshiwudaozheng	杭丁顿氏舞蹈症	687
 hangdingdunwudaozheng	杭丁顿舞蹈症	700
 hangduan	航段	198
+hange	喊个	480	no_contains
+hange	含个	280	no_contains
+hange	焊个	220	no_contains
 hangfeng	绗缝	198
 hangge	夯歌	305
 hanghai	航海	536
@@ -63276,6 +63287,8 @@ jiangdoushi	江都市	506
 jiangdu	江都	610
 jiangduqu	江都区	167
 jiange	间隔	859
+jiange	建个	640	no_contains
+jiange	减个	420	no_contains
 jiangechongfu	间隔重复	260
 jiangehao	间隔号	340
 jiangeliedao	尖阁列岛	226
@@ -63294,6 +63307,7 @@ jianggaisujiyinxiangguantai	降钙素基因相关肽	657
 jianggaisuxiangguanjiyintaishoutijiekangji	降钙素相关基因肽受体拮抗剂	700
 jianggang	酱缸	10
 jianggaotai	讲稿台	600
+jiangge	讲个	640	no_contains
 jiangge	降格	391
 jianggeyiqiu	降格以求	635
 jianggong	蒋公	137
@@ -75596,6 +75610,9 @@ kangdingshi	康定市	47
 kangdongdanbai	抗冻蛋白	570
 kangdongqingsuyaowu	抗动情素药物	700
 kangdusu	抗毒素	360
+kange	看个	640	no_contains
+kange	砍个	300	no_contains
+kange	侃个	260	no_contains
 kangfeipangyao	抗肥胖药	570
 kangfeipangyaowu	抗肥胖药物	640
 kangfen	亢奋	738
@@ -80111,6 +80128,8 @@ langdehaihuayuanchangjing	郎德海花园场景	724
 langdexuming	浪得虚名	387
 langdu	朗读	427
 langduoroushao	狼多肉少	387
+lange	拦个	320	no_contains
+lange	揽个	280	no_contains
 langehanxibaozuzhiqiuzengshengzheng	兰格汉细胞组织球增生症	701
 langehanxibaozuzhiqiuzengshengzheng	兰格罕细胞组织球增生症	699
 langen	烂根	280
@@ -98035,6 +98054,8 @@ nangbing	馕饼	198
 nangchongkangti	囊虫抗体	540
 nangchuai	囊膪	1000
 nangdai	囊袋	198
+nange	难哥	180	no_contains
+nange	难个	120	no_contains
 nangeha'ersheng	楠格哈尔省	169
 nangen	男根	305
 nangengnvzhi	男耕女织	634
@@ -102572,6 +102593,9 @@ pangdiniyagongguo	庞蒂尼亚公国	579
 pangdudu	胖嘟嘟	382
 pangdundun	胖墩墩	389
 pangdunr	胖墩儿	357
+pange	盘个	420	no_contains
+pange	盼个	260	no_contains
+pange	攀个	180	no_contains
 pangen	盘亘	323
 pangencuojie	盘根错节	792
 pangencuojie	蟠根错节	1
@@ -106464,6 +106488,8 @@ qiangdu	强度	487
 qiangduan	抢断	427
 qiangdui	强队	431
 qiangduo	抢夺	456
+qiange	欠个	380	no_contains
+qiange	牵个	320	no_contains
 qiangeng	浅耕	214
 qiangfa	枪法	431
 qiangfanchi	抢饭吃	10
@@ -133578,7 +133604,12 @@ tangdixi	堂弟媳	230
 tangdou	烫斗	438
 tangdouren	糖豆人	460
 tangdunzhuangyuan	唐顿庄园	549
+tange	探戈	580	no_contains
+tange	谈个	520	no_contains
+tange	弹个	480	no_contains
 tange	糖萼	440
+tange	叹个	280	no_contains
+tange	贪个	240	no_contains
 tange	塘鹅	1
 tangeli	碳隔离	230
 tangelianai	谈个恋爱	280
@@ -140948,6 +140979,7 @@ wangdun	王敦	267
 wangduomuguangchang	旺多姆广场	526
 wangduxian	望都县	160
 wange	挽歌	407
+wange	完个	180	no_contains
 wangen	忘恩	401
 wangenfuyi	忘恩负义	496
 wangeng	顽梗	305
@@ -147923,6 +147955,8 @@ xiangduji	响度级	500
 xiangduo	想多	700
 xiangduqu	襄都区	174
 xiange	弦歌	1000
+xiange	献个	360	no_contains
+xiange	嫌个	180	no_contains
 xiangei	献给	10
 xiangeishenmingbandeni	献给神明般的你	632
 xiangeiweilanzhihaidexinniang	献给蔚蓝之海的新娘	662
@@ -148036,6 +148070,7 @@ xianggangzhongwendaxue	香港中文大学	362
 xianggangzhongzhi	香港众志	260
 xianggangzuqiuzonghui	香港足球总会	318
 xianggao	相告	280
+xiangge	想个	640	no_contains
 xiangge	相隔	459
 xianggebanfa	想个办法	800
 xianggebuting	响个不停	10
@@ -159192,6 +159227,8 @@ yangduzishoujin	羊肚子手巾	289
 yange	严格	1000
 yange	阉割	673
 yange	沿革	430
+yange	验个	380	no_contains
+yange	咽个	220	no_contains
 yangegeli	严格隔离	218
 yangejiaolv	阉割焦虑	570
 yangekongzhi	严格控制	280

@@ -13156,3 +13156,45 @@
 # Do not turn short substrings into popularity evidence for unrelated terms.
 标红	標紅	0.620	biaohong	exact_rank_no_contains
 反直觉	反直覺	0.460	fanzhijue	exact_rank_no_contains
+
+# Everyday an/ang + ge phrases, 2026-09-15.
+# Explicit lexical entries resolve nasal-final boundaries without changing parsing.
+# Keep established homophones ahead of fragments; rare forms stay low-frequency.
+# tange uses tan for playing; yange uses yan for swallowing; gange kinship is gan.
+想个	想個	0.640	xiangge	exact_rank_no_contains
+唱个	唱個	0.520	changge	exact_rank_no_contains
+尝个	嘗個	0.360	changge	exact_rank_no_contains
+讲个	講個	0.640	jiangge	exact_rank_no_contains
+献个	獻個	0.360	xiange	exact_rank_no_contains
+牵个	牽個	0.320	qiange	exact_rank_no_contains
+办个	辦個	0.620	bange	exact_rank_no_contains
+盘个	盤個	0.420	pange	exact_rank_no_contains
+盼个	盼個	0.260	pange	exact_rank_no_contains
+攀个	攀個	0.180	pange	exact_rank_no_contains
+拌个	拌個	0.320	bange	exact_rank_no_contains
+反个	反個	0.260	fange	exact_rank_no_contains
+翻个	翻個	0.580	fange	exact_rank_no_contains
+担个	擔個	0.320	dange	exact_rank_no_contains
+探戈	探戈	0.580	tange	exact_rank_no_contains
+谈个	談個	0.520	tange	exact_rank_no_contains
+叹个	嘆個	0.280	tange	exact_rank_no_contains
+贪个	貪個	0.240	tange	exact_rank_no_contains
+弹个	彈個	0.480	tange	exact_rank_no_contains
+难个	難個	0.120	nange	exact_rank_no_contains
+难哥	難哥	0.180	nange	exact_rank_no_contains
+拦个	攔個	0.320	lange	exact_rank_no_contains
+揽个	攬個	0.280	lange	exact_rank_no_contains
+干哥	乾哥	0.180	gange	exact_rank_no_contains
+看个	看個	0.640	kange	exact_rank_no_contains
+砍个	砍個	0.300	kange	exact_rank_no_contains
+侃个	侃個	0.260	kange	exact_rank_no_contains
+喊个	喊個	0.480	hange	exact_rank_no_contains
+含个	含個	0.280	hange	exact_rank_no_contains
+焊个	焊個	0.220	hange	exact_rank_no_contains
+建个	建個	0.640	jiange	exact_rank_no_contains
+减个	減個	0.420	jiange	exact_rank_no_contains
+欠个	欠個	0.380	qiange	exact_rank_no_contains
+嫌个	嫌個	0.180	xiange	exact_rank_no_contains
+咽个	嚥個	0.220	yange	exact_rank_no_contains
+验个	驗個	0.380	yange	exact_rank_no_contains
+完个	完個	0.180	wange	exact_rank_no_contains
