@@ -13135,3 +13135,8 @@
 # Page navigation and a familiar brand, 2026-09-14.
 每页	每頁	0.620	meiye	exact_rank_no_contains
 美高梅	美高梅	0.480	meigaomei	exact_rank_no_contains
+
+# Preheating is a common standalone verb; exposure to heat is contextual.
+# Keep the correction after global calibration so rebuilding cannot undo it.
+预热	預熱	0.760	yure	exact_rank
+遇热	遇熱	0.320	yure	exact_rank
