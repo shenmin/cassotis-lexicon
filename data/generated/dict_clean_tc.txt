@@ -97084,6 +97084,7 @@ mingzhuang	名狀	319
 mingzhuantou	明珠暗投	396
 mingzi	名字	1000
 mingziduixiang	名字對象	659
+mingzong	明宗	240	no_contains
 mingzui	名嘴	319
 mingzuo	名作	431
 minhang	民航	436
@@ -115961,9 +115962,11 @@ renzitoushangyibadao	忍字頭上一把刀	10
 renzituo	人字拖	362
 renzituoxie	人字拖鞋	196
 renzixing	人字形	419
+renzong	仁宗	360	no_contains
 renzong	任總	280
 renzouchaliang	人走茶涼	387
 renzu	人族	216
+renzu	認祖	200	no_contains
 renzuguizong	認祖歸宗	668
 renzui	認罪	421
 renzuixieshang	認罪協商	260
@@ -146629,6 +146632,7 @@ wodixingjing	臥底刑警	538
 wodong	我懂	700
 wodu	我讀	1000
 woducu	我督促	800
+wodui	我對	700	no_contains
 wodui	渥堆	351
 wodun	沃頓	262
 woduofuziwodenayata	沃多夫茲沃德納亞塔	660
@@ -153366,6 +153370,7 @@ xiaozi	小字	10
 xiaozichanjieji	小資產階級	289
 xiaozixian	蕭子顯	209
 xiaozixiansun	孝子賢孫	527
+xiaozong	孝宗	260	no_contains
 xiaozu	小組	995
 xiaozu	小卒	1
 xiaozuiheng	小嘴鴴	228

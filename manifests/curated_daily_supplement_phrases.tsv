@@ -13140,3 +13140,14 @@
 # Keep the correction after global calibration so rebuilding cannot undo it.
 预热	預熱	0.760	yure	exact_rank
 遇热	遇熱	0.320	yure	exact_rank
+
+# Historical titles and an ancestral-recognition phrase, 2026-09-15.
+# Keep titles selectable without assigning everyday-word or substring popularity.
+# Standalone ancestral recognition stays below the established renzu homophone.
+仁宗	仁宗	0.360	renzong	exact_rank_no_contains
+认祖	認祖	0.200	renzu	exact_rank_no_contains
+孝宗	孝宗	0.260	xiaozong	exact_rank_no_contains
+明宗	明宗	0.240	mingzong	exact_rank_no_contains
+
+# Common pronoun/preposition phrase; match the existing ni-dui weight range.
+我对	我對	0.700	wodui	exact_rank_no_contains
