@@ -13198,3 +13198,71 @@
 咽个	嚥個	0.220	yange	exact_rank_no_contains
 验个	驗個	0.380	yange	exact_rank_no_contains
 完个	完個	0.180	wange	exact_rank_no_contains
+
+# Everyday verb + le phrases and a software-work phrase, 2026-09-16.
+# Reuse existing verbs where present; colloquial fragments stay below common forms.
+# Fixed lexical ranks do not invent substring popularity or corpus transitions.
+# Keep productive fragments conservative where they compete with longer verbs.
+连了	連了	0.620	lianle	exact_rank_no_contains
+通了	通了	0.180	tongle	exact_rank_no_contains
+闪了	閃了	0.520	shanle	exact_rank_no_contains
+划了	劃了	0.440	huale	exact_rank_no_contains
+滑了	滑了	0.520	huale	exact_rank_no_contains
+爱了	愛了	0.540	aile	exact_rank_no_contains
+水了	水了	0.180	shuile	exact_rank_no_contains
+飞了	飛了	0.620	feile	exact_rank_no_contains
+掉了	掉了	0.700	diaole	exact_rank_no_contains
+做版本	做版本	0.380	zuobanben	exact_rank_no_contains
+付了	付了	0.180	fule	exact_rank_no_contains
+签了	簽了	0.580	qianle	exact_rank_no_contains
+拆了	拆了	0.620	chaile	exact_rank_no_contains
+退了	退了	0.660	tuile	exact_rank_no_contains
+存了	存了	0.600	cunle	exact_rank_no_contains
+锁了	鎖了	0.580	suole	exact_rank_no_contains
+传了	傳了	0.540	chuanle	exact_rank_no_contains
+卸了	卸了	0.480	xiele	exact_rank_no_contains
+读了	讀了	0.580	dule	exact_rank_no_contains
+剪了	剪了	0.560	jianle	exact_rank_no_contains
+捡了	撿了	0.520	jianle	exact_rank_no_contains
+煎了	煎了	0.340	jianle	exact_rank_no_contains
+抢了	搶了	0.640	qiangle	exact_rank_no_contains
+躲了	躲了	0.480	duole	exact_rank_no_contains
+闹了	鬧了	0.280	naole	exact_rank_no_contains
+摔了	摔了	0.560	shuaile	exact_rank_no_contains
+吐了	吐了	0.180	tule	exact_rank_no_contains
+晒了	曬了	0.440	shaile	exact_rank_no_contains
+烤了	烤了	0.400	kaole	exact_rank_no_contains
+蒸了	蒸了	0.360	zhengle	exact_rank_no_contains
+炖了	燉了	0.360	dunle	exact_rank_no_contains
+炸了	炸了	0.460	zhale	exact_rank_no_contains
+拧了	擰了	0.440	ningle	exact_rank_no_contains
+扯了	扯了	0.480	chele	exact_rank_no_contains
+翻了	翻了	0.580	fanle	exact_rank_no_contains
+聊了	聊了	0.620	liaole	exact_rank_no_contains
+唱了	唱了	0.580	changle	exact_rank_no_contains
+问了	問了	0.540	wenle	exact_rank_no_contains
+吻了	吻了	0.420	wenle	exact_rank_no_contains
+查了	查了	0.640	chale	exact_rank_no_contains
+测了	測了	0.520	cele	exact_rank_no_contains
+爬了	爬了	0.480	pale	exact_rank_no_contains
+飙了	飆了	0.340	biaole	exact_rank_no_contains
+塞了	塞了	0.340	saile	exact_rank_no_contains
+藏了	藏了	0.440	cangle	exact_rank_no_contains
+赔了	賠了	0.520	peile	exact_rank_no_contains
+# Colloquial durability expressions; do not manufacture corpus support.
+经用	經用	0.360	jingyong	exact_rank_no_contains
+不经用	不經用	0.420	bujingyong	exact_rank_no_contains
+经造	經造	0.260	jingzao	exact_rank_no_contains
+不经造	不經造	0.360	bujingzao	exact_rank_no_contains
+不经	不經	0.180	bujing	exact_rank_no_contains
+经得住	經得住	0.500	jingdezhu	exact_rank_no_contains
+# Conversational contrast; preserve established homophones.
+我倒	我倒	0.520	wodao	exact_rank_no_contains
+我倒是	我倒是	0.620	wodaoshi	exact_rank_no_contains
+这我倒是	這我倒是	0.420	zhewodaoshi	exact_rank_no_contains
+
+# Document and keyboard/touch actions, 2026-09-16.
+# Preserve established homophones; do not synthesize corpus popularity.
+新文稿	新文稿	0.420	xinwengao	exact_rank_no_contains
+长按	長按	0.680	changan	exact_rank_no_contains
+连按	連按	0.500	lianan	exact_rank_no_contains

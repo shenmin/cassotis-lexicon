@@ -660,6 +660,7 @@ ailao	艾老	65
 ailate	埃拉特	202
 ailatuositeni	埃拉托斯特尼	318
 aile	矮了	700
+aile	愛了	540	no_contains
 ailebang	挨了棒	685
 ailebang	捱了棒	405
 ailebangdegou	挨了棒的狗	654
@@ -9074,6 +9075,7 @@ biaoke	鏢客	26
 biaoke	錶殼	10
 biaokoushui	飆口水	232
 biaokucheshen	飆酷車神	538
+biaole	飆了	340	no_contains
 biaoli	表裡	1000
 biaoli	表里	974
 biaoli	表裏	520
@@ -12581,6 +12583,7 @@ bujinbu	不今不	556
 bujinbugu	不今不古	597
 bujinbuman	不緊不慢	482
 bujing	不驚	280
+bujing	不經	180	no_contains
 bujing	捕鯨	41
 bujing	佈景	1
 bujing	布景	1
@@ -12594,6 +12597,8 @@ bujingqi	不景氣	544
 bujingshen	不精神	640
 bujingyi	不經意	485
 bujingyijian	不經意間	260
+bujingyong	不經用	420	no_contains
+bujingzao	不經造	360	no_contains
 bujingzhitan	不經之談	387
 bujinjin	不僅僅	630
 bujinmada	步進馬達	218
@@ -14991,6 +14996,7 @@ canglanleitinggangfutezhao	蒼藍雷霆鋼佛特爪	662
 canglanshiyue	蒼藍誓約	534
 canglanzheng	蒼藍症	500
 canglao	蒼老	450
+cangle	藏了	440	no_contains
 cangliang	蒼涼	440
 canglin	倉廩	372
 canglong	蒼龍	269
@@ -15681,6 +15687,7 @@ cejuyi	測距儀	279
 cekong	測控	423
 cekongfan	側空翻	406
 celan	側欄	10
+cele	測了	520	no_contains
 celi	冊立	1000
 celian	側臉	700
 celiang	測量	551
@@ -16100,6 +16107,7 @@ chailangdangtu	豺狼噹涂	347
 chailanghubao	豺狼虎豹	408
 chailangsailu	豺狼塞路	401
 chailangzuo	豺狼座	228
+chaile	拆了	620	no_contains
 chailing	柴玲	630
 chailv	差旅	335
 chailvfei	差旅費	432
@@ -16191,6 +16199,7 @@ chakou	插口	13
 chakou	查扣	1
 chakou	茬口	1
 chale	插了	700
+chale	查了	640	no_contains
 chali	查理	551
 chali'ershi	查理二世	413
 chaliao	茶寮	260
@@ -16256,6 +16265,7 @@ chang'anqu	長安區	183
 chang'e	嫦娥	433
 chang'erxiao	長耳鴞	230
 changan	長安	732
+changan	長按	680	no_contains
 changandaxue	長安大學	260
 changanqu	長安區	183
 changba	長吧	280
@@ -16496,6 +16506,7 @@ changlang	長廊	446
 changle	長了	1000
 changle	嚐了	1000
 changle	長樂	616
+changle	唱了	580	no_contains
 changle	嘗了	520
 changlegongzhu	長樂公主	260
 changlequ	長樂區	228
@@ -17961,6 +17972,7 @@ chekudangdaiyishubowuguan	車庫噹代藝術博物館	352
 chelaichewang	車來車往	550
 chelan	車籃	176
 chele	撤了	700
+chele	扯了	480	no_contains
 cheli	撤離	821
 cheli	車裏	752
 cheliang	車輛	487
@@ -20936,6 +20948,7 @@ chuanlai	傳來	502
 chuanlan	船纜	198
 chuanlaoda	船老大	467
 chuanle	穿了	700
+chuanle	傳了	540	no_contains
 chuanlian	串聯	296
 chuanlianqinhechunhua	串聯親和純化	700
 chuanlianzhipu	串聯質譜	570
@@ -23338,6 +23351,7 @@ cunkuanzheng	存款證	232
 cunkuanzhunbeijin	存款准備金	289
 cunkuanzhunbeijinlv	存款准備金率	321
 cunkuanzhunbeijinlv	存款準備金率	315
+cunle	存了	600	no_contains
 cunli	村里	699
 cunli	村裏	684
 cunliang	存量	560
@@ -30156,6 +30170,7 @@ diaokuai	調快	700
 diaokun	吊捆	10
 diaolan	吊籃	623
 diaolanyuqi	雕欄玉砌	619
+diaole	掉了	700	no_contains
 diaolei	掉淚	413
 diaolexialai	掉了下來	10
 diaoli	調離	10
@@ -34603,6 +34618,7 @@ dulandaquan	獨攬大權	634
 dulang	獨狼	198
 dulanshichang	獨攬市場	260
 dulanxian	都蘭縣	176
+dule	讀了	580	no_contains
 duleisi	杜蕾斯	193
 duleitezheng	杜雷特症	570
 dulengding	杜冷丁	213
@@ -34732,6 +34748,7 @@ dunkeng	蹲坑	364
 dunkuyao	蹲苦窯	228
 dunlao	蹲牢	323
 dunlasazhen	敦拉薩鎮	583
+dunle	燉了	360	no_contains
 dunledun	頓了頓	280
 dunlichuangshang	鈍力創傷	570
 dunliwaishang	鈍力外傷	570
@@ -35047,6 +35064,7 @@ duolaba	多拉把	640
 duolan	躲懶	387
 duolaoduode	多勞多得	514
 duole	多了	700
+duole	躲了	480	no_contains
 duolei	多累	198
 duolemaohuanlemiaopaidui	多樂貓歡樂喵派對	662
 duolenggong	多棱宮	520
@@ -38797,6 +38815,7 @@ fanlaohuangli	翻老皇曆	260
 fanlaohuantong	返老還童	600
 fanlaoyao	返老藥	510
 fanlaozhang	翻老賬	357
+fanle	翻了	580	no_contains
 fanle	犯了	10
 fanlei	飯類	438
 fanli	反例	1000
@@ -40062,6 +40081,7 @@ feilaifeiqu	飛來飛去	387
 feilaihenghuo	飛來橫禍	427
 feilao	肺癆	367
 feilapengtuofuxiudaoyuan	費拉蓬托夫修道院	660
+feile	飛了	620	no_contains
 feileiguchunkangfayanji	非類固醇抗發炎劑	700
 feileiguchunleixiaoyanyao	非類固醇類消炎藥	898
 feileiguchunleixiaoyanyao	非類固醇類消炎葯	380
@@ -43236,6 +43256,7 @@ fulao	服老	10
 fulao	父老	1
 fulaoxieyou	扶老攜幼	472
 fule	扶了	700
+fule	付了	180	no_contains
 fule	服了	10
 fulechongji	婦樂沖劑	540
 fulei	父類別	817
@@ -59123,6 +59144,8 @@ hualangwaidetianfu	畫廊外的天賦	831
 hualao	話嘮	10
 hualayisheng	嘩啦一聲	387
 hualazimi	花剌子密	507
+huale	滑了	520	no_contains
+huale	劃了	440	no_contains
 hualei	花蕾	260
 huali	華麗	437
 hualian	花蓮	694
@@ -65087,6 +65110,9 @@ jianlao	堅牢	591
 jianlao	監牢	246
 jianle	減了	700
 jianle	建了	658
+jianle	剪了	560	no_contains
+jianle	撿了	520	no_contains
+jianle	煎了	340	no_contains
 jianle	見了	10
 jianlezhimadiulexigua	揀了芝麻丟了西瓜	938
 jianli	建立	1000
@@ -70322,6 +70348,7 @@ jingdexian	旌德縣	165
 jingdezhen	景德鎮	629
 jingdezhenshi	景德鎮市	247
 jingdezhentaocixueyuan	景德鎮陶瓷學院	339
+jingdezhu	經得住	500	no_contains
 jingdi	境地	760
 jingdi	勁敵	114
 jingdi	井底	10
@@ -71330,6 +71357,7 @@ jingyingzhe	經營者	558
 jingyinjian	靜音鍵	10
 jingyiqiujing	精益求精	487
 jingyizhilv	驚異之旅	538
+jingyong	經用	360	no_contains
 jingyong	警用	10
 jingyou	經由	1000
 jingyou	精油	1
@@ -71351,6 +71379,7 @@ jingyuequanshu	景岳全書	540
 jingyuetan	淨月潭	896
 jingyuxian	靖宇縣	213
 jingyuzuo	鯨魚座	230
+jingzao	經造	260	no_contains
 jingzaohua	精皂花	500
 jingzeng	敬贈	323
 jingzhaguan	晶閘管	480
@@ -77686,6 +77715,7 @@ kaolao	犒勞	1000
 kaolapinyinshurufa	考拉拼音輸入法	744
 kaolashurufa	考拉輸入法	760
 kaole	考了	700
+kaole	烤了	400	no_contains
 kaoliang	考量	429
 kaoliao	銬鐐	10
 kaolong	靠攏	448
@@ -83977,6 +84007,7 @@ lianaishidai	戀愛世代	785
 lianaitiandian	戀愛甜點	538
 lianaiwuyu	戀愛物語	744
 lianaiyouxi	戀愛遊戲	538
+lianan	連按	500	no_contains
 lianan	聯氨	198
 lianba	斂巴	1
 lianbai	連敗	428
@@ -84957,6 +84988,7 @@ liankong	臉孔	442
 liankongzhongsheji	臉空中射擊	613
 liankuwa	連褲襪	371
 lianlang	連廊	420
+lianle	連了	620	no_contains
 lianlei	連累	447
 lianli	連理	870
 lianlian	練練	700
@@ -85355,6 +85387,7 @@ liaokuo	遼闊	1000
 liaokuo	寥廓	1
 liaolai	聊賴	323
 liaolan	蓼藍	293
+liaole	聊了	620	no_contains
 liaole	了了	280
 liaoli	料理	507
 liaoliang	嘹亮	983
@@ -100403,6 +100436,7 @@ naojiyebilou	腦脊液鼻漏	640
 naoju	鬧劇	422
 naokangtaijiaonang	腦康泰膠囊	610
 naoke	腦殼	440
+naole	鬧了	280	no_contains
 naoli	腦力	408
 naolibaowan	腦力寶丸	540
 naolidaren	腦力達人	538
@@ -102329,6 +102363,7 @@ ningkuai	凝塊	198
 ninglang	寧蒗	220
 ninglangxian	寧蒗縣	228
 ninglangyizuzizhixian	寧蒗彝族自治縣	346
+ningle	擰了	440	no_contains
 ninglian	凝練	560
 ningling	寧陵	231
 ninglingsu	凝零素	453
@@ -104231,6 +104266,7 @@ palashijie	帕拉世界	538
 palasidetan	帕拉斯地毯	760
 pale	怕了	700
 pale	趴了	658
+pale	爬了	480	no_contains
 paleituo	帕累托	625
 paleituofaze	帕累托法則	289
 paleituozuiyou	帕累托最優	289
@@ -105025,6 +105061,7 @@ peijue	配角	418
 peikuan	賠款	441
 peilageniyatongjiqu	佩拉戈尼亞統計區	681
 peilan	佩蘭	216
+peile	賠了	520	no_contains
 peilefurenyouzhebing	賠了夫人又折兵	499
 peili	賠禮	418
 peilian	陪練	683
@@ -108363,6 +108400,7 @@ qiangla	強拉	198
 qianglai'ansuan	羥賴氨酸	580
 qianglaiansuan	羥賴氨酸	580
 qianglang	蜣螂	373
+qiangle	搶了	640	no_contains
 qianglei	牆肋	720
 qiangleixing	強類型	637
 qiangleizhenyu	強雷陣雨	10
@@ -108720,6 +108758,7 @@ qianlai	前來	462
 qianlang	前廊	345
 qianlanse	淺藍色	10
 qianlaxingshiwangmotuoli	牽拉性視網膜脫離	680
+qianle	簽了	580	no_contains
 qianle	牽了	420
 qianle	淺了	297
 qianlei	牽累	416
@@ -118081,6 +118120,7 @@ sailaisidiya	塞萊斯蒂亞	635
 sailaixibu	塞來昔布	540
 sailali'ang	塞拉利昂	605
 sailaliang	塞拉利昂	605
+saile	塞了	340	no_contains
 saileinuosi	賽勒諾斯	538
 saili'ougong	塞里歐拱	680
 sailie	鰓裂	401
@@ -119912,6 +119952,7 @@ shaijian	篩檢	198
 shaijin	曬進	280
 shaikang	篩糠	420
 shaike	曬客	198
+shaile	曬了	440	no_contains
 shailiedehu	曬裂的葫	523
 shailiedehulu	曬裂的葫蘆	566
 shailuotuo	曬駱駝	108
@@ -121141,6 +121182,7 @@ shanlangdangjian	山莨菪鹼	540
 shanlanke	山欖科	169
 shanlanxianweng	山藍仙鶲	218
 shanle	刪了	1000
+shanle	閃了	520	no_contains
 shanleba	刪了吧	1018
 shanlemei	刪了沒	280
 shanli	山裏	10
@@ -129156,6 +129198,7 @@ shuailaishuaiqu	甩來甩去	280
 shuailao	衰老	462
 shuailaoxiangguanfenmibiaoxing	衰老相關分泌表型	700
 shuaile	甩了	700
+shuaile	摔了	560	no_contains
 shuailian	甩臉	10
 shuailianzi	甩臉子	232
 shuailing	率領	502
@@ -130163,6 +130206,7 @@ shuilanjiao	睡懶覺	397
 shuilao	水牢	583
 shuilaoya	水老鴉	167
 shuile	睡了	1000
+shuile	水了	180	no_contains
 shuilei	水雷	440
 shuilemei	睡了沒	280
 shuileng	水冷	194
@@ -134165,6 +134209,7 @@ suokong	鎖孔	366
 suokou	鎖釦	10
 suokun	所困	700
 suole	縮了	700
+suole	鎖了	580	no_contains
 suolian	鎖鏈	399
 suoliansu	鎖鏈素	500
 suolianzhanji	鎖鏈戰記	538
@@ -139930,6 +139975,7 @@ tonglan	統攬	378
 tonglanweng	銅藍鶲	228
 tongle	痛了	700
 tongle	同樂	310
+tongle	通了	180	no_contains
 tonglehui	同樂會	340
 tonglei	同類	465
 tongleixiangshi	同類相食	570
@@ -141351,6 +141397,7 @@ tuilaituiqu	推來推去	387
 tuilamen	推拉門	544
 tuilao	頹老	198
 tuile	推了	700
+tuile	退了	660	no_contains
 tuili	推理	1000
 tuili	推力	570
 tuilidianziyouxi	推理電子遊戲	648
@@ -141557,6 +141604,7 @@ tulaomao	土老帽	340
 tulaowugong	徒勞無功	433
 tulaowuyi	徒勞無益	450
 tulazhen	圖拉真	438
+tule	吐了	180	no_contains
 tulei	土壘	260
 tuleite	圖雷特	547
 tuleiteshizonghezheng	圖雷特氏綜合症	700
@@ -146173,6 +146221,8 @@ wenlaidalusalanguo	文萊達魯薩蘭國	647
 wenlaihepingzhiguo	文萊和平之國	694
 wenlaihepingzhiguo	汶萊和平之國	688
 wenlan	溫嵐	631
+wenle	問了	540	no_contains
+wenle	吻了	420	no_contains
 wenle	穩了	10
 wenli	文理	560
 wenli	紋理	560
@@ -146612,7 +146662,9 @@ wodafenggongsi	沃達丰公司	305
 wodafenggongsi	沃達豐公司	299
 wodaidong	我帶動	800
 wodangran	我當然	1000
+wodao	我倒	520	no_contains
 wodao	臥倒	428
+wodaoshi	我倒是	620	no_contains
 wode	我的	914
 wodediguo	我的帝國	538
 wodeiyou	我得有	800
@@ -154249,6 +154301,7 @@ xiela	謝拉	214
 xielao	偕老	406
 xiele	寫了	700
 xiele	謝了	700
+xiele	卸了	480	no_contains
 xiele	泄了	10
 xieleba	歇了吧	108
 xielehu	蠍了虎	540
@@ -157287,6 +157340,7 @@ xinwenfabuhui	新聞發佈會	962
 xinwenfabuhui	新聞發布會	910
 xinwenfayanren	新聞發言人	289
 xinwengao	新聞稿	515
+xinwengao	新文稿	420	no_contains
 xinwengongzuozhe	新聞工作者	289
 xinwenhuayundong	新文化運動	430
 xinwenjie	新聞界	551
@@ -177831,6 +177885,7 @@ zhalaiteqi	扎賚特旗	232
 zhalan	柵欄	422
 zhalantun	扎蘭屯	178
 zhalantunshi	扎蘭屯市	237
+zhale	炸了	460	no_contains
 zhalei	炸雷	398
 zhali	柵籬	198
 zhaliang	炸兩	438
@@ -180148,6 +180203,7 @@ zhengke	政客	447
 zhengkuai	整塊	1000
 zhenglanqi	正藍旗	346
 zhengle	整了	700
+zhengle	蒸了	360	no_contains
 zhengli	整理	1000
 zhenglian	征斂	211
 zhengliang	錚亮	359
@@ -181250,6 +181306,7 @@ zhetiaotuiwen	這條推文	800
 zhetou	這頭	280
 zhetou	折頭	1
 zhewei	這位	700
+zhewodaoshi	這我倒是	420	no_contains
 zhexia	這下	700
 zhexia	遮瑕	10
 zhexiagao	遮瑕膏	193
@@ -190467,6 +190524,7 @@ zuoban	左半	1000
 zuoban	做伴	208
 zuoban	坐班	10
 zuoban	作伴	1
+zuobanben	做版本	380	no_contains
 zuobanfang	坐班房	232
 zuobangyoubi	左膀右臂	444
 zuobanjiechangqiechushu	左半結腸切除術	650

@@ -18832,12 +18832,12 @@ bujinbu	bujinbugu	不今不古	597	209	40	0	1	0	0	0	1	0
 bujinbu	bujinbuman	不緊不慢	482	261	226	0	1	0	85	1	0	1
 bujing	bujinggejia	佈景格架	933	175	0	0	1	0	89	1	1	0
 bujing	bujingshen	不精神	640	223	0	0	1	0	0	0	0	1
-bujing	bujingqi	不景氣	544	243	288	0	1	0	0	0	0	2
-bujing	bujingyi	不經意	485	253	312	0	1	0	0	0	0	3
-bujing	bujingchuan	捕鯨船	403	158	85	0	1	0	0	0	1	4
-bujing	bujingerzou	不脛而走	470	254	193	0	1	0	84	1	0	5
-bujing	bujinggejia	布景格架	349	80	0	0	0	0	0	0	1	6
-bujing	bujingen	不盡根	407	137	40	0	1	0	0	0	0	7
+bujing	bujingyi	不經意	485	253	312	0	1	0	0	0	1	2
+bujing	bujingqi	不景氣	544	243	288	0	1	0	0	0	0	3
+bujing	bujingyong	不經用	420	80	0	0	0	0	0	0	1	4
+bujing	bujingchuan	捕鯨船	403	158	85	0	1	0	0	0	1	5
+bujing	bujingerzou	不脛而走	470	254	193	0	1	0	84	1	0	6
+bujing	bujingzhitan	不經之談	387	137	40	0	1	0	0	0	1	7
 bujinger	bujingerzou	不脛而走	470	254	193	0	1	0	84	1	0	0
 bujingge	bujinggejia	佈景格架	933	175	0	0	1	0	89	1	0	0
 bujingge	bujinggejia	布景格架	349	80	0	0	0	0	0	0	0	1
@@ -40892,7 +40892,7 @@ diaokong	diaokongxulie	調控序列	570	102	0	0	2	0	154	3	0	0
 diaokongxu	diaokongxulie	調控序列	570	102	0	0	2	0	154	3	0	0
 diaolan	diaolanyuqi	雕欄玉砌	619	196	85	0	1	0	91	1	0	0
 diaolanyu	diaolanyuqi	雕欄玉砌	619	196	85	0	1	0	91	1	0	0
-diaole	diaolexialai	掉了下來	10	202	0	0	2	0	0	0	0	0
+diaole	diaolexialai	掉了下來	10	202	0	0	2	0	0	0	1	0
 diaolexia	diaolexialai	掉了下來	10	202	0	0	2	0	0	0	0	0
 diaolian	diaolianzi	掉鏈子	232	80	0	0	0	0	0	0	0	0
 diaoliang	diaolianghuadong	雕樑畫棟	645	237	164	0	1	0	86	1	0	0
@@ -99188,8 +99188,8 @@ jingde	jingdeqi	經得起	552	254	316	0	1	0	0	0	0	6
 jingde	jingdege	靜的割	540	80	0	0	0	0	0	0	0	7
 jingde	jingdezhenshi	景德鎮市	247	152	109	0	1	0	0	0	0	8
 jingde	jingdexian	旌德縣	165	128	40	0	1	0	0	0	0	9
-jingde	jingdebu	靜的不	501	80	0	0	0	0	0	0	0	10
-jingde	jingdean	靜的安	540	80	0	0	0	0	0	0	0	11
+jingde	jingdezhu	經得住	500	80	0	0	0	0	0	0	0	10
+jingde	jingdebu	靜的不	501	80	0	0	0	0	0	0	0	11
 jingdean	jingdeanding	靜的安定	597	80	0	0	0	0	0	0	1	0
 jingdebu	jingdebu'anding	靜的不安定	569	80	0	0	0	0	0	0	1	0
 jingdebu	jingdebuan	靜的不安	527	80	0	0	0	0	0	0	1	1
@@ -149623,7 +149623,7 @@ peilageni	peilageniyatongjiqu	佩拉戈尼亞統計區	681	12	0	0	1	0	174	2	0	0
 peilageniya	peilageniyatongjiqu	佩拉戈尼亞統計區	681	12	0	0	1	0	174	2	0	0
 peilageniyatong	peilageniyatongjiqu	佩拉戈尼亞統計區	681	12	0	0	1	0	174	2	0	0
 peilageniyatongji	peilageniyatongjiqu	佩拉戈尼亞統計區	681	12	0	0	1	0	174	2	0	0
-peile	peilefurenyouzhebing	賠了夫人又折兵	499	210	113	0	1	0	89	1	0	0
+peile	peilefurenyouzhebing	賠了夫人又折兵	499	210	113	0	1	0	89	1	1	0
 peilefu	peilefurenyouzhebing	賠了夫人又折兵	499	210	113	0	1	0	89	1	0	0
 peilefuren	peilefurenyouzhebing	賠了夫人又折兵	499	210	113	0	1	0	89	1	0	0
 peilefurenyou	peilefurenyouzhebing	賠了夫人又折兵	499	210	113	0	1	0	89	1	0	0
@@ -154122,7 +154122,7 @@ qianlaxingshi	qianlaxingshiwangmotuoli	牽拉性視網膜脫離	680	1	0	0	1	0	24
 qianlaxingshiwang	qianlaxingshiwangmotuoli	牽拉性視網膜脫離	680	1	0	0	1	0	247	3	0	0
 qianlaxingshiwangmo	qianlaxingshiwangmotuoli	牽拉性視網膜脫離	680	1	0	0	1	0	247	3	0	0
 qianlaxingshiwangmotuo	qianlaxingshiwangmotuoli	牽拉性視網膜脫離	680	1	0	0	1	0	247	3	0	0
-qianle	qianlemei	簽了沒	280	252	0	0	2	0	0	0	0	0
+qianle	qianlemei	簽了沒	280	252	0	0	2	0	0	0	1	0
 qianli	qianlizhidihuiyuyixue	千里之堤毀於蟻穴	941	175	0	0	1	0	89	1	1	0
 qianli	qianlizhixingshiyuzuxia	千里之行始於足下	941	175	0	0	1	0	89	1	1	1
 qianli	qianlizhidi	千里之堤	800	530	66	0	4	0	0	0	1	2
@@ -207219,6 +207219,7 @@ wodafenggong	wodafenggongsi	沃達丰公司	305	80	0	0	0	0	0	0	0	0
 wodafenggong	wodafenggongsi	沃達豐公司	299	80	0	0	0	0	0	0	0	1
 wodai	wodaidong	我帶動	800	199	0	0	1	0	0	0	0	0
 wodang	wodangran	我當然	1000	540	0	0	4	0	0	0	0	0
+wodao	wodaoshi	我倒是	620	80	0	0	0	0	0	0	1	0
 wode	woderen	我的人	1000	540	0	0	4	0	0	0	1	0
 wode	wodetianne	我的天吶	1000	540	0	0	4	0	0	0	1	1
 wode	wodetian	我的天	867	256	0	0	2	0	0	0	1	2
@@ -222577,6 +222578,7 @@ xinwenfabu	xinwenfabuhui	新聞發佈會	962	404	0	0	4	520	0	0	0	0
 xinwenfabu	xinwenfabuhui	新聞發布會	910	536	0	0	4	0	0	0	0	1
 xinwenfayan	xinwenfayanren	新聞發言人	289	80	0	0	0	520	0	0	0	0
 xinweng	xinwengao	新聞稿	515	245	292	0	1	0	0	0	0	0
+xinweng	xinwengao	新文稿	420	80	0	0	0	0	0	0	0	1
 xinwengong	xinwengongzuozhe	新聞工作者	289	80	0	0	0	496	0	0	0	0
 xinwengongzuo	xinwengongzuozhe	新聞工作者	289	80	0	0	0	496	0	0	0	0
 xinwenhua	xinwenhuayundong	新文化運動	430	252	357	0	1	0	0	0	0	0
@@ -255945,6 +255947,8 @@ zhetiangai	zhetiangaide	遮天蓋地	598	80	0	0	0	0	0	0	0	0
 zhetiao	zhetiaotuiwen	這條推文	800	199	0	0	1	0	0	0	1	0
 zhetiaotui	zhetiaotuiwen	這條推文	800	199	0	0	1	0	0	0	0	0
 zhewan	zhewanyi	這玩意	1000	540	0	0	4	0	0	0	0	0
+zhewo	zhewodaoshi	這我倒是	420	80	0	0	0	0	0	0	0	0
+zhewodao	zhewodaoshi	這我倒是	420	80	0	0	0	0	0	0	0	0
 zhexia	zhexiazi	這下子	453	214	215	0	1	0	0	0	1	0
 zhexia	zhexiagao	遮瑕膏	193	124	28	0	1	0	0	0	1	1
 zhexian	zhexiantu	折線圖	413	137	40	0	1	0	0	0	1	0
@@ -270274,7 +270278,8 @@ zuoai	zuo'ai'ershizheng	佐埃二氏症	640	102	0	0	2	0	154	3	0	0
 zuoaier	zuo'ai'ershizheng	佐埃二氏症	640	102	0	0	2	0	154	3	0	0
 zuoaiershi	zuo'ai'ershizheng	佐埃二氏症	640	102	0	0	2	0	154	3	0	0
 zuoban	zuobanjiechangqiechushu	左半結腸切除術	650	1	0	0	1	0	247	3	1	0
-zuoban	zuobanfang	坐班房	232	80	0	0	0	0	0	0	1	1
+zuoban	zuobanben	做版本	380	80	0	0	0	0	0	0	0	1
+zuoban	zuobanfang	坐班房	232	80	0	0	0	0	0	0	1	2
 zuobang	zuobangyoubi	左膀右臂	444	178	130	0	1	0	0	0	0	0
 zuobangyou	zuobangyoubi	左膀右臂	444	178	130	0	1	0	0	0	0	0
 zuobanjie	zuobanjiechangqiechushu	左半結腸切除術	650	1	0	0	1	0	247	3	0	0

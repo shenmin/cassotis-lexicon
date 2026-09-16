@@ -657,6 +657,7 @@ ailate	埃拉特	131	50	0	1	0	0	0
 ailatuositeni	埃拉托斯特尼	38	0	0	1	174	2	0
 aile	矮了	528	0	0	4	0	0	0
 aile	挨了	296	0	0	2	0	0	0
+aile	爱了	80	0	0	0	0	0	0
 ailebang	挨了棒	165	0	0	1	0	0	0
 ailebangdegou	挨了棒的狗	176	0	0	1	0	0	0
 ailei	埃蕾	80	0	0	0	0	0	0
@@ -9028,6 +9029,7 @@ biaoke	表壳	216	100	0	2	0	0	0
 biaoke	镖客	190	158	0	1	0	0	0
 biaokoushui	飙口水	80	0	0	0	0	0	0
 biaokucheshen	飙酷车神	77	0	0	1	109	1	0
+biaole	飙了	80	0	0	0	0	0	0
 biaoli	表里	226	245	0	1	0	0	0
 biaolian	表链	208	40	0	2	0	0	0
 biaoliang	标量	199	180	0	1	0	0	0
@@ -12463,6 +12465,7 @@ bujinbuman	不紧不慢	261	226	0	1	85	1	0
 bujing	不惊	292	0	0	2	0	0	0
 bujing	捕鲸	266	218	0	2	0	0	0
 bujing	布景	229	253	0	1	0	0	0
+bujing	不经	80	0	0	0	0	0	0
 bujing'erzou	不胫而走	254	193	0	1	84	1	0
 bujingchuan	捕鲸船	158	85	0	1	0	0	0
 bujingen	不尽根	137	40	0	1	0	0	0
@@ -12472,6 +12475,8 @@ bujingqi	不景气	243	288	0	1	0	0	0
 bujingshen	不精神	223	0	0	1	0	0	0
 bujingyi	不经意	253	312	0	1	0	0	0
 bujingyijian	不经意间	80	0	0	0	0	0	0
+bujingyong	不经用	80	0	0	0	0	0	0
+bujingzao	不经造	80	0	0	0	0	0	0
 bujingzhitan	不经之谈	137	40	0	1	0	0	0
 bujinjin	不仅仅	310	456	0	1	0	0	0
 bujinmada	步进马达	80	0	0	0	0	0	0
@@ -14827,6 +14832,7 @@ canglanleitinggangfutezhao	苍蓝雷霆钢佛特爪	93	0	0	1	109	1	0
 canglanshiyue	苍蓝誓约	77	0	0	1	109	1	0
 canglanzheng	苍蓝症	97	0	0	2	154	3	0
 canglao	苍老	254	314	0	1	0	0	0
+cangle	藏了	80	0	0	0	0	0	0
 cangliang	苍凉	236	271	0	1	0	0	0
 canglin	仓廪	202	188	0	1	0	0	0
 canglong	苍龙	185	173	0	1	0	0	0
@@ -15504,6 +15510,7 @@ cejuyi	测距仪	206	247	0	1	0	0	0
 cekong	测控	210	207	0	1	0	0	0
 cekongfan	侧空翻	137	40	0	1	0	0	0
 celan	侧栏	202	0	0	2	0	0	0
+cele	测了	80	0	0	0	0	0	0
 celi	册立	268	349	0	1	0	0	0
 celian	侧脸	534	0	0	4	0	0	0
 celian	侧链	1	0	0	0	340	3	0
@@ -15935,6 +15942,7 @@ chailangdangtu	豺狼当涂	137	40	0	1	0	0	0
 chailanghubao	豺狼虎豹	192	73	0	1	91	1	0
 chailangsailu	豺狼塞路	137	40	0	1	0	0	0
 chailangzuo	豺狼座	80	0	0	0	0	0	0
+chaile	拆了	80	0	0	0	0	0	0
 chailing	柴玲	341	0	292	3	0	0	0
 chailv	差旅	158	85	0	1	0	0	0
 chailvfei	差旅费	175	124	0	1	0	0	0
@@ -16042,6 +16050,7 @@ chakou	茬口	178	130	0	1	0	0	0
 chakou	岔口	170	113	0	1	0	0	0
 chakou	查扣	168	109	0	1	0	0	0
 chale	插了	528	0	0	4	0	0	0
+chale	查了	80	0	0	0	0	0	0
 chali	查理	343	325	0	3	0	0	0
 chali'ershi	查理二世	51	40	0	1	174	2	0
 chaliao	茶寮	182	0	0	1	87	1	0
@@ -16112,6 +16121,7 @@ chang'anqu	长安区	149	100	0	1	0	0	0
 chang'e	嫦娥	250	304	0	1	0	0	0
 chang'erxiao	长耳鸮	80	0	0	0	0	0	0
 changan	长安	433	615	0	3	0	0	0
+changan	长按	80	0	0	0	0	0	0
 changandaxue	长安大学	80	0	0	0	0	0	491
 changanqu	长安区	149	100	0	1	0	0	0
 changba	长吧	260	0	0	2	0	0	0
@@ -16349,6 +16359,7 @@ changlang	长廊	281	366	0	1	91	1	0
 changle	尝了	532	0	0	4	0	0	0
 changle	长了	532	0	0	4	0	0	0
 changle	长乐	335	300	0	3	0	0	0
+changle	唱了	80	0	0	0	0	0	0
 changlegongzhu	长乐公主	80	0	0	0	0	0	0
 changlequ	长乐区	80	0	0	0	0	0	0
 changleweiyang	长乐未央	180	40	0	1	91	1	0
@@ -17807,6 +17818,7 @@ chekudangdaiyishubowuguan	车库当代艺术博物馆	80	0	0	0	0	0	0
 chelaichewang	车来车往	151	0	0	2	68	1	0
 chelan	车篮	80	0	0	0	0	0	0
 chele	撤了	528	0	0	4	0	0	0
+chele	扯了	80	0	0	0	0	0	0
 cheli	车里	288	287	0	2	0	0	0
 cheli	撤离	272	359	0	1	0	0	0
 cheliang	车辆	329	508	0	1	0	0	0
@@ -20794,6 +20806,7 @@ chuanlai	传来	335	528	0	1	0	0	0
 chuanlan	船缆	80	0	0	0	0	0	0
 chuanlaoda	船老大	230	256	0	1	0	0	0
 chuanle	穿了	532	0	0	4	0	0	0
+chuanle	传了	80	0	0	0	0	0	0
 chuanlian	串联	235	296	0	1	0	0	0
 chuanlianqinhechunhua	串联亲和纯化	102	0	0	2	154	3	0
 chuanlianzhipu	串联质谱	102	0	0	2	154	3	0
@@ -23195,6 +23208,7 @@ cunkuanzheng	存款证	80	0	0	0	0	0	0
 cunkuanzhunbeijin	存款准备金	80	0	0	0	0	0	474
 cunkuanzhunbeijinlv	存款准备金率	80	0	0	0	0	0	0
 cunlan	存栏	170	113	0	1	0	0	0
+cunle	存了	80	0	0	0	0	0	0
 cunli	村里	318	475	0	1	0	0	0
 cunliang	存量	231	258	0	1	0	0	0
 cunliang	忖量	141	50	0	1	0	0	0
@@ -29927,6 +29941,7 @@ diaokun	吊捆	202	0	0	2	0	0	0
 diaolan	吊篮	166	130	0	1	0	0	0
 diaolan	吊兰	139	59	0	1	0	0	0
 diaolanyuqi	雕栏玉砌	196	85	0	1	91	1	0
+diaole	掉了	80	0	0	0	0	0	0
 diaolei	掉泪	198	177	0	1	0	0	0
 diaolexialai	掉了下来	202	0	0	2	0	0	0
 diaoli	调离	259	246	0	2	0	0	0
@@ -34395,6 +34410,7 @@ dulang	独狼	80	0	0	0	0	0	0
 dulanshichang	独揽市场	80	0	0	0	0	0	0
 dulanxian	都兰县	140	73	0	1	0	0	0
 dule	堵了	296	0	0	2	0	0	0
+dule	读了	80	0	0	0	0	0	0
 duleisi	杜蕾斯	1	28	0	1	247	3	0
 duleitezheng	杜雷特症	102	0	0	2	154	3	0
 dulengding	杜冷丁	1	91	0	1	247	3	0
@@ -34532,6 +34548,7 @@ dunkeng	蹲坑	149	66	0	1	0	0	0
 dunkuyao	蹲苦窑	80	0	0	0	0	0	0
 dunlao	蹲牢	137	40	0	1	0	0	0
 dunlasazhen	敦拉萨镇	17	0	0	1	174	2	0
+dunle	炖了	80	0	0	0	0	0	0
 dunledun	顿了顿	304	0	0	2	0	0	0
 dunlichuangshang	钝力创伤	102	0	0	2	154	3	0
 dunliwaishang	钝力外伤	102	0	0	2	154	3	0
@@ -34863,6 +34880,7 @@ duolaba	多拉把	223	0	0	1	0	0	0
 duolan	躲懒	168	109	0	1	0	0	0
 duolaoduode	多劳多得	223	85	0	1	0	0	0
 duole	多了	536	0	0	4	0	0	0
+duole	躲了	80	0	0	0	0	0	0
 duolei	多累	80	0	0	0	0	0	0
 duolemaohuanlemiaopaidui	多乐猫欢乐喵派对	93	0	0	1	109	1	0
 duolenggong	多棱宫	1	0	0	0	150	1	0
@@ -38458,6 +38476,7 @@ fanlaohuantong	返老还童	199	158	0	2	154	3	0
 fanlaoyao	返老药	97	0	0	2	154	3	0
 fanlaozhang	翻老账	137	40	0	1	0	0	0
 fanle	犯了	202	0	0	2	0	0	0
+fanle	翻了	80	0	0	0	0	0	0
 fanlei	饭类	80	0	0	0	0	0	0
 fanli	反例	540	50	0	4	0	0	0
 fanli	范蠡	283	408	0	1	0	0	0
@@ -39705,6 +39724,7 @@ feilaifeiqu	飞来飞去	137	40	0	1	0	0	0
 feilaihenghuo	飞来横祸	221	96	0	1	85	1	0
 feilao	肺痨	175	124	0	1	0	0	0
 feilapengtuofuxiudaoyuan	费拉蓬托夫修道院	145	0	0	1	98	1	0
+feile	飞了	80	0	0	0	0	0	0
 feileiguchunkangfayanji	非类固醇抗发炎剂	102	0	0	2	154	3	0
 feileiguchunleixiaoyanyao	非类固醇类消炎药	102	0	0	2	154	3	0
 feileiguchunxiaoyanyao	非类固醇消炎药	102	0	0	2	154	3	0
@@ -42578,6 +42598,7 @@ fulao	服老	208	40	0	2	0	0	0
 fulaoxieyou	扶老携幼	251	199	0	1	85	1	0
 fule	扶了	526	0	0	4	0	0	0
 fule	服了	202	0	0	2	0	0	0
+fule	付了	80	0	0	0	0	0	0
 fulechongji	妇乐冲剂	1	0	0	1	247	3	0
 fulei	父类	233	0	0	1	73	1	0
 fulei	负累	181	139	0	1	0	0	0
@@ -58296,6 +58317,8 @@ hualazimi	花剌子密	38	0	0	1	174	2	0
 huale	花了	522	0	0	4	0	0	0
 huale	化了	200	0	0	2	0	0	0
 huale	画了	200	0	0	2	0	0	0
+huale	划了	80	0	0	0	0	0	0
+huale	滑了	80	0	0	0	0	0	0
 hualei	花蕾	193	193	0	1	0	0	0
 huali	华丽	267	366	0	1	0	0	0
 huali	华里	227	273	0	1	0	0	0
@@ -64225,6 +64248,9 @@ jianlao	坚牢	194	168	0	1	0	0	0
 jianle	减了	532	0	0	4	0	0	0
 jianle	建了	528	0	0	4	0	0	0
 jianle	见了	276	0	0	2	0	0	0
+jianle	剪了	80	0	0	0	0	0	0
+jianle	捡了	80	0	0	0	0	0	0
+jianle	煎了	80	0	0	0	0	0	0
 jianlezhimadiulexigua	拣了芝麻丢了西瓜	168	0	0	1	91	1	0
 jianlezhimadiulexigua	捡了芝麻丢了西瓜	80	0	0	0	0	0	0
 jianli	建立	413	779	0	1	0	0	0
@@ -69386,6 +69412,7 @@ jingdexian	旌德县	128	40	0	1	0	0	0
 jingdezhen	景德镇	325	266	0	3	0	0	0
 jingdezhenshi	景德镇市	152	109	0	1	0	0	0
 jingdezhentaocixueyuan	景德镇陶瓷学院	128	40	0	1	0	0	0
+jingdezhu	经得住	80	0	0	0	0	0	0
 jingdi	境地	292	409	0	1	0	0	0
 jingdi	井底	254	233	0	2	0	0	0
 jingdi	劲敌	253	311	0	1	0	0	0
@@ -70377,6 +70404,7 @@ jingyinjian	静音键	202	0	0	2	0	0	0
 jingyiqiujing	精益求精	260	192	0	1	82	1	0
 jingyizhilv	惊异之旅	77	0	0	1	109	1	0
 jingyong	警用	220	144	0	2	0	0	0
+jingyong	经用	80	0	0	0	0	0	0
 jingyou	经由	270	355	0	1	0	0	0
 jingyou	精油	220	232	0	1	0	0	0
 jingyouxinsheng	境由心生	80	0	0	0	0	0	0
@@ -70394,6 +70422,7 @@ jingyuequanshu	景岳全书	1	40	0	1	247	3	0
 jingyuetan	净月潭	141	50	0	1	0	0	0
 jingyuxian	靖宇县	145	91	0	1	0	0	0
 jingyuzuo	鲸鱼座	80	0	0	0	0	0	0
+jingzao	经造	80	0	0	0	0	0	0
 jingzaohua	精皂花	97	0	0	2	154	3	0
 jingzeng	敬赠	137	40	0	1	0	0	0
 jingzhaguan	晶闸管	209	205	0	1	0	0	0
@@ -76578,6 +76607,7 @@ kaolapinyinshurufa	考拉拼音输入法	278	0	0	3	27	1	0
 kaolashurufa	考拉输入法	278	0	0	3	27	1	0
 kaole	考了	536	0	0	4	0	0	0
 kaole	靠了	498	40	0	4	0	0	0
+kaole	烤了	80	0	0	0	0	0	0
 kaoliang	考量	225	243	0	1	0	0	0
 kaoliao	铐镣	202	0	0	2	0	0	0
 kaolong	靠拢	250	306	0	1	0	0	0
@@ -82815,6 +82845,7 @@ lianaitiandian	恋爱甜点	77	0	0	1	109	1	0
 lianaiwuyu	恋爱物语	288	0	0	4	27	1	0
 lianaiyouxi	恋爱游戏	77	0	0	1	109	1	0
 lianan	联氨	80	0	0	0	0	0	0
+lianan	连按	80	0	0	0	0	0	0
 lianba	敛巴	80	0	0	0	0	0	0
 lianbai	连败	219	227	0	1	0	0	0
 lianbang	联邦	394	490	0	3	0	0	0
@@ -83771,6 +83802,7 @@ liankong	脸孔	267	347	0	1	0	0	0
 liankongzhongsheji	脸空中射击	93	0	0	1	109	1	0
 liankuwa	连裤袜	137	40	0	1	0	0	0
 lianlang	连廊	248	0	0	1	68	1	0
+lianle	连了	80	0	0	0	0	0	0
 lianlei	连累	249	302	0	1	0	0	0
 lianli	连理	193	166	0	1	0	0	0
 lianlian	练练	528	40	0	4	0	0	0
@@ -84174,6 +84206,7 @@ liaokuo	寥廓	168	109	0	1	0	0	0
 liaolai	聊赖	137	40	0	1	0	0	0
 liaolan	蓼蓝	131	28	0	1	0	0	0
 liaole	了了	272	40	0	2	0	0	0
+liaole	聊了	80	0	0	0	0	0	0
 liaoli	料理	166	391	0	2	154	3	0
 liaoliang	嘹亮	231	258	0	1	0	0	0
 liaoliao	聊聊	555	312	0	4	0	0	0
@@ -99108,6 +99141,7 @@ naojiyebilou	脑脊液鼻漏	102	0	0	2	154	3	0
 naoju	闹剧	232	259	0	1	0	0	0
 naokangtaijiaonang	脑康泰胶囊	1	0	0	1	246	3	0
 naoke	脑壳	247	296	0	1	0	0	0
+naole	闹了	80	0	0	0	0	0	0
 naoli	脑力	211	210	0	1	0	0	0
 naolibaowan	脑力宝丸	1	0	0	1	247	3	0
 naolidaren	脑力达人	77	0	0	1	109	1	0
@@ -101036,6 +101070,7 @@ ningkuai	凝块	80	0	0	0	0	0	0
 ninglang	宁蒗	153	96	0	1	0	0	0
 ninglangxian	宁蒗县	80	0	0	0	0	0	0
 ninglangyizuzizhixian	宁蒗彝族自治县	134	59	0	1	0	0	0
+ningle	拧了	80	0	0	0	0	0	0
 ninglian	凝练	191	162	0	1	0	0	0
 ninglian	凝炼	178	130	0	1	0	0	0
 ningling	宁陵	167	133	0	1	0	0	0
@@ -102926,6 +102961,7 @@ palashijie	帕拉世界	77	0	0	1	109	1	0
 palasidetan	帕拉斯地毯	175	0	0	1	89	1	0
 pale	怕了	528	0	0	4	0	0	0
 pale	趴了	524	0	0	4	0	0	0
+pale	爬了	80	0	0	0	0	0	0
 paleituo	帕累托	242	0	0	3	0	0	0
 paleituofaze	帕累托法则	80	0	0	0	0	0	0
 paleituozuiyou	帕累托最优	80	0	0	0	0	0	0
@@ -103721,6 +103757,7 @@ peijue	配角	226	245	0	1	0	0	0
 peikuan	赔款	266	344	0	1	0	0	0
 peilageniyatongjiqu	佩拉戈尼亚统计区	12	0	0	1	174	2	0
 peilan	佩兰	1	85	0	1	247	3	0
+peile	赔了	80	0	0	0	0	0	0
 peilefurenyouzhebing	赔了夫人又折兵	210	113	0	1	89	1	0
 peili	赔礼	204	192	0	1	0	0	0
 peilian	陪练	175	124	0	1	0	0	0
@@ -107053,6 +107090,7 @@ qianglai'ansuan	羟赖氨酸	114	40	0	2	154	3	0
 qianglaiansuan	羟赖氨酸	114	40	0	2	154	3	0
 qianglang	蜣螂	181	139	0	1	0	0	0
 qiangle	呛了	244	0	0	2	0	0	0
+qiangle	抢了	80	0	0	0	0	0	0
 qianglei	墙肋	175	0	0	1	89	1	0
 qiangleixing	强类型	218	0	0	1	77	1	0
 qiangleizhenyu	强雷阵雨	202	0	0	2	0	0	0
@@ -107414,6 +107452,7 @@ qianlanse	浅蓝色	231	177	0	2	0	0	0
 qianlaxingshiwangmotuoli	牵拉性视网膜脱离	1	0	0	1	247	3	0
 qianle	浅了	530	0	0	4	0	0	0
 qianle	牵了	528	0	0	4	0	0	0
+qianle	签了	80	0	0	0	0	0	0
 qianlei	牵累	202	188	0	1	0	0	0
 qianlemei	签了没	252	0	0	2	0	0	0
 qianli	潜力	622	468	0	4	0	0	0
@@ -116680,6 +116719,7 @@ sailaisidiya	塞莱斯蒂亚	12	0	0	1	174	2	0
 sailaixibu	塞来昔布	1	0	0	1	247	3	0
 sailali'ang	塞拉利昂	82	210	0	1	174	2	0
 sailaliang	塞拉利昂	82	210	0	1	174	2	0
+saile	塞了	80	0	0	0	0	0	0
 saileinuosi	赛勒诺斯	77	0	0	1	109	1	0
 saili'ougong	塞里欧拱	175	0	0	1	89	1	0
 sailie	鳃裂	1	144	0	1	247	3	0
@@ -118490,6 +118530,7 @@ shaijian	筛检	1	0	0	0	340	3	0
 shaijin	晒进	292	0	0	2	0	0	0
 shaikang	筛糠	207	199	0	1	0	0	0
 shaike	晒客	80	0	0	0	0	0	0
+shaile	晒了	80	0	0	0	0	0	0
 shailiedehu	晒裂的葫	165	0	0	1	0	0	0
 shailiedehulu	晒裂的葫芦	176	0	0	1	0	0	0
 shailuotuo	晒骆驼	80	0	0	0	0	0	0
@@ -119723,6 +119764,7 @@ shanlangdangjian	山莨菪碱	1	50	0	1	247	3	0
 shanlanke	山榄科	131	50	0	1	0	0	0
 shanlanxianweng	山蓝仙鹟	80	0	0	0	0	0	0
 shanle	删了	540	40	0	4	0	0	0
+shanle	闪了	80	0	0	0	0	0	0
 shanleba	删了吧	542	0	0	4	0	0	0
 shanlemei	删了没	244	0	0	2	0	0	0
 shanli	山里	333	429	0	2	0	0	0
@@ -127623,6 +127665,7 @@ shuailaishuaiqu	甩来甩去	304	0	0	2	0	0	0
 shuailao	衰老	277	373	0	1	0	0	0
 shuailaoxiangguanfenmibiaoxing	衰老相关分泌表型	102	0	0	2	154	3	0
 shuaile	甩了	532	0	0	4	0	0	0
+shuaile	摔了	80	0	0	0	0	0	0
 shuailian	甩脸	202	0	0	2	0	0	0
 shuailianzi	甩脸子	80	0	0	0	0	0	0
 shuailing	率领	355	594	0	1	0	0	0
@@ -128626,6 +128669,7 @@ shuilanjiao	睡懒觉	137	40	0	1	0	0	0
 shuilao	水牢	165	100	0	1	0	0	0
 shuilaoya	水老鸦	80	0	0	0	0	0	0
 shuile	睡了	540	0	0	4	0	0	0
+shuile	水了	80	0	0	0	0	0	0
 shuilei	水雷	263	337	0	1	0	0	0
 shuilemei	睡了没	248	0	0	2	0	0	0
 shuileng	水冷	131	40	0	1	0	0	0
@@ -132546,6 +132590,7 @@ suokong	锁孔	173	120	0	1	0	0	0
 suokou	锁扣	215	96	0	2	0	0	0
 suokun	所困	498	40	0	4	0	0	0
 suole	缩了	526	0	0	4	0	0	0
+suole	锁了	80	0	0	0	0	0	0
 suolian	锁链	214	216	0	1	0	0	0
 suoliansu	锁链素	97	0	0	2	154	3	0
 suolianzhanji	锁链战记	77	0	0	1	109	1	0
@@ -138348,6 +138393,7 @@ tonglan	统揽	160	91	0	1	0	0	0
 tonglanweng	铜蓝鹟	80	0	0	0	0	0	0
 tongle	痛了	532	0	0	4	0	0	0
 tongle	同乐	251	168	0	2	0	0	0
+tongle	通了	80	0	0	0	0	0	0
 tonglehui	同乐会	131	28	0	1	0	0	0
 tonglei	同类	290	406	0	1	0	0	0
 tongleixiangshi	同类相食	102	0	0	2	154	3	0
@@ -139758,6 +139804,7 @@ tuilamen	推拉门	146	59	0	1	0	0	0
 tuilao	颓老	80	0	0	0	0	0	0
 tuile	推了	526	0	0	4	0	0	0
 tuile	腿了	80	0	0	0	0	0	0
+tuile	退了	80	0	0	0	0	0	0
 tuili	推力	274	365	0	1	0	0	0
 tuili	推理	254	398	0	2	68	1	0
 tuilidianziyouxi	推理电子游戏	80	0	0	0	0	0	0
@@ -139968,6 +140015,7 @@ tulaomao	土老帽	131	28	0	1	0	0	0
 tulaowugong	徒劳无功	220	109	0	1	86	1	0
 tulaowuyi	徒劳无益	223	144	0	1	88	1	0
 tulazhen	图拉真	38	0	0	1	174	2	0
+tule	吐了	80	0	0	0	0	0	0
 tulei	土垒	175	0	0	1	89	1	0
 tuleite	图雷特	199	0	0	2	0	0	0
 tuleiteshizonghezheng	图雷特氏综合症	102	0	0	2	154	3	0
@@ -144594,6 +144642,8 @@ wenlaihepingzhiguo	文莱和平之国	12	0	0	1	174	2	0
 wenlaihepingzhiguo	汶莱和平之国	12	0	0	1	174	2	0
 wenlan	温岚	80	0	0	0	0	0	0
 wenle	稳了	202	0	0	2	0	0	0
+wenle	吻了	80	0	0	0	0	0	0
+wenle	问了	80	0	0	0	0	0	0
 wenli	纹理	235	266	0	1	0	0	0
 wenli	文理	227	249	0	1	0	0	0
 wenlian	文联	239	304	0	1	0	0	0
@@ -145048,6 +145098,8 @@ wodafenggongsi	沃达丰公司	158	127	0	1	0	0	0
 wodaidong	我带动	522	0	0	4	0	0	0
 wodangran	我当然	540	0	0	4	0	0	0
 wodao	卧倒	218	226	0	1	0	0	0
+wodao	我倒	80	0	0	0	0	0	0
+wodaoshi	我倒是	80	0	0	0	0	0	0
 wode	我的	287	0	0	2	0	0	0
 wodediguo	我的帝国	77	0	0	1	109	1	0
 wodeiyou	我得有	532	0	0	4	0	0	0
@@ -152603,6 +152655,7 @@ xielao	偕老	189	156	0	1	0	0	0
 xiele	写了	534	0	0	4	0	0	0
 xiele	谢了	534	0	0	4	0	0	0
 xiele	泄了	202	0	0	2	0	0	0
+xiele	卸了	80	0	0	0	0	0	0
 xieleba	歇了吧	80	0	0	0	0	0	0
 xielehu	蝎了虎	181	0	0	1	0	0	0
 xielehuzi	蝎了虎子	197	0	0	1	0	0	0
@@ -155571,6 +155624,7 @@ xinwenchubanzongshu	新闻出版总署	80	0	0	0	0	0	0
 xinwenfabuhui	新闻发布会	536	0	0	4	0	0	520
 xinwenfayanren	新闻发言人	80	0	0	0	0	0	520
 xinwengao	新闻稿	245	292	0	1	0	0	0
+xinwengao	新文稿	80	0	0	0	0	0	0
 xinwengongzuozhe	新闻工作者	80	0	0	0	0	0	496
 xinwenhuayundong	新文化运动	252	357	0	1	0	0	0
 xinwenjie	新闻界	269	353	0	1	0	0	0
@@ -175804,6 +175858,7 @@ zhalaiteqi	扎赉特旗	131	50	0	1	0	0	0
 zhalan	栅栏	233	262	0	1	0	0	0
 zhalantun	扎兰屯	142	80	0	1	0	0	0
 zhalantunshi	扎兰屯市	137	66	0	1	0	0	0
+zhale	炸了	80	0	0	0	0	0	0
 zhalei	炸雷	212	211	0	1	0	0	0
 zhali	栅篱	80	0	0	0	0	0	0
 zhali'ershi	査理二世	80	0	0	0	0	0	0
@@ -178163,6 +178218,7 @@ zhengke	政客	255	318	0	1	0	0	0
 zhengkuai	整块	553	256	0	4	0	0	0
 zhenglanqi	正蓝旗	219	283	0	1	0	0	0
 zhengle	整了	528	0	0	4	0	0	0
+zhengle	蒸了	80	0	0	0	0	0	0
 zhengli	整理	329	509	0	1	0	0	0
 zhenglian	征敛	80	0	0	0	0	0	0
 zhenglian	正脸	80	0	0	0	0	0	0
@@ -179295,6 +179351,7 @@ zhetuoshi	着脱式	223	0	0	1	0	0	0
 zhewanyi	这玩意	540	0	0	4	0	0	0
 zhewanyir	这玩意儿	536	0	0	4	0	0	422
 zhewei	这位	672	654	0	4	0	0	0
+zhewodaoshi	这我倒是	80	0	0	0	0	0	0
 zhexia	这下	538	0	0	4	0	0	0
 zhexia	遮瑕	202	0	0	2	0	0	0
 zhexiagao	遮瑕膏	124	28	0	1	0	0	0
@@ -188290,6 +188347,7 @@ zuoban	左半	540	0	0	4	0	0	0
 zuoban	坐班	216	105	0	2	0	0	0
 zuoban	做伴	213	213	0	1	0	0	0
 zuoban	作伴	212	211	0	1	0	0	0
+zuobanben	做版本	80	0	0	0	0	0	0
 zuobanfang	坐班房	80	0	0	0	0	0	0
 zuobangyoubi	左膀右臂	178	130	0	1	0	0	0
 zuobanjiechangqiechushu	左半结肠切除术	1	0	0	1	247	3	0

@@ -17916,12 +17916,12 @@ bujinbu	bujinbugu	不今不古	597	209	40	0	1	0	0	0	1	0
 bujinbu	bujinbuman	不紧不慢	482	261	226	0	1	0	85	1	0	1
 bujing	bujinggejia	布景格架	669	175	0	0	1	0	89	1	1	0
 bujing	bujingshen	不精神	640	223	0	0	1	0	0	0	0	1
-bujing	bujingqi	不景气	544	243	288	0	1	0	0	0	0	2
-bujing	bujingyi	不经意	485	253	312	0	1	0	0	0	0	3
-bujing	bujingchuan	捕鲸船	403	158	85	0	1	0	0	0	1	4
-bujing	bujingerzou	不胫而走	470	254	193	0	1	0	84	1	0	5
-bujing	bujingzhitan	不经之谈	387	137	40	0	1	0	0	0	0	6
-bujing	bujingen	不尽根	362	137	40	0	1	0	0	0	0	7
+bujing	bujingyi	不经意	485	253	312	0	1	0	0	0	1	2
+bujing	bujingqi	不景气	544	243	288	0	1	0	0	0	0	3
+bujing	bujingyong	不经用	420	80	0	0	0	0	0	0	1	4
+bujing	bujingchuan	捕鲸船	403	158	85	0	1	0	0	0	1	5
+bujing	bujingerzou	不胫而走	470	254	193	0	1	0	84	1	0	6
+bujing	bujingzhitan	不经之谈	387	137	40	0	1	0	0	0	1	7
 bujinger	bujingerzou	不胫而走	470	254	193	0	1	0	84	1	0	0
 bujingge	bujinggejia	布景格架	669	175	0	0	1	0	89	1	0	0
 bujingyi	bujingyijian	不经意间	260	80	0	0	0	0	0	0	1	0
@@ -38864,7 +38864,7 @@ diaokong	diaokongxulie	调控序列	570	102	0	0	2	0	154	3	0	0
 diaokongxu	diaokongxulie	调控序列	570	102	0	0	2	0	154	3	0	0
 diaolan	diaolanyuqi	雕栏玉砌	619	196	85	0	1	0	91	1	0	0
 diaolanyu	diaolanyuqi	雕栏玉砌	619	196	85	0	1	0	91	1	0	0
-diaole	diaolexialai	掉了下来	10	202	0	0	2	0	0	0	0	0
+diaole	diaolexialai	掉了下来	10	202	0	0	2	0	0	0	1	0
 diaolexia	diaolexialai	掉了下来	10	202	0	0	2	0	0	0	0	0
 diaolian	diaolianzi	掉链子	232	80	0	0	0	0	0	0	0	0
 diaoliang	diaolianghuadong	雕梁画栋	454	237	164	0	1	0	86	1	0	0
@@ -86164,7 +86164,7 @@ jiankupu	jiankupusu	艰苦朴素	459	241	164	0	1	0	85	1	0	0
 jiankuzhuo	jiankuzhuojue	艰苦卓绝	714	265	220	0	1	0	83	1	0	0
 jiankuzhuo	jiankuzhuojue	坚苦卓绝	363	177	40	0	1	0	92	1	0	1
 jianle	jianlezhimadiulexigua	拣了芝麻丢了西瓜	939	168	0	0	1	0	91	1	0	0
-jianle	jianlezhimadiulexigua	捡了芝麻丢了西瓜	58	80	0	0	0	0	0	0	0	1
+jianle	jianlezhimadiulexigua	捡了芝麻丢了西瓜	58	80	0	0	0	0	0	0	1	1
 jianlezhi	jianlezhimadiulexigua	拣了芝麻丢了西瓜	939	168	0	0	1	0	91	1	0	0
 jianlezhi	jianlezhimadiulexigua	捡了芝麻丢了西瓜	58	80	0	0	0	0	0	0	0	1
 jianlezhima	jianlezhimadiulexigua	拣了芝麻丢了西瓜	939	168	0	0	1	0	91	1	0	0
@@ -140689,7 +140689,7 @@ peilageni	peilageniyatongjiqu	佩拉戈尼亚统计区	613	12	0	0	1	0	174	2	0	0
 peilageniya	peilageniyatongjiqu	佩拉戈尼亚统计区	613	12	0	0	1	0	174	2	0	0
 peilageniyatong	peilageniyatongjiqu	佩拉戈尼亚统计区	613	12	0	0	1	0	174	2	0	0
 peilageniyatongji	peilageniyatongjiqu	佩拉戈尼亚统计区	613	12	0	0	1	0	174	2	0	0
-peile	peilefurenyouzhebing	赔了夫人又折兵	499	210	113	0	1	0	89	1	0	0
+peile	peilefurenyouzhebing	赔了夫人又折兵	499	210	113	0	1	0	89	1	1	0
 peilefu	peilefurenyouzhebing	赔了夫人又折兵	499	210	113	0	1	0	89	1	0	0
 peilefuren	peilefurenyouzhebing	赔了夫人又折兵	499	210	113	0	1	0	89	1	0	0
 peilefurenyou	peilefurenyouzhebing	赔了夫人又折兵	499	210	113	0	1	0	89	1	0	0
@@ -145004,7 +145004,7 @@ qianlaxingshi	qianlaxingshiwangmotuoli	牵拉性视网膜脱离	664	1	0	0	1	0	24
 qianlaxingshiwang	qianlaxingshiwangmotuoli	牵拉性视网膜脱离	664	1	0	0	1	0	247	3	0	0
 qianlaxingshiwangmo	qianlaxingshiwangmotuoli	牵拉性视网膜脱离	664	1	0	0	1	0	247	3	0	0
 qianlaxingshiwangmotuo	qianlaxingshiwangmotuoli	牵拉性视网膜脱离	664	1	0	0	1	0	247	3	0	0
-qianle	qianlemei	签了没	280	252	0	0	2	0	0	0	0	0
+qianle	qianlemei	签了没	280	252	0	0	2	0	0	0	1	0
 qianli	qianlizhidi	千里之堤	800	530	66	0	4	0	0	0	1	0
 qianli	qianlizhidikuiyuyixue	千里之堤溃于蚁穴	800	534	0	0	4	0	0	0	1	1
 qianli	qianlizhidihuiyuyixue	千里之堤毁于蚁穴	728	175	0	0	1	0	89	1	1	2
@@ -195326,6 +195326,7 @@ wodafeng	wodafenggongsi	沃达丰公司	302	158	127	0	1	0	0	0	1	0
 wodafenggong	wodafenggongsi	沃达丰公司	302	158	127	0	1	0	0	0	0	0
 wodai	wodaidong	我带动	800	522	0	0	4	0	0	0	0	0
 wodang	wodangran	我当然	1000	540	0	0	4	0	0	0	0	0
+wodao	wodaoshi	我倒是	620	80	0	0	0	0	0	0	1	0
 wode	woderen	我的人	1000	540	0	0	4	0	0	0	1	0
 wode	wodetianne	我的天呐	1000	540	0	0	4	0	0	0	1	1
 wode	wodetian	我的天	867	256	0	0	2	0	0	0	1	2
@@ -209790,6 +209791,7 @@ xinwenfa	xinwenfayanren	新闻发言人	289	80	0	0	0	520	0	0	0	1
 xinwenfabu	xinwenfabuhui	新闻发布会	800	536	0	0	4	520	0	0	0	0
 xinwenfayan	xinwenfayanren	新闻发言人	289	80	0	0	0	520	0	0	0	0
 xinweng	xinwengao	新闻稿	515	245	292	0	1	0	0	0	0	0
+xinweng	xinwengao	新文稿	420	80	0	0	0	0	0	0	0	1
 xinwengong	xinwengongzuozhe	新闻工作者	289	80	0	0	0	496	0	0	0	0
 xinwengongzuo	xinwengongzuozhe	新闻工作者	289	80	0	0	0	496	0	0	0	0
 xinwenhua	xinwenhuayundong	新文化运动	430	252	357	0	1	0	0	0	0	0
@@ -241131,6 +241133,8 @@ zhetiao	zhetiaotuiwen	这条推文	800	528	0	0	4	0	0	0	1	0
 zhetiaotui	zhetiaotuiwen	这条推文	800	528	0	0	4	0	0	0	0	0
 zhetuo	zhetuoshi	着脱式	640	223	0	0	1	0	0	0	0	0
 zhewan	zhewanyi	这玩意	1000	540	0	0	4	0	0	0	0	0
+zhewo	zhewodaoshi	这我倒是	420	80	0	0	0	0	0	0	0	0
+zhewodao	zhewodaoshi	这我倒是	420	80	0	0	0	0	0	0	0	0
 zhexia	zhexiazi	这下子	453	214	215	0	1	0	0	0	1	0
 zhexia	zhexiagao	遮瑕膏	193	124	28	0	1	0	0	0	1	1
 zhexian	zhexiantu	折线图	379	137	40	0	1	0	0	0	1	0
@@ -254486,7 +254490,8 @@ zuoai	zuo'ai'ershizheng	佐埃二氏症	640	102	0	0	2	0	154	3	0	0
 zuoaier	zuo'ai'ershizheng	佐埃二氏症	640	102	0	0	2	0	154	3	0	0
 zuoaiershi	zuo'ai'ershizheng	佐埃二氏症	640	102	0	0	2	0	154	3	0	0
 zuoban	zuobanjiechangqiechushu	左半结肠切除术	630	1	0	0	1	0	247	3	1	0
-zuoban	zuobanfang	坐班房	232	80	0	0	0	0	0	0	1	1
+zuoban	zuobanben	做版本	380	80	0	0	0	0	0	0	0	1
+zuoban	zuobanfang	坐班房	232	80	0	0	0	0	0	0	1	2
 zuobang	zuobangyoubi	左膀右臂	444	178	130	0	1	0	0	0	0	0
 zuobangyou	zuobangyoubi	左膀右臂	444	178	130	0	1	0	0	0	0	0
 zuobanjie	zuobanjiechangqiechushu	左半结肠切除术	630	1	0	0	1	0	247	3	0	0
