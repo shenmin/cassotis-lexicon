@@ -13266,3 +13266,46 @@
 新文稿	新文稿	0.420	xinwengao	exact_rank_no_contains
 长按	長按	0.680	changan	exact_rank_no_contains
 连按	連按	0.500	lianan	exact_rank_no_contains
+
+# Productive ke + action/property phrases, 2026-09-17.
+# Common operations outrank rare fragments, not established unrelated homophones.
+# Exact lexical ranks do not manufacture substring popularity or LM transitions.
+可写	可寫	0.680	kexie	exact_rank_no_contains
+可读	可讀	0.620	kedu	exact_rank_no_contains
+可摸	可摸	0.300	kemo	exact_rank_no_contains
+可拍	可拍	0.400	kepai	exact_rank_no_contains
+可开	可開	0.520	kekai	exact_rank_no_contains
+可关	可關	0.380	keguan	exact_rank_no_contains
+可拉	可拉	0.380	kela	exact_rank_no_contains
+可拖	可拖	0.360	ketuo	exact_rank_no_contains
+可脱	可脫	0.260	ketuo	exact_rank_no_contains
+可屈	可屈	0.280	kequ	exact_rank_no_contains
+可伸	可伸	0.380	keshen	exact_rank_no_contains
+可死	可死	0.080	kesi	exact_rank_no_contains
+可活	可活	0.260	kehuo	exact_rank_no_contains
+可火	可火	0.160	kehuo	exact_rank_no_contains
+可成	可成	0.180	kecheng	exact_rank_no_contains
+可败	可敗	0.100	kebai	exact_rank_no_contains
+可会	可會	0.080	kehui	exact_rank_no_contains
+可来	可來	0.360	kelai	exact_rank_no_contains
+可抬	可抬	0.260	ketai	exact_rank_no_contains
+可高	可高	0.160	kegao	exact_rank_no_contains
+可矮	可矮	0.120	keai	exact_rank_no_contains
+可黑	可黑	0.160	kehei	exact_rank_no_contains
+可白	可白	0.180	kebai	exact_rank_no_contains
+可大	可大	0.240	keda	exact_rank_no_contains
+可小	可小	0.200	kexiao	exact_rank_no_contains
+可听	可聽	0.400	keting	exact_rank_no_contains
+可尝	可嘗	0.200	kechang	exact_rank_no_contains
+可跑	可跑	0.340	kepao	exact_rank_no_contains
+可测	可測	0.500	kece	exact_rank_no_contains
+可睡	可睡	0.260	keshui	exact_rank_no_contains
+可抱	可抱	0.220	kebao	exact_rank_no_contains
+可爆	可爆	0.180	kebao	exact_rank_no_contains
+可保	可保	0.360	kebao	exact_rank_no_contains
+可吃	可吃	0.620	kechi	exact_rank_no_contains
+可喝	可喝	0.560	kehe	exact_rank_no_contains
+可减	可減	0.380	kejian	exact_rank_no_contains
+可装	可裝	0.520	kezhuang	exact_rank_no_contains
+可拆	可拆	0.480	kechai	exact_rank_no_contains
+可组	可組	0.360	kezu	exact_rank_no_contains

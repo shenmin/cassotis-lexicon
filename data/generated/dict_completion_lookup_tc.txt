@@ -110517,8 +110517,8 @@ kecai	kecaixing	可采性	246	80	0	0	0	0	0	0	1	0
 kecao	kecaozuoquan	可操左券	597	209	40	0	1	0	0	0	0	0
 kecao	kecaozuo	可操左	556	181	0	0	1	0	0	0	0	1
 kecaozuo	kecaozuoquan	可操左券	597	209	40	0	1	0	0	0	1	0
-kece	keceshixingsheji	可測試性設計	778	194	0	0	1	0	84	1	0	0
-kece	keceshixing	可測試性	700	214	0	0	1	0	78	1	0	1
+kece	keceshixingsheji	可測試性設計	778	194	0	0	1	0	84	1	1	0
+kece	keceshixing	可測試性	700	214	0	0	1	0	78	1	1	1
 kecen	kecenqingongdian	科岑欽宮殿	660	145	0	0	1	0	98	1	0	0
 kecenqin	kecenqingongdian	科岑欽宮殿	660	145	0	0	1	0	98	1	0	0
 kecenqingong	kecenqingongdian	科岑欽宮殿	660	145	0	0	1	0	98	1	0	0
@@ -110603,8 +110603,8 @@ kedou	kedoudewei	蝌蚪的尾	523	165	0	0	1	0	0	0	1	1
 kedoude	kedoudeweiba	蝌蚪的尾巴	566	176	0	0	1	0	0	0	0	0
 kedoude	kedoudewei	蝌蚪的尾	523	165	0	0	1	0	0	0	0	1
 kedoudewei	kedoudeweiba	蝌蚪的尾巴	566	176	0	0	1	0	0	0	1	0
-kedu	kedupan	刻度盤	419	163	96	0	1	0	0	0	1	0
-kedu	keduxing	可讀性	487	213	214	0	1	0	0	0	0	1
+kedu	keduxing	可讀性	487	213	214	0	1	0	0	0	1	0
+kedu	kedupan	刻度盤	419	163	96	0	1	0	0	0	1	1
 keduan	keduanxing	可煅性	635	223	0	0	1	0	0	0	0	0
 keduo	keduotang	殼多糖	510	97	0	0	2	0	154	3	0	0
 keer	ke'ersakefuzonghezheng	科爾薩科夫綜合症	898	102	0	0	2	0	154	3	1	0

@@ -76853,6 +76853,7 @@ ke'ersidiqi	克尔斯蒂奇	153	113	0	1	0	0	0
 ke'ertexiagu	柯尔特峡谷	93	0	0	1	109	1	0
 keai	可爱	393	443	0	2	0	0	0
 keai	可哀	214	40	0	1	0	0	0
+keai	可矮	80	0	0	0	0	0	0
 keaidao	可爱岛	80	0	0	0	0	0	0
 keaide	可爱的	536	0	0	4	0	0	0
 keaixiang	可哀想	223	0	0	1	0	0	0
@@ -76860,6 +76861,8 @@ keaixiang	可哀相	223	0	0	1	0	0	0
 keaixingqiu	可爱星球	77	0	0	1	109	1	0
 keba	渴吧	256	0	0	2	0	0	0
 keba	磕巴	207	28	0	2	0	0	0
+kebai	可白	80	0	0	0	0	0	0
+kebai	可败	80	0	0	0	0	0	0
 keban	刻板	218	226	0	1	0	0	0
 keban	科班	207	199	0	1	0	0	0
 keban	刻版	137	40	0	1	0	0	0
@@ -76871,6 +76874,9 @@ kebanxingyundongzhang'ai	刻板性运动障碍	102	0	0	2	154	3	0
 kebanyinxiang	刻板印象	102	0	0	2	154	3	0
 kebanyundongzhang'ai	刻板运动障碍	102	0	0	2	154	3	0
 kebanzheng	刻板症	97	0	0	2	154	3	0
+kebao	可保	80	0	0	0	0	0	0
+kebao	可抱	80	0	0	0	0	0	0
+kebao	可爆	80	0	0	0	0	0	0
 kebaya	可巴雅	223	0	0	1	0	0	0
 kebei	可悲	237	272	0	1	0	0	0
 keben	课本	277	372	0	1	0	0	0
@@ -76913,16 +76919,20 @@ kecang	客舱	194	168	0	1	0	0	0
 kecaozuo	可操左	181	0	0	1	0	0	0
 kecaozuoquan	可操左券	209	40	0	1	0	0	0
 kecaxie	可擦写	80	0	0	0	0	0	0
+kece	可测	80	0	0	0	0	0	0
 kecenqingongdian	科岑钦宫殿	145	0	0	1	98	1	0
 keceshixing	可测试性	214	0	0	1	78	1	0
 keceshixingsheji	可测试性设计	194	0	0	1	84	1	0
+kechai	可拆	80	0	0	0	0	0	0
 kechang	客场	290	405	0	1	0	0	0
 kechang	科场	248	218	0	2	0	0	0
+kechang	可尝	80	0	0	0	0	0	0
 kechaxunleixing	可查询类型	187	0	0	1	86	1	0
 keche	客车	285	393	0	1	0	0	0
 kechen	砢碜	80	0	0	0	0	0	0
 kechen	磕碜	80	0	0	0	0	0	0
 kecheng	课程	374	546	0	2	0	0	0
+kecheng	可成	80	0	0	0	0	0	0
 kechengbiao	课程表	137	40	0	1	0	0	0
 kechengfuzhuhuodong	课程辅助活动	283	0	0	3	27	1	0
 kechengqu	柯城区	124	28	0	1	0	0	0
@@ -76930,6 +76940,7 @@ kechengxingshu	颏成形术	1	40	0	1	247	3	0
 kechengzhiji	可乘之机	282	264	0	1	82	1	0
 kechengzhixi	可乘之隙	179	40	0	1	92	1	0
 kechi	可耻	244	290	0	1	0	0	0
+kechi	可吃	80	0	0	0	0	0	0
 kechixu	可持续	80	0	0	0	0	0	0
 kechixufazhan	可持续发展	102	0	0	2	154	3	520
 kechongxian	可重现	211	0	0	1	79	1	0
@@ -76944,6 +76955,7 @@ kechuxing	可除性	223	0	0	1	0	0	0
 kecihuati	可磁化体	80	0	0	0	0	0	0
 keciwo'erde	科茨沃尔德	80	0	0	0	0	0	0
 keda	科达	325	144	426	2	0	0	0
+keda	可大	80	0	0	0	0	0	0
 kedai	可待	202	0	0	1	0	0	0
 kedaibiao	课代表	202	0	0	2	0	0	0
 kedaiyin	可待因	1	40	0	1	240	3	0
@@ -76974,6 +76986,7 @@ kedoudewei	蝌蚪的尾	165	0	0	1	0	0	0
 kedoudeweiba	蝌蚪的尾巴	176	0	0	1	0	0	0
 kedu	刻度	274	242	0	2	0	0	0
 kedu	刻毒	190	160	0	1	0	0	0
+kedu	可读	80	0	0	0	0	0	0
 keduanxing	可煅性	223	0	0	1	0	0	0
 kedui	客队	244	288	0	1	0	0	0
 keduotang	壳多糖	109	40	0	2	154	3	0
@@ -77014,6 +77027,7 @@ kefuzhongxin	客服中心	102	0	0	2	154	3	0
 kegai	可改	526	0	0	4	0	0	0
 kegan	氪肝	80	0	0	0	0	0	0
 keganliyankeli	克感利咽颗粒	1	0	0	1	247	3	0
+kegao	可高	80	0	0	0	0	0	0
 kege	可歌	176	0	0	1	0	0	0
 kegebo	克格勃	168	151	0	1	0	0	0
 kegeke	可歌可	181	0	0	1	0	0	0
@@ -77030,6 +77044,7 @@ keguai	可怪	80	0	0	0	0	0	0
 keguan	客观	413	551	0	3	0	0	0
 keguan	可观	273	361	0	1	0	0	0
 keguan	客官	240	279	0	1	0	0	0
+keguan	可关	80	0	0	0	0	0	0
 keguanshijie	客观世界	80	0	0	0	0	0	520
 keguanshishi	客观事实	272	40	0	2	0	0	0
 keguanweixin	客观唯心	211	40	0	2	0	0	0
@@ -77048,6 +77063,8 @@ kehan	可汗	235	267	0	1	0	0	0
 kehao	可好	348	304	0	1	0	0	0
 kehaoti	柯浩体	97	0	0	2	154	3	0
 kehatebianjiangqu	科哈特边疆区	12	0	0	1	174	2	0
+kehe	可喝	80	0	0	0	0	0	0
+kehei	可黑	80	0	0	0	0	0	0
 kehen	可恨	237	272	0	1	0	0	0
 kehen	刻痕	158	85	0	1	0	0	0
 kehenzhirenbiyoukelianzhichu	可恨之人必有可怜之处	202	0	0	2	0	0	0
@@ -77073,11 +77090,14 @@ kehufuwubu	客户服务部	80	0	0	0	0	0	0
 kehufuwuqi	客户服务器	131	28	0	1	0	0	0
 kehuguanxi	客户关系	272	40	0	2	0	0	520
 kehui	可回	202	0	0	1	0	0	0
+kehui	可会	80	0	0	0	0	0	0
 kehuishou	可回收	235	40	0	1	0	0	0
 kehuisu	可回溯	223	0	0	1	0	0	0
 kehuji	客户机	186	149	0	1	0	0	0
 kehujiruanjian	客户机软件	80	0	0	0	0	0	0
 kehunqi	可婚期	223	0	0	1	0	0	0
+kehuo	可活	80	0	0	0	0	0	0
+kehuo	可火	80	0	0	0	0	0	0
 kehuqun	客户群	538	168	0	4	0	0	0
 kehutepeike	科胡特佩克	12	0	0	1	174	2	0
 kehuyingyong	客户应用	80	0	0	0	0	0	0
@@ -77093,6 +77113,7 @@ kejiahua	客家话	137	40	0	1	0	0	0
 kejian	可见	338	538	0	1	0	0	0
 kejian	课件	194	168	0	1	0	0	0
 kejian	课间	178	130	0	1	0	0	0
+kejian	可减	80	0	0	0	0	0	0
 kejiancao	课间操	152	73	0	1	0	0	0
 kejiangjiesuliao	可降解塑料	102	0	0	2	154	3	0
 kejianguang	可见光	248	299	0	1	0	0	0
@@ -77148,6 +77169,7 @@ kejuepiao	可决票	80	0	0	0	0	0	0
 kejukaoshi	科举考试	137	40	0	1	0	0	0
 kejuzhi	科举制	198	177	0	1	0	0	0
 keka	可卡	202	0	0	1	0	0	0
+kekai	可开	80	0	0	0	0	0	0
 kekan	可看	137	40	0	1	0	0	0
 kekao	可靠	353	487	0	1	0	0	0
 kekao	科考	267	219	0	2	0	0	0
@@ -77197,10 +77219,12 @@ kekuozhanxing	可扩展性	253	91	0	1	75	1	0
 kekuozhanyuyan	可扩展语言	191	0	0	1	85	1	0
 kekuzuanyan	刻苦钻研	137	40	0	1	0	0	0
 kela	克拉	353	357	0	3	0	0	0
+kela	可拉	80	0	0	0	0	0	0
 kelabobing	克拉伯病	102	0	0	2	154	3	0
 kelacijinliu	克拉茨金瘤	102	0	0	2	154	3	0
 kelafuqiuke	克拉夫丘克	137	66	0	1	0	0	0
 kelai	克莱	162	120	0	1	0	0	0
+kelai	可来	80	0	0	0	0	0	0
 kelai'er	克莱尔	161	136	0	1	0	0	0
 kelai'erdexiangji	克莱尔的相机	278	0	0	3	27	1	0
 kelai'erjiangbei	科莱尔奖杯	283	0	0	3	27	1	0
@@ -77489,6 +77513,7 @@ kemianshisishi	克勉十四世	38	0	0	1	174	2	0
 kemianshiyishi	克勉十一世	38	0	0	1	174	2	0
 keming	科名	137	40	0	1	0	0	0
 kemingguan	刻命馆	62	0	0	1	109	1	0
+kemo	可摸	80	0	0	0	0	0	0
 kemoduolong	科莫多龙	80	0	0	0	0	0	0
 kemoluo	科摩罗	70	205	0	1	174	2	0
 kemu	科目	302	436	0	1	0	0	0
@@ -77599,8 +77624,10 @@ kenya	肯雅	1	0	0	1	174	2	0
 kenyinggutou	啃硬骨头	197	0	0	1	83	1	0
 kenzhi	垦殖	229	253	0	1	0	0	0
 kepa	可怕	329	510	0	1	0	0	0
+kepai	可拍	80	0	0	0	0	0	0
 kepaishiyou	壳牌石油	199	0	0	2	0	0	0
 kepaishiyougongsi	壳牌石油公司	142	80	0	1	0	0	0
+kepao	可跑	80	0	0	0	0	0	0
 kepei'er	科佩尔	124	28	0	1	0	0	0
 kepeier	科佩尔	124	28	0	1	0	0	0
 kepeng	磕碰	181	139	0	1	0	0	0
@@ -77630,6 +77657,7 @@ keqiu	渴求	229	253	0	1	0	0	0
 keqiu	苛求	218	226	0	1	0	0	0
 kequ	可去	266	40	0	1	0	0	0
 kequ	可取	261	332	0	1	0	0	0
+kequ	可屈	80	0	0	0	0	0	0
 kequankedian	可圈可点	186	149	0	1	0	0	0
 kequde	可去的	223	0	0	1	0	0	0
 kequn	客群	80	0	0	0	0	0	0
@@ -77681,6 +77709,7 @@ keshaqibingdu	柯沙奇病毒	80	0	0	0	0	0	0
 keshe	课设	202	0	0	2	0	0	0
 kesheji	颏舌肌	1	0	0	1	247	3	0
 keshen	可身	137	40	0	1	0	0	0
+keshen	可伸	80	0	0	0	0	0	0
 keshenke	克什克	242	0	0	3	0	0	0
 keshenketeng	克什克腾	1	0	0	1	245	3	0
 keshenmi'erdequ	克什米尔地区	162	139	0	1	0	0	427
@@ -77712,6 +77741,7 @@ keshizonghezheng	克氏综合症	102	0	0	2	154	3	0
 keshou	恪守	250	305	0	1	0	0	0
 keshu	可数	182	141	0	1	0	0	0
 keshui	瞌睡	284	276	0	2	0	0	0
+keshui	可睡	80	0	0	0	0	0	0
 keshuichong	瞌睡虫	160	91	0	1	0	0	0
 keshuizheng	渴睡症	97	0	0	2	154	3	0
 keshuji	可数集	80	0	0	0	0	0	0
@@ -77722,6 +77752,7 @@ keshuoshi	可说是	366	356	0	2	0	0	0
 keshuqin	柯淑勤	80	0	0	0	0	0	0
 kesi	缂丝	194	168	0	1	0	0	0
 kesi	客死	187	151	0	1	0	0	0
+kesi	可死	80	0	0	0	0	0	0
 kesimojiudian	科斯莫酒店	145	0	0	1	98	1	0
 kesiqianzi	克丝钳子	137	40	0	1	0	0	0
 kesiqiushenkeqiu	柯斯丘什科丘	145	0	0	1	98	1	0
@@ -77748,6 +77779,7 @@ kesuwu	可塑物	223	0	0	1	0	0	0
 kesuxing	可塑性	286	204	0	1	0	0	0
 kesuya	科素亚	1	0	0	1	247	3	0
 keta	克他	202	0	0	1	0	0	0
+ketai	可抬	80	0	0	0	0	0	0
 ketaming	克他命	223	0	0	1	0	0	0
 ketan	可叹	220	230	0	1	0	0	0
 ketan	咳痰	1	153	0	1	247	3	0
@@ -77766,6 +77798,7 @@ keti	可体	141	50	0	1	0	0	0
 ketiao	可调	222	236	0	1	0	0	0
 ketijiegou	壳体结构	175	0	0	1	89	1	0
 keting	客厅	298	425	0	1	0	0	0
+keting	可听	80	0	0	0	0	0	0
 ketingbing	克汀病	1	124	0	1	247	3	0
 ketingxinhao	可聴信号	283	0	0	3	27	1	0
 ketingxinhaopan	可聴信号盘	283	0	0	3	27	1	0
@@ -77775,6 +77808,8 @@ ketong	可通	202	0	0	1	0	0	0
 ketongyue	可通约	223	0	0	1	0	0	0
 ketou	磕头	346	463	0	2	0	0	0
 ketourudaosuan	磕头如捣蒜	168	109	0	1	0	0	0
+ketuo	可拖	80	0	0	0	0	0	0
+ketuo	可脱	80	0	0	0	0	0	0
 ketuo	骒驼	80	0	0	0	0	0	0
 ketuominglou	科托明楼	145	0	0	1	98	1	0
 ketuonu	科托努	166	144	0	1	0	0	0
@@ -77817,9 +77852,11 @@ kexiangerzhi	可想而知	320	374	0	1	81	1	0
 kexiangxiang	可想像	223	0	0	1	0	0	0
 kexianzhaolu	溘先朝露	137	40	0	1	0	0	0
 kexiao	可笑	292	410	0	1	0	0	0
+kexiao	可小	80	0	0	0	0	0	0
 kexiaoyu	柯小玉	53	0	0	1	170	2	0
 kexie	刻写	170	113	0	1	0	0	0
 kexie	咳血	130	158	0	2	154	3	0
+kexie	可写	80	0	0	0	0	0	0
 kexieshishengxiangping	可携式圣像屏	175	0	0	1	89	1	0
 kexifenbu	柯西分布	202	0	0	2	0	0	0
 kexigai	磕膝盖	80	0	0	0	0	0	0
@@ -77997,6 +78034,7 @@ kezhong	刻钟	248	66	0	2	0	0	0
 kezhongfuxing	可重复性	117	50	0	2	154	3	0
 kezhongruhanshu	可重入函数	207	0	0	1	80	1	0
 kezhouqiujian	刻舟求剑	297	100	0	2	68	1	0
+kezhuang	可装	80	0	0	0	0	0	0
 kezhuangzhi	柯壮志	53	0	0	1	170	2	0
 kezhuanrang	可转让	80	0	0	0	0	0	0
 kezhuanrangzhengquan	可转让证券	80	0	0	0	0	0	0
@@ -78013,6 +78051,7 @@ kezilesu	克孜勒苏	258	50	0	3	0	0	0
 kezilesuhe	克孜勒苏河	80	0	0	0	0	0	0
 kezilesukeerkezizizhizhou	克孜勒苏柯尔克孜自治州	147	96	0	1	0	0	416
 kezilesuzhou	克孜勒苏州	80	0	0	0	0	0	0
+kezu	可组	80	0	0	0	0	0	0
 kezun	可尊	202	0	0	1	0	0	0
 kezun	恪遵	80	0	0	0	0	0	0
 kezunjing	可尊敬	235	40	0	1	0	0	0

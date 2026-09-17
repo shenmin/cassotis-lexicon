@@ -77957,12 +77957,15 @@ ke'ersidiqi	克爾斯蒂奇	299
 ke'ertexiagu	柯爾特峽谷	613
 keai	可愛	914
 keai	可哀	494
+keai	可矮	120	no_contains
 keaide	可愛的	800
 keaixiang	可哀相	641
 keaixiang	可哀想	639
 keaixingqiu	可愛星球	538
 keba	渴吧	280
 keba	磕巴	10
+kebai	可白	180	no_contains
+kebai	可敗	100	no_contains
 keban	刻板	451
 keban	刻版	447
 keban	科班	345
@@ -77974,6 +77977,9 @@ kebanxingyundongzhang'ai	刻板性運動障礙	700
 kebanyinxiang	刻板印象	570
 kebanyundongzhang'ai	刻板運動障礙	700
 kebanzheng	刻板症	500
+kebao	可保	360	no_contains
+kebao	可抱	220	no_contains
+kebao	可爆	180	no_contains
 kebaya	可巴雅	640
 kebei	可悲	440
 keben	課本	493
@@ -78016,15 +78022,19 @@ kecang	客艙	384
 kecaozuo	可操左	556
 kecaozuoquan	可操左券	597
 kecaxie	可擦寫	232
+kece	可測	500	no_contains
 kecenqingongdian	科岑欽宮殿	660
 keceshixing	可測試性	700
 keceshixingsheji	可測試性設計	778
+kechai	可拆	480	no_contains
 kechang	客場	248
+kechang	可嘗	200	no_contains
 kechang	科場	10
 kechaxunleixing	可查詢類型	724
 keche	客車	451
 kechen	磕磣	1
 kecheng	課程	1000
+kecheng	可成	180	no_contains
 kechengbiao	課程表	379
 kechengfuzhuhuodong	課程輔助活動	831
 kechengqu	柯城區	193
@@ -78032,6 +78042,7 @@ kechengxingshu	頦成形術	540
 kechengzhiji	可乘之機	495
 kechengzhixi	可乘之隙	619
 kechi	可恥	992
+kechi	可吃	620	no_contains
 kechixu	可持續	232
 kechixufazhan	可持續發展	640
 kechuan	客串	402
@@ -78045,6 +78056,7 @@ kechuxing	可除性	640
 kecihuati	可磁化體	260
 keciwo'erde	科茨沃爾德	289
 keda	科達	737
+keda	可大	240	no_contains
 kedai	可待	521
 kedaibiao	課代表	10
 kedaiyin	可待因	688
@@ -78073,6 +78085,7 @@ kedongyu	可動域	500
 kedou	蝌蚪	1000
 kedoudewei	蝌蚪的尾	523
 kedoudeweiba	蝌蚪的尾巴	566
+kedu	可讀	620	no_contains
 kedu	刻度	516
 kedu	刻毒	273
 keduanxing	可煅性	635
@@ -78116,6 +78129,7 @@ kefuzhongxin	客服中心	570
 kegai	可改	700
 kegan	氪肝	428
 keganliyankeli	克感利嚥顆粒	664
+kegao	可高	160	no_contains
 kege	可歌	473
 kegebo	克格勃	241
 kegeke	可歌可	556
@@ -78130,6 +78144,7 @@ kegu	刻骨	371
 keguai	可怪	198
 keguan	客觀	1000
 keguan	可觀	802
+keguan	可關	380	no_contains
 keguan	客官	42
 keguanshijie	客觀世界	260
 keguanshishi	客觀事實	280
@@ -78150,6 +78165,8 @@ kehan	可汗	439
 kehao	可好	640
 kehaoti	柯浩體	500
 kehatebianjiangqu	科哈特邊疆區	691
+kehe	可喝	560	no_contains
+kehei	可黑	160	no_contains
 kehen	可恨	987
 kehen	刻痕	1
 kehenzhirenbiyoukelianzhichu	可恨之人必有可憐之處	10
@@ -78175,12 +78192,15 @@ kehufuwubu	客戶服務部	289
 kehufuwuqi	客戶服務器	373
 kehuguanxi	客戶關係	280
 kehui	可回	521
+kehui	可會	80	no_contains
 kehuishou	可回收	640
 kehuisu	可回溯	640
 kehuji	客戶機	594
 kehujiruanjian	客戶機軟件	289
 kehuleiwu	刻鵠類鶩	383
 kehunqi	可婚期	640
+kehuo	可活	260	no_contains
+kehuo	可火	160	no_contains
 kehuqun	客戶群	800
 kehutepeike	科胡特佩克	639
 kehuyingyong	客戶應用	260
@@ -78193,6 +78213,7 @@ kejia	客家	426
 kejia	可嘉	1
 kejiahua	客家話	361
 kejian	可見	1000
+kejian	可減	380	no_contains
 kejian	課間	1
 kejiancao	課間操	404
 kejiangjiesuliao	可降解塑料	640
@@ -78247,6 +78268,7 @@ kejuepiao	可決票	232
 kejukaoshi	科舉考試	405
 kejuzhi	科舉制	456
 keka	可卡	521
+kekai	可開	520	no_contains
 kekan	可看	412
 kekao	可靠	1000
 kekao	科考	1
@@ -78296,9 +78318,11 @@ kekuozhanxing	可擴展性	741
 kekuozhanyuyan	可擴展語言	728
 kekuzuanyan	刻苦鑽研	405
 kela	克拉	813
+kela	可拉	380	no_contains
 kelabobing	克拉伯病	570
 kelacijinliu	克拉茨金瘤	640
 kelafuqiuke	克拉夫丘克	288
+kelai	可來	360	no_contains
 kelai	克萊	228
 kelai'er	克萊爾	223
 kelai'erdexiangji	克萊爾的相機	811
@@ -78587,6 +78611,7 @@ kemianshisishi	克勉十四世	587
 kemianshiyishi	克勉十一世	587
 keming	科名	319
 kemingguan	刻命館	460
+kemo	可摸	300	no_contains
 kemoduolong	科莫多龍	260
 kemoluo	科摩羅	505
 kemu	科目	941
@@ -78700,8 +78725,10 @@ kenya	肯亞	97
 kenyinggutou	啃硬骨頭	655
 kenzhi	墾殖	435
 kepa	可怕	520
+kepai	可拍	400	no_contains
 kepaishiyou	殻牌石油	573
 kepaishiyougongsi	殻牌石油公司	322
+kepao	可跑	340	no_contains
 kepei'er	科佩爾	193
 kepeier	科佩爾	193
 kepeng	磕碰	399
@@ -78731,6 +78758,7 @@ keqiu	渴求	709
 keqiu	苛求	669
 kequ	可去	960
 kequ	可取	742
+kequ	可屈	280	no_contains
 kequankedian	可圈可點	452
 kequde	可去的	640
 kequn	客羣	198
@@ -78784,6 +78812,7 @@ keshaqibingdu	柯沙奇病毒	287
 keshe	課設	10
 kesheji	頦舌肌	470
 keshen	可身	467
+keshen	可伸	380	no_contains
 keshenke	克什克	540
 keshenketeng	克什克騰	540
 keshenmi'erdequ	克什米爾地區	334
@@ -78814,6 +78843,7 @@ keshizonghezheng	克氏綜合征	320
 keshou	恪守	448
 keshu	可數	385
 keshui	瞌睡	497
+keshui	可睡	260	no_contains
 keshuichong	瞌睡蟲	407
 keshuizheng	渴睡症	500
 keshuji	可數集	232
@@ -78821,6 +78851,7 @@ keshumingci	可數名詞	387
 keshuoshi	可說是	280
 kesi	客死	560
 kesi	緙絲	249
+kesi	可死	80	no_contains
 kesimojiudian	科斯莫酒店	660
 kesiqianzi	克絲鉗子	405
 kesiqiushenkeqiu	柯斯丘什科丘	660
@@ -78850,6 +78881,7 @@ kesuwu	可塑物	640
 kesuxing	可塑性	680
 kesuya	科素亞	470
 keta	克他	521
+ketai	可抬	260	no_contains
 ketaming	克他命	640
 ketan	可嘆	631
 ketan	咳痰	383
@@ -78867,6 +78899,7 @@ keti	客體	122
 ketiao	可調	441
 ketijiegou	殼體結構	946
 keting	客廳	457
+keting	可聽	400	no_contains
 ketingbing	克汀病	470
 ketingxinhao	可聴信號	705
 ketingxinhaopan	可聴信號盤	765
@@ -78876,6 +78909,8 @@ ketong	可通	521
 ketongyue	可通約	620
 ketou	磕頭	523
 ketourudaosuan	磕頭如搗蒜	466
+ketuo	可拖	360	no_contains
+ketuo	可脫	260	no_contains
 ketuo	騍駝	204
 ketuominglou	科托明樓	600
 ketuonu	科托努	240
@@ -78919,7 +78954,9 @@ kexiangerzhi	可想而知	629
 kexiangxiang	可想像	640
 kexianzhaolu	溘先朝露	387
 kexiao	可笑	480
+kexiao	可小	200	no_contains
 kexiaoyu	柯小玉	458
+kexie	可寫	680	no_contains
 kexie	咳血	440
 kexie	刻寫	1
 kexieshishengxiangping	可攜式聖像屏	760
@@ -79099,6 +79136,7 @@ kezhongfuxing	可重複性	818
 kezhongfuxing	可重復性	250
 kezhongruhanshu	可重入函數	764
 kezhouqiujian	刻舟求劍	775
+kezhuang	可裝	520	no_contains
 kezhuangzhi	柯壯志	453
 kezhuanrang	可轉讓	232
 kezhuanrangzhengquan	可轉讓證券	289
@@ -79116,6 +79154,7 @@ kezilesuhe	克孜勒囌河	100
 kezilesukeerkezizizhizhou	克孜勒蘇柯爾克孜自治州	416
 kezilesukeerkezizizhizhou	克孜勒囌柯爾克孜自治州	356
 kezilesuzhou	克孜勒囌州	172
+kezu	可組	360	no_contains
 kezun	可尊	963
 kezunjing	可尊敬	640
 kezuo	可做	992
