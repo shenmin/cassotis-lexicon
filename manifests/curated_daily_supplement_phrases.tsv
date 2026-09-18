@@ -13309,3 +13309,10 @@
 可装	可裝	0.520	kezhuang	exact_rank_no_contains
 可拆	可拆	0.480	kechai	exact_rank_no_contains
 可组	可組	0.360	kezu	exact_rank_no_contains
+
+# Cryptographic keys: retain existing readings and accept yao/yue, 2026-09-18.
+# Explicit lexical aliases only; do not rewrite unrelated words containing yao/yue.
+公钥	公鑰	0.420	gongyue	exact_rank
+公钥	公鑰	0.420	gongyao	exact_rank
+私钥	私鑰	0.379	siyue	exact_rank
+密钥	密鑰	0.280	miyao	exact_rank
