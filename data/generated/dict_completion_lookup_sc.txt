@@ -149629,12 +149629,12 @@ qiushui	qiushuixian	秋水仙	629	242	0	0	3	0	0	0	1	0
 qiushui	qiushuixianjianpian	秋水仙碱片	610	1	0	0	1	0	247	3	1	1
 qiushui	qiushuixianjian	秋水仙碱	540	5	105	0	1	0	245	3	1	2
 qiushui	qiushuiyiren	秋水伊人	525	185	40	0	1	0	90	1	1	3
-qiushui	qiushuigongzhangtianyise	秋水共长天一色	451	146	59	0	1	0	0	0	1	4
+qiushui	qiushuigongchangtianyise	秋水共长天一色	451	146	59	0	1	0	0	0	1	4
 qiushui	qiushuixiansu	秋水仙素	249	128	40	0	1	0	0	0	1	5
-qiushuigong	qiushuigongzhangtianyise	秋水共长天一色	451	146	59	0	1	0	0	0	0	0
-qiushuigongzhang	qiushuigongzhangtianyise	秋水共长天一色	451	146	59	0	1	0	0	0	0	0
-qiushuigongzhangtian	qiushuigongzhangtianyise	秋水共长天一色	451	146	59	0	1	0	0	0	0	0
-qiushuigongzhangtianyi	qiushuigongzhangtianyise	秋水共长天一色	451	146	59	0	1	0	0	0	0	0
+qiushuigong	qiushuigongchangtianyise	秋水共长天一色	451	146	59	0	1	0	0	0	0	0
+qiushuigongchang	qiushuigongchangtianyise	秋水共长天一色	451	146	59	0	1	0	0	0	0	0
+qiushuigongchangtian	qiushuigongchangtianyise	秋水共长天一色	451	146	59	0	1	0	0	0	0	0
+qiushuigongchangtianyi	qiushuigongchangtianyise	秋水共长天一色	451	146	59	0	1	0	0	0	0	0
 qiushuixian	qiushuixianjianpian	秋水仙碱片	610	1	0	0	1	0	247	3	1	0
 qiushuixian	qiushuixianjian	秋水仙碱	540	5	105	0	1	0	245	3	1	1
 qiushuixian	qiushuixiansu	秋水仙素	249	128	40	0	1	0	0	0	1	2

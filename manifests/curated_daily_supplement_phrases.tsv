@@ -13316,3 +13316,6 @@
 公钥	公鑰	0.420	gongyao	exact_rank
 私钥	私鑰	0.379	siyue	exact_rank
 密钥	密鑰	0.280	miyao	exact_rank
+
+# Keep the common literary noun ahead of the less usual verb, 2026-09-18.
+秋水	秋水	0.600	qiushui	exact_rank
