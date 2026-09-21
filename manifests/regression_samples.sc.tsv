@@ -1286,3 +1286,6 @@ miyao	迷药	1
 qiushui	秋水	1
 qiushui	泅水	2
 qiushuigongchangtianyise	秋水共长天一色	1
+
+# Explicit phrase only; do not raise the individual homophone globally.
+dingzaipiguhoumian	盯在屁股后面	1

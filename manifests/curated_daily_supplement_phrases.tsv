@@ -13319,3 +13319,6 @@
 
 # Keep the common literary noun ahead of the less usual verb, 2026-09-18.
 秋水	秋水	0.600	qiushui	exact_rank
+
+# Explicit requested phrase, 2026-09-21; no fragment popularity reinforcement.
+盯在屁股后面	盯在屁股後面	0.180	dingzaipiguhoumian	exact_rank_no_contains
