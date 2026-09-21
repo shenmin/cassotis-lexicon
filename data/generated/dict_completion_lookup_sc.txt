@@ -114709,7 +114709,7 @@ linbie	linbiezengyan	临别赠言	405	189	40	0	1	0	89	1	1	0
 linbiezeng	linbiezengyan	临别赠言	405	189	40	0	1	0	89	1	0	0
 linbing	linbingxuan	林冰萱	449	53	0	0	1	0	170	2	1	0
 linbitie	linbitiedao	邻避铁道	538	77	0	0	1	0	109	1	0	0
-linbu	linbuqing	拎不清	10	208	40	0	2	0	0	0	0	0
+linbu	linbuqing	拎不清	10	208	40	0	2	0	0	0	0	1
 lincang	lincangshi	临沧市	165	128	40	0	1	0	0	0	1	0
 linchang	linchanggan	临场感	406	137	40	0	1	0	0	0	1	0
 linchang	linchangfahui	临场发挥	10	244	209	0	2	401	0	0	1	1
@@ -114803,7 +114803,7 @@ lindaozong	lindaozonghezheng	林岛综合征	640	102	0	0	2	0	154	3	0	0
 lindaozonghe	lindaozonghezheng	林岛综合征	640	102	0	0	2	0	154	3	0	0
 linde	lindechongpenquan	林德虫喷泉	660	145	0	0	1	0	98	1	0	0
 linde	lindetongweisu	磷的同位素	640	102	0	0	2	0	154	3	0	1
-linde	lindebulade	林德布拉德	289	80	0	0	0	0	0	0	0	2
+linde	lindebulade	林德布拉德	289	80	0	0	0	0	0	0	0	3
 lindebu	lindebulade	林德布拉德	289	80	0	0	0	0	0	0	0	0
 lindebula	lindebulade	林德布拉德	289	80	0	0	0	0	0	0	0	0
 lindechong	lindechongpenquan	林德虫喷泉	660	145	0	0	1	0	98	1	0	0
@@ -114891,7 +114891,7 @@ lingdianling	lingdianlingsanba	零点零三八	371	131	28	0	1	0	0	0	0	0
 lingdianlingsan	lingdianlingsanba	零点零三八	371	131	28	0	1	0	0	0	0	0
 lingding	lingdingyang	伶仃洋	364	107	120	0	1	0	163	2	1	0
 lingdong	lingdongqishi	灵动骑士	538	77	0	0	1	0	109	1	1	0
-lingdong	lingdongqu	岭东区	165	128	40	0	1	0	0	0	0	1
+lingdong	lingdongqu	岭东区	165	128	40	0	1	0	0	0	0	2
 lingdongqi	lingdongqishi	灵动骑士	538	77	0	0	1	0	109	1	0	0
 linge	lingeshiye	林格氏液	570	102	0	0	2	0	154	3	0	0
 lingen	lingenpai	灵恩派	232	80	0	0	0	0	0	0	1	0
@@ -115109,7 +115109,7 @@ lingqi	lingqiliaofa	灵气疗法	570	102	0	0	2	0	154	3	1	1
 lingqi	lingqisuoxiang	令旗所向	538	77	0	0	1	0	109	1	0	2
 lingqi	lingqiruocai	绫崎若菜	534	77	0	0	1	0	109	1	0	3
 lingqi	lingqiluzao	另起炉灶	453	240	151	0	1	0	84	1	1	4
-lingqi	lingqidian	零起点	379	137	40	0	1	0	0	0	0	5
+lingqi	lingqidian	零起点	379	137	40	0	1	0	0	0	0	6
 lingqiao	lingqiaojieduwan	羚翘解毒丸	610	1	0	0	1	0	247	3	0	0
 lingqiao	lingqiaojiedupian	羚翘解毒片	603	1	0	0	1	0	247	3	0	1
 lingqiao	lingqiaosuida	零敲碎打	423	212	91	0	1	0	87	1	0	2
@@ -115915,7 +115915,7 @@ linzhong	linzhongzhaohu	临终照护	570	102	0	0	2	0	154	3	1	2
 linzhong	linzhongxiaonvwu	林中小女巫	613	93	0	0	1	0	109	1	0	3
 linzhong	linzhongzhiye	林中之夜	538	77	0	0	1	0	109	1	0	4
 linzhong	linzhongdu	磷中毒	470	1	0	0	1	0	247	3	0	5
-linzhong	linzhongshi	临终诗	10	202	0	0	2	0	0	0	1	6
+linzhong	linzhongshi	临终诗	10	202	0	0	2	0	0	0	1	7
 linzhongguan	linzhongguanhuai	临终关怀	570	114	40	0	2	0	154	3	0	0
 linzhonghu	linzhonghuli	临终护理	570	102	0	0	2	0	154	3	0	0
 linzhongxiao	linzhongxiaonvwu	林中小女巫	613	93	0	0	1	0	109	1	0	0
@@ -227402,8 +227402,8 @@ yiru	yirujiwang	一如既往	507	301	302	0	1	0	80	1	1	1
 yiru	yiruwangchang	一如往常	260	80	0	0	0	460	0	0	1	2
 yiru	yirusuoliao	一如所料	260	80	0	0	0	0	0	0	1	3
 yiru	yiruyu	译入语	232	80	0	0	0	0	0	0	0	4
-yiru	yirufanzhang	易如翻掌	68	137	40	0	1	0	0	0	0	5
-yiru	yirushi	亦如是	10	202	0	0	2	0	0	0	0	6
+yiru	yirufanzhang	易如翻掌	68	137	40	0	1	0	0	0	0	6
+yiru	yirushi	亦如是	10	202	0	0	2	0	0	0	1	5
 yirufan	yirufanzhang	易如反掌	749	262	247	0	1	0	86	1	0	0
 yirufan	yirufanzhang	易如翻掌	68	137	40	0	1	0	0	0	0	1
 yirui	yiruiketiwengmiao	伊瑞克提翁庙	318	80	0	0	0	0	0	0	0	0
@@ -255270,3 +255270,13 @@ zuzhuang	zuzhuangchang	组装厂	379	137	40	0	1	0	0	0	1	2
 zuzhuangche	zuzhuangchejian	组装车间	538	77	0	0	1	0	109	1	0	0
 zuzu	zuzubeibei	祖祖辈辈	467	202	188	0	1	0	0	0	0	0
 zuzubei	zuzubeibei	祖祖辈辈	467	202	188	0	1	0	0	0	0	0
+linbu	linbudong	拎不动	420	80	0	0	0	0	0	0	0	0
+linde	lindeqing	拎得清	520	80	0	0	0	0	0	0	0	2
+lindong	lindongxi	拎东西	460	80	0	0	0	0	0	0	0	0
+lingbu	lingbudong	拎不动	420	80	0	0	0	0	0	0	0	1
+lingde	lingdeqing	拎得清	520	80	0	0	0	0	0	0	0	0
+lingdong	lingdongxi	拎东西	460	80	0	0	0	0	0	0	0	1
+lingqi	lingqilai	拎起来	420	80	0	0	0	0	0	0	0	5
+lingzhong	lingzhongwu	拎重物	320	80	0	0	0	0	0	0	0	0
+linqi	linqilai	拎起来	420	80	0	0	0	0	0	0	1	1
+linzhong	linzhongwu	拎重物	320	80	0	0	0	0	0	0	0	6

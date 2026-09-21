@@ -122345,7 +122345,7 @@ linbie	linbiezengyan	臨別贈言	405	189	40	0	1	0	89	1	1	0
 linbiezeng	linbiezengyan	臨別贈言	405	189	40	0	1	0	89	1	0	0
 linbing	linbingxuan	林冰萱	449	53	0	0	1	0	170	2	1	0
 linbitie	linbitiedao	鄰避鐵道	538	77	0	0	1	0	109	1	0	0
-linbu	linbuqing	拎不清	10	208	40	0	2	0	0	0	0	0
+linbu	linbuqing	拎不清	10	208	40	0	2	0	0	0	0	1
 lincang	lincangshi	臨滄市	165	128	40	0	1	0	0	0	1	0
 linchang	linchanggan	臨場感	406	137	40	0	1	0	0	0	1	0
 linchang	linchangyingbian	臨場應變	10	202	0	0	2	0	0	0	1	1
@@ -122469,7 +122469,7 @@ lindaozonghe	lindaozonghezheng	林島綜合徵	836	102	0	0	2	0	154	3	0	0
 lindaozonghe	lindaozonghezheng	林島綜合征	320	80	0	0	0	0	0	0	0	1
 linde	lindechongpenquan	林德蟲噴泉	660	145	0	0	1	0	98	1	0	0
 linde	lindetongweisu	磷的同位素	640	102	0	0	2	0	154	3	0	1
-linde	lindebulade	林德布拉德	289	80	0	0	0	0	0	0	0	2
+linde	lindebulade	林德布拉德	289	80	0	0	0	0	0	0	0	3
 lindebu	lindebulade	林德布拉德	289	80	0	0	0	0	0	0	0	0
 lindebula	lindebulade	林德布拉德	289	80	0	0	0	0	0	0	0	0
 lindechong	lindechongpenquan	林德蟲噴泉	660	145	0	0	1	0	98	1	0	0
@@ -122558,7 +122558,7 @@ lingdianling	lingdianlingsanba	零點零三八	371	80	0	0	0	0	0	0	0	0
 lingdianlingsan	lingdianlingsanba	零點零三八	371	80	0	0	0	0	0	0	0	0
 lingding	lingdingyang	伶仃洋	614	107	120	0	1	0	163	2	1	0
 lingdong	lingdongqishi	靈動騎士	538	77	0	0	1	0	109	1	1	0
-lingdong	lingdongqu	嶺東區	165	128	40	0	1	0	0	0	0	1
+lingdong	lingdongqu	嶺東區	165	128	40	0	1	0	0	0	0	2
 lingdongqi	lingdongqishi	靈動騎士	538	77	0	0	1	0	109	1	0	0
 linge	lingeshiye	林格氏液	570	102	0	0	2	0	154	3	0	0
 lingen	lingenpai	靈恩派	232	80	0	0	0	0	0	0	1	0
@@ -122783,7 +122783,7 @@ lingqi	lingqiliaofa	靈氣療法	570	102	0	0	2	0	154	3	1	1
 lingqi	lingqisuoxiang	令旗所向	538	77	0	0	1	0	109	1	0	2
 lingqi	lingqiruocai	綾崎若菜	534	77	0	0	1	0	109	1	0	3
 lingqi	lingqiluzao	另起爐竈	453	193	0	0	1	0	84	1	1	4
-lingqi	lingqidian	零起點	379	137	40	0	1	0	0	0	0	5
+lingqi	lingqidian	零起點	379	137	40	0	1	0	0	0	0	6
 lingqiao	lingqiaojieduwan	羚翹解毒丸	610	1	0	0	1	0	247	3	0	0
 lingqiao	lingqiaojiedupian	羚翹解毒片	610	1	0	0	1	0	247	3	0	1
 lingqiao	lingqiaosuida	零敲碎打	423	212	91	0	1	0	87	1	0	2
@@ -123222,7 +123222,7 @@ linnanmaijiyoule	linnanmaijiyouleyuan	林南邁基遊樂園	651	80	0	0	0	0	0	0	0
 linnei	linneixiang	林內鄉	167	80	0	0	0	0	0	0	1	0
 linping	linpingzhi	林平之	348	156	335	0	1	0	170	2	0	0
 linqi	linqizonghezheng	林奇綜合徵	836	102	0	0	2	0	154	3	0	0
-linqi	linqizonghezheng	林奇綜合征	320	80	0	0	0	0	0	0	0	1
+linqi	linqizonghezheng	林奇綜合征	320	80	0	0	0	0	0	0	0	2
 linqiao	linqiaozhi	林巧稚	469	163	80	320	2	0	154	3	0	0
 linqin	linqinnan	林琴南	207	137	66	0	1	0	0	0	0	0
 linqing	linqingxia	林青霞	780	420	109	463	3	0	0	0	0	0
@@ -123586,7 +123586,7 @@ linzhong	linzhongguanhuai	臨終關懷	570	114	40	0	2	0	154	3	1	2
 linzhong	linzhongxiaonvwu	林中小女巫	613	93	0	0	1	0	109	1	0	3
 linzhong	linzhongzhiye	林中之夜	538	77	0	0	1	0	109	1	0	4
 linzhong	linzhongdu	磷中毒	470	1	0	0	1	0	247	3	0	5
-linzhong	linzhongshi	臨終詩	10	202	0	0	2	0	0	0	1	6
+linzhong	linzhongshi	臨終詩	10	202	0	0	2	0	0	0	1	7
 linzhongguan	linzhongguanhuai	臨終關懷	570	114	40	0	2	0	154	3	0	0
 linzhonghu	linzhonghuli	臨終護理	570	102	0	0	2	0	154	3	0	0
 linzhongxiao	linzhongxiaonvwu	林中小女巫	613	93	0	0	1	0	109	1	0	0
@@ -241366,8 +241366,8 @@ yiru	yirujiwang	一如既往	507	301	302	0	1	0	80	1	1	1
 yiru	yiruwangchang	一如往常	260	80	0	0	0	453	0	0	1	2
 yiru	yirusuoliao	一如所料	260	80	0	0	0	0	0	0	1	3
 yiru	yiruyu	譯入語	232	80	0	0	0	0	0	0	0	4
-yiru	yirufanzhang	易如翻掌	68	137	40	0	1	0	0	0	0	5
-yiru	yirushi	亦如是	10	202	0	0	2	0	0	0	0	6
+yiru	yirufanzhang	易如翻掌	68	137	40	0	1	0	0	0	0	6
+yiru	yirushi	亦如是	10	202	0	0	2	0	0	0	1	5
 yirufan	yirufanzhang	易如反掌	749	262	247	0	1	0	86	1	0	0
 yirufan	yirufanzhang	易如翻掌	68	137	40	0	1	0	0	0	0	1
 yirui	yiruiketiwengmiao	伊瑞克提翁廟	318	80	0	0	0	0	0	0	0	0
@@ -271080,3 +271080,13 @@ zuzhuang	zuzhuangchang	組裝廠	379	137	40	0	1	0	0	0	1	2
 zuzhuangche	zuzhuangchejian	組裝車間	538	77	0	0	1	0	109	1	0	0
 zuzu	zuzubeibei	祖祖輩輩	467	202	188	0	1	0	0	0	0	0
 zuzubei	zuzubeibei	祖祖輩輩	467	202	188	0	1	0	0	0	0	0
+linbu	linbudong	拎不動	420	80	0	0	0	0	0	0	0	0
+linde	lindeqing	拎得清	520	80	0	0	0	0	0	0	0	2
+lindong	lindongxi	拎東西	460	80	0	0	0	0	0	0	0	0
+lingbu	lingbudong	拎不動	420	80	0	0	0	0	0	0	0	1
+lingde	lingdeqing	拎得清	520	80	0	0	0	0	0	0	0	0
+lingdong	lingdongxi	拎東西	460	80	0	0	0	0	0	0	0	1
+lingqi	lingqilai	拎起來	420	80	0	0	0	0	0	0	0	5
+lingzhong	lingzhongwu	拎重物	320	80	0	0	0	0	0	0	0	0
+linqi	linqilai	拎起來	420	80	0	0	0	0	0	0	1	1
+linzhong	linzhongwu	拎重物	320	80	0	0	0	0	0	0	0	6

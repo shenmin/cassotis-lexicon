@@ -21,7 +21,8 @@ en	嗯	9
 hu	和	9
 ji	系	9
 la	落	9
-lin	拎	18
+lin	拎	9
+ling	拎	9
 lv	捋	27
 shi	什	9
 sou	嗖	27
@@ -1289,3 +1290,33 @@ qiushuigongchangtianyise	秋水共长天一色	1
 
 # Explicit phrase only; do not raise the individual homophone globally.
 dingzaipiguhoumian	盯在屁股后面	1
+
+# Carry verb readings and written-language yi fragments.
+lindeqing	拎得清	1
+lingdeqing	拎得清	1
+linqing	拎清	9
+lingqing	拎清	9
+lindongxi	拎东西	1
+lingdongxi	拎东西	1
+linzhongwu	拎重物	1
+lingzhongwu	拎重物	1
+linqilai	拎起来	1
+lingqilai	拎起来	1
+linbudong	拎不动	1
+lingbudong	拎不动	1
+linzou	拎走	2
+lingzou	拎走	2
+yiran	亦然	9
+yishi	亦是	20
+yiru	亦如	9
+yihui	亦会	9
+yixiang	亦想	9
+yiyao	亦要	9
+yiqu	亦去	9
+yilai	亦来	9
+yizuo	亦做	9
+yiru	亦入	9
+yichu	亦出	9
+yikuai	亦快	9
+yiman	亦慢	9
+yijiang	亦将	9

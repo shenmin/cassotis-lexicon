@@ -856,6 +856,11 @@ SINGLE_CHAR_RELATIVE_ORDER_OVERRIDES: Tuple[
     (("ka", "咯"), ("ka", "佧"), 16),
     (("luo", "咯"), ("luo", "箩"), 16),
     (("luo", "咯"), ("luo", "籮"), 16),
+    # Keep the everyday carry verb visible under both lin and Taiwan ling.
+    (("lin", "拎"), ("lin", "鳞"), 16),
+    (("lin", "拎"), ("lin", "鱗"), 16),
+    (("ling", "拎"), ("ling", "龄"), 16),
+    (("ling", "拎"), ("ling", "齡"), 16),
 )
 
 MULTI_CHAR_TERM_DROP_OVERRIDES: Set[str] = {

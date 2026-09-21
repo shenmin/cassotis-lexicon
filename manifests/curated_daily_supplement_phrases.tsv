@@ -13322,3 +13322,36 @@
 
 # Explicit requested phrase, 2026-09-21; no fragment popularity reinforcement.
 盯在屁股后面	盯在屁股後面	0.180	dingzaipiguhoumian	exact_rank_no_contains
+
+# Carrying phrases and literary yi snippets, 2026-09-21.
+# Explicit lin/ling readings; no fabricated corpus or substring popularity.
+# Existing compounds keep their source readings rather than expanding every alias.
+拎得清	拎得清	0.520	lindeqing	exact_rank_no_contains
+拎得清	拎得清	0.520	lingdeqing	exact_rank_no_contains
+拎清	拎清	0.360	linqing	exact_rank_no_contains
+拎清	拎清	0.360	lingqing	exact_rank_no_contains
+拎东西	拎東西	0.460	lindongxi	exact_rank_no_contains
+拎东西	拎東西	0.460	lingdongxi	exact_rank_no_contains
+拎重物	拎重物	0.320	linzhongwu	exact_rank_no_contains
+拎重物	拎重物	0.320	lingzhongwu	exact_rank_no_contains
+拎起来	拎起來	0.420	linqilai	exact_rank_no_contains
+拎起来	拎起來	0.420	lingqilai	exact_rank_no_contains
+拎不动	拎不動	0.420	linbudong	exact_rank_no_contains
+拎不动	拎不動	0.420	lingbudong	exact_rank_no_contains
+拎走	拎走	0.360	linzou	exact_rank_no_contains
+拎走	拎走	0.360	lingzou	exact_rank_no_contains
+# These are selectable written-language fragments, not dominant homophones.
+亦然	亦然	0.520	yiran	exact_rank_no_contains
+亦是	亦是	0.300	yishi	exact_rank_no_contains
+亦如	亦如	0.360	yiru	exact_rank_no_contains
+亦会	亦會	0.260	yihui	exact_rank_no_contains
+亦想	亦想	0.120	yixiang	exact_rank_no_contains
+亦要	亦要	0.180	yiyao	exact_rank_no_contains
+亦去	亦去	0.100	yiqu	exact_rank_no_contains
+亦来	亦來	0.100	yilai	exact_rank_no_contains
+亦做	亦做	0.100	yizuo	exact_rank_no_contains
+亦入	亦入	0.100	yiru	exact_rank_no_contains
+亦出	亦出	0.120	yichu	exact_rank_no_contains
+亦快	亦快	0.080	yikuai	exact_rank_no_contains
+亦慢	亦慢	0.080	yiman	exact_rank_no_contains
+亦将	亦將	0.180	yijiang	exact_rank_no_contains
