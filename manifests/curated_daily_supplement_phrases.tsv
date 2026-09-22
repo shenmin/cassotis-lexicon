@@ -13422,3 +13422,7 @@
 省能	省能	0.220	shengneng	exact_rank_no_contains
 省人	省人	0.040	shengren	exact_rank_no_contains
 省省	省省	0.400	shengsheng	exact_rank_no_contains
+
+# Everyday delivery and blocking terms, 2026-09-22.
+退信	退信	0.420	tuixin	exact_rank_no_contains
+封堵	封堵	0.420	fengdu	exact_rank_no_contains
