@@ -13355,3 +13355,70 @@
 亦快	亦快	0.080	yikuai	exact_rank_no_contains
 亦慢	亦慢	0.080	yiman	exact_rank_no_contains
 亦将	亦將	0.180	yijiang	exact_rank_no_contains
+
+# Everyday actions, UI terms and forms of address, 2026-09-22.
+# Keep personal forms of address below common lexical homophones; use explicit
+# hang/dei readings without inventing corpus or substring popularity.
+# Particle fragments stay modest; fa+de uses the minimum positive weight to
+# avoid encouraging splits of established verbs followed by a particle.
+列得	列得	0.280	liede	exact_rank_no_contains
+输的	輸的	0.080	shude	exact_rank_no_contains
+输得	輸得	0.120	shude	exact_rank_no_contains
+数得	數得	0.060	shude	exact_rank_no_contains
+数的	數的	0.040	shude	exact_rank_no_contains
+发送过	發送過	0.520	fasongguo	exact_rank_no_contains
+送过	送過	0.620	songguo	exact_rank_no_contains
+送的	送的	0.500	songde	exact_rank_no_contains
+送得	送得	0.420	songde	exact_rank_no_contains
+发的	發的	0.001	fade	exact_rank_no_contains
+发得	發得	0.001	fade	exact_rank_no_contains
+雷总	雷總	0.180	leizong	exact_rank_no_contains
+没联网	沒聯網	0.500	meilianwang	exact_rank_no_contains
+已联网	已聯網	0.420	yilianwang	exact_rank_no_contains
+走的	走的	0.650	zoude	exact_rank_no_contains
+当前行	當前行	0.460	dangqianhang	exact_rank_no_contains
+向下箭头	向下箭頭	0.520	xiangxiajiantou	exact_rank_no_contains
+选中项	選中項	0.460	xuanzhongxiang	exact_rank_no_contains
+桃姐	桃姐	0.160	taojie	exact_rank_no_contains
+王姐	王姐	0.024	wangjie	exact_rank_no_contains
+李姐	李姐	0.012	lijie	exact_rank_no_contains
+赵姐	趙姐	0.180	zhaojie	exact_rank_no_contains
+钱姐	錢姐	0.160	qianjie	exact_rank_no_contains
+孙姐	孫姐	0.160	sunjie	exact_rank_no_contains
+周姐	周姐	0.180	zhoujie	exact_rank_no_contains
+周杰	周杰	0.220	zhoujie	exact_rank_no_contains
+毛总	毛總	0.120	maozong	exact_rank_no_contains
+毛姐	毛姐	0.120	maojie	exact_rank_no_contains
+吴姐	吳姐	0.160	wujie	exact_rank_no_contains
+郑姐	鄭姐	0.060	zhengjie	exact_rank_no_contains
+冯姐	馮姐	0.160	fengjie	exact_rank_no_contains
+陈姐	陳姐	0.200	chenjie	exact_rank_no_contains
+申姐	申姐	0.060	shenjie	exact_rank_no_contains
+出现时	出現時	0.001	chuxianshi	exact_rank_no_contains
+治治	治治	0.160	zhizhi	exact_rank_no_contains
+已经有	已經有	0.720	yijingyou	exact_rank_no_contains
+已经没	已經沒	0.440	yijingmei	exact_rank_no_contains
+累人	累人	0.680	leiren	exact_rank_no_contains
+累死人	累死人	0.500	leisiren	exact_rank_no_contains
+改不掉	改不掉	0.580	gaibudiao	exact_rank_no_contains
+改得掉	改得掉	0.300	gaidediao	exact_rank_no_contains
+送不到	送不到	0.500	songbudao	exact_rank_no_contains
+发不到	發不到	0.420	fabudao	exact_rank_no_contains
+得靠我	得靠我	0.360	deikaowo	exact_rank_no_contains
+还得	還得	0.800	haidei	exact_rank_no_contains
+那要看	那要看	0.480	nayaokan	exact_rank_no_contains
+耗掉	耗掉	0.400	haodiao	exact_rank_no_contains
+一遇	一遇	0.140	yiyu	exact_rank_no_contains
+一遇到	一遇到	0.420	yiyudao	exact_rank_no_contains
+白柜	白櫃	0.240	baigui	exact_rank_no_contains
+五斗橱	五斗櫥	0.420	wudouchu	exact_rank_no_contains
+放一下	放一下	0.620	fangyixia	exact_rank_no_contains
+强转移	強轉移	0.240	qiangzhuanyi	exact_rank_no_contains
+弱转移	弱轉移	0.200	ruozhuanyi	exact_rank_no_contains
+前版本	前版本	0.280	qianbanben	exact_rank_no_contains
+省电	省電	0.780	shengdian	exact_rank_no_contains
+省水	省水	0.700	shengshui	exact_rank_no_contains
+省气	省氣	0.260	shengqi	exact_rank_no_contains
+省能	省能	0.220	shengneng	exact_rank_no_contains
+省人	省人	0.040	shengren	exact_rank_no_contains
+省省	省省	0.400	shengsheng	exact_rank_no_contains
