@@ -18,14 +18,16 @@ Cassotis IME 的词库构建与发布仓库。
 - 支持外部来源引导构建和可复现的生成词库构建流程。
 - 保持署名文件与生成产物一致。
 
-## 当前词库快照（2026-09-22 构建）
+## 当前词库快照（2026-09-23 构建）
 
 | 文件 | 变体 | 词条数 |
 |------|------|--------|
-| `data/generated/dict_clean_sc.txt` | 简体主词库 | 189,676 |
-| `data/generated/dict_clean_tc.txt` | 繁体主词库 | 192,632 |
+| `data/generated/dict_clean_sc.txt` | 简体主词库 | 225,366 |
+| `data/generated/dict_clean_tc.txt` | 繁体主词库 | 228,318 |
 | `data/generated/dict_unihan_sc.txt` | 简体单字（Unihan） | 23,914 |
 | `data/generated/dict_unihan_tc.txt` | 繁体单字（Unihan） | 24,173 |
+
+专业词覆盖采用低权重、只补缺项的方式，不抬高已有词和单字权重。完整拼音可以选择冷门专业词，但它们默认不进入短前缀和 Tab 预测；“有限责任公司”“文件系统”等经过复核的通用表达仍可正常补全。收录清单和来源见 [专业词准入记录](manifests/vertical/thuocl_specialist_admissions.tsv)，通用表达的补全资格见 [独立清单](manifests/specialist_common_terms.tsv)。
 
 ## 本地排序模型数据与 AI 重排支持
 

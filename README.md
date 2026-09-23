@@ -18,14 +18,16 @@ Lexicon build and release repository for Cassotis IME.
 - Supports external-source bootstrap and reproducible generated dictionary builds.
 - Keeps attribution and release policy files aligned with generated artifacts.
 
-## Current dictionary snapshot (2026-09-22 build)
+## Current dictionary snapshot (2026-09-23 build)
 
 | File | Variant | Entries |
 |------|---------|---------|
-| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 189,676 |
-| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 192,632 |
+| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 225,366 |
+| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 228,318 |
 | `data/generated/dict_unihan_sc.txt` | Simplified single-char (Unihan) | 23,914 |
 | `data/generated/dict_unihan_tc.txt` | Traditional single-char (Unihan) | 24,173 |
+
+Specialist coverage is added at low weights without raising existing word or character weights. Complete Pinyin can select uncommon technical terms, but catalogue-only entries do not participate in short-prefix or Tab predictions. Reviewed general-use expressions remain eligible for completion. See the [admission records](manifests/vertical/thuocl_specialist_admissions.tsv) and the separate [familiarity review](manifests/specialist_common_terms.tsv).
 
 ## Local ranking model data and AI reranking support
 

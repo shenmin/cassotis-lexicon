@@ -1,0 +1,84 @@
+{
+  "source_commit": "a30ce79d895d01ab5132a5c74c29703ff7efb4cc",
+  "archive_sha256": "0c710aeaf9b75b345c944c3c4f625bb4c8135ee97518dc5be5f444bf5ed1f89b",
+  "pypinyin_version": "0.51.0",
+  "opencc_version": "0.1.7",
+  "entries": 35633,
+  "categories": {
+    "IT": {
+      "input": 16000,
+      "already_covered": 3085,
+      "length_or_script": 3674,
+      "fragment": 72,
+      "lexical_exclusion": 6,
+      "source_error": 2,
+      "admitted": 9057,
+      "ambiguous_pinyin_boundary": 57,
+      "unverified_character_reading": 46
+    },
+    "animal": {
+      "input": 17287,
+      "length_or_script": 556,
+      "animal_domain_mismatch": 5057,
+      "already_covered": 159,
+      "fragment": 3,
+      "fiction_label": 10,
+      "organization_label": 2,
+      "source_error": 1,
+      "admitted": 10593,
+      "unverified_character_reading": 433,
+      "ambiguous_pinyin_boundary": 473
+    },
+    "caijing": {
+      "input": 3830,
+      "length_or_script": 1527,
+      "finance_domain_mismatch": 1499,
+      "organization_label": 32,
+      "already_covered": 175,
+      "fragment": 4,
+      "admitted": 586,
+      "ambiguous_pinyin_boundary": 5,
+      "unverified_character_reading": 2
+    },
+    "car": {
+      "input": 1752,
+      "length_or_script": 140,
+      "already_covered": 56,
+      "organization_label": 11,
+      "fragment": 4,
+      "source_error": 1,
+      "admitted": 1477,
+      "ambiguous_pinyin_boundary": 54,
+      "unverified_character_reading": 9
+    },
+    "food": {
+      "input": 8974,
+      "length_or_script": 767,
+      "already_covered": 459,
+      "malformed": 1,
+      "fragment": 1,
+      "admitted": 7374,
+      "ambiguous_pinyin_boundary": 239,
+      "unverified_character_reading": 133
+    },
+    "law": {
+      "input": 9896,
+      "length_or_script": 2589,
+      "already_covered": 297,
+      "fragment": 125,
+      "organization_label": 1,
+      "publication_title": 205,
+      "malformed": 1,
+      "admitted": 6550,
+      "ambiguous_pinyin_boundary": 103,
+      "unverified_character_reading": 25
+    },
+    "medical": {
+      "input": 18749,
+      "length_or_script": 2947,
+      "already_covered": 15786,
+      "fragment": 15,
+      "admitted": 1
+    }
+  }
+}

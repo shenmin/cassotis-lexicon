@@ -1100,9 +1100,9 @@ PROFILE_DEFAULTS: Dict[str, Dict[str, object]] = {
                 "name": "THUOCL (Tsinghua Open Chinese Lexicon)",
                 "download_url": THUOCL_ZIP_URL,
                 "homepage": THUOCL_HOMEPAGE,
-                "license": "THUOCL custom open terms",
-                "risk_level": "medium",
-                "redistribution_class": "attribution_required",
+                "license": "MIT",
+                "risk_level": "low",
+                "redistribution_class": "permissive",
                 "attribution_required": True,
                 "raw_committed": False,
                 "notes": "Domain/common words with DF statistics, used for broad coverage.",
@@ -18536,6 +18536,80 @@ def _filter_windows_unrenderable_entries(
     return filtered, dropped
 
 
+def _inject_specialist_exact_entries(
+    sc: Dict[Tuple[str, str], int],
+    tc: Dict[Tuple[str, str], int],
+    entries: List[VerticalEntry],
+) -> Tuple[Set[Tuple[str, str]], Set[Tuple[str, str]]]:
+    """Admit reviewed single-domain terms without treating admission as frequency."""
+    validated = []
+    seen: Set[Tuple[str, str]] = set()
+    for sc_word, tc_word, usage, pinyin, layer_id, source_id in entries:
+        weight = int(round(usage * 1000))
+        syllables = _runtime_parse_compact_pinyin(pinyin)
+        if (
+            layer_id != "specialist_terms" or not source_id
+            or not (0 <= usage <= 0.12) or not (0 <= weight <= 120)
+            or not (2 <= len(sc_word) <= 10)
+            or not CJK_FULL_RE.fullmatch(sc_word)
+            or not CJK_FULL_RE.fullmatch(tc_word)
+            or len(tc_word) != len(sc_word)
+            or not EXPLICIT_PINYIN_RE.fullmatch(pinyin)
+            or len(syllables) != len(sc_word)
+            or any(syllable in _RUNTIME_PINYIN_INITIALS for syllable in syllables)
+            or "".join(syllables) != pinyin.replace("'", "")
+            or (pinyin, sc_word) in seen
+            or _is_explicit_multi_char_drop_text(sc_word)
+            or _is_explicit_multi_char_drop_text(tc_word)
+        ):
+            raise ValueError(f"Invalid reviewed specialist entry: {sc_word!r} / {pinyin!r}")
+        seen.add((pinyin, sc_word))
+        validated.append((pinyin, sc_word, tc_word, weight))
+    additions: Tuple[Set[Tuple[str, str]], Set[Tuple[str, str]]] = (set(), set())
+    for pinyin, sc_word, tc_word, weight in validated:
+        for mapping, added, text in ((sc, additions[0], sc_word), (tc, additions[1], tc_word)):
+            key = (pinyin, text)
+            if key not in mapping:
+                mapping[key] = weight
+                added.add(key)
+    return additions
+
+
+def _load_specialist_common_terms(
+    path: pathlib.Path, entries: List[VerticalEntry],
+) -> Dict[str, int]:
+    """Explicit familiarity review, independent of catalogue DF and base weight."""
+    aliases = {sc: tc for sc, tc, *_ in entries}
+    result: Dict[str, int] = {}
+    if not path.exists():
+        return result
+    for number, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
+        if not line or line.startswith("#"):
+            continue
+        fields = line.split("\t")
+        if len(fields) != 2 or not fields[1].isdigit():
+            raise ValueError(f"Invalid specialist familiarity row: {path}:{number}")
+        word, score = fields[0], int(fields[1])
+        if word not in aliases or word in result or not 450 <= score <= 700:
+            raise ValueError(f"Unverified specialist familiarity row: {path}:{number}")
+        result[word] = score
+        result[aliases[word]] = score
+    return result
+
+
+def _specialist_completion_prior(
+    text: str = "", common_terms: Dict[str, int] | None = None,
+) -> Tuple[int, int, int, int, int, int, int]:
+    if common_terms and text in common_terms:
+        # Eligibility is not popularity. Keep editorial familiarity a weak
+        # contribution (10%), consistent with the existing one-source prior;
+        # only real corpus evidence may earn a protected high-popularity score.
+        return (113 + common_terms[text] // 10, 0, 0, 1, 0, 0, 0)
+    # A reviewed catalogue is one source, not evidence of common usage or LM
+    # transitions. Layer 4 is exact-only coverage, excluded from predictions.
+    return (1, 0, 0, 1, 150, 4, 0)
+
+
 def _write_dict(
     path: pathlib.Path,
     mapping: Dict[Tuple[str, str], int],
@@ -21689,6 +21763,8 @@ def _build_completion_popularity_prior(
     curated_low_terms: Set[str],
     path_score_map: Dict[str, int],
     stats_prefix: str,
+    exact_only_keys: Set[Tuple[str, str]] | None = None,
+    specialist_common_terms: Dict[str, int] | None = None,
 ) -> Tuple[Dict[Tuple[str, str], Tuple[int, int, int, int, int, int, int]], Dict[str, int]]:
     """Build a completion popularity prior without reusing dictionary weight."""
 
@@ -21788,6 +21864,10 @@ def _build_completion_popularity_prior(
             if current is None or value > current:
                 output[key] = value
 
+    for key in exact_only_keys or ():
+        if key in output:
+            output[key] = _specialist_completion_prior(key[1], specialist_common_terms)
+
     for (
         popularity_prior,
         _corpus,
@@ -21830,6 +21910,7 @@ def _build_completion_exact_lookup(
     *,
     stats_prefix: str,
     per_rank_limit: int = 8,
+    reviewed_specialist_keys: Set[Tuple[str, str]] | None = None,
 ) -> Tuple[
     Dict[
         Tuple[str, str, str],
@@ -21867,6 +21948,13 @@ def _build_completion_exact_lookup(
                     f"Invalid dictionary weight at {dictionary_path}:{line_number}"
                 ) from exc
             if not pinyin or not text or weight <= 0:
+                continue
+            prior = completion_prior.get((pinyin, text))
+            if prior is None:
+                prior = completion_prior.get((_normalize_compact_pinyin_key(pinyin), text))
+            if prior is not None and prior[5] == 4:
+                # Do not reserve Top-K slots or create predictive anchors from
+                # catalogue-only admissions, regardless of their DF or weight.
                 continue
             syllables = _runtime_parse_compact_pinyin(pinyin)
             text_units = _split_text_units(text)
@@ -21943,6 +22031,17 @@ def _build_completion_exact_lookup(
         Tuple[int, int, int, int, int, int, int, int, int, int],
     ] = {}
     for typed_prefix, candidates in grouped.items():
+        # Editorial review grants eligibility, not a reason to perturb an
+        # already-supported prediction on a broad prefix. More specific input
+        # still recalls the reviewed term, including via the runtime range scan.
+        if reviewed_specialist_keys and any(
+            (candidate[0], candidate[1]) not in reviewed_specialist_keys
+            and candidate[10] and candidate[6] >= 2
+            and (candidate[3] >= 250 or candidate[4] >= 40 or candidate[7] >= 120)
+            for candidate in candidates
+        ):
+            candidates = [candidate for candidate in candidates
+                          if (candidate[0], candidate[1]) not in reviewed_specialist_keys]
         deduplicated: Dict[
             Tuple[str, str],
             Tuple[str, str, int, int, int, int, int, int, int, int, int],
@@ -23056,6 +23155,7 @@ def main() -> int:
     tc_pageviews_burst_signal_map: Dict[str, float] = {}
     tc_thuocl_signal_map: Dict[str, float] = {}
     vertical_entries: List[VerticalEntry] = []
+    specialist_entries: List[VerticalEntry] = []
     sc_family_term_count_map: Dict[str, int] = {}
     sc_family_support_sum_map: Dict[str, float] = {}
     tc_family_term_count_map: Dict[str, int] = {}
@@ -23302,7 +23402,10 @@ def main() -> int:
                     args.min_hanzi,
                     repo_root,
                 )
-                vertical_entries.extend(entries)
+                if vertical_source.get("vertical_layer_id") == "specialist_terms":
+                    specialist_entries.extend(entries)
+                else:
+                    vertical_entries.extend(entries)
                 for key, value in parse_stats.items():
                     vertical_parse_stats[key] = vertical_parse_stats.get(key, 0) + value
             vertical_stats, vertical_sc_terms, vertical_tc_terms = _augment_with_vertical_terms(
@@ -23811,7 +23914,10 @@ def main() -> int:
                     args.min_hanzi,
                     repo_root,
                 )
-                vertical_entries.extend(entries)
+                if vertical_source.get("vertical_layer_id") == "specialist_terms":
+                    specialist_entries.extend(entries)
+                else:
+                    vertical_entries.extend(entries)
                 for key, value in parse_stats.items():
                     vertical_parse_stats[key] = vertical_parse_stats.get(key, 0) + value
             vertical_stats, vertical_sc_terms, vertical_tc_terms = _augment_with_vertical_terms(
@@ -26622,6 +26728,17 @@ def main() -> int:
             curated_daily_post_rank_exact_entries,
         )
     )
+    specialist_sc_keys, specialist_tc_keys = _inject_specialist_exact_entries(
+        sc_map, tc_map, specialist_entries,
+    )
+    stats["specialist_exact_added_sc"] = len(specialist_sc_keys)
+    specialist_common_terms = _load_specialist_common_terms(
+        repo_root / "manifests/specialist_common_terms.tsv", specialist_entries
+    ) if specialist_entries else {}
+    stats["specialist_exact_added_tc"] = len(specialist_tc_keys)
+    contains_popularity_excluded_sc_terms.update(text for _, text in specialist_sc_keys)
+    contains_popularity_excluded_tc_terms.update(text for _, text in specialist_tc_keys)
+    curated_daily_explicit_pinyin_keys.update(specialist_sc_keys | specialist_tc_keys)
     post_rank_exact_sc_terms = {
         sc_word
         for sc_word, _tc_word, _usage_score, _explicit_pinyin
@@ -26823,6 +26940,8 @@ def main() -> int:
                     curated_low_terms=curated_daily_supplement_sc_terms,
                     path_score_map=completion_sc_path_scores,
                     stats_prefix="sc",
+                    exact_only_keys=specialist_sc_keys,
+                    specialist_common_terms=specialist_common_terms,
                 )
             )
             if output_completion_prior_sc is not None:
@@ -26836,6 +26955,8 @@ def main() -> int:
                         output_sc,
                         sc_completion_prior,
                         stats_prefix="sc",
+                        reviewed_specialist_keys={key for key in specialist_sc_keys
+                                                  if key[1] in specialist_common_terms},
                     )
                 )
                 _write_completion_exact_lookup(
@@ -26856,6 +26977,8 @@ def main() -> int:
                     curated_low_terms=curated_daily_supplement_tc_terms,
                     path_score_map=completion_tc_path_scores,
                     stats_prefix="tc",
+                    exact_only_keys=specialist_tc_keys,
+                    specialist_common_terms=specialist_common_terms,
                 )
             )
             if output_completion_prior_tc is not None:
@@ -26869,6 +26992,8 @@ def main() -> int:
                         output_tc,
                         tc_completion_prior,
                         stats_prefix="tc",
+                        reviewed_specialist_keys={key for key in specialist_tc_keys
+                                                  if key[1] in specialist_common_terms},
                     )
                 )
                 _write_completion_exact_lookup(

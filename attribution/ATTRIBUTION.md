@@ -21,7 +21,8 @@ Notes:
 - Name: THUOCL (Tsinghua Open Chinese Lexicon)
 - Homepage: https://github.com/thunlp/THUOCL
 - Download: https://github.com/thunlp/THUOCL/archive/refs/heads/master.zip
-- License: THUOCL custom open terms (see upstream README)
+- License: MIT (see [upstream LICENSE](https://github.com/thunlp/THUOCL/blob/master/LICENSE)
+  and [included notice](THUOCL-LICENSE.txt))
 - Copyright holder: THUNLP and THUOCL contributors
 
 Notes:
@@ -30,6 +31,20 @@ Notes:
 - Filtered `THUOCL_IT` and `THUOCL_medical` subsets are also used as isolated
   vertical-layer candidate sources.
 - The raw source archive is not committed in this repository.
+- A reviewed animal/husbandry subset is kept in
+  [thuocl_reviewed_animals.tsv](../manifests/vertical/thuocl_reviewed_animals.tsv),
+  with explicit readings and upstream DF values. These add-only specialist terms
+  use low exact weights, not general-frequency or character-popularity boosts.
+- Additional cleaned three-to-ten-character entries from the IT, animal,
+  finance, car, food, law and medical categories are recorded in
+  [thuocl_specialist_admissions.tsv](../manifests/vertical/thuocl_specialist_admissions.tsv).
+  The pinned source revision, checksum and filtering counts are recorded in
+  [the admission report](../reports/thuocl_specialist_admissions.json).
+- Prediction eligibility is separate from admission: catalogue-only entries
+  are excluded from short-prefix and Tab prediction. Familiar general-use
+  expressions are explicitly reviewed in
+  [specialist_common_terms.tsv](../manifests/specialist_common_terms.tsv),
+  without inventing corpus counts or changing existing dictionary weights.
 
 ## jieba dict.txt
 

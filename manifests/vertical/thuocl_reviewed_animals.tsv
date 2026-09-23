@@ -1,0 +1,62 @@
+# sc	tc	usage_score	pinyin	THUOCL_DF
+# Reviewed animal/breed names; no people, fictional entities, fragments or marketing phrases.
+# Upstream: https://github.com/thunlp/THUOCL/blob/master/data/THUOCL_animal.txt
+# Copyright (c) 2018 THUNLP. MIT license: attribution/THUOCL-LICENSE.txt
+# DF is provenance, not a general-language frequency. Weights remain in 40..100.
+利木赞牛	利木贊牛	0.080	limuzanniu	9371
+利木赞肉牛	利木贊肉牛	0.060	limuzanrouniu	884
+小尾寒羊	小尾寒羊	0.100	xiaoweihanyang	18980
+杜泊绵羊	杜泊綿羊	0.080	dubomianyang	4587
+杜泊羊	杜泊羊	0.060	duboyang	1859
+秦川牛	秦川牛	0.080	qinchuanniu	871
+樱桃谷鸭	櫻桃谷鴨	0.080	yingtaoguya	816
+朗德鹅	朗德鵝	0.060	langdee	761
+清远麻鸡	清遠麻雞	0.060	qingyuanmaji	337
+大骨鸡	大骨雞	0.050	daguji	475
+野牦牛	野犛牛	0.100	yemaoniu	3938
+种公猪	種公豬	0.080	zhonggongzhu	2508
+折耳猫	折耳貓	0.100	zheermao	1597
+柯基犬	柯基犬	0.100	kejiquan	952
+威尔士柯基犬	威爾士柯基犬	0.060	weiershikejiquan	563
+喜乐蒂牧羊犬	喜樂蒂牧羊犬	0.060	xiledimuyangquan	798
+英国古代牧羊犬	英國古代牧羊犬	0.060	yingguogudaimuyangquan	647
+纽芬兰犬	紐芬蘭犬	0.060	niufenlanquan	579
+英国斗牛犬	英國鬥牛犬	0.080	yingguodouniuquan	505
+法国斗牛犬	法國鬥牛犬	0.080	faguodouniuquan	398
+中国冠毛犬	中國冠毛犬	0.060	zhongguoguanmaoquan	374
+苏格兰梗	蘇格蘭梗	0.060	sugelangeng	398
+英国可卡犬	英國可卡犬	0.060	yingguokekaquan	289
+西部高地白梗	西部高地白梗	0.050	xibugaodibaigeng	272
+猎狐犬	獵狐犬	0.060	liehuquan	731
+长毛猫	長毛貓	0.080	changmaomao	735
+斗牛犬	鬥牛犬	0.100	douniuquan	3940
+角鲸	角鯨	0.080	jiaojing	1386
+灰鲸	灰鯨	0.060	huijing	644
+露脊鲸	露脊鯨	0.060	lujijing	530
+毛冠鹿	毛冠鹿	0.060	maoguanlu	701
+黑犀牛	黑犀牛	0.080	heixiniu	623
+披毛犀	披毛犀	0.060	pimaoxi	615
+印支虎	印支虎	0.060	yinzhihu	580
+白颊长臂猿	白頰長臂猿	0.060	baijiachangbiyuan	299
+山地大猩猩	山地大猩猩	0.060	shandidaxingxing	393
+中国小鲵	中國小鯢	0.040	zhongguoxiaoni	453
+三角帆蚌	三角帆蚌	0.060	sanjiaofanbang	280
+斑点叉尾鮰	斑點叉尾鮰	0.060	bandianchaweihui	1226
+潜叶蝇	潛葉蠅	0.050	qianyeying	408
+椰心叶甲	椰心葉甲	0.050	yexinyejia	625
+德国小蠊	德國小蠊	0.060	deguoxiaolian	1123
+赤眼蜂	赤眼蜂	0.060	chiyanfeng	839
+黄蝶	黃蝶	0.050	huangdie	891
+灰蝶	灰蝶	0.050	huidie	478
+舟蛾	舟蛾	0.040	zhoue	342
+车轮虫	車輪蟲	0.050	chelunchong	531
+卤虫	鹵蟲	0.060	luchong	1005
+轮虫	輪蟲	0.060	lunchong	1679
+摇蚊	搖蚊	0.050	yaowen	439
+涡虫	渦蟲	0.050	wochong	275
+星虫	星蟲	0.050	xingchong	806
+榛鸡	榛雞	0.060	zhenji	550
+闭壳龟	閉殼龜	0.060	bikegui	824
+海刺参	海刺參	0.060	haicishen	503
+岩鸽	巖鴿	0.050	yange	656
+冠毛犬	冠毛犬	0.060	guanmaoquan	694
