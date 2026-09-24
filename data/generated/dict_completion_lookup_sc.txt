@@ -94037,8 +94037,8 @@ jingshiguanchaoshengxin	jingshiguanchaoshengxindongtu	经食管超声心动图	7
 jingshiguanchaoshengxindong	jingshiguanchaoshengxindongtu	经食管超声心动图	700	102	0	0	2	0	154	3	0	0
 jingshihai	jingshihaisu	惊世骇俗	479	254	217	0	1	0	86	1	0	0
 jingshitong	jingshitongyan	警世通言	260	80	0	0	0	0	0	0	0	0
-jingshou	jingshouren	经手人	415	160	91	0	1	0	0	0	1	0
-jingshou	jingshouru	净收入	432	175	124	0	1	0	0	0	0	1
+jingshou	jingshouren	经手人	415	160	91	0	1	0	0	0	1	1
+jingshou	jingshouru	净收入	432	175	124	0	1	0	0	0	0	2
 jingshu	jingshukeli	经舒颗粒	562	1	0	0	1	0	247	3	0	0
 jingshu	jingshukeli	颈舒颗粒	554	1	0	0	1	0	247	3	0	1
 jingshu	jingshujiaonang	经舒胶囊	540	1	0	0	1	0	247	3	0	2
@@ -255394,3 +255394,4 @@ zidongbian	zidongbiansuxiang	自动变速箱	20	171	0	0	1	0	0	0	0	1
 zidongbiansu	zidongbiansuxiang	自动变速箱	20	171	0	0	1	0	0	0	0	0
 zidongsheng	zidongshengcheng	自动生成	40	171	0	0	1	0	0	0	0	1
 ziyuanguan	ziyuanguanli	资源管理	40	171	0	0	1	0	0	0	0	3
+jingshou	jingshouyi	净收益	520	80	0	0	0	0	0	0	0	0

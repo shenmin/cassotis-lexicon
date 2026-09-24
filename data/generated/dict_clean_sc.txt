@@ -12744,6 +12744,7 @@ bulatisilawa	布拉提斯拉瓦	198
 bulatisilawalaocheng	布拉提斯拉瓦老城	613
 bulazaosikasi	布拉藻斯卡斯	304
 bule	不了	576
+bule	补了	420	no_contains
 bule'erle	不了而了	597
 buleerle	不了而了	597
 bulei	部类	778
@@ -47865,6 +47866,7 @@ gongzhaiquan	公债券	429
 gongzhan	攻占	696
 gongzhang	工长	872
 gongzhang	公章	287
+gongzhang	公账	260	no_contains
 gongzhang	公丈	184
 gongzhe	躬着	10
 gongzhen	共振	429
@@ -64961,6 +64963,7 @@ jiaojian	脚尖	700
 jiaojiang	椒江	228
 jiaojiangqu	椒江区	172
 jiaojiao	交角	560
+jiaojiao	缴交	420	no_contains
 jiaojiaonv	娇娇女	330
 jiaojiaozhe	佼佼者	495
 jiaojiaozheyiwu	皎皎者易污	288
@@ -64993,6 +64996,7 @@ jiaojinziao	骄矜自傲	10
 jiaojiquan	交际圈	10
 jiaojirufen	焦急如焚	535
 jiaojiu	较久	700
+jiaojiu	较旧	520	no_contains
 jiaojiu	叫酒	280
 jiaojiu	交九	227
 jiaojiwanfen	焦急万分	280
@@ -65447,6 +65451,7 @@ jiaoxie	胶鞋	1000
 jiaoxie	缴械	739
 jiaoxietouxiang	缴械投降	721
 jiaoxin	脚心	700
+jiaoxin	较新	620	no_contains
 jiaoxin	交心	1
 jiaoxing	侥幸	981
 jiaoxing	叫醒	836
@@ -67593,8 +67598,8 @@ jieridelihua	节日的礼花	569
 jierini'aofujiao	杰日尼奥夫角	313
 jierjisi	吉尔吉斯	654
 jierte	基尔特	232
+jieru	接入	800
 jieru	介入	758
-jieru	接入	578
 jieruchaoshengxue	介入超声学	640
 jieruchou	嫉恶如仇	593
 jieruchou	疾恶如仇	243
@@ -137499,9 +137504,9 @@ tizhongpianjian	体重偏见	570
 tizhongqi	体重器	232
 tizhongzhishu	体重指数	570
 tizhuan	啼啭	198
-tizi	屉子	1000
+tizi	梯子	760
 tizi	蹄子	119
-tizi	梯子	117
+tizi	屉子	100
 tizi	题字	75
 tiziqi	提字器	232
 tizou	踢走	10
@@ -225364,3 +225369,5 @@ zuzhijiankangbaogaofa	组织健康报告法	20	no_contains
 zuzhijiemian	组织界面	40	no_contains
 zuzhiyueyuzui	组织越狱罪	20	no_contains
 zuzhuangjishu	组装技术	40	no_contains
+gonghu	公户	300	no_contains
+jingshouyi	净收益	520	no_contains

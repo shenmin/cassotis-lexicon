@@ -13426,3 +13426,16 @@
 # Everyday delivery and blocking terms, 2026-09-22.
 退信	退信	0.420	tuixin	exact_rank_no_contains
 封堵	封堵	0.420	fengdu	exact_rank_no_contains
+
+# Everyday access, comparisons and account terms, 2026-09-24.
+# Preserve existing corpus priors; calibrate base exact ranks only.
+接入	接入	0.800	jieru	exact_rank
+梯子	梯子	0.760	tizi	exact_rank
+屉子	屜子	0.100	tizi	exact_rank
+缴交	繳交	0.420	jiaojiao	exact_rank_no_contains
+较新	較新	0.620	jiaoxin	exact_rank_no_contains
+较旧	較舊	0.520	jiaojiu	exact_rank_no_contains
+公账	公賬	0.260	gongzhang	exact_rank_no_contains
+公户	公戶	0.300	gonghu	exact_rank_no_contains
+补了	補了	0.420	bule	exact_rank_no_contains
+净收益	淨收益	0.520	jingshouyi	exact_rank_no_contains
