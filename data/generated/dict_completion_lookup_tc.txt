@@ -163898,7 +163898,7 @@ renwenshehuixue	renwenshehuixueke	人文社會學科	318	80	0	0	0	0	0	0	0	0
 renwenzhu	renwenzhuyi	人文主義	602	181	255	0	2	0	154	3	0	0
 renwenzhu	renwenzhuyizhe	人文主義者	455	80	0	0	0	0	0	0	0	1
 renwenzhuyi	renwenzhuyizhe	人文主義者	455	80	0	0	0	0	0	0	1	0
-renwo	renwoxing	任我行	493	65	40	0	1	0	170	2	0	0
+renwo	renwoxing	任我行	493	65	40	0	1	0	170	2	1	0
 renwu	renwulan	任務欄	1000	540	40	0	4	0	0	0	1	0
 renwu	renwudiaoduchengxu	任務調度程序	781	197	0	0	1	0	83	1	1	1
 renwu	renwuyuanlvbiyoujinyou	人無遠慮必有近憂	723	169	0	0	1	0	91	1	0	2
@@ -190920,10 +190920,10 @@ suisiyou	suisiyourong	雖死猶榮	387	137	40	0	1	0	0	0	0	1
 suisui	suisuipingan	歲歲平安	260	174	0	0	1	0	90	1	0	0
 suisui	suisuinian	碎碎念	230	80	0	0	0	0	0	0	0	1
 suisuiping	suisuipingan	歲歲平安	260	174	0	0	1	0	90	1	0	0
-suita	suitaqu	隨他去	800	199	0	0	1	0	0	0	0	0
-suita	suitaqu	隨她去	800	199	0	0	1	0	0	0	0	1
-suita	suitamenqu	隨他們去	800	199	0	0	1	0	0	0	0	2
-suita	suitamenqu	隨她們去	800	199	0	0	1	0	0	0	0	3
+suita	suitaqu	隨他去	800	199	0	0	1	0	0	0	1	0
+suita	suitaqu	隨她去	800	199	0	0	1	0	0	0	1	1
+suita	suitamenqu	隨他們去	800	199	0	0	1	0	0	0	1	2
+suita	suitamenqu	隨她們去	800	199	0	0	1	0	0	0	1	3
 suitamen	suitamenqu	隨他們去	800	199	0	0	1	0	0	0	0	0
 suitamen	suitamenqu	隨她們去	800	199	0	0	1	0	0	0	0	1
 suitang	suitangceyan	隨堂測驗	405	137	40	0	1	0	0	0	1	0
@@ -190931,7 +190931,7 @@ suitang	suitangyanyi	隋唐演義	249	128	40	0	1	0	0	0	1	1
 suitangce	suitangceyan	隨堂測驗	405	137	40	0	1	0	0	0	0	0
 suitangyan	suitangyanyi	隋唐演義	249	128	40	0	1	0	0	0	0	0
 suiwen	suiwendi	隋文帝	279	206	246	0	1	0	0	0	0	0
-suiwo	suiwoqu	隨我去	800	199	0	0	1	0	0	0	0	0
+suiwo	suiwoqu	隨我去	800	199	0	0	1	0	0	0	1	0
 suixi	suixixian	遂溪縣	86	128	40	0	1	0	0	0	0	0
 suixiang	suixiangqu	隨想曲	424	184	144	0	1	0	0	0	1	0
 suixie	suixieyan	碎屑岩	490	225	244	0	1	0	0	0	1	0
@@ -245837,10 +245837,10 @@ yousuoweiyou	yousuoweiyousuobuwei	有所為有所不為	451	80	0	0	0	0	0	0	0	0
 yousuoweiyousuo	yousuoweiyousuobuwei	有所為有所不為	451	80	0	0	0	0	0	0	0	0
 yousuoweiyousuobu	yousuoweiyousuobuwei	有所為有所不為	451	80	0	0	0	0	0	0	0	0
 yousuozuo	yousuozuowei	有所作為	514	301	325	0	1	0	82	1	0	0
-youta	youtaqu	由他去	800	526	40	0	4	0	0	0	0	0
-youta	youtaqu	由她去	800	526	0	0	4	0	0	0	0	1
-youta	youtamenqu	由他們去	800	199	0	0	1	0	0	0	0	2
-youta	youtamenqu	由她們去	800	199	0	0	1	0	0	0	0	3
+youta	youtaqu	由他去	800	526	40	0	4	0	0	0	1	0
+youta	youtaqu	由她去	800	526	0	0	4	0	0	0	1	1
+youta	youtamenqu	由他們去	800	199	0	0	1	0	0	0	1	2
+youta	youtamenqu	由她們去	800	199	0	0	1	0	0	0	1	3
 youta	youtazhou	猶他州	208	168	151	0	1	0	0	0	1	4
 youtai	youtaiwuli	猶太物理	700	278	0	0	3	0	27	1	1	0
 youtai	youtaihuitang	猶太會堂	660	315	0	0	5	0	0	0	1	1
@@ -250694,7 +250694,7 @@ zaisuobu	zaisuobuji	在所不計	417	155	80	0	1	0	0	0	1	3
 zaisuonan	zaisuonanmian	在所難免	484	272	230	0	1	0	82	1	0	0
 zaisusong	zaisusongqijian	在訴訟期間	289	80	0	0	0	0	0	0	0	0
 zaisusongqi	zaisusongqijian	在訴訟期間	289	80	0	0	0	0	0	0	0	0
-zaita	zaitadeshidai	在他的時代	613	93	0	0	1	0	109	1	0	0
+zaita	zaitadeshidai	在他的時代	613	93	0	0	1	0	109	1	1	0
 zaitade	zaitadeshidai	在他的時代	613	93	0	0	1	0	109	1	0	0
 zaitadeshi	zaitadeshidai	在他的時代	613	93	0	0	1	0	109	1	0	0
 zaiti	zaitidanbaizhi	載體蛋白質	640	102	0	0	2	0	154	3	1	0

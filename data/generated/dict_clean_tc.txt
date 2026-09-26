@@ -38215,6 +38215,7 @@ fangmu	放牧	497
 fangmude	放牧地	676
 fangnei	房內	10
 fangneng	方能	330
+fangni	防你	220	no_contains
 fangni	方妮	137
 fangniao	放鳥	198
 fangniuban	放牛班	406
@@ -172830,6 +172831,8 @@ younaxie	有哪些	800
 youneng	有能	600
 younengli	有能力	640
 youni	油膩	660
+youni	有你	480	no_contains
+youni	由你	420	no_contains
 younian	幼年	973
 younianhuangserouyazhong	幼年黃色肉芽腫	700
 younianqi	幼年期	470
@@ -173077,6 +173080,10 @@ yousuoguji	有所顧忌	635
 yousuoguxiadongmai	右鎖骨下動脈	700
 yousuoweiyousuobuwei	有所為有所不為	451
 yousuozuowei	有所作為	514
+youta	有他	420	no_contains
+youta	有她	420	no_contains
+youta	由他	380	no_contains
+youta	由她	380	no_contains
 youta	猶他	248
 youtai	猶太	790
 youtaifadian	猶太法典	260
@@ -173149,6 +173156,8 @@ youwenti	有問題	800
 youwentusi	尤文圖斯	334
 youwentusidui	尤文圖斯隊	294
 youwentusiqiuchang	尤文圖斯球場	691
+youwo	有我	480	no_contains
+youwo	由我	420	no_contains
 youwo	優渥	378
 youwu	有無	984
 youwu	有霧	280
@@ -228324,3 +228333,27 @@ zuzhiyueyuzui	組織越獄罪	20	no_contains
 zuzhuangjishu	組裝技術	40	no_contains
 gonghu	公戶	300	no_contains
 jingshouyi	淨收益	520	no_contains
+fangta	防他	220	no_contains
+fangta	防她	220	no_contains
+fangwo	防我	220	no_contains
+qianni	欠你	260	no_contains
+qianni	牽你	240	no_contains
+qianni	簽你	120	no_contains
+qianta	欠他	260	no_contains
+qianta	欠她	260	no_contains
+qianta	牽他	240	no_contains
+qianta	牽她	240	no_contains
+qianta	簽他	120	no_contains
+qianta	簽她	120	no_contains
+qianwo	欠我	260	no_contains
+qianwo	牽我	240	no_contains
+qianwo	簽我	120	no_contains
+renni	任你	320	no_contains
+renta	任他	320	no_contains
+renta	任她	320	no_contains
+renwo	任我	320	no_contains
+suita	隨他	198	no_contains
+suita	隨她	198	no_contains
+suiwo	隨我	198	no_contains
+zaita	在他	420	no_contains
+zaita	在她	420	no_contains
