@@ -31373,9 +31373,9 @@ dahou	dahoutian	大后天	387	152	73	0	1	0	0	0	0	0
 dahou	dahounian	大后年	362	137	40	0	1	0	0	0	0	1
 dahou	dahoudajiao	大吼大叫	10	208	40	0	2	0	0	0	1	2
 dahouda	dahoudajiao	大吼大叫	10	208	40	0	2	0	0	0	0	0
-dahu	dahuxiaojiao	大呼小叫	498	263	274	0	1	0	88	1	0	0
-dahu	dahuzhuang	大湖庄	391	80	0	0	0	0	0	0	1	1
-dahu	dahulu	打呼噜	421	185	146	0	1	0	0	0	0	2
+dahu	dahuxiaojiao	大呼小叫	498	263	274	0	1	0	88	1	0	1
+dahu	dahuzhuang	大湖庄	391	80	0	0	0	0	0	0	1	2
+dahu	dahulu	打呼噜	421	185	146	0	1	0	0	0	1	0
 dahu	dahulaer	大呼拉尔	277	178	180	0	1	0	0	0	0	3
 dahu	dahutoufeng	大虎头蜂	260	80	0	0	0	0	0	0	0	4
 dahu	dahuxiang	大湖乡	174	80	0	0	0	0	0	0	1	5
@@ -108052,8 +108052,8 @@ laiyang	laiyangzhuanqu	莱阳专区	482	17	0	0	1	0	174	2	1	1
 laiyang	laiyangshi	莱阳市	176	140	73	0	1	0	0	0	1	2
 laiyangli	laiyangligao	莱阳梨膏	540	1	0	0	1	0	247	3	0	0
 laiyangzhuan	laiyangzhuanqu	莱阳专区	482	17	0	0	1	0	174	2	0	0
-laiyi	laiyier	莱伊尔	232	80	0	0	0	0	0	0	0	0
-laiyi	laiyixiang	来义乡	174	80	0	0	0	0	0	0	0	1
+laiyi	laiyier	莱伊尔	232	80	0	0	0	0	0	0	0	2
+laiyi	laiyixiang	来义乡	174	80	0	0	0	0	0	0	0	3
 laiyin	laiyinhe	莱茵河	289	228	309	0	1	0	0	0	0	0
 laiying	laiyingde	来硬的	232	80	0	0	0	0	0	0	0	0
 laiyuan	laiyuanyu	来源于	608	304	441	0	1	0	0	0	1	0
@@ -133296,7 +133296,7 @@ nageyang	nageyangzi	那个样子	800	534	0	0	4	0	0	0	0	0
 nagu	naguwu	那古屋	640	223	0	0	1	0	0	0	1	0
 nagu	naguta	纳骨塔	232	80	0	0	0	0	0	0	0	1
 naha	nahaliya	纳哈里亚	482	17	0	0	1	0	174	2	0	0
-nahai	nahaiyongshuo	那还用说	387	137	40	0	1	0	0	0	0	0
+nahai	nahaiyongshuo	那还用说	387	137	40	0	1	0	0	0	0	1
 nahaiyong	nahaiyongshuo	那还用说	387	137	40	0	1	0	0	0	0	0
 nahali	nahaliya	纳哈里亚	482	17	0	0	1	0	174	2	0	0
 nahe	nahexiong	纳赫雄	230	80	0	0	0	0	0	0	0	0
@@ -253717,7 +253717,7 @@ zouxianghuadongduan	zouxianghuadongduanceng	走向滑动断层	318	80	0	0	0	0	0	
 zouxiangsui	zouxiangsuixiang	走乡随乡	226	80	0	0	0	0	0	0	0	0
 zouxiapo	zouxiapolu	走下坡路	470	204	192	0	1	0	0	0	1	0
 zouxing	zouxingshi	走形式	232	80	0	0	0	0	0	0	1	0
-zouyi	zouyibian	走一遍	280	284	40	0	2	0	0	0	0	0
+zouyi	zouyibian	走一遍	280	284	40	0	2	0	0	0	0	2
 zouyuan	zouyuanchang	走圆场	232	80	0	0	0	0	0	0	0	0
 zouzhe	zouzheqiao	走着瞧	459	222	235	0	1	0	0	0	1	0
 zouzhong	zouzhongjiangyijiwanjiajiang	走钟奖一级玩家奖	772	80	0	0	0	0	0	0	0	0
@@ -255395,3 +255395,11 @@ zidongbiansu	zidongbiansuxiang	自动变速箱	20	171	0	0	1	0	0	0	0	0
 zidongsheng	zidongshengcheng	自动生成	40	171	0	0	1	0	0	0	0	1
 ziyuanguan	ziyuanguanli	资源管理	40	171	0	0	1	0	0	0	0	3
 jingshou	jingshouyi	净收益	520	80	0	0	0	0	0	0	0	0
+haiyou	haiyoude	还有得	320	80	0	0	0	0	0	0	1	3
+haiyou	haiyoudewan	还有得玩	360	80	0	0	0	0	0	0	1	2
+haiyoude	haiyoudewan	还有得玩	360	80	0	0	0	0	0	0	1	0
+laiyi	laiyitang	来一趟	520	80	0	0	0	0	0	0	0	1
+laiyi	laiyixia	来一下	780	0	0	0	0	0	0	0	0	0
+nahai	nahaizao	那还早	420	80	0	0	0	0	0	0	0	0
+zouyi	zouyitang	走一趟	520	80	0	0	0	0	0	0	0	1
+zouyi	zouyixia	走一下	680	0	0	0	0	0	0	0	0	0

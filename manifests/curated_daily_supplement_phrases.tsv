@@ -13475,3 +13475,15 @@
 随她	隨她	0.198	suita	exact_rank_no_contains
 随他	隨他	0.198	suita	exact_rank_no_contains
 随我	隨我	0.198	suiwo	exact_rank_no_contains
+
+# Everyday visits and particles; explicit hai/de and the proper name Nuo Qin.
+来一趟	來一趟	0.520	laiyitang	exact_rank_no_contains
+还早	還早	0.620	haizao	exact_rank_no_contains
+那还早	那還早	0.420	nahaizao	exact_rank_no_contains
+走一趟	走一趟	0.520	zouyitang	exact_rank_no_contains
+打呼	打呼	0.420	dahu	exact_rank_no_contains
+# Keep the new na-jian homophone selectable without inferred frequency.
+那间	那間	0.000	najian	exact_rank_no_contains
+还有得	還有得	0.320	haiyoude	exact_rank_no_contains
+还有得玩	還有得玩	0.360	haiyoudewan	exact_rank_no_contains
+那琴	那琴	0.120	nuoqin	exact_rank_no_contains

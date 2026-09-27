@@ -32959,8 +32959,8 @@ dahou	dahounian	大後年	369	137	40	0	1	0	0	0	0	3
 dahou	dahoudajiao	大吼大叫	10	208	40	0	2	0	0	0	1	4
 dahouda	dahoudajiao	大吼大叫	10	208	40	0	2	0	0	0	0	0
 dahu	dahuzhuang	大湖莊	496	80	0	0	0	0	0	0	1	0
-dahu	dahuxiaojiao	大呼小叫	498	263	274	0	1	0	88	1	0	1
-dahu	dahulu	打呼嚕	421	185	146	0	1	0	0	0	0	2
+dahu	dahuxiaojiao	大呼小叫	498	263	274	0	1	0	88	1	0	2
+dahu	dahulu	打呼嚕	421	185	146	0	1	0	0	0	1	1
 dahu	dahuxiang	大湖鄉	232	80	0	0	0	0	0	0	1	3
 dahu	dahulaer	大呼拉爾	277	178	180	0	1	0	0	0	0	4
 dahu	dahutoufeng	大虎頭蜂	260	80	0	0	0	0	0	0	0	5
@@ -115305,8 +115305,8 @@ laiyang	laiyangligao	萊陽梨膏	540	1	0	0	1	0	247	3	1	1
 laiyang	laiyangshi	萊陽市	176	140	73	0	1	0	0	0	1	2
 laiyangli	laiyangligao	萊陽梨膏	540	1	0	0	1	0	247	3	0	0
 laiyangzhuan	laiyangzhuanqu	萊陽專區	583	17	0	0	1	0	174	2	0	0
-laiyi	laiyier	萊伊爾	232	80	0	0	0	0	0	0	0	0
-laiyi	laiyixiang	來義鄉	228	80	0	0	0	0	0	0	0	1
+laiyi	laiyier	萊伊爾	232	80	0	0	0	0	0	0	0	2
+laiyi	laiyixiang	來義鄉	228	80	0	0	0	0	0	0	0	3
 laiyin	laiyinhe	萊茵河	289	228	309	0	1	0	0	0	0	0
 laiying	laiyingde	來硬的	232	80	0	0	0	0	0	0	0	0
 laiyuan	laiyuanyu	來源於	1000	304	441	0	1	0	0	0	1	0
@@ -269397,7 +269397,7 @@ zouxianghuadongduan	zouxianghuadongduanceng	走向滑動斷層	318	80	0	0	0	0	0	
 zouxiangsui	zouxiangsuixiang	走鄉隨鄉	258	80	0	0	0	0	0	0	0	0
 zouxiapo	zouxiapolu	走下坡路	470	204	192	0	1	0	0	0	1	0
 zouxing	zouxingshi	走形式	232	80	0	0	0	0	0	0	1	0
-zouyi	zouyibian	走一遍	280	284	40	0	2	0	0	0	0	0
+zouyi	zouyibian	走一遍	280	284	40	0	2	0	0	0	0	2
 zouyuan	zouyuanchang	走圓場	232	80	0	0	0	0	0	0	0	0
 zouzhe	zouzheqiao	走著瞧	455	222	235	0	1	0	0	0	1	0
 zouzi	zouzipai	走資派	647	224	239	0	1	0	0	0	0	0
@@ -271211,3 +271211,11 @@ zidongbiansu	zidongbiansuxiang	自動變速箱	20	171	0	0	1	0	0	0	0	0
 zidongsheng	zidongshengcheng	自動生成	40	171	0	0	1	0	0	0	0	1
 ziyuanguan	ziyuanguanli	資源管理	40	171	0	0	1	0	0	0	0	3
 jingshou	jingshouyi	淨收益	520	80	0	0	0	0	0	0	0	1
+haiyou	haiyoude	還有得	320	80	0	0	0	0	0	0	1	3
+haiyou	haiyoudewan	還有得玩	360	80	0	0	0	0	0	0	1	2
+haiyoude	haiyoudewan	還有得玩	360	80	0	0	0	0	0	0	1	0
+laiyi	laiyitang	來一趟	520	80	0	0	0	0	0	0	0	1
+laiyi	laiyixia	來一下	780	0	0	0	0	0	0	0	0	0
+nahai	nahaizao	那還早	420	80	0	0	0	0	0	0	0	1
+zouyi	zouyitang	走一趟	520	80	0	0	0	0	0	0	0	1
+zouyi	zouyixia	走一下	680	0	0	0	0	0	0	0	0	0

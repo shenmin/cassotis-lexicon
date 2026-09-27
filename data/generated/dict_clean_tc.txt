@@ -24375,6 +24375,7 @@ dahoutian	大后天	406
 dahoutian	大後天	394
 dahu	大戶	673
 dahu	大湖	475
+dahu	打呼	420	no_contains
 dahua	答話	646
 dahua	大化	385
 dahua	搭話	330
@@ -54095,6 +54096,7 @@ haiyunfei	海運費	198
 haizai	還在	1000
 haizang	海葬	328
 haizao	海藻	1000
+haizao	還早	620	no_contains
 haizaoduotangkongxinjiaonang	海藻多糖空心膠囊	677
 haizaonengyuan	海藻能源	570
 haizaoranliao	海藻燃料	570
@@ -99537,6 +99539,7 @@ najiabeng	鈉鉀泵	500
 najializibeng	鈉鉀離子泵	320
 najialvgongzhuanyundanbai	鈉鉀氯共轉運蛋白	700
 najian	那件	280
+najian	那間	0	no_contains
 najiaren	那加人	640
 najiazi	拿架子	409
 najibu	納吉布	222
@@ -101030,6 +101033,7 @@ neifu	內服	560
 neigang	內港	288
 neiganshouxing	內感受性	570
 neiganzhi	內感知	500
+neige	那個	1000	no_contains
 neige	內閣	513
 neigefushamo	內格夫沙漠	253
 neigezongli	內閣總理	602
@@ -101079,6 +101083,8 @@ neiji	內急	602
 neiji	內積	252
 neijiade	內賈德	205
 neijian	內奸	504
+neijian	那件	280	no_contains
+neijian	那間	0	no_contains
 neijiang	內江	259
 neijiangshi	內江市	180
 neijiangzhuanqu	內江專區	583
@@ -101208,6 +101214,7 @@ neisizhijie	內絲直接	680
 neisizhitong	內絲直通	680
 neitai	內胎	370
 neitaniyahu	內塔尼亞胡	358
+neitian	那天	1000	no_contains
 neitian	內田	198
 neitianyouji	內田有紀	781
 neitidanbaifenxuanzhuanyunfuheti	內體蛋白分選轉運複合體	898
@@ -101318,6 +101325,7 @@ neizhihanshu	內置函數	705
 neizhileixing	內置類型	703
 neizhiwang	內質網	459
 neizhiwangguanliandanbaizhifenjie	內質網關聯蛋白質分解	700
+neizhong	那種	1054	no_contains
 neizhong	內中	305
 neizhuan	內傳	198
 neizhuang	內裝	319
@@ -228357,3 +228365,15 @@ suita	隨她	198	no_contains
 suiwo	隨我	198	no_contains
 zaita	在他	420	no_contains
 zaita	在她	420	no_contains
+haiyoude	還有得	320	no_contains
+haiyoudewan	還有得玩	360	no_contains
+laiyitang	來一趟	520	no_contains
+nahaizao	那還早	420	no_contains
+neiben	那本	10	no_contains
+neici	那次	700	no_contains
+neijia	那家	280	no_contains
+neinian	那年	280	no_contains
+neiwei	那位	700	no_contains
+neixie	那些	1000	no_contains
+nuoqin	那琴	120	no_contains
+zouyitang	走一趟	520	no_contains

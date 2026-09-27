@@ -826,6 +826,29 @@ SINGLE_CHAR_READING_DELTA_OVERRIDES: Dict[Tuple[str, str], int] = {
 }
 SINGLE_CHAR_ADDED_READING_WEIGHT_CAP = 280
 
+# Additive, whole-term readings only; never rewrite a primary reading or expand
+# names/places by replacing every occurrence of a character. Na/nei/nuo:
+# https://dict.revised.moe.edu.tw/dictView.jsp?ID=3142&la=0&powerMode=0
+# A zero cap inherits the source weight; standalone aliases use conservative caps.
+AUDITED_ADDITIVE_PINYIN_READINGS: Tuple[Tuple[str, str, str, int], ...] = (
+    ("\u90a3", "na", "nei", 60),
+    ("\u90a3", "na", "nuo", 180),
+    ("\u90a3\u4e2a", "nage", "neige", 0),
+    ("\u90a3\u500b", "nage", "neige", 0),
+    ("\u90a3\u4e9b", "naxie", "neixie", 0),
+    ("\u90a3\u4f4d", "nawei", "neiwei", 0),
+    ("\u90a3\u79cd", "nazhong", "neizhong", 0),
+    ("\u90a3\u7a2e", "nazhong", "neizhong", 0),
+    ("\u90a3\u672c", "naben", "neiben", 0),
+    ("\u90a3\u6b21", "naci", "neici", 0),
+    ("\u90a3\u5bb6", "najia", "neijia", 0),
+    ("\u90a3\u5e74", "nanian", "neinian", 0),
+    ("\u90a3\u5929", "natian", "neitian", 0),
+    ("\u90a3\u4ef6", "najian", "neijian", 0),
+    ("\u90a3\u95f4", "najian", "neijian", 0),
+    ("\u90a3\u9593", "najian", "neijian", 0),
+)
+
 # Simplification may merge characters with different modern readings. Restore
 # only audited pairs, not every reading of every historical variant.
 SINGLE_CHAR_SIMPLIFIED_READING_ALIASES: Tuple[Tuple[str, str, str], ...] = (
@@ -10061,10 +10084,13 @@ def _parse_curated_daily_phrase_entries(
             CURATED_DAILY_EXACT_RANK_MODE,
             CURATED_DAILY_EXACT_RANK_NO_CONTAINS_MODE,
         }:
-            bounded_rank = max(0.001, min(1.0, usage_score))
-            normalized_usage_score = -(
-                -CURATED_DAILY_POST_RANK_FIXED_WEIGHT_USAGE_BASE + bounded_rank
-            )
+            if usage_score == 0.0:
+                normalized_usage_score = CURATED_DAILY_POST_RANK_ZERO_WEIGHT_USAGE_MAX
+            else:
+                bounded_rank = max(0.001, min(1.0, usage_score))
+                normalized_usage_score = -(
+                    -CURATED_DAILY_POST_RANK_FIXED_WEIGHT_USAGE_BASE + bounded_rank
+                )
             stats[f"{stats_prefix}_exact_rank"] += 1
         elif usage_score <= CURATED_DAILY_POST_RANK_ZERO_WEIGHT_USAGE_MAX:
             normalized_usage_score = CURATED_DAILY_POST_RANK_ZERO_WEIGHT_USAGE_MAX
@@ -14251,6 +14277,23 @@ def _restore_audited_simplified_single_char_readings(
             continue
         sc_map[key] = min(weight, SINGLE_CHAR_ADDED_READING_WEIGHT_CAP)
         stats[f"{stats_prefix}_simplified_readings_restored"] += 1
+    return stats
+
+
+def _restore_audited_additive_pinyin_readings(
+    mapping: Dict[Tuple[str, str], int],
+    stats_prefix: str,
+) -> Dict[str, int]:
+    """Restore audited aliases after ranking, without touching existing rows."""
+    stats = {f"{stats_prefix}_audited_readings_added": 0}
+    for text, source_pinyin, added_pinyin, cap in AUDITED_ADDITIVE_PINYIN_READINGS:
+        source_key = (source_pinyin, text)
+        added_key = (added_pinyin, text)
+        if source_key not in mapping or added_key in mapping:
+            continue
+        weight = mapping[source_key]
+        mapping[added_key] = min(weight, cap) if cap else weight
+        stats[f"{stats_prefix}_audited_readings_added"] += 1
     return stats
 
 
@@ -18622,12 +18665,14 @@ def _write_dict(
     unihan_source_rank_map: Dict[Tuple[str, str], int] | None = None,
     unihan_pinlu_detail_map: Dict[Tuple[str, str], int] | None = None,
     contains_popularity_excluded_terms: Set[str] | None = None,
+    contains_popularity_excluded_keys: Set[Tuple[str, str]] | None = None,
 ) -> None:
     preferred_terms = preferred_terms or set()
     low_priority_output_terms = low_priority_output_terms or set()
     post_low_priority_output_terms = post_low_priority_output_terms or set()
     preserve_pinyin_keys = preserve_pinyin_keys or set()
     contains_popularity_excluded_terms = contains_popularity_excluded_terms or set()
+    contains_popularity_excluded_keys = contains_popularity_excluded_keys or set()
     valid_single_syllables: Set[str] = set()
     if unihan_readings_map:
         for readings in unihan_readings_map.values():
@@ -18727,7 +18772,9 @@ def _write_dict(
 
     with path.open("w", encoding="utf-8", newline="\n") as f:
         for (output_pinyin, text), weight in ordered_items:
-            scope = "\tno_contains" if text in contains_popularity_excluded_terms else ""
+            excluded = (text in contains_popularity_excluded_terms
+                        or (output_pinyin, text) in contains_popularity_excluded_keys)
+            scope = "\tno_contains" if excluded else ""
             f.write(f"{output_pinyin}\t{text}\t{weight}{scope}\n")
 
 
@@ -26855,6 +26902,17 @@ def main() -> int:
     stats["sc_final_explicit_multi_char_drop_rows"] = sc_final_explicit_drop_rows
     stats["tc_final_explicit_multi_char_drop_rows"] = tc_final_explicit_drop_rows
 
+    for mapping, variant in ((sc_map, "sc"), (tc_map, "tc")):
+        stats.update(_restore_audited_additive_pinyin_readings(
+            mapping, f"{variant}_final_post",
+        ))
+    audited_reading_keys = {
+        (added_pinyin, text)
+        for text, _source_pinyin, added_pinyin, _cap in AUDITED_ADDITIVE_PINYIN_READINGS
+        if (added_pinyin, text) in sc_map or (added_pinyin, text) in tc_map
+    }
+    curated_daily_explicit_pinyin_keys.update(audited_reading_keys)
+
     _write_dict(
         output_sc,
         sc_map,
@@ -26867,6 +26925,7 @@ def main() -> int:
         unihan_source_rank_map=output_unihan_source_rank_map,
         unihan_pinlu_detail_map=output_unihan_pinlu_detail_map,
         contains_popularity_excluded_terms=contains_popularity_excluded_sc_terms,
+        contains_popularity_excluded_keys=audited_reading_keys,
     )
     _write_dict(
         output_tc,
@@ -26880,6 +26939,7 @@ def main() -> int:
         unihan_source_rank_map=output_unihan_source_rank_map,
         unihan_pinlu_detail_map=output_unihan_pinlu_detail_map,
         contains_popularity_excluded_terms=contains_popularity_excluded_tc_terms,
+        contains_popularity_excluded_keys=audited_reading_keys,
     )
     if output_transition_completion_sc is not None:
         sc_transition_completion_index, completion_stats = (

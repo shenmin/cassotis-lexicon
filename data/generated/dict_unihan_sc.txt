@@ -12285,6 +12285,7 @@ ne	䭆	28
 nei	内	567
 nei	哪	173
 nei	馁	88
+nei	那	60	no_contains
 nei	娞	52
 nei	氝	52
 nei	腇	52
@@ -12641,6 +12642,7 @@ nun	黁	79
 nuo	糯	223
 nuo	挪	218
 nuo	诺	204
+nuo	那	180	no_contains
 nuo	懦	166
 nuo	傩	109
 nuo	搦	89
