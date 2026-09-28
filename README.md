@@ -35,7 +35,7 @@ Cassotis Lexicon publishes local ranking artifacts alongside its lexical diction
 
 | Version | Query-path priors (SC / TC) | Word-path transitions (SC / TC) | Forward character n-gram parameters (SC / TC) | Reverse character n-gram parameters (SC / TC) |
 |---|---:|---:|---:|---:|
-| `v1.14.0` - `v1.23.0` | 23,603 / 22,723 | 289,955 / 257,125 | 698,694 / 698,777 | 2,538,336 / 2,539,067 |
+| `v1.14.0` - `v1.29.0` | 23,603 / 22,723 | 289,955 / 257,125 | 698,694 / 698,777 | 2,538,336 / 2,539,067 |
 | `v1.13.0` | 23,598 / 22,720 | 289,955 / 257,125 | 698,694 / 698,777 | 2,538,336 / 2,539,067 |
 | `v1.12.0` | 23,593 / 22,717 | 289,955 / 257,125 | 698,694 / 698,777 | — |
 | `v1.11.0` | 23,593 / 22,717 | 281,091 / 250,354 | 698,694 / 698,777 | — |
@@ -61,7 +61,13 @@ The build also derives a separate offline transition-completion index from stron
 
 | Version | Completion popularity priors (SC / TC) | Prefix lookup records (SC / TC) | Transition-completion index (SC / TC) |
 |---|---:|---:|---:|
-| `v1.23.0`<br/>`v1.21.0` | 189,301 / 192,193 | 255,560 / 271,145 | 102,449 / 96,718 |
+| `v1.29.0` | 225,201 / 228,153 | 255,405 / 271,221 | 102,449 / 96,718 |
+| `v1.28.0` | 189,388 / 192,343 | 255,282 / 271,092 | 102,449 / 96,718 |
+| `v1.27.0` | 189,355 / 192,310 | 255,268 / 271,078 | 102,449 / 96,718 |
+| `v1.26.1` | 189,221 / 192,176 | 255,260 / 271,070 | 102,449 / 96,718 |
+| `v1.26.0` | 189,214 / 192,169 | 255,259 / 271,069 | 102,449 / 96,718 |
+| `v1.25.0` | 189,210 / 192,165 | 255,258 / 271,068 | 102,449 / 96,718 |
+| `v1.24.0`<br/>`v1.23.0`<br/>`v1.21.0` | 189,301 / 192,193 | 255,560 / 271,145 | 102,449 / 96,718 |
 | `v1.20.0` | 189,169 / 192,061 | 255,185 / 270,770 | 102,449 / 96,718 |
 | `v1.19.0` | 189,120 / 192,012 | 255,185 / 270,770 | 102,449 / 96,718 |
 | `v1.18.0` | 189,077 / 191,969 | 255,185 / 270,770 | 102,449 / 96,718 |
@@ -69,13 +75,13 @@ The build also derives a separate offline transition-completion index from stron
 | `v1.16.0` | 188,983 / 191,875 | 255,129 / 270,714 | 102,449 / 96,718 |
 | `v1.15.0` | — | — | 54,305 / 51,875 |
 
-v1.16.0 added corpus-derived popularity priors and a precomputed Top-K prefix lookup index, allowing IME to distinguish popular completions from cold specialist terms without enumerating combinations at runtime. Popularity priors form an independently built snapshot, so their count need not match the current main dictionary.
+v1.16.0 added corpus-derived popularity priors and a precomputed Top-K prefix lookup index, allowing IME to distinguish popular completions from cold specialist terms without enumerating combinations at runtime. Popularity priors form an independently built snapshot, so their count need not match the current main dictionary. Prior records are not a count of eligible suggestions: rare specialist terms remain subject to separate short-prefix and Tab eligibility checks.
 
 Additional static data for completion ranking and local continuation:
 
 | Version | Completion competition priors (SC / TC) | Pairwise switch-audit records (SC / TC) | Long-sentence continuation index (SC / TC) |
 |---|---:|---:|---:|
-| `v1.18.0` - `v1.23.0` | 42,453 / 42,448 | 4,379 / 4,379 | 97,589 / 92,457 |
+| `v1.18.0` - `v1.29.0` | 42,453 / 42,448 | 4,379 / 4,379 | 97,589 / 92,457 |
 | `v1.17.0` | 42,453 / 42,448 | 4,379 / 4,379 | 35,423 / 32,481 |
 
 Since v1.17.0, competition priors and pairwise audits have supported completion selection and abstention, while a separate index supplies short continuations after stable word anchors. These are static lookup records, not additional dictionary entries or neural-network parameter counts; models trained and deployed by the IME project are not included.
@@ -103,6 +109,8 @@ The v1.13.0 artifacts add reverse character n-gram models for bidirectional path
 The v1.14.0 artifacts refresh query-path priors for the expanded exact-anchor and phrase-continuation paths used by IME; word transitions and forward/reverse character models remain unchanged.
 
 The v1.16.0 query-path, word-transition, and character n-gram artifacts remain unchanged from v1.14.0. Its new model data is the one-key completion popularity and prefix lookup index listed above.
+
+Long-sentence local repair in IME v1.22.0, joint review of complete repair proposals in v1.26.0, and contextual short-word semantic review in v1.29.0 are trained and deployed by the IME project. They do not add records to these Lexicon tables. See [IME local ranking](https://github.com/shenmin/cassotis-ime/blob/master/README.md#corpus-trained-local-ranking) for details.
 
 The statistical model stores only short word transitions and character n-grams, not complete training sentences. The independent long-sentence and short-word benchmark cases are excluded from training. At runtime, IME evaluates these statistical signals and most compact native rerankers locally. Starting with v1.18.0, the constrained long-sentence one-key-completion fallback uses an INT8 weight-quantized, mixed-precision ONNX model loaded only by the external host process; it requires no network or GPU and safely falls back when unavailable. See the [IME benchmark documentation](https://github.com/shenmin/cassotis-ime/blob/master/BENCHMARK.md) for the long-sentence evaluation protocol.
 
