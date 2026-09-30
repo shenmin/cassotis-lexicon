@@ -13487,3 +13487,20 @@
 还有得	還有得	0.320	haiyoude	exact_rank_no_contains
 还有得玩	還有得玩	0.360	haiyoudewan	exact_rank_no_contains
 那琴	那琴	0.120	nuoqin	exact_rank_no_contains
+
+# Everyday maintenance and conversational phrases, 2026-09-30.
+# Exact rank corrections preserve independent corpus popularity evidence.
+实体	實體	1.000	shiti	exact_rank
+试题	試題	0.600	shiti	exact_rank
+尸体	屍體	0.300	shiti	exact_rank
+差了	差了	0.560	chale	exact_rank_no_contains
+维修店	維修店	0.600	weixiudian	exact_rank_no_contains
+旧有	舊有	0.450	jiuyou	exact_rank_no_contains
+闭源	閉源	0.560	biyuan	exact_rank_no_contains
+能呀	能呀	0.360	nengya	exact_rank_no_contains
+能吧	能吧	0.420	nengba	exact_rank_no_contains
+哪一步	哪一步	0.520	nayibu	exact_rank_no_contains
+哪一步	哪一步	0.440	neiyibu	exact_rank_no_contains
+好物	好物	0.520	haowu	exact_rank_no_contains
+鲜牛肉	鮮牛肉	0.560	xianniurou	exact_rank_no_contains
+混着	混著	0.420	hunzhe	exact_rank_no_contains

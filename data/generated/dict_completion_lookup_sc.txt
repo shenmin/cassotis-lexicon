@@ -135961,7 +135961,7 @@ neixue	neixuebi	内削壁	600	175	0	0	1	0	89	1	0	0
 neiyan	neiyanjiao	内眼角	379	137	40	0	1	0	0	0	0	0
 neiye	neiyeshou	内野手	379	137	40	0	1	0	0	0	1	0
 neiyi	neiyiku	内衣裤	412	158	85	0	1	0	0	0	1	0
-neiyi	neiyidian	内衣店	10	208	40	0	2	0	0	0	1	1
+neiyi	neiyidian	内衣店	10	208	40	0	2	0	0	0	1	2
 neiyin	neiyinkebanyinxiang	内隐刻板印象	700	102	0	0	2	0	154	3	0	0
 neiyin	neiyinjiyi	内隐记忆	540	1	40	0	1	0	247	3	0	1
 neiyin	neiyinzi	内因子	470	1	0	0	1	0	247	3	0	2
@@ -194264,7 +194264,7 @@ weixinzhu	weixinzhuyizhe	唯心主义者	452	178	130	0	1	0	0	0	0	1
 weixinzhuyi	weixinzhuyizhe	唯心主义者	452	178	130	0	1	0	0	0	1	0
 weixirun	weixirun'ezao	胃喜润恶燥	603	1	0	0	1	0	247	3	0	0
 weixirune	weixirun'ezao	胃喜润恶燥	603	1	0	0	1	0	247	3	0	0
-weixiu	weixiujuesangshi	味嗅觉丧失	640	102	0	0	2	0	154	3	0	0
+weixiu	weixiujuesangshi	味嗅觉丧失	640	102	0	0	2	0	154	3	0	1
 weixiujue	weixiujuesangshi	味嗅觉丧失	640	102	0	0	2	0	154	3	0	0
 weixiujuesang	weixiujuesangshi	味嗅觉丧失	640	102	0	0	2	0	154	3	0	0
 weixiwen	weixiwenyifuxingjianzhu	威悉文艺复兴建筑	760	182	0	0	1	0	87	1	0	0
@@ -255403,3 +255403,6 @@ laiyi	laiyixia	来一下	780	0	0	0	0	0	0	0	0	0
 nahai	nahaizao	那还早	420	80	0	0	0	0	0	0	0	0
 zouyi	zouyitang	走一趟	520	80	0	0	0	0	0	0	0	1
 zouyi	zouyixia	走一下	680	0	0	0	0	0	0	0	0	0
+neiyi	neiyibu	哪一步	440	80	0	0	0	0	0	0	0	1
+weixiu	weixiudian	维修店	600	80	0	0	0	0	0	0	1	0
+xianniu	xianniurou	鲜牛肉	560	80	0	0	0	0	0	0	0	0

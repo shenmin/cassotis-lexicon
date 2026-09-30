@@ -10843,6 +10843,7 @@ biyouzhongxie	必有重谢	260
 biyu	比喻	1000
 biyu	避雨	615
 biyu	碧玉	10
+biyuan	闭源	560	no_contains
 biyuan	鼻渊	271
 biyuanshukoufuye	鼻渊舒口服液	644
 biyuantangjiang	鼻渊糖浆	536
@@ -16010,6 +16011,7 @@ chakou	查扣	1
 chakou	茬口	1
 chale	插了	700
 chale	查了	640	no_contains
+chale	差了	560	no_contains
 chali	查理	551
 chali'ershi	查理二世	413
 chaliao	茶寮	260
@@ -54309,6 +54311,7 @@ haoweishihengjia	郝威式桁架	719
 haowen	好文	10
 haowen	好闻	10
 haowu	毫无	1018
+haowu	好物	520	no_contains
 haowu	好恶	114
 haowu'erzhi	毫无二致	431
 haowubanfa	毫无办法	280
@@ -72541,6 +72544,7 @@ jiuyiyixijishijian	九一一袭击事件	610
 jiuyong	就用	700
 jiuyou	就有	1018
 jiuyou	就又	700
+jiuyou	旧有	450	no_contains
 jiuyou	旧友	1
 jiuyouyingde	咎有应得	387
 jiuyouziqu	咎由自取	454
@@ -125391,9 +125395,9 @@ shitaofenbeige	施陶芬贝格	293
 shitelaosi	施特劳斯	327
 shitelasibao	施特拉斯堡	262
 shitelong	史特龙	167
-shiti	尸体	481
-shiti	实体	385
-shiti	试题	131
+shiti	实体	1000
+shiti	试题	600
+shiti	尸体	300
 shiti	事体	107
 shiti	诗体	106
 shiti'ai	实体癌	470
@@ -225424,3 +225428,10 @@ neiwei	那位	700	no_contains
 neixie	那些	1000	no_contains
 nuoqin	那琴	120	no_contains
 zouyitang	走一趟	520	no_contains
+hunzhe	混着	420	no_contains
+nayibu	哪一步	520	no_contains
+neiyibu	哪一步	440	no_contains
+nengba	能吧	420	no_contains
+nengya	能呀	360	no_contains
+weixiudian	维修店	600	no_contains
+xianniurou	鲜牛肉	560	no_contains
