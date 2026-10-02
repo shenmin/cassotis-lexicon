@@ -55015,6 +55015,7 @@ haohuodangshang	好活噹賞	261
 haohuodangshang	好活當賞	257
 haoji	好幾	914
 haoji	好几	714
+haoji	好記	0	no_contains
 haojiahuo	好傢伙	477
 haojiahuo	好家伙	475
 haojiami	蒿甲醚	470
@@ -62969,6 +62970,7 @@ huoxia	活蝦	10
 huoxiachuan	活俠傳	460
 huoxialai	活下來	10
 huoxian	火線	560
+huoxian	活線	240	no_contains
 huoxiang	活像	554
 huoxiang	藿香	1
 huoxiangqingweijiaonang	藿香清胃膠囊	664
@@ -84495,6 +84497,7 @@ liangpi	涼皮	305
 liangpian	兩片	10
 liangpiao	糧票	639
 liangpin	良品	10
+liangping	亮屏	420	no_contains
 liangping	量瓶	89
 liangping	兩瓶	10
 liangpingqu	梁平區	167
@@ -132870,6 +132873,7 @@ sixiali	四下裏	384
 sixiali	四下里	381
 sixiali	四下裡	367
 sixian	絲腺	440
+sixian	死線	320	no_contains
 sixian	絲線	260
 sixiang	思想	1000
 sixiang	四項	700
@@ -158145,6 +158149,7 @@ xipiao	息票	349
 xipin	細品	10
 xipinenrou	細皮嫩肉	405
 xiping	西平	615
+xiping	息屏	560	no_contains
 xipingshijing	熹平石經	260
 xipingxian	西平縣	165
 xipingxianshi	息屏顯示	260
@@ -166666,6 +166671,7 @@ yihuxunchang	異乎尋常	491
 yihuyixue	醫護醫學	570
 yiji	以及	1000
 yiji	一級	652
+yiji	易記	360	no_contains
 yiji	遺跡	351
 yiji	遺蹟	344
 yiji	一記	280
@@ -228388,3 +228394,6 @@ nengba	能吧	420	no_contains
 nengya	能呀	360	no_contains
 weixiudian	維修店	600	no_contains
 xianniurou	鮮牛肉	560	no_contains
+nalia	那倆	480	no_contains
+zhelia	這倆	480	no_contains
+zheliangxiang	這兩項	520	no_contains

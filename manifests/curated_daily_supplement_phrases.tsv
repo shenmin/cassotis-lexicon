@@ -13504,3 +13504,14 @@
 好物	好物	0.520	haowu	exact_rank_no_contains
 鲜牛肉	鮮牛肉	0.560	xianniurou	exact_rank_no_contains
 混着	混著	0.420	hunzhe	exact_rank_no_contains
+# Screen states, memorable wording, and everyday references, 2026-10-02.
+息屏	息屏	0.560	xiping	exact_rank_no_contains
+# Preserve exact selection without promoting overlapping long-sentence paths.
+好记	好記	0.000	haoji	exact_rank_no_contains
+易记	易記	0.360	yiji	exact_rank_no_contains
+亮屏	亮屏	0.420	liangping	exact_rank_no_contains
+这两项	這兩項	0.520	zheliangxiang	exact_rank_no_contains
+死线	死線	0.320	sixian	exact_rank_no_contains
+活线	活線	0.240	huoxian	exact_rank_no_contains
+这俩	這倆	0.480	zhelia	exact_rank_no_contains
+那俩	那倆	0.480	nalia	exact_rank_no_contains

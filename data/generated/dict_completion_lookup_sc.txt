@@ -210892,7 +210892,7 @@ xipi	xipishi	嬉皮士	372	146	59	0	1	0	0	0	1	1
 xipi	xipixiaolian	嘻皮笑脸	434	203	113	0	1	0	91	1	0	2
 xipi	xipinenrou	细皮嫩肉	405	137	40	0	1	0	0	0	0	3
 xipinen	xipinenrou	细皮嫩肉	405	137	40	0	1	0	0	0	0	0
-xiping	xipingxianshi	息屏显示	260	80	0	0	0	0	0	0	0	0
+xiping	xipingxianshi	息屏显示	260	80	0	0	0	0	0	0	1	0
 xiping	xipingshijing	熹平石经	260	80	0	0	0	0	0	0	0	1
 xiping	xipingxian	西平县	165	128	40	0	1	0	0	0	1	2
 xipingshi	xipingshijing	熹平石经	260	80	0	0	0	0	0	0	0	0
@@ -239142,7 +239142,7 @@ zheliang	zheliangci	这两次	1018	542	0	0	4	0	0	0	0	0
 zheliang	zheliangzhong	这两种	1000	540	0	0	4	0	0	0	0	1
 zheliang	zheliangzhi	这两只	800	538	0	0	4	0	0	0	0	2
 zheliang	zheliangtian	这两天	640	223	0	0	1	0	0	0	0	3
-zheliang	zheliangdian	这两点	280	284	40	0	2	519	0	0	0	4
+zheliang	zheliangdian	这两点	280	284	40	0	2	519	0	0	0	6
 zhelimu	zhelimumeng	哲里木盟	395	57	127	0	1	0	174	2	0	0
 zheliu	zheliushi	柘榴石	228	80	0	0	0	0	0	0	0	0
 zheme	zhemehao	这么好	1018	542	0	0	4	0	0	0	1	0
@@ -255406,3 +255406,5 @@ zouyi	zouyixia	走一下	680	0	0	0	0	0	0	0	0	0
 neiyi	neiyibu	哪一步	440	80	0	0	0	0	0	0	0	1
 weixiu	weixiudian	维修店	600	80	0	0	0	0	0	0	1	0
 xianniu	xianniurou	鲜牛肉	560	80	0	0	0	0	0	0	0	0
+zheliang	zheliangpian	这两篇	620	0	0	0	0	0	0	0	0	4
+zheliang	zheliangxiang	这两项	520	80	0	0	0	0	0	0	0	5
