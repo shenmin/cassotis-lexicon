@@ -346,6 +346,52 @@ function Test-CompletionPairAuditFile {
     }
 }
 
+function Test-ShortPromotionFile {
+    param([string]$Path)
+
+    # pinyin, first exact word, word to put above it, margin, and the words
+    # and weights the choice was made among (word:weight|word:weight...).
+    $lineNo = 0
+    $rows = 0
+    $seenKeys = @{}
+    Get-Content -Encoding utf8 $Path | ForEach-Object {
+        $lineNo++
+        $line = $_.TrimEnd()
+        if ($line -eq '' -or $line.StartsWith('#')) { return }
+
+        $parts = $line -split "`t"
+        if ($parts.Count -ne 5) {
+            throw "Invalid short-promotion column count at ${Path}:$lineNo"
+        }
+
+        $lead = 0
+        $pinyin = $parts[0]
+        $baselineText = $parts[1]
+        $promotedText = $parts[2]
+        $candidates = @($parts[4] -split '\|')
+        if (($pinyin -notmatch '^[a-z]+$') -or
+            ($baselineText -eq '') -or ($promotedText -eq '') -or
+            ($baselineText -eq $promotedText) -or
+            (-not [int]::TryParse($parts[3], [ref]$lead)) -or
+            ($candidates.Count -lt 2) -or ($candidates.Count -gt 3) -or
+            (@($candidates | Where-Object { $_ -notmatch '^[^:|]+:-?\d+$' }).Count -gt 0) -or
+            (-not $candidates[0].StartsWith($baselineText + ':')) -or
+            (@($candidates | Where-Object { $_.StartsWith($promotedText + ':') }).Count -ne 1)) {
+            throw "Invalid short-promotion row at ${Path}:$lineNo"
+        }
+
+        $key = "$pinyin`0$baselineText"
+        if ($seenKeys.ContainsKey($key)) {
+            throw "Duplicate short-promotion row at ${Path}:$lineNo"
+        }
+        $seenKeys[$key] = $true
+        $rows++
+    }
+    if ($rows -eq 0) {
+        throw "No short-promotion rows in $Path"
+    }
+}
+
 function Test-PinyinOverrideFile {
     param([string]$Path)
 
@@ -423,6 +469,8 @@ $required = @(
     'data\generated\dict_completion_competition_tc.txt',
     'data\generated\dict_completion_pair_audit_sc.txt',
     'data\generated\dict_completion_pair_audit_tc.txt',
+    'data\generated\dict_short_promotion_sc.txt',
+    'data\generated\dict_short_promotion_tc.txt',
     'data\generated\dict_unihan_sc.txt',
     'data\generated\dict_unihan_tc.txt',
     'manifests\sources.public.yml',
@@ -468,6 +516,8 @@ Test-CompletionCompetitionFile (Join-Path $Root 'data\generated\dict_completion_
 Test-CompletionCompetitionFile (Join-Path $Root 'data\generated\dict_completion_competition_tc.txt')
 Test-CompletionPairAuditFile (Join-Path $Root 'data\generated\dict_completion_pair_audit_sc.txt')
 Test-CompletionPairAuditFile (Join-Path $Root 'data\generated\dict_completion_pair_audit_tc.txt')
+Test-ShortPromotionFile (Join-Path $Root 'data\generated\dict_short_promotion_sc.txt')
+Test-ShortPromotionFile (Join-Path $Root 'data\generated\dict_short_promotion_tc.txt')
 Test-DictFile (Join-Path $Root 'data\generated\dict_unihan_sc.txt')
 Test-DictFile (Join-Path $Root 'data\generated\dict_unihan_tc.txt')
 Test-PinyinOverrideFile (Join-Path $Root 'manifests\pinyin_overrides.tsv')
