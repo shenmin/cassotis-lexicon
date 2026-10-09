@@ -13515,3 +13515,77 @@
 活线	活線	0.240	huoxian	exact_rank_no_contains
 这俩	這倆	0.480	zhelia	exact_rank_no_contains
 那俩	那倆	0.480	nalia	exact_rank_no_contains
+
+# Everyday actions, negations, and design/software wording, 2026-10-09.
+# Keep new homophones below established common words; do not infer corpus support.
+搞完	搞完	0.480	gaowan	exact_rank_no_contains
+弄完	弄完	0.480	nongwan	exact_rank_no_contains
+色差	色差	0.560	secha	exact_rank_no_contains
+是个	是個	0.120	shige	exact_rank_no_contains
+造词	造詞	0.420	zaoci	exact_rank_no_contains
+误删	誤刪	0.480	wushan	exact_rank_no_contains
+各轮	各輪	0.240	gelun	exact_rank_no_contains
+两棵树	兩棵樹	0.420	liangkeshu	exact_rank_no_contains
+棵树	棵樹	0.220	keshu	exact_rank_no_contains
+不装	不裝	0.300	buzhuang	exact_rank_no_contains
+不撞	不撞	0.240	buzhuang	exact_rank_no_contains
+不讨	不討	0.160	butao	exact_rank_no_contains
+不逃	不逃	0.300	butao	exact_rank_no_contains
+不套	不套	0.180	butao	exact_rank_no_contains
+不嗨	不嗨	0.160	buhai	exact_rank_no_contains
+不悔	不悔	0.260	buhui	exact_rank_no_contains
+不尖	不尖	0.120	bujian	exact_rank_no_contains
+不建	不建	0.180	bujian	exact_rank_no_contains
+不剪	不剪	0.240	bujian	exact_rank_no_contains
+不深	不深	0.260	bushen	exact_rank_no_contains
+不签	不簽	0.260	buqian	exact_rank_no_contains
+不浅	不淺	0.280	buqian	exact_rank_no_contains
+不前	不前	0.180	buqian	exact_rank_no_contains
+不欠	不欠	0.260	buqian	exact_rank_no_contains
+又不	又不	0.420	youbu	exact_rank_no_contains
+又不可	又不可	0.360	youbuke	exact_rank_no_contains
+亦不可	亦不可	0.260	yibuke	exact_rank_no_contains
+亦不	亦不	0.280	yibu	exact_rank_no_contains
+也不可	也不可	0.480	yebuke	exact_rank_no_contains
+水粉	水粉	0.300	shuifen	exact_rank_no_contains
+水粉色	水粉色	0.320	shuifense	exact_rank_no_contains
+# Keep selectable without introducing a competing long-sentence word boundary.
+细了	細了	0.000	xile	exact_rank_no_contains
+粗了	粗了	0.240	cule	exact_rank_no_contains
+美感上	美感上	0.240	meiganshang	exact_rank_no_contains
+触达	觸達	0.420	chuda	exact_rank_no_contains
+图层	圖層	0.620	tuceng	exact_rank_no_contains
+修吧	修吧	0.240	xiuba	exact_rank_no_contains
+不把	不把	0.260	buba	exact_rank_no_contains
+包名	包名	0.260	baoming	exact_rank_no_contains
+发行包	發行包	0.360	faxingbao	exact_rank_no_contains
+不杀	不殺	0.320	busha	exact_rank_no_contains
+不踏	不踏	0.180	buta	exact_rank_no_contains
+# Keep selectable without overriding established standalone choices.
+只在	只在	0.000	zhizai	exact_rank_no_contains
+仅在	僅在	0.420	jinzai	exact_rank_no_contains
+亦可	亦可	0.320	yike	exact_rank_no_contains
+都可	都可	0.520	douke	exact_rank_no_contains
+还可	還可	0.420	haike	exact_rank_no_contains
+
+# Hardware and everyday messaging, 2026-10-09.
+独显	獨顯	0.700	duxian	exact_rank_no_contains
+拯救者	拯救者	0.560	zhengjiuzhe	exact_rank_no_contains
+便宜得	便宜得	0.260	pianyide	exact_rank_no_contains
+发你	發你	0.480	fani	exact_rank_no_contains
+发我	發我	0.480	fawo	exact_rank_no_contains
+发他	發他	0.420	fata	exact_rank_no_contains
+发她	發她	0.420	fata	exact_rank_no_contains
+
+# Tax terminology, 2026-10-09. Keep everyday homophones ahead without context.
+税号	稅號	0.200	shuihao	exact_rank_no_contains
+税源	稅源	0.420	shuiyuan	exact_rank_no_contains
+税基	稅基	0.360	shuiji	exact_rank_no_contains
+税种	稅種	0.008	shuizhong	exact_rank_no_contains
+国税	國稅	0.420	guoshui	exact_rank_no_contains
+上税	上稅	0.220	shangshui	exact_rank_no_contains
+改税	改稅	0.120	gaishui	exact_rank_no_contains
+加税	加稅	0.008	jiashui	exact_rank_no_contains
+分税制	分稅制	0.360	fenshuizhi	exact_rank_no_contains
+分税	分稅	0.260	fenshui	exact_rank_no_contains
+课税	課稅	0.160	keshui	exact_rank_no_contains
