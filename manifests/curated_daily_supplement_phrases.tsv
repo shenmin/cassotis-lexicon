@@ -13589,3 +13589,8 @@
 分税制	分稅制	0.360	fenshuizhi	exact_rank_no_contains
 分税	分稅	0.260	fenshui	exact_rank_no_contains
 课税	課稅	0.160	keshui	exact_rank_no_contains
+
+# Whitespace and composition terminology, 2026-10-09.
+留白	留白	0.480	liubai	exact_rank_no_contains
+余白	餘白	0.220	yubai	exact_rank_no_contains
+布白	布白	0.008	bubai	exact_rank_no_contains

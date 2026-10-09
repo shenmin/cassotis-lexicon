@@ -228462,3 +228462,6 @@ shuihao	稅號	200	no_contains
 shuiji	稅基	360	no_contains
 shuiyuan	稅源	420	no_contains
 shuizhong	稅種	8	no_contains
+bubai	布白	8	no_contains
+liubai	留白	480	no_contains
+yubai	餘白	220	no_contains
