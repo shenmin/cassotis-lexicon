@@ -13594,3 +13594,47 @@
 留白	留白	0.480	liubai	exact_rank_no_contains
 余白	餘白	0.220	yubai	exact_rank_no_contains
 布白	布白	0.008	bubai	exact_rank_no_contains
+
+# Descriptions and accepted idiom reading variants, 2026-10-10.
+有模有样	有模有樣	0.300	youmuyouyang	exact_rank_no_contains
+有模有样	有模有樣	0.180	youmoyouyang	exact_rank_no_contains
+细条	細條	0.260	xitiao	exact_rank_no_contains
+细杆	細桿	0.100	xigan	exact_rank_no_contains
+细腿	細腿	0.220	xitui	exact_rank_no_contains
+细胳膊	細胳膊	0.200	xigebo	exact_rank_no_contains
+细脖子	細脖子	0.220	xibozi	exact_rank_no_contains
+很懂	很懂	0.450	hendong	exact_rank_no_contains
+
+# Reciprocal actions and everyday requests, 2026-10-10.
+互有	互有	0.120	huyou	exact_rank_no_contains
+要推	要推	0.260	yaotui	exact_rank_no_contains
+不要推	不要推	0.360	buyaotui	exact_rank_no_contains
+互捏	互捏	0.120	hunie	exact_rank_no_contains
+互损	互損	0.160	husun	exact_rank_no_contains
+互骂	互罵	0.200	huma	exact_rank_no_contains
+互打	互打	0.160	huda	exact_rank_no_contains
+互推	互推	0.180	hutui	exact_rank_no_contains
+互踢	互踢	0.100	huti	exact_rank_no_contains
+互摔	互摔	0.080	hushuai	exact_rank_no_contains
+互拍	互拍	0.140	hupai	exact_rank_no_contains
+互拉	互拉	0.120	hula	exact_rank_no_contains
+互抬	互抬	0.100	hutai	exact_rank_no_contains
+互拆	互拆	0.100	huchai	exact_rank_no_contains
+互写	互寫	0.100	huxie	exact_rank_no_contains
+互发	互發	0.008	hufa	exact_rank_no_contains
+
+# Song terminology and everyday lookup preference, 2026-10-10.
+歌名	歌名	0.500	geming	exact_rank_no_contains
+查到	查到	0.933	chadao	exact_rank
+岔道	岔道	0.898	chadao	exact_rank
+茶道	茶道	0.700	chadao	exact_rank
+
+# Authentication and classification terminology, 2026-10-10.
+鉴权	鑑權	0.500	jianquan	exact_rank_no_contains
+鉴密	鑑密	0.180	jianmi	exact_rank_no_contains
+
+# Everyday sequencing, 2026-10-10.
+先做	先做	0.500	xianzuo	exact_rank_no_contains
+但又	但又	0.450	danyou	exact_rank_no_contains
+却还	卻還	0.450	quehai	exact_rank_no_contains
+踢掉	踢掉	0.500	tidiao	exact_rank_no_contains

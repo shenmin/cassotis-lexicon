@@ -15972,9 +15972,9 @@ chachu	查處	580
 chachulai	查出來	800
 chacuo	差錯	435
 chadai	茶袋	545
-chadao	茶道	933
+chadao	茶道	700
 chadao	岔道	898
-chadao	查到	700
+chadao	查到	933
 chade	差的	700
 chade	插的	700
 chade	插得	676
@@ -228465,3 +228465,34 @@ shuizhong	稅種	8	no_contains
 bubai	布白	8	no_contains
 liubai	留白	480	no_contains
 yubai	餘白	220	no_contains
+hendong	很懂	450	no_contains
+xibozi	細脖子	220	no_contains
+xigan	細桿	100	no_contains
+xigebo	細胳膊	200	no_contains
+xitiao	細條	260	no_contains
+xitui	細腿	220	no_contains
+youmoyouyang	有模有樣	180	no_contains
+youmuyouyang	有模有樣	300	no_contains
+buyaotui	不要推	360	no_contains
+huchai	互拆	100	no_contains
+huda	互打	160	no_contains
+hufa	互發	8	no_contains
+hula	互拉	120	no_contains
+huma	互罵	200	no_contains
+hunie	互捏	120	no_contains
+hupai	互拍	140	no_contains
+hushuai	互摔	80	no_contains
+husun	互損	160	no_contains
+hutai	互抬	100	no_contains
+huti	互踢	100	no_contains
+hutui	互推	180	no_contains
+huxie	互寫	100	no_contains
+huyou	互有	120	no_contains
+yaotui	要推	260	no_contains
+geming	歌名	500	no_contains
+jianmi	鑑密	180	no_contains
+jianquan	鑑權	500	no_contains
+xianzuo	先做	500	no_contains
+danyou	但又	450	no_contains
+quehai	卻還	450	no_contains
+tidiao	踢掉	500	no_contains
