@@ -27631,7 +27631,7 @@ dazhuxiaozhuluoyupan	大珠小珠落玉盘	445
 dazhuyi	大主意	391
 dazhuzhuanqu	大竹专区	482
 dazi	大字	897
-dazi	打字	801
+dazi	打字	1000
 dazibao	大字报	513
 dazidiule	大字丢了	527
 dazidiuleheng	大字丢了横	569
@@ -225543,3 +225543,29 @@ xianzuo	先做	500	no_contains
 danyou	但又	450	no_contains
 quehai	却还	450	no_contains
 tidiao	踢掉	500	no_contains
+chengbao	撑爆	200	no_contains
+jiahui	加回	320	no_contains
+jiahuiqu	加回去	360	no_contains
+pingji	凭几	80	no_contains
+pingni	凭你	240	no_contains
+pingsha	凭啥	280	no_contains
+pingta	凭他	160	no_contains
+pingwo	凭我	240	no_contains
+pingzhang	凭仗	120	no_contains
+youpa	又怕	450	no_contains
+zhongzhi	中值	200	no_contains
+zuidazhi	最大值	600	no_contains
+jiangle	降了	460	no_contains
+jixi	机洗	480	no_contains
+liangdang	两档	480	no_contains
+lucheng	录成	200	no_contains
+ludao	录到	280	no_contains
+luhao	录好	280	no_contains
+luhuai	录坏	160	no_contains
+lule	录了	240	no_contains
+lushipin	录视频	400	no_contains
+luyige	录一个	220	no_contains
+luzuo	录做	120	no_contains
+shouxi	手洗	480	no_contains
+shouzhi	手制	20	no_contains
+xiaoshi	小诗	120	no_contains

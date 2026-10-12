@@ -84403,7 +84403,7 @@ jiahubing	jiahubingfanghuli	加护病房护理	700	102	0	0	2	0	154	3	0	0
 jiahubing	jiahubingfang	加护病房	570	133	0	0	2	0	154	3	0	1
 jiahubingfang	jiahubingfanghuli	加护病房护理	700	102	0	0	2	0	154	3	1	0
 jiahubingfanghu	jiahubingfanghuli	加护病房护理	700	102	0	0	2	0	154	3	0	0
-jiahui	jiahuilai	加回来	800	524	40	0	4	0	0	0	0	0
+jiahui	jiahuilai	加回来	800	524	40	0	4	0	0	0	1	0
 jiahuo	jiahuoyuren	嫁祸于人	429	209	100	0	1	0	88	1	1	0
 jiahuoyu	jiahuoyuren	嫁祸于人	429	209	100	0	1	0	88	1	0	0
 jiaji	jiajixiaojixiaojigua	甲基硝基硝基胍	687	102	0	0	2	0	154	3	1	0
@@ -120509,7 +120509,7 @@ lushenjingsun	lushenjingsunhai	颅神经损害	610	1	0	0	1	0	247	3	0	0
 lushi	lushixianyingtaogou	卢氏县樱桃沟	579	80	0	0	0	0	0	0	1	0
 lushi	lushichuanshuo	炉石传说	538	77	0	0	1	0	109	1	0	1
 lushi	lushizhanji	炉石战记	538	77	0	0	1	0	109	1	0	2
-lushi	lushixian	卢氏县	212	176	173	0	1	0	0	0	1	3
+lushi	lushixian	卢氏县	212	176	173	0	1	0	0	0	1	4
 lushichuan	lushichuanshuo	炉石传说	538	77	0	0	1	0	109	1	0	0
 lushixian	lushixianyingtaogou	卢氏县樱桃沟	579	80	0	0	0	0	0	0	1	0
 lushixianying	lushixianyingtaogou	卢氏县樱桃沟	579	80	0	0	0	0	0	0	0	0
@@ -253902,7 +253902,6 @@ zuida	zuidalizi	最大粒子	690	283	0	0	3	0	27	1	1	3
 zuida	zuidasuiyitongqiliang	最大随意通气量	687	102	0	0	2	0	154	3	1	4
 zuida	zuidanaishoujiliang	最大耐受剂量	649	1	0	0	1	0	247	3	1	5
 zuida	zuidawuzuoyongjiliang	最大无作用剂量	627	1	0	0	1	0	247	3	1	6
-zuida	zuidaxiaoneng	最大效能	540	1	0	0	1	0	245	3	1	7
 zuida	zuidahua	最大化	282	212	263	0	1	0	0	0	1	8
 zuida	zuidadang	最大档	10	202	0	0	2	0	0	0	1	9
 zuida	zuidaeji	罪大恶极	484	258	232	0	1	0	86	1	0	10
@@ -255420,3 +255419,6 @@ xige	xigebo	细胳膊	200	80	0	0	0	0	0	0	0	9
 youmo	youmoyouyang	有模有样	180	80	0	0	0	0	0	0	0	1
 youmoyou	youmoyouyang	有模有样	180	80	0	0	0	0	0	0	0	0
 youmuyou	youmuyouyang	有模有样	300	80	0	0	0	0	0	0	0	0
+jiahui	jiahuiqu	加回去	360	80	0	0	0	0	0	0	1	1
+zuida	zuidazhi	最大值	600	80	0	0	0	0	0	0	1	7
+lushi	lushipin	录视频	400	80	0	0	0	0	0	0	0	3

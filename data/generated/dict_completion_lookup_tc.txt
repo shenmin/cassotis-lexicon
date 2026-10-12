@@ -90041,7 +90041,7 @@ jiahubing	jiahubingfanghuli	加護病房護理	700	102	0	0	2	0	154	3	0	0
 jiahubing	jiahubingfang	加護病房	680	133	0	0	2	0	154	3	0	1
 jiahubingfang	jiahubingfanghuli	加護病房護理	700	102	0	0	2	0	154	3	1	0
 jiahubingfanghu	jiahubingfanghuli	加護病房護理	700	102	0	0	2	0	154	3	0	0
-jiahui	jiahuilai	加回來	800	524	40	0	4	0	0	0	0	0
+jiahui	jiahuilai	加回來	800	524	40	0	4	0	0	0	1	0
 jiahuo	jiahuoyuren	嫁禍於人	690	209	100	0	1	0	88	1	1	0
 jiahuo	jiahuoyuren	嫁禍于人	109	80	0	0	0	0	0	0	1	1
 jiahuoyu	jiahuoyuren	嫁禍於人	690	209	100	0	1	0	88	1	0	0
@@ -128413,7 +128413,7 @@ lushenjingsun	lushenjingsunhai	顱神經損害	610	1	0	0	1	0	247	3	0	0
 lushi	lushixianyingtaogou	盧氏縣櫻桃溝	691	80	0	0	0	0	0	0	1	0
 lushi	lushichuanshuo	爐石傳說	538	77	0	0	1	0	109	1	0	1
 lushi	lushizhanji	爐石戰記	538	77	0	0	1	0	109	1	0	2
-lushi	lushixian	盧氏縣	245	176	173	0	1	0	0	0	1	3
+lushi	lushixian	盧氏縣	245	176	173	0	1	0	0	0	1	4
 lushichuan	lushichuanshuo	爐石傳說	538	77	0	0	1	0	109	1	0	0
 lushixian	lushixianyingtaogou	盧氏縣櫻桃溝	691	80	0	0	0	0	0	0	1	0
 lushixianying	lushixianyingtaogou	盧氏縣櫻桃溝	691	80	0	0	0	0	0	0	0	0
@@ -271236,3 +271236,5 @@ xige	xigebo	細胳膊	200	80	0	0	0	0	0	0	0	9
 youmo	youmoyouyang	有模有樣	180	80	0	0	0	0	0	0	0	1
 youmoyou	youmoyouyang	有模有樣	180	80	0	0	0	0	0	0	0	0
 youmuyou	youmuyouyang	有模有樣	300	80	0	0	0	0	0	0	0	0
+jiahui	jiahuiqu	加回去	360	80	0	0	0	0	0	0	1	1
+lushi	lushipin	錄視頻	400	80	0	0	0	0	0	0	0	3

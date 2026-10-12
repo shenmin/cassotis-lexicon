@@ -13638,3 +13638,37 @@
 但又	但又	0.450	danyou	exact_rank_no_contains
 却还	卻還	0.450	quehai	exact_rank_no_contains
 踢掉	踢掉	0.500	tidiao	exact_rank_no_contains
+
+# Everyday additions and numeric terminology, 2026-10-11.
+又怕	又怕	0.450	youpa	exact_rank_no_contains
+撑爆	撐爆	0.200	chengbao	exact_rank_no_contains
+最大值	最大值	0.600	zuidazhi	exact_rank_no_contains
+中值	中值	0.200	zhongzhi	exact_rank_no_contains
+凭他	憑他	0.160	pingta	exact_rank_no_contains
+凭你	憑你	0.240	pingni	exact_rank_no_contains
+凭啥	憑啥	0.280	pingsha	exact_rank_no_contains
+凭我	憑我	0.240	pingwo	exact_rank_no_contains
+凭仗	憑仗	0.120	pingzhang	exact_rank_no_contains
+凭几	憑几	0.080	pingji	exact_rank_no_contains
+加回	加回	0.320	jiahui	exact_rank_no_contains
+加回去	加回去	0.360	jiahuiqu	exact_rank_no_contains
+
+# Everyday recording and level changes, 2026-10-12.
+降了	降了	0.460	jiangle	exact_rank_no_contains
+两档	兩檔	0.480	liangdang	exact_rank_no_contains
+录成	錄成	0.200	lucheng	exact_rank_no_contains
+录视频	錄視頻	0.400	lushipin	exact_rank_no_contains
+录了	錄了	0.240	lule	exact_rank_no_contains
+录一个	錄一個	0.220	luyige	exact_rank_no_contains
+录到	錄到	0.280	ludao	exact_rank_no_contains
+录好	錄好	0.280	luhao	exact_rank_no_contains
+录坏	錄壞	0.160	luhuai	exact_rank_no_contains
+小诗	小詩	0.120	xiaoshi	exact_rank_no_contains
+录做	錄做	0.120	luzuo	exact_rank_no_contains
+手洗	手洗	0.480	shouxi	exact_rank_no_contains
+机洗	機洗	0.480	jixi	exact_rank_no_contains
+手制	手製	0.020	shouzhi	exact_rank_no_contains
+
+# Typing is a more common default than a large-character description.
+打字	打字	1.000	dazi	exact_rank
+大字	大字	0.897	dazi	exact_rank
