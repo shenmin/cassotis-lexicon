@@ -10116,7 +10116,7 @@ binghuanquanli	病患权利	570
 binghuanzuo	丙环唑	228
 binghuo	冰火	371
 binghuqiuyue	冰壶秋月	387
-bingji	病机	440
+bingji	病机	50
 bingjia	兵家	1000
 bingjia	病假	334
 bingjia	病家	1
@@ -139491,7 +139491,7 @@ tukanr	土坎儿	232
 tukela	土坷垃	399
 tukesiboli	图克斯伯里	279
 tukou	吐口	257
-tuku	土库	305
+tuku	土库	100
 tukuman	土库曼	629
 tukumanbianduanshitiao	土库曼边端饰条	724
 tukumanren	土库曼人	260
@@ -225958,3 +225958,70 @@ zaizou	在走	300	no_contains
 zhuini	追你	380	no_contains
 zhuita	追她	1	no_contains
 zhuiwo	追我	380	no_contains
+anliku	案例库	220	no_contains
+bendicangku	本地仓库	200	no_contains
+biaozhunku	标准库	300	no_contains
+bingji	并集	460	no_contains
+buji	补集	330	no_contains
+ceshiku	测试库	260	no_contains
+chaji	差集	260	no_contains
+chaoji	超集	200	no_contains
+congku	从库	200	no_contains
+duichencha	对称差	200	no_contains
+gonggongcangku	公共仓库	300	no_contains
+gonggongdaima	公共代码	260	no_contains
+gonggongfangfa	公共方法	260	no_contains
+gonggongfuwu	公共服务	480	no_contains
+gonggonghanshu	公共函数	260	no_contains
+gonggongjiekou	公共接口	280	no_contains
+gonggongku	公共库	380	no_contains
+gonggongmokuai	公共模块	280	no_contains
+gonggongpeizhi	公共配置	260	no_contains
+gonggongzujian	公共组件	300	no_contains
+gongjuku	工具库	260	no_contains
+gongkaiban	公开版	280	no_contains
+hexinku	核心库	240	no_contains
+jingxiangku	镜像库	220	no_contains
+kaifaku	开发库	220	no_contains
+kaiyuanku	开源库	260	no_contains
+leiku	类库	240	no_contains
+miji	幂集	140	no_contains
+nabuxing	那不行	320	no_contains
+nahaixing	那还行	280	no_contains
+nahao	那好	360	no_contains
+nahaoba	那好吧	340	no_contains
+nahaode	那好的	300	no_contains
+najiuhao	那就好	380	no_contains
+najiusuanle	那就算了	300	no_contains
+najiuxing	那就行	360	no_contains
+najiuzheyang	那就这样	320	no_contains
+nakeyi	那可以	320	no_contains
+nameibanfa	那没办法	260	no_contains
+nameishi	那没事	280	no_contains
+nasuanle	那算了	340	no_contains
+nataihaole	那太好了	300	no_contains
+natinghao	那挺好	280	no_contains
+naxing	那行	380	no_contains
+naxingba	那行吧	320	no_contains
+nazaban	那咋办	260	no_contains
+nazheyang	那这样	300	no_contains
+nazouba	那走吧	260	no_contains
+neibuban	内部版	260	no_contains
+qiubingji	求并集	240	no_contains
+qiujiaoji	求交集	240	no_contains
+quanpingtai	全平台	300	no_contains
+qubingji	取并集	260	no_contains
+qujiaoji	取交集	260	no_contains
+sanpingtai	三平台	260	no_contains
+shengchanku	生产库	220	no_contains
+shuangpingtai	双平台	260	no_contains
+sucaiku	素材库	280	no_contains
+tuku	图库	320	no_contains
+waibuban	外部版	220	no_contains
+yangbenku	样本库	220	no_contains
+zhengshiku	正式库	220	no_contains
+zhuku	主库	240	no_contains
+ziku	子库	200	no_contains
+ziku	字库	360	no_contains
+zimokuai	子模块	260	no_contains
+zujianku	组件库	260	no_contains
