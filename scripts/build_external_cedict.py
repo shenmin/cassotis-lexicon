@@ -534,6 +534,9 @@ CURATED_DAILY_EXACT_ZERO_MODE = "exact_zero"
 CURATED_DAILY_EXACT_RANK_MODE = "exact_rank"
 CURATED_DAILY_NO_CONTAINS_MODE = "no_contains"
 CURATED_DAILY_EXACT_RANK_NO_CONTAINS_MODE = "exact_rank_no_contains"
+# exact_rank_no_contains, and the row offers no completions either: it is
+# found only when its whole reading is typed (lines of classical poems).
+CURATED_DAILY_EXACT_RANK_EXACT_ONLY_MODE = "exact_rank_exact_only"
 
 
 def _curated_daily_supplement_weight_cap(usage_score: float, text: str) -> int:
@@ -10083,6 +10086,7 @@ def _parse_curated_daily_phrase_entries(
         elif output_mode in {
             CURATED_DAILY_EXACT_RANK_MODE,
             CURATED_DAILY_EXACT_RANK_NO_CONTAINS_MODE,
+            CURATED_DAILY_EXACT_RANK_EXACT_ONLY_MODE,
         }:
             if usage_score == 0.0:
                 normalized_usage_score = CURATED_DAILY_POST_RANK_ZERO_WEIGHT_USAGE_MAX
@@ -10130,6 +10134,7 @@ def _parse_curated_contains_popularity_exclusions(
         if output_mode not in {
             CURATED_DAILY_NO_CONTAINS_MODE,
             CURATED_DAILY_EXACT_RANK_NO_CONTAINS_MODE,
+            CURATED_DAILY_EXACT_RANK_EXACT_ONLY_MODE,
         }:
             continue
         sc_word = parts[0].strip()
@@ -10139,6 +10144,31 @@ def _parse_curated_contains_popularity_exclusions(
         if tc_word and CJK_FULL_RE.fullmatch(tc_word):
             tc_terms.add(tc_word)
     return sc_terms, tc_terms
+
+
+def _parse_curated_exact_only_keys(
+    payload: bytes,
+) -> Tuple[Set[Tuple[str, str]], Set[Tuple[str, str]]]:
+    """(pinyin, text) of the rows that offer no completions: their completion
+    prior is the exact-only layer, which the completion lookup leaves out."""
+    sc_keys: Set[Tuple[str, str]] = set()
+    tc_keys: Set[Tuple[str, str]] = set()
+    text = _decode_text(payload)
+    for raw_line in text.splitlines():
+        line = raw_line.strip()
+        if not line or line.startswith("#"):
+            continue
+        parts = line.split("\t")
+        if len(parts) < 5 or parts[4].strip().lower() != CURATED_DAILY_EXACT_RANK_EXACT_ONLY_MODE:
+            continue
+        pinyin = _normalize_pinyin(parts[3].strip().lower())
+        sc_word = parts[0].strip()
+        tc_word = parts[1].strip() or sc_word
+        if pinyin and sc_word and CJK_FULL_RE.fullmatch(sc_word):
+            sc_keys.add((pinyin, sc_word))
+        if pinyin and tc_word and CJK_FULL_RE.fullmatch(tc_word):
+            tc_keys.add((pinyin, tc_word))
+    return sc_keys, tc_keys
 
 
 def _parse_vertical_term_entries(
@@ -23177,6 +23207,8 @@ def main() -> int:
     curated_daily_supplement_tc_terms: Set[str] = set()
     curated_daily_supplement_entries: List[Tuple[str, str, float, str]] = []
     curated_daily_post_rank_exact_entries: List[Tuple[str, str, float, str]] = []
+    curated_exact_only_sc_keys: Set[Tuple[str, str]] = set()
+    curated_exact_only_tc_keys: Set[Tuple[str, str]] = set()
     contains_popularity_excluded_sc_terms: Set[str] = set()
     contains_popularity_excluded_tc_terms: Set[str] = set()
     curated_daily_supplement_parse_stats: Dict[str, int] = {}
@@ -23326,6 +23358,9 @@ def main() -> int:
                 )
                 contains_popularity_excluded_sc_terms.update(excluded_sc)
                 contains_popularity_excluded_tc_terms.update(excluded_tc)
+                curated_exact_only_sc_keys, curated_exact_only_tc_keys = (
+                    _parse_curated_exact_only_keys(curated_daily_supplement_payload)
+                )
                 (
                     curated_daily_supplement_entries,
                     curated_daily_post_rank_exact_entries,
@@ -23667,6 +23702,9 @@ def main() -> int:
             )
             contains_popularity_excluded_sc_terms.update(excluded_sc)
             contains_popularity_excluded_tc_terms.update(excluded_tc)
+            curated_exact_only_sc_keys, curated_exact_only_tc_keys = (
+                _parse_curated_exact_only_keys(curated_daily_supplement_payload)
+            )
             (
                 curated_daily_supplement_entries,
                 curated_daily_post_rank_exact_entries,
@@ -27000,7 +27038,7 @@ def main() -> int:
                     curated_low_terms=curated_daily_supplement_sc_terms,
                     path_score_map=completion_sc_path_scores,
                     stats_prefix="sc",
-                    exact_only_keys=specialist_sc_keys,
+                    exact_only_keys=specialist_sc_keys | curated_exact_only_sc_keys,
                     specialist_common_terms=specialist_common_terms,
                 )
             )
@@ -27037,7 +27075,7 @@ def main() -> int:
                     curated_low_terms=curated_daily_supplement_tc_terms,
                     path_score_map=completion_tc_path_scores,
                     stats_prefix="tc",
-                    exact_only_keys=specialist_tc_keys,
+                    exact_only_keys=specialist_tc_keys | curated_exact_only_tc_keys,
                     specialist_common_terms=specialist_common_terms,
                 )
             )

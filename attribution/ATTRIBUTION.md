@@ -207,3 +207,22 @@ Notes:
   they are used in the isolated medicine vertical layer.
 - Query responses are cached locally during build and are not committed as raw
   source dumps.
+
+## chinese-poetry
+
+- Name: chinese-poetry (Classical Chinese poetry database)
+- Homepage: https://github.com/chinese-poetry/chinese-poetry
+- Download: https://raw.githubusercontent.com/chinese-poetry/chinese-poetry/master/
+  (`全唐诗/唐诗三百首.json`, `蒙学/qianjiashi.json`, `宋词/宋词三百首.json`,
+  and the full Tang and Song corpora for the poems of the school curriculum)
+- License: MIT (see [included notice](CHINESE-POETRY-LICENSE.txt))
+- Copyright holder: JackeyGao and chinese-poetry contributors
+
+Notes:
+
+- The poems themselves are in the public domain; the dataset supplies their
+  texts. Lines of 4 to 11 characters of the school curriculum, 唐诗三百首,
+  千家诗 and 宋词三百首 are exact rows of the supplement manifest
+  (`exact_rank_exact_only`: found when the whole line is typed, no completions),
+  converted to simplified characters and to OpenCC `s2tw` traditional forms.
+- The raw dataset is not committed in this repository.

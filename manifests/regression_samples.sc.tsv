@@ -2168,3 +2168,33 @@ zimokuai	子模块	1
 # Existing words set lower, 2026-10-15: without a context the short promotion put them above a word of this batch.
 bingji	病机	2
 tuku	土库	2
+
+# Classical poetry lines, 2026-10-15: the poems of the school curriculum, 唐诗三百首, 千家诗 and 宋词三百首, line by line, as exact rows (texts from chinese-poetry, MIT). Readings as typed; a second row where verse reads a character otherwise (还 huan, 斜 xia, 衰 cui, 骑 ji, 重 chong).
+chunmianbujuexiao	春眠不觉晓	1
+chuchuwentiniao	处处闻啼鸟	1
+yelaifengyusheng	夜来风雨声	1
+hualuozhiduoshao	花落知多少	1
+bairiyishanjin	白日依山尽	1
+huangheruhailiu	黄河入海流	1
+liliyuanshangcao	离离原上草	1
+yisuiyikurong	一岁一枯荣	1
+xiaohecailujianjianjiao	小荷才露尖尖角	1
+jietianlianyewuqiongbi	接天莲叶无穷碧	1
+taohuatanshuishenqianchi	桃花潭水深千尺	1
+qianlijianglingyirihai	千里江陵一日还	1
+qingzhouyiguowanzhongshan	轻舟已过万重山	1
+danyuanrenchangjiu	但愿人长久	1
+qianligongchanjuan	千里共婵娟	1
+xunxunmimi	寻寻觅觅	1
+xiantianxiazhiyoueryou	先天下之忧而忧	1
+laoxiayuguwuqifei	落霞与孤鹜齐飞	1
+guanguanjujiu	关关雎鸠	1
+chuyunierburan	出淤泥而不染	1
+fengusuishenhunbupa	粉骨碎身浑不怕	1
+benshitonggensheng	本是同根生	1
+
+# Existing words set higher, 2026-10-15: 本机 above 本纪 and 笨鸡 without a context.
+benji	本机	1
+
+# X的 beside the adverb X地, 2026-10-15: the dictionary had only 正确地 for zhengquede. One less than X地: without a context the short promotion decides, with one the LM. Exact rows that offer no completions.
+zhengquede	正确的	2
