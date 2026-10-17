@@ -93,6 +93,43 @@ class LongCompletionIndexTests(unittest.TestCase):
         self.assertEqual(("suffix",), anchor_rows[0].suffix)
         self.assertEqual(720, anchor_rows[0].evidence)
 
+    def test_poetry_next_lines_continue_a_whole_line_with_its_mark(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            manifest = pathlib.Path(temp_dir) / "next.tsv"
+            manifest.write_text(
+                "# comment\n"
+                "\u6625\u7720\u4e0d\u89c9\u6653\t\u6625\u7720\u4e0d\u89ba\u66c9\t\uff0c\t"
+                "\u5904\u5904\u95fb\u557c\u9e1f\t\u8655\u8655\u805e\u557c\u9ce5\t"
+                "chu'chu'wen'ti'niao\n",
+                encoding="utf-8",
+            )
+            rows = builder.poetry_next_line_rows(manifest)
+            traditional = builder.poetry_next_line_rows(manifest, traditional=True)
+        self.assertEqual(1, len(rows))
+        fields = rows[0].split("\t")
+        # one anchor segment, the mark leads the suffix, a visible row above
+        # the runtime's floors (evidence 560, five sources)
+        self.assertEqual("\u6625\u7720\u4e0d\u89c9\u6653", fields[0])
+        self.assertEqual("chu'chu'wen'ti'niao", fields[1])
+        self.assertEqual("\uff0c\u5904\u5904\u95fb\u557c\u9e1f", fields[2])
+        self.assertEqual(fields[2], fields[3])
+        self.assertGreaterEqual(int(fields[4]), builder.MIN_PAIR_EVIDENCE)
+        self.assertGreaterEqual(int(fields[5]), 5)
+        self.assertEqual("1", fields[6])
+        self.assertTrue(traditional[0].startswith("\u6625\u7720\u4e0d\u89ba\u66c9\t"))
+
+    def test_poetry_next_line_reading_must_match_the_line(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            manifest = pathlib.Path(temp_dir) / "next.tsv"
+            manifest.write_text(
+                "\u6625\u7720\u4e0d\u89c9\u6653\t\u6625\u7720\u4e0d\u89ba\u66c9\t\uff0c\t"
+                "\u5904\u5904\u95fb\u557c\u9e1f\t\u8655\u8655\u805e\u557c\u9ce5\t"
+                "chu'chu'wen'ti\n",
+                encoding="utf-8",
+            )
+            with self.assertRaises(ValueError):
+                builder.poetry_next_line_rows(manifest)
+
     def test_pair_only_build_writes_local_paths_without_sentence_data(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
             root = pathlib.Path(temp_dir)

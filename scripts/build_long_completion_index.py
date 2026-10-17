@@ -31,6 +31,10 @@ BROAD_MIN_CORPUS_COUNT = 3
 BROAD_MIN_CORPUS_SOURCES = 2
 BROAD_MIN_CORPUS_DOMAINS = 1
 BROAD_MAX_EVIDENCE = MIN_PAIR_EVIDENCE - 1
+# The next line of a classical poem line: an editorial row, above the
+# runtime's floors for a visible continuation (evidence 560, five sources).
+POETRY_NEXT_LINE_EVIDENCE = 900
+POETRY_NEXT_LINE_SOURCES = 9
 MAX_SUFFIX_UNITS = 6
 MAX_VISIBLE_ROWS_PER_ANCHOR = 8
 MAX_RECALL_ROWS_PER_ANCHOR = 24
@@ -468,6 +472,41 @@ def _completion_rows(
     return output
 
 
+def poetry_next_line_rows(manifest_path: pathlib.Path, traditional: bool = False) -> List[str]:
+    """Continuation rows of manifests/classical_poetry_next_lines.tsv: a line of
+    the poetry block, typed in full, is one dictionary entry and continues
+    with the mark and the line after it in its poem."""
+
+    rows: List[str] = []
+    for line_number, raw_line in enumerate(
+        manifest_path.read_text(encoding="utf-8").splitlines(), start=1
+    ):
+        if not raw_line or raw_line.startswith("#"):
+            continue
+        fields = raw_line.split("\t")
+        if len(fields) != 6:
+            raise ValueError(f"Malformed next-line row at {manifest_path}:{line_number}")
+        line_sc, line_tc, mark, next_sc, next_tc, next_pinyin = fields
+        line, following = (line_tc, next_tc) if traditional else (line_sc, next_sc)
+        if len(next_pinyin.split("'")) != len(following):
+            raise ValueError(f"Reading does not match the line at {manifest_path}:{line_number}")
+        suffix = mark + following
+        rows.append(
+            "\t".join(
+                (
+                    line,
+                    next_pinyin,
+                    suffix,
+                    suffix,
+                    str(POETRY_NEXT_LINE_EVIDENCE),
+                    str(POETRY_NEXT_LINE_SOURCES),
+                    "1",
+                )
+            )
+        )
+    return rows
+
+
 def build_index(
     transition_completion_path: pathlib.Path,
     lm_transition_path: pathlib.Path,
@@ -475,6 +514,7 @@ def build_index(
     dictionary_path: pathlib.Path | None = None,
     corpus_dir: pathlib.Path | None = None,
     traditional: bool = False,
+    poetry_next_lines_path: pathlib.Path | None = None,
 ) -> dict[str, int]:
     pairs = _parse_transition_completions(transition_completion_path)
     corpus_paths: List[PathEvidence] = []
@@ -588,6 +628,13 @@ def build_index(
                 )
                 + "\n"
             )
+        poetry_rows = (
+            poetry_next_line_rows(poetry_next_lines_path, traditional)
+            if poetry_next_lines_path is not None
+            else []
+        )
+        for row in poetry_rows:
+            handle.write(row + "\n")
     return {
         "strong_pair_paths": sum(len(items) for items in pairs.values()),
         "corpus_validated_lm_paths": corpus_accepted,
@@ -597,6 +644,7 @@ def build_index(
         "visible_rows": len(visible_rows),
         "anchors": len({row.anchor for row in rows}),
         "rows": len(rows),
+        "poetry_next_line_rows": len(poetry_rows),
     }
 
 
@@ -608,6 +656,7 @@ def main() -> int:
     parser.add_argument("--dictionary", type=pathlib.Path)
     parser.add_argument("--corpus-dir", type=pathlib.Path)
     parser.add_argument("--traditional", action="store_true")
+    parser.add_argument("--poetry-next-lines", type=pathlib.Path)
     args = parser.parse_args()
     if (args.dictionary is None) != (args.corpus_dir is None):
         parser.error("--dictionary and --corpus-dir must be provided together")
@@ -618,6 +667,7 @@ def main() -> int:
         args.dictionary,
         args.corpus_dir,
         args.traditional,
+        args.poetry_next_lines,
     )
     for key, value in stats.items():
         print(f"{key}={value}")

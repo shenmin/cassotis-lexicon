@@ -228,7 +228,8 @@ if ($QueryPathLmCorpusDir -ne "") {
         '--transition-completion', (Join-Path $Root 'data\generated\dict_transition_completion_sc.txt'),
         '--lm-transition', (Join-Path $Root 'data\generated\dict_lm_transition_sc.txt'),
         '--dictionary', (Join-Path $Root 'data\generated\dict_clean_sc.txt'),
-        '--output', (Join-Path $Root 'data\generated\dict_long_completion_sc.txt')
+        '--output', (Join-Path $Root 'data\generated\dict_long_completion_sc.txt'),
+        '--poetry-next-lines', (Join-Path $Root 'manifests\classical_poetry_next_lines.tsv')
     ) + $longCompletionCommonArgs
     Invoke-PythonScript -ScriptPath $longCompletionScript -ScriptArgs $longCompletionScArgs
     $longCompletionTcArgs = @(
@@ -236,6 +237,7 @@ if ($QueryPathLmCorpusDir -ne "") {
         '--lm-transition', (Join-Path $Root 'data\generated\dict_lm_transition_tc.txt'),
         '--dictionary', (Join-Path $Root 'data\generated\dict_clean_tc.txt'),
         '--output', (Join-Path $Root 'data\generated\dict_long_completion_tc.txt'),
+        '--poetry-next-lines', (Join-Path $Root 'manifests\classical_poetry_next_lines.tsv'),
         '--traditional'
     ) + $longCompletionCommonArgs
     Invoke-PythonScript -ScriptPath $longCompletionScript -ScriptArgs $longCompletionTcArgs
