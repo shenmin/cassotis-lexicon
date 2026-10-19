@@ -122608,7 +122608,6 @@ shikelangshuo	屎壳郎说	523
 shikelangshuoshu	屎壳郎说书	569
 shikerenshubukeren	是可忍孰不可忍	698
 shikeshabukeru	士可杀不可辱	706
-shikeyerzhi	适可而止	759
 shikeying	施可莹	620
 shikezhunbei	时刻准备	260
 shikong	时空	560
@@ -148507,7 +148506,6 @@ xiaoshihuazhi	消食化滞	540
 xiaoshihui	消石灰	379
 xiaoshijianweipian	消食健胃片	603
 xiaoshikeli	消食颗粒	540
-xiaoshiliao	小时了	556
 xiaoshiliaoliao	小时了了	597
 xiaoshilingyusifei'er	消失领域思费尔	632
 xiaoshiniudao	小试牛刀	369
@@ -168502,7 +168500,7 @@ yuanbuyuanyi	愿不愿意	10
 yuancailiao	原材料	577
 yuanchan	原产	449
 yuanchandi	原产地	492
-yuanchang	圆场	560
+yuanchang	圆场	50
 yuanchangpei	原肠胚	500
 yuanchangpeixingcheng	原肠胚形成	640
 yuanchanguo	原产国	232
@@ -171635,7 +171633,6 @@ zaizhuang	在装	1000
 zaizhushe	再注射	640
 zaizi	崽子	560
 zaizi	栽子	64
-zaizixixi	仔仔细细	280
 zaizuo	再做	700
 zaizuo	在做	700
 zaizuo	在座	557
@@ -233610,3 +233607,241 @@ zuodifenzang	坐地分赃	625
 zuorichongxian	昨日重现	570
 zusexingfeiqizhong	阻塞性肺气肿	670
 zusexingshuimianhuxizanting	阻塞性睡眠呼吸暂停	700
+aishui	爱谁	400	no_contains
+anci	按次	136	no_contains
+ancuo	按错	80	no_contains
+anfenzhong	按分钟	80	no_contains
+anhu	按户	400	no_contains
+anji	按季	109	no_contains
+anjidu	按季度	600	no_contains
+anjin	按斤	200	no_contains
+annian	按年	600	no_contains
+anniandu	按年度	400	no_contains
+anrentou	按人头	200	no_contains
+anxiaoshi	按小时	400	no_contains
+anyue	按月	600	no_contains
+anzhou	按周	177	no_contains
+bangshui	帮谁	200	no_contains
+baoxiu	报修	496	no_contains
+beicuo	背错	80	no_contains
+biaocuo	标错	200	no_contains
+biaoshi	标识	600	no_contains
+biaozhifu	标识符	666	no_contains
+buchiyu	不迟于	200	no_contains
+buciyu	不次于	200	no_contains
+budayu	不大于	600	no_contains
+budiyu	不低于	600	no_contains
+buduoyu	不多于	400	no_contains
+bugaoyu	不高于	600	no_contains
+bulieyu	不劣于	80	no_contains
+buwanyu	不晚于	400	no_contains
+buxiaoyu	不小于	600	no_contains
+buxunyu	不逊于	400	no_contains
+buyihuier	不一会儿	1	no_contains
+buzaoyu	不早于	400	no_contains
+chaocuo	抄错	200	no_contains
+chayu	差于	233	no_contains
+chiyu	迟于	400	no_contains
+chuancuo	传错	200	no_contains
+chuansha	穿啥	200	no_contains
+chuanzhuo	穿着	700	no_contains
+chuisha	吹啥	400	no_contains
+chusha	出啥	600	no_contains
+dacuo	答错	400	no_contains
+daixiu	待修	400	no_contains
+dasha	打啥	400	no_contains
+dashui	打谁	321	no_contains
+dengsha	等啥	200	no_contains
+dengshui	等谁	200	no_contains
+deyoudian	得有点	800	no_contains
+diancuo	点错	400	no_contains
+dingsi	定死	956	no_contains
+diyuyuqi	低于预期	600	no_contains
+dongsha	懂啥	200	no_contains
+duanyu	短于	600	no_contains
+ducuo	读错	400	no_contains
+dudui	读对	400	no_contains
+facuo	发错	400	no_contains
+fanchang	返厂	400	no_contains
+fangcuo	放错	400	no_contains
+fanxiu	返修	465	no_contains
+fanxiulv	返修率	200	no_contains
+gaidui	改对	400	no_contains
+gaoshui	告谁	200	no_contains
+gaoyuyuqi	高于预期	400	no_contains
+geishui	给谁	600	no_contains
+guaishui	怪谁	400	no_contains
+guansha	管啥	400	no_contains
+guanshui	管谁	600	no_contains
+guasha	挂啥	400	no_contains
+guoyihuier	过一会儿	1	no_contains
+handa	喊打	400	no_contains
+hane	喊饿	80	no_contains
+hanjiayou	喊加油	200	no_contains
+hanjiuming	喊救命	400	no_contains
+hankouhao	喊口号	600	no_contains
+hanlei	喊累	400	no_contains
+hansha	喊啥	233	no_contains
+hansha	喊杀	233	no_contains
+hansi	焊死	182	no_contains
+hanteng	喊疼	200	no_contains
+hanting	喊停	197	no_contains
+haoyu	好于	600	no_contains
+haoyuyuqi	好于预期	400	no_contains
+henshui	恨谁	200	no_contains
+heshui	和谁	600	no_contains
+houyu	后与	79	no_contains
+houyu	后于	600	no_contains
+huier	会儿	1	no_contains
+jiangsha	讲啥	200	no_contains
+jiaocuo	叫错	80	no_contains
+jiaosha	叫啥	701	no_contains
+jiaoshui	叫谁	178	no_contains
+jiecuo	接错	200	no_contains
+jinyu	近于	600	no_contains
+jiude	就得	699	no_contains
+kandui	看对	600	no_contains
+kaoshui	靠谁	400	no_contains
+kuaiyu	快于	600	no_contains
+kuaiyuyuqi	快于预期	80	no_contains
+kusha	哭啥	200	no_contains
+laxia	落下	834	no_contains
+lieyu	劣于	200	no_contains
+maicuo	买错	600	no_contains
+mangsha	忙啥	400	no_contains
+manyu	慢于	176	no_contains
+masha	骂啥	400	no_contains
+mashui	骂谁	400	no_contains
+mingliao	明了	696	no_contains
+nacuo	拿错	400	no_contains
+naer	哪儿	1	no_contains
+naer	那儿	1	no_contains
+nahuier	那会儿	1	no_contains
+nasha	拿啥	80	no_contains
+nawanyier	那玩意儿	1	no_contains
+neige	哪个	580	no_contains
+neixie	哪些	834	no_contains
+neixiefangmian	哪些方面	280	no_contains
+niancuo	念错	400	no_contains
+niandui	念对	400	no_contains
+nongsha	弄啥	400	no_contains
+paocuo	跑错	200	no_contains
+pasha	怕啥	400	no_contains
+pashui	怕谁	400	no_contains
+pianshui	骗谁	200	no_contains
+pindui	拼对	200	no_contains
+powanyier	破玩意儿	1	no_contains
+qiangyuyuqi	强于预期	200	no_contains
+qingshui	请谁	200	no_contains
+qingyu	轻于	199	no_contains
+qiushui	求谁	200	no_contains
+quesha	缺啥	400	no_contains
+qunaer	去哪儿	1	no_contains
+rangshui	让谁	400	no_contains
+rendui	认对	9	no_contains
+ruoyu	弱于	600	no_contains
+ruoyuyuqi	弱于预期	200	no_contains
+shangweidadao	尚未达到	400	no_contains
+shangweidaoqi	尚未到期	200	no_contains
+shangweiman	尚未满	200	no_contains
+shaoyu	少于	600	no_contains
+shawanyier	啥玩意儿	1	no_contains
+shenyu	甚于	200	no_contains
+shikeerzhi	适可而止	759
+shucuo	输错	200	no_contains
+shuoshui	说谁	600	no_contains
+songjian	送检	414	no_contains
+songsha	送啥	80	no_contains
+songxiu	送修	400	no_contains
+suandui	算对	400	no_contains
+suansha	算啥	600	no_contains
+suanshui	算谁	200	no_contains
+tiancuo	填错	400	no_contains
+tiesha	贴啥	363	no_contains
+tugesha	图个啥	200	no_contains
+tunqu	褪去	202	no_contains
+tusha	图啥	200	no_contains
+wanyier	玩意儿	1	no_contains
+wanyu	晚于	600	no_contains
+weichao	未超	514	no_contains
+weichaobiao	未超标	80	no_contains
+weichaoguo	未超过	600	no_contains
+weida	未达	600	no_contains
+weidabiao	未达标	600	no_contains
+weidadao	未达到	600	no_contains
+weidao	未到	600	no_contains
+weidaochang	未到场	200	no_contains
+weidaoda	未到达	400	no_contains
+weidaoqi	未到期	400	no_contains
+weidaowei	未到位	200	no_contains
+weidaozhang	未到账	200	no_contains
+weigou	未够	200	no_contains
+weiguoqi	未过期	80	no_contains
+weijieman	未届满	80	no_contains
+weiman	未满	600	no_contains
+weimane	未满额	80	no_contains
+weimanshibasui	未满十八岁	200	no_contains
+weimanyinian	未满一年	600	no_contains
+weimanzhousui	未满周岁	80	no_contains
+weimanzu	未满足	600	no_contains
+weishengxiao	未生效	200	no_contains
+weixiudian	维修点	400	no_contains
+weiyu	未逾	279	no_contains
+weizhi	未至	600	no_contains
+weizu	未足	600	no_contains
+wozheer	我这儿	1	no_contains
+xiangsha	像啥	200	no_contains
+xiangshui	像谁	400	no_contains
+xianyu	先于	874	no_contains
+xiaoshile	小时了	556
+xiaowanyier	小玩意儿	1	no_contains
+xiedui	写对	136	no_contains
+xielou	泄露	1000	no_contains
+xinshui	信谁	400	no_contains
+xiubuhao	修不好	400	no_contains
+xuandui	选对	600	no_contains
+xuanshui	选谁	400	no_contains
+xunyu	逊于	600	no_contains
+yaosha	要啥	600	no_contains
+yaosi	咬死	600	no_contains
+yayu	亚于	400	no_contains
+yichao	已超	600	no_contains
+yichaoguo	已超过	600	no_contains
+yicuo	译错	9	no_contains
+yida	已达	600	no_contains
+yidabiao	已达标	200	no_contains
+yidadao	已达到	600	no_contains
+yidaoda	已到达	400	no_contains
+yidaoqi	已到期	400	no_contains
+yidaowei	已到位	400	no_contains
+yigou	已够	200	no_contains
+yiguoqi	已过期	400	no_contains
+yijie	已届	200	no_contains
+yijieman	已届满	80	no_contains
+yikuaier	一块儿	1	no_contains
+yiman	已满	600	no_contains
+yimanyinian	已满一年	80	no_contains
+yimanzu	已满足	200	no_contains
+yishengxiao	已生效	400	no_contains
+yishibanhuier	一时半会儿	1	no_contains
+yixing	一行	999	no_contains
+yiyu	已逾	121	no_contains
+yizhi	已至	294	no_contains
+yizu	已足	600	no_contains
+yongcuo	用错	600	no_contains
+yuanchang	原厂	600	no_contains
+yuanchangjian	原厂件	200	no_contains
+yuanchangpeijian	原厂配件	200	no_contains
+yuanshui	怨谁	200	no_contains
+yuanyu	远于	200	no_contains
+zainaer	在哪儿	1	no_contains
+zainaer	在那儿	1	no_contains
+zaoyu	早于	486	no_contains
+zhahusha	咋呼啥	400	no_contains
+zhaoyang	朝阳	999	no_contains
+zheer	这儿	1	no_contains
+zhehuier	这会儿	1	no_contains
+zhewanyier	这玩意儿	1	no_contains
+zhongyu	重于	600	no_contains
+zhuangcuo	装错	200	no_contains
+zizixixi	仔仔细细	280

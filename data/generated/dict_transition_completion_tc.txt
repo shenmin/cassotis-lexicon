@@ -1936,7 +1936,7 @@ benwen	ben'wen'zuo'zhe	本文作者	本文|作者	642
 benwen	ben'wen'lai'zi	本文來自	本文|來自	641
 benwenban	ben'wen'ban'quan	本文版權	本文|版權	610
 benwenbu	ben'wen'bu'fen	本文部分	本文|部分	628
-benwencai	ben'wen'cai'yong	本文采用	本文|采用	610
+benwencai	ben'wen'cai'yong	本文採用	本文|採用	610
 benwenjie	ben'wen'jie'shao	本文介紹	本文|介紹	625
 benwenjin	ben'wen'jin'gong	本文僅供	本文|僅供	610
 benwenlai	ben'wen'lai'zi	本文來自	本文|來自	641
@@ -2016,7 +2016,7 @@ biancheng	bian'cheng'hong'se	變成紅色	變成|紅色	617
 bianchengbai	bian'cheng'bai'se	變成白色	變成|白色	616
 bianchenghei	bian'cheng'hei'se	變成黑色	變成|黑色	610
 bianchenghong	bian'cheng'hong'se	變成紅色	變成|紅色	617
-bianchengliao	bian'cheng'liao'ru	變成了如	變成|了如	595
+bianchengliao	bian'cheng'liao'ru	變成瞭如	變成|瞭如	595
 bianchengling	bian'cheng'ling'yi'ge	變成另一個	變成|另一個	613
 bianchenglingyi	bian'cheng'ling'yi'ge	變成另一個	變成|另一個	613
 bianchengmei	bian'cheng'mei'hao	變成美好	變成|美好	581
@@ -3679,7 +3679,7 @@ budebu	bu'de'bu'dui	不得不對	不得|不對	610
 budebu	bu'de'bu'yong	不得不用	不得|不用	606
 budebu	bu'de'bu'chu	不得不出	不得|不出	593
 budebu	bu'de'bu'bei	不得不被	不得|不被	588
-budecai	bu'de'cai'yong	不得采用	不得|采用	590
+budecai	bu'de'cai'yong	不得採用	不得|採用	590
 budecan	bu'de'can'jia	不得參加	不得|參加	646
 budechao	bu'de'chao'guo	不得超過	不得|超過	652
 budecong	bu'de'cong'shi	不得從事	不得|從事	631
@@ -6805,12 +6805,12 @@ changjiande	chang'jian'de'shi	常見的是	常見|的是	652
 changjiang	chang'jiang'da'qiao	長江大橋	長江|大橋	652
 changjiang	chang'jiang'yi'nan	長江以南	長江|以南	625
 changjiang	chang'jiang'jiang'tun	長江江豚	長江|江豚	622
-changjiang	chang'jiang'gan'liu	長江干流	長江|干流	619
+changjiang	chang'jiang'gan'liu	長江幹流	長江|幹流	619
 changjiang	chang'jiang'da'xue	長江大學	長江|大學	618
 changjiang	chang'jiang'ri'bao	長江日報	長江|日報	617
 changjiangda	chang'jiang'da'qiao	長江大橋	長江|大橋	652
 changjiangda	chang'jiang'da'xue	長江大學	長江|大學	618
-changjianggan	chang'jiang'gan'liu	長江干流	長江|干流	619
+changjianggan	chang'jiang'gan'liu	長江幹流	長江|幹流	619
 changjiangjiang	chang'jiang'jiang'tun	長江江豚	長江|江豚	622
 changjiangri	chang'jiang'ri'bao	長江日報	長江|日報	617
 changjiangshui	chang'jiang'shui'li	長江水利	長江|水利	580
@@ -8990,7 +8990,7 @@ chuantongying	chuan'tong'ying'xiao	傳統營銷	傳統|營銷	588
 chuantongyou	chuan'tong'you'xi	傳統遊戲	傳統|遊戲	569
 chuantongyuan	chuan'tong'yuan'su	傳統元素	傳統|元素	600
 chuantongzhe	chuan'tong'zhe'xue	傳統哲學	傳統|哲學	618
-chuantongzhi	chuan'tong'zhi'zao	傳統制造	傳統|制造	620
+chuantongzhi	chuan'tong'zhi'zao	傳統製造	傳統|製造	620
 chuantongzhong	chuan'tong'zhong'yi	傳統中醫	傳統|中醫	644
 chuantongzhong	chuan'tong'zhong'guo	傳統中國	傳統|中國	617
 chuantongzong	chuan'tong'zong'jiao	傳統宗教	傳統|宗教	608
@@ -10519,10 +10519,10 @@ daduiren	da'dui'ren'ma	大隊人馬	大隊|人馬	609
 daduo	da'duo'dou'shi	大多都是	大多|都是	652
 daduo	da'duo'shu'xue	大多數學	大多|數學	652
 daduo	da'duo'lai'zi	大多來自	大多|來自	633
-daduo	da'duo'cai'yong	大多采用	大多|采用	626
+daduo	da'duo'cai'yong	大多採用	大多|採用	626
 daduo	da'duo'shi'hou	大多時候	大多|時候	618
 daduo	da'duo'ren	大多人	大多|人	591
-daduocai	da'duo'cai'yong	大多采用	大多|采用	626
+daduocai	da'duo'cai'yong	大多採用	大多|採用	626
 daduodou	da'duo'dou'shi	大多都是	大多|都是	652
 daduolai	da'duo'lai'zi	大多來自	大多|來自	633
 daduoshi	da'duo'shi'hou	大多時候	大多|時候	618
@@ -12434,7 +12434,7 @@ daolezi	dao'le'zi'ji'de	到了自己的	到了|自己的	652
 daoleziji	dao'le'zi'ji'de	到了自己的	到了|自己的	652
 daolezui	dao'le'zui'hou	到了最後	到了|最後	652
 daolian	dao'lian'shang	到臉上	到|臉上	604
-daoliao	dao'liao'ru	到了如	到|了如	649
+daoliao	dao'liao'ru	到瞭如	到|瞭如	649
 daolin	dao'lin'tou	到臨頭	到|臨頭	605
 daoling	dao'ling'chen	到凌晨	到|凌晨	652
 daoliu	dao'liu'nian	到六年	到|六年	613
@@ -15913,7 +15913,7 @@ douxiang	dou'xiang'yao	都想要	都|想要	645
 douxiang	dou'xiang'bu	都想不	都|想不	641
 douxiang	dou'xiang'dang	都相當	都|相當	639
 douxiang	dou'xiang'xin	都相信	都|相信	635
-douxiang	dou'xiang'wang	都向往	都|向往	625
+douxiang	dou'xiang'wang	都嚮往	都|嚮往	625
 douxie	dou'xie'zai	都寫在	都|寫在	634
 douxu	dou'xu'yao	都需要	都|需要	652
 douxuan	dou'xuan'ze	都選擇	都|選擇	647
@@ -25134,7 +25134,7 @@ guifanzhi	gui'fan'zhi'fa	規範執法	規範|執法	597
 guifanzhi	gui'fan'zhi'liao	規範治療	規範|治療	597
 guige	gui'ge'xing'hao	規格型號	規格|型號	612
 guigexing	gui'ge'xing'hao	規格型號	規格|型號	612
-guigu	gui'gu'zi	鬼谷子	鬼|谷子	597
+guigu	gui'gu'zi	鬼穀子	鬼|穀子	597
 guihua	gui'hua'jian'she	規劃建設	規劃|建設	652
 guihua	gui'hua'she'ji	規劃設計	規劃|設計	652
 guihua	gui'hua'gang'yao	規劃綱要	規劃|綱要	650
@@ -29437,7 +29437,7 @@ huaxueyao	hua'xue'yao'ji	化學藥劑	化學|藥劑	611
 huaxueyao	hua'xue'yao'wu	化學藥物	化學|藥物	597
 huaxueyuan	hua'xue'yuan'liao	化學原料	化學|原料	610
 huaxueyuan	hua'xue'yuan'li	化學原理	化學|原理	585
-huaxuezhi	hua'xue'zhi'pin	化學制品	化學|制品	594
+huaxuezhi	hua'xue'zhi'pin	化學製品	化學|製品	594
 huaxuezhuan	hua'xue'zhuan'ye	化學專業	化學|專業	641
 huaxuezu	hua'xue'zu'cheng	化學組成	化學|組成	634
 huaxuezuo	hua'xue'zuo'yong	化學作用	化學|作用	633
@@ -42456,7 +42456,7 @@ lidu	li'du'bu'gou	力度不夠	力度|不夠	639
 lidu	li'du'jia'da	力度加大	力度|加大	610
 lidubu	li'du'bu'gou	力度不夠	力度|不夠	639
 lidujia	li'du'jia'da	力度加大	力度|加大	610
-liebiao	lie'biao'li	列表里	列|表里	634
+liebiao	lie'biao'li	列表裡	列|表裡	634
 lieche	lie'che'yun'xing	列車運行	列車|運行	597
 liecheyun	lie'che'yun'xing	列車運行	列車|運行	597
 liechu	lie'chu'le	列出了	列|出了	642
@@ -63127,7 +63127,7 @@ suoxi	suo'xi'shou	所吸收	所|吸收	618
 suoxi	suo'xi'wang	所希望	所|希望	616
 suoxi	suo'xi'huan	所喜歡	所|喜歡	588
 suoxian	suo'xian'shi	所顯示	所|顯示	605
-suoxiang	suo'xiang'wang	所向往	所|向往	620
+suoxiang	suo'xiang'wang	所嚮往	所|嚮往	620
 suoxiang	suo'xiang'yao'de	所想要的	所想|要的	610
 suoxiang	suo'xiang'you	所享有	所|享有	593
 suoxiangyao	suo'xiang'yao'de	所想要的	所想|要的	610
@@ -64463,7 +64463,7 @@ tezhengti	te'zheng'ti'qu	特徵提取	特徵|提取	608
 tezhengyi	te'zheng'yi'ji	特徵以及	特徵|以及	602
 tezhengzai	te'zheng'zai'yu	特徵在於	特徵|在於	587
 tezhengzhi	te'zheng'zhi'yi	特徵之一	特徵|之一	632
-tezhi	te'zhi'ding	特制定	特制|定	640
+tezhi	te'zhi'ding	特製定	特製|定	640
 tezhong	te'zhong'she'bei	特種設備	特種|設備	652
 tezhong	te'zhong'zuo'ye	特種作業	特種|作業	652
 tezhong	te'zhong'che'liang	特種車輛	特種|車輛	608
@@ -91579,8 +91579,8 @@ zhizhijin	zhi'zhi'jin'ri	直至今日	直至|今日	642
 zhizhizui	zhi'zhi'zui'hou	直至最後	直至|最後	625
 zhizhong	zhi'zhong'le	之中了	之|中了	603
 zhizhuo	zhi'zhuo'yu	執著于	執著|于	589
-zhizuo	zhi'zuo'yong'de	制作用的	制作|用的	593
-zhizuoyong	zhi'zuo'yong'de	制作用的	制作|用的	593
+zhizuo	zhi'zuo'yong'de	製作用的	製作|用的	593
+zhizuoyong	zhi'zuo'yong'de	製作用的	製作|用的	593
 zhongbang	zhong'bang'zhu	中幫助	中幫|助	598
 zhongbao	zhong'bao'chi	中保持	中保|持	652
 zhongbao	zhong'bao'cun	中保存	中保|存	627

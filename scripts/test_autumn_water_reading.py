@@ -41,7 +41,9 @@ class AutumnWaterReadingTests(unittest.TestCase):
     def test_generated_dictionary_reading_and_rank(self):
         for variant, quote in zip(("sc", "tc"), QUOTES):
             rows = load_merged_dict([ROOT / f"data/generated/dict_clean_{variant}.txt"])
-            self.assertEqual([(AUTUMN, 600), (SWIM, 433)], rows["qiushui"])
+            # Words of the key added later stay below the two (求谁, 2026-10-18).
+            self.assertEqual([(AUTUMN, 600), (SWIM, 433)], rows["qiushui"][:2])
+            self.assertTrue(all(weight < 433 for _, weight in rows["qiushui"][2:]))
             self.assertIn((quote, 451), rows[READING])
             self.assertNotIn(quote, [text for text, _ in rows.get(OLD_READING, [])])
 

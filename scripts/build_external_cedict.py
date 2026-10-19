@@ -12757,26 +12757,78 @@ def _convert_sc_text_to_tc_with_phrase_hints(
     return "".join(output)
 
 
+def _build_char_variant_pairs(
+    tc_to_sc_map: Dict[str, Set[str]],
+    opencc_entries: List[Tuple[str, str]],
+) -> Set[Tuple[str, str]]:
+    """Every (traditional, simplified) character pair of the aligned words,
+    the ambiguous ones too (於 / 于, 後 / 后, 乾 / 干), which
+    _build_char_variant_hints leaves out of its one-to-one maps."""
+    pairs: Set[Tuple[str, str]] = set()
+
+    def add_pair(tc_word: str, sc_word: str) -> None:
+        if len(tc_word) != len(sc_word):
+            return
+        for tc_ch, sc_ch in zip(tc_word, sc_word):
+            if tc_ch != sc_ch and CJK_FULL_RE.fullmatch(tc_ch) and CJK_FULL_RE.fullmatch(sc_ch):
+                pairs.add((tc_ch, sc_ch))
+
+    for sc_word, tc_word in opencc_entries:
+        add_pair(tc_word, sc_word)
+    for tc_word, sc_words in tc_to_sc_map.items():
+        for sc_word in sc_words:
+            add_pair(tc_word, sc_word)
+    return pairs
+
+
 def _backfill_tc_mapping_from_sc_with_char_map(
     sc_mapping: Dict[Tuple[str, str], int],
     tc_mapping: Dict[Tuple[str, str], int],
     simp_to_trad_char_map: Dict[str, str],
+    variant_pairs: Set[Tuple[str, str]] | None = None,
 ) -> Tuple[Dict[Tuple[str, str], int], Dict[str, int]]:
+    """Gives every simplified row a traditional row of its key. The char map
+    leaves a character with more than one traditional form as it is (于 of
+    高于), so where the key already holds the word in traditional (高於, a
+    twin by variant_pairs) that row takes the weight instead of a copy in
+    simplified beside it, which came first among equal weights."""
     if not simp_to_trad_char_map:
         return tc_mapping, {
             "tc_backfill_from_sc_added": 0,
             "tc_backfill_from_sc_boosted": 0,
+            "tc_backfill_from_sc_twin": 0,
             "tc_backfill_from_sc_total": len(tc_mapping),
         }
 
     normalized = dict(tc_mapping)
+    texts_by_pinyin: Dict[str, List[str]] = {}
+    for pinyin, text in tc_mapping:
+        texts_by_pinyin.setdefault(pinyin, []).append(text)
+
+    def twin_of(pinyin: str, sc_text: str, tc_text: str) -> str:
+        if not variant_pairs:
+            return ""
+        for text in texts_by_pinyin.get(pinyin, ()):
+            if text == tc_text or len(text) != len(sc_text):
+                continue
+            if all(left == right or (left, right) in variant_pairs for left, right in zip(text, sc_text)):
+                return text
+        return ""
+
     added = 0
     boosted = 0
+    twins = 0
     for (pinyin, sc_text), weight in sc_mapping.items():
         tc_text = _convert_text_with_char_map(sc_text, simp_to_trad_char_map)
         key = (pinyin, tc_text)
         previous = normalized.get(key)
         if previous is None:
+            twin = twin_of(pinyin, sc_text, tc_text)
+            if twin:
+                twins += 1
+                if weight > normalized[(pinyin, twin)]:
+                    normalized[(pinyin, twin)] = weight
+                continue
             normalized[key] = weight
             added += 1
         elif weight > previous:
@@ -12786,6 +12838,7 @@ def _backfill_tc_mapping_from_sc_with_char_map(
     stats = {
         "tc_backfill_from_sc_added": added,
         "tc_backfill_from_sc_boosted": boosted,
+        "tc_backfill_from_sc_twin": twins,
         "tc_backfill_from_sc_total": len(normalized),
     }
     return normalized, stats
@@ -18670,6 +18723,29 @@ def _load_specialist_common_terms(
     return result
 
 
+def _load_medicine_catalogue_terms(path: pathlib.Path) -> Tuple[Set[str], Set[str]]:
+    """The medicine layer's catalogue terms (simplified, traditional): words of
+    the layer that the general text the character LM was trained on holds
+    fewer than 50 times (manifests/medicine_catalogue_terms.tsv; the user,
+    2026-10-19: "对于'落下灰'这种专业词条，在输入中应该权重很低，全匹配时才候选").
+    The layer's evidence fields cannot tell them from everyday words of it
+    (深度学习 and 罗夏克墨迹测试 share every value); their counts in the text
+    can."""
+    simplified: Set[str] = set()
+    traditional: Set[str] = set()
+    if not path.exists():
+        return simplified, traditional
+    for number, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
+        if not line or line.startswith("#"):
+            continue
+        fields = line.split("\t")
+        if len(fields) != 2 or not fields[0] or not CJK_FULL_RE.fullmatch(fields[0]):
+            raise ValueError(f"Invalid medicine catalogue row: {path}:{number}")
+        simplified.add(fields[0])
+        traditional.update(fields[1].split())
+    return simplified, traditional
+
+
 def _specialist_completion_prior(
     text: str = "", common_terms: Dict[str, int] | None = None,
 ) -> Tuple[int, int, int, int, int, int, int]:
@@ -21842,8 +21918,11 @@ def _build_completion_popularity_prior(
     stats_prefix: str,
     exact_only_keys: Set[Tuple[str, str]] | None = None,
     specialist_common_terms: Dict[str, int] | None = None,
+    catalogue_terms: Set[str] | None = None,
 ) -> Tuple[Dict[Tuple[str, str], Tuple[int, int, int, int, int, int, int]], Dict[str, int]]:
-    """Build a completion popularity prior without reusing dictionary weight."""
+    """Build a completion popularity prior without reusing dictionary weight.
+    A catalogue term of the medicine layer (catalogue_terms) is exact only,
+    like a reviewed specialist entry."""
 
     output: Dict[Tuple[str, str], Tuple[int, int, int, int, int, int, int]] = {}
     stats = {
@@ -21851,6 +21930,7 @@ def _build_completion_popularity_prior(
         f"{stats_prefix}_completion_prior_hot_rows": 0,
         f"{stats_prefix}_completion_prior_vertical_rows": 0,
         f"{stats_prefix}_completion_prior_cold_vertical_rows": 0,
+        f"{stats_prefix}_completion_prior_medicine_catalogue_rows": 0,
     }
 
     with dictionary_path.open("r", encoding="utf-8-sig") as handle:
@@ -21944,6 +22024,10 @@ def _build_completion_popularity_prior(
     for key in exact_only_keys or ():
         if key in output:
             output[key] = _specialist_completion_prior(key[1], specialist_common_terms)
+    for key, value in list(output.items()):
+        if catalogue_terms and key[1] in catalogue_terms and value[5] == 3:
+            output[key] = _specialist_completion_prior()
+            stats[f"{stats_prefix}_completion_prior_medicine_catalogue_rows"] += 1
 
     for (
         popularity_prior,
@@ -24047,7 +24131,8 @@ def main() -> int:
             trad_to_simp_char_map,
         )
         tc_map, tc_backfill_stats = _backfill_tc_mapping_from_sc_with_char_map(
-            sc_map, tc_map, simp_to_trad_char_map
+            sc_map, tc_map, simp_to_trad_char_map,
+            _build_char_variant_pairs(tc_to_sc_map, opencc_entries),
         )
         tc_map, tc_script_filter_stats = _filter_tc_mapping_with_script_hints(
             tc_map, sc_script_chars, tc_script_chars
@@ -26820,6 +26905,9 @@ def main() -> int:
     specialist_common_terms = _load_specialist_common_terms(
         repo_root / "manifests/specialist_common_terms.tsv", specialist_entries
     ) if specialist_entries else {}
+    medicine_catalogue_sc_terms, medicine_catalogue_tc_terms = _load_medicine_catalogue_terms(
+        repo_root / "manifests/medicine_catalogue_terms.tsv"
+    )
     stats["specialist_exact_added_tc"] = len(specialist_tc_keys)
     contains_popularity_excluded_sc_terms.update(text for _, text in specialist_sc_keys)
     contains_popularity_excluded_tc_terms.update(text for _, text in specialist_tc_keys)
@@ -27040,6 +27128,7 @@ def main() -> int:
                     stats_prefix="sc",
                     exact_only_keys=specialist_sc_keys | curated_exact_only_sc_keys,
                     specialist_common_terms=specialist_common_terms,
+                    catalogue_terms=medicine_catalogue_sc_terms,
                 )
             )
             if output_completion_prior_sc is not None:
@@ -27077,6 +27166,7 @@ def main() -> int:
                     stats_prefix="tc",
                     exact_only_keys=specialist_tc_keys | curated_exact_only_tc_keys,
                     specialist_common_terms=specialist_common_terms,
+                    catalogue_terms=medicine_catalogue_tc_terms,
                 )
             )
             if output_completion_prior_tc is not None:
