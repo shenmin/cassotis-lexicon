@@ -25,8 +25,11 @@ DROPPED = {"gaoyu": ("高于", "高於"), "diyu": ("低于", "低於"), "houqi":
            "fanben": ("范本", "範本"), "henchou": ("很丑", "很醜"), "zaiyu": ("在于", "在於")}
 # Copies whose twin is wrong itself.
 KEPT = {"bulie": "布列", "buliesiteyaosai": "布列斯特要塞"}
-# Traditional forms the standards keep beside a converted twin.
-STANDARD = {"wutai": ("舞台", "舞臺"), "caikeyi": ("才可以", "纔可以"), "limian": ("裡面", "裏面")}
+# Traditional forms the standards keep beside a converted twin; Taiwan's
+# (normalize_traditional_forms.py) take the place of OpenCC's: 纔可以 and
+# 裏面 became 才可以 and 裡面.
+STANDARD = {"wutai": ("舞台", "舞臺"), "caikeyi": ("才可以",), "limian": ("裡面",)}
+REPLACED = {"caikeyi": "纔可以", "limian": "裏面"}
 
 
 def keys(variant):
@@ -64,6 +67,8 @@ class TraditionalSimplifiedCopiesTests(unittest.TestCase):
         for pinyin, texts in STANDARD.items():
             for text in texts:
                 self.assertIn(text, rows[pinyin], text)
+        for pinyin, text in REPLACED.items():
+            self.assertNotIn(text, rows[pinyin], text)
         # The simplified dictionary is not touched.
         self.assertIn("高于", keys("sc")["gaoyu"])
 

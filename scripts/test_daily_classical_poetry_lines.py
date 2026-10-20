@@ -14,6 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 import build_external_cedict as builder
 from test_daily_whitespace_phrases import read_rows
+from normalize_traditional_forms import taiwan_path, taiwan_text
 
 MANIFEST = ROOT / "manifests/curated_daily_supplement_phrases.tsv"
 HEADER_POETRY = "# Classical poetry lines, 2026-10-15:"
@@ -109,6 +110,12 @@ def block(header):
 ROWS = tuple(row[:4] for row in block(HEADER_POETRY))
 
 
+def shown(variant):
+    """A manifest text as the generated files hold it: the traditional
+    ones in Taiwan's forms (衞青 -> 衛青, normalize_traditional_forms.py)."""
+    return taiwan_text if variant == "tc" else str
+
+
 class DailyClassicalPoetryTests(unittest.TestCase):
     def test_block_rows(self):
         rows = block(HEADER_POETRY)
@@ -191,23 +198,29 @@ class DailyClassicalPoetryTests(unittest.TestCase):
     def test_generated_entries(self):
         for index, variant in enumerate(("sc", "tc"), 1):
             rows = read_rows(f"dict_clean_{variant}.txt")
+            # Lines that are one in Taiwan's forms (淡粧, 淡妝) are one row of
+            # the higher weight.
+            weights = {}
             for row in ROWS:
-                self.assertEqual([str(row[3]), "no_contains"], rows[(row[0], row[index])])
+                text_key = (row[0], shown(variant)(row[index]))
+                weights[text_key] = max(weights.get(text_key, 0), row[3])
+            for text_key, weight in weights.items():
+                self.assertEqual([str(weight), "no_contains"], rows[text_key])
 
     def test_ordinary_prior(self):
         # popularity 80 from the base share alone, no layer: not exact-only
         for index, variant in enumerate(("sc", "tc"), 1):
             rows = read_rows(f"dict_completion_prior_{variant}.txt")
             for row in ROWS:
+                text = shown(variant)(row[index])
                 if row[1] in MERGED:
-                    self.assertIn((row[0], row[index]), rows)
+                    self.assertIn((row[0], text), rows)
                     continue
-                self.assertEqual((80, 0, 0, 0, 0, 0, 0),
-                                 tuple(map(int, rows[(row[0], row[index])])), row[1])
+                self.assertEqual((80, 0, 0, 0, 0, 0, 0), tuple(map(int, rows[(row[0], text)])), row[1])
 
     def test_completions(self):
         for index, variant in enumerate(("sc", "tc"), 1):
-            keys = {(row[0], row[index]) for row in ROWS}
+            keys = {(row[0], shown(variant)(row[index])) for row in ROWS}
             offered = {}
             for line in (ROOT / "data/generated" / f"dict_completion_lookup_{variant}.txt").read_text(
                     encoding="utf-8").splitlines():
@@ -223,7 +236,7 @@ class DailyClassicalPoetryTests(unittest.TestCase):
                 syllables = builder._runtime_parse_compact_pinyin(pinyin)
                 if len(syllables) >= 3 and len(syllables) == len(text) and "r" not in syllables:
                     self.assertIn((pinyin, text), offered, text)
-            sample = ("chunmianbujuexiao", SAMPLES[0][index])
+            sample = ("chunmianbujuexiao", shown(variant)(SAMPLES[0][index]))
             self.assertTrue({"chunmian", "chunmianbu", "chunmianbujue"} <= offered[sample], offered[sample])
 
     def test_next_lines(self):
@@ -242,12 +255,16 @@ class DailyClassicalPoetryTests(unittest.TestCase):
             for row in rows:
                 self.assertIn(row[2], "，。？！；：、", row)
                 # anchor and next line are entries: typed in full each is one
-                self.assertIn(row[index], texts, row)
-                self.assertIn(row[3 + index], texts, row)
+                self.assertIn(shown(variant)(row[index]), texts, row)
+                self.assertIn(shown(variant)(row[3 + index]), texts, row)
                 self.assertEqual(len(row[3 + index]), len(row[5].split("'")), row)
             generated = (ROOT / "data/generated" / f"dict_long_completion_{variant}.txt").read_text(
                 encoding="utf-8").splitlines()
             expected = continuation.poetry_next_line_rows(manifest, traditional=variant == "tc")
+            if variant == "tc":
+                # as normalize_traditional_forms.py writes the long continuations
+                expected = ["\t".join([taiwan_text(f[0]), f[1], taiwan_text(f[2]), taiwan_path(f[3])] + f[4:])
+                            for f in (line.split("\t") for line in expected)]
             self.assertEqual(expected, generated[-len(expected):])
 
     def test_forced_weights(self):

@@ -18,14 +18,16 @@ Lexicon build and release repository for Cassotis IME.
 - Supports external-source bootstrap and reproducible generated dictionary builds.
 - Keeps attribution and release policy files aligned with generated artifacts.
 
-## Current dictionary snapshot (2026-10-19 build)
+## Current dictionary snapshot (2026-10-20 build)
 
 | File | Variant | Entries |
 |------|---------|---------|
 | `data/generated/dict_clean_sc.txt` | Simplified Chinese | 233,847 |
-| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 235,424 |
+| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 234,450 |
 | `data/generated/dict_unihan_sc.txt` | Simplified single-char (Unihan) | 23,916 |
-| `data/generated/dict_unihan_tc.txt` | Traditional single-char (Unihan) | 24,175 |
+| `data/generated/dict_unihan_tc.txt` | Traditional single-char (Unihan) | 24,165 |
+
+The traditional dictionary writes Taiwan's character forms (為, 裡, 著, 群, 吃) in every word of two characters or more; single characters keep their variants, so that they can still be typed on purpose. See the [form list](manifests/traditional_taiwan_forms.tsv).
 
 Specialist coverage is added at low weights without raising existing word or character weights. Complete Pinyin can select uncommon technical terms, but catalogue-only entries do not participate in short-prefix or Tab predictions. Reviewed general-use expressions remain eligible for completion. See the [admission records](manifests/vertical/thuocl_specialist_admissions.tsv) and the separate [familiarity review](manifests/specialist_common_terms.tsv).
 

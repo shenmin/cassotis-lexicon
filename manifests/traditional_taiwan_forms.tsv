@@ -1,0 +1,103 @@
+# Characters the traditional dictionary writes in Taiwan's form (2026-10-20,
+# the user: "统一繁体固定使用台湾用字字形，处理掉混用"). Applied by
+# scripts/normalize_traditional_forms.py to every word of two characters or
+# more in the generated traditional files; single characters stay, so that a
+# variant can still be typed on purpose. Kept as they are, since Taiwan writes
+# them too: 泄 (排泄 beside 洩漏), 台 (舞台), 煙, 濕, 醣 (多醣), 塚, 餬 (餬口),
+# 鎚, 纍 (纍纍), 陞 (陞遷), 踰 (踰越), 綑 (綑綁), 罎, 榦, 麯, 糍, 苧, 么, and the
+# brand 滙豐.
+# from	to	kind
+羣	群	OpenCC TWVariants
+爲	為	OpenCC TWVariants
+喫	吃	OpenCC TWVariants
+裏	裡	OpenCC TWVariants
+脣	唇	OpenCC TWVariants
+麪	麵	OpenCC TWVariants
+蔘	參	OpenCC TWVariants
+祕	秘	OpenCC TWVariants
+啓	啟	OpenCC TWVariants
+僞	偽	OpenCC TWVariants
+污	汙	OpenCC TWVariants
+睾	睪	OpenCC TWVariants
+衆	眾	OpenCC TWVariants
+峯	峰	OpenCC TWVariants
+牀	床	OpenCC TWVariants
+覈	核	OpenCC TWVariants
+癡	痴	OpenCC TWVariants
+棱	稜	OpenCC TWVariants
+竈	灶	OpenCC TWVariants
+檐	簷	OpenCC TWVariants
+糉	粽	OpenCC TWVariants
+幺	么	OpenCC TWVariants
+纔	才	OpenCC TWVariants
+擡	抬	OpenCC TWVariants
+痹	痺	OpenCC TWVariants
+齶	顎	OpenCC TWVariants
+鍼	針	OpenCC TWVariants
+鉢	缽	OpenCC TWVariants
+繮	韁	OpenCC TWVariants
+皁	皂	OpenCC TWVariants
+鮎	鯰	OpenCC TWVariants
+潙	溈	OpenCC TWVariants
+嫺	嫻	OpenCC TWVariants
+蔿	蒍	OpenCC TWVariants
+着	著	OpenCC TWVariants
+潨	潀	OpenCC TWVariants
+嬀	媯	OpenCC TWVariants
+鈎	鉤	Hong Kong form (OpenCC HKVariants)
+説	說	Hong Kong form (OpenCC HKVariants)
+衞	衛	Hong Kong form (OpenCC HKVariants)
+藴	蘊	Hong Kong form (OpenCC HKVariants)
+粧	妝	Hong Kong form (OpenCC HKVariants)
+閲	閱	Hong Kong form (OpenCC HKVariants)
+鋭	銳	Hong Kong form (OpenCC HKVariants)
+醖	醞	Hong Kong form (OpenCC HKVariants)
+緼	縕	Hong Kong form (OpenCC HKVariants)
+糭	粽	Hong Kong form (OpenCC HKVariants)
+鰛	鰮	Hong Kong form (OpenCC HKVariants)
+輼	轀	Hong Kong form (OpenCC HKVariants)
+涚	涗	Hong Kong form (OpenCC HKVariants)
+蒀	蒕	Hong Kong form (OpenCC HKVariants)
+衹	只	Hong Kong form (OpenCC HKVariants)
+綫	線	variant outside Taiwan's standard
+奬	獎	variant outside Taiwan's standard
+墻	牆	variant outside Taiwan's standard
+凈	淨	variant outside Taiwan's standard
+殻	殼	variant outside Taiwan's standard
+瘺	瘻	variant outside Taiwan's standard
+銹	鏽	variant outside Taiwan's standard
+竪	豎	variant outside Taiwan's standard
+鶿	鷀	variant outside Taiwan's standard
+麽	麼	variant outside Taiwan's standard
+鰐	鱷	variant outside Taiwan's standard
+綉	繡	variant outside Taiwan's standard
+査	查	variant outside Taiwan's standard
+獃	呆	variant outside Taiwan's standard
+鎸	鐫	variant outside Taiwan's standard
+蒓	蓴	variant outside Taiwan's standard
+厠	廁	variant outside Taiwan's standard
+録	錄	variant outside Taiwan's standard
+絶	絕	variant outside Taiwan's standard
+簑	蓑	variant outside Taiwan's standard
+氂	犛	variant outside Taiwan's standard
+敎	教	variant outside Taiwan's standard
+鷄	雞	variant outside Taiwan's standard
+鳬	鳧	variant outside Taiwan's standard
+鮝	鯗	variant outside Taiwan's standard
+駡	罵	variant outside Taiwan's standard
+飱	飧	variant outside Taiwan's standard
+顔	顏	variant outside Taiwan's standard
+頽	頹	variant outside Taiwan's standard
+鎭	鎮	variant outside Taiwan's standard
+遡	溯	variant outside Taiwan's standard
+贜	贓	variant outside Taiwan's standard
+賫	齎	variant outside Taiwan's standard
+謭	譾	variant outside Taiwan's standard
+謡	謠	variant outside Taiwan's standard
+舘	館	variant outside Taiwan's standard
+縧	絛	variant outside Taiwan's standard
+緑	綠	variant outside Taiwan's standard
+眞	真	variant outside Taiwan's standard
+畵	畫	variant outside Taiwan's standard
+産	產	variant outside Taiwan's standard
+昵	暱	variant outside Taiwan's standard

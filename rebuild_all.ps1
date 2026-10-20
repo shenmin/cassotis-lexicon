@@ -123,6 +123,7 @@ $buildScript = Join-Path $Root "scripts\build_external_seed.ps1"
 $validateScript = Join-Path $Root "scripts\validate_regression_samples.py"
 $readmeSnapshotScript = Join-Path $Root "scripts\update_readme_snapshot.py"
 $longCompletionScript = Join-Path $Root "scripts\build_long_completion_index.py"
+$taiwanFormsScript = Join-Path $Root "scripts\normalize_traditional_forms.py"
 
 if (-not (Test-Path -LiteralPath $buildScript)) {
     throw "Missing build script: $buildScript"
@@ -268,6 +269,11 @@ Write-Host "Building dedicated lexicon Unihan outputs (dict_unihan_sc/tc)..."
 if ($LASTEXITCODE -ne 0) {
     throw "Unihan build step failed with exit code $LASTEXITCODE"
 }
+
+# The traditional outputs in Taiwan's forms (manifests/traditional_taiwan_forms.tsv):
+# the sources and OpenCC's standard give both forms of such a character.
+Write-Host "Writing the traditional outputs in Taiwan's forms..."
+Invoke-PythonScript -ScriptPath $taiwanFormsScript -ScriptArgs @("--root", $Root)
 
 if (-not $SkipReadmeSnapshot) {
     Write-Host "Updating README dictionary snapshot from generated file row counts..."

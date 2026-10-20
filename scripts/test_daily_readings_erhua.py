@@ -15,6 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 import build_external_cedict as builder
 from test_daily_whitespace_phrases import read_rows
+from normalize_traditional_forms import taiwan_text
 
 MANIFEST = ROOT / "manifests/curated_daily_supplement_phrases.tsv"
 OVERRIDES = ROOT / "manifests/pinyin_overrides.tsv"
@@ -98,9 +99,11 @@ class DailyReadingsErhuaTests(unittest.TestCase):
             keys = {}
             for (pinyin, text), fields in generated.items():
                 keys.setdefault(pinyin, {})[text] = int(fields[0])
-            new = {(row[0], row[index]) for row in ROWS}
+            # The generated traditional files hold Taiwan's forms (穿著).
+            shown = taiwan_text if variant == "tc" else str
+            new = {(row[0], shown(row[index])) for row in ROWS}
             for row in ROWS:
-                pinyin, text, weight = row[0], row[index], row[3]
+                pinyin, text, weight = row[0], shown(row[index]), row[3]
                 if (row[0], row[1]) in STANDARD:
                     continue
                 others = [w for t, w in keys[pinyin].items() if t != text and (pinyin, t) not in new]
@@ -124,9 +127,10 @@ class DailyReadingsErhuaTests(unittest.TestCase):
         for index, variant in enumerate(("sc", "tc"), 1):
             rows = read_rows(f"dict_clean_{variant}.txt")
             prior = read_rows(f"dict_completion_prior_{variant}.txt")
+            shown = taiwan_text if variant == "tc" else str
             for row in ROWS:
-                self.assertEqual([str(row[3]), "no_contains"], rows[(row[0], row[index])])
-                self.assertEqual(["80", "0", "0", "0", "0", "0", "0"], prior[(row[0], row[index])])
+                self.assertEqual([str(row[3]), "no_contains"], rows[(row[0], shown(row[index]))])
+                self.assertEqual(["80", "0", "0", "0", "0", "0", "0"], prior[(row[0], shown(row[index]))])
 
     def test_readings_that_were_errors(self):
         overrides = OVERRIDES.read_text(encoding="utf-8").splitlines()

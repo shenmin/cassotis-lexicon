@@ -18,14 +18,16 @@ Cassotis IME 的詞庫建置與發布儲存庫。
 - 支援以外部來源建立詞庫，以及可重現的詞庫生成流程。
 - 確保來源標示檔案與生成產物保持一致。
 
-## 目前詞庫快照（2026-10-19 建置）
+## 目前詞庫快照（2026-10-20 建置）
 
 | 檔案 | 變體 | 詞條數 |
 |------|------|--------|
 | `data/generated/dict_clean_sc.txt` | 簡體主詞庫 | 233,847 |
-| `data/generated/dict_clean_tc.txt` | 繁體主詞庫 | 235,424 |
+| `data/generated/dict_clean_tc.txt` | 繁體主詞庫 | 234,450 |
 | `data/generated/dict_unihan_sc.txt` | 簡體單字（Unihan） | 23,916 |
-| `data/generated/dict_unihan_tc.txt` | 繁體單字（Unihan） | 24,175 |
+| `data/generated/dict_unihan_tc.txt` | 繁體單字（Unihan） | 24,165 |
+
+繁體詞庫的多字詞統一採用臺灣用字（為、裡、著、群、吃）；單字保留異體，仍可刻意輸入。字形對照見 [臺灣用字表](manifests/traditional_taiwan_forms.tsv)。
 
 專業詞彙以低權重補足缺漏，不調高既有詞彙及單字的權重。輸入完整拼音即可選取冷門專業詞，但預設不將它們用於短前綴及 Tab 預測；「有限責任公司」「綠豆湯」這類經過複核的通用表達仍可正常補全。收錄清單及來源請見[專業詞彙收錄紀錄](manifests/vertical/thuocl_specialist_admissions.tsv)，通用表達的補全資格另列於[獨立清單](manifests/specialist_common_terms.tsv)。
 

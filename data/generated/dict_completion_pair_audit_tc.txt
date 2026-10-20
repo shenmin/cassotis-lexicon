@@ -23,7 +23,7 @@
 0		beida	beidaziyuanzhongxue	北達資源中學	beidaxiyang	北大西洋	-1	0	3	0	1	0
 0		beihai	beihaidaogonglve	北海道攻略	beihairen	被害人	-1	0	9	0	1	0
 0		beijia	beijiashu	被加數	beijiaerhu	貝加爾湖	-1	0	5	0	1	0
-0		beima	beimaliyanaqundao	北馬里亞納羣島	beimaqidun	北馬其頓	-1	0	4	0	2	0
+0		beima	beimaliyanaqundao	北馬里亞納群島	beimaqidun	北馬其頓	-1	0	4	0	2	0
 0		beimaqi	beimaqidungongheguo	北馬其頓共和國	beimaqidun	北馬其頓	-1	0	4	0	2	0
 0		beimei	beimeixueyuangeteshi	北美學院哥特式	beimeizhou	北美洲	-1	0	3	0	1	0
 0		beishang	beishangguang	北上廣	beishangguangshen	北上廣深	-1	0	3	0	1	0
@@ -84,7 +84,7 @@
 0		danyan	danyanfansheshixiangji	單眼反射式相機	danyanpi	單眼皮	-1	0	3	0	2	0
 0		daoxian	daoxianchang	到現場	daoxianzai	到現在	-1	0	49	0	4	0
 0		daping	dapingceng	大平層	dapingmu	大屏幕	-1	0	3	0	2	0
-0		daqiwu	daqiwuli	大氣物理	daqiwuran	大氣污染	-1	0	7	0	1	0
+0		daqiwu	daqiwuli	大氣物理	daqiwuran	大氣汙染	-1	0	7	0	1	0
 0		dasheng	dashengyiren	大生意人	dashengjihu	大聲疾呼	-1	0	4	0	2	0
 0		dati	datiyouxi	答題遊戲	datishang	大體上	-1	0	5	0	3	0
 0		dawan	dawanjia	大玩家	dawanshang	大晚上	-1	0	7	0	1	0
@@ -154,12 +154,12 @@
 0		gaomeng	gaomengsuan	高錳酸	gaomengsuanjia	高錳酸鉀	-1	0	5	0	2	0
 0		gaoqing	gaoqingxidu	高清晰度	gaoqingdianshi	高清電視	-1	0	3	0	1	0
 0		gaoxiong	gaoxiongxingsuxuezheng	高雄性素血癥	gaoxiongshi	高雄市	-1	0	4	0	2	0
-0		genghao	genghaodewei	更好地爲	genghaode	更好地	-1	0	27	0	2	0
-0		genghao	genghaodewei	更好地爲	genghaode	更好的	-1	0	4	0	2	0
+0		genghao	genghaodewei	更好地為	genghaode	更好地	-1	0	27	0	2	0
+0		genghao	genghaodewei	更好地為	genghaode	更好的	-1	0	4	0	2	0
 0		gexing	gexingqishi	各行其是	gexinghua	個性化	-1	0	3	0	1	0
 0		geyou	geyousuozhang	各有所長	geyougede	各有各的	-1	0	4	0	1	0
 0		gezhong	gezhongshuru	各種輸入	gezhonggeyang	各種各樣	-1	0	6	0	1	0
-0		gezi	geziweizhan	各自爲戰	gezide	各自的	-1	0	3	0	2	0
+0		gezi	geziweizhan	各自為戰	gezide	各自的	-1	0	3	0	2	0
 0		gongan	gonganting	公安廳	gonganbu	公安部	-1	0	19	0	2	0
 0		gonggongguan	gonggongguanxixue	公共關係學	gonggongguanxi	公共關係	-1	0	3	0	2	0
 0		gongli	gonglizhuyi	功利主義	gongliyiyuan	公立醫院	-1	0	6	0	2	0
@@ -206,7 +206,7 @@
 0		houtai	houtaitongbu	後臺同步	houtaichengxu	後臺程序	-1	0	3	0	1	0
 0		houxian	houxiandaizhuyijianzhu	後現代主義建築	houxiandai	後現代	-1	0	3	0	2	0
 0		huangfei	huangfeizhide	荒廢之地	huangfeihong	黃飛鴻	-1	0	4	0	1	0
-0		huanjingwu	huanjingwulixue	環境物理學	huanjingwuran	環境污染	-1	0	7	0	2	0
+0		huanjingwu	huanjingwulixue	環境物理學	huanjingwuran	環境汙染	-1	0	7	0	2	0
 0		huansheng	huanshengleidong	歡聲雷動	huanshengxiaoyu	歡聲笑語	-1	0	4	0	3	0
 0		huantian	huantianxide	歡天喜地	huantianxidi	歡天喜地	-1	0	4	0	1	0
 0		huantianxi	huantianxide	歡天喜地	huantianxidi	歡天喜地	-1	0	4	0	1	0
@@ -238,11 +238,11 @@
 0		jiashi	jiashifuwu	家弒服務	jiashicang	駕駛艙	-1	0	3	0	2	0
 0		jiatingyi	jiatingyixuezhiyehushi	家庭醫學執業護士	jiatingyisheng	家庭醫生	-1	0	3	0	2	0
 0		jibenli	jibenliziwuli	基本粒子物理	jibenlizi	基本粒子	-1	0	3	0	1	0
-0		jibo	jiboteshizhenghouqun	吉伯特氏症候羣	jibohan	季伯涵	-1	0	7	0	1	0
+0		jibo	jiboteshizhenghouqun	吉伯特氏症候群	jibohan	季伯涵	-1	0	7	0	1	0
 0		jichu	jichuciku	基礎詞庫	jichujiagou	基礎架構	-1	0	4	0	2	0
 0		jida	jidaditisheng	極大地提升	jidadi	極大地	-1	0	10	0	2	0
 0		jieti	jietixingfangshuiban	階梯型防水板	jietijiaoshi	階梯教室	-1	0	7	0	2	0
-0		jiligu	jiligulu	嘰哩咕嚕	jiligulu	嘰裏咕嚕	-1	0	3	0	1	0
+0		jiligu	jiligulu	嘰哩咕嚕	jiligulu	嘰裡咕嚕	-1	0	3	0	1	0
 0		jilong	jilongpodadouhuiqu	吉隆坡大都會區	jilongpo	吉隆坡	-1	0	8	0	3	0
 0		jingtiandong	jingtiandongde	驚天動地	jingtiandongdi	驚天動地	-1	0	5	0	3	0
 0		jingyan	jingyanzhuyi	經驗主義	jingyanfengfu	經驗豐富	-1	0	4	0	3	0
@@ -255,7 +255,7 @@
 0		jiujin	jiujinshanmeirongyuan	舊金山美容院	jiujinshan	舊金山	-1	0	4	0	2	0
 0		jiuyue	jiuyuedeshizi	九月的柿子	jiuyuefen	九月份	-1	0	4	0	3	0
 0		jiuzhou	jiuzhougonglve	九州攻略	jiuzhougang	九洲港	-1	0	4	0	1	0
-0		jixiao	jixiaokaohefangfa	績效考覈方法	jixiaoshi	幾小時	-1	0	5	0	1	0
+0		jixiao	jixiaokaohefangfa	績效考核方法	jixiaoshi	幾小時	-1	0	5	0	1	0
 0		jixingbi	jixingbijiaoxingqingguangyan	急性閉角型青光眼	jixingbiyan	急性鼻炎	-1	0	3	0	1	0
 0		jixun	jixunying	集訓營	jixundui	集訓隊	-1	0	4	0	1	0
 0		jiyinbian	jiyinbianjijishu	基因編輯技術	jiyinbianji	基因編輯	-1	0	3	0	2	0
@@ -263,7 +263,7 @@
 0		jubing	jubingxixiananningjiaodianyong	聚丙烯酰胺凝膠電泳	jubingxi	聚丙烯	-1	0	6	0	1	0
 0		juebu	juebuneng	決不能	juebuhui	絕不會	-1	1	11	1	3	83
 0		juti	juticaozuo	具體操作	jutide	具體的	-1	2	24	2	3	77
-0		juwei	juweijiyou	據爲己有	juweihui	居委會	-1	0	3	0	1	0
+0		juwei	juweijiyou	據為己有	juweihui	居委會	-1	0	3	0	1	0
 0		juyu	juyuwangwangguan	局域網網關	juyuwang	局域網	-1	0	5	0	1	0
 0		kaicheng	kaichengshi	開城市	kaichengbugong	開誠佈公	-1	0	3	0	1	0
 0		kaier	kaiercaikelakefuzhujiaogong	凱爾採克拉科夫主教宮	kaierteren	凱爾特人	-1	0	4	0	2	0
@@ -304,7 +304,7 @@
 0		liuge	liugexiaoshi	六個小時	liugeyue	六個月	-1	0	7	0	3	0
 0		liumang	liumangguojia	流氓國家	liumangruanjian	流氓軟件	-1	0	3	0	1	0
 0		liuyue	liuyuejie	六月節	liuyuefen	六月份	-1	0	9	0	2	0
-0		liwei	liweisi	李維斯	liweiaila	裏維埃拉	-1	0	3	0	1	0
+0		liwei	liweisi	李維斯	liweiaila	裡維埃拉	-1	0	3	0	1	0
 0		liyan	liyanjiedukeli	利咽解毒顆粒	liyanhong	李彥宏	-1	0	4	0	2	0
 0		luosi	luosifu	羅斯福	luosiding	螺絲釘	-1	0	3	0	2	0
 0		luoye	luoyesong	落葉松	luoyeqiaomu	落葉喬木	-1	0	3	0	2	0
@@ -329,14 +329,14 @@
 0		meiwan	meiwanmeile	沒完沒了	meiwanmeiliao	沒完沒了	-1	0	17	0	3	0
 0		meiwanmei	meiwanmeile	沒完沒了	meiwanmeiliao	沒完沒了	-1	0	17	0	3	0
 0		mengzhi	mengzhilvxilie	夢之旅系列	mengzhixing	孟之行	-1	0	14	0	1	0
-0		mianbao	mianbaoxiedaohang	麪包屑導航	mianbaoshi	麪包師	-1	0	22	0	1	0
+0		mianbao	mianbaoxiedaohang	麵包屑導航	mianbaoshi	麵包師	-1	0	22	0	1	0
 0		mingtian	mingtianhe	明天和	mingtianlai	明天來	-1	1	9	1	1	100
-0		mobu	mobuzhetounao	摸不着頭腦	mobushi	莫不是	-1	0	4	0	1	0
+0		mobu	mobuzhetounao	摸不著頭腦	mobushi	莫不是	-1	0	4	0	1	0
 0		mofang	mofangyouxi	模仿遊戲	mofangzhu	磨坊主	-1	0	3	0	1	0
 0		moshoushi	moshoushijiekapaiyouxi	魔獸世界卡牌遊戲	moshoushijie	魔獸世界	-1	0	4	0	2	0
 0		mudan	mudanjiang	牡丹江	mudanjiangshi	牡丹江市	-1	0	6	0	2	0
 0		nainai	nainaidecaipu	奶奶的菜譜	nainaide	奶奶的	-1	0	3	0	2	0
-0		nali	nalikalayaosai	納裏卡拉要塞	nalinali	哪裏哪裏	-1	0	3	0	3	0
+0		nali	nalikalayaosai	納裡卡拉要塞	nalinali	哪裡哪裡	-1	0	3	0	3	0
 0		nanbu	nanbudefangxingzhengguanliweiyuanhui	南部地方行政管理委員會	nanbucheng	難不成	-1	0	26	0	2	0
 0		nanchang	nanchangqiyi	南昌起義	nanchangshi	南昌市	-1	1	17	1	2	56
 0		nanhai	nanhaizhongcaian	南海仲裁案	nanhaizi	男孩子	-1	0	13	0	3	0
@@ -365,13 +365,13 @@
 0		qiaozha	qiaozhaleisuo	敲詐勒索	qiaozhalesuo	敲詐勒索	-1	0	4	0	2	0
 0		qieer	qieernuobeiliheshigu	切爾諾貝利核事故	qieerbushe	鍥而不捨	-1	0	3	0	1	0
 0		qige	qigexiaoshi	七個小時	qigemingzi	起個名字	-1	0	3	0	2	0
-0		qiming	qimingxing	啓明星	qimingzi	起名字	-1	1	6	1	2	143
+0		qiming	qimingxing	啟明星	qimingzi	起名字	-1	1	6	1	2	143
 0		qinai	qinaiwohe	其奈我何	qinaide	親愛的	-1	0	51	0	4	0
 0		qingcheng	qingchengshan	青城山	qingchengqingguo	傾城傾國	-1	0	3	0	1	0
 0		qingzhen	qingzhensi	清真寺	qingzhenshi	清鎮市	-1	0	3	0	1	0
 0		qingzhen	qingzhensi	清真寺	qingzhenyiqie	情真意切	-1	0	3	0	2	0
 0		qiuqiu	qiuqiudazuozhan	球球大作戰	qiuqiuni	求求你	-1	0	9	0	1	0
-0		qiyue	qiyuexingwei	契約行爲	qiyuefen	七月份	-1	0	3	0	2	0
+0		qiyue	qiyuexingwei	契約行為	qiyuefen	七月份	-1	0	3	0	2	0
 0		quandou	quandouyao	全都要	quandouzai	全都在	-1	1	8	1	3	111
 0		quangong	quangongquanshou	全攻全守	quangongsi	全公司	-1	0	7	0	2	0
 0		quanjun	quanjunfumei	全軍覆沒	quanjunfumo	全軍覆沒	-1	0	7	0	4	0
@@ -389,9 +389,9 @@
 0		rouqing	rouqingsishui	柔情似水	rouqingmiyi	柔情蜜意	-1	0	3	0	1	0
 0		ruanjiankai	ruanjiankaifahuanjing	軟件開發環境	ruanjiankaifa	軟件開發	-1	0	5	0	2	0
 0		ruanjing	ruanjingtian	阮經天	ruanjingjing	阮晶晶	-1	0	3	0	1	0
-0		ruchi	ruchirukuang	如癡如狂	ruchiruzui	如癡如醉	-1	0	3	0	2	0
-0		ruchiru	ruchirukuang	如癡如狂	ruchiruzui	如癡如醉	-1	0	3	0	2	0
-0		rutu	rutuweian	入土爲安	rutusuoshi	如圖所示	-1	0	3	0	2	0
+0		ruchi	ruchirukuang	如痴如狂	ruchiruzui	如痴如醉	-1	0	3	0	2	0
+0		ruchiru	ruchirukuang	如痴如狂	ruchiruzui	如痴如醉	-1	0	3	0	2	0
+0		rutu	rutuweian	入土為安	rutusuoshi	如圖所示	-1	0	3	0	2	0
 0		ruyu	ruyudeshu	如魚得水	ruyudeshui	如魚得水	-1	0	11	0	3	0
 0		ruyude	ruyudeshu	如魚得水	ruyudeshui	如魚得水	-1	0	11	0	3	0
 0		sanjia	sanjiacun	三家村	sanjiayiyuan	三甲醫院	-1	0	3	0	2	0
@@ -478,7 +478,7 @@
 0		tingqi	tingqiyanerguanqixing	聽其言而觀其行	tingqilai	聽起來	-1	0	28	0	4	0
 0		tixing	tixingwomen	提醒我們	tixingni	提醒你	-1	0	5	0	3	0
 0		tixing	tixingwomen	提醒我們	tixingta	提醒他	-1	0	3	0	2	0
-0		tongcheng	tongchengxian	通城縣	tongchengwei	統稱爲	-1	0	6	0	2	0
+0		tongcheng	tongchengxian	通城縣	tongchengwei	統稱為	-1	0	6	0	2	0
 0		tongshan	tongshanxian	通山縣	tongshanqu	銅山區	-1	0	5	0	1	0
 0		tongxinxie	tongxinxieli	同心協力	tongxinxieyi	通信協議	-1	0	4	0	2	0
 0		tongxun	tongxunxieyi	通訊協議	tongxunlu	通訊錄	-1	0	6	0	1	0
@@ -493,12 +493,12 @@
 0		wanglao	wanglaowu	王老五	wanglaoji	王老吉	-1	0	4	0	1	0
 0		wangluoji	wangluojisuan	網絡計算	wangluojishu	網絡技術	-1	0	3	0	1	0
 0		wangnian	wangnianzhijiao	忘年之交	wangnianjiao	忘年交	-1	0	3	0	2	0
-0		wangsi	wangsicong	王思聰	wangsili	往死裏	-1	0	5	0	2	0
+0		wangsi	wangsicong	王思聰	wangsili	往死裡	-1	0	5	0	2	0
 0		wangxiang	wangxiangwobing	王祥臥冰	wangxiangzheng	妄想症	-1	0	3	0	1	0
-0		wanzhong	wanzhongyixin	萬衆一心	wanzhongzhumu	萬衆矚目	-1	0	3	0	2	0
+0		wanzhong	wanzhongyixin	萬眾一心	wanzhongzhumu	萬眾矚目	-1	0	3	0	2	0
 0		weifu	weifuwu	微服務	weifusifang	微服私訪	-1	0	6	0	1	0
 0		weimu	weimuqiang	帷幕牆	weimuru	餵母乳	-1	0	4	0	1	0
-0		weirong	weirongyuerzhan	爲榮譽而戰	weirongjie	魏榮傑	-1	0	5	0	1	0
+0		weirong	weirongyuerzhan	為榮譽而戰	weirongjie	魏榮傑	-1	0	5	0	1	0
 0		weiruo	weiruozhaolu	危若朝露	weiruoxing	韋若星	-1	0	13	0	1	0
 0		wending	wendingde	穩定地	wendingxing	穩定性	-1	0	6	0	1	0
 0		wenti	wentijieda	問題解答	wentijiejue	問題解決	-1	0	5	0	1	0
@@ -510,7 +510,7 @@
 0		woming	womingyouwobuyoutian	我命由我不由天	womingtian	我明天	-1	0	53	0	2	0
 0		woshi	woshiguole	我試過了	woshile	我試了	-1	1	11	1	1	83
 0		woyi	woyidinghui	我一定會	woyijing	我已經	-1	7	57	1	3	109
-0		woyi	woyidinghui	我一定會	woyiwei	我以爲	-1	7	88	1	2	74
+0		woyi	woyidinghui	我一定會	woyiwei	我以為	-1	7	88	1	2	74
 0		wuhou	wuhouxue	物候學	wuhouci	武侯祠	-1	0	3	0	1	0
 0		wulian	wulianjie	無連接	wulianwang	物聯網	-1	0	7	0	2	0
 0		wulun	wulunyudao	無論遇到	wulunruhe	無論如何	-1	0	14	0	2	0
@@ -520,8 +520,8 @@
 0		wusuo	wusuobuzhi	無所不知	wusuowei	無所謂	-1	1	6	1	2	143
 0		wuti	wutitoude	五體投地	wutitoudi	五體投地	-1	0	4	0	1	0
 0		wutitou	wutitoude	五體投地	wutitoudi	五體投地	-1	0	4	0	1	0
-0		wuyi	wuyixiweigui	物以稀爲貴	wuyijian	無意間	-1	0	11	0	3	0
-0		wuyi	wuyixiweigui	物以稀爲貴	wuyishi	無意識	-1	0	5	0	2	0
+0		wuyi	wuyixiweigui	物以稀為貴	wuyijian	無意間	-1	0	11	0	3	0
+0		wuyi	wuyixiweigui	物以稀為貴	wuyishi	無意識	-1	0	5	0	2	0
 0		xiaban	xiabanbu	下半部	xiabannian	下半年	-1	0	15	0	2	0
 0		xiangcheng	xiangchengqu	襄城區	xiangchengqu	相城區	-1	0	3	0	1	0
 0		xiangcun	xiangcunrenkou	鄉村人口	xiangcunyisheng	鄉村醫生	-1	0	3	0	1	0
@@ -549,7 +549,7 @@
 0		xinbei	xinbeishilihuangjinbowuguan	新北市立黃金博物館	xinbeishi	新北市	-1	0	8	0	2	0
 0		xingai	xingaijiaosebanyan	性愛角色扮演	xingaijiqi	性愛機器	-1	0	23	0	1	0
 0		xinggong	xinggongzuo	性工作	xinggongneng	性功能	-1	0	4	0	2	0
-0		xingjia	xingjialishou	行家裏手	xingjiabi	性價比	-1	0	17	0	3	0
+0		xingjia	xingjialishou	行家裡手	xingjiabi	性價比	-1	0	17	0	3	0
 0		xingjiang	xingjiangjieshu	行將結束	xingjiangjiumu	行將就木	-1	0	3	0	1	0
 0		xingqu	xingquangran	興趣盎然	xingquaihao	興趣愛好	-1	0	3	0	1	0
 0		xinguanfei	xinguanfeiyanzhangqizhengzhuang	新冠肺炎長期症狀	xinguanfeiyan	新冠肺炎	-1	0	12	0	2	0
@@ -613,7 +613,7 @@
 0		yizhan	yizhanqi	一站起	yizhanshi	一站式	-1	0	3	0	2	0
 0		yizhang	yizhangchuan	一長串	yizhangyihe	一張一合	-1	0	4	0	1	0
 0		yongbu	yongbuwan	用不完	yongbuliao	用不了	-1	0	5	0	4	0
-0		yongde	yongdeliao	用得了	yongdezhao	用得着	-1	0	6	0	2	0
+0		yongde	yongdeliao	用得了	yongdezhao	用得著	-1	0	6	0	2	0
 0		yongren	yongrenjingfei	用人經費	yongrenzirao	庸人自擾	-1	0	3	0	1	0
 0		youban	youbanyouyan	有板有眼	youbanfa	有辦法	-1	0	6	0	2	0
 0		youdao	youdaoshi	有道是	youdaoli	有道理	-1	0	6	0	1	0
@@ -636,7 +636,7 @@
 0		yuqingyu	yuqingyujing	寓情於景	yuqingyuli	於情於理	-1	0	5	0	1	0
 0		yuren	yurenfangbian	與人方便	yurenjie	愚人節	-1	0	5	0	1	0
 0		yuzhongxin	yuzhongxinzhang	語重心長	yuzhongxinchang	語重心長	-1	0	10	0	3	0
-0		zaici	zaicikuli	在詞庫裏	zaicizhiqian	在此之前	-1	0	6	0	2	0
+0		zaici	zaicikuli	在詞庫裡	zaicizhiqian	在此之前	-1	0	6	0	2	0
 0		zaiwo	zaiwokan	在我看	zaiwokanlai	在我看來	-1	1	6	1	2	143
 0		zaixia	zaixiarizouxiangwomendegeyao	在夏日奏響我們的歌謠	zaixiamian	在下面	-1	0	5	0	2	0
 0		zaoxie	zaoxieshihou	早些時候	zaoxienian	早些年	-1	0	3	0	2	0
@@ -656,7 +656,7 @@
 0		zhengchang	zhengchangyunxing	正常運行	zhengchangren	正常人	-1	1	6	1	2	143
 0		zhengjian	zhengjianshi	整件事	zhengjianhui	證監會	-1	1	8	1	1	111
 0		zhengjiao	zhengjiaoheyi	政教合一	zhengjiaosuo	證交所	-1	0	6	0	2	0
-0		zhengyin	zhengyinruci	正因如此	zhengyinwei	正因爲	-1	1	23	1	4	42
+0		zhengyin	zhengyinruci	正因如此	zhengyinwei	正因為	-1	1	23	1	4	42
 0		zhengzhou	zhengzhouhuanghefengjingmingshengqu	鄭州黃河風景名勝區	zhengzhoushi	鄭州市	-1	0	12	0	1	0
 0		zhenmei	zhenmeili	真美麗	zhenmeixiangdao	真沒想到	-1	0	3	0	2	0
 0		zheyang	zheyangbuhao	這樣不好	zheyangde	這樣的	-1	6	142	2	4	41
@@ -671,7 +671,7 @@
 0		zhongguoyou	zhongguoyouxijishi	中國遊戲紀事	zhongguoyouzheng	中國郵政	-1	0	4	0	1	0
 0		zhonghuamin	zhonghuaminguo	中華民國	zhonghuaminzu	中華民族	-1	2	18	1	3	100
 0		zhongqing	zhongqingkuangchanziyuan	重慶礦產資源	zhongqingzhongyi	重情重義	-1	0	3	0	2	0
-0		zhongshizhi	zhongshizhide	衆矢之的	zhongshizhidi	衆矢之的	-1	0	3	0	2	0
+0		zhongshizhi	zhongshizhide	眾矢之的	zhongshizhidi	眾矢之的	-1	0	3	0	2	0
 0		zhongyangjun	zhongyangjunshiweiyuanhui	中央軍事委員會	zhongyangjunwei	中央軍委	-1	0	12	0	2	0
 0		zhongyangkong	zhongyangkongdiao	中央空調	zhongyangkongtiao	中央空調	-1	0	14	0	2	0
 0		zhouwu	zhouwufangkeye	週五放克夜	zhouwuwang	周武王	-1	0	3	0	2	0
@@ -701,7 +701,7 @@
 1	上	dongbenxi	dongbenxizou	東奔西走	dongbenxipao	東奔西跑	0	0	1	0	1	0
 1	上	fenghua	fenghuaxue	風花雪	fenghuazhengmao	風華正茂	0	0	1	0	1	0
 1	上	gaiyi	gaiyigai	改一改	gaiyixia	改一下	0	0	1	0	1	0
-1	上	jiligu	jiligulu	嘰哩咕嚕	jiligulu	嘰裏咕嚕	0	0	1	0	1	0
+1	上	jiligu	jiligulu	嘰哩咕嚕	jiligulu	嘰裡咕嚕	0	0	1	0	1	0
 1	上	matou	matouqin	馬頭琴	matouju	馬頭具	0	0	1	0	1	0
 1	上	quanjun	quanjunfumei	全軍覆沒	quanjunfumo	全軍覆沒	0	0	1	0	1	0
 1	上	quanjunfu	quanjunfumei	全軍覆沒	quanjunfumo	全軍覆沒	0	0	1	0	1	0
@@ -713,7 +713,7 @@
 1	下	yiweishen	yiweishenzhang	意味深長	yiweishenchang	意味深長	0	0	1	0	1	0
 1	不	liubi	liubixue	流鼻血	liubixie	流鼻血	0	0	1	0	1	0
 1	與	changan	changandaxue	長安大學	changanqu	長安區	0	0	1	0	1	0
-1	與	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣污染	0	0	1	0	1	0
+1	與	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣汙染	0	0	1	0	1	0
 1	與	matou	matouqin	馬頭琴	matouxingyun	馬頭星雲	0	0	1	0	1	0
 1	與	xuyu	xuyuzhen	徐宇真	xuyuweiyi	虛與委蛇	0	0	1	0	1	0
 1	與	yinmou	yinmoulun	陰謀論	yinmoujituan	陰謀集團	0	0	1	0	1	0
@@ -744,7 +744,7 @@
 1	爲	xuancheng	xuanchengziji	宣稱自己	xuanchengshi	宣城市	0	0	1	0	1	0
 1	爲	xuzhi	xuzhimo	徐志摩	xuzhili	徐智禮	0	0	1	0	1	0
 1	爲	zhonghuamin	zhonghuaminguo	中華民國	zhonghuaminzu	中華民族	0	2	1	1	1	667
-1	爲	zhongshizhi	zhongshizhide	衆矢之的	zhongshizhidi	衆矢之的	0	0	2	0	1	0
+1	爲	zhongshizhi	zhongshizhide	眾矢之的	zhongshizhidi	眾矢之的	0	0	2	0	1	0
 1	麼	duandian	duandiandiaoshi	斷點調試	duandianxuchuan	斷點續傳	0	0	1	0	1	0
 1	麼	jingtiandong	jingtiandongde	驚天動地	jingtiandongdi	驚天動地	0	0	1	0	1	0
 1	麼	yangshui	yangshuiguoduo	羊水過多	yangshuichuanci	羊水穿刺	0	0	1	0	1	0
@@ -757,7 +757,7 @@
 1	也	lebu	lebule	了不了	lebukezhi	樂不可支	0	0	1	0	1	0
 1	也	xiangdian	xiangdiannao	向電腦	xiangdianbanfa	想點辦法	0	0	1	0	1	0
 1	也	xingjiang	xingjiangjieshu	行將結束	xingjiangjiumu	行將就木	0	0	1	0	1	0
-1	書	tongcheng	tongchengxian	通城縣	tongchengwei	統稱爲	0	0	1	0	1	0
+1	書	tongcheng	tongchengxian	通城縣	tongchengwei	統稱為	0	0	1	0	1	0
 1	買	mazi	maziyuan	馬資源	mazida	馬自達	0	0	1	0	1	0
 1	了	fanbian	fanbianyiqi	反編譯器	fanbianyi	反編譯	0	0	1	0	1	0
 1	了	fantian	fantianfude	翻天覆地	fantianfudi	翻天覆地	0	0	4	0	2	0
@@ -829,8 +829,8 @@
 1	們	mashang	mashangdao	馬上到	mashanglai	馬上來	0	0	1	0	1	0
 1	們	qingcheng	qingchengshan	青城山	qingchengqingguo	傾城傾國	0	0	1	0	1	0
 1	們	quandou	quandouyao	全都要	quandouzai	全都在	0	0	1	0	1	0
-1	們	ruchi	ruchirukuang	如癡如狂	ruchiruzui	如癡如醉	0	0	1	0	1	0
-1	們	ruchiru	ruchirukuang	如癡如狂	ruchiruzui	如癡如醉	0	0	1	0	1	0
+1	們	ruchi	ruchirukuang	如痴如狂	ruchiruzui	如痴如醉	0	0	1	0	1	0
+1	們	ruchiru	ruchirukuang	如痴如狂	ruchiruzui	如痴如醉	0	0	1	0	1	0
 1	們	suishi	suishisuide	隨時隨地	suishisuidi	隨時隨地	0	0	1	0	1	0
 1	們	suishisui	suishisuide	隨時隨地	suishisuidi	隨時隨地	0	0	1	0	1	0
 1	們	taojia	taojiahaijia	討價還價	taojiahuanjia	討價還價	0	0	1	0	1	0
@@ -978,7 +978,7 @@
 1	在	bubai	bubaizhide	不敗之地	bubaizhidi	不敗之地	0	0	1	0	1	0
 1	在	bubaizhi	bubaizhide	不敗之地	bubaizhidi	不敗之地	0	0	1	0	1	0
 1	在	chenyi	chenyixun	陳奕迅	chenyichuan	陳亦川	0	0	1	0	1	0
-1	在	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣污染	0	0	1	0	1	0
+1	在	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣汙染	0	0	1	0	1	0
 1	在	faxing	faxingren	發行人	faxingshang	發行商	0	0	1	0	1	0
 1	在	gaiyi	gaiyigai	改一改	gaiyixia	改一下	0	0	1	0	1	0
 1	在	hunxiaoshi	hunxiaoshifei	混淆是非	hunxiaoshiting	混淆視聽	0	0	1	0	1	0
@@ -1019,7 +1019,7 @@
 1	天	jiaotashi	jiaotashide	腳踏實地	jiaotashidi	腳踏實地	0	0	1	0	1	0
 1	天	mazi	maziyuan	馬資源	mazida	馬自達	0	0	1	0	1	0
 1	天	rouqing	rouqingsishui	柔情似水	rouqingmiyi	柔情蜜意	0	0	1	0	1	0
-1	頭	jiligu	jiligulu	嘰哩咕嚕	jiligulu	嘰裏咕嚕	0	0	1	0	1	0
+1	頭	jiligu	jiligulu	嘰哩咕嚕	jiligulu	嘰裡咕嚕	0	0	1	0	1	0
 1	奐	qingzhen	qingzhensi	清真寺	qingzhenyiqie	情真意切	0	0	1	0	1	0
 1	她	benben	benbenzhuyi	本本主義	benbenfenfen	本本分分	0	0	1	0	1	0
 1	她	duoshao	duoshaoqian	多少錢	duoshaoyouxie	多少有些	0	0	1	0	1	0
@@ -1097,7 +1097,7 @@
 1	己	jiaotashi	jiaotashide	腳踏實地	jiaotashidi	腳踏實地	0	0	1	0	1	0
 1	己	kaicheng	kaichengshi	開城市	kaichengbugong	開誠佈公	0	0	1	0	1	0
 1	己	suoyan	suoyanbujia	所言不假	suoyanfeixu	所言非虛	0	0	1	0	1	0
-1	市	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣污染	0	0	1	0	1	0
+1	市	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣汙染	0	0	1	0	1	0
 1	市	shapo	shapotou	沙坡頭	shapotouqu	沙坡頭區	0	0	1	0	1	0
 1	常	feichanggan	feichanggandong	非常感動	feichangganxie	非常感謝	0	0	1	0	1	0
 1	常	shenchugui	shenchuguimei	神出鬼沒	shenchuguimo	神出鬼沒	0	0	1	0	1	0
@@ -1118,8 +1118,8 @@
 1	得	jiaobuzhan	jiaobuzhande	腳不沾地	jiaobuzhandi	腳不沾地	0	0	2	0	2	0
 1	得	lebu	lebule	了不了	lebukezhi	樂不可支	0	0	1	0	1	0
 1	得	linze	linzexu	林則徐	linzeqiu	林澤秋	0	0	1	0	1	0
-1	得	ruchi	ruchirukuang	如癡如狂	ruchiruzui	如癡如醉	0	0	1	0	1	0
-1	得	ruchiru	ruchirukuang	如癡如狂	ruchiruzui	如癡如醉	0	0	1	0	1	0
+1	得	ruchi	ruchirukuang	如痴如狂	ruchiruzui	如痴如醉	0	0	1	0	1	0
+1	得	ruchiru	ruchirukuang	如痴如狂	ruchiruzui	如痴如醉	0	0	1	0	1	0
 1	得	ruyu	ruyudeshu	如魚得水	ruyudeshui	如魚得水	0	0	1	0	1	0
 1	得	ruyude	ruyudeshu	如魚得水	ruyudeshui	如魚得水	0	0	1	0	1	0
 1	得	shijianguan	shijianguannian	時間觀念	shijianguanli	時間管理	0	0	1	0	1	0
@@ -1169,15 +1169,15 @@
 1	掉	baishi	baishiwucheng	百事無成	baishikele	百事可樂	0	0	1	0	1	0
 1	掉	fuzai	fuzailiang	負載量	fuzaijunheng	負載均衡	0	0	1	0	1	0
 1	接	gaiyi	gaiyigai	改一改	gaiyixia	改一下	0	0	1	0	1	0
-1	揭	liwei	liweisi	李維斯	liweiaila	裏維埃拉	0	0	1	0	1	0
+1	揭	liwei	liweisi	李維斯	liweiaila	裡維埃拉	0	0	1	0	1	0
 1	援	pinkun	pinkunliaodao	貧困潦倒	pinkundiqu	貧困地區	0	0	1	0	1	0
 1	搞	liumang	liumangguojia	流氓國家	liumangruanjian	流氓軟件	0	0	1	0	1	0
 1	擺	nige	nigeluo	尼格羅	nigetou	你個頭	0	0	1	0	1	0
 1	據	mudan	mudanjiang	牡丹江	mudanjiangshi	牡丹江市	0	0	1	0	1	0
 1	教	shougong	shougongye	手工業	shougongyipin	手工藝品	0	0	1	0	1	0
 1	斥	chenyi	chenyixun	陳奕迅	chenyichuan	陳亦川	0	0	1	0	1	0
-1	斷	rutu	rutuweian	入土爲安	rutusuoshi	如圖所示	0	0	1	0	1	0
-1	施	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣污染	0	0	1	0	1	0
+1	斷	rutu	rutuweian	入土為安	rutusuoshi	如圖所示	0	0	1	0	1	0
+1	施	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣汙染	0	0	1	0	1	0
 1	施	qiaozha	qiaozhaleisuo	敲詐勒索	qiaozhalesuo	敲詐勒索	0	0	1	0	1	0
 1	族	quanjun	quanjunfumei	全軍覆沒	quanjunfumo	全軍覆沒	0	0	1	0	1	0
 1	族	quanjunfu	quanjunfumei	全軍覆沒	quanjunfumo	全軍覆沒	0	0	1	0	1	0
@@ -1289,10 +1289,10 @@
 1	比	xiaohu	xiaohurenjia	小戶人家	xiaohudui	小虎隊	0	0	1	0	1	0
 1	汗	yinmou	yinmoulun	陰謀論	yinmoujituan	陰謀集團	0	0	1	0	1	0
 1	治	zhixing	zhixingchengxu	執行程序	zhixingli	執行力	0	0	1	0	1	0
-1	法	rutu	rutuweian	入土爲安	rutusuoshi	如圖所示	0	0	1	0	1	0
-1	法	tongcheng	tongchengxian	通城縣	tongchengwei	統稱爲	0	0	1	0	1	0
+1	法	rutu	rutuweian	入土為安	rutusuoshi	如圖所示	0	0	1	0	1	0
+1	法	tongcheng	tongchengxian	通城縣	tongchengwei	統稱為	0	0	1	0	1	0
 1	海	jiuzhou	jiuzhougonglve	九州攻略	jiuzhougang	九洲港	0	0	1	0	1	0
-1	海	liwei	liweisi	李維斯	liweiaila	裏維埃拉	0	0	1	0	1	0
+1	海	liwei	liweisi	李維斯	liweiaila	裡維埃拉	0	0	1	0	1	0
 1	清	congzhong	congzhongyuli	從中漁利	congzhongzuogeng	從中作梗	0	0	1	0	1	0
 1	遊	wuhou	wuhouxue	物候學	wuhouci	武侯祠	0	0	1	0	1	0
 1	灣	taizhong	taizhongyao	太重要	taizhongshi	臺中市	0	0	1	0	1	0
@@ -1388,12 +1388,12 @@
 1	省	taizhong	taizhongyao	太重要	taizhongshi	臺中市	0	0	1	0	1	0
 1	看	chenguan	chenguanyu	陳冠宇	chenguanxi	陳冠希	0	0	1	0	1	0
 1	看	huaqi	huaqide	畫期的	huaqiyinhang	花旗銀行	0	0	1	0	1	0
-1	看	liwei	liweisi	李維斯	liweiaila	裏維埃拉	0	0	1	0	1	0
+1	看	liwei	liweisi	李維斯	liweiaila	裡維埃拉	0	0	1	0	1	0
 1	看	mazi	maziyuan	馬資源	mazida	馬自達	0	0	1	0	1	0
 1	眼	fengtouying	fengtouyingdiao	鳳頭鷹鵰	fengtouyingwu	鳳頭鸚鵡	0	0	1	0	1	0
 1	着	fantian	fantianfude	翻天覆地	fantianfudi	翻天覆地	0	0	2	0	1	0
 1	着	fantianfu	fantianfude	翻天覆地	fantianfudi	翻天覆地	0	0	2	0	1	0
-1	着	jiligu	jiligulu	嘰哩咕嚕	jiligulu	嘰裏咕嚕	0	0	1	0	1	0
+1	着	jiligu	jiligulu	嘰哩咕嚕	jiligulu	嘰裡咕嚕	0	0	1	0	1	0
 1	着	quanjun	quanjunfumei	全軍覆沒	quanjunfumo	全軍覆沒	0	0	1	0	1	0
 1	着	quanjunfu	quanjunfumei	全軍覆沒	quanjunfumo	全軍覆沒	0	0	1	0	1	0
 1	着	xuzhi	xuzhimo	徐志摩	xuzhili	徐智禮	0	0	1	0	1	0
@@ -1453,7 +1453,7 @@
 1	般	shuihuo	shuihuozhizhong	水火之中	shuihuoburong	水火不容	0	0	1	0	1	0
 1	色	fengtouying	fengtouyingdiao	鳳頭鷹鵰	fengtouyingwu	鳳頭鸚鵡	0	0	1	0	1	0
 1	菜	taojia	taojiahaijia	討價還價	taojiahuanjia	討價還價	0	0	1	0	1	0
-1	行	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣污染	0	0	1	0	1	0
+1	行	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣汙染	0	0	1	0	1	0
 1	行	duandian	duandiandiaoshi	斷點調試	duandianxuchuan	斷點續傳	0	0	1	0	1	0
 1	行	zhushi	zhushihuishe	株式會社	zhushidiao	註釋掉	0	0	1	0	1	0
 1	表	yuzhongxin	yuzhongxinzhang	語重心長	yuzhongxinchang	語重心長	0	0	1	0	1	0
@@ -1461,7 +1461,7 @@
 1	被	fanbian	fanbianyiqi	反編譯器	fanbianyi	反編譯	0	0	1	0	1	0
 1	被	shaodong	shaodongjia	少東家	shaodongxu	邵東旭	0	0	1	0	1	0
 1	被	simazan	simazanti	四馬攢蹄	simazanti	駟馬攢蹄	0	0	1	0	1	0
-1	被	tongcheng	tongchengxian	通城縣	tongchengwei	統稱爲	0	0	1	0	1	0
+1	被	tongcheng	tongchengxian	通城縣	tongchengwei	統稱為	0	0	1	0	1	0
 1	裝	yuanyuanliu	yuanyuanliuzhang	源遠流長	yuanyuanliuchang	源遠流長	0	0	1	0	1	0
 1	西	nige	nigeluo	尼格羅	nigetou	你個頭	0	0	1	0	1	0
 1	要	churentou	churentoude	出人頭地	churentoudi	出人頭地	0	0	1	0	1	0
@@ -1495,17 +1495,17 @@
 1	象	dongri	dongriben	東日本	dongriruanjian	東日軟件	0	0	1	0	1	0
 1	販	taojia	taojiahaijia	討價還價	taojiahuanjia	討價還價	0	0	2	0	2	0
 1	購	dongri	dongriben	東日本	dongriruanjian	東日軟件	0	0	1	0	1	0
-1	贏	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣污染	0	0	1	0	1	0
+1	贏	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣汙染	0	0	1	0	1	0
 1	起	dianxian	dianxianguan	電線管	dianxianfazuo	癲癇發作	0	0	1	0	1	0
 1	起	haosheng	haoshengsheng	好生生	haoshengxin	好勝心	0	0	1	0	1	0
 1	起	mazi	maziyuan	馬資源	mazida	馬自達	0	0	1	0	1	0
-1	起	ruchi	ruchirukuang	如癡如狂	ruchiruzui	如癡如醉	0	0	1	0	1	0
-1	起	ruchiru	ruchirukuang	如癡如狂	ruchiruzui	如癡如醉	0	0	1	0	1	0
+1	起	ruchi	ruchirukuang	如痴如狂	ruchiruzui	如痴如醉	0	0	1	0	1	0
+1	起	ruchiru	ruchirukuang	如痴如狂	ruchiruzui	如痴如醉	0	0	1	0	1	0
 1	起	weiruo	weiruozhaolu	危若朝露	weiruoxing	韋若星	0	0	1	0	1	0
 1	超	beishang	beishangguang	北上廣	beishangguangshen	北上廣深	0	0	1	0	1	0
 1	越	xishang	xishangjiaxi	喜上加喜	xishangmeishao	喜上眉梢	0	0	1	0	1	0
 1	跌	nige	nigeluo	尼格羅	nigetou	你個頭	0	0	1	0	1	0
-1	路	rutu	rutuweian	入土爲安	rutusuoshi	如圖所示	0	0	1	0	1	0
+1	路	rutu	rutuweian	入土為安	rutusuoshi	如圖所示	0	0	1	0	1	0
 1	較	zijie	zijiegou	子結構	zijieshu	字節數	0	0	1	0	1	0
 1	輛	siping	sipingshi	四平市	sipingbawen	四平八穩	0	0	1	0	1	0
 1	輝	fengtouying	fengtouyingdiao	鳳頭鷹鵰	fengtouyingwu	鳳頭鸚鵡	0	0	1	0	1	0
@@ -1519,7 +1519,7 @@
 1	還	meiwan	meiwanmeile	沒完沒了	meiwanmeiliao	沒完沒了	0	0	3	0	2	0
 1	還	meiwanmei	meiwanmeile	沒完沒了	meiwanmeiliao	沒完沒了	0	0	3	0	2	0
 1	這	yuhuo	yuhuochongsheng	浴火重生	yuhuofenshen	慾火焚身	0	0	1	0	1	0
-1	進	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣污染	0	0	1	0	1	0
+1	進	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣汙染	0	0	1	0	1	0
 1	遠	congrong	congrongbu	從容不	congrongbupo	從容不迫	0	0	1	0	1	0
 1	連	zhouxiao	zhouxiaoan	周孝安	zhouxiaochuan	周小川	0	0	1	0	1	0
 1	選	guotai	guotaiminan	國泰民安	guotaijunan	國泰君安	0	0	1	0	1	0
@@ -1610,7 +1610,7 @@
 2	不知	wurenbu	wurenbuzhi	無人不知	wurenbuxiao	無人不曉	0	0	1	0	1	0
 2	不能	gaiyi	gaiyigai	改一改	gaiyixia	改一下	0	1	0	1	0	1000
 2	不能	sixinta	sixintadi	死心塌地	sixintade	死心塌地	0	0	1	0	1	0
-2	與	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣污染	0	0	1	0	1	0
+2	與	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣汙染	0	0	1	0	1	0
 2	與	yinmou	yinmoulun	陰謀論	yinmoujituan	陰謀集團	0	0	1	0	1	0
 2	專職	xiaofang	xiaofangzi	小房子	xiaofangdui	消防隊	0	0	1	0	1	0
 2	專門	fanbian	fanbianyiqi	反編譯器	fanbianyi	反編譯	0	0	1	0	1	0
@@ -1711,9 +1711,9 @@
 2	像是	meiwanmei	meiwanmeile	沒完沒了	meiwanmeiliao	沒完沒了	0	0	1	0	1	0
 2	兒的	tiemu	tiemuzhen	鐵木真	tiemuer	帖木兒	0	0	1	0	1	0
 2	兒被	simazan	simazanti	四馬攢蹄	simazanti	駟馬攢蹄	0	0	1	0	1	0
-2	光路	rutu	rutuweian	入土爲安	rutusuoshi	如圖所示	0	0	1	0	1	0
+2	光路	rutu	rutuweian	入土為安	rutusuoshi	如圖所示	0	0	1	0	1	0
 2	入坑	yinv	yinvxin	乙女心	yinvyouxi	乙女遊戲	0	0	1	0	1	0
-2	全市	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣污染	0	0	1	0	1	0
+2	全市	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣汙染	0	0	1	0	1	0
 2	全班	congna	congnazhihou	從那之後	congnayihou	從那以後	0	0	1	0	1	0
 2	全的	fanbian	fanbianyiqi	反編譯器	fanbianyi	反編譯	0	0	1	0	1	0
 2	公司	gaiyi	gaiyigai	改一改	gaiyixia	改一下	0	0	1	0	1	0
@@ -1739,7 +1739,7 @@
 2	擊起	haosheng	haoshengsheng	好生生	haoshengxin	好勝心	0	0	1	0	1	0
 2	分到	lanzhou	lanzhoudaxue	蘭州大學	lanzhoushi	蘭州市	0	0	1	0	1	0
 2	剛纔	rouqing	rouqingsishui	柔情似水	rouqingmiyi	柔情蜜意	0	0	1	0	1	0
-2	判斷	rutu	rutuweian	入土爲安	rutusuoshi	如圖所示	0	0	1	0	1	0
+2	判斷	rutu	rutuweian	入土為安	rutusuoshi	如圖所示	0	0	1	0	1	0
 2	利於	bubai	bubaizhide	不敗之地	bubaizhidi	不敗之地	0	0	1	0	1	0
 2	利於	bubaizhi	bubaizhide	不敗之地	bubaizhidi	不敗之地	0	0	1	0	1	0
 2	到有	churentou	churentoude	出人頭地	churentoudi	出人頭地	0	0	1	0	1	0
@@ -1769,7 +1769,7 @@
 2	壓是	ganying	ganyingqi	感應器	ganyinghua	肝硬化	0	0	1	0	1	0
 2	原本	yuangu	yuangudai	元古代	yuangugu	圓鼓鼓	0	0	1	0	1	0
 2	去	guotai	guotaiminan	國泰民安	guotaijunan	國泰君安	0	0	1	0	1	0
-2	去看	liwei	liweisi	李維斯	liweiaila	裏維埃拉	0	0	1	0	1	0
+2	去看	liwei	liweisi	李維斯	liweiaila	裡維埃拉	0	0	1	0	1	0
 2	縣籍	kangmei	kangmeina	康美娜	kangmeiyuanchao	抗美援朝	0	0	1	0	1	0
 2	又	chaoxixiang	chaoxixiangchu	朝夕相處	chaoxixiangdui	朝夕相對	0	0	1	0	1	0
 2	又	quanjun	quanjunfumei	全軍覆沒	quanjunfumo	全軍覆沒	0	0	1	0	1	0
@@ -1804,7 +1804,7 @@
 2	可是	weifu	weifuwu	微服務	weifusifang	微服私訪	0	0	1	0	1	0
 2	可是	zhouxiao	zhouxiaoan	周孝安	zhouxiaochuan	周小川	0	0	1	0	1	0
 2	可汗	yinmou	yinmoulun	陰謀論	yinmoujituan	陰謀集團	0	0	1	0	1	0
-2	可被	tongcheng	tongchengxian	通城縣	tongchengwei	統稱爲	0	0	1	0	1	0
+2	可被	tongcheng	tongchengxian	通城縣	tongchengwei	統稱為	0	0	1	0	1	0
 2	可謂	ruyu	ruyudeshu	如魚得水	ruyudeshui	如魚得水	0	0	1	0	1	0
 2	可謂	ruyude	ruyudeshu	如魚得水	ruyudeshui	如魚得水	0	0	1	0	1	0
 2	臺灣	taizhong	taizhongyao	太重要	taizhongshi	臺中市	0	0	1	0	1	0
@@ -1816,8 +1816,8 @@
 2	否先	gaiyi	gaiyigai	改一改	gaiyixia	改一下	0	0	1	0	1	0
 2	噸級	paishui	paishuigou	排水溝	paishuiliang	排水量	0	0	1	0	1	0
 2	聽取	bianhu	bianhushi	辯護士	bianhuren	辯護人	0	0	1	0	1	0
-2	聽得	ruchi	ruchirukuang	如癡如狂	ruchiruzui	如癡如醉	0	0	1	0	1	0
-2	聽得	ruchiru	ruchirukuang	如癡如狂	ruchiruzui	如癡如醉	0	0	1	0	1	0
+2	聽得	ruchi	ruchirukuang	如痴如狂	ruchiruzui	如痴如醉	0	0	1	0	1	0
+2	聽得	ruchiru	ruchirukuang	如痴如狂	ruchiruzui	如痴如醉	0	0	1	0	1	0
 2	呈交	guoan	guoanju	國安局	guoanbu	國安部	0	0	1	0	1	0
 2	告你	fanbian	fanbianyiqi	反編譯器	fanbianyi	反編譯	0	0	1	0	1	0
 2	告訴	guoan	guoanju	國安局	guoanbu	國安部	0	0	1	0	1	0
@@ -1843,7 +1843,7 @@
 2	喜報	putiangai	putiangaide	鋪天蓋地	putiangaidi	鋪天蓋地	0	0	1	0	1	0
 2	喜歡	hunshui	hunshuimoyu	混水摸魚	hunshuimoyu	渾水摸魚	0	0	1	0	1	0
 2	喜歡	hunshuimo	hunshuimoyu	混水摸魚	hunshuimoyu	渾水摸魚	0	0	1	0	1	0
-2	嘴上	jiligu	jiligulu	嘰哩咕嚕	jiligulu	嘰裏咕嚕	0	0	1	0	1	0
+2	嘴上	jiligu	jiligulu	嘰哩咕嚕	jiligulu	嘰裡咕嚕	0	0	1	0	1	0
 2	嘴裏	shenchu	shenchuguimei	神出鬼沒	shenchulai	伸出來	0	0	1	0	1	0
 2	因爲	congna	congnazhihou	從那之後	congnayihou	從那以後	0	0	1	0	1	0
 2	因爲	xuzhi	xuzhimo	徐志摩	xuzhili	徐智禮	0	0	1	0	1	0
@@ -1902,7 +1902,7 @@
 2	寧誠	sixinta	sixintadi	死心塌地	sixintade	死心塌地	0	0	1	0	1	0
 2	宗教	shougong	shougongye	手工業	shougongyipin	手工藝品	0	0	1	0	1	0
 2	實其	suoyan	suoyanbujia	所言不假	suoyanfeixu	所言非虛	0	0	1	0	1	0
-2	實施	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣污染	0	0	1	0	1	0
+2	實施	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣汙染	0	0	1	0	1	0
 2	實施	qiaozha	qiaozhaleisuo	敲詐勒索	qiaozhalesuo	敲詐勒索	0	0	1	0	1	0
 2	室和	dongri	dongriben	東日本	dongriruanjian	東日軟件	0	0	1	0	1	0
 2	家族	quanjun	quanjunfumei	全軍覆沒	quanjunfumo	全軍覆沒	0	0	1	0	1	0
@@ -1982,7 +1982,7 @@
 2	忙得	jiaobu	jiaobuzhande	腳不沾地	jiaobuzhandi	腳不沾地	0	0	2	0	2	0
 2	忙得	jiaobuzhan	jiaobuzhande	腳不沾地	jiaobuzhandi	腳不沾地	0	0	2	0	2	0
 2	快	nige	nigeluo	尼格羅	nigetou	你個頭	0	0	1	0	1	0
-2	念着	jiligu	jiligulu	嘰哩咕嚕	jiligulu	嘰裏咕嚕	0	0	1	0	1	0
+2	念着	jiligu	jiligulu	嘰哩咕嚕	jiligulu	嘰裡咕嚕	0	0	1	0	1	0
 2	總理	erti	ertijiao	二踢腳	ertimianming	耳提面命	0	0	1	0	1	0
 2	戀的	chanmian	chanmianbuyi	纏綿不已	chanmianfeice	纏綿悱惻	0	0	1	0	1	0
 2	患上	wangxiang	wangxiangwobing	王祥臥冰	wangxiangzheng	妄想症	0	0	1	0	1	0
@@ -2007,7 +2007,7 @@
 2	懂得	dianxian	dianxianguan	電線管	dianxianfazuo	癲癇發作	0	0	1	0	1	0
 2	懂得	shijianguan	shijianguannian	時間觀念	shijianguanli	時間管理	0	0	1	0	1	0
 2	成爲	maoming	maomingdingti	冒名頂替	maomingshi	茂名市	0	0	1	0	1	0
-2	成爲	zhongshizhi	zhongshizhide	衆矢之的	zhongshizhidi	衆矢之的	0	0	2	0	1	0
+2	成爲	zhongshizhi	zhongshizhide	眾矢之的	zhongshizhidi	眾矢之的	0	0	2	0	1	0
 2	成人	xinggong	xinggongzuo	性工作	xinggongneng	性功能	0	0	1	0	1	0
 2	成立	shizong	shizongdawang	世宗大王	shizongxian	師宗縣	0	0	1	0	1	0
 2	我	yiyan	yiyanga	一樣啊	yiyankan	一眼看	0	0	1	0	1	0
@@ -2016,8 +2016,8 @@
 2	我們	feichanggan	feichanggandong	非常感動	feichangganxie	非常感謝	0	0	1	0	1	0
 2	我們	mashang	mashangdao	馬上到	mashanglai	馬上來	0	0	1	0	1	0
 2	我們	qingcheng	qingchengshan	青城山	qingchengqingguo	傾城傾國	0	0	1	0	1	0
-2	我們	ruchi	ruchirukuang	如癡如狂	ruchiruzui	如癡如醉	0	0	1	0	1	0
-2	我們	ruchiru	ruchirukuang	如癡如狂	ruchiruzui	如癡如醉	0	0	1	0	1	0
+2	我們	ruchi	ruchirukuang	如痴如狂	ruchiruzui	如痴如醉	0	0	1	0	1	0
+2	我們	ruchiru	ruchirukuang	如痴如狂	ruchiruzui	如痴如醉	0	0	1	0	1	0
 2	我們	suishi	suishisuide	隨時隨地	suishisuidi	隨時隨地	0	0	1	0	1	0
 2	我們	suishisui	suishisuide	隨時隨地	suishisuidi	隨時隨地	0	0	1	0	1	0
 2	我們	yiya	yiyahaiya	以牙還牙	yiyahuanya	以牙還牙	0	0	2	0	1	0
@@ -2040,18 +2040,18 @@
 2	所以	congna	congnazhihou	從那之後	congnayihou	從那以後	0	0	1	0	1	0
 2	所謂	renjie	renjiedeling	人傑地靈	renjiediling	人傑地靈	0	0	1	0	1	0
 2	手指	yizhang	yizhangchuan	一長串	yizhangyihe	一張一合	0	0	1	0	1	0
-2	手法	rutu	rutuweian	入土爲安	rutusuoshi	如圖所示	0	0	1	0	1	0
+2	手法	rutu	rutuweian	入土為安	rutusuoshi	如圖所示	0	0	1	0	1	0
 2	手的	xiaonian	xiaonianye	小年夜	xiaonianqing	小年輕	0	0	1	0	1	0
 2	手臂	shenchu	shenchuguimei	神出鬼沒	shenchulai	伸出來	0	0	1	0	1	0
-2	打贏	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣污染	0	0	1	0	1	0
+2	打贏	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣汙染	0	0	1	0	1	0
 2	打量	chenyi	chenyixun	陳奕迅	chenyichuan	陳亦川	0	0	1	0	1	0
 2	託	nige	nigeluo	尼格羅	nigetou	你個頭	0	0	1	0	1	0
 2	擴大	pinkun	pinkunliaodao	貧困潦倒	pinkundiqu	貧困地區	0	0	1	0	1	0
 2	找家	sanjia	sanjiacun	三家村	sanjiayiyuan	三甲醫院	0	0	1	0	1	0
 2	把她	simazan	simazanti	四馬攢蹄	simazanti	駟馬攢蹄	0	0	1	0	1	0
 2	報者	xishang	xishangjiaxi	喜上加喜	xishangmeishao	喜上眉梢	0	0	1	0	1	0
-2	抱起	ruchi	ruchirukuang	如癡如狂	ruchiruzui	如癡如醉	0	0	1	0	1	0
-2	抱起	ruchiru	ruchirukuang	如癡如狂	ruchiruzui	如癡如醉	0	0	1	0	1	0
+2	抱起	ruchi	ruchirukuang	如痴如狂	ruchiruzui	如痴如醉	0	0	1	0	1	0
+2	抱起	ruchiru	ruchirukuang	如痴如狂	ruchiruzui	如痴如醉	0	0	1	0	1	0
 2	擔心	fenghua	fenghuaxue	風花雪	fenghuaxueyue	風花雪月	0	0	1	0	1	0
 2	招來	meiwan	meiwanmeile	沒完沒了	meiwanmeiliao	沒完沒了	0	0	1	0	1	0
 2	招來	meiwanmei	meiwanmeile	沒完沒了	meiwanmeiliao	沒完沒了	0	0	1	0	1	0
@@ -2060,14 +2060,14 @@
 2	拿來	gaiyi	gaiyigai	改一改	gaiyixia	改一下	0	0	1	0	1	0
 2	拿點	wanglao	wanglaowu	王老五	wanglaoji	王老吉	0	0	1	0	1	0
 2	指甲	doukuai	doukuaile	都快了	doukuaiyao	都快要	0	0	1	0	1	0
-2	按揭	liwei	liweisi	李維斯	liweiaila	裏維埃拉	0	0	1	0	1	0
+2	按揭	liwei	liweisi	李維斯	liweiaila	裡維埃拉	0	0	1	0	1	0
 2	按鈕	gaiyi	gaiyigai	改一改	gaiyixia	改一下	0	0	1	0	1	0
 2	換成	baishi	baishiwucheng	百事無成	baishikele	百事可樂	0	0	1	0	1	0
 2	掉就	xietian	xietianxiede	謝天謝地	xietianxiedi	謝天謝地	0	0	1	0	1	0
 2	掉就	xietianxie	xietianxiede	謝天謝地	xietianxiedi	謝天謝地	0	0	1	0	1	0
 2	排斥	chenyi	chenyixun	陳奕迅	chenyichuan	陳亦川	0	0	1	0	1	0
 2	探子	hunxiaoshi	hunxiaoshifei	混淆是非	hunxiaoshiting	混淆視聽	0	0	1	0	1	0
-2	推進	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣污染	0	0	1	0	1	0
+2	推進	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣汙染	0	0	1	0	1	0
 2	提及	xuzhi	xuzhimo	徐志摩	xuzhili	徐智禮	0	0	1	0	1	0
 2	提司	weifu	weifuwu	微服務	weifusifang	微服私訪	0	0	1	0	1	0
 2	提醒	sunda	sundasheng	孫大聖	sundawei	孫大衛	0	0	1	0	1	0
@@ -2086,7 +2086,7 @@
 2	文化	yuanyuanliu	yuanyuanliuzhang	源遠流長	yuanyuanliuchang	源遠流長	0	0	3	0	1	0
 2	文遊	wuhou	wuhouxue	物候學	wuhouci	武侯祠	0	0	1	0	1	0
 2	斬棘	lingpi	lingpiqijing	另闢蹊徑	lingpixijing	另闢蹊徑	0	0	1	0	1	0
-2	方法	tongcheng	tongchengxian	通城縣	tongchengwei	統稱爲	0	0	1	0	1	0
+2	方法	tongcheng	tongchengxian	通城縣	tongchengwei	統稱為	0	0	1	0	1	0
 2	旗袍	fengzi	fengzicai	馮子材	fengzichuoyue	風姿綽約	0	0	1	0	1	0
 2	時把	baishi	baishiwucheng	百事無成	baishikele	百事可樂	0	0	1	0	1	0
 2	時的	yuhuo	yuhuochongsheng	浴火重生	yuhuofenshen	慾火焚身	0	0	1	0	1	0
@@ -2187,7 +2187,7 @@
 2	混的	churentou	churentoude	出人頭地	churentoudi	出人頭地	0	0	1	0	1	0
 2	渠與	changan	changandaxue	長安大學	changanqu	長安區	0	0	1	0	1	0
 2	灣省	taizhong	taizhongyao	太重要	taizhongshi	臺中市	0	0	1	0	1	0
-2	源在	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣污染	0	0	1	0	1	0
+2	源在	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣汙染	0	0	1	0	1	0
 2	濫用	gaomeng	gaomengsuan	高錳酸	gaomengsuanjia	高錳酸鉀	0	0	1	0	1	0
 2	灼華	wangluoji	wangluojisuan	網絡計算	wangluojishu	網絡技術	0	0	1	0	1	0
 2	炫	nige	nigeluo	尼格羅	nigetou	你個頭	0	0	1	0	1	0
@@ -2210,7 +2210,7 @@
 2	現在	gaiyi	gaiyigai	改一改	gaiyixia	改一下	0	0	1	0	1	0
 2	現在	liumang	liumangguojia	流氓國家	liumangruanjian	流氓軟件	0	0	1	0	1	0
 2	珠海	jiuzhou	jiuzhougonglve	九州攻略	jiuzhougang	九洲港	0	0	1	0	1	0
-2	珠海	liwei	liweisi	李維斯	liweiaila	裏維埃拉	0	0	1	0	1	0
+2	珠海	liwei	liweisi	李維斯	liweiaila	裡維埃拉	0	0	1	0	1	0
 2	球上	dongben	dongbenxizou	東奔西走	dongbenxipao	東奔西跑	0	0	1	0	1	0
 2	球上	dongbenxi	dongbenxizou	東奔西走	dongbenxipao	東奔西跑	0	0	1	0	1	0
 2	理的	fenghua	fenghuaxue	風花雪	fenghuaxueyue	風花雪月	0	0	1	0	1	0
@@ -2372,7 +2372,7 @@
 2	論的	buyi	buyilehu	不亦樂乎	buyiding	不一定	0	1	0	1	0	1000
 2	設置	zhongyangkong	zhongyangkongdiao	中央空調	zhongyangkongtiao	中央空調	0	0	1	0	1	0
 2	訪問	dongri	dongriben	東日本	dongriruanjian	東日軟件	0	0	1	0	1	0
-2	證書	tongcheng	tongchengxian	通城縣	tongchengwei	統稱爲	0	0	1	0	1	0
+2	證書	tongcheng	tongchengxian	通城縣	tongchengwei	統稱為	0	0	1	0	1	0
 2	試圖	lingpi	lingpiqijing	另闢蹊徑	lingpixijing	另闢蹊徑	0	0	1	0	1	0
 2	該用	cuimian	cuimianzhuangtai	催眠狀態	cuimianyao	催眠藥	0	0	1	0	1	0
 2	說得	yiweishen	yiweishenzhang	意味深長	yiweishenchang	意味深長	0	0	1	0	1	0
@@ -2395,11 +2395,11 @@
 2	跟她	fenghua	fenghuaxue	風花雪	fenghuaxueyue	風花雪月	0	0	1	0	1	0
 2	路邊	ouba	oubama	歐巴馬	oubasang	歐巴桑	0	0	1	0	1	0
 2	軍爲	zhonghuamin	zhonghuaminguo	中華民國	zhonghuaminzu	中華民族	0	1	0	1	0	1000
-2	轉頭	jiligu	jiligulu	嘰哩咕嚕	jiligulu	嘰裏咕嚕	0	0	1	0	1	0
+2	轉頭	jiligu	jiligulu	嘰哩咕嚕	jiligulu	嘰裡咕嚕	0	0	1	0	1	0
 2	輪和	faxing	faxingren	發行人	faxingshang	發行商	0	0	1	0	1	0
 2	輝	fengtouying	fengtouyingdiao	鳳頭鷹鵰	fengtouyingwu	鳳頭鸚鵡	0	0	1	0	1	0
 2	過他	zaoxie	zaoxieshihou	早些時候	zaoxienian	早些年	0	0	1	0	1	0
-2	運行	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣污染	0	0	1	0	1	0
+2	運行	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣汙染	0	0	1	0	1	0
 2	還和	mofang	mofangyouxi	模仿遊戲	mofangzhu	磨坊主	0	0	1	0	1	0
 2	還回	jixun	jixunying	集訓營	jixundui	集訓隊	0	0	1	0	1	0
 2	還在	yuzhongxin	yuzhongxinzhang	語重心長	yuzhongxinchang	語重心長	0	0	1	0	1	0
@@ -2511,7 +2511,7 @@
 3	不能叫	wangluoji	wangluojisuan	網絡計算	wangluojishu	網絡技術	0	0	1	0	1	0
 3	不能選	guotai	guotaiminan	國泰民安	guotaijunan	國泰君安	0	0	1	0	1	0
 3	不要開	fuzai	fuzailiang	負載量	fuzaijunheng	負載均衡	0	0	1	0	1	0
-3	與	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣污染	0	0	1	0	1	0
+3	與	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣汙染	0	0	1	0	1	0
 3	與	yinmou	yinmoulun	陰謀論	yinmoujituan	陰謀集團	0	0	1	0	1	0
 3	且可以	suishi	suishisuide	隨時隨地	suishisuidi	隨時隨地	0	0	1	0	1	0
 3	且可以	suishisui	suishisuide	隨時隨地	suishisuidi	隨時隨地	0	0	1	0	1	0
@@ -2552,7 +2552,7 @@
 3	也只能	lingpi	lingpiqijing	另闢蹊徑	lingpixijing	另闢蹊徑	0	0	1	0	1	0
 3	也可以	xuyu	xuyuzhen	徐宇真	xuyuweiyi	虛與委蛇	0	0	1	0	1	0
 3	也忙得	buyi	buyilehu	不亦樂乎	buyiding	不一定	0	1	0	1	0	1000
-3	也念着	jiligu	jiligulu	嘰哩咕嚕	jiligulu	嘰裏咕嚕	0	0	1	0	1	0
+3	也念着	jiligu	jiligulu	嘰哩咕嚕	jiligulu	嘰裡咕嚕	0	0	1	0	1	0
 3	也是	suishi	suishisuide	隨時隨地	suishisuidi	隨時隨地	0	0	1	0	1	0
 3	也是	suishisui	suishisuide	隨時隨地	suishisuidi	隨時隨地	0	0	1	0	1	0
 3	也要	jiaotashi	jiaotashide	腳踏實地	jiaotashidi	腳踏實地	0	0	1	0	1	0
@@ -2568,8 +2568,8 @@
 3	交響曲	quandou	quandouyao	全都要	quandouzai	全都在	0	0	1	0	1	0
 3	享受這	yuhuo	yuhuochongsheng	浴火重生	yuhuofenshen	慾火焚身	0	0	1	0	1	0
 3	人不知	wurenbu	wurenbuzhi	無人不知	wurenbuxiao	無人不曉	0	0	1	0	1	0
-3	人聽得	ruchi	ruchirukuang	如癡如狂	ruchiruzui	如癡如醉	0	0	1	0	1	0
-3	人聽得	ruchiru	ruchirukuang	如癡如狂	ruchiruzui	如癡如醉	0	0	1	0	1	0
+3	人聽得	ruchi	ruchirukuang	如痴如狂	ruchiruzui	如痴如醉	0	0	1	0	1	0
+3	人聽得	ruchiru	ruchirukuang	如痴如狂	ruchiruzui	如痴如醉	0	0	1	0	1	0
 3	人員和	xiangcun	xiangcunrenkou	鄉村人口	xiangcunyisheng	鄉村醫生	0	0	1	0	1	0
 3	人家	xiaonian	xiaonianye	小年夜	xiaonianqing	小年輕	0	0	1	0	1	0
 3	人是最	shuihuo	shuihuozhizhong	水火之中	shuihuoburong	水火不容	0	0	1	0	1	0
@@ -2620,7 +2620,7 @@
 3	價竟超	beishang	beishangguang	北上廣	beishangguangshen	北上廣深	0	0	1	0	1	0
 3	會	liubi	liubixue	流鼻血	liubixie	流鼻血	0	0	1	0	1	0
 3	會兩大	zhuguan	zhuguanrenyuan	主管人員	zhuguanjiguan	主管機關	0	0	1	0	1	0
-3	會成爲	zhongshizhi	zhongshizhide	衆矢之的	zhongshizhidi	衆矢之的	0	0	1	0	1	0
+3	會成爲	zhongshizhi	zhongshizhide	眾矢之的	zhongshizhidi	眾矢之的	0	0	1	0	1	0
 3	會招來	meiwan	meiwanmeile	沒完沒了	meiwanmeiliao	沒完沒了	0	0	1	0	1	0
 3	會招來	meiwanmei	meiwanmeile	沒完沒了	meiwanmeiliao	沒完沒了	0	0	1	0	1	0
 3	會提醒	sunda	sundasheng	孫大聖	sundawei	孫大衛	0	0	1	0	1	0
@@ -2661,7 +2661,7 @@
 3	使盡了	hunshen	hunshenjieshu	渾身解數	hunshenxieshu	渾身解數	0	0	1	0	1	0
 3	俗文化	yuanyuanliu	yuanyuanliuzhang	源遠流長	yuanyuanliuchang	源遠流長	0	0	1	0	1	0
 3	保存了	yuanyuanliu	yuanyuanliuzhang	源遠流長	yuanyuanliuchang	源遠流長	0	0	1	0	1	0
-3	保打贏	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣污染	0	0	1	0	1	0
+3	保打贏	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣汙染	0	0	1	0	1	0
 3	做	yangshui	yangshuiguoduo	羊水過多	yangshuichuanci	羊水穿刺	0	0	1	0	1	0
 3	做寫入	fuzai	fuzailiang	負載量	fuzaijunheng	負載均衡	0	0	1	0	1	0
 3	像	jiubie	jiubiezhongfeng	久別重逢	jiubiechongfeng	久別重逢	0	0	1	0	1	0
@@ -2675,7 +2675,7 @@
 3	關掉	fuzai	fuzailiang	負載量	fuzaijunheng	負載均衡	0	0	1	0	1	0
 3	關還在	yuzhongxin	yuzhongxinzhang	語重心長	yuzhongxinchang	語重心長	0	0	1	0	1	0
 3	興趣的	guanguang	guanguangqu	觀光區	guanguangke	觀光客	0	0	1	0	1	0
-3	其光路	rutu	rutuweian	入土爲安	rutusuoshi	如圖所示	0	0	1	0	1	0
+3	其光路	rutu	rutuweian	入土為安	rutusuoshi	如圖所示	0	0	1	0	1	0
 3	其實	mazi	maziyuan	馬資源	mazida	馬自達	0	0	1	0	1	0
 3	其實	sunda	sundasheng	孫大聖	sundawei	孫大衛	0	0	1	0	1	0
 3	內都是	meiwan	meiwanmeile	沒完沒了	meiwanmeiliao	沒完沒了	0	0	1	0	1	0
@@ -2690,7 +2690,7 @@
 3	出來的	faxing	faxingren	發行人	faxingshang	發行商	0	1	0	1	0	1000
 3	分之百	guanguang	guanguangqu	觀光區	guanguangke	觀光客	0	0	1	0	1	0
 3	劃必須	gaiyi	gaiyigai	改一改	gaiyixia	改一下	0	1	0	1	0	1000
-3	判斷	rutu	rutuweian	入土爲安	rutusuoshi	如圖所示	0	0	1	0	1	0
+3	判斷	rutu	rutuweian	入土為安	rutusuoshi	如圖所示	0	0	1	0	1	0
 3	到一陣	putiangai	putiangaide	鋪天蓋地	putiangaidi	鋪天蓋地	0	0	1	0	1	0
 3	到如今	haibu	haibuhui	還不會	haibushi	還不是	0	1	0	1	0	1000
 3	刻握住	xiaoa	xiaoaa	笑呵呵	xiaoayi	小阿姨	0	0	1	0	1	0
@@ -2748,7 +2748,7 @@
 3	可以	suishi	suishisuide	隨時隨地	suishisuidi	隨時隨地	-1	0	4	0	3	0
 3	可以	suishisui	suishisuide	隨時隨地	suishisuidi	隨時隨地	-1	0	4	0	3	0
 3	可是	zhouxiao	zhouxiaoan	周孝安	zhouxiaochuan	周小川	0	0	1	0	1	0
-3	可被	tongcheng	tongchengxian	通城縣	tongchengwei	統稱爲	0	0	1	0	1	0
+3	可被	tongcheng	tongchengxian	通城縣	tongchengwei	統稱為	0	0	1	0	1	0
 3	臺灣省	taizhong	taizhongyao	太重要	taizhongshi	臺中市	0	0	1	0	1	0
 3	臺灣	taizhong	taizhongyao	太重要	taizhongshi	臺中市	0	0	1	0	1	0
 3	臺稱	ouba	oubama	歐巴馬	oubasang	歐巴桑	0	0	1	0	1	0
@@ -2780,14 +2780,14 @@
 3	哇	nige	nigeluo	尼格羅	nigetou	你個頭	0	0	1	0	1	0
 3	哎	nige	nigeluo	尼格羅	nigetou	你個頭	0	0	1	0	1	0
 3	哥當然	lebu	lebule	了不了	lebukezhi	樂不可支	0	0	1	0	1	0
-3	哥抱起	ruchi	ruchirukuang	如癡如狂	ruchiruzui	如癡如醉	0	0	1	0	1	0
-3	哥抱起	ruchiru	ruchirukuang	如癡如狂	ruchiruzui	如癡如醉	0	0	1	0	1	0
+3	哥抱起	ruchi	ruchirukuang	如痴如狂	ruchiruzui	如痴如醉	0	0	1	0	1	0
+3	哥抱起	ruchiru	ruchirukuang	如痴如狂	ruchiruzui	如痴如醉	0	0	1	0	1	0
 3	哥有過	liubi	liubixue	流鼻血	liubixie	流鼻血	0	0	1	0	1	0
 3	哭一邊	liubi	liubixue	流鼻血	liubiti	流鼻涕	0	0	1	0	1	0
 3	唿籲	zhuguan	zhuguanrenyuan	主管人員	zhuguanjiguan	主管機關	0	0	1	0	1	0
 3	喜歡	hunshui	hunshuimoyu	混水摸魚	hunshuimoyu	渾水摸魚	0	0	1	0	1	0
 3	喜歡	hunshuimo	hunshuimoyu	混水摸魚	hunshuimoyu	渾水摸魚	0	0	1	0	1	0
-3	嘴上	jiligu	jiligulu	嘰哩咕嚕	jiligulu	嘰裏咕嚕	0	0	1	0	1	0
+3	嘴上	jiligu	jiligulu	嘰哩咕嚕	jiligulu	嘰裡咕嚕	0	0	1	0	1	0
 3	嘴裏	shenchu	shenchuguimei	神出鬼沒	shenchulai	伸出來	0	0	1	0	1	0
 3	嚏還總	liubi	liubixue	流鼻血	liubiti	流鼻涕	0	0	1	0	1	0
 3	四周是	putiangai	putiangaide	鋪天蓋地	putiangaidi	鋪天蓋地	0	0	1	0	1	0
@@ -2866,7 +2866,7 @@
 3	媽媽和	xiaoa	xiaoaa	笑呵呵	xiaoayi	小阿姨	0	0	1	0	1	0
 3	子裏面	yituanluan	yituanluanzao	一團亂糟	yituanluanma	一團亂麻	0	0	1	0	1	0
 3	學凱原	faxue	faxuejia	法學家	faxueyuan	法學院	0	0	1	0	1	0
-3	學方法	tongcheng	tongchengxian	通城縣	tongchengwei	統稱爲	0	0	1	0	1	0
+3	學方法	tongcheng	tongchengxian	通城縣	tongchengwei	統稱為	0	0	1	0	1	0
 3	學起就	erti	ertijiao	二踢腳	ertimianming	耳提面命	0	0	1	0	1	0
 3	學問題	quandou	quandouyao	全都要	quandouzai	全都在	0	0	1	0	1	0
 3	它帶到	matou	matouqin	馬頭琴	matouxingyun	馬頭星雲	0	0	1	0	1	0
@@ -2883,7 +2883,7 @@
 3	容易被	fanbian	fanbianyiqi	反編譯器	fanbianyi	反編譯	0	0	1	0	1	0
 3	寒或者	chenyi	chenyixun	陳奕迅	chenyichuan	陳亦川	0	0	1	0	1	0
 3	寒站在	chenyi	chenyixun	陳奕迅	chenyichuan	陳亦川	0	0	1	0	1	0
-3	對全市	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣污染	0	0	1	0	1	0
+3	對全市	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣汙染	0	0	1	0	1	0
 3	對佔有	yixizhi	yixizhide	一席之地	yixizhidi	一席之地	0	0	1	0	1	0
 3	對我們	yiya	yiyahaiya	以牙還牙	yiyahuanya	以牙還牙	0	0	1	0	1	0
 3	對李峋	duoshao	duoshaoqian	多少錢	duoshaoyouxie	多少有些	0	0	1	0	1	0
@@ -2916,7 +2916,7 @@
 3	川大學	dingtian	dingtianlide	頂天立地	dingtianlidi	頂天立地	0	0	1	0	1	0
 3	川大學	dingtianli	dingtianlide	頂天立地	dingtianlidi	頂天立地	0	0	1	0	1	0
 3	己爲他	sixinta	sixintadi	死心塌地	sixintade	死心塌地	0	0	1	0	1	0
-3	己成爲	zhongshizhi	zhongshizhide	衆矢之的	zhongshizhidi	衆矢之的	0	0	1	0	1	0
+3	己成爲	zhongshizhi	zhongshizhide	眾矢之的	zhongshizhidi	眾矢之的	0	0	1	0	1	0
 3	已戴上	matou	matouqin	馬頭琴	matouju	馬頭具	0	0	1	0	1	0
 3	已拿到	guotai	guotaiminan	國泰民安	guotaijunan	國泰君安	0	0	1	0	1	0
 3	已經被	shaodong	shaodongjia	少東家	shaodongxu	邵東旭	0	0	1	0	1	0
@@ -2924,12 +2924,12 @@
 3	師父	yiweishen	yiweishenzhang	意味深長	yiweishenchang	意味深長	0	0	1	0	1	0
 3	師父是	tiandi	tiandihui	天地會	tiandixia	天底下	0	0	1	0	1	0
 3	帝陛下	hunshen	hunshenjieshu	渾身解數	hunshenshangxia	渾身上下	0	0	1	0	1	0
-3	常運行	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣污染	0	0	1	0	1	0
+3	常運行	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣汙染	0	0	1	0	1	0
 3	幅超過	beishang	beishangguang	北上廣	beishangguangshen	北上廣深	0	0	1	0	1	0
 3	幹了多	jingtiandong	jingtiandongde	驚天動地	jingtiandongdi	驚天動地	0	0	1	0	1	0
 3	幹部要	jiaotashi	jiaotashide	腳踏實地	jiaotashidi	腳踏實地	0	0	1	0	1	0
 3	年大黨	fenghua	fenghuaxue	風花雪	fenghuazhengmao	風華正茂	0	0	1	0	1	0
-3	年轉頭	jiligu	jiligulu	嘰哩咕嚕	jiligulu	嘰裏咕嚕	0	0	1	0	1	0
+3	年轉頭	jiligu	jiligulu	嘰哩咕嚕	jiligulu	嘰裡咕嚕	0	0	1	0	1	0
 3	年裏的	shenchugui	shenchuguimei	神出鬼沒	shenchuguimo	神出鬼沒	0	0	1	0	1	0
 3	並不是	meiwan	meiwanmeile	沒完沒了	meiwanmeiliao	沒完沒了	0	0	1	0	1	0
 3	並不是	meiwanmei	meiwanmeile	沒完沒了	meiwanmeiliao	沒完沒了	0	0	1	0	1	0
@@ -3004,7 +3004,7 @@
 3	所以	congna	congnazhihou	從那之後	congnayihou	從那以後	0	0	1	0	1	0
 3	所謂	renjie	renjiedeling	人傑地靈	renjiediling	人傑地靈	0	0	1	0	1	0
 3	手指甲	doukuai	doukuaile	都快了	doukuaiyao	都快要	0	0	1	0	1	0
-3	手法	rutu	rutuweian	入土爲安	rutusuoshi	如圖所示	0	0	1	0	1	0
+3	手法	rutu	rutuweian	入土為安	rutusuoshi	如圖所示	0	0	1	0	1	0
 3	才被人	hunshui	hunshuimoyu	混水摸魚	hunshuimoyu	渾水摸魚	0	0	1	0	1	0
 3	才被人	hunshuimo	hunshuimoyu	混水摸魚	hunshuimoyu	渾水摸魚	0	0	1	0	1	0
 3	託	nige	nigeluo	尼格羅	nigetou	你個頭	0	0	1	0	1	0
@@ -3092,13 +3092,13 @@
 3	某些人	danan	dananzi	大男子	dananlintou	大難臨頭	0	0	1	0	1	0
 3	某某及	bianhu	bianhushi	辯護士	bianhuren	辯護人	0	0	1	0	1	0
 3	某某的	bianhu	bianhushi	辯護士	bianhuren	辯護人	0	0	1	0	1	0
-3	染源在	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣污染	0	0	1	0	1	0
+3	染源在	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣汙染	0	0	1	0	1	0
 3	標準	paishui	paishuigou	排水溝	paishuiliang	排水量	0	0	1	0	1	0
 3	標準的	jiandu	jianduzhe	監督者	jianduxuexi	監督學習	0	0	1	0	1	0
 3	根手指	yizhang	yizhangchuan	一長串	yizhangyihe	一張一合	0	0	1	0	1	0
 3	根據	mudan	mudanjiang	牡丹江	mudanjiangshi	牡丹江市	0	0	1	0	1	0
 3	概花了	liangge	lianggexiaoshi	兩個小時	lianggeren	兩個人	0	1	0	1	0	1000
-3	次去看	liwei	liweisi	李維斯	liweiaila	裏維埃拉	0	0	1	0	1	0
+3	次去看	liwei	liweisi	李維斯	liweiaila	裡維埃拉	0	0	1	0	1	0
 3	次呈交	guoan	guoanju	國安局	guoanbu	國安部	0	0	1	0	1	0
 3	次實施	qiaozha	qiaozhaleisuo	敲詐勒索	qiaozhalesuo	敲詐勒索	0	0	1	0	1	0
 3	正寒給	chenyi	chenyixun	陳奕迅	chenyichuan	陳亦川	0	0	1	0	1	0
@@ -3144,7 +3144,7 @@
 3	現在	liumang	liumangguojia	流氓國家	liumangruanjian	流氓軟件	0	0	1	0	1	0
 3	現在搞	liumang	liumangguojia	流氓國家	liumangruanjian	流氓軟件	0	0	1	0	1	0
 3	珠海	jiuzhou	jiuzhougonglve	九州攻略	jiuzhougang	九洲港	0	0	1	0	1	0
-3	珠海	liwei	liweisi	李維斯	liweiaila	裏維埃拉	0	0	1	0	1	0
+3	珠海	liwei	liweisi	李維斯	liweiaila	裡維埃拉	0	0	1	0	1	0
 3	理的無	jiandu	jianduzhe	監督者	jianduxuexi	監督學習	0	0	1	0	1	0
 3	生至今	haibu	haibuhui	還不會	haibushi	還不是	0	1	0	1	0	1000
 3	用力就	liubi	liubixue	流鼻血	liubixie	流鼻血	0	0	1	0	1	0
@@ -3178,7 +3178,7 @@
 3	的色調	gaiyi	gaiyigai	改一改	gaiyixia	改一下	0	0	1	0	1	0
 3	的蒙古	tiemu	tiemuzhen	鐵木真	tiemuer	帖木兒	0	0	1	0	1	0
 3	的藍牙	tongxinxie	tongxinxieli	同心協力	tongxinxieyi	通信協議	0	0	1	0	1	0
-3	的證書	tongcheng	tongchengxian	通城縣	tongchengwei	統稱爲	0	0	1	0	1	0
+3	的證書	tongcheng	tongchengxian	通城縣	tongchengwei	統稱為	0	0	1	0	1	0
 3	的路邊	ouba	oubama	歐巴馬	oubasang	歐巴桑	0	0	1	0	1	0
 3	的這羣	xiaonian	xiaonianye	小年夜	xiaonianqing	小年輕	0	0	1	0	1	0
 3	的那個	chenyi	chenyixun	陳奕迅	chenyichuan	陳亦川	0	0	1	0	1	0
@@ -3238,8 +3238,8 @@
 3	結果	guishi	guishishencha	鬼使神差	guishishenchai	鬼使神差	0	0	1	0	1	0
 3	結果	guishishen	guishishencha	鬼使神差	guishishenchai	鬼使神差	0	0	1	0	1	0
 3	絕美又	yuzhongxin	yuzhongxinzhang	語重心長	yuzhongxinchang	語重心長	0	0	1	0	1	0
-3	續實施	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣污染	0	0	1	0	1	0
-3	續推進	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣污染	0	0	1	0	1	0
+3	續實施	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣汙染	0	0	1	0	1	0
+3	續推進	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣汙染	0	0	1	0	1	0
 3	維蘇威	huoshan	huoshankou	火山口	huoshanbaofa	火山爆發	0	0	1	0	1	0
 3	緩解	yanjing	yanjingdaxue	燕京大學	yanjingpilao	眼睛疲勞	0	0	1	0	1	0
 3	緣側的	shendu	shenduceshi	深度測試	shenduxuexi	深度學習	0	0	1	0	1	0
@@ -3290,7 +3290,7 @@
 3	雖然	ganen	ganentubao	感恩圖報	ganenjie	感恩節	0	0	1	0	1	0
 3	蟻家族	quanjun	quanjunfumei	全軍覆沒	quanjunfumo	全軍覆沒	0	0	1	0	1	0
 3	蟻家族	quanjunfu	quanjunfumei	全軍覆沒	quanjunfumo	全軍覆沒	0	0	1	0	1	0
-3	行按揭	liwei	liweisi	李維斯	liweiaila	裏維埃拉	0	0	1	0	1	0
+3	行按揭	liwei	liweisi	李維斯	liweiaila	裡維埃拉	0	0	1	0	1	0
 3	行行長	zhouxiao	zhouxiaoan	周孝安	zhouxiaochuan	周小川	0	0	1	0	1	0
 3	補跌	nige	nigeluo	尼格羅	nigetou	你個頭	0	0	1	0	1	0
 3	表面與	matou	matouqin	馬頭琴	matouxingyun	馬頭星雲	0	0	1	0	1	0
@@ -3320,8 +3320,8 @@
 3	讓女兒	meiwan	meiwanmeile	沒完沒了	meiwanmeiliao	沒完沒了	0	0	1	0	1	0
 3	讓女兒	meiwanmei	meiwanmeile	沒完沒了	meiwanmeiliao	沒完沒了	0	0	1	0	1	0
 3	讓我	feichanggan	feichanggandong	非常感動	feichangganxie	非常感謝	0	1	0	1	0	1000
-3	讓我們	ruchi	ruchirukuang	如癡如狂	ruchiruzui	如癡如醉	0	0	1	0	1	0
-3	讓我們	ruchiru	ruchirukuang	如癡如狂	ruchiruzui	如癡如醉	0	0	1	0	1	0
+3	讓我們	ruchi	ruchirukuang	如痴如狂	ruchiruzui	如痴如醉	0	0	1	0	1	0
+3	讓我們	ruchiru	ruchirukuang	如痴如狂	ruchiruzui	如痴如醉	0	0	1	0	1	0
 3	讓我們	suishi	suishisuide	隨時隨地	suishisuidi	隨時隨地	0	0	1	0	1	0
 3	讓我們	suishisui	suishisuide	隨時隨地	suishisuidi	隨時隨地	0	0	1	0	1	0
 3	設局是	shizong	shizongdawang	世宗大王	shizongxian	師宗縣	0	0	1	0	1	0
@@ -3461,7 +3461,7 @@
 4	不要開	fuzai	fuzailiang	負載量	fuzaijunheng	負載均衡	0	0	1	0	1	0
 4	不要找家	sanjia	sanjiacun	三家村	sanjiayiyuan	三甲醫院	0	0	1	0	1	0
 4	不遠處的	shaodong	shaodongjia	少東家	shaodongxu	邵東旭	0	0	1	0	1	0
-4	與	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣污染	0	0	1	0	1	0
+4	與	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣汙染	0	0	1	0	1	0
 4	與	yinmou	yinmoulun	陰謀論	yinmoujituan	陰謀集團	0	0	1	0	1	0
 4	業的那個	chenyi	chenyixun	陳奕迅	chenyichuan	陳亦川	0	0	1	0	1	0
 4	東西往往	putiangai	putiangaide	鋪天蓋地	putiangaidi	鋪天蓋地	0	0	1	0	1	0
@@ -3603,7 +3603,7 @@
 4	全換成	baishi	baishiwucheng	百事無成	baishikele	百事可樂	0	0	1	0	1	0
 4	公司還有	zhongyangkong	zhongyangkongdiao	中央空調	zhongyangkongtiao	中央空調	0	0	1	0	1	0
 4	關掉	fuzai	fuzailiang	負載量	fuzaijunheng	負載均衡	0	0	1	0	1	0
-4	其光路	rutu	rutuweian	入土爲安	rutusuoshi	如圖所示	0	0	1	0	1	0
+4	其光路	rutu	rutuweian	入土為安	rutusuoshi	如圖所示	0	0	1	0	1	0
 4	其實	mazi	maziyuan	馬資源	mazida	馬自達	0	0	1	0	1	0
 4	其實	sunda	sundasheng	孫大聖	sundawei	孫大衛	0	0	1	0	1	0
 4	其實只是	anzhuang	anzhuanghao	安裝好	anzhuangchengxu	安裝程序	0	0	1	0	1	0
@@ -3612,7 +3612,7 @@
 4	再來聊聊	zhongyangkong	zhongyangkongdiao	中央空調	zhongyangkongtiao	中央空調	0	0	1	0	1	0
 4	農村有着	fantian	fantianfude	翻天覆地	fantianfudi	翻天覆地	0	0	1	0	1	0
 4	農村有着	fantianfu	fantianfude	翻天覆地	fantianfudi	翻天覆地	0	0	1	0	1	0
-4	農行按揭	liwei	liweisi	李維斯	liweiaila	裏維埃拉	0	0	1	0	1	0
+4	農行按揭	liwei	liweisi	李維斯	liweiaila	裡維埃拉	0	0	1	0	1	0
 4	決定同級	gongli	gonglizhuyi	功利主義	gongliyiyuan	公立醫院	0	0	1	0	1	0
 4	況發生的	fantian	fantianfude	翻天覆地	fantianfudi	翻天覆地	0	0	1	0	1	0
 4	況發生的	fantianfu	fantianfude	翻天覆地	fantianfudi	翻天覆地	0	0	1	0	1	0
@@ -3623,9 +3623,9 @@
 4	出生至今	haibu	haibuhui	還不會	haibushi	還不是	0	1	0	1	0	1000
 4	劉某某及	bianhu	bianhushi	辯護士	bianhuren	辯護人	0	0	1	0	1	0
 4	剛好對上	chenyi	chenyixun	陳奕迅	chenyichuan	陳亦川	0	0	1	0	1	0
-4	判斷	rutu	rutuweian	入土爲安	rutusuoshi	如圖所示	0	0	1	0	1	0
+4	判斷	rutu	rutuweian	入土為安	rutusuoshi	如圖所示	0	0	1	0	1	0
 4	到她幾乎	shenzhibu	shenzhibuzhidao	甚至不知道	shenzhibuqing	神志不清	0	0	1	0	1	0
-4	前的證書	tongcheng	tongchengxian	通城縣	tongchengwei	統稱爲	0	0	1	0	1	0
+4	前的證書	tongcheng	tongchengxian	通城縣	tongchengwei	統稱為	0	0	1	0	1	0
 4	力都處於	bubai	bubaizhide	不敗之地	bubaizhidi	不敗之地	0	0	1	0	1	0
 4	力都處於	bubaizhi	bubaizhide	不敗之地	bubaizhidi	不敗之地	0	0	1	0	1	0
 4	加強	xiangcun	xiangcunrenkou	鄉村人口	xiangcunyisheng	鄉村醫生	0	0	1	0	1	0
@@ -3648,8 +3648,8 @@
 4	歷史文化	yuanyuanliu	yuanyuanliuzhang	源遠流長	yuanyuanliuchang	源遠流長	0	0	2	0	1	0
 4	原合約上	gaiyi	gaiyigai	改一改	gaiyixia	改一下	0	0	1	0	1	0
 4	原哥當然	lebu	lebule	了不了	lebukezhi	樂不可支	0	0	1	0	1	0
-4	原哥抱起	ruchi	ruchirukuang	如癡如狂	ruchiruzui	如癡如醉	0	0	1	0	1	0
-4	原哥抱起	ruchiru	ruchirukuang	如癡如狂	ruchiruzui	如癡如醉	0	0	1	0	1	0
+4	原哥抱起	ruchi	ruchirukuang	如痴如狂	ruchiruzui	如痴如醉	0	0	1	0	1	0
+4	原哥抱起	ruchiru	ruchirukuang	如痴如狂	ruchiruzui	如痴如醉	0	0	1	0	1	0
 4	原本	yuangu	yuangudai	元古代	yuangugu	圓鼓鼓	0	0	1	0	1	0
 4	去	guotai	guotaiminan	國泰民安	guotaijunan	國泰君安	0	0	1	0	1	0
 4	參加那些	xuyu	xuyuzhen	徐宇真	xuyuweiyi	虛與委蛇	0	0	1	0	1	0
@@ -3678,7 +3678,7 @@
 4	可是	zhouxiao	zhouxiaoan	周孝安	zhouxiaochuan	周小川	0	0	1	0	1	0
 4	可是我在	anzhuang	anzhuanghao	安裝好	anzhuangchengxu	安裝程序	0	0	1	0	1	0
 4	可能的話	gaiyi	gaiyigai	改一改	gaiyixia	改一下	0	0	1	0	1	0
-4	可被	tongcheng	tongchengxian	通城縣	tongchengwei	統稱爲	0	0	1	0	1	0
+4	可被	tongcheng	tongchengxian	通城縣	tongchengwei	統稱為	0	0	1	0	1	0
 4	臺中州下	taizhong	taizhongyao	太重要	taizhongshi	臺中市	0	0	1	0	1	0
 4	臺灣	taizhong	taizhongyao	太重要	taizhongshi	臺中市	0	0	1	0	1	0
 4	臺稱	ouba	oubama	歐巴馬	oubasang	歐巴桑	0	0	1	0	1	0
@@ -3709,7 +3709,7 @@
 4	喜歡	hunshui	hunshuimoyu	混水摸魚	hunshuimoyu	渾水摸魚	0	0	1	0	1	0
 4	喜歡	hunshuimo	hunshuimoyu	混水摸魚	hunshuimoyu	渾水摸魚	0	0	1	0	1	0
 4	噴嚏還總	liubi	liubixue	流鼻血	liubiti	流鼻涕	0	0	1	0	1	0
-4	嘴上	jiligu	jiligulu	嘰哩咕嚕	jiligulu	嘰裏咕嚕	0	0	1	0	1	0
+4	嘴上	jiligu	jiligulu	嘰哩咕嚕	jiligulu	嘰裡咕嚕	0	0	1	0	1	0
 4	嘴裏	shenchu	shenchuguimei	神出鬼沒	shenchulai	伸出來	0	0	1	0	1	0
 4	四周是	putiangai	putiangaide	鋪天蓋地	putiangaidi	鋪天蓋地	0	0	1	0	1	0
 4	四年裏的	shenchugui	shenchuguimei	神出鬼沒	shenchuguimo	神出鬼沒	0	0	1	0	1	0
@@ -3784,7 +3784,7 @@
 4	學習以及	shendu	shenduceshi	深度測試	shenduxuexi	深度學習	0	0	1	0	1	0
 4	它的確和	matou	matouqin	馬頭琴	matouju	馬頭具	0	0	1	0	1	0
 4	完全的	fanbian	fanbianyiqi	反編譯器	fanbianyi	反編譯	0	0	1	0	1	0
-4	定會成爲	zhongshizhi	zhongshizhide	衆矢之的	zhongshizhidi	衆矢之的	0	0	1	0	1	0
+4	定會成爲	zhongshizhi	zhongshizhide	眾矢之的	zhongshizhidi	眾矢之的	0	0	1	0	1	0
 4	定得說服	guoan	guoanju	國安局	guoanbu	國安部	0	0	1	0	1	0
 4	寶寶最好	weimu	weimuqiang	帷幕牆	weimuru	餵母乳	0	0	1	0	1	0
 4	客戶是在	beishang	beishangguang	北上廣	beishangguangshen	北上廣深	0	0	1	0	1	0
@@ -3801,7 +3801,7 @@
 4	小皇帝還	meiwan	meiwanmeile	沒完沒了	meiwanmeiliao	沒完沒了	0	0	1	0	1	0
 4	小皇帝還	meiwanmei	meiwanmeile	沒完沒了	meiwanmeiliao	沒完沒了	0	0	1	0	1	0
 4	少萬噸級	paishui	paishuigou	排水溝	paishuiliang	排水量	0	0	1	0	1	0
-4	少年轉頭	jiligu	jiligulu	嘰哩咕嚕	jiligulu	嘰裏咕嚕	0	0	1	0	1	0
+4	少年轉頭	jiligu	jiligulu	嘰哩咕嚕	jiligulu	嘰裡咕嚕	0	0	1	0	1	0
 4	就	chaosi	chaosimuxiang	朝思暮想	chaosile	吵死了	0	0	1	0	1	0
 4	就	liubi	liubixue	流鼻血	liubixie	流鼻血	0	0	1	0	1	0
 4	就	wanglao	wanglaowu	王老五	wanglaoji	王老吉	0	0	1	0	1	0
@@ -3932,7 +3932,7 @@
 4	所以	congna	congnazhihou	從那之後	congnayihou	從那以後	0	0	1	0	1	0
 4	所謂	renjie	renjiedeling	人傑地靈	renjiediling	人傑地靈	0	0	1	0	1	0
 4	手指甲	doukuai	doukuaile	都快了	doukuaiyao	都快要	0	0	1	0	1	0
-4	手法	rutu	rutuweian	入土爲安	rutusuoshi	如圖所示	0	0	1	0	1	0
+4	手法	rutu	rutuweian	入土為安	rutusuoshi	如圖所示	0	0	1	0	1	0
 4	才被人	hunshui	hunshuimoyu	混水摸魚	hunshuimoyu	渾水摸魚	0	0	1	0	1	0
 4	才被人	hunshuimo	hunshuimoyu	混水摸魚	hunshuimoyu	渾水摸魚	0	0	1	0	1	0
 4	託	nige	nigeluo	尼格羅	nigetou	你個頭	0	0	1	0	1	0
@@ -3943,8 +3943,8 @@
 4	披荊斬棘	lingpi	lingpiqijing	另闢蹊徑	lingpixijing	另闢蹊徑	0	0	1	0	1	0
 4	抬頭打量	chenyi	chenyixun	陳奕迅	chenyichuan	陳亦川	0	0	1	0	1	0
 4	拆穿我們	qingcheng	qingchengshan	青城山	qingchengqingguo	傾城傾國	0	0	1	0	1	0
-4	持續實施	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣污染	0	0	1	0	1	0
-4	持續推進	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣污染	0	0	1	0	1	0
+4	持續實施	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣汙染	0	0	1	0	1	0
+4	持續推進	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣汙染	0	0	1	0	1	0
 4	捐贈用於	pinkun	pinkunliaodao	貧困潦倒	pinkundiqu	貧困地區	0	0	1	0	1	0
 4	排的男生	shaodong	shaodongjia	少東家	shaodongxu	邵東旭	0	0	1	0	1	0
 4	接就顯示	fanbian	fanbianyiqi	反編譯器	fanbianyi	反編譯	0	0	1	0	1	0
@@ -3954,7 +3954,7 @@
 4	政治	zhixing	zhixingchengxu	執行程序	zhixingli	執行力	0	0	1	0	1	0
 4	故宮	xiaofang	xiaofangzi	小房子	xiaofangdui	消防隊	0	0	1	0	1	0
 4	敏老師講	shijianguan	shijianguannian	時間觀念	shijianguanli	時間管理	0	0	1	0	1	0
-4	教學方法	tongcheng	tongchengxian	通城縣	tongchengwei	統稱爲	0	0	1	0	1	0
+4	教學方法	tongcheng	tongchengxian	通城縣	tongchengwei	統稱為	0	0	1	0	1	0
 4	斥着一股	butu	butubu	不吐不	butubukuai	不吐不快	0	0	1	0	1	0
 4	新買的	zheyi	zheyipi	這一批	zheyici	這一次	0	1	0	1	0	1000
 4	新調來的	zheyi	zheyipi	這一批	zheyici	這一次	0	1	0	1	0	1000
@@ -4029,7 +4029,7 @@
 4	次想起了	weiruo	weiruozhaolu	危若朝露	weiruoxing	韋若星	0	0	1	0	1	0
 4	正寒或者	chenyi	chenyixun	陳奕迅	chenyichuan	陳亦川	0	0	1	0	1	0
 4	正寒站在	chenyi	chenyixun	陳奕迅	chenyichuan	陳亦川	0	0	1	0	1	0
-4	正常運行	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣污染	0	0	1	0	1	0
+4	正常運行	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣汙染	0	0	1	0	1	0
 4	正規公立	sanjia	sanjiacun	三家村	sanjiayiyuan	三甲醫院	0	0	1	0	1	0
 4	步至少要	liangge	lianggexiaoshi	兩個小時	lianggeren	兩個人	0	1	0	1	0	1000
 4	殃的路邊	ouba	oubama	歐巴馬	oubasang	歐巴桑	0	0	1	0	1	0
@@ -4049,7 +4049,7 @@
 4	永遠處於	bubai	bubaizhide	不敗之地	bubaizhidi	不敗之地	0	0	1	0	1	0
 4	永遠處於	bubaizhi	bubaizhide	不敗之地	bubaizhidi	不敗之地	0	0	1	0	1	0
 4	江逾白	congrong	congrongbu	從容不	congrongbupo	從容不迫	0	0	1	0	1	0
-4	污染源在	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣污染	0	0	1	0	1	0
+4	污染源在	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣汙染	0	0	1	0	1	0
 4	沒有	taojia	taojiahaijia	討價還價	taojiahuanjia	討價還價	0	0	1	0	1	0
 4	沒有	zoudi	zoudipan	走地盤	zoudiji	走地雞	0	0	1	0	1	0
 4	沒有反駁	chenyi	chenyixun	陳奕迅	chenyichuan	陳亦川	0	0	1	0	1	0
@@ -4090,7 +4090,7 @@
 4	現在他們	quandou	quandouyao	全都要	quandouzai	全都在	0	0	1	0	1	0
 4	現在搞	liumang	liumangguojia	流氓國家	liumangruanjian	流氓軟件	0	0	1	0	1	0
 4	珠海	jiuzhou	jiuzhougonglve	九州攻略	jiuzhougang	九洲港	0	0	1	0	1	0
-4	珠海	liwei	liweisi	李維斯	liweiaila	裏維埃拉	0	0	1	0	1	0
+4	珠海	liwei	liweisi	李維斯	liweiaila	裡維埃拉	0	0	1	0	1	0
 4	現在覺得	zhouxiao	zhouxiaoan	周孝安	zhouxiaochuan	周小川	0	0	1	0	1	0
 4	理說稍微	jiaotashi	jiaotashide	腳踏實地	jiaotashidi	腳踏實地	0	0	1	0	1	0
 4	甚至還和	mofang	mofangyouxi	模仿遊戲	mofangzhu	磨坊主	0	0	1	0	1	0
@@ -4147,7 +4147,7 @@
 4	知道	zhouxiao	zhouxiaoan	周孝安	zhouxiaochuan	周小川	0	0	1	0	1	0
 4	研究員到	faxue	faxuejia	法學家	faxueyuan	法學院	0	0	1	0	1	0
 4	研究員應	faxue	faxuejia	法學家	faxueyuan	法學院	0	0	1	0	1	0
-4	確保打贏	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣污染	0	0	1	0	1	0
+4	確保打贏	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣汙染	0	0	1	0	1	0
 4	神十和	qianji	qianjici	前幾次	qianjitian	前幾天	0	1	0	1	0	1000
 4	神相戀的	chanmian	chanmianbuyi	纏綿不已	chanmianfeice	纏綿悱惻	0	0	1	0	1	0
 4	福特	mazi	maziyuan	馬資源	mazida	馬自達	0	0	1	0	1	0
@@ -4201,8 +4201,8 @@
 4	而造成人	xinggong	xinggongzuo	性工作	xinggongneng	性功能	0	0	1	0	1	0
 4	肉身留着	yixizhi	yixizhide	一席之地	yixizhidi	一席之地	0	0	1	0	1	0
 4	肯定佔有	yixizhi	yixizhide	一席之地	yixizhidi	一席之地	0	0	1	0	1	0
-4	育人聽得	ruchi	ruchirukuang	如癡如狂	ruchiruzui	如癡如醉	0	0	1	0	1	0
-4	育人聽得	ruchiru	ruchirukuang	如癡如狂	ruchiruzui	如癡如醉	0	0	1	0	1	0
+4	育人聽得	ruchi	ruchirukuang	如痴如狂	ruchiruzui	如痴如醉	0	0	1	0	1	0
+4	育人聽得	ruchiru	ruchirukuang	如痴如狂	ruchiruzui	如痴如醉	0	0	1	0	1	0
 4	胖子	tankou	tankouqi	探口氣	tankouqi	嘆口氣	0	0	1	0	1	0
 4	能不能也	xiangdian	xiangdiannao	向電腦	xiangdianbanfa	想點辦法	0	0	1	0	1	0
 4	能否先	gaiyi	gaiyigai	改一改	gaiyixia	改一下	0	0	1	0	1	0
@@ -4218,7 +4218,7 @@
 4	腰力勾住	shixiang	shixiangquanneng	十項全能	shixianggui	石像鬼	0	0	1	0	1	0
 4	自動顯示	jianti	jiantizi	簡體字	jiantizhongwen	簡體中文	0	0	1	0	1	0
 4	自己爲他	sixinta	sixintadi	死心塌地	sixintade	死心塌地	0	0	1	0	1	0
-4	自己成爲	zhongshizhi	zhongshizhide	衆矢之的	zhongshizhidi	衆矢之的	0	0	1	0	1	0
+4	自己成爲	zhongshizhi	zhongshizhide	眾矢之的	zhongshizhidi	眾矢之的	0	0	1	0	1	0
 4	自已戴上	matou	matouqin	馬頭琴	matouju	馬頭具	0	0	1	0	1	0
 4	蘇喬	congrong	congrongbu	從容不	congrongbupo	從容不迫	0	0	1	0	1	0
 4	蘇總	daleng	dalengzhan	打冷戰	dalengtian	大冷天	0	0	1	0	1	0
@@ -4254,8 +4254,8 @@
 4	讓你站在	bubai	bubaizhide	不敗之地	bubaizhidi	不敗之地	0	0	1	0	1	0
 4	讓你站在	bubaizhi	bubaizhide	不敗之地	bubaizhidi	不敗之地	0	0	1	0	1	0
 4	讓我	feichanggan	feichanggandong	非常感動	feichangganxie	非常感謝	0	1	0	1	0	1000
-4	讓我們	ruchi	ruchirukuang	如癡如狂	ruchiruzui	如癡如醉	0	0	1	0	1	0
-4	讓我們	ruchiru	ruchirukuang	如癡如狂	ruchiruzui	如癡如醉	0	0	1	0	1	0
+4	讓我們	ruchi	ruchirukuang	如痴如狂	ruchiruzui	如痴如醉	0	0	1	0	1	0
+4	讓我們	ruchiru	ruchirukuang	如痴如狂	ruchiruzui	如痴如醉	0	0	1	0	1	0
 4	記翟長衛	yuzhongxin	yuzhongxinzhang	語重心長	yuzhongxinchang	語重心長	0	0	1	0	1	0
 4	訪問	dongri	dongriben	東日本	dongriruanjian	東日軟件	0	0	1	0	1	0
 4	證明自己	suoyan	suoyanbujia	所言不假	suoyanfeixu	所言非虛	0	0	1	0	1	0
@@ -4321,7 +4321,7 @@
 4	那麼	yangshui	yangshuiguoduo	羊水過多	yangshuichuanci	羊水穿刺	0	0	1	0	1	0
 4	那我	gaiyi	gaiyigai	改一改	gaiyixia	改一下	0	0	1	0	1	0
 4	那我去	gaiyi	gaiyigai	改一改	gaiyixia	改一下	0	0	1	0	1	0
-4	那次去看	liwei	liweisi	李維斯	liweiaila	裏維埃拉	0	0	1	0	1	0
+4	那次去看	liwei	liweisi	李維斯	liweiaila	裡維埃拉	0	0	1	0	1	0
 4	那還	meiwan	meiwanmeile	沒完沒了	meiwanmeiliao	沒完沒了	0	0	1	0	1	0
 4	那還	meiwanmei	meiwanmeile	沒完沒了	meiwanmeiliao	沒完沒了	0	0	1	0	1	0
 4	那裏的	zoudi	zoudipan	走地盤	zoudiji	走地雞	0	0	1	0	1	0
@@ -4333,9 +4333,9 @@
 4	都開始用	yiweishen	yiweishenzhang	意味深長	yiweishenchang	意味深長	0	0	1	0	1	0
 4	都暖的叫	zhongyangkong	zhongyangkongdiao	中央空調	zhongyangkongtiao	中央空調	0	0	1	0	1	0
 4	醉在剛纔	rouqing	rouqingsishui	柔情似水	rouqingmiyi	柔情蜜意	0	0	1	0	1	0
-4	裏也念着	jiligu	jiligulu	嘰哩咕嚕	jiligulu	嘰裏咕嚕	0	0	1	0	1	0
+4	裏也念着	jiligu	jiligulu	嘰哩咕嚕	jiligulu	嘰裡咕嚕	0	0	1	0	1	0
 4	裏面都寫	dongri	dongriben	東日本	dongriruanjian	東日軟件	0	0	1	0	1	0
-4	針對全市	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣污染	0	0	1	0	1	0
+4	針對全市	daqiwu	daqiwuli	大氣物理	daqiwuran	大氣汙染	0	0	1	0	1	0
 4	錯以爲她	suoyan	suoyanbujia	所言不假	suoyanfeixu	所言非虛	0	0	1	0	1	0
 4	長喙黑	fengtouying	fengtouyingdiao	鳳頭鷹鵰	fengtouyingwu	鳳頭鸚鵡	0	0	1	0	1	0
 4	長篇大論	meiwan	meiwanmeile	沒完沒了	meiwanmeiliao	沒完沒了	0	0	1	0	1	0
