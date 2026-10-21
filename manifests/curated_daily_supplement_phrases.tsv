@@ -22902,3 +22902,6 @@
 纬纱	緯紗	0.400	weisha	exact_rank
 钉钉	釘釘	0.415	dingding	exact_rank
 梳妆	梳妝	0.930	shuzhuang	exact_rank
+# Words of an input method's candidates, 2026-10-21: 候选里, which the user asked for (houxuanli had no entry, and neither the character LM nor the correction model knows the phrase, so a phrase pieced from other words came first), and 候选项. Weighted as the blocks of 2026-10-20; 候选中, 候选词, 候选区, 候选字 and 候选栏 are too rare in the general text and the chat sentences. The keys held no word.
+候选里	候選裡	0.400	houxuanli	exact_rank_no_contains
+候选项	候選項	0.200	houxuanxiang	exact_rank_no_contains
