@@ -2410,3 +2410,27 @@ shuzhuang	梳妝	1
 # Words of an input method's candidates of 2026-10-21 (候选里 and its kind): the rank each has by weight among the words of its key.
 houxuanli	候選裡	1
 houxuanxiang	候選項	1
+
+# Everyday words of 2026-10-22 (春丽, 只对, 还对, 偏对, 我擦, 机王, 已打, 已答, 分库) and the existing words reweighted on their keys (才对, 拳王, 卧草, 蔡堆 ...): the rank each has by weight among the words of its key.
+chunli	春麗	2
+jieba	街霸	4
+zhidui	只對	1
+haidui	還對	1
+piandui	偏對	1
+caidui	才對	1
+woca	我擦	1
+jiwang	機王	3
+quanwang	拳王	2
+yida	已打	5
+yida	已答	6
+fenku	分庫	1
+fenkufenbiao	分庫分表	1
+fenqubiao	分區表	1
+duxiefenli	讀寫分離	1
+zhucongfuzhi	主從複製	1
+jiwang	既往	1
+yida	醫大	4
+yiban	一瓣	6
+weida	維達	3
+wocao	臥草	2
+caidui	蔡堆	2

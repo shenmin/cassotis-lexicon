@@ -4061,7 +4061,6 @@
 英文版	英文版	0.01
 两相	兩相	0.01
 教务处	教務處	0.01
-才对	纔對	0.01
 会员卡	會員卡	0.01
 折扣价	折扣價	0.01
 石子路	石子路	0.01
@@ -11410,7 +11409,6 @@
 办公室恋情	辦公室戀情	0.01
 硬性规定	硬性規定	0.01
 抱孙子	抱孫子	0.01
-一瓣	一瓣	0.01
 放寒假	放寒假	0.01
 牛羊肉卷	牛羊肉卷	0.01
 蟹棒	蟹棒	0.01
@@ -22905,3 +22903,110 @@
 # Words of an input method's candidates, 2026-10-21: 候选里, which the user asked for (houxuanli had no entry, and neither the character LM nor the correction model knows the phrase, so a phrase pieced from other words came first), and 候选项. Weighted as the blocks of 2026-10-20; 候选中, 候选词, 候选区, 候选字 and 候选栏 are too rare in the general text and the chat sentences. The keys held no word.
 候选里	候選裡	0.400	houxuanli	exact_rank_no_contains
 候选项	候選項	0.200	houxuanxiang	exact_rank_no_contains
+# Everyday words, 2026-10-22, the more frequent ones: an adverb before 对 (只对, 还对 read hai, 偏对, 又对, 先对, 也不对, 不太对), characters of fighting games (春丽, 维加, 特瑞), the exclamation 我擦, X王 of a champion (机王, 卷王, 球王, 赌王) and 销冠, 已 and 未 before a verb of messages and errands (已打, 已答, 已读, 已收到, 未回, 未付, 未处理) and words of split databases (分库, 分表, 建库, 备库). Weighted as the blocks of 2026-10-20 (occurrences where the word is no part of a longer dictionary word, nor before one that its last character begins); a requested word stays under a word of its key more than one and a half times as frequent (只对 under 支队, 春丽 under 纯利, 机王 under 既往 and 寄望, 已打 and 已答 under 一大). 已读 stays under 一睹 and 一堵, whose ranks a regression sample holds. At 2, on the page but below: 没对 and 球王, which went above 每对 and 球网 without a context.
+春丽	春麗	0.400	chunli	exact_rank_no_contains
+维加	維加	0.400	weijia	exact_rank_no_contains
+特瑞	特瑞	0.600	terui	exact_rank_no_contains
+只对	只對	0.492	zhidui	exact_rank_no_contains
+还对	還對	0.600	haidui	exact_rank_no_contains
+偏对	偏對	0.400	piandui	exact_rank_no_contains
+又对	又對	0.600	youdui	exact_rank_no_contains
+总对	總對	0.400	zongdui	exact_rank_no_contains
+竟对	竟對	0.400	jingdui	exact_rank_no_contains
+却对	卻對	0.600	quedui	exact_rank_no_contains
+仍对	仍對	0.600	rengdui	exact_rank_no_contains
+光对	光對	0.600	guangdui	exact_rank_no_contains
+更对	更對	0.400	gengdui	exact_rank_no_contains
+先对	先對	0.600	xiandui	exact_rank_no_contains
+再对	再對	0.002	zaidui	exact_rank_no_contains
+没对	沒對	0.002	meidui	exact_rank_no_contains
+也不对	也不對	0.600	yebudui	exact_rank_no_contains
+都不对	都不對	0.600	doubudui	exact_rank_no_contains
+就不对	就不對	0.400	jiubudui	exact_rank_no_contains
+不太对	不太對	0.400	butaidui	exact_rank_no_contains
+我擦	我擦	0.400	woca	exact_rank_no_contains
+机王	機王	0.172	jiwang	exact_rank_no_contains
+卷王	卷王	0.400	juanwang	exact_rank_no_contains
+销冠	銷冠	0.400	xiaoguan	exact_rank_no_contains
+歌王	歌王	0.193	gewang	exact_rank_no_contains
+球王	球王	0.002	qiuwang	exact_rank_no_contains
+赌王	賭王	0.400	duwang	exact_rank_no_contains
+已打	已打	0.401	yida	exact_rank_no_contains
+已答	已答	0.400	yida	exact_rank_no_contains
+已读	已讀	0.400	yidu	exact_rank_no_contains
+已办	已辦	0.278	yiban	exact_rank_no_contains
+已过	已過	0.600	yiguo	exact_rank_no_contains
+已收到	已收到	0.600	yishoudao	exact_rank_no_contains
+未回	未回	0.400	weihui	exact_rank_no_contains
+未收	未收	0.600	weishou	exact_rank_no_contains
+未付	未付	0.400	weifu	exact_rank_no_contains
+未交	未交	0.400	weijiao	exact_rank_no_contains
+未签	未簽	0.400	weiqian	exact_rank_no_contains
+未审	未審	0.600	weishen	exact_rank_no_contains
+未批	未批	0.400	weipi	exact_rank_no_contains
+未处理	未處理	0.600	weichuli	exact_rank_no_contains
+未提交	未提交	0.600	weitijiao	exact_rank_no_contains
+分库	分庫	0.400	fenku	exact_rank_no_contains
+分表	分表	0.600	fenbiao	exact_rank_no_contains
+备库	備庫	0.432	beiku	exact_rank_no_contains
+建库	建庫	0.400	jianku	exact_rank_no_contains
+总库	總庫	0.400	zongku	exact_rank_no_contains
+合库	合庫	0.400	heku	exact_rank_no_contains
+# Everyday words, 2026-10-22, the less frequent ones of the same kinds (专对, 偏偏对, 布兰卡, 草薙京, 我晕, 我的妈呀, 机皇, 标王, 已读不回, 未回复, 读库, 建表), by the same weights.
+古烈	古烈	0.080	gulie	exact_rank_no_contains
+豪鬼	豪鬼	0.080	haogui	exact_rank_no_contains
+布兰卡	布蘭卡	0.200	bulanka	exact_rank_no_contains
+草薙京	草薙京	0.200	caotijing	exact_rank_no_contains
+八神庵	八神庵	0.080	bashenan	exact_rank_no_contains
+不知火舞	不知火舞	0.200	buzhihuowu	exact_rank_no_contains
+专对	專對	0.200	zhuandui	exact_rank_no_contains
+太对	太對	0.200	taidui	exact_rank_no_contains
+偏偏对	偏偏對	0.080	pianpiandui	exact_rank_no_contains
+只对了	只對了	0.200	zhiduile	exact_rank_no_contains
+全对了	全對了	0.200	quanduile	exact_rank_no_contains
+都对了	都對了	0.200	douduile	exact_rank_no_contains
+我晕	我暈	0.200	woyun	exact_rank_no_contains
+我勒个去	我勒個去	0.080	wolegequ	exact_rank_no_contains
+我丢	我丟	0.200	wodiu	exact_rank_no_contains
+我的妈	我的媽	0.080	wodema	exact_rank_no_contains
+我的妈呀	我的媽呀	0.200	wodemaya	exact_rank_no_contains
+我的天哪	我的天哪	0.200	wodetianna	exact_rank_no_contains
+我服了	我服了	0.200	wofule	exact_rank_no_contains
+我吐了	我吐了	0.080	wotule	exact_rank_no_contains
+我醉了	我醉了	0.080	wozuile	exact_rank_no_contains
+机皇	機皇	0.200	jihuang	exact_rank_no_contains
+卡王	卡王	0.200	kawang	exact_rank_no_contains
+标王	標王	0.200	biaowang	exact_rank_no_contains
+楼王	樓王	0.200	louwang	exact_rank_no_contains
+车王	車王	0.200	chewang	exact_rank_no_contains
+船王	船王	0.200	chuanwang	exact_rank_no_contains
+性价比之王	性價比之王	0.200	xingjiabizhiwang	exact_rank_no_contains
+已拨	已撥	0.200	yibo	exact_rank_no_contains
+已领	已領	0.320	yiling	exact_rank_no_contains
+已回复	已回覆	0.080	yihuifu	exact_rank_no_contains
+已读不回	已讀不回	0.200	yidubuhui	exact_rank_no_contains
+已预约	已預約	0.200	yiyuyue	exact_rank_no_contains
+未答	未答	0.200	weida	exact_rank_no_contains
+未打	未打	0.201	weida	exact_rank_no_contains
+未填	未填	0.200	weitian	exact_rank_no_contains
+未回复	未回覆	0.200	weihuifu	exact_rank_no_contains
+未付款	未付款	0.200	weifukuan	exact_rank_no_contains
+未发货	未發貨	0.200	weifahuo	exact_rank_no_contains
+未打卡	未打卡	0.080	weidaka	exact_rank_no_contains
+建表	建表	0.200	jianbiao	exact_rank_no_contains
+库表	庫表	0.080	kubiao	exact_rank_no_contains
+读库	讀庫	0.200	duku	exact_rank_no_contains
+# Existing words on the keys of the batch of 2026-10-22: words at an import weight weighted by the same rules (才对, 街霸, 拳王, 分库分表, 分区表, 读写分离, 主从复制), so that a new word does not go above a commoner one whose weight says nothing (既往 above 机王, 医大 above 已打, 一瓣 above 已办, 维达 above 未打), and two far above their frequency set under the commoner word of their key (卧草 under 卧槽, the place name 蔡堆 under 才对); 臥草, 醫大 and 維達 were missing from the traditional dictionary and are added there.
+街霸	街霸	0.279	jieba	exact_rank
+才对	才對	0.600	caidui	exact_rank
+拳王	拳王	0.600	quanwang	exact_rank
+分库分表	分庫分表	0.200	fenkufenbiao	exact_rank
+分区表	分區表	0.400	fenqubiao	exact_rank
+读写分离	讀寫分離	0.200	duxiefenli	exact_rank
+主从复制	主從複製	0.200	zhucongfuzhi	exact_rank
+既往	既往	0.600	jiwang	exact_rank
+医大	醫大	0.402	yida	exact_rank
+一瓣	一瓣	0.279	yiban	exact_rank
+维达	維達	0.400	weida	exact_rank
+卧草	臥草	0.050	wocao	exact_rank
+蔡堆	蔡堆	0.050	caidui	exact_rank

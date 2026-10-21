@@ -14120,9 +14120,9 @@ caidongfan	蔡東藩	167
 caidou	菜豆	387
 caiduan	裁斷	947
 caiduan	綵緞	10
-caidui	蔡堆	757
+caidui	蔡堆	50
 caidui	猜對	10
-caidui	才對	10
+caidui	才對	600
 caidunzi	菜墩子	379
 caiduo	猜度	531
 caiduo	裁奪	400
@@ -65874,7 +65874,7 @@ jieaobushun	桀驁不順	258
 jieaobuxun	桀驁不馴	779
 jieaobuxun	桀驁不遜	352
 jieaoyanshen	桀驁眼神	10
-jieba	街霸	121
+jieba	街霸	279
 jieba	結巴	88
 jiebai	結拜	918
 jiebai	潔白	397
@@ -71656,7 +71656,7 @@ jiwan	幾碗	700
 jiwan	幾萬	700
 jiwancifen	己烷雌酚	540
 jiwang	寄望	236
-jiwang	既往	149
+jiwang	既往	600
 jiwangbujiu	既往不咎	475
 jiwangkailai	繼往開來	521
 jiwangshi	既往史	470
@@ -110378,7 +110378,7 @@ quanwairen	圈外人	280
 quanwaixianzicexu	全外顯子測序	700
 quanwan	荃灣	161
 quanwang	全忘	1000
-quanwang	拳王	1
+quanwang	拳王	600
 quanwanggongdi	全網公敵	538
 quanwei	權位	1000
 quanwei	勸慰	507
@@ -161032,7 +161032,7 @@ yiban	一版	700
 yiban	一半	442
 yiban	一板	280
 yiban	一班	280
-yiban	一瓣	10
+yiban	一瓣	279
 yiban	一斑	1
 yiban'eryan	一般而言	461
 yibanban	一般般	377
@@ -192948,7 +192948,7 @@ duwenben	讀文本	40	no_contains
 duwenjian	讀文件	40	no_contains
 duxiaoyuedanzaimian	度小月擔仔麵	20	no_contains
 duxiecitou	讀寫磁頭	40	no_contains
-duxiefenli	讀寫分離	40	no_contains
+duxiefenli	讀寫分離	200	no_contains
 duxiekongzhidianlu	讀寫控制電路	20	no_contains
 duxiesuo	讀寫鎖	40	no_contains
 duxiewenjian	讀寫文件	40	no_contains
@@ -194072,7 +194072,7 @@ fenjujifengyake	分距姬蜂亞科	20	no_contains
 fenjuling	分居令	40	no_contains
 fenkuaichazhao	分塊查找	40	no_contains
 fenkuaisuanfa	分塊算法	40	no_contains
-fenkufenbiao	分庫分表	40	no_contains
+fenkufenbiao	分庫分表	200	no_contains
 fenlanlapuhedequan	芬蘭拉普赫德犬	20	no_contains
 fenlansimaoquan	芬蘭絲毛犬	20	no_contains
 fenlanxunlu	芬蘭馴鹿	40	no_contains
@@ -194094,7 +194094,7 @@ fenpimianjin	粉皮面筋	40	no_contains
 fenpindian	分頻點	40	no_contains
 fenpizi	粉皮子	40	no_contains
 fenqijiaochong	分歧焦蟲	40	no_contains
-fenqubiao	分區表	40	no_contains
+fenqubiao	分區表	400	no_contains
 fensankongzhi	分散控制	40	no_contains
 fenshichuli	分時處理	40	no_contains
 fenshidiaodu	分時調度	40	no_contains
@@ -221518,7 +221518,7 @@ zhuchangfen	豬腸粉	40	no_contains
 zhuchedeng	駐車燈	40	no_contains
 zhuchezhidongzhishideng	駐車制動指示燈	20	no_contains
 zhucongdong	主從動	40	no_contains
-zhucongfuzhi	主從複製	40	no_contains
+zhucongfuzhi	主從複製	200	no_contains
 zhucongqiehuan	主從切換	40	no_contains
 zhucongtongbu	主從同步	40	no_contains
 zhudachang	豬大腸	40	no_contains
@@ -234983,3 +234983,97 @@ zhuzhuang	柱狀	600	no_contains
 zhuzhuang	珠狀	400	no_contains
 houxuanli	候選裡	400	no_contains
 houxuanxiang	候選項	200	no_contains
+bashenan	八神庵	80	no_contains
+beiku	備庫	432	no_contains
+biaowang	標王	200	no_contains
+bulanka	布蘭卡	200	no_contains
+butaidui	不太對	400	no_contains
+buzhihuowu	不知火舞	200	no_contains
+caotijing	草薙京	200	no_contains
+chewang	車王	200	no_contains
+chuanwang	船王	200	no_contains
+chunli	春麗	400	no_contains
+doubudui	都不對	600	no_contains
+douduile	都對了	200	no_contains
+duku	讀庫	200	no_contains
+duwang	賭王	400	no_contains
+fenbiao	分表	600	no_contains
+fenku	分庫	400	no_contains
+gengdui	更對	400	no_contains
+gewang	歌王	193	no_contains
+guangdui	光對	600	no_contains
+gulie	古烈	80	no_contains
+haidui	還對	600	no_contains
+haogui	豪鬼	80	no_contains
+heku	合庫	400	no_contains
+jianbiao	建表	200	no_contains
+jianku	建庫	400	no_contains
+jihuang	機皇	200	no_contains
+jingdui	竟對	400	no_contains
+jiubudui	就不對	400	no_contains
+jiwang	機王	172	no_contains
+juanwang	卷王	400	no_contains
+kawang	卡王	200	no_contains
+kubiao	庫表	80	no_contains
+louwang	樓王	200	no_contains
+meidui	沒對	2	no_contains
+piandui	偏對	400	no_contains
+pianpiandui	偏偏對	80	no_contains
+qiuwang	球王	2	no_contains
+quanduile	全對了	200	no_contains
+quedui	卻對	600	no_contains
+rengdui	仍對	600	no_contains
+taidui	太對	200	no_contains
+terui	特瑞	600	no_contains
+weichuli	未處理	600	no_contains
+weida	未打	201	no_contains
+weida	未答	200	no_contains
+weida	維達	400
+weidaka	未打卡	80	no_contains
+weifahuo	未發貨	200	no_contains
+weifu	未付	400	no_contains
+weifukuan	未付款	200	no_contains
+weihui	未回	400	no_contains
+weihuifu	未回覆	200	no_contains
+weijia	維加	400	no_contains
+weijiao	未交	400	no_contains
+weipi	未批	400	no_contains
+weiqian	未簽	400	no_contains
+weishen	未審	600	no_contains
+weishou	未收	600	no_contains
+weitian	未填	200	no_contains
+weitijiao	未提交	600	no_contains
+woca	我擦	400	no_contains
+wocao	臥草	50
+wodema	我的媽	80	no_contains
+wodemaya	我的媽呀	200	no_contains
+wodetianna	我的天哪	200	no_contains
+wodiu	我丟	200	no_contains
+wofule	我服了	200	no_contains
+wolegequ	我勒個去	80	no_contains
+wotule	我吐了	80	no_contains
+woyun	我暈	200	no_contains
+wozuile	我醉了	80	no_contains
+xiandui	先對	600	no_contains
+xiaoguan	銷冠	400	no_contains
+xingjiabizhiwang	性價比之王	200	no_contains
+yebudui	也不對	600	no_contains
+yiban	已辦	278	no_contains
+yibo	已撥	200	no_contains
+yida	已打	401	no_contains
+yida	已答	400	no_contains
+yida	醫大	402
+yidu	已讀	400	no_contains
+yidubuhui	已讀不回	200	no_contains
+yiguo	已過	600	no_contains
+yihuifu	已回覆	80	no_contains
+yiling	已領	320	no_contains
+yishoudao	已收到	600	no_contains
+yiyuyue	已預約	200	no_contains
+youdui	又對	600	no_contains
+zaidui	再對	2	no_contains
+zhidui	只對	492	no_contains
+zhiduile	只對了	200	no_contains
+zhuandui	專對	200	no_contains
+zongdui	總對	400	no_contains
+zongku	總庫	400	no_contains
