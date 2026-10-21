@@ -18,14 +18,14 @@ Cassotis IME 的詞庫建置與發布儲存庫。
 - 支援以外部來源建立詞庫，以及可重現的詞庫生成流程。
 - 確保來源標示檔案與生成產物保持一致。
 
-## 目前詞庫快照（2026-10-20 建置）
+## 目前詞庫快照（2026-10-21 建置）
 
 | 檔案 | 變體 | 詞條數 |
 |------|------|--------|
-| `data/generated/dict_clean_sc.txt` | 簡體主詞庫 | 233,847 |
-| `data/generated/dict_clean_tc.txt` | 繁體主詞庫 | 234,450 |
+| `data/generated/dict_clean_sc.txt` | 簡體主詞庫 | 234,375 |
+| `data/generated/dict_clean_tc.txt` | 繁體主詞庫 | 234,983 |
 | `data/generated/dict_unihan_sc.txt` | 簡體單字（Unihan） | 23,916 |
-| `data/generated/dict_unihan_tc.txt` | 繁體單字（Unihan） | 24,165 |
+| `data/generated/dict_unihan_tc.txt` | 繁體單字（Unihan） | 24,179 |
 
 繁體詞庫的多字詞統一採用臺灣用字（為、裡、著、群、吃）；單字保留異體，仍可刻意輸入。字形對照見 [臺灣用字表](manifests/traditional_taiwan_forms.tsv)。
 

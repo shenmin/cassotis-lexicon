@@ -75,7 +75,8 @@ class DailyCuoXiuShaShuiTests(unittest.TestCase):
         self.assertTrue(all(row[3] >= 400 for row in common))
         self.assertTrue(all(row[3] < 400 for row in less))
         self.assertEqual(len(ROWS), len({(row[0], row[1]) for row in ROWS}))
-        # 谁 is shui in the lexicon's X谁 words; 念 stays 念 in traditional.
+        # 谁 is shui in these rows (the shei rows of the same words came on
+        # 2026-10-20: test_daily_x_shui_phrases); 念 stays 念 in traditional.
         self.assertFalse(any(row[0].endswith("shei") for row in ROWS))
         self.assertFalse(any("唸" in row[2] for row in ROWS))
 
