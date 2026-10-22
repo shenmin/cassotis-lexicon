@@ -6340,7 +6340,7 @@ baozha	爆炸	551
 baozhadanren	爆炸彈人	538
 baozhai	堡寨	441
 baozhali	爆炸力	446
-baozhan	報站	10
+baozhan	報站	400
 baozhang	保障	1000
 baozhang	暴漲	660
 baozhang	保長	341
@@ -21868,7 +21868,7 @@ chuzai	處在	481
 chuzhan	出戰	757
 chuzhan	初戰	699
 chuzhan	初綻	280
-chuzhan	出站	10
+chuzhan	出站	739
 chuzhang	處長	719
 chuzhangzehaifujiaonang	除障則海甫膠囊	650
 chuzhangzehaifupian	除障則海甫片	679
@@ -26327,7 +26327,7 @@ daozang	道藏	198
 daozao	倒灶	396
 daozei	盜賊	437
 daozeizhihai	盜賊之海	538
-daozhan	到站	10
+daozhan	到站	600
 daozhang	到賬	700
 daozhang	道長	293
 daozhangshijian	到賬時間	280
@@ -29616,7 +29616,7 @@ difangzi	地方自	556
 difangzizhi	地方自治	597
 difei	底肥	293
 difen	低分	560
-difengxian	低風險	10
+difengxian	低風險	600
 difenzigansu	低分子肝素	610
 difenzilianggansu	低分子量肝素	664
 difenzilianggansugaizhusheye	低分子量肝素鈣注射液	680
@@ -30955,8 +30955,8 @@ diwangqie	帝王企鵝	260
 diwangxie	帝王蟹	232
 diwei	地位	1000
 diwei	低微	584
-diwei	地委	1
-diwei	帝位	1
+diwei	地委	601
+diwei	帝位	600
 diweibucuoshang	骶尾部挫傷	610
 diwen	低溫	456
 diwenbaocun	低溫保存	570
@@ -72240,8 +72240,8 @@ jizha	機詐	323
 jizhai	極窄	1000
 jizhan	激戰	1000
 jizhan	擠佔	237
-jizhan	機戰	23
-jizhan	基站	1
+jizhan	機戰	200
+jizhan	基站	999
 jizhan'aoleika	激戰奧雷卡	613
 jizhandejunchengbao	激戰德軍城堡	648
 jizhang	幾張	700
@@ -116149,7 +116149,7 @@ sanzang	三藏	428
 sanzangfashi	三藏法師	260
 sanzha'ertan	三札爾毯	680
 sanzhaertan	三札爾毯	680
-sanzhan	三站	10
+sanzhan	三站	400
 sanzhang	三張	1000
 sanzhe	三者	10
 sanzhen	三振	319
@@ -124217,7 +124217,7 @@ shiyan	飾演	494
 shiyan	十堰	435
 shiyan	失言	314
 shiyan	試演	185
-shiyan	誓言	13
+shiyan	誓言	493
 shiyan	食言	1
 shiyan'erfei	食言而肥	429
 shiyanban	實驗班	800
@@ -179837,8 +179837,8 @@ zhongwang	眾望	257
 zhongwang	重望	215
 zhongwangsuogui	眾望所歸	469
 zhongwanxue	中脘穴	915
-zhongwei	中尉	135
-zhongwei	眾位	10
+zhongwei	中尉	601
+zhongwei	眾位	401
 zhongweimoxing	中位模型	570
 zhongweiqingwa'erming	鐘為青蛙而鳴	793
 zhongweiqingwa'erming	鍾為青蛙而鳴	371
@@ -235077,3 +235077,65 @@ zhiduile	只對了	200	no_contains
 zhuandui	專對	200	no_contains
 zongdui	總對	400	no_contains
 zongku	總庫	400	no_contains
+bazhan	八站	400	no_contains
+dibazhan	第八站	400	no_contains
+dierzhan	第二站	600	no_contains
+dijiuzhan	第九站	400	no_contains
+diliuzhan	第六站	400	no_contains
+diqizhan	第七站	400	no_contains
+disanzhan	第三站	400	no_contains
+dishiyan	低時延	400	no_contains
+dishizhan	第十站	400	no_contains
+disizhan	第四站	400	no_contains
+diwei	低危	400	no_contains
+diwuzhan	第五站	400	no_contains
+diyanshi	低延時	400	no_contains
+diyizhan	第一站	600	no_contains
+gaowei	高危	1000	no_contains
+gaoweidiqu	高危地區	80	no_contains
+gaoweier	高危兒	200	no_contains
+gaoweihangye	高危行業	400	no_contains
+gaoweihuanzhe	高危患者	400	no_contains
+gaoweiloudong	高危漏洞	200	no_contains
+gaoweiyinsu	高危因素	400	no_contains
+gaoweizhiye	高危職業	200	no_contains
+gaoyanshi	高延時	400	no_contains
+gezhan	各站	402	no_contains
+guozhan	過站	400	no_contains
+huanchengzhan	換乘站	600	no_contains
+jiuzhan	九站	400	no_contains
+jizhan	幾站	201	no_contains
+liangzhan	兩站	600	no_contains
+lingyanshi	零延時	80	no_contains
+liuzhan	六站	400	no_contains
+meizhan	每站	281	no_contains
+mozhan	末站	400	no_contains
+qianyizhan	前一站	200	no_contains
+qidianzhan	起點站	400	no_contains
+qizhan	七站	400	no_contains
+shangyizhan	上一站	200	no_contains
+shifazhan	始發站	400	no_contains
+shiyan	時延	381	no_contains
+shizhan	十站	561	no_contains
+shouzhan	首站	600	no_contains
+sizhan	四站	400	no_contains
+wangluoyanchi	網絡延遲	400	no_contains
+wangluoyanshi	網絡延時	200	no_contains
+wuyanchi	無延遲	200	no_contains
+wuyanshi	無延時	80	no_contains
+wuzhan	五站	400	no_contains
+xiazhan	下站	600	no_contains
+xucun	續存	200	no_contains
+xudai	續貸	600	no_contains
+xujiao	續交	401	no_contains
+xujiao	續繳	400	no_contains
+xupin	續聘	400	no_contains
+xuqi	續期	600	no_contains
+xuzhan	續展	400	no_contains
+zhongfengxian	中風險	600	no_contains
+zhongwei	中危	400	no_contains
+zhongwei	中衛	600
+zidongxuding	自動續訂	80	no_contains
+zidongxufei	自動續費	400	no_contains
+zidongxuqi	自動續期	200	no_contains
+zuoguozhan	坐過站	200	no_contains

@@ -7184,7 +7184,6 @@
 其上	其上	0.01
 矮墙	矮牆	0.01
 如练	如練	0.01
-到站	到站	0.01
 昏黄	昏黃	0.01
 隐入	隱入	0.01
 走来	走來	0.01
@@ -8148,7 +8147,6 @@
 十七岁	十七歲	0.01
 强强	強強	0.01
 女主	女主	0.01
-出站	出站	0.01
 特聘	特聘	0.01
 女二	女二	0.01
 改不了	改不了	0.01
@@ -8180,7 +8178,6 @@
 考不上	考不上	0.01
 踏出	踏出	0.01
 展览品	展覽品	0.01
-众位	衆位	0.01
 偏胖	偏胖	0.01
 小肚子	小肚子	0.01
 偷瞄	偷瞄	0.01
@@ -9174,7 +9171,6 @@
 抄作业	抄作業	0.01
 挑眉下颌	挑眉下頜	0.01
 微绷	微繃	0.01
-报站	報站	0.01
 奥林匹克竞赛	奧林匹克競賽	0.01
 好运气	好運氣	0.01
 大受	大受	0.01
@@ -9329,7 +9325,6 @@
 侧栏	側欄	0.01
 留评	留評	0.01
 安全系数	安全係數	0.01
-三站	三站	0.01
 跑没了	跑沒了	0.01
 编发	編髮	0.01
 长歪	長歪	0.01
@@ -10385,7 +10380,6 @@
 柴阳	柴陽	0.01
 宫斗	宮鬥	0.01
 主战场	主戰場	0.01
-低风险	低風險	0.01
 高回报	高回報	0.01
 无死角	無死角	0.01
 逻辑层	邏輯層	0.01
@@ -23010,3 +23004,80 @@
 维达	維達	0.400	weida	exact_rank
 卧草	臥草	0.050	wocao	exact_rank
 蔡堆	蔡堆	0.050	caidui	exact_rank
+# Everyday words, 2026-10-22 (stations, risk levels, latency, renewals), the more frequent ones: stops of a ride or a journey (第一站 to 第十站, 两站 and 四站 to 十站, 各站, 下站, 首站, 换乘站, 过站), levels of a risk (高危, 中危, 低危, 高危行业, 中风险), latency (高延时, 低延时, 时延, 低时延, 网络延迟) and renewals (续期, 自动续费, 续贷, 续缴, 续聘, 续展). Weighted as the blocks of 2026-10-20 (occurrences where the word is no part of a longer dictionary word, nor before one that its last character begins); a requested word stays under a word of its key more than one and a half times as frequent (八站 under 霸占, 十站 under 实战, 四站 under 死战, 高危 under 高位).
+第一站	第一站	0.600	diyizhan	exact_rank_no_contains
+第二站	第二站	0.600	dierzhan	exact_rank_no_contains
+第三站	第三站	0.400	disanzhan	exact_rank_no_contains
+第四站	第四站	0.400	disizhan	exact_rank_no_contains
+第五站	第五站	0.400	diwuzhan	exact_rank_no_contains
+第六站	第六站	0.400	diliuzhan	exact_rank_no_contains
+第七站	第七站	0.400	diqizhan	exact_rank_no_contains
+第八站	第八站	0.400	dibazhan	exact_rank_no_contains
+第九站	第九站	0.400	dijiuzhan	exact_rank_no_contains
+第十站	第十站	0.400	dishizhan	exact_rank_no_contains
+两站	兩站	0.600	liangzhan	exact_rank_no_contains
+四站	四站	0.400	sizhan	exact_rank_no_contains
+五站	五站	0.400	wuzhan	exact_rank_no_contains
+六站	六站	0.400	liuzhan	exact_rank_no_contains
+七站	七站	0.400	qizhan	exact_rank_no_contains
+八站	八站	0.400	bazhan	exact_rank_no_contains
+九站	九站	0.400	jiuzhan	exact_rank_no_contains
+十站	十站	0.561	shizhan	exact_rank_no_contains
+各站	各站	0.402	gezhan	exact_rank_no_contains
+下站	下站	0.600	xiazhan	exact_rank_no_contains
+首站	首站	0.600	shouzhan	exact_rank_no_contains
+末站	末站	0.400	mozhan	exact_rank_no_contains
+起点站	起點站	0.400	qidianzhan	exact_rank_no_contains
+始发站	始發站	0.400	shifazhan	exact_rank_no_contains
+换乘站	換乘站	0.600	huanchengzhan	exact_rank_no_contains
+过站	過站	0.400	guozhan	exact_rank_no_contains
+高危	高危	1.000	gaowei	exact_rank_no_contains
+中危	中危	0.400	zhongwei	exact_rank_no_contains
+低危	低危	0.400	diwei	exact_rank_no_contains
+高危行业	高危行業	0.400	gaoweihangye	exact_rank_no_contains
+高危因素	高危因素	0.400	gaoweiyinsu	exact_rank_no_contains
+高危患者	高危患者	0.400	gaoweihuanzhe	exact_rank_no_contains
+中风险	中風險	0.600	zhongfengxian	exact_rank_no_contains
+高延时	高延時	0.400	gaoyanshi	exact_rank_no_contains
+低延时	低延時	0.400	diyanshi	exact_rank_no_contains
+时延	時延	0.381	shiyan	exact_rank_no_contains
+低时延	低時延	0.400	dishiyan	exact_rank_no_contains
+网络延迟	網絡延遲	0.400	wangluoyanchi	exact_rank_no_contains
+续期	續期	0.600	xuqi	exact_rank_no_contains
+自动续费	自動續費	0.400	zidongxufei	exact_rank_no_contains
+续贷	續貸	0.600	xudai	exact_rank_no_contains
+续缴	續繳	0.400	xujiao	exact_rank_no_contains
+续交	續交	0.401	xujiao	exact_rank_no_contains
+续聘	續聘	0.400	xupin	exact_rank_no_contains
+续展	續展	0.400	xuzhan	exact_rank_no_contains
+# Everyday words, 2026-10-22 (stations, risk levels, latency, renewals), the less frequent ones of the same kinds (几站, 每站, 上一站, 坐过站, 高危漏洞, 高危儿, 零延时, 无延迟, 网络延时, 自动续期, 续存), by the same weights.
+几站	幾站	0.201	jizhan	exact_rank_no_contains
+每站	每站	0.281	meizhan	exact_rank_no_contains
+上一站	上一站	0.200	shangyizhan	exact_rank_no_contains
+前一站	前一站	0.200	qianyizhan	exact_rank_no_contains
+坐过站	坐過站	0.200	zuoguozhan	exact_rank_no_contains
+高危漏洞	高危漏洞	0.200	gaoweiloudong	exact_rank_no_contains
+高危职业	高危職業	0.200	gaoweizhiye	exact_rank_no_contains
+高危地区	高危地區	0.080	gaoweidiqu	exact_rank_no_contains
+高危儿	高危兒	0.200	gaoweier	exact_rank_no_contains
+零延时	零延時	0.080	lingyanshi	exact_rank_no_contains
+无延时	無延時	0.080	wuyanshi	exact_rank_no_contains
+无延迟	無延遲	0.200	wuyanchi	exact_rank_no_contains
+网络延时	網絡延時	0.200	wangluoyanshi	exact_rank_no_contains
+自动续期	自動續期	0.200	zidongxuqi	exact_rank_no_contains
+自动续订	自動續訂	0.080	zidongxuding	exact_rank_no_contains
+续存	續存	0.200	xucun	exact_rank_no_contains
+# Existing words on the keys of the batch of 2026-10-22 (stations, risk levels, latency, renewals): words at an import weight weighted by the same rules (三站, 到站, 出站, 报站, 低风险), so that a new word does not go above a commoner one whose weight says nothing (基站 above 几站, 中尉 and 中卫 above 中危, 地委 above 低危, 誓言 above 时延); 中衛 was missing from the traditional dictionary and is added there.
+三站	三站	0.400	sanzhan	exact_rank
+到站	到站	0.600	daozhan	exact_rank
+出站	出站	0.739	chuzhan	exact_rank
+报站	報站	0.400	baozhan	exact_rank
+低风险	低風險	0.600	difengxian	exact_rank
+基站	基站	0.999	jizhan	exact_rank
+机战	機戰	0.200	jizhan	exact_rank
+中尉	中尉	0.601	zhongwei	exact_rank
+众位	眾位	0.401	zhongwei	exact_rank
+中卫	中衛	0.600	zhongwei	exact_rank
+地委	地委	0.601	diwei	exact_rank
+帝位	帝位	0.600	diwei	exact_rank
+誓言	誓言	0.493	shiyan	exact_rank
