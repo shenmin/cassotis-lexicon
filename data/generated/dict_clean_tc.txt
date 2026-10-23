@@ -5299,7 +5299,7 @@ bantu	半途	351
 bantu'erfei	半途而廢	481
 bantuerfei	半途而廢	481
 bantuibanjiu	半推半就	599
-bantuixiu	半退休	10
+bantuixiu	半退休	200
 bantuo	辦妥	317
 bantuochan	半脫產	377
 bantusitan	班圖斯坦	218
@@ -9401,7 +9401,7 @@ biguan	閉關	1000
 biguan	閉館	1
 biguanmian	筆管面	252
 biguansuoguo	閉關鎖國	455
-biguanxiulian	閉關修煉	10
+biguanxiulian	閉關修煉	200
 biguanxue	髀關穴	470
 biguanzhengce	閉關政策	387
 biguanzishou	閉關自守	489
@@ -154253,7 +154253,7 @@ xiujueshouti	嗅覺受體	570
 xiujuezhang'ai	嗅覺障礙	570
 xiujuezhangai	嗅覺障礙	570
 xiuke	休克	280
-xiuke	修課	56
+xiuke	修課	279
 xiukefei	休克肺	470
 xiukexingfeiyan	休克型肺炎	610
 xiukou	袖口	560
@@ -154283,7 +154283,7 @@ xiuluo	修羅	194
 xiuluochang	修羅場	165
 xiuluozhimen	修羅之門	538
 xiulvche	休旅車	232
-xiuman	修滿	10
+xiuman	修滿	600
 xiumei	秀美	909
 xiumei	修沒	280
 xiumian	休眠	1000
@@ -154332,7 +154332,7 @@ xiushenjingjibing	嗅神經疾病	640
 xiushenjingsunshang	嗅神經損傷	640
 xiushi	修飾	1000
 xiushi	鏽蝕	58
-xiushi	修士	1
+xiushi	修士	600
 xiushidun	休士頓	198
 xiushihen	修飾痕	458
 xiushihenji	修飾痕跡	538
@@ -154359,7 +154359,7 @@ xiutan	嗅探	428
 xiutanquan	嗅探犬	228
 xiutao	袖套	305
 xiuting	秀挺	10
-xiuting	休庭	1
+xiuting	休庭	200
 xiutong	袖筒	395
 xiutongr	袖筒兒	230
 xiutu	修圖	198
@@ -154416,8 +154416,8 @@ xiuyang	休養	676
 xiuyangshengxi	休養生息	500
 xiuyanmanzuzizhixian	岫岩滿族自治縣	334
 xiuyanxian	岫岩縣	104
-xiuye	修業	47
-xiuye	休業	10
+xiuye	修業	600
+xiuye	休業	200
 xiuyin	修音	198
 xiuying	秀英	612
 xiuyingqu	秀英區	198
@@ -235324,3 +235324,69 @@ tianyixia	填一下	200	no_contains
 xiabian	瞎編	1
 xiacaoxin	瞎操心	200	no_contains
 xiaxie	瞎寫	200	no_contains
+baoxiu	包修	400	no_contains
+biexiu	別修	400	no_contains
+buxiu	補修	180	no_contains
+danxiu	單休	600	no_contains
+daxiaozhou	大小週	200	no_contains
+douxiu	都修	200	no_contains
+faxiu	法修	400	no_contains
+gaixiu	該修	80	no_contains
+gongxiu	共修	384	no_contains
+haixiu	還修	200	no_contains
+haoxiu	好修	200	no_contains
+huixiu	會修	400	no_contains
+jianxiu	兼修	400	no_contains
+jianxiu	劍修	80	no_contains
+jingxiu	精修	397	no_contains
+jingxiu	靜修	396	no_contains
+kuaixiu	快修	400	no_contains
+kuxiu	苦修	400	no_contains
+laixiu	來修	400	no_contains
+lingxiu	靈修	486	no_contains
+meixiu	沒休	80	no_contains
+mianxiu	免修	400	no_contains
+naquxiu	拿去修	200	no_contains
+neixiu	內修	400	no_contains
+nengxiu	能修	400	no_contains
+nianxiu	年休	400	no_contains
+nianxiujia	年休假	600	no_contains
+qianxinxiulian	潛心修煉	200	no_contains
+qingxiu	清修	400	no_contains
+quxiu	去修	600	no_contains
+sanxiu	散修	80	no_contains
+shuangxiu	雙休	184
+tongxiu	同修	600	no_contains
+wanxiu	晚休	135	no_contains
+wanxiu	晚修	400	no_contains
+wanzixiu	晚自修	200	no_contains
+wuxiushijian	午休時間	600	no_contains
+xianxiu	先修	600	no_contains
+xianxiuke	先修課	200	no_contains
+xiaoxiu	小休	200	no_contains
+xiaoxiu	小修	400	no_contains
+xiubingjia	休病假	80	no_contains
+xiubuliao	修不了	200	no_contains
+xiuchanjia	休產假	400	no_contains
+xiuhaole	修好了	600	no_contains
+xiuliangtian	休兩天	80	no_contains
+xiunianjia	休年假	400	no_contains
+xiuwan	休完	400	no_contains
+xiuwan	修完	600	no_contains
+xiuwanle	修完了	200	no_contains
+xiuxiu	修修	199	no_contains
+xiuyitian	休一天	400	no_contains
+xiuyixia	修一下	200	no_contains
+xiuyixiu	修一修	200	no_contains
+yaoxiu	要修	600	no_contains
+yixiu	已休	80	no_contains
+yuexiu	月休	355	no_contains
+zaodianxiuxi	早點休息	600	no_contains
+zaoxiu	早休	400	no_contains
+zaoxiu	早修	401	no_contains
+zaoxiuxi	早休息	200	no_contains
+zaozixiu	早自修	80	no_contains
+zhengxiu	正修	200	no_contains
+zhongxiu	中修	400	no_contains
+zhouxiu	週休	400	no_contains
+zijixiu	自己修	400	no_contains

@@ -8693,7 +8693,6 @@
 纪念照	紀念照	0.01
 谨遵医嘱	謹遵醫囑	0.01
 复健	復健	0.01
-半退休	半退休	0.01
 传道解惑	傳道解惑	0.01
 支撑力	支撐力	0.01
 放话	放話	0.01
@@ -10555,7 +10554,6 @@
 赞叹不绝	讚嘆不絕	0.01
 一杯子	一杯子	0.01
 上一辈	上一輩	0.01
-修满	修滿	0.01
 视频分类	視頻分類	0.01
 涮肉	涮肉	0.01
 炸烧饼	炸燒餅	0.01
@@ -10889,7 +10887,6 @@
 沐浴焚香	沐浴焚香	0.01
 精神小伙	精神小夥	0.01
 自我陈述	自我陳述	0.01
-休业	休業	0.01
 小广告	小廣告	0.01
 软毯	軟毯	0.01
 豌豆公主	豌豆公主	0.01
@@ -10946,7 +10943,6 @@
 主卧	主臥	0.01
 花语	花語	0.01
 函评	函評	0.01
-闭关修炼	閉關修煉	0.01
 嫩黄	嫩黃	0.01
 肥嫩	肥嫩	0.01
 尊重感	尊重感	0.01
@@ -23274,3 +23270,80 @@
 瞎编	瞎編	0.001	xiabian	exact_rank
 瞎扯	瞎扯	0.400	xiache	exact_rank
 瞎折腾	瞎折騰	0.400	xiazheteng	exact_rank
+# Everyday words, 2026-10-23 (修 and 休), the more frequent ones: 修 "repair" after an adverb or a modal and with its result (先修, 别修, 早修, 要修, 能修, 去修, 自己修, 修好了, 修完, 快修, 小修, 免修, 兼修), 晚修 for the evening self-study, spiritual practice (灵修, 同修, 苦修, 清修, 静修, 内修, 共修) and rest (早休, 晚休, 单休, 年休, 周休, 月休, 休完, 休一天, 年休假, 休年假, 休产假, 早点休息, 午休时间). Weighted as the blocks of 2026-10-20 (occurrences where the word is no part of a longer dictionary word, nor before one that its last character begins, nor after one that its first character ends); a requested word leads a place name it is more frequent than (晚修 above 万秀) and stays under a commoner word of its key (灵修 under 领袖, 晚休 under 万秀).
+先修	先修	0.600	xianxiu	exact_rank_no_contains
+别修	別修	0.400	biexiu	exact_rank_no_contains
+早修	早修	0.401	zaoxiu	exact_rank_no_contains
+晚修	晚修	0.400	wanxiu	exact_rank_no_contains
+要修	要修	0.600	yaoxiu	exact_rank_no_contains
+能修	能修	0.400	nengxiu	exact_rank_no_contains
+会修	會修	0.400	huixiu	exact_rank_no_contains
+快修	快修	0.400	kuaixiu	exact_rank_no_contains
+去修	去修	0.600	quxiu	exact_rank_no_contains
+来修	來修	0.400	laixiu	exact_rank_no_contains
+自己修	自己修	0.400	zijixiu	exact_rank_no_contains
+修好了	修好了	0.600	xiuhaole	exact_rank_no_contains
+修完	修完	0.600	xiuwan	exact_rank_no_contains
+修修	修修	0.199	xiuxiu	exact_rank_no_contains
+免修	免修	0.400	mianxiu	exact_rank_no_contains
+补修	補修	0.180	buxiu	exact_rank_no_contains
+兼修	兼修	0.400	jianxiu	exact_rank_no_contains
+包修	包修	0.400	baoxiu	exact_rank_no_contains
+精修	精修	0.397	jingxiu	exact_rank_no_contains
+小修	小修	0.400	xiaoxiu	exact_rank_no_contains
+中修	中修	0.400	zhongxiu	exact_rank_no_contains
+灵修	靈修	0.486	lingxiu	exact_rank_no_contains
+苦修	苦修	0.400	kuxiu	exact_rank_no_contains
+静修	靜修	0.396	jingxiu	exact_rank_no_contains
+清修	清修	0.400	qingxiu	exact_rank_no_contains
+同修	同修	0.600	tongxiu	exact_rank_no_contains
+共修	共修	0.384	gongxiu	exact_rank_no_contains
+内修	內修	0.400	neixiu	exact_rank_no_contains
+法修	法修	0.400	faxiu	exact_rank_no_contains
+早休	早休	0.400	zaoxiu	exact_rank_no_contains
+晚休	晚休	0.135	wanxiu	exact_rank_no_contains
+年休	年休	0.400	nianxiu	exact_rank_no_contains
+月休	月休	0.355	yuexiu	exact_rank_no_contains
+周休	週休	0.400	zhouxiu	exact_rank_no_contains
+单休	單休	0.600	danxiu	exact_rank_no_contains
+休完	休完	0.400	xiuwan	exact_rank_no_contains
+休一天	休一天	0.400	xiuyitian	exact_rank_no_contains
+年休假	年休假	0.600	nianxiujia	exact_rank_no_contains
+休年假	休年假	0.400	xiunianjia	exact_rank_no_contains
+休产假	休產假	0.400	xiuchanjia	exact_rank_no_contains
+早点休息	早點休息	0.600	zaodianxiuxi	exact_rank_no_contains
+午休时间	午休時間	0.600	wuxiushijian	exact_rank_no_contains
+# Everyday words, 2026-10-23 (修 and 休), the less frequent ones of the same kinds (还修, 都修, 好修, 拿去修, 修不了, 修完了, 修一下, 先修课, 晚自修, 早自修, 散修, 剑修, 潜心修炼, 小休, 没休, 已休, 休两天, 休病假, 早休息, 大小周), by the same weights.
+还修	還修	0.200	haixiu	exact_rank_no_contains
+都修	都修	0.200	douxiu	exact_rank_no_contains
+该修	該修	0.080	gaixiu	exact_rank_no_contains
+好修	好修	0.200	haoxiu	exact_rank_no_contains
+正修	正修	0.200	zhengxiu	exact_rank_no_contains
+拿去修	拿去修	0.200	naquxiu	exact_rank_no_contains
+修不了	修不了	0.200	xiubuliao	exact_rank_no_contains
+修完了	修完了	0.200	xiuwanle	exact_rank_no_contains
+修一下	修一下	0.200	xiuyixia	exact_rank_no_contains
+修一修	修一修	0.200	xiuyixiu	exact_rank_no_contains
+先修课	先修課	0.200	xianxiuke	exact_rank_no_contains
+早自修	早自修	0.080	zaozixiu	exact_rank_no_contains
+晚自修	晚自修	0.200	wanzixiu	exact_rank_no_contains
+散修	散修	0.080	sanxiu	exact_rank_no_contains
+剑修	劍修	0.080	jianxiu	exact_rank_no_contains
+潜心修炼	潛心修煉	0.200	qianxinxiulian	exact_rank_no_contains
+没休	沒休	0.080	meixiu	exact_rank_no_contains
+已休	已休	0.080	yixiu	exact_rank_no_contains
+小休	小休	0.200	xiaoxiu	exact_rank_no_contains
+休两天	休兩天	0.080	xiuliangtian	exact_rank_no_contains
+休病假	休病假	0.080	xiubingjia	exact_rank_no_contains
+早休息	早休息	0.200	zaoxiuxi	exact_rank_no_contains
+大小周	大小週	0.200	daxiaozhou	exact_rank_no_contains
+# Existing words of the kinds of the batch of 2026-10-23 (修 and 休) at an import weight, weighted by the same rules: 修满, 修业, 修士 (under 修饰), 修课 (under 休克), 闭关修炼, 休业, 休庭 and 半退休; 双休, which the traditional dictionary lacked (雙休 at its weight).
+修满	修滿	0.600	xiuman	exact_rank
+修课	修課	0.279	xiuke	exact_rank
+修业	修業	0.600	xiuye	exact_rank
+修士	修士	0.600	xiushi	exact_rank
+闭关修炼	閉關修煉	0.200	biguanxiulian	exact_rank
+休业	休業	0.200	xiuye	exact_rank
+休庭	休庭	0.200	xiuting	exact_rank
+半退休	半退休	0.200	bantuixiu	exact_rank
+双休	雙休	0.184	shuangxiu	exact_rank

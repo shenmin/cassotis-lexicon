@@ -2545,3 +2545,21 @@ douda	都打	1
 xiabian	瞎编	2
 xiache	瞎扯	2
 xiazheteng	瞎折腾	1
+
+# Everyday words of 2026-10-23 (先修, 别修, 早修, 晚修, 早休, 晚休, 灵修) and the existing words of their kinds reweighted (修满, 修业, 修士, 休庭 ...) with 雙休 added to the traditional dictionary: the rank each has by weight among the words of its key.
+xianxiu	先修	1
+biexiu	别修	1
+zaoxiu	早修	1
+wanxiu	晚修	1
+xiuman	修满	1
+xiuke	修课	2
+xiuye	修业	1
+lingxiu	灵修	2
+xiushi	修士	2
+biguanxiulian	闭关修炼	1
+zaoxiu	早休	2
+wanxiu	晚休	3
+xiuye	休业	2
+xiuting	休庭	1
+bantuixiu	半退休	1
+shuangxiu	双休	1
