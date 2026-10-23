@@ -22,8 +22,8 @@ Cassotis IME 的詞庫建置與發布儲存庫。
 
 | 檔案 | 變體 | 詞條數 |
 |------|------|--------|
-| `data/generated/dict_clean_sc.txt` | 簡體主詞庫 | 234,529 |
-| `data/generated/dict_clean_tc.txt` | 繁體主詞庫 | 235,141 |
+| `data/generated/dict_clean_sc.txt` | 簡體主詞庫 | 234,713 |
+| `data/generated/dict_clean_tc.txt` | 繁體主詞庫 | 235,326 |
 | `data/generated/dict_unihan_sc.txt` | 簡體單字（Unihan） | 23,916 |
 | `data/generated/dict_unihan_tc.txt` | 繁體單字（Unihan） | 24,179 |
 

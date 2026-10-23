@@ -4067,7 +4067,6 @@
 翠树	翠樹	0.01
 嚼舌根	嚼舌根	0.01
 多面性	多面性	0.01
-乱扯	亂扯	0.01
 几部	幾部	0.01
 杂花生树	雜花生樹	0.01
 淙淙	淙淙	0.01
@@ -5500,7 +5499,6 @@
 勾住	勾住	0.01
 就势	就勢	0.01
 石子	石子	0.01
-乱找	亂找	0.01
 黑亮	黑亮	0.01
 晶光	晶光	0.01
 尾箱	尾箱	0.01
@@ -5758,7 +5756,6 @@
 反背	反背	0.01
 拂开	拂開	0.01
 垂在	垂在	0.36
-乱发	亂髮	0.01
 双唇	雙脣	0.01
 咬住	咬住	0.01
 背上	背上	0.01
@@ -7143,7 +7140,6 @@
 无数遍	無數遍	0.01
 小奴隶	小奴隸	0.01
 理她	理她	0.01
-乱摸	亂摸	0.01
 暂不管	暫不管	0.01
 喜欢的	喜歡的	0.01
 酸麻	痠麻	0.01
@@ -11438,8 +11434,6 @@
 海景房	海景房	0.01
 包包	包包	0.01
 海上摩托	海上摩托	0.01
-验证集	驗證集	0.01
-测试集	測試集	0.01
 保守估计	保守估計	0.01
 代表者	代表者	0.01
 自然科学基金	自然科學基金	0.01
@@ -23081,3 +23075,202 @@
 地委	地委	0.601	diwei	exact_rank
 帝位	帝位	0.600	diwei	exact_rank
 誓言	誓言	0.493	shiyan	exact_rank
+# Everyday words, 2026-10-22, the third batch (sets of cases, filling in, the weather, doing a thing any which way), the more frequent ones: 竞争集 (the subset of the short-word benchmark), 都 (dou) before a verb or an adjective (都该, 都学, 都开, 都关, 都跑, 都好, 都坏, 都杀, 都傻, 都笨, 都棒, 都帮, 都跪, 都舔, 都打, 都想, 都知道, 都忘了), filling in (填好, 填完, 填进去, 填平), the weather (天好, 天冷了, 天亮了, 天黑了) and doing a thing any which way (乱拼, 乱改, 乱凑, 乱做, 乱作, 乱弄, 乱交, 乱加, 乱扣, 乱开, 乱灌, 乱关, 乱管, 乱下, 乱放, 乱买, 乱停, 乱扔垃圾, 乱停乱放, 乱发脾气). Weighted as the blocks of 2026-10-20 (occurrences where the word is no part of a longer dictionary word, nor before one that its last character begins, nor after one that its first character ends: 天好 not in 今天好); a requested word leads a place name or an archaic word it is more frequent than (填完 above 田湾, 乱加 above 銮驾) and stays under a commoner word of its key (乱交 under 乱叫, 都杀 and 都傻 under 豆沙).
+竞争集	競爭集	0.400	jingzhengji	exact_rank_no_contains
+填好	填好	0.600	tianhao	exact_rank_no_contains
+填完	填完	0.400	tianwan	exact_rank_no_contains
+填进去	填進去	0.400	tianjinqu	exact_rank_no_contains
+填平	填平	0.437	tianping	exact_rank_no_contains
+天好	天好	0.400	tianhao	exact_rank_no_contains
+天冷了	天冷了	0.400	tianlengle	exact_rank_no_contains
+天亮了	天亮了	0.600	tianliangle	exact_rank_no_contains
+天黑了	天黑了	0.600	tianheile	exact_rank_no_contains
+乱拼	亂拼	0.400	luanpin	exact_rank_no_contains
+乱改	亂改	0.400	luangai	exact_rank_no_contains
+乱凑	亂湊	0.400	luancou	exact_rank_no_contains
+乱做	亂做	0.400	luanzuo	exact_rank_no_contains
+乱作	亂作	0.401	luanzuo	exact_rank_no_contains
+乱弄	亂弄	0.400	luannong	exact_rank_no_contains
+乱交	亂交	0.400	luanjiao	exact_rank_no_contains
+乱唱	亂唱	0.400	luanchang	exact_rank_no_contains
+乱舔	亂舔	0.400	luantian	exact_rank_no_contains
+乱加	亂加	0.400	luanjia	exact_rank_no_contains
+乱扣	亂扣	0.400	luankou	exact_rank_no_contains
+乱开	亂開	0.400	luankai	exact_rank_no_contains
+乱灌	亂灌	0.401	luanguan	exact_rank_no_contains
+乱关	亂關	0.400	luanguan	exact_rank_no_contains
+乱管	亂管	0.402	luanguan	exact_rank_no_contains
+乱喊	亂喊	0.400	luanhan	exact_rank_no_contains
+乱下	亂下	0.400	luanxia	exact_rank_no_contains
+乱放	亂放	0.600	luanfang	exact_rank_no_contains
+乱买	亂買	0.400	luanmai	exact_rank_no_contains
+乱点	亂點	0.400	luandian	exact_rank_no_contains
+乱翻	亂翻	0.400	luanfan	exact_rank_no_contains
+乱打	亂打	0.400	luanda	exact_rank_no_contains
+乱停	亂停	0.400	luanting	exact_rank_no_contains
+乱贴	亂貼	0.400	luantie	exact_rank_no_contains
+乱倒	亂倒	0.197	luandao	exact_rank_no_contains
+乱涂	亂塗	0.400	luantu	exact_rank_no_contains
+乱想	亂想	0.002	luanxiang	exact_rank_no_contains
+乱猜	亂猜	0.400	luancai	exact_rank_no_contains
+乱搭	亂搭	0.401	luanda	exact_rank_no_contains
+乱砍	亂砍	0.400	luankan	exact_rank_no_contains
+乱建	亂建	0.600	luanjian	exact_rank_no_contains
+乱飞	亂飛	0.600	luanfei	exact_rank_no_contains
+乱撞	亂撞	0.400	luanzhuang	exact_rank_no_contains
+乱咬	亂咬	0.400	luanyao	exact_rank_no_contains
+乱拉	亂拉	0.400	luanla	exact_rank_no_contains
+乱堆	亂堆	0.600	luandui	exact_rank_no_contains
+乱摆	亂擺	0.400	luanbai	exact_rank_no_contains
+乱接	亂接	0.400	luanjie	exact_rank_no_contains
+乱收费	亂收費	0.600	luanshoufei	exact_rank_no_contains
+乱扔垃圾	亂扔垃圾	0.600	luanrenglaji	exact_rank_no_contains
+乱停车	亂停車	0.400	luantingche	exact_rank_no_contains
+乱停乱放	亂停亂放	0.600	luantingluanfang	exact_rank_no_contains
+乱涂乱画	亂塗亂畫	0.400	luantuluanhua	exact_rank_no_contains
+乱说话	亂說話	0.400	luanshuohua	exact_rank_no_contains
+乱发脾气	亂發脾氣	0.400	luanfapiqi	exact_rank_no_contains
+都该	都該	0.600	dougai	exact_rank_no_contains
+都学	都學	0.600	douxue	exact_rank_no_contains
+都开	都開	0.600	doukai	exact_rank_no_contains
+都关	都關	0.400	douguan	exact_rank_no_contains
+都跑	都跑	0.600	doupao	exact_rank_no_contains
+都好	都好	0.600	douhao	exact_rank_no_contains
+都坏	都壞	0.400	douhuai	exact_rank_no_contains
+都杀	都殺	0.401	dousha	exact_rank_no_contains
+都傻	都傻	0.400	dousha	exact_rank_no_contains
+都笨	都笨	0.400	douben	exact_rank_no_contains
+都棒	都棒	0.400	doubang	exact_rank_no_contains
+都帮	都幫	0.401	doubang	exact_rank_no_contains
+都跪	都跪	0.400	dougui	exact_rank_no_contains
+都舔	都舔	0.400	doutian	exact_rank_no_contains
+都打	都打	0.600	douda	exact_rank_no_contains
+都想	都想	0.600	douxiang	exact_rank_no_contains
+都看	都看	0.600	doukan	exact_rank_no_contains
+都吃	都吃	0.379	douchi	exact_rank_no_contains
+都买	都買	0.600	doumai	exact_rank_no_contains
+都做	都做	0.600	douzuo	exact_rank_no_contains
+都忘	都忘	0.400	douwang	exact_rank_no_contains
+都哭	都哭	0.400	douku	exact_rank_no_contains
+都笑	都笑	0.600	douxiao	exact_rank_no_contains
+都怕	都怕	0.600	doupa	exact_rank_no_contains
+都爱	都愛	0.600	douai	exact_rank_no_contains
+都乱	都亂	0.400	douluan	exact_rank_no_contains
+都死	都死	0.600	dousi	exact_rank_no_contains
+都满	都滿	0.400	douman	exact_rank_no_contains
+都换	都換	0.400	douhuan	exact_rank_no_contains
+都写	都寫	0.600	douxie	exact_rank_no_contains
+都听	都聽	0.600	douting	exact_rank_no_contains
+都问	都問	0.400	douwen	exact_rank_no_contains
+都等	都等	0.600	doudeng	exact_rank_no_contains
+都选	都選	0.400	douxuan	exact_rank_no_contains
+都送	都送	0.400	dousong	exact_rank_no_contains
+都拿	都拿	0.600	douna	exact_rank_no_contains
+都带	都帶	0.600	doudai	exact_rank_no_contains
+都放	都放	0.600	doufang	exact_rank_no_contains
+都睡	都睡	0.400	doushui	exact_rank_no_contains
+都忙	都忙	0.400	doumang	exact_rank_no_contains
+都急	都急	0.400	douji	exact_rank_no_contains
+都美	都美	0.279	doumei	exact_rank_no_contains
+都老	都老	0.400	doulao	exact_rank_no_contains
+都少	都少	0.400	doushao	exact_rank_no_contains
+都多	都多	0.600	douduo	exact_rank_no_contains
+都慢	都慢	0.401	douman	exact_rank_no_contains
+都难	都難	0.182	dounan	exact_rank_no_contains
+都贵	都貴	0.401	dougui	exact_rank_no_contains
+都便宜	都便宜	0.400	doupianyi	exact_rank_no_contains
+都一样	都一樣	0.600	douyiyang	exact_rank_no_contains
+都不一样	都不一樣	0.600	doubuyiyang	exact_rank_no_contains
+都没有	都沒有	0.600	doumeiyou	exact_rank_no_contains
+都知道	都知道	0.600	douzhidao	exact_rank_no_contains
+都喜欢	都喜歡	0.600	douxihuan	exact_rank_no_contains
+都觉得	都覺得	0.600	doujuede	exact_rank_no_contains
+都明白	都明白	0.600	doumingbai	exact_rank_no_contains
+都清楚	都清楚	0.600	douqingchu	exact_rank_no_contains
+都同意	都同意	0.600	doutongyi	exact_rank_no_contains
+都答应	都答應	0.400	doudaying	exact_rank_no_contains
+都认识	都認識	0.641	dourenshi	exact_rank_no_contains
+都记得	都記得	0.600	doujide	exact_rank_no_contains
+都忘了	都忘了	0.600	douwangle	exact_rank_no_contains
+都走了	都走了	0.600	douzoule	exact_rank_no_contains
+都来了	都來了	0.600	doulaile	exact_rank_no_contains
+都完了	都完了	0.400	douwanle	exact_rank_no_contains
+都死了	都死了	0.600	dousile	exact_rank_no_contains
+都疯了	都瘋了	0.400	doufengle	exact_rank_no_contains
+都笑了	都笑了	0.400	douxiaole	exact_rank_no_contains
+都哭了	都哭了	0.400	doukule	exact_rank_no_contains
+都好了	都好了	0.400	douhaole	exact_rank_no_contains
+都坏了	都壞了	0.400	douhuaile	exact_rank_no_contains
+都跑了	都跑了	0.400	doupaole	exact_rank_no_contains
+# Everyday words, 2026-10-22, the third batch (sets of cases, filling in, the weather, doing a thing any which way), the less frequent ones of the same kinds (开发集, 填一下, 填好了, 填完了, 天热了, 天晴了, 乱填, 乱逛, 乱编, 乱骂, 乱罚款, 乱写乱画, 乱扣帽子, 瞎写, 瞎操心, 都错, 都醒, 都懵了, 都醒了), by the same weights.
+开发集	開發集	0.080	kaifaji	exact_rank_no_contains
+填一下	填一下	0.200	tianyixia	exact_rank_no_contains
+填好了	填好了	0.200	tianhaole	exact_rank_no_contains
+填完了	填完了	0.080	tianwanle	exact_rank_no_contains
+填好的	填好的	0.200	tianhaode	exact_rank_no_contains
+天热了	天熱了	0.200	tianrele	exact_rank_no_contains
+天凉了	天涼了	0.200	tianliangle	exact_rank_no_contains
+天晴了	天晴了	0.200	tianqingle	exact_rank_no_contains
+乱按	亂按	0.200	luanan	exact_rank_no_contains
+乱碰	亂碰	0.200	luanpeng	exact_rank_no_contains
+乱填	亂填	0.401	luantian	exact_rank_no_contains
+乱逛	亂逛	0.200	luanguang	exact_rank_no_contains
+乱走	亂走	0.200	luanzou	exact_rank_no_contains
+乱传	亂傳	0.200	luanchuan	exact_rank_no_contains
+乱编	亂編	0.080	luanbian	exact_rank_no_contains
+乱选	亂選	0.080	luanxuan	exact_rank_no_contains
+乱排	亂排	0.201	luanpai	exact_rank_no_contains
+乱拍	亂拍	0.200	luanpai	exact_rank_no_contains
+乱挖	亂挖	0.200	luanwa	exact_rank_no_contains
+乱转	亂轉	0.200	luanzhuan	exact_rank_no_contains
+乱闯	亂闖	0.200	luanchuang	exact_rank_no_contains
+乱踢	亂踢	0.200	luanti	exact_rank_no_contains
+乱骂	亂罵	0.052	luanma	exact_rank_no_contains
+乱挂	亂掛	0.200	luangua	exact_rank_no_contains
+乱喷	亂噴	0.080	luanpen	exact_rank_no_contains
+乱看	亂看	0.200	luankan	exact_rank_no_contains
+乱罚款	亂罰款	0.200	luanfakuan	exact_rank_no_contains
+乱摊派	亂攤派	0.200	luantanpai	exact_rank_no_contains
+乱写乱画	亂寫亂畫	0.200	luanxieluanhua	exact_rank_no_contains
+乱讲话	亂講話	0.200	luanjianghua	exact_rank_no_contains
+乱扣帽子	亂扣帽子	0.080	luankoumaozi	exact_rank_no_contains
+都错	都錯	0.200	doucuo	exact_rank_no_contains
+都累	都累	0.200	doulei	exact_rank_no_contains
+都恨	都恨	0.197	douhen	exact_rank_no_contains
+都烦	都煩	0.324	doufan	exact_rank_no_contains
+都输	都輸	0.200	doushu	exact_rank_no_contains
+都赢	都贏	0.200	douying	exact_rank_no_contains
+都空	都空	0.200	doukong	exact_rank_no_contains
+都试	都試	0.080	doushi	exact_rank_no_contains
+都醒	都醒	0.200	douxing	exact_rank_no_contains
+都慌	都慌	0.200	douhuang	exact_rank_no_contains
+都气	都氣	0.200	douqi	exact_rank_no_contains
+都丑	都醜	0.200	douchou	exact_rank_no_contains
+都胖	都胖	0.080	doupang	exact_rank_no_contains
+都瘦	都瘦	0.200	doushou	exact_rank_no_contains
+都烂	都爛	0.394	doulan	exact_rank_no_contains
+都香	都香	0.200	douxiang	exact_rank_no_contains
+都甜	都甜	0.080	doutian	exact_rank_no_contains
+都苦	都苦	0.080	douku	exact_rank_no_contains
+都傻了	都傻了	0.200	doushale	exact_rank_no_contains
+都懵了	都懵了	0.200	doumengle	exact_rank_no_contains
+都睡了	都睡了	0.200	doushuile	exact_rank_no_contains
+都醒了	都醒了	0.080	douxingle	exact_rank_no_contains
+都饿了	都餓了	0.200	douele	exact_rank_no_contains
+都累了	都累了	0.200	douleile	exact_rank_no_contains
+都输了	都輸了	0.200	doushule	exact_rank_no_contains
+瞎写	瞎寫	0.200	xiaxie	exact_rank_no_contains
+瞎操心	瞎操心	0.200	xiacaoxin	exact_rank_no_contains
+# Existing words on the keys of the batch of 2026-10-22, the third (sets of cases, filling in, doing a thing any which way): words at an import weight weighted by the same rules (验证集, 测试集, 乱摸, 乱发, 乱扯, 乱找, 瞎扯, 瞎折腾; 瞎编 at its weight, which the traditional dictionary lacked), 后端 above 后段 at the user's word, 斗士 and 斗室 above 都试; 乱骂 stays under 乱麻, whose weight says nothing but which is the commoner.
+验证集	驗證集	0.400	yanzhengji	exact_rank
+测试集	測試集	0.600	ceshiji	exact_rank
+乱摸	亂摸	0.200	luanmo	exact_rank
+乱发	亂髮	0.400	luanfa	exact_rank
+乱扯	亂扯	0.200	luanche	exact_rank
+乱找	亂找	0.080	luanzhao	exact_rank
+后端	後端	0.956	houduan	exact_rank
+斗士	鬥士	0.279	doushi	exact_rank
+斗室	斗室	0.278	doushi	exact_rank
+瞎编	瞎編	0.001	xiabian	exact_rank
+瞎扯	瞎扯	0.400	xiache	exact_rank
+瞎折腾	瞎折騰	0.400	xiazheteng	exact_rank

@@ -15439,7 +15439,7 @@ ceshiguanligongju	測試管理工具	785
 ceshiguiyue	測試規約	684
 ceshiguocheng	測試過程	706
 ceshihuanjing	測試環境	739
-ceshiji	測試集	10
+ceshiji	測試集	600
 ceshijiaoben	測試腳本	797
 ceshijieduan	測試階段	731
 ceshijihua	測試計劃	857
@@ -32442,8 +32442,8 @@ doushenmeniandaile	都什么年代了	319
 doushenmeniandaile	都什麼年代了	317
 doushi	都是	1018
 doushi	都使	280
-doushi	斗室	1
-doushi	鬥士	1
+doushi	斗室	278
+doushi	鬥士	279
 doushiyong	都是用	1000
 doushou	兜售	421
 doushouchang	鬥獸場	10
@@ -56380,7 +56380,7 @@ houdixie	厚底鞋	380
 houdou	猴痘	198
 houdu	厚度	454
 houduan	后段	955
-houduan	後端	65
+houduan	後端	956
 houdun	後盾	483
 houer	猴兒	1
 houfanfan	侯凡凡	470
@@ -86988,7 +86988,7 @@ luanchaowo	卵巢窩	228
 luanchaoyan	卵巢炎	500
 luanchaozaoshuai	卵巢早衰	570
 luanchaozhongliu	卵巢腫瘤	540
-luanche	亂扯	10
+luanche	亂扯	200
 luancheng	欒城	230
 luanchengqu	欒城區	228
 luanchengyituan	亂成一團	498
@@ -87011,7 +87011,7 @@ luandiu	亂丟	418
 luandong	亂動	446
 luandouxiyou	亂鬥西遊	700
 luandouxiyou	亂斗西遊	258
-luanfa	亂髮	10
+luanfa	亂髮	400
 luanfeng	鸞鳳	343
 luanfengheming	鸞鳳和鳴	616
 luang	魯昂	231
@@ -87054,7 +87054,7 @@ luanma	亂碼	1000
 luanma	亂麻	70
 luanmaoshi	卵錨飾	600
 luanmin	亂民	392
-luanmo	亂摸	10
+luanmo	亂摸	200
 luanmuxibao	卵母細胞	540
 luannan	灤南	161
 luannanxian	灤南縣	160
@@ -87115,7 +87115,7 @@ luanyuanxing	卵圓形	379
 luanzanggang	亂葬崗	400
 luanzaozao	亂糟糟	455
 luanzhang	亂賬	10
-luanzhao	亂找	10
+luanzhao	亂找	80
 luanzhen	亂真	455
 luanzhen	亂針	10
 luanzheng	亂政	198
@@ -145554,7 +145554,7 @@ xiachangximodongmai	下腸繫膜動脈	894
 xiachangximodongmai	下腸系膜動脈	380
 xiachao	夏朝	389
 xiache	下車	1000
-xiache	瞎扯	61
+xiache	瞎扯	400
 xiachedan	瞎扯蛋	228
 xiachen	下沉	465
 xiachenghengjia	下承桁架	680
@@ -158978,7 +158978,7 @@ yanzheng	嚴整	846
 yanzheng	炎症	440
 yanzhengchengxu	驗證程序	696
 yanzhengfanying	炎症反應	540
-yanzhengji	驗證集	10
+yanzhengji	驗證集	400
 yanzhengma	驗證碼	379
 yanzhengxingchangbing	炎症性腸病	640
 yanzhengzheng	眼睜睜	552
@@ -214986,7 +214986,7 @@ xiazaiwenjian	下載文件	40	no_contains
 xiazaizhe	下載者	40	no_contains
 xiazaotang	蝦棗湯	40	no_contains
 xiazhaiyuanluo	狹窄圓螺	40	no_contains
-xiazheteng	瞎折騰	40	no_contains
+xiazheteng	瞎折騰	400	no_contains
 xiazhoubifengcha	峽州碧峰茶	20	no_contains
 xiazidongsun	蝦籽冬筍	40	no_contains
 xiaziguanting	蝦籽管廷	40	no_contains
@@ -235139,3 +235139,188 @@ zidongxuding	自動續訂	80	no_contains
 zidongxufei	自動續費	400	no_contains
 zidongxuqi	自動續期	200	no_contains
 zuoguozhan	坐過站	200	no_contains
+douai	都愛	600	no_contains
+doubang	都幫	401	no_contains
+doubang	都棒	400	no_contains
+douben	都笨	400	no_contains
+doubuyiyang	都不一樣	600	no_contains
+douchi	都吃	379	no_contains
+douchou	都醜	200	no_contains
+doucuo	都錯	200	no_contains
+douda	都打	600	no_contains
+doudai	都帶	600	no_contains
+doudaying	都答應	400	no_contains
+doudeng	都等	600	no_contains
+douduo	都多	600	no_contains
+douele	都餓了	200	no_contains
+doufan	都煩	324	no_contains
+doufang	都放	600	no_contains
+doufengle	都瘋了	400	no_contains
+dougai	都該	600	no_contains
+douguan	都關	400	no_contains
+dougui	都貴	401	no_contains
+dougui	都跪	400	no_contains
+douhao	都好	600	no_contains
+douhaole	都好了	400	no_contains
+douhen	都恨	197	no_contains
+douhuai	都壞	400	no_contains
+douhuaile	都壞了	400	no_contains
+douhuan	都換	400	no_contains
+douhuang	都慌	200	no_contains
+douji	都急	400	no_contains
+doujide	都記得	600	no_contains
+doujuede	都覺得	600	no_contains
+doukai	都開	600	no_contains
+doukan	都看	600	no_contains
+doukong	都空	200	no_contains
+douku	都哭	400	no_contains
+douku	都苦	80	no_contains
+doukule	都哭了	400	no_contains
+doulaile	都來了	600	no_contains
+doulan	都爛	394	no_contains
+doulao	都老	400	no_contains
+doulei	都累	200	no_contains
+douleile	都累了	200	no_contains
+douluan	都亂	400	no_contains
+doumai	都買	600	no_contains
+douman	都慢	401	no_contains
+douman	都滿	400	no_contains
+doumang	都忙	400	no_contains
+doumei	都美	279	no_contains
+doumeiyou	都沒有	600	no_contains
+doumengle	都懵了	200	no_contains
+doumingbai	都明白	600	no_contains
+douna	都拿	600	no_contains
+dounan	都難	182	no_contains
+doupa	都怕	600	no_contains
+doupang	都胖	80	no_contains
+doupao	都跑	600	no_contains
+doupaole	都跑了	400	no_contains
+doupianyi	都便宜	400	no_contains
+douqi	都氣	200	no_contains
+douqingchu	都清楚	600	no_contains
+dourenshi	都認識	641	no_contains
+dousha	都傻	400	no_contains
+dousha	都殺	401	no_contains
+doushale	都傻了	200	no_contains
+doushao	都少	400	no_contains
+doushi	都試	80	no_contains
+doushou	都瘦	200	no_contains
+doushu	都輸	200	no_contains
+doushui	都睡	400	no_contains
+doushuile	都睡了	200	no_contains
+doushule	都輸了	200	no_contains
+dousi	都死	600	no_contains
+dousile	都死了	600	no_contains
+dousong	都送	400	no_contains
+doutian	都甜	80	no_contains
+doutian	都舔	400	no_contains
+douting	都聽	600	no_contains
+doutongyi	都同意	600	no_contains
+douwang	都忘	400	no_contains
+douwangle	都忘了	600	no_contains
+douwanle	都完了	400	no_contains
+douwen	都問	400	no_contains
+douxiang	都想	600	no_contains
+douxiang	都香	200	no_contains
+douxiao	都笑	600	no_contains
+douxiaole	都笑了	400	no_contains
+douxie	都寫	600	no_contains
+douxihuan	都喜歡	600	no_contains
+douxing	都醒	200	no_contains
+douxingle	都醒了	80	no_contains
+douxuan	都選	400	no_contains
+douxue	都學	600	no_contains
+douying	都贏	200	no_contains
+douyiyang	都一樣	600	no_contains
+douzhidao	都知道	600	no_contains
+douzoule	都走了	600	no_contains
+douzuo	都做	600	no_contains
+jingzhengji	競爭集	400	no_contains
+kaifaji	開發集	80	no_contains
+luanan	亂按	200	no_contains
+luanbai	亂擺	400	no_contains
+luanbian	亂編	80	no_contains
+luancai	亂猜	400	no_contains
+luanchang	亂唱	400	no_contains
+luanchuan	亂傳	200	no_contains
+luanchuang	亂闖	200	no_contains
+luancou	亂湊	400	no_contains
+luanda	亂打	400	no_contains
+luanda	亂搭	401	no_contains
+luandao	亂倒	197	no_contains
+luandian	亂點	400	no_contains
+luandui	亂堆	600	no_contains
+luanfakuan	亂罰款	200	no_contains
+luanfan	亂翻	400	no_contains
+luanfang	亂放	600	no_contains
+luanfapiqi	亂發脾氣	400	no_contains
+luanfei	亂飛	600	no_contains
+luangai	亂改	400	no_contains
+luangua	亂掛	200	no_contains
+luanguan	亂灌	401	no_contains
+luanguan	亂管	402	no_contains
+luanguan	亂關	400	no_contains
+luanguang	亂逛	200	no_contains
+luanhan	亂喊	400	no_contains
+luanjia	亂加	400	no_contains
+luanjian	亂建	600	no_contains
+luanjianghua	亂講話	200	no_contains
+luanjiao	亂交	400	no_contains
+luanjie	亂接	400	no_contains
+luankai	亂開	400	no_contains
+luankan	亂看	200	no_contains
+luankan	亂砍	400	no_contains
+luankou	亂扣	400	no_contains
+luankoumaozi	亂扣帽子	80	no_contains
+luanla	亂拉	400	no_contains
+luanma	亂罵	52	no_contains
+luanmai	亂買	400	no_contains
+luannong	亂弄	400	no_contains
+luanpai	亂拍	200	no_contains
+luanpai	亂排	201	no_contains
+luanpen	亂噴	80	no_contains
+luanpeng	亂碰	200	no_contains
+luanpin	亂拼	400	no_contains
+luanrenglaji	亂扔垃圾	600	no_contains
+luanshoufei	亂收費	600	no_contains
+luanshuohua	亂說話	400	no_contains
+luantanpai	亂攤派	200	no_contains
+luanti	亂踢	200	no_contains
+luantian	亂填	401	no_contains
+luantian	亂舔	400	no_contains
+luantie	亂貼	400	no_contains
+luanting	亂停	400	no_contains
+luantingche	亂停車	400	no_contains
+luantingluanfang	亂停亂放	600	no_contains
+luantu	亂塗	400	no_contains
+luantuluanhua	亂塗亂畫	400	no_contains
+luanwa	亂挖	200	no_contains
+luanxia	亂下	400	no_contains
+luanxiang	亂想	2	no_contains
+luanxieluanhua	亂寫亂畫	200	no_contains
+luanxuan	亂選	80	no_contains
+luanyao	亂咬	400	no_contains
+luanzhuan	亂轉	200	no_contains
+luanzhuang	亂撞	400	no_contains
+luanzou	亂走	200	no_contains
+luanzuo	亂作	401	no_contains
+luanzuo	亂做	400	no_contains
+tianhao	填好	600	no_contains
+tianhao	天好	400	no_contains
+tianhaode	填好的	200	no_contains
+tianhaole	填好了	200	no_contains
+tianheile	天黑了	600	no_contains
+tianjinqu	填進去	400	no_contains
+tianlengle	天冷了	400	no_contains
+tianliangle	天亮了	600	no_contains
+tianliangle	天涼了	200	no_contains
+tianping	填平	437	no_contains
+tianqingle	天晴了	200	no_contains
+tianrele	天熱了	200	no_contains
+tianwan	填完	400	no_contains
+tianwanle	填完了	80	no_contains
+tianyixia	填一下	200	no_contains
+xiabian	瞎編	1
+xiacaoxin	瞎操心	200	no_contains
+xiaxie	瞎寫	200	no_contains
