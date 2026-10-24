@@ -4057,7 +4057,6 @@
 观止	觀止	0.01
 煌煌	煌煌	0.01
 巨作	鉅作	0.01
-通篇	通篇	0.01
 英文版	英文版	0.01
 两相	兩相	0.01
 教务处	教務處	0.01
@@ -5312,7 +5311,6 @@
 奶渍	奶漬	0.01
 宵夜	宵夜	0.01
 板书	板書	0.01
-老客户	老客戶	0.01
 天鹅项链	天鵝項鏈	0.01
 光腿	光腿	0.01
 灌铅	灌鉛	0.01
@@ -5344,7 +5342,6 @@
 美人	美人	0.01
 挂件	掛件	0.01
 财务报告	財務報告	0.01
-带班	帶班	0.01
 名企	名企	0.01
 娇颤	嬌顫	0.01
 娇俏	嬌俏	0.01
@@ -6601,7 +6598,6 @@
 单次	單次	0.01
 三者	三者	0.01
 爬出	爬出	0.01
-整节	整節	0.01
 叠影	疊影	0.01
 转场	轉場	0.01
 震撼力	震撼力	0.01
@@ -6796,7 +6792,6 @@
 换货	換貨	0.01
 完美屏	完美屏	0.01
 良品	良品	0.01
-老电脑	老電腦	0.01
 跑满	跑滿	0.01
 垂涎已久	垂涎已久	0.01
 配齐	配齊	0.01
@@ -6810,7 +6805,6 @@
 居委	居委	0.01
 礼包	禮包	0.01
 特保	特保	0.01
-偷溜	偷溜	0.01
 酱鸭	醬鴨	0.01
 大瓶	大瓶	0.01
 塞下	塞下	0.01
@@ -7414,7 +7408,6 @@
 案底	案底	0.01
 奔涌	奔湧	0.01
 起意	起意	0.01
-褒奖	褒獎	0.01
 侧倚	側倚	0.01
 一步之遥	一步之遙	0.01
 眸光	眸光	0.01
@@ -8483,7 +8476,6 @@
 叹了口气	嘆了口氣	0.01
 听不下去	聽不下去	0.01
 匆匆忙忙	匆匆忙忙	0.01
-木椅	木椅	0.01
 逼着	逼著	0.01
 深红	深紅	0.01
 回纹	回紋	0.01
@@ -8841,7 +8833,6 @@
 好心情	好心情	0.01
 找书	找書	0.01
 批发市场	批發市場	0.01
-收账	收賬	0.01
 洗衣服	洗衣服	0.01
 解出来	解出來	0.01
 慢走不送	慢走不送	0.01
@@ -8972,7 +8963,6 @@
 培优	培優	0.01
 初中部	初中部	0.01
 高中部	高中部	0.01
-国际班	國際班	0.01
 好印象	好印象	0.01
 管一管	管一管	0.01
 追不上	追不上	0.01
@@ -23347,3 +23337,746 @@
 休庭	休庭	0.200	xiuting	exact_rank
 半退休	半退休	0.200	bantuixiu	exact_rank
 双休	雙休	0.184	shuangxiu	exact_rank
+# Everyday words, 2026-10-23, the second batch (common words the lexicon lacked: found by a user's typing statistics, genuine words only, well-known names in, reviewed by hand, weighted by the general text and the chat sentences), the more frequent ones: words of work and the web (答题, 错题, 配图, 插画, 绘本, 愿景, 售后, 退费, 包邮, 私域, 获客, 爆品, 地推, 日活, 粒度, 倒逼, 人脸, 取值, 勘误, 待办, 截止日期, 知识图谱, 灰度发布, 增删改查), technical terms (逐字稿, 埋点, 高亮, 投喂, 推流, 竖屏, 声纹, 逆变器, 执行器, 置信度, 返回值, 详情页, 快捷指令), common words and idioms (矫正, 托运, 陈旧, 拜托, 智能化, 小姐姐, 会议纪要, 控制面板, 马太效应, 以旧换新, 牛气冲天) and well-known names (顺丰, 德邦, 万达, 领克, 安克, 亚朵, 企业微信, 印象笔记, 新街口, 深圳湾, 纳博科夫). Weighted as the blocks of 2026-10-20 (occurrences where the word is no part of a longer dictionary word, nor before one that its last character begins, nor after one that its first character ends); a word leads its key only with three times the occurrences of its first word (大类 above 打雷, 配图 above 培土) and stays below every more frequent word of the key (取值 under 屈指).
+答题	答題	0.600	dati	exact_rank_no_contains
+配图	配圖	0.600	peitu	exact_rank_no_contains
+好书	好書	0.600	haoshu	exact_rank_no_contains
+大类	大類	0.966	dalei	exact_rank_no_contains
+手持	手持	0.600	shouchi	exact_rank_no_contains
+售后	售後	0.600	shouhou	exact_rank_no_contains
+错题	錯題	0.600	cuoti	exact_rank_no_contains
+新书	新書	0.600	xinshu	exact_rank_no_contains
+插画	插畫	0.396	chahua	exact_rank_no_contains
+粒度	粒度	0.002	lidu	exact_rank_no_contains
+祈福	祈福	0.323	qifu	exact_rank_no_contains
+选材	選材	0.600	xuancai	exact_rank_no_contains
+精益	精益	0.641	jingyi	exact_rank_no_contains
+退费	退費	0.496	tuifei	exact_rank_no_contains
+巡检	巡檢	0.600	xunjian	exact_rank_no_contains
+降本	降本	0.600	jiangben	exact_rank_no_contains
+村委	村委	0.600	cunwei	exact_rank_no_contains
+倒逼	倒逼	0.745	daobi	exact_rank_no_contains
+人脸	人臉	0.600	renlian	exact_rank_no_contains
+饵料	餌料	0.600	erliao	exact_rank_no_contains
+取值	取值	0.279	quzhi	exact_rank_no_contains
+返利	返利	0.808	fanli	exact_rank_no_contains
+收货	收貨	0.600	shouhuo	exact_rank_no_contains
+利差	利差	0.322	licha	exact_rank_no_contains
+心法	心法	0.002	xinfa	exact_rank_no_contains
+人机	人機	0.492	renji	exact_rank_no_contains
+卖货	賣貨	0.600	maihuo	exact_rank_no_contains
+板式	板式	0.279	banshi	exact_rank_no_contains
+自测	自測	0.600	zice	exact_rank_no_contains
+滤网	濾網	0.600	lvwang	exact_rank_no_contains
+作图	作圖	0.600	zuotu	exact_rank_no_contains
+导流	導流	0.426	daoliu	exact_rank_no_contains
+扣款	扣款	0.600	koukuan	exact_rank_no_contains
+贴片	貼片	0.600	tiepian	exact_rank_no_contains
+原味	原味	0.479	yuanwei	exact_rank_no_contains
+匠人	匠人	0.600	jiangren	exact_rank_no_contains
+色块	色塊	0.600	sekuai	exact_rank_no_contains
+换水	換水	0.600	huanshui	exact_rank_no_contains
+主推	主推	0.600	zhutui	exact_rank_no_contains
+报税	報稅	0.540	baoshui	exact_rank_no_contains
+石料	石料	0.390	shiliao	exact_rank_no_contains
+代发	代發	0.600	daifa	exact_rank_no_contains
+跨区	跨區	0.600	kuaqu	exact_rank_no_contains
+方框	方框	0.600	fangkuang	exact_rank_no_contains
+最迟	最遲	0.600	zuichi	exact_rank_no_contains
+售前	售前	0.600	shouqian	exact_rank_no_contains
+圆角	圓角	0.559	yuanjiao	exact_rank_no_contains
+进厂	進廠	0.600	jinchang	exact_rank_no_contains
+群友	群友	0.600	qunyou	exact_rank_no_contains
+外化	外化	0.600	waihua	exact_rank_no_contains
+涂色	塗色	0.600	tuse	exact_rank_no_contains
+易用	易用	0.565	yiyong	exact_rank_no_contains
+鱼竿	魚竿	0.308	yugan	exact_rank_no_contains
+分厂	分廠	0.386	fenchang	exact_rank_no_contains
+伴生	伴生	0.431	bansheng	exact_rank_no_contains
+精要	精要	0.600	jingyao	exact_rank_no_contains
+倒角	倒角	0.600	daojiao	exact_rank_no_contains
+转售	轉售	0.600	zhuanshou	exact_rank_no_contains
+大群	大群	0.600	daqun	exact_rank_no_contains
+正解	正解	0.517	zhengjie	exact_rank_no_contains
+单篇	單篇	0.396	danpian	exact_rank_no_contains
+压痕	壓痕	0.600	yahen	exact_rank_no_contains
+缺人	缺人	0.002	queren	exact_rank_no_contains
+刀尖	刀尖	0.157	daojian	exact_rank_no_contains
+椒盐	椒鹽	0.573	jiaoyan	exact_rank_no_contains
+打样	打樣	0.600	dayang	exact_rank_no_contains
+强推	強推	0.600	qiangtui	exact_rank_no_contains
+突进	突進	0.400	tujin	exact_rank_no_contains
+倒排	倒排	0.400	daopai	exact_rank_no_contains
+竹片	竹片	0.400	zhupian	exact_rank_no_contains
+打头	打頭	0.400	datou	exact_rank_no_contains
+联调	聯調	0.400	liantiao	exact_rank_no_contains
+总览	總覽	0.194	zonglan	exact_rank_no_contains
+生茶	生茶	0.400	shengcha	exact_rank_no_contains
+穿线	穿線	0.400	chuanxian	exact_rank_no_contains
+重发	重發	0.600	chongfa	exact_rank_no_contains
+黑底	黑底	0.400	heidi	exact_rank_no_contains
+鞣质	鞣質	0.400	rouzhi	exact_rank_no_contains
+魔镜	魔鏡	0.400	mojing	exact_rank_no_contains
+预研	預研	0.233	yuyan	exact_rank_no_contains
+钢印	鋼印	0.400	gangyin	exact_rank_no_contains
+褐藻	褐藻	0.400	hezao	exact_rank_no_contains
+磨具	磨具	0.439	moju	exact_rank_no_contains
+板载	板載	0.600	banzai	exact_rank_no_contains
+掉电	掉電	0.400	diaodian	exact_rank_no_contains
+铜片	銅片	0.400	tongpian	exact_rank_no_contains
+底纹	底紋	0.400	diwen	exact_rank_no_contains
+气罐	氣罐	0.400	qiguan	exact_rank_no_contains
+细活	細活	0.400	xihuo	exact_rank_no_contains
+彩石	彩石	0.155	caishi	exact_rank_no_contains
+杂木	雜木	0.400	zamu	exact_rank_no_contains
+刃口	刃口	0.400	renkou	exact_rank_no_contains
+线框	線框	0.400	xiankuang	exact_rank_no_contains
+壳子	殼子	0.816	kezi	exact_rank_no_contains
+沙箱	沙箱	0.400	shaxiang	exact_rank_no_contains
+书摘	書摘	0.393	shuzhai	exact_rank_no_contains
+费电	費電	0.317	feidian	exact_rank_no_contains
+发廊	髮廊	0.400	falang	exact_rank_no_contains
+压印	壓印	0.400	yayin	exact_rank_no_contains
+光板	光板	0.381	guangban	exact_rank_no_contains
+风笛	風笛	0.127	fengdi	exact_rank_no_contains
+灌流	灌流	0.400	guanliu	exact_rank_no_contains
+刀匠	刀匠	0.400	daojiang	exact_rank_no_contains
+转储	轉儲	0.400	zhuanchu	exact_rank_no_contains
+年饭	年飯	0.400	nianfan	exact_rank_no_contains
+柜机	櫃機	0.400	guiji	exact_rank_no_contains
+勘误	勘誤	0.400	kanwu	exact_rank_no_contains
+备忘	備忘	0.400	beiwang	exact_rank_no_contains
+结息	結息	0.400	jiexi	exact_rank_no_contains
+拱火	拱火	0.400	gonghuo	exact_rank_no_contains
+僵死	僵死	0.400	jiangsi	exact_rank_no_contains
+首行	首行	0.400	shouhang	exact_rank_no_contains
+刀痕	刀痕	0.400	daohen	exact_rank_no_contains
+金婚	金婚	0.400	jinhun	exact_rank_no_contains
+待办	待辦	0.400	daiban	exact_rank_no_contains
+泳道	泳道	0.400	yongdao	exact_rank_no_contains
+炉头	爐頭	0.400	lutou	exact_rank_no_contains
+对饮	對飲	0.400	duiyin	exact_rank_no_contains
+大漆	大漆	0.400	daqi	exact_rank_no_contains
+搓澡	搓澡	0.400	cuozao	exact_rank_no_contains
+误触	誤觸	0.119	wuchu	exact_rank_no_contains
+框定	框定	0.400	kuangding	exact_rank_no_contains
+粗度	粗度	0.400	cudu	exact_rank_no_contains
+木柄	木柄	0.400	mubing	exact_rank_no_contains
+重画	重畫	0.400	chonghua	exact_rank_no_contains
+声纹	聲紋	0.481	shengwen	exact_rank_no_contains
+砂带	砂帶	0.382	shadai	exact_rank_no_contains
+打勾	打勾	0.002	dagou	exact_rank_no_contains
+流式	流式	0.239	liushi	exact_rank_no_contains
+万达	萬達	0.600	wanda	exact_rank_no_contains
+总队	總隊	0.443	zongdui	exact_rank_no_contains
+北站	北站	0.600	beizhan	exact_rank_no_contains
+英美	英美	0.600	yingmei	exact_rank_no_contains
+兴旺	興旺	0.985	xingwang	exact_rank_no_contains
+南门	南門	0.600	nanmen	exact_rank_no_contains
+川崎	川崎	0.600	chuanqi	exact_rank_no_contains
+山居	山居	0.412	shanju	exact_rank_no_contains
+松林	松林	0.600	songlin	exact_rank_no_contains
+税局	稅局	0.600	shuiju	exact_rank_no_contains
+造景	造景	0.600	zaojing	exact_rank_no_contains
+智障	智障	0.600	zhizhang	exact_rank_no_contains
+内省	內省	0.600	neisheng	exact_rank_no_contains
+动宾	動賓	0.400	dongbin	exact_rank_no_contains
+榆木	榆木	0.344	yumu	exact_rank_no_contains
+深冷	深冷	0.400	shenleng	exact_rank_no_contains
+源氏	源氏	0.485	yuanshi	exact_rank_no_contains
+买点	買點	0.559	maidian	exact_rank_no_contains
+超轻	超輕	0.400	chaoqing	exact_rank_no_contains
+调调	調調	0.400	diaodiao	exact_rank_no_contains
+俺们	俺們	0.600	anmen	exact_rank_no_contains
+逐字稿	逐字稿	0.400	zhuzigao	exact_rank_no_contains
+埋点	埋點	0.400	maidian	exact_rank_no_contains
+高亮	高亮	0.192	gaoliang	exact_rank_no_contains
+投喂	投餵	0.600	touwei	exact_rank_no_contains
+生图	生圖	0.304	shengtu	exact_rank_no_contains
+推流	推流	0.400	tuiliu	exact_rank_no_contains
+外呼	外呼	0.400	waihu	exact_rank_no_contains
+横屏	橫屏	0.248	hengping	exact_rank_no_contains
+竖屏	豎屏	0.400	shuping	exact_rank_no_contains
+提效	提效	0.402	tixiao	exact_rank_no_contains
+逆变器	逆變器	0.600	nibianqi	exact_rank_no_contains
+夫妻俩	夫妻倆	0.600	fuqilia	exact_rank_no_contains
+执行器	執行器	0.600	zhixingqi	exact_rank_no_contains
+拥有者	擁有者	0.600	yongyouzhe	exact_rank_no_contains
+综合体	綜合體	0.600	zongheti	exact_rank_no_contains
+渐进式	漸進式	0.600	jianjinshi	exact_rank_no_contains
+正负极	正負極	0.600	zhengfuji	exact_rank_no_contains
+误操作	誤操作	0.600	wucaozuo	exact_rank_no_contains
+知识型	知識型	0.600	zhishixing	exact_rank_no_contains
+国际版	國際版	0.600	guojiban	exact_rank_no_contains
+置信度	置信度	0.400	zhixindu	exact_rank_no_contains
+信息源	信息源	0.600	xinxiyuan	exact_rank_no_contains
+意向性	意向性	0.501	yixiangxing	exact_rank_no_contains
+政绩观	政績觀	0.400	zhengjiguan	exact_rank_no_contains
+纪念版	紀念版	0.400	jinianban	exact_rank_no_contains
+不干胶	不乾膠	0.400	buganjiao	exact_rank_no_contains
+小黄鱼	小黃魚	0.400	xiaohuangyu	exact_rank_no_contains
+试验品	試驗品	0.400	shiyanpin	exact_rank_no_contains
+语言包	語言包	0.400	yuyanbao	exact_rank_no_contains
+以旧换新	以舊換新	0.600	yijiuhuanxin	exact_rank_no_contains
+原作者	原作者	0.600	yuanzuozhe	exact_rank_no_contains
+全过程	全過程	0.600	quanguocheng	exact_rank_no_contains
+另一方	另一方	0.002	lingyifang	exact_rank_no_contains
+讲故事	講故事	0.600	jianggushi	exact_rank_no_contains
+全自动	全自動	0.600	quanzidong	exact_rank_no_contains
+可追溯	可追溯	0.600	kezhuisu	exact_rank_no_contains
+服务商	服務商	0.600	fuwushang	exact_rank_no_contains
+中文版	中文版	0.600	zhongwenban	exact_rank_no_contains
+系统化	系統化	0.600	xitonghua	exact_rank_no_contains
+人生观	人生觀	0.600	renshengguan	exact_rank_no_contains
+参与度	參與度	0.600	canyudu	exact_rank_no_contains
+正确性	正確性	0.600	zhengquexing	exact_rank_no_contains
+快节奏	快節奏	0.600	kuaijiezou	exact_rank_no_contains
+紧迫感	緊迫感	0.600	jinpogan	exact_rank_no_contains
+聪明人	聰明人	0.600	congmingren	exact_rank_no_contains
+轻量化	輕量化	0.600	qinglianghua	exact_rank_no_contains
+年月日	年月日	0.600	nianyueri	exact_rank_no_contains
+交互式	交互式	0.600	jiaohushi	exact_rank_no_contains
+逻辑性	邏輯性	0.600	luojixing	exact_rank_no_contains
+温湿度	溫溼度	0.600	wenshidu	exact_rank_no_contains
+信任度	信任度	0.600	xinrendu	exact_rank_no_contains
+返回值	返回值	0.600	fanhuizhi	exact_rank_no_contains
+详情页	詳情頁	0.600	xiangqingye	exact_rank_no_contains
+停车费	停車費	0.600	tingchefei	exact_rank_no_contains
+阅读者	閱讀者	0.600	yueduzhe	exact_rank_no_contains
+社交圈	社交圈	0.002	shejiaoquan	exact_rank_no_contains
+正规化	正規化	0.600	zhengguihua	exact_rank_no_contains
+小批量	小批量	0.600	xiaopiliang	exact_rank_no_contains
+低质量	低質量	0.600	dizhiliang	exact_rank_no_contains
+画面感	畫面感	0.600	huamiangan	exact_rank_no_contains
+深圳湾	深圳灣	0.600	shenzhenwan	exact_rank_no_contains
+完成度	完成度	0.600	wanchengdu	exact_rank_no_contains
+个人化	個人化	0.600	gerenhua	exact_rank_no_contains
+演讲者	演講者	0.600	yanjiangzhe	exact_rank_no_contains
+露营地	露營地	0.600	luyingdi	exact_rank_no_contains
+大家伙	大傢伙	0.600	dajiahuo	exact_rank_no_contains
+日文版	日文版	0.600	riwenban	exact_rank_no_contains
+冷兵器	冷兵器	0.600	lengbingqi	exact_rank_no_contains
+包装箱	包裝箱	0.600	baozhuangxiang	exact_rank_no_contains
+新街口	新街口	0.600	xinjiekou	exact_rank_no_contains
+子项目	子項目	0.600	zixiangmu	exact_rank_no_contains
+交互性	交互性	0.600	jiaohuxing	exact_rank_no_contains
+词汇表	詞彙表	0.400	cihuibiao	exact_rank_no_contains
+模糊性	模糊性	0.400	mohuxing	exact_rank_no_contains
+煤油灯	煤油燈	0.400	meiyoudeng	exact_rank_no_contains
+常识性	常識性	0.600	changshixing	exact_rank_no_contains
+识别率	識別率	0.400	shibielv	exact_rank_no_contains
+全功能	全功能	0.600	quangongneng	exact_rank_no_contains
+茅草屋	茅草屋	0.400	maocaowu	exact_rank_no_contains
+相关度	相關度	0.400	xiangguandu	exact_rank_no_contains
+长江口	長江口	0.400	changjiangkou	exact_rank_no_contains
+条理化	條理化	0.400	tiaolihua	exact_rank_no_contains
+土豆片	土豆片	0.400	tudoupian	exact_rank_no_contains
+分享者	分享者	0.002	fenxiangzhe	exact_rank_no_contains
+查看器	查看器	0.400	chakanqi	exact_rank_no_contains
+快递费	快遞費	0.400	kuaidifei	exact_rank_no_contains
+大而全	大而全	0.400	daerquan	exact_rank_no_contains
+架构图	架構圖	0.400	jiagoutu	exact_rank_no_contains
+单声道	單聲道	0.400	danshengdao	exact_rank_no_contains
+扫地机	掃地機	0.400	saodiji	exact_rank_no_contains
+原子化	原子化	0.400	yuanzihua	exact_rank_no_contains
+可选项	可選項	0.400	kexuanxiang	exact_rank_no_contains
+启动器	啟動器	0.400	qidongqi	exact_rank_no_contains
+固定值	固定值	0.400	gudingzhi	exact_rank_no_contains
+五月花	五月花	0.400	wuyuehua	exact_rank_no_contains
+上下水	上下水	0.400	shangxiashui	exact_rank_no_contains
+后半程	後半程	0.400	houbancheng	exact_rank_no_contains
+发言者	發言者	0.400	fayanzhe	exact_rank_no_contains
+双声道	雙聲道	0.400	shuangshengdao	exact_rank_no_contains
+升级包	升級包	0.400	shengjibao	exact_rank_no_contains
+基础知识	基礎知識	0.600	jichuzhishi	exact_rank_no_contains
+平均水平	平均水平	0.600	pingjunshuiping	exact_rank_no_contains
+系统工程	系統工程	0.600	xitonggongcheng	exact_rank_no_contains
+参考价值	參考價值	0.600	cankaojiazhi	exact_rank_no_contains
+户外运动	戶外運動	0.600	huwaiyundong	exact_rank_no_contains
+神经科学	神經科學	0.600	shenjingkexue	exact_rank_no_contains
+科学依据	科學依據	0.600	kexueyiju	exact_rank_no_contains
+控制面板	控制面板	0.600	kongzhimianban	exact_rank_no_contains
+哲学思想	哲學思想	0.600	zhexuesixiang	exact_rank_no_contains
+博士论文	博士論文	0.600	boshilunwen	exact_rank_no_contains
+专业术语	專業術語	0.600	zhuanyeshuyu	exact_rank_no_contains
+判断能力	判斷能力	0.600	panduannengli	exact_rank_no_contains
+自动识别	自動識別	0.600	zidongshibie	exact_rank_no_contains
+名人名言	名人名言	0.600	mingrenmingyan	exact_rank_no_contains
+儿童教育	兒童教育	0.600	ertongjiaoyu	exact_rank_no_contains
+会议纪要	會議紀要	0.600	huiyijiyao	exact_rank_no_contains
+写作方法	寫作方法	0.600	xiezuofangfa	exact_rank_no_contains
+核心思想	核心思想	0.600	hexinsixiang	exact_rank_no_contains
+会议记录	會議記錄	0.600	huiyijilu	exact_rank_no_contains
+分工协作	分工協作	0.600	fengongxiezuo	exact_rank_no_contains
+消费主义	消費主義	0.600	xiaofeizhuyi	exact_rank_no_contains
+马太效应	馬太效應	0.600	mataixiaoying	exact_rank_no_contains
+原始记录	原始記錄	0.400	yuanshijilu	exact_rank_no_contains
+积极情绪	積極情緒	0.400	jijiqingxu	exact_rank_no_contains
+磁盘空间	磁盤空間	0.400	cipankongjian	exact_rank_no_contains
+互相矛盾	互相矛盾	0.400	huxiangmaodun	exact_rank_no_contains
+天然材料	天然材料	0.400	tianrancailiao	exact_rank_no_contains
+呼叫转移	呼叫轉移	0.400	hujiaozhuanyi	exact_rank_no_contains
+自动播放	自動播放	0.400	zidongbofang	exact_rank_no_contains
+封闭系统	封閉系統	0.400	fengbixitong	exact_rank_no_contains
+无人能敌	無人能敵	0.400	wurennengdi	exact_rank_no_contains
+时间机器	時間機器	0.400	shijianjiqi	exact_rank_no_contains
+不讲道理	不講道理	0.600	bujiangdaoli	exact_rank_no_contains
+浪费时间	浪費時間	0.600	langfeishijian	exact_rank_no_contains
+保持一致	保持一致	0.600	baochiyizhi	exact_rank_no_contains
+吃吃喝喝	吃吃喝喝	0.400	chichihehe	exact_rank_no_contains
+变来变去	變來變去	0.400	bianlaibianqu	exact_rank_no_contains
+智能化	智能化	0.600	zhinenghua	exact_rank_no_contains
+矫正	矯正	0.600	jiaozheng	exact_rank_no_contains
+小姐姐	小姐姐	0.916	xiaojiejie	exact_rank_no_contains
+托运	託運	0.935	tuoyun	exact_rank_no_contains
+桑叶	桑葉	0.600	sangye	exact_rank_no_contains
+雨林	雨林	0.002	yulin	exact_rank_no_contains
+陈旧	陳舊	0.600	chenjiu	exact_rank_no_contains
+拜托	拜託	0.600	baituo	exact_rank_no_contains
+中国区	中國區	0.600	zhongguoqu	exact_rank_no_contains
+蓝领	藍領	0.595	lanling	exact_rank_no_contains
+小东西	小東西	0.600	xiaodongxi	exact_rank_no_contains
+英文单词	英文單詞	0.600	yingwendanci	exact_rank_no_contains
+日程安排	日程安排	0.600	richenganpai	exact_rank_no_contains
+同心圆	同心圓	0.600	tongxinyuan	exact_rank_no_contains
+严谨性	嚴謹性	0.600	yanjinxing	exact_rank_no_contains
+全景图	全景圖	0.600	quanjingtu	exact_rank_no_contains
+丹麦语	丹麥語	0.400	danmaiyu	exact_rank_no_contains
+欧美人	歐美人	0.400	oumeiren	exact_rank_no_contains
+鹿邑	鹿邑	0.400	luyi	exact_rank_no_contains
+伯希和	伯希和	0.400	boxihe	exact_rank_no_contains
+小毛驴	小毛驢	0.400	xiaomaolv	exact_rank_no_contains
+宝莲灯	寶蓮燈	0.400	baoliandeng	exact_rank_no_contains
+鹿皮	鹿皮	0.400	lupi	exact_rank_no_contains
+毛糙	毛糙	0.400	maocao	exact_rank_no_contains
+修修补补	修修補補	0.400	xiuxiububu	exact_rank_no_contains
+小秘书	小秘書	0.600	xiaomishu	exact_rank_no_contains
+杨木	楊木	0.400	yangmu	exact_rank_no_contains
+武汉站	武漢站	0.400	wuhanzhan	exact_rank_no_contains
+斯多葛	斯多葛	0.400	siduoge	exact_rank_no_contains
+加冰	加冰	0.002	jiabing	exact_rank_no_contains
+艾伦	艾倫	0.600	ailun	exact_rank_no_contains
+绘本	繪本	0.339	huiben	exact_rank_no_contains
+愿景	願景	0.600	yuanjing	exact_rank_no_contains
+核心价值	核心價值	0.600	hexinjiazhi	exact_rank_no_contains
+全覆盖	全覆蓋	0.600	quanfugai	exact_rank_no_contains
+微信群	微信群	0.600	weixinqun	exact_rank_no_contains
+文创	文創	0.600	wenchuang	exact_rank_no_contains
+负面情绪	負面情緒	0.600	fumianqingxu	exact_rank_no_contains
+全流程	全流程	0.600	quanliucheng	exact_rank_no_contains
+包邮	包郵	0.279	baoyou	exact_rank_no_contains
+顺丰	順豐	0.915	shunfeng	exact_rank_no_contains
+私域	私域	0.600	siyu	exact_rank_no_contains
+截止日期	截止日期	0.600	jiezhiriqi	exact_rank_no_contains
+支付方式	支付方式	0.600	zhifufangshi	exact_rank_no_contains
+获客	獲客	0.492	huoke	exact_rank_no_contains
+超预期	超預期	0.600	chaoyuqi	exact_rank_no_contains
+播放量	播放量	0.600	bofangliang	exact_rank_no_contains
+知识图谱	知識圖譜	0.600	zhishitupu	exact_rank_no_contains
+想象空间	想象空間	0.600	xiangxiangkongjian	exact_rank_no_contains
+同频	同頻	0.600	tongpin	exact_rank_no_contains
+消费电子	消費電子	0.600	xiaofeidianzi	exact_rank_no_contains
+回看	回看	0.600	huikan	exact_rank_no_contains
+知识付费	知識付費	0.600	zhishifufei	exact_rank_no_contains
+脑洞	腦洞	0.600	naodong	exact_rank_no_contains
+企业微信	企業微信	0.600	qiyeweixin	exact_rank_no_contains
+专业度	專業度	0.600	zhuanyedu	exact_rank_no_contains
+时间成本	時間成本	0.600	shijianchengben	exact_rank_no_contains
+隐私保护	隱私保護	0.600	yinsibaohu	exact_rank_no_contains
+通识	通識	0.002	tongshi	exact_rank_no_contains
+主图	主圖	0.600	zhutu	exact_rank_no_contains
+爆品	爆品	0.600	baopin	exact_rank_no_contains
+替代方案	替代方案	0.600	tidaifangan	exact_rank_no_contains
+地推	地推	0.600	ditui	exact_rank_no_contains
+发色	髮色	0.600	fase	exact_rank_no_contains
+内推	內推	0.600	neitui	exact_rank_no_contains
+仿写	仿寫	0.285	fangxie	exact_rank_no_contains
+匹配度	匹配度	0.600	pipeidu	exact_rank_no_contains
+网安	網安	0.224	wangan	exact_rank_no_contains
+畅享	暢享	0.600	changxiang	exact_rank_no_contains
+硅基	硅基	0.600	guiji	exact_rank_no_contains
+背景知识	背景知識	0.600	beijingzhishi	exact_rank_no_contains
+信创	信創	0.701	xinchuang	exact_rank_no_contains
+插画师	插畫師	0.600	chahuashi	exact_rank_no_contains
+懵逼	懵逼	0.600	mengbi	exact_rank_no_contains
+包浆	包漿	0.600	baojiang	exact_rank_no_contains
+德邦	德邦	0.600	debang	exact_rank_no_contains
+领克	領克	0.600	lingke	exact_rank_no_contains
+美术生	美術生	0.600	meishusheng	exact_rank_no_contains
+兴趣点	興趣點	0.600	xingqudian	exact_rank_no_contains
+扣费	扣費	0.600	koufei	exact_rank_no_contains
+场景化	場景化	0.600	changjinghua	exact_rank_no_contains
+建群	建群	0.600	jianqun	exact_rank_no_contains
+瓶颈期	瓶頸期	0.600	pingjingqi	exact_rank_no_contains
+日活	日活	0.388	rihuo	exact_rank_no_contains
+白嫖	白嫖	0.600	baipiao	exact_rank_no_contains
+丰富度	豐富度	0.600	fengfudu	exact_rank_no_contains
+低配	低配	0.386	dipei	exact_rank_no_contains
+打洞	打洞	0.600	dadong	exact_rank_no_contains
+奥莱	奧萊	0.600	aolai	exact_rank_no_contains
+脑区	腦區	0.600	naoqu	exact_rank_no_contains
+小面	小面	0.600	xiaomian	exact_rank_no_contains
+周线	周線	0.420	zhouxian	exact_rank_no_contains
+背景音	背景音	0.548	beijingyin	exact_rank_no_contains
+低级错误	低級錯誤	0.600	dijicuowu	exact_rank_no_contains
+面部识别	面部識別	0.400	mianbushibie	exact_rank_no_contains
+付费用户	付費用戶	0.600	fufeiyonghu	exact_rank_no_contains
+星链	星鏈	0.400	xinglian	exact_rank_no_contains
+长视频	長視頻	0.400	changshipin	exact_rank_no_contains
+突出显示	突出顯示	0.400	tuchuxianshi	exact_rank_no_contains
+彩页	彩頁	0.400	caiye	exact_rank_no_contains
+收货地址	收貨地址	0.400	shouhuodizhi	exact_rank_no_contains
+网络搜索	網絡搜索	0.400	wangluosousuo	exact_rank_no_contains
+锅具	鍋具	0.002	guoju	exact_rank_no_contains
+早期版本	早期版本	0.400	zaoqibanben	exact_rank_no_contains
+安克	安克	0.219	anke	exact_rank_no_contains
+关系图	關係圖	0.600	guanxitu	exact_rank_no_contains
+总时长	總時長	0.400	zongshichang	exact_rank_no_contains
+归属地	歸屬地	0.600	guishudi	exact_rank_no_contains
+博客文章	博客文章	0.400	bokewenzhang	exact_rank_no_contains
+掌控感	掌控感	0.400	zhangkonggan	exact_rank_no_contains
+命名规则	命名規則	0.400	mingmingguize	exact_rank_no_contains
+熵增	熵增	0.400	shangzeng	exact_rank_no_contains
+设计稿	設計稿	0.600	shejigao	exact_rank_no_contains
+主菜单	主菜單	0.600	zhucaidan	exact_rank_no_contains
+客户反馈	客戶反饋	0.400	kehufankui	exact_rank_no_contains
+手帐	手帳	0.400	shouzhang	exact_rank_no_contains
+回测	回測	0.400	huice	exact_rank_no_contains
+说话人	說話人	0.400	shuohuaren	exact_rank_no_contains
+月活	月活	0.400	yuehuo	exact_rank_no_contains
+日漫	日漫	0.400	riman	exact_rank_no_contains
+返场	返場	0.399	fanchang	exact_rank_no_contains
+反人性	反人性	0.400	fanrenxing	exact_rank_no_contains
+完整度	完整度	0.400	wanzhengdu	exact_rank_no_contains
+大文件	大文件	0.400	dawenjian	exact_rank_no_contains
+秘密基地	秘密基地	0.400	mimijidi	exact_rank_no_contains
+古早	古早	0.400	guzao	exact_rank_no_contains
+股权比例	股權比例	0.400	guquanbili	exact_rank_no_contains
+副卡	副卡	0.400	fuka	exact_rank_no_contains
+佳明	佳明	0.400	jiaming	exact_rank_no_contains
+上滑	上滑	0.279	shanghua	exact_rank_no_contains
+数据点	數據點	0.400	shujudian	exact_rank_no_contains
+青春版	青春版	0.400	qingchunban	exact_rank_no_contains
+健康数据	健康數據	0.400	jiankangshuju	exact_rank_no_contains
+长期记忆	長期記憶	0.400	changqijiyi	exact_rank_no_contains
+辅助决策	輔助決策	0.400	fuzhujuece	exact_rank_no_contains
+微信读书	微信讀書	0.400	weixindushu	exact_rank_no_contains
+日榜	日榜	0.400	ribang	exact_rank_no_contains
+头肉	頭肉	0.400	tourou	exact_rank_no_contains
+老玩家	老玩家	0.400	laowanjia	exact_rank_no_contains
+主流观点	主流觀點	0.400	zhuliuguandian	exact_rank_no_contains
+买量	買量	0.400	mailiang	exact_rank_no_contains
+官方文档	官方文檔	0.400	guanfangwendang	exact_rank_no_contains
+流量卡	流量卡	0.400	liuliangka	exact_rank_no_contains
+直出	直出	0.279	zhichu	exact_rank_no_contains
+失败原因	失敗原因	0.400	shibaiyuanyin	exact_rank_no_contains
+走流程	走流程	0.400	zouliucheng	exact_rank_no_contains
+认知偏差	認知偏差	0.400	renzhipiancha	exact_rank_no_contains
+技术规格	技術規格	0.400	jishuguige	exact_rank_no_contains
+超级电容	超級電容	0.400	chaojidianrong	exact_rank_no_contains
+产研	產研	0.395	chanyan	exact_rank_no_contains
+印象笔记	印象筆記	0.400	yinxiangbiji	exact_rank_no_contains
+待办事项	待辦事項	0.400	daibanshixiang	exact_rank_no_contains
+蓝牙设备	藍牙設備	0.400	lanyashebei	exact_rank_no_contains
+重绘	重繪	0.600	chonghui	exact_rank_no_contains
+滤筒	濾筒	0.400	lvtong	exact_rank_no_contains
+异同点	異同點	0.400	yitongdian	exact_rank_no_contains
+推广者	推廣者	0.400	tuiguangzhe	exact_rank_no_contains
+花屏	花屏	0.400	huaping	exact_rank_no_contains
+拼色	拼色	0.002	pinse	exact_rank_no_contains
+充电口	充電口	0.400	chongdiankou	exact_rank_no_contains
+隐性知识	隱性知識	0.400	yinxingzhishi	exact_rank_no_contains
+标星	標星	0.400	biaoxing	exact_rank_no_contains
+聊天框	聊天框	0.400	liaotiankuang	exact_rank_no_contains
+小模型	小模型	0.400	xiaomoxing	exact_rank_no_contains
+亚朵	亞朵	0.400	yaduo	exact_rank_no_contains
+拉群	拉群	0.400	laqun	exact_rank_no_contains
+订阅服务	訂閱服務	0.400	dingyuefuwu	exact_rank_no_contains
+纳博科夫	納博科夫	0.400	nabokefu	exact_rank_no_contains
+白噪音	白噪音	0.400	baizaoyin	exact_rank_no_contains
+编程思维	編程思維	0.400	bianchengsiwei	exact_rank_no_contains
+离网	離網	0.400	liwang	exact_rank_no_contains
+长弓	長弓	0.400	changgong	exact_rank_no_contains
+具身	具身	0.002	jushen	exact_rank_no_contains
+故事板	故事板	0.400	gushiban	exact_rank_no_contains
+失败案例	失敗案例	0.400	shibaianli	exact_rank_no_contains
+俏色	俏色	0.400	qiaose	exact_rank_no_contains
+护体	護體	0.099	huti	exact_rank_no_contains
+安卓版	安卓版	0.400	anzhuoban	exact_rank_no_contains
+胜场	勝場	0.377	shengchang	exact_rank_no_contains
+绿联	綠聯	0.400	lvlian	exact_rank_no_contains
+公共知识	公共知識	0.400	gonggongzhishi	exact_rank_no_contains
+木艺	木藝	0.002	muyi	exact_rank_no_contains
+无状态	無狀態	0.400	wuzhuangtai	exact_rank_no_contains
+内部系统	內部系統	0.400	neibuxitong	exact_rank_no_contains
+翘课	翹課	0.986	qiaoke	exact_rank_no_contains
+优惠码	優惠碼	0.400	youhuima	exact_rank_no_contains
+高级版	高級版	0.400	gaojiban	exact_rank_no_contains
+问价	問價	0.400	wenjia	exact_rank_no_contains
+大版本	大版本	0.400	dabanben	exact_rank_no_contains
+主窗口	主窗口	0.400	zhuchuangkou	exact_rank_no_contains
+编辑区	編輯區	0.400	bianjiqu	exact_rank_no_contains
+艺术字体	藝術字體	0.400	yishuziti	exact_rank_no_contains
+# Everyday words, 2026-10-23, the second batch (common words the lexicon lacked), the less frequent ones of the same kinds (撒花, 柴刀, 框选, 短按, 滚屏, 攒机, 认知负荷, 端侧, 白屏, 左滑, 右滑, 元信息, 协作者, 误删除, 卡片盒, 草缸, 洞洞板, 秋梨膏, 灵动岛, 图床, 语音转写), by the same weights.
+撒花	撒花	0.200	sahua	exact_rank_no_contains
+柴刀	柴刀	0.200	chaidao	exact_rank_no_contains
+框选	框選	0.200	kuangxuan	exact_rank_no_contains
+脏活	髒活	0.200	zanghuo	exact_rank_no_contains
+火机	火機	0.102	huoji	exact_rank_no_contains
+锻打	鍛打	0.200	duanda	exact_rank_no_contains
+预读	預讀	0.200	yudu	exact_rank_no_contains
+挨冻	挨凍	0.200	aidong	exact_rank_no_contains
+生皮	生皮	0.200	shengpi	exact_rank_no_contains
+皮绳	皮繩	0.200	pisheng	exact_rank_no_contains
+短按	短按	0.200	duanan	exact_rank_no_contains
+钓虾	釣蝦	0.197	diaoxia	exact_rank_no_contains
+人味	人味	0.200	renwei	exact_rank_no_contains
+火绒	火絨	0.200	huorong	exact_rank_no_contains
+雪盲	雪盲	0.200	xuemang	exact_rank_no_contains
+代卖	代賣	0.200	daimai	exact_rank_no_contains
+滚屏	滾屏	0.200	gunping	exact_rank_no_contains
+兔皮	兔皮	0.080	tupi	exact_rank_no_contains
+攒机	攢機	0.080	zanji	exact_rank_no_contains
+派活	派活	0.080	paihuo	exact_rank_no_contains
+窗机	窗機	0.080	chuangji	exact_rank_no_contains
+钻木	鑽木	0.080	zuanmu	exact_rank_no_contains
+军报	軍報	0.200	junbao	exact_rank_no_contains
+问斩	問斬	0.200	wenzhan	exact_rank_no_contains
+听装	聽裝	0.200	tingzhuang	exact_rank_no_contains
+认知负荷	認知負荷	0.200	renzhifuhe	exact_rank_no_contains
+端侧	端側	0.200	duance	exact_rank_no_contains
+白屏	白屏	0.200	baiping	exact_rank_no_contains
+左滑	左滑	0.159	zuohua	exact_rank_no_contains
+右滑	右滑	0.200	youhua	exact_rank_no_contains
+脑暴	腦暴	0.080	naobao	exact_rank_no_contains
+元信息	元信息	0.200	yuanxinxi	exact_rank_no_contains
+协作者	協作者	0.200	xiezuozhe	exact_rank_no_contains
+玩不转	玩不轉	0.200	wanbuzhuan	exact_rank_no_contains
+误删除	誤刪除	0.200	wushanchu	exact_rank_no_contains
+卡片盒	卡片盒	0.200	kapianhe	exact_rank_no_contains
+时分秒	時分秒	0.080	shifenmiao	exact_rank_no_contains
+折叠桌	摺疊桌	0.200	zhediezhuo	exact_rank_no_contains
+收纳袋	收納袋	0.200	shounadai	exact_rank_no_contains
+周转箱	週轉箱	0.200	zhouzhuanxiang	exact_rank_no_contains
+不吭声	不吭聲	0.200	bukengsheng	exact_rank_no_contains
+黄铜矿	黃銅礦	0.200	huangtongkuang	exact_rank_no_contains
+德文版	德文版	0.200	dewenban	exact_rank_no_contains
+讨论组	討論組	0.200	taolunzu	exact_rank_no_contains
+雕刻刀	雕刻刀	0.200	diaokedao	exact_rank_no_contains
+盗版书	盜版書	0.200	daobanshu	exact_rank_no_contains
+不识货	不識貨	0.200	bushihuo	exact_rank_no_contains
+产品名	產品名	0.200	chanpinming	exact_rank_no_contains
+电信卡	電信卡	0.200	dianxinka	exact_rank_no_contains
+主流程	主流程	0.200	zhuliucheng	exact_rank_no_contains
+登山包	登山包	0.200	dengshanbao	exact_rank_no_contains
+目录名	目錄名	0.200	muluming	exact_rank_no_contains
+动态效果	動態效果	0.200	dongtaixiaoguo	exact_rank_no_contains
+激光雕刻	激光雕刻	0.200	jiguangdiaoke	exact_rank_no_contains
+记忆系统	記憶系統	0.200	jiyixitong	exact_rank_no_contains
+程序逻辑	程序邏輯	0.200	chengxuluoji	exact_rank_no_contains
+税务代理	稅務代理	0.200	shuiwudaili	exact_rank_no_contains
+希思罗	希思羅	0.200	xisiluo	exact_rank_no_contains
+黑胡桃	黑胡桃	0.200	heihutao	exact_rank_no_contains
+雅库特	雅庫特	0.200	yakute	exact_rank_no_contains
+巴尔虎	巴爾虎	0.200	baerhu	exact_rank_no_contains
+兑换码	兌換碼	0.200	duihuanma	exact_rank_no_contains
+英式英语	英式英語	0.200	yingshiyingyu	exact_rank_no_contains
+笔记法	筆記法	0.200	bijifa	exact_rank_no_contains
+元婴	元嬰	0.197	yuanying	exact_rank_no_contains
+开始日期	開始日期	0.200	kaishiriqi	exact_rank_no_contains
+木勺	木勺	0.200	mushao	exact_rank_no_contains
+分享链接	分享鏈接	0.200	fenxianglianjie	exact_rank_no_contains
+大地色	大地色	0.200	dadise	exact_rank_no_contains
+立即生效	立即生效	0.200	lijishengxiao	exact_rank_no_contains
+关键事件	關鍵事件	0.200	guanjianshijian	exact_rank_no_contains
+回听	回聽	0.200	huiting	exact_rank_no_contains
+产品图	產品圖	0.200	chanpintu	exact_rank_no_contains
+群规	群規	0.200	qungui	exact_rank_no_contains
+二创	二創	0.200	erchuang	exact_rank_no_contains
+宣传图	宣傳圖	0.200	xuanchuantu	exact_rank_no_contains
+破音	破音	0.200	poyin	exact_rank_no_contains
+商业闭环	商業閉環	0.200	shangyebihuan	exact_rank_no_contains
+铲屎	鏟屎	0.114	chanshi	exact_rank_no_contains
+牛气冲天	牛氣沖天	0.200	niuqichongtian	exact_rank_no_contains
+社交货币	社交貨幣	0.200	shejiaohuobi	exact_rank_no_contains
+交互界面	交互界面	0.200	jiaohujiemian	exact_rank_no_contains
+留档	留檔	0.200	liudang	exact_rank_no_contains
+企微	企微	0.139	qiwei	exact_rank_no_contains
+原视频	原視頻	0.200	yuanshipin	exact_rank_no_contains
+投流	投流	0.200	touliu	exact_rank_no_contains
+追觅	追覓	0.200	zhuimi	exact_rank_no_contains
+结束日期	結束日期	0.200	jieshuriqi	exact_rank_no_contains
+买课	買課	0.200	maike	exact_rank_no_contains
+价值流	價值流	0.200	jiazhiliu	exact_rank_no_contains
+缸壁	缸壁	0.282	gangbi	exact_rank_no_contains
+打标签	打標籤	0.200	dabiaoqian	exact_rank_no_contains
+除藻	除藻	0.200	chuzao	exact_rank_no_contains
+闪送	閃送	0.200	shansong	exact_rank_no_contains
+抽绳	抽繩	0.200	chousheng	exact_rank_no_contains
+刀型	刀型	0.200	daoxing	exact_rank_no_contains
+行李额	行李額	0.200	xinglie	exact_rank_no_contains
+舆情监控	輿情監控	0.200	yuqingjiankong	exact_rank_no_contains
+说明文档	說明文檔	0.200	shuomingwendang	exact_rank_no_contains
+徒步鞋	徒步鞋	0.200	tubuxie	exact_rank_no_contains
+微信群聊	微信群聊	0.200	weixinqunliao	exact_rank_no_contains
+皮雕	皮雕	0.200	pidiao	exact_rank_no_contains
+增删改查	增刪改查	0.200	zengshangaicha	exact_rank_no_contains
+塞利格曼	塞利格曼	0.200	sailigeman	exact_rank_no_contains
+伪需求	偽需求	0.200	weixuqiu	exact_rank_no_contains
+记忆库	記憶庫	0.200	jiyiku	exact_rank_no_contains
+检查清单	檢查清單	0.200	jianchaqingdan	exact_rank_no_contains
+灰调	灰調	0.200	huidiao	exact_rank_no_contains
+子文件夹	子文件夾	0.200	ziwenjianjia	exact_rank_no_contains
+班夫	班夫	0.200	banfu	exact_rank_no_contains
+需求规格	需求規格	0.200	xuqiuguige	exact_rank_no_contains
+桌面端	桌面端	0.200	zhuomianduan	exact_rank_no_contains
+税点	稅點	0.200	shuidian	exact_rank_no_contains
+荒野求生	荒野求生	0.200	huangyeqiusheng	exact_rank_no_contains
+编辑界面	編輯界面	0.200	bianjijiemian	exact_rank_no_contains
+卢曼	盧曼	0.275	luman	exact_rank_no_contains
+无摩擦	無摩擦	0.200	wumoca	exact_rank_no_contains
+怼人	懟人	0.200	duiren	exact_rank_no_contains
+待确认	待確認	0.200	daiqueren	exact_rank_no_contains
+弹框	彈框	0.200	tankuang	exact_rank_no_contains
+发布版本	發佈版本	0.200	fabubanben	exact_rank_no_contains
+重连	重連	0.200	chonglian	exact_rank_no_contains
+专注当下	專注當下	0.200	zhuanzhudangxia	exact_rank_no_contains
+草缸	草缸	0.200	caogang	exact_rank_no_contains
+环境音	環境音	0.200	huanjingyin	exact_rank_no_contains
+河口湖	河口湖	0.200	hekouhu	exact_rank_no_contains
+快捷指令	快捷指令	0.200	kuaijiezhiling	exact_rank_no_contains
+反选	反選	0.200	fanxuan	exact_rank_no_contains
+洞洞板	洞洞板	0.200	dongdongban	exact_rank_no_contains
+秋梨膏	秋梨膏	0.200	qiuligao	exact_rank_no_contains
+皮艺	皮藝	0.200	piyi	exact_rank_no_contains
+物理按键	物理按鍵	0.200	wulianjian	exact_rank_no_contains
+柘木	柘木	0.200	zhemu	exact_rank_no_contains
+夹片	夾片	0.200	jiapian	exact_rank_no_contains
+反常识	反常識	0.200	fanchangshi	exact_rank_no_contains
+逻辑链	邏輯鏈	0.200	luojilian	exact_rank_no_contains
+撒币	撒幣	0.200	sabi	exact_rank_no_contains
+待选	待選	0.200	daixuan	exact_rank_no_contains
+传图	傳圖	0.200	chuantu	exact_rank_no_contains
+声网	聲網	0.153	shengwang	exact_rank_no_contains
+存储层	存儲層	0.200	cunchuceng	exact_rank_no_contains
+蓝标	藍標	0.200	lanbiao	exact_rank_no_contains
+茧房	繭房	0.080	jianfang	exact_rank_no_contains
+生存指南	生存指南	0.200	shengcunzhinan	exact_rank_no_contains
+乐鑫	樂鑫	0.200	lexin	exact_rank_no_contains
+逻辑漏洞	邏輯漏洞	0.200	luojiloudong	exact_rank_no_contains
+笔记软件	筆記軟件	0.200	bijiruanjian	exact_rank_no_contains
+腾讯文档	騰訊文檔	0.200	tengxunwendang	exact_rank_no_contains
+静态图	靜態圖	0.200	jingtaitu	exact_rank_no_contains
+语音文件	語音文件	0.200	yuyinwenjian	exact_rank_no_contains
+计费系统	計費系統	0.200	jifeixitong	exact_rank_no_contains
+保活	保活	0.200	baohuo	exact_rank_no_contains
+呼吸灯	呼吸燈	0.200	huxideng	exact_rank_no_contains
+订阅制	訂閱制	0.200	dingyuezhi	exact_rank_no_contains
+手台	手臺	0.200	shoutai	exact_rank_no_contains
+压力指数	壓力指數	0.200	yalizhishu	exact_rank_no_contains
+访谈者	訪談者	0.200	fangtanzhe	exact_rank_no_contains
+深度洞察	深度洞察	0.200	shendudongcha	exact_rank_no_contains
+创新院	創新院	0.200	chuangxinyuan	exact_rank_no_contains
+兵人	兵人	0.200	bingren	exact_rank_no_contains
+待办清单	待辦清單	0.200	daibanqingdan	exact_rank_no_contains
+索林根	索林根	0.200	suolingen	exact_rank_no_contains
+汤逊湖	湯遜湖	0.200	tangxunhu	exact_rank_no_contains
+熵减	熵減	0.200	shangjian	exact_rank_no_contains
+本地时间	本地時間	0.200	bendishijian	exact_rank_no_contains
+回显	回顯	0.200	huixian	exact_rank_no_contains
+支付者	支付者	0.200	zhifuzhe	exact_rank_no_contains
+录音文件	錄音文件	0.200	luyinwenjian	exact_rank_no_contains
+灵动岛	靈動島	0.080	lingdongdao	exact_rank_no_contains
+立创	立創	0.080	lichuang	exact_rank_no_contains
+责任边界	責任邊界	0.080	zerenbianjie	exact_rank_no_contains
+虾虎	蝦虎	0.080	xiahu	exact_rank_no_contains
+交互逻辑	交互邏輯	0.200	jiaohuluoji	exact_rank_no_contains
+植鞣	植鞣	0.200	zhirou	exact_rank_no_contains
+异步执行	異步執行	0.080	yibuzhixing	exact_rank_no_contains
+大纲视图	大綱視圖	0.080	dagangshitu	exact_rank_no_contains
+敲木鱼	敲木魚	0.080	qiaomuyu	exact_rank_no_contains
+设计哲学	設計哲學	0.200	shejizhexue	exact_rank_no_contains
+离线模式	離線模式	0.080	lixianmoshi	exact_rank_no_contains
+落盘	落盤	0.080	luopan	exact_rank_no_contains
+虚拟网	虛擬網	0.080	xuniwang	exact_rank_no_contains
+灰度发布	灰度發佈	0.080	huidufabu	exact_rank_no_contains
+图床	圖床	0.080	tuchuang	exact_rank_no_contains
+左侧栏	左側欄	0.080	zuocelan	exact_rank_no_contains
+语音转写	語音轉寫	0.080	yuyinzhuanxie	exact_rank_no_contains
+# Existing words on the keys of the batch of 2026-10-23, the second, at an import weight that the general text holds more often than the new word of their key, weighted by the same rules (人为 at 1 with 82,700 occurrences, 纸张 at 80 with 12,900, 校验, 寓言, 书评, 首长, 手杖, 大旗, 打气, 甬道, 呆板 ...); 将死, which the traditional dictionary lacked, goes there too.
+版式	版式	0.278	banshi	exact_rank
+政界	政界	0.519	zhengjie	exact_rank
+整节	整節	0.518	zhengjie	exact_rank
+校验	校驗	0.574	jiaoyan	exact_rank
+寓言	寓言	0.507	yuyan	exact_rank
+通篇	通篇	0.600	tongpian	exact_rank
+采食	採食	0.156	caishi	exact_rank
+封底	封底	0.128	fengdi	exact_rank
+将死	將死	0.600	jiangsi	exact_rank
+呆板	呆板	0.601	daiban	exact_rank
+带班	帶班	0.600	daiban	exact_rank
+甬道	甬道	0.600	yongdao	exact_rank
+大器	大器	0.401	daqi	exact_rank
+大旗	大旗	0.600	daqi	exact_rank
+打气	打氣	0.601	daqi	exact_rank
+祸及	禍及	0.103	huoji	exact_rank
+火鸡	火雞	0.105	huoji	exact_rank
+货机	貨機	0.104	huoji	exact_rank
+人为	人為	0.600	renwei	exact_rank
+书评	書評	0.600	shuping	exact_rank
+油滑	油滑	0.265	youhua	exact_rank
+国际班	國際班	0.601	guojiban	exact_rank
+纸张	紙張	0.831	zhizhang	exact_rank
+褒奖	褒獎	0.601	baojiang	exact_rank
+首长	首長	0.602	shouzhang	exact_rank
+收账	收賬	0.600	shouzhang	exact_rank
+手杖	手杖	0.601	shouzhang	exact_rank
+木椅	木椅	0.401	muyi	exact_rank
+偷溜	偷溜	0.400	touliu	exact_rank
+宝货	寶貨	0.201	baohuo	exact_rank
+# Everyday words, 2026-10-24 (versions, old and new things of work, inspections), the more frequent ones: 旧版 and 老版 (requested), versions and models (初版, 旧款, 老款, 新型号, 老机型), old and new things of work (旧系统, 新代码, 新项目, 老用户, 新客户, 旧数据, 老设备) and inspections (巡检员, 巡检记录, 巡检系统, 日常巡检). Weighted as the blocks of 2026-10-20 (occurrences where the word is no part of a longer dictionary word, nor before one that its last character begins, nor after one that its first character ends); a requested word stays under a commoner word of its key (老版 under 老板).
+旧版	舊版	0.600	jiuban	exact_rank_no_contains
+老版	老版	0.399	laoban	exact_rank_no_contains
+初版	初版	0.550	chuban	exact_rank_no_contains
+首版	首版	0.002	shouban	exact_rank_no_contains
+旧款	舊款	0.400	jiukuan	exact_rank_no_contains
+老款	老款	0.600	laokuan	exact_rank_no_contains
+新型号	新型號	0.400	xinxinghao	exact_rank_no_contains
+新机型	新機型	0.400	xinjixing	exact_rank_no_contains
+新系统	新系統	0.600	xinxitong	exact_rank_no_contains
+旧手机	舊手機	0.400	jiushouji	exact_rank_no_contains
+老手机	老手機	0.400	laoshouji	exact_rank_no_contains
+新项目	新項目	0.600	xinxiangmu	exact_rank_no_contains
+新客户	新客戶	0.600	xinkehu	exact_rank_no_contains
+老用户	老用戶	0.600	laoyonghu	exact_rank_no_contains
+新用户	新用戶	0.600	xinyonghu	exact_rank_no_contains
+日检	日檢	0.400	rijian	exact_rank_no_contains
+# Everyday words, 2026-10-24 (versions, old and new things of work, inspections), the less frequent ones of the same kinds, by the same weights.
+初版本	初版本	0.080	chubanben	exact_rank_no_contains
+旧型号	舊型號	0.080	jiuxinghao	exact_rank_no_contains
+老机型	老機型	0.080	laojixing	exact_rank_no_contains
+旧系统	舊系統	0.200	jiuxitong	exact_rank_no_contains
+老系统	老系統	0.200	laoxitong	exact_rank_no_contains
+旧数据	舊數據	0.200	jiushuju	exact_rank_no_contains
+旧电脑	舊電腦	0.200	jiudiannao	exact_rank_no_contains
+新代码	新代碼	0.200	xindaima	exact_rank_no_contains
+老项目	老項目	0.200	laoxiangmu	exact_rank_no_contains
+旧文件	舊文件	0.080	jiuwenjian	exact_rank_no_contains
+旧设备	舊設備	0.200	jiushebei	exact_rank_no_contains
+老设备	老設備	0.200	laoshebei	exact_rank_no_contains
+老服务器	老服務器	0.200	laofuwuqi	exact_rank_no_contains
+旧用户	舊用戶	0.200	jiuyonghu	exact_rank_no_contains
+新界面	新界面	0.200	xinjiemian	exact_rank_no_contains
+周检	周檢	0.080	zhoujian	exact_rank_no_contains
+月检	月檢	0.200	yuejian	exact_rank_no_contains
+巡检员	巡檢員	0.200	xunjianyuan	exact_rank_no_contains
+巡检系统	巡檢系統	0.080	xunjianxitong	exact_rank_no_contains
+巡检记录	巡檢記錄	0.080	xunjianjilu	exact_rank_no_contains
+巡检机器人	巡檢機器人	0.200	xunjianjiqiren	exact_rank_no_contains
+日常巡检	日常巡檢	0.200	richangxunjian	exact_rank_no_contains
+巡检人员	巡檢人員	0.200	xunjianrenyuan	exact_rank_no_contains
+# Existing words of the kinds of the batch of 2026-10-24 at an import weight, weighted by the same rules (年检 at 1, 老电脑, 老客户, 新功能).
+老电脑	老電腦	0.200	laodiannao	exact_rank
+老客户	老客戶	0.600	laokehu	exact_rank
+新功能	新功能	0.600	xingongneng	exact_rank
+年检	年檢	0.600	nianjian	exact_rank

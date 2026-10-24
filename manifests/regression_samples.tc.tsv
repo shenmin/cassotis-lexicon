@@ -2539,3 +2539,57 @@ xiuye	休業	2
 xiuting	休庭	1
 bantuixiu	半退休	1
 shuangxiu	雙休	1
+
+# Everyday words of 2026-10-23, the second batch (答题, 配图, 插画, 埋点, 高亮, 逆变器 ...) and the existing words of their keys reweighted (人为, 校验, 寓言 ...): the rank each has by weight among the words of its key.
+dati	答題	2
+peitu	配圖	1
+dalei	大類	1
+chahua	插畫	3
+maidian	埋點	3
+gaoliang	高亮	3
+nibianqi	逆變器	1
+zhixindu	置信度	1
+yijiuhuanxin	以舊換新	1
+huiyijiyao	會議紀要	1
+jiaozheng	矯正	1
+huiben	繪本	2
+yuanjing	願景	2
+shunfeng	順豐	1
+banshi	版式	4
+zhengjie	政界	3
+zhengjie	整節	4
+jiaoyan	校驗	3
+yuyan	寓言	3
+tongpian	通篇	1
+caishi	採食	5
+fengdi	封底	2
+jiangsi	將死	1
+daiban	呆板	2
+daiban	帶班	3
+yongdao	甬道	2
+daqi	大器	4
+daqi	大旗	3
+daqi	打氣	2
+huoji	禍及	7
+huoji	火雞	5
+huoji	貨機	6
+renwei	人為	2
+shuping	書評	1
+youhua	油滑	4
+guojiban	國際班	1
+zhizhang	紙張	1
+baojiang	褒獎	1
+shouzhang	首長	2
+shouzhang	收賬	4
+shouzhang	手杖	3
+muyi	木椅	1
+touliu	偷溜	1
+baohuo	寶貨	2
+
+# Everyday words of 2026-10-24 (旧版, 老版) and the existing words of their kinds reweighted (年检, 老电脑, 老客户, 新功能): the rank each has by weight among the words of its key.
+jiuban	舊版	1
+laoban	老版	3
+laodiannao	老電腦	1
+laokehu	老客戶	1
+xingongneng	新功能	1
+nianjian	年檢	2

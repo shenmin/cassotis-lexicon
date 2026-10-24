@@ -5242,7 +5242,7 @@ banshenxiang	半身像	676
 banshi	辦事	655
 banshi	半是	280
 banshi	班師	102
-banshi	版式	57
+banshi	版式	278
 banshichu	辦事處	600
 banshihuichao	班師回朝	525
 banshisichongbing	班氏絲蟲病	610
@@ -5764,7 +5764,7 @@ baohuludemimi	寶葫蘆的秘密	318
 baohumo	保護膜	470
 baohumoshi	保護模式	405
 baohuo	包活	802
-baohuo	寶貨	70
+baohuo	寶貨	201
 baohupinghe	暴虎馮河	228
 baohuqu	保護區	772
 baohuren	保護人	232
@@ -5803,7 +5803,7 @@ baojian	報檢	443
 baojian	寶劍	439
 baojiancao	保健操	222
 baojianchui	包剪錘	167
-baojiang	褒獎	10
+baojiang	褒獎	601
 baojiangjingzizhushe	胞漿精子注射	700
 baojiangneidanjingzizhushe	胞漿內單精子注射	700
 baojiangneijingzizhushe	胞漿內精子注射	700
@@ -6664,7 +6664,7 @@ bayannaoer	巴彥淖爾	650
 bayanxian	巴彥縣	160
 bayaqian	拔牙鉗	470
 bayashu	拔牙術	500
-baye	第八頁	800
+dibaye	第八頁	800
 baye	霸業	501
 bayejide'ershi	巴耶濟德二世	645
 bayejideta	巴耶濟德塔	635
@@ -14346,7 +14346,7 @@ caishi	才是	937
 caishi	菜市	664
 caishi	菜式	320
 caishi	採石	194
-caishi	採食	122
+caishi	採食	156
 caishi	才識	1
 caishi'eryi	才十二一	570
 caishibeigaiqu	蔡氏被蓋區	640
@@ -23859,8 +23859,8 @@ daian	待庵	260
 daianna	戴安娜	355
 daiaoxin	戴奧辛	198
 daiban	代辦	933
-daiban	呆板	85
-daiban	帶班	10
+daiban	呆板	601
+daiban	帶班	600
 daibanshixiangliebiao	待辦事項列表	318
 daibanshou	呆扳手	230
 daiben	呆笨	359
@@ -26417,9 +26417,9 @@ dapudong	大浦洞	232
 dapuke	打撲克	379
 dapuxiang	大埔鄉	228
 daqi	大氣	1000
-daqi	大器	13
-daqi	大旗	13
-daqi	打氣	1
+daqi	大器	401
+daqi	大旗	600
+daqi	打氣	601
 daqian	打錢	700
 daqian	打千	294
 daqian	大錢	216
@@ -39543,7 +39543,7 @@ fengdelun	馮德倫	774
 fengdeng	丰登	245
 fengdeying	馮德英	228
 fengdi	封地	172
-fengdi	封底	72
+fengdi	封底	128
 fengdian	風電	560
 fengdian	瘋癲	188
 fengdianchang	風電廠	232
@@ -50562,7 +50562,7 @@ guojiazirankexuejiang	國家自然科學獎	391
 guojiazirankexuejijin	國家自然科學基金	384
 guojiazirankexuejijinweiyuanhui	國家自然科學基金委員會	376
 guojiazuqiudui	國家足球隊	290
-guojiban	國際班	10
+guojiban	國際班	601
 guojibiaozhun	國際標準	761
 guojibiaozhun	國際標准	309
 guojibiaozhunhuazuzhi	國際標準化組織	418
@@ -60670,9 +60670,9 @@ huoji	活祭	688
 huoji	活計	532
 huoji	伙計	128
 huoji	夥計	92
-huoji	禍及	31
-huoji	火雞	1
-huoji	貨機	1
+huoji	禍及	103
+huoji	火雞	105
+huoji	貨機	104
 huojia	貨架	560
 huojian	火箭	1000
 huojian	活檢	303
@@ -64525,7 +64525,7 @@ jiaoyaliusuan	焦亞硫酸	573
 jiaoyaliusuanna	焦亞硫酸鈉	610
 jiaoyan	嬌豔	798
 jiaoyan	教研	637
-jiaoyan	校驗	1
+jiaoyan	校驗	574
 jiaoyang	驕陽	860
 jiaoyang	教養	598
 jiaoyangfangshi	教養方式	570
@@ -71540,7 +71540,7 @@ jiuyao	就要	700
 jiuyao	酒殽	425
 jiuyao	酒餚	232
 jiuye	就業	1000
-jiuye	第九頁	798
+dijiuye	第九頁	798
 jiuye	就也	342
 jiuye	舅爺	25
 jiuye'andingfei	就業安定費	289
@@ -79741,7 +79741,7 @@ laode	老的	600
 laodeng	老等	206
 laodi	老底	379
 laodi	老弟	283
-laodiannao	老電腦	10
+laodiannao	老電腦	200
 laodiao	老掉	956
 laodiao	老雕	1
 laodiaochongtan	老調重彈	673
@@ -79995,7 +79995,7 @@ laojuncuo	老君厝	591
 laojunmei	老君眉	506
 laokao	牢靠	425
 laoke	老客	560
-laokehu	老客戶	10
+laokehu	老客戶	600
 laokela	老克拉	640
 laokenggong	老坑公	640
 laokengpo	老坑婆	635
@@ -86037,7 +86037,7 @@ liuyanhuawu	柳煙花霧	387
 liuyanlei	流眼淚	280
 liuyanxi	柳演錫	775
 liuyanzhiyuzhizhe	流言止於智者	919
-liuye	第六頁	798
+diliuye	第六頁	798
 liuye	柳葉	10
 liuyedao	柳葉刀	249
 liuyemei	柳葉眉	215
@@ -96276,7 +96276,7 @@ muye	牧業	392
 muye	牧野	296
 muyecha	母夜叉	240
 muyequ	牧野區	379
-muyi	木椅	10
+muyi	木椅	401
 muyicheng	木已成	556
 muyichengzhou	木已成舟	599
 muyin	母音	305
@@ -109659,7 +109659,7 @@ qiyanyeshan	其言也善	627
 qiyao	七曜	200
 qiyazi	奇亞籽	230
 qiye	企業	1000
-qiye	第七頁	798
+diqiye	第七頁	798
 qiye	起夜	1
 qiyebaye	七爺八爺	405
 qiyegan	七葉苷	500
@@ -112540,7 +112540,7 @@ renwang	仁王	535
 renwangwuzai	人亡物在	615
 renwangzhengxi	人亡政息	666
 renwei	認為	1000
-renwei	人為	1
+renwei	人為	600
 renweicaisi	人為財死	626
 renweidaozu	人為刀俎	628
 renweidaozuwoweiyurou	人為刀俎我為魚肉	721
@@ -124265,7 +124265,7 @@ shiyaozu	試葯族	235
 shiye	事業	871
 shiye	失業	859
 shiye	實業	762
-shiye	第十頁	640
+dishiye	第十頁	640
 shiye	視野	87
 shiye	試液	20
 shiye	濕液	10
@@ -125527,9 +125527,9 @@ shouze	守則	402
 shouzha	手札	235
 shouzhai	守齋	198
 shouzhang	手掌	700
-shouzhang	首長	32
-shouzhang	收賬	10
-shouzhang	手杖	1
+shouzhang	首長	602
+shouzhang	收賬	600
+shouzhang	手杖	601
 shouzhangaojie	首戰告捷	273
 shouzhangji	手掌機	736
 shouzhangjifangzhenqi	手掌機仿真器	831
@@ -127744,7 +127744,7 @@ shupi	書皮	160
 shupian	薯片	364
 shupijiu	熟啤酒	228
 shuping	數瓶	280
-shuping	書評	1
+shuping	書評	600
 shupingfanggongli	數平方公里	371
 shupiqiude	屬皮球的	597
 shupir	書皮兒	232
@@ -136314,7 +136314,7 @@ tongpeifu	通配符	436
 tongpeishengzhi	同配生殖	387
 tongpeng	通膨	137
 tongpi	痛批	198
-tongpian	通篇	10
+tongpian	通篇	600
 tongpiao	通票	333
 tongpici	同批次	800
 tongpo	捅破	323
@@ -136957,7 +136957,7 @@ toulianr	頭臉兒	232
 toulie	偷獵	497
 touliezhe	偷獵者	437
 touling	頭領	469
-touliu	偷溜	10
+touliu	偷溜	400
 toulou	透漏	549
 toulou	偷漏	299
 toulu	透露	1000
@@ -145132,7 +145132,7 @@ wuyazui	烏鴉嘴	198
 wuyazuo	烏鴉座	228
 wuye	午夜	789
 wuye	物業	727
-wuye	第五頁	608
+diwuye	第五頁	608
 wuye	無業	213
 wuyedeqingxinxuanlv	午夜的傾心旋律	569
 wuyefei	物業費	419
@@ -167077,7 +167077,7 @@ yongcunpeitaixueguan	永存胚胎血管	700
 yongdai	擁戴	460
 yongdaimalianjiexinhao	用代碼連接信號	789
 yongdao	用到	1000
-yongdao	甬道	1
+yongdao	甬道	600
 yongde	用的	1000
 yongde	用得	640
 yongdeliao	用得了	800
@@ -167788,7 +167788,7 @@ youhu	佑護	323
 youhua	優化	1000
 youhua	右劃	280
 youhua	油畫	269
-youhua	油滑	1
+youhua	油滑	265
 youhuakuaijiang	有話快講	10
 youhuakuaishuo	有話快說	260
 youhuan	憂患	560
@@ -171580,7 +171580,7 @@ yuxunqi	漁汛期	328
 yuyan	語言	928
 yuyan	預言	508
 yuyan	預演	178
-yuyan	寓言	1
+yuyan	寓言	507
 yuyanbuxiang	語焉不詳	439
 yuyanceshi	語言測試	570
 yuyanchengxu	語言程序	693
@@ -175272,8 +175272,8 @@ zhengjiaozhenquan	正教真詮	260
 zhengjiashi	正駕駛	230
 zhengjie	癥結	700
 zhengjie	整潔	520
-zhengjie	政界	87
-zhengjie	整節	10
+zhengjie	政界	519
+zhengjie	整節	518
 zhengjijiaozhiqi	正畸矯治器	610
 zhengjing	正經	1000
 zhengjingbabai	正經八百	572
@@ -178240,7 +178240,7 @@ zhizeyouxi	指責遊戲	755
 zhizhai	指摘	443
 zhizhang	執掌	822
 zhizhang	之仗	280
-zhizhang	紙張	132
+zhizhang	紙張	831
 zhizhang	滯脹	120
 zhizhang	職掌	72
 zhizhangrenshi	智障人士	570
@@ -215565,7 +215565,7 @@ xingnengxuqiu	性能需求	40	no_contains
 xingnengyali	性能壓力	40	no_contains
 xingnengyouhua	性能優化	40	no_contains
 xingnengzhenduan	性能診斷	40	no_contains
-xingongneng	新功能	40	no_contains
+xingongneng	新功能	600	no_contains
 xingongsifadezhiduchuangxin	新公司法的制度創新	20	no_contains
 xingongsifayugongsidengji	新公司法與公司登記	20	no_contains
 xingpishui	杏皮水	40	no_contains
@@ -235390,3 +235390,708 @@ zhengxiu	正修	200	no_contains
 zhongxiu	中修	400	no_contains
 zhouxiu	週休	400	no_contains
 zijixiu	自己修	400	no_contains
+aidong	挨凍	200	no_contains
+ailun	艾倫	600	no_contains
+anke	安克	219	no_contains
+anmen	俺們	600	no_contains
+anzhuoban	安卓版	400	no_contains
+aolai	奧萊	600	no_contains
+baerhu	巴爾虎	200	no_contains
+baipiao	白嫖	600	no_contains
+baiping	白屏	200	no_contains
+baituo	拜託	600	no_contains
+baizaoyin	白噪音	400	no_contains
+banfu	班夫	200	no_contains
+bansheng	伴生	431	no_contains
+banshi	板式	279	no_contains
+banzai	板載	600	no_contains
+baochiyizhi	保持一致	600	no_contains
+baohuo	保活	200	no_contains
+baojiang	包漿	600	no_contains
+baoliandeng	寶蓮燈	400	no_contains
+baopin	爆品	600	no_contains
+baoshui	報稅	540	no_contains
+baoyou	包郵	279	no_contains
+baozhuangxiang	包裝箱	600	no_contains
+beijingyin	背景音	548	no_contains
+beijingzhishi	背景知識	600	no_contains
+beiwang	備忘	400	no_contains
+beizhan	北站	600	no_contains
+bendishijian	本地時間	200	no_contains
+bianchengsiwei	編程思維	400	no_contains
+bianjijiemian	編輯界面	200	no_contains
+bianjiqu	編輯區	400	no_contains
+bianlaibianqu	變來變去	400	no_contains
+biaoxing	標星	400	no_contains
+bijifa	筆記法	200	no_contains
+bijiruanjian	筆記軟件	200	no_contains
+bingren	兵人	200	no_contains
+bofangliang	播放量	600	no_contains
+bokewenzhang	博客文章	400	no_contains
+boshilunwen	博士論文	600	no_contains
+boxihe	伯希和	400	no_contains
+buganjiao	不乾膠	400	no_contains
+bujiangdaoli	不講道理	600	no_contains
+bukengsheng	不吭聲	200	no_contains
+bushihuo	不識貨	200	no_contains
+caishi	彩石	155	no_contains
+caiye	彩頁	400	no_contains
+cankaojiazhi	參考價值	600	no_contains
+canyudu	參與度	600	no_contains
+caogang	草缸	200	no_contains
+chahua	插畫	396	no_contains
+chahuashi	插畫師	600	no_contains
+chaidao	柴刀	200	no_contains
+chakanqi	查看器	400	no_contains
+changgong	長弓	400	no_contains
+changjiangkou	長江口	400	no_contains
+changjinghua	場景化	600	no_contains
+changqijiyi	長期記憶	400	no_contains
+changshipin	長視頻	400	no_contains
+changshixing	常識性	600	no_contains
+changxiang	暢享	600	no_contains
+chanpinming	產品名	200	no_contains
+chanpintu	產品圖	200	no_contains
+chanshi	鏟屎	114	no_contains
+chanyan	產研	395	no_contains
+chaojidianrong	超級電容	400	no_contains
+chaoqing	超輕	400	no_contains
+chaoyuqi	超預期	600	no_contains
+chengxuluoji	程序邏輯	200	no_contains
+chenjiu	陳舊	600	no_contains
+chichihehe	吃吃喝喝	400	no_contains
+chongdiankou	充電口	400	no_contains
+chongfa	重發	600	no_contains
+chonghua	重畫	400	no_contains
+chonghui	重繪	600	no_contains
+chonglian	重連	200	no_contains
+chousheng	抽繩	200	no_contains
+chuangji	窗機	80	no_contains
+chuangxinyuan	創新院	200	no_contains
+chuanqi	川崎	600	no_contains
+chuantu	傳圖	200	no_contains
+chuanxian	穿線	400	no_contains
+chuzao	除藻	200	no_contains
+cihuibiao	詞彙表	400	no_contains
+cipankongjian	磁盤空間	400	no_contains
+congmingren	聰明人	600	no_contains
+cudu	粗度	400	no_contains
+cunchuceng	存儲層	200	no_contains
+cunwei	村委	600	no_contains
+cuoti	錯題	600	no_contains
+cuozao	搓澡	400	no_contains
+dabanben	大版本	400	no_contains
+dabiaoqian	打標籤	200	no_contains
+dadise	大地色	200	no_contains
+dadong	打洞	600	no_contains
+daerquan	大而全	400	no_contains
+dagangshitu	大綱視圖	80	no_contains
+dagou	打勾	2	no_contains
+daiban	待辦	400	no_contains
+daibanqingdan	待辦清單	200	no_contains
+daibanshixiang	待辦事項	400	no_contains
+daifa	代發	600	no_contains
+daimai	代賣	200	no_contains
+daiqueren	待確認	200	no_contains
+daixuan	待選	200	no_contains
+dajiahuo	大傢伙	600	no_contains
+dalei	大類	966	no_contains
+danmaiyu	丹麥語	400	no_contains
+danpian	單篇	396	no_contains
+danshengdao	單聲道	400	no_contains
+daobanshu	盜版書	200	no_contains
+daobi	倒逼	745	no_contains
+daohen	刀痕	400	no_contains
+daojian	刀尖	157	no_contains
+daojiang	刀匠	400	no_contains
+daojiao	倒角	600	no_contains
+daoliu	導流	426	no_contains
+daopai	倒排	400	no_contains
+daoxing	刀型	200	no_contains
+daqi	大漆	400	no_contains
+daqun	大群	600	no_contains
+dati	答題	600	no_contains
+datou	打頭	400	no_contains
+dawenjian	大文件	400	no_contains
+dayang	打樣	600	no_contains
+debang	德邦	600	no_contains
+dengshanbao	登山包	200	no_contains
+dewenban	德文版	200	no_contains
+dianxinka	電信卡	200	no_contains
+diaodian	掉電	400	no_contains
+diaodiao	調調	400	no_contains
+diaokedao	雕刻刀	200	no_contains
+diaoxia	釣蝦	197	no_contains
+dijicuowu	低級錯誤	600	no_contains
+dingyuefuwu	訂閱服務	400	no_contains
+dingyuezhi	訂閱制	200	no_contains
+dipei	低配	386	no_contains
+ditui	地推	600	no_contains
+diwen	底紋	400	no_contains
+dizhiliang	低質量	600	no_contains
+dongbin	動賓	400	no_contains
+dongdongban	洞洞板	200	no_contains
+dongtaixiaoguo	動態效果	200	no_contains
+duanan	短按	200	no_contains
+duance	端側	200	no_contains
+duanda	鍛打	200	no_contains
+duihuanma	兌換碼	200	no_contains
+duiren	懟人	200	no_contains
+duiyin	對飲	400	no_contains
+erchuang	二創	200	no_contains
+erliao	餌料	600	no_contains
+ertongjiaoyu	兒童教育	600	no_contains
+fabubanben	發佈版本	200	no_contains
+falang	髮廊	400	no_contains
+fanchang	返場	399	no_contains
+fanchangshi	反常識	200	no_contains
+fangkuang	方框	600	no_contains
+fangtanzhe	訪談者	200	no_contains
+fangxie	仿寫	285	no_contains
+fanhuizhi	返回值	600	no_contains
+fanli	返利	808	no_contains
+fanrenxing	反人性	400	no_contains
+fanxuan	反選	200	no_contains
+fase	髮色	600	no_contains
+fayanzhe	發言者	400	no_contains
+feidian	費電	317	no_contains
+fenchang	分廠	386	no_contains
+fengbixitong	封閉系統	400	no_contains
+fengdi	風笛	127	no_contains
+fengfudu	豐富度	600	no_contains
+fengongxiezuo	分工協作	600	no_contains
+fenxianglianjie	分享鏈接	200	no_contains
+fenxiangzhe	分享者	2	no_contains
+fufeiyonghu	付費用戶	600	no_contains
+fuka	副卡	400	no_contains
+fumianqingxu	負面情緒	600	no_contains
+fuqilia	夫妻倆	600	no_contains
+fuwushang	服務商	600	no_contains
+fuzhujuece	輔助決策	400	no_contains
+gangbi	缸壁	282	no_contains
+gangyin	鋼印	400	no_contains
+gaojiban	高級版	400	no_contains
+gaoliang	高亮	192	no_contains
+gerenhua	個人化	600	no_contains
+gonggongzhishi	公共知識	400	no_contains
+gonghuo	拱火	400	no_contains
+guanfangwendang	官方文檔	400	no_contains
+guangban	光板	381	no_contains
+guanjianshijian	關鍵事件	200	no_contains
+guanliu	灌流	400	no_contains
+guanxitu	關係圖	600	no_contains
+gudingzhi	固定值	400	no_contains
+guiji	櫃機	400	no_contains
+guiji	硅基	600	no_contains
+guishudi	歸屬地	600	no_contains
+gunping	滾屏	200	no_contains
+guojiban	國際版	600	no_contains
+guoju	鍋具	2	no_contains
+guquanbili	股權比例	400	no_contains
+gushiban	故事板	400	no_contains
+guzao	古早	400	no_contains
+haoshu	好書	600	no_contains
+heidi	黑底	400	no_contains
+heihutao	黑胡桃	200	no_contains
+hekouhu	河口湖	200	no_contains
+hengping	橫屏	248	no_contains
+hexinjiazhi	核心價值	600	no_contains
+hexinsixiang	核心思想	600	no_contains
+hezao	褐藻	400	no_contains
+houbancheng	後半程	400	no_contains
+huamiangan	畫面感	600	no_contains
+huangtongkuang	黃銅礦	200	no_contains
+huangyeqiusheng	荒野求生	200	no_contains
+huanjingyin	環境音	200	no_contains
+huanshui	換水	600	no_contains
+huaping	花屏	400	no_contains
+huiben	繪本	339	no_contains
+huice	回測	400	no_contains
+huidiao	灰調	200	no_contains
+huidufabu	灰度發佈	80	no_contains
+huikan	回看	600	no_contains
+huiting	回聽	200	no_contains
+huixian	回顯	200	no_contains
+huiyijilu	會議記錄	600	no_contains
+huiyijiyao	會議紀要	600	no_contains
+hujiaozhuanyi	呼叫轉移	400	no_contains
+huoji	火機	102	no_contains
+huoke	獲客	492	no_contains
+huorong	火絨	200	no_contains
+huti	護體	99	no_contains
+huwaiyundong	戶外運動	600	no_contains
+huxiangmaodun	互相矛盾	400	no_contains
+huxideng	呼吸燈	200	no_contains
+jiabing	加冰	2	no_contains
+jiagoutu	架構圖	400	no_contains
+jiaming	佳明	400	no_contains
+jianchaqingdan	檢查清單	200	no_contains
+jianfang	繭房	80	no_contains
+jiangben	降本	600	no_contains
+jianggushi	講故事	600	no_contains
+jiangren	匠人	600	no_contains
+jiangsi	僵死	400	no_contains
+jiangsi	將死	600
+jianjinshi	漸進式	600	no_contains
+jiankangshuju	健康數據	400	no_contains
+jianqun	建群	600	no_contains
+jiaohujiemian	交互界面	200	no_contains
+jiaohuluoji	交互邏輯	200	no_contains
+jiaohushi	交互式	600	no_contains
+jiaohuxing	交互性	600	no_contains
+jiaoyan	椒鹽	573	no_contains
+jiaozheng	矯正	600	no_contains
+jiapian	夾片	200	no_contains
+jiazhiliu	價值流	200	no_contains
+jichuzhishi	基礎知識	600	no_contains
+jieshuriqi	結束日期	200	no_contains
+jiexi	結息	400	no_contains
+jiezhiriqi	截止日期	600	no_contains
+jifeixitong	計費系統	200	no_contains
+jiguangdiaoke	激光雕刻	200	no_contains
+jijiqingxu	積極情緒	400	no_contains
+jinchang	進廠	600	no_contains
+jingtaitu	靜態圖	200	no_contains
+jingyao	精要	600	no_contains
+jingyi	精益	641	no_contains
+jinhun	金婚	400	no_contains
+jinianban	紀念版	400	no_contains
+jinpogan	緊迫感	600	no_contains
+jishuguige	技術規格	400	no_contains
+jiyiku	記憶庫	200	no_contains
+jiyixitong	記憶系統	200	no_contains
+junbao	軍報	200	no_contains
+jushen	具身	2	no_contains
+kaishiriqi	開始日期	200	no_contains
+kanwu	勘誤	400	no_contains
+kapianhe	卡片盒	200	no_contains
+kehufankui	客戶反饋	400	no_contains
+kexuanxiang	可選項	400	no_contains
+kexueyiju	科學依據	600	no_contains
+kezhuisu	可追溯	600	no_contains
+kezi	殼子	816	no_contains
+kongzhimianban	控制面板	600	no_contains
+koufei	扣費	600	no_contains
+koukuan	扣款	600	no_contains
+kuaidifei	快遞費	400	no_contains
+kuaijiezhiling	快捷指令	200	no_contains
+kuaijiezou	快節奏	600	no_contains
+kuangding	框定	400	no_contains
+kuangxuan	框選	200	no_contains
+kuaqu	跨區	600	no_contains
+lanbiao	藍標	200	no_contains
+langfeishijian	浪費時間	600	no_contains
+lanling	藍領	595	no_contains
+lanyashebei	藍牙設備	400	no_contains
+laowanjia	老玩家	400	no_contains
+laqun	拉群	400	no_contains
+lengbingqi	冷兵器	600	no_contains
+lexin	樂鑫	200	no_contains
+liantiao	聯調	400	no_contains
+liaotiankuang	聊天框	400	no_contains
+licha	利差	322	no_contains
+lichuang	立創	80	no_contains
+lidu	粒度	2	no_contains
+lijishengxiao	立即生效	200	no_contains
+lingdongdao	靈動島	80	no_contains
+lingke	領克	600	no_contains
+lingyifang	另一方	2	no_contains
+liudang	留檔	200	no_contains
+liuliangka	流量卡	400	no_contains
+liushi	流式	239	no_contains
+liwang	離網	400	no_contains
+lixianmoshi	離線模式	80	no_contains
+luman	盧曼	275	no_contains
+luojilian	邏輯鏈	200	no_contains
+luojiloudong	邏輯漏洞	200	no_contains
+luojixing	邏輯性	600	no_contains
+luopan	落盤	80	no_contains
+lupi	鹿皮	400	no_contains
+lutou	爐頭	400	no_contains
+luyi	鹿邑	400	no_contains
+luyingdi	露營地	600	no_contains
+luyinwenjian	錄音文件	200	no_contains
+lvlian	綠聯	400	no_contains
+lvtong	濾筒	400	no_contains
+lvwang	濾網	600	no_contains
+maidian	埋點	400	no_contains
+maidian	買點	559	no_contains
+maihuo	賣貨	600	no_contains
+maike	買課	200	no_contains
+mailiang	買量	400	no_contains
+maocao	毛糙	400	no_contains
+maocaowu	茅草屋	400	no_contains
+mataixiaoying	馬太效應	600	no_contains
+meishusheng	美術生	600	no_contains
+meiyoudeng	煤油燈	400	no_contains
+mengbi	懵逼	600	no_contains
+mianbushibie	面部識別	400	no_contains
+mimijidi	秘密基地	400	no_contains
+mingmingguize	命名規則	400	no_contains
+mingrenmingyan	名人名言	600	no_contains
+mohuxing	模糊性	400	no_contains
+mojing	魔鏡	400	no_contains
+moju	磨具	439	no_contains
+mubing	木柄	400	no_contains
+muluming	目錄名	200	no_contains
+mushao	木勺	200	no_contains
+muyi	木藝	2	no_contains
+nabokefu	納博科夫	400	no_contains
+nanmen	南門	600	no_contains
+naobao	腦暴	80	no_contains
+naodong	腦洞	600	no_contains
+naoqu	腦區	600	no_contains
+neibuxitong	內部系統	400	no_contains
+neisheng	內省	600	no_contains
+neitui	內推	600	no_contains
+nianfan	年飯	400	no_contains
+nianyueri	年月日	600	no_contains
+nibianqi	逆變器	600	no_contains
+niuqichongtian	牛氣沖天	200	no_contains
+oumeiren	歐美人	400	no_contains
+paihuo	派活	80	no_contains
+panduannengli	判斷能力	600	no_contains
+peitu	配圖	600	no_contains
+pidiao	皮雕	200	no_contains
+pingjingqi	瓶頸期	600	no_contains
+pingjunshuiping	平均水平	600	no_contains
+pinse	拼色	2	no_contains
+pipeidu	匹配度	600	no_contains
+pisheng	皮繩	200	no_contains
+piyi	皮藝	200	no_contains
+poyin	破音	200	no_contains
+qiangtui	強推	600	no_contains
+qiaoke	翹課	986	no_contains
+qiaomuyu	敲木魚	80	no_contains
+qiaose	俏色	400	no_contains
+qidongqi	啟動器	400	no_contains
+qifu	祈福	323	no_contains
+qiguan	氣罐	400	no_contains
+qingchunban	青春版	400	no_contains
+qinglianghua	輕量化	600	no_contains
+qiuligao	秋梨膏	200	no_contains
+qiwei	企微	139	no_contains
+qiyeweixin	企業微信	600	no_contains
+quanfugai	全覆蓋	600	no_contains
+quangongneng	全功能	600	no_contains
+quanguocheng	全過程	600	no_contains
+quanjingtu	全景圖	600	no_contains
+quanliucheng	全流程	600	no_contains
+quanzidong	全自動	600	no_contains
+queren	缺人	2	no_contains
+qungui	群規	200	no_contains
+qunyou	群友	600	no_contains
+quzhi	取值	279	no_contains
+renji	人機	492	no_contains
+renkou	刃口	400	no_contains
+renlian	人臉	600	no_contains
+renshengguan	人生觀	600	no_contains
+renwei	人味	200	no_contains
+renzhifuhe	認知負荷	200	no_contains
+renzhipiancha	認知偏差	400	no_contains
+ribang	日榜	400	no_contains
+richenganpai	日程安排	600	no_contains
+rihuo	日活	388	no_contains
+riman	日漫	400	no_contains
+riwenban	日文版	600	no_contains
+rouzhi	鞣質	400	no_contains
+sabi	撒幣	200	no_contains
+sahua	撒花	200	no_contains
+sailigeman	塞利格曼	200	no_contains
+sangye	桑葉	600	no_contains
+saodiji	掃地機	400	no_contains
+sekuai	色塊	600	no_contains
+shadai	砂帶	382	no_contains
+shanghua	上滑	279	no_contains
+shangjian	熵減	200	no_contains
+shangxiashui	上下水	400	no_contains
+shangyebihuan	商業閉環	200	no_contains
+shangzeng	熵增	400	no_contains
+shanju	山居	412	no_contains
+shansong	閃送	200	no_contains
+shaxiang	沙箱	400	no_contains
+shejiaohuobi	社交貨幣	200	no_contains
+shejiaoquan	社交圈	2	no_contains
+shejigao	設計稿	600	no_contains
+shejizhexue	設計哲學	200	no_contains
+shendudongcha	深度洞察	200	no_contains
+shengcha	生茶	400	no_contains
+shengchang	勝場	377	no_contains
+shengcunzhinan	生存指南	200	no_contains
+shengjibao	升級包	400	no_contains
+shengpi	生皮	200	no_contains
+shengtu	生圖	304	no_contains
+shengwang	聲網	153	no_contains
+shengwen	聲紋	481	no_contains
+shenjingkexue	神經科學	600	no_contains
+shenleng	深冷	400	no_contains
+shenzhenwan	深圳灣	600	no_contains
+shibaianli	失敗案例	400	no_contains
+shibaiyuanyin	失敗原因	400	no_contains
+shibielv	識別率	400	no_contains
+shifenmiao	時分秒	80	no_contains
+shijianchengben	時間成本	600	no_contains
+shijianjiqi	時間機器	400	no_contains
+shiliao	石料	390	no_contains
+shiyanpin	試驗品	400	no_contains
+shouchi	手持	600	no_contains
+shouhang	首行	400	no_contains
+shouhou	售後	600	no_contains
+shouhuo	收貨	600	no_contains
+shouhuodizhi	收貨地址	400	no_contains
+shounadai	收納袋	200	no_contains
+shouqian	售前	600	no_contains
+shoutai	手臺	200	no_contains
+shouzhang	手帳	400	no_contains
+shuangshengdao	雙聲道	400	no_contains
+shuidian	稅點	200	no_contains
+shuiju	稅局	600	no_contains
+shuiwudaili	稅務代理	200	no_contains
+shujudian	數據點	400	no_contains
+shunfeng	順豐	915	no_contains
+shuohuaren	說話人	400	no_contains
+shuomingwendang	說明文檔	200	no_contains
+shuping	豎屏	400	no_contains
+shuzhai	書摘	393	no_contains
+siduoge	斯多葛	400	no_contains
+siyu	私域	600	no_contains
+songlin	松林	600	no_contains
+suolingen	索林根	200	no_contains
+tangxunhu	湯遜湖	200	no_contains
+tankuang	彈框	200	no_contains
+taolunzu	討論組	200	no_contains
+tengxunwendang	騰訊文檔	200	no_contains
+tianrancailiao	天然材料	400	no_contains
+tiaolihua	條理化	400	no_contains
+tidaifangan	替代方案	600	no_contains
+tiepian	貼片	600	no_contains
+tingchefei	停車費	600	no_contains
+tingzhuang	聽裝	200	no_contains
+tixiao	提效	402	no_contains
+tongpian	銅片	400	no_contains
+tongpin	同頻	600	no_contains
+tongshi	通識	2	no_contains
+tongxinyuan	同心圓	600	no_contains
+touliu	投流	200	no_contains
+tourou	頭肉	400	no_contains
+touwei	投餵	600	no_contains
+tubuxie	徒步鞋	200	no_contains
+tuchuang	圖床	80	no_contains
+tuchuxianshi	突出顯示	400	no_contains
+tudoupian	土豆片	400	no_contains
+tuifei	退費	496	no_contains
+tuiguangzhe	推廣者	400	no_contains
+tuiliu	推流	400	no_contains
+tujin	突進	400	no_contains
+tuoyun	託運	935	no_contains
+tupi	兔皮	80	no_contains
+tuse	塗色	600	no_contains
+waihu	外呼	400	no_contains
+waihua	外化	600	no_contains
+wanbuzhuan	玩不轉	200	no_contains
+wanchengdu	完成度	600	no_contains
+wanda	萬達	600	no_contains
+wangan	網安	224	no_contains
+wangluosousuo	網絡搜索	400	no_contains
+wanzhengdu	完整度	400	no_contains
+weixindushu	微信讀書	400	no_contains
+weixinqun	微信群	600	no_contains
+weixinqunliao	微信群聊	200	no_contains
+weixuqiu	偽需求	200	no_contains
+wenchuang	文創	600	no_contains
+wenjia	問價	400	no_contains
+wenshidu	溫溼度	600	no_contains
+wenzhan	問斬	200	no_contains
+wucaozuo	誤操作	600	no_contains
+wuchu	誤觸	119	no_contains
+wuhanzhan	武漢站	400	no_contains
+wulianjian	物理按鍵	200	no_contains
+wumoca	無摩擦	200	no_contains
+wurennengdi	無人能敵	400	no_contains
+wushanchu	誤刪除	200	no_contains
+wuyuehua	五月花	400	no_contains
+wuzhuangtai	無狀態	400	no_contains
+xiahu	蝦虎	80	no_contains
+xiangguandu	相關度	400	no_contains
+xiangqingye	詳情頁	600	no_contains
+xiangxiangkongjian	想象空間	600	no_contains
+xiankuang	線框	400	no_contains
+xiaodongxi	小東西	600	no_contains
+xiaofeidianzi	消費電子	600	no_contains
+xiaofeizhuyi	消費主義	600	no_contains
+xiaohuangyu	小黃魚	400	no_contains
+xiaojiejie	小姐姐	916	no_contains
+xiaomaolv	小毛驢	400	no_contains
+xiaomian	小面	600	no_contains
+xiaomishu	小秘書	600	no_contains
+xiaomoxing	小模型	400	no_contains
+xiaopiliang	小批量	600	no_contains
+xiezuofangfa	寫作方法	600	no_contains
+xiezuozhe	協作者	200	no_contains
+xihuo	細活	400	no_contains
+xinchuang	信創	701	no_contains
+xinfa	心法	2	no_contains
+xinglian	星鏈	400	no_contains
+xinglie	行李額	200	no_contains
+xingqudian	興趣點	600	no_contains
+xingwang	興旺	985	no_contains
+xinjiekou	新街口	600	no_contains
+xinrendu	信任度	600	no_contains
+xinshu	新書	600	no_contains
+xinxiyuan	信息源	600	no_contains
+xisiluo	希思羅	200	no_contains
+xitonggongcheng	系統工程	600	no_contains
+xitonghua	系統化	600	no_contains
+xiuxiububu	修修補補	400	no_contains
+xuancai	選材	600	no_contains
+xuanchuantu	宣傳圖	200	no_contains
+xuemang	雪盲	200	no_contains
+xuniwang	虛擬網	80	no_contains
+xunjian	巡檢	600	no_contains
+xuqiuguige	需求規格	200	no_contains
+yaduo	亞朵	400	no_contains
+yahen	壓痕	600	no_contains
+yakute	雅庫特	200	no_contains
+yalizhishu	壓力指數	200	no_contains
+yangmu	楊木	400	no_contains
+yanjiangzhe	演講者	600	no_contains
+yanjinxing	嚴謹性	600	no_contains
+yayin	壓印	400	no_contains
+yibuzhixing	異步執行	80	no_contains
+yijiuhuanxin	以舊換新	600	no_contains
+yingmei	英美	600	no_contains
+yingshiyingyu	英式英語	200	no_contains
+yingwendanci	英文單詞	600	no_contains
+yinsibaohu	隱私保護	600	no_contains
+yinxiangbiji	印象筆記	400	no_contains
+yinxingzhishi	隱性知識	400	no_contains
+yishuziti	藝術字體	400	no_contains
+yitongdian	異同點	400	no_contains
+yixiangxing	意向性	501	no_contains
+yiyong	易用	565	no_contains
+yongdao	泳道	400	no_contains
+yongyouzhe	擁有者	600	no_contains
+youhua	右滑	200	no_contains
+youhuima	優惠碼	400	no_contains
+yuanjiao	圓角	559	no_contains
+yuanjing	願景	600	no_contains
+yuanshi	源氏	485	no_contains
+yuanshijilu	原始記錄	400	no_contains
+yuanshipin	原視頻	200	no_contains
+yuanwei	原味	479	no_contains
+yuanxinxi	元信息	200	no_contains
+yuanying	元嬰	197	no_contains
+yuanzihua	原子化	400	no_contains
+yuanzuozhe	原作者	600	no_contains
+yudu	預讀	200	no_contains
+yueduzhe	閱讀者	600	no_contains
+yuehuo	月活	400	no_contains
+yugan	魚竿	308	no_contains
+yulin	雨林	2	no_contains
+yumu	榆木	344	no_contains
+yuqingjiankong	輿情監控	200	no_contains
+yuyan	預研	233	no_contains
+yuyanbao	語言包	400	no_contains
+yuyinwenjian	語音文件	200	no_contains
+yuyinzhuanxie	語音轉寫	80	no_contains
+zamu	雜木	400	no_contains
+zanghuo	髒活	200	no_contains
+zanji	攢機	80	no_contains
+zaojing	造景	600	no_contains
+zaoqibanben	早期版本	400	no_contains
+zengshangaicha	增刪改查	200	no_contains
+zerenbianjie	責任邊界	80	no_contains
+zhangkonggan	掌控感	400	no_contains
+zhediezhuo	摺疊桌	200	no_contains
+zhemu	柘木	200	no_contains
+zhengfuji	正負極	600	no_contains
+zhengguihua	正規化	600	no_contains
+zhengjie	正解	517	no_contains
+zhengjiguan	政績觀	400	no_contains
+zhengquexing	正確性	600	no_contains
+zhexuesixiang	哲學思想	600	no_contains
+zhichu	直出	279	no_contains
+zhifufangshi	支付方式	600	no_contains
+zhifuzhe	支付者	200	no_contains
+zhinenghua	智能化	600	no_contains
+zhirou	植鞣	200	no_contains
+zhishifufei	知識付費	600	no_contains
+zhishitupu	知識圖譜	600	no_contains
+zhishixing	知識型	600	no_contains
+zhixindu	置信度	400	no_contains
+zhixingqi	執行器	600	no_contains
+zhizhang	智障	600	no_contains
+zhongguoqu	中國區	600	no_contains
+zhongwenban	中文版	600	no_contains
+zhouxian	周線	420	no_contains
+zhouzhuanxiang	週轉箱	200	no_contains
+zhuanchu	轉儲	400	no_contains
+zhuanshou	轉售	600	no_contains
+zhuanyedu	專業度	600	no_contains
+zhuanyeshuyu	專業術語	600	no_contains
+zhuanzhudangxia	專注當下	200	no_contains
+zhucaidan	主菜單	600	no_contains
+zhuchuangkou	主窗口	400	no_contains
+zhuimi	追覓	200	no_contains
+zhuliucheng	主流程	200	no_contains
+zhuliuguandian	主流觀點	400	no_contains
+zhuomianduan	桌面端	200	no_contains
+zhupian	竹片	400	no_contains
+zhutu	主圖	600	no_contains
+zhutui	主推	600	no_contains
+zhuzigao	逐字稿	400	no_contains
+zice	自測	600	no_contains
+zidongbofang	自動播放	400	no_contains
+zidongshibie	自動識別	600	no_contains
+ziwenjianjia	子文件夾	200	no_contains
+zixiangmu	子項目	600	no_contains
+zongdui	總隊	443	no_contains
+zongheti	綜合體	600	no_contains
+zonglan	總覽	194	no_contains
+zongshichang	總時長	400	no_contains
+zouliucheng	走流程	400	no_contains
+zuanmu	鑽木	80	no_contains
+zuichi	最遲	600	no_contains
+zuocelan	左側欄	80	no_contains
+zuohua	左滑	159	no_contains
+zuotu	作圖	600	no_contains
+chuban	初版	550	no_contains
+chubanben	初版本	80	no_contains
+jiuban	舊版	600	no_contains
+jiudiannao	舊電腦	200	no_contains
+jiukuan	舊款	400	no_contains
+jiushebei	舊設備	200	no_contains
+jiushouji	舊手機	400	no_contains
+jiushuju	舊數據	200	no_contains
+jiuwenjian	舊文件	80	no_contains
+jiuxinghao	舊型號	80	no_contains
+jiuxitong	舊系統	200	no_contains
+jiuyonghu	舊用戶	200	no_contains
+laoban	老版	399	no_contains
+laofuwuqi	老服務器	200	no_contains
+laojixing	老機型	80	no_contains
+laokuan	老款	600	no_contains
+laoshebei	老設備	200	no_contains
+laoshouji	老手機	400	no_contains
+laoxiangmu	老項目	200	no_contains
+laoxitong	老系統	200	no_contains
+laoyonghu	老用戶	600	no_contains
+nianjian	年檢	600
+richangxunjian	日常巡檢	200	no_contains
+rijian	日檢	400	no_contains
+shouban	首版	2	no_contains
+xindaima	新代碼	200	no_contains
+xinjiemian	新界面	200	no_contains
+xinjixing	新機型	400	no_contains
+xinkehu	新客戶	600	no_contains
+xinxiangmu	新項目	600	no_contains
+xinxinghao	新型號	400	no_contains
+xinxitong	新系統	600	no_contains
+xinyonghu	新用戶	600	no_contains
+xunjianjilu	巡檢記錄	80	no_contains
+xunjianjiqiren	巡檢機器人	200	no_contains
+xunjianrenyuan	巡檢人員	200	no_contains
+xunjianxitong	巡檢系統	80	no_contains
+xunjianyuan	巡檢員	200	no_contains
+yuejian	月檢	200	no_contains
+zhoujian	周檢	80	no_contains
