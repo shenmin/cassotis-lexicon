@@ -24210,3 +24210,5 @@
 # Existing words of the kinds of 不要带 and 那你做吧 (2026-10-24) at an import weight, weighted by the same rules (不要钱 at 10, 别理 at 1, under 别离).
 不要钱	不要錢	0.600	buyaoqian	exact_rank
 别理	別理	0.200	bieli	exact_rank
+# Everyday word, 2026-10-24 (还真): 还真 (requested), 还 read hai as in 还真是 and 还真不错, on a key that held no word. Weighted as the blocks of 2026-10-20 (occurrences where the word is no part of a longer dictionary word, nor before one that its last character begins, nor after one that its first character ends).
+还真	還真	0.600	haizhen	exact_rank_no_contains
