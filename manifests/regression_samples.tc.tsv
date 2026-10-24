@@ -2593,3 +2593,9 @@ laodiannao	老電腦	1
 laokehu	老客戶	1
 xingongneng	新功能	1
 nianjian	年檢	2
+
+# Everyday words of 2026-10-24 (不要带, 那你做吧) and the existing words of their kinds reweighted (不要钱, 别理): the rank each has by weight among the words of its key.
+buyaodai	不要帶	1
+nanizuoba	那你做吧	1
+buyaoqian	不要錢	1
+bieli	別理	2

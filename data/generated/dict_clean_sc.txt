@@ -9280,7 +9280,7 @@ bielai	别来	1000
 bielaiwuyang	别来无恙	449
 biele	别了	700
 bieli	别离	967
-bieli	别理	1
+bieli	别理	200
 bielian	别脸	137
 bielun	别论	323
 bieluosha	瘪螺痧	228
@@ -13644,7 +13644,7 @@ buyaojin	不要紧	671
 buyaola	不要啦	800
 buyaolian	不要脸	650
 buyaoming	不要命	640
-buyaoqian	不要钱	10
+buyaoqian	不要钱	600
 buyaoweishihouzi	不要喂食猴子	648
 buyaowen	不要问	1000
 buyaoxiang	不要想	1000
@@ -235479,3 +235479,129 @@ xunjianxitong	巡检系统	80	no_contains
 xunjianyuan	巡检员	200	no_contains
 yuejian	月检	200	no_contains
 zhoujian	周检	80	no_contains
+biebi	别逼	200	no_contains
+biechao	别吵	200	no_contains
+biechi	别吃	600	no_contains
+biechuan	别穿	200	no_contains
+biedai	别带	200	no_contains
+biedanxin	别担心	600	no_contains
+biedeng	别等	400	no_contains
+biediu	别丢	200	no_contains
+bieduoxiang	别多想	80	no_contains
+biefa	别发	200	no_contains
+biefan	别烦	80	no_contains
+biefang	别放	200	no_contains
+biefeihua	别废话	80	no_contains
+biegei	别给	600	no_contains
+biegen	别跟	600	no_contains
+bieguai	别怪	400	no_contains
+bieguang	别光	400	no_contains
+biehaipa	别害怕	400	no_contains
+biehe	别喝	400	no_contains
+biehuang	别慌	400	no_contains
+bieji	别挤	80	no_contains
+biejiao	别叫	2	no_contains
+biejieyi	别介意	200	no_contains
+biejinzhang	别紧张	400	no_contains
+bielao	别老	400	no_contains
+bieluan	别乱	400	no_contains
+bieluanshuo	别乱说	80	no_contains
+biemang	别忙	80	no_contains
+biena	别拿	400	no_contains
+bienanguo	别难过	200	no_contains
+biepao	别跑	200	no_contains
+bieqiang	别抢	80	no_contains
+bierang	别让	600	no_contains
+biereng	别扔	200	no_contains
+biesha	别傻	80	no_contains
+bieshengqi	别生气	400	no_contains
+bieshui	别睡	80	no_contains
+bietai	别太	600	no_contains
+bieting	别停	80	no_contains
+bieting	别听	400	no_contains
+bietuo	别拖	200	no_contains
+biewan	别玩	400	no_contains
+biewang	别忘	400	no_contains
+biewangle	别忘了	600	no_contains
+biewuhui	别误会	200	no_contains
+biexiashuo	别瞎说	80	no_contains
+biexin	别信	400	no_contains
+biezai	别再	601	no_contains
+biezai	别在	600	no_contains
+biezhao	别找	400	no_contains
+biezong	别总	400	no_contains
+biezou	别走	400	no_contains
+buyaoan	不要按	200	no_contains
+buyaobi	不要比	201	no_contains
+buyaobi	不要逼	200	no_contains
+buyaochao	不要吵	200	no_contains
+buyaochi	不要吃	600	no_contains
+buyaochuan	不要穿	600	no_contains
+buyaoda	不要打	400	no_contains
+buyaodai	不要带	400	no_contains
+buyaodeng	不要等	600	no_contains
+buyaodian	不要点	400	no_contains
+buyaodiu	不要丢	200	no_contains
+buyaodong	不要动	400	no_contains
+buyaofa	不要发	400	no_contains
+buyaofan	不要烦	200	no_contains
+buyaofan	不要犯	400	no_contains
+buyaofang	不要放	600	no_contains
+buyaogai	不要改	200	no_contains
+buyaogei	不要给	600	no_contains
+buyaogen	不要跟	600	no_contains
+buyaoguai	不要怪	400	no_contains
+buyaoguan	不要关	200	no_contains
+buyaoguan	不要管	400	no_contains
+buyaohe	不要喝	600	no_contains
+buyaohuan	不要换	200	no_contains
+buyaohuang	不要慌	600	no_contains
+buyaoji	不要急	600	no_contains
+buyaoji	不要挤	200	no_contains
+buyaojia	不要加	400	no_contains
+buyaojiang	不要讲	400	no_contains
+buyaojiao	不要交	200	no_contains
+buyaojiao	不要叫	201	no_contains
+buyaokai	不要开	400	no_contains
+buyaokan	不要看	600	no_contains
+buyaoku	不要哭	400	no_contains
+buyaolai	不要来	400	no_contains
+buyaolao	不要老	400	no_contains
+buyaoli	不要理	200	no_contains
+buyaoluan	不要乱	600	no_contains
+buyaomai	不要买	600	no_contains
+buyaomai	不要卖	400	no_contains
+buyaomo	不要摸	80	no_contains
+buyaona	不要拿	600	no_contains
+buyaonao	不要闹	80	no_contains
+buyaopa	不要怕	600	no_contains
+buyaopao	不要跑	200	no_contains
+buyaopeng	不要碰	600	no_contains
+buyaoqiang	不要抢	200	no_contains
+buyaoqu	不要去	600	no_contains
+buyaorang	不要让	600	no_contains
+buyaoreng	不要扔	200	no_contains
+buyaoshui	不要睡	200	no_contains
+buyaoshuo	不要说	600	no_contains
+buyaotai	不要太	600	no_contains
+buyaoti	不要提	400	no_contains
+buyaotiao	不要跳	80	no_contains
+buyaoting	不要停	400	no_contains
+buyaoting	不要听	401	no_contains
+buyaotuo	不要拖	400	no_contains
+buyaowan	不要玩	400	no_contains
+buyaowang	不要忘	200	no_contains
+buyaoxian	不要嫌	400	no_contains
+buyaoxiao	不要笑	400	no_contains
+buyaoxie	不要写	400	no_contains
+buyaoxin	不要信	400	no_contains
+buyaoxuan	不要选	400	no_contains
+buyaoxue	不要学	400	no_contains
+buyaozai	不要再	601	no_contains
+buyaozai	不要在	600	no_contains
+buyaozhao	不要找	400	no_contains
+buyaozhuang	不要装	400	no_contains
+buyaozong	不要总	600	no_contains
+buyaozou	不要走	400	no_contains
+buyaozuo	不要做	600	no_contains
+nanizuoba	那你做吧	400	no_contains

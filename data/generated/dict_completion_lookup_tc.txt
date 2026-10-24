@@ -12011,7 +12011,7 @@ bidoue	bidou'exingzhongliu	鼻竇噁性腫瘤	366	80	0	0	0	0	0	0	0	1
 bidouexing	bidou'exingzhongliu	鼻竇噁性腫瘤	366	80	0	0	0	0	0	0	0	1
 bidouexingzhong	bidou'exingzhongliu	鼻竇噁性腫瘤	366	80	0	0	0	0	0	0	0	1
 biduan	biduanzhu	壁端柱	600	175	0	0	1	0	89	1	0	0
-biebi	biebibi	別逼逼	280	280	0	0	2	0	0	0	0	0
+biebi	biebibi	別逼逼	280	280	0	0	2	0	0	0	1	0
 biebu	biebuzhu	憋不住	362	137	40	0	1	0	0	0	0	0
 biebu	biebuchu	憋不出	10	202	0	0	2	0	0	0	0	1
 biechu	biechuxinyi	別出新意	621	169	0	0	1	0	91	1	0	0
@@ -12029,7 +12029,7 @@ biee	bieesi	別餓死	460	62	0	0	1	0	109	1	0	0
 bieer	bie'ergeluode	別爾哥羅德	286	80	0	0	0	0	0	0	0	0
 bieerge	bie'ergeluode	別爾哥羅德	286	80	0	0	0	0	0	0	0	0
 bieergeluo	bie'ergeluode	別爾哥羅德	286	80	0	0	0	0	0	0	0	0
-biefan	biefanwo	別煩我	1018	542	0	0	4	0	0	0	0	0
+biefan	biefanwo	別煩我	1018	542	0	0	4	0	0	0	1	0
 biehe	biehejieliefu	別赫捷列夫	289	80	0	0	0	0	0	0	0	0
 biehejie	biehejieliefu	別赫捷列夫	289	80	0	0	0	0	0	0	0	0
 biehejielie	biehejieliefu	別赫捷列夫	289	80	0	0	0	0	0	0	0	0
@@ -12085,7 +12085,7 @@ bieshu	bieshuyiqi	別樹一旗	249	128	40	0	1	0	0	0	0	1
 bieshu	bieshuqu	別墅區	10	216	105	0	2	0	0	0	1	2
 bieshuyi	bieshuyizhi	別樹一幟	387	183	40	0	1	0	91	1	0	0
 bieshuyi	bieshuyiqi	別樹一旗	249	128	40	0	1	0	0	0	0	1
-bietai	bietaikeqi	別太客氣	258	80	0	0	0	0	0	0	0	0
+bietai	bietaikeqi	別太客氣	258	80	0	0	0	0	0	0	1	0
 bietaike	bietaikeqi	別太客氣	258	80	0	0	0	0	0	0	0	0
 bieti	bietile	別提了	230	80	0	0	0	0	0	0	1	0
 biewei	bieweihouzi	別餵猴子	538	77	0	0	1	0	109	1	0	0
@@ -16717,7 +16717,7 @@ buyao	buyaolian	不要臉	650	319	313	0	1	0	0	0	1	6
 buyao	buyaoweishihouzi	不要餵食猴子	648	93	0	0	1	0	109	1	1	7
 buyao	buyaoming	不要命	640	235	40	0	1	0	0	0	1	8
 buyao	buyaoyong	不要用	20	210	0	0	2	0	0	0	1	9
-buyao	buyaoqian	不要錢	10	202	0	0	2	467	0	0	1	10
+buyao	buyaoqian	不要錢	600	202	0	0	2	467	0	0	1	10
 buyaobu	buyaobuji	不要不急	597	197	0	0	1	0	0	0	1	0
 buyaobu	buyaobuyaode	不要不要的	569	176	0	0	1	396	0	0	1	1
 buyaobu	buyaobuyao	不要不要	527	165	0	0	1	0	0	0	1	2
@@ -16733,7 +16733,7 @@ buyaojiantatianshideyu	buyaojiantatianshideyumao	不要踐踏天使的羽毛	662
 buyaowei	buyaoweishihouzi	不要餵食猴子	648	93	0	0	1	0	109	1	0	0
 buyaoweishi	buyaoweishihouzi	不要餵食猴子	648	93	0	0	1	0	109	1	0	0
 buyaoweishihou	buyaoweishihouzi	不要餵食猴子	648	93	0	0	1	0	109	1	0	0
-buyaozai	buyaozaiyikeshushangdiaosi	不要在一棵樹上吊死	378	80	0	0	0	0	0	0	0	0
+buyaozai	buyaozaiyikeshushangdiaosi	不要在一棵樹上吊死	378	80	0	0	0	0	0	0	1	0
 buyaozaiyi	buyaozaiyikeshushangdiaosi	不要在一棵樹上吊死	378	80	0	0	0	0	0	0	0	0
 buyaozaiyike	buyaozaiyikeshushangdiaosi	不要在一棵樹上吊死	378	80	0	0	0	0	0	0	0	0
 buyaozaiyikeshu	buyaozaiyikeshushangdiaosi	不要在一棵樹上吊死	378	80	0	0	0	0	0	0	0	0
@@ -110122,10 +110122,10 @@ nanhuigui	nanhuiguixian	南迴歸線	519	198	177	0	1	0	0	0	0	1
 nanhun	nanhunnvjia	男婚女嫁	441	202	91	0	1	0	90	1	0	0
 nanhunnv	nanhunnvjia	男婚女嫁	441	202	91	0	1	0	90	1	0	0
 nanhuqi	nanhuqinan	難乎其難	624	171	0	0	1	0	90	1	0	0
-nani	nanimeibanfa	拿你沒辦法	289	80	0	0	0	0	0	0	0	0
-nani	naniyachuanqi	納尼亞傳奇	289	80	0	0	0	0	0	0	0	1
-nani	nanimeizhe	拿你沒轍	260	80	0	0	0	0	0	0	0	2
-nani	naniya	納尼亞	198	128	40	0	1	0	0	0	0	3
+nani	nanimeibanfa	拿你沒辦法	289	80	0	0	0	0	0	0	0	1
+nani	naniyachuanqi	納尼亞傳奇	289	80	0	0	0	0	0	0	0	2
+nani	nanimeizhe	拿你沒轍	260	80	0	0	0	0	0	0	0	3
+nani	naniya	納尼亞	198	128	40	0	1	0	0	0	0	4
 nanimei	nanimeibanfa	拿你沒辦法	289	80	0	0	0	0	0	0	0	0
 nanimei	nanimeizhe	拿你沒轍	260	80	0	0	0	0	0	0	0	1
 nanimeiban	nanimeibanfa	拿你沒辦法	289	80	0	0	0	0	0	0	0	0
@@ -247743,3 +247743,17 @@ xunjianji	xunjianjiqiren	巡檢機器人	200	80	0	0	0	0	0	0	0	0
 xunjianjiqi	xunjianjiqiren	巡檢機器人	200	80	0	0	0	0	0	0	0	0
 xunjianren	xunjianrenyuan	巡檢人員	200	80	0	0	0	0	0	0	0	0
 xunjianxi	xunjianxitong	巡檢系統	80	80	0	0	0	0	0	0	0	0
+biedan	biedanxin	別擔心	600	80	0	0	0	0	0	0	0	0
+bieduo	bieduoxiang	別多想	80	80	0	0	0	0	0	0	0	0
+biefei	biefeihua	別廢話	80	80	0	0	0	0	0	0	0	0
+biehai	biehaipa	別害怕	400	80	0	0	0	0	0	0	0	0
+biejie	biejieyi	別介意	200	80	0	0	0	0	0	0	0	0
+biejin	biejinzhang	別緊張	400	80	0	0	0	0	0	0	0	0
+bieluan	bieluanshuo	別亂說	80	80	0	0	0	0	0	0	1	0
+bienan	bienanguo	別難過	200	80	0	0	0	0	0	0	0	0
+biesheng	bieshengqi	別生氣	400	80	0	0	0	0	0	0	0	0
+biewang	biewangle	別忘了	600	80	0	0	0	0	0	0	1	0
+biewu	biewuhui	別誤會	200	80	0	0	0	0	0	0	0	7
+biexia	biexiashuo	別瞎說	80	80	0	0	0	0	0	0	0	0
+nani	nanizuoba	那你做吧	400	80	0	0	0	0	0	0	1	0
+nanizuo	nanizuoba	那你做吧	400	80	0	0	0	0	0	0	0	0

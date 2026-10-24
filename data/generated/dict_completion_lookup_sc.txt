@@ -11479,7 +11479,7 @@ bideyao	bideyaosai	彼得要塞	597	197	0	0	1	0	0	0	1	0
 bidi	bidixia	笔底下	379	137	40	0	1	0	0	0	0	0
 bidou	bidouyan	鼻窦炎	772	306	168	0	5	0	61	3	1	0
 biduan	biduanzhu	壁端柱	600	175	0	0	1	0	89	1	0	0
-biebi	biebibi	别逼逼	280	280	0	0	2	0	0	0	0	0
+biebi	biebibi	别逼逼	280	280	0	0	2	0	0	0	1	0
 biebu	biebuzhu	憋不住	362	137	40	0	1	0	0	0	0	0
 biebu	biebuchu	憋不出	10	202	0	0	2	0	0	0	0	1
 biechu	biechuxinyi	别出新意	621	181	40	0	1	0	91	1	0	0
@@ -11497,7 +11497,7 @@ biee	bieesi	别饿死	460	62	0	0	1	0	109	1	0	0
 bieer	bie'ergeluode	别尔哥罗德	286	134	59	0	1	0	0	0	0	0
 bieerge	bie'ergeluode	别尔哥罗德	286	134	59	0	1	0	0	0	0	0
 bieergeluo	bie'ergeluode	别尔哥罗德	286	134	59	0	1	0	0	0	0	0
-biefan	biefanwo	别烦我	1018	542	0	0	4	0	0	0	0	0
+biefan	biefanwo	别烦我	1018	542	0	0	4	0	0	0	1	0
 biehe	biehejieliefu	别赫捷列夫	289	80	0	0	0	0	0	0	0	0
 biehejie	biehejieliefu	别赫捷列夫	289	80	0	0	0	0	0	0	0	0
 biehejielie	biehejieliefu	别赫捷列夫	289	80	0	0	0	0	0	0	0	0
@@ -11552,7 +11552,7 @@ bieshu	bieshuyiqi	别树一旗	249	128	40	0	1	0	0	0	0	1
 bieshu	bieshuqu	别墅区	10	216	105	0	2	0	0	0	1	2
 bieshuyi	bieshuyizhi	别树一帜	387	183	40	0	1	0	91	1	0	0
 bieshuyi	bieshuyiqi	别树一旗	249	128	40	0	1	0	0	0	0	1
-bietai	bietaikeqi	别太客气	218	80	0	0	0	0	0	0	0	0
+bietai	bietaikeqi	别太客气	218	80	0	0	0	0	0	0	1	0
 bietaike	bietaikeqi	别太客气	218	80	0	0	0	0	0	0	0	0
 bieti	bietile	别提了	167	80	0	0	0	0	0	0	1	0
 biewei	bieweihouzi	别喂猴子	538	77	0	0	1	0	109	1	0	0
@@ -11585,7 +11585,7 @@ bieyoutian	bieyoutiandi	别有天地	597	181	40	0	1	0	91	1	1	0
 bieyouyong	bieyouyongxin	别有用心	606	291	297	0	1	0	82	1	1	0
 bieyouyun	bieyouyunwei	别有韵味	218	80	0	0	0	0	0	0	0	0
 bieyouzi	bieyouziwei	别有滋味	628	186	40	0	1	0	90	1	0	0
-biezai	biezaiyi	别在意	1000	540	0	0	4	0	0	0	0	0
+biezai	biezaiyi	别在意	1000	540	0	0	4	0	0	0	1	0
 biezhe	biezheyang	别这样	1018	542	0	0	4	0	0	0	0	0
 biezhe	biezheme	别这么	1000	540	0	0	4	0	0	0	0	1
 bifang	bifangshuo	比方说	502	137	40	0	1	0	0	0	1	0
@@ -16009,7 +16009,7 @@ buyaojiantatianshideyu	buyaojiantatianshideyumao	不要践踏天使的羽毛	662
 buyaowei	buyaoweishihouzi	不要喂食猴子	648	93	0	0	1	0	109	1	0	0
 buyaoweishi	buyaoweishihouzi	不要喂食猴子	648	93	0	0	1	0	109	1	0	0
 buyaoweishihou	buyaoweishihouzi	不要喂食猴子	648	93	0	0	1	0	109	1	0	0
-buyaozai	buyaozaiyikeshushangdiaosi	不要在一棵树上吊死	378	80	0	0	0	0	0	0	0	0
+buyaozai	buyaozaiyikeshushangdiaosi	不要在一棵树上吊死	378	80	0	0	0	0	0	0	1	0
 buyaozaiyi	buyaozaiyikeshushangdiaosi	不要在一棵树上吊死	378	80	0	0	0	0	0	0	0	0
 buyaozaiyike	buyaozaiyikeshushangdiaosi	不要在一棵树上吊死	378	80	0	0	0	0	0	0	0	0
 buyaozaiyikeshu	buyaozaiyikeshushangdiaosi	不要在一棵树上吊死	378	80	0	0	0	0	0	0	0	0
@@ -103186,10 +103186,10 @@ nanhuigui	nanhuiguixian	南回归线	464	198	177	0	1	0	0	0	0	0
 nanhun	nanhunnvjia	男婚女嫁	441	202	91	0	1	0	90	1	0	0
 nanhunnv	nanhunnvjia	男婚女嫁	441	202	91	0	1	0	90	1	0	0
 nanhuqi	nanhuqinan	难乎其难	624	180	28	0	1	0	90	1	0	0
-nani	nanimeibanfa	拿你没办法	289	80	0	0	0	0	0	0	0	0
-nani	naniyachuanqi	纳尼亚传奇	289	80	0	0	0	0	0	0	0	1
-nani	nanimeizhe	拿你没辙	260	80	0	0	0	0	0	0	0	2
-nani	naniya	纳尼亚	198	128	40	0	1	0	0	0	0	3
+nani	nanimeibanfa	拿你没办法	289	80	0	0	0	0	0	0	0	1
+nani	naniyachuanqi	纳尼亚传奇	289	80	0	0	0	0	0	0	0	2
+nani	nanimeizhe	拿你没辙	260	80	0	0	0	0	0	0	0	3
+nani	naniya	纳尼亚	198	128	40	0	1	0	0	0	0	4
 nanimei	nanimeibanfa	拿你没办法	289	80	0	0	0	0	0	0	0	0
 nanimei	nanimeizhe	拿你没辙	260	80	0	0	0	0	0	0	0	1
 nanimeiban	nanimeibanfa	拿你没办法	289	80	0	0	0	0	0	0	0	0
@@ -234657,3 +234657,17 @@ xunjianji	xunjianjiqiren	巡检机器人	200	80	0	0	0	0	0	0	0	0
 xunjianjiqi	xunjianjiqiren	巡检机器人	200	80	0	0	0	0	0	0	0	0
 xunjianren	xunjianrenyuan	巡检人员	200	80	0	0	0	0	0	0	0	0
 xunjianxi	xunjianxitong	巡检系统	80	80	0	0	0	0	0	0	0	0
+biedan	biedanxin	别担心	600	80	0	0	0	0	0	0	0	0
+bieduo	bieduoxiang	别多想	80	80	0	0	0	0	0	0	0	0
+biefei	biefeihua	别废话	80	80	0	0	0	0	0	0	0	0
+biehai	biehaipa	别害怕	400	80	0	0	0	0	0	0	0	0
+biejie	biejieyi	别介意	200	80	0	0	0	0	0	0	0	0
+biejin	biejinzhang	别紧张	400	80	0	0	0	0	0	0	0	0
+bieluan	bieluanshuo	别乱说	80	80	0	0	0	0	0	0	1	0
+bienan	bienanguo	别难过	200	80	0	0	0	0	0	0	0	0
+biesheng	bieshengqi	别生气	400	80	0	0	0	0	0	0	0	0
+biewang	biewangle	别忘了	600	80	0	0	0	0	0	0	1	0
+biewu	biewuhui	别误会	200	80	0	0	0	0	0	0	0	7
+biexia	biexiashuo	别瞎说	80	80	0	0	0	0	0	0	0	0
+nani	nanizuoba	那你做吧	400	80	0	0	0	0	0	0	1	0
+nanizuo	nanizuoba	那你做吧	400	80	0	0	0	0	0	0	0	0
