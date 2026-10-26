@@ -18,7 +18,7 @@ Cassotis IME 的詞庫建置與發布儲存庫。
 - 支援以外部來源建立詞庫，以及可重現的詞庫生成流程。
 - 確保來源標示檔案與生成產物保持一致。
 
-## 目前詞庫快照（2026-10-24 建置）
+## 目前詞庫快照（2026-10-26 建置）
 
 | 檔案 | 變體 | 詞條數 |
 |------|------|--------|
@@ -58,6 +58,8 @@ Cassotis Lexicon 除了詞彙詞庫，也會發布本機排序模型產物：查
 以上記錄並非可直接輸入的詞條，因此不計入前述詞庫快照。查詢路徑先驗和詞級二元、三元轉移關係由 Lexicon 建置流程產生；具平滑退避機制的正向、反向字元級 n-gram 模型則由 IME 訓練工具產生，再由本儲存庫統一進行版本管理與發布。Cassotis IME 會將這些產物匯入本機 SQLite 詞庫，用於長句 lattice/N-best 路徑評分；從 v1.4.0 開始，字元 n-gram 也會作為處理短詞精確候選歧義的前後文訊號。
 
 建置流程也會從強證據 exact 詞路徑離線產生獨立的轉移補全索引，每個輸入前綴最多保留六個經過複核的可靠方案。使用者補全仍優先；基礎詞庫與轉移補全方案則結合熱門度、前後文和語料證據比較。該索引不計入可直接輸入的詞條資料。
+
+每個變體還有一份詞頻表（`data/generated/dict_word_frequency_{sc,tc}.txt`），記錄兩個字以上的每個詞在通用中文文本裡作為詞出現的次數，取 `100 * log10(1 + 次數)`；繁體詞取其簡體形式的次數。計數（`manifests/general_word_counts.tsv`，由 `scripts/count_general_word_frequency.py` 產生）來自 Cassotis IME 字級語言模型的通用語料，長詞裡的短詞不計。Cassotis IME 在沒有前後文、同音詞之間取捨時使用這張表。它不計入可直接輸入的詞條資料。
 
 ### 一鍵補全模型資料
 
@@ -127,6 +129,7 @@ IME v1.22.0 的長句局部修正、v1.26.0 的完整修正方案複核，以及
 | OpenCC STPhrases | Apache-2.0 | 簡繁詞組對應 |
 | THUOCL | THUOCL custom open terms | 擴充覆蓋與 DF 統計訊號 |
 | jieba `dict.txt` | MIT | 頻率排序訊號 |
+| FineWeb-Edu-Chinese v2.1、Ultra-FineWeb（中文）、中文維基百科 | 各資料集的條款；只用計數 | 詞頻表的出現次數 |
 | Wiktionary 中文標題（ns0） | CC BY-SA 4.0 | 日常表達、口語短語和聊天類詞彙種子 |
 | Wikipedia 中文標題（ns0） | CC BY-SA 4.0 | 專名覆蓋與高可信度專有名詞種子 |
 | Wikimedia Pageviews Top（zh.wikipedia） | CC BY-SA 4.0 | 真實世界熱度訊號 |

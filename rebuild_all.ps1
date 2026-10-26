@@ -124,6 +124,7 @@ $validateScript = Join-Path $Root "scripts\validate_regression_samples.py"
 $readmeSnapshotScript = Join-Path $Root "scripts\update_readme_snapshot.py"
 $longCompletionScript = Join-Path $Root "scripts\build_long_completion_index.py"
 $taiwanFormsScript = Join-Path $Root "scripts\normalize_traditional_forms.py"
+$wordFrequencyScript = Join-Path $Root "scripts\build_word_frequency.py"
 
 if (-not (Test-Path -LiteralPath $buildScript)) {
     throw "Missing build script: $buildScript"
@@ -274,6 +275,20 @@ if ($LASTEXITCODE -ne 0) {
 # the sources and OpenCC's standard give both forms of such a character.
 Write-Host "Writing the traditional outputs in Taiwan's forms..."
 Invoke-PythonScript -ScriptPath $taiwanFormsScript -ScriptArgs @("--root", $Root)
+
+# How often the general text holds each word as a word, for both variants
+# (manifests/general_word_counts.tsv, made by scripts/count_general_word_frequency.py
+# from the corpora; this step only reads the counts).
+Write-Host "Writing the word frequency tables..."
+foreach ($variant in @("sc", "tc")) {
+    $wordFrequencyArgs = @(
+        "--counts", (Join-Path $Root "manifests\general_word_counts.tsv"),
+        "--dictionary", (Join-Path $Root "data\generated\dict_clean_$variant.txt"),
+        "--output", (Join-Path $Root "data\generated\dict_word_frequency_$variant.txt")
+    )
+    if ($variant -eq "tc") { $wordFrequencyArgs += "--traditional" }
+    Invoke-PythonScript -ScriptPath $wordFrequencyScript -ScriptArgs $wordFrequencyArgs
+}
 
 if (-not $SkipReadmeSnapshot) {
     Write-Host "Updating README dictionary snapshot from generated file row counts..."

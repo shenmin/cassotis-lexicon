@@ -18,7 +18,7 @@ Cassotis IME 的词库构建与发布仓库。
 - 支持外部来源引导构建和可复现的生成词库构建流程。
 - 保持署名文件与生成产物一致。
 
-## 当前词库快照（2026-10-24 构建）
+## 当前词库快照（2026-10-26 构建）
 
 | 文件 | 变体 | 词条数 |
 |------|------|--------|
@@ -58,6 +58,8 @@ Cassotis Lexicon 在词汇词库之外还发布本地排序模型产物：查询
 以上记录不是可直接输入的词条，因此不计入前述词库快照。查询路径先验和词级二元、三元转移关系由 Lexicon 构建流程生成；带平滑回退的正向、反向字符级 n-gram 模型由 IME 训练工具生成，再由本仓库统一版本化和发布。Cassotis IME 会将这些产物导入本地 SQLite 词库，用于长句 lattice/N-best 路径打分；从 v1.4.0 开始，字符 n-gram 还会作为处理短词精确候选歧义的上下文信号。
 
 构建流程还会从强证据 exact 词路径离线生成独立的转移补全索引，每个输入前缀最多保留六个经过复核的可靠方案。用户补全仍优先；基础词库与转移补全方案结合流行度、上下文和语料证据比较。该索引不计入可直接输入的词条数据。
+
+每个变体还有一份词频表（`data/generated/dict_word_frequency_{sc,tc}.txt`），记录两个字以上的每个词在通用中文文本里作为词出现的次数，取 `100 * log10(1 + 次数)`；繁体词取其简体形式的次数。计数（`manifests/general_word_counts.tsv`，由 `scripts/count_general_word_frequency.py` 生成）来自 Cassotis IME 字级语言模型的通用语料，长词里的短词不计。Cassotis IME 在没有上下文、同音词之间取舍时使用这张表。它不计入可直接输入的词条数据。
 
 ### 一键补全模型数据
 
@@ -127,6 +129,7 @@ IME v1.22.0 的长句局部纠错、v1.26.0 的完整修正方案复核，以及
 | OpenCC STPhrases | Apache-2.0 | 简繁短语映射 |
 | THUOCL | THUOCL custom open terms | 扩展覆盖与 DF 统计信号 |
 | jieba `dict.txt` | MIT | 频率排序信号 |
+| FineWeb-Edu-Chinese v2.1、Ultra-FineWeb（中文）、中文维基百科 | 各数据集的条款；只用计数 | 词频表的出现次数 |
 | Wiktionary 中文标题（ns0） | CC BY-SA 4.0 | 日常表达、口语短语和聊天类词汇种子 |
 | Wikipedia 中文标题（ns0） | CC BY-SA 4.0 | 专名覆盖与高置信专有名词种子 |
 | Wikimedia Pageviews Top（zh.wikipedia） | CC BY-SA 4.0 | 真实世界热度信号 |
