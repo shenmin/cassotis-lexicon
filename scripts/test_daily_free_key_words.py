@@ -9,6 +9,7 @@ kept, weighted anew. Weighted as test_daily_suo_bijiao_phrases (occurrences wher
 the word is no part of a longer dictionary word, nor before one that its last
 character begins, nor after one that its first character ends)."""
 from pathlib import Path
+import re
 import sys
 import unittest
 
@@ -43,12 +44,23 @@ class DailyFreeKeyWordsTests(unittest.TestCase):
         self.assertEqual({"exact_rank"}, {row[4] for row in forced})
 
     def test_keys_had_no_word(self):
-        # The batch's keys hold no word but the batch's own.
+        # The batch's keys held no word but the batch's own; a later daily
+        # block may add words of its own there (只隔 beside 制革 at zhige,
+        # 2026-10-28).
+        later = set()
+        newest = ""
+        for line in (ROOT / "manifests/curated_daily_supplement_phrases.tsv").read_text(encoding="utf-8").splitlines():
+            if line.startswith("#"):
+                newest = max(re.findall(r"20\d\d-\d\d-\d\d", line), default="")
+                continue
+            fields = line.split("	")
+            if newest > "2026-10-27" and len(fields) >= 4:
+                later.update({(fields[3], fields[0]), (fields[3], fields[1])})
         for variant, index in (("sc", 1), ("tc", 2)):
             ours = {(row[0], row[index]) for row in ROWS + tuple(FORCED)}
             batch_keys = {row[0] for row in ROWS + tuple(FORCED)}
             for (pinyin, text) in read_rows(f"dict_clean_{variant}.txt"):
-                if pinyin.replace("'", "") in batch_keys:
+                if pinyin.replace("'", "") in batch_keys and (pinyin, text) not in later:
                     self.assertIn((pinyin, text), ours, (variant, pinyin, text))
 
     def test_order(self):

@@ -18,12 +18,12 @@ Lexicon build and release repository for Cassotis IME.
 - Supports external-source bootstrap and reproducible generated dictionary builds.
 - Keeps attribution and release policy files aligned with generated artifacts.
 
-## Current dictionary snapshot (2026-10-27 build)
+## Current dictionary snapshot (2026-10-28 build)
 
 | File | Variant | Entries |
 |------|---------|---------|
-| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 237,132 |
-| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 237,748 |
+| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 237,233 |
+| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 237,849 |
 | `data/generated/dict_unihan_sc.txt` | Simplified single-char (Unihan) | 23,916 |
 | `data/generated/dict_unihan_tc.txt` | Traditional single-char (Unihan) | 24,179 |
 
@@ -37,7 +37,7 @@ Cassotis Lexicon publishes local ranking artifacts alongside its lexical diction
 
 | Version | Query-path priors (SC / TC) | Word-path transitions (SC / TC) | Forward character n-gram parameters (SC / TC) | Reverse character n-gram parameters (SC / TC) |
 |---|---:|---:|---:|---:|
-| `2026-10-28` | 23,603 / 22,681 | 904,761 / 833,701 | 698,694 / 697,013 | 2,538,336 / 2,538,235 |
+| `2026-10-28` | 23,603 / 22,681 | 904,767 / 833,707 | 698,694 / 697,013 | 2,538,336 / 2,538,235 |
 | `v1.14.0` - `v1.29.0` | 23,603 / 22,723 | 289,955 / 257,125 | 698,694 / 698,777 | 2,538,336 / 2,539,067 |
 | `v1.13.0` | 23,598 / 22,720 | 289,955 / 257,125 | 698,694 / 698,777 | 2,538,336 / 2,539,067 |
 | `v1.12.0` | 23,593 / 22,717 | 289,955 / 257,125 | 698,694 / 698,777 | — |
@@ -115,7 +115,7 @@ The v1.14.0 artifacts refresh query-path priors for the expanded exact-anchor an
 
 The v1.16.0 query-path, word-transition, and character n-gram artifacts remain unchanged from v1.14.0. Its new model data is the one-key completion popularity and prefix lookup index listed above.
 
-The word transitions of 2026-10-28 add pairs of words counted in 120 million characters of the general Chinese text the character model was trained on (FineWeb-Edu-Chinese, Ultra-FineWeb and Chinese Wikipedia; counts only), keeping every existing transition and its weight: 289,955 -> 904,761 (SC) and 257,124 -> 833,701 (TC). Only paths of two words of two characters or more were added. Added paths with a word of one character glued single characters to words as general text writes them and cost long-sentence first choices on fiction, and paths of three words changed almost nothing.
+The word transitions of 2026-10-28 add pairs of words counted in 120 million characters of the general Chinese text the character model was trained on (FineWeb-Edu-Chinese, Ultra-FineWeb and Chinese Wikipedia; counts only), keeping every existing transition and its weight: 289,955 -> 904,767 (SC) and 257,124 -> 833,707 (TC). Only paths of two words of two characters or more were added, and six pairs of single characters (他还, 他被, 他从, 他为, 他都). Added paths with a word of one character glued single characters to words as general text writes them and cost long-sentence first choices on fiction; most added pairs of single characters were fragments of general text (年他, 日被) that would have stood first on two-syllable keys; paths of three words changed almost nothing.
 
 Long-sentence local repair in IME v1.22.0, joint review of complete repair proposals in v1.26.0, and contextual short-word semantic review in v1.29.0 are trained and deployed by the IME project. They do not add records to these Lexicon tables. See [IME local ranking](https://github.com/shenmin/cassotis-ime/blob/master/README.md#corpus-trained-local-ranking) for details.
 

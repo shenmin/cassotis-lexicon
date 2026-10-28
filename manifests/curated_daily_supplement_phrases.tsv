@@ -6466,7 +6466,6 @@
 朝上	朝上	0.01
 观赏性	觀賞性	0.01
 直肠壁	直腸壁	0.01
-只剩	只剩	0.01
 难以言喻	難以言喻	0.34
 奔向	奔向	0.01
 只需	只需	0.36
@@ -6589,7 +6588,6 @@
 断更	斷更	0.01
 搭好	搭好	0.01
 底模	底模	0.01
-只为	只爲	0.01
 六十岁	六十歲	0.01
 小作文	小作文	0.01
 保持住	保持住	0.01
@@ -7101,7 +7099,6 @@
 加水	加水	0.01
 放盐	放鹽	0.01
 亮着	亮著	0.01
-枝头	枝頭	0.01
 摇着	搖著	0.01
 狗绳	狗繩	0.01
 守在	守在	0.01
@@ -7367,7 +7364,6 @@
 一撮	一撮	0.01
 施施然	施施然	0.01
 明志	明志	0.01
-致远	致遠	0.01
 浑水	渾水	0.01
 心窝	心窩	0.00
 老旧	老舊	0.01
@@ -7903,7 +7899,6 @@
 鎏金	鎏金	0.01
 之感	之感	0.01
 之术	之術	0.01
-之道	之道	0.01
 于一身	於一身	0.01
 有的话	有的話	0.01
 是的话	是的話	0.01
@@ -26192,3 +26187,137 @@
 都热	都熱	0.200	doure	exact_rank_no_contains
 都冷	都冷	0.080	douleng	exact_rank_no_contains
 都挤	都擠	0.200	douji	exact_rank_no_contains
+# Everyday words, 2026-10-28: 才 (cai) before a verb or an adjective of one character, the more frequent ones: 才开, 才关, 才醒, 才睡, 才至 (the user's examples), 才算, 才叫, 才知, 才想, 才够, 才懂, 才配; the pairs jieba cuts as the adverb 才 and a word of one character in the general text and in chat sentences that the dictionary lacked, reviewed by hand (traditional forms, prepositions, pieces of longer words such as 才恢 of 才恢复, readings the key cannot tell left out). Weighted as the blocks of 2026-10-20 (occurrences where the word is no part of a longer dictionary word, nor before one that its last character begins, nor after one that its first character ends); a word stays under every more frequent word of its key, an import's weight included (才关 under 菜馆, 才醒 under 才行, 才至 under 采制).
+才开	才開	0.400	caikai	exact_rank_no_contains
+才关	才關	0.284	caiguan	exact_rank_no_contains
+才醒	才醒	0.223	caixing	exact_rank_no_contains
+才睡	才睡	0.400	caishui	exact_rank_no_contains
+才至	才至	0.348	caizhi	exact_rank_no_contains
+才算	才算	0.600	caisuan	exact_rank_no_contains
+才叫	才叫	0.999	caijiao	exact_rank_no_contains
+才知	才知	0.600	caizhi	exact_rank_no_contains
+才想	才想	0.400	caixiang	exact_rank_no_contains
+才吃	才吃	0.400	caichi	exact_rank_no_contains
+才看	才看	0.400	caikan	exact_rank_no_contains
+才够	才夠	0.400	caigou	exact_rank_no_contains
+才回	才回	0.600	caihui	exact_rank_no_contains
+才见	才見	0.505	caijian	exact_rank_no_contains
+才买	才買	0.400	caimai	exact_rank_no_contains
+才没	才沒	0.400	caimei	exact_rank_no_contains
+才成	才成	0.400	caicheng	exact_rank_no_contains
+才懂	才懂	0.849	caidong	exact_rank_no_contains
+才上	才上	0.009	caishang	exact_rank_no_contains
+才换	才換	0.400	caihuan	exact_rank_no_contains
+才配	才配	0.400	caipei	exact_rank_no_contains
+才打	才打	0.400	caida	exact_rank_no_contains
+才爽	才爽	0.400	caishuang	exact_rank_no_contains
+# Everyday words, 2026-10-28: 才 (cai) before a verb of one character, the less frequent ones (才写, 才找, 才拿, 才停, 才考, 才活, 才带, 才穿, 才放, 才讲, 才像, 才问, 才跌, 才赚), by the same weights.
+才写	才寫	0.999	caixie	exact_rank_no_contains
+才找	才找	0.200	caizhao	exact_rank_no_contains
+才拿	才拿	0.200	caina	exact_rank_no_contains
+才停	才停	0.200	caiting	exact_rank_no_contains
+才考	才考	0.200	caikao	exact_rank_no_contains
+才活	才活	0.200	caihuo	exact_rank_no_contains
+才带	才帶	0.200	caidai	exact_rank_no_contains
+才穿	才穿	0.200	caichuan	exact_rank_no_contains
+才放	才放	0.200	caifang	exact_rank_no_contains
+才讲	才講	0.200	caijiang	exact_rank_no_contains
+才像	才像	0.200	caixiang	exact_rank_no_contains
+才问	才問	0.009	caiwen	exact_rank_no_contains
+才跌	才跌	0.200	caidie	exact_rank_no_contains
+才赚	才賺	0.200	caizhuan	exact_rank_no_contains
+# Everyday words, 2026-10-28: 只 (zhi, "only") before a verb or an adjective of one character, the more frequent ones: 只加, 只挑, 只点, 只叫 (the user's examples), 只占, 只靠, 只差, 只够, 只谈, 只等, 只让, 只讲, 只认; the pairs jieba cuts as the adverb 只 and a word of one character, reviewed by hand (只 as a classifier, 只狗 and 只猫, and pieces such as 只可 of 只可惜 left out), weighted by the same rules (只加 under 指甲 and 支架, 只点 under 指点, 支点 and 质点, 只叫 under 执教 and 支教).
+只加	只加	0.602	zhijia	exact_rank_no_contains
+只挑	只挑	0.278	zhitiao	exact_rank_no_contains
+只点	只點	0.181	zhidian	exact_rank_no_contains
+只叫	只叫	0.125	zhijiao	exact_rank_no_contains
+只占	只佔	0.600	zhizhan	exact_rank_no_contains
+只靠	只靠	0.599	zhikao	exact_rank_no_contains
+只差	只差	0.600	zhicha	exact_rank_no_contains
+只留	只留	0.231	zhiliu	exact_rank_no_contains
+只知	只知	0.178	zhizhi	exact_rank_no_contains
+只讲	只講	0.385	zhijiang	exact_rank_no_contains
+只花	只花	0.398	zhihua	exact_rank_no_contains
+只愿	只願	0.164	zhiyuan	exact_rank_no_contains
+只考	只考	0.598	zhikao	exact_rank_no_contains
+只收	只收	0.278	zhishou	exact_rank_no_contains
+只爱	只愛	0.193	zhiai	exact_rank_no_contains
+只问	只問	0.400	zhiwen	exact_rank_no_contains
+只穿	只穿	0.197	zhichuan	exact_rank_no_contains
+只打	只打	0.279	zhida	exact_rank_no_contains
+只带	只帶	0.343	zhidai	exact_rank_no_contains
+只睡	只睡	0.365	zhishui	exact_rank_no_contains
+只画	只畫	0.397	zhihua	exact_rank_no_contains
+只够	只夠	0.600	zhigou	exact_rank_no_contains
+只谈	只談	0.600	zhitan	exact_rank_no_contains
+只招	只招	0.600	zhizhao	exact_rank_no_contains
+只懂	只懂	0.400	zhidong	exact_rank_no_contains
+只隔	只隔	0.400	zhige	exact_rank_no_contains
+只含	只含	0.400	zhihan	exact_rank_no_contains
+只怪	只怪	0.197	zhiguai	exact_rank_no_contains
+只准	只准	0.400	zhizhun	exact_rank_no_contains
+只放	只放	0.401	zhifang	exact_rank_no_contains
+只装	只裝	0.166	zhizhuang	exact_rank_no_contains
+只教	只教	0.124	zhijiao	exact_rank_no_contains
+只选	只選	0.278	zhixuan	exact_rank_no_contains
+只赚	只賺	0.400	zhizhuan	exact_rank_no_contains
+只交	只交	0.123	zhijiao	exact_rank_no_contains
+只念	只念	0.197	zhinian	exact_rank_no_contains
+只记	只記	0.000	zhiji	exact_rank_no_contains
+只出	只出	0.278	zhichu	exact_rank_no_contains
+只进	只進	0.298	zhijin	exact_rank_no_contains
+只认	只認	0.400	zhiren	exact_rank_no_contains
+只活	只活	0.279	zhihuo	exact_rank_no_contains
+只恨	只恨	0.400	zhihen	exact_rank_no_contains
+只取	只取	0.519	zhiqu	exact_rank_no_contains
+只找	只找	0.400	zhizhao	exact_rank_no_contains
+只盼	只盼	0.400	zhipan	exact_rank_no_contains
+只肯	只肯	0.400	zhiken	exact_rank_no_contains
+只签	只籤	0.276	zhiqian	exact_rank_no_contains
+只等	只等	0.600	zhideng	exact_rank_no_contains
+只凭	只憑	0.397	zhiping	exact_rank_no_contains
+只因	只因	0.600	zhiyin	exact_rank_no_contains
+只让	只讓	0.600	zhirang	exact_rank_no_contains
+只到	只到	0.143	zhidao	exact_rank_no_contains
+# Everyday words, 2026-10-28: 只 (zhi, "only") before a verb of one character, the less frequent ones (只盯, 只投, 只拍, 只住, 只填, 只扣, 只唱, 只杀, 只存, 只跌, 只拉, 只来), by the same weights.
+只盯	只盯	0.200	zhiding	exact_rank_no_contains
+只投	只投	0.154	zhitou	exact_rank_no_contains
+只拍	只拍	0.200	zhipai	exact_rank_no_contains
+只住	只住	0.111	zhizhu	exact_rank_no_contains
+只填	只填	0.197	zhitian	exact_rank_no_contains
+只扣	只扣	0.200	zhikou	exact_rank_no_contains
+只唱	只唱	0.200	zhichang	exact_rank_no_contains
+只杀	只殺	0.200	zhisha	exact_rank_no_contains
+只存	只存	0.200	zhicun	exact_rank_no_contains
+只跌	只跌	0.200	zhidie	exact_rank_no_contains
+只拉	只拉	0.200	zhila	exact_rank_no_contains
+只来	只來	0.200	zhilai	exact_rank_no_contains
+# Words at an import's weight, 2026-10-28, weighted by the same rules as the 才 and 只 words: 只为 and 只剩, and the words at an import's weight on the keys of those words that are more frequent than one of them (支架, 趾甲, 制假, 支点, 质点, 支教, 纸巾, 织锦, 知己, 织机, 至极, 之道, 纸质, 彩绘, 采制; the user chose to weight them anew rather than to put the requested words above them); 直击, 踩上 and 踩稳 keep the low weights of their block.
+只剩	只剩	0.279	zhisheng	exact_rank
+只为	只為	0.600	zhiwei	exact_rank
+之道	之道	0.148	zhidao	exact_rank
+支架	支架	0.603	zhijia	exact_rank
+纸质	紙質	0.600	zhizhi	exact_rank
+枝头	枝頭	0.155	zhitou	exact_rank
+支教	支教	0.600	zhijiao	exact_rank
+知己	知己	0.382	zhiji	exact_rank
+纸巾	紙巾	0.601	zhijin	exact_rank
+彩绘	彩繪	0.601	caihui	exact_rank
+值守	值守	0.279	zhishou	exact_rank
+知音	知音	0.601	zhiyin	exact_rank
+支点	支點	0.183	zhidian	exact_rank
+致远	致遠	0.165	zhiyuan	exact_rank
+挚爱	摯愛	0.469	zhiai	exact_rank
+志趣	志趣	0.531	zhiqu	exact_rank
+置放	置放	0.400	zhifang	exact_rank
+质点	質點	0.182	zhidian	exact_rank
+支招	支招	0.601	zhizhao	exact_rank
+制假	製假	0.600	zhijia	exact_rank
+织锦	織錦	0.600	zhijin	exact_rank
+直选	直選	0.279	zhixuan	exact_rank
+支前	支前	0.277	zhiqian	exact_rank
+采制	采制	0.349	caizhi	exact_rank
+织机	織機	0.383	zhiji	exact_rank
+至极	至極	0.381	zhiji	exact_rank
+纸钱	紙錢	0.278	zhiqian	exact_rank
+趾甲	趾甲	0.601	zhijia	exact_rank
