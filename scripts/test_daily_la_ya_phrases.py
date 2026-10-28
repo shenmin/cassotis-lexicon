@@ -7,9 +7,7 @@ part of a longer dictionary word, nor before one that its last character
 begins, nor after one that its first character ends): a requested word at
 least at the least weight of a requested word, but below a commoner word of
 its key (傻啦 under 莎拉, 填呀 under 天涯); the words with a particle kept from
-20 occurrences in the general text, which writes them rarely, and none of the
-added kinds that would take the first place from a word three times as
-frequent whose last syllable is being typed (同样 at tongya)."""
+20 occurrences in the general text, which writes them rarely."""
 from pathlib import Path
 import sys
 import unittest

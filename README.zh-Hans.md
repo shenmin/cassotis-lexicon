@@ -18,12 +18,12 @@ Cassotis IME 的词库构建与发布仓库。
 - 支持外部来源引导构建和可复现的生成词库构建流程。
 - 保持署名文件与生成产物一致。
 
-## 当前词库快照（2026-10-26 构建）
+## 当前词库快照（2026-10-27 构建）
 
 | 文件 | 变体 | 词条数 |
 |------|------|--------|
-| `data/generated/dict_clean_sc.txt` | 简体主词库 | 235,797 |
-| `data/generated/dict_clean_tc.txt` | 繁体主词库 | 236,414 |
+| `data/generated/dict_clean_sc.txt` | 简体主词库 | 237,132 |
+| `data/generated/dict_clean_tc.txt` | 繁体主词库 | 237,748 |
 | `data/generated/dict_unihan_sc.txt` | 简体单字（Unihan） | 23,916 |
 | `data/generated/dict_unihan_tc.txt` | 繁体单字（Unihan） | 24,179 |
 
@@ -37,6 +37,7 @@ Cassotis Lexicon 在词汇词库之外还发布本地排序模型产物：查询
 
 | Version | 查询路径先验（简体 / 繁体） | 词路径转移关系（简体 / 繁体） | 正向字符 n-gram 参数（简体 / 繁体） | 反向字符 n-gram 参数（简体 / 繁体） |
 |---|---:|---:|---:|---:|
+| `2026-10-28` | 23,603 / 22,681 | 904,761 / 833,701 | 698,694 / 697,013 | 2,538,336 / 2,538,235 |
 | `v1.14.0` - `v1.29.0` | 23,603 / 22,723 | 289,955 / 257,125 | 698,694 / 698,777 | 2,538,336 / 2,539,067 |
 | `v1.13.0` | 23,598 / 22,720 | 289,955 / 257,125 | 698,694 / 698,777 | 2,538,336 / 2,539,067 |
 | `v1.12.0` | 23,593 / 22,717 | 289,955 / 257,125 | 698,694 / 698,777 | — |
@@ -114,6 +115,8 @@ v1.14.0 更新查询路径先验，以支持 IME 扩展后的精确词锚定和�
 
 v1.16.0 的查询路径、词路径转移及正反向字符 n-gram 数据与 v1.14.0 相同；本版新增的是上表所列的一键补全流行度和前缀查询索引。
 
+2026-10-28 的词路径转移新增了从字级语言模型的通用中文语料（FineWeb-Edu-Chinese、Ultra-FineWeb、中文维基百科；只用计数）中 1.2 亿字统计的词对，已有的转移及其权重全部保留：简体 289,955 → 904,761，繁体 257,124 → 833,701。只加入由两个词组成、且每个词至少两个字的路径。含单字词的新路径会按通用文本的写法把单字粘在词上，降低了小说长句的首选；三个词的路径几乎不起作用。
+
 IME v1.22.0 的长句局部纠错、v1.26.0 的完整修正方案复核，以及 v1.29.0 的有上下文短词语义复核，均由 IME 项目训练和部署，不增加这些 Lexicon 静态记录。相关技术见 [IME 本地排序说明](https://github.com/shenmin/cassotis-ime/blob/master/README.zh-Hans.md#语料训练增强的本地排序)。
 
 统计模型只保存短距离词语转移和字符 n-gram，不保存完整训练句子。独立的长句和短词基准案例均不参与训练。运行时，IME 在本地计算这些统计信号和大部分紧凑的原生重排器。从 v1.18.0 开始，受约束的长句一键补全后备层采用 INT8 权重量化、混合精度 ONNX 模型，且只由外部 host 进程加载；它不需要联网或 GPU，模型不可用时会安全回退。长句评测方法见 [IME 基准测试说明](https://github.com/shenmin/cassotis-ime/blob/master/BENCHMARK.CN.md)。
@@ -129,7 +132,7 @@ IME v1.22.0 的长句局部纠错、v1.26.0 的完整修正方案复核，以及
 | OpenCC STPhrases | Apache-2.0 | 简繁短语映射 |
 | THUOCL | THUOCL custom open terms | 扩展覆盖与 DF 统计信号 |
 | jieba `dict.txt` | MIT | 频率排序信号 |
-| FineWeb-Edu-Chinese v2.1、Ultra-FineWeb（中文）、中文维基百科 | 各数据集的条款；只用计数 | 词频表的出现次数 |
+| FineWeb-Edu-Chinese v2.1、Ultra-FineWeb（中文）、中文维基百科 | 各数据集的条款；只用计数 | 词频表的出现次数；单字排序的字频；词路径转移的词对计数 |
 | Wiktionary 中文标题（ns0） | CC BY-SA 4.0 | 日常表达、口语短语和聊天类词汇种子 |
 | Wikipedia 中文标题（ns0） | CC BY-SA 4.0 | 专名覆盖与高置信专有名词种子 |
 | Wikimedia Pageviews Top（zh.wikipedia） | CC BY-SA 4.0 | 真实世界热度信号 |
@@ -229,6 +232,8 @@ IME v1.22.0 的长句局部纠错、v1.26.0 的完整修正方案复核，以及
 ```
 
 仅修改短语词库时，全量重建会保持现有 Unihan 单字权重稳定。只有明确需要重新校准单字排序层时，才使用 `-RefreshUnihanSingleCharWeights`。
+
+每个读音下的单字按现代文本的使用频率排序（`scripts/build_single_char_frequency.py`，2026-10-27）。原来的顺序来自 Unihan 的频率、上世纪八十年代的《现代汉语频率词典》计数和学段等级，zhen 下的 甄、贞、榛、斟 都排在 帧 之前。这一步把一个读音原有的权重重新分给它的字，用得最多的字拿最大的权重：计数来自字级语言模型的通用语料，既算总出现次数，也算词典词以外单独出现的次数（`manifests/general_char_counts.tsv`，由 `scripts/count_general_char_frequency.py` 生成），另加聊天消息里单独打出的字，这部分计数不公开。一个字只在它的主读音下移动，经过审核的相对顺序和回归样例保持不变。全量重建会保留这些权重；使用 `-RefreshUnihanSingleCharWeights` 之后，需要重新运行这一步，再运行 `scripts/normalize_traditional_forms.py`。
 
 `external_broad` 和 `external_cedict` 在存在
 `manifests/vertical_layers.public.json` 时会自动加载它。

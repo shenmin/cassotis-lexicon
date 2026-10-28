@@ -7,7 +7,10 @@ one above the key's first word (one below a word at 1000) and stays below
 every more frequent word of the key (专项, 防控, 党委, 业主, 职场, 编号, 排队,
 蜂蜜, 雅思 ...). Combinations of a function character and a word (也在, 他就)
 and words earlier batches weighed were left out. Both variants take the
-weight; the traditional row is the dictionary's own text of the word."""
+weight; the traditional row is the dictionary's own text of the word. 灰蝶
+went out of the block on 2026-10-28: it is a reviewed specialist term
+(test_specialist_terms), whose weight stays low whatever the general text,
+much of it encyclopaedia pages of species, holds."""
 from pathlib import Path
 import sys
 import unittest
@@ -222,7 +225,6 @@ FORCED = {
     ("huashu", "话术"): 974,
     ("hufeng", "湖风"): 999,
     ("hufu", "护肤"): 999,
-    ("huidie", "灰蝶"): 600,
     ("huimin", "惠民"): 999,
     ("huitu", "绘图"): 915,
     ("jiachong", "甲虫"): 999,
@@ -873,7 +875,6 @@ FORCED_TC = {
     ("huashu", "話術"): 974,
     ("hufeng", "湖風"): 999,
     ("hufu", "護膚"): 999,
-    ("huidie", "灰蝶"): 600,
     ("huimin", "惠民"): 999,
     ("huitu", "繪圖"): 915,
     ("jiachong", "甲蟲"): 999,

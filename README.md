@@ -18,12 +18,12 @@ Lexicon build and release repository for Cassotis IME.
 - Supports external-source bootstrap and reproducible generated dictionary builds.
 - Keeps attribution and release policy files aligned with generated artifacts.
 
-## Current dictionary snapshot (2026-10-26 build)
+## Current dictionary snapshot (2026-10-27 build)
 
 | File | Variant | Entries |
 |------|---------|---------|
-| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 235,797 |
-| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 236,414 |
+| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 237,132 |
+| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 237,748 |
 | `data/generated/dict_unihan_sc.txt` | Simplified single-char (Unihan) | 23,916 |
 | `data/generated/dict_unihan_tc.txt` | Traditional single-char (Unihan) | 24,179 |
 
@@ -37,6 +37,7 @@ Cassotis Lexicon publishes local ranking artifacts alongside its lexical diction
 
 | Version | Query-path priors (SC / TC) | Word-path transitions (SC / TC) | Forward character n-gram parameters (SC / TC) | Reverse character n-gram parameters (SC / TC) |
 |---|---:|---:|---:|---:|
+| `2026-10-28` | 23,603 / 22,681 | 904,761 / 833,701 | 698,694 / 697,013 | 2,538,336 / 2,538,235 |
 | `v1.14.0` - `v1.29.0` | 23,603 / 22,723 | 289,955 / 257,125 | 698,694 / 698,777 | 2,538,336 / 2,539,067 |
 | `v1.13.0` | 23,598 / 22,720 | 289,955 / 257,125 | 698,694 / 698,777 | 2,538,336 / 2,539,067 |
 | `v1.12.0` | 23,593 / 22,717 | 289,955 / 257,125 | 698,694 / 698,777 | — |
@@ -114,6 +115,8 @@ The v1.14.0 artifacts refresh query-path priors for the expanded exact-anchor an
 
 The v1.16.0 query-path, word-transition, and character n-gram artifacts remain unchanged from v1.14.0. Its new model data is the one-key completion popularity and prefix lookup index listed above.
 
+The word transitions of 2026-10-28 add pairs of words counted in 120 million characters of the general Chinese text the character model was trained on (FineWeb-Edu-Chinese, Ultra-FineWeb and Chinese Wikipedia; counts only), keeping every existing transition and its weight: 289,955 -> 904,761 (SC) and 257,124 -> 833,701 (TC). Only paths of two words of two characters or more were added. Added paths with a word of one character glued single characters to words as general text writes them and cost long-sentence first choices on fiction, and paths of three words changed almost nothing.
+
 Long-sentence local repair in IME v1.22.0, joint review of complete repair proposals in v1.26.0, and contextual short-word semantic review in v1.29.0 are trained and deployed by the IME project. They do not add records to these Lexicon tables. See [IME local ranking](https://github.com/shenmin/cassotis-ime/blob/master/README.md#corpus-trained-local-ranking) for details.
 
 The statistical model stores only short word transitions and character n-grams, not complete training sentences. The independent long-sentence and short-word benchmark cases are excluded from training. At runtime, IME evaluates these statistical signals and most compact native rerankers locally. Starting with v1.18.0, the constrained long-sentence one-key-completion fallback uses an INT8 weight-quantized, mixed-precision ONNX model loaded only by the external host process; it requires no network or GPU and safely falls back when unavailable. See the [IME benchmark documentation](https://github.com/shenmin/cassotis-ime/blob/master/BENCHMARK.md) for the long-sentence evaluation protocol.
@@ -129,7 +132,7 @@ The statistical model stores only short word transitions and character n-grams, 
 | OpenCC STPhrases | Apache-2.0 | SC-TC phrase mapping |
 | THUOCL | THUOCL custom open terms | Broad coverage and DF statistics |
 | jieba `dict.txt` | MIT | Frequency ranking signal |
-| FineWeb-Edu-Chinese v2.1, Ultra-FineWeb (zh), Chinese Wikipedia | Each dataset's terms; counts only | Word occurrence counts for the word-frequency table |
+| FineWeb-Edu-Chinese v2.1, Ultra-FineWeb (zh), Chinese Wikipedia | Each dataset's terms; counts only | Word occurrence counts for the word-frequency table; character counts for the single-character order; word-pair counts for the word transitions |
 | Wiktionary zh titles (ns0) | CC BY-SA 4.0 | Daily wording, colloquial phrases, and chat-style lexical seeds |
 | Wikipedia zh titles (ns0) | CC BY-SA 4.0 | Named-entity coverage and high-confidence proper-noun seeds |
 | Wikimedia Pageviews Top (zh.wikipedia) | CC BY-SA 4.0 | Real-world usage heat signal |
@@ -231,6 +234,21 @@ See:
 Full rebuilds keep existing Unihan single-character weights stable when only
 phrase dictionaries change. Use `-RefreshUnihanSingleCharWeights` only when
 deliberately recalibrating the single-character ranking layer.
+
+The single characters of each reading are ordered by how often modern text
+uses them (`scripts/build_single_char_frequency.py`, 2026-10-27). Unihan's
+frequencies, the Xiandai Hanyu Pinlu counts of the 1980s and school grades
+had put 甄, 贞, 榛 and 斟 above 帧 under zhen. The step gives the weights a
+reading already has to its characters again, the largest to the character
+used most: in the general corpora of the character language model, counted
+overall and standing alone outside dictionary words
+(`manifests/general_char_counts.tsv`, made by
+`scripts/count_general_char_frequency.py`), and standing alone in typed chat
+messages, whose counts are not published. A character moves only under its
+main reading, and the audited relative order and the regression samples
+hold. Full rebuilds keep these weights; after
+`-RefreshUnihanSingleCharWeights`, run the step again, then
+`scripts/normalize_traditional_forms.py`.
 
 `external_broad` and `external_cedict` automatically load
 `manifests/vertical_layers.public.json` when present.

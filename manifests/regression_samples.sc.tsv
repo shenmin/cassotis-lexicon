@@ -2539,8 +2539,8 @@ dousha	都傻	3
 douben	都笨	1
 doubang	都棒	2
 doubang	都帮	1
-dougui	都跪	2
-doutian	都舔	1
+dougui	都跪	3
+doutian	都舔	2
 douda	都打	1
 xiabian	瞎编	2
 xiache	瞎扯	2
@@ -2702,7 +2702,7 @@ xieya	写呀	1
 wanya	玩呀	1
 reya	热呀	2
 lengya	冷呀	1
-guiya	跪呀	1
+guiya	跪呀	2
 kaiya	开呀	1
 guanya	关呀	2
 zheya	着呀	1
@@ -2738,3 +2738,26 @@ jiaya	加呀	2
 jianya	减呀	2
 tianya	填呀	3
 tianya	添呀	5
+
+# Words of 2026-10-27 the user asked for (关键帧, 帧数, 补回, 挤掉 ...) and words at an import's weight weighted anew: the rank each has by weight among the words of its key.
+guanjianzhen	关键帧	1
+zhenshu	帧数	2
+zhuzhen	逐帧	2
+diaozhen	掉帧	1
+diuzhen	丢帧	1
+chazhen	插帧	1
+buzhen	补帧	2
+meimiaozhenshu	每秒帧数	1
+buhui	补回	4
+jidiao	挤掉	2
+buwan	补完	4
+bufa	补发	6
+tuidiao	推掉	2
+
+# Words of 2026-10-27 on keys that had no word, the user's example (laodu: 牢度, 老杜): the rank each has by weight among the words of its key.
+lumang	鲁莽	1
+laodu	牢度	1
+laodu	老杜	2
+
+# Words of 2026-10-27, 都 (dou) before a verb or an adjective, the user's example (都叫): the rank each has by weight among the words of its key.
+doujiao	都叫	2
