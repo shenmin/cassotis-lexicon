@@ -14220,7 +14220,7 @@ caijian	裁剪	672
 caijian	才兼	497
 caijianwen	才兼文	556
 caijianwenwu	才兼文武	514
-caijiao	踩腳	1000
+caijiao	踩腳	400
 caijing	財經	700
 caijingweiyuanhui	財經委員會	301
 caijinqu	才進去	280
@@ -14409,7 +14409,7 @@ caixialai	裁下來	800
 caixian	踩線	198
 caixiang	猜想	1000
 caixiantuan	踩線團	758
-caixie	踩鞋	1000
+caixie	踩鞋	80
 caixin	彩信	555
 caixin	菜心	370
 caixing	才行	978
@@ -237761,7 +237761,7 @@ caihui	才回	600	no_contains
 caihuo	才活	200	no_contains
 caijian	才見	505	no_contains
 caijiang	才講	200	no_contains
-caijiao	才叫	999	no_contains
+caijiao	才叫	600	no_contains
 caikai	才開	400	no_contains
 caikan	才看	400	no_contains
 caikao	才考	200	no_contains
@@ -237777,7 +237777,7 @@ caiting	才停	200	no_contains
 caiwen	才問	9	no_contains
 caixiang	才像	200	no_contains
 caixiang	才想	400	no_contains
-caixie	才寫	999	no_contains
+caixie	才寫	200	no_contains
 caixing	才醒	223	no_contains
 caizhao	才找	200	no_contains
 caizhi	才知	600	no_contains

@@ -26194,7 +26194,7 @@
 才睡	才睡	0.400	caishui	exact_rank_no_contains
 才至	才至	0.348	caizhi	exact_rank_no_contains
 才算	才算	0.600	caisuan	exact_rank_no_contains
-才叫	才叫	0.999	caijiao	exact_rank_no_contains
+才叫	才叫	0.600	caijiao	exact_rank_no_contains
 才知	才知	0.600	caizhi	exact_rank_no_contains
 才想	才想	0.400	caixiang	exact_rank_no_contains
 才吃	才吃	0.400	caichi	exact_rank_no_contains
@@ -26212,7 +26212,7 @@
 才打	才打	0.400	caida	exact_rank_no_contains
 才爽	才爽	0.400	caishuang	exact_rank_no_contains
 # Everyday words, 2026-10-28: 才 (cai) before a verb of one character, the less frequent ones (才写, 才找, 才拿, 才停, 才考, 才活, 才带, 才穿, 才放, 才讲, 才像, 才问, 才跌, 才赚), by the same weights.
-才写	才寫	0.999	caixie	exact_rank_no_contains
+才写	才寫	0.200	caixie	exact_rank_no_contains
 才找	才找	0.200	caizhao	exact_rank_no_contains
 才拿	才拿	0.200	caina	exact_rank_no_contains
 才停	才停	0.200	caiting	exact_rank_no_contains
@@ -26321,3 +26321,6 @@
 至极	至極	0.381	zhiji	exact_rank
 纸钱	紙錢	0.278	zhiqian	exact_rank
 趾甲	趾甲	0.601	zhijia	exact_rank
+# Reweighted 2026-10-29: 踩脚 and 踩鞋, at 1000 from the daily action phrases of curated_daily_phrases.tsv, by the rules of the 才 words of 2026-10-28 (the tier of their occurrences as words in the general text, 304 and 8); 才叫 and 才写 (3,190 and 143), which those rules had put one below them at 999, take their own tiers in the 才 blocks (600 and 200).
+踩脚	踩腳	0.400	caijiao	exact_rank
+踩鞋	踩鞋	0.080	caixie	exact_rank

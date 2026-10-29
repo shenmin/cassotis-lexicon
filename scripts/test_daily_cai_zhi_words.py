@@ -8,7 +8,9 @@ imports at 0.01, weighted anew, and the words at an import's weight that
 were more frequent than a word of the batch on its key (支架, 支点, 支教). Weighted as test_daily_suo_bijiao_phrases
 (occurrences where the word is no part of a longer dictionary word, nor
 before one that its last character begins, nor after one that its first
-character ends)."""
+character ends). On 2026-10-29 踩脚 and 踩鞋, at 1000 from the daily action
+phrases, took the tier of their own occurrences by those rules, and 才叫 and
+才写, which had been put one below them, their own tiers."""
 from pathlib import Path
 import sys
 import unittest
@@ -25,6 +27,11 @@ REQUESTED = ['才开', '才关', '才醒', '才睡', '才至', '只加', '只挑
 HEADER_FORCED = "# Words at an import's weight, 2026-10-28, weighted by the same rules as the 才 and 只 words: 只为 and 只剩, and the words at an import's weight on the keys of those words that are more frequent than one of them (支架, 趾甲, 制假, 支点, 质点, 支教, 纸巾, 织锦, 知己, 织机, 至极, 之道, 纸质, 彩绘, 采制; the user chose to weight them anew rather than to put the requested words above them); 直击, 踩上 and 踩稳 keep the low weights of their block."
 FORCED = [('zhisheng', '只剩', '只剩', 279), ('zhiwei', '只为', '只為', 600), ('zhidao', '之道', '之道', 148), ('zhijia', '支架', '支架', 603), ('zhizhi', '纸质', '紙質', 600), ('zhitou', '枝头', '枝頭', 155), ('zhijiao', '支教', '支教', 600), ('zhiji', '知己', '知己', 382), ('zhijin', '纸巾', '紙巾', 601), ('caihui', '彩绘', '彩繪', 601), ('zhishou', '值守', '值守', 279), ('zhiyin', '知音', '知音', 601), ('zhidian', '支点', '支點', 183), ('zhiyuan', '致远', '致遠', 165), ('zhiai', '挚爱', '摯愛', 469), ('zhiqu', '志趣', '志趣', 531), ('zhifang', '置放', '置放', 400), ('zhidian', '质点', '質點', 182), ('zhizhao', '支招', '支招', 601), ('zhijia', '制假', '製假', 600), ('zhijin', '织锦', '織錦', 600), ('zhixuan', '直选', '直選', 279), ('zhiqian', '支前', '支前', 277), ('caizhi', '采制', '采制', 349), ('zhiji', '织机', '織機', 383), ('zhiji', '至极', '至極', 381), ('zhiqian', '纸钱', '紙錢', 278), ('zhijia', '趾甲', '趾甲', 601)]
 ROWS = tuple(row[:4] for header in HEADERS.values() for row in block(header))
+HEADER_CAIJIAO = ("# Reweighted 2026-10-29: 踩脚 and 踩鞋, at 1000 from the daily action phrases of "
+                  "curated_daily_phrases.tsv, by the rules of the 才 words of 2026-10-28 (the tier of their "
+                  "occurrences as words in the general text, 304 and 8); 才叫 and 才写 (3,190 and 143), which "
+                  "those rules had put one below them at 999, take their own tiers in the 才 blocks (600 and 200).")
+CAIJIAO = [('caijiao', '踩脚', '踩腳', 400), ('caixie', '踩鞋', '踩鞋', 80)]
 
 
 class DailyCaiZhiWordsTests(unittest.TestCase):
@@ -40,6 +47,19 @@ class DailyCaiZhiWordsTests(unittest.TestCase):
         forced = block(HEADER_FORCED)
         self.assertEqual(sorted(tuple(row) for row in FORCED), sorted(row[:4] for row in forced))
         self.assertEqual({"exact_rank"}, {row[4] for row in forced})
+
+    def test_cai_words_above_cai_jiao_and_cai_xie(self):
+        self.assertEqual(sorted(CAIJIAO), sorted(tuple(row[:4]) for row in block(HEADER_CAIJIAO)))
+        self.assertEqual({"exact_rank"}, {row[4] for row in block(HEADER_CAIJIAO)})
+        weights = {(row[0], row[1]): row[3] for row in ROWS}
+        self.assertEqual(600, weights[("caijiao", "才叫")])
+        self.assertEqual(200, weights[("caixie", "才写")])
+        for index, variant in enumerate(("sc", "tc"), 1):
+            rows = read_rows(f"dict_clean_{variant}.txt")
+            for pinyin, word, other in (("caijiao", ("才叫", "才叫"), ("踩脚", "踩腳")),
+                                        ("caixie", ("才写", "才寫"), ("踩鞋", "踩鞋"))):
+                self.assertGreater(int(rows[(pinyin, word[index - 1])][0]),
+                                   int(rows[(pinyin, other[index - 1])][0]), (variant, pinyin))
 
     def test_head_and_one_character(self):
         for pinyin, sc, tc, _weight in ROWS:
