@@ -5129,7 +5129,6 @@
 露趾	露趾	0.01
 传话筒	傳話筒	0.01
 大腿根	大腿根	0.01
-美腿	美腿	0.01
 官博	官博	0.01
 道歉信	道歉信	0.01
 被害妄想症	被害妄想症	0.01
@@ -26523,3 +26522,14 @@
 梳的	梳的	0.039	shude	exact_rank_no_contains
 盯的	盯的	0.200	dingde	exact_rank_no_contains
 舔的	舔的	0.200	tiande	exact_rank_no_contains
+# Everyday words, 2026-10-30, more frequent: 微幅, 不升, 美腿 and 粗短; independent general-text and chat counts, below more frequent homophones. Exact rows, without substring-popularity promotion.
+微幅	微幅	0.399	weifu	exact_rank_no_contains
+不升	不升	0.600	busheng	exact_rank_no_contains
+美腿	美腿	0.600	meitui	exact_rank_no_contains
+粗短	粗短	0.400	cuduan	exact_rank_no_contains
+# Everyday words, 2026-10-30, less frequent: 几版, 不升反降, 反降, 粗长 and 细短; 长 reads chang, not zhang. Weighted by the same independent evidence.
+几版	幾版	0.080	jiban	exact_rank_no_contains
+不升反降	不升反降	0.200	bushengfanjiang	exact_rank_no_contains
+反降	反降	0.200	fanjiang	exact_rank_no_contains
+粗长	粗長	0.200	cuchang	exact_rank_no_contains
+细短	細短	0.200	xiduan	exact_rank_no_contains
