@@ -18,12 +18,12 @@ Lexicon build and release repository for Cassotis IME.
 - Supports external-source bootstrap and reproducible generated dictionary builds.
 - Keeps attribution and release policy files aligned with generated artifacts.
 
-## Current dictionary snapshot (2026-10-29 build)
+## Current dictionary snapshot (2026-10-30 build)
 
 | File | Variant | Entries |
 |------|---------|---------|
-| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 237,233 |
-| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 237,849 |
+| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 237,430 |
+| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 238,046 |
 | `data/generated/dict_unihan_sc.txt` | Simplified single-char (Unihan) | 23,916 |
 | `data/generated/dict_unihan_tc.txt` | Traditional single-char (Unihan) | 24,179 |
 

@@ -2780,3 +2780,27 @@ zhijia	趾甲	4
 # 2026-10-29: 才叫 and 才写 above 踩脚 and 踩鞋, the rank each has by weight among the words of its key.
 caijiao	才叫	1
 caixie	才寫	1
+
+# Words of 2026-10-29, X刷, 发X, 以X, X着 and X的, the user's examples (多刷, 守着, 发钱, 想的, 以你): the rank each has by weight among the words of its key.
+duoshua	多刷	1
+shaoshua	少刷	1
+youshua	又刷	2
+youshua	有刷	1
+yishua	已刷	2
+meishua	沒刷	1
+laishua	來刷	1
+woshua	我刷	1
+nishua	你刷	1
+tashua	她刷	2
+tashua	他刷	1
+faqian	發錢	1
+faxiang	發餉	3
+faliang	發糧	3
+fami	發米	1
+fayou	發油	1
+yini	以你	2
+yiwo	以我	1
+yita	以他	1
+yita	以她	2
+shouzhe	守著	1
+xiangde	想的	2
