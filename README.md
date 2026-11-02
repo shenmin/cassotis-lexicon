@@ -22,10 +22,10 @@ Lexicon build and release repository for Cassotis IME.
 
 | File | Variant | Entries |
 |------|---------|---------|
-| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 237,893 |
-| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 238,507 |
-| `data/generated/dict_unihan_sc.txt` | Simplified single-char (Unihan) | 23,916 |
-| `data/generated/dict_unihan_tc.txt` | Traditional single-char (Unihan) | 24,179 |
+| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 237,892 |
+| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 238,506 |
+| `data/generated/dict_unihan_sc.txt` | Simplified single-char (Unihan) | 23,917 |
+| `data/generated/dict_unihan_tc.txt` | Traditional single-char (Unihan) | 24,180 |
 
 The traditional dictionary writes Taiwan's character forms (為, 裡, 著, 群, 吃) in every word of two characters or more; single characters keep their variants, so that they can still be typed on purpose. See the [form list](manifests/traditional_taiwan_forms.tsv).
 
@@ -37,6 +37,7 @@ Cassotis Lexicon publishes local ranking artifacts alongside its lexical diction
 
 | Version | Query-path priors (SC / TC) | Word-path transitions (SC / TC) | Forward character n-gram parameters (SC / TC) | Reverse character n-gram parameters (SC / TC) |
 |---|---:|---:|---:|---:|
+| `2026-11-02` | 23,603 / 22,683 | 904,762 / 833,701 | 698,694 / 697,013 | 2,538,336 / 2,538,235 |
 | `2026-10-28` | 23,603 / 22,681 | 904,767 / 833,707 | 698,694 / 697,013 | 2,538,336 / 2,538,235 |
 | `v1.14.0` - `v1.29.0` | 23,603 / 22,723 | 289,955 / 257,125 | 698,694 / 698,777 | 2,538,336 / 2,539,067 |
 | `v1.13.0` | 23,598 / 22,720 | 289,955 / 257,125 | 698,694 / 698,777 | 2,538,336 / 2,539,067 |

@@ -13,6 +13,7 @@
 仔	zai	common	补充煲仔饭、牛仔等语义下的zai读音，保留zi
 # Taiwan MOE Revised Dictionary: https://dict.revised.moe.edu.tw/dictView.jsp?ID=3693
 拎	ling	common	兼容台湾国语ling读音，保留大陆普通话lin
+伺	si	common	补充伺服、伺机、窥伺等语义下的si读音，保留伺候的ci
 文件	wenjian	common
 人工智能	rengongzhineng	common
 智能	zhineng	common
@@ -3533,3 +3534,4 @@
 适可而止	shikeerzhi	common	yer is no syllable, 2026-10-18
 小时了	xiaoshile	common	le: 四十个小时了 (liao only in 小时了了), 2026-10-18
 仔仔细细	zizixixi	common	仔细 zixi, 2026-10-18
+伺机而动	sijierdong	common	伺机 siji, 2026-11-02

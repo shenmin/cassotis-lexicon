@@ -22162,7 +22162,7 @@ ciji	刺激	352	550	0	3	61	3	0
 ciji	次级	225	243	0	1	0	0	0
 ciji	磁极	206	198	0	1	0	0	0
 ciji	此际	181	162	0	1	0	0	0
-ciji'erdong	伺机而动	196	40	0	1	87	1	0
+sijierdong	伺机而动	196	40	0	1	87	1	0
 cijian	此间	308	451	0	1	0	0	0
 cijiangdao	慈江道	134	59	0	1	0	0	0
 cijianjijun	此剑即君	77	0	0	1	109	1	0
@@ -22171,7 +22171,6 @@ cijidaikuan	次级贷款	80	0	0	0	0	0	0
 cijidaixie	次级代谢	102	0	0	2	154	3	0
 cijidiyadaikuan	次级抵押贷款	80	0	0	0	0	0	0
 cijiepianxiang	磁界偏向	197	0	0	1	0	0	0
-cijierdong	伺机而动	196	40	0	1	87	1	0
 cijifangwuxindaiweiji	次级房屋信贷危机	80	0	0	0	0	0	0
 cijifanying	刺激反应	1	0	0	1	245	3	0
 cijigan	刺激感	202	0	0	2	0	0	0
@@ -189817,7 +189816,6 @@ cifafenxi	词法分析	1	0	0	1	150	4	0
 cifafenxiqi	词法分析器	1	0	0	1	150	4	0
 cifanshepiansuoluo	次反射骗梭螺	1	0	0	1	150	4	0
 cifenchuierchie	次粉垂耳尺蛾	1	0	0	1	150	4	0
-cifudianji	伺服电机	1	0	0	1	150	4	0
 cigaihouzhudiao	刺盖后竺鲷	1	0	0	1	150	4	0
 cigaixiahuyu	刺盖鰕虎鱼	1	0	0	1	150	4	0
 cigaiyuke	刺盖鱼科	1	0	0	1	150	4	0
@@ -227411,7 +227409,6 @@ suiweijueqiyiheshangxi	虽萎绝其亦何伤兮	80	0	0	0	0	0	0
 suiwubinzhuyi	虽无宾主意	80	0	0	0	0	0	0
 suixiaotianranbie	虽小天然别	80	0	0	0	0	0	0
 suixinmeierwulixi	虽信美而无礼兮	80	0	0	0	0	0	0
-suixuzhencinengjugong	睢盱侦伺能鞠躬	80	0	0	0	0	0	0
 suiyegaotangliemingzhu	岁夜高堂列明烛	80	0	0	0	0	0	0
 suiyichunfangxie	随意春芳歇	80	0	0	0	0	0	0
 suiyingwuxiayang	碎影舞斜阳	80	0	0	0	0	0	0
@@ -237666,3 +237663,5 @@ zhunma	准吗	80	0	0	0	0	0	0
 zuguo	租过	80	0	0	0	0	0	0
 zuiguo	醉过	80	0	0	0	0	0	0
 zuma	租吗	80	0	0	0	0	0	0
+sifudianji	伺服电机	1	0	0	1	150	4	0
+suixuzhensinengjugong	睢盱侦伺能鞠躬	80	0	0	0	0	0	0

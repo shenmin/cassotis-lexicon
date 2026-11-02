@@ -22112,7 +22112,7 @@ ciji	刺激	1000
 ciji	次级	152
 ciji	此际	1
 ciji	磁极	1
-ciji'erdong	伺机而动	707
+sijierdong	伺机而动	707
 cijian	此间	1000
 cijiangdao	慈江道	205
 cijianjijun	此剑即君	538
@@ -22121,7 +22121,6 @@ cijidaikuan	次级贷款	260
 cijidaixie	次级代谢	570
 cijidiyadaikuan	次级抵押贷款	318
 cijiepianxiang	磁界偏向	597
-cijierdong	伺机而动	707
 cijifangwuxindaiweiji	次级房屋信贷危机	378
 cijifanying	刺激反应	540
 cijigan	刺激感	10
@@ -190074,7 +190073,6 @@ cifafenxi	词法分析	40	no_contains
 cifafenxiqi	词法分析器	20	no_contains
 cifanshepiansuoluo	次反射骗梭螺	20	no_contains
 cifenchuierchie	次粉垂耳尺蛾	20	no_contains
-cifudianji	伺服电机	40	no_contains
 cigaihouzhudiao	刺盖后竺鲷	20	no_contains
 cigaixiahuyu	刺盖鰕虎鱼	20	no_contains
 cigaiyuke	刺盖鱼科	40	no_contains
@@ -227636,7 +227634,6 @@ suiweijueqiyiheshangxi	虽萎绝其亦何伤兮	360	no_contains
 suiwubinzhuyi	虽无宾主意	360	no_contains
 suixiaotianranbie	虽小天然别	360	no_contains
 suixinmeierwulixi	虽信美而无礼兮	360	no_contains
-suixuzhencinengjugong	睢盱侦伺能鞠躬	360	no_contains
 suiyegaotangliemingzhu	岁夜高堂列明烛	360	no_contains
 suiyichunfangxie	随意春芳歇	300	no_contains
 suiyingwuxiayang	碎影舞斜阳	300	no_contains
@@ -237891,3 +237888,5 @@ zhunma	准吗	400	no_contains
 zuguo	租过	80	no_contains
 zuiguo	醉过	200	no_contains
 zuma	租吗	80	no_contains
+sifudianji	伺服电机	40	no_contains
+suixuzhensinengjugong	睢盱侦伺能鞠躬	360	no_contains

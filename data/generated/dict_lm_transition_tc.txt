@@ -24161,9 +24161,6 @@ cifangshi	此|方式	430
 cifangxue	刺|放血	421
 cifanwei	此|範圍	431
 cifenli	磁|分離	397
-cifudiandongji	伺服|電動機	441
-cifudianji	伺服|電機	505
-cifuxitong	伺服|系統	436
 cigainian	此|概念	429
 ciganyingqiangdu	磁感應|強度	382
 cigaoduan	次|高端	396
@@ -89177,7 +89174,6 @@ jiaolianwang	教練|王	396
 jiaolinsuan	焦|磷酸	411
 jiaoliubian	交|流變	437
 jiaoliucailiao	交流|材料	378
-jiaoliucifu	交流|伺服	447
 jiaoliudahui	交流|大會	371
 jiaoliudao	交流|到	402
 jiaoliude	交流|的	520
@@ -314694,13 +314690,13 @@ cidizhankai	此地|展開	399
 cidizuowei	此地|作為	492
 ciershengyin	刺耳|聲音	411
 cifafenxiqi	詞法|分析器	463
-cifufankui	伺服|反饋	442
-cifujigou	伺服|機構	485
-cifukongzhi	伺服|控制	508
-cifukongzhixitong	伺服|控制系統	421
-cifumada	伺服|馬達	425
-cifuqudong	伺服|驅動	487
-cifuzidong	伺服|自動	413
+sifufankui	伺服|反饋	442
+sifujigou	伺服|機構	485
+sifukongzhi	伺服|控制	508
+sifukongzhixitong	伺服|控制系統	421
+sifumada	伺服|馬達	425
+sifuqudong	伺服|驅動	487
+sifuzidong	伺服|自動	413
 ciganmuyin	詞幹|母音	488
 cigeirende	賜給|人的	383
 cigeirenlei	賜給|人類	418
@@ -338783,7 +338779,7 @@ dianzichuanmei	電子|傳媒	449
 dianzichuanshuceng	電子|傳輸層	445
 dianzichucun	電子|儲存	395
 dianzichufang	電子|處方	378
-dianzicifu	電子|伺服	467
+dianzisifu	電子|伺服	467
 dianzicongyi	電子|從一	394
 dianzidaima	電子|代碼	363
 dianzidanyuan	電子|單元	403
@@ -495162,7 +495158,7 @@ kongzhichuanganqi	控制|傳感器	364
 kongzhichuangkou	控制|窗口	422
 kongzhichuli	控制|處理	354
 kongzhicichang	控制|磁場	396
-kongzhicifu	控制|伺服	504
+kongzhisifu	控制|伺服	504
 kongzhicunchu	控制|存儲	406
 kongzhidaliang	控制|大量	374
 kongzhidangdi	控制|當地	461
@@ -628460,7 +628456,7 @@ sigecengmian	四個|層面	467
 sigechangjing	四個|場景	372
 sigechengyuan	四個|成員	372
 sigechurukou	四個|出入口	434
-sigecifu	四個|伺服	427
+sigesifu	四個|伺服	427
 sigedaan	四個|答案	392
 sigedamen	四個|大門	420
 sigedangci	四個|檔次	422
@@ -722316,7 +722312,7 @@ yexuziji	也許|自己	347
 yexuzuijin	也許|最近	453
 yexuzuizhong	也許|最終	371
 yeyachuandong	液壓|傳動	520
-yeyacifu	液壓|伺服	450
+yeyasifu	液壓|伺服	450
 yeyadianci	液壓|電磁	389
 yeyajianzhenqi	液壓|減震器	415
 yeyakongzhi	液壓|控制	520

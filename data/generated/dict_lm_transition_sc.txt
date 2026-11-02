@@ -27521,9 +27521,6 @@ cifangxue	刺|放血	429
 cifanwei	此|范围	417
 cifanyi	词|翻译	412
 cifenli	磁|分离	396
-cifudiandongji	伺服|电动机	441
-cifudianji	伺服|电机	505
-cifuxitong	伺服|系统	436
 cifuyu	赐福|于	390
 cigaikuo	词|概括	422
 ciganyingqiangdu	磁感应|强度	382
@@ -38244,7 +38241,6 @@ dechuzuche	的|出租车	398
 decibei	的|慈悲	367
 decichang	的|磁场	493
 decidian	的|词典	368
-decifu	的|伺服	377
 decihui	的|词汇	520
 deciji	的|刺激	520
 decijisu	的|雌激素	421
@@ -102612,7 +102608,6 @@ jiaolianzu	教练|组	462
 jiaolinsuan	焦|磷酸	411
 jiaoliubian	交|流变	437
 jiaoliucailiao	交流|材料	379
-jiaoliucifu	交流|伺服	447
 jiaoliudahui	交流|大会	372
 jiaoliude	交流|的	520
 jiaoliudeng	交流|等	480
@@ -351871,13 +351866,13 @@ cidizuowei	此地|作为	496
 ciershengyin	刺耳|声音	415
 cifafenxi	词法|分析	402
 cifafenxiqi	词法|分析器	465
-cifufankui	伺服|反馈	446
-cifujigou	伺服|机构	496
-cifukongzhi	伺服|控制	508
-cifukongzhixitong	伺服|控制系统	417
-cifumada	伺服|马达	426
-cifuqudong	伺服|驱动	491
-cifuzidong	伺服|自动	413
+sifufankui	伺服|反馈	446
+sifujigou	伺服|机构	496
+sifukongzhi	伺服|控制	508
+sifukongzhixitong	伺服|控制系统	417
+sifumada	伺服|马达	426
+sifuqudong	伺服|驱动	491
+sifuzidong	伺服|自动	413
 ciganmuyin	词干|母音	487
 ciganxianfangxiang	磁感线|方向	406
 ciganxianyundong	磁感线|运动	395
@@ -361651,7 +361646,7 @@ danganchayue	档案|查阅	407
 danganchongxin	档案|重新	422
 danganchuanshu	档案|传输	454
 danganchucun	档案|储存	394
-dangancifu	档案|伺服	472
+dangansifu	档案|伺服	472
 dangandalou	档案|大楼	389
 dangandaxiao	档案|大小	392
 dangandiushi	档案|丢失	478
@@ -377526,7 +377521,7 @@ dianzichuanmei	电子|传媒	462
 dianzichuanshuceng	电子|传输层	447
 dianzichucun	电子|储存	387
 dianzichufang	电子|处方	390
-dianzicifu	电子|伺服	471
+dianzisifu	电子|伺服	471
 dianzidaima	电子|代码	372
 dianzidanyuan	电子|单元	405
 dianzidasha	电子|大厦	418
@@ -445939,7 +445934,7 @@ guanlichushenqing	管理处|申请	393
 guanlichuxian	管理|出现	408
 guanlichuzai	管理|处在	360
 guanlichuzhang	管理|处长	358
-guanlicifu	管理|伺服	375
+guanlisifu	管理|伺服	375
 guanlicongye	管理|从业	368
 guanlicufang	管理|粗放	403
 guanlidailai	管理|带来	451
@@ -543383,7 +543378,7 @@ kongzhichuanganqi	控制|传感器	364
 kongzhichuangkou	控制|窗口	422
 kongzhichuli	控制|处理	354
 kongzhicichang	控制|磁场	378
-kongzhicifu	控制|伺服	506
+kongzhisifu	控制|伺服	506
 kongzhicunchu	控制|存储	409
 kongzhidaliang	控制|大量	379
 kongzhidangdi	控制|当地	458
@@ -576970,7 +576965,7 @@ mianfeichuangjian	免费|创建	428
 mianfeichuangye	免费|创业	361
 mianfeichuanpiao	免费|船票	407
 mianfeichuansuo	免费|穿梭	492
-mianfeicifu	免费|伺服	412
+mianfeisifu	免费|伺服	412
 mianfeicunchu	免费|存储	382
 mianfeidagong	免费|打工	396
 mianfeidaili	免费|代理	448
@@ -637390,7 +637385,7 @@ ribenchukou	日本|出口	458
 ribenchusheng	日本|出生	425
 ribenchuxian	日本|出现	422
 ribenchuzhan	日本|出战	385
-ribencifu	日本|伺服	396
+ribensifu	日本|伺服	396
 ribencishi	日本|此时	342
 ribendabanfu	日本|大阪府	520
 ribendabenying	日本|大本营	416
@@ -669260,7 +669255,7 @@ shiticangku	实体|仓库	431
 shitichanpin	实体|产品	474
 shitichanye	实体|产业	513
 shitichuban	实体|出版	409
-shiticifu	实体|伺服	420
+shitisifu	实体|伺服	420
 shiticunzai	实体|存在	423
 shitidajian	实体|搭建	402
 shitidanqu	实体|单曲	392
@@ -685557,7 +685552,7 @@ sigechangjing	四个|场景	383
 sigechenggong	四个|成功	354
 sigechengyuan	四个|成员	356
 sigechurukou	四个|出入口	432
-sigecifu	四个|伺服	444
+sigesifu	四个|伺服	444
 sigedaan	四个|答案	399
 sigedamen	四个|大门	421
 sigedangci	四个|档次	429
@@ -691834,7 +691829,7 @@ suoyouchusheng	所有|出生	340
 suoyouchuxian	所有|出现	388
 suoyouchuxing	所有|出行	359
 suoyouchuzhong	所有|初中	418
-suoyoucifu	所有|伺服	368
+suoyousifu	所有|伺服	368
 suoyoucizhuan	所有|瓷砖	410
 suoyoucongshi	所有|从事	381
 suoyoucongye	所有|从业	348
@@ -694986,7 +694981,7 @@ taiwanchule	台湾|除了	340
 taiwanchusheng	台湾|出生	515
 taiwanchushou	台湾|出售	359
 taiwanchuxi	台湾|出席	344
-taiwancifu	台湾|伺服	350
+taiwansifu	台湾|伺服	350
 taiwandadao	台湾|大道	520
 taiwandageda	台湾|大哥大	520
 taiwandaibiaochu	台湾|代表处	394
@@ -720799,7 +720794,7 @@ wangyebanben	网页|版本	385
 wangyechansheng	网页|产生	358
 wangyechengxu	网页|程序	389
 wangyechuxian	网页|出现	348
-wangyecifu	网页|伺服	481
+wangyesifu	网页|伺服	481
 wangyedakai	网页|打开	456
 wangyedoushi	网页|都是	390
 wangyefuwu	网页|服务	448
@@ -720909,7 +720904,7 @@ wangzhanchengxu	网站|程序	483
 wangzhanchuangjian	网站|创建	429
 wangzhanchuxian	网站|出现	394
 wangzhanchuyu	网站|处于	356
-wangzhancifu	网站|伺服	450
+wangzhansifu	网站|伺服	450
 wangzhandailai	网站|带来	406
 wangzhandakai	网站|打开	428
 wangzhandaohang	网站|导航	457
@@ -755789,7 +755784,7 @@ xiliechongtu	系列|冲突	350
 xiliechuangyi	系列|创意	362
 xiliechuangzuo	系列|创作	435
 xiliechuliqi	系列|处理器	517
-xiliecifu	系列|伺服	462
+xiliesifu	系列|伺服	462
 xiliecuihuaji	系列|催化剂	371
 xiliecuoshi	系列|措施	513
 xiliedangshi	系列|当时	351
@@ -786485,7 +786480,7 @@ yexuziji	也许|自己	347
 yexuzuijin	也许|最近	453
 yexuzuizhong	也许|最终	371
 yeyachuandong	液压|传动	520
-yeyacifu	液压|伺服	453
+yeyasifu	液压|伺服	453
 yeyajianzhenqi	液压|减震器	415
 yeyajixie	液压|机械	398
 yeyakongzhi	液压|控制	520
@@ -826355,7 +826350,7 @@ youxichuhai	游戏|出海	445
 youxichule	游戏|除了	384
 youxichuqi	游戏|初期	359
 youxichuxian	游戏|出现	358
-youxicifu	游戏|伺服	399
+youxisifu	游戏|伺服	399
 youxidagai	游戏|大概	362
 youxidahui	游戏|大会	341
 youxidaigei	游戏|带给	467
@@ -834395,7 +834390,7 @@ yumimianbao	玉米|面包	413
 yumimianji	玉米|面积	413
 yuminfaxian	渔民|发现	390
 yumingbeian	域名|备案	475
-yumingcifu	域名|伺服	415
+yumingsifu	域名|伺服	415
 yumingduiying	域名|对应	392
 yumingfangwen	域名|访问	409
 yumingfuwu	域名|服务	458
@@ -834888,7 +834883,7 @@ yundongzuyi	运动|足以	455
 yundongzuzhi	运动|组织	514
 yunduanbushu	云端|部署	400
 yunduanchucun	云端|储存	400
-yunduancifu	云端|伺服	396
+yunduansifu	云端|伺服	396
 yunduancunchu	云端|存储	423
 yunduandianxun	云端|电讯	401
 yunduanfengong	云端|分工	398
@@ -852565,7 +852560,7 @@ zhenggechufang	整个|厨房	368
 zhenggechuli	整个|处理	425
 zhenggechuxing	整个|出行	427
 zhenggechuzhong	整个|初中	489
-zhenggecifu	整个|伺服	396
+zhenggesifu	整个|伺服	396
 zhenggecunluo	整个|村落	450
 zhenggecunzai	整个|存在	377
 zhenggedalou	整个|大楼	384
@@ -877264,7 +877259,7 @@ zhongyangchuizhi	中央|垂直	350
 zhongyangchuli	中央|处理	490
 zhongyangchutai	中央|出台	429
 zhongyangchuxian	中央|出现	389
-zhongyangcifu	中央|伺服	420
+zhongyangsifu	中央|伺服	420
 zhongyangcunkuan	中央|存款	455
 zhongyangdadao	中央|大道	429
 zhongyangdaibiao	中央|代表	370

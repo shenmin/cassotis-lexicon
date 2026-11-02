@@ -37,6 +37,8 @@ ANIMAL_ENDINGS = tuple(
     "鹤鸥鹭鸬鹚鹎鸫莺鹀雀雁鹰隼鹞鸮鹮鹳鹇鹑鸵鸸鸨鸊鷉鸠鸦鹊啄木鸟"
     "螈蜥蟒蛇鳄鼬鼩鼹螨虱蜱蠊蝎蜈蚣蜘蛛螽蟋蟀蝗螂蜻蜓蝽螟蝤蛸魟鮰鳐"
 ) + ("动物", "昆虫", "金龟", "叶甲", "步甲", "天牛", "长臂猿", "大猩猩", "海参", "海星", "水母", "珊瑚", "梗", "科", "亚科", "属", "亚属", "亚种")
+# Readings pypinyin gets wrong for an admitted word (伺服 is sifu).
+READING_CORRECTIONS = {"伺服电机": ["si", "fu", "dian", "ji"]}
 FICTION_MARKERS = ("魔法", "恶魔", "地狱", "精灵", "女妖", "神龙", "史莱姆", "哥布林", "宝可梦", "数码宝贝", "皮卡丘", "奥特曼", "海贼", "火影", "魔兽", "圣斗士")
 FINANCE_MARKERS = tuple("税财股贷债券资金汇款账帐价费率购售险产付") + (
     "银行", "证券", "期货", "风险", "商业", "市场", "结算", "信托", "贴现",
@@ -126,7 +128,8 @@ def prepare(root: Path, archive: bytes):
     admitted = []
     for word, evidence in sorted(raw.items()):
         tc = converter.convert(word)
-        syllables = [row[0] for row in pinyin(word, style=Style.NORMAL, heteronym=False, errors=lambda _: [""])]
+        syllables = READING_CORRECTIONS.get(word) or [
+            row[0] for row in pinyin(word, style=Style.NORMAL, heteronym=False, errors=lambda _: [""])]
         compact = "".join(syllables)
         reason = ""
         if len(tc) != len(word) or len(syllables) != len(word):
