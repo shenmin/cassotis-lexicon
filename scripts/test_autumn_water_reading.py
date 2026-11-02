@@ -18,8 +18,8 @@ OLD_READING = "qiushuigongzhangtianyise"
 
 class AutumnWaterReadingTests(unittest.TestCase):
     def test_reading_override_replaces_wrong_reading_without_changing_weight(self):
-        overrides = builder._load_pinyin_overrides(ROOT / "manifests/pinyin_overrides.tsv")
-        for quote in QUOTES:
+        sc, tc = builder._load_variant_pinyin_overrides(ROOT / "manifests/pinyin_overrides.sc.tsv")
+        for quote, overrides in zip(QUOTES, (sc, tc)):
             self.assertEqual(READING, overrides[quote])
             mapping = {(OLD_READING, quote): 451, ("qiushui", AUTUMN): 600,
                        ("qiushui", SWIM): 433}

@@ -29171,11 +29171,10 @@ deernuofushe	de'ernuofusheke	德尔诺夫舍克	309	128	40	0	1	0	0	0	0	0
 defa	defanianjian	德法年鉴	260	80	0	0	0	0	0	0	0	0
 defang	defanglv	得房率	421	366	0	0	3	0	27	1	0	0
 defanian	defanianjian	德法年鉴	260	80	0	0	0	0	0	0	0	0
-defu	defutianfan	地复天翻	620	80	0	0	0	0	0	0	0	0
-defu	defuhuayuanwushiming'an	德福花园五尸命案	606	80	0	0	0	0	0	0	0	1
-defu	defuhuayuan	德福花园	573	80	0	0	0	0	0	0	0	2
-defu	defushaonianhuazijun	地缚少年花子君	567	80	0	0	0	0	0	0	0	3
-defu	defuzi	地肤子	470	1	40	0	1	0	247	3	0	4
+defu	defuhuayuanwushiming'an	德福花园五尸命案	606	80	0	0	0	0	0	0	0	0
+defu	defuhuayuan	德福花园	573	80	0	0	0	0	0	0	0	1
+defu	defushaonianhuazijun	地缚少年花子君	567	80	0	0	0	0	0	0	0	2
+defu	defuzi	地肤子	470	1	40	0	1	0	247	3	0	3
 defuhua	defuhuayuanwushiming'an	德福花园五尸命案	606	80	0	0	0	0	0	0	0	0
 defuhua	defuhuayuan	德福花园	573	80	0	0	0	0	0	0	0	1
 defuhuayuan	defuhuayuanwushiming'an	德福花园五尸命案	606	80	0	0	0	0	0	0	1	0
@@ -29186,7 +29185,6 @@ defushao	defushaonianhuazijun	地缚少年花子君	567	80	0	0	0	0	0	0	0	0
 defushaonian	defushaonianhuazijun	地缚少年花子君	567	80	0	0	0	0	0	0	0	0
 defushaonianhua	defushaonianhuazijun	地缚少年花子君	567	80	0	0	0	0	0	0	0	0
 defushaonianhuazi	defushaonianhuazijun	地缚少年花子君	567	80	0	0	0	0	0	0	0	0
-defutian	defutianfan	地复天翻	620	80	0	0	0	0	0	0	0	0
 degao	degaowangzhong	德高望重	494	275	261	0	1	0	84	1	1	1
 degao	degaojiao	德高胶	490	38	0	0	1	0	174	2	1	2
 degao	degaoxin	地高辛	506	1	40	0	1	0	240	3	0	4
@@ -40273,10 +40271,8 @@ fantankecuo	fantankecuoshi	反坦克措施	713	168	0	0	1	0	91	1	0	0
 fantankeju	fantankejuma	反坦克拒马	713	168	0	0	1	0	91	1	0	0
 fante	fantexi	范特西	167	80	0	0	0	0	0	0	0	0
 fanti	fantizi	繁体字	552	271	358	0	1	0	0	0	1	0
-fantian	fantianfude	翻天复地	660	137	40	0	1	0	0	0	0	0
-fantian	fantianfudi	翻天覆地	603	276	239	0	1	0	82	1	0	1
-fantianfu	fantianfude	翻天复地	660	137	40	0	1	0	0	0	0	0
-fantianfu	fantianfudi	翻天覆地	603	276	239	0	1	0	82	1	0	1
+fantian	fantianfudi	翻天覆地	603	276	239	0	1	0	82	1	0	0
+fantianfu	fantianfudi	翻天覆地	603	276	239	0	1	0	82	1	0	0
 fantiao	fantiaotong	反跳痛	470	1	0	0	1	0	247	3	1	1
 fanting	fantinglongshi	反町隆史	805	353	40	292	3	0	0	0	0	0
 fantinglong	fantinglongshi	反町隆史	805	353	40	292	3	0	0	0	0	0

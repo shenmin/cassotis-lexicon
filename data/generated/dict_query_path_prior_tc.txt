@@ -4797,7 +4797,6 @@ fuwuduanbiancheng	服務端|編程	468
 fuwuduanjiagou	服務端|架構	468
 fuwuduankaifa	服務端|開發	469
 fuwuhangye	服務|行業	479
-fuwuqifuzai	伺服器|負載	505
 fuwushuju	服務|數據	385
 fuwushujudanyuan	服務|數據|單元	467
 fuwuzhiliang	服務|質量	467
@@ -10362,6 +10361,7 @@ luomadoushouchang	羅馬|鬥獸場	449
 luomafuxing	羅馬|復興	384
 luomafuxingfengge	羅馬|復興|風格	466
 luomafuxingjianzhu	羅馬|復興|建築	466
+luomajingjichang	羅馬|競技場	456
 luomashifengge	羅馬式|風格	466
 luomashuzi	羅馬|數字	467
 luomayuchang	羅馬|浴場	453
@@ -11715,7 +11715,7 @@ niunizuotai	忸怩|作態	480
 niupixuanguanjieyan	牛皮癬|關節炎	457
 niuquxianjing	扭曲|仙境	400
 niutoumamian	牛頭|馬面	418
-niuxilanxuanqu	紐西蘭|選區	431
+niuxilanxuanqu	紐西蘭|選區	454
 niuyuelaoshu	紐約|老鼠	450
 niuzhuanjingluan	扭轉|痙攣	454
 nixingnishang	你行|你上	520
@@ -15294,6 +15294,7 @@ sifangliangting	四房|兩廳	450
 sifarenyuan	司法|人員	467
 sifaxinlixue	司法|心理學	459
 sifenyinfu	四分|音符	432
+sifuqifuzai	伺服器|負載	505
 sigexiaoshi	四個|小時	520
 siguozhanji	四國|戰機	432
 sihaishengping	四海|昇平	451
@@ -21612,6 +21613,7 @@ zhixinairen	知心|愛人	466
 zhixingchengxu	執行|程序	492
 zhixingdiaodeng	枝形|吊燈	392
 zhixinghuanjing	執行|環境	488
+zhixingzhuangtai	執行|狀態	505
 zhixinjiejie	知心|姐姐	474
 zhixinpengyou	知心|朋友	494
 zhixinqujian	置信|區間	439

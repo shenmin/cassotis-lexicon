@@ -38,11 +38,11 @@ class DailyLinYiTests(unittest.TestCase):
                 right = [(text, weight) for (py, text), weight in mapping.items() if py == 'ling' + tail]
                 self.assertEqual(1, len(left))
                 self.assertEqual(left, right)
-        overrides = builder._build_curated_daily_explicit_pinyin_override_map(self.entries)
+        overrides = builder._build_curated_daily_explicit_pinyin_override_map(self.entries, set())
         self.assertFalse(any(text.startswith(LIN) for text in overrides))
 
     def test_secondary_reading_preserves_primary_and_other_characters(self):
-        overrides = builder._load_pinyin_overrides(ROOT / 'manifests/pinyin_overrides.tsv')
+        overrides = builder._load_pinyin_overrides(ROOT / 'manifests/pinyin_overrides.sc.tsv')
         self.assertEqual('ling', overrides[LIN])
         original = {('lin', LIN): 74, ('lin', '\u9cde'): 194,
                     ('ling', '\u9f84'): 317, ('ling', '\u9886'): 600}

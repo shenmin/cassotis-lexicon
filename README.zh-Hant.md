@@ -22,8 +22,8 @@ Cassotis IME 的詞庫建置與發布儲存庫。
 
 | 檔案 | 變體 | 詞條數 |
 |------|------|--------|
-| `data/generated/dict_clean_sc.txt` | 簡體主詞庫 | 237,897 |
-| `data/generated/dict_clean_tc.txt` | 繁體主詞庫 | 238,513 |
+| `data/generated/dict_clean_sc.txt` | 簡體主詞庫 | 237,893 |
+| `data/generated/dict_clean_tc.txt` | 繁體主詞庫 | 238,507 |
 | `data/generated/dict_unihan_sc.txt` | 簡體單字（Unihan） | 23,916 |
 | `data/generated/dict_unihan_tc.txt` | 繁體單字（Unihan） | 24,179 |
 
@@ -212,7 +212,7 @@ IME v1.22.0 的長句局部修正、v1.26.0 的完整修正方案複核，以及
 ## 目錄結構
 - `data/generated/`：產生的詞庫檔案、版本化語言模型產物和離線轉移補全索引。
 - `manifests/`：來源/授權條款清單與迴歸樣本。
-- `manifests/pinyin_overrides.tsv`：專案維護的詞條級讀音覆蓋表。
+- `manifests/pinyin_overrides.sc.tsv`、`manifests/pinyin_overrides.tc.tsv`：專案維護的詞條級讀音覆蓋表，簡繁各一個檔案，互不作用於對方的詞條。
 - `manifests/vertical/`：專案維護的隔離式垂直領域詞表。
 - `scripts/`：建置、驗證和匯出輔助指令碼。
 - `reports/`：建置報告。

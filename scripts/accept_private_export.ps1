@@ -475,8 +475,10 @@ $required = @(
     'data\generated\dict_unihan_tc.txt',
     'manifests\sources.public.yml',
     'manifests\profiles.public.yml',
-    'manifests\pinyin_overrides.tsv',
-    'manifests\pinyin_overrides.clean_permissive.tsv',
+    'manifests\pinyin_overrides.sc.tsv',
+    'manifests\pinyin_overrides.tc.tsv',
+    'manifests\pinyin_overrides.clean_permissive.sc.tsv',
+    'manifests\pinyin_overrides.clean_permissive.tc.tsv',
     'manifests\regression_samples.sc.tsv',
     'manifests\regression_samples.tc.tsv',
     'attribution\ATTRIBUTION.md',
@@ -520,8 +522,10 @@ Test-ShortPromotionFile (Join-Path $Root 'data\generated\dict_short_promotion_sc
 Test-ShortPromotionFile (Join-Path $Root 'data\generated\dict_short_promotion_tc.txt')
 Test-DictFile (Join-Path $Root 'data\generated\dict_unihan_sc.txt')
 Test-DictFile (Join-Path $Root 'data\generated\dict_unihan_tc.txt')
-Test-PinyinOverrideFile (Join-Path $Root 'manifests\pinyin_overrides.tsv')
-Test-PinyinOverrideFile (Join-Path $Root 'manifests\pinyin_overrides.clean_permissive.tsv')
+foreach ($variant in @('sc', 'tc')) {
+    Test-PinyinOverrideFile (Join-Path $Root "manifests\pinyin_overrides.$variant.tsv")
+    Test-PinyinOverrideFile (Join-Path $Root "manifests\pinyin_overrides.clean_permissive.$variant.tsv")
+}
 Assert-ManifestPolicy (Join-Path $Root 'manifests\sources.public.yml')
 
 $pythonCmd = @(Get-PythonCommand)

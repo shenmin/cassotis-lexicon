@@ -62,8 +62,8 @@ MESH_DESCRIPTOR_XML_URL = f"https://nlmpubs.nlm.nih.gov/projects/mesh/MESH_FILES
 MESH_HOMEPAGE = "https://www.nlm.nih.gov/mesh/meshhome.html"
 WIKIDATA_SPARQL_URL = "https://query.wikidata.org/sparql"
 WIKIDATA_HOMEPAGE = "https://www.wikidata.org/wiki/Wikidata:Main_Page"
-DEFAULT_PINYIN_OVERRIDES = "manifests/pinyin_overrides.tsv"
-DEFAULT_PERMISSIVE_OVERRIDES = "manifests/pinyin_overrides.clean_permissive.tsv"
+DEFAULT_PINYIN_OVERRIDES = "manifests/pinyin_overrides.sc.tsv"
+DEFAULT_PERMISSIVE_OVERRIDES = "manifests/pinyin_overrides.clean_permissive.sc.tsv"
 DEFAULT_HTTP_USER_AGENT = "cassotis-lexicon/1.0 (+https://github.com/shenmin/cassotis-lexicon)"
 COMPUTING_VERTICAL_FILTER_KEYWORDS = (
     "程序",
@@ -579,8 +579,14 @@ def _inject_curated_daily_post_rank_exact_entries(
     sc_map: Dict[Tuple[str, str], int],
     tc_map: Dict[Tuple[str, str], int],
     entries: List[Tuple[str, str, float, str]],
+    tc_pinyin_overrides: Dict[str, str] | None = None,
+    char_pairs: Set[Tuple[str, str]] | None = None,
 ) -> Dict[str, int]:
-    """Add exact-only rows after every ranking and path-prior stage."""
+    """Add exact-only rows after every ranking and path-prior stage. A row's
+    reading is its simplified word's; given the script pairs of the characters
+    (_build_script_char_pairs), a traditional text that is another word takes
+    its own from the traditional overrides, or is left out. Without them every
+    traditional text takes the row's reading (the batches' deltas)."""
     stats = {
         "curated_daily_post_rank_exact_rows": len(entries),
         "curated_daily_post_rank_exact_sc_added": 0,
@@ -590,6 +596,7 @@ def _inject_curated_daily_post_rank_exact_entries(
         "curated_daily_post_rank_exact_sc_forced_rank": 0,
         "curated_daily_post_rank_exact_tc_forced_rank": 0,
         "curated_daily_post_rank_exact_invalid_pinyin": 0,
+        "curated_daily_post_rank_exact_tc_other_word_unread": 0,
     }
     for sc_word, tc_word, usage_score, explicit_pinyin in entries:
         pinyin = _normalize_pinyin(explicit_pinyin)
@@ -635,7 +642,15 @@ def _inject_curated_daily_post_rank_exact_entries(
             sc_map[sc_key] = exact_weight
 
         tc_text = tc_word or sc_word
-        tc_key = (pinyin, tc_text)
+        tc_pinyin = pinyin
+        if char_pairs is not None and tc_text not in _explicit_reading_texts(
+            sc_word, tc_text, char_pairs
+        ):
+            tc_pinyin = (tc_pinyin_overrides or {}).get(tc_text, "")
+            if not tc_pinyin:
+                stats["curated_daily_post_rank_exact_tc_other_word_unread"] += 1
+                continue
+        tc_key = (tc_pinyin, tc_text)
         if tc_key not in tc_map:
             tc_map[tc_key] = exact_weight
             stats["curated_daily_post_rank_exact_tc_added"] += 1
@@ -1019,6 +1034,13 @@ MULTI_CHAR_TERM_DROP_OVERRIDES: Set[str] = {
     # Low-signal CEDICT noise; the standard everyday target is 花费/花費.
     "华废",
     "華廢",
+    # Variant spellings that read as misspellings in simplified text (2026-11-02):
+    # the words are 翻天覆地, 着色剂 and 重复促发 (覆 for 复 is the traditional
+    # spelling). Simplified texts only; the traditional 著色劑 and 重覆促發 stay.
+    "翻天复地",
+    "地复天翻",
+    "著色剂",
+    "重覆促发",
 }
 
 MULTI_CHAR_TERM_DROP_SUBSTRINGS: Set[str] = {
@@ -2506,31 +2528,64 @@ def _build_vertical_explicit_pinyin_override_map(
     return overrides
 
 
+def _is_same_word_in_tc(
+    sc_word: str,
+    tc_word: str,
+    char_pairs: Set[Tuple[str, str]],
+) -> bool:
+    """Whether a traditional text is its simplified word written in the other
+    script, character for character (後 for 后, 著 for 着), and not another word
+    of the same meaning (伺服器 for 服务器, 雪梨歌劇院 for 悉尼歌剧院): only then
+    is the simplified word's reading its reading."""
+    if len(sc_word) != len(tc_word):
+        return False
+    return all(
+        tc_char == sc_char or (tc_char, sc_char) in char_pairs
+        for sc_char, tc_char in zip(sc_word, tc_word)
+    )
+
+
+def _explicit_reading_texts(
+    sc_word: str,
+    tc_word: str,
+    char_pairs: Set[Tuple[str, str]],
+) -> List[str]:
+    """The texts a row's explicit reading belongs to: its simplified word, and
+    its traditional text when that is the same word (_is_same_word_in_tc). A
+    traditional text that is another word reads by its own characters, and
+    pinyin_overrides.tc.tsv gives its reading."""
+    texts = [sc_word] if sc_word else []
+    if tc_word and tc_word != sc_word and sc_word and _is_same_word_in_tc(
+        sc_word, tc_word, char_pairs
+    ):
+        texts.append(tc_word)
+    return texts
+
+
 def _build_explicit_term_pinyin_override_map(
     entries: List[VerticalEntry],
+    char_pairs: Set[Tuple[str, str]],
 ) -> Dict[str, str]:
     overrides: Dict[str, str] = {}
     for sc_word, tc_word, _usage_score, explicit_pinyin, _layer_id, _source_id in entries:
         if not explicit_pinyin:
             continue
-        if sc_word and sc_word not in overrides:
-            overrides[sc_word] = explicit_pinyin
-        if tc_word and tc_word not in overrides:
-            overrides[tc_word] = explicit_pinyin
+        for text in _explicit_reading_texts(sc_word, tc_word, char_pairs):
+            if text not in overrides:
+                overrides[text] = explicit_pinyin
     return overrides
 
 
 def _build_curated_daily_explicit_pinyin_override_map(
     entries: List[Tuple[str, str, float, str]],
+    char_pairs: Set[Tuple[str, str]],
 ) -> Dict[str, str]:
     pinyins_by_text: Dict[str, Set[str]] = {}
     for sc_word, tc_word, _usage_score, explicit_pinyin in entries:
         if not explicit_pinyin:
             continue
-        if sc_word:
-            pinyins_by_text.setdefault(sc_word, set()).add(explicit_pinyin)
-        if tc_word:
-            pinyins_by_text.setdefault(tc_word, set()).add(explicit_pinyin)
+        for text in _explicit_reading_texts(sc_word, tc_word, char_pairs):
+            pinyins_by_text.setdefault(text, set()).add(explicit_pinyin)
 
     overrides: Dict[str, str] = {}
     for text, pinyins in pinyins_by_text.items():
@@ -2541,29 +2596,27 @@ def _build_curated_daily_explicit_pinyin_override_map(
 
 def _build_curated_daily_explicit_pinyin_key_set(
     entries: List[Tuple[str, str, float, str]],
+    char_pairs: Set[Tuple[str, str]],
 ) -> Set[Tuple[str, str]]:
     keys: Set[Tuple[str, str]] = set()
     for sc_word, tc_word, _usage_score, explicit_pinyin in entries:
         if not explicit_pinyin:
             continue
-        if sc_word:
-            keys.add((explicit_pinyin, sc_word))
-        if tc_word:
-            keys.add((explicit_pinyin, tc_word))
+        for text in _explicit_reading_texts(sc_word, tc_word, char_pairs):
+            keys.add((explicit_pinyin, text))
     return keys
 
 
 def _build_vertical_explicit_pinyin_key_set(
     entries: List[VerticalEntry],
+    char_pairs: Set[Tuple[str, str]],
 ) -> Set[Tuple[str, str]]:
     keys: Set[Tuple[str, str]] = set()
     for sc_word, tc_word, _usage_score, explicit_pinyin, _layer_id, _source_id in entries:
         if not explicit_pinyin or "'" not in explicit_pinyin:
             continue
-        if sc_word:
-            keys.add((explicit_pinyin, sc_word))
-        if tc_word:
-            keys.add((explicit_pinyin, tc_word))
+        for text in _explicit_reading_texts(sc_word, tc_word, char_pairs):
+            keys.add((explicit_pinyin, text))
     return keys
 
 
@@ -11859,6 +11912,20 @@ def _load_pinyin_overrides(path: pathlib.Path) -> Dict[str, str]:
     return overrides
 
 
+def _load_variant_pinyin_overrides(
+    path: pathlib.Path,
+) -> Tuple[Dict[str, str], Dict[str, str]]:
+    """The word-level readings of each variant: <name>.sc.tsv for the
+    simplified dictionary and <name>.tc.tsv beside it for the traditional one.
+    The two never mix: a text both scripts write can be another word in each
+    (合著 is co-written, hezhu, in both, and in Taiwan's forms also 合着, hezhe)."""
+    name = path.name
+    if not name.endswith(".sc.tsv"):
+        raise ValueError(f"pinyin overrides must name the simplified file <name>.sc.tsv: {path}")
+    tc_path = path.with_name(name[: -len(".sc.tsv")] + ".tc.tsv")
+    return _load_pinyin_overrides(path), _load_pinyin_overrides(tc_path)
+
+
 def _pinyin_from_unihan(
     text: str,
     unihan_map: Dict[str, str],
@@ -11902,7 +11969,8 @@ def _build_from_opencc_unihan(
     opencc_text: str,
     unihan_payload: bytes,
     min_hanzi: int,
-    overrides: Dict[str, str],
+    sc_overrides: Dict[str, str],
+    tc_overrides: Dict[str, str],
 ) -> Tuple[Dict[Tuple[str, str], int], Dict[Tuple[str, str], int], Dict[str, int]]:
     sc: Dict[Tuple[str, str], int] = {}
     tc: Dict[Tuple[str, str], int] = {}
@@ -11925,7 +11993,7 @@ def _build_from_opencc_unihan(
     stats["unihan_grade_size"] = len(unihan_grade_map)
     stats["unihan_core_size"] = len(unihan_core_map)
     stats["invalid_pinyin"] = 0
-    stats["override_entries"] = len(overrides)
+    stats["override_entries"] = len(sc_overrides) + len(tc_overrides)
     stats["override_hits"] = 0
     stats["fallback_hits"] = 0
     stats["override_injected"] = 0
@@ -11933,7 +12001,7 @@ def _build_from_opencc_unihan(
     stats["unihan_single_char_injected_tc"] = 0
 
     for sc_word, tc_word in opencc_entries:
-        for text, bucket in ((sc_word, sc), (tc_word, tc)):
+        for text, bucket, overrides in ((sc_word, sc, sc_overrides), (tc_word, tc, tc_overrides)):
             if _cjk_len(text) < min_hanzi:
                 continue
             pinyin = overrides.get(text, "")
@@ -11959,23 +12027,21 @@ def _build_from_opencc_unihan(
             if weight > previous:
                 bucket[key] = weight
 
-    # Ensure override entries are included even when source phrase lists do not contain them.
-    for text, pinyin in overrides.items():
-        if _cjk_len(text) < min_hanzi:
-            continue
-        key = (pinyin, text)
-        # Explicit overrides should be easier to surface in top candidates.
-        weight = min(1000, _compute_weight(text) + 80)
-        if (text in sc_terms) and (text not in tc_terms):
-            target_buckets = (sc,)
-        elif (text in tc_terms) and (text not in sc_terms):
-            target_buckets = (tc,)
-        elif (text in sc_terms) and (text in tc_terms):
-            target_buckets = (sc,)
-        else:
-            target_buckets = (sc, tc)
-
-        for bucket in target_buckets:
+    # Ensure override entries are included even when source phrase lists do not contain them:
+    # each variant's own, the simplified ones unless only the traditional list holds the
+    # text, the traditional ones where only it holds the text or neither does.
+    for overrides, bucket, variant in ((sc_overrides, sc, "sc"), (tc_overrides, tc, "tc")):
+        for text, pinyin in overrides.items():
+            if _cjk_len(text) < min_hanzi:
+                continue
+            in_sc, in_tc = text in sc_terms, text in tc_terms
+            if variant == "sc" and in_tc and not in_sc:
+                continue
+            if variant == "tc" and in_sc:
+                continue
+            key = (pinyin, text)
+            # Explicit overrides should be easier to surface in top candidates.
+            weight = min(1000, _compute_weight(text) + 80)
             previous = bucket.get(key, 0)
             if weight > previous:
                 bucket[key] = weight
@@ -12039,7 +12105,8 @@ def _build_from_opencc_unihan(
 def _build_from_unihan_only(
     unihan_payload: bytes,
     min_hanzi: int,
-    overrides: Dict[str, str],
+    sc_overrides: Dict[str, str],
+    tc_overrides: Dict[str, str],
     trad_to_simp_char_map: Dict[str, str],
     simp_to_trad_char_map: Dict[str, str],
     sc_chars: Set[str],
@@ -12072,7 +12139,7 @@ def _build_from_unihan_only(
         "unihan_frequency_size": len(unihan_freq_map),
         "unihan_grade_size": len(unihan_grade_map),
         "unihan_core_size": len(unihan_core_map),
-        "override_entries": len(overrides),
+        "override_entries": len(sc_overrides) + len(tc_overrides),
         "override_hits": 0,
         "override_injected": 0,
         "unihan_single_char_injected_sc": 0,
@@ -12238,43 +12305,33 @@ def _build_from_unihan_only(
         "unihan_phrase_inferred_reading_injected_tc",
     )
 
-    for text, pinyin in overrides.items():
-        if _cjk_len(text) != 1:
-            continue
-        if min_hanzi > 1:
-            continue
+    # Each variant's single-character readings into its own map; a character only the
+    # other script writes stays out.
+    for overrides, bucket, other_only_chars in (
+        (sc_overrides, sc, tc_only_chars),
+        (tc_overrides, tc, sc_only_chars),
+    ):
+        for text, pinyin in overrides.items():
+            if _cjk_len(text) != 1:
+                continue
+            if min_hanzi > 1:
+                continue
+            if text in other_only_chars:
+                continue
 
-        base_weight = _compute_unihan_single_char_weight(
-            freq=unihan_freq_map.get(text, 0),
-            pinlu_freq=unihan_pinlu_map.get(text, 0),
-            grade_level=unihan_grade_map.get(text, 0),
-            core_coverage=unihan_core_map.get(text, 0),
-        )
-        key = (pinyin, text)
-        output_weight = min(700, base_weight + 70)
-
-        if text in tc_only_chars:
-            previous_tc = tc.get(key, 0)
-            if output_weight > previous_tc:
-                tc[key] = output_weight
+            base_weight = _compute_unihan_single_char_weight(
+                freq=unihan_freq_map.get(text, 0),
+                pinlu_freq=unihan_pinlu_map.get(text, 0),
+                grade_level=unihan_grade_map.get(text, 0),
+                core_coverage=unihan_core_map.get(text, 0),
+            )
+            key = (pinyin, text)
+            output_weight = min(700, base_weight + 70)
+            previous = bucket.get(key, 0)
+            if output_weight > previous:
+                bucket[key] = output_weight
                 stats["override_injected"] += 1
-        elif text in sc_only_chars:
-            previous_sc = sc.get(key, 0)
-            if output_weight > previous_sc:
-                sc[key] = output_weight
-                stats["override_injected"] += 1
-        else:
-            previous_sc = sc.get(key, 0)
-            if output_weight > previous_sc:
-                sc[key] = output_weight
-                stats["override_injected"] += 1
-
-            previous_tc = tc.get(key, 0)
-            if output_weight > previous_tc:
-                tc[key] = output_weight
-                stats["override_injected"] += 1
-
-        stats["override_hits"] += 1
+            stats["override_hits"] += 1
 
     if trad_to_simp_char_map:
         sc, normalize_stats = _normalize_sc_mapping_with_char_map(
@@ -12778,6 +12835,24 @@ def _build_char_variant_pairs(
     for tc_word, sc_words in tc_to_sc_map.items():
         for sc_word in sc_words:
             add_pair(tc_word, sc_word)
+    return pairs
+
+
+def _build_script_char_pairs(
+    trad_to_simp_char_map: Dict[str, str],
+    simp_to_trad_char_map: Dict[str, str],
+    tc_to_sc_map: Dict[str, Set[str]],
+    opencc_entries: List[Tuple[str, str]],
+    unihan_variant_pairs: Iterable[Tuple[str, str]] = (),
+) -> Set[Tuple[str, str]]:
+    """Every (traditional, simplified) pair of characters the two scripts write
+    for one character: the one-to-one maps, the ambiguous pairs of the aligned
+    words (著 / 着, 線 / 线, 餘 / 余), which the maps leave out, and Unihan's
+    variants (灩 / 滟, 犛 / 牦)."""
+    pairs = _build_char_variant_pairs(tc_to_sc_map, opencc_entries)
+    pairs.update(unihan_variant_pairs)
+    pairs.update(trad_to_simp_char_map.items())
+    pairs.update((tc_ch, sc_ch) for sc_ch, tc_ch in simp_to_trad_char_map.items())
     return pairs
 
 
@@ -23124,7 +23199,8 @@ def main() -> int:
     parser.add_argument(
         "--pinyin-overrides",
         default=DEFAULT_PINYIN_OVERRIDES,
-        help="Optional word-level pinyin override TSV: text<TAB>pinyin",
+        help="Word-level pinyin overrides of the simplified dictionary (<name>.sc.tsv: "
+        "text<TAB>pinyin); the traditional dictionary's are read from <name>.tc.tsv beside it.",
     )
     parser.add_argument("--min-hanzi", type=int, default=2)
     parser.add_argument(
@@ -23236,9 +23312,18 @@ def main() -> int:
     vertical_manifest_stats: Dict[str, int] = {}
     vertical_source_configs: List[Dict[str, object]] = []
     vertical_payload_map: Dict[str, bytes] = {}
-    word_pinyin_overrides: Dict[str, str] = {}
+    # The simplified and the traditional dictionary take their word readings from
+    # their own files (_load_variant_pinyin_overrides), and a row's reading reaches
+    # its traditional text only when that is the same word (_explicit_reading_texts).
+    sc_word_pinyin_overrides: Dict[str, str] = {}
+    tc_word_pinyin_overrides: Dict[str, str] = {}
     if args.pinyin_overrides:
-        word_pinyin_overrides = _load_pinyin_overrides(repo_root / args.pinyin_overrides)
+        sc_word_pinyin_overrides, tc_word_pinyin_overrides = _load_variant_pinyin_overrides(
+            repo_root / args.pinyin_overrides
+        )
+    trad_to_simp_char_map: Dict[str, str] = {}
+    simp_to_trad_char_map: Dict[str, str] = {}
+    char_variant_pairs: Set[Tuple[str, str]] = set()
     output_unihan_map: Dict[str, str] = {}
     output_unihan_readings_map: Dict[str, Set[str]] = {}
     output_unihan_source_rank_map: Dict[Tuple[str, str], int] = {}
@@ -23858,6 +23943,11 @@ def main() -> int:
                 tc_script_chars,
                 tc_shared_identity_chars,
             )
+        char_variant_pairs = _build_script_char_pairs(
+            trad_to_simp_char_map, simp_to_trad_char_map, tc_to_sc_map, opencc_entries,
+            list(unihan_simplified_variant_map.items())
+            + [(trad_ch, simp_ch) for simp_ch, trad_ch in unihan_traditional_variant_map.items()],
+        )
         sc_rescore_stats = _rescore_mapping_with_signals(
             sc_map,
             usage_score_map=usage_score_map,
@@ -24138,7 +24228,7 @@ def main() -> int:
             tc_map, sc_script_chars, tc_script_chars
         )
         curated_daily_explicit_pinyin_overrides = _build_curated_daily_explicit_pinyin_override_map(
-            curated_daily_entries + curated_daily_supplement_entries
+            curated_daily_entries + curated_daily_supplement_entries, char_variant_pairs
         )
         sc_map, sc_curated_daily_pinyin_override_stats = _apply_explicit_term_pinyin_overrides(
             sc_map,
@@ -24150,7 +24240,9 @@ def main() -> int:
             curated_daily_explicit_pinyin_overrides,
             "tc_curated_daily_explicit_pinyin_override",
         )
-        explicit_term_pinyin_overrides = _build_explicit_term_pinyin_override_map(vertical_entries)
+        explicit_term_pinyin_overrides = _build_explicit_term_pinyin_override_map(
+            vertical_entries, char_variant_pairs
+        )
         sc_map, sc_pinyin_override_stats = _apply_explicit_term_pinyin_overrides(
             sc_map,
             explicit_term_pinyin_overrides,
@@ -24318,11 +24410,12 @@ def main() -> int:
             download_url=UNICODE_UNIHAN_URL,
         )
         opencc_text = _decode_text(opencc_payload)
-        overrides: Dict[str, str] = {}
-        if args.pinyin_overrides:
-            overrides = _load_pinyin_overrides(repo_root / args.pinyin_overrides)
         sc_map, tc_map, stats = _build_from_opencc_unihan(
-            opencc_text, unihan_payload, args.min_hanzi, overrides
+            opencc_text,
+            unihan_payload,
+            args.min_hanzi,
+            sc_word_pinyin_overrides,
+            tc_word_pinyin_overrides,
         )
         opencc_entries_for_hints, _opencc_hint_stats = _parse_opencc_entries(opencc_text, 1)
         opencc_entries = opencc_entries_for_hints
@@ -24497,9 +24590,6 @@ def main() -> int:
                 tc_single_char_pos_map[trad_ch] = pos_tag
                 variant_pos_terms += 1
             unihan_jieba_stats["jieba_tc_single_char_variant_pos_terms"] = variant_pos_terms
-        overrides: Dict[str, str] = {}
-        if args.pinyin_overrides:
-            overrides = _load_pinyin_overrides(repo_root / args.pinyin_overrides)
         vertical_parse_stats = {
             "vertical_term_rows": 0,
             "vertical_term_kept": 0,
@@ -24723,7 +24813,8 @@ def main() -> int:
         sc_map, tc_map, stats = _build_from_unihan_only(
             unihan_payload,
             args.min_hanzi,
-            overrides,
+            sc_word_pinyin_overrides,
+            tc_word_pinyin_overrides,
             trad_to_simp_char_map,
             simp_to_trad_char_map,
             sc_script_chars,
@@ -24761,6 +24852,11 @@ def main() -> int:
         stats["vertical_support_excluded_tc"] = len(vertical_tc_support_excludes)
     else:
         raise ValueError(f"unsupported parser: {parser_name}")
+    if not char_variant_pairs:
+        char_variant_pairs = _build_script_char_pairs(
+            trad_to_simp_char_map, simp_to_trad_char_map, tc_to_sc_map,
+            opencc_entries if parser_name in ("opencc_unihan", "unihan_only") else [],
+        )
 
     sc_map, dropped_sc_non_windows = _filter_windows_unrenderable_entries(sc_map)
     tc_map, dropped_tc_non_windows = _filter_windows_unrenderable_entries(tc_map)
@@ -25311,17 +25407,18 @@ def main() -> int:
     stats.update(tc_project_preferred_merge_stats)
     sc_map, sc_word_pinyin_override_stats = _apply_word_pinyin_overrides(
         sc_map,
-        word_pinyin_overrides,
+        sc_word_pinyin_overrides,
         "sc_word_pinyin_override",
     )
     tc_map, tc_word_pinyin_override_stats = _apply_word_pinyin_overrides(
         tc_map,
-        word_pinyin_overrides,
+        tc_word_pinyin_overrides,
         "tc_word_pinyin_override",
     )
     stats.update(sc_word_pinyin_override_stats)
     stats.update(tc_word_pinyin_override_stats)
-    stats["word_pinyin_override_entries"] = len(word_pinyin_overrides)
+    stats["word_pinyin_override_entries_sc"] = len(sc_word_pinyin_overrides)
+    stats["word_pinyin_override_entries_tc"] = len(tc_word_pinyin_overrides)
     sc_final_prefix_fragment_stats = _filter_low_signal_prefix_fragment_entries(
         sc_map,
         usage_score_map,
@@ -25808,20 +25905,29 @@ def main() -> int:
     )
     stats.update(sc_styled_competitor_cap_stats)
     stats.update(tc_styled_competitor_cap_stats)
+    # The readings each variant's output keeps as given: the rows' and the
+    # variant's own overrides.
     curated_daily_explicit_pinyin_keys = _build_curated_daily_explicit_pinyin_key_set(
-        curated_daily_entries + curated_daily_supplement_entries
+        curated_daily_entries + curated_daily_supplement_entries, char_variant_pairs
     )
     curated_daily_explicit_pinyin_keys.update(
-        _build_vertical_explicit_pinyin_key_set(vertical_entries)
+        _build_vertical_explicit_pinyin_key_set(vertical_entries, char_variant_pairs)
     )
-    curated_daily_explicit_pinyin_keys.update(
-        (pinyin, text)
-        for text, pinyin in word_pinyin_overrides.items()
-        if text and "'" in pinyin
-    )
+    explicit_pinyin_keys: Dict[str, Set[Tuple[str, str]]] = {}
+    for variant, word_overrides in (
+        ("sc", sc_word_pinyin_overrides),
+        ("tc", tc_word_pinyin_overrides),
+    ):
+        keys = set(curated_daily_explicit_pinyin_keys)
+        keys.update(
+            (pinyin, text)
+            for text, pinyin in word_overrides.items()
+            if text and "'" in pinyin
+        )
+        explicit_pinyin_keys[variant] = keys
     sc_output_pinyin_bucket_map = _build_output_pinyin_bucket_map(
         sc_map,
-        preserve_pinyin_keys=curated_daily_explicit_pinyin_keys,
+        preserve_pinyin_keys=explicit_pinyin_keys["sc"],
         unihan_map=output_unihan_map,
         unihan_readings_map=output_unihan_readings_map,
         unihan_source_rank_map=output_unihan_source_rank_map,
@@ -25829,7 +25935,7 @@ def main() -> int:
     )
     tc_output_pinyin_bucket_map = _build_output_pinyin_bucket_map(
         tc_map,
-        preserve_pinyin_keys=curated_daily_explicit_pinyin_keys,
+        preserve_pinyin_keys=explicit_pinyin_keys["tc"],
         unihan_map=output_unihan_map,
         unihan_readings_map=output_unihan_readings_map,
         unihan_source_rank_map=output_unihan_source_rank_map,
@@ -26896,6 +27002,8 @@ def main() -> int:
             sc_map,
             tc_map,
             curated_daily_post_rank_exact_entries,
+            tc_word_pinyin_overrides,
+            char_variant_pairs,
         )
     )
     specialist_sc_keys, specialist_tc_keys = _inject_specialist_exact_entries(
@@ -26911,7 +27019,15 @@ def main() -> int:
     stats["specialist_exact_added_tc"] = len(specialist_tc_keys)
     contains_popularity_excluded_sc_terms.update(text for _, text in specialist_sc_keys)
     contains_popularity_excluded_tc_terms.update(text for _, text in specialist_tc_keys)
-    curated_daily_explicit_pinyin_keys.update(specialist_sc_keys | specialist_tc_keys)
+    # A reviewed specialist reading is written as given where the entry was added,
+    # and in the other variant too when both write the same text (the same key).
+    for sc_word, tc_word, _usage, pinyin, _layer_id, _source_id in specialist_entries:
+        sc_key, tc_key = (pinyin, sc_word), (pinyin, tc_word)
+        added = sc_key in specialist_sc_keys or tc_key in specialist_tc_keys
+        if sc_key in specialist_sc_keys or (added and sc_word == tc_word and sc_key in sc_map):
+            explicit_pinyin_keys["sc"].add(sc_key)
+        if tc_key in specialist_tc_keys or (added and sc_word == tc_word and tc_key in tc_map):
+            explicit_pinyin_keys["tc"].add(tc_key)
     post_rank_exact_sc_terms = {
         sc_word
         for sc_word, _tc_word, _usage_score, _explicit_pinyin
@@ -26924,11 +27040,11 @@ def main() -> int:
     }
     low_priority_supplement_sc_terms.update(post_rank_exact_sc_terms)
     low_priority_supplement_tc_terms.update(post_rank_exact_tc_terms)
-    curated_daily_explicit_pinyin_keys.update(
-        _build_curated_daily_explicit_pinyin_key_set(
-            curated_daily_post_rank_exact_entries
-        )
+    post_rank_explicit_pinyin_keys = _build_curated_daily_explicit_pinyin_key_set(
+        curated_daily_post_rank_exact_entries, char_variant_pairs
     )
+    for variant in ("sc", "tc"):
+        explicit_pinyin_keys[variant].update(post_rank_explicit_pinyin_keys)
 
     stats.update(
         _restore_common_polyphonic_reading_visibility(
@@ -26949,7 +27065,7 @@ def main() -> int:
             visibility_family_term_count_map=sc_visibility_family_term_count_map,
             single_char_frequency_map=single_char_frequency_map,
             single_char_pos_map=single_char_pos_map,
-            explicit_pinyin_overrides=word_pinyin_overrides,
+            explicit_pinyin_overrides=sc_word_pinyin_overrides,
             stats_prefix="sc_final_post",
         )
     )
@@ -26972,7 +27088,7 @@ def main() -> int:
             visibility_family_term_count_map=tc_visibility_family_term_count_map,
             single_char_frequency_map=tc_single_char_frequency_map,
             single_char_pos_map=tc_single_char_pos_map,
-            explicit_pinyin_overrides=word_pinyin_overrides,
+            explicit_pinyin_overrides=tc_word_pinyin_overrides,
             stats_prefix="tc_final_post",
         )
     )
@@ -27037,7 +27153,8 @@ def main() -> int:
         for text, _source_pinyin, added_pinyin, _cap in AUDITED_ADDITIVE_PINYIN_READINGS
         if (added_pinyin, text) in sc_map or (added_pinyin, text) in tc_map
     }
-    curated_daily_explicit_pinyin_keys.update(audited_reading_keys)
+    explicit_pinyin_keys["sc"].update(key for key in audited_reading_keys if key in sc_map)
+    explicit_pinyin_keys["tc"].update(key for key in audited_reading_keys if key in tc_map)
 
     _write_dict(
         output_sc,
@@ -27045,7 +27162,7 @@ def main() -> int:
         preferred_terms=curated_daily_sc_terms,
         low_priority_output_terms=low_priority_supplement_sc_terms,
         post_low_priority_output_terms=stable_tail_exact_sc_terms,
-        preserve_pinyin_keys=curated_daily_explicit_pinyin_keys,
+        preserve_pinyin_keys=explicit_pinyin_keys["sc"],
         unihan_map=output_unihan_map,
         unihan_readings_map=output_unihan_readings_map,
         unihan_source_rank_map=output_unihan_source_rank_map,
@@ -27059,7 +27176,7 @@ def main() -> int:
         preferred_terms=curated_daily_tc_terms,
         low_priority_output_terms=low_priority_supplement_tc_terms,
         post_low_priority_output_terms=stable_tail_exact_tc_terms,
-        preserve_pinyin_keys=curated_daily_explicit_pinyin_keys,
+        preserve_pinyin_keys=explicit_pinyin_keys["tc"],
         unihan_map=output_unihan_map,
         unihan_readings_map=output_unihan_readings_map,
         unihan_source_rank_map=output_unihan_source_rank_map,

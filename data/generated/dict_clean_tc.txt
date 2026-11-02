@@ -810,7 +810,6 @@ aisai'ebiyalianbangminzhugongheguo	埃塞俄比亞聯邦民主共和國	681
 aisai'ebiyaren	埃塞俄比亞人	324
 aisai'ebiyarenmingemingminzhuzhenxian	埃塞俄比亞人民革命民主陣線	369
 aisai'ebiyazhengfu	埃塞俄比亞政府	339
-aisaiebiya	衣索比亞	674
 aisaikesi	艾賽克斯	218
 aisake	艾薩克	215
 aisaketaxiangji	愛薩克塔相機	811
@@ -31731,8 +31730,7 @@ dongjingmorenxueyuanjianfengtielonglong	東京魔人學園劍風帖龍龍	662
 dongjingmorenxueyuanwaifatiexuefenglu	東京魔人學園外法帖血風錄	662
 dongjingnvyoudajijie	東京女優大集結	632
 dongjingqijiemei	東京七姐妹	613
-dongjingta	東京鐵塔	931
-dongjingtieta	東京鐵塔	693
+dongjingtieta	東京鐵塔	931
 dongjingwan	東京灣	207
 dongjingwanfuzhuying	東京灣輔助營	831
 dongjingwulixuexiao	東京物理學校	811
@@ -42436,7 +42434,7 @@ fuwufei	服務費	495
 fuwugongyingshang	服務供應商	406
 fuwuguizhang	服務規章	260
 fuwuhangye	服務行業	280
-fuwuqi	伺服器	1000
+sifuqi	伺服器	1000
 fuwuqibushu	服務器部署	768
 fuwuqiceshi	服務器測試	764
 fuwuqichengxu	服務器程序	406
@@ -42444,7 +42442,7 @@ fuwuqiduanjiaoben	服務器端腳本	811
 fuwuqiduanxuanran	服務器端渲染	811
 fuwuqifanhui	服務器返回	373
 fuwuqifasong	服務器發送	373
-fuwuqifuzai	伺服器負載	1000
+sifuqifuzai	伺服器負載	1000
 fuwuqihuanjing	服務器環境	772
 fuwuqijinxing	服務器進行	373
 fuwuqipeizhi	服務器配置	778
@@ -87234,7 +87232,7 @@ lufei	路費	409
 lufeng	陸豐	326
 lufengshi	陸丰市	122
 lufengxianfengbiguozao	顱縫線封閉過早	898
-lufugong	羅浮宮	966
+luofugong	羅浮宮	966
 lufushaxing	蘆氟沙星	540
 lugang	陸港	150
 lugangmaodun	陸港矛盾	258
@@ -87844,7 +87842,7 @@ luoma	騾馬	1
 luomadache	騾馬大車	260
 luomadiguo	羅馬帝國	435
 luomadiguoderongyao	羅馬帝國的榮耀	632
-luomadoushouchang	羅馬競技場	822
+luomajingjichang	羅馬競技場	822
 luomadoushouchang	羅馬鬥獸場	743
 luomafa	羅馬法	198
 luomafuxingfengge	羅馬復興風格	760
@@ -92664,7 +92662,7 @@ mengtekelisidi	蒙特克里斯蒂	304
 mengtelei	蒙特雷	215
 mengteli	蒙特利	629
 mengteli'ershi	蒙特利爾市	267
-mengtelier	蒙特婁	523
+mengtelou	蒙特婁	523
 mengtenapolundajie	蒙特拿破崙大街	780
 mengtenapolundajie	蒙特拿破侖大街	322
 mengteneigeluo	蒙特內格羅	636
@@ -99887,7 +99885,7 @@ niuweihai	牛尾海	470
 niuxi	牛膝	218
 niuxiang	扭向	280
 niuxicao	牛膝草	167
-niuxilan	紐西蘭	532
+niuxilan	紐西蘭	1000
 niuxilanxuanqu	紐西蘭選區	635
 niuxin	牛心	372
 niuxing	牛性	327
@@ -119314,7 +119312,6 @@ shengbidebaoqingzhensi	聖彼得堡清真寺	660
 shengbidebaoshi	聖彼得堡市	262
 shengbidebaoshiduma	聖彼得堡市杜馬	660
 shengbidebaozhiwuyuan	聖彼得堡植物園	660
-shengbidedajiaotang	聖伯多祿大殿	1000
 shengbideguangchang	聖彼得廣場	269
 shengbideheshengbaoluozhujiaozuotang	聖彼得和聖保羅主教座堂	660
 shengbideluopusitela	聖彼德羅普斯特拉	681
@@ -119327,7 +119324,7 @@ shengbing	生病	440
 shengbo	聲波	437
 shengbo'ernaduo	聖伯爾納鐸	587
 shengbodingwei	聲波定位	260
-shengboduoludadian	聖伯多祿大殿	813
+shengboduoludadian	聖伯多祿大殿	1000
 shengboduoluheshengbaoluzhujiaozuotang	聖伯多祿和聖保祿主教座堂	660
 shengboduolushengbaolutang	聖伯多祿聖保祿堂	660
 shengbu	聲部	1000
@@ -148005,7 +148002,7 @@ xiaocheng	小城	600
 xiaochengdajie	小懲大誡	387
 xiaochengqitang	小承氣湯	540
 xiaochengwang	孝成王	232
-xiaochengxu	小程式	1000
+xiaochengshi	小程式	1000
 xiaochengxuchakanqi	小程序查看器	772
 xiaochi	小吃	560
 xiaochibaihezi	小池百合子	289
@@ -152377,7 +152374,6 @@ xini'aoyunhui	悉尼奧運會	294
 xinian	昔年	398
 xiniang	喜娘	363
 xiniao	犀鳥	386
-xinigejuyuan	雪梨歌劇院	994
 xiniluohere	西尼羅河熱	640
 xining	西寧	457
 xiningshi	西寧市	491
@@ -153191,13 +153187,12 @@ xinxihua	信息化	605
 xinxijianfang	信息繭房	260
 xinxijiegou	信息結構	663
 xinxijishu	信息技術	826
-xinxilan	紐西蘭	1000
 xinxilan	信息欄	10
 xinxilangongdang	新西蘭工黨	279
 xinxilanzhengfu	新西蘭政府	274
 xinxiliang	信息量	666
 xinxilingtong	信息靈通	260
-xinxiliu	資訊流	1000
+zixunliu	資訊流	1000
 xinxilixiya	新西里西亞	639
 xinxilun	信息論	453
 xinximianban	信息面板	680
@@ -155454,7 +155449,7 @@ xuelianrongjie	雪戀溶解	538
 xuelianzhusheye	雪蓮注射液	610
 xueliao	血療	353
 xueligao	雪梨膏	470
-xueligejuyuan	雪梨歌劇院	660
+xueligejuyuan	雪梨歌劇院	994
 xuelihong	雪裡蕻	577
 xuelijiu	雪利酒	198
 xuelinba	血淋巴	500
@@ -165777,7 +165772,7 @@ yisishi	意思是	800
 yisisi	一絲絲	280
 yisitan	伊斯坦	540
 yisitanbu'er	伊斯坦布爾	360
-yisitanbuer	伊斯坦堡	749
+yisitanbao	伊斯坦堡	749
 yisite	伊斯特	248
 yisitelaikefengge	伊斯特萊克風格	760
 yisitelaikeyundong	伊斯特萊克運動	760
@@ -165802,7 +165797,7 @@ yisui	一歲	600
 yisunxing	易損性	193
 yisuo	一所	280
 yisuo	伊索	1
-yisuobiya	衣索比亞	637
+yisuobiya	衣索比亞	674
 yisuobiyajie	衣索比亞界	289
 yisusai'ersaitadeshuhai	伊蘇塞爾塞塔的樹海	807
 yisusai'ersaitadeshuhai	伊囌塞爾塞塔的樹海	385
@@ -170091,7 +170086,7 @@ yuehanfuyin	約翰福音	249
 yuehanhuopujinsi	約翰霍普金斯	304
 yuehankabentejudutujidui	約翰卡本特劇毒突擊隊	662
 yuehanneisi	約翰內斯	573
-yuehanneisibao	約翰尼斯堡	680
+yuehannisibao	約翰尼斯堡	680
 yuehansanshu	約翰三書	260
 yuehansidun	約翰斯頓	264
 yuehantielu	粵漢鐵路	228
@@ -171196,7 +171191,6 @@ yunxingrizhi	運行日誌	1000
 yunxingshi	執行期	1000
 yunxingshicuowu	運行時錯誤	289
 yunxingzhuangkuang	運行狀況	387
-yunxingzhuangtai	執行狀態	1000
 yunxiqu	云溪區	158
 yunxixian	鄖西縣	346
 yunxu	允許	1000
@@ -220528,7 +220522,7 @@ zhixingyinqing	執行引擎	40	no_contains
 zhixingyuan	執行員	40	no_contains
 zhixingzhan	執行棧	40	no_contains
 zhixingzhongjie	執行終結	40	no_contains
-zhixingzhuangtai	執行狀態	40	no_contains
+zhixingzhuangtai	執行狀態	1000
 zhixingzhuguan	執行主管	40	no_contains
 zhixingzhuti	執行主體	40	no_contains
 zhixinxiquan	制信息權	40	no_contains

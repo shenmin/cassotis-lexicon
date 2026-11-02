@@ -22,8 +22,8 @@ Cassotis IME 的词库构建与发布仓库。
 
 | 文件 | 变体 | 词条数 |
 |------|------|--------|
-| `data/generated/dict_clean_sc.txt` | 简体主词库 | 237,897 |
-| `data/generated/dict_clean_tc.txt` | 繁体主词库 | 238,513 |
+| `data/generated/dict_clean_sc.txt` | 简体主词库 | 237,893 |
+| `data/generated/dict_clean_tc.txt` | 繁体主词库 | 238,507 |
 | `data/generated/dict_unihan_sc.txt` | 简体单字（Unihan） | 23,916 |
 | `data/generated/dict_unihan_tc.txt` | 繁体单字（Unihan） | 24,179 |
 
@@ -212,7 +212,7 @@ IME v1.22.0 的长句局部纠错、v1.26.0 的完整修正方案复核，以及
 ## 目录结构
 - `data/generated/`：生成的词库文件、版本化语言模型产物和离线转移补全索引。
 - `manifests/`：来源/许可证清单与回归样本。
-- `manifests/pinyin_overrides.tsv`：项目维护的词条级读音覆盖表。
+- `manifests/pinyin_overrides.sc.tsv`、`manifests/pinyin_overrides.tc.tsv`：项目维护的词条级读音覆盖表，简繁各一个文件，互不作用于对方的词条。
 - `manifests/vertical/`：项目维护的隔离式 vertical 词表。
 - `scripts/`：构建、校验和导出辅助脚本。
 - `reports/`：构建报告。

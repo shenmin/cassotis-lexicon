@@ -22,8 +22,8 @@ Lexicon build and release repository for Cassotis IME.
 
 | File | Variant | Entries |
 |------|---------|---------|
-| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 237,897 |
-| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 238,513 |
+| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 237,893 |
+| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 238,507 |
 | `data/generated/dict_unihan_sc.txt` | Simplified single-char (Unihan) | 23,916 |
 | `data/generated/dict_unihan_tc.txt` | Traditional single-char (Unihan) | 24,179 |
 
@@ -212,7 +212,7 @@ See:
 ## Directory layout
 - `data/generated/`: generated lexicon files, versioned language-model artifacts, and offline transition-completion indexes.
 - `manifests/`: source/license manifests and regression samples.
-- `manifests/pinyin_overrides.tsv`: project-authored word-level pronunciation overrides.
+- `manifests/pinyin_overrides.sc.tsv`, `manifests/pinyin_overrides.tc.tsv`: project-authored word-level pronunciation overrides, one file per variant; neither applies to the other's texts.
 - `manifests/vertical/`: project-authored isolated vertical term lists.
 - `scripts/`: build/validation/export helper scripts.
 - `reports/`: generated build reports.

@@ -18,7 +18,7 @@ from test_daily_whitespace_phrases import read_rows
 from normalize_traditional_forms import taiwan_text
 
 MANIFEST = ROOT / "manifests/curated_daily_supplement_phrases.tsv"
-OVERRIDES = ROOT / "manifests/pinyin_overrides.tsv"
+OVERRIDES = {variant: ROOT / f"manifests/pinyin_overrides.{variant}.tsv" for variant in ("sc", "tc")}
 HEADER_READINGS = "# Readings that were missing, 2026-10-18:"
 HEADER_ERHUA = "# Erhua words typed with the syllable er"
 READINGS = (
@@ -133,10 +133,10 @@ class DailyReadingsErhuaTests(unittest.TestCase):
                 self.assertEqual(["80", "0", "0", "0", "0", "0", "0"], prior[(row[0], shown(row[index]))])
 
     def test_readings_that_were_errors(self):
-        overrides = OVERRIDES.read_text(encoding="utf-8").splitlines()
         for wrong, right, sc, tc in REKEYED:
             for index, variant in enumerate(("sc", "tc"), 1):
                 text = (sc, tc)[index - 1]
+                overrides = OVERRIDES[variant].read_text(encoding="utf-8").splitlines()
                 self.assertTrue(any(line.startswith(f"{text}	{right}	") for line in overrides), text)
                 rows = read_rows(f"dict_clean_{variant}.txt")
                 readings = {pinyin for pinyin, word in rows if word == text}

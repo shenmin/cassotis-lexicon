@@ -813,7 +813,6 @@ aisai'ebiyalianbangminzhugongheguo	埃塞俄比亞聯邦民主共和國	12	0	0	1
 aisai'ebiyaren	埃塞俄比亞人	80	0	0	0	0	0	0
 aisai'ebiyarenmingemingminzhuzhenxian	埃塞俄比亞人民革命民主陣線	80	0	0	0	0	0	0
 aisai'ebiyazhengfu	埃塞俄比亞政府	80	0	0	0	0	0	0
-aisaiebiya	衣索比亞	45	40	0	1	174	2	0
 aisaikesi	艾賽克斯	80	0	0	0	0	0	0
 aisake	艾薩克	147	96	0	1	0	0	0
 aisaketaxiangji	愛薩克塔相機	278	0	0	3	27	1	0
@@ -31814,7 +31813,6 @@ dongjingmorenxueyuanjianfengtielonglong	東京魔人學園劍風帖龍龍	93	0	0
 dongjingmorenxueyuanwaifatiexuefenglu	東京魔人學園外法帖血風錄	93	0	0	1	109	1	0
 dongjingnvyoudajijie	東京女優大集結	93	0	0	1	109	1	0
 dongjingqijiemei	東京七姐妹	93	0	0	1	109	1	0
-dongjingta	東京鐵塔	87	0	0	1	156	2	0
 dongjingtieta	東京鐵塔	87	0	0	1	156	2	0
 dongjingwan	東京灣	167	146	0	1	0	0	0
 dongjingwanfuzhuying	東京灣輔助營	283	0	0	3	27	1	0
@@ -42574,7 +42572,7 @@ fuwufei	服務費	221	233	0	1	0	0	0
 fuwugongyingshang	服務供應商	80	0	0	0	0	0	460
 fuwuguizhang	服務規章	80	0	0	0	0	0	0
 fuwuhangye	服務行業	272	0	0	2	0	0	520
-fuwuqi	伺服器	275	40	0	1	64	1	0
+sifuqi	伺服器	275	40	0	1	64	1	0
 fuwuqibushu	服務器部署	211	0	0	1	79	1	0
 fuwuqiceshi	服務器測試	207	0	0	1	80	1	0
 fuwuqichengxu	服務器程序	80	0	0	0	0	0	0
@@ -42582,7 +42580,7 @@ fuwuqiduanjiaoben	服務器端腳本	278	0	0	3	27	1	0
 fuwuqiduanxuanran	服務器端渲染	278	0	0	3	27	1	0
 fuwuqifanhui	服務器返回	80	0	0	0	0	0	0
 fuwuqifasong	服務器發送	80	0	0	0	0	0	0
-fuwuqifuzai	伺服器負載	289	0	0	2	66	1	0
+sifuqifuzai	伺服器負載	289	0	0	2	66	1	0
 fuwuqihuanjing	服務器環境	214	0	0	1	78	1	0
 fuwuqijinxing	服務器進行	80	0	0	0	0	0	0
 fuwuqipeizhi	服務器配置	220	0	0	1	76	1	0
@@ -87597,7 +87595,7 @@ lufei	路費	213	213	0	1	0	0	0
 lufeng	陸豐	212	233	0	1	0	0	0
 lufengshi	陸丰市	80	0	0	0	0	0	0
 lufengxianfengbiguozao	顱縫線封閉過早	80	0	0	0	0	0	0
-lufugong	羅浮宮	236	40	0	1	103	2	0
+luofugong	羅浮宮	236	40	0	1	103	2	0
 lufushaxing	蘆氟沙星	1	0	0	1	150	4	0
 lugang	陸港	80	0	0	0	0	0	0
 lugangmaodun	陸港矛盾	80	0	0	0	0	0	0
@@ -88209,7 +88207,7 @@ luomadache	騾馬大車	80	0	0	0	0	0	0
 luomadiguo	羅馬帝國	210	402	0	1	101	1	520
 luomadiguoderongyao	羅馬帝國的榮耀	93	0	0	1	109	1	0
 luomadoushouchang	羅馬鬥獸場	80	0	0	0	0	0	0
-luomadoushouchang	羅馬競技場	28	0	0	1	174	2	0
+luomajingjichang	羅馬競技場	28	0	0	1	174	2	0
 luomafa	羅馬法	128	40	0	1	0	0	0
 luomafuxingfengge	羅馬復興風格	182	0	0	1	87	1	0
 luomafuxingjianzhu	羅馬復興建築	182	0	0	1	87	1	0
@@ -93041,7 +93039,7 @@ mengtekelisidi	蒙特克里斯蒂	124	28	0	1	0	0	0
 mengtelei	蒙特雷	147	96	0	1	0	0	0
 mengteli	蒙特利	255	40	0	3	0	0	0
 mengteli'ershi	蒙特利爾市	80	0	0	0	0	0	0
-mengtelier	蒙特婁	40	40	0	1	174	2	0
+mengtelou	蒙特婁	40	40	0	1	174	2	0
 mengtenapolundajie	蒙特拿破侖大街	80	0	0	0	0	0	0
 mengtenapolundajie	蒙特拿破崙大街	80	0	0	0	0	0	0
 mengteneigeluo	蒙特內哥羅	12	0	0	1	174	2	0
@@ -119772,7 +119770,6 @@ shengbidebaoqingzhensi	聖彼得堡清真寺	145	0	0	1	98	1	0
 shengbidebaoshi	聖彼得堡市	80	0	0	0	0	0	0
 shengbidebaoshiduma	聖彼得堡市杜馬	145	0	0	1	98	1	0
 shengbidebaozhiwuyuan	聖彼得堡植物園	145	0	0	1	98	1	0
-shengbidedajiaotang	聖伯多祿大殿	87	0	0	1	156	2	0
 shengbideguangchang	聖彼得廣場	80	0	0	0	0	0	0
 shengbideheshengbaoluozhujiaozuotang	聖彼得和聖保羅主教座堂	145	0	0	1	98	1	0
 shengbideluopusitela	聖彼德羅普斯特拉	12	0	0	1	174	2	0
@@ -148594,7 +148591,7 @@ xiaocheng	小城	279	378	0	1	0	0	0
 xiaochengdajie	小懲大誡	178	40	0	1	92	1	0
 xiaochengqitang	小承氣湯	1	0	0	1	247	3	0
 xiaochengwang	孝成王	80	0	0	0	0	0	0
-xiaochengxu	小程式	226	0	0	1	75	1	0
+xiaochengshi	小程式	226	0	0	1	75	1	0
 xiaochengxuchakanqi	小程序查看器	190	0	0	1	85	1	0
 xiaochi	小吃	1	0	0	0	340	3	0
 xiaochibaihezi	小池百合子	80	0	0	0	0	0	0
@@ -152985,7 +152982,6 @@ xini'aoyunhui	悉尼奧運會	80	0	0	0	0	0	0
 xinian	昔年	234	264	0	1	0	0	0
 xiniang	喜娘	170	113	0	1	0	0	0
 xiniao	犀鳥	197	175	0	1	0	0	0
-xinigejuyuan	雪梨歌劇院	224	0	0	1	103	2	0
 xiniluohere	西尼羅河熱	1	0	0	1	150	4	0
 xining	西寧	241	329	0	1	136	2	0
 xiningshi	西寧市	68	198	0	1	174	2	0
@@ -153802,12 +153798,11 @@ xinxijianfang	信息繭房	80	0	0	0	0	0	0
 xinxijiegou	信息結構	211	0	0	1	79	1	0
 xinxijishu	信息技術	507	358	576	2	0	0	0
 xinxilan	信息欄	202	0	0	2	0	0	0
-xinxilan	紐西蘭	40	40	0	1	174	2	0
 xinxilangongdang	新西蘭工黨	80	0	0	0	0	0	0
 xinxilanzhengfu	新西蘭政府	80	0	0	0	0	0	0
 xinxiliang	信息量	281	248	0	1	81	1	0
 xinxilingtong	信息靈通	80	0	0	0	0	0	0
-xinxiliu	資訊流	255	0	0	1	66	1	0
+zixunliu	資訊流	255	0	0	1	66	1	0
 xinxilixiya	新西里西亞	12	0	0	1	174	2	0
 xinxilun	信息論	195	171	0	1	0	0	0
 xinximianban	信息面板	218	0	0	1	77	1	0
@@ -166428,7 +166423,7 @@ yisishi	意思是	536	0	0	4	0	0	0
 yisisi	一絲絲	284	0	0	2	0	0	0
 yisitan	伊斯坦	80	0	0	0	0	0	0
 yisitanbu'er	伊斯坦布爾	207	249	0	1	0	0	0
-yisitanbuer	伊斯坦堡	45	40	0	1	174	2	0
+yisitanbao	伊斯坦堡	45	40	0	1	174	2	0
 yisite	伊斯特	80	0	0	0	0	0	0
 yisitelaikefengge	伊斯特萊克風格	182	0	0	1	87	1	0
 yisitelaikeyundong	伊斯特萊克運動	182	0	0	1	87	1	0
@@ -170746,7 +170741,7 @@ yuehanfuyin	約翰福音	128	40	0	1	0	0	0
 yuehanhuopujinsi	約翰霍普金斯	80	0	0	0	0	0	474
 yuehankabentejudutujidui	約翰卡本特劇毒突擊隊	93	0	0	1	109	1	0
 yuehanneisi	約翰內斯	199	0	0	2	0	0	0
-yuehanneisibao	約翰尼斯堡	28	0	0	1	174	2	0
+yuehannisibao	約翰尼斯堡	28	0	0	1	174	2	0
 yuehansanshu	約翰三書	80	0	0	0	0	0	0
 yuehansidun	約翰斯頓	145	91	0	1	0	0	0
 yuehantielu	粵漢鐵路	128	40	0	1	0	0	0
@@ -171856,7 +171851,6 @@ yunxingrizhi	運行日誌	255	0	0	2	68	1	0
 yunxingshi	執行期	248	0	0	1	68	1	0
 yunxingshicuowu	運行時錯誤	80	0	0	0	0	0	0
 yunxingzhuangkuang	運行狀況	80	0	0	0	0	0	0
-yunxingzhuangtai	執行狀態	289	0	0	2	66	1	0
 yunxiqu	云溪區	80	0	0	0	0	0	0
 yunxixian	鄖西縣	239	320	0	1	0	0	0
 yunxu	允許	346	562	0	1	0	0	0
@@ -220269,7 +220263,7 @@ zhixingyinqing	執行引擎	1	0	0	1	150	4	0
 zhixingyuan	執行員	1	0	0	1	150	4	0
 zhixingzhan	執行棧	1	0	0	1	150	4	0
 zhixingzhongjie	執行終結	1	0	0	1	150	4	0
-zhixingzhuangtai	執行狀態	1	0	0	1	150	4	0
+zhixingzhuangtai	執行狀態	289	0	0	2	66	1	0
 zhixingzhuguan	執行主管	1	0	0	1	150	4	0
 zhixingzhuti	執行主體	1	0	0	1	150	4	0
 zhixinxiquan	制信息權	1	0	0	1	150	4	0

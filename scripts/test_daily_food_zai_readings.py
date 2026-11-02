@@ -43,7 +43,7 @@ class DailyFoodReadingTests(unittest.TestCase):
             self.assertEqual({key: [str(w), 'no_contains'] for key, w in expected.items()}, actual)
 
     def test_secondary_reading_does_not_replace_or_raise_primary(self):
-        overrides = builder._load_pinyin_overrides(ROOT / 'manifests/pinyin_overrides.tsv')
+        overrides = builder._load_pinyin_overrides(ROOT / 'manifests/pinyin_overrides.sc.tsv')
         self.assertEqual('zai', overrides[ZAI])
         original = {('zi', ZAI): 414, ('zai', '\u5728'): 853}
         result, _ = builder._apply_word_pinyin_overrides(original, overrides, 'test')
@@ -69,7 +69,8 @@ class DailyFoodReadingTests(unittest.TestCase):
                              [text for text, _ in rows['yimian'][:2]])
 
     def test_explicit_compound_readings_and_spoken_aliases(self):
-        overrides = builder._build_curated_daily_explicit_pinyin_override_map(self.entries)
+        overrides = builder._build_curated_daily_explicit_pinyin_override_map(
+            self.entries, {('\u5be9', '\u5ba1'), ('\u98ef', '\u996d')})
         for text in ('\u9732\u80a9', '\u9732\u817f'):
             self.assertNotIn(text, overrides)
         for text in ('\u5ba1\u6821', '\u5be9\u6821'):

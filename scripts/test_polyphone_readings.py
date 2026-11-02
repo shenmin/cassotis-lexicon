@@ -7,7 +7,9 @@ huanjia 505, 地理学 delixue 716 beside dilixue 320). pinyin_overrides.tsv
 gives each such word one reading, the one its neighbouring words and its
 phrase give: chang or zhang by meaning, 似 si except in 似的, 佛 fo except in
 仿佛. Words read both ways keep both (明朝, 睡着, 总长), and so do words whose
-references misled (了不起, 势在必得, 三人行)."""
+references misled (了不起, 势在必得, 三人行). Each variant has its own file
+(pinyin_overrides.sc.tsv and .tc.tsv, 2026-11-02): the traditional 合著 is also
+the simplified 合着 and keeps hezhe beside hezhu."""
 from pathlib import Path
 import sys
 import unittest
@@ -17,7 +19,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import build_external_cedict as builder
 from test_daily_whitespace_phrases import read_rows
 
-OVERRIDES = ROOT / "manifests/pinyin_overrides.tsv"
+OVERRIDES = {variant: ROOT / f"manifests/pinyin_overrides.{variant}.tsv" for variant in ("sc", "tc")}
 HEADER = "# Polyphonic characters by their meaning, 2026-10-16:"
 # (variant, text, readings it must have and no other)
 SAMPLES = (
@@ -42,6 +44,8 @@ SAMPLES = (
     ("tc", "長篇大論", {"changpiandalun"}),
     ("tc", "討價還價", {"taojiahuanjia"}),
     ("tc", "光陰似箭", {"guangyinsijian"}),
+    ("sc", "合著", {"hezhu"}),
+    ("tc", "合著", {"hezhu", "hezhe"}),
     # left alone
     ("sc", "似的", {"shide"}),
     ("sc", "仿佛", {"fangfu", "pangfu"}),
@@ -55,30 +59,33 @@ SAMPLES = (
 )
 
 
-def section():
-    """(text, pinyin) rows of the section of the overrides."""
+def section(variant):
+    """(text, pinyin) rows of the section of a variant's overrides."""
     rows, inside = [], False
-    for line in OVERRIDES.read_text(encoding="utf-8").splitlines():
+    for line in OVERRIDES[variant].read_text(encoding="utf-8").splitlines():
         if line.startswith(HEADER):
             inside = True
             continue
-        if inside and line and not line.startswith("#"):
+        if inside and not line:
+            break
+        if inside and not line.startswith("#"):
             rows.append(tuple(line.split("\t")[:2]))
     return rows
 
 
 class PolyphoneReadingTests(unittest.TestCase):
     def test_overrides_load(self):
-        overrides = builder._load_pinyin_overrides(OVERRIDES)
-        rows = section()
-        self.assertGreater(len(rows), 6000)
-        self.assertEqual(len(rows), len({text for text, _pinyin in rows}))
-        for text, pinyin in rows:
-            self.assertEqual(builder._normalize_explicit_pinyin(pinyin), overrides[text])
+        overrides = dict(zip(("sc", "tc"), builder._load_variant_pinyin_overrides(OVERRIDES["sc"])))
+        for variant in ("sc", "tc"):
+            rows = section(variant)
+            self.assertGreater(len(rows), 3000)
+            self.assertEqual(len(rows), len({text for text, _pinyin in rows}))
+            for text, pinyin in rows:
+                self.assertEqual(builder._normalize_explicit_pinyin(pinyin), overrides[variant][text])
 
     def test_generated_rows_follow_the_overrides(self):
-        wanted = {text: pinyin.replace("'", "") for text, pinyin in section()}
         for variant in ("sc", "tc"):
+            wanted = {text: pinyin.replace("'", "") for text, pinyin in section(variant)}
             for pinyin, text in read_rows(f"dict_clean_{variant}.txt"):
                 if text in wanted:
                     self.assertEqual(wanted[text], pinyin.replace("'", ""), (pinyin, text))
