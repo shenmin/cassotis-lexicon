@@ -5485,7 +5485,6 @@
 狼嚎	狼嚎	0.01
 绳结	繩結	0.01
 转过来	轉過來	0.01
-擦过	擦過	0.01
 舔弄	舔弄	0.01
 塞进	塞進	0.01
 勒住	勒住	0.01
@@ -6477,7 +6476,6 @@
 弦音	絃音	0.01
 磨过	磨過	0.01
 一任	一任	0.01
-尝过	嘗過	0.01
 本校	本校	0.01
 窒息感	窒息感	0.01
 何意	何意	0.01
@@ -6554,7 +6552,6 @@
 君来	君來	0.01
 白纸	白紙	0.01
 彩铅	彩鉛	0.01
-所爱	所愛	0.01
 一分	一分	0.01
 平改坡	平改坡	0.01
 万字	萬字	0.01
@@ -8032,7 +8029,6 @@
 练武	練武	0.01
 一比一	一比一	0.01
 二道杠	二道槓	0.01
-借书	借書	0.01
 择校费	擇校費	0.01
 歪头	歪頭	0.01
 翻卡片	翻卡片	0.01
@@ -8586,7 +8582,6 @@
 得力干将	得力幹將	0.01
 霸王花	霸王花	0.01
 打草稿	打草稿	0.01
-抢过	搶過	0.01
 孤帆远影碧空尽	孤帆遠影碧空盡	0.01
 孤帆	孤帆	0.01
 深有体会	深有體會	0.01
@@ -8599,7 +8594,6 @@
 堕入	墮入	0.01
 搬来	搬來	0.01
 捻起	捻起	0.01
-逃过	逃過	0.01
 站出来	站出來	0.01
 这一套	這一套	0.01
 这一招	這一招	0.01
@@ -26533,3 +26527,472 @@
 反降	反降	0.200	fanjiang	exact_rank_no_contains
 粗长	粗長	0.200	cuchang	exact_rank_no_contains
 细短	細短	0.200	xiduan	exact_rank_no_contains
+# Everyday words, 2026-11-01, the more frequent ones: 就 before a verb of one character (就放, 就弄, 就还, 就丢, 就甩, 就睡, 就起, 就醒, 就恨, 就爱, 就带, 就戴, 就穿, 就脱, 就奔, 就跑, 就走, 就趴, 就飞: the user's examples, 就还 read jiu huan; 就找, 就哭, 就停, 就住), a verb or adjective of one character before 吗 (弄吗, 丢吗, 甩吗, 睡吗, 起吗, 爱吗, 恨吗, 带吗, 穿吗, 戴吗, 脱吗, 飞吗, 发吗; 说吗, 忙吗, 贵吗), 所 before a verb (所限, 所恨, 所弄, 所丢; 所迫, 所言, 所购), a verb before 过 (进过, 恨过, 戴过, 弄过; 救过, 离过, 生过), 中 read zhong as hit or won (会中, 没中, 有中; 能中), 借 before a direction, a result or what is lent (借来, 借去; 借到, 借车), 有, 无 and 没 before a house, a car or a debt (有车, 有房, 无贷, 有贷; 无房, 没车, 有房贷), 反 before a rise or fall (反升; 反跌, 反诈), 多词, 小蜜 and 小秘 (多字); 上过, 高过 and 就多, which the dictionary had only as pairs of single characters (上|过 and the like) that a word of the batch went above; low on their key, words that took benchmark cases from a word of their key, such as 痛吗, 炸过, 所著, 无房 and 就多; the pairs of the general text that the dictionary lacked, reviewed by hand (pieces of longer words such as 就可 of 就可以 and 所措 of 不知所措, readings the key cannot tell left out). Weighted as the blocks of 2026-10-29 (occurrences where the word is no part of a longer dictionary word, nor before one that its last character begins, nor after one that its first character ends); a word stays under every more frequent word of its key, an import's weight included.
+就找	就找	0.600	jiuzhao	exact_rank_no_contains
+就回	就回	0.000	jiuhui	exact_rank_no_contains
+就听	就聽	0.600	jiuting	exact_rank_no_contains
+就坐	就坐	0.600	jiuzuo	exact_rank_no_contains
+就停	就停	0.601	jiuting	exact_rank_no_contains
+就讲	就講	0.600	jiujiang	exact_rank_no_contains
+就哭	就哭	0.600	jiuku	exact_rank_no_contains
+就送	就送	0.600	jiusong	exact_rank_no_contains
+就推	就推	0.400	jiutui	exact_rank_no_contains
+就懂	就懂	0.400	jiudong	exact_rank_no_contains
+就考	就考	0.400	jiukao	exact_rank_no_contains
+就留	就留	0.400	jiuliu	exact_rank_no_contains
+就见	就見	0.279	jiujian	exact_rank_no_contains
+就站	就站	0.399	jiuzhan	exact_rank_no_contains
+就帮	就幫	0.600	jiubang	exact_rank_no_contains
+就抓	就抓	0.400	jiuzhua	exact_rank_no_contains
+就笑	就笑	0.400	jiuxiao	exact_rank_no_contains
+就拉	就拉	0.400	jiula	exact_rank_no_contains
+就翻	就翻	0.999	jiufan	exact_rank_no_contains
+就喝	就喝	0.837	jiuhe	exact_rank_no_contains
+就掉	就掉	0.400	jiudiao	exact_rank_no_contains
+就涨	就漲	0.002	jiuzhang	exact_rank_no_contains
+就拍	就拍	0.197	jiupai	exact_rank_no_contains
+就抱	就抱	0.204	jiubao	exact_rank_no_contains
+就画	就畫	0.374	jiuhua	exact_rank_no_contains
+就跳	就跳	0.401	jiutiao	exact_rank_no_contains
+就借	就借	0.401	jiujie	exact_rank_no_contains
+就聊	就聊	0.400	jiuliao	exact_rank_no_contains
+就赚	就賺	0.600	jiuzhuan	exact_rank_no_contains
+就倒	就倒	0.400	jiudao	exact_rank_no_contains
+就玩	就玩	0.471	jiuwan	exact_rank_no_contains
+就追	就追	0.400	jiuzhui	exact_rank_no_contains
+就杀	就殺	0.400	jiusha	exact_rank_no_contains
+就躲	就躲	0.400	jiuduo	exact_rank_no_contains
+就扔	就扔	0.400	jiureng	exact_rank_no_contains
+就挂	就掛	0.400	jiugua	exact_rank_no_contains
+就逃	就逃	0.421	jiutao	exact_rank_no_contains
+就喊	就喊	0.009	jiuhan	exact_rank_no_contains
+就忘	就忘	0.183	jiuwang	exact_rank_no_contains
+就记	就記	0.400	jiuji	exact_rank_no_contains
+就教	就教	0.074	jiujiao	exact_rank_no_contains
+就错	就錯	0.400	jiucuo	exact_rank_no_contains
+就快	就快	0.600	jiukuai	exact_rank_no_contains
+就亏	就虧	0.002	jiukui	exact_rank_no_contains
+就住	就住	0.600	jiuzhu	exact_rank_no_contains
+就接	就接	0.400	jiujie	exact_rank_no_contains
+就骂	就罵	0.400	jiuma	exact_rank_no_contains
+就练	就練	0.009	jiulian	exact_rank_no_contains
+就洗	就洗	0.254	jiuxi	exact_rank_no_contains
+就爬	就爬	0.401	jiupa	exact_rank_no_contains
+就唱	就唱	0.400	jiuchang	exact_rank_no_contains
+就烧	就燒	0.400	jiushao	exact_rank_no_contains
+就跌	就跌	0.600	jiudie	exact_rank_no_contains
+就吵	就吵	0.400	jiuchao	exact_rank_no_contains
+就抢	就搶	0.400	jiuqiang	exact_rank_no_contains
+就咬	就咬	0.400	jiuyao	exact_rank_no_contains
+就疼	就疼	0.400	jiuteng	exact_rank_no_contains
+就闹	就鬧	0.400	jiunao	exact_rank_no_contains
+就嫁	就嫁	0.279	jiujia	exact_rank_no_contains
+就乱	就亂	0.400	jiuluan	exact_rank_no_contains
+就照	就照	0.400	jiuzhao	exact_rank_no_contains
+就拜	就拜	0.400	jiubai	exact_rank_no_contains
+就升	就升	0.400	jiusheng	exact_rank_no_contains
+就挑	就挑	0.400	jiutiao	exact_rank_no_contains
+就念	就唸	0.111	jiunian	exact_rank_no_contains
+就拖	就拖	0.400	jiutuo	exact_rank_no_contains
+就约	就約	0.021	jiuyue	exact_rank_no_contains
+就扣	就扣	0.400	jiukou	exact_rank_no_contains
+就多	就多	0.002	jiuduo	exact_rank_no_contains
+就放	就放	0.599	jiufang	exact_rank_no_contains
+就弄	就弄	0.400	jiunong	exact_rank_no_contains
+就还	就還	0.400	jiuhuan	exact_rank_no_contains
+就丢	就丟	0.400	jiudiu	exact_rank_no_contains
+就甩	就甩	0.400	jiushuai	exact_rank_no_contains
+就睡	就睡	0.413	jiushui	exact_rank_no_contains
+就起	就起	0.009	jiuqi	exact_rank_no_contains
+就醒	就醒	0.000	jiuxing	exact_rank_no_contains
+就恨	就恨	0.400	jiuhen	exact_rank_no_contains
+就爱	就愛	0.600	jiuai	exact_rank_no_contains
+就带	就帶	0.600	jiudai	exact_rank_no_contains
+就戴	就戴	0.400	jiudai	exact_rank_no_contains
+就穿	就穿	0.400	jiuchuan	exact_rank_no_contains
+就脱	就脫	0.401	jiutuo	exact_rank_no_contains
+就奔	就奔	0.400	jiuben	exact_rank_no_contains
+就跑	就跑	0.600	jiupao	exact_rank_no_contains
+就走	就走	0.600	jiuzou	exact_rank_no_contains
+就趴	就趴	0.400	jiupa	exact_rank_no_contains
+就飞	就飛	0.400	jiufei	exact_rank_no_contains
+喝吗	喝嗎	0.000	hema	exact_rank_no_contains
+说吗	說嗎	0.400	shuoma	exact_rank_no_contains
+玩吗	玩嗎	0.400	wanma	exact_rank_no_contains
+痛吗	痛嗎	0.002	tongma	exact_rank_no_contains
+疼吗	疼嗎	0.400	tengma	exact_rank_no_contains
+忙吗	忙嗎	0.400	mangma	exact_rank_no_contains
+贵吗	貴嗎	0.400	guima	exact_rank_no_contains
+美吗	美嗎	0.400	meima	exact_rank_no_contains
+准吗	準嗎	0.400	zhunma	exact_rank_no_contains
+换吗	換嗎	0.400	huanma	exact_rank_no_contains
+住吗	住嗎	0.101	zhuma	exact_rank_no_contains
+考吗	考嗎	0.400	kaoma	exact_rank_no_contains
+学吗	學嗎	0.400	xuema	exact_rank_no_contains
+读吗	讀嗎	0.002	duma	exact_rank_no_contains
+涨吗	漲嗎	0.600	zhangma	exact_rank_no_contains
+跌吗	跌嗎	0.400	diema	exact_rank_no_contains
+信吗	信嗎	0.197	xinma	exact_rank_no_contains
+分吗	分嗎	0.400	fenma	exact_rank_no_contains
+花吗	花嗎	0.400	huama	exact_rank_no_contains
+弄吗	弄嗎	0.400	nongma	exact_rank_no_contains
+丢吗	丟嗎	0.400	diuma	exact_rank_no_contains
+甩吗	甩嗎	0.400	shuaima	exact_rank_no_contains
+睡吗	睡嗎	0.376	shuima	exact_rank_no_contains
+起吗	起嗎	0.212	qima	exact_rank_no_contains
+爱吗	愛嗎	0.400	aima	exact_rank_no_contains
+恨吗	恨嗎	0.400	henma	exact_rank_no_contains
+带吗	帶嗎	0.401	daima	exact_rank_no_contains
+穿吗	穿嗎	0.400	chuanma	exact_rank_no_contains
+戴吗	戴嗎	0.400	daima	exact_rank_no_contains
+脱吗	脫嗎	0.000	tuoma	exact_rank_no_contains
+飞吗	飛嗎	0.009	feima	exact_rank_no_contains
+发吗	發嗎	0.342	fama	exact_rank_no_contains
+所言	所言	0.600	suoyan	exact_rank_no_contains
+所著	所著	0.002	suozhu	exact_rank_no_contains
+所撰	所撰	0.600	suozhuan	exact_rank_no_contains
+所绘	所繪	0.600	suohui	exact_rank_no_contains
+所编	所編	0.400	suobian	exact_rank_no_contains
+所迫	所迫	0.600	suopo	exact_rank_no_contains
+所杀	所殺	0.600	suosha	exact_rank_no_contains
+所救	所救	0.600	suojiu	exact_rank_no_contains
+所藏	所藏	0.600	suocang	exact_rank_no_contains
+所累	所累	0.600	suolei	exact_rank_no_contains
+所害	所害	0.400	suohai	exact_rank_no_contains
+所伤	所傷	0.415	suoshang	exact_rank_no_contains
+所阻	所阻	0.199	suozu	exact_rank_no_contains
+所败	所敗	0.400	suobai	exact_rank_no_contains
+所逼	所逼	0.400	suobi	exact_rank_no_contains
+所惑	所惑	0.400	suohuo	exact_rank_no_contains
+所围	所圍	0.400	suowei	exact_rank_no_contains
+所购	所購	0.600	suogou	exact_rank_no_contains
+所售	所售	0.599	suoshou	exact_rank_no_contains
+所持	所持	0.600	suochi	exact_rank_no_contains
+所占	所佔	0.600	suozhan	exact_rank_no_contains
+所灭	所滅	0.600	suomie	exact_rank_no_contains
+所改	所改	0.400	suogai	exact_rank_no_contains
+所求	所求	0.600	suoqiu	exact_rank_no_contains
+所盼	所盼	0.400	suopan	exact_rank_no_contains
+所望	所望	0.400	suowang	exact_rank_no_contains
+所存	所存	0.600	suocun	exact_rank_no_contains
+所念	所念	0.400	suonian	exact_rank_no_contains
+所悟	所悟	0.400	suowu	exact_rank_no_contains
+所感	所感	0.600	suogan	exact_rank_no_contains
+所限	所限	0.600	suoxian	exact_rank_no_contains
+所恨	所恨	0.400	suohen	exact_rank_no_contains
+所弄	所弄	0.400	suonong	exact_rank_no_contains
+所丢	所丟	0.400	suodiu	exact_rank_no_contains
+犯过	犯過	0.831	fanguo	exact_rank_no_contains
+救过	救過	0.612	jiuguo	exact_rank_no_contains
+伤过	傷過	0.400	shangguo	exact_rank_no_contains
+爬过	爬過	0.600	paguo	exact_rank_no_contains
+留过	留過	0.009	liuguo	exact_rank_no_contains
+混过	混過	0.400	hunguo	exact_rank_no_contains
+煮过	煮過	0.400	zhuguo	exact_rank_no_contains
+停过	停過	0.400	tingguo	exact_rank_no_contains
+扛过	扛過	0.400	kangguo	exact_rank_no_contains
+死过	死過	0.325	siguo	exact_rank_no_contains
+撑过	撐過	0.069	chengguo	exact_rank_no_contains
+追过	追過	0.400	zhuiguo	exact_rank_no_contains
+搞过	搞過	0.601	gaoguo	exact_rank_no_contains
+骂过	罵過	0.129	maguo	exact_rank_no_contains
+摸过	摸過	0.002	moguo	exact_rank_no_contains
+画过	畫過	0.279	huaguo	exact_rank_no_contains
+游过	游過	0.000	youguo	exact_rank_no_contains
+骑过	騎過	0.173	qiguo	exact_rank_no_contains
+烫过	燙過	0.400	tangguo	exact_rank_no_contains
+烧过	燒過	0.377	shaoguo	exact_rank_no_contains
+泡过	泡過	0.400	paoguo	exact_rank_no_contains
+痛过	痛過	0.400	tongguo	exact_rank_no_contains
+离过	離過	0.400	liguo	exact_rank_no_contains
+结过	結過	0.279	jieguo	exact_rank_no_contains
+生过	生過	0.478	shengguo	exact_rank_no_contains
+养过	養過	0.366	yangguo	exact_rank_no_contains
+种过	種過	0.400	zhongguo	exact_rank_no_contains
+咬过	咬過	0.379	yaoguo	exact_rank_no_contains
+上过	上過	0.600	shangguo	exact_rank_no_contains
+高过	高過	0.600	gaoguo	exact_rank_no_contains
+进过	進過	0.600	jinguo	exact_rank_no_contains
+恨过	恨過	0.400	henguo	exact_rank_no_contains
+戴过	戴過	0.400	daiguo	exact_rank_no_contains
+弄过	弄過	0.400	nongguo	exact_rank_no_contains
+能中	能中	0.400	nengzhong	exact_rank_no_contains
+未中	未中	0.000	weizhong	exact_rank_no_contains
+必中	必中	0.000	bizhong	exact_rank_no_contains
+会中	會中	0.600	huizhong	exact_rank_no_contains
+没中	沒中	0.400	meizhong	exact_rank_no_contains
+有中	有中	0.600	youzhong	exact_rank_no_contains
+借到	借到	0.601	jiedao	exact_rank_no_contains
+借车	借車	0.400	jieche	exact_rank_no_contains
+借点	借點	0.000	jiedian	exact_rank_no_contains
+借入	借入	0.600	jieru	exact_rank_no_contains
+借呗	借唄	0.600	jiebei	exact_rank_no_contains
+借力	借力	0.600	jieli	exact_rank_no_contains
+借壳	借殼	0.600	jieke	exact_rank_no_contains
+借道	借道	0.600	jiedao	exact_rank_no_contains
+借景	借景	0.000	jiejing	exact_rank_no_contains
+借期	借期	0.198	jieqi	exact_rank_no_contains
+借来	借來	0.600	jielai	exact_rank_no_contains
+借去	借去	0.400	jiequ	exact_rank_no_contains
+无房	無房	0.002	wufang	exact_rank_no_contains
+无车	無車	0.600	wuche	exact_rank_no_contains
+没房	沒房	0.421	meifang	exact_rank_no_contains
+没车	沒車	0.600	meiche	exact_rank_no_contains
+无债	無債	0.182	wuzhai	exact_rank_no_contains
+有贷款	有貸款	0.600	youdaikuan	exact_rank_no_contains
+有房贷	有房貸	0.400	youfangdai	exact_rank_no_contains
+有娃	有娃	0.400	youwa	exact_rank_no_contains
+有房子	有房子	0.600	youfangzi	exact_rank_no_contains
+有车	有車	0.600	youche	exact_rank_no_contains
+有房	有房	0.600	youfang	exact_rank_no_contains
+无贷	無貸	0.400	wudai	exact_rank_no_contains
+有贷	有貸	0.400	youdai	exact_rank_no_contains
+反跌	反跌	0.400	fandie	exact_rank_no_contains
+反诈	反詐	0.600	fanzha	exact_rank_no_contains
+反被	反被	0.000	fanbei	exact_rank_no_contains
+反遭	反遭	0.400	fanzao	exact_rank_no_contains
+反杀	反殺	0.400	fansha	exact_rank_no_contains
+反升	反升	0.400	fansheng	exact_rank_no_contains
+多字	多字	0.559	duozi	exact_rank_no_contains
+多词	多詞	0.400	duoci	exact_rank_no_contains
+小蜜	小蜜	0.423	xiaomi	exact_rank_no_contains
+小秘	小秘	0.400	xiaomi	exact_rank_no_contains
+# Everyday words, 2026-11-01, the less frequent ones (就醉, 就饿, 就躺, 冷吗, 饱吗, 签吗, 所骗, 所诱, 吻过, 醉过, 才中, 借走, 有债, 反涨, 少字), by the same weights.
+就赶	就趕	0.200	jiugan	exact_rank_no_contains
+就搬	就搬	0.200	jiuban	exact_rank_no_contains
+就藏	就藏	0.200	jiucang	exact_rank_no_contains
+就输	就輸	0.200	jiushu	exact_rank_no_contains
+就痛	就痛	0.200	jiutong	exact_rank_no_contains
+就赢	就贏	0.201	jiuying	exact_rank_no_contains
+就偷	就偷	0.200	jiutou	exact_rank_no_contains
+就试	就試	0.000	jiushi	exact_rank_no_contains
+就醉	就醉	0.200	jiuzui	exact_rank_no_contains
+就饿	就餓	0.526	jiue	exact_rank_no_contains
+就困	就困	0.200	jiukun	exact_rank_no_contains
+就累	就累	0.200	jiulei	exact_rank_no_contains
+就躺	就躺	0.200	jiutang	exact_rank_no_contains
+就修	就修	0.200	jiuxiu	exact_rank_no_contains
+就查	就查	0.030	jiucha	exact_rank_no_contains
+就摔	就摔	0.200	jiushuai	exact_rank_no_contains
+就赔	就賠	0.200	jiupei	exact_rank_no_contains
+就吐	就吐	0.200	jiutu	exact_rank_no_contains
+就补	就補	0.000	jiubu	exact_rank_no_contains
+就租	就租	0.200	jiuzu	exact_rank_no_contains
+就陪	就陪	0.201	jiupei	exact_rank_no_contains
+就猜	就猜	0.200	jiucai	exact_rank_no_contains
+就吹	就吹	0.200	jiuchui	exact_rank_no_contains
+就捡	就撿	0.200	jiujian	exact_rank_no_contains
+就溜	就溜	0.000	jiuliu	exact_rank_no_contains
+就晕	就暈	0.200	jiuyun	exact_rank_no_contains
+就骑	就騎	0.007	jiuqi	exact_rank_no_contains
+就疯	就瘋	0.200	jiufeng	exact_rank_no_contains
+就冷	就冷	0.200	jiuleng	exact_rank_no_contains
+就切	就切	0.200	jiuqie	exact_rank_no_contains
+就跪	就跪	0.009	jiugui	exact_rank_no_contains
+就煮	就煮	0.200	jiuzhu	exact_rank_no_contains
+就泡	就泡	0.200	jiupao	exact_rank_no_contains
+就蹲	就蹲	0.200	jiudun	exact_rank_no_contains
+就戒	就戒	0.080	jiujie	exact_rank_no_contains
+就骗	就騙	0.159	jiupian	exact_rank_no_contains
+就拆	就拆	0.200	jiuchai	exact_rank_no_contains
+就胖	就胖	0.200	jiupang	exact_rank_no_contains
+就炒	就炒	0.200	jiuchao	exact_rank_no_contains
+就擦	就擦	0.200	jiuca	exact_rank_no_contains
+就滚	就滾	0.200	jiugun	exact_rank_no_contains
+就娶	就娶	0.000	jiuqu	exact_rank_no_contains
+就搭	就搭	0.200	jiuda	exact_rank_no_contains
+就领	就領	0.200	jiuling	exact_rank_no_contains
+就气	就氣	0.008	jiuqi	exact_rank_no_contains
+就闻	就聞	0.032	jiuwen	exact_rank_no_contains
+就摆	就擺	0.401	jiubai	exact_rank_no_contains
+就劝	就勸	0.200	jiuquan	exact_rank_no_contains
+就忙	就忙	0.200	jiumang	exact_rank_no_contains
+就拒	就拒	0.009	jiuju	exact_rank_no_contains
+就演	就演	0.356	jiuyan	exact_rank_no_contains
+就踏	就踏	0.200	jiuta	exact_rank_no_contains
+就摸	就摸	0.200	jiumo	exact_rank_no_contains
+就抽	就抽	0.200	jiuchou	exact_rank_no_contains
+就炸	就炸	0.200	jiuzha	exact_rank_no_contains
+就扑	就撲	0.200	jiupu	exact_rank_no_contains
+就拔	就拔	0.200	jiuba	exact_rank_no_contains
+就混	就混	0.200	jiuhun	exact_rank_no_contains
+就闭	就閉	0.080	jiubi	exact_rank_no_contains
+就亮	就亮	0.200	jiuliang	exact_rank_no_contains
+就盯	就盯	0.200	jiuding	exact_rank_no_contains
+就崩	就崩	0.200	jiubeng	exact_rank_no_contains
+就硬	就硬	0.200	jiuying	exact_rank_no_contains
+就懒	就懶	0.080	jiulan	exact_rank_no_contains
+就撒	就撒	0.200	jiusa	exact_rank_no_contains
+就挣	就掙	0.200	jiuzheng	exact_rank_no_contains
+就压	就壓	0.200	jiuya	exact_rank_no_contains
+就歇	就歇	0.200	jiuxie	exact_rank_no_contains
+就怒	就怒	0.080	jiunu	exact_rank_no_contains
+就飘	就飄	0.200	jiupiao	exact_rank_no_contains
+就跨	就跨	0.200	jiukua	exact_rank_no_contains
+就贴	就貼	0.200	jiutie	exact_rank_no_contains
+就扯	就扯	0.200	jiuche	exact_rank_no_contains
+就敲	就敲	0.080	jiuqiao	exact_rank_no_contains
+就催	就催	0.200	jiucui	exact_rank_no_contains
+就盖	就蓋	0.200	jiugai	exact_rank_no_contains
+就碎	就碎	0.009	jiusui	exact_rank_no_contains
+就逼	就逼	0.200	jiubi	exact_rank_no_contains
+就烦	就煩	0.200	jiufan	exact_rank_no_contains
+就挖	就挖	0.200	jiuwa	exact_rank_no_contains
+就挤	就擠	0.200	jiuji	exact_rank_no_contains
+想吗	想嗎	0.200	xiangma	exact_rank_no_contains
+会吗	會嗎	0.201	huima	exact_rank_no_contains
+能吗	能嗎	0.080	nengma	exact_rank_no_contains
+冷吗	冷嗎	0.200	lengma	exact_rank_no_contains
+热吗	熱嗎	0.200	rema	exact_rank_no_contains
+快吗	快嗎	0.200	kuaima	exact_rank_no_contains
+慢吗	慢嗎	0.200	manma	exact_rank_no_contains
+甜吗	甜嗎	0.000	tianma	exact_rank_no_contains
+辣吗	辣嗎	0.080	lama	exact_rank_no_contains
+酸吗	酸嗎	0.009	suanma	exact_rank_no_contains
+苦吗	苦嗎	0.200	kuma	exact_rank_no_contains
+怕吗	怕嗎	0.200	pama	exact_rank_no_contains
+傻吗	傻嗎	0.200	shama	exact_rank_no_contains
+烦吗	煩嗎	0.080	fanma	exact_rank_no_contains
+帅吗	帥嗎	0.401	shuaima	exact_rank_no_contains
+丑吗	醜嗎	0.281	chouma	exact_rank_no_contains
+稳吗	穩嗎	0.080	wenma	exact_rank_no_contains
+晚吗	晚嗎	0.080	wanma	exact_rank_no_contains
+早吗	早嗎	0.306	zaoma	exact_rank_no_contains
+饱吗	飽嗎	0.080	baoma	exact_rank_no_contains
+爽吗	爽嗎	0.200	shuangma	exact_rank_no_contains
+脏吗	髒嗎	0.080	zangma	exact_rank_no_contains
+输吗	輸嗎	0.080	shuma	exact_rank_no_contains
+赢吗	贏嗎	0.281	yingma	exact_rank_no_contains
+修吗	修嗎	0.080	xiuma	exact_rank_no_contains
+查吗	查嗎	0.080	chama	exact_rank_no_contains
+洗吗	洗嗎	0.080	xima	exact_rank_no_contains
+借吗	借嗎	0.019	jiema	exact_rank_no_contains
+送吗	送嗎	0.200	songma	exact_rank_no_contains
+收吗	收嗎	0.200	shouma	exact_rank_no_contains
+放吗	放嗎	0.080	fangma	exact_rank_no_contains
+唱吗	唱嗎	0.080	changma	exact_rank_no_contains
+骂吗	罵嗎	0.080	mama	exact_rank_no_contains
+关吗	關嗎	0.080	guanma	exact_rank_no_contains
+停吗	停嗎	0.080	tingma	exact_rank_no_contains
+等吗	等嗎	0.200	dengma	exact_rank_no_contains
+找吗	找嗎	0.080	zhaoma	exact_rank_no_contains
+回吗	回嗎	0.200	huima	exact_rank_no_contains
+留吗	留嗎	0.200	liuma	exact_rank_no_contains
+租吗	租嗎	0.080	zuma	exact_rank_no_contains
+签吗	簽嗎	0.126	qianma	exact_rank_no_contains
+交吗	交嗎	0.325	jiaoma	exact_rank_no_contains
+教吗	教嗎	0.324	jiaoma	exact_rank_no_contains
+练吗	練嗎	0.200	lianma	exact_rank_no_contains
+画吗	畫嗎	0.200	huama	exact_rank_no_contains
+醒吗	醒嗎	0.000	xingma	exact_rank_no_contains
+跟吗	跟嗎	0.080	genma	exact_rank_no_contains
+救吗	救嗎	0.080	jiuma	exact_rank_no_contains
+杀吗	殺嗎	0.080	shama	exact_rank_no_contains
+死吗	死嗎	0.200	sima	exact_rank_no_contains
+烧吗	燒嗎	0.200	shaoma	exact_rank_no_contains
+煮吗	煮嗎	0.080	zhuma	exact_rank_no_contains
+推吗	推嗎	0.080	tuima	exact_rank_no_contains
+赔吗	賠嗎	0.200	peima	exact_rank_no_contains
+亏吗	虧嗎	0.200	kuima	exact_rank_no_contains
+记吗	記嗎	0.080	jima	exact_rank_no_contains
+试吗	試嗎	0.080	shima	exact_rank_no_contains
+追吗	追嗎	0.200	zhuima	exact_rank_no_contains
+嫁吗	嫁嗎	0.000	jiama	exact_rank_no_contains
+离吗	離嗎	0.200	lima	exact_rank_no_contains
+骑吗	騎嗎	0.080	qima	exact_rank_no_contains
+站吗	站嗎	0.080	zhanma	exact_rank_no_contains
+游吗	游嗎	0.200	youma	exact_rank_no_contains
+冲吗	衝嗎	0.080	chongma	exact_rank_no_contains
+刷吗	刷嗎	0.080	shuama	exact_rank_no_contains
+晒吗	曬嗎	0.080	shaima	exact_rank_no_contains
+泡吗	泡嗎	0.080	paoma	exact_rank_no_contains
+动吗	動嗎	0.200	dongma	exact_rank_no_contains
+取吗	取嗎	0.000	quma	exact_rank_no_contains
+付吗	付嗎	0.200	fuma	exact_rank_no_contains
+赚吗	賺嗎	0.200	zhuanma	exact_rank_no_contains
+所扰	所擾	0.200	suorao	exact_rank_no_contains
+所骗	所騙	0.200	suopian	exact_rank_no_contains
+所弃	所棄	0.176	suoqi	exact_rank_no_contains
+所擒	所擒	0.200	suoqin	exact_rank_no_contains
+所俘	所俘	0.199	suofu	exact_rank_no_contains
+所欺	所欺	0.175	suoqi	exact_rank_no_contains
+所诱	所誘	0.200	suoyou	exact_rank_no_contains
+所吞	所吞	0.200	suotun	exact_rank_no_contains
+所驱	所驅	0.200	suoqu	exact_rank_no_contains
+所拒	所拒	0.200	suoju	exact_rank_no_contains
+所惧	所懼	0.080	suoju	exact_rank_no_contains
+所掩	所掩	0.200	suoyan	exact_rank_no_contains
+所遮	所遮	0.080	suozhe	exact_rank_no_contains
+所控	所控	0.200	suokong	exact_rank_no_contains
+所捕	所捕	0.200	suobu	exact_rank_no_contains
+所抓	所抓	0.200	suozhua	exact_rank_no_contains
+所期	所期	0.177	suoqi	exact_rank_no_contains
+所余	所餘	0.200	suoyu	exact_rank_no_contains
+所失	所失	0.000	suoshi	exact_rank_no_contains
+所偷	所偷	0.080	suotou	exact_rank_no_contains
+所笑	所笑	0.080	suoxiao	exact_rank_no_contains
+所识	所識	0.000	suoshi	exact_rank_no_contains
+所认	所認	0.080	suoren	exact_rank_no_contains
+所信	所信	0.200	suoxin	exact_rank_no_contains
+害过	害過	0.080	haiguo	exact_rank_no_contains
+赶过	趕過	0.002	ganguo	exact_rank_no_contains
+杀过	殺過	0.200	shaguo	exact_rank_no_contains
+跟过	跟過	0.200	genguo	exact_rank_no_contains
+涨过	漲過	0.200	zhangguo	exact_rank_no_contains
+怨过	怨過	0.080	yuanguo	exact_rank_no_contains
+照过	照過	0.200	zhaoguo	exact_rank_no_contains
+炸过	炸過	0.002	zhaguo	exact_rank_no_contains
+花过	花過	0.200	huaguo	exact_rank_no_contains
+闻过	聞過	0.201	wenguo	exact_rank_no_contains
+信过	信過	0.080	xinguo	exact_rank_no_contains
+偷过	偷過	0.200	touguo	exact_rank_no_contains
+抱过	抱過	0.000	baoguo	exact_rank_no_contains
+亲过	親過	0.200	qinguo	exact_rank_no_contains
+吻过	吻過	0.200	wenguo	exact_rank_no_contains
+牵过	牽過	0.200	qianguo	exact_rank_no_contains
+剪过	剪過	0.132	jianguo	exact_rank_no_contains
+染过	染過	0.200	ranguo	exact_rank_no_contains
+陪过	陪過	0.080	peiguo	exact_rank_no_contains
+求过	求過	0.200	qiuguo	exact_rank_no_contains
+劝过	勸過	0.200	quanguo	exact_rank_no_contains
+夸过	誇過	0.000	kuaguo	exact_rank_no_contains
+丢过	丟過	0.200	diuguo	exact_rank_no_contains
+租过	租過	0.080	zuguo	exact_rank_no_contains
+搬过	搬過	0.200	banguo	exact_rank_no_contains
+醉过	醉過	0.200	zuiguo	exact_rank_no_contains
+疼过	疼過	0.200	tengguo	exact_rank_no_contains
+累过	累過	0.200	leiguo	exact_rank_no_contains
+怕过	怕過	0.200	paguo	exact_rank_no_contains
+恋过	戀過	0.080	lianguo	exact_rank_no_contains
+娶过	娶過	0.200	quguo	exact_rank_no_contains
+挖过	挖過	0.200	waguo	exact_rank_no_contains
+吐过	吐過	0.080	tuguo	exact_rank_no_contains
+抽过	抽過	0.197	chouguo	exact_rank_no_contains
+吸过	吸過	0.200	xiguo	exact_rank_no_contains
+摔过	摔過	0.197	shuaiguo	exact_rank_no_contains
+跌过	跌過	0.200	dieguo	exact_rank_no_contains
+撞过	撞過	0.200	zhuangguo	exact_rank_no_contains
+才中	才中	0.181	caizhong	exact_rank_no_contains
+也中	也中	0.348	yezhong	exact_rank_no_contains
+又中	又中	0.200	youzhong	exact_rank_no_contains
+再中	再中	0.000	zaizhong	exact_rank_no_contains
+借走	借走	0.009	jiezou	exact_rank_no_contains
+借回	借回	0.200	jiehui	exact_rank_no_contains
+借完	借完	0.080	jiewan	exact_rank_no_contains
+有债	有債	0.200	youzhai	exact_rank_no_contains
+无贷款	無貸款	0.200	wudaikuan	exact_rank_no_contains
+有车贷	有車貸	0.080	youchedai	exact_rank_no_contains
+有车子	有車子	0.200	youchezi	exact_rank_no_contains
+反涨	反漲	0.197	fanzhang	exact_rank_no_contains
+反减	反減	0.000	fanjian	exact_rank_no_contains
+反胜	反勝	0.080	fansheng	exact_rank_no_contains
+少字	少字	0.200	shaozi	exact_rank_no_contains
+# Everyday words of 2026-11-01 the lexicon held at an import's weight, weighted as the blocks above (所爱, 抢过, 擦过, 尝过, 逃过, 借书, 借贷); and 接力, one above 竭力 again: with 借力 on the key the short choice no longer put it first.
+所爱	所愛	0.600	suoai	exact_rank
+抢过	搶過	0.132	qiangguo	exact_rank
+擦过	擦過	0.400	caguo	exact_rank
+尝过	嘗過	0.600	changguo	exact_rank
+逃过	逃過	0.600	taoguo	exact_rank
+借书	借書	0.600	jieshu	exact_rank
+借贷	借貸	0.600	jiedai	exact_rank
+接力	接力	0.894	jieli	exact_rank

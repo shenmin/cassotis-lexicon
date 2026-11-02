@@ -18,12 +18,12 @@ Cassotis IME 的词库构建与发布仓库。
 - 支持外部来源引导构建和可复现的生成词库构建流程。
 - 保持署名文件与生成产物一致。
 
-## 当前词库快照（2026-10-31 构建）
+## 当前词库快照（2026-11-02 构建）
 
 | 文件 | 变体 | 词条数 |
 |------|------|--------|
-| `data/generated/dict_clean_sc.txt` | 简体主词库 | 237,439 |
-| `data/generated/dict_clean_tc.txt` | 繁体主词库 | 238,055 |
+| `data/generated/dict_clean_sc.txt` | 简体主词库 | 237,897 |
+| `data/generated/dict_clean_tc.txt` | 繁体主词库 | 238,513 |
 | `data/generated/dict_unihan_sc.txt` | 简体单字（Unihan） | 23,916 |
 | `data/generated/dict_unihan_tc.txt` | 繁体单字（Unihan） | 24,179 |
 
@@ -60,7 +60,7 @@ Cassotis Lexicon 在词汇词库之外还发布本地排序模型产物：查询
 
 构建流程还会从强证据 exact 词路径离线生成独立的转移补全索引，每个输入前缀最多保留六个经过复核的可靠方案。用户补全仍优先；基础词库与转移补全方案结合流行度、上下文和语料证据比较。该索引不计入可直接输入的词条数据。
 
-每个变体还有一份词频表（`data/generated/dict_word_frequency_{sc,tc}.txt`），记录两个字以上的每个词在通用中文文本里作为词出现的次数，取 `100 * log10(1 + 次数)`；繁体词取其简体形式的次数。计数（`manifests/general_word_counts.tsv`，由 `scripts/count_general_word_frequency.py` 生成）来自 Cassotis IME 字级语言模型的通用语料，长词里的短词不计。Cassotis IME 在没有上下文、同音词之间取舍时使用这张表。它不计入可直接输入的词条数据。
+每个变体还有一份词频表（`data/generated/dict_word_frequency_{sc,tc}.txt`），记录两个字以上的每个词在通用中文文本里作为词出现的次数，取 `100 * log10(1 + 次数)`；繁体词取其简体形式的次数。计数（`manifests/general_word_counts.tsv`，由 `scripts/count_general_word_frequency.py` 生成）来自 Cassotis IME 字级语言模型的通用语料，按把文本切成最少词条的切分计数，所以长词里的短词不计。后加的词单独计数（只算它独立成词的地方），其余词保留原有次数。Cassotis IME 在没有上下文、同音词之间取舍时使用这张表。它不计入可直接输入的词条数据。
 
 ### 一键补全模型数据
 

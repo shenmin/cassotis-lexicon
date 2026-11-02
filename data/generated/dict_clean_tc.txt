@@ -14051,7 +14051,7 @@ cadiao	擦掉	700
 cadingzhi	擦腚紙	228
 cagan	擦乾	352
 caganjing	擦乾淨	10
-caguo	擦過	10
+caguo	擦過	400
 caheir	擦黑兒	344
 cai'aga	蔡阿嘎	773
 cai'e	蔡鍔	259
@@ -16020,7 +16020,7 @@ changguisai	常規賽	551
 changguiwuqi	常規武器	486
 changgun	長棍	198
 changguo	唱過	700
-changguo	嘗過	10
+changguo	嘗過	600
 changhai	長海	181
 changhaixian	長海縣	182
 changhao	長號	391
@@ -65998,7 +65998,7 @@ jieda	解答	1000
 jiedahangkonghuoyun	捷達航空貨運	318
 jiedahuanxi	皆大歡喜	484
 jiedai	接待	1000
-jiedai	借貸	1
+jiedai	借貸	600
 jiedaichu	接待處	10
 jiedaikongjian	接待空間	680
 jiedaishi	接待室	439
@@ -66463,7 +66463,7 @@ jiele	借了	700
 jiele	接了	663
 jieli	竭力	893
 jieli	解理	871
-jieli	接力	665
+jieli	接力	894
 jieli	解離	653
 jielian	接連	1000
 jielian	結連	1
@@ -66726,7 +66726,7 @@ jieshouyuchengnuozhiliao	接受與承諾治療	700
 jieshouzhe	接受者	444
 jieshouzhecaozuotezheng	接收者操作特徵	896
 jieshu	結束	1000
-jieshu	借書	10
+jieshu	借書	600
 jieshu	劫數	1
 jieshuang	結霜	305
 jieshudan	借書單	379
@@ -105306,7 +105306,7 @@ qiangguang	強光	10
 qianggujiaonang	強骨膠囊	540
 qiangguo	熗鍋	280
 qiangguo	強國	72
-qiangguo	搶過	10
+qiangguo	搶過	132
 qiangguofumin	強國富民	537
 qiangguolai	搶過來	280
 qianggushengxuekoufuye	強骨生血口服液	651
@@ -130479,7 +130479,7 @@ suo'erweiwulixuehuiyi	索爾維物理學會議	774
 suo'erziboli	索爾茲伯里	301
 suo'erzibolipingyuan	索爾茲伯里平原	348
 suo'erzibolishihuan	索爾茲伯里石環	348
-suoai	所愛	10
+suoai	所愛	600
 suoanjiniao	縮氨基脲	570
 suoansuan	縮氨酸	228
 suobangdaxue	索邦大學	218
@@ -132875,7 +132875,7 @@ taogou	套購	364
 taoguan	套管	390
 taoguangyanghui	韜光養晦	491
 taoguichuan	討鬼傳	460
-taoguo	逃過	10
+taoguo	逃過	600
 taoguoyijie	逃過一劫	387
 taohai	討海	198
 taohao	討好	497
@@ -238053,3 +238053,461 @@ jiban	幾版	80	no_contains
 meitui	美腿	600	no_contains
 weifu	微幅	399	no_contains
 xiduan	細短	200	no_contains
+aima	愛嗎	400	no_contains
+banguo	搬過	200	no_contains
+baoguo	抱過	0	no_contains
+baoma	飽嗎	80	no_contains
+bizhong	必中	0	no_contains
+caizhong	才中	181	no_contains
+chama	查嗎	80	no_contains
+changma	唱嗎	80	no_contains
+chengguo	撐過	69	no_contains
+chongma	衝嗎	80	no_contains
+chouguo	抽過	197	no_contains
+chouma	醜嗎	281	no_contains
+chuanma	穿嗎	400	no_contains
+daiguo	戴過	400	no_contains
+daima	帶嗎	401	no_contains
+daima	戴嗎	400	no_contains
+dengma	等嗎	200	no_contains
+dieguo	跌過	200	no_contains
+diema	跌嗎	400	no_contains
+diuguo	丟過	200	no_contains
+diuma	丟嗎	400	no_contains
+dongma	動嗎	200	no_contains
+duma	讀嗎	2	no_contains
+duoci	多詞	400	no_contains
+duozi	多字	559	no_contains
+fama	發嗎	342	no_contains
+fanbei	反被	0	no_contains
+fandie	反跌	400	no_contains
+fangma	放嗎	80	no_contains
+fanguo	犯過	831	no_contains
+fanjian	反減	0	no_contains
+fanma	煩嗎	80	no_contains
+fansha	反殺	400	no_contains
+fansheng	反勝	80	no_contains
+fansheng	反升	400	no_contains
+fanzao	反遭	400	no_contains
+fanzha	反詐	600	no_contains
+fanzhang	反漲	197	no_contains
+feima	飛嗎	9	no_contains
+fenma	分嗎	400	no_contains
+fuma	付嗎	200	no_contains
+ganguo	趕過	2	no_contains
+gaoguo	搞過	601	no_contains
+gaoguo	高過	600	no_contains
+genguo	跟過	200	no_contains
+genma	跟嗎	80	no_contains
+guanma	關嗎	80	no_contains
+guima	貴嗎	400	no_contains
+haiguo	害過	80	no_contains
+hema	喝嗎	0	no_contains
+henguo	恨過	400	no_contains
+henma	恨嗎	400	no_contains
+huaguo	畫過	279	no_contains
+huaguo	花過	200	no_contains
+huama	畫嗎	200	no_contains
+huama	花嗎	400	no_contains
+huanma	換嗎	400	no_contains
+huima	回嗎	200	no_contains
+huima	會嗎	201	no_contains
+huizhong	會中	600	no_contains
+hunguo	混過	400	no_contains
+jiama	嫁嗎	0	no_contains
+jianguo	剪過	132	no_contains
+jiaoma	交嗎	325	no_contains
+jiaoma	教嗎	324	no_contains
+jiebei	借唄	600	no_contains
+jieche	借車	400	no_contains
+jiedao	借到	601	no_contains
+jiedao	借道	600	no_contains
+jiedian	借點	0	no_contains
+jieguo	結過	279	no_contains
+jiehui	借回	200	no_contains
+jiejing	借景	0	no_contains
+jieke	借殼	600	no_contains
+jielai	借來	600	no_contains
+jieli	借力	600	no_contains
+jiema	借嗎	19	no_contains
+jieqi	借期	198	no_contains
+jiequ	借去	400	no_contains
+jieru	借入	600	no_contains
+jiewan	借完	80	no_contains
+jiezou	借走	9	no_contains
+jima	記嗎	80	no_contains
+jinguo	進過	600	no_contains
+jiuai	就愛	600	no_contains
+jiuba	就拔	200	no_contains
+jiubai	就拜	400	no_contains
+jiubai	就擺	401	no_contains
+jiuban	就搬	200	no_contains
+jiubang	就幫	600	no_contains
+jiubao	就抱	204	no_contains
+jiuben	就奔	400	no_contains
+jiubeng	就崩	200	no_contains
+jiubi	就逼	200	no_contains
+jiubi	就閉	80	no_contains
+jiubu	就補	0	no_contains
+jiuca	就擦	200	no_contains
+jiucai	就猜	200	no_contains
+jiucang	就藏	200	no_contains
+jiucha	就查	30	no_contains
+jiuchai	就拆	200	no_contains
+jiuchang	就唱	400	no_contains
+jiuchao	就吵	400	no_contains
+jiuchao	就炒	200	no_contains
+jiuche	就扯	200	no_contains
+jiuchou	就抽	200	no_contains
+jiuchuan	就穿	400	no_contains
+jiuchui	就吹	200	no_contains
+jiucui	就催	200	no_contains
+jiucuo	就錯	400	no_contains
+jiuda	就搭	200	no_contains
+jiudai	就帶	600	no_contains
+jiudai	就戴	400	no_contains
+jiudao	就倒	400	no_contains
+jiudiao	就掉	400	no_contains
+jiudie	就跌	600	no_contains
+jiuding	就盯	200	no_contains
+jiudiu	就丟	400	no_contains
+jiudong	就懂	400	no_contains
+jiudun	就蹲	200	no_contains
+jiuduo	就多	2	no_contains
+jiuduo	就躲	400	no_contains
+jiue	就餓	526	no_contains
+jiufan	就煩	200	no_contains
+jiufan	就翻	999	no_contains
+jiufang	就放	599	no_contains
+jiufei	就飛	400	no_contains
+jiufeng	就瘋	200	no_contains
+jiugai	就蓋	200	no_contains
+jiugan	就趕	200	no_contains
+jiugua	就掛	400	no_contains
+jiugui	就跪	9	no_contains
+jiugun	就滾	200	no_contains
+jiuguo	救過	612	no_contains
+jiuhan	就喊	9	no_contains
+jiuhe	就喝	837	no_contains
+jiuhen	就恨	400	no_contains
+jiuhua	就畫	374	no_contains
+jiuhuan	就還	400	no_contains
+jiuhui	就回	0	no_contains
+jiuhun	就混	200	no_contains
+jiuji	就擠	200	no_contains
+jiuji	就記	400	no_contains
+jiujia	就嫁	279	no_contains
+jiujian	就撿	200	no_contains
+jiujian	就見	279	no_contains
+jiujiang	就講	600	no_contains
+jiujiao	就教	74	no_contains
+jiujie	就借	401	no_contains
+jiujie	就戒	80	no_contains
+jiujie	就接	400	no_contains
+jiuju	就拒	9	no_contains
+jiukao	就考	400	no_contains
+jiukou	就扣	400	no_contains
+jiuku	就哭	600	no_contains
+jiukua	就跨	200	no_contains
+jiukuai	就快	600	no_contains
+jiukui	就虧	2	no_contains
+jiukun	就困	200	no_contains
+jiula	就拉	400	no_contains
+jiulan	就懶	80	no_contains
+jiulei	就累	200	no_contains
+jiuleng	就冷	200	no_contains
+jiulian	就練	9	no_contains
+jiuliang	就亮	200	no_contains
+jiuliao	就聊	400	no_contains
+jiuling	就領	200	no_contains
+jiuliu	就溜	0	no_contains
+jiuliu	就留	400	no_contains
+jiuluan	就亂	400	no_contains
+jiuma	就罵	400	no_contains
+jiuma	救嗎	80	no_contains
+jiumang	就忙	200	no_contains
+jiumo	就摸	200	no_contains
+jiunao	就鬧	400	no_contains
+jiunian	就唸	111	no_contains
+jiunong	就弄	400	no_contains
+jiunu	就怒	80	no_contains
+jiupa	就爬	401	no_contains
+jiupa	就趴	400	no_contains
+jiupai	就拍	197	no_contains
+jiupang	就胖	200	no_contains
+jiupao	就泡	200	no_contains
+jiupao	就跑	600	no_contains
+jiupei	就賠	200	no_contains
+jiupei	就陪	201	no_contains
+jiupian	就騙	159	no_contains
+jiupiao	就飄	200	no_contains
+jiupu	就撲	200	no_contains
+jiuqi	就氣	8	no_contains
+jiuqi	就起	9	no_contains
+jiuqi	就騎	7	no_contains
+jiuqiang	就搶	400	no_contains
+jiuqiao	就敲	80	no_contains
+jiuqie	就切	200	no_contains
+jiuqu	就娶	0	no_contains
+jiuquan	就勸	200	no_contains
+jiureng	就扔	400	no_contains
+jiusa	就撒	200	no_contains
+jiusha	就殺	400	no_contains
+jiushao	就燒	400	no_contains
+jiusheng	就升	400	no_contains
+jiushi	就試	0	no_contains
+jiushu	就輸	200	no_contains
+jiushuai	就摔	200	no_contains
+jiushuai	就甩	400	no_contains
+jiushui	就睡	413	no_contains
+jiusong	就送	600	no_contains
+jiusui	就碎	9	no_contains
+jiuta	就踏	200	no_contains
+jiutang	就躺	200	no_contains
+jiutao	就逃	421	no_contains
+jiuteng	就疼	400	no_contains
+jiutiao	就挑	400	no_contains
+jiutiao	就跳	401	no_contains
+jiutie	就貼	200	no_contains
+jiuting	就停	601	no_contains
+jiuting	就聽	600	no_contains
+jiutong	就痛	200	no_contains
+jiutou	就偷	200	no_contains
+jiutu	就吐	200	no_contains
+jiutui	就推	400	no_contains
+jiutuo	就拖	400	no_contains
+jiutuo	就脫	401	no_contains
+jiuwa	就挖	200	no_contains
+jiuwan	就玩	471	no_contains
+jiuwang	就忘	183	no_contains
+jiuwen	就聞	32	no_contains
+jiuxi	就洗	254	no_contains
+jiuxiao	就笑	400	no_contains
+jiuxie	就歇	200	no_contains
+jiuxing	就醒	0	no_contains
+jiuxiu	就修	200	no_contains
+jiuya	就壓	200	no_contains
+jiuyan	就演	356	no_contains
+jiuyao	就咬	400	no_contains
+jiuying	就硬	200	no_contains
+jiuying	就贏	201	no_contains
+jiuyue	就約	21	no_contains
+jiuyun	就暈	200	no_contains
+jiuzha	就炸	200	no_contains
+jiuzhan	就站	399	no_contains
+jiuzhang	就漲	2	no_contains
+jiuzhao	就找	600	no_contains
+jiuzhao	就照	400	no_contains
+jiuzheng	就掙	200	no_contains
+jiuzhu	就住	600	no_contains
+jiuzhu	就煮	200	no_contains
+jiuzhua	就抓	400	no_contains
+jiuzhuan	就賺	600	no_contains
+jiuzhui	就追	400	no_contains
+jiuzou	就走	600	no_contains
+jiuzu	就租	200	no_contains
+jiuzui	就醉	200	no_contains
+jiuzuo	就坐	600	no_contains
+kangguo	扛過	400	no_contains
+kaoma	考嗎	400	no_contains
+kuaguo	誇過	0	no_contains
+kuaima	快嗎	200	no_contains
+kuima	虧嗎	200	no_contains
+kuma	苦嗎	200	no_contains
+lama	辣嗎	80	no_contains
+leiguo	累過	200	no_contains
+lengma	冷嗎	200	no_contains
+lianguo	戀過	80	no_contains
+lianma	練嗎	200	no_contains
+liguo	離過	400	no_contains
+lima	離嗎	200	no_contains
+liuguo	留過	9	no_contains
+liuma	留嗎	200	no_contains
+maguo	罵過	129	no_contains
+mama	罵嗎	80	no_contains
+mangma	忙嗎	400	no_contains
+manma	慢嗎	200	no_contains
+meiche	沒車	600	no_contains
+meifang	沒房	421	no_contains
+meima	美嗎	400	no_contains
+meizhong	沒中	400	no_contains
+moguo	摸過	2	no_contains
+nengma	能嗎	80	no_contains
+nengzhong	能中	400	no_contains
+nongguo	弄過	400	no_contains
+nongma	弄嗎	400	no_contains
+paguo	怕過	200	no_contains
+paguo	爬過	600	no_contains
+pama	怕嗎	200	no_contains
+paoguo	泡過	400	no_contains
+paoma	泡嗎	80	no_contains
+peiguo	陪過	80	no_contains
+peima	賠嗎	200	no_contains
+qianguo	牽過	200	no_contains
+qianma	簽嗎	126	no_contains
+qiguo	騎過	173	no_contains
+qima	起嗎	212	no_contains
+qima	騎嗎	80	no_contains
+qinguo	親過	200	no_contains
+qiuguo	求過	200	no_contains
+quanguo	勸過	200	no_contains
+quguo	娶過	200	no_contains
+quma	取嗎	0	no_contains
+ranguo	染過	200	no_contains
+rema	熱嗎	200	no_contains
+shaguo	殺過	200	no_contains
+shaima	曬嗎	80	no_contains
+shama	傻嗎	200	no_contains
+shama	殺嗎	80	no_contains
+shangguo	上過	600	no_contains
+shangguo	傷過	400	no_contains
+shaoguo	燒過	377	no_contains
+shaoma	燒嗎	200	no_contains
+shaozi	少字	200	no_contains
+shengguo	生過	478	no_contains
+shima	試嗎	80	no_contains
+shouma	收嗎	200	no_contains
+shuaiguo	摔過	197	no_contains
+shuaima	帥嗎	401	no_contains
+shuaima	甩嗎	400	no_contains
+shuama	刷嗎	80	no_contains
+shuangma	爽嗎	200	no_contains
+shuima	睡嗎	376	no_contains
+shuma	輸嗎	80	no_contains
+shuoma	說嗎	400	no_contains
+siguo	死過	325	no_contains
+sima	死嗎	200	no_contains
+songma	送嗎	200	no_contains
+suanma	酸嗎	9	no_contains
+suobai	所敗	400	no_contains
+suobi	所逼	400	no_contains
+suobian	所編	400	no_contains
+suobu	所捕	200	no_contains
+suocang	所藏	600	no_contains
+suochi	所持	600	no_contains
+suocun	所存	600	no_contains
+suodiu	所丟	400	no_contains
+suofu	所俘	199	no_contains
+suogai	所改	400	no_contains
+suogan	所感	600	no_contains
+suogou	所購	600	no_contains
+suohai	所害	400	no_contains
+suohen	所恨	400	no_contains
+suohui	所繪	600	no_contains
+suohuo	所惑	400	no_contains
+suojiu	所救	600	no_contains
+suoju	所懼	80	no_contains
+suoju	所拒	200	no_contains
+suokong	所控	200	no_contains
+suolei	所累	600	no_contains
+suomie	所滅	600	no_contains
+suonian	所念	400	no_contains
+suonong	所弄	400	no_contains
+suopan	所盼	400	no_contains
+suopian	所騙	200	no_contains
+suopo	所迫	600	no_contains
+suoqi	所期	177	no_contains
+suoqi	所棄	176	no_contains
+suoqi	所欺	175	no_contains
+suoqin	所擒	200	no_contains
+suoqiu	所求	600	no_contains
+suoqu	所驅	200	no_contains
+suorao	所擾	200	no_contains
+suoren	所認	80	no_contains
+suosha	所殺	600	no_contains
+suoshang	所傷	415	no_contains
+suoshi	所失	0	no_contains
+suoshi	所識	0	no_contains
+suoshou	所售	599	no_contains
+suotou	所偷	80	no_contains
+suotun	所吞	200	no_contains
+suowang	所望	400	no_contains
+suowei	所圍	400	no_contains
+suowu	所悟	400	no_contains
+suoxian	所限	600	no_contains
+suoxiao	所笑	80	no_contains
+suoxin	所信	200	no_contains
+suoyan	所掩	200	no_contains
+suoyan	所言	600	no_contains
+suoyou	所誘	200	no_contains
+suoyu	所餘	200	no_contains
+suozhan	所佔	600	no_contains
+suozhe	所遮	80	no_contains
+suozhu	所著	2	no_contains
+suozhua	所抓	200	no_contains
+suozhuan	所撰	600	no_contains
+suozu	所阻	199	no_contains
+tangguo	燙過	400	no_contains
+tengguo	疼過	200	no_contains
+tengma	疼嗎	400	no_contains
+tianma	甜嗎	0	no_contains
+tingguo	停過	400	no_contains
+tingma	停嗎	80	no_contains
+tongguo	痛過	400	no_contains
+tongma	痛嗎	2	no_contains
+touguo	偷過	200	no_contains
+tuguo	吐過	80	no_contains
+tuima	推嗎	80	no_contains
+tuoma	脫嗎	0	no_contains
+waguo	挖過	200	no_contains
+wanma	晚嗎	80	no_contains
+wanma	玩嗎	400	no_contains
+weizhong	未中	0	no_contains
+wenguo	吻過	200	no_contains
+wenguo	聞過	201	no_contains
+wenma	穩嗎	80	no_contains
+wuche	無車	600	no_contains
+wudai	無貸	400	no_contains
+wudaikuan	無貸款	200	no_contains
+wufang	無房	2	no_contains
+wuzhai	無債	182	no_contains
+xiangma	想嗎	200	no_contains
+xiaomi	小秘	400	no_contains
+xiaomi	小蜜	423	no_contains
+xiguo	吸過	200	no_contains
+xima	洗嗎	80	no_contains
+xingma	醒嗎	0	no_contains
+xinguo	信過	80	no_contains
+xinma	信嗎	197	no_contains
+xiuma	修嗎	80	no_contains
+xuema	學嗎	400	no_contains
+yangguo	養過	366	no_contains
+yaoguo	咬過	379	no_contains
+yezhong	也中	348	no_contains
+yingma	贏嗎	281	no_contains
+youche	有車	600	no_contains
+youchedai	有車貸	80	no_contains
+youchezi	有車子	200	no_contains
+youdai	有貸	400	no_contains
+youdaikuan	有貸款	600	no_contains
+youfang	有房	600	no_contains
+youfangdai	有房貸	400	no_contains
+youfangzi	有房子	600	no_contains
+youguo	游過	0	no_contains
+youma	游嗎	200	no_contains
+youwa	有娃	400	no_contains
+youzhai	有債	200	no_contains
+youzhong	又中	200	no_contains
+youzhong	有中	600	no_contains
+yuanguo	怨過	80	no_contains
+zaizhong	再中	0	no_contains
+zangma	髒嗎	80	no_contains
+zaoma	早嗎	306	no_contains
+zhaguo	炸過	2	no_contains
+zhangguo	漲過	200	no_contains
+zhangma	漲嗎	600	no_contains
+zhanma	站嗎	80	no_contains
+zhaoguo	照過	200	no_contains
+zhaoma	找嗎	80	no_contains
+zhongguo	種過	400	no_contains
+zhuangguo	撞過	200	no_contains
+zhuanma	賺嗎	200	no_contains
+zhuguo	煮過	400	no_contains
+zhuiguo	追過	400	no_contains
+zhuima	追嗎	200	no_contains
+zhuma	住嗎	101	no_contains
+zhuma	煮嗎	80	no_contains
+zhunma	準嗎	400	no_contains
+zuguo	租過	80	no_contains
+zuiguo	醉過	200	no_contains
+zuma	租嗎	80	no_contains

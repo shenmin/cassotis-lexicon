@@ -18,12 +18,12 @@ Lexicon build and release repository for Cassotis IME.
 - Supports external-source bootstrap and reproducible generated dictionary builds.
 - Keeps attribution and release policy files aligned with generated artifacts.
 
-## Current dictionary snapshot (2026-10-31 build)
+## Current dictionary snapshot (2026-11-02 build)
 
 | File | Variant | Entries |
 |------|---------|---------|
-| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 237,439 |
-| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 238,055 |
+| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 237,897 |
+| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 238,513 |
 | `data/generated/dict_unihan_sc.txt` | Simplified single-char (Unihan) | 23,916 |
 | `data/generated/dict_unihan_tc.txt` | Traditional single-char (Unihan) | 24,179 |
 
@@ -60,7 +60,7 @@ These records are not directly inputable dictionary entries and are therefore ex
 
 The build also derives a separate offline transition-completion index from strongly supported exact-word paths. It retains up to six vetted alternatives for each typed prefix. User completions remain the first priority; base-dictionary and transition suggestions are compared using popularity, context, and corpus evidence. The index is not counted as directly inputable dictionary data.
 
-A word-frequency table for each variant (`data/generated/dict_word_frequency_{sc,tc}.txt`) records how often general Chinese text holds each word of two characters or more as a word, as `100 * log10(1 + occurrences)`; a traditional word takes the count of its simplified form. The counts (`manifests/general_word_counts.tsv`, made by `scripts/count_general_word_frequency.py`) come from the general corpora of the Cassotis IME character language model; a word inside a longer dictionary word is not counted. Cassotis IME uses the table when it chooses among the words of one reading without context. It is not counted as directly inputable dictionary data.
+A word-frequency table for each variant (`data/generated/dict_word_frequency_{sc,tc}.txt`) records how often general Chinese text holds each word of two characters or more as a word, as `100 * log10(1 + occurrences)`; a traditional word takes the count of its simplified form. The counts (`manifests/general_word_counts.tsv`, made by `scripts/count_general_word_frequency.py`) come from the general corpora of the Cassotis IME character language model; a word counts where the text is cut into the fewest dictionary words, so a word inside a longer dictionary word is not counted. Words added to the dictionary later are counted on their own, only where they stand as words, and the other words keep their counts. Cassotis IME uses the table when it chooses among the words of one reading without context. It is not counted as directly inputable dictionary data.
 
 ### One-key completion model data
 
