@@ -60,9 +60,7 @@
 数只	數隻	0.20	shuzhi
 几几年	幾幾年	0.20	jijinian
 几几	幾幾	0.20	jiji
-已付	已付	0.00	yifu
 雨血	雨血	0.00	yuxue
-银鱼	銀魚	0.00	yinyu
 阴郁	陰鬱	0.20	yinyu
 禀报	稟報	0.20	bingbao
 
@@ -3631,7 +3629,6 @@
 缓的	緩的	0.28	huande
 
 # lower-frequency scene/action supplements 2026-07-04
-清癯	清癯	0.00	qingqu
 睡不着	睡不著	0.52	shuibuzhao
 睡着	睡著	0.48	shuizhao
 搞事	搞事	0.48	gaoshi
@@ -4145,7 +4142,6 @@
 按道理	按道理	0.01
 交握	交握	0.01
 第十三章	第十三章	0.01
-夏末	夏末	0.00
 错话	錯話	0.01
 高沉	高沉	0.01
 抖出来	抖出來	0.01
@@ -4242,7 +4238,6 @@
 钱夹	錢夾	0.01
 回电话	回電話	0.34
 帮主	幫主	0.01
-剧透	劇透	0.00
 发腻	發膩	0.01
 荧幕	熒幕	0.01
 步步紧逼	步步緊逼	0.34
@@ -4415,7 +4410,6 @@
 挤不进	擠不進	0.01
 抻着	抻著	0.00
 算错	算錯	0.01
-一大批	一大批	0.01
 肤质	膚質	0.01
 一模	一模	0.01
 年级组	年級組	0.01
@@ -4616,7 +4610,6 @@
 科目三	科目三	0.01
 教练车	教練車	0.01
 驾驶位	駕駛位	0.01
-二挡	二擋	0.00
 三档	三檔	0.01
 换档	換檔	0.01
 挂入	掛入	0.01
@@ -4755,7 +4748,6 @@
 仰望星空	仰望星空	0.01
 联谊	聯誼	0.01
 叙旧	敘舊	0.36
-晶石	晶石	0.00
 挂不住	掛不住	0.01
 台阶下	臺階下	0.01
 入喉	入喉	0.01
@@ -4912,7 +4904,6 @@
 答疑解惑	答疑解惑	0.01
 艺术团	藝術團	0.01
 补觉	補覺	0.01
-净赚	淨賺	0.00
 和弦	和絃	0.01
 泠泠	泠泠	0.01
 盈满	盈滿	0.01
@@ -4986,7 +4977,6 @@
 抿唇	抿脣	0.01
 泯然众人	泯然眾人	0.01
 眉宽眼小	眉寬眼小	0.01
-发胶	髮膠	0.00
 油渍	油漬	0.01
 坐有坐相	坐有坐相	0.01
 站有站相	站有站相	0.01
@@ -5604,7 +5594,6 @@
 肋部	肋部	0.01
 踢断	踢斷	0.01
 脖筋	脖筋	0.01
-踢伤	踢傷	0.00
 那所	那所	0.01
 消失殆尽	消失殆盡	0.01
 调教室	調教室	0.01
@@ -5871,7 +5860,6 @@
 白痴	白癡	0.01
 男伴	男伴	0.01
 背过	背過	0.01
-淫欲	淫慾	0.01
 壁面	壁面	0.01
 趁此	趁此	0.01
 靠住	靠住	0.01
@@ -6209,7 +6197,6 @@
 嫁给	嫁給	0.01
 牛粪	牛糞	0.01
 不和	不和	0.01
-新聘	新聘	0.00
 狂烈	狂烈	0.01
 拳击馆	拳擊館	0.01
 速度球	速度球	0.01
@@ -6329,7 +6316,6 @@
 突然之间	突然之間	0.01
 喊来	喊來	0.01
 流干	流乾	0.01
-高吊	高吊	0.00
 缠在	纏在	0.01
 长腿	長腿	0.01
 长手	長手	0.01
@@ -7193,7 +7179,6 @@
 发话	發話	0.01
 乐声	樂聲	0.01
 称不上	稱不上	0.01
-靠背	靠背	0.00
 跃动	躍動	0.01
 轻叹	輕嘆	0.01
 甘冽	甘冽	0.01
@@ -7205,7 +7190,6 @@
 掌中	掌中	0.01
 大儿子	大兒子	0.01
 话唠	話嘮	0.01
-劫犯	劫犯	0.01
 不畅	不暢	0.01
 黑透	黑透	0.01
 暂代	暫代	0.01
@@ -7278,7 +7262,6 @@
 面无表情	面無表情	0.01
 秀场	秀場	0.01
 攥紧	攥緊	0.01
-斜挎	斜挎	0.00
 英锐	英銳	0.01
 案底	案底	0.01
 奔涌	奔湧	0.01
@@ -7361,7 +7344,6 @@
 施施然	施施然	0.01
 明志	明志	0.01
 浑水	渾水	0.01
-心窝	心窩	0.00
 老旧	老舊	0.01
 古董	古董	0.01
 软嫩	軟嫩	0.01
@@ -7553,7 +7535,6 @@
 下下策	下下策	0.01
 拍卖行	拍賣行	0.01
 宫灯	宮燈	0.01
-金丝	金絲	0.00
 细数	細數	0.01
 扬言	揚言	0.01
 棉袍	棉袍	0.01
@@ -7708,7 +7689,6 @@
 心神俱震	心神俱震	0.01
 雷池	雷池	0.01
 克扣	剋扣	0.01
-棉绒	棉絨	0.00
 中气	中氣	0.01
 爆栗	爆栗	0.01
 勾齿	勾齒	0.01
@@ -7801,7 +7781,6 @@
 保安科	保安科	0.01
 净尘	淨塵	0.01
 墨菲定律	墨菲定律	0.01
-荫庇	蔭庇	0.00
 失心疯	失心瘋	0.01
 侧平举	側平舉	0.01
 养胎	養胎	0.01
@@ -9861,7 +9840,6 @@
 烟云	煙雲	0.01
 背景布	背景布	0.01
 虾丸	蝦丸	0.01
-青蟹	青蟹	0.01
 香橙	香橙	0.01
 米切尔	米切爾	0.01
 巨震	鉅震	0.01
@@ -10707,7 +10685,6 @@
 光泽感	光澤感	0.01
 海鲜宴	海鮮宴	0.01
 花蛤	花蛤	0.01
-海蟹	海蟹	0.01
 泪光涟涟	淚光漣漣	0.01
 进社会	進社會	0.01
 相思之苦	相思之苦	0.01
@@ -11169,7 +11146,6 @@
 抱孙子	抱孫子	0.01
 放寒假	放寒假	0.01
 牛羊肉卷	牛羊肉卷	0.01
-蟹棒	蟹棒	0.01
 发皱	發皺	0.01
 战斗轰炸机	戰鬥轟炸機	0.01
 快如闪电	快如閃電	0.01
@@ -26996,3 +26972,149 @@
 借书	借書	0.600	jieshu	exact_rank
 借贷	借貸	0.600	jiedai	exact_rank
 接力	接力	0.894	jieli	exact_rank
+# Everyday words, 2026-11-03, the more frequent ones: 蟹卡, 谢卡, 反了, 那一批, 那几批, 好几批 and 就一批 (the user's examples; 反了 under the more frequent 翻了 and 犯了, 谢卡 low under 蟹卡, where the shared LM still puts it first without a context), X批 with a demonstrative or a number (那批, 两批, 三批, 第二批, 又一批, 同一批, 最后一批, 一批批), 好几X, 那几X, 那一X and 就一X with a measure word (好几遍, 好几家, 那几天, 那几年, 那一段, 那一套, 就一个, 就一句), cards and vouchers given as presents (购物卡, 礼品卡) and crab words (蟹壳). Weighted as the blocks of 2026-11-01 (occurrences where the word is no part of a longer dictionary word, nor before one that its last character begins, nor after one that its first character ends); a word stays under every more frequent word of its key, an import's weight included; a requested word at least 400 where no more frequent word holds it lower.
+下一批	下一批	0.400	xiayipi	exact_rank_no_contains
+同一批	同一批	0.400	tongyipi	exact_rank_no_contains
+新一批	新一批	0.400	xinyipi	exact_rank_no_contains
+最后一批	最後一批	0.600	zuihouyipi	exact_rank_no_contains
+一批批	一批批	0.600	yipipi	exact_rank_no_contains
+两批	兩批	0.304	liangpi	exact_rank_no_contains
+三批	三批	0.600	sanpi	exact_rank_no_contains
+那批	那批	0.600	napi	exact_rank_no_contains
+又一批	又一批	0.400	youyipi	exact_rank_no_contains
+第二批	第二批	0.400	dierpi	exact_rank_no_contains
+那一批	那一批	0.400	nayipi	exact_rank_no_contains
+那几批	那幾批	0.400	najipi	exact_rank_no_contains
+好几批	好幾批	0.400	haojipi	exact_rank_no_contains
+就一批	就一批	0.400	jiuyipi	exact_rank_no_contains
+好几遍	好幾遍	0.600	haojibian	exact_rank_no_contains
+好几家	好幾家	0.600	haojijia	exact_rank_no_contains
+好几张	好幾張	0.400	haojizhang	exact_rank_no_contains
+好几条	好幾條	0.400	haojitiao	exact_rank_no_contains
+好几位	好幾位	0.400	haojiwei	exact_rank_no_contains
+好几本	好幾本	0.400	haojiben	exact_rank_no_contains
+那几天	那幾天	0.600	najitian	exact_rank_no_contains
+那几年	那幾年	0.600	najinian	exact_rank_no_contains
+那几位	那幾位	0.400	najiwei	exact_rank_no_contains
+那几句	那幾句	0.400	najiju	exact_rank_no_contains
+那一晚	那一晚	0.400	nayiwan	exact_rank_no_contains
+那一声	那一聲	0.400	nayisheng	exact_rank_no_contains
+那一句	那一句	0.600	nayiju	exact_rank_no_contains
+那一幕	那一幕	0.600	nayimu	exact_rank_no_contains
+那一段	那一段	0.600	nayiduan	exact_rank_no_contains
+那一页	那一頁	0.400	nayiye	exact_rank_no_contains
+那一套	那一套	0.600	nayitao	exact_rank_no_contains
+那一类	那一類	0.400	nayilei	exact_rank_no_contains
+那一种	那一種	0.600	nayizhong	exact_rank_no_contains
+那一份	那一份	0.600	nayifen	exact_rank_no_contains
+就一次	就一次	0.400	jiuyici	exact_rank_no_contains
+就一个	就一個	0.600	jiuyige	exact_rank_no_contains
+就一句	就一句	0.400	jiuyiju	exact_rank_no_contains
+就一天	就一天	0.400	jiuyitian	exact_rank_no_contains
+就一点	就一點	0.400	jiuyidian	exact_rank_no_contains
+就一下	就一下	0.400	jiuyixia	exact_rank_no_contains
+反了	反了	0.009	fanle	exact_rank_no_contains
+礼品卡	禮品卡	0.400	lipinka	exact_rank_no_contains
+购物卡	購物卡	0.600	gouwuka	exact_rank_no_contains
+蟹卡	蟹卡	0.401	xieka	exact_rank_no_contains
+谢卡	謝卡	0.002	xieka	exact_rank_no_contains
+蟹壳	蟹殼	0.222	xieke	exact_rank_no_contains
+# Everyday words, 2026-11-03, the less frequent ones (搞反了, 弄反了, 说反, 写反, 用反, 上一批, 好几回, 那几张, 那一眼, 就一口, 卡券, 蟹券, 感谢卡, 蟹钳, 毛蟹), by the same weights.
+上一批	上一批	0.200	shangyipi	exact_rank_no_contains
+一小批	一小批	0.200	yixiaopi	exact_rank_no_contains
+下批	下批	0.080	xiapi	exact_rank_no_contains
+上批	上批	0.200	shangpi	exact_rank_no_contains
+好几回	好幾回	0.200	haojihui	exact_rank_no_contains
+好几趟	好幾趟	0.200	haojitang	exact_rank_no_contains
+好几声	好幾聲	0.080	haojisheng	exact_rank_no_contains
+好几层	好幾層	0.200	haojiceng	exact_rank_no_contains
+好几件	好幾件	0.200	haojijian	exact_rank_no_contains
+好几处	好幾處	0.200	haojichu	exact_rank_no_contains
+好几份	好幾份	0.200	haojifen	exact_rank_no_contains
+好几辆	好幾輛	0.200	haojiliang	exact_rank_no_contains
+好几轮	好幾輪	0.200	haojilun	exact_rank_no_contains
+好几步	好幾步	0.200	haojibu	exact_rank_no_contains
+好几口	好幾口	0.080	haojikou	exact_rank_no_contains
+好几下	好幾下	0.200	haojixia	exact_rank_no_contains
+好几场	好幾場	0.200	haojichang	exact_rank_no_contains
+好几颗	好幾顆	0.200	haojike	exact_rank_no_contains
+好几根	好幾根	0.200	haojigen	exact_rank_no_contains
+那几次	那幾次	0.080	najici	exact_rank_no_contains
+那几本	那幾本	0.200	najiben	exact_rank_no_contains
+那几家	那幾家	0.200	najijia	exact_rank_no_contains
+那几张	那幾張	0.200	najizhang	exact_rank_no_contains
+那几件	那幾件	0.080	najijian	exact_rank_no_contains
+那几样	那幾樣	0.080	najiyang	exact_rank_no_contains
+那一眼	那一眼	0.200	nayiyan	exact_rank_no_contains
+那一下	那一下	0.200	nayixia	exact_rank_no_contains
+那一阵	那一陣	0.200	nayizhen	exact_rank_no_contains
+就一口	就一口	0.200	jiuyikou	exact_rank_no_contains
+就一张	就一張	0.200	jiuyizhang	exact_rank_no_contains
+搞反了	搞反了	0.200	gaofanle	exact_rank_no_contains
+弄反了	弄反了	0.200	nongfanle	exact_rank_no_contains
+穿反了	穿反了	0.080	chuanfanle	exact_rank_no_contains
+接反了	接反了	0.080	jiefanle	exact_rank_no_contains
+说反	說反	0.200	shuofan	exact_rank_no_contains
+写反	寫反	0.200	xiefan	exact_rank_no_contains
+装反	裝反	0.200	zhuangfan	exact_rank_no_contains
+用反	用反	0.197	yongfan	exact_rank_no_contains
+插反	插反	0.080	chafan	exact_rank_no_contains
+接反	接反	0.200	jiefan	exact_rank_no_contains
+蟹券	蟹券	0.080	xiequan	exact_rank_no_contains
+提货券	提貨券	0.080	tihuoquan	exact_rank_no_contains
+礼卡	禮卡	0.080	lika	exact_rank_no_contains
+月饼券	月餅券	0.080	yuebingquan	exact_rank_no_contains
+卡券	卡券	0.200	kaquan	exact_rank_no_contains
+感谢卡	感謝卡	0.080	ganxieka	exact_rank_no_contains
+祝福卡	祝福卡	0.080	zhufuka	exact_rank_no_contains
+心意卡	心意卡	0.080	xinyika	exact_rank_no_contains
+蟹膏	蟹膏	0.200	xiegao	exact_rank_no_contains
+蟹钳	蟹鉗	0.200	xieqian	exact_rank_no_contains
+蟹脚	蟹腳	0.200	xiejiao	exact_rank_no_contains
+蟹腿	蟹腿	0.200	xietui	exact_rank_no_contains
+蟹柳	蟹柳	0.197	xieliu	exact_rank_no_contains
+毛蟹	毛蟹	0.200	maoxie	exact_rank_no_contains
+面包蟹	麵包蟹	0.080	mianbaoxie	exact_rank_no_contains
+# Weighted anew on 2026-11-03: the rows this manifest held at 0.00 (weight 1) for imports and early batches (斜挎, 夏末, 金丝, 净赚, 发胶, 心窝, 剧透, 新聘, 二挡, 踢伤, 棉绒, 清癯, 已付, 荫庇, 晶石), import-weight words of the batch's kinds (一大批, 礼券, 河蟹, 青蟹, 梭子蟹, 海蟹, 蟹棒), import-weight words that held one of them under them (拷贝 over 靠背, 高调 over 高吊, 隐喻 over 银鱼, 姨父 over 已付) and the other import-weight words of their keys (姨夫, 音域, 淫欲, 经世, 力劝, 利权, 鞋帮, 斜角, 劫犯, 银币, 荫蔽), weighted as the blocks above (隐喻 at 1000: at the rule's 601 it fell under 阴雨, at 1 it had been first); 蟹粉, which only the traditional dictionary had, at its weight there; and 呐喊 (1000) at 359, one under 那好, which comes first on naha where both are still being typed (the user's request). The rows at 0.00 of a function character before a word (过的, 也在) stay low.
+一大批	一大批	0.600	yidapi	exact_rank
+礼券	禮券	0.400	liquan	exact_rank
+蟹粉	蟹粉	0.363	xiefen	exact_rank
+蟹棒	蟹棒	0.080	xiebang	exact_rank
+河蟹	河蟹	0.600	hexie	exact_rank
+海蟹	海蟹	0.200	haixie	exact_rank
+青蟹	青蟹	0.400	qingxie	exact_rank
+梭子蟹	梭子蟹	0.400	suozixie	exact_rank
+已付	已付	0.400	yifu	exact_rank
+银鱼	銀魚	0.278	yinyu	exact_rank
+清癯	清癯	0.079	qingqu	exact_rank
+夏末	夏末	0.600	xiamo	exact_rank
+剧透	劇透	0.289	jutou	exact_rank
+二挡	二擋	0.200	erdang	exact_rank
+晶石	晶石	0.139	jingshi	exact_rank
+净赚	淨賺	0.400	jingzhuan	exact_rank
+发胶	髮膠	0.400	fajiao	exact_rank
+踢伤	踢傷	0.200	tishang	exact_rank
+新聘	新聘	0.279	xinpin	exact_rank
+高吊	高吊	0.080	gaodiao	exact_rank
+靠背	靠背	0.600	kaobei	exact_rank
+斜挎	斜挎	0.200	xiekua	exact_rank
+心窝	心窩	0.399	xinwo	exact_rank
+金丝	金絲	0.600	jinsi	exact_rank
+棉绒	棉絨	0.200	mianrong	exact_rank
+荫庇	蔭庇	0.200	yinbi	exact_rank
+姨夫	姨夫	0.419	yifu	exact_rank
+音域	音域	0.600	yinyu	exact_rank
+淫欲	淫慾	0.279	yinyu	exact_rank
+隐喻	隱喻	1.000	yinyu	exact_rank
+经世	經世	0.138	jingshi	exact_rank
+高调	高調	0.600	gaodiao	exact_rank
+拷贝	拷貝	0.601	kaobei	exact_rank
+力劝	力勸	0.201	liquan	exact_rank
+利权	利權	0.200	liquan	exact_rank
+鞋帮	鞋幫	0.400	xiebang	exact_rank
+斜角	斜角	0.301	xiejiao	exact_rank
+劫犯	劫犯	0.080	jiefan	exact_rank
+姨父	姨父	0.401	yifu	exact_rank
+银币	銀幣	0.600	yinbi	exact_rank
+荫蔽	蔭蔽	0.400	yinbi	exact_rank
+呐喊	吶喊	0.359	nahan	exact_rank
