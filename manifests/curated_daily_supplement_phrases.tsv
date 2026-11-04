@@ -4173,7 +4173,6 @@
 校医院	校醫院	0.01
 第十四章	第十四章	0.01
 三分钟	三分鐘	0.01
-回班	回班	0.01
 白底	白底	0.01
 蓝边	藍邊	0.01
 按着	按著	0.01
@@ -5901,7 +5900,6 @@
 腿弯	腿彎	0.01
 抓过	抓過	0.01
 左眼	左眼	0.01
-不许动	不許動	0.01
 揍死	揍死	0.01
 左脚	左腳	0.01
 用不上	用不上	0.01
@@ -6654,7 +6652,6 @@
 大班	大班	0.01
 全方面	全方面	0.01
 在先	在先	0.01
-回校	回校	0.01
 副科	副科	0.01
 第一场	第一場	0.01
 第一志愿	第一志願	0.01
@@ -7068,7 +7065,6 @@
 洗礼	洗禮	0.01
 守夜人	守夜人	0.01
 硬物	硬物	0.01
-挥刀	揮刀	0.01
 易燃易爆	易燃易爆	0.01
 声源	聲源	0.01
 电棍	電棍	0.01
@@ -7825,7 +7821,6 @@
 嘴皮	嘴皮	0.01
 垃圾篓	垃圾簍	0.01
 温善	溫善	0.01
-灰褐	灰褐	0.01
 纵身一跃	縱身一躍	0.01
 猫咪	貓咪	0.01
 猫毛	貓毛	0.01
@@ -10461,7 +10456,6 @@
 涮掉	涮掉	0.01
 抄题	抄題	0.01
 跨年夜	跨年夜	0.01
-挥拍	揮拍	0.01
 肩宽腿长	肩寬腿長	0.01
 又蹦又跳	又蹦又跳	0.01
 摸透	摸透	0.01
@@ -10537,7 +10531,6 @@
 私聊	私聊	0.01
 斗图	鬥圖	0.01
 布包	布包	0.01
-回乡	回鄉	0.01
 灯台树	燈臺樹	0.01
 启动资金	啟動資金	0.01
 串供	串供	0.01
@@ -10814,7 +10807,6 @@
 掌纹	掌紋	0.01
 强哥	強哥	0.01
 莫慌	莫慌	0.01
-会来事	會來事	0.01
 倒数第一	倒數第一	0.01
 摸鱼大法	摸魚大法	0.01
 砰砰直跳	砰砰直跳	0.01
@@ -27118,3 +27110,281 @@
 银币	銀幣	0.600	yinbi	exact_rank
 荫蔽	蔭蔽	0.400	yinbi	exact_rank
 呐喊	吶喊	0.359	nahan	exact_rank
+# Everyday words, 2026-11-04, the more frequent ones: 你动, 我动, 他动, 它动, 她动, 人动, 人懂, 会选, 会挑, 会调 (read tiao), 会回, 会来, 会写, 会打, 会吃, 会喝, 会编, 会发, 会守, 会踢, 会玩, 会完, 会晚, 会早, 会认, 会忍, 会老, 会变, 会摸, 会看, 会听, 会动, 会懂, 会喊, 会冷, 会热, 会报, 会包, 会抱, 会烫, 会躺, 会睡, 会醒, 会起 and 会倒 (the user's examples; 会打, 会倒 and 会报 stay under the more frequent 回答, 回到 and 回报; 会选 and 会打, like 会赢 and 会给, at 200 and 会问 at 2, where higher weights turned benchmark cases of 回旋, 回稳, 回答 and 回应), a person or a pronoun with 动 or 懂 (能动, 也懂, 我不懂, 都不懂, 你懂的, 我懂了), 会 with a verb or an adjective (会说, 会让, 会给, 会等, 会疼, 会累, 会怕) and 会 with a short phrase (会开车, 会说话, 会后悔, 会更好, 会回来). Weighted as the blocks of 2026-11-03 (occurrences where the word is no part of a longer dictionary word, nor before one that its last character begins, nor after one that its first character ends); a word stays under every more frequent word of its key, an import's weight included; a requested word at least 400 where no more frequent word holds it lower.
+也懂	也懂	0.400	yedong	exact_rank_no_contains
+能动	能動	0.600	nengdong	exact_rank_no_contains
+能懂	能懂	0.400	nengdong	exact_rank_no_contains
+敢动	敢動	0.400	gandong	exact_rank_no_contains
+要动	要動	0.360	yaodong	exact_rank_no_contains
+我懂了	我懂了	0.400	wodongle	exact_rank_no_contains
+你不懂	你不懂	0.600	nibudong	exact_rank_no_contains
+他不懂	他不懂	0.400	tabudong	exact_rank_no_contains
+我不懂	我不懂	0.600	wobudong	exact_rank_no_contains
+都不懂	都不懂	0.600	doubudong	exact_rank_no_contains
+你懂的	你懂的	0.600	nidongde	exact_rank_no_contains
+动一下	動一下	0.400	dongyixia	exact_rank_no_contains
+你动	你動	0.400	nidong	exact_rank_no_contains
+我动	我動	0.400	wodong	exact_rank_no_contains
+他动	他動	0.279	tadong	exact_rank_no_contains
+它动	它動	0.278	tadong	exact_rank_no_contains
+她动	她動	0.277	tadong	exact_rank_no_contains
+人动	人動	0.388	rendong	exact_rank_no_contains
+人懂	人懂	0.389	rendong	exact_rank_no_contains
+会说	會說	0.600	huishuo	exact_rank_no_contains
+会想	會想	0.385	huixiang	exact_rank_no_contains
+会用	會用	0.600	huiyong	exact_rank_no_contains
+会走	會走	0.600	huizou	exact_rank_no_contains
+会跑	會跑	0.400	huipao	exact_rank_no_contains
+会飞	會飛	0.559	huifei	exact_rank_no_contains
+会哭	會哭	0.400	huiku	exact_rank_no_contains
+会笑	會笑	0.400	huixiao	exact_rank_no_contains
+会疼	會疼	0.400	huiteng	exact_rank_no_contains
+会痛	會痛	0.400	huitong	exact_rank_no_contains
+会累	會累	0.400	huilei	exact_rank_no_contains
+会怕	會怕	0.400	huipa	exact_rank_no_contains
+会跳	會跳	0.278	huitiao	exact_rank_no_contains
+会唱	會唱	0.400	huichang	exact_rank_no_contains
+会跟	會跟	0.600	huigen	exact_rank_no_contains
+会给	會給	0.200	huigei	exact_rank_no_contains
+会拿	會拿	0.400	huina	exact_rank_no_contains
+会买	會買	0.600	huimai	exact_rank_no_contains
+会卖	會賣	0.468	huimai	exact_rank_no_contains
+会让	會讓	0.600	huirang	exact_rank_no_contains
+会叫	會叫	0.240	huijiao	exact_rank_no_contains
+会问	會問	0.002	huiwen	exact_rank_no_contains
+会学	會學	0.002	huixue	exact_rank_no_contains
+会教	會教	0.002	huijiao	exact_rank_no_contains
+会读	會讀	0.600	huidu	exact_rank_no_contains
+会算	會算	0.363	huisuan	exact_rank_no_contains
+会画	會畫	0.308	huihua	exact_rank_no_contains
+会停	會停	0.199	huiting	exact_rank_no_contains
+会等	會等	0.600	huideng	exact_rank_no_contains
+会输	會輸	0.002	huishu	exact_rank_no_contains
+会赢	會贏	0.200	huiying	exact_rank_no_contains
+会掉	會掉	0.400	huidiao	exact_rank_no_contains
+会亮	會亮	0.400	huiliang	exact_rank_no_contains
+会好	會好	0.600	huihao	exact_rank_no_contains
+会错	會錯	0.400	huicuo	exact_rank_no_contains
+会帮	會幫	0.002	huibang	exact_rank_no_contains
+会留	會留	0.401	huiliu	exact_rank_no_contains
+会换	會換	0.002	huihuan	exact_rank_no_contains
+会找	會找	0.600	huizhao	exact_rank_no_contains
+会伤	會傷	0.278	huishang	exact_rank_no_contains
+会爱	會愛	0.400	huiai	exact_rank_no_contains
+会烧	會燒	0.400	huishao	exact_rank_no_contains
+会讲	會講	0.337	huijiang	exact_rank_no_contains
+会借	會借	0.400	huijie	exact_rank_no_contains
+会还	會還	0.196	huihuan	exact_rank_no_contains
+会送	會送	0.400	huisong	exact_rank_no_contains
+会拉	會拉	0.003	huila	exact_rank_no_contains
+会咬	會咬	0.400	huiyao	exact_rank_no_contains
+会赔	會賠	0.400	huipei	exact_rank_no_contains
+会花	會花	0.392	huihua	exact_rank_no_contains
+会流	會流	0.400	huiliu	exact_rank_no_contains
+会慢	會慢	0.400	huiman	exact_rank_no_contains
+会快	會快	0.600	huikuai	exact_rank_no_contains
+会选	會選	0.200	huixuan	exact_rank_no_contains
+会挑	會挑	0.279	huitiao	exact_rank_no_contains
+会调	會調	0.277	huitiao	exact_rank_no_contains
+会回	會回	0.400	huihui	exact_rank_no_contains
+会来	會來	0.600	huilai	exact_rank_no_contains
+会写	會寫	0.443	huixie	exact_rank_no_contains
+会打	會打	0.200	huida	exact_rank_no_contains
+会吃	會吃	0.600	huichi	exact_rank_no_contains
+会喝	會喝	0.400	huihe	exact_rank_no_contains
+会编	會編	0.400	huibian	exact_rank_no_contains
+会发	會發	0.550	huifa	exact_rank_no_contains
+会守	會守	0.400	huishou	exact_rank_no_contains
+会踢	會踢	0.400	huiti	exact_rank_no_contains
+会玩	會玩	0.600	huiwan	exact_rank_no_contains
+会完	會完	0.400	huiwan	exact_rank_no_contains
+会晚	會晚	0.401	huiwan	exact_rank_no_contains
+会早	會早	0.400	huizao	exact_rank_no_contains
+会认	會認	0.401	huiren	exact_rank_no_contains
+会忍	會忍	0.400	huiren	exact_rank_no_contains
+会老	會老	0.400	huilao	exact_rank_no_contains
+会变	會變	0.496	huibian	exact_rank_no_contains
+会摸	會摸	0.400	huimo	exact_rank_no_contains
+会看	會看	0.599	huikan	exact_rank_no_contains
+会听	會聽	0.400	huiting	exact_rank_no_contains
+会动	會動	0.401	huidong	exact_rank_no_contains
+会懂	會懂	0.400	huidong	exact_rank_no_contains
+会喊	會喊	0.400	huihan	exact_rank_no_contains
+会冷	會冷	0.400	huileng	exact_rank_no_contains
+会热	會熱	0.400	huire	exact_rank_no_contains
+会报	會報	0.206	huibao	exact_rank_no_contains
+会包	會包	0.205	huibao	exact_rank_no_contains
+会抱	會抱	0.204	huibao	exact_rank_no_contains
+会烫	會燙	0.400	huitang	exact_rank_no_contains
+会躺	會躺	0.399	huitang	exact_rank_no_contains
+会睡	會睡	0.400	huishui	exact_rank_no_contains
+会醒	會醒	0.400	huixing	exact_rank_no_contains
+会起	會起	0.531	huiqi	exact_rank_no_contains
+会倒	會倒	0.401	huidao	exact_rank_no_contains
+会开车	會開車	0.600	huikaiche	exact_rank_no_contains
+会做饭	會做飯	0.400	huizuofan	exact_rank_no_contains
+会游泳	會游泳	0.400	huiyouyong	exact_rank_no_contains
+会说话	會說話	0.600	huishuohua	exact_rank_no_contains
+会唱歌	會唱歌	0.400	huichangge	exact_rank_no_contains
+会跳舞	會跳舞	0.400	huitiaowu	exact_rank_no_contains
+会生气	會生氣	0.400	huishengqi	exact_rank_no_contains
+会后悔	會後悔	0.600	huihouhui	exact_rank_no_contains
+会害怕	會害怕	0.400	huihaipa	exact_rank_no_contains
+会回来	會回來	0.400	huihuilai	exact_rank_no_contains
+会更好	會更好	0.600	huigenghao	exact_rank_no_contains
+会来的	會來的	0.400	huilaide	exact_rank_no_contains
+会上瘾	會上癮	0.400	huishangyin	exact_rank_no_contains
+# Everyday words, 2026-11-04, the less frequent ones (谁懂, 也动, 想动, 你懂吗, 别乱动, 会饿, 会丢, 会坏, 会摔, 会疯, 会晕, 会痒, 会吵, 会画画, 会骑车, 会吃亏, 会过期), by the same weights; at weight 2 the words the general text holds fewer than 50 times (你动了, 没人动, 会删, 会骗, 会馋, 会想你) and 会收 and 会穿, whose presence turned benchmark cases (会穿 at 0 under 汇川).
+它懂	它懂	0.002	tadong	exact_rank_no_contains
+谁懂	誰懂	0.200	shuidong	exact_rank_no_contains
+谁动	誰動	0.002	shuidong	exact_rank_no_contains
+也动	也動	0.200	yedong	exact_rank_no_contains
+都动	都動	0.200	doudong	exact_rank_no_contains
+还动	還動	0.080	haidong	exact_rank_no_contains
+还懂	還懂	0.182	haidong	exact_rank_no_contains
+想动	想動	0.200	xiangdong	exact_rank_no_contains
+才动	才動	0.200	caidong	exact_rank_no_contains
+刚动	剛動	0.002	gangdong	exact_rank_no_contains
+你懂吗	你懂嗎	0.200	nidongma	exact_rank_no_contains
+她不懂	她不懂	0.200	tabudong	exact_rank_no_contains
+没人懂	沒人懂	0.081	meirendong	exact_rank_no_contains
+有人懂	有人懂	0.200	yourendong	exact_rank_no_contains
+没人动	沒人動	0.002	meirendong	exact_rank_no_contains
+有人动	有人動	0.002	yourendong	exact_rank_no_contains
+你别动	你別動	0.002	nibiedong	exact_rank_no_contains
+我没动	我沒動	0.002	womeidong	exact_rank_no_contains
+他没动	他沒動	0.002	tameidong	exact_rank_no_contains
+谁动了	誰動了	0.200	shuidongle	exact_rank_no_contains
+我也懂	我也懂	0.002	woyedong	exact_rank_no_contains
+你动了	你動了	0.002	nidongle	exact_rank_no_contains
+我动了	我動了	0.002	wodongle	exact_rank_no_contains
+他动了	他動了	0.002	tadongle	exact_rank_no_contains
+别乱动	別亂動	0.200	bieluandong	exact_rank_no_contains
+不准动	不準動	0.002	buzhundong	exact_rank_no_contains
+会饿	會餓	0.080	huie	exact_rank_no_contains
+会困	會困	0.002	huikun	exact_rank_no_contains
+会信	會信	0.200	huixin	exact_rank_no_contains
+会关	會關	0.080	huiguan	exact_rank_no_contains
+会追	會追	0.200	huizhui	exact_rank_no_contains
+会丢	會丟	0.200	huidiu	exact_rank_no_contains
+会坏	會壞	0.200	huihuai	exact_rank_no_contains
+会断	會斷	0.200	huiduan	exact_rank_no_contains
+会烂	會爛	0.200	huilan	exact_rank_no_contains
+会碎	會碎	0.080	huisui	exact_rank_no_contains
+会响	會響	0.187	huixiang	exact_rank_no_contains
+会救	會救	0.080	huijiu	exact_rank_no_contains
+会杀	會殺	0.200	huisha	exact_rank_no_contains
+会骂	會罵	0.199	huima	exact_rank_no_contains
+会住	會住	0.200	huizhu	exact_rank_no_contains
+会搬	會搬	0.080	huiban	exact_rank_no_contains
+会删	會刪	0.002	huishan	exact_rank_no_contains
+会存	會存	0.200	huicun	exact_rank_no_contains
+会碰	會碰	0.080	huipeng	exact_rank_no_contains
+会撞	會撞	0.200	huizhuang	exact_rank_no_contains
+会摔	會摔	0.200	huishuai	exact_rank_no_contains
+会疯	會瘋	0.200	huifeng	exact_rank_no_contains
+会恨	會恨	0.200	huihen	exact_rank_no_contains
+会穿	會穿	0.000	huichuan	exact_rank_no_contains
+会脱	會脫	0.080	huituo	exact_rank_no_contains
+会洗	會洗	0.200	huixi	exact_rank_no_contains
+会煮	會煮	0.080	huizhu	exact_rank_no_contains
+会炒	會炒	0.201	huichao	exact_rank_no_contains
+会烤	會烤	0.002	huikao	exact_rank_no_contains
+会剪	會剪	0.200	huijian	exact_rank_no_contains
+会拍	會拍	0.201	huipai	exact_rank_no_contains
+会聊	會聊	0.200	huiliao	exact_rank_no_contains
+会劝	會勸	0.080	huiquan	exact_rank_no_contains
+会骗	會騙	0.002	huipian	exact_rank_no_contains
+会抢	會搶	0.200	huiqiang	exact_rank_no_contains
+会偷	會偷	0.200	huitou	exact_rank_no_contains
+会收	會收	0.002	huishou	exact_rank_no_contains
+会寄	會寄	0.201	huiji	exact_rank_no_contains
+会退	會退	0.201	huitui	exact_rank_no_contains
+会接	會接	0.200	huijie	exact_rank_no_contains
+会挂	會掛	0.200	huigua	exact_rank_no_contains
+会推	會推	0.200	huitui	exact_rank_no_contains
+会扔	會扔	0.002	huireng	exact_rank_no_contains
+会捡	會撿	0.080	huijian	exact_rank_no_contains
+会抓	會抓	0.200	huizhua	exact_rank_no_contains
+会亲	會親	0.197	huiqin	exact_rank_no_contains
+会哄	會哄	0.080	huihong	exact_rank_no_contains
+会逗	會逗	0.080	huidou	exact_rank_no_contains
+会陪	會陪	0.200	huipei	exact_rank_no_contains
+会管	會管	0.200	huiguan	exact_rank_no_contains
+会赚	會賺	0.200	huizhuan	exact_rank_no_contains
+会省	會省	0.200	huisheng	exact_rank_no_contains
+会交	會交	0.200	huijiao	exact_rank_no_contains
+会租	會租	0.002	huizu	exact_rank_no_contains
+会排	會排	0.200	huipai	exact_rank_no_contains
+会挤	會擠	0.002	huiji	exact_rank_no_contains
+会堵	會堵	0.080	huidu	exact_rank_no_contains
+会冻	會凍	0.080	huidong	exact_rank_no_contains
+会化	會化	0.200	huihua	exact_rank_no_contains
+会晒	會曬	0.080	huishai	exact_rank_no_contains
+会淋	會淋	0.002	huilin	exact_rank_no_contains
+会湿	會濕	0.080	huishi	exact_rank_no_contains
+会脏	會髒	0.002	huizang	exact_rank_no_contains
+会臭	會臭	0.002	huichou	exact_rank_no_contains
+会香	會香	0.080	huixiang	exact_rank_no_contains
+会甜	會甜	0.080	huitian	exact_rank_no_contains
+会苦	會苦	0.200	huiku	exact_rank_no_contains
+会酸	會酸	0.200	huisuan	exact_rank_no_contains
+会辣	會辣	0.002	huila	exact_rank_no_contains
+会胖	會胖	0.200	huipang	exact_rank_no_contains
+会瘦	會瘦	0.201	huishou	exact_rank_no_contains
+会晕	會暈	0.080	huiyun	exact_rank_no_contains
+会烦	會煩	0.080	huifan	exact_rank_no_contains
+会急	會急	0.080	huiji	exact_rank_no_contains
+会慌	會慌	0.002	huihuang	exact_rank_no_contains
+会乱	會亂	0.401	huiluan	exact_rank_no_contains
+会贵	會貴	0.200	huigui	exact_rank_no_contains
+会痒	會癢	0.200	huiyang	exact_rank_no_contains
+会肿	會腫	0.080	huizhong	exact_rank_no_contains
+会红	會紅	0.130	huihong	exact_rank_no_contains
+会黑	會黑	0.200	huihei	exact_rank_no_contains
+会暗	會暗	0.002	huian	exact_rank_no_contains
+会吵	會吵	0.200	huichao	exact_rank_no_contains
+会闹	會鬧	0.200	huinao	exact_rank_no_contains
+会醉	會醉	0.080	huizui	exact_rank_no_contains
+会吐	會吐	0.200	huitu	exact_rank_no_contains
+会病	會病	0.002	huibing	exact_rank_no_contains
+会凉	會涼	0.200	huiliang	exact_rank_no_contains
+会暖	會暖	0.002	huinuan	exact_rank_no_contains
+会懒	會懶	0.002	huilan	exact_rank_no_contains
+会馋	會饞	0.002	huichan	exact_rank_no_contains
+会画画	會畫畫	0.200	huihuahua	exact_rank_no_contains
+会写字	會寫字	0.200	huixiezi	exact_rank_no_contains
+会骑车	會騎車	0.080	huiqiche	exact_rank_no_contains
+会打字	會打字	0.200	huidazi	exact_rank_no_contains
+会喝酒	會喝酒	0.200	huihejiu	exact_rank_no_contains
+会抽烟	會抽菸	0.080	huichouyan	exact_rank_no_contains
+会睡觉	會睡覺	0.080	huishuijiao	exact_rank_no_contains
+会难过	會難過	0.200	huinanguo	exact_rank_no_contains
+会没事	會沒事	0.200	huimeishi	exact_rank_no_contains
+会懂的	會懂的	0.002	huidongde	exact_rank_no_contains
+会想你	會想你	0.002	huixiangni	exact_rank_no_contains
+会出事	會出事	0.200	huichushi	exact_rank_no_contains
+会吃亏	會吃虧	0.200	huichikui	exact_rank_no_contains
+会感冒	會感冒	0.200	huiganmao	exact_rank_no_contains
+会过期	會過期	0.200	huiguoqi	exact_rank_no_contains
+# Weighted anew on 2026-11-04: import-weight words that held a word of the batch under them on its key (灰心, 回乡, 会东, 会心, 会商, 会集, 汇流, 回填, 回校, 挥刀, 挥拍, 辉石, 挥师, 灰褐, 灰土, 会昌, 会首, 回班) and import-weight words of the batch's kinds (不许动, 会来事), weighted as the blocks above.
+不许动	不許動	0.200	buxudong	exact_rank
+会来事	會來事	0.200	huilaishi	exact_rank
+回乡	回鄉	0.600	huixiang	exact_rank
+会首	會首	0.200	huishou	exact_rank
+会东	會東	0.200	huidong	exact_rank
+汇流	匯流	0.600	huiliu	exact_rank
+挥拍	揮拍	0.279	huipai	exact_rank
+会集	會集	0.400	huiji	exact_rank
+辉石	輝石	0.094	huishi	exact_rank
+灰褐	灰褐	0.040	huihe	exact_rank
+灰心	灰心	0.601	huixin	exact_rank
+灰土	灰土	0.400	huitu	exact_rank
+挥师	揮師	0.093	huishi	exact_rank
+挥刀	揮刀	0.400	huidao	exact_rank
+回班	回班	0.200	huiban	exact_rank
+回校	回校	0.600	huixiao	exact_rank
+回填	回填	0.600	huitian	exact_rank
+会昌	會昌	0.566	huichang	exact_rank
+会心	會心	0.600	huixin	exact_rank
+会商	會商	0.279	huishang	exact_rank

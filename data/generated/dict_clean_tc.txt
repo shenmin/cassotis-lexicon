@@ -13422,7 +13422,7 @@ buxuanzhong	不旋踵	640
 buxubaixingdiandeng	不許百姓點燈	427
 buxubuji	不徐不疾	620
 buxucixing	不虛此行	450
-buxudong	不許動	10
+buxudong	不許動	200
 buxue	補血	440
 buxue	不學	100
 buxuekoufuye	補血口服液	610
@@ -58136,7 +58136,7 @@ huibai	回拜	144
 huibaihoulinying	灰白喉林鶯	289
 huibaise	灰白色	512
 huibaizhi	灰白質	500
-huiban	回班	10
+huiban	回班	200
 huibang	毀謗	396
 huibanheng	灰斑鴴	228
 huibanjiu	灰斑鳩	228
@@ -58233,7 +58233,7 @@ huidang	迴盪	938
 huidang	會黨	1
 huidanr	回單兒	232
 huidao	回到	1000
-huidao	揮刀	10
+huidao	揮刀	400
 huidaoweilai	回到未來	538
 huide	會的	700
 huidelai	回得來	280
@@ -58353,7 +58353,7 @@ huihaosamo	揮毫灑墨	260
 huihe	會合	881
 huihe	匯合	813
 huihe	回合	801
-huihe	灰褐	10
+huihe	灰褐	40
 huihe	灰鶴	1
 huihecelve	回合策略	538
 huihecelveyouxi	回合策略遊戲	831
@@ -58406,7 +58406,7 @@ huiji	會記	1000
 huiji	匯集	725
 huiji	彙集	721
 huiji	回擊	674
-huiji	會集	11
+huiji	會集	400
 huijia	回家	1000
 huijia	匯價	1
 huijiachiziji	回家吃自己	289
@@ -58457,7 +58457,7 @@ huikui	回饋	415
 huikuichoushanghuilu	回饋酬賞迴路	895
 huikuichoushanghuilu	回饋酬賞回路	380
 huilai	回來	1000
-huilaishi	會來事	10
+huilaishi	會來事	200
 huilaixian	惠來縣	165
 huilan	灰藍	280
 huilang	灰狼	600
@@ -58494,7 +58494,7 @@ huiliqiu	回力球	232
 huilishi	會理市	174
 huiliu	回流	774
 huiliu	迴流	716
-huiliu	匯流	52
+huiliu	匯流	600
 huiliufa	迴流法	896
 huiliuhuan	匯流環	232
 huiliuliu	灰溜溜	434
@@ -58576,7 +58576,7 @@ huiniurou	燴牛肉	10
 huinongqu	惠農區	165
 huinuan	回暖	417
 huipai	會派	280
-huipai	揮拍	10
+huipai	揮拍	279
 huipaijianzhu	徽派建築	941
 huipiao	匯票	450
 huipinuo	灰皮諾	230
@@ -58620,7 +58620,7 @@ huishan	惠山	252
 huishanchun	灰山鶉	339
 huishang	毀傷	635
 huishang	會上	280
-huishang	會商	68
+huishang	會商	279
 huishanjiaoniao	灰山椒鳥	260
 huishanqu	惠山區	165
 huishanshijian	灰山事件	538
@@ -58640,8 +58640,8 @@ huishi	會是	1000
 huishi	回事	843
 huishi	會試	524
 huishi	會師	107
-huishi	輝石	79
-huishi	揮師	56
+huishi	輝石	94
+huishi	揮師	93
 huishibing	惠氏病	500
 huishichuanshuo	灰石傳說	538
 huishou	回收	876
@@ -58673,7 +58673,7 @@ huitang	會堂	401
 huiteman	惠特曼	278
 huitian	迴天	997
 huitian	回天	959
-huitian	回填	34
+huitian	回填	600
 huitianfashu	回天乏術	441
 huitianmiede	毀天滅地	538
 huitianwuli	迴天無力	622
@@ -58708,7 +58708,7 @@ huitouyaque	灰頭鴉雀	260
 huitouyingwu	灰頭鸚鵡	258
 huitouzhuomuniao	灰頭啄木鳥	289
 huitu	回吐	929
-huitu	灰土	1
+huitu	灰土	400
 huitu	繪圖	915
 huitui	回退	323
 huiwang	會忘	1000
@@ -58734,7 +58734,7 @@ huixiang	回想	795
 huixiang	回響	257
 huixiang	迴響	291
 huixiang	茴香	252
-huixiang	回鄉	10
+huixiang	回鄉	600
 huixiangdou	茴香豆	400
 huixiangjuhewan	茴香桔核丸	610
 huixiangjuhewan	茴香橘核丸	610
@@ -58743,12 +58743,12 @@ huixiangquan	茴香醛	470
 huixiangyou	茴香油	470
 huixiangzi	茴香籽	228
 huixianshi	輝縣市	172
-huixiao	回校	10
+huixiao	回校	600
 huixie	詼諧	444
 huixiezaomei	灰脅噪鶥	258
 huixin	回信	999
-huixin	灰心	13
-huixin	會心	1
+huixin	灰心	601
+huixin	會心	600
 huixindizhi	回信地址	597
 huixing	彗星	891
 huixingdefanpan	輝星的反叛	613
@@ -237134,10 +237134,10 @@ hudingxin	胡定欣	620
 huibo	回駁	154
 huibuhui	會不會	232
 huichan	灰產	198
-huichang	會昌	1
+huichang	會昌	566
 huiche	會車	1
 huicuifenxi	薈萃分析	570
-huidong	會東	1
+huidong	會東	200
 huidongxian	會東縣	93
 huifei	匯費	197
 huifulezhengchang	恢復了正常	1231
@@ -237147,7 +237147,7 @@ huihui	回回	560
 huili	會理	56
 huinan	輝南	167
 huiqi	會期	600
-huishou	會首	31
+huishou	會首	200
 huishu	回數	246
 huishui	會水	429
 huitiao	回條	84
@@ -240827,3 +240827,258 @@ zhuoseqiyuyan	著色器語言	740
 zhuosexingganpibing	著色性乾皮病	644
 zhuosezhenjunbing	著色真菌病	610
 zhuozhongyu	著重於	10
+bieluandong	別亂動	200	no_contains
+buzhundong	不準動	2	no_contains
+caidong	才動	200	no_contains
+dongyixia	動一下	400	no_contains
+doubudong	都不懂	600	no_contains
+doudong	都動	200	no_contains
+gandong	敢動	400	no_contains
+gangdong	剛動	2	no_contains
+haidong	還動	80	no_contains
+haidong	還懂	182	no_contains
+huiai	會愛	400	no_contains
+huian	會暗	2	no_contains
+huiban	會搬	80	no_contains
+huibang	會幫	2	no_contains
+huibao	會包	205	no_contains
+huibao	會報	206	no_contains
+huibao	會抱	204	no_contains
+huibian	會編	400	no_contains
+huibian	會變	496	no_contains
+huibing	會病	2	no_contains
+huichan	會饞	2	no_contains
+huichang	會唱	400	no_contains
+huichangge	會唱歌	400	no_contains
+huichao	會吵	200	no_contains
+huichao	會炒	201	no_contains
+huichi	會吃	600	no_contains
+huichikui	會吃虧	200	no_contains
+huichou	會臭	2	no_contains
+huichouyan	會抽菸	80	no_contains
+huichuan	會穿	0	no_contains
+huichushi	會出事	200	no_contains
+huicun	會存	200	no_contains
+huicuo	會錯	400	no_contains
+huida	會打	200	no_contains
+huidao	會倒	401	no_contains
+huidazi	會打字	200	no_contains
+huideng	會等	600	no_contains
+huidiao	會掉	400	no_contains
+huidiu	會丟	200	no_contains
+huidong	會凍	80	no_contains
+huidong	會動	401	no_contains
+huidong	會懂	400	no_contains
+huidongde	會懂的	2	no_contains
+huidou	會逗	80	no_contains
+huidu	會堵	80	no_contains
+huidu	會讀	600	no_contains
+huiduan	會斷	200	no_contains
+huie	會餓	80	no_contains
+huifa	會發	550	no_contains
+huifan	會煩	80	no_contains
+huifei	會飛	559	no_contains
+huifeng	會瘋	200	no_contains
+huiganmao	會感冒	200	no_contains
+huigei	會給	200	no_contains
+huigen	會跟	600	no_contains
+huigenghao	會更好	600	no_contains
+huigua	會掛	200	no_contains
+huiguan	會管	200	no_contains
+huiguan	會關	80	no_contains
+huigui	會貴	200	no_contains
+huiguoqi	會過期	200	no_contains
+huihaipa	會害怕	400	no_contains
+huihan	會喊	400	no_contains
+huihao	會好	600	no_contains
+huihe	會喝	400	no_contains
+huihei	會黑	200	no_contains
+huihejiu	會喝酒	200	no_contains
+huihen	會恨	200	no_contains
+huihong	會哄	80	no_contains
+huihong	會紅	130	no_contains
+huihouhui	會後悔	600	no_contains
+huihua	會化	200	no_contains
+huihua	會畫	308	no_contains
+huihua	會花	392	no_contains
+huihuahua	會畫畫	200	no_contains
+huihuai	會壞	200	no_contains
+huihuan	會換	2	no_contains
+huihuan	會還	196	no_contains
+huihuang	會慌	2	no_contains
+huihui	會回	400	no_contains
+huihuilai	會回來	400	no_contains
+huiji	會寄	201	no_contains
+huiji	會急	80	no_contains
+huiji	會擠	2	no_contains
+huijian	會剪	200	no_contains
+huijian	會撿	80	no_contains
+huijiang	會講	337	no_contains
+huijiao	會交	200	no_contains
+huijiao	會叫	240	no_contains
+huijiao	會教	2	no_contains
+huijie	會借	400	no_contains
+huijie	會接	200	no_contains
+huijiu	會救	80	no_contains
+huikaiche	會開車	600	no_contains
+huikan	會看	599	no_contains
+huikao	會烤	2	no_contains
+huiku	會哭	400	no_contains
+huiku	會苦	200	no_contains
+huikuai	會快	600	no_contains
+huikun	會困	2	no_contains
+huila	會拉	3	no_contains
+huila	會辣	2	no_contains
+huilai	會來	600	no_contains
+huilaide	會來的	400	no_contains
+huilan	會懶	2	no_contains
+huilan	會爛	200	no_contains
+huilao	會老	400	no_contains
+huilei	會累	400	no_contains
+huileng	會冷	400	no_contains
+huiliang	會亮	400	no_contains
+huiliang	會涼	200	no_contains
+huiliao	會聊	200	no_contains
+huilin	會淋	2	no_contains
+huiliu	會流	400	no_contains
+huiliu	會留	401	no_contains
+huiluan	會亂	401	no_contains
+huima	會罵	199	no_contains
+huimai	會買	600	no_contains
+huimai	會賣	468	no_contains
+huiman	會慢	400	no_contains
+huimeishi	會沒事	200	no_contains
+huimo	會摸	400	no_contains
+huina	會拿	400	no_contains
+huinanguo	會難過	200	no_contains
+huinao	會鬧	200	no_contains
+huinuan	會暖	2	no_contains
+huipa	會怕	400	no_contains
+huipai	會拍	201	no_contains
+huipai	會排	200	no_contains
+huipang	會胖	200	no_contains
+huipao	會跑	400	no_contains
+huipei	會賠	400	no_contains
+huipei	會陪	200	no_contains
+huipeng	會碰	80	no_contains
+huipian	會騙	2	no_contains
+huiqi	會起	531	no_contains
+huiqiang	會搶	200	no_contains
+huiqiche	會騎車	80	no_contains
+huiqin	會親	197	no_contains
+huiquan	會勸	80	no_contains
+huirang	會讓	600	no_contains
+huire	會熱	400	no_contains
+huiren	會忍	400	no_contains
+huiren	會認	401	no_contains
+huireng	會扔	2	no_contains
+huisha	會殺	200	no_contains
+huishai	會曬	80	no_contains
+huishan	會刪	2	no_contains
+huishang	會傷	278	no_contains
+huishangyin	會上癮	400	no_contains
+huishao	會燒	400	no_contains
+huisheng	會省	200	no_contains
+huishengqi	會生氣	400	no_contains
+huishi	會濕	80	no_contains
+huishou	會守	400	no_contains
+huishou	會收	2	no_contains
+huishou	會瘦	201	no_contains
+huishu	會輸	2	no_contains
+huishuai	會摔	200	no_contains
+huishui	會睡	400	no_contains
+huishuijiao	會睡覺	80	no_contains
+huishuo	會說	600	no_contains
+huishuohua	會說話	600	no_contains
+huisong	會送	400	no_contains
+huisuan	會算	363	no_contains
+huisuan	會酸	200	no_contains
+huisui	會碎	80	no_contains
+huitang	會燙	400	no_contains
+huitang	會躺	399	no_contains
+huiteng	會疼	400	no_contains
+huiti	會踢	400	no_contains
+huitian	會甜	80	no_contains
+huitiao	會挑	279	no_contains
+huitiao	會調	277	no_contains
+huitiao	會跳	278	no_contains
+huitiaowu	會跳舞	400	no_contains
+huiting	會停	199	no_contains
+huiting	會聽	400	no_contains
+huitong	會痛	400	no_contains
+huitou	會偷	200	no_contains
+huitu	會吐	200	no_contains
+huitui	會推	200	no_contains
+huitui	會退	201	no_contains
+huituo	會脫	80	no_contains
+huiwan	會完	400	no_contains
+huiwan	會晚	401	no_contains
+huiwan	會玩	600	no_contains
+huiwen	會問	2	no_contains
+huixi	會洗	200	no_contains
+huixiang	會想	385	no_contains
+huixiang	會響	187	no_contains
+huixiang	會香	80	no_contains
+huixiangni	會想你	2	no_contains
+huixiao	會笑	400	no_contains
+huixie	會寫	443	no_contains
+huixiezi	會寫字	200	no_contains
+huixin	會信	200	no_contains
+huixing	會醒	400	no_contains
+huixuan	會選	200	no_contains
+huixue	會學	2	no_contains
+huiyang	會癢	200	no_contains
+huiyao	會咬	400	no_contains
+huiying	會贏	200	no_contains
+huiyong	會用	600	no_contains
+huiyouyong	會游泳	400	no_contains
+huiyun	會暈	80	no_contains
+huizang	會髒	2	no_contains
+huizao	會早	400	no_contains
+huizhao	會找	600	no_contains
+huizhong	會腫	80	no_contains
+huizhu	會住	200	no_contains
+huizhu	會煮	80	no_contains
+huizhua	會抓	200	no_contains
+huizhuan	會賺	200	no_contains
+huizhuang	會撞	200	no_contains
+huizhui	會追	200	no_contains
+huizou	會走	600	no_contains
+huizu	會租	2	no_contains
+huizui	會醉	80	no_contains
+huizuofan	會做飯	400	no_contains
+meirendong	沒人動	2	no_contains
+meirendong	沒人懂	81	no_contains
+nengdong	能動	600	no_contains
+nengdong	能懂	400	no_contains
+nibiedong	你別動	2	no_contains
+nibudong	你不懂	600	no_contains
+nidong	你動	400	no_contains
+nidongde	你懂的	600	no_contains
+nidongle	你動了	2	no_contains
+nidongma	你懂嗎	200	no_contains
+rendong	人動	388	no_contains
+rendong	人懂	389	no_contains
+shuidong	誰動	2	no_contains
+shuidong	誰懂	200	no_contains
+shuidongle	誰動了	200	no_contains
+tabudong	他不懂	400	no_contains
+tabudong	她不懂	200	no_contains
+tadong	他動	279	no_contains
+tadong	她動	277	no_contains
+tadong	它動	278	no_contains
+tadong	它懂	2	no_contains
+tadongle	他動了	2	no_contains
+tameidong	他沒動	2	no_contains
+wobudong	我不懂	600	no_contains
+wodong	我動	400	no_contains
+wodongle	我動了	2	no_contains
+wodongle	我懂了	400	no_contains
+womeidong	我沒動	2	no_contains
+woyedong	我也懂	2	no_contains
+xiangdong	想動	200	no_contains
+yaodong	要動	360	no_contains
+yedong	也動	200	no_contains
+yedong	也懂	400	no_contains
+yourendong	有人動	2	no_contains
+yourendong	有人懂	200	no_contains

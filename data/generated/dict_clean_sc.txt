@@ -13592,7 +13592,7 @@ buxuanzhong	不旋踵	640
 buxubaixingdiandeng	不许百姓点灯	427
 buxubuji	不徐不疾	620
 buxucixing	不虚此行	450
-buxudong	不许动	10
+buxudong	不许动	200
 buxue	补血	440
 buxue	不学	1
 buxuekoufuye	补血口服液	610
@@ -58986,7 +58986,7 @@ huibai	回拜	85
 huibaihoulinying	灰白喉林莺	289
 huibaise	灰白色	512
 huibaizhi	灰白质	500
-huiban	回班	10
+huiban	回班	200
 huibang	毁谤	396
 huibanheng	灰斑鸻	228
 huibanjiu	灰斑鸠	228
@@ -59033,7 +59033,7 @@ huicha	汇差	1
 huichan	灰产	198
 huichang	会场	700
 huichang	回肠	567
-huichang	会昌	1
+huichang	会昌	566
 huichangdangqi	回肠荡气	445
 huichangxian	会昌县	172
 huichangyan	回肠炎	510
@@ -59080,7 +59080,7 @@ huidang	回荡	934
 huidang	会党	1
 huidanr	回单儿	232
 huidao	回到	1000
-huidao	挥刀	10
+huidao	挥刀	400
 huidaoweilai	回到未来	538
 huide	会的	700
 huidelai	回得来	280
@@ -59095,7 +59095,7 @@ huidiaojizhi	回调机制	701
 huidiaomoshi	回调模式	673
 huidie	回跌	372
 huidong	挥动	1000
-huidong	会东	1
+huidong	会东	200
 huidongxian	会东县	93
 huidu	灰度	1000
 huiduanjiaobei	灰短脚鹎	258
@@ -59198,7 +59198,7 @@ huihe	会合	881
 huihe	汇合	813
 huihe	回合	801
 huihe	灰鹤	41
-huihe	灰褐	10
+huihe	灰褐	40
 huihecelve	回合策略	538
 huihecelveyouxi	回合策略游戏	811
 huiheceshi	灰盒测试	671
@@ -59248,7 +59248,7 @@ huihuowudu	挥霍无度	440
 huiji	会记	1000
 huiji	汇集	743
 huiji	回击	688
-huiji	会集	1
+huiji	会集	400
 huijia	回家	1000
 huijia	汇价	1
 huijiachiziji	回家吃自己	289
@@ -59298,7 +59298,7 @@ huikudehaiziyoutangchi	会哭的孩子有糖吃	378
 huikui	回馈	415
 huikuichoushanghuilu	回馈酬赏回路	700
 huilai	回来	1000
-huilaishi	会来事	10
+huilaishi	会来事	200
 huilaixian	惠来县	165
 huilan	灰蓝	280
 huilang	回廊	448
@@ -59333,7 +59333,7 @@ huilinxiao	灰林鸮	228
 huiliqiu	回力球	232
 huilishi	会理市	174
 huiliu	回流	1000
-huiliu	汇流	1
+huiliu	汇流	600
 huiliufa	回流法	470
 huiliuhuan	汇流环	232
 huiliuliu	灰溜溜	434
@@ -59412,7 +59412,7 @@ huiniurou	烩牛肉	10
 huinongqu	惠农区	165
 huinuan	回暖	417
 huipai	会派	280
-huipai	挥拍	10
+huipai	挥拍	279
 huipaijianzhu	徽派建筑	674
 huipiao	汇票	450
 huipinuo	灰皮诺	230
@@ -59456,7 +59456,7 @@ huishan	惠山	252
 huishanchun	灰山鹑	339
 huishang	会上	280
 huishang	毁伤	191
-huishang	会商	1
+huishang	会商	279
 huishanjiaoniao	灰山椒鸟	260
 huishanqu	惠山区	165
 huishanshijian	灰山事件	538
@@ -59476,14 +59476,14 @@ huishi	会是	1000
 huishi	回事	855
 huishi	会试	572
 huishi	会师	95
-huishi	辉石	67
-huishi	挥师	44
+huishi	辉石	94
+huishi	挥师	93
 huishibing	惠氏病	500
 huishichuanshuo	灰石传说	538
 huishou	回收	867
 huishou	挥手	836
 huishou	回首	785
-huishou	会首	31
+huishou	会首	200
 huishouchengxu	回收程序	664
 huishoudaobie	挥手道别	535
 huishougaobie	挥手告别	280
@@ -59512,7 +59512,7 @@ huitan	回弹	1
 huitang	会堂	401
 huiteman	惠特曼	278
 huitian	回天	1000
-huitian	回填	1
+huitian	回填	600
 huitianfashu	回天乏术	441
 huitianmiede	毁天灭地	538
 huitianwuli	回天无力	420
@@ -59547,7 +59547,7 @@ huitouyaque	灰头鸦雀	260
 huitouyingwu	灰头鹦鹉	258
 huitouzhuomuniao	灰头啄木鸟	289
 huitu	回吐	914
-huitu	灰土	1
+huitu	灰土	400
 huitu	绘图	915
 huitui	回退	323
 huiwang	会忘	1000
@@ -59572,7 +59572,7 @@ huixian	辉县	285
 huixiang	回想	795
 huixiang	回响	386
 huixiang	茴香	188
-huixiang	回乡	10
+huixiang	回乡	600
 huixiangdou	茴香豆	400
 huixiangjuhewan	茴香桔核丸	598
 huixiangjuhewan	茴香橘核丸	598
@@ -59581,12 +59581,12 @@ huixiangquan	茴香醛	470
 huixiangyou	茴香油	470
 huixiangzi	茴香籽	228
 huixianshi	辉县市	172
-huixiao	回校	10
+huixiao	回校	600
 huixie	诙谐	444
 huixiezaomei	灰胁噪鹛	258
 huixin	回信	999
-huixin	灰心	13
-huixin	会心	1
+huixin	灰心	601
+huixin	会心	600
 huixindizhi	回信地址	597
 huixing	彗星	891
 huixingdefanpan	辉星的反叛	613
@@ -237992,3 +237992,258 @@ yuebingquan	月饼券	80	no_contains
 zhuangfan	装反	200	no_contains
 zhufuka	祝福卡	80	no_contains
 zuihouyipi	最后一批	600	no_contains
+bieluandong	别乱动	200	no_contains
+buzhundong	不准动	2	no_contains
+caidong	才动	200	no_contains
+dongyixia	动一下	400	no_contains
+doubudong	都不懂	600	no_contains
+doudong	都动	200	no_contains
+gandong	敢动	400	no_contains
+gangdong	刚动	2	no_contains
+haidong	还动	80	no_contains
+haidong	还懂	182	no_contains
+huiai	会爱	400	no_contains
+huian	会暗	2	no_contains
+huiban	会搬	80	no_contains
+huibang	会帮	2	no_contains
+huibao	会包	205	no_contains
+huibao	会报	206	no_contains
+huibao	会抱	204	no_contains
+huibian	会变	496	no_contains
+huibian	会编	400	no_contains
+huibing	会病	2	no_contains
+huichan	会馋	2	no_contains
+huichang	会唱	400	no_contains
+huichangge	会唱歌	400	no_contains
+huichao	会吵	200	no_contains
+huichao	会炒	201	no_contains
+huichi	会吃	600	no_contains
+huichikui	会吃亏	200	no_contains
+huichou	会臭	2	no_contains
+huichouyan	会抽烟	80	no_contains
+huichuan	会穿	0	no_contains
+huichushi	会出事	200	no_contains
+huicun	会存	200	no_contains
+huicuo	会错	400	no_contains
+huida	会打	200	no_contains
+huidao	会倒	401	no_contains
+huidazi	会打字	200	no_contains
+huideng	会等	600	no_contains
+huidiao	会掉	400	no_contains
+huidiu	会丢	200	no_contains
+huidong	会冻	80	no_contains
+huidong	会动	401	no_contains
+huidong	会懂	400	no_contains
+huidongde	会懂的	2	no_contains
+huidou	会逗	80	no_contains
+huidu	会堵	80	no_contains
+huidu	会读	600	no_contains
+huiduan	会断	200	no_contains
+huie	会饿	80	no_contains
+huifa	会发	550	no_contains
+huifan	会烦	80	no_contains
+huifei	会飞	559	no_contains
+huifeng	会疯	200	no_contains
+huiganmao	会感冒	200	no_contains
+huigei	会给	200	no_contains
+huigen	会跟	600	no_contains
+huigenghao	会更好	600	no_contains
+huigua	会挂	200	no_contains
+huiguan	会关	80	no_contains
+huiguan	会管	200	no_contains
+huigui	会贵	200	no_contains
+huiguoqi	会过期	200	no_contains
+huihaipa	会害怕	400	no_contains
+huihan	会喊	400	no_contains
+huihao	会好	600	no_contains
+huihe	会喝	400	no_contains
+huihei	会黑	200	no_contains
+huihejiu	会喝酒	200	no_contains
+huihen	会恨	200	no_contains
+huihong	会哄	80	no_contains
+huihong	会红	130	no_contains
+huihouhui	会后悔	600	no_contains
+huihua	会化	200	no_contains
+huihua	会画	308	no_contains
+huihua	会花	392	no_contains
+huihuahua	会画画	200	no_contains
+huihuai	会坏	200	no_contains
+huihuan	会换	2	no_contains
+huihuan	会还	196	no_contains
+huihuang	会慌	2	no_contains
+huihui	会回	400	no_contains
+huihuilai	会回来	400	no_contains
+huiji	会寄	201	no_contains
+huiji	会急	80	no_contains
+huiji	会挤	2	no_contains
+huijian	会剪	200	no_contains
+huijian	会捡	80	no_contains
+huijiang	会讲	337	no_contains
+huijiao	会交	200	no_contains
+huijiao	会叫	240	no_contains
+huijiao	会教	2	no_contains
+huijie	会借	400	no_contains
+huijie	会接	200	no_contains
+huijiu	会救	80	no_contains
+huikaiche	会开车	600	no_contains
+huikan	会看	599	no_contains
+huikao	会烤	2	no_contains
+huiku	会哭	400	no_contains
+huiku	会苦	200	no_contains
+huikuai	会快	600	no_contains
+huikun	会困	2	no_contains
+huila	会拉	3	no_contains
+huila	会辣	2	no_contains
+huilai	会来	600	no_contains
+huilaide	会来的	400	no_contains
+huilan	会懒	2	no_contains
+huilan	会烂	200	no_contains
+huilao	会老	400	no_contains
+huilei	会累	400	no_contains
+huileng	会冷	400	no_contains
+huiliang	会亮	400	no_contains
+huiliang	会凉	200	no_contains
+huiliao	会聊	200	no_contains
+huilin	会淋	2	no_contains
+huiliu	会流	400	no_contains
+huiliu	会留	401	no_contains
+huiluan	会乱	401	no_contains
+huima	会骂	199	no_contains
+huimai	会买	600	no_contains
+huimai	会卖	468	no_contains
+huiman	会慢	400	no_contains
+huimeishi	会没事	200	no_contains
+huimo	会摸	400	no_contains
+huina	会拿	400	no_contains
+huinanguo	会难过	200	no_contains
+huinao	会闹	200	no_contains
+huinuan	会暖	2	no_contains
+huipa	会怕	400	no_contains
+huipai	会拍	201	no_contains
+huipai	会排	200	no_contains
+huipang	会胖	200	no_contains
+huipao	会跑	400	no_contains
+huipei	会赔	400	no_contains
+huipei	会陪	200	no_contains
+huipeng	会碰	80	no_contains
+huipian	会骗	2	no_contains
+huiqi	会起	531	no_contains
+huiqiang	会抢	200	no_contains
+huiqiche	会骑车	80	no_contains
+huiqin	会亲	197	no_contains
+huiquan	会劝	80	no_contains
+huirang	会让	600	no_contains
+huire	会热	400	no_contains
+huiren	会忍	400	no_contains
+huiren	会认	401	no_contains
+huireng	会扔	2	no_contains
+huisha	会杀	200	no_contains
+huishai	会晒	80	no_contains
+huishan	会删	2	no_contains
+huishang	会伤	278	no_contains
+huishangyin	会上瘾	400	no_contains
+huishao	会烧	400	no_contains
+huisheng	会省	200	no_contains
+huishengqi	会生气	400	no_contains
+huishi	会湿	80	no_contains
+huishou	会守	400	no_contains
+huishou	会收	2	no_contains
+huishou	会瘦	201	no_contains
+huishu	会输	2	no_contains
+huishuai	会摔	200	no_contains
+huishui	会睡	400	no_contains
+huishuijiao	会睡觉	80	no_contains
+huishuo	会说	600	no_contains
+huishuohua	会说话	600	no_contains
+huisong	会送	400	no_contains
+huisuan	会算	363	no_contains
+huisuan	会酸	200	no_contains
+huisui	会碎	80	no_contains
+huitang	会烫	400	no_contains
+huitang	会躺	399	no_contains
+huiteng	会疼	400	no_contains
+huiti	会踢	400	no_contains
+huitian	会甜	80	no_contains
+huitiao	会挑	279	no_contains
+huitiao	会调	277	no_contains
+huitiao	会跳	278	no_contains
+huitiaowu	会跳舞	400	no_contains
+huiting	会停	199	no_contains
+huiting	会听	400	no_contains
+huitong	会痛	400	no_contains
+huitou	会偷	200	no_contains
+huitu	会吐	200	no_contains
+huitui	会推	200	no_contains
+huitui	会退	201	no_contains
+huituo	会脱	80	no_contains
+huiwan	会完	400	no_contains
+huiwan	会晚	401	no_contains
+huiwan	会玩	600	no_contains
+huiwen	会问	2	no_contains
+huixi	会洗	200	no_contains
+huixiang	会响	187	no_contains
+huixiang	会想	385	no_contains
+huixiang	会香	80	no_contains
+huixiangni	会想你	2	no_contains
+huixiao	会笑	400	no_contains
+huixie	会写	443	no_contains
+huixiezi	会写字	200	no_contains
+huixin	会信	200	no_contains
+huixing	会醒	400	no_contains
+huixuan	会选	200	no_contains
+huixue	会学	2	no_contains
+huiyang	会痒	200	no_contains
+huiyao	会咬	400	no_contains
+huiying	会赢	200	no_contains
+huiyong	会用	600	no_contains
+huiyouyong	会游泳	400	no_contains
+huiyun	会晕	80	no_contains
+huizang	会脏	2	no_contains
+huizao	会早	400	no_contains
+huizhao	会找	600	no_contains
+huizhong	会肿	80	no_contains
+huizhu	会住	200	no_contains
+huizhu	会煮	80	no_contains
+huizhua	会抓	200	no_contains
+huizhuan	会赚	200	no_contains
+huizhuang	会撞	200	no_contains
+huizhui	会追	200	no_contains
+huizou	会走	600	no_contains
+huizu	会租	2	no_contains
+huizui	会醉	80	no_contains
+huizuofan	会做饭	400	no_contains
+meirendong	没人动	2	no_contains
+meirendong	没人懂	81	no_contains
+nengdong	能动	600	no_contains
+nengdong	能懂	400	no_contains
+nibiedong	你别动	2	no_contains
+nibudong	你不懂	600	no_contains
+nidong	你动	400	no_contains
+nidongde	你懂的	600	no_contains
+nidongle	你动了	2	no_contains
+nidongma	你懂吗	200	no_contains
+rendong	人动	388	no_contains
+rendong	人懂	389	no_contains
+shuidong	谁动	2	no_contains
+shuidong	谁懂	200	no_contains
+shuidongle	谁动了	200	no_contains
+tabudong	他不懂	400	no_contains
+tabudong	她不懂	200	no_contains
+tadong	他动	279	no_contains
+tadong	她动	277	no_contains
+tadong	它动	278	no_contains
+tadong	它懂	2	no_contains
+tadongle	他动了	2	no_contains
+tameidong	他没动	2	no_contains
+wobudong	我不懂	600	no_contains
+wodong	我动	400	no_contains
+wodongle	我动了	2	no_contains
+wodongle	我懂了	400	no_contains
+womeidong	我没动	2	no_contains
+woyedong	我也懂	2	no_contains
+xiangdong	想动	200	no_contains
+yaodong	要动	360	no_contains
+yedong	也动	200	no_contains
+yedong	也懂	400	no_contains
+yourendong	有人动	2	no_contains
+yourendong	有人懂	200	no_contains
