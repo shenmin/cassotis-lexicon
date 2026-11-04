@@ -22,7 +22,7 @@ OVERRIDES = {variant: ROOT / f"manifests/pinyin_overrides.{variant}.tsv" for var
 HEADER_READINGS = "# Readings that were missing, 2026-10-18:"
 HEADER_ERHUA = "# Erhua words typed with the syllable er"
 READINGS = (
-    ("xielou", "泄露", "泄露", 1000),
+    ("xielou", "泄露", "洩露", 1000),
     ("yixing", "一行", "一行", 999),
     ("neige", "哪个", "哪個", 580),
     ("neixie", "哪些", "哪些", 834),

@@ -1584,14 +1584,14 @@
 不太行	不太行	0.92
 太不行	太不行	0.90
 真不行	真不行	0.92
-别在意	别在意	0.90
-别这样	别这样	0.92
-不要问	不要问	0.90
-别问	别问	0.88
+别在意	別在意	0.90
+别这样	別這樣	0.92
+不要问	不要問	0.90
+别问	別問	0.88
 不要想	不要想	0.90
 想都不要想	想都不要想	0.94
-别这么	别这么	0.90
-这样不好	这样不好	0.92
+别这么	別這麼	0.90
+这样不好	這樣不好	0.92
 钙片	鈣片	0.90	gaipian
 那也行	那也行	0.90	nayexing
 或许吧	或許吧	0.90	huoxuba
@@ -2166,18 +2166,18 @@
 她有	她有	0.88	tayou
 她真	她真	0.88	tazhen
 她是	她是	0.88	tashi
-我该	我该	0.88	wogai
-我现在	我现在	0.90	woxianzai
-你现在	你现在	0.90	nixianzai
-他现在	他现在	0.90	taxianzai
-她现在	她现在	0.90	taxianzai
-你该	你该	0.88	nigai
-也还是	也还是	0.90	yehaishi
-就还是	就还是	0.90	jiuhaishi
+我该	我該	0.88	wogai
+我现在	我現在	0.90	woxianzai
+你现在	你現在	0.90	nixianzai
+他现在	他現在	0.90	taxianzai
+她现在	她現在	0.90	taxianzai
+你该	你該	0.88	nigai
+也还是	也還是	0.90	yehaishi
+就还是	就還是	0.90	jiuhaishi
 抑或是	抑或是	0.90	yihuoshi
-很显然	很显然	0.90	henxianran
-我发现	我发现	0.90	wofaxian
-很明显	很明显	0.90	henmingxian
+很显然	很顯然	0.90	henxianran
+我发现	我發現	0.90	wofaxian
+很明显	很明顯	0.90	henmingxian
 会把	會把	0.88	huiba
 会吧	會吧	0.88	huiba
 会的	會的	0.88	huide
@@ -2205,26 +2205,26 @@
 做做	做做	0.88	zuozuo
 做做看	做做看	0.90	zuozuokan
 又变成	又變成	0.90	youbiancheng
-开干	开干	0.90	kaigan
-值得爱	值得爱	0.90	zhideai
-这部剧	这部剧	0.92	zhebuju
-这部	这部	0.90	zhebu
+开干	開幹	0.90	kaigan
+值得爱	值得愛	0.90	zhideai
+这部剧	這部劇	0.92	zhebuju
+这部	這部	0.90	zhebu
 那部	那部	0.90	nabu
 都很	都很	0.88	douhen
-换上	换上	0.90	huanshang
-两人	两人	0.90	liangren
+换上	換上	0.90	huanshang
+两人	兩人	0.90	liangren
 新版	新版	0.90	xinban
-你俩	你俩	0.90	nilia
-他俩	他俩	0.90	talia
-我俩	我俩	0.90	wolia
-她俩	她俩	0.90	talia
-你们俩	你们俩	0.90	nimenlia
-我们俩	我们俩	0.90	womenlia
-他们俩	他们俩	0.90	tamenlia
-她们俩	她们俩	0.90	tamenlia
-两个人	两个人	0.90	lianggeren
-你还是	你还是	0.90	nihaishi
-你还	你还	0.88	nihai
+你俩	你倆	0.90	nilia
+他俩	他倆	0.90	talia
+我俩	我倆	0.90	wolia
+她俩	她倆	0.90	talia
+你们俩	你們倆	0.90	nimenlia
+我们俩	我們倆	0.90	womenlia
+他们俩	他們倆	0.90	tamenlia
+她们俩	她們倆	0.90	tamenlia
+两个人	兩個人	0.90	lianggeren
+你还是	你還是	0.90	nihaishi
+你还	你還	0.88	nihai
 哈哈哈	哈哈哈	0.90	hahaha
 哈哈哈哈	哈哈哈哈	0.90	hahahaha
 哈哈哈哈哈	哈哈哈哈哈	0.90	hahahahaha
@@ -2234,24 +2234,24 @@
 真不好	真不好	0.90	zhenbuhao
 真好笑	真好笑	0.90	zhenhaoxiao
 真大	真大	0.90	zhenda
-真强	真强	0.90	zhenqiang
+真强	真強	0.90	zhenqiang
 真弱	真弱	0.90	zhenruo
-真远	真远	0.90	zhenyuan
+真远	真遠	0.90	zhenyuan
 真近	真近	0.90	zhenjin
 真乖	真乖	0.90	zhenguai
-真听话	真听话	0.90	zhentinghua
+真听话	真聽話	0.90	zhentinghua
 真高	真高	0.90	zhengao
 真矮	真矮	0.90	zhenai
 真低	真低	0.90	zhendi
-真强大	真强大	0.90	zhenqiangda
+真强大	真強大	0.90	zhenqiangda
 真色	真色	0.90	zhense
-真喜欢	真喜欢	0.90	zhenxihuan
+真喜欢	真喜歡	0.90	zhenxihuan
 真快	真快	0.90	zhenkuai
 真慢	真慢	0.90	zhenman
-真长	真长	0.90	zhenchang
+真长	真長	0.90	zhenchang
 真短	真短	0.90	zhenduan
 真暗	真暗	0.90	zhenan
-真热	真热	0.90	zhenre
+真热	真熱	0.90	zhenre
 真冷	真冷	0.90	zhenleng
 真甜	真甜	0.90	zhentian
 真苦	真苦	0.90	zhenku
@@ -2259,31 +2259,31 @@
 真辣	真辣	0.90	zhenla
 真臭	真臭	0.90	zhenchou
 真差	真差	0.90	zhencha
-真差劲	真差劲	0.90	zhenchajin
+真差劲	真差勁	0.90	zhenchajin
 真累	真累	0.90	zhenlei
 真困	真困	0.90	zhenkun
 真忙	真忙	0.90	zhenmang
-真闲	真闲	0.90	zhenxian
-真贵	真贵	0.90	zhengui
+真闲	真閒	0.90	zhenxian
+真贵	真貴	0.90	zhengui
 真便宜	真便宜	0.90	zhenpianyi
 真美	真美	0.90	zhenmei
-真丑	真丑	0.90	zhenchou
+真丑	真醜	0.90	zhenchou
 真愁	真愁	0.90	zhenchou
 真好看	真好看	0.90	zhenhaokan
-真难看	真难看	0.90	zhennankan
-真美丽	真美丽	0.90	zhenmeili
+真难看	真難看	0.90	zhennankan
+真美丽	真美麗	0.90	zhenmeili
 真漂亮	真漂亮	0.90	zhenpiaoliang
-真可爱	真可爱	0.90	zhenkeai
-真讨厌	真讨厌	0.90	zhentaoyan
+真可爱	真可愛	0.90	zhenkeai
+真讨厌	真討厭	0.90	zhentaoyan
 真奇怪	真奇怪	0.90	zhenqiguai
-比较丑	比较丑	0.90	bijiaochou
-比较贵	比较贵	0.90	bijiaogui
-比较便宜	比较便宜	0.90	bijiaopianyi
-很贵	很贵	0.90	hengui
+比较丑	比較醜	0.90	bijiaochou
+比较贵	比較貴	0.90	bijiaogui
+比较便宜	比較便宜	0.90	bijiaopianyi
+很贵	很貴	0.90	hengui
 很便宜	很便宜	0.90	henpianyi
-很丑	很丑	0.90	henchou
+很丑	很醜	0.90	henchou
 很美	很美	0.90	henmei
-很热	很热	0.90	henre
+很热	很熱	0.90	henre
 很冷	很冷	0.90	henleng
 很甜	很甜	0.90	hentian
 很苦	很苦	0.90	henku
@@ -2291,51 +2291,51 @@
 很辣	很辣	0.90	henla
 很香	很香	0.90	henxiang
 很臭	很臭	0.90	henchou
-很差劲	很差劲	0.90	henchajin
+很差劲	很差勁	0.90	henchajin
 很累	很累	0.90	henlei
 很困	很困	0.90	henkun
 很忙	很忙	0.90	henmang
-很闲	很闲	0.90	henxian
+很闲	很閒	0.90	henxian
 很好看	很好看	0.90	henhaokan
-很难看	很难看	0.90	hennankan
+很难看	很難看	0.90	hennankan
 很漂亮	很漂亮	0.90	henpiaoliang
-很可爱	很可爱	0.90	henkeai
+很可爱	很可愛	0.90	henkeai
 很拉胯	很拉胯	0.90	henlakua
 真拉胯	真拉胯	0.90	zhenlakua
 更美	更美	0.90	gengmei
-更丑	更丑	0.90	gengchou
+更丑	更醜	0.90	gengchou
 更香	更香	0.90	gengxiang
 更臭	更臭	0.90	gengchou
 更漂亮	更漂亮	0.90	gengpiaoliang
-更可爱	更可爱	0.90	gengkeai
+更可爱	更可愛	0.90	gengkeai
 更奇怪	更奇怪	0.90	gengqiguai
-更贵	更贵	0.90	genggui
+更贵	更貴	0.90	genggui
 更便宜	更便宜	0.90	gengpianyi
-更喜欢	更喜欢	0.90	gengxihuan
+更喜欢	更喜歡	0.90	gengxihuan
 更快	更快	0.90	gengkuai
 更慢	更慢	0.90	gengman
-更长	更长	0.90	gengchang
+更长	更長	0.90	gengchang
 更短	更短	0.90	gengduan
 更亮	更亮	0.90	gengliang
 更暗	更暗	0.90	gengan
-更热	更热	0.90	gengre
+更热	更熱	0.90	gengre
 更冷	更冷	0.90	gengleng
 更甜	更甜	0.90	gengtian
 更苦	更苦	0.90	gengku
 更酸	更酸	0.90	gengsuan
 更辣	更辣	0.90	gengla
 更累	更累	0.90	genglei
-更闲	更闲	0.90	gengxian
+更闲	更閒	0.90	gengxian
 更困	更困	0.90	gengkun
 更忙	更忙	0.90	gengmang
-之举	之举	0.90	zhiju
-这段	这段	0.90	zheduan
+之举	之舉	0.90	zhiju
+这段	這段	0.90	zheduan
 那段	那段	0.90	naduan
-这一段	这一段	0.90	zheyiduan
-创造出	创造出	0.90	chuangzaochu
-创造出了	创造出了	0.90	chuangzaochule
-创造了	创造了	0.90	chuangzaole
-闺蜜	闺蜜	0.90	guimi
+这一段	這一段	0.90	zheyiduan
+创造出	創造出	0.90	chuangzaochu
+创造出了	創造出了	0.90	chuangzaochule
+创造了	創造了	0.90	chuangzaole
+闺蜜	閨蜜	0.90	guimi
 共情	共情	0.90	gongqing
 不吃	不吃	0.90	buchi
 不赞同	不贊同	0.90	buzantong
@@ -5092,7 +5092,7 @@
 九行	九行	0.72	jiuhang
 十行	十行	0.74	shihang
 全屋	全屋	0.86	quanwu
-全屋定制	全屋定制	0.82	quanwudingzhi
+全屋定制	全屋定製	0.82	quanwudingzhi
 全屋装修	全屋裝修	0.80	quanwuzhuangxiu
 全屋智能	全屋智能	0.80	quanwuzhineng
 全屋家电	全屋家電	0.78	quanwujiadian
@@ -5991,7 +5991,7 @@
 来催	來催	0.74
 若有	若有	0.66	ruoyou
 仍是	仍是	0.74	rengshi
-后才	后才	0.66	houcai
+后才	後才	0.66	houcai
 仍在	仍在	0.74
 扔在	扔在	0.74
 微笑着	微笑着	0.74	weixiaozhe
@@ -6037,15 +6037,15 @@
 跑向	跑向	0.74	paoxiang
 请您	請您	0.74
 柔声	柔聲	0.66	rousheng
-没吃	沒喫	0.74	meichi
-吃慢	喫慢	0.66	chiman
+没吃	沒吃	0.74	meichi
+吃慢	吃慢	0.66	chiman
 别写	別寫	0.74
 该做	該做	0.74
 帮个忙	幫個忙	0.74	banggemang
 憋坏	憋壞	0.66	biehuai
 蓝晶	藍晶	0.66	lanjing
 大变	大變	0.66	dabian
-拿我当	拿我噹	0.74
+拿我当	拿我當	0.74
 想向	想向	0.74
 压在	壓在	0.74
 正从	正從	0.66	zhengcong
@@ -6060,7 +6060,7 @@
 去忙	去忙	0.74
 想带	想帶	0.74
 手捧	手捧	0.66	shoupeng
-后等	后等	0.66
+后等	後等	0.66
 慢点	慢點	0.66
 伸向	伸向	0.74
 站定	站定	0.66
@@ -6989,14 +6989,14 @@
 用电	用電	0.78
 骑着	騎著	0.78
 两回	兩回	0.78
-吃糖	喫糖	0.78
+吃糖	吃糖	0.78
 资格证	資格證	0.66
 大平层	大平層	0.66
 平层	平層	0.78
 这个月	這個月	0.66
 住不下	住不下	0.66
 玩游戏	玩遊戲	0.66
-碗里	碗里	0.78
+碗里	碗裡	0.78
 谁家	誰家	0.78
 十二岁	十二歲	0.66
 学习成绩	學習成績	0.52

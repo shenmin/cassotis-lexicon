@@ -1042,7 +1042,8 @@ jiahao	加號	1
 jiahao	加好	2
 
 # Everyday accidental actions (2026-09-12).
-wuhuan	誤換	1
+wuhuan	五環	1
+wuhuan	誤換	2
 wujiang	武將	1
 wujiang	誤將	2
 wuba	誤把	1
@@ -1853,7 +1854,7 @@ zaikao	再考	2
 zaizheng	在整	1
 zaizheng	再整	2
 zaijian	再見	2
-zaijian	在減	3
+zaijian	在減	4
 zaishu	在數	1
 zaishu	在輸	2
 zaishang	在上	1
@@ -2018,7 +2019,7 @@ qingchi	請吃	1
 qinghe	慶賀	1
 qinghe	請喝	3
 qingshuo	請說	1
-qingjiang	請講	2
+qingjiang	請講	3
 qinghui	請回	1
 qingqu	輕取	2
 qingqu	情趣	1
@@ -2098,7 +2099,7 @@ buji	補集	6
 chaoji	超級	1
 chaoji	超集	2
 miji	密集	1
-miji	冪集	2
+miji	冪集	3
 duichencha	對稱差	1
 qubingji	取並集	1
 qujiaoji	取交集	1
@@ -2179,7 +2180,7 @@ benji	本機	1
 zhengquede	正確的	2
 
 # Readings, erhua spellings and everyday phrases, 2026-10-18: the rank each has by weight among the words of its key.
-xielou	泄露	1
+xielou	洩露	1
 yixing	一行	2
 neige	哪個	2
 neixie	哪些	2
@@ -2555,7 +2556,7 @@ jiaozheng	矯正	1
 huiben	繪本	2
 yuanjing	願景	2
 shunfeng	順豐	1
-banshi	版式	4
+banshi	版式	5
 zhengjie	政界	3
 zhengjie	整節	4
 jiaoyan	校驗	3
@@ -2611,7 +2612,7 @@ hela	喝啦	2
 biela	別啦	1
 yaola	要啦	1
 tengla	疼啦	1
-shala	傻啦	2
+shala	傻啦	3
 zuola	做啦	3
 xiela	寫啦	2
 wanla	完啦	2
@@ -2771,7 +2772,7 @@ zhijia	製假	5
 zhijin	織錦	3
 zhixuan	直選	2
 zhiqian	支前	6
-caizhi	采制	4
+caizhi	採製	4
 zhiji	織機	4
 zhiji	至極	6
 zhiqian	紙錢	5
@@ -2844,7 +2845,7 @@ henma	恨嗎	1
 daima	帶嗎	2
 chuanma	穿嗎	1
 daima	戴嗎	3
-tuoma	脫嗎	2
+tuoma	脫嗎	3
 feima	飛嗎	3
 fama	發嗎	3
 suoai	所愛	1

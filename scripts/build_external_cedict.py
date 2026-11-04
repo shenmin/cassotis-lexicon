@@ -800,6 +800,55 @@ SHARED_SCRIPT_VARIANT_BEHAVIOR: Dict[Tuple[str, str], Tuple[bool, bool]] = {
     ("纔", "才"): (False, True),
 }
 
+# The simplified-to-traditional character map is put together from word
+# alignments (CEDICT, OpenCC's phrases) and Unihan's variant pairs, and two of
+# its sources pick the wrong form of a character with several. Unihan lists a
+# character's traditional variants in code point order and the loader takes
+# the first (葯 for 药, 噹 for 当, 囌 for 苏), and CEDICT's entries of variant
+# forms outnumber the character itself (鉅 for 巨, 喫 for 吃, 嚥 for 咽).
+# Converted by the map, 巨人 became 鉅人 and 當然 噹然; a form no source writes
+# has no signal of use, and the filters of rare entries then took 巨人, 吃喝 and
+# 吃力 out of the traditional dictionary altogether. The map takes OpenCC's
+# default instead (the first form of STCharacters.txt, in Taiwan's form by
+# TWVariants.txt; the character itself where OpenCC keeps it), and the phrases
+# decide words like 吞嚥, 叮噹 and 痊癒. Left as the map has them: 濕, 姪, 塚,
+# 瞇 (Taiwan writes them; normalize_traditional_forms.py keeps 濕 and 塚), 簽
+# (抽籤 comes from the phrases), 嘩, 嚙 and 裊, which Taiwan writes too.
+# 么 stays: Taiwan writes 老么 and 么二 with it, and the traditional words
+# themselves go through the map (麼 made them 老麼); OpenCC's phrases give
+# 什麼 and 怎麼.
+# A value equal to its key removes the entry.
+TC_CHAR_MAP_CORRECTIONS: Dict[str, str] = {
+    "㑺": "㑺", "㝦": "㝦", "㤖": "㤖", "㤭": "㤭", "㧛": "㧛", "㻪": "㻪", "䐪": "䐪",
+    "䒿": "䒿", "䛓": "䛓", "䲤": "䲤", "䴘": "鷉", "么": "么", "冲": "衝", "净": "淨",
+    "勋": "勳", "历": "歷", "厕": "廁", "吃": "吃", "吣": "吣", "启": "啟", "咽": "咽",
+    "唇": "唇", "喂": "喂", "坝": "壩", "埙": "壎", "埯": "埯", "墙": "牆", "壳": "殼",
+    "奖": "獎", "奨": "奨", "尽": "盡", "岙": "岙", "巨": "巨", "当": "當", "录": "錄",
+    "恤": "恤", "恶": "惡", "愈": "愈", "昆": "昆", "檗": "檗", "沾": "沾", "浚": "浚",
+    "滟": "灩", "灶": "灶", "牦": "犛", "琅": "琅", "痴": "痴", "瘘": "瘻", "秘": "秘",
+    "竖": "豎", "粽": "粽", "纤": "纖", "线": "線", "绣": "繡", "绦": "絛", "绱": "鞝",
+    "绷": "繃", "缊": "縕", "缰": "韁", "群": "群", "耇": "耇", "脏": "髒", "腭": "顎",
+    "艳": "豔", "芸": "芸", "苏": "蘇", "苔": "苔", "荡": "蕩", "药": "藥", "莼": "蓴",
+    "蕴": "蘊", "裥": "襉", "褝": "褝", "褵": "褵", "谥": "諡", "谫": "譾", "赍": "齎",
+    "赝": "贗", "辒": "轀", "酝": "醞", "鉴": "鑑", "钩": "鉤", "锈": "鏽", "镋": "钂",
+    "镌": "鐫", "镢": "钁", "闲": "閒", "鲇": "鯰", "鲞": "鯗", "鳁": "鰮", "鳄": "鱷",
+    "鿟": "鿟", "鿭": "鿭", "鿴": "鿴", "鿸": "鿸",
+}
+
+# Phrases of the traditional backfill that OpenCC's phrases lack, where the
+# corrected char map gives OpenCC's first form and the word means the other:
+# 癒 heals (愈 is "the more"), 餵 feeds (喂 is "hello"), 噁 in chemistry, 麼 of
+# the question word, and a name; and two where OpenCC's phrases take 鉅 and
+# Taiwan writes 巨: 巨細胞 (the phrase 巨细 matched inside it: 鉅細胞病毒) and
+# 巨變; and 落盡, where the phrase 尽子 (儘子) matched inside 杨花落尽子规啼.
+# Longest match first, as OpenCC's phrases.
+TC_EXTRA_PHRASES: Dict[str, str] = {
+    "疗愈": "療癒", "自愈": "自癒", "而愈": "而癒", "喂猴": "餵猴",
+    "恶唑": "噁唑", "恶嗪": "噁嗪", "二恶英": "二噁英", "曹冲": "曹沖",
+    "饿了么": "餓了麼", "特么": "特麼", "肿么": "腫麼", "恁么": "恁麼",
+    "巨细胞": "巨細胞", "巨变": "巨變", "落尽": "落盡",
+}
+
 # Audited single-character reading overrides. Keep this hook available, but
 # prefer algorithmic phrase-support calibration before adding explicit entries.
 SINGLE_CHAR_READING_DROP_OVERRIDES: Set[Tuple[str, str]] = {
@@ -12377,6 +12426,36 @@ def _build_opencc_sc_to_tc_map(opencc_entries: List[Tuple[str, str]]) -> Dict[st
     return mapping
 
 
+def _apply_tc_char_map_corrections(
+    simp_to_trad_char_map: Dict[str, str],
+    corrections: Dict[str, str] | None = None,
+    sc_chars: Set[str] | None = None,
+    tc_chars: Set[str] | None = None,
+) -> Dict[str, int]:
+    """Puts TC_CHAR_MAP_CORRECTIONS into the map, where it has the character.
+    A character kept as its own traditional form is one of both scripts then
+    (tc_chars), or the script filter of traditional rows would drop the words
+    the map no longer converts (病灶 once 灶 stays)."""
+    corrections = TC_CHAR_MAP_CORRECTIONS if corrections is None else corrections
+    removed = 0
+    replaced = 0
+    for simp_ch, trad_ch in corrections.items():
+        if simp_ch not in simp_to_trad_char_map:
+            continue
+        if trad_ch == simp_ch:
+            del simp_to_trad_char_map[simp_ch]
+            if sc_chars is not None and tc_chars is not None and simp_ch in sc_chars:
+                tc_chars.add(simp_ch)
+            removed += 1
+        elif simp_to_trad_char_map[simp_ch] != trad_ch:
+            simp_to_trad_char_map[simp_ch] = trad_ch
+            replaced += 1
+    return {
+        "tc_char_map_corrections_removed": removed,
+        "tc_char_map_corrections_replaced": replaced,
+    }
+
+
 def _build_opencc_tc_to_sc_map(opencc_entries: List[Tuple[str, str]]) -> Dict[str, Set[str]]:
     mapping: Dict[str, Set[str]] = {}
     for sc_word, tc_word in opencc_entries:
@@ -12861,12 +12940,15 @@ def _backfill_tc_mapping_from_sc_with_char_map(
     tc_mapping: Dict[Tuple[str, str], int],
     simp_to_trad_char_map: Dict[str, str],
     variant_pairs: Set[Tuple[str, str]] | None = None,
+    convert_text: Callable[[str], str] | None = None,
 ) -> Tuple[Dict[Tuple[str, str], int], Dict[str, int]]:
-    """Gives every simplified row a traditional row of its key. The char map
-    leaves a character with more than one traditional form as it is (于 of
-    高于), so where the key already holds the word in traditional (高於, a
-    twin by variant_pairs) that row takes the weight instead of a copy in
-    simplified beside it, which came first among equal weights."""
+    """Gives every simplified row a traditional row of its key, converted by
+    convert_text (the main build: OpenCC's phrases, then the char map) or the
+    char map. The char map leaves a character with more than one traditional
+    form as it is (于 of 高于), so where the key already holds the word in
+    traditional (高於, a twin by variant_pairs) that row takes the weight
+    instead of a copy in simplified beside it, which came first among equal
+    weights."""
     if not simp_to_trad_char_map:
         return tc_mapping, {
             "tc_backfill_from_sc_added": 0,
@@ -12894,7 +12976,10 @@ def _backfill_tc_mapping_from_sc_with_char_map(
     boosted = 0
     twins = 0
     for (pinyin, sc_text), weight in sc_mapping.items():
-        tc_text = _convert_text_with_char_map(sc_text, simp_to_trad_char_map)
+        if convert_text is not None:
+            tc_text = convert_text(sc_text)
+        else:
+            tc_text = _convert_text_with_char_map(sc_text, simp_to_trad_char_map)
         key = (pinyin, tc_text)
         previous = normalized.get(key)
         if previous is None:
@@ -23943,6 +24028,11 @@ def main() -> int:
                 tc_script_chars,
                 tc_shared_identity_chars,
             )
+        tc_char_map_correction_stats = _apply_tc_char_map_corrections(
+            simp_to_trad_char_map,
+            sc_chars=sc_script_chars,
+            tc_chars=tc_script_chars,
+        )
         char_variant_pairs = _build_script_char_pairs(
             trad_to_simp_char_map, simp_to_trad_char_map, tc_to_sc_map, opencc_entries,
             list(unihan_simplified_variant_map.items())
@@ -24220,9 +24310,25 @@ def main() -> int:
             simp_to_trad_char_map,
             trad_to_simp_char_map,
         )
+        # STPhrases lists several forms of some phrases (加注: 加註 加注) and
+        # the parser keeps them as one string; the backfill takes the first.
+        opencc_sc_to_tc_for_backfill = _build_opencc_sc_to_tc_map(
+            [
+                (sc_word, tc_word.split()[0])
+                for sc_word, tc_word in opencc_entries
+                if tc_word.split()
+            ]
+        ) if opencc_entries else {}
+        for sc_word, tc_word in TC_EXTRA_PHRASES.items():
+            opencc_sc_to_tc_for_backfill[sc_word] = {tc_word}
         tc_map, tc_backfill_stats = _backfill_tc_mapping_from_sc_with_char_map(
             sc_map, tc_map, simp_to_trad_char_map,
             _build_char_variant_pairs(tc_to_sc_map, opencc_entries),
+            convert_text=lambda text: _convert_sc_text_to_tc_with_phrase_hints(
+                text,
+                opencc_sc_to_tc_for_backfill,
+                simp_to_trad_char_map,
+            ),
         )
         tc_map, tc_script_filter_stats = _filter_tc_mapping_with_script_hints(
             tc_map, sc_script_chars, tc_script_chars
@@ -24382,6 +24488,7 @@ def main() -> int:
         stats.update(sc_pinyin_override_stats)
         stats.update(tc_char_normalize_stats)
         stats.update(tc_backfill_stats)
+        stats.update(tc_char_map_correction_stats)
         stats.update(tc_script_filter_stats)
         stats.update(tc_pinyin_override_stats)
         stats["unihan_map_size"] = len(unihan_map)

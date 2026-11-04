@@ -18,12 +18,12 @@ Lexicon build and release repository for Cassotis IME.
 - Supports external-source bootstrap and reproducible generated dictionary builds.
 - Keeps attribution and release policy files aligned with generated artifacts.
 
-## Current dictionary snapshot (2026-11-03 build)
+## Current dictionary snapshot (2026-11-04 build)
 
 | File | Variant | Entries |
 |------|---------|---------|
 | `data/generated/dict_clean_sc.txt` | Simplified Chinese | 237,994 |
-| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 238,608 |
+| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 240,829 |
 | `data/generated/dict_unihan_sc.txt` | Simplified single-char (Unihan) | 23,917 |
 | `data/generated/dict_unihan_tc.txt` | Traditional single-char (Unihan) | 24,180 |
 
@@ -37,6 +37,7 @@ Cassotis Lexicon publishes local ranking artifacts alongside its lexical diction
 
 | Version | Query-path priors (SC / TC) | Word-path transitions (SC / TC) | Forward character n-gram parameters (SC / TC) | Reverse character n-gram parameters (SC / TC) |
 |---|---:|---:|---:|---:|
+| `2026-11-04` | 23,603 / 22,749 | 904,762 / 833,694 | 698,694 / 697,033 | 2,538,336 / 2,538,261 |
 | `2026-11-02` | 23,603 / 22,683 | 904,762 / 833,701 | 698,694 / 697,013 | 2,538,336 / 2,538,235 |
 | `2026-10-28` | 23,603 / 22,681 | 904,767 / 833,707 | 698,694 / 697,013 | 2,538,336 / 2,538,235 |
 | `v1.14.0` - `v1.29.0` | 23,603 / 22,723 | 289,955 / 257,125 | 698,694 / 698,777 | 2,538,336 / 2,539,067 |
