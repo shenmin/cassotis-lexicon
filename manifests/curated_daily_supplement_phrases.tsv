@@ -27622,7 +27622,7 @@
 舀起	舀起	0.201	yaoqi	exact_rank
 腰际	腰際	0.202	yaoji	exact_rank
 咬人	咬人	0.600	yaoren	exact_rank
-# Everyday words, 2026-11-05, the more frequent ones: 首字, 首句 and 首善 (the user's examples), 首 with a character for the first of something: a part of a text (首段, 首篇, 首联), a thing counted (首张, 首场, 首笔), a first event (首战, 首飞, 首诊), a period (首周, 首月, 首年), and the words and short phrases it begins (首班车, 首映礼, 首先是, 首次出现, 首席科学家). Weighted as the blocks of 2026-11-04 (occurrences where the word is no part of a longer dictionary word, nor before one that its last character begins, nor after one that its first character ends); a word stays under every more frequent word of its key, an import's weight included; a requested word at least 400 where no more frequent word holds it lower.
+# Everyday words, 2026-11-05, the more frequent ones: 首字, 首句 and 首善 (the user's examples), 首 with a character for the first of something: a part of a text (首段, 首篇, 首联), a thing counted (首张, 首场, 首笔), a first event (首战, 首飞, 首诊), a period (首周, 首月, 首年), and the words and short phrases it begins (首班车, 首映礼, 首先是, 首次出现, 首席科学家). Weighted as the blocks of 2026-11-04 (occurrences where the word is no part of a longer dictionary word, nor before one that its last character begins, nor after one that its first character ends); a word stays under every more frequent word of its key, an import's weight included, but for 首张, which the user asked to have second on its key, above 首长; a requested word at least 400 where no more frequent word holds it lower.
 首段	首段	0.400	shouduan	exact_rank_no_contains
 首节	首節	0.261	shoujie	exact_rank_no_contains
 首篇	首篇	0.400	shoupian	exact_rank_no_contains
@@ -27630,7 +27630,7 @@
 首部	首部	0.279	shoubu	exact_rank_no_contains
 首词	首詞	0.400	shouci	exact_rank_no_contains
 首联	首聯	0.600	shoulian	exact_rank_no_contains
-首张	首張	0.599	shouzhang	exact_rank_no_contains
+首张	首張	0.603	shouzhang	exact_rank_no_contains
 首名	首名	0.438	shouming	exact_rank_no_contains
 首枚	首枚	0.400	shoumei	exact_rank_no_contains
 首架	首架	0.358	shoujia	exact_rank_no_contains
