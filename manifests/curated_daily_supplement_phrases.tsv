@@ -3770,7 +3770,6 @@
 拖回	拖回	0.05	tuohui
 每句	每句	0.05	meiju
 每一句	每一句	0.05	meiyiju
-要用	要用	0.05	yaoyong
 不要用	不要用	0.05	buyaoyong
 
 # lower-frequency scene/action supplements 2026-07-05
@@ -3903,7 +3902,6 @@
 中文系	中文系	0.01
 毛笔字	毛筆字	0.01
 如梭	如梭	0.01
-瘦高	瘦高	0.01
 常考	常考	0.01
 半开	半開	0.01
 赞歌	讚歌	0.01
@@ -4420,7 +4418,6 @@
 金链	金鍊	0.01
 压惊	壓驚	0.01
 按住	按住	0.01
-咬人	咬人	0.01
 逼急	逼急	0.01
 抡出	掄出	0.01
 对战	對戰	0.01
@@ -4470,7 +4467,6 @@
 跳楼案	跳樓案	0.01
 确有此事	確有此事	0.01
 两仪	兩儀	0.01
-首饰盒	首飾盒	0.01
 珠宝店	珠寶店	0.01
 埃及棉	埃及棉	0.01
 百试百灵	百試百靈	0.01
@@ -4694,7 +4690,6 @@
 银框	銀框	0.01
 金卡	金卡	0.01
 正厅	正廳	0.01
-首曲	首曲	0.01
 虾饺	蝦餃	0.01
 鲍鱼	鮑魚	0.01
 勾翅	勾翅	0.01
@@ -5554,7 +5549,6 @@
 这帮	這幫	0.01
 下腹	下腹	0.01
 这个时候	這個時候	0.01
-瘦瘦	瘦瘦	0.01
 很静	很靜	0.01
 眼际	眼際	0.01
 流过	流過	0.01
@@ -7240,7 +7234,6 @@
 细听	細聽	0.01
 平齐	平齊	0.01
 闭眼	閉眼	0.01
-腰际	腰際	0.01
 跳下	跳下	0.01
 存稿	存稿	0.01
 仙缘	仙緣	0.01
@@ -7616,7 +7609,6 @@
 调离	調離	0.01
 肉制品	肉製品	0.01
 独守	獨守	0.01
-腰腹	腰腹	0.01
 素白	素白	0.01
 澄黄	澄黃	0.01
 索吻	索吻	0.01
@@ -8362,7 +8354,6 @@
 发肿	發腫	0.01
 气不打一处来	氣不打一處來	0.01
 摆臂	擺臂	0.01
-舀起	舀起	0.01
 一勺	一勺	0.01
 忘不掉	忘不掉	0.01
 干农活	幹農活	0.01
@@ -8662,7 +8653,6 @@
 摸底考试	摸底考試	0.01
 权对称	權對稱	0.01
 反复推导	反復推導	0.01
-收卷	收卷	0.01
 稳了	穩了	0.01
 金杯	金杯	0.01
 惊鸿一瞥	驚鴻一瞥	0.01
@@ -10297,7 +10287,6 @@
 麻辣香锅	麻辣香鍋	0.01
 空间动态	空間動態	0.01
 游客照	遊客照	0.01
-收尽	收盡	0.01
 插兜	插兜	0.01
 转专业	轉專業	0.01
 惊坐而起	驚坐而起	0.01
@@ -11040,7 +11029,6 @@
 杀父仇人	殺父仇人	0.01
 身怀绝技	身懷絕技	0.01
 熏心	薰心	0.01
-首饰店	首飾店	0.01
 灯牌	燈牌	0.01
 鱼肉粥	魚肉粥	0.01
 一次性筷子	一次性筷子	0.01
@@ -27388,3 +27376,480 @@
 会昌	會昌	0.566	huichang	exact_rank
 会心	會心	0.600	huixin	exact_rank
 会商	會商	0.279	huishang	exact_rank
+# Everyday words, 2026-11-04, the more frequent ones: 要装, 要抱, 要弄, 要保, 要煲, 要报, 要包, 要房, 要车, 要找, 要招, 要带, 要戴, 要等, 要搞, 要告, 要唱, 要喊 and 要黑 (the user's examples, with 要舔, which the dictionary had; 要带 and 要戴, 要搞 and 要告, 要唱 and 要房 stay under the more frequent 腰带, 药膏, 药厂, 药房 and 药方; 要车 at 200, where 400 turned a long Tab case), 要 with a verb, a noun or an adjective (要买, 要给, 要靠, 要换, 要快) and 要 with a short phrase (要回家, 要上班, 要小心, 要好好, 要走了). Weighted as the blocks of 2026-11-04 (occurrences where the word is no part of a longer dictionary word, nor before one that its last character begins, nor after one that its first character ends); a word stays under every more frequent word of its key, an import's weight included; a requested word at least 400 where no more frequent word holds it lower. At 2: 要取, whose weight turned a long case, and 要学, 要杀, 要拍, 要涂, which went first without a context over the more frequent 药学, 要啥, 要派 and 要图.
+要买	要買	0.601	yaomai	exact_rank_no_contains
+要卖	要賣	0.600	yaomai	exact_rank_no_contains
+要讲	要講	0.600	yaojiang	exact_rank_no_contains
+要问	要問	0.379	yaowen	exact_rank_no_contains
+要读	要讀	0.600	yaodu	exact_rank_no_contains
+要学	要學	0.002	yaoxue	exact_rank_no_contains
+要教	要教	0.600	yaojiao	exact_rank_no_contains
+要拿	要拿	0.600	yaona	exact_rank_no_contains
+要给	要給	0.600	yaogei	exact_rank_no_contains
+要送	要送	0.600	yaosong	exact_rank_no_contains
+要借	要借	0.400	yaojie	exact_rank_no_contains
+要还	要還	0.600	yaohuan	exact_rank_no_contains
+要换	要換	0.601	yaohuan	exact_rank_no_contains
+要收	要收	0.600	yaoshou	exact_rank_no_contains
+要寄	要寄	0.289	yaoji	exact_rank_no_contains
+要退	要退	0.259	yaotui	exact_rank_no_contains
+要交	要交	0.701	yaojiao	exact_rank_no_contains
+要付	要付	0.400	yaofu	exact_rank_no_contains
+要取	要取	0.002	yaoqu	exact_rank_no_contains
+要停	要停	0.600	yaoting	exact_rank_no_contains
+要追	要追	0.400	yaozhui	exact_rank_no_contains
+要抓	要抓	0.600	yaozhua	exact_rank_no_contains
+要哭	要哭	0.400	yaoku	exact_rank_no_contains
+要起	要起	0.401	yaoqi	exact_rank_no_contains
+要住	要住	0.400	yaozhu	exact_rank_no_contains
+要请	要請	0.600	yaoqing	exact_rank_no_contains
+要见	要見	0.156	yaojian	exact_rank_no_contains
+要陪	要陪	0.400	yaopei	exact_rank_no_contains
+要管	要管	0.600	yaoguan	exact_rank_no_contains
+要帮	要幫	0.600	yaobang	exact_rank_no_contains
+要救	要救	0.357	yaojiu	exact_rank_no_contains
+要杀	要殺	0.002	yaosha	exact_rank_no_contains
+要赚	要賺	0.400	yaozhuan	exact_rank_no_contains
+要省	要省	0.400	yaosheng	exact_rank_no_contains
+要拍	要拍	0.002	yaopai	exact_rank_no_contains
+要回	要回	0.600	yaohui	exact_rank_no_contains
+要下	要下	0.600	yaoxia	exact_rank_no_contains
+要进	要進	0.715	yaojin	exact_rank_no_contains
+要出	要出	0.600	yaochu	exact_rank_no_contains
+要过	要過	0.381	yaoguo	exact_rank_no_contains
+要留	要留	0.197	yaoliu	exact_rank_no_contains
+要选	要選	0.600	yaoxuan	exact_rank_no_contains
+要挑	要挑	0.400	yaotiao	exact_rank_no_contains
+要试	要試	0.400	yaoshi	exact_rank_no_contains
+要穿	要穿	0.554	yaochuan	exact_rank_no_contains
+要炒	要炒	0.400	yaochao	exact_rank_no_contains
+要烧	要燒	0.400	yaoshao	exact_rank_no_contains
+要养	要養	0.600	yaoyang	exact_rank_no_contains
+要种	要種	0.400	yaozhong	exact_rank_no_contains
+要涂	要塗	0.002	yaotu	exact_rank_no_contains
+要画	要畫	0.200	yaohua	exact_rank_no_contains
+要拉	要拉	0.399	yaola	exact_rank_no_contains
+要背	要背	0.279	yaobei	exact_rank_no_contains
+要提	要提	0.400	yaoti	exact_rank_no_contains
+要挂	要掛	0.400	yaogua	exact_rank_no_contains
+要贴	要貼	0.400	yaotie	exact_rank_no_contains
+要盖	要蓋	0.400	yaogai	exact_rank_no_contains
+要查	要查	0.600	yaocha	exact_rank_no_contains
+要抢	要搶	0.400	yaoqiang	exact_rank_no_contains
+要赔	要賠	0.401	yaopei	exact_rank_no_contains
+要罚	要罰	0.400	yaofa	exact_rank_no_contains
+要签	要籤	0.400	yaoqian	exact_rank_no_contains
+要填	要填	0.400	yaotian	exact_rank_no_contains
+要考	要考	0.600	yaokao	exact_rank_no_contains
+要练	要練	0.999	yaolian	exact_rank_no_contains
+要接	要接	0.401	yaojie	exact_rank_no_contains
+要排	要排	0.400	yaopai	exact_rank_no_contains
+要跟	要跟	0.600	yaogen	exact_rank_no_contains
+要靠	要靠	0.601	yaokao	exact_rank_no_contains
+要拖	要拖	0.400	yaotuo	exact_rank_no_contains
+要分	要分	0.600	yaofen	exact_rank_no_contains
+要离	要離	0.400	yaoli	exact_rank_no_contains
+要嫁	要嫁	0.279	yaojia	exact_rank_no_contains
+要娶	要娶	0.400	yaoqu	exact_rank_no_contains
+要扣	要扣	0.400	yaokou	exact_rank_no_contains
+要补	要補	0.279	yaobu	exact_rank_no_contains
+要配	要配	0.402	yaopei	exact_rank_no_contains
+要赶	要趕	0.495	yaogan	exact_rank_no_contains
+要拼	要拼	0.400	yaopin	exact_rank_no_contains
+要怪	要怪	0.400	yaoguai	exact_rank_no_contains
+要守	要守	0.400	yaoshou	exact_rank_no_contains
+要记	要記	0.469	yaoji	exact_rank_no_contains
+要想	要想	0.600	yaoxiang	exact_rank_no_contains
+要懂	要懂	0.359	yaodong	exact_rank_no_contains
+要变	要變	0.400	yaobian	exact_rank_no_contains
+要快	要快	0.600	yaokuai	exact_rank_no_contains
+要慢	要慢	0.600	yaoman	exact_rank_no_contains
+要早	要早	0.600	yaozao	exact_rank_no_contains
+要晚	要晚	0.400	yaowan	exact_rank_no_contains
+要稳	要穩	0.378	yaowen	exact_rank_no_contains
+要装	要裝	0.600	yaozhuang	exact_rank_no_contains
+要抱	要抱	0.401	yaobao	exact_rank_no_contains
+要弄	要弄	0.600	yaonong	exact_rank_no_contains
+要保	要保	0.403	yaobao	exact_rank_no_contains
+要煲	要煲	0.400	yaobao	exact_rank_no_contains
+要报	要報	0.419	yaobao	exact_rank_no_contains
+要包	要包	0.402	yaobao	exact_rank_no_contains
+要房	要房	0.231	yaofang	exact_rank_no_contains
+要车	要車	0.200	yaoche	exact_rank_no_contains
+要找	要找	0.600	yaozhao	exact_rank_no_contains
+要招	要招	0.400	yaozhao	exact_rank_no_contains
+要带	要帶	0.443	yaodai	exact_rank_no_contains
+要戴	要戴	0.442	yaodai	exact_rank_no_contains
+要等	要等	0.600	yaodeng	exact_rank_no_contains
+要搞	要搞	0.402	yaogao	exact_rank_no_contains
+要告	要告	0.400	yaogao	exact_rank_no_contains
+要唱	要唱	0.400	yaochang	exact_rank_no_contains
+要喊	要喊	0.625	yaohan	exact_rank_no_contains
+要黑	要黑	0.400	yaohei	exact_rank_no_contains
+要回家	要回家	0.600	yaohuijia	exact_rank_no_contains
+要上班	要上班	0.400	yaoshangban	exact_rank_no_contains
+要上学	要上學	0.400	yaoshangxue	exact_rank_no_contains
+要睡觉	要睡覺	0.600	yaoshuijiao	exact_rank_no_contains
+要吃饭	要吃飯	0.400	yaochifan	exact_rank_no_contains
+要出门	要出門	0.400	yaochumen	exact_rank_no_contains
+要加班	要加班	0.400	yaojiaban	exact_rank_no_contains
+要考试	要考試	0.400	yaokaoshi	exact_rank_no_contains
+要结婚	要結婚	0.600	yaojiehun	exact_rank_no_contains
+要搬家	要搬家	0.400	yaobanjia	exact_rank_no_contains
+要下雨	要下雨	0.400	yaoxiayu	exact_rank_no_contains
+要小心	要小心	0.600	yaoxiaoxin	exact_rank_no_contains
+要记得	要記得	0.600	yaojide	exact_rank_no_contains
+要努力	要努力	0.600	yaonuli	exact_rank_no_contains
+要加油	要加油	0.400	yaojiayou	exact_rank_no_contains
+要坚持	要堅持	0.600	yaojianchi	exact_rank_no_contains
+要相信	要相信	0.600	yaoxiangxin	exact_rank_no_contains
+要开心	要開心	0.400	yaokaixin	exact_rank_no_contains
+要快乐	要快樂	0.400	yaokuaile	exact_rank_no_contains
+要健康	要健康	0.400	yaojiankang	exact_rank_no_contains
+要按时	要按時	0.400	yaoanshi	exact_rank_no_contains
+要早点	要早點	0.400	yaozaodian	exact_rank_no_contains
+要多吃	要多吃	0.600	yaoduochi	exact_rank_no_contains
+要少吃	要少吃	0.600	yaoshaochi	exact_rank_no_contains
+要多喝	要多喝	0.400	yaoduohe	exact_rank_no_contains
+要好好	要好好	0.600	yaohaohao	exact_rank_no_contains
+要慢慢	要慢慢	0.600	yaomanman	exact_rank_no_contains
+要走了	要走了	0.400	yaozoule	exact_rank_no_contains
+要来了	要來了	0.600	yaolaile	exact_rank_no_contains
+要到了	要到了	0.400	yaodaole	exact_rank_no_contains
+要我说	要我說	0.400	yaowoshuo	exact_rank_no_contains
+要什么	要什麼	0.600	yaoshenme	exact_rank_no_contains
+要这个	要這個	0.600	yaozhege	exact_rank_no_contains
+# Everyday words, 2026-11-04, the less frequent ones (要擦, 要拆, 要疯, 要哄, 要扔, 要下班, 要过年, 要哭了, 要饿死), by the same weights; at weight 2 要怕 and 要脱, which went first without a context over the more frequent 要趴 and 要拖, and the words the general text holds fewer than 50 times (要催, 要宠, 要饿, 要困, 要晕, 要慌, 要哪个).
+要擦	要擦	0.200	yaoca	exact_rank_no_contains
+要扫	要掃	0.200	yaosao	exact_rank_no_contains
+要存	要存	0.200	yaocun	exact_rank_no_contains
+要骂	要罵	0.200	yaoma	exact_rank_no_contains
+要笑	要笑	0.200	yaoxiao	exact_rank_no_contains
+要醒	要醒	0.080	yaoxing	exact_rank_no_contains
+要搬	要搬	0.200	yaoban	exact_rank_no_contains
+要租	要租	0.200	yaozu	exact_rank_no_contains
+要哄	要哄	0.200	yaohong	exact_rank_no_contains
+要亲	要親	0.200	yaoqin	exact_rank_no_contains
+要攒	要攢	0.200	yaozan	exact_rank_no_contains
+要剪	要剪	0.115	yaojian	exact_rank_no_contains
+要染	要染	0.002	yaoran	exact_rank_no_contains
+要录	要錄	0.200	yaolu	exact_rank_no_contains
+要删	要刪	0.080	yaoshan	exact_rank_no_contains
+要传	要傳	0.515	yaochuan	exact_rank_no_contains
+要扔	要扔	0.200	yaoreng	exact_rank_no_contains
+要丢	要丟	0.080	yaodiu	exact_rank_no_contains
+要捡	要撿	0.114	yaojian	exact_rank_no_contains
+要脱	要脫	0.002	yaotuo	exact_rank_no_contains
+要煮	要煮	0.208	yaozhu	exact_rank_no_contains
+要烤	要烤	0.080	yaokao	exact_rank_no_contains
+要炖	要燉	0.002	yaodun	exact_rank_no_contains
+要蒸	要蒸	0.197	yaozheng	exact_rank_no_contains
+要泡	要泡	0.200	yaopao	exact_rank_no_contains
+要喂	要喂	0.200	yaowei	exact_rank_no_contains
+要锁	要鎖	0.002	yaosuo	exact_rank_no_contains
+要拆	要拆	0.200	yaochai	exact_rank_no_contains
+要弹	要彈	0.200	yaotan	exact_rank_no_contains
+要扶	要扶	0.200	yaofu	exact_rank_no_contains
+要扛	要扛	0.200	yaokang	exact_rank_no_contains
+要抬	要抬	0.200	yaotai	exact_rank_no_contains
+要逃	要逃	0.200	yaotao	exact_rank_no_contains
+要躲	要躲	0.200	yaoduo	exact_rank_no_contains
+要藏	要藏	0.200	yaocang	exact_rank_no_contains
+要催	要催	0.002	yaocui	exact_rank_no_contains
+要吵	要吵	0.200	yaochao	exact_rank_no_contains
+要闹	要鬧	0.200	yaonao	exact_rank_no_contains
+要骗	要騙	0.200	yaopian	exact_rank_no_contains
+要偷	要偷	0.200	yaotou	exact_rank_no_contains
+要游	要遊	0.200	yaoyou	exact_rank_no_contains
+要骑	要騎	0.200	yaoqi	exact_rank_no_contains
+要挤	要擠	0.201	yaoji	exact_rank_no_contains
+要抽	要抽	0.200	yaochou	exact_rank_no_contains
+要戒	要戒	0.288	yaojie	exact_rank_no_contains
+要订	要訂	0.200	yaoding	exact_rank_no_contains
+要赌	要賭	0.197	yaodu	exact_rank_no_contains
+要宠	要寵	0.002	yaochong	exact_rank_no_contains
+要信	要信	0.200	yaoxin	exact_rank_no_contains
+要忍	要忍	0.200	yaoren	exact_rank_no_contains
+要冷	要冷	0.080	yaoleng	exact_rank_no_contains
+要热	要熱	0.200	yaore	exact_rank_no_contains
+要凉	要涼	0.200	yaoliang	exact_rank_no_contains
+要坏	要壞	0.200	yaohuai	exact_rank_no_contains
+要烂	要爛	0.200	yaolan	exact_rank_no_contains
+要疯	要瘋	0.200	yaofeng	exact_rank_no_contains
+要晕	要暈	0.002	yaoyun	exact_rank_no_contains
+要困	要困	0.002	yaokun	exact_rank_no_contains
+要饿	要餓	0.002	yaoe	exact_rank_no_contains
+要累	要累	0.080	yaolei	exact_rank_no_contains
+要亮	要亮	0.201	yaoliang	exact_rank_no_contains
+要红	要紅	0.080	yaohong	exact_rank_no_contains
+要火	要火	0.200	yaohuo	exact_rank_no_contains
+要吐	要吐	0.200	yaotu	exact_rank_no_contains
+要痛	要痛	0.200	yaotong	exact_rank_no_contains
+要怕	要怕	0.002	yaopa	exact_rank_no_contains
+要急	要急	0.200	yaoji	exact_rank_no_contains
+要慌	要慌	0.002	yaohuang	exact_rank_no_contains
+要乖	要乖	0.080	yaoguai	exact_rank_no_contains
+要下班	要下班	0.200	yaoxiaban	exact_rank_no_contains
+要做饭	要做飯	0.080	yaozuofan	exact_rank_no_contains
+要洗澡	要洗澡	0.200	yaoxizao	exact_rank_no_contains
+要开会	要開會	0.200	yaokaihui	exact_rank_no_contains
+要出差	要出差	0.200	yaochucha	exact_rank_no_contains
+要放假	要放假	0.200	yaofangjia	exact_rank_no_contains
+要过年	要過年	0.200	yaoguonian	exact_rank_no_contains
+要迟到	要遲到	0.080	yaochidao	exact_rank_no_contains
+要下雪	要下雪	0.080	yaoxiaxue	exact_rank_no_contains
+要变天	要變天	0.200	yaobiantian	exact_rank_no_contains
+要听话	要聽話	0.200	yaotinghua	exact_rank_no_contains
+要幸福	要幸福	0.200	yaoxingfu	exact_rank_no_contains
+要乖乖	要乖乖	0.080	yaoguaiguai	exact_rank_no_contains
+要疯了	要瘋了	0.200	yaofengle	exact_rank_no_contains
+要哭了	要哭了	0.200	yaokule	exact_rank_no_contains
+要睡了	要睡了	0.200	yaoshuile	exact_rank_no_contains
+要饿死	要餓死	0.080	yaoesi	exact_rank_no_contains
+要累死	要累死	0.200	yaoleisi	exact_rank_no_contains
+要你管	要你管	0.080	yaoniguan	exact_rank_no_contains
+要几个	要幾個	0.200	yaojige	exact_rank_no_contains
+要哪个	要哪個	0.002	yaonage	exact_rank_no_contains
+要那个	要那個	0.201	yaonage	exact_rank_no_contains
+# Weighted anew on 2026-11-04: import-weight words that held a word of the batch under them on its key (咬人, 窈窕, 腰腹, 妖气, 舀起, 腰际; 耀斑 and 腰板 at 202 and 201, just above 要搬: higher weights turned the long case 当下有正事要办) and 要用 and 要饭 of earlier blocks, weighted as the blocks above.
+要用	要用	0.414	yaoyong	exact_rank
+要饭	要飯	0.271	yaofan	exact_rank
+腰腹	腰腹	0.600	yaofu	exact_rank
+腰板	腰板	0.201	yaoban	exact_rank
+耀斑	耀斑	0.202	yaoban	exact_rank
+窈窕	窈窕	0.600	yaotiao	exact_rank
+妖气	妖氣	0.400	yaoqi	exact_rank
+舀起	舀起	0.201	yaoqi	exact_rank
+腰际	腰際	0.202	yaoji	exact_rank
+咬人	咬人	0.600	yaoren	exact_rank
+# Everyday words, 2026-11-05, the more frequent ones: 首字, 首句 and 首善 (the user's examples), 首 with a character for the first of something: a part of a text (首段, 首篇, 首联), a thing counted (首张, 首场, 首笔), a first event (首战, 首飞, 首诊), a period (首周, 首月, 首年), and the words and short phrases it begins (首班车, 首映礼, 首先是, 首次出现, 首席科学家). Weighted as the blocks of 2026-11-04 (occurrences where the word is no part of a longer dictionary word, nor before one that its last character begins, nor after one that its first character ends); a word stays under every more frequent word of its key, an import's weight included; a requested word at least 400 where no more frequent word holds it lower.
+首段	首段	0.400	shouduan	exact_rank_no_contains
+首节	首節	0.261	shoujie	exact_rank_no_contains
+首篇	首篇	0.400	shoupian	exact_rank_no_contains
+首集	首集	0.104	shouji	exact_rank_no_contains
+首部	首部	0.279	shoubu	exact_rank_no_contains
+首词	首詞	0.400	shouci	exact_rank_no_contains
+首联	首聯	0.600	shoulian	exact_rank_no_contains
+首张	首張	0.599	shouzhang	exact_rank_no_contains
+首名	首名	0.438	shouming	exact_rank_no_contains
+首枚	首枚	0.400	shoumei	exact_rank_no_contains
+首架	首架	0.358	shoujia	exact_rank_no_contains
+首艘	首艘	0.600	shousou	exact_rank_no_contains
+首条	首條	0.373	shoutiao	exact_rank_no_contains
+首项	首項	0.400	shouxiang	exact_rank_no_contains
+首笔	首筆	0.400	shoubi	exact_rank_no_contains
+首单	首單	0.369	shoudan	exact_rank_no_contains
+首场	首場	0.600	shouchang	exact_rank_no_contains
+首局	首局	0.400	shouju	exact_rank_no_contains
+首球	首球	0.400	shouqiu	exact_rank_no_contains
+首班	首班	0.249	shouban	exact_rank_no_contains
+首趟	首趟	0.193	shoutang	exact_rank_no_contains
+首波	首波	0.400	shoubo	exact_rank_no_contains
+首作	首作	0.400	shouzuo	exact_rank_no_contains
+首战	首戰	0.401	shouzhan	exact_rank_no_contains
+首金	首金	0.401	shoujin	exact_rank_no_contains
+首冠	首冠	0.400	shouguan	exact_rank_no_contains
+首奖	首獎	0.400	shoujiang	exact_rank_no_contains
+首飞	首飛	0.512	shoufei	exact_rank_no_contains
+首航	首航	0.399	shouhang	exact_rank_no_contains
+首考	首考	0.400	shoukao	exact_rank_no_contains
+首贷	首貸	0.335	shoudai	exact_rank_no_contains
+首诊	首診	0.400	shouzhen	exact_rank_no_contains
+首周	首周	0.422	shouzhou	exact_rank_no_contains
+首月	首月	0.382	shouyue	exact_rank_no_contains
+首年	首年	0.600	shounian	exact_rank_no_contains
+首义	首義	0.155	shouyi	exact_rank_no_contains
+首乌	首烏	0.600	shouwu	exact_rank_no_contains
+首通	首通	0.400	shoutong	exact_rank_no_contains
+首开	首開	0.600	shoukai	exact_rank_no_contains
+首见	首見	0.184	shoujian	exact_rank_no_contains
+首唱	首唱	0.161	shouchang	exact_rank_no_contains
+首展	首展	0.400	shouzhan	exact_rank_no_contains
+首列	首列	0.400	shoulie	exact_rank_no_contains
+首辅	首輔	0.180	shoufu	exact_rank_no_contains
+首店	首店	0.492	shoudian	exact_rank_no_contains
+首阳	首陽	0.150	shouyang	exact_rank_no_contains
+首字	首字	0.400	shouzi	exact_rank_no_contains
+首句	首句	0.559	shouju	exact_rank_no_contains
+首善	首善	0.444	shoushan	exact_rank_no_contains
+首班车	首班車	0.400	shoubanche	exact_rank_no_contains
+首发式	首發式	0.400	shoufashi	exact_rank_no_contains
+首映礼	首映禮	0.400	shouyingli	exact_rank_no_contains
+首部曲	首部曲	0.400	shoubuqu	exact_rank_no_contains
+首尔市	首爾市	0.400	shouershi	exact_rank_no_contains
+首先是	首先是	0.600	shouxianshi	exact_rank_no_contains
+首先要	首先要	0.600	shouxianyao	exact_rank_no_contains
+首先得	首先得	0.600	shouxiandei	exact_rank_no_contains
+首先说	首先說	0.600	shouxianshuo	exact_rank_no_contains
+首次使用	首次使用	0.600	shoucishiyong	exact_rank_no_contains
+首次出现	首次出現	0.600	shoucichuxian	exact_rank_no_contains
+首次发现	首次發現	0.600	shoucifaxian	exact_rank_no_contains
+首次提出	首次提出	0.600	shoucitichu	exact_rank_no_contains
+首次尝试	首次嘗試	0.400	shoucichangshi	exact_rank_no_contains
+首次亮相	首次亮相	0.600	shouciliangxiang	exact_rank_no_contains
+首次公开	首次公開	0.600	shoucigongkai	exact_rank_no_contains
+首次购房	首次購房	0.400	shoucigoufang	exact_rank_no_contains
+首尾呼应	首尾呼應	0.400	shouweihuying	exact_rank_no_contains
+首付比例	首付比例	0.600	shoufubili	exact_rank_no_contains
+首要目标	首要目標	0.400	shouyaomubiao	exact_rank_no_contains
+首要条件	首要條件	0.400	shouyaotiaojian	exact_rank_no_contains
+首要问题	首要問題	0.400	shouyaowenti	exact_rank_no_contains
+首席顾问	首席顧問	0.400	shouxiguwen	exact_rank_no_contains
+首席记者	首席記者	0.400	shouxijizhe	exact_rank_no_contains
+首席科学家	首席科學家	0.600	shouxikexuejia	exact_rank_no_contains
+首席设计师	首席設計師	0.400	shouxishejishi	exact_rank_no_contains
+首套住房	首套住房	0.400	shoutaozhufang	exact_rank_no_contains
+# Everyday words, 2026-11-05, the less frequent ones (首恶, 首犯, 首登, 首发价, 首次见面, 首发阵容), by the same weights; at weight 2 首胜, which went first without a context over the more frequent 收声, and the words the general text holds fewer than 50 times (首帧, 首吻, 首遍, 首单优惠, 首屏加载).
+首章	首章	0.200	shouzhang	exact_rank_no_contains
+首卷	首卷	0.200	shoujuan	exact_rank_no_contains
+首图	首圖	0.200	shoutu	exact_rank_no_contains
+首音	首音	0.093	shouyin	exact_rank_no_contains
+首韵	首韻	0.002	shouyun	exact_rank_no_contains
+首语	首語	0.080	shouyu	exact_rank_no_contains
+首辆	首輛	0.200	shouliang	exact_rank_no_contains
+首盘	首盤	0.080	shoupan	exact_rank_no_contains
+首遍	首遍	0.002	shoubian	exact_rank_no_contains
+首回	首回	0.080	shouhui	exact_rank_no_contains
+首番	首番	0.002	shoufan	exact_rank_no_contains
+首代	首代	0.200	shoudai	exact_rank_no_contains
+首刊	首刊	0.002	shoukan	exact_rank_no_contains
+首印	首印	0.092	shouyin	exact_rank_no_contains
+首稿	首稿	0.001	shougao	exact_rank_no_contains
+首胜	首勝	0.002	shousheng	exact_rank_no_contains
+首败	首敗	0.002	shoubai	exact_rank_no_contains
+首功	首功	0.200	shougong	exact_rank_no_contains
+首测	首測	0.002	shouce	exact_rank_no_contains
+首试	首試	0.002	shoushi	exact_rank_no_contains
+首卖	首賣	0.002	shoumai	exact_rank_no_contains
+首销	首銷	0.080	shouxiao	exact_rank_no_contains
+首售	首售	0.002	shoushou	exact_rank_no_contains
+首购	首購	0.201	shougou	exact_rank_no_contains
+首租	首租	0.002	shouzu	exact_rank_no_contains
+首签	首籤	0.080	shouqian	exact_rank_no_contains
+首剂	首劑	0.103	shouji	exact_rank_no_contains
+首针	首針	0.200	shouzhen	exact_rank_no_contains
+首胎	首胎	0.002	shoutai	exact_rank_no_contains
+首吻	首吻	0.002	shouwen	exact_rank_no_contains
+首夜	首夜	0.002	shouye	exact_rank_no_contains
+首晚	首晚	0.002	shouwan	exact_rank_no_contains
+首恶	首惡	0.200	shoue	exact_rank_no_contains
+首犯	首犯	0.200	shoufan	exact_rank_no_contains
+首告	首告	0.002	shougao	exact_rank_no_contains
+首途	首途	0.002	shoutu	exact_rank_no_contains
+首屏	首屏	0.200	shouping	exact_rank_no_contains
+首帧	首幀	0.002	shouzhen	exact_rank_no_contains
+首键	首鍵	0.002	shoujian	exact_rank_no_contains
+首杀	首殺	0.080	shousha	exact_rank_no_contains
+首充	首充	0.200	shouchong	exact_rank_no_contains
+首刷	首刷	0.081	shoushua	exact_rank_no_contains
+首赞	首贊	0.002	shouzan	exact_rank_no_contains
+首评	首評	0.002	shouping	exact_rank_no_contains
+首抽	首抽	0.002	shouchou	exact_rank_no_contains
+首登	首登	0.200	shoudeng	exact_rank_no_contains
+首夺	首奪	0.200	shouduo	exact_rank_no_contains
+首破	首破	0.200	shoupo	exact_rank_no_contains
+首设	首設	0.200	shoushe	exact_rank_no_contains
+首建	首建	0.182	shoujian	exact_rank_no_contains
+首提	首提	0.200	shouti	exact_rank_no_contains
+首现	首現	0.201	shouxian	exact_rank_no_contains
+首遇	首遇	0.000	shouyu	exact_rank_no_contains
+首访	首訪	0.200	shoufang	exact_rank_no_contains
+首谈	首談	0.080	shoutan	exact_rank_no_contains
+首讲	首講	0.080	shoujiang	exact_rank_no_contains
+首奏	首奏	0.002	shouzou	exact_rank_no_contains
+首拍	首拍	0.081	shoupai	exact_rank_no_contains
+首录	首錄	0.002	shoulu	exact_rank_no_contains
+首排	首排	0.080	shoupai	exact_rank_no_contains
+首端	首端	0.200	shouduan	exact_rank_no_contains
+首徒	首徒	0.081	shoutu	exact_rank_no_contains
+首城	首城	0.081	shoucheng	exact_rank_no_contains
+首县	首縣	0.080	shouxian	exact_rank_no_contains
+首邑	首邑	0.080	shouyi	exact_rank_no_contains
+首鼠	首鼠	0.002	shoushu	exact_rank_no_contains
+首存	首存	0.002	shoucun	exact_rank_no_contains
+首调	首調	0.200	shoudiao	exact_rank_no_contains
+首乘	首乘	0.002	shoucheng	exact_rank_no_contains
+首班机	首班機	0.002	shoubanji	exact_rank_no_contains
+首富榜	首富榜	0.002	shoufubang	exact_rank_no_contains
+首付比	首付比	0.080	shoufubi	exact_rank_no_contains
+首页面	首頁面	0.200	shouyemian	exact_rank_no_contains
+首席官	首席官	0.002	shouxiguan	exact_rank_no_contains
+首发价	首發價	0.200	shoufajia	exact_rank_no_contains
+首发款	首發款	0.002	shoufakuan	exact_rank_no_contains
+首单价	首單價	0.002	shoudanjia	exact_rank_no_contains
+首次见面	首次見面	0.200	shoucijianmian	exact_rank_no_contains
+首次登录	首次登錄	0.200	shoucidenglu	exact_rank_no_contains
+首次启动	首次啟動	0.200	shouciqidong	exact_rank_no_contains
+首次打开	首次打開	0.080	shoucidakai	exact_rank_no_contains
+首次安装	首次安裝	0.080	shoucianzhuang	exact_rank_no_contains
+首次运行	首次運行	0.080	shouciyunxing	exact_rank_no_contains
+首次购买	首次購買	0.200	shoucigoumai	exact_rank_no_contains
+首次加载	首次加載	0.002	shoucijiazai	exact_rank_no_contains
+首发阵容	首發陣容	0.200	shoufazhenrong	exact_rank_no_contains
+首发上市	首發上市	0.200	shoufashangshi	exact_rank_no_contains
+首战失利	首戰失利	0.002	shouzhanshili	exact_rank_no_contains
+首战必胜	首戰必勝	0.002	shouzhanbisheng	exact_rank_no_contains
+首尾相顾	首尾相顧	0.002	shouweixianggu	exact_rank_no_contains
+首付贷款	首付貸款	0.002	shoufudaikuan	exact_rank_no_contains
+首要之务	首要之務	0.002	shouyaozhiwu	exact_rank_no_contains
+首字下沉	首字下沉	0.080	shouzixiachen	exact_rank_no_contains
+首字母大写	首字母大寫	0.200	shouzimudaxie	exact_rank_no_contains
+首批名单	首批名單	0.002	shoupimingdan	exact_rank_no_contains
+首日票房	首日票房	0.200	shouripiaofang	exact_rank_no_contains
+首周票房	首周票房	0.200	shouzhoupiaofang	exact_rank_no_contains
+首映票房	首映票房	0.080	shouyingpiaofang	exact_rank_no_contains
+首单优惠	首單優惠	0.002	shoudanyouhui	exact_rank_no_contains
+首单免费	首單免費	0.002	shoudanmianfei	exact_rank_no_contains
+首充福利	首充福利	0.002	shouchongfuli	exact_rank_no_contains
+首页推荐	首頁推薦	0.200	shouyetuijian	exact_rank_no_contains
+首页内容	首頁內容	0.002	shouyeneirong	exact_rank_no_contains
+首屏加载	首屏加載	0.002	shoupingjiazai	exact_rank_no_contains
+首屏时间	首屏時間	0.002	shoupingshijian	exact_rank_no_contains
+首行缩进	首行縮進	0.200	shouhangsuojin	exact_rank_no_contains
+# Weighted anew on 2026-11-05: import-weight words that held a word of the batch under them on its key (手绘, 兽医, 寿险, 手语, 收银, 手记, 手链, 手笔, 手卷, 收工, 手相, 守时, 授业) and 首度, 首款, 首富 and 首选项 of earlier blocks, weighted as the blocks above.
+首度	首度	0.600	shoudu	exact_rank
+首款	首款	0.600	shoukuan	exact_rank
+首富	首富	0.183	shoufu	exact_rank
+首重	首重	0.114	shouzhong	exact_rank
+首曲	首曲	0.200	shouqu	exact_rank
+首选项	首選項	0.400	shouxuanxiang	exact_rank
+首饰盒	首飾盒	0.200	shoushihe	exact_rank
+首饰店	首飾店	0.200	shoushidian	exact_rank
+首席律师	首席律師	0.080	shouxilvshi	exact_rank
+手绘	手繪	0.600	shouhui	exact_rank
+兽医	獸醫	0.156	shouyi	exact_rank
+寿险	壽險	0.265	shouxian	exact_rank
+手语	手語	0.634	shouyu	exact_rank
+收银	收銀	0.094	shouyin	exact_rank
+手记	手記	0.106	shouji	exact_rank
+手链	手鍊	0.601	shoulian	exact_rank
+手笔	手筆	0.600	shoubi	exact_rank
+手卷	手卷	0.600	shoujuan	exact_rank
+受够	受夠	0.200	shougou	exact_rank
+售完	售完	0.400	shouwan	exact_rank
+守业	守業	0.401	shouye	exact_rank
+收监	收監	0.183	shoujian	exact_rank
+寿数	壽數	0.400	shoushu	exact_rank
+寿限	壽限	0.200	shouxian	exact_rank
+收工	收工	0.600	shougong	exact_rank
+收市	收市	0.104	shoushi	exact_rank
+手相	手相	0.600	shouxiang	exact_rank
+收腹	收腹	0.182	shoufu	exact_rank
+守时	守時	0.103	shoushi	exact_rank
+收服	收服	0.181	shoufu	exact_rank
+手书	手書	0.601	shoushu	exact_rank
+瘦瘦	瘦瘦	0.183	shoushou	exact_rank
+受业	受業	0.400	shouye	exact_rank
+授时	授時	0.102	shoushi	exact_rank
+手绢	手絹	0.401	shoujuan	exact_rank
+收尽	收盡	0.200	shoujin	exact_rank
+收卷	收卷	0.400	shoujuan	exact_rank
+手巾	手巾	0.400	shoujin	exact_rank
+瘦高	瘦高	0.200	shougao	exact_rank
+守宫	守宮	0.400	shougong	exact_rank
+手谕	手諭	0.081	shouyu	exact_rank
+手迹	手跡	0.105	shouji	exact_rank
+收束	收束	0.600	shoushu	exact_rank
+守夜	守夜	0.402	shouye	exact_rank
+收尸	收屍	0.101	shoushi	exact_rank
+授业	授業	0.600	shouye	exact_rank
