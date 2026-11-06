@@ -18,12 +18,12 @@ Cassotis IME 的詞庫建置與發布儲存庫。
 - 支援以外部來源建立詞庫，以及可重現的詞庫生成流程。
 - 確保來源標示檔案與生成產物保持一致。
 
-## 目前詞庫快照（2026-11-05 建置）
+## 目前詞庫快照（2026-11-06 建置）
 
 | 檔案 | 變體 | 詞條數 |
 |------|------|--------|
-| `data/generated/dict_clean_sc.txt` | 簡體主詞庫 | 238,664 |
-| `data/generated/dict_clean_tc.txt` | 繁體主詞庫 | 241,499 |
+| `data/generated/dict_clean_sc.txt` | 簡體主詞庫 | 239,186 |
+| `data/generated/dict_clean_tc.txt` | 繁體主詞庫 | 242,021 |
 | `data/generated/dict_unihan_sc.txt` | 簡體單字（Unihan） | 23,917 |
 | `data/generated/dict_unihan_tc.txt` | 繁體單字（Unihan） | 24,180 |
 

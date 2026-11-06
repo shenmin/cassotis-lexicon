@@ -48,7 +48,9 @@ class DailyDingPhraseTests(unittest.TestCase):
             self.assertEqual([(word, 180)], rows[PINYIN])
             expected = {("\u9489\u5728", 10), ("\u9876\u5728", 10)} if variant == "sc" else {
                 ("\u91d8\u5728", 10), ("\u9802\u5728", 10)}
-            self.assertEqual(expected, set(rows["dingzai"]))
+            # The two keep their weights and the phrase adds no fragment of its own.
+            self.assertLessEqual(expected, set(rows["dingzai"]))
+            self.assertNotIn(word[:2], {text for text, _weight in rows["dingzai"]})
 
     def test_completion_index_uses_the_same_phrase_and_weight(self):
         for variant, word in zip(("sc", "tc"), WORDS):

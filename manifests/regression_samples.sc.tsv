@@ -1780,7 +1780,7 @@ zaijiao	在教	2
 zaijiao	再叫	4
 zaijiao	再教	5
 zaijiang	在讲	1
-zaijiang	再讲	2
+zaijiang	再讲	3
 zaitan	在谈	1
 zaitan	再谈	2
 zaifei	在飞	1
@@ -2042,7 +2042,7 @@ qingchi	请吃	1
 qinghe	庆贺	1
 qinghe	请喝	3
 qingshuo	请说	1
-qingjiang	请讲	3
+qingjiang	请讲	4
 qinghui	请回	1
 qingqu	轻取	2
 qingqu	情趣	1
@@ -2298,7 +2298,7 @@ buchou	不丑	3
 bupei	不配	1
 buchou	不愁	1
 budei	不得	1
-meizai	美哉	1
+meizai	美哉	2
 qibu	岂不	3
 youshui	有谁	1
 youshei	有谁	1
@@ -2969,7 +2969,7 @@ huilai	会来	2
 huixie	会写	2
 huida	会打	2
 huichi	会吃	1
-huihe	会喝	4
+huihe	会喝	5
 huibian	会编	3
 huifa	会发	2
 huishou	会守	4
@@ -3006,11 +3006,11 @@ huidong	会东	4
 huiliu	汇流	2
 huipai	挥拍	2
 huiji	会集	4
-huishi	辉石	5
-huihe	灰褐	6
+huishi	辉石	6
+huihe	灰褐	7
 huixin	灰心	2
 huitu	灰土	3
-huishi	挥师	6
+huishi	挥师	7
 huidao	挥刀	3
 huiban	回班	1
 huixiao	回校	1
@@ -3100,3 +3100,17 @@ shoushu	收束	3
 shouye	守夜	3
 shoushi	收尸	9
 shouye	授业	2
+
+# Words of 2026-11-06, the user's examples (将在, 将于, 会在, 会于, 就于, 将是) and the import words weighted anew: the rank each has by weight among the words of its key.
+jiangzai	将在	1
+jiangyu	将于	2
+jiangshi	将是	1
+jiangzhi	将至	6
+huizai	会在	1
+huiyu	会于	2
+jiuyu	就于	2
+jiulian	就连	1
+yezai	也在	1
+bingzai	并在	1
+daoshi	倒是	3
+qiashi	恰是	1
