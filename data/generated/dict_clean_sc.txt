@@ -5812,7 +5812,7 @@ baojialvyou	包价旅游	218
 baojian	保健	465
 baojian	宝剑	433
 baojian	报检	369
-baojian	包间	61
+baojian	包间	368
 baojiancao	保健操	222
 baojianchui	包剪锤	167
 baojiang	胞浆	48
@@ -25416,7 +25416,7 @@ danjiachuang	担架床	232
 danjian	胆碱	91
 danjian	单键	49
 danjian	单肩	10
-danjian	单间	10
+danjian	单间	600
 danjian	单件	9
 danjianbao	单肩包	167
 danjiancha	单间差	167
@@ -240039,3 +240039,93 @@ zhulian	珠链	200	no_contains
 zilian	子链	200	no_contains
 zuifan	醉翻	2	no_contains
 zuofan	左翻	400	no_contains
+anjian	暗间	0	no_contains
+banjian	半间	200	no_contains
+bianjian	边间	2	no_contains
+buhuibao	不会报	1	no_contains
+buhuibao	不会抱	0	no_contains
+buhuibao	不会爆	3	no_contains
+buhuibao	不回报	2	no_contains
+buhuiben	不回本	2	no_contains
+buhuibi	不会比	600	no_contains
+buhuibi	不会逼	2	no_contains
+buhuibi	不回避	400	no_contains
+buhuida	不会打	400	no_contains
+buhuida	不会搭	2	no_contains
+buhuida	不会答	81	no_contains
+buhuida	不回答	401	no_contains
+buhuidao	不会倒	200	no_contains
+buhuidao	不会到	400	no_contains
+buhuidao	不回到	80	no_contains
+buhuidian	不会点	81	no_contains
+buhuidian	不回电	2	no_contains
+buhuifan	不会烦	1	no_contains
+buhuifan	不会犯	200	no_contains
+buhuifan	不会翻	2	no_contains
+buhuifan	不回返	0	no_contains
+buhuifu	不会付	2	no_contains
+buhuifu	不回复	400	no_contains
+buhuigou	不回购	2	no_contains
+buhuigu	不会顾	2	no_contains
+buhuigu	不回顾	3	no_contains
+buhuigui	不回归	2	no_contains
+buhuiguo	不会过	201	no_contains
+buhuiguo	不回国	200	no_contains
+buhuihua	不会滑	2	no_contains
+buhuihua	不会画	200	no_contains
+buhuihua	不会花	201	no_contains
+buhuihua	不回话	1	no_contains
+buhuijia	不会加	200	no_contains
+buhuijia	不回家	600	no_contains
+buhuilai	不会来	400	no_contains
+buhuilai	不回来	601	no_contains
+buhuile	不会了	400	no_contains
+buhuile	不回了	200	no_contains
+buhuiliu	不会流	81	no_contains
+buhuiliu	不会留	200	no_contains
+buhuiliu	不回流	2	no_contains
+buhuini	不会腻	2	no_contains
+buhuini	不回你	200	no_contains
+buhuiqu	不会去	600	no_contains
+buhuiqu	不会娶	2	no_contains
+buhuiqu	不回去	401	no_contains
+buhuiqu	补回去	400	no_contains
+buhuishou	不会受	400	no_contains
+buhuishou	不会收	201	no_contains
+buhuishou	不回收	200	no_contains
+buhuishou	不回首	2	no_contains
+buhuisuo	不会缩	2	no_contains
+buhuisuo	不回缩	3	no_contains
+buhuitan	不会谈	3	no_contains
+buhuitan	不会贪	1	no_contains
+buhuitan	不回弹	2	no_contains
+buhuitou	不会偷	2	no_contains
+buhuitou	不会投	81	no_contains
+buhuitou	不回头	400	no_contains
+buhuiwo	不回我	200	no_contains
+buhuixiang	不会像	600	no_contains
+buhuixiang	不会想	400	no_contains
+buhuixiang	不回乡	3	no_contains
+buhuixiang	不回想	2	no_contains
+buhuixin	不会信	200	no_contains
+buhuixin	不回信	2	no_contains
+buhuixin	不灰心	201	no_contains
+buhuiyi	不回忆	80	no_contains
+buhuiying	不会赢	200	no_contains
+buhuiying	不回应	400	no_contains
+cejian	侧间	2	no_contains
+cijian	次间	400	no_contains
+dajian	大间	400	no_contains
+dongjian	东间	260	no_contains
+dujian	独间	2	no_contains
+jinjian	尽间	2	no_contains
+mingjian	明间	400	no_contains
+neijian	内间	1	no_contains
+qianjian	前间	2	no_contains
+shaojian	梢间	200	no_contains
+shuangjian	双间	2	no_contains
+tongjian	通间	216	no_contains
+xiaojian	小间	26	no_contains
+xijian	西间	0	no_contains
+zhengjian	正间	80	no_contains
+zhujian	主间	2	no_contains

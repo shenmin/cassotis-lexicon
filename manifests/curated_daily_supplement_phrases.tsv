@@ -4729,7 +4729,6 @@
 酒劲	酒勁	0.01
 痞气	痞氣	0.01
 破土而出	破土而出	0.01
-单间	單間	0.01
 忍字头上一把刀	忍字頭上一把刀	0.01
 隔海相望	隔海相望	0.01
 孬种	孬種	0.01
@@ -30285,3 +30284,98 @@
 银链	銀鏈	0.200	yinlian	exact_rank
 金链	金鍊	0.400	jinlian	exact_rank
 眼帘	眼簾	0.600	yanlian	exact_rank
+# Everyday words, 2026-11-09, the more frequent ones: 不 before a verb of 回 (the user's 不回来 and 不回去; 不回家, 不回头, 不回答, 不回复, 不回避, 不回应), 补回去 beside 补回来 (the user: 不回X above 补回X), the phrases 不会X of those keys that the short-phrase stage put together before (不会去, 不会想, 不会像, 不会了, 不会比), and one character before 间 for a room (the user's 大间, 通间 and 小间; 明间, 次间), weighted by the general text as the batches before.
+不回来	不回來	0.601	buhuilai	exact_rank_no_contains
+不回去	不回去	0.401	buhuiqu	exact_rank_no_contains
+不回家	不回家	0.600	buhuijia	exact_rank_no_contains
+不回头	不回頭	0.400	buhuitou	exact_rank_no_contains
+不回避	不迴避	0.400	buhuibi	exact_rank_no_contains
+不回答	不回答	0.401	buhuida	exact_rank_no_contains
+不回复	不回覆	0.400	buhuifu	exact_rank_no_contains
+不回应	不回應	0.400	buhuiying	exact_rank_no_contains
+补回去	補回去	0.400	buhuiqu	exact_rank_no_contains
+不会去	不會去	0.600	buhuiqu	exact_rank_no_contains
+不会像	不會像	0.600	buhuixiang	exact_rank_no_contains
+不会想	不會想	0.400	buhuixiang	exact_rank_no_contains
+不会来	不會來	0.400	buhuilai	exact_rank_no_contains
+不会了	不會了	0.400	buhuile	exact_rank_no_contains
+不会打	不會打	0.400	buhuida	exact_rank_no_contains
+不会比	不會比	0.600	buhuibi	exact_rank_no_contains
+不会到	不會到	0.400	buhuidao	exact_rank_no_contains
+不会受	不會受	0.400	buhuishou	exact_rank_no_contains
+大间	大間	0.400	dajian	exact_rank_no_contains
+通间	通間	0.216	tongjian	exact_rank_no_contains
+小间	小間	0.026	xiaojian	exact_rank_no_contains
+次间	次間	0.400	cijian	exact_rank_no_contains
+明间	明間	0.400	mingjian	exact_rank_no_contains
+# Everyday words, 2026-11-09, the less frequent ones (不回国, 不回收, 不回弹, 不会犯, 不会留, 梢间, 半间, 东间, 西间), by the same weights.
+不回到	不回到	0.080	buhuidao	exact_rank_no_contains
+不回国	不回國	0.200	buhuiguo	exact_rank_no_contains
+不回你	不回你	0.200	buhuini	exact_rank_no_contains
+不回了	不回了	0.200	buhuile	exact_rank_no_contains
+不回信	不回信	0.002	buhuixin	exact_rank_no_contains
+不回我	不回我	0.200	buhuiwo	exact_rank_no_contains
+不回收	不回收	0.200	buhuishou	exact_rank_no_contains
+不回顾	不回顧	0.003	buhuigu	exact_rank_no_contains
+不回归	不迴歸	0.002	buhuigui	exact_rank_no_contains
+不回忆	不回憶	0.080	buhuiyi	exact_rank_no_contains
+不回报	不回報	0.002	buhuibao	exact_rank_no_contains
+不回流	不迴流	0.002	buhuiliu	exact_rank_no_contains
+不回缩	不回縮	0.003	buhuisuo	exact_rank_no_contains
+不回本	不回本	0.002	buhuiben	exact_rank_no_contains
+不回乡	不回鄉	0.003	buhuixiang	exact_rank_no_contains
+不回弹	不回彈	0.002	buhuitan	exact_rank_no_contains
+不回返	不回返	0.000	buhuifan	exact_rank_no_contains
+不回购	不回購	0.002	buhuigou	exact_rank_no_contains
+不回首	不回首	0.002	buhuishou	exact_rank_no_contains
+不回想	不回想	0.002	buhuixiang	exact_rank_no_contains
+不回电	不回電	0.002	buhuidian	exact_rank_no_contains
+不回话	不回話	0.001	buhuihua	exact_rank_no_contains
+不会过	不會過	0.201	buhuiguo	exact_rank_no_contains
+不会留	不會留	0.200	buhuiliu	exact_rank_no_contains
+不会收	不會收	0.201	buhuishou	exact_rank_no_contains
+不会犯	不會犯	0.200	buhuifan	exact_rank_no_contains
+不会花	不會花	0.201	buhuihua	exact_rank_no_contains
+不会画	不會畫	0.200	buhuihua	exact_rank_no_contains
+不会加	不會加	0.200	buhuijia	exact_rank_no_contains
+不会答	不會答	0.081	buhuida	exact_rank_no_contains
+不会倒	不會倒	0.200	buhuidao	exact_rank_no_contains
+不会信	不會信	0.200	buhuixin	exact_rank_no_contains
+不会赢	不會贏	0.200	buhuiying	exact_rank_no_contains
+不会烦	不會煩	0.001	buhuifan	exact_rank_no_contains
+不会翻	不會翻	0.002	buhuifan	exact_rank_no_contains
+不会点	不會點	0.081	buhuidian	exact_rank_no_contains
+不会偷	不會偷	0.002	buhuitou	exact_rank_no_contains
+不会投	不會投	0.081	buhuitou	exact_rank_no_contains
+不会谈	不會談	0.003	buhuitan	exact_rank_no_contains
+不会贪	不會貪	0.001	buhuitan	exact_rank_no_contains
+不会流	不會流	0.081	buhuiliu	exact_rank_no_contains
+不会娶	不會娶	0.002	buhuiqu	exact_rank_no_contains
+不会抱	不會抱	0.000	buhuibao	exact_rank_no_contains
+不会报	不會報	0.001	buhuibao	exact_rank_no_contains
+不会爆	不會爆	0.003	buhuibao	exact_rank_no_contains
+不会付	不會付	0.002	buhuifu	exact_rank_no_contains
+不会腻	不會膩	0.002	buhuini	exact_rank_no_contains
+不会顾	不會顧	0.002	buhuigu	exact_rank_no_contains
+不会逼	不會逼	0.002	buhuibi	exact_rank_no_contains
+不会搭	不會搭	0.002	buhuida	exact_rank_no_contains
+不会滑	不會滑	0.002	buhuihua	exact_rank_no_contains
+不会缩	不會縮	0.002	buhuisuo	exact_rank_no_contains
+不灰心	不灰心	0.201	buhuixin	exact_rank_no_contains
+梢间	梢間	0.200	shaojian	exact_rank_no_contains
+尽间	盡間	0.002	jinjian	exact_rank_no_contains
+暗间	暗間	0.000	anjian	exact_rank_no_contains
+东间	東間	0.260	dongjian	exact_rank_no_contains
+西间	西間	0.000	xijian	exact_rank_no_contains
+正间	正間	0.080	zhengjian	exact_rank_no_contains
+侧间	側間	0.002	cejian	exact_rank_no_contains
+前间	前間	0.002	qianjian	exact_rank_no_contains
+内间	內間	0.001	neijian	exact_rank_no_contains
+半间	半間	0.200	banjian	exact_rank_no_contains
+双间	雙間	0.002	shuangjian	exact_rank_no_contains
+独间	獨間	0.002	dujian	exact_rank_no_contains
+边间	邊間	0.002	bianjian	exact_rank_no_contains
+主间	主間	0.002	zhujian	exact_rank_no_contains
+# Weighted anew on 2026-11-09: import-weight words of the X间 family, which the general text holds far more often than their weights say (单间, 包间).
+单间	單間	0.600	danjian	exact_rank
+包间	包間	0.368	baojian	exact_rank

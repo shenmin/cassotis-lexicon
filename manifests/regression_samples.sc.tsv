@@ -4027,3 +4027,13 @@ goulian	狗链	2
 yinlian	银链	2
 jinlian	金链	1
 yanlian	眼帘	2
+
+# Words of 2026-11-09, the user's examples (不回来, 不回去, 补回去, 大间, 通间, 小间) and the import words weighted anew: the rank each has by weight among the words of its key.
+buhuilai	不回来	1
+buhuiqu	不回去	2
+buhuiqu	补回去	3
+dajian	大间	4
+tongjian	通间	4
+xiaojian	小间	4
+danjian	单间	1
+baojian	包间	4
