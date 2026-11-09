@@ -8,9 +8,10 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import build_external_cedict as builder
 from validate_regression_samples import load_merged_dict
 
+# \u4f59\u70ed (residual heat) between them since the reweight of 2026-11-08 (the general text writes it often).
 WORDS = {
-    "sc": {"\u9884\u70ed": 760, "\u9047\u70ed": 320},
-    "tc": {"\u9810\u71b1": 760, "\u9047\u71b1": 320},
+    "sc": {"\u9884\u70ed": 760, "\u4f59\u70ed": 600, "\u9047\u70ed": 320},
+    "tc": {"\u9810\u71b1": 760, "\u9918\u71b1": 600, "\u9047\u71b1": 320},
 }
 
 
@@ -21,7 +22,7 @@ class PreheatingWeightTests(unittest.TestCase):
         selected = [entry for entry in entries if entry[3] == "yure"]
         regular, exact = builder._partition_curated_daily_post_rank_exact_entries(selected)
         self.assertFalse(regular)
-        self.assertEqual(2, len(exact))
+        self.assertEqual(3, len(exact))
         sc = {("yure", "\u9884\u70ed"): 1, ("yure", "\u9047\u70ed"): 700}
         tc = {("yure", "\u9810\u71b1"): 336, ("yure", "\u9047\u71b1"): 224}
         expected = tuple({("yure", text): weight for text, weight in WORDS[v].items()}

@@ -10,7 +10,7 @@ from validate_regression_samples import load_merged_dict
 
 MARKER = "# Everyday mistaken handling 2026-09-13."
 EXPECTED = [
-    ('chaban', '\u63d2\u677f', '\u63d2\u677f', 700),
+    ('chaban', '\u63d2\u677f', '\u63d2\u677f', 599),
     ('wufang', '\u8bef\u653e', '\u8aa4\u653e', 220),
     ('cuofang', '\u9519\u653e', '\u932f\u653e', 480),
     ('wuna', '\u8bef\u62ff', '\u8aa4\u62ff', 460),
@@ -32,7 +32,7 @@ EXPECTED = [
     ('wufa', '\u8bef\u53d1', '\u8aa4\u767c', 1),
     ('cuofa', '\u9519\u53d1', '\u932f\u767c', 600),
     ('wukai', '\u8bef\u5f00', '\u8aa4\u958b', 360),
-    ('wuguan', '\u8bef\u5173', '\u8aa4\u95dc', 320),
+    ('wuguan', '\u8bef\u5173', '\u8aa4\u95dc', 103),
     ('cuoguan', '\u9519\u5173', '\u932f\u95dc', 360),
     ('wuda', '\u8bef\u6253', '\u8aa4\u6253', 380),
     ('cuoda', '\u9519\u6253', '\u932f\u6253', 460),

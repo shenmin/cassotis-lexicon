@@ -3814,7 +3814,6 @@
 百岁	百歲	0.01
 第一章	第一章	0.01
 掺杂	摻雜	0.01
-一届	一屆	0.01
 三尺	三尺	0.01
 黑板擦	黑板擦	0.01
 面朝	面朝	0.01
@@ -3822,7 +3821,6 @@
 短袖衫	短袖衫	0.01
 棉质	棉質	0.01
 脚上	腳上	0.36
-桌椅	桌椅	0.01
 尖子班	尖子班	0.01
 分科	分科	0.01
 月考	月考	0.01
@@ -3910,7 +3908,6 @@
 扇风	扇風	0.01
 作业本	作業本	0.01
 答题卷	答題卷	0.01
-硬笔	硬筆	0.01
 有异	有異	0.01
 言罢	言罷	0.01
 枇杷树	枇杷樹	0.01
@@ -3927,7 +3924,6 @@
 鱼汤	魚湯	0.01
 两级	兩級	0.01
 见底	見底	0.01
-哪次	哪次	0.01
 休息日	休息日	0.01
 老爷们	老爺們	0.01
 八十岁	八十歲	0.01
@@ -3951,7 +3947,6 @@
 满头	滿頭	0.01
 一寸	一寸	0.01
 纤长	纖長	0.01
-一粒	一粒	0.01
 两颗	兩顆	0.01
 钝刀	鈍刀	0.01
 腹中	腹中	0.01
@@ -4048,7 +4043,6 @@
 翠树	翠樹	0.01
 嚼舌根	嚼舌根	0.01
 多面性	多面性	0.01
-几部	幾部	0.01
 杂花生树	雜花生樹	0.01
 淙淙	淙淙	0.01
 顿生	頓生	0.01
@@ -4063,8 +4057,6 @@
 蜡黄	蠟黃	0.01
 白衬衫	白襯衫	0.01
 金耳环	金耳環	0.01
-一碗	一碗	0.01
-背起	背起	0.01
 刷碗	刷碗	0.720	shuawan	exact_rank_no_contains
 天光	天光	0.01
 初升	初升	0.01
@@ -4097,17 +4089,14 @@
 斜照	斜照	0.01
 二零一二年	二零一二年	0.01
 一颤	一顫	0.01
-远去	遠去	0.01
 下学期	下學期	0.01
 可乐瓶	可樂瓶	0.01
 上学期	上學期	0.01
-一亮	一亮	0.01
 抬脚	擡腳	0.01
 流走	流走	0.01
 傻站	傻站	0.01
 夜灯	夜燈	0.01
 外胎	外胎	0.01
-指腹	指腹	0.01
 修车铺	修車鋪	0.01
 薄暮	薄暮	0.01
 汪汪	汪汪	0.01
@@ -4129,7 +4118,6 @@
 大型犬	大型犬	0.01
 小卖铺	小賣鋪	0.01
 跨进	跨進	0.01
-拖把	拖把	0.01
 修理店	修理店	0.01
 经摔	經摔	0.01
 三校	三校	0.01
@@ -4175,14 +4163,12 @@
 按着	按著	0.01
 放榜	放榜	0.01
 速记本	速記本	0.01
-拔出	拔出	0.01
 倒过来	倒過來	0.01
 心狠	心狠	0.01
 心黑	心黑	0.01
 上课铃	上課鈴	0.01
 流金	流金	0.01
 分内事	分內事	0.01
-份数	份數	0.01
 踢出去	踢出去	0.01
 踢走	踢走	0.01
 成真	成真	0.01
@@ -4227,7 +4213,6 @@
 停笔	停筆	0.01
 微卷	微卷	0.01
 下映	下映	0.01
-一劫	一劫	0.01
 动脑子	動腦子	0.01
 手包	手包	0.01
 后街	後街	0.01
@@ -4246,7 +4231,6 @@
 翻书	翻書	0.01
 一通	一通	0.01
 包场	包場	0.01
-益智	益智	0.01
 端茶倒水	端茶倒水	0.01
 殷勤	殷勤	0.01
 拉过来	拉過來	0.01
@@ -4265,9 +4249,7 @@
 高宁路	高寧路	0.01
 庄园	莊園	0.01
 电器城	電器城	0.01
-甚远	甚遠	0.01
 假称	假稱	0.01
-白光	白光	0.01
 进店	進店	0.01
 秋季款	秋季款	0.01
 少则	少則	0.01
@@ -4292,7 +4274,6 @@
 杏子树	杏子樹	0.01
 三米	三米	0.01
 泛黄	泛黃	0.01
-架起	架起	0.01
 老蒋	老蔣	0.01
 没文化	沒文化	0.01
 老邻居	老鄰居	0.01
@@ -4395,7 +4376,6 @@
 布帘	布簾	0.01
 门缝	門縫	0.01
 筛下	篩下	0.01
-同校	同校	0.01
 为零	爲零	0.36
 出锅	出鍋	0.01
 两片	兩片	0.01
@@ -4406,7 +4386,6 @@
 挤不进	擠不進	0.01
 抻着	抻著	0.00
 算错	算錯	0.01
-肤质	膚質	0.01
 一模	一模	0.01
 年级组	年級組	0.01
 两盒	兩盒	0.01
@@ -4414,7 +4393,6 @@
 三罐	三罐	0.01
 城南	城南	0.01
 黄牙	黃牙	0.01
-金链	金鍊	0.01
 压惊	壓驚	0.01
 按住	按住	0.01
 逼急	逼急	0.01
@@ -4480,11 +4458,9 @@
 双肩	雙肩	0.01
 滴水未进	滴水未進	0.01
 嗟叹	嗟嘆	0.01
-神坛	神壇	0.01
 滑到	滑到	0.01
 接水	接水	0.01
 二嫂	二嫂	0.01
-一堵	一堵	0.01
 碍着	礙著	0.01
 小红花	小紅花	0.01
 两道杠	兩道槓	0.01
@@ -4579,7 +4555,6 @@
 诧然	詫然	0.01
 垂首	垂首	0.01
 守下去	守下去	0.01
-同城	同城	0.01
 秒速	秒速	0.01
 平凡人	平凡人	0.01
 天下熙熙	天下熙熙	0.01
@@ -4597,7 +4572,6 @@
 借遍	借遍	0.01
 扛货	扛貨	0.01
 兼负	兼負	0.01
-驾校	駕校	0.01
 排课表	排課表	0.01
 科目一	科目一	0.01
 科目二	科目二	0.01
@@ -4617,7 +4591,6 @@
 共处一室	共處一室	0.01
 大亏	大虧	0.01
 圈紧	圈緊	0.01
-一局	一局	0.01
 六块	六塊	0.01
 八块	八塊	0.01
 颈窝	頸窩	0.01
@@ -4632,7 +4605,6 @@
 美赛	美賽	0.01
 跨校	跨校	0.01
 男生宿舍	男生宿舍	0.01
-学姐	學姐	0.01
 上床下桌	上床下桌	0.01
 扇面	扇面	0.01
 昭告天下	昭告天下	0.01
@@ -4692,7 +4664,6 @@
 虾饺	蝦餃	0.01
 鲍鱼	鮑魚	0.01
 勾翅	勾翅	0.01
-产自	產自	0.01
 凉菜	涼菜	0.01
 小锤子	小錘子	0.01
 湿巾	濕巾	0.01
@@ -4714,16 +4685,12 @@
 我操	我操	0.01
 狗叫	狗叫	0.01
 霜染	霜染	0.01
-银杏	銀杏	0.01
 实验楼	實驗樓	0.01
 选拔赛	選拔賽	0.01
-蕾丝	蕾絲	0.01
 麦色	麥色	0.01
 踮着	踮著	0.01
 求你	求你	0.01
-校级	校級	0.01
 调剂品	調劑品	0.01
-谨记	謹記	0.01
 红枫	紅楓	0.01
 苒苒	苒苒	0.01
 邪火	邪火	0.01
@@ -4731,7 +4698,6 @@
 重话	重話	0.01
 横插一杠	橫插一槓	0.01
 撸高	擼高	0.01
-一截	一截	0.01
 男生堆	男生堆	0.01
 兴致高涨	興致高漲	0.01
 课后	課後	0.01
@@ -4777,7 +4743,6 @@
 网兜	網兜	0.01
 打乱	打亂	0.01
 共宿	共宿	0.01
-一室	一室	0.01
 耸翠	聳翠	0.01
 手可摘星辰	手可摘星辰	0.01
 虫鸣	蟲鳴	0.01
@@ -4798,7 +4763,6 @@
 好风光	好風光	0.01
 倚石	倚石	0.01
 入镜	入鏡	0.01
-上相	上相	0.01
 砸场	砸場	0.01
 连拍	連拍	0.01
 岔气	岔氣	0.01
@@ -4809,7 +4773,6 @@
 玩水	玩水	0.01
 一捧	一捧	0.01
 打水仗	打水仗	0.01
-溅起	濺起	0.01
 龙颈河	龍頸河	0.01
 河段	河段	0.01
 吓懵	嚇懵	0.01
@@ -4835,7 +4798,6 @@
 心中没底	心中沒底	0.01
 副组长	副組長	0.01
 竖线	豎線	0.01
-几株	幾株	0.01
 滴水观音	滴水觀音	0.01
 办公区	辦公區	0.01
 查字典	查字典	0.01
@@ -4846,7 +4808,6 @@
 俊朗	俊朗	0.01
 组员	組員	0.01
 各忙各事	各忙各事	0.01
-副职	副職	0.01
 正组长	正組長	0.01
 痘印	痘印	0.01
 行政部	行政部	0.01
@@ -4876,7 +4837,6 @@
 身似菩提树	身似菩提樹	0.01
 泼开	潑開	0.01
 冷水澡	冷水澡	0.01
-磨砂	磨砂	0.01
 软垫	軟墊	0.01
 电子钟	電子鐘	0.01
 前戏	前戲	0.01
@@ -5007,7 +4967,6 @@
 特等奖	特等獎	0.01
 舌头打结	舌頭打結	0.01
 到岗	到崗	0.01
-一拳	一拳	0.01
 黑水鬼	黑水鬼	0.01
 美少年	美少年	0.01
 剥粽子	剝粽子	0.01
@@ -5020,7 +4979,6 @@
 弯月	彎月	0.01
 产品部	產品部	0.01
 现卖	現賣	0.01
-献给	獻給	0.01
 次位	次位	0.01
 竖毛	豎毛	0.01
 逮住	逮住	0.01
@@ -5087,7 +5045,6 @@
 劣根性	劣根性	0.01
 顺风顺水	順風順水	0.01
 唇瓣	唇瓣	0.01
-美院	美院	0.01
 亲热劲	親熱勁	0.01
 假笑	假笑	0.01
 巧不巧	巧不巧	0.01
@@ -5145,7 +5102,6 @@
 双专业	雙專業	0.01
 法学系	法學系	0.01
 高教园	高教園	0.01
-吃辣	吃辣	0.01
 询证函	詢證函	0.01
 一腔热血	一腔熱血	0.01
 登门拜访	登門拜訪	0.01
@@ -5195,7 +5151,6 @@
 红黑联盟	紅黑聯盟	0.01
 木头桩子	木頭樁子	0.01
 楚汉	楚漢	0.01
-项王	項王	0.01
 电脑白痴	電腦白痴	0.01
 外联社	外聯社	0.01
 粉晕	粉暈	0.01
@@ -5216,7 +5171,6 @@
 商业机密	商業機密	0.01
 侍奉	侍奉	0.48	shifeng
 手艺活	手藝活	0.01
-大厨	大廚	0.01
 纸团	紙團	0.01
 山珍	山珍	0.01
 荤话	葷話	0.01
@@ -5303,7 +5257,6 @@
 宏丽	宏麗	0.01
 时间跨度	時間跨度	0.01
 公关文	公關文	0.01
-一派	一派	0.01
 封闭型	封閉型	0.01
 就业指导	就業指導	0.01
 采访片	採訪片	0.01
@@ -5328,7 +5281,6 @@
 揭下来	揭下來	0.01
 撞破	撞破	0.01
 激吻	激吻	0.01
-长情	長情	0.01
 狗爪	狗爪	0.01
 腿细	腿細	0.01
 番外	番外	0.01
@@ -5355,13 +5307,11 @@
 一泻千丈	一瀉千丈	0.01
 镇场	鎮場	0.01
 乍一看	乍一看	0.01
-远洋	遠洋	0.01
 水手长	水手長	0.01
 世界上	世界上	0.01
 同组	同組	0.01
 第一句	第一句	0.01
 网名	網名	0.01
-时值	時值	0.01
 广告公司	廣告公司	0.01
 圆圆	圓圓	0.01
 后翘	後翹	0.01
@@ -5377,7 +5327,6 @@
 超群脱俗	超群脫俗	0.01
 温雅	溫雅	0.01
 手脚架	手腳架	0.01
-一跳	一跳	0.01
 青丹	青丹	0.01
 夜雨	夜雨	0.01
 拉进	拉進	0.01
@@ -5385,7 +5334,6 @@
 两层	兩層	0.01
 结合部	結合部	0.01
 临街	臨街	0.01
-那套	那套	0.01
 租给	租給	0.01
 见过面	見過面	0.01
 长长	長長	0.01
@@ -5401,11 +5349,9 @@
 吃了一惊	吃了一驚	0.34
 大酒店	大酒店	0.01
 欧化	歐化	0.01
-越是	越是	0.01
 赶过去	趕過去	0.01
 坐下来	坐下來	0.01
 狂跳	狂跳	0.01
-直直	直直	0.01
 挨到	捱到	0.01
 说不出来	說不出來	0.01
 西路	西路	0.01
@@ -5416,7 +5362,6 @@
 电梯口	電梯口	0.01
 勾住	勾住	0.01
 就势	就勢	0.01
-石子	石子	0.01
 黑亮	黑亮	0.01
 晶光	晶光	0.01
 尾箱	尾箱	0.01
@@ -5474,7 +5419,6 @@
 汗湿	汗濕	0.01
 给人	給人	0.36
 前座	前座	0.01
-那辆	那輛	0.01
 飞驶而过	飛駛而過	0.01
 副驾	副駕	0.01
 边上	邊上	0.01
@@ -5529,7 +5473,6 @@
 碗口	碗口	0.01
 吊钩	吊鉤	0.01
 吊着	吊着	0.01
-这根	這根	0.01
 勒捆	勒捆	0.01
 叉开	叉開	0.01
 蛤蟆吊	蛤蟆吊	0.01
@@ -5544,7 +5487,6 @@
 滑嫩	滑嫩	0.01
 连在	連在	0.01
 毫无遮拦	毫無遮攔	0.01
-这帮	這幫	0.01
 下腹	下腹	0.01
 这个时候	這個時候	0.01
 很静	很靜	0.01
@@ -5557,7 +5499,6 @@
 师团	師團	0.01
 不允许	不允許	0.01
 夺下	奪下	0.01
-胃部	胃部	0.01
 弯下	彎下	0.01
 弄糊涂	弄糊塗	0.01
 冲过来	衝過來	0.01
@@ -5576,7 +5517,6 @@
 暖呼呼	暖呼呼	0.01
 摔在	摔在	0.01
 扶起来	扶起來	0.01
-扶起	扶起	0.01
 粘液	粘液	0.01
 恨恨	恨恨	0.01
 站起	站起	0.36
@@ -5585,7 +5525,6 @@
 肋部	肋部	0.01
 踢断	踢斷	0.01
 脖筋	脖筋	0.01
-那所	那所	0.01
 消失殆尽	消失殆盡	0.01
 调教室	調教室	0.01
 酱缸	醬缸	0.01
@@ -5633,7 +5572,6 @@
 做作业	做作業	0.01
 布团	布團	0.01
 撒盐	撒鹽	0.01
-施暴	施暴	0.01
 名牌大学	名牌大學	0.01
 男同学	男同學	0.01
 撩人心扉	撩人心扉	0.01
@@ -5663,7 +5601,6 @@
 双唇	雙唇	0.01
 背上	背上	0.01
 落地镜	落地鏡	0.01
-推到	推到	0.01
 柔月	柔月	0.01
 反扭	反扭	0.01
 勒绑	勒綁	0.01
@@ -5694,13 +5631,11 @@
 截然相反	截然相反	0.01
 现代社会	現代社會	0.01
 金赛	金賽	0.01
-浅浅	淺淺	0.01
 着重于	着重於	0.01
 大哥哥	大哥哥	0.01
 色色	色色	0.01
 绳痕	繩痕	0.01
 大吵	大吵	0.01
-一架	一架	0.01
 打懵	打懵	0.01
 吓出	嚇出	0.01
 看得出来	看得出來	0.01
@@ -5748,7 +5683,6 @@
 几十米	幾十米	0.01
 粗麻	粗麻	0.01
 逃出	逃出	0.01
-解下	解下	0.01
 绕到	繞到	0.01
 独辫	獨辮	0.01
 四道	四道	0.01
@@ -5773,7 +5707,6 @@
 刮光	刮光	0.01
 刮毛	刮毛	0.01
 扮作	扮作	0.01
-归为	歸爲	0.01
 光溜溜	光溜溜	0.01
 梦里	夢裏	0.01
 晾衣	晾衣	0.01
@@ -5798,7 +5731,6 @@
 几滴	幾滴	0.01
 剧疼	劇疼	0.01
 亮起	亮起	0.01
-这间	這間	0.01
 低着	低著	0.01
 走过来	走過來	0.01
 流回	流回	0.01
@@ -5861,7 +5793,6 @@
 小夫妻	小夫妻	0.01
 搞不清	搞不清	0.01
 开去	開去	0.01
-小院	小院	0.01
 想尽	想盡	0.01
 以此为荣	以此為榮	0.01
 初涉	初涉	0.01
@@ -5895,7 +5826,6 @@
 左脚	左腳	0.01
 用不上	用不上	0.01
 几声	幾聲	0.01
-难忍	難忍	0.01
 蜡汁	蠟汁	0.01
 抱到	抱到	0.01
 醒过来	醒過來	0.01
@@ -5918,7 +5848,6 @@
 齐平	齊平	0.01
 哼声	哼聲	0.01
 无意义	無意義	0.01
-那副	那副	0.01
 毫无顾忌	毫無顧忌	0.01
 长头发	長頭髮	0.01
 滴蜡	滴蠟	0.01
@@ -5966,7 +5895,6 @@
 凑在	湊在	0.01
 不相配	不相配	0.01
 腿伤	腿傷	0.01
-拿回	拿回	0.01
 大奔	大奔	0.01
 白衬衣	白襯衣	0.01
 一件件	一件件	0.01
@@ -5976,7 +5904,6 @@
 滑润	滑潤	0.01
 波浪形	波浪形	0.01
 竹杠	竹槓	0.01
-一字	一字	0.01
 吊捆	吊捆	0.01
 高脚凳	高腳凳	0.01
 高脚	高腳	0.01
@@ -6004,7 +5931,6 @@
 工具包	工具包	0.01
 蓝山咖啡	藍山咖啡	0.01
 醇香	醇香	0.01
-生下	生下	0.01
 走来走去	走來走去	0.01
 松紧	鬆緊	0.01
 号码锁	號碼鎖	0.01
@@ -6028,7 +5954,6 @@
 汗臭味	汗臭味	0.01
 第一组	第一組	0.01
 粘住	粘住	0.01
-酸酸	酸酸	0.01
 腥气	腥氣	0.01
 吸引人	吸引人	0.01
 每一处	每一處	0.01
@@ -6050,10 +5975,8 @@
 挂在	掛在	0.01
 梧桐树	梧桐樹	0.01
 狼狈相	狼狽相	0.01
-这招	這招	0.01
 麻痛	麻痛	0.01
 大亮	大亮	0.01
-屋里	屋裏	0.01
 等人	等人	0.01
 两盏	兩盞	0.01
 端到	端到	0.01
@@ -6066,7 +5989,6 @@
 刺入	刺入	0.01
 上百年	上百年	0.01
 上百	上百	0.01
-这棵	這棵	0.01
 瞪着	瞪著	0.01
 小动物	小動物	0.01
 搅成	攪成	0.01
@@ -6109,7 +6031,6 @@
 几袋	幾袋	0.01
 十几粒	十幾粒	0.01
 每星期	每星期	0.01
-劫财	劫財	0.01
 拿光	拿光	0.01
 重拳	重拳	0.01
 惹来	惹來	0.01
@@ -6122,7 +6043,6 @@
 静观	靜觀	0.01
 后顾	後顧	0.01
 一棵棵	一棵棵	0.01
-大树	大樹	0.01
 四层	四層	0.01
 帆影	帆影	0.01
 鱼腥味	魚腥味	0.01
@@ -6253,9 +6173,7 @@
 新住址	新住址	0.01
 一大排	一大排	0.01
 储物箱	儲物箱	0.01
-一包	一包	0.01
 皮套	皮套	0.01
-言和	言和	0.01
 至死	至死	0.01
 绞动	絞動	0.01
 看不下去	看不下去	0.01
@@ -6290,7 +6208,6 @@
 淫毒	淫毒	0.01
 说不清楚	說不清楚	0.01
 一时之间	一時之間	0.01
-爱恋	愛戀	0.01
 阳刚之气	陽剛之氣	0.01
 无以自持	無以自持	0.01
 祈盼	祈盼	0.01
@@ -6319,7 +6236,6 @@
 小太妹	小太妹	0.01
 回过身	回過身	0.01
 朝下	朝下	0.01
-脚踩	腳踩	0.01
 反弓	反弓	0.01
 肉虾	肉蝦	0.01
 骚狐狸	騷狐狸	0.01
@@ -6341,7 +6257,6 @@
 阴雨绵绵	陰雨綿綿	0.01
 雪雨	雪雨	0.01
 胀破	脹破	0.01
-雨中	雨中	0.01
 淌流	淌流	0.01
 悸痛	悸痛	0.01
 一咬	一咬	0.01
@@ -6368,7 +6283,6 @@
 医学生	醫學生	0.01
 追求者	追求者	0.01
 从那以后	從那以後	0.01
-这所	這所	0.01
 最深处	最深處	0.01
 性生理学	性生理學	0.01
 这一天	這一天	0.01
@@ -6379,7 +6293,6 @@
 全开	全開	0.01
 心跳声	心跳聲	0.01
 死紧	死緊	0.01
-这门	這門	0.01
 欲裂	欲裂	0.01
 砸在	砸在	0.01
 一红	一紅	0.01
@@ -6423,7 +6336,6 @@
 静置	靜置	0.01
 充盈感	充盈感	0.01
 他物	他物	0.01
-一剂	一劑	0.01
 开足	開足	0.01
 顾不了	顧不了	0.01
 靡丽	靡麗	0.01
@@ -6436,11 +6348,9 @@
 尖叫声	尖叫聲	0.01
 惊天地	驚天地	0.01
 泣鬼神	泣鬼神	0.01
-朝上	朝上	0.01
 观赏性	觀賞性	0.01
 直肠壁	直腸壁	0.01
 难以言喻	難以言喻	0.34
-奔向	奔向	0.01
 只需	只需	0.36
 是非题	是非題	0.01
 翻起	翻起	0.01
@@ -6503,9 +6413,7 @@
 上大学	上大學	0.01
 碎片化	碎片化	0.01
 磨钝	磨鈍	0.01
-省下	省下	0.01
 诗性	詩性	0.01
-请进	請進	0.01
 一盏	一盞	0.01
 冷白	冷白	0.01
 两半	兩半	0.01
@@ -6539,7 +6447,6 @@
 一周年	一週年	0.01
 日均	日均	0.01
 千字	千字	0.01
-短篇	短篇	0.01
 稍长	稍長	0.01
 大时代	大時代	0.01
 一座山	一座山	0.01
@@ -6549,7 +6456,6 @@
 考前	考前	0.01
 一路走来	一路走來	0.01
 思考能力	思考能力	0.01
-播客	播客	0.01
 全公司	全公司	0.01
 工作能力	工作能力	0.01
 找工作	找工作	0.01
@@ -6647,10 +6553,8 @@
 台机	臺機	0.01
 大个头	大個頭	0.01
 下不去手	下不去手	0.01
-这股	這股	0.01
 小板	小板	0.01
 小型化	小型化	0.01
-颜值	顏值	0.01
 高刷	高刷	0.01
 蓝线	藍線	0.01
 换货	換貨	0.01
@@ -6670,10 +6574,8 @@
 酱鸭	醬鴨	0.01
 大瓶	大瓶	0.01
 塞下	塞下	0.01
-六一	六一	0.01
 春深	春深	0.01
 物我	物我	0.01
-相忘	相忘	0.01
 十楼	十樓	0.01
 新年伊始	新年伊始	0.01
 伊始	伊始	0.01
@@ -6749,7 +6651,6 @@
 背对着	背對著	0.01
 匙孔	匙孔	0.01
 插进去	插進去	0.01
-警用	警用	0.01
 皮铐	皮銬	0.01
 腕上	腕上	0.01
 马头具	馬頭具	0.01
@@ -6767,7 +6668,6 @@
 自由前	自由前	0.01
 另一根	另一根	0.01
 更方便	更方便	0.01
-一晚	一晚	0.01
 肚子饿	肚子餓	0.01
 两口	兩口	0.01
 抛在	拋在	0.01
@@ -6784,7 +6684,6 @@
 淋浴器	淋浴器	0.01
 稍高	稍高	0.01
 蹦起来	蹦起來	0.01
-浮起	浮起	0.01
 掉下来	掉下來	0.01
 犯了	犯了	0.01
 够到	夠到	0.01
@@ -6889,7 +6788,6 @@
 浮到	浮到	0.01
 往下沉	往下沉	0.01
 呼了口气	呼了口氣	0.01
-三声	三聲	0.01
 摔去	摔去	0.01
 睁开双眼	睜開雙眼	0.01
 掉在	掉在	0.01
@@ -6906,9 +6804,7 @@
 归想	歸想	0.01
 躬着	躬著	0.01
 渐明	漸明	0.01
-微凉	微涼	0.01
 漫到	漫到	0.01
-不实	不實	0.01
 刺痒	刺癢	0.01
 五味瓶	五味瓶	0.01
 门背	門背	0.01
@@ -6929,7 +6825,6 @@
 艳舞	豔舞	0.01
 自虐	自虐	0.01
 铐镣	銬鐐	0.01
-狗链	狗鏈	0.01
 铁连	鐵連	0.01
 松松	鬆鬆	0.01
 床前	床前	0.01
@@ -6957,7 +6852,6 @@
 撒起娇	撒起嬌	0.01
 小玩意儿	小玩意兒	0.01
 弱女子	弱女子	0.01
-分机	分機	0.01
 两条街	兩條街	0.01
 捂着	捂著	0.01
 笑闹	笑鬧	0.01
@@ -7009,7 +6903,6 @@
 掠影	掠影	0.01
 素光同	素光同	0.01
 午夜梦回	午夜夢迴	0.01
-捡到	撿到	0.01
 素描画	素描畫	0.01
 胜在	勝在	0.01
 爬满	爬滿	0.01
@@ -7043,15 +6936,12 @@
 高瘦	高瘦	0.01
 偏白	偏白	0.01
 叼着	叼著	0.01
-吓到	嚇到	0.01
 掐灭	掐滅	0.01
 冷色调	冷色調	0.01
-待客	待客	0.01
 沾着	沾著	0.01
 提点	提點	0.01
 宏升	宏升	0.01
 照出	照出	0.01
-洗礼	洗禮	0.01
 守夜人	守夜人	0.01
 硬物	硬物	0.01
 易燃易爆	易燃易爆	0.01
@@ -7074,7 +6964,6 @@
 杯口	杯口	0.01
 往北	往北	0.01
 二十几	二十幾	0.01
-翻到	翻到	0.01
 好闻	好聞	0.01
 附在	附在	0.01
 明码标价	明碼標價	0.01
@@ -7094,7 +6983,6 @@
 送错	送錯	0.01
 绕在	繞在	0.01
 里屋	裏屋	0.01
-跑出来	跑出來	0.01
 扑向	撲向	0.01
 真名	真名	0.01
 毛绒绒	毛絨絨	0.01
@@ -7114,7 +7002,6 @@
 叩响	叩響	0.01
 红灯绿酒	紅燈綠酒	0.01
 捧起	捧起	0.01
-两瓶	兩瓶	0.01
 好酒	好酒	0.01
 耍酒疯	耍酒瘋	0.01
 闷声	悶聲	0.01
@@ -7131,7 +7018,6 @@
 绊子	絆子	0.01
 摔落	摔落	0.01
 扣紧	扣緊	0.01
-抢到	搶到	0.01
 明白人	明白人	0.01
 话外音	話外音	0.01
 为免	爲免	0.01
@@ -7145,7 +7031,6 @@
 窃窃	竊竊	0.01
 换汇	換匯	0.01
 金框	金框	0.01
-展区	展區	0.01
 发饰	髮飾	0.01
 矢车菊	矢車菊	0.01
 偏头	偏頭	0.01
@@ -7179,7 +7064,6 @@
 黑透	黑透	0.01
 暂代	暫代	0.01
 崩断	崩斷	0.01
-一键	一鍵	0.01
 鱼鳍	魚鰭	0.01
 不放	不放	0.01
 床角	床角	0.01
@@ -7228,7 +7112,6 @@
 忽近忽远	忽近忽遠	0.01
 细听	細聽	0.01
 平齐	平齊	0.01
-闭眼	閉眼	0.01
 跳下	跳下	0.01
 存稿	存稿	0.01
 仙缘	仙緣	0.01
@@ -7236,7 +7119,6 @@
 小天使	小天使	0.01
 意乱神迷	意亂神迷	0.01
 起风	起風	0.01
-受教	受教	0.01
 如昼	如晝	0.01
 柔润	柔潤	0.01
 踮脚	踮腳	0.01
@@ -7255,7 +7137,6 @@
 眸光	眸光	0.01
 凶杀犯	兇殺犯	0.01
 份上	份上	0.01
-一跤	一跤	0.01
 腿根	腿根	0.01
 捋平	捋平	0.01
 温香软玉	溫香軟玉	0.01
@@ -7282,8 +7163,6 @@
 财务报表	財務報表	0.01
 蔚蓝色	蔚藍色	0.01
 讨要	討要	0.01
-飞向	飛向	0.01
-囿于	囿於	0.01
 水泽	水澤	0.01
 好文	好文	0.01
 畅游	暢遊	0.01
@@ -7305,12 +7184,10 @@
 铁桶	鐵桶	0.01
 盛满	盛滿	0.01
 桌沿	桌沿	0.01
-一桩	一樁	0.01
 线报	線報	0.01
 燃尽	燃盡	0.01
 伽罗	伽羅	0.01
 掩上	掩上	0.01
-干湿	乾溼	0.01
 直男	直男	0.01
 抽光	抽光	0.01
 短小	短小	0.01
@@ -7333,7 +7210,6 @@
 软嫩	軟嫩	0.01
 金漆	金漆	0.01
 勾破	勾破	0.01
-紧致	緊緻	0.01
 商海	商海	0.01
 跨坐	跨坐	0.01
 如织	如織	0.01
@@ -7382,7 +7258,6 @@
 毒舌	毒舌	0.01
 西化	西化	0.01
 塞住	塞住	0.01
-锁紧	鎖緊	0.01
 耳骨	耳骨	0.01
 硬来	硬來	0.01
 波光潋滟	波光瀲灩	0.01
@@ -7394,10 +7269,8 @@
 讨取	討取	0.01
 私账	私賬	0.01
 恍神	恍神	0.01
-无良	無良	0.01
 垂目	垂目	0.01
 打小	打小	0.01
-共赢	共贏	0.01
 为本	爲本	0.01
 双手合十	雙手合十	0.01
 摘清	摘清	0.01
@@ -7495,7 +7368,6 @@
 攒足	攢足	0.01
 旁落	旁落	0.01
 伯母	伯母	0.01
-备齐	備齊	0.01
 俊容	俊容	0.01
 挣动	掙動	0.01
 软椅	軟椅	0.01
@@ -7519,7 +7391,6 @@
 下下策	下下策	0.01
 拍卖行	拍賣行	0.01
 宫灯	宮燈	0.01
-细数	細數	0.01
 扬言	揚言	0.01
 棉袍	棉袍	0.01
 乌紫	烏紫	0.01
@@ -7534,10 +7405,8 @@
 五感	五感	0.01
 纱衣	紗衣	0.01
 旷工	曠工	0.01
-吐字	吐字	0.01
 卖相	賣相	0.01
 沉下	沉下	0.01
-捕手	捕手	0.01
 七寸	七寸	0.01
 转醒	轉醒	0.01
 留院	留院	0.01
@@ -7557,7 +7426,6 @@
 高定	高定	0.01
 发尾	髮尾	0.01
 红颜	紅顏	0.01
-血样	血樣	0.01
 小心驶得万年船	小心駛得萬年船	0.01
 光火	光火	0.01
 堂兄妹	堂兄妹	0.01
@@ -7712,7 +7580,6 @@
 信息栏	信息欄	0.01
 非卖品	非賣品	0.01
 看腻	看膩	0.01
-锦鲤	錦鯉	0.01
 水逆	水逆	0.01
 借烟消愁	借煙消愁	0.01
 腾云绕雾	騰雲繞霧	0.01
@@ -7774,7 +7641,6 @@
 辞职信	辭職信	0.01
 忘忧	忘憂	0.01
 望眼镜	望眼鏡	0.01
-上香	上香	0.01
 顾惜	顧惜	0.01
 仲春	仲春	0.01
 赶巧	趕巧	0.01
@@ -7838,7 +7704,6 @@
 职业竞争	職業競爭	0.01
 经济公司	經濟公司	0.01
 时间观念	時間觀念	0.01
-线稿	線稿	0.01
 交通便利	交通便利	0.01
 踏蹄	踏蹄	0.01
 私人信息	私人信息	0.01
@@ -8001,7 +7866,6 @@
 睁着	睜著	0.01
 安安静静	安安靜靜	0.01
 白闪闪	白閃閃	0.01
-那本	那本	0.01
 半面	半面	0.01
 流云	流雲	0.01
 渐浓	漸濃	0.01
@@ -8011,10 +7875,8 @@
 出花	出花	0.28	chuhua
 出花样	出花樣	0.54	chuhuayang
 艳阳	豔陽	0.01
-班里	班裏	0.01
 抽选	抽選	0.01
 小兔子	小兔子	0.01
-十指	十指	0.01
 搞不清楚	搞不清楚	0.01
 救场	救場	0.01
 托住	托住	0.01
@@ -8025,7 +7887,6 @@
 打完	打完	0.01
 暗红色	暗紅色	0.01
 金粉	金粉	0.01
-排好	排好	0.01
 偷钱	偷錢	0.01
 马蜂	馬蜂	0.01
 跟紧	跟緊	0.01
@@ -8042,7 +7903,6 @@
 草莓味	草莓味	0.01
 夏夏	夏夏	0.01
 三四十	三四十	0.01
-四位	四位	0.01
 揣进	揣進	0.01
 华灯	華燈	0.01
 泽被	澤被	0.01
@@ -8059,7 +7919,6 @@
 修正带	修正帶	0.01
 一凛	一凜	0.01
 抬腿	擡腿	0.01
-一击	一擊	0.01
 金丝边	金絲邊	0.01
 跑出	跑出	0.01
 怔然	怔然	0.01
@@ -8129,7 +7988,6 @@
 滑滑梯	滑滑梯	0.01
 抛向	拋向	0.01
 叫来	叫來	0.01
-低处	低處	0.01
 滚进	滾進	0.01
 踢球	踢球	0.01
 马尔可夫	馬爾可夫	0.01
@@ -8138,7 +7996,6 @@
 捡球	撿球	0.01
 快跑	快跑	0.01
 又笑又跳	又笑又跳	0.01
-一闪	一閃	0.01
 马奇诺防线	馬奇諾防線	0.01
 踩上	踩上	0.01
 去意已决	去意已決	0.01
@@ -8167,7 +8024,6 @@
 赶在	趕在	0.01
 跳上	跳上	0.01
 快去快回	快去快回	0.01
-一跃	一躍	0.01
 记起	記起	0.01
 童话书	童話書	0.01
 猜错	猜錯	0.01
@@ -8204,7 +8060,6 @@
 瞥眼	瞥眼	0.01
 二手书	二手書	0.01
 站到	站到	0.01
-雨露	雨露	0.01
 借书卡	借書卡	0.01
 十八代	十八代	0.01
 降世	降世	0.01
@@ -8219,7 +8074,6 @@
 写作业	寫作業	0.01
 抛之脑后	拋之腦後	0.01
 六点钟	六點鐘	0.01
-周记	週記	0.01
 大作战	大作戰	0.01
 梭罗	梭羅	0.01
 古埃及	古埃及	0.01
@@ -8230,7 +8084,6 @@
 文明古国	文明古國	0.01
 迷局	迷局	0.01
 万吨	萬噸	0.01
-三颗	三顆	0.01
 划进	划進	0.01
 专指	專指	0.01
 分子云	份子雲	0.01
@@ -8245,7 +8098,6 @@
 聚成	聚成	0.01
 两秒钟	兩秒鐘	0.01
 两秒	兩秒	0.01
-雷鸣	雷鳴	0.01
 说不过	說不過	0.01
 拄地	拄地	0.01
 有钱有权	有錢有權	0.01
@@ -8304,8 +8156,6 @@
 系紧	繫緊	0.01
 不缺	不缺	0.01
 幸运日	幸運日	0.01
-一挥	一揮	0.01
-甜甜	甜甜	0.01
 下端	下端	0.01
 自来水厂	自來水廠	0.01
 嘀嘀嗒嗒	嘀嘀嗒嗒	0.01
@@ -8366,7 +8216,6 @@
 墨水瓶	墨水瓶	0.01
 验货	驗貨	0.01
 行政楼	行政樓	0.01
-分针	分針	0.01
 呆望	呆望	0.01
 淡黄色	淡黃色	0.01
 踩稳	踩穩	0.01
@@ -8430,7 +8279,6 @@
 攥住	攥住	0.01
 递上	遞上	0.01
 龙利鱼	龍利魚	0.01
-食人	食人	0.01
 竹筷	竹筷	0.01
 嚼劲	嚼勁	0.01
 擦嘴	擦嘴	0.01
@@ -8525,7 +8373,6 @@
 谋权篡位	謀權篡位	0.01
 痛扁	痛扁	0.01
 不可饶恕	不可饒恕	0.01
-安西	安西	0.01
 故人西辞黄鹤楼	故人西辭黃鶴樓	0.01
 烟花三月下扬州	煙花三月下揚州	0.01
 诗仙	詩仙	0.01
@@ -8585,7 +8432,6 @@
 现代汉语	現代漢語	0.01
 列成	列成	0.01
 词汇量	詞匯量	0.01
-慧眼	慧眼	0.01
 吸溜	吸溜	0.01
 弥天大错	彌天大錯	0.01
 罪无可恕	罪無可恕	0.01
@@ -8642,7 +8488,6 @@
 交汇点	交匯點	0.01
 好好活	好好活	0.01
 向死而生	向死而生	0.01
-一换	一換	0.01
 坐正	坐正	0.01
 灭活	滅活	0.01
 摸底考试	摸底考試	0.01
@@ -8673,7 +8518,6 @@
 最终章	最終章	0.01
 广阔无垠	廣闊無垠	0.01
 更丰富	更豐富	0.01
-直击	直擊	0.01
 编了	編了	0.01
 谱词	譜詞	0.01
 思如泉涌	思如泉湧	0.01
@@ -8682,7 +8526,6 @@
 附加分	附加分	0.01
 面色如常	面色如常	0.01
 无悲无喜	無悲無喜	0.01
-三科	三科	0.01
 评卷人	評卷人	0.01
 捧脸	捧臉	0.01
 济慈	濟慈	0.01
@@ -8710,7 +8553,6 @@
 晕晕乎乎	暈暈乎乎	0.01
 烧坏	燒壞	0.01
 勺柄	勺柄	0.01
-喂饭	餵飯	0.01
 委屈巴巴	委屈巴巴	0.01
 反流	反流	0.01
 拧干	擰乾	0.01
@@ -8749,7 +8591,6 @@
 阴寒	陰寒	0.01
 初培优	初培優	0.01
 考进	考進	0.01
-省立	省立	0.01
 培优班	培優班	0.01
 培优	培優	0.01
 初中部	初中部	0.01
@@ -8766,7 +8607,6 @@
 拉不回	拉不回	0.01
 心不甘情不愿	心不甘情不願	0.01
 邻省	鄰省	0.01
-受邀	受邀	0.01
 灯几近	燈幾近	0.01
 暖橙色	暖橙色	0.01
 零零落落	零零落落	0.01
@@ -8885,7 +8725,6 @@
 不畏艰险	不畏艱險	0.01
 共创	共創	0.01
 喜怒不显	喜怒不顯	0.01
-全解	全解	0.01
 勤奋好学	勤奮好學	0.01
 晃来晃去	晃來晃去	0.01
 女校长	女校長	0.01
@@ -8932,7 +8771,6 @@
 期末考试	期末考試	0.01
 领成绩	領成績	0.01
 杂声鼎沸	雜聲鼎沸	0.01
-张大	張大	0.01
 举高	舉高	0.01
 收住	收住	0.01
 快说	快說	0.01
@@ -8947,7 +8785,6 @@
 微绷	微繃	0.01
 奥林匹克竞赛	奧林匹克競賽	0.01
 好运气	好運氣	0.01
-大受	大受	0.01
 宝典	寶典	0.01
 查漏补缺	查漏補缺	0.01
 冻上	凍上	0.01
@@ -9008,7 +8845,6 @@
 脏活累活	髒活累活	0.01
 邮箱地址	郵箱地址	0.01	youxiangdizhi
 打印版	打印版	0.01
-无价	無價	0.01
 训练模式	訓練模式	0.01
 详略得当	詳略得當	0.01
 国之栋梁	國之棟梁	0.01
@@ -9041,7 +8877,6 @@
 表现机会	表現機會	0.01
 请了	請了	0.01
 十位数	十位數	0.01
-之和	之和	0.01
 桀骜眼神	桀驁眼神	0.01
 上下册	上下冊	0.01
 碾死	碾死	0.01
@@ -9131,7 +8966,6 @@
 计算式	計算式	0.01
 经纬度	經緯度	0.01
 迎宾员	迎賓員	0.01
-尽到	盡到	0.01
 金色大厅	金色大廳	0.01
 指挥员	指揮員	0.01
 老干部	老幹部	0.01
@@ -9158,7 +8992,6 @@
 话里话外	話裡話外	0.01
 满目凶恶	滿目兇惡	0.01
 九成新	九成新	0.01
-复国	復國	0.01
 懒懒散散	懶懶散散	0.01
 不积跬步	不積跬步	0.01
 不积小流	不積小流	0.01
@@ -9196,7 +9029,6 @@
 动员大会	動員大會	0.01
 挽出	挽出	0.01
 红花初绽雪花繁	紅花初綻雪花繁	0.01
-随堂	隨堂	0.01
 鞠了一躬	鞠了一躬	0.01
 引为笑谈	引爲笑談	0.01
 抱膝	抱膝	0.01
@@ -9258,7 +9090,6 @@
 大师赛	大師賽	0.01
 校友录	校友錄	0.01
 擦地	擦地	0.01
-一试	一試	0.01
 二试	二試	0.01
 天空如洗	天空如洗	0.01
 读书声	讀書聲	0.01
@@ -9408,7 +9239,6 @@
 省队	省隊	0.01
 奥赛	奧賽	0.01
 香水味	香水味	0.01
-教委	教委	0.01
 鼻尖一酸	鼻尖一酸	0.01
 关店	關店	0.01
 柱香	柱香	0.01
@@ -9426,7 +9256,6 @@
 苹果羹	蘋果羹	0.01
 高傲冷静	高傲冷靜	0.01
 睥睨众生	睥睨眾生	0.01
-极尽	極盡	0.01
 酸爽	酸爽	0.01
 汉普顿宫	漢普頓宮	0.01
 阿布辛贝勒	阿布辛貝勒	0.01
@@ -9799,7 +9628,6 @@
 身居高位	身居高位	0.01
 身居	身居	0.01
 驱动板	驅動板	0.01
-底板	底板	0.01
 高洁傲岸	高潔傲岸	0.01
 富家千金	富家千金	0.01
 寿与天齐	壽與天齊	0.01
@@ -9860,7 +9688,6 @@
 髡残	髡殘	0.01
 慧根	慧根	0.01
 褒义词	褒義詞	0.01
-牵拉	牽拉	0.01
 景随情移	景隨情移	0.01
 午门	午門	0.01
 女式	女式	0.01
@@ -9889,7 +9716,6 @@
 艺术展	藝術展	0.01
 明明灭灭	明明滅滅	0.01
 饰品店	飾品店	0.01
-表链	錶鏈	0.01
 判卷	判卷	0.01
 互道晚安	互道晚安	0.01
 少女情怀	少女情懷	0.01
@@ -9984,7 +9810,6 @@
 不服输	不服輸	0.01
 长枝	長枝	0.01
 柳叶	柳葉	0.01
-读博	讀博	0.01
 作息表	作息表	0.01
 邓莎莎	鄧莎莎	0.01
 期中考试	期中考試	0.01
@@ -10041,7 +9866,6 @@
 捧花	捧花	0.01
 琴盒	琴盒	0.01
 时不待人	時不待人	0.01
-呈上	呈上	0.01
 临场应变	臨場應變	0.01
 临场发挥	臨場發揮	0.01
 心胸宽广	心胸寬廣	0.01
@@ -10093,7 +9917,6 @@
 打旋	打旋	0.01
 旅行包	旅行包	0.01
 碧云寺	碧雲寺	0.01
-石缝	石縫	0.01
 听泉	聽泉	0.01
 回报率	回報率	0.01
 江南烟雨	江南煙雨	0.01
@@ -10224,7 +10047,6 @@
 逢人便问	逢人便問	0.01
 三角钢琴	三角鋼琴	0.01
 钢琴凳	鋼琴凳	0.01
-荆棘	荊棘	0.01
 无处安置	無處安置	0.01
 童年情景	童年情景	0.01
 克拉拉	克拉拉	0.01
@@ -10264,7 +10086,6 @@
 和谐共处	和諧共處	0.01
 受苦受累	受苦受累	0.01
 洗盘子	洗盤子	0.01
-一作	一作	0.01
 影响深远	影響深遠	0.01
 有儿有女	有兒有女	0.01
 捎话	捎話	0.01
@@ -10339,7 +10160,6 @@
 规规矩矩	規規矩矩	0.01
 鲔鱼	鮪魚	0.01
 锅瓦瓢盆	鍋瓦瓢盆	0.01
-银链	銀鏈	0.01
 答疑会	答疑會	0.01
 温旗	溫旗	0.01
 帝国理工	帝國理工	0.01
@@ -10640,7 +10460,6 @@
 城市景观	城市景觀	0.01
 未婚夫妻	未婚夫妻	0.01
 七大奇迹	七大奇跡	0.01
-王妃	王妃	0.01
 茶树菇	茶樹菇	0.01
 一干人等	一干人等	0.01
 倦怠期	倦怠期	0.01
@@ -10839,7 +10658,6 @@
 纯善	純善	0.01
 多电子	多電子	0.01
 原子轨道	原子軌道	0.01
-基态	基態	0.01
 研一	研一	0.01
 大银幕	大銀幕	0.01
 末位淘汰制	末位淘汰制	0.01
@@ -10933,7 +10751,6 @@
 戒备心	戒備心	0.01
 受之无愧	受之無愧	0.01
 产学研	產學研	0.01
-一介	一介	0.01
 不堪其扰	不堪其擾	0.01
 蔫了吧唧	蔫了吧唧	0.01
 以彼之道还施彼身	以彼之道還施彼身	0.01
@@ -10956,7 +10773,6 @@
 镶金镀银	鑲金鍍銀	0.01
 对赌协议	對賭協議	0.01
 剑尖	劍尖	0.01
-代指	代指	0.01
 上位者	上位者	0.01
 歪路	歪路	0.01
 意气焕发	意氣煥發	0.01
@@ -12317,7 +12133,6 @@
 多组	多組	0.44	duozu
 多批	多批	0.40	duopi
 多款	多款	0.42	duokuan
-多部	多部	0.01	duobu
 多项	多項	0.46	duoxiang
 多场	多場	0.42	duochang
 多户	多戶	0.01	duohu
@@ -12329,7 +12144,6 @@
 多杯	多杯	0.01	duobei
 多瓶	多瓶	0.01	duoping
 多箱	多箱	0.01	duoxiang
-多斤	多斤	0.01	duojin
 多吨	多噸	0.01	duodun
 多根	多根	0.01	duogen
 多块	多塊	0.01	duokuai
@@ -12756,7 +12570,7 @@
 # Rank ordinary actions above rare fragments; protect established common homophones.
 # Keep accidental sending selectable without displacing the dominant inability path.
 # Exact lexical entries do not synthesize substring popularity or LM evidence.
-插板	插板	0.700	chaban	exact_rank_no_contains
+插板	插板	0.599	chaban	exact_rank_no_contains
 误放	誤放	0.220	wufang	exact_rank_no_contains
 错放	錯放	0.480	cuofang	exact_rank_no_contains
 误拿	誤拿	0.460	wuna	exact_rank_no_contains
@@ -12778,7 +12592,7 @@
 误发	誤發	0.001	wufa	exact_rank_no_contains
 错发	錯發	0.600	cuofa	exact_rank_no_contains
 误开	誤開	0.360	wukai	exact_rank_no_contains
-误关	誤關	0.320	wuguan	exact_rank_no_contains
+误关	誤關	0.103	wuguan	exact_rank_no_contains
 错关	錯關	0.360	cuoguan	exact_rank_no_contains
 误打	誤打	0.380	wuda	exact_rank_no_contains
 错打	錯打	0.460	cuoda	exact_rank_no_contains
@@ -21834,7 +21648,7 @@
 爱谁	愛誰	0.400	aishui	exact_rank_no_contains
 靠谁	靠誰	0.400	kaoshui	exact_rank_no_contains
 让谁	讓誰	0.400	rangshui	exact_rank_no_contains
-管谁	管誰	0.600	guanshui	exact_rank_no_contains
+管谁	管誰	0.599	guanshui	exact_rank_no_contains
 喊打	喊打	0.400	handa	exact_rank_no_contains
 喊累	喊累	0.400	hanlei	exact_rank_no_contains
 喊救命	喊救命	0.400	hanjiuming	exact_rank_no_contains
@@ -21877,7 +21691,7 @@
 懂啥	懂啥	0.200	dongsha	exact_rank_no_contains
 图个啥	圖個啥	0.200	tugesha	exact_rank_no_contains
 打谁	打誰	0.321	dashui	exact_rank_no_contains
-叫谁	叫誰	0.178	jiaoshui	exact_rank_no_contains
+叫谁	叫誰	0.161	jiaoshui	exact_rank_no_contains
 怨谁	怨誰	0.200	yuanshui	exact_rank_no_contains
 帮谁	幫誰	0.200	bangshui	exact_rank_no_contains
 等谁	等誰	0.200	dengshui	exact_rank_no_contains
@@ -21896,7 +21710,7 @@
 早于	早於	0.486	zaoyu	exact_rank_no_contains
 晚于	晚於	0.600	wanyu	exact_rank_no_contains
 迟于	遲於	0.400	chiyu	exact_rank_no_contains
-先于	先於	0.874	xianyu	exact_rank_no_contains
+先于	先於	0.873	xianyu	exact_rank_no_contains
 后于	後於	0.600	houyu	exact_rank_no_contains
 快于	快於	0.600	kuaiyu	exact_rank_no_contains
 弱于	弱於	0.600	ruoyu	exact_rank_no_contains
@@ -21935,7 +21749,7 @@
 已过期	已過期	0.400	yiguoqi	exact_rank_no_contains
 未至	未至	0.600	weizhi	exact_rank_no_contains
 未足	未足	0.600	weizu	exact_rank_no_contains
-已足	已足	0.600	yizu	exact_rank_no_contains
+已足	已足	0.599	yizu	exact_rank_no_contains
 未满一年	未滿一年	0.600	weimanyinian	exact_rank_no_contains
 已到位	已到位	0.400	yidaowei	exact_rank_no_contains
 已生效	已生效	0.400	yishengxiao	exact_rank_no_contains
@@ -21960,9 +21774,9 @@
 已满足	已滿足	0.200	yimanzu	exact_rank_no_contains
 未过期	未過期	0.080	weiguoqi	exact_rank_no_contains
 已届	已屆	0.200	yijie	exact_rank_no_contains
-未逾	未逾	0.279	weiyu	exact_rank_no_contains
-已逾	已逾	0.121	yiyu	exact_rank_no_contains
-已至	已至	0.294	yizhi	exact_rank_no_contains
+未逾	未逾	0.278	weiyu	exact_rank_no_contains
+已逾	已逾	0.120	yiyu	exact_rank_no_contains
+已至	已至	0.293	yizhi	exact_rank_no_contains
 未够	未夠	0.200	weigou	exact_rank_no_contains
 已够	已夠	0.200	yigou	exact_rank_no_contains
 未届满	未屆滿	0.080	weijieman	exact_rank_no_contains
@@ -22032,7 +21846,7 @@
 不演	不演	0.400	buyan	exact_rank_no_contains
 不追	不追	0.600	buzhui	exact_rank_no_contains
 不催	不催	0.400	bucui	exact_rank_no_contains
-不闲	不閒	0.279	buxian	exact_rank_no_contains
+不闲	不閒	0.277	buxian	exact_rank_no_contains
 不懒	不懶	0.400	bulan	exact_rank_no_contains
 不笨	不笨	0.400	buben	exact_rank_no_contains
 不傻	不傻	0.319	busha	exact_rank_no_contains
@@ -22060,7 +21874,7 @@
 岂有	豈有	0.600	qiyou	exact_rank_no_contains
 岂容	豈容	0.400	qirong	exact_rank_no_contains
 岂无	豈無	0.279	qiwu	exact_rank_no_contains
-岂是	豈是	0.600	qishi	exact_rank_no_contains
+岂是	豈是	0.444	qishi	exact_rank_no_contains
 # Everyday phrases, 2026-10-20, the less frequent ones of the same kinds (混剪, 不酷, 岂但, 回涨, 炒上天), by the same weights; 可不得, 那不得, 这不得, 还不得 read dei at 80 (the text cannot tell dei from de).
 涨不动	漲不動	0.200	zhangbudong	exact_rank_no_contains
 涨不停	漲不停	0.200	zhangbuting	exact_rank_no_contains
@@ -22196,7 +22010,7 @@
 欠谁	欠誰	0.200	qianshei	exact_rank_no_contains
 谢谁	謝誰	0.080	xieshui	exact_rank_no_contains
 谢谁	謝誰	0.080	xieshei	exact_rank_no_contains
-服谁	服誰	0.153	fushui	exact_rank_no_contains
+服谁	服誰	0.152	fushui	exact_rank_no_contains
 服谁	服誰	0.200	fushei	exact_rank_no_contains
 输谁	輸誰	0.200	shushui	exact_rank_no_contains
 输谁	輸誰	0.200	shushei	exact_rank_no_contains
@@ -28378,3 +28192,2096 @@
 并在	並在	0.600	bingzai	exact_rank
 倒是	倒是	0.341	daoshi	exact_rank
 恰是	恰是	0.600	qiashi	exact_rank
+# Everyday words, 2026-11-07, the more frequent ones: 这封 and 那封 (the user's examples), 这, 那 and 哪 before a measure word or a word of time (这颗, 那枚, 哪条, 这趟), the phrases such a measure word makes with its noun (这封信, 一封信, 这本书, 那件事, 这段时间), weighted by the general text as the batches before, and the words such a word would take off its page or put below itself (这可, 那可, 这一章).
+这封	這封	0.600	zhefeng	exact_rank_no_contains
+这把	這把	0.600	zheba	exact_rank_no_contains
+这辆	這輛	0.600	zheliang	exact_rank_no_contains
+这匹	這匹	0.600	zhepi	exact_rank_no_contains
+这支	這支	0.600	zhezhi	exact_rank_no_contains
+这枚	這枚	0.600	zhemei	exact_rank_no_contains
+这颗	這顆	0.602	zheke	exact_rank_no_contains
+这粒	這粒	0.000	zheli	exact_rank_no_contains
+这杯	這杯	0.400	zhebei	exact_rank_no_contains
+这瓶	這瓶	0.400	zheping	exact_rank_no_contains
+这碗	這碗	0.400	zhewan	exact_rank_no_contains
+这盘	這盤	0.400	zhepan	exact_rank_no_contains
+这本	這本	0.600	zheben	exact_rank_no_contains
+这节	這節	0.600	zhejie	exact_rank_no_contains
+这章	這章	0.400	zhezhang	exact_rank_no_contains
+这行	這行	0.600	zhehang	exact_rank_no_contains
+这列	這列	0.400	zhelie	exact_rank_no_contains
+这幢	這幢	0.400	zhezhuang	exact_rank_no_contains
+这扇	這扇	0.400	zheshan	exact_rank_no_contains
+这趟	這趟	0.469	zhetang	exact_rank_no_contains
+这束	這束	0.632	zheshu	exact_rank_no_contains
+这伙	這夥	0.400	zhehuo	exact_rank_no_contains
+这对	這對	0.701	zhedui	exact_rank_no_contains
+这双	這雙	0.600	zheshuang	exact_rank_no_contains
+这副	這副	0.320	zhefu	exact_rank_no_contains
+这名	這名	0.600	zheming	exact_rank_no_contains
+这株	這株	0.457	zhezhu	exact_rank_no_contains
+这朵	這朵	0.400	zheduo	exact_rank_no_contains
+这块	這塊	0.600	zhekuai	exact_rank_no_contains
+这面	這面	0.600	zhemian	exact_rank_no_contains
+这架	這架	0.279	zhejia	exact_rank_no_contains
+这艘	這艘	0.600	zhesou	exact_rank_no_contains
+这口	這口	0.451	zhekou	exact_rank_no_contains
+这笔	這筆	0.600	zhebi	exact_rank_no_contains
+这集	這集	0.400	zheji	exact_rank_no_contains
+这期	這期	0.200	zheqi	exact_rank_no_contains
+这届	這屆	0.601	zhejie	exact_rank_no_contains
+这档	這檔	0.437	zhedang	exact_rank_no_contains
+这桩	這樁	0.600	zhezhuang	exact_rank_no_contains
+这起	這起	0.201	zheqi	exact_rank_no_contains
+这户	這戶	0.400	zhehu	exact_rank_no_contains
+这尊	這尊	0.600	zhezun	exact_rank_no_contains
+这具	這具	0.400	zheju	exact_rank_no_contains
+这盏	這盞	0.400	zhezhan	exact_rank_no_contains
+这顶	這頂	0.400	zheding	exact_rank_no_contains
+这步	這步	0.600	zhebu	exact_rank_no_contains
+这代	這代	0.600	zhedai	exact_rank_no_contains
+这版	這版	0.400	zheban	exact_rank_no_contains
+这课	這課	0.400	zheke	exact_rank_no_contains
+这堂	這堂	0.400	zhetang	exact_rank_no_contains
+这关	這關	0.400	zheguan	exact_rank_no_contains
+这题	這題	0.600	zheti	exact_rank_no_contains
+这票	這票	0.400	zhepiao	exact_rank_no_contains
+这单	這單	0.400	zhedan	exact_rank_no_contains
+这团	這團	0.400	zhetuan	exact_rank_no_contains
+这则	這則	0.600	zheze	exact_rank_no_contains
+这味	這味	0.400	zhewei	exact_rank_no_contains
+这波	這波	0.600	zhebo	exact_rank_no_contains
+这年	這年	0.600	zhenian	exact_rank_no_contains
+这日	這日	0.400	zheri	exact_rank_no_contains
+这月	這月	0.400	zheyue	exact_rank_no_contains
+那封	那封	0.400	nafeng	exact_rank_no_contains
+那把	那把	0.600	naba	exact_rank_no_contains
+那座	那座	0.600	nazuo	exact_rank_no_contains
+那匹	那匹	0.400	napi	exact_rank_no_contains
+那支	那支	0.600	nazhi	exact_rank_no_contains
+那枚	那枚	0.400	namei	exact_rank_no_contains
+那颗	那顆	0.602	nake	exact_rank_no_contains
+那瓶	那瓶	0.400	naping	exact_rank_no_contains
+那碗	那碗	0.400	nawan	exact_rank_no_contains
+那行	那行	0.400	nahang	exact_rank_no_contains
+那扇	那扇	0.400	nashan	exact_rank_no_contains
+那股	那股	0.600	nagu	exact_rank_no_contains
+那串	那串	0.400	nachuan	exact_rank_no_contains
+那束	那束	0.400	nashu	exact_rank_no_contains
+那群	那群	0.600	naqun	exact_rank_no_contains
+那帮	那幫	0.600	nabang	exact_rank_no_contains
+那对	那對	0.701	nadui	exact_rank_no_contains
+那组	那組	0.400	nazu	exact_rank_no_contains
+那类	那類	0.400	nalei	exact_rank_no_contains
+那棵	那棵	0.600	nake	exact_rank_no_contains
+那株	那株	0.400	nazhu	exact_rank_no_contains
+那朵	那朵	0.600	naduo	exact_rank_no_contains
+那块	那塊	0.600	nakuai	exact_rank_no_contains
+那面	那面	0.600	namian	exact_rank_no_contains
+那架	那架	0.279	najia	exact_rank_no_contains
+那艘	那艘	0.400	nasou	exact_rank_no_contains
+那口	那口	0.400	nakou	exact_rank_no_contains
+那点	那點	0.600	nadian	exact_rank_no_contains
+那轮	那輪	0.400	nalun	exact_rank_no_contains
+那盏	那盞	0.400	nazhan	exact_rank_no_contains
+那声	那聲	0.400	nasheng	exact_rank_no_contains
+那抹	那抹	0.400	namo	exact_rank_no_contains
+那团	那團	0.400	natuan	exact_rank_no_contains
+那身	那身	0.400	nashen	exact_rank_no_contains
+那波	那波	0.400	nabo	exact_rank_no_contains
+那夜	那夜	0.400	naye	exact_rank_no_contains
+那晚	那晚	0.600	nawan	exact_rank_no_contains
+那日	那日	0.600	nari	exact_rank_no_contains
+那月	那月	0.400	nayue	exact_rank_no_contains
+哪张	哪張	0.400	nazhang	exact_rank_no_contains
+哪条	哪條	0.200	natiao	exact_rank_no_contains
+哪件	哪件	0.000	najian	exact_rank_no_contains
+哪句	哪句	0.279	naju	exact_rank_no_contains
+哪间	哪間	0.000	najian	exact_rank_no_contains
+哪所	哪所	0.401	nasuo	exact_rank_no_contains
+哪组	哪組	0.401	nazu	exact_rank_no_contains
+哪类	哪類	0.600	nalei	exact_rank_no_contains
+哪根	哪根	0.279	nagen	exact_rank_no_contains
+哪块	哪塊	0.400	nakuai	exact_rank_no_contains
+哪部	哪部	0.400	nabu	exact_rank_no_contains
+哪台	哪臺	0.279	natai	exact_rank_no_contains
+哪项	哪項	0.696	naxiang	exact_rank_no_contains
+哪款	哪款	0.279	nakuan	exact_rank_no_contains
+多封	多封	0.419	duofeng	exact_rank_no_contains
+这封信	這封信	0.600	zhefengxin	exact_rank_no_contains
+那封信	那封信	0.400	nafengxin	exact_rank_no_contains
+一封信	一封信	0.600	yifengxin	exact_rank_no_contains
+这封邮件	這封郵件	0.400	zhefengyoujian	exact_rank_no_contains
+那封邮件	那封郵件	0.400	nafengyoujian	exact_rank_no_contains
+一封邮件	一封郵件	0.600	yifengyoujian	exact_rank_no_contains
+两封邮件	兩封郵件	0.400	liangfengyoujian	exact_rank_no_contains
+一封家书	一封家書	0.400	yifengjiashu	exact_rank_no_contains
+这两人	這兩人	0.600	zheliangren	exact_rank_no_contains
+这三人	這三人	0.400	zhesanren	exact_rank_no_contains
+这两大	這兩大	0.600	zheliangda	exact_rank_no_contains
+这三大	這三大	0.600	zhesanda	exact_rank_no_contains
+这一波	這一波	0.600	zheyibo	exact_rank_no_contains
+那一波	那一波	0.400	nayibo	exact_rank_no_contains
+这一仗	這一仗	0.400	zheyizhang	exact_rank_no_contains
+这一去	這一去	0.400	zheyiqu	exact_rank_no_contains
+这一说	這一說	0.400	zheyishuo	exact_rank_no_contains
+这本书	這本書	0.600	zhebenshu	exact_rank_no_contains
+那本书	那本書	0.600	nabenshu	exact_rank_no_contains
+哪本书	哪本書	0.400	nabenshu	exact_rank_no_contains
+这件事	這件事	0.600	zhejianshi	exact_rank_no_contains
+那件事	那件事	0.600	najianshi	exact_rank_no_contains
+这条路	這條路	0.600	zhetiaolu	exact_rank_no_contains
+那条路	那條路	0.600	natiaolu	exact_rank_no_contains
+哪条路	哪條路	0.400	natiaolu	exact_rank_no_contains
+哪句话	哪句話	0.279	najuhua	exact_rank_no_contains
+这节课	這節課	0.600	zhejieke	exact_rank_no_contains
+这首诗	這首詩	0.600	zheshoushi	exact_rank_no_contains
+那首诗	那首詩	0.400	nashoushi	exact_rank_no_contains
+那首歌	那首歌	0.400	nashouge	exact_rank_no_contains
+这道题	這道題	0.002	zhedaoti	exact_rank_no_contains
+这道菜	這道菜	0.002	zhedaocai	exact_rank_no_contains
+这笔钱	這筆錢	0.600	zhebiqian	exact_rank_no_contains
+那笔钱	那筆錢	0.400	nabiqian	exact_rank_no_contains
+这幅画	這幅畫	0.600	zhefuhua	exact_rank_no_contains
+那幅画	那幅畫	0.400	nafuhua	exact_rank_no_contains
+这门课	這門課	0.600	zhemenke	exact_rank_no_contains
+这堂课	這堂課	0.600	zhetangke	exact_rank_no_contains
+这张图	這張圖	0.600	zhezhangtu	exact_rank_no_contains
+这辆车	這輛車	0.600	zheliangche	exact_rank_no_contains
+这家店	這家店	0.600	zhejiadian	exact_rank_no_contains
+这棵树	這棵樹	0.600	zhekeshu	exact_rank_no_contains
+那棵树	那棵樹	0.400	nakeshu	exact_rank_no_contains
+这群人	這群人	0.600	zhequnren	exact_rank_no_contains
+那群人	那群人	0.400	naqunren	exact_rank_no_contains
+这帮人	這幫人	0.600	zhebangren	exact_rank_no_contains
+那帮人	那幫人	0.400	nabangren	exact_rank_no_contains
+这类人	這類人	0.600	zheleiren	exact_rank_no_contains
+这种人	這種人	0.600	zhezhongren	exact_rank_no_contains
+那种人	那種人	0.600	nazhongren	exact_rank_no_contains
+这种事	這種事	0.600	zhezhongshi	exact_rank_no_contains
+这座桥	這座橋	0.600	zhezuoqiao	exact_rank_no_contains
+这座山	這座山	0.600	zhezuoshan	exact_rank_no_contains
+那座山	那座山	0.400	nazuoshan	exact_rank_no_contains
+这块地	這塊地	0.600	zhekuaidi	exact_rank_no_contains
+那段话	那段話	0.400	naduanhua	exact_rank_no_contains
+这段路	這段路	0.400	zheduanlu	exact_rank_no_contains
+这碗饭	這碗飯	0.400	zhewanfan	exact_rank_no_contains
+这双鞋	這雙鞋	0.400	zheshuangxie	exact_rank_no_contains
+这扇门	這扇門	0.400	zheshanmen	exact_rank_no_contains
+那扇门	那扇門	0.400	nashanmen	exact_rank_no_contains
+这条河	這條河	0.600	zhetiaohe	exact_rank_no_contains
+这条街	這條街	0.600	zhetiaojie	exact_rank_no_contains
+这条鱼	這條魚	0.400	zhetiaoyu	exact_rank_no_contains
+这条线	這條線	0.600	zhetiaoxian	exact_rank_no_contains
+那条线	那條線	0.400	natiaoxian	exact_rank_no_contains
+这只猫	這隻貓	0.400	zhezhimao	exact_rank_no_contains
+那只猫	那隻貓	0.400	nazhimao	exact_rank_no_contains
+这只狗	這隻狗	0.400	zhezhigou	exact_rank_no_contains
+那只手	那隻手	0.400	nazhishou	exact_rank_no_contains
+这颗心	這顆心	0.400	zhekexin	exact_rank_no_contains
+那颗心	那顆心	0.400	nakexin	exact_rank_no_contains
+这朵花	這朵花	0.400	zheduohua	exact_rank_no_contains
+这张脸	這張臉	0.400	zhezhanglian	exact_rank_no_contains
+这张纸	這張紙	0.400	zhezhangzhi	exact_rank_no_contains
+这把刀	這把刀	0.400	zhebadao	exact_rank_no_contains
+这部书	這部書	0.600	zhebushu	exact_rank_no_contains
+这套书	這套書	0.600	zhetaoshu	exact_rank_no_contains
+这则新闻	這則新聞	0.400	zhezexinwen	exact_rank_no_contains
+这段时间	這段時間	0.600	zheduanshijian	exact_rank_no_contains
+那段时间	那段時間	0.600	naduanshijian	exact_rank_no_contains
+这段日子	這段日子	0.600	zheduanrizi	exact_rank_no_contains
+那段日子	那段日子	0.600	naduanrizi	exact_rank_no_contains
+这段历史	這段歷史	0.600	zheduanlishi	exact_rank_no_contains
+那段历史	那段歷史	0.400	naduanlishi	exact_rank_no_contains
+这段经历	這段經歷	0.600	zheduanjingli	exact_rank_no_contains
+这段感情	這段感情	0.600	zheduanganqing	exact_rank_no_contains
+这段关系	這段關係	0.600	zheduanguanxi	exact_rank_no_contains
+这篇文章	這篇文章	0.600	zhepianwenzhang	exact_rank_no_contains
+那篇文章	那篇文章	0.600	napianwenzhang	exact_rank_no_contains
+这部电影	這部電影	0.600	zhebudianying	exact_rank_no_contains
+这部小说	這部小說	0.600	zhebuxiaoshuo	exact_rank_no_contains
+这部作品	這部作品	0.600	zhebuzuopin	exact_rank_no_contains
+这座城市	這座城市	0.600	zhezuochengshi	exact_rank_no_contains
+这家公司	這家公司	0.600	zhejiagongsi	exact_rank_no_contains
+那家公司	那家公司	0.401	najiagongsi	exact_rank_no_contains
+哪家公司	哪家公司	0.400	najiagongsi	exact_rank_no_contains
+这所学校	這所學校	0.600	zhesuoxuexiao	exact_rank_no_contains
+哪所学校	哪所學校	0.400	nasuoxuexiao	exact_rank_no_contains
+这张照片	這張照片	0.600	zhezhangzhaopian	exact_rank_no_contains
+那张照片	那張照片	0.400	nazhangzhaopian	exact_rank_no_contains
+这张专辑	這張專輯	0.600	zhezhangzhuanji	exact_rank_no_contains
+这份工作	這份工作	0.600	zhefengongzuo	exact_rank_no_contains
+这片土地	這片土地	0.600	zhepiantudi	exact_rank_no_contains
+这场比赛	這場比賽	0.600	zhechangbisai	exact_rank_no_contains
+那场比赛	那場比賽	0.400	nachangbisai	exact_rank_no_contains
+这场战争	這場戰爭	0.600	zhechangzhanzheng	exact_rank_no_contains
+这件事情	這件事情	0.600	zhejianshiqing	exact_rank_no_contains
+那件事情	那件事情	0.400	najianshiqing	exact_rank_no_contains
+这件衣服	這件衣服	0.400	zhejianyifu	exact_rank_no_contains
+这首歌曲	這首歌曲	0.600	zheshougequ	exact_rank_no_contains
+这首曲子	這首曲子	0.600	zheshouquzi	exact_rank_no_contains
+这可	這可	0.601	zheke	exact_rank_no_contains
+那可	那可	0.601	nake	exact_rank_no_contains
+这和	這和	0.002	zhehe	exact_rank_no_contains
+这为	這為	0.600	zhewei	exact_rank_no_contains
+哪去	哪去	0.279	naqu	exact_rank_no_contains
+那山	那山	0.401	nashan	exact_rank_no_contains
+这一章	這一章	0.600	zheyizhang	exact_rank_no_contains
+# Everyday words, 2026-11-07, the less frequent ones (那摞, 这撮, 哪顶, 八封), by the same weights.
+这盒	這盒	0.200	zhehe	exact_rank_no_contains
+这袋	這袋	0.200	zhedai	exact_rank_no_contains
+这包	這包	0.200	zhebao	exact_rank_no_contains
+这箱	這箱	0.080	zhexiang	exact_rank_no_contains
+这桶	這桶	0.200	zhetong	exact_rank_no_contains
+这册	這冊	0.200	zhece	exact_rank_no_contains
+这页	這頁	0.019	zheye	exact_rank_no_contains
+这排	這排	0.200	zhepai	exact_rank_no_contains
+这遍	這遍	0.000	zhebian	exact_rank_no_contains
+这阵	這陣	0.200	zhezhen	exact_rank_no_contains
+这捆	這捆	0.002	zhekun	exact_rank_no_contains
+这滴	這滴	0.080	zhedi	exact_rank_no_contains
+这曲	這曲	0.200	zhequ	exact_rank_no_contains
+这局	這局	0.000	zheju	exact_rank_no_contains
+这杆	這杆	0.200	zhegan	exact_rank_no_contains
+这柄	這柄	0.200	zhebing	exact_rank_no_contains
+这号	這號	0.080	zhehao	exact_rank_no_contains
+这宗	這宗	0.200	zhezong	exact_rank_no_contains
+这尾	這尾	0.002	zhewei	exact_rank_no_contains
+这壶	這壺	0.200	zhehu	exact_rank_no_contains
+这罐	這罐	0.080	zheguan	exact_rank_no_contains
+这筐	這筐	0.002	zhekuang	exact_rank_no_contains
+这篮	這籃	0.002	zhelan	exact_rank_no_contains
+这碟	這碟	0.001	zhedie	exact_rank_no_contains
+这桌	這桌	0.200	zhezhuo	exact_rank_no_contains
+这席	這席	0.003	zhexi	exact_rank_no_contains
+这声	這聲	0.200	zhesheng	exact_rank_no_contains
+这季	這季	0.200	zheji	exact_rank_no_contains
+这辈	這輩	0.200	zhebei	exact_rank_no_contains
+这级	這級	0.081	zheji	exact_rank_no_contains
+这枝	這枝	0.000	zhezhi	exact_rank_no_contains
+这缕	這縷	0.080	zhelv	exact_rank_no_contains
+这抹	這抹	0.200	zhemo	exact_rank_no_contains
+这幕	這幕	0.199	zhemu	exact_rank_no_contains
+这卷	這卷	0.200	zhejuan	exact_rank_no_contains
+这联	這聯	0.080	zhelian	exact_rank_no_contains
+这剂	這劑	0.080	zheji	exact_rank_no_contains
+这截	這截	0.002	zhejie	exact_rank_no_contains
+这撮	這撮	0.002	zhecuo	exact_rank_no_contains
+这摞	這摞	0.002	zheluo	exact_rank_no_contains
+这沓	這沓	0.002	zheda	exact_rank_no_contains
+这叠	這疊	0.002	zhedie	exact_rank_no_contains
+这床	這床	0.080	zhechuang	exact_rank_no_contains
+这袭	這襲	0.002	zhexi	exact_rank_no_contains
+这拨	這撥	0.200	zhebo	exact_rank_no_contains
+这夜	這夜	0.018	zheye	exact_rank_no_contains
+这晚	這晚	0.200	zhewan	exact_rank_no_contains
+那粒	那粒	0.200	nali	exact_rank_no_contains
+那盘	那盤	0.200	napan	exact_rank_no_contains
+那盒	那盒	0.200	nahe	exact_rank_no_contains
+那袋	那袋	0.200	nadai	exact_rank_no_contains
+那包	那包	0.200	nabao	exact_rank_no_contains
+那箱	那箱	0.003	naxiang	exact_rank_no_contains
+那桶	那桶	0.200	natong	exact_rank_no_contains
+那册	那冊	0.002	nace	exact_rank_no_contains
+那页	那頁	0.200	naye	exact_rank_no_contains
+那节	那節	0.200	najie	exact_rank_no_contains
+那章	那章	0.200	nazhang	exact_rank_no_contains
+那列	那列	0.081	nalie	exact_rank_no_contains
+那排	那排	0.200	napai	exact_rank_no_contains
+那幢	那幢	0.200	nazhuang	exact_rank_no_contains
+那趟	那趟	0.200	natang	exact_rank_no_contains
+那遍	那遍	0.003	nabian	exact_rank_no_contains
+那回	那回	0.008	nahui	exact_rank_no_contains
+那番	那番	0.200	nafan	exact_rank_no_contains
+那捆	那捆	0.002	nakun	exact_rank_no_contains
+那伙	那夥	0.200	nahuo	exact_rank_no_contains
+那滴	那滴	0.200	nadi	exact_rank_no_contains
+那项	那項	0.695	naxiang	exact_rank_no_contains
+那门	那門	0.201	namen	exact_rank_no_contains
+那集	那集	0.086	naji	exact_rank_no_contains
+那期	那期	0.201	naqi	exact_rank_no_contains
+那届	那屆	0.201	najie	exact_rank_no_contains
+那局	那局	0.003	naju	exact_rank_no_contains
+那杆	那杆	0.200	nagan	exact_rank_no_contains
+那柄	那柄	0.200	nabing	exact_rank_no_contains
+那号	那號	0.003	nahao	exact_rank_no_contains
+那档	那檔	0.003	nadang	exact_rank_no_contains
+那桩	那樁	0.002	nazhuang	exact_rank_no_contains
+那起	那起	0.200	naqi	exact_rank_no_contains
+那宗	那宗	0.002	nazong	exact_rank_no_contains
+那户	那戶	0.201	nahu	exact_rank_no_contains
+那尊	那尊	0.200	nazun	exact_rank_no_contains
+那具	那具	0.200	naju	exact_rank_no_contains
+那顶	那頂	0.306	nading	exact_rank_no_contains
+那尾	那尾	0.001	nawei	exact_rank_no_contains
+那锅	那鍋	0.000	naguo	exact_rank_no_contains
+那壶	那壺	0.080	nahu	exact_rank_no_contains
+那罐	那罐	0.003	naguan	exact_rank_no_contains
+那筐	那筐	0.002	nakuang	exact_rank_no_contains
+那篮	那籃	0.002	nalan	exact_rank_no_contains
+那碟	那碟	0.001	nadie	exact_rank_no_contains
+那桌	那桌	0.200	nazhuo	exact_rank_no_contains
+那席	那席	0.001	naxi	exact_rank_no_contains
+那步	那步	0.200	nabu	exact_rank_no_contains
+那招	那招	0.200	nazhao	exact_rank_no_contains
+那季	那季	0.003	naji	exact_rank_no_contains
+那代	那代	0.201	nadai	exact_rank_no_contains
+那辈	那輩	0.200	nabei	exact_rank_no_contains
+那版	那版	0.080	naban	exact_rank_no_contains
+那级	那級	0.001	naji	exact_rank_no_contains
+那课	那課	0.003	nake	exact_rank_no_contains
+那堂	那堂	0.003	natang	exact_rank_no_contains
+那关	那關	0.082	naguan	exact_rank_no_contains
+那题	那題	0.200	nati	exact_rank_no_contains
+那票	那票	0.003	napiao	exact_rank_no_contains
+那单	那單	0.003	nadan	exact_rank_no_contains
+那枝	那枝	0.200	nazhi	exact_rank_no_contains
+那缕	那縷	0.200	nalv	exact_rank_no_contains
+那幕	那幕	0.080	namu	exact_rank_no_contains
+那卷	那卷	0.200	najuan	exact_rank_no_contains
+那联	那聯	0.002	nalian	exact_rank_no_contains
+那则	那則	0.200	naze	exact_rank_no_contains
+那味	那味	0.200	nawei	exact_rank_no_contains
+那剂	那劑	0.000	naji	exact_rank_no_contains
+那截	那截	0.082	najie	exact_rank_no_contains
+那撮	那撮	0.002	nacuo	exact_rank_no_contains
+那摞	那摞	0.002	naluo	exact_rank_no_contains
+那沓	那沓	0.002	nada	exact_rank_no_contains
+那叠	那疊	0.002	nadie	exact_rank_no_contains
+那床	那床	0.003	nachuang	exact_rank_no_contains
+那袭	那襲	0.002	naxi	exact_rank_no_contains
+那拨	那撥	0.080	nabo	exact_rank_no_contains
+那周	那週	0.200	nazhou	exact_rank_no_contains
+哪封	哪封	0.002	nafeng	exact_rank_no_contains
+哪把	哪把	0.002	naba	exact_rank_no_contains
+哪篇	哪篇	0.201	napian	exact_rank_no_contains
+哪份	哪份	0.200	nafen	exact_rank_no_contains
+哪座	哪座	0.200	nazuo	exact_rank_no_contains
+哪辆	哪輛	0.164	naliang	exact_rank_no_contains
+哪匹	哪匹	0.003	napi	exact_rank_no_contains
+哪头	哪頭	0.080	natou	exact_rank_no_contains
+哪支	哪支	0.201	nazhi	exact_rank_no_contains
+哪枚	哪枚	0.002	namei	exact_rank_no_contains
+哪颗	哪顆	0.200	nake	exact_rank_no_contains
+哪杯	哪杯	0.003	nabei	exact_rank_no_contains
+哪瓶	哪瓶	0.002	naping	exact_rank_no_contains
+哪碗	哪碗	0.003	nawan	exact_rank_no_contains
+哪盘	哪盤	0.002	napan	exact_rank_no_contains
+哪盒	哪盒	0.002	nahe	exact_rank_no_contains
+哪袋	哪袋	0.002	nadai	exact_rank_no_contains
+哪包	哪包	0.002	nabao	exact_rank_no_contains
+哪箱	哪箱	0.002	naxiang	exact_rank_no_contains
+哪本	哪本	0.200	naben	exact_rank_no_contains
+哪页	哪頁	0.201	naye	exact_rank_no_contains
+哪段	哪段	0.200	naduan	exact_rank_no_contains
+哪节	哪節	0.003	najie	exact_rank_no_contains
+哪章	哪章	0.002	nazhang	exact_rank_no_contains
+哪行	哪行	0.200	nahang	exact_rank_no_contains
+哪列	哪列	0.002	nalie	exact_rank_no_contains
+哪排	哪排	0.002	napai	exact_rank_no_contains
+哪层	哪層	0.200	naceng	exact_rank_no_contains
+哪扇	哪扇	0.080	nashan	exact_rank_no_contains
+哪道	哪道	0.200	nadao	exact_rank_no_contains
+哪顿	哪頓	0.002	nadun	exact_rank_no_contains
+哪趟	哪趟	0.001	natang	exact_rank_no_contains
+哪遍	哪遍	0.002	nabian	exact_rank_no_contains
+哪回	哪回	0.002	nahui	exact_rank_no_contains
+哪阵	哪陣	0.002	nazhen	exact_rank_no_contains
+哪场	哪場	0.080	nachang	exact_rank_no_contains
+哪番	哪番	0.002	nafan	exact_rank_no_contains
+哪股	哪股	0.002	nagu	exact_rank_no_contains
+哪串	哪串	0.002	nachuan	exact_rank_no_contains
+哪群	哪群	0.002	naqun	exact_rank_no_contains
+哪帮	哪幫	0.002	nabang	exact_rank_no_contains
+哪伙	哪夥	0.002	nahuo	exact_rank_no_contains
+哪批	哪批	0.002	napi	exact_rank_no_contains
+哪对	哪對	0.635	nadui	exact_rank_no_contains
+哪双	哪雙	0.080	nashuang	exact_rank_no_contains
+哪副	哪副	0.002	nafu	exact_rank_no_contains
+哪套	哪套	0.200	natao	exact_rank_no_contains
+哪名	哪名	0.002	naming	exact_rank_no_contains
+哪棵	哪棵	0.001	nake	exact_rank_no_contains
+哪朵	哪朵	0.080	naduo	exact_rank_no_contains
+哪片	哪片	0.200	napian	exact_rank_no_contains
+哪面	哪面	0.080	namian	exact_rank_no_contains
+哪幅	哪幅	0.200	nafu	exact_rank_no_contains
+哪架	哪架	0.002	najia	exact_rank_no_contains
+哪艘	哪艘	0.002	nasou	exact_rank_no_contains
+哪口	哪口	0.002	nakou	exact_rank_no_contains
+哪点	哪點	0.200	nadian	exact_rank_no_contains
+哪笔	哪筆	0.002	nabi	exact_rank_no_contains
+哪门	哪門	0.200	namen	exact_rank_no_contains
+哪首	哪首	0.200	nashou	exact_rank_no_contains
+哪曲	哪曲	0.002	naqu	exact_rank_no_contains
+哪集	哪集	0.000	naji	exact_rank_no_contains
+哪期	哪期	0.003	naqi	exact_rank_no_contains
+哪届	哪屆	0.002	najie	exact_rank_no_contains
+哪轮	哪輪	0.002	nalun	exact_rank_no_contains
+哪局	哪局	0.002	naju	exact_rank_no_contains
+哪号	哪號	0.002	nahao	exact_rank_no_contains
+哪档	哪檔	0.002	nadang	exact_rank_no_contains
+哪起	哪起	0.002	naqi	exact_rank_no_contains
+哪户	哪戶	0.200	nahu	exact_rank_no_contains
+哪尊	哪尊	0.002	nazun	exact_rank_no_contains
+哪顶	哪頂	0.002	nading	exact_rank_no_contains
+哪桌	哪桌	0.002	nazhuo	exact_rank_no_contains
+哪声	哪聲	0.002	nasheng	exact_rank_no_contains
+哪步	哪步	0.002	nabu	exact_rank_no_contains
+哪招	哪招	0.002	nazhao	exact_rank_no_contains
+哪季	哪季	0.000	naji	exact_rank_no_contains
+哪代	哪代	0.081	nadai	exact_rank_no_contains
+哪辈	哪輩	0.002	nabei	exact_rank_no_contains
+哪版	哪版	0.000	naban	exact_rank_no_contains
+哪级	哪級	0.002	naji	exact_rank_no_contains
+哪课	哪課	0.002	nake	exact_rank_no_contains
+哪堂	哪堂	0.002	natang	exact_rank_no_contains
+哪关	哪關	0.002	naguan	exact_rank_no_contains
+哪题	哪題	0.002	nati	exact_rank_no_contains
+哪票	哪票	0.002	napiao	exact_rank_no_contains
+哪单	哪單	0.002	nadan	exact_rank_no_contains
+哪团	哪團	0.002	natuan	exact_rank_no_contains
+哪卷	哪卷	0.002	najuan	exact_rank_no_contains
+哪味	哪味	0.002	nawei	exact_rank_no_contains
+哪床	哪床	0.002	nachuang	exact_rank_no_contains
+哪身	哪身	0.002	nashen	exact_rank_no_contains
+哪夜	哪夜	0.002	naye	exact_rank_no_contains
+哪晚	哪晚	0.002	nawan	exact_rank_no_contains
+哪日	哪日	0.080	nari	exact_rank_no_contains
+哪月	哪月	0.200	nayue	exact_rank_no_contains
+哪周	哪週	0.002	nazhou	exact_rank_no_contains
+四封	四封	0.200	sifeng	exact_rank_no_contains
+五封	五封	0.184	wufeng	exact_rank_no_contains
+六封	六封	0.009	liufeng	exact_rank_no_contains
+七封	七封	0.009	qifeng	exact_rank_no_contains
+八封	八封	0.002	bafeng	exact_rank_no_contains
+九封	九封	0.002	jiufeng	exact_rank_no_contains
+十封	十封	0.000	shifeng	exact_rank_no_contains
+几封	幾封	0.000	jifeng	exact_rank_no_contains
+数封	數封	0.002	shufeng	exact_rank_no_contains
+每封	每封	0.200	meifeng	exact_rank_no_contains
+某封	某封	0.002	moufeng	exact_rank_no_contains
+首封	首封	0.080	shoufeng	exact_rank_no_contains
+整封	整封	0.002	zhengfeng	exact_rank_no_contains
+上封	上封	0.000	shangfeng	exact_rank_no_contains
+下封	下封	0.200	xiafeng	exact_rank_no_contains
+半封	半封	0.009	banfeng	exact_rank_no_contains
+百封	百封	0.002	baifeng	exact_rank_no_contains
+千封	千封	0.002	qianfeng	exact_rank_no_contains
+万封	萬封	0.080	wanfeng	exact_rank_no_contains
+这一封	這一封	0.080	zheyifeng	exact_rank_no_contains
+那一封	那一封	0.003	nayifeng	exact_rank_no_contains
+哪一封	哪一封	0.002	nayifeng	exact_rank_no_contains
+这两封	這兩封	0.002	zheliangfeng	exact_rank_no_contains
+那两封	那兩封	0.003	naliangfeng	exact_rank_no_contains
+哪两封	哪兩封	0.002	naliangfeng	exact_rank_no_contains
+这几封	這幾封	0.002	zhejifeng	exact_rank_no_contains
+那几封	那幾封	0.003	najifeng	exact_rank_no_contains
+哪几封	哪幾封	0.002	najifeng	exact_rank_no_contains
+好几封	好幾封	0.002	haojifeng	exact_rank_no_contains
+几十封	幾十封	0.200	jishifeng	exact_rank_no_contains
+上百封	上百封	0.002	shangbaifeng	exact_rank_no_contains
+哪封信	哪封信	0.002	nafengxin	exact_rank_no_contains
+两封信	兩封信	0.200	liangfengxin	exact_rank_no_contains
+三封信	三封信	0.080	sanfengxin	exact_rank_no_contains
+几封信	幾封信	0.081	jifengxin	exact_rank_no_contains
+每封信	每封信	0.200	meifengxin	exact_rank_no_contains
+这几封信	這幾封信	0.002	zhejifengxin	exact_rank_no_contains
+那几封信	那幾封信	0.002	najifengxin	exact_rank_no_contains
+这两封信	這兩封信	0.002	zheliangfengxin	exact_rank_no_contains
+那两封信	那兩封信	0.002	naliangfengxin	exact_rank_no_contains
+写封信	寫封信	0.200	xiefengxin	exact_rank_no_contains
+寄封信	寄封信	0.002	jifengxin	exact_rank_no_contains
+发封信	發封信	0.200	fafengxin	exact_rank_no_contains
+回封信	回封信	0.002	huifengxin	exact_rank_no_contains
+哪封邮件	哪封郵件	0.002	nafengyoujian	exact_rank_no_contains
+几封邮件	幾封郵件	0.002	jifengyoujian	exact_rank_no_contains
+每封邮件	每封郵件	0.002	meifengyoujian	exact_rank_no_contains
+这几封邮件	這幾封郵件	0.002	zhejifengyoujian	exact_rank_no_contains
+那几封邮件	那幾封郵件	0.002	najifengyoujian	exact_rank_no_contains
+发封邮件	發封郵件	0.002	fafengyoujian	exact_rank_no_contains
+回封邮件	回封郵件	0.002	huifengyoujian	exact_rank_no_contains
+写封邮件	寫封郵件	0.200	xiefengyoujian	exact_rank_no_contains
+这封来信	這封來信	0.002	zhefenglaixin	exact_rank_no_contains
+这封情书	這封情書	0.002	zhefengqingshu	exact_rank_no_contains
+那封情书	那封情書	0.002	nafengqingshu	exact_rank_no_contains
+这封家书	這封家書	0.080	zhefengjiashu	exact_rank_no_contains
+那封家书	那封家書	0.002	nafengjiashu	exact_rank_no_contains
+这封遗书	這封遺書	0.002	zhefengyishu	exact_rank_no_contains
+那封遗书	那封遺書	0.002	nafengyishu	exact_rank_no_contains
+一封情书	一封情書	0.200	yifengqingshu	exact_rank_no_contains
+一封来信	一封來信	0.080	yifenglaixin	exact_rank_no_contains
+一封电报	一封電報	0.200	yifengdianbao	exact_rank_no_contains
+一封短信	一封短信	0.080	yifengduanxin	exact_rank_no_contains
+一封遗书	一封遺書	0.080	yifengyishu	exact_rank_no_contains
+那两人	那兩人	0.200	naliangren	exact_rank_no_contains
+这几人	這幾人	0.080	zhejiren	exact_rank_no_contains
+那几人	那幾人	0.002	najiren	exact_rank_no_contains
+那三人	那三人	0.002	nasanren	exact_rank_no_contains
+这几大	這幾大	0.201	zhejida	exact_rank_no_contains
+这一晚	這一晚	0.200	zheyiwan	exact_rank_no_contains
+那一仗	那一仗	0.002	nayizhang	exact_rank_no_contains
+这一环	這一環	0.200	zheyihuan	exact_rank_no_contains
+那一环	那一環	0.002	nayihuan	exact_rank_no_contains
+这一看	這一看	0.200	zheyikan	exact_rank_no_contains
+这一问	這一問	0.200	zheyiwen	exact_rank_no_contains
+这一笑	這一笑	0.200	zheyixiao	exact_rank_no_contains
+那一笑	那一笑	0.002	nayixiao	exact_rank_no_contains
+这一走	這一走	0.200	zheyizou	exact_rank_no_contains
+哪件事	哪件事	0.200	najianshi	exact_rank_no_contains
+那节课	那節課	0.200	najieke	exact_rank_no_contains
+哪首诗	哪首詩	0.080	nashoushi	exact_rank_no_contains
+哪首歌	哪首歌	0.200	nashouge	exact_rank_no_contains
+哪道题	哪道題	0.200	nadaoti	exact_rank_no_contains
+那道菜	那道菜	0.080	nadaocai	exact_rank_no_contains
+那部剧	那部劇	0.003	nabuju	exact_rank_no_contains
+哪部剧	哪部劇	0.002	nabuju	exact_rank_no_contains
+那门课	那門課	0.200	namenke	exact_rank_no_contains
+哪门课	哪門課	0.080	namenke	exact_rank_no_contains
+那堂课	那堂課	0.080	natangke	exact_rank_no_contains
+那张图	那張圖	0.200	nazhangtu	exact_rank_no_contains
+哪辆车	哪輛車	0.080	naliangche	exact_rank_no_contains
+那家店	那家店	0.201	najiadian	exact_rank_no_contains
+哪家店	哪家店	0.200	najiadian	exact_rank_no_contains
+那类人	那類人	0.200	naleiren	exact_rank_no_contains
+那种事	那種事	0.200	nazhongshi	exact_rank_no_contains
+那座桥	那座橋	0.200	nazuoqiao	exact_rank_no_contains
+那块地	那塊地	0.002	nakuaidi	exact_rank_no_contains
+那番话	那番話	0.200	nafanhua	exact_rank_no_contains
+那段路	那段路	0.200	naduanlu	exact_rank_no_contains
+这杯水	這杯水	0.200	zhebeishui	exact_rank_no_contains
+那杯水	那杯水	0.080	nabeishui	exact_rank_no_contains
+这杯酒	這杯酒	0.200	zhebeijiu	exact_rank_no_contains
+那杯酒	那杯酒	0.080	nabeijiu	exact_rank_no_contains
+这杯茶	這杯茶	0.200	zhebeicha	exact_rank_no_contains
+那杯茶	那杯茶	0.002	nabeicha	exact_rank_no_contains
+这碗面	這碗麵	0.080	zhewanmian	exact_rank_no_contains
+那碗面	那碗麵	0.002	nawanmian	exact_rank_no_contains
+那碗饭	那碗飯	0.002	nawanfan	exact_rank_no_contains
+这双手	這雙手	0.201	zheshuangshou	exact_rank_no_contains
+那双手	那雙手	0.200	nashuangshou	exact_rank_no_contains
+那双鞋	那雙鞋	0.200	nashuangxie	exact_rank_no_contains
+那条河	那條河	0.200	natiaohe	exact_rank_no_contains
+那条街	那條街	0.200	natiaojie	exact_rank_no_contains
+这条狗	這條狗	0.200	zhetiaogou	exact_rank_no_contains
+那条狗	那條狗	0.200	natiaogou	exact_rank_no_contains
+那条鱼	那條魚	0.200	natiaoyu	exact_rank_no_contains
+那只狗	那隻狗	0.200	nazhigou	exact_rank_no_contains
+这只手	這隻手	0.200	zhezhishou	exact_rank_no_contains
+这只鸟	這隻鳥	0.200	zhezhiniao	exact_rank_no_contains
+那只鸟	那隻鳥	0.200	nazhiniao	exact_rank_no_contains
+这颗星	這顆星	0.200	zhekexing	exact_rank_no_contains
+那颗星	那顆星	0.200	nakexing	exact_rank_no_contains
+那朵花	那朵花	0.200	naduohua	exact_rank_no_contains
+那张脸	那張臉	0.200	nazhanglian	exact_rank_no_contains
+那张纸	那張紙	0.200	nazhangzhi	exact_rank_no_contains
+这张床	這張床	0.200	zhezhangchuang	exact_rank_no_contains
+那张床	那張床	0.002	nazhangchuang	exact_rank_no_contains
+那把刀	那把刀	0.200	nabadao	exact_rank_no_contains
+这把剑	這把劍	0.200	zhebajian	exact_rank_no_contains
+那把剑	那把劍	0.002	nabajian	exact_rank_no_contains
+这把火	這把火	0.200	zhebahuo	exact_rank_no_contains
+那把火	那把火	0.002	nabahuo	exact_rank_no_contains
+那部书	那部書	0.002	nabushu	exact_rank_no_contains
+那套书	那套書	0.002	nataoshu	exact_rank_no_contains
+这号人	這號人	0.002	zhehaoren	exact_rank_no_contains
+那号人	那號人	0.002	nahaoren	exact_rank_no_contains
+这桌菜	這桌菜	0.002	zhezhuocai	exact_rank_no_contains
+那桌菜	那桌菜	0.002	nazhuocai	exact_rank_no_contains
+这席话	這席話	0.080	zhexihua	exact_rank_no_contains
+那席话	那席話	0.002	naxihua	exact_rank_no_contains
+那段经历	那段經歷	0.200	naduanjingli	exact_rank_no_contains
+那段感情	那段感情	0.080	naduanganqing	exact_rank_no_contains
+那段关系	那段關係	0.002	naduanguanxi	exact_rank_no_contains
+哪篇文章	哪篇文章	0.080	napianwenzhang	exact_rank_no_contains
+那部电影	那部電影	0.201	nabudianying	exact_rank_no_contains
+哪部电影	哪部電影	0.002	nabudianying	exact_rank_no_contains
+那部小说	那部小說	0.003	nabuxiaoshuo	exact_rank_no_contains
+哪部小说	哪部小說	0.002	nabuxiaoshuo	exact_rank_no_contains
+那部作品	那部作品	0.002	nabuzuopin	exact_rank_no_contains
+那座城市	那座城市	0.200	nazuochengshi	exact_rank_no_contains
+哪座城市	哪座城市	0.201	nazuochengshi	exact_rank_no_contains
+那所学校	那所學校	0.200	nasuoxuexiao	exact_rank_no_contains
+哪张照片	哪張照片	0.002	nazhangzhaopian	exact_rank_no_contains
+那张专辑	那張專輯	0.002	nazhangzhuanji	exact_rank_no_contains
+那份工作	那份工作	0.200	nafengongzuo	exact_rank_no_contains
+那片土地	那片土地	0.200	napiantudi	exact_rank_no_contains
+哪场比赛	哪場比賽	0.002	nachangbisai	exact_rank_no_contains
+那场战争	那場戰爭	0.200	nachangzhanzheng	exact_rank_no_contains
+哪件事情	哪件事情	0.080	najianshiqing	exact_rank_no_contains
+那件衣服	那件衣服	0.200	najianyifu	exact_rank_no_contains
+哪件衣服	哪件衣服	0.002	najianyifu	exact_rank_no_contains
+那首歌曲	那首歌曲	0.002	nashougequ	exact_rank_no_contains
+那首曲子	那首曲子	0.080	nashouquzi	exact_rank_no_contains
+那一章	那一章	0.200	nayizhang	exact_rank_no_contains
+这极大	這極大	0.200	zhejida	exact_rank_no_contains
+着极大	著極大	0.002	zhejida	exact_rank_no_contains
+着双手	著雙手	0.200	zheshuangshou	exact_rank_no_contains
+# Weighted anew on 2026-11-07: import-weight words of the family, which the general text holds far more often than their weights say (这间, 这所, 这股, 这帮, 这根, 这棵, 这门, 这招, 那辆, 那本, 那所, 那副, 那套, 哪次); and on daojia 到家 1000 above 道家 1, by the user's judgement (到家 had stood at 1 under 道家 1000).
+这间	這間	0.279	zhejian	exact_rank
+这所	這所	0.600	zhesuo	exact_rank
+这股	這股	0.314	zhegu	exact_rank
+这帮	這幫	0.600	zhebang	exact_rank
+这根	這根	0.600	zhegen	exact_rank
+这棵	這棵	0.600	zheke	exact_rank
+这门	這門	0.600	zhemen	exact_rank
+这招	這招	0.600	zhezhao	exact_rank
+那辆	那輛	0.600	naliang	exact_rank
+那本	那本	0.600	naben	exact_rank
+那所	那所	0.400	nasuo	exact_rank
+那副	那副	0.600	nafu	exact_rank
+那套	那套	0.600	natao	exact_rank
+哪次	哪次	0.200	naci	exact_rank
+那本	那本	0.600	neiben	exact_rank
+到家	到家	1.000	daojia	exact_rank
+道家	道家	0.001	daojia	exact_rank
+# Reweighted 2026-11-08 (exact_rank, the weight / 1000; the user: "864个词你单独做一轮，费时间我不怕，我要好的正确的结果"): words at an import's weight (under 100) of 1,000 occurrences or more in the general text, at least three times as many as a heavier word of their key: at 600, leading the key at three times its first word's count, else below every word not three times rarer; and the words three times rarer that stood above them, moved just below them in the order of their counts (none of 100 or more under 100; a word an earlier batch weighed takes its weight in that batch's row).
+爱恋	愛戀	1.000	ailian	exact_rank
+爱怜	愛憐	0.999	ailian	exact_rank
+安得	安得	0.600	ande	exact_rank
+暗得	暗得	0.599	ande	exact_rank
+氨气	氨氣	0.545	anqi	exact_rank
+安西	安西	0.600	anxi	exact_rank
+暗喜	暗喜	0.599	anxi	exact_rank
+暗香	暗香	0.110	anxiang	exact_rank
+安乡	安鄉	0.109	anxiang	exact_rank
+按响	按響	0.108	anxiang	exact_rank
+拔出	拔出	0.489	bachu	exact_rank
+罢黜	罷黜	0.488	bachu	exact_rank
+白光	白光	0.600	baiguang	exact_rank
+巴结	巴結	0.165	bajie	exact_rank
+巴解	巴解	0.164	bajie	exact_rank
+爸妈	爸媽	0.741	bama	exact_rank
+班里	班裡	0.178	banli	exact_rank
+搬离	搬離	0.177	banli	exact_rank
+保利	保利	0.012	baoli	exact_rank
+靶子	靶子	0.600	bazi	exact_rank
+备件	備件	0.600	beijian	exact_rank
+北汽	北汽	0.119	beiqi	exact_rank
+被弃	被棄	0.106	beiqi	exact_rank
+背气	背氣	0.105	beiqi	exact_rank
+背起	背起	0.118	beiqi	exact_rank
+备齐	備齊	0.107	beiqi	exact_rank
+奔向	奔向	0.279	benxiang	exact_rank
+本相	本相	0.278	benxiang	exact_rank
+变回	變回	0.279	bianhui	exact_rank
+变灰	變灰	0.278	bianhui	exact_rank
+便士	便士	0.555	bianshi	exact_rank
+变湿	變濕	0.554	bianshi	exact_rank
+边远	邊遠	0.596	bianyuan	exact_rank
+变圆	變圓	0.595	bianyuan	exact_rank
+变造	變造	0.519	bianzao	exact_rank
+变早	變早	0.518	bianzao	exact_rank
+标的	標的	1.000	biaodi	exact_rank
+表弟	表弟	0.999	biaodi	exact_rank
+笔迹	筆跡	0.600	biji	exact_rank
+比及	比及	0.599	biji	exact_rank
+笔力	筆力	0.600	bili	exact_rank
+比莉	比莉	0.599	bili	exact_rank
+病史	病史	0.451	bingshi	exact_rank
+兵士	兵士	0.450	bingshi	exact_rank
+笔算	筆算	0.600	bisuan	exact_rank
+闭眼	閉眼	0.439	biyan	exact_rank
+鼻咽	鼻咽	0.438	biyan	exact_rank
+播客	播客	0.600	boke	exact_rank
+步伐	步伐	0.579	bufa	exact_rank
+布满	布滿	0.599	buman	exact_rank
+步入	步入	0.600	buru	exact_rank
+不入	不入	0.599	buru	exact_rank
+不实	不實	0.182	bushi	exact_rank
+不事	不事	0.180	bushi	exact_rank
+不湿	不濕	0.179	bushi	exact_rank
+补时	補時	0.178	bushi	exact_rank
+布什	布什	0.181	bushi	exact_rank
+部首	部首	0.600	bushou	exact_rank
+捕手	捕手	0.599	bushou	exact_rank
+补体	補體	0.600	buti	exact_rank
+布线	佈線	0.279	buxian	exact_rank
+不先	不先	0.278	buxian	exact_rank
+哺育	哺育	0.244	buyu	exact_rank
+不愉	不愉	0.243	buyu	exact_rank
+才华	才華	1.000	caihua	exact_rank
+采花	採花	0.598	caihua	exact_rank
+菜花	菜花	0.600	caihua	exact_rank
+彩画	彩畫	0.599	caihua	exact_rank
+才气	才氣	0.948	caiqi	exact_rank
+彩旗	彩旗	0.600	caiqi	exact_rank
+菜畦	菜畦	0.599	caiqi	exact_rank
+才艺	才藝	0.600	caiyi	exact_rank
+彩衣	彩衣	0.599	caiyi	exact_rank
+插班	插班	0.600	chaban	exact_rank
+查德	查德	0.279	chade	exact_rank
+插得	插得	0.278	chade	exact_rank
+长青	長青	0.600	changqing	exact_rank
+长情	長情	0.599	changqing	exact_rank
+厂区	廠區	1.000	changqu	exact_rank
+场区	場區	0.999	changqu	exact_rank
+长石	長石	0.125	changshi	exact_rank
+常时	常時	0.124	changshi	exact_rank
+产自	產自	0.180	chanzi	exact_rank
+朝上	朝上	0.600	chaoshang	exact_rank
+车把	車把	0.701	cheba	exact_rank
+呈上	呈上	0.239	chengshang	exact_rank
+城厢	城廂	0.306	chengxiang	exact_rank
+承想	承想	0.305	chengxiang	exact_rank
+吃货	吃貨	0.864	chihuo	exact_rank
+吃辣	吃辣	0.399	chila	exact_rank
+赤水	赤水	0.399	chishui	exact_rank
+传导	傳導	0.279	chuandao	exact_rank
+初赛	初賽	0.600	chusai	exact_rank
+出众	出眾	0.600	chuzhong	exact_rank
+词源	詞源	0.600	ciyuan	exact_rank
+词元	詞元	0.599	ciyuan	exact_rank
+大坝	大壩	0.279	daba	exact_rank
+打吧	打吧	0.278	daba	exact_rank
+大宝	大寶	0.340	dabao	exact_rank
+打爆	打爆	0.339	dabao	exact_rank
+大厨	大廚	0.600	dachu	exact_rank
+大调	大調	0.600	dadiao	exact_rank
+大度	大度	0.106	dadu	exact_rank
+打赌	打賭	0.105	dadu	exact_rank
+答对	答對	0.699	dadui	exact_rank
+打对	打對	0.698	dadui	exact_rank
+大鼓	大鼓	0.600	dagu	exact_rank
+大谷	大谷	0.599	dagu	exact_rank
+大姑	大姑	0.598	dagu	exact_rank
+待客	待客	0.107	daike	exact_rank
+带壳	帶殼	0.106	daike	exact_rank
+代指	代指	0.600	daizhi	exact_rank
+大吉	大吉	0.309	daji	exact_rank
+大计	大計	0.308	daji	exact_rank
+大件	大件	0.600	dajian	exact_rank
+大卡	大卡	0.159	daka	exact_rank
+达卡	達卡	0.158	daka	exact_rank
+打蜡	打蠟	0.399	dala	exact_rank
+大妈	大媽	0.183	dama	exact_rank
+打码	打碼	0.182	dama	exact_rank
+打吗	打嗎	0.181	dama	exact_rank
+单击	單擊	0.034	danji	exact_rank
+单品	單品	0.600	danpin	exact_rank
+道奇	道奇	0.519	daoqi	exact_rank
+到齐	到齊	0.518	daoqi	exact_rank
+大牌	大牌	0.300	dapai	exact_rank
+打拍	打拍	0.299	dapai	exact_rank
+大势	大勢	0.279	dashi	exact_rank
+大受	大受	0.600	dashou	exact_rank
+搭售	搭售	0.599	dashou	exact_rank
+大树	大樹	0.600	dashu	exact_rank
+大雅	大雅	0.399	daya	exact_rank
+大志	大志	0.600	dazhi	exact_rank
+电量	電量	0.600	dianliang	exact_rank
+底板	底板	0.600	diban	exact_rank
+低处	低處	0.600	dichu	exact_rank
+涤除	滌除	0.599	dichu	exact_rank
+低谷	低谷	0.600	digu	exact_rank
+砥砺	砥礪	0.403	dili	exact_rank
+定力	定力	0.479	dingli	exact_rank
+鼎立	鼎立	0.478	dingli	exact_rank
+定例	定例	0.477	dingli	exact_rank
+定势	定勢	0.384	dingshi	exact_rank
+顶饰	頂飾	0.382	dingshi	exact_rank
+定式	定式	0.383	dingshi	exact_rank
+定子	定子	0.600	dingzi	exact_rank
+底气	底氣	0.600	diqi	exact_rank
+地市级	地市級	1.000	dishiji	exact_rank
+第十集	第十集	0.999	dishiji	exact_rank
+底数	底數	0.701	dishu	exact_rank
+第四季	第四季	0.758	disiji	exact_rank
+第四集	第四集	0.757	disiji	exact_rank
+地支	地支	0.493	dizhi	exact_rank
+动议	動議	1.000	dongyi	exact_rank
+冬衣	冬衣	0.999	dongyi	exact_rank
+短篇	短篇	0.524	duanpian	exact_rank
+段子	段子	0.600	duanzi	exact_rank
+读博	讀博	0.600	dubo	exact_rank
+对位	對位	0.701	duiwei	exact_rank
+多部	多部	0.627	duobu	exact_rank
+多斤	多斤	0.599	duojin	exact_rank
+法宝	法寶	0.320	fabao	exact_rank
+发报	發報	0.319	fabao	exact_rank
+翻到	翻到	0.600	fandao	exact_rank
+翻倒	翻倒	0.599	fandao	exact_rank
+方城	方城	0.600	fangcheng	exact_rank
+方志	方誌	0.600	fangzhi	exact_rank
+仿纸	仿紙	0.598	fangzhi	exact_rank
+方知	方知	0.599	fangzhi	exact_rank
+蕃茄	蕃茄	0.600	fanqie	exact_rank
+凡事	凡事	0.600	fanshi	exact_rank
+饭食	飯食	0.598	fanshi	exact_rank
+范式	範式	0.599	fanshi	exact_rank
+飞向	飛向	0.427	feixiang	exact_rank
+粪便	糞便	0.600	fenbian	exact_rank
+纷呈	紛呈	0.600	fencheng	exact_rank
+风度	風度	0.380	fengdu	exact_rank
+蜂毒	蜂毒	0.379	fengdu	exact_rank
+蜂箱	蜂箱	0.291	fengxiang	exact_rank
+风姿	風姿	0.455	fengzi	exact_rank
+分机	分機	0.567	fenji	exact_rank
+愤激	憤激	0.566	fenji	exact_rank
+分句	分句	0.156	fenju	exact_rank
+分据	分據	0.155	fenju	exact_rank
+分属	分屬	0.600	fenshu	exact_rank
+焚书	焚書	0.598	fenshu	exact_rank
+份数	份數	0.599	fenshu	exact_rank
+分针	分針	0.439	fenzhen	exact_rank
+伏笔	伏筆	0.600	fubi	exact_rank
+腹壁	腹壁	0.599	fubi	exact_rank
+浮尘	浮塵	0.600	fuchen	exact_rank
+福地	福地	0.292	fudi	exact_rank
+伏地	伏地	0.291	fudi	exact_rank
+富国	富國	0.279	fuguo	exact_rank
+付过	付過	0.277	fuguo	exact_rank
+复国	復國	0.278	fuguo	exact_rank
+负荷	負荷	0.562	fuhe	exact_rank
+附和	附和	0.561	fuhe	exact_rank
+腹肌	腹肌	0.600	fuji	exact_rank
+福气	福氣	0.600	fuqi	exact_rank
+扶起	扶起	0.599	fuqi	exact_rank
+浮起	浮起	0.598	fuqi	exact_rank
+服气	服氣	0.597	fuqi	exact_rank
+富商	富商	0.559	fushang	exact_rank
+复式	複式	0.344	fushi	exact_rank
+伏侍	伏侍	0.342	fushi	exact_rank
+赋诗	賦詩	0.343	fushi	exact_rank
+腐熟	腐熟	0.441	fushu	exact_rank
+服输	服輸	0.440	fushu	exact_rank
+腹水	腹水	0.153	fushui	exact_rank
+复线	複線	0.600	fuxian	exact_rank
+妇幼	婦幼	0.600	fuyou	exact_rank
+复员	復員	0.600	fuyuan	exact_rank
+幅员	幅員	0.599	fuyuan	exact_rank
+赋值	賦值	0.279	fuzhi	exact_rank
+复职	復職	0.275	fuzhi	exact_rank
+肤质	膚質	0.278	fuzhi	exact_rank
+副职	副職	0.277	fuzhi	exact_rank
+负值	負值	0.276	fuzhi	exact_rank
+盖碗	蓋碗	0.159	gaiwan	exact_rank
+干果	乾果	0.600	ganguo	exact_rank
+干湿	乾溼	0.314	ganshi	exact_rank
+高校	高校	0.370	gaoxiao	exact_rank
+高雅	高雅	0.399	gaoya	exact_rank
+格力	格力	0.600	geli	exact_rank
+更新世	更新世	0.279	gengxinshi	exact_rank
+公馆	公館	0.258	gongguan	exact_rank
+共管	共管	0.257	gongguan	exact_rank
+宫观	宮觀	0.256	gongguan	exact_rank
+公鸡	公雞	0.587	gongji	exact_rank
+功绩	功績	0.586	gongji	exact_rank
+工件	工件	0.872	gongjian	exact_rank
+公事	公事	0.109	gongshi	exact_rank
+贡士	貢士	0.108	gongshi	exact_rank
+拱石	拱石	0.107	gongshi	exact_rank
+共赢	共贏	0.212	gongying	exact_rank
+恭迎	恭迎	0.211	gongying	exact_rank
+沟壑	溝壑	0.756	gouhe	exact_rank
+光线	光線	0.419	guangxian	exact_rank
+灌水	灌水	0.600	guanshui	exact_rank
+呱呱	呱呱	0.213	gugu	exact_rank
+鼓鼓	鼓鼓	0.212	gugu	exact_rank
+贵妇	貴婦	0.600	guifu	exact_rank
+归为	歸為	1.000	guiwei	exact_rank
+归位	歸位	0.999	guiwei	exact_rank
+古籍	古籍	0.437	guji	exact_rank
+痼疾	痼疾	0.436	guji	exact_rank
+股利	股利	0.600	guli	exact_rank
+果报	果報	0.279	guobao	exact_rank
+国籍	國籍	0.600	guoji	exact_rank
+过激	過激	0.599	guoji	exact_rank
+过敏原	過敏原	0.600	guominyuan	exact_rank
+国事	國事	0.355	guoshi	exact_rank
+国势	國勢	0.353	guoshi	exact_rank
+国史	國史	0.354	guoshi	exact_rank
+股市	股市	0.600	gushi	exact_rank
+古诗	古詩	0.599	gushi	exact_rank
+古物	古物	0.119	guwu	exact_rank
+孤鹜	孤鶩	0.118	guwu	exact_rank
+姑息	姑息	0.516	guxi	exact_rank
+海安	海安	0.600	haian	exact_rank
+海神	海神	0.320	haishen	exact_rank
+涵洞	涵洞	0.289	handong	exact_rank
+含水	含水	0.386	hanshui	exact_rank
+汉水	漢水	0.385	hanshui	exact_rank
+涵义	涵義	0.279	hanyi	exact_rank
+寒衣	寒衣	0.277	hanyi	exact_rank
+韩裔	韓裔	0.276	hanyi	exact_rank
+寒意	寒意	0.278	hanyi	exact_rank
+核实	核實	0.279	heshi	exact_rank
+何事	何事	0.278	heshi	exact_rank
+合十	合十	0.277	heshi	exact_rank
+核子	核子	0.536	hezi	exact_rank
+后记	後記	0.600	houji	exact_rank
+后裔	後裔	0.999	houyi	exact_rank
+后座	後座	0.976	houzuo	exact_rank
+花店	花店	0.279	huadian	exact_rank
+环岛	環島	0.600	huandao	exact_rank
+换气	換氣	0.600	huanqi	exact_rank
+缓期	緩期	0.599	huanqi	exact_rank
+华文	華文	0.495	huawen	exact_rank
+花香	花香	0.560	huaxiang	exact_rank
+悔过	悔過	0.600	huiguo	exact_rank
+回望	回望	0.999	huiwang	exact_rank
+慧眼	慧眼	0.139	huiyan	exact_rank
+讳言	諱言	0.138	huiyan	exact_rank
+会厌	會厭	0.137	huiyan	exact_rank
+会意	會意	0.599	huiyi	exact_rank
+会友	會友	0.236	huiyou	exact_rank
+火炉	火爐	1.000	huolu	exact_rank
+活路	活路	0.999	huolu	exact_rank
+货品	貨品	1.000	huopin	exact_rank
+火拼	火拼	0.999	huopin	exact_rank
+火险	火險	0.239	huoxian	exact_rank
+户主	戶主	0.359	huzhu	exact_rank
+家道	家道	0.600	jiadao	exact_rank
+佳绩	佳績	0.138	jiaji	exact_rank
+家计	家計	0.137	jiaji	exact_rank
+价款	價款	0.961	jiakuan	exact_rank
+捡到	撿到	0.600	jiandao	exact_rank
+减到	減到	0.599	jiandao	exact_rank
+建德	建德	0.279	jiande	exact_rank
+减得	減得	0.278	jiande	exact_rank
+讲到	講到	0.600	jiangdao	exact_rank
+降息	降息	0.600	jiangxi	exact_rank
+讲习	講習	0.599	jiangxi	exact_rank
+间距	間距	0.600	jianju	exact_rank
+检举	檢舉	0.599	jianju	exact_rank
+溅起	濺起	0.279	jianqi	exact_rank
+简史	簡史	0.108	jianshi	exact_rank
+兼施	兼施	0.107	jianshi	exact_rank
+建始	建始	0.106	jianshi	exact_rank
+建水	建水	0.541	jianshui	exact_rank
+践行	踐行	0.625	jianxing	exact_rank
+建兴	建興	0.599	jianxing	exact_rank
+剪影	剪影	0.796	jianying	exact_rank
+剪映	剪映	0.795	jianying	exact_rank
+剪纸	剪紙	0.338	jianzhi	exact_rank
+脚踩	腳踩	0.600	jiaocai	exact_rank
+叫法	叫法	0.600	jiaofa	exact_rank
+教父	教父	0.600	jiaofu	exact_rank
+较富	較富	0.598	jiaofu	exact_rank
+缴付	繳付	0.599	jiaofu	exact_rank
+焦化	焦化	0.310	jiaohua	exact_rank
+叫化	叫化	0.309	jiaohua	exact_rank
+皎洁	皎潔	0.335	jiaojie	exact_rank
+铰链	鉸鏈	0.600	jiaolian	exact_rank
+教区	教區	0.600	jiaoqu	exact_rank
+交手	交手	0.600	jiaoshou	exact_rank
+交售	交售	0.599	jiaoshou	exact_rank
+胶水	膠水	0.162	jiaoshui	exact_rank
+教委	教委	0.600	jiaowei	exact_rank
+脚位	腳位	0.599	jiaowei	exact_rank
+教义	教義	0.600	jiaoyi	exact_rank
+交椅	交椅	0.599	jiaoyi	exact_rank
+浇筑	澆築	0.255	jiaozhu	exact_rank
+叫住	叫住	0.254	jiaozhu	exact_rank
+架起	架起	0.600	jiaqi	exact_rank
+驾校	駕校	0.600	jiaxiao	exact_rank
+假牙	假牙	0.399	jiaya	exact_rank
+几倍	幾倍	0.600	jibei	exact_rank
+脊背	脊背	0.599	jibei	exact_rank
+几部	幾部	0.302	jibu	exact_rank
+鸡翅	雞翅	0.600	jichi	exact_rank
+急驰	急馳	0.599	jichi	exact_rank
+基带	基帶	0.616	jidai	exact_rank
+劫财	劫財	0.188	jiecai	exact_rank
+戒毒	戒毒	0.469	jiedu	exact_rank
+借读	借讀	0.468	jiedu	exact_rank
+接缝	接縫	0.600	jiefeng	exact_rank
+借机	借機	0.600	jieji	exact_rank
+解禁	解禁	0.600	jiejin	exact_rank
+拮据	拮据	0.248	jieju	exact_rank
+戒惧	戒懼	0.247	jieju	exact_rank
+解下	解下	0.600	jiexia	exact_rank
+揭下	揭下	0.599	jiexia	exact_rank
+截下	截下	0.598	jiexia	exact_rank
+结语	結語	0.600	jieyu	exact_rank
+节育	節育	0.598	jieyu	exact_rank
+结余	結餘	0.599	jieyu	exact_rank
+截肢	截肢	0.158	jiezhi	exact_rank
+界址	界址	0.157	jiezhi	exact_rank
+基肥	基肥	0.600	jifei	exact_rank
+记分	記分	0.546	jifen	exact_rank
+计分	計分	0.545	jifen	exact_rank
+继父	繼父	0.193	jifu	exact_rank
+几副	幾副	0.192	jifu	exact_rank
+集会	集會	0.252	jihui	exact_rank
+几回	幾回	0.251	jihui	exact_rank
+极会	極會	0.250	jihui	exact_rank
+肌腱	肌腱	0.029	jijian	exact_rank
+集锦	集錦	0.519	jijin	exact_rank
+极近	極近	0.517	jijin	exact_rank
+极尽	極盡	0.518	jijin	exact_rank
+饥渴	飢渴	0.255	jike	exact_rank
+几刻	幾刻	0.254	jike	exact_rank
+肌瘤	肌瘤	0.138	jiliu	exact_rank
+鸡柳	雞柳	0.137	jiliu	exact_rank
+集贸	集貿	0.562	jimao	exact_rank
+几毛	幾毛	0.561	jimao	exact_rank
+劲爆	勁爆	0.600	jinbao	exact_rank
+金币	金幣	0.600	jinbi	exact_rank
+进逼	進逼	0.599	jinbi	exact_rank
+紧逼	緊逼	0.598	jinbi	exact_rank
+尽到	盡到	0.279	jindao	exact_rank
+荆棘	荊棘	0.351	jingji	exact_rank
+径迹	徑跡	0.350	jingji	exact_rank
+警句	警句	0.583	jingju	exact_rank
+惊惧	驚懼	0.582	jingju	exact_rank
+景气	景氣	0.600	jingqi	exact_rank
+惊起	驚起	0.118	jingqi	exact_rank
+精气	精氣	0.119	jingqi	exact_rank
+经手	經手	0.600	jingshou	exact_rank
+精瘦	精瘦	0.599	jingshou	exact_rank
+静心	靜心	0.343	jingxin	exact_rank
+警用	警用	0.359	jingyong	exact_rank
+鲸鱼	鯨魚	0.108	jingyu	exact_rank
+境域	境域	0.107	jingyu	exact_rank
+净值	淨值	0.152	jingzhi	exact_rank
+径直	徑直	0.151	jingzhi	exact_rank
+谨记	謹記	0.584	jinji	exact_rank
+进击	進擊	0.583	jinji	exact_rank
+锦鲤	錦鯉	0.600	jinli	exact_rank
+浸礼	浸禮	0.599	jinli	exact_rank
+禁食	禁食	0.197	jinshi	exact_rank
+今时	今時	0.196	jinshi	exact_rank
+近时	近時	0.194	jinshi	exact_rank
+津市	津市	0.195	jinshi	exact_rank
+紧致	緊緻	0.497	jinzhi	exact_rank
+浸渍	浸漬	0.600	jinzi	exact_rank
+金字	金字	0.599	jinzi	exact_rank
+祭品	祭品	0.600	jipin	exact_rank
+济贫	濟貧	0.599	jipin	exact_rank
+技师	技師	0.296	jishi	exact_rank
+计时	計時	0.137	jishi	exact_rank
+几室	幾室	0.135	jishi	exact_rank
+急事	急事	0.136	jishi	exact_rank
+祭司	祭司	0.600	jisi	exact_rank
+缉私	緝私	0.599	jisi	exact_rank
+基态	基態	0.419	jitai	exact_rank
+旧事	舊事	0.346	jiushi	exact_rank
+酒食	酒食	0.345	jiushi	exact_rank
+迹象	跡象	0.238	jixiang	exact_rank
+极想	極想	0.237	jixiang	exact_rank
+吉凶	吉凶	1.000	jixiong	exact_rank
+鸡胸	雞胸	0.999	jixiong	exact_rank
+急需	急需	0.600	jixu	exact_rank
+鸡眼	雞眼	0.114	jiyan	exact_rank
+肌炎	肌炎	0.113	jiyan	exact_rank
+机油	機油	0.600	jiyou	exact_rank
+极右	極右	0.599	jiyou	exact_rank
+寄语	寄語	0.118	jiyu	exact_rank
+觊觎	覬覦	0.116	jiyu	exact_rank
+鲫鱼	鯽魚	0.117	jiyu	exact_rank
+纪元	紀元	0.600	jiyuan	exact_rank
+极远	極遠	0.597	jiyuan	exact_rank
+济源	濟源	0.599	jiyuan	exact_rank
+妓院	妓院	0.598	jiyuan	exact_rank
+集约	集約	0.811	jiyue	exact_rank
+机长	機長	0.600	jizhang	exact_rank
+几章	幾章	0.599	jizhang	exact_rank
+集镇	集鎮	0.154	jizhen	exact_rank
+鸡胗	雞胗	0.153	jizhen	exact_rank
+基质	基質	0.308	jizhi	exact_rank
+几支	幾支	0.306	jizhi	exact_rank
+机智	機智	0.307	jizhi	exact_rank
+几株	幾株	0.436	jizhu	exact_rank
+居间	居間	0.600	jujian	exact_rank
+句式	句式	0.600	jushi	exact_rank
+据实	據實	0.598	jushi	exact_rank
+举世	舉世	0.597	jushi	exact_rank
+居室	居室	0.599	jushi	exact_rank
+桔子	桔子	0.342	juzi	exact_rank
+铠甲	鎧甲	0.581	kaijia	exact_rank
+客机	客機	0.600	keji	exact_rank
+课件	課件	0.600	kejian	exact_rank
+课间	課間	0.599	kejian	exact_rank
+空档	空檔	0.976	kongdang	exact_rank
+兰科	蘭科	0.600	lanke	exact_rank
+姥姥	姥姥	0.600	laolao	exact_rank
+雷鸣	雷鳴	0.697	leiming	exact_rank
+蕾丝	蕾絲	0.600	leisi	exact_rank
+良方	良方	0.168	liangfang	exact_rank
+量房	量房	0.167	liangfang	exact_rank
+靓丽	靚麗	0.600	liangli	exact_rank
+两瓶	兩瓶	0.419	liangping	exact_rank
+联机	聯機	0.600	lianji	exact_rank
+恋人	戀人	0.600	lianren	exact_rank
+梨花	梨花	0.600	lihua	exact_rank
+里加	里加	0.159	lijia	exact_rank
+黎家	黎家	0.158	lijia	exact_rank
+利剑	利劍	0.600	lijian	exact_rank
+粒径	粒徑	0.600	lijing	exact_rank
+灵性	靈性	0.104	lingxing	exact_rank
+灵醒	靈醒	0.103	lingxing	exact_rank
+沥青	瀝青	0.600	liqing	exact_rank
+离世	離世	0.600	lishi	exact_rank
+立时	立時	0.598	lishi	exact_rank
+力士	力士	0.599	lishi	exact_rank
+流芳	流芳	0.299	liufang	exact_rank
+六房	六房	0.298	liufang	exact_rank
+流利	流利	0.600	liuli	exact_rank
+流离	流離	0.599	liuli	exact_rank
+六一	六一	0.600	liuyi	exact_rank
+六艺	六藝	0.599	liuyi	exact_rank
+历险	歷險	0.323	lixian	exact_rank
+李现	李現	0.322	lixian	exact_rank
+礼遇	禮遇	0.279	liyu	exact_rank
+俚语	俚語	0.278	liyu	exact_rank
+卵石	卵石	0.104	luanshi	exact_rank
+乱视	亂視	0.103	luanshi	exact_rank
+鲁国	魯國	0.600	luguo	exact_rank
+罗素	羅素	1.000	luosu	exact_rank
+落俗	落俗	0.999	luosu	exact_rank
+卤水	滷水	0.600	lushui	exact_rank
+美称	美稱	0.999	meicheng	exact_rank
+美德	美德	0.555	meide	exact_rank
+美发	美髮	0.695	meifa	exact_rank
+美化	美化	0.331	meihua	exact_rank
+没花	沒花	0.330	meihua	exact_rank
+没画	沒畫	0.329	meihua	exact_rank
+煤灰	煤灰	0.699	meihui	exact_rank
+每回	每回	0.698	meihui	exact_rank
+美式	美式	0.579	meishi	exact_rank
+煤田	煤田	0.555	meitian	exact_rank
+没填	沒填	0.554	meitian	exact_rank
+煤油	煤油	0.600	meiyou	exact_rank
+美院	美院	0.600	meiyuan	exact_rank
+梅州市	梅州市	0.600	meizhoushi	exact_rank
+面议	面議	0.751	mianyi	exact_rank
+棉衣	棉衣	0.750	mianyi	exact_rank
+秘籍	秘籍	0.139	miji	exact_rank
+咪咪	咪咪	0.180	mimi	exact_rank
+幂幂	冪冪	0.179	mimi	exact_rank
+谜面	謎面	1.000	mimian	exact_rank
+米面	米麵	0.999	mimian	exact_rank
+名城	名城	0.600	mingcheng	exact_rank
+名利	名利	0.600	mingli	exact_rank
+名声	名聲	0.600	mingsheng	exact_rank
+明史	明史	0.383	mingshi	exact_rank
+名实	名實	0.382	mingshi	exact_rank
+秘制	秘製	0.602	mizhi	exact_rank
+米脂	米脂	0.601	mizhi	exact_rank
+魔方	魔方	0.600	mofang	exact_rank
+磨炼	磨鍊	0.114	molian	exact_rank
+摸脸	摸臉	0.113	molian	exact_rank
+磨砂	磨砂	0.600	mosha	exact_rank
+漠视	漠視	0.600	moshi	exact_rank
+末世	末世	0.599	moshi	exact_rank
+母语	母語	0.600	muyu	exact_rank
+拇指	拇指	0.600	muzhi	exact_rank
+拿回	拿回	0.489	nahui	exact_rank
+难忍	難忍	0.555	nanren	exact_rank
+难认	難認	0.554	nanren	exact_rank
+难闻	難聞	0.701	nanwen	exact_rank
+呢喃	呢喃	1.000	ninan	exact_rank
+你男	你男	0.999	ninan	exact_rank
+拟人	擬人	0.339	niren	exact_rank
+农艺	農藝	0.279	nongyi	exact_rank
+排好	排好	0.210	paihao	exact_rank
+跑出来	跑出來	0.600	paochulai	exact_rank
+平摊	平攤	0.125	pingtan	exact_rank
+乒坛	乒壇	0.124	pingtan	exact_rank
+评议	評議	0.613	pingyi	exact_rank
+抢到	搶到	0.600	qiangdao	exact_rank
+呛到	嗆到	0.599	qiangdao	exact_rank
+枪支	槍支	0.414	qiangzhi	exact_rank
+牵拉	牽拉	0.399	qianla	exact_rank
+千面	千面	0.600	qianmian	exact_rank
+前妻	前妻	0.600	qianqi	exact_rank
+浅浅	淺淺	1.000	qianqian	exact_rank
+千千	千千	0.999	qianqian	exact_rank
+前言	前言	0.600	qianyan	exact_rank
+气场	氣場	0.948	qichang	exact_rank
+起航	起航	0.433	qihang	exact_rank
+七行	七行	0.432	qihang	exact_rank
+契机	契機	0.628	qiji	exact_rank
+情妇	情婦	0.279	qingfu	exact_rank
+青椒	青椒	0.100	qingjiao	exact_rank
+情结	情結	0.600	qingjie	exact_rank
+轻捷	輕捷	0.599	qingjie	exact_rank
+请进	請進	0.222	qingjin	exact_rank
+清空	清空	0.332	qingkong	exact_rank
+漆器	漆器	0.531	qiqi	exact_rank
+气球	氣球	0.600	qiqiu	exact_rank
+乞求	乞求	0.599	qiqiu	exact_rank
+气势	氣勢	0.445	qishi	exact_rank
+祈使	祈使	0.443	qishi	exact_rank
+骑手	騎手	0.331	qishou	exact_rank
+全解	全解	0.244	quanjie	exact_rank
+全网	全網	0.599	quanwang	exact_rank
+全忘	全忘	0.598	quanwang	exact_rank
+驱虫	驅蟲	0.699	quchong	exact_rank
+取景	取景	0.600	qujing	exact_rank
+趣事	趣事	0.494	qushi	exact_rank
+趣闻	趣聞	0.600	quwen	exact_rank
+人脉	人脈	0.600	renmai	exact_rank
+人名	人名	0.600	renming	exact_rank
+认命	認命	0.599	renming	exact_rank
+日立	日立	0.600	rili	exact_rank
+入院	入院	0.359	ruyuan	exact_rank
+散见	散見	0.285	sanjian	exact_rank
+三级胺	三級胺	0.284	sanjian	exact_rank
+三科	三科	0.581	sanke	exact_rank
+三颗	三顆	0.580	sanke	exact_rank
+三声	三聲	0.600	sansheng	exact_rank
+三世	三世	0.254	sanshi	exact_rank
+散失	散失	0.253	sanshi	exact_rank
+沙雕	沙雕	0.600	shadiao	exact_rank
+嬗变	嬗變	0.600	shanbian	exact_rank
+山洞	山洞	0.600	shandong	exact_rank
+闪动	閃動	0.599	shandong	exact_rank
+上街	上街	0.108	shangjie	exact_rank
+上界	上界	0.107	shangjie	exact_rank
+裳阶	裳階	0.106	shangjie	exact_rank
+商事	商事	0.600	shangshi	exact_rank
+尚食	尚食	0.599	shangshi	exact_rank
+上香	上香	0.600	shangxiang	exact_rank
+上相	上相	0.599	shangxiang	exact_rank
+上肢	上肢	0.600	shangzhi	exact_rank
+善事	善事	0.600	shanshi	exact_rank
+闪失	閃失	0.598	shanshi	exact_rank
+山势	山勢	0.599	shanshi	exact_rank
+烧碱	燒鹼	0.600	shaojian	exact_rank
+烧水	燒水	0.701	shaoshui	exact_rank
+少尉	少尉	0.600	shaowei	exact_rank
+烧味	燒味	0.599	shaowei	exact_rank
+深爱	深愛	0.600	shenai	exact_rank
+生父	生父	0.600	shengfu	exact_rank
+升幅	升幅	0.599	shengfu	exact_rank
+省力	省力	0.441	shengli	exact_rank
+省立	省立	0.440	shengli	exact_rank
+生下	生下	0.279	shengxia	exact_rank
+省下	省下	0.278	shengxia	exact_rank
+升压	升壓	0.399	shengya	exact_rank
+绅士	紳士	0.135	shenshi	exact_rank
+肾石	腎石	0.134	shenshi	exact_rank
+渗碳	滲碳	0.794	shentan	exact_rank
+神坛	神壇	0.600	shentan	exact_rank
+深谈	深談	0.599	shentan	exact_rank
+神威	神威	0.275	shenwei	exact_rank
+申威	申威	0.274	shenwei	exact_rank
+甚远	甚遠	0.279	shenyuan	exact_rank
+伸冤	伸冤	0.278	shenyuan	exact_rank
+肾元	腎元	0.277	shenyuan	exact_rank
+设限	設限	0.576	shexian	exact_rank
+涉险	涉險	0.575	shexian	exact_rank
+施暴	施暴	0.195	shibao	exact_rank
+矢堡	矢堡	0.194	shibao	exact_rank
+柿饼	柿餅	0.600	shibing	exact_rank
+时长	時長	0.590	shichang	exact_rank
+失常	失常	0.589	shichang	exact_rank
+师从	師從	0.279	shicong	exact_rank
+世道	世道	0.600	shidao	exact_rank
+实地	實地	0.600	shidi	exact_rank
+师弟	師弟	0.599	shidi	exact_rank
+湿度	濕度	0.600	shidu	exact_rank
+石缝	石縫	0.279	shifeng	exact_rank
+市府	市府	0.228	shifu	exact_rank
+十幅	十幅	0.227	shifu	exact_rank
+十副	十副	0.226	shifu	exact_rank
+世故	世故	0.112	shigu	exact_rank
+十股	十股	0.111	shigu	exact_rank
+事迹	事跡	0.220	shiji	exact_rank
+实机	實機	0.218	shiji	exact_rank
+史记	史記	0.219	shiji	exact_rank
+世家	世家	0.600	shijia	exact_rank
+释迦	釋迦	0.599	shijia	exact_rank
+世间	世間	0.459	shijian	exact_rank
+尸检	屍檢	0.458	shijian	exact_rank
+驶离	駛離	0.279	shili	exact_rank
+侍立	侍立	0.278	shili	exact_rank
+矢量	矢量	0.600	shiliang	exact_rank
+食粮	食糧	0.599	shiliang	exact_rank
+湿气	濕氣	0.471	shiqi	exact_rank
+食人	食人	0.120	shiren	exact_rank
+尸人	屍人	0.119	shiren	exact_rank
+事事	事事	0.100	shishi	exact_rank
+史书	史書	0.600	shishu	exact_rank
+十数	十數	0.599	shishu	exact_rank
+时态	時態	0.600	shitai	exact_rank
+失态	失態	0.599	shitai	exact_rank
+势态	勢態	0.597	shitai	exact_rank
+石台	石台	0.598	shitai	exact_rank
+诗坛	詩壇	0.600	shitan	exact_rank
+世系	世系	0.600	shixi	exact_rank
+十项	十項	0.564	shixiang	exact_rank
+识相	識相	0.563	shixiang	exact_rank
+视野	視野	0.600	shiye	exact_rank
+实业	實業	0.599	shiye	exact_rank
+诗意	詩意	0.118	shiyi	exact_rank
+施以	施以	0.117	shiyi	exact_rank
+十亿	十億	0.116	shiyi	exact_rank
+拾遗	拾遺	0.115	shiyi	exact_rank
+失忆	失憶	0.114	shiyi	exact_rank
+释疑	釋疑	0.113	shiyi	exact_rank
+使役	使役	0.112	shiyi	exact_rank
+食用	食用	0.279	shiyong	exact_rank
+施用	施用	0.278	shiyong	exact_rank
+室友	室友	0.600	shiyou	exact_rank
+食欲	食慾	0.279	shiyu	exact_rank
+时针	時針	0.379	shizhen	exact_rank
+施政	施政	0.122	shizheng	exact_rank
+时值	時值	0.136	shizhi	exact_rank
+十只	十隻	0.135	shizhi	exact_rank
+十指	十指	0.134	shizhi	exact_rank
+矢志	矢誌	0.133	shizhi	exact_rank
+时钟	時鐘	0.419	shizhong	exact_rank
+师资	師資	0.436	shizi	exact_rank
+式子	式子	0.435	shizi	exact_rank
+石子	石子	0.434	shizi	exact_rank
+世子	世子	0.433	shizi	exact_rank
+虱子	蝨子	0.432	shizi	exact_rank
+士子	士子	0.431	shizi	exact_rank
+世宗	世宗	0.600	shizong	exact_rank
+受教	受教	0.323	shoujiao	exact_rank
+收胶	收膠	0.322	shoujiao	exact_rank
+受邀	受邀	0.385	shouyao	exact_rank
+叔父	叔父	0.600	shufu	exact_rank
+数伏	數伏	0.599	shufu	exact_rank
+水壶	水壺	0.600	shuihu	exact_rank
+水疱	水皰	0.154	shuipao	exact_rank
+水雾	水霧	0.479	shuiwu	exact_rank
+暑气	暑氣	0.559	shuqi	exact_rank
+术语	術語	0.600	shuyu	exact_rank
+疏于	疏於	0.599	shuyu	exact_rank
+四位	四位	0.335	siwei	exact_rank
+四卫	四衛	0.322	siwei	exact_rank
+饲喂	飼餵	0.323	siwei	exact_rank
+酸酸	酸酸	0.600	suansuan	exact_rank
+随堂	隨堂	0.638	suitang	exact_rank
+隋棠	隋棠	0.637	suitang	exact_rank
+锁紧	鎖緊	0.314	suojin	exact_rank
+夙愿	夙願	0.600	suyuan	exact_rank
+胎动	胎動	0.467	taidong	exact_rank
+甜食	甜食	0.559	tianshi	exact_rank
+甜甜	甜甜	0.600	tiantian	exact_rank
+体量	體量	0.600	tiliang	exact_rank
+题字	題字	0.600	tizi	exact_rank
+同城	同城	0.803	tongcheng	exact_rank
+通称	通稱	0.802	tongcheng	exact_rank
+同构	同構	1.000	tonggou	exact_rank
+统购	統購	0.999	tonggou	exact_rank
+铜仁	銅仁	0.136	tongren	exact_rank
+通人	通人	0.135	tongren	exact_rank
+同校	同校	0.501	tongxiao	exact_rank
+同义	同義	0.579	tongyi	exact_rank
+同治	同治	0.280	tongzhi	exact_rank
+同知	同知	0.279	tongzhi	exact_rank
+统制	統制	0.277	tongzhi	exact_rank
+同质	同質	0.278	tongzhi	exact_rank
+头巾	頭巾	0.279	toujin	exact_rank
+透进	透進	0.278	toujin	exact_rank
+涂层	塗層	0.619	tuceng	exact_rank
+土层	土層	0.618	tuceng	exact_rank
+推到	推到	0.488	tuidao	exact_rank
+拖把	拖把	0.380	tuoba	exact_rank
+脱险	脫險	0.701	tuoxian	exact_rank
+拖鞋	拖鞋	0.600	tuoxie	exact_rank
+吐气	吐氣	0.600	tuqi	exact_rank
+土气	土氣	0.599	tuqi	exact_rank
+图示	圖示	0.600	tushi	exact_rank
+吐字	吐字	0.600	tuzi	exact_rank
+外相	外相	0.600	waixiang	exact_rank
+王妃	王妃	0.600	wangfei	exact_rank
+王后	王后	0.600	wanghou	exact_rank
+往届	往屆	0.621	wangjie	exact_rank
+王维	王維	0.205	wangwei	exact_rank
+妄为	妄為	0.204	wangwei	exact_rank
+网胃	網胃	0.203	wangwei	exact_rank
+晚宴	晚宴	0.600	wanyan	exact_rank
+胃部	胃部	0.600	weibu	exact_rank
+维度	維度	0.806	weidu	exact_rank
+威尔	威爾	0.600	weier	exact_rank
+喂饭	餵飯	0.600	weifan	exact_rank
+围观	圍觀	0.302	weiguan	exact_rank
+微管	微管	0.301	weiguan	exact_rank
+维和	維和	0.600	weihe	exact_rank
+违和	違和	0.599	weihe	exact_rank
+违纪	違紀	0.600	weiji	exact_rank
+危急	危急	0.599	weiji	exact_rank
+微机	微機	0.598	weiji	exact_rank
+未及	未及	0.597	weiji	exact_rank
+围巾	圍巾	0.135	weijin	exact_rank
+违禁	違禁	0.134	weijin	exact_rank
+味精	味精	0.600	weijing	exact_rank
+胃镜	胃鏡	0.386	weijing	exact_rank
+危境	危境	0.385	weijing	exact_rank
+微凉	微涼	0.112	weiliang	exact_rank
+维梁	維樑	0.111	weiliang	exact_rank
+围梁	圍樑	0.110	weiliang	exact_rank
+尾气	尾氣	0.183	weiqi	exact_rank
+未起	未起	0.182	weiqi	exact_rank
+卫视	衛視	0.165	weishi	exact_rank
+韦氏	韋氏	0.164	weishi	exact_rank
+未始	未始	0.163	weishi	exact_rank
+微湿	微溼	0.162	weishi	exact_rank
+围饰	圍飾	0.161	weishi	exact_rank
+维系	維繫	0.973	weixi	exact_rank
+逶迤	逶迤	0.297	weiyi	exact_rank
+谓语	謂語	0.600	weiyu	exact_rank
+尾羽	尾羽	0.279	weiyu	exact_rank
+违者	違者	0.009	weizhe	exact_rank
+纹身	紋身	1.000	wenshen	exact_rank
+问神	問神	0.999	wenshen	exact_rank
+文士	文士	0.124	wenshi	exact_rank
+稳实	穩實	0.123	wenshi	exact_rank
+卧底	臥底	1.000	wodi	exact_rank
+我弟	我弟	0.999	wodi	exact_rank
+窝点	窩點	0.999	wodian	exact_rank
+涡旋	渦旋	0.450	woxuan	exact_rank
+我宣	我宣	0.449	woxuan	exact_rank
+污点	汙點	0.600	wudian	exact_rank
+五方	五方	0.239	wufang	exact_rank
+五房	五房	0.238	wufang	exact_rank
+五官	五官	0.104	wuguan	exact_rank
+舞会	舞會	0.264	wuhui	exact_rank
+污秽	汙穢	0.263	wuhui	exact_rank
+无极	無極	0.211	wuji	exact_rank
+舞技	舞技	0.198	wuji	exact_rank
+无际	無際	0.210	wuji	exact_rank
+污迹	汙跡	0.199	wuji	exact_rank
+吴江	吳江	0.479	wujiang	exact_rank
+屋里	屋裡	0.139	wuli	exact_rank
+无礼	無禮	0.138	wuli	exact_rank
+无良	無良	0.328	wuliang	exact_rank
+雾气	霧氣	0.600	wuqi	exact_rank
+无奇	無奇	0.599	wuqi	exact_rank
+吴起	吳起	0.105	wuqi	exact_rank
+务期	務期	0.104	wuqi	exact_rank
+五世	五世	0.167	wushi	exact_rank
+乌什	烏什	0.163	wushi	exact_rank
+五室	五室	0.162	wushi	exact_rank
+巫师	巫師	0.166	wushi	exact_rank
+误食	誤食	0.165	wushi	exact_rank
+舞狮	舞獅	0.164	wushi	exact_rank
+武田	武田	0.600	wutian	exact_rank
+武威	武威	0.239	wuwei	exact_rank
+五卫	五衛	0.238	wuwei	exact_rank
+无序	無序	0.600	wuxu	exact_rank
+无烟	無煙	0.330	wuyan	exact_rank
+吴用	吳用	0.600	wuyong	exact_rank
+五蕴	五蘊	0.340	wuyun	exact_rank
+吴中	吳中	0.192	wuzhong	exact_rank
+无中	無中	0.191	wuzhong	exact_rank
+污渍	汙漬	0.399	wuzi	exact_rank
+吓到	嚇到	0.600	xiadao	exact_rank
+贤才	賢才	0.599	xiancai	exact_rank
+鲜菜	鮮菜	0.598	xiancai	exact_rank
+线稿	線稿	0.419	xiangao	exact_rank
+献给	獻給	0.199	xiangei	exact_rank
+项链	項鏈	0.456	xianglian	exact_rank
+相联	相聯	0.455	xianglian	exact_rank
+香气	香氣	0.600	xiangqi	exact_rank
+象棋	象棋	0.599	xiangqi	exact_rank
+乡人	鄉人	0.365	xiangren	exact_rank
+想人	想人	0.364	xiangren	exact_rank
+详实	詳實	0.172	xiangshi	exact_rank
+相视	相視	0.171	xiangshi	exact_rank
+想试	想試	0.169	xiangshi	exact_rank
+乡试	鄉試	0.170	xiangshi	exact_rank
+县官	縣官	0.600	xianguan	exact_rank
+项王	項王	0.600	xiangwang	exact_rank
+相忘	相忘	0.599	xiangwang	exact_rank
+相依	相依	0.600	xiangyi	exact_rank
+相异	相異	0.599	xiangyi	exact_rank
+巷子	巷子	0.608	xiangzi	exact_rank
+先机	先機	0.600	xianji	exact_rank
+仙境	仙境	0.600	xianjing	exact_rank
+限期	限期	0.445	xianqi	exact_rank
+先期	先期	0.444	xianqi	exact_rank
+先贤	先賢	0.600	xianxian	exact_rank
+显性	顯性	0.468	xianxing	exact_rank
+显形	顯形	0.467	xianxing	exact_rank
+县域	縣域	0.874	xianyu	exact_rank
+陷于	陷於	0.872	xianyu	exact_rank
+咸鱼	鹹魚	0.279	xianyu	exact_rank
+闲置	閒置	0.600	xianzhi	exact_rank
+闲职	閒職	0.596	xianzhi	exact_rank
+先知	先知	0.599	xianzhi	exact_rank
+县志	縣志	0.598	xianzhi	exact_rank
+现值	現值	0.597	xianzhi	exact_rank
+校方	校方	0.359	xiaofang	exact_rank
+效仿	效仿	0.358	xiaofang	exact_rank
+校服	校服	0.171	xiaofu	exact_rank
+小傅	小傅	0.170	xiaofu	exact_rank
+小寒	小寒	0.600	xiaohan	exact_rank
+小花	小花	0.301	xiaohua	exact_rank
+硝化	硝化	0.300	xiaohua	exact_rank
+小鸡	小雞	0.214	xiaoji	exact_rank
+小计	小計	0.213	xiaoji	exact_rank
+校级	校級	0.212	xiaoji	exact_rank
+校际	校際	0.211	xiaoji	exact_rank
+小结	小結	0.587	xiaojie	exact_rank
+小节	小節	0.586	xiaojie	exact_rank
+消解	消解	0.585	xiaojie	exact_rank
+消食	消食	0.119	xiaoshi	exact_rank
+消释	消釋	0.116	xiaoshi	exact_rank
+小食	小食	0.118	xiaoshi	exact_rank
+小视	小視	0.117	xiaoshi	exact_rank
+笑颜	笑顏	0.123	xiaoyan	exact_rank
+笑眼	笑眼	0.122	xiaoyan	exact_rank
+孝义	孝義	0.131	xiaoyi	exact_rank
+孝衣	孝衣	0.130	xiaoyi	exact_rank
+笑语	笑語	0.600	xiaoyu	exact_rank
+小院	小院	0.600	xiaoyuan	exact_rank
+下线	下線	0.600	xiaxian	exact_rank
+下陷	下陷	0.599	xiaxian	exact_rank
+携程	攜程	0.600	xiecheng	exact_rank
+鞋带	鞋帶	0.453	xiedai	exact_rank
+斜视	斜視	0.327	xieshi	exact_rank
+洗礼	洗禮	0.600	xili	exact_rank
+西里	西里	0.599	xili	exact_rank
+行程	行程	0.600	xingcheng	exact_rank
+刑期	刑期	0.600	xingqi	exact_rank
+行期	行期	0.599	xingqi	exact_rank
+姓氏	姓氏	0.288	xingshi	exact_rank
+型式	型式	0.287	xingshi	exact_rank
+省事	省事	0.286	xingshi	exact_rank
+幸事	幸事	0.285	xingshi	exact_rank
+星象	星象	0.600	xingxiang	exact_rank
+猩猩	猩猩	0.353	xingxing	exact_rank
+悻悻	悻悻	0.351	xingxing	exact_rank
+行刑	行刑	0.352	xingxing	exact_rank
+心仪	心儀	0.376	xinyi	exact_rank
+信义	信義	0.375	xinyi	exact_rank
+新衣	新衣	0.374	xinyi	exact_rank
+新意	新意	0.373	xinyi	exact_rank
+吸声	吸聲	0.600	xisheng	exact_rank
+细数	細數	0.359	xishu	exact_rank
+蜥蜴	蜥蜴	0.137	xiyi	exact_rank
+西裔	西裔	0.136	xiyi	exact_rank
+戏院	戲院	0.496	xiyuan	exact_rank
+洗冤	洗冤	0.495	xiyuan	exact_rank
+宣德	宣德	0.600	xuande	exact_rank
+选得	選得	0.599	xuande	exact_rank
+玄机	玄機	0.600	xuanji	exact_rank
+学姐	學姐	0.344	xuejie	exact_rank
+血样	血樣	0.354	xueyang	exact_rank
+学医	學醫	0.477	xueyi	exact_rank
+学员	學員	0.600	xueyuan	exact_rank
+学园	學園	0.599	xueyuan	exact_rank
+驯鹿	馴鹿	0.701	xunlu	exact_rank
+须知	須知	0.974	xuzhi	exact_rank
+阳极	陽極	0.920	yangji	exact_rank
+燕国	燕國	0.600	yanguo	exact_rank
+言和	言和	0.600	yanhe	exact_rank
+砚盒	硯盒	0.599	yanhe	exact_rank
+眼疾	眼疾	0.209	yanji	exact_rank
+烟气	煙氣	0.600	yanqi	exact_rank
+厌弃	厭棄	0.599	yanqi	exact_rank
+焉耆	焉耆	0.598	yanqi	exact_rank
+演戏	演戲	0.400	yanxi	exact_rank
+筵席	筵席	0.398	yanxi	exact_rank
+宴席	宴席	0.399	yanxi	exact_rank
+颜值	顏值	0.600	yanzhi	exact_rank
+胭脂	胭脂	0.599	yanzhi	exact_rank
+要义	要義	0.659	yaoyi	exact_rank
+摇椅	搖椅	0.658	yaoyi	exact_rank
+牙医	牙醫	0.279	yayi	exact_rank
+讶异	訝異	0.278	yayi	exact_rank
+液流	液流	0.701	yeliu	exact_rank
+夜市	夜市	0.279	yeshi	exact_rank
+也试	也試	0.276	yeshi	exact_rank
+野史	野史	0.278	yeshi	exact_rank
+夜视	夜視	0.277	yeshi	exact_rank
+夜游	夜遊	0.600	yeyou	exact_rank
+野猪	野豬	0.600	yezhu	exact_rank
+噎住	噎住	0.599	yezhu	exact_rank
+一包	一包	0.424	yibao	exact_rank
+一遍	一遍	0.183	yibian	exact_rank
+已变	已變	0.182	yibian	exact_rank
+益处	益處	0.307	yichu	exact_rank
+衣橱	衣櫥	0.306	yichu	exact_rank
+一睹	一睹	0.600	yidu	exact_rank
+一堵	一堵	0.599	yidu	exact_rank
+乙方	乙方	0.600	yifang	exact_rank
+已放	已放	0.599	yifang	exact_rank
+议和	議和	0.600	yihe	exact_rank
+已核	已核	0.599	yihe	exact_rank
+医患	醫患	0.279	yihuan	exact_rank
+已换	已換	0.277	yihuan	exact_rank
+异环	異環	0.276	yihuan	exact_rank
+一换	一換	0.278	yihuan	exact_rank
+一挥	一揮	0.259	yihui	exact_rank
+已回	已回	0.258	yihui	exact_rank
+一剂	一劑	0.279	yiji	exact_rank
+一击	一擊	0.278	yiji	exact_rank
+一架	一架	0.081	yijia	exact_rank
+议价	議價	0.080	yijia	exact_rank
+一键	一鍵	0.302	yijian	exact_rank
+一跤	一跤	0.231	yijiao	exact_rank
+溢胶	溢膠	0.230	yijiao	exact_rank
+一届	一屆	0.600	yijie	exact_rank
+一截	一截	0.599	yijie	exact_rank
+一劫	一劫	0.598	yijie	exact_rank
+一介	一介	0.597	yijie	exact_rank
+意境	意境	0.407	yijing	exact_rank
+易经	易經	0.406	yijing	exact_rank
+一局	一局	0.279	yiju	exact_rank
+疑惧	疑懼	0.278	yiju	exact_rank
+毅力	毅力	0.177	yili	exact_rank
+屹立	屹立	0.176	yili	exact_rank
+以利	以利	0.175	yili	exact_rank
+伊犁	伊犁	0.173	yili	exact_rank
+移离	移離	0.172	yili	exact_rank
+一粒	一粒	0.174	yili	exact_rank
+一亮	一亮	0.279	yiliang	exact_rank
+溢满	溢滿	0.599	yiman	exact_rank
+硬笔	硬筆	0.107	yingbi	exact_rank
+影壁	影壁	0.106	yingbi	exact_rank
+英德	英德	0.518	yingde	exact_rank
+硬得	硬得	0.517	yingde	exact_rank
+隐士	隱士	0.124	yinshi	exact_rank
+阴湿	陰濕	0.123	yinshi	exact_rank
+阴性	陰性	0.600	yinxing	exact_rank
+印行	印行	0.597	yinxing	exact_rank
+银杏	銀杏	0.599	yinxing	exact_rank
+隐性	隱性	0.598	yinxing	exact_rank
+音质	音質	0.159	yinzhi	exact_rank
+引至	引至	0.158	yinzhi	exact_rank
+印支	印支	0.157	yinzhi	exact_rank
+一派	一派	0.600	yipai	exact_rank
+已排	已排	0.599	yipai	exact_rank
+意趣	意趣	0.231	yiqu	exact_rank
+移去	移去	0.229	yiqu	exact_rank
+易趣	易趣	0.228	yiqu	exact_rank
+疫区	疫區	0.230	yiqu	exact_rank
+一拳	一拳	0.167	yiquan	exact_rank
+已全	已全	0.166	yiquan	exact_rank
+一闪	一閃	0.234	yishan	exact_rank
+一审	一審	0.600	yishen	exact_rank
+遗失	遺失	0.279	yishi	exact_rank
+衣食	衣食	0.278	yishi	exact_rank
+衣饰	衣飾	0.118	yishi	exact_rank
+役使	役使	0.115	yishi	exact_rank
+轶事	軼事	0.120	yishi	exact_rank
+一试	一試	0.119	yishi	exact_rank
+一室	一室	0.117	yishi	exact_rank
+易事	易事	0.116	yishi	exact_rank
+一跳	一跳	0.419	yitiao	exact_rank
+一碗	一碗	0.471	yiwan	exact_rank
+伊万	伊萬	0.470	yiwan	exact_rank
+一完	一完	0.468	yiwan	exact_rank
+一晚	一晚	0.469	yiwan	exact_rank
+异味	異味	0.575	yiwei	exact_rank
+已为	已為	0.574	yiwei	exact_rank
+移位	移位	0.347	yiwei	exact_rank
+译文	譯文	0.600	yiwen	exact_rank
+义乌	義烏	0.600	yiwu	exact_rank
+贻误	貽誤	0.597	yiwu	exact_rank
+异物	異物	0.599	yiwu	exact_rank
+遗物	遺物	0.598	yiwu	exact_rank
+乙烯	乙烯	0.515	yixi	exact_rank
+意象	意象	0.009	yixiang	exact_rank
+异乡	異鄉	0.008	yixiang	exact_rank
+遗像	遺像	0.007	yixiang	exact_rank
+遗言	遺言	0.522	yiyan	exact_rank
+已验	已驗	0.521	yiyan	exact_rank
+异议	異議	0.600	yiyi	exact_rank
+异域	異域	0.121	yiyu	exact_rank
+意愿	意願	0.210	yiyuan	exact_rank
+一元	一元	0.209	yiyuan	exact_rank
+一跃	一躍	0.600	yiyue	exact_rank
+议长	議長	0.288	yizhang	exact_rank
+仪仗	儀仗	0.287	yizhang	exact_rank
+已涨	已漲	0.286	yizhang	exact_rank
+义诊	義診	0.600	yizhen	exact_rank
+医治	醫治	0.294	yizhi	exact_rank
+异质	異質	0.292	yizhi	exact_rank
+益智	益智	0.291	yizhi	exact_rank
+移转	移轉	0.279	yizhuan	exact_rank
+已赚	已賺	0.278	yizhuan	exact_rank
+一桩	一樁	0.419	yizhuang	exact_rank
+一字	一字	0.600	yizi	exact_rank
+彝族	彝族	0.600	yizu	exact_rank
+一作	一作	0.600	yizuo	exact_rank
+已做	已做	0.599	yizuo	exact_rank
+邮电	郵電	0.088	youdian	exact_rank
+油气	油氣	0.212	youqi	exact_rank
+友情	友情	0.600	youqing	exact_rank
+油污	油汙	0.600	youwu	exact_rank
+有线	有線	0.135	youxian	exact_rank
+又先	又先	0.134	youxian	exact_rank
+有形	有形	0.600	youxing	exact_rank
+有性	有性	0.599	youxing	exact_rank
+右翼	右翼	0.450	youyi	exact_rank
+犹疑	猶疑	0.449	youyi	exact_rank
+游艺	遊藝	0.009	youyi	exact_rank
+鱿鱼	魷魚	0.279	youyu	exact_rank
+囿于	囿於	0.278	youyu	exact_rank
+游园	遊園	0.262	youyuan	exact_rank
+柚子	柚子	0.131	youzi	exact_rank
+幼子	幼子	0.130	youzi	exact_rank
+有字	有字	0.129	youzi	exact_rank
+原件	原件	0.600	yuanjian	exact_rank
+远见	遠見	0.599	yuanjian	exact_rank
+元军	元軍	0.600	yuanjun	exact_rank
+远去	遠去	0.600	yuanqu	exact_rank
+远洋	遠洋	0.600	yuanyang	exact_rank
+远扬	遠揚	0.599	yuanyang	exact_rank
+园艺	園藝	0.434	yuanyi	exact_rank
+远志	遠志	0.600	yuanzhi	exact_rank
+原汁	原汁	0.599	yuanzhi	exact_rank
+月饼	月餅	1.000	yuebing	exact_rank
+阅兵	閱兵	0.999	yuebing	exact_rank
+越是	越是	1.000	yueshi	exact_rank
+粤式	粵式	0.997	yueshi	exact_rank
+渔夫	漁夫	0.600	yufu	exact_rank
+迂腐	迂腐	0.599	yufu	exact_rank
+雨露	雨露	0.230	yulu	exact_rank
+愚鲁	愚魯	0.229	yulu	exact_rank
+韵味	韻味	0.550	yunwei	exact_rank
+余热	餘熱	0.600	yure	exact_rank
+御史	御史	0.252	yushi	exact_rank
+于适	于適	0.251	yushi	exact_rank
+瘀血	瘀血	0.410	yuxue	exact_rank
+浴血	浴血	0.409	yuxue	exact_rank
+寓意	寓意	0.550	yuyi	exact_rank
+愈益	愈益	0.546	yuyi	exact_rank
+羽翼	羽翼	0.549	yuyi	exact_rank
+雨衣	雨衣	0.548	yuyi	exact_rank
+语意	語意	0.547	yuyi	exact_rank
+语种	語種	0.269	yuzhong	exact_rank
+鱼种	魚種	0.267	yuzhong	exact_rank
+雨中	雨中	0.268	yuzhong	exact_rank
+早泄	早洩	0.600	zaoxie	exact_rank
+枣子	棗子	0.600	zaozi	exact_rank
+燥子	燥子	0.599	zaozi	exact_rank
+乍得	乍得	0.600	zhade	exact_rank
+张大	張大	0.424	zhangda	exact_rank
+张杰	張傑	0.183	zhangjie	exact_rank
+长姐	長姐	0.182	zhangjie	exact_rank
+战力	戰力	0.600	zhanli	exact_rank
+展区	展區	0.414	zhanqu	exact_rank
+占去	佔去	0.413	zhanqu	exact_rank
+肇事	肇事	0.524	zhaoshi	exact_rank
+照实	照實	0.522	zhaoshi	exact_rank
+招式	招式	0.523	zhaoshi	exact_rank
+榨汁	榨汁	0.117	zhazhi	exact_rank
+炸制	炸制	0.116	zhazhi	exact_rank
+政绩	政績	0.231	zhengji	exact_rank
+正脊	正脊	0.229	zhengji	exact_rank
+政纪	政紀	0.230	zhengji	exact_rank
+政事	政事	0.338	zhengshi	exact_rank
+证照	證照	1.000	zhengzhao	exact_rank
+征召	徵召	0.999	zhengzhao	exact_rank
+征兆	徵兆	0.600	zhengzhao	exact_rank
+正着	正著	0.599	zhengzhao	exact_rank
+针剂	針劑	0.145	zhenji	exact_rank
+真际	真際	0.144	zhenji	exact_rank
+纸板	紙板	0.600	zhiban	exact_rank
+置办	置辦	0.599	zhiban	exact_rank
+植保	植保	0.279	zhibao	exact_rank
+直尺	直尺	0.547	zhichi	exact_rank
+咫尺	咫尺	0.546	zhichi	exact_rank
+指腹	指腹	0.200	zhifu	exact_rank
+只付	只付	0.199	zhifu	exact_rank
+枝干	枝幹	0.009	zhigan	exact_rank
+桎梏	桎梏	0.279	zhigu	exact_rank
+指骨	指骨	0.278	zhigu	exact_rank
+植骨	植骨	0.277	zhigu	exact_rank
+之和	之和	0.701	zhihe	exact_rank
+纸盒	紙盒	0.600	zhihe	exact_rank
+直击	直擊	0.279	zhiji	exact_rank
+智己	智己	0.278	zhiji	exact_rank
+质检	質檢	0.555	zhijian	exact_rank
+智商	智商	0.186	zhishang	exact_rank
+直上	直上	0.185	zhishang	exact_rank
+志士	志士	0.279	zhishi	exact_rank
+支使	支使	0.278	zhishi	exact_rank
+织物	織物	0.600	zhiwu	exact_rank
+治学	治學	0.469	zhixue	exact_rank
+只学	只學	0.468	zhixue	exact_rank
+直直	直直	0.177	zhizhi	exact_rank
+侄子	姪子	0.359	zhizi	exact_rank
+栀子	梔子	0.358	zhizi	exact_rank
+中点	中點	0.600	zhongdian	exact_rank
+忠告	忠告	0.600	zhonggao	exact_rank
+终稿	終稿	0.599	zhonggao	exact_rank
+中式	中式	0.600	zhongshi	exact_rank
+中时	中時	0.599	zhongshi	exact_rank
+种田	種田	0.559	zhongtian	exact_rank
+中田	中田	0.558	zhongtian	exact_rank
+中庸	中庸	0.600	zhongyong	exact_rank
+中指	中指	0.522	zhongzhi	exact_rank
+周记	週記	0.600	zhouji	exact_rank
+专一	專一	0.600	zhuanyi	exact_rank
+转义	轉義	0.599	zhuanyi	exact_rank
+转椅	轉椅	0.597	zhuanyi	exact_rank
+转译	轉譯	0.598	zhuanyi	exact_rank
+专著	專著	0.600	zhuanzhu	exact_rank
+主板	主板	0.689	zhuban	exact_rank
+诸般	諸般	0.688	zhuban	exact_rank
+主唱	主唱	0.430	zhuchang	exact_rank
+助剂	助劑	0.600	zhuji	exact_rank
+铸件	鑄件	0.600	zhujian	exact_rank
+竹节	竹節	0.600	zhujie	exact_rank
+助力	助力	0.471	zhuli	exact_rank
+桌椅	桌椅	0.792	zhuoyi	exact_rank
+主委	主委	0.350	zhuwei	exact_rank
+住校	住校	0.600	zhuxiao	exact_rank
+竹子	竹子	0.600	zhuzi	exact_rank
+珠子	珠子	0.438	zhuzi	exact_rank
+字迹	字跡	0.600	ziji	exact_rank
+字谜	字謎	0.251	zimi	exact_rank
+仔密	仔密	0.250	zimi	exact_rank
+字型	字型	0.491	zixing	exact_rank
+字义	字義	0.183	ziyi	exact_rank
+自抑	自抑	0.182	ziyi	exact_rank
+资质	資質	0.600	zizhi	exact_rank
+自制	自制	0.599	zizhi	exact_rank
+仔猪	仔豬	0.329	zizhu	exact_rank
+作伴	作伴	0.600	zuoban	exact_rank
+座席	座席	0.236	zuoxi	exact_rank
+做戏	做戲	0.235	zuoxi	exact_rank
+座椅	座椅	0.999	zuoyi	exact_rank
+左翼	左翼	0.600	zuoyi	exact_rank
+# Everyday words, 2026-11-08, the more frequent ones: 失 and 无 with one character (the user's examples 失温, 失热, 失水, 无事, 无钱, 无眠, 无雨, 无病 and the rest of their list; then 无休, 无止, 无好, 无坏 and 无差, read cha), for a loss (失分, 失能, 失聪, 失序) and for being without something (无忧, 无证, 无痕, 无创, 无涯, 无憾; the other halves of 无好 and 无坏: 无对, 无错, 无善, 无多), weighted by the general text as the batches before.
+失温	失溫	0.000	shiwen	exact_rank_no_contains
+失热	失熱	0.215	shire	exact_rank_no_contains
+失水	失水	0.299	shishui	exact_rank_no_contains
+失分	失分	0.829	shifen	exact_rank_no_contains
+失能	失能	0.556	shineng	exact_rank_no_contains
+失活	失活	0.600	shihuo	exact_rank_no_contains
+失智	失智	0.132	shizhi	exact_rank_no_contains
+失聪	失聰	0.201	shicong	exact_rank_no_contains
+失陷	失陷	0.000	shixian	exact_rank_no_contains
+失格	失格	0.000	shige	exact_rank_no_contains
+失稳	失穩	0.000	shiwen	exact_rank_no_contains
+失范	失範	0.188	shifan	exact_rank_no_contains
+失序	失序	0.400	shixu	exact_rank_no_contains
+失独	失獨	0.123	shidu	exact_rank_no_contains
+失德	失德	0.400	shide	exact_rank_no_contains
+失物	失物	0.009	shiwu	exact_rank_no_contains
+失却	失卻	0.400	shique	exact_rank_no_contains
+失球	失球	0.400	shiqiu	exact_rank_no_contains
+失音	失音	0.400	shiyin	exact_rank_no_contains
+失配	失配	0.243	shipei	exact_rank_no_contains
+无事	無事	0.251	wushi	exact_rank_no_contains
+无贼	無賊	0.400	wuzei	exact_rank_no_contains
+无天	無天	0.401	wutian	exact_rank_no_contains
+无命	無命	0.400	wuming	exact_rank_no_contains
+无钱	無錢	0.519	wuqian	exact_rank_no_contains
+无税	無稅	0.009	wushui	exact_rank_no_contains
+无眠	無眠	0.600	wumian	exact_rank_no_contains
+无字	無字	0.397	wuzi	exact_rank_no_contains
+无雨	無雨	0.031	wuyu	exact_rank_no_contains
+无韵	無韻	0.339	wuyun	exact_rank_no_contains
+无光	無光	0.600	wuguang	exact_rank_no_contains
+无油	無油	0.600	wuyou	exact_rank_no_contains
+无父	無父	0.421	wufu	exact_rank_no_contains
+无母	無母	0.262	wumu	exact_rank_no_contains
+无子	無子	0.398	wuzi	exact_rank_no_contains
+无女	無女	0.197	wunv	exact_rank_no_contains
+无酒	無酒	0.398	wujiu	exact_rank_no_contains
+无籽	無籽	0.000	wuzi	exact_rank_no_contains
+无生	無生	0.600	wusheng	exact_rank_no_contains
+无死	無死	0.401	wusi	exact_rank_no_contains
+无病	無病	0.600	wubing	exact_rank_no_contains
+无休	無休	0.254	wuxiu	exact_rank_no_contains
+无止	無止	0.391	wuzhi	exact_rank_no_contains
+无好	無好	0.380	wuhao	exact_rank_no_contains
+无坏	無壞	0.400	wuhuai	exact_rank_no_contains
+无差	無差	0.400	wucha	exact_rank_no_contains
+无忧	無憂	0.849	wuyou	exact_rank_no_contains
+无证	無證	0.600	wuzheng	exact_rank_no_contains
+无毛	無毛	0.413	wumao	exact_rank_no_contains
+无功	無功	0.002	wugong	exact_rank_no_contains
+无果	無果	0.344	wuguo	exact_rank_no_contains
+无创	無創	0.600	wuchuang	exact_rank_no_contains
+无源	無源	0.466	wuyuan	exact_rank_no_contains
+无痕	無痕	0.600	wuhen	exact_rank_no_contains
+无主	無主	0.000	wuzhu	exact_rank_no_contains
+无门	無門	0.600	wumen	exact_rank_no_contains
+无界	無界	0.600	wujie	exact_rank_no_contains
+无相	無相	0.419	wuxiang	exact_rank_no_contains
+无尘	無塵	0.222	wuchen	exact_rank_no_contains
+无涯	無涯	0.600	wuya	exact_rank_no_contains
+无根	無根	0.419	wugen	exact_rank_no_contains
+无疆	無疆	0.478	wujiang	exact_rank_no_contains
+无纺	無紡	0.001	wufang	exact_rank_no_contains
+无汗	無汗	0.601	wuhan	exact_rank_no_contains
+无他	無他	0.600	wuta	exact_rank_no_contains
+无欲	無慾	0.030	wuyu	exact_rank_no_contains
+无底	無底	0.000	wudi	exact_rank_no_contains
+无臭	無臭	0.253	wuxiu	exact_rank_no_contains
+无路	無路	0.600	wulu	exact_rank_no_contains
+无依	無依	0.342	wuyi	exact_rank_no_contains
+无华	無華	0.353	wuhua	exact_rank_no_contains
+无忌	無忌	0.197	wuji	exact_rank_no_contains
+无德	無德	0.135	wude	exact_rank_no_contains
+无土	無土	0.600	wutu	exact_rank_no_contains
+无影	無影	0.600	wuying	exact_rank_no_contains
+无级	無級	0.196	wuji	exact_rank_no_contains
+无信	無信	0.439	wuxin	exact_rank_no_contains
+无憾	無憾	0.600	wuhan	exact_rank_no_contains
+无怨	無怨	0.465	wuyuan	exact_rank_no_contains
+无铅	無鉛	0.000	wuqian	exact_rank_no_contains
+无药	無藥	0.357	wuyao	exact_rank_no_contains
+无肉	無肉	0.400	wurou	exact_rank_no_contains
+无痰	無痰	0.400	wutan	exact_rank_no_contains
+无求	無求	0.400	wuqiu	exact_rank_no_contains
+无阻	無阻	0.400	wuzu	exact_rank_no_contains
+无伤	無傷	0.400	wushang	exact_rank_no_contains
+无盐	無鹽	0.329	wuyan	exact_rank_no_contains
+无义	無義	0.038	wuyi	exact_rank_no_contains
+无袖	無袖	0.252	wuxiu	exact_rank_no_contains
+无垢	無垢	0.220	wugou	exact_rank_no_contains
+无虑	無慮	0.060	wulv	exact_rank_no_contains
+无妄	無妄	0.400	wuwang	exact_rank_no_contains
+无嗣	無嗣	0.400	wusi	exact_rank_no_contains
+无责	無責	0.400	wuze	exact_rank_no_contains
+无话	無話	0.352	wuhua	exact_rank_no_contains
+无尾	無尾	0.000	wuwei	exact_rank_no_contains
+无灾	無災	0.400	wuzai	exact_rank_no_contains
+无家	無家	0.000	wujia	exact_rank_no_contains
+无虞	無虞	0.029	wuyu	exact_rank_no_contains
+无争	無爭	0.368	wuzheng	exact_rank_no_contains
+无卡	無卡	0.400	wuka	exact_rank_no_contains
+无票	無票	0.400	wupiao	exact_rank_no_contains
+无偏	無偏	0.299	wupian	exact_rank_no_contains
+无梦	無夢	0.400	wumeng	exact_rank_no_contains
+无纸	無紙	0.390	wuzhi	exact_rank_no_contains
+无泪	無淚	0.006	wulei	exact_rank_no_contains
+无亲	無親	0.400	wuqin	exact_rank_no_contains
+无座	無座	0.259	wuzuo	exact_rank_no_contains
+无框	無框	0.400	wukuang	exact_rank_no_contains
+无图	無圖	0.402	wutu	exact_rank_no_contains
+无绳	無繩	0.000	wusheng	exact_rank_no_contains
+无对	無對	0.400	wudui	exact_rank_no_contains
+无错	無錯	0.400	wucuo	exact_rank_no_contains
+无善	無善	0.479	wushan	exact_rank_no_contains
+无多	無多	0.400	wuduo	exact_rank_no_contains
+# Everyday words, 2026-11-08, the less frequent ones (失怙, 失婚, 失盗, 无霜, 无薪, 无磷, 无优, 无劣, 无高, 无低), by the same weights.
+失焦	失焦	0.000	shijiao	exact_rank_no_contains
+失绿	失綠	0.200	shilv	exact_rank_no_contains
+失电	失電	0.000	shidian	exact_rank_no_contains
+失压	失壓	0.200	shiya	exact_rank_no_contains
+失磁	失磁	0.033	shici	exact_rank_no_contains
+失魂	失魂	0.201	shihun	exact_rank_no_contains
+失密	失密	0.200	shimi	exact_rank_no_contains
+失怙	失怙	0.200	shihu	exact_rank_no_contains
+失婚	失婚	0.200	shihun	exact_rank_no_contains
+失子	失子	0.200	shizi	exact_rank_no_contains
+失群	失群	0.200	shiqun	exact_rank_no_contains
+失访	失訪	0.200	shifang	exact_rank_no_contains
+失亲	失親	0.200	shiqin	exact_rank_no_contains
+失母	失母	0.080	shimu	exact_rank_no_contains
+失贞	失貞	0.080	shizhen	exact_rank_no_contains
+失盗	失盜	0.147	shidao	exact_rank_no_contains
+无霜	無霜	0.200	wushuang	exact_rank_no_contains
+无薪	無薪	0.000	wuxin	exact_rank_no_contains
+无颜	無顏	0.000	wuyan	exact_rank_no_contains
+无氟	無氟	0.200	wufu	exact_rank_no_contains
+无轨	無軌	0.200	wugui	exact_rank_no_contains
+无磷	無磷	0.200	wulin	exact_rank_no_contains
+无优	無優	0.002	wuyou	exact_rank_no_contains
+无劣	無劣	0.002	wulie	exact_rank_no_contains
+无高	無高	0.200	wugao	exact_rank_no_contains
+无低	無低	0.000	wudi	exact_rank_no_contains
+无少	無少	0.200	wushao	exact_rank_no_contains
+# Weighted anew on 2026-11-08: import-weight words of the family, which the general text holds far more often than their weights say (失地, 失约, 失策, 无价, 无明, 无题, 无业, 无状, 无算).
+失地	失地	0.050	shidi	exact_rank
+失约	失約	0.481	shiyue	exact_rank
+失策	失策	0.107	shice	exact_rank
+无价	無價	0.600	wujia	exact_rank
+无明	無明	0.600	wuming	exact_rank
+无题	無題	0.600	wuti	exact_rank
+无业	無業	0.555	wuye	exact_rank
+无状	無狀	0.200	wuzhuang	exact_rank
+无算	無算	0.200	wusuan	exact_rank
+# Everyday words, 2026-11-09, the more frequent ones: one character before 翻 or 链 (the user's examples 上翻, 下翻, 左翻, 右翻, 前翻, 后翻, 软链 and 硬链; then 内翻, 滚翻, 深翻, 嗨翻, 翻翻), for the direction or way of a turn and for a kind of link or chain (短链, 内链, 公链, 主链, 跨链, 上链, 断链, 长链, 支链, 碳链, 重链, 补链, 强链), weighted by the general text as the batches before.
+上翻	上翻	0.400	shangfan	exact_rank_no_contains
+下翻	下翻	0.290	xiafan	exact_rank_no_contains
+左翻	左翻	0.400	zuofan	exact_rank_no_contains
+右翻	右翻	0.400	youfan	exact_rank_no_contains
+前翻	前翻	0.400	qianfan	exact_rank_no_contains
+后翻	後翻	0.400	houfan	exact_rank_no_contains
+内翻	內翻	0.400	neifan	exact_rank_no_contains
+滚翻	滾翻	0.400	gunfan	exact_rank_no_contains
+深翻	深翻	0.400	shenfan	exact_rank_no_contains
+嗨翻	嗨翻	0.400	haifan	exact_rank_no_contains
+翻翻	翻翻	0.600	fanfan	exact_rank_no_contains
+软链	軟鏈	0.400	ruanlian	exact_rank_no_contains
+硬链	硬鏈	0.379	yinglian	exact_rank_no_contains
+内链	內鏈	0.400	neilian	exact_rank_no_contains
+短链	短鏈	0.600	duanlian	exact_rank_no_contains
+公链	公鏈	0.600	gonglian	exact_rank_no_contains
+主链	主鏈	0.308	zhulian	exact_rank_no_contains
+跨链	跨鏈	0.400	kualian	exact_rank_no_contains
+上链	上鍊	0.407	shanglian	exact_rank_no_contains
+断链	斷鏈	0.009	duanlian	exact_rank_no_contains
+长链	長鏈	0.600	changlian	exact_rank_no_contains
+支链	支鏈	0.197	zhilian	exact_rank_no_contains
+直链	直鏈	0.196	zhilian	exact_rank_no_contains
+碳链	碳鏈	0.400	tanlian	exact_rank_no_contains
+轻链	輕鏈	0.400	qinglian	exact_rank_no_contains
+重链	重鏈	0.400	zhonglian	exact_rank_no_contains
+补链	補鏈	0.600	bulian	exact_rank_no_contains
+强链	強鏈	0.600	qianglian	exact_rank_no_contains
+延链	延鏈	0.400	yanlian	exact_rank_no_contains
+# Everyday words, 2026-11-09, the less frequent ones (回翻, 笑翻, 吵翻, 撞翻, 精翻, 重翻, 友链, 死链, 盗链, 珠链, 犬链, 建链), by the same weights.
+回翻	回翻	0.002	huifan	exact_rank_no_contains
+倒翻	倒翻	0.002	daofan	exact_rank_no_contains
+反翻	反翻	0.002	fanfan	exact_rank_no_contains
+斜翻	斜翻	0.002	xiefan	exact_rank_no_contains
+横翻	橫翻	0.002	hengfan	exact_rank_no_contains
+竖翻	豎翻	0.002	shufan	exact_rank_no_contains
+耕翻	耕翻	0.200	gengfan	exact_rank_no_contains
+笑翻	笑翻	0.200	xiaofan	exact_rank_no_contains
+乐翻	樂翻	0.200	lefan	exact_rank_no_contains
+美翻	美翻	0.200	meifan	exact_rank_no_contains
+萌翻	萌翻	0.002	mengfan	exact_rank_no_contains
+忙翻	忙翻	0.002	mangfan	exact_rank_no_contains
+赚翻	賺翻	0.200	zhuanfan	exact_rank_no_contains
+吵翻	吵翻	0.200	chaofan	exact_rank_no_contains
+撞翻	撞翻	0.199	zhuangfan	exact_rank_no_contains
+踢翻	踢翻	0.200	tifan	exact_rank_no_contains
+踹翻	踹翻	0.002	chuaifan	exact_rank_no_contains
+吹翻	吹翻	0.200	chuifan	exact_rank_no_contains
+弄翻	弄翻	0.080	nongfan	exact_rank_no_contains
+喝翻	喝翻	0.002	hefan	exact_rank_no_contains
+放翻	放翻	0.002	fangfan	exact_rank_no_contains
+刮翻	刮翻	0.002	guafan	exact_rank_no_contains
+卷翻	卷翻	0.002	juanfan	exact_rank_no_contains
+拱翻	拱翻	0.002	gongfan	exact_rank_no_contains
+偷翻	偷翻	0.002	toufan	exact_rank_no_contains
+玩翻	玩翻	0.002	wanfan	exact_rank_no_contains
+炸翻	炸翻	0.080	zhafan	exact_rank_no_contains
+秀翻	秀翻	0.002	xiufan	exact_rank_no_contains
+累翻	累翻	0.002	leifan	exact_rank_no_contains
+帅翻	帥翻	0.002	shuaifan	exact_rank_no_contains
+酷翻	酷翻	0.002	kufan	exact_rank_no_contains
+醉翻	醉翻	0.002	zuifan	exact_rank_no_contains
+震翻	震翻	0.002	zhenfan	exact_rank_no_contains
+精翻	精翻	0.200	jingfan	exact_rank_no_contains
+高翻	高翻	0.136	gaofan	exact_rank_no_contains
+直翻	直翻	0.002	zhifan	exact_rank_no_contains
+重翻	重翻	0.080	chongfan	exact_rank_no_contains
+友链	友鏈	0.197	youlian	exact_rank_no_contains
+死链	死鏈	0.081	silian	exact_rank_no_contains
+盗链	盜鏈	0.200	daolian	exact_rank_no_contains
+超链	超鏈	0.197	chaolian	exact_rank_no_contains
+互链	互鏈	0.080	hulian	exact_rank_no_contains
+私链	私鏈	0.002	silian	exact_rank_no_contains
+子链	子鏈	0.200	zilian	exact_rank_no_contains
+母链	母鏈	0.002	mulian	exact_rank_no_contains
+下链	下鏈	0.002	xialian	exact_rank_no_contains
+开链	開鏈	0.080	kailian	exact_rank_no_contains
+闭链	閉鏈	0.002	bilian	exact_rank_no_contains
+糖链	糖鏈	0.200	tanglian	exact_rank_no_contains
+掉链	掉鏈	0.002	diaolian	exact_rank_no_contains
+环链	環鏈	0.200	huanlian	exact_rank_no_contains
+珠链	珠鏈	0.200	zhulian	exact_rank_no_contains
+弹链	彈鏈	0.200	danlian	exact_rank_no_contains
+车链	車鏈	0.080	chelian	exact_rank_no_contains
+腰链	腰鏈	0.002	yaolian	exact_rank_no_contains
+犬链	犬鏈	0.136	quanlian	exact_rank_no_contains
+钢链	鋼鏈	0.002	ganglian	exact_rank_no_contains
+铜链	銅鏈	0.080	tonglian	exact_rank_no_contains
+颈链	頸鍊	0.080	jinglian	exact_rank_no_contains
+固链	固鏈	0.200	gulian	exact_rank_no_contains
+建链	建鏈	0.000	jianlian	exact_rank_no_contains
+# Weighted anew on 2026-11-09: import-weight words of the family, which the general text holds far more often than their weights say (金链, 表链, 狗链, 银链), and 眼帘, at an import's 1 under 演练 though the general text holds it 2,855 times (the user: "眼帘 改吧").
+表链	錶鏈	0.200	biaolian	exact_rank
+狗链	狗鏈	0.200	goulian	exact_rank
+银链	銀鏈	0.200	yinlian	exact_rank
+金链	金鍊	0.400	jinlian	exact_rank
+眼帘	眼簾	0.600	yanlian	exact_rank
