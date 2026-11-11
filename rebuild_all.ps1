@@ -290,6 +290,20 @@ foreach ($variant in @("sc", "tc")) {
     Invoke-PythonScript -ScriptPath $wordFrequencyScript -ScriptArgs $wordFrequencyArgs
 }
 
+# How often everyday conversation holds each word as a word (LCCC,
+# manifests/conversation_word_counts.tsv, counted as the general text is).
+Write-Host "Writing the conversation frequency tables..."
+foreach ($variant in @("sc", "tc")) {
+    $conversationFrequencyArgs = @(
+        "--counts", (Join-Path $Root "manifests\conversation_word_counts.tsv"),
+        "--dictionary", (Join-Path $Root "data\generated\dict_clean_$variant.txt"),
+        "--output", (Join-Path $Root "data\generated\dict_conversation_frequency_$variant.txt"),
+        "--describe", "conversation"
+    )
+    if ($variant -eq "tc") { $conversationFrequencyArgs += "--traditional" }
+    Invoke-PythonScript -ScriptPath $wordFrequencyScript -ScriptArgs $conversationFrequencyArgs
+}
+
 if (-not $SkipReadmeSnapshot) {
     Write-Host "Updating README dictionary snapshot from generated file row counts..."
     Invoke-PythonScript -ScriptPath $readmeSnapshotScript -ScriptArgs @(

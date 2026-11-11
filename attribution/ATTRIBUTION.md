@@ -226,3 +226,24 @@ Notes:
   (`exact_rank_exact_only`: found when the whole line is typed, no completions),
   converted to simplified characters and to OpenCC `s2tw` traditional forms.
 - The raw dataset is not committed in this repository.
+
+## LCCC
+
+- Name: LCCC (Large-scale Cleaned Chinese Conversation), LCCC-large; Wang et al.,
+  "A Large-Scale Chinese Short-Text Conversation Dataset", NLPCC 2020
+- Homepage: https://github.com/thu-coai/CDial-GPT
+- Download: https://huggingface.co/datasets/silver/lccc (`lccc_large.jsonl.gz`)
+- License: MIT (see [included notice](LCCC-LICENSE.txt))
+- Copyright holder: lemon234071 (CDial-GPT)
+
+Notes:
+
+- Only word occurrence counts are used: how often the utterances hold each
+  dictionary word as a word, counted as the general text is
+  ([conversation_word_counts.tsv](../manifests/conversation_word_counts.tsv)),
+  and the conversation frequency tables generated from them
+  (`data/generated/dict_conversation_frequency_{sc,tc}.txt`). No utterance is
+  stored in this repository.
+- The dataset filtered sensitive words, so a word it does not hold is no
+  evidence that the word is rare.
+- The raw dataset is not committed in this repository.

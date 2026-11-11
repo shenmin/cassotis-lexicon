@@ -18,7 +18,7 @@ Lexicon build and release repository for Cassotis IME.
 - Supports external-source bootstrap and reproducible generated dictionary builds.
 - Keeps attribution and release policy files aligned with generated artifacts.
 
-## Current dictionary snapshot (2026-11-09 build)
+## Current dictionary snapshot (2026-11-11 build)
 
 | File | Variant | Entries |
 |------|---------|---------|
@@ -63,6 +63,8 @@ These records are not directly inputable dictionary entries and are therefore ex
 The build also derives a separate offline transition-completion index from strongly supported exact-word paths. It retains up to six vetted alternatives for each typed prefix. User completions remain the first priority; base-dictionary and transition suggestions are compared using popularity, context, and corpus evidence. The index is not counted as directly inputable dictionary data.
 
 A word-frequency table for each variant (`data/generated/dict_word_frequency_{sc,tc}.txt`) records how often general Chinese text holds each word of two characters or more as a word, as `100 * log10(1 + occurrences)`; a traditional word takes the count of its simplified form. The counts (`manifests/general_word_counts.tsv`, made by `scripts/count_general_word_frequency.py`) come from the general corpora of the Cassotis IME character language model; a word counts where the text is cut into the fewest dictionary words, so a word inside a longer dictionary word is not counted. Words added to the dictionary later are counted on their own, only where they stand as words, and the other words keep their counts. Cassotis IME uses the table when it chooses among the words of one reading without context. It is not counted as directly inputable dictionary data.
+
+A conversation frequency table for each variant (`data/generated/dict_conversation_frequency_{sc,tc}.txt`) is made the same way from everyday conversation: the utterances of LCCC-large (Wang et al., "A Large-Scale Chinese Short-Text Conversation Dataset", NLPCC 2020; MIT License), counted as the general text is (`manifests/conversation_word_counts.tsv`, counts only). Without context, Cassotis IME uses it to keep the dictionary's first word in place where conversation writes that word far more often and the general text prefers the other word only slightly (这周 stays above 褶皱 for zhezhou). LCCC filtered sensitive words, so a word it lacks is no evidence. It is not counted as directly inputable dictionary data.
 
 ### One-key completion model data
 
@@ -135,6 +137,7 @@ The statistical model stores only short word transitions and character n-grams, 
 | THUOCL | THUOCL custom open terms | Broad coverage and DF statistics |
 | jieba `dict.txt` | MIT | Frequency ranking signal |
 | FineWeb-Edu-Chinese v2.1, Ultra-FineWeb (zh), Chinese Wikipedia | Each dataset's terms; counts only | Word occurrence counts for the word-frequency table; character counts for the single-character order; word-pair counts for the word transitions |
+| LCCC-large (Wang et al., NLPCC 2020) | MIT; counts only | Word occurrence counts for the conversation frequency table |
 | Wiktionary zh titles (ns0) | CC BY-SA 4.0 | Daily wording, colloquial phrases, and chat-style lexical seeds |
 | Wikipedia zh titles (ns0) | CC BY-SA 4.0 | Named-entity coverage and high-confidence proper-noun seeds |
 | Wikimedia Pageviews Top (zh.wikipedia) | CC BY-SA 4.0 | Real-world usage heat signal |
