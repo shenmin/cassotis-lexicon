@@ -19804,7 +19804,7 @@ chaweitai	chaweitaiyangniao	叉尾太陽鳥	289	80	0	0	0	0	0	0	0	0
 chaweitaiyang	chaweitaiyangniao	叉尾太陽鳥	289	80	0	0	0	0	0	0	0	0
 chawu	chawushiju	查無實據	637	210	96	0	1	0	88	1	0	0
 chawushi	chawushiju	查無實據	637	210	96	0	1	0	88	1	0	0
-chaxian	chaxianban	插線板	232	80	0	0	0	0	0	0	0	0
+chaxian	chaxianban	插線板	232	80	0	0	0	0	0	0	1	0
 chaxiong	chaxiongbanzhuomuniao	茶胸斑啄木鳥	318	80	0	0	0	0	0	0	0	0
 chaxiongban	chaxiongbanzhuomuniao	茶胸斑啄木鳥	318	80	0	0	0	0	0	0	0	0
 chaxiongbanzhuo	chaxiongbanzhuomuniao	茶胸斑啄木鳥	318	80	0	0	0	0	0	0	0	0
@@ -35915,7 +35915,7 @@ duokong	duokongdongwu	多孔動物	260	80	0	0	0	0	0	0	1	2
 duokongdong	duokongdongwumen	多孔動物門	289	80	0	0	0	0	0	0	0	0
 duokongdong	duokongdongwu	多孔動物	260	80	0	0	0	0	0	0	0	1
 duokongdongwu	duokongdongwumen	多孔動物門	289	80	0	0	0	0	0	0	1	0
-duokuai	duokuaihaosheng	多快好省	637	235	171	0	1	0	87	1	0	0
+duokuai	duokuaihaosheng	多快好省	637	235	171	0	1	0	87	1	1	0
 duokuaihao	duokuaihaosheng	多快好省	637	235	171	0	1	0	87	1	0	0
 duokuang	duokuangerchu	奪眶而出	648	268	249	0	1	0	85	1	1	0
 duokuanger	duokuangerchu	奪眶而出	648	268	249	0	1	0	85	1	0	0
@@ -36094,7 +36094,7 @@ duonaduonayiqiganhuai	duonaduonayiqiganhuaishiba	多娜多娜一起幹壞事吧	
 duonaduonayiqiganhuaishi	duonaduonayiqiganhuaishiba	多娜多娜一起幹壞事吧	805	93	0	0	1	0	109	1	0	0
 duonai	duonaipaiqi	多奈哌齊	540	1	0	0	1	0	247	3	0	0
 duonaipai	duonaipaiqi	多奈哌齊	540	1	0	0	1	0	247	3	0	0
-duonan	duonanxingbang	多難興邦	396	198	50	0	1	0	87	1	0	0
+duonan	duonanxingbang	多難興邦	396	198	50	0	1	0	87	1	1	0
 duonang	duonangluanchaozonghezheng	多囊卵巢綜合徵	847	80	0	0	0	0	0	0	0	0
 duonang	duonangluanchao	多囊卵巢	573	80	0	0	0	0	0	0	0	1
 duonang	duonangshen	多囊腎	470	1	0	0	1	0	247	3	0	2
@@ -36272,9 +36272,9 @@ duoshao	duoshaoci	多少次	1000	540	40	0	4	0	0	0	1	0
 duoshao	duoshaoqian	多少錢	800	199	0	0	1	0	0	0	1	1
 duoshao	duoshaoyouxie	多少有些	260	80	0	0	0	426	0	0	1	7
 duoshaoyou	duoshaoyouxie	多少有些	260	80	0	0	0	426	0	0	0	1
-duoshen	duoshenlunzhe	多神論者	260	80	0	0	0	0	0	0	0	0
-duoshen	duoshenlun	多神論	232	80	0	0	0	0	0	0	0	1
-duoshen	duoshenjiao	多神教	221	158	127	0	1	0	0	0	0	2
+duoshen	duoshenlunzhe	多神論者	260	80	0	0	0	0	0	0	0	1
+duoshen	duoshenlun	多神論	232	80	0	0	0	0	0	0	0	2
+duoshen	duoshenjiao	多神教	221	158	127	0	1	0	0	0	0	3
 duosheng	duoshengya	多生牙	470	1	0	0	1	0	247	3	0	0
 duoshenlun	duoshenlunzhe	多神論者	260	80	0	0	0	0	0	0	1	0
 duoshi	duoshili	多實例	633	214	0	0	1	0	78	1	0	1
@@ -36357,8 +36357,8 @@ duowuliu	duowuliuqiandun	多五六千噸	371	80	0	0	0	0	0	0	0	0
 duowuliuqian	duowuliuqiandun	多五六千噸	371	80	0	0	0	0	0	0	0	0
 duoxi	duoxitongweisuo	多系統萎縮	640	102	0	0	2	0	154	3	0	1
 duoxi	duoxizishanchun	多西紫杉醇	612	1	0	0	1	0	247	3	0	2
-duoxi	duoxibao	多細胞	232	80	0	0	0	469	0	0	0	6
-duoxi	duoxibaoshengwu	多細胞生物	289	80	0	0	0	0	0	0	0	5
+duoxi	duoxibao	多細胞	232	80	0	0	0	469	0	0	1	6
+duoxi	duoxibaoshengwu	多細胞生物	289	80	0	0	0	0	0	0	1	5
 duoxian	duoxianchengbingfa	多線程併發	777	218	0	0	1	0	77	1	0	3
 duoxian	duoxianchengduojincheng	多線程多進程	784	200	0	0	1	0	82	1	0	1
 duoxian	duoxianchengbiancheng	多線程編程	778	219	0	0	1	0	77	1	0	2
@@ -36391,9 +36391,9 @@ duoxianchengtong	duoxianchengtongxin	多線程通信	742	203	0	0	1	0	81	1	0	1
 duoxianchengwang	duoxianchengwangluo	多線程網絡	742	204	0	0	1	0	81	1	0	0
 duoxianchengxia	duoxianchengxiazai	多線程下載	773	215	0	0	1	0	78	1	0	0
 duoxiang	duoxiangshi	多項式	629	313	229	0	3	0	0	0	1	0
-duoxiang	duoxiangshifangchengzu	多項式方程組	318	80	0	0	0	0	0	0	1	2
-duoxiang	duoxiangshifangcheng	多項式方程	289	80	0	0	0	0	0	0	1	3
-duoxiang	duoxiangguo	多香果	232	80	0	0	0	0	0	0	0	4
+duoxiang	duoxiangshifangchengzu	多項式方程組	318	80	0	0	0	0	0	0	1	1
+duoxiang	duoxiangshifangcheng	多項式方程	289	80	0	0	0	0	0	0	1	2
+duoxiang	duoxiangguo	多香果	232	80	0	0	0	0	0	0	1	3
 duoxiangshi	duoxiangshifangchengzu	多項式方程組	318	80	0	0	0	0	0	0	1	0
 duoxiangshi	duoxiangshifangcheng	多項式方程	289	80	0	0	0	0	0	0	1	1
 duoxiangshifang	duoxiangshifangchengzu	多項式方程組	318	80	0	0	0	0	0	0	0	0
@@ -36402,7 +36402,7 @@ duoxiangshifangcheng	duoxiangshifangchengzu	多項式方程組	318	80	0	0	0	0	0	
 duoxianran	duoxianranseti	多線染色體	320	80	0	0	0	0	0	0	0	1
 duoxianranse	duoxianranseti	多線染色體	320	80	0	0	0	0	0	0	0	1
 duoxianshi	duoxianshiqi	多顯示器	608	167	0	0	2	0	68	1	0	0
-duoxiao	duoxiaoshi	多小時	1009	541	0	0	4	0	0	0	0	0
+duoxiao	duoxiaoshi	多小時	1009	541	0	0	4	0	0	0	1	0
 duoxibao	duoxibaoshengwu	多細胞生物	289	80	0	0	0	0	0	0	1	0
 duoxibaosheng	duoxibaoshengwu	多細胞生物	289	80	0	0	0	0	0	0	0	0
 duoxie	duoxieyi	多協議	629	211	0	0	1	0	79	1	0	0
@@ -36522,7 +36522,7 @@ duozangqi	duozangqigongnengshuaijie	多臟器功能衰竭	700	102	0	0	2	0	154	3	
 duozangqigong	duozangqigongnengshuaijie	多臟器功能衰竭	700	102	0	0	2	0	154	3	0	0
 duozangqigongneng	duozangqigongnengshuaijie	多臟器功能衰竭	700	102	0	0	2	0	154	3	0	0
 duozangqigongnengshuai	duozangqigongnengshuaijie	多臟器功能衰竭	700	102	0	0	2	0	154	3	0	0
-duozao	duozaowan	多早晚	432	191	162	0	1	0	0	0	0	0
+duozao	duozaowan	多早晚	432	191	162	0	1	0	0	0	1	0
 duozhan	duozhandizhi	多站地址	597	197	0	0	1	0	0	0	1	0
 duozhan	duozhanjunsu	多粘菌素	540	1	66	0	1	0	247	3	0	1
 duozhandi	duozhandizhi	多站地址	597	197	0	0	1	0	0	0	0	0
@@ -36531,7 +36531,7 @@ duozhi	duozhiyilai	多值依賴	657	192	0	0	1	0	84	1	1	0
 duozhi	duozhihanshu	多值函數	260	80	0	0	0	0	0	0	1	1
 duozhihan	duozhihanshu	多值函數	260	80	0	0	0	0	0	0	0	0
 duozhiyi	duozhiyilai	多值依賴	657	192	0	0	1	0	84	1	0	0
-duozhong	duozhongduoyang	多種多樣	520	265	343	0	1	0	0	0	1	0
+duozhong	duozhongduoyang	多種多樣	520	265	343	0	1	0	0	0	1	1
 duozhong	duozhongweishengsu	多種維生素	289	80	0	0	0	495	0	0	1	2
 duozhongduo	duozhongduoyang	多種多樣	520	265	343	0	1	0	0	0	0	0
 duozhongwei	duozhongweishengsu	多種維生素	289	80	0	0	0	495	0	0	0	0
@@ -203155,7 +203155,7 @@ duoduohua	duoduohuakaidanmohen	朵朵花開淡墨痕	360	80	0	0	0	0	0	0	0	0
 duoduohuakai	duoduohuakaidanmohen	朵朵花開淡墨痕	360	80	0	0	0	0	0	0	0	0
 duoduohuakaidan	duoduohuakaidanmohen	朵朵花開淡墨痕	360	80	0	0	0	0	0	0	0	0
 duoduohuakaidanmo	duoduohuakaidanmohen	朵朵花開淡墨痕	360	80	0	0	0	0	0	0	0	0
-duonan	duonanshijunchi	多難識君遲	300	80	0	0	0	0	0	0	0	1
+duonan	duonanshijunchi	多難識君遲	300	80	0	0	0	0	0	0	1	1
 duonanshi	duonanshijunchi	多難識君遲	300	80	0	0	0	0	0	0	0	0
 duonanshijun	duonanshijunchi	多難識君遲	300	80	0	0	0	0	0	0	0	0
 duoqing	duoqingweishuizhuixi	多情為誰追惜	300	80	0	0	0	0	0	0	1	3
@@ -230481,7 +230481,7 @@ dujin	dujindefoxiang	鍍金的佛像	569	80	0	0	0	0	0	0	1	0
 dujinde	dujindefo	鍍金的佛	527	80	0	0	0	0	0	0	0	1
 dujinde	dujindefoxiang	鍍金的佛像	569	80	0	0	0	0	0	0	0	0
 dujindefo	dujindefoxiang	鍍金的佛像	569	80	0	0	0	0	0	0	1	0
-duochang	duochangshijian	多長時間	280	272	0	0	2	0	0	0	0	0
+duochang	duochangshijian	多長時間	280	272	0	0	2	0	0	0	1	0
 duochangshi	duochangshijian	多長時間	280	272	0	0	2	0	0	0	0	0
 duochong	duochongjiedi	多重接地	597	197	0	0	1	0	0	0	1	6
 duochong	duochongnaiyaoxing	多重耐藥性	837	102	0	0	2	0	154	3	1	3
@@ -237451,7 +237451,7 @@ duoyaoli	duoyaolixue	多藥理學	580	80	0	0	0	0	0	0	0	0
 duoyaonai	duoyaonaiyaoxing	多藥耐藥性	837	80	0	0	0	0	0	0	0	0
 duoyaonaiyao	duoyaonaiyaoxing	多藥耐藥性	837	80	0	0	0	0	0	0	0	0
 duoyuan	duoyuanfenxi	多元分析	540	1	40	0	1	0	247	3	1	6
-duozhong	duozhongyongyao	多重用藥	580	80	0	0	0	0	0	0	0	1
+duozhong	duozhongyongyao	多重用藥	580	80	0	0	0	0	0	0	1	0
 duozhongyong	duozhongyongyao	多重用藥	580	80	0	0	0	0	0	0	0	0
 duru	durufeng	杜如風	620	80	0	0	0	0	0	0	0	0
 duwen	duwenze	杜汶澤	620	128	40	0	1	0	0	0	0	0
@@ -242876,7 +242876,7 @@ tishen	tishenzonghezheng	替身綜合徵	836	80	0	0	0	0	0	0	1	0
 tishenzong	tishenzonghezheng	替身綜合徵	836	80	0	0	0	0	0	0	0	0
 tishenzonghe	tishenzonghezheng	替身綜合徵	836	80	0	0	0	0	0	0	0	0
 tishi	tishineng	體適能	232	80	0	0	0	0	0	0	0	6
-tiwai	tiwaihua	題外話	379	137	40	0	1	0	0	0	0	6
+tiwai	tiwaihua	題外話	379	137	40	0	1	0	0	0	1	6
 tiwai	tiwaijishengchong	體外寄生蟲	610	1	0	0	1	0	247	3	1	1
 tiwai	tiwaixunhuan	體外循環	540	1	0	0	1	0	245	3	1	5
 tixu	tixuruwei	體恤入微	405	137	40	0	1	0	0	0	1	2
@@ -246140,3 +246140,5 @@ buhui	buhuini	不回你	200	80	0	0	0	0	0	0	1	10
 buhui	buhuiqu	不會去	600	80	0	0	0	0	0	0	1	7
 buhui	buhuixiang	不會像	600	80	0	0	0	0	0	0	1	6
 buhui	buhuixin	不回信	2	80	0	0	0	0	0	0	1	11
+duoshen	duoshenren	多滲人	400	80	0	0	0	0	0	0	0	0
+duoshen	duoshenren	多瘮人	2	80	0	0	0	0	0	0	0	4

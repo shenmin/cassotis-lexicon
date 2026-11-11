@@ -5322,7 +5322,6 @@
 则是	則是	0.36
 闪灵	閃靈	0.01
 大眼睛	大眼睛	0.01
-多好	多好	0.01
 超群脱俗	超群脫俗	0.01
 温雅	溫雅	0.01
 手脚架	手腳架	0.01
@@ -5501,7 +5500,6 @@
 弯下	彎下	0.01
 弄糊涂	弄糊塗	0.01
 冲过来	衝過來	0.01
-多远	多遠	0.01
 小桌子	小桌子	0.01
 左肋	左肋	0.01
 巨疼	巨疼	0.01
@@ -6592,7 +6590,6 @@
 啪啦啦	啪啦啦	0.01
 不属于	不屬於	0.01
 一遍遍	一遍遍	0.01
-多怪	多怪	0.01
 性刺激	性刺激	0.01
 绑起来	綁起來	0.01
 缠满	纏滿	0.01
@@ -7140,7 +7137,6 @@
 捋平	捋平	0.01
 温香软玉	溫香軟玉	0.01
 倒水	倒水	0.01
-渗人	滲人	0.01
 互不干涉	互不干涉	0.01
 各走各路	各走各路	0.01
 直挺挺	直挺挺	0.01
@@ -8577,7 +8573,6 @@
 信守承诺	信守承諾	0.01
 活虾	活蝦	0.01
 焯水	焯水	0.01
-剁馅	剁餡	0.01
 海虾	海蝦	0.01
 山货	山貨	0.01
 吃惯	吃慣	0.01
@@ -12137,15 +12132,11 @@
 多户	多戶	0.01	duohu
 多笔	多筆	0.01	duobi
 多列	多列	0.01	duolie
-多段	多段	0.01	duoduan
-多图	多圖	0.01	duotu
 多路	多路	0.01	duolu
 多杯	多杯	0.01	duobei
 多瓶	多瓶	0.01	duoping
-多箱	多箱	0.01	duoxiang
 多吨	多噸	0.01	duodun
 多根	多根	0.01	duogen
-多块	多塊	0.01	duokuai
 多盘	多盤	0.01	duopan
 多门	多門	0.01	duomen
 多桌	多桌	0.01	duozhuo
@@ -30379,3 +30370,135 @@
 # Weighted anew on 2026-11-09: import-weight words of the X间 family, which the general text holds far more often than their weights say (单间, 包间).
 单间	單間	0.600	danjian	exact_rank
 包间	包間	0.368	baojian	exact_rank
+# Everyday words, 2026-11-11, the more frequent ones: 多 as "how" before an adjective (the user's 多长 read duochang, 多短, 多怕, 多黑, 多难, 多穷, 多有, 多富, 多坏, 多渗人, 多轻, 多重 read duozhong, 多亮, 多暗, 多白, 多高, 多低, 多矮, 多帅 and 多丑; 多强, 多深, 多美, 多快, 多忙, 多贵, 多晚) and the user's 题外 and 插线, weighted by the general text as the batches before; 多长 and 多短 above 多场 and 多端, which everyday conversation writes far less often.
+多长	多長	0.281	duochang	exact_rank_no_contains
+多短	多短	0.320	duoduan	exact_rank_no_contains
+多怕	多怕	0.400	duopa	exact_rank_no_contains
+多黑	多黑	0.400	duohei	exact_rank_no_contains
+多难	多難	0.600	duonan	exact_rank_no_contains
+多穷	多窮	0.400	duoqiong	exact_rank_no_contains
+多有	多有	0.600	duoyou	exact_rank_no_contains
+多富	多富	0.400	duofu	exact_rank_no_contains
+多坏	多壞	0.400	duohuai	exact_rank_no_contains
+多渗人	多滲人	0.400	duoshenren	exact_rank_no_contains
+多轻	多輕	0.400	duoqing	exact_rank_no_contains
+多重	多重	0.461	duozhong	exact_rank_no_contains
+多亮	多亮	0.279	duoliang	exact_rank_no_contains
+多暗	多暗	0.400	duoan	exact_rank_no_contains
+多白	多白	0.400	duobai	exact_rank_no_contains
+多高	多高	0.600	duogao	exact_rank_no_contains
+多低	多低	0.400	duodi	exact_rank_no_contains
+多矮	多矮	0.400	duoai	exact_rank_no_contains
+多帅	多帥	0.400	duoshuai	exact_rank_no_contains
+多丑	多醜	0.400	duochou	exact_rank_no_contains
+多强	多強	0.600	duoqiang	exact_rank_no_contains
+多深	多深	0.600	duoshen	exact_rank_no_contains
+多美	多美	0.600	duomei	exact_rank_no_contains
+多快	多快	0.600	duokuai	exact_rank_no_contains
+多牛	多牛	0.400	duoniu	exact_rank_no_contains
+多忙	多忙	0.600	duomang	exact_rank_no_contains
+多痛	多痛	0.400	duotong	exact_rank_no_contains
+多苦	多苦	0.400	duoku	exact_rank_no_contains
+多宽	多寬	0.279	duokuan	exact_rank_no_contains
+多热	多熱	0.400	duore	exact_rank_no_contains
+多惨	多慘	0.400	duocan	exact_rank_no_contains
+多差	多差	0.400	duocha	exact_rank_no_contains
+多小	多小	0.600	duoxiao	exact_rank_no_contains
+多贵	多貴	0.400	duogui	exact_rank_no_contains
+多爽	多爽	0.400	duoshuang	exact_rank_no_contains
+多棒	多棒	0.400	duobang	exact_rank_no_contains
+多厚	多厚	0.400	duohou	exact_rank_no_contains
+多近	多近	0.215	duojin	exact_rank_no_contains
+多香	多香	0.279	duoxiang	exact_rank_no_contains
+多晚	多晚	0.400	duowan	exact_rank_no_contains
+多新	多新	0.400	duoxin	exact_rank_no_contains
+多野	多野	0.279	duoye	exact_rank_no_contains
+多火	多火	0.400	duohuo	exact_rank_no_contains
+题外	題外	0.400	tiwai	exact_rank_no_contains
+插线	插線	0.400	chaxian	exact_rank_no_contains
+# Everyday words, 2026-11-11, the less frequent ones (多慢, 多疼, 多冷, 多胖, 多瘦, 多饿, 多乖, 多瘆人 beside 多渗人, and 瘆人, of which 渗人 is the common miswriting), by the same weights.
+多瘆人	多瘮人	0.002	duoshenren	exact_rank_no_contains
+多慢	多慢	0.200	duoman	exact_rank_no_contains
+多疼	多疼	0.200	duoteng	exact_rank_no_contains
+多窄	多窄	0.002	duozhai	exact_rank_no_contains
+多冷	多冷	0.200	duoleng	exact_rank_no_contains
+多困	多困	0.200	duokun	exact_rank_no_contains
+多广	多廣	0.200	duoguang	exact_rank_no_contains
+多脏	多髒	0.200	duozang	exact_rank_no_contains
+多薄	多薄	0.002	duobao	exact_rank_no_contains
+多狠	多狠	0.200	duohen	exact_rank_no_contains
+多紧	多緊	0.200	duojin	exact_rank_no_contains
+多臭	多臭	0.002	duochou	exact_rank_no_contains
+多甜	多甜	0.200	duotian	exact_rank_no_contains
+多酸	多酸	0.200	duosuan	exact_rank_no_contains
+多辣	多辣	0.002	duola	exact_rank_no_contains
+多咸	多鹹	0.002	duoxian	exact_rank_no_contains
+多硬	多硬	0.200	duoying	exact_rank_no_contains
+多软	多軟	0.002	duoruan	exact_rank_no_contains
+多老	多老	0.200	duolao	exact_rank_no_contains
+多嫩	多嫩	0.002	duonen	exact_rank_no_contains
+多细	多細	0.080	duoxi	exact_rank_no_contains
+多粗	多粗	0.200	duocu	exact_rank_no_contains
+多猛	多猛	0.288	duomeng	exact_rank_no_contains
+多静	多靜	0.200	duojing	exact_rank_no_contains
+多吵	多吵	0.002	duochao	exact_rank_no_contains
+多乱	多亂	0.200	duoluan	exact_rank_no_contains
+多烂	多爛	0.388	duolan	exact_rank_no_contains
+多酷	多酷	0.200	duoku	exact_rank_no_contains
+多凶	多兇	0.200	duoxiong	exact_rank_no_contains
+多脆	多脆	0.002	duocui	exact_rank_no_contains
+多准	多準	0.200	duozhun	exact_rank_no_contains
+多红	多紅	0.200	duohong	exact_rank_no_contains
+多傻	多傻	0.200	duosha	exact_rank_no_contains
+多蠢	多蠢	0.003	duochun	exact_rank_no_contains
+多笨	多笨	0.002	duoben	exact_rank_no_contains
+多毒	多毒	0.080	duodu	exact_rank_no_contains
+多沉	多沉	0.080	duochen	exact_rank_no_contains
+多早	多早	0.200	duozao	exact_rank_no_contains
+多浓	多濃	0.080	duonong	exact_rank_no_contains
+多淡	多淡	0.002	duodan	exact_rank_no_contains
+多烦	多煩	0.200	duofan	exact_rank_no_contains
+多旧	多舊	0.002	duojiu	exact_rank_no_contains
+多熟	多熟	0.000	duoshu	exact_rank_no_contains
+多急	多急	0.081	duoji	exact_rank_no_contains
+多狂	多狂	0.002	duokuang	exact_rank_no_contains
+多渴	多渴	0.002	duoke	exact_rank_no_contains
+多饿	多餓	0.080	duoe	exact_rank_no_contains
+多稳	多穩	0.002	duowen	exact_rank_no_contains
+多胖	多胖	0.199	duopang	exact_rank_no_contains
+多瘦	多瘦	0.080	duoshou	exact_rank_no_contains
+多壮	多壯	0.200	duozhuang	exact_rank_no_contains
+多懒	多懶	0.002	duolan	exact_rank_no_contains
+多弱	多弱	0.200	duoruo	exact_rank_no_contains
+多纯	多純	0.002	duochun	exact_rank_no_contains
+多挤	多擠	0.080	duoji	exact_rank_no_contains
+多烫	多燙	0.000	duotang	exact_rank_no_contains
+多凉	多涼	0.002	duoliang	exact_rank_no_contains
+多暖	多暖	0.080	duonuan	exact_rank_no_contains
+多湿	多濕	0.200	duoshi	exact_rank_no_contains
+多绿	多綠	0.080	duolv	exact_rank_no_contains
+多蓝	多藍	0.081	duolan	exact_rank_no_contains
+多黄	多黃	0.200	duohuang	exact_rank_no_contains
+多乖	多乖	0.080	duoguai	exact_rank_no_contains
+多萌	多萌	0.002	duomeng	exact_rank_no_contains
+多拽	多拽	0.002	duozhuai	exact_rank_no_contains
+多俊	多俊	0.080	duojun	exact_rank_no_contains
+多土	多土	0.200	duotu	exact_rank_no_contains
+多闲	多閒	0.200	duoxian	exact_rank_no_contains
+多假	多假	0.080	duojia	exact_rank_no_contains
+多坑	多坑	0.080	duokeng	exact_rank_no_contains
+多松	多鬆	0.080	duosong	exact_rank_no_contains
+多滑	多滑	0.080	duohua	exact_rank_no_contains
+多险	多險	0.081	duoxian	exact_rank_no_contains
+瘆人	瘮人	0.201	shenren	exact_rank_no_contains
+# Weighted anew on 2026-11-11: import-weight words of the 多X keys that the general text holds far more often than their weights say (多远, 多好, 多块, 多段, 多图, 舵手, 渗人).
+多远	多遠	0.600	duoyuan	exact_rank
+多好	多好	0.600	duohao	exact_rank
+多段	多段	0.318	duoduan	exact_rank
+多块	多塊	0.601	duokuai	exact_rank
+多图	多圖	0.400	duotu	exact_rank
+舵手	舵手	0.279	duoshou	exact_rank
+渗人	滲人	0.200	shenren	exact_rank
+多箱	多箱	0.200	duoxiang	exact_rank
+多怪	多怪	0.200	duoguai	exact_rank
+剁馅	剁餡	0.082	duoxian	exact_rank

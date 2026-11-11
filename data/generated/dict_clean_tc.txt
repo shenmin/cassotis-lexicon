@@ -33279,7 +33279,7 @@ duogongqi	多工器	232
 duogongyunzuo	多工運作	260
 duogongzuoye	多工作業	260
 duogua	多寡	405
-duoguai	多怪	10
+duoguai	多怪	200
 duoguan	奪冠	463
 duoguanqixia	多管齊下	10
 duoguanshi	多管是	640
@@ -33291,7 +33291,7 @@ duoha	多哈	311
 duohahuihe	多哈回合	260
 duohang	多行	1000
 duohanzheng	多汗症	500
-duohao	多好	10
+duohao	多好	600
 duohegansuan	多核苷酸	570
 duohegansuanlinsuanhuamei	多核苷酸磷酸化酶	700
 duohetangti	多核糖體	570
@@ -33561,7 +33561,7 @@ duoshilixuexi	多示例學習	640
 duoshizheng	多食症	500
 duoshizhiqiu	多事之秋	446
 duoshou	多首	280
-duoshou	舵手	1
+duoshou	舵手	279
 duoshoudang	剁手黨	230
 duoshouduojiao	多手多腳	260
 duoshoujie	剁手節	230
@@ -33625,7 +33625,7 @@ duowukeduo	躲無可躲	708
 duowulichang	多物理場	700
 duowuliuqiandun	多五六千噸	371
 duoxia	奪下	10
-duoxian	剁餡	10
+duoxian	剁餡	82
 duoxiancheng	多執行緒	1000
 duoxiancheng'anquan	多線程安全	773
 duoxianchengbiancheng	多線程編程	778
@@ -33714,7 +33714,7 @@ duoyu	多於	1000
 duoyu	多餘	302
 duoyu	躲雨	64
 duoyuan	多元	955
-duoyuan	多遠	10
+duoyuan	多遠	600
 duoyuanbubaohezhifangsuan	多元不飽和脂肪酸	378
 duoyuande	多元的	640
 duoyuanfenxi	多元分析	540
@@ -118915,7 +118915,7 @@ shenquexue	神闕穴	360
 shenquzoujie	神曲奏界	538
 shenran	哂然	10
 shenren	神人	288
-shenren	滲人	10
+shenren	滲人	200
 shenrong	參茸	316
 shenru	深入	1000
 shenru	伸入	280
@@ -182909,7 +182909,7 @@ geyou	葛優	1
 duoben	多本	280
 duobu	多部	627
 duochang	多場	280
-duoduan	多段	10
+duoduan	多段	318
 duogen	多根	10
 duojian	多間	280
 duojin	多斤	599
@@ -182924,7 +182924,7 @@ duoshui	多水	280
 duotai	多台	347
 duotao	多套	280
 duoxiang	多項	280
-duoxiang	多箱	10
+duoxiang	多箱	200
 duoye	多頁	280
 duozhang	多張	280
 duozhi	多隻	280
@@ -182933,10 +182933,10 @@ duobei	多杯	10
 duobi	多筆	10
 duodun	多噸	10
 duohu	多戶	10
-duokuai	多塊	10
+duokuai	多塊	601
 duomen	多門	10
 duopan	多盤	10
-duotu	多圖	10
+duotu	多圖	400
 duozhuo	多桌	10
 gangchang	肛腸	460
 gangchangmenzhen	肛腸門診	590
@@ -242964,3 +242964,122 @@ xiaojian	小間	26	no_contains
 xijian	西間	0	no_contains
 zhengjian	正間	80	no_contains
 zhujian	主間	2	no_contains
+chaxian	插線	400	no_contains
+duoai	多矮	400	no_contains
+duoan	多暗	400	no_contains
+duobai	多白	400	no_contains
+duobang	多棒	400	no_contains
+duobao	多薄	2	no_contains
+duoben	多笨	2	no_contains
+duocan	多慘	400	no_contains
+duocha	多差	400	no_contains
+duochang	多長	281	no_contains
+duochao	多吵	2	no_contains
+duochen	多沉	80	no_contains
+duochou	多臭	2	no_contains
+duochou	多醜	400	no_contains
+duochun	多純	2	no_contains
+duochun	多蠢	3	no_contains
+duocu	多粗	200	no_contains
+duocui	多脆	2	no_contains
+duodan	多淡	2	no_contains
+duodi	多低	400	no_contains
+duodu	多毒	80	no_contains
+duoduan	多短	320	no_contains
+duoe	多餓	80	no_contains
+duofan	多煩	200	no_contains
+duofu	多富	400	no_contains
+duogao	多高	600	no_contains
+duoguai	多乖	80	no_contains
+duoguang	多廣	200	no_contains
+duogui	多貴	400	no_contains
+duohei	多黑	400	no_contains
+duohen	多狠	200	no_contains
+duohong	多紅	200	no_contains
+duohou	多厚	400	no_contains
+duohua	多滑	80	no_contains
+duohuai	多壞	400	no_contains
+duohuang	多黃	200	no_contains
+duohuo	多火	400	no_contains
+duoji	多急	81	no_contains
+duoji	多擠	80	no_contains
+duojia	多假	80	no_contains
+duojin	多緊	200	no_contains
+duojin	多近	215	no_contains
+duojing	多靜	200	no_contains
+duojiu	多舊	2	no_contains
+duojun	多俊	80	no_contains
+duoke	多渴	2	no_contains
+duokeng	多坑	80	no_contains
+duoku	多苦	400	no_contains
+duoku	多酷	200	no_contains
+duokuai	多快	600	no_contains
+duokuan	多寬	279	no_contains
+duokuang	多狂	2	no_contains
+duokun	多困	200	no_contains
+duola	多辣	2	no_contains
+duolan	多懶	2	no_contains
+duolan	多爛	388	no_contains
+duolan	多藍	81	no_contains
+duolao	多老	200	no_contains
+duoleng	多冷	200	no_contains
+duoliang	多亮	279	no_contains
+duoliang	多涼	2	no_contains
+duoluan	多亂	200	no_contains
+duolv	多綠	80	no_contains
+duoman	多慢	200	no_contains
+duomang	多忙	600	no_contains
+duomei	多美	600	no_contains
+duomeng	多猛	288	no_contains
+duomeng	多萌	2	no_contains
+duonan	多難	600	no_contains
+duonen	多嫩	2	no_contains
+duoniu	多牛	400	no_contains
+duonong	多濃	80	no_contains
+duonuan	多暖	80	no_contains
+duopa	多怕	400	no_contains
+duopang	多胖	199	no_contains
+duoqiang	多強	600	no_contains
+duoqing	多輕	400	no_contains
+duoqiong	多窮	400	no_contains
+duore	多熱	400	no_contains
+duoruan	多軟	2	no_contains
+duoruo	多弱	200	no_contains
+duosha	多傻	200	no_contains
+duoshen	多深	600	no_contains
+duoshenren	多滲人	400	no_contains
+duoshenren	多瘮人	2	no_contains
+duoshi	多濕	200	no_contains
+duoshou	多瘦	80	no_contains
+duoshu	多熟	0	no_contains
+duoshuai	多帥	400	no_contains
+duoshuang	多爽	400	no_contains
+duosong	多鬆	80	no_contains
+duosuan	多酸	200	no_contains
+duotang	多燙	0	no_contains
+duoteng	多疼	200	no_contains
+duotian	多甜	200	no_contains
+duotong	多痛	400	no_contains
+duotu	多土	200	no_contains
+duowan	多晚	400	no_contains
+duowen	多穩	2	no_contains
+duoxi	多細	80	no_contains
+duoxian	多閒	200	no_contains
+duoxian	多險	81	no_contains
+duoxian	多鹹	2	no_contains
+duoxiang	多香	279	no_contains
+duoxiao	多小	600	no_contains
+duoxin	多新	400	no_contains
+duoxiong	多兇	200	no_contains
+duoye	多野	279	no_contains
+duoying	多硬	200	no_contains
+duoyou	多有	600	no_contains
+duozang	多髒	200	no_contains
+duozao	多早	200	no_contains
+duozhai	多窄	2	no_contains
+duozhong	多重	461	no_contains
+duozhuai	多拽	2	no_contains
+duozhuang	多壯	200	no_contains
+duozhun	多準	200	no_contains
+shenren	瘮人	201	no_contains
+tiwai	題外	400	no_contains
