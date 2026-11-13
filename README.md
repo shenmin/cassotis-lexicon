@@ -29,12 +29,12 @@ Lexicon build and release repository for Cassotis IME (言泉输入法): its sim
 - Rebuilds reproducibly from the external sources (`external_broad`).
 - Keeps attribution and license files aligned with what is generated.
 
-## Current dictionary snapshot (2026-11-11 build)
+## Current dictionary snapshot (2026-11-13 build)
 
 | File | Variant | Entries |
 |------|---------|---------|
-| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 240,250 |
-| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 243,085 |
+| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 240,251 |
+| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 243,086 |
 | `data/generated/dict_unihan_sc.txt` | Simplified single-char (Unihan) | 23,917 |
 | `data/generated/dict_unihan_tc.txt` | Traditional single-char (Unihan) | 24,180 |
 

@@ -29,12 +29,12 @@ Cassotis IME（言泉輸入法）的詞庫建置與發布儲存庫：輸入法�
 - 支援從外部來源可重現地重建（`external_broad`）。
 - 確保來源標示與授權檔案和生成產物保持一致。
 
-## 目前詞庫快照（2026-11-11 建置）
+## 目前詞庫快照（2026-11-13 建置）
 
 | 檔案 | 變體 | 詞條數 |
 |------|------|--------|
-| `data/generated/dict_clean_sc.txt` | 簡體主詞庫 | 240,250 |
-| `data/generated/dict_clean_tc.txt` | 繁體主詞庫 | 243,085 |
+| `data/generated/dict_clean_sc.txt` | 簡體主詞庫 | 240,251 |
+| `data/generated/dict_clean_tc.txt` | 繁體主詞庫 | 243,086 |
 | `data/generated/dict_unihan_sc.txt` | 簡體單字（Unihan） | 23,917 |
 | `data/generated/dict_unihan_tc.txt` | 繁體單字（Unihan） | 24,180 |
 
