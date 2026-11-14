@@ -553,9 +553,9 @@ agu	agubai	阿古柏	469	289	219	252	2	0	0	0	0	0
 agua	aguakaliante	阿瓜卡連特	639	12	0	0	1	0	174	2	0	0
 aguaka	aguakaliante	阿瓜卡連特	639	12	0	0	1	0	174	2	0	0
 aguakalian	aguakaliante	阿瓜卡連特	639	12	0	0	1	0	174	2	0	0
-aha	ahajia'ershanmai	阿哈加爾山脈	691	12	0	0	1	0	174	2	0	1
-aha	ahajia'ergaoyuan	阿哈加爾高原	691	12	0	0	1	0	174	2	0	2
-aha	ahajiaer	阿哈加爾	587	17	0	0	1	0	174	2	0	4
+aha	ahajia'ershanmai	阿哈加爾山脈	691	12	0	0	1	0	174	2	0	5
+aha	ahajia'ergaoyuan	阿哈加爾高原	691	12	0	0	1	0	174	2	0	6
+aha	ahajiaer	阿哈加爾	587	17	0	0	1	0	174	2	0	8
 ahajia	ahajia'ershanmai	阿哈加爾山脈	691	12	0	0	1	0	174	2	0	1
 ahajia	ahajia'ergaoyuan	阿哈加爾高原	691	12	0	0	1	0	174	2	0	2
 ahajia	ahajiaer	阿哈加爾	587	17	0	0	1	0	174	2	0	4
@@ -228839,8 +228839,8 @@ afolie	afoliedadi	阿佛列大帝	587	38	0	0	1	0	174	2	0	0
 afolieda	afoliedadi	阿佛列大帝	587	38	0	0	1	0	174	2	0	0
 afoluo	afoluodite	阿佛洛狄忒	388	80	0	0	0	0	0	0	0	0
 afoluodi	afoluodite	阿佛洛狄忒	388	80	0	0	0	0	0	0	0	0
-aha	ahajia'ergaodi	阿哈加爾高地	691	12	0	0	1	0	174	2	0	3
-aha	ahajia'ershandi	阿哈加爾山地	691	12	0	0	1	0	174	2	0	0
+aha	ahajia'ergaodi	阿哈加爾高地	691	12	0	0	1	0	174	2	0	7
+aha	ahajia'ershandi	阿哈加爾山地	691	12	0	0	1	0	174	2	0	4
 ahajia	ahajia'ergaodi	阿哈加爾高地	691	12	0	0	1	0	174	2	0	3
 ahajia	ahajia'ershandi	阿哈加爾山地	691	12	0	0	1	0	174	2	0	0
 ahajiaer	ahajia'ergaodi	阿哈加爾高地	691	12	0	0	1	0	174	2	1	3
@@ -246142,3 +246142,13 @@ buhui	buhuixiang	不會像	600	80	0	0	0	0	0	0	1	6
 buhui	buhuixin	不回信	2	80	0	0	0	0	0	0	1	11
 duoshen	duoshenren	多滲人	400	80	0	0	0	0	0	0	0	0
 duoshen	duoshenren	多瘮人	2	80	0	0	0	0	0	0	0	4
+aha	ahaha	啊哈哈	700	538	0	0	4	0	0	0	0	0
+aha	ahahaha	啊哈哈哈	700	538	0	0	4	0	0	0	0	1
+aha	ahahahaha	啊哈哈哈哈	700	538	0	0	4	0	0	0	0	2
+aha	ahahahahaha	啊哈哈哈哈哈	700	538	0	0	4	0	0	0	0	3
+ahaha	ahahaha	啊哈哈哈	700	538	0	0	4	0	0	0	1	0
+ahaha	ahahahaha	啊哈哈哈哈	700	538	0	0	4	0	0	0	1	1
+ahaha	ahahahahaha	啊哈哈哈哈哈	700	538	0	0	4	0	0	0	1	2
+ahahaha	ahahahaha	啊哈哈哈哈	700	538	0	0	4	0	0	0	1	0
+ahahaha	ahahahahaha	啊哈哈哈哈哈	700	538	0	0	4	0	0	0	1	1
+ahahahaha	ahahahahaha	啊哈哈哈哈哈	700	538	0	0	4	0	0	0	1	0

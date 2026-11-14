@@ -29,12 +29,12 @@ Cassotis IME（言泉输入法）的词库构建与发布仓库：输入法的�
 - 支持从外部来源可复现地重建（`external_broad`）。
 - 保持署名与许可文件和生成产物一致。
 
-## 当前词库快照（2026-11-13 构建）
+## 当前词库快照（2026-11-14 构建）
 
 | 文件 | 变体 | 词条数 |
 |------|------|--------|
-| `data/generated/dict_clean_sc.txt` | 简体主词库 | 240,251 |
-| `data/generated/dict_clean_tc.txt` | 繁体主词库 | 243,086 |
+| `data/generated/dict_clean_sc.txt` | 简体主词库 | 240,255 |
+| `data/generated/dict_clean_tc.txt` | 繁体主词库 | 243,090 |
 | `data/generated/dict_unihan_sc.txt` | 简体单字（Unihan） | 23,917 |
 | `data/generated/dict_unihan_tc.txt` | 繁体单字（Unihan） | 24,180 |
 
