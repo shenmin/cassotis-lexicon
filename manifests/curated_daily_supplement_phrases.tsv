@@ -3755,7 +3755,6 @@
 下探	下探	0.05	xiatan
 上探	上探	0.05	shangtan
 找准	找準	0.05	zhaozhun
-扣在	扣在	0.05	kouzai
 呛了	嗆了	0.05	qiangle
 呛着	嗆著	0.05	qiangzhe
 容她	容她	0.05	rongta
@@ -4030,7 +4029,6 @@
 除此以外	除此以外	0.01
 前五	前五	0.01
 四楼	四樓	0.01
-躲在	躲在	0.01
 观止	觀止	0.01
 煌煌	煌煌	0.01
 巨作	鉅作	0.01
@@ -4103,7 +4101,6 @@
 店门	店門	0.01
 砖砌	磚砌	0.01
 泥点子	泥點子	0.01
-跪在	跪在	0.01
 油垢	油垢	0.01
 第十二章	第十二章	0.01
 大块	大塊	0.01
@@ -4143,7 +4140,6 @@
 纸和笔	紙和筆	0.01
 开水房	開水房	0.01
 细弱	細弱	0.01
-蜷在	蜷在	0.01
 干冷	乾冷	0.01
 赶着	趕著	0.01
 扶到	扶到	0.01
@@ -4382,7 +4378,6 @@
 硬扛	硬扛	0.01
 毛线球	毛線球	0.01
 说不上来	說不上來	0.01
-贴在	貼在	0.01
 挤不进	擠不進	0.01
 抻着	抻著	0.00
 算错	算錯	0.01
@@ -4425,7 +4420,6 @@
 初吻	初吻	0.01
 正中央	正中央	0.01
 里层	裏層	0.01
-小火	小火	0.01
 红透	紅透	0.01
 抱枕	抱枕	0.01
 惹祸上身	惹禍上身	0.01
@@ -5368,7 +5362,6 @@
 冲上	衝上	0.01
 拧到	擰到	0.01
 一提	一提	0.01
-倒在	倒在	0.01
 一只手	一隻手	0.01
 抓握	抓握	0.01
 提着	提著	0.01
@@ -5423,7 +5416,6 @@
 响着	響著	0.01
 绳师	繩師	0.01
 演奏家	演奏家	0.01
-埋在	埋在	0.01
 每小时	每小時	0.01
 发香	髮香	0.01
 抬起头	擡起頭	0.34
@@ -5483,7 +5475,6 @@
 被虐	被虐	0.01
 不明白	不明白	0.01
 滑嫩	滑嫩	0.01
-连在	連在	0.01
 毫无遮拦	毫無遮攔	0.01
 下腹	下腹	0.01
 这个时候	這個時候	0.01
@@ -5512,7 +5503,6 @@
 横着	橫著	0.01
 扫到	掃到	0.01
 暖呼呼	暖呼呼	0.01
-摔在	摔在	0.01
 扶起来	扶起來	0.01
 粘液	粘液	0.01
 恨恨	恨恨	0.01
@@ -5554,7 +5544,6 @@
 三个月	三個月	0.34
 瘦干	瘦乾	0.01
 有求于	有求於	0.01
-印在	印在	0.01
 很久很久	很久很久	0.01
 小职员	小職員	0.01
 美男子	美男子	0.01
@@ -5648,7 +5637,6 @@
 浓浓	濃濃	0.01
 一阵阵	一陣陣	0.01
 好强	好強	0.01
-活在	活在	0.01
 几眼	幾眼	0.01
 细瘦	細瘦	0.01
 勒进	勒進	0.01
@@ -5676,7 +5664,6 @@
 铐在	銬在	0.01
 鼓足	鼓足	0.01
 滑向	滑向	0.01
-按在	按在	0.01
 几十米	幾十米	0.01
 粗麻	粗麻	0.01
 逃出	逃出	0.01
@@ -5709,14 +5696,12 @@
 晾衣	晾衣	0.01
 晒衣架	曬衣架	0.01
 晒衣	曬衣	0.01
-滴在	滴在	0.01
 一大滩	一大灘	0.01
 用足	用足	0.01
 大汗	大汗	0.01
 看电视	看電視	0.01
 托起	托起	0.01
 毫无价值	毫無價值	0.01
-跟在	跟在	0.01
 落地门	落地門	0.01
 男的	男的	0.01
 披着	披著	0.01
@@ -5762,7 +5747,6 @@
 不堪重负	不堪重負	0.01
 带出	帶出	0.01
 迈动	邁動	0.01
-撞在	撞在	0.01
 软软	軟軟	0.01
 接电话	接電話	0.01
 绷直	繃直	0.01
@@ -5801,7 +5785,6 @@
 犬奴	犬奴	0.01
 直刺	直刺	0.01
 硬边	硬邊	0.01
-垫在	墊在	0.01
 钢边	鋼邊	0.01
 窄边	窄邊	0.01
 不服从	不服從	0.01
@@ -5814,7 +5797,6 @@
 恐惧感	恐懼感	0.01
 绳扣	繩釦	0.01
 淋浴间	淋浴間	0.01
-抱在	抱在	0.01
 反应过来	反應過來	0.01
 腿弯	腿彎	0.01
 抓过	抓過	0.01
@@ -5889,7 +5871,6 @@
 毕业于	畢業於	0.01
 北方人	北方人	0.01
 买车	買車	0.01
-凑在	湊在	0.01
 不相配	不相配	0.01
 腿伤	腿傷	0.01
 大奔	大奔	0.01
@@ -5897,7 +5878,6 @@
 一件件	一件件	0.01
 双股	雙股	0.01
 润肤	潤膚	0.01
-喷在	噴在	0.01
 滑润	滑潤	0.01
 波浪形	波浪形	0.01
 竹杠	竹槓	0.01
@@ -5958,7 +5938,6 @@
 底衬	底襯	0.01
 钢带	鋼帶	0.01
 圆口	圓口	0.01
-骑在	騎在	0.01
 弄湿	弄濕	0.01
 叮铃	叮鈴	0.01
 盼望已久	盼望已久	0.01
@@ -5966,10 +5945,8 @@
 银环	銀環	0.01
 扣好	扣好	0.01
 欲火中烧	慾火中燒	0.01
-顶在	頂在	0.01
 绳裤	繩褲	0.01
 还算	還算	0.01
-挂在	掛在	0.01
 梧桐树	梧桐樹	0.01
 狼狈相	狼狽相	0.01
 麻痛	麻痛	0.01
@@ -5997,7 +5974,6 @@
 做出来	做出來	0.01
 一滴	一滴	0.01
 逛遍	逛遍	0.01
-小街	小街	0.01
 副大队长	副大隊長	0.01
 黑白两道	黑白兩道	0.01
 生意人	生意人	0.01
@@ -6079,7 +6055,6 @@
 乱针	亂針	0.01
 乱刺	亂刺	0.01
 取精	取精	0.01
-漂在	漂在	0.01
 电刑	電刑	0.01
 各地区	各地區	0.01
 安检口	安檢口	0.01
@@ -6092,7 +6067,6 @@
 男武警	男武警	0.01
 拘束器	拘束器	0.01
 安检室	安檢室	0.01
-盘在	盤在	0.01
 正面交锋	正面交鋒	0.01
 搬出	搬出	0.01
 银杏树	銀杏樹	0.01
@@ -6121,7 +6095,6 @@
 四块	四塊	0.01
 圆凳	圓凳	0.01
 扑出	撲出	0.01
-揣在	揣在	0.01
 一阵风	一陣風	0.01
 右胯	右胯	0.01
 皮领	皮領	0.01
@@ -6134,7 +6107,6 @@
 后腿	後腿	0.01
 蹬出	蹬出	0.01
 踢空	踢空	0.01
-赌在	賭在	0.01
 蹬踏	蹬踏	0.01
 蹬踹	蹬踹	0.01
 闯大祸	闖大禍	0.01
@@ -6197,7 +6169,6 @@
 高品位	高品位	0.01
 狗笼	狗籠	0.01
 锡条	錫條	0.01
-焊在	焊在	0.01
 旅行箱	旅行箱	0.01
 求死	求死	0.01
 求活	求活	0.01
@@ -6219,7 +6190,6 @@
 突然之间	突然之間	0.01
 喊来	喊來	0.01
 流干	流乾	0.01
-缠在	纏在	0.01
 长腿	長腿	0.01
 长手	長手	0.01
 把着	把著	0.01
@@ -6250,7 +6220,6 @@
 痛彻	痛徹	0.01
 融进	融進	0.01
 一半儿	一半兒	0.01
-泼在	潑在	0.01
 阴雨绵绵	陰雨綿綿	0.01
 雪雨	雪雨	0.01
 胀破	脹破	0.01
@@ -6291,7 +6260,6 @@
 心跳声	心跳聲	0.01
 死紧	死緊	0.01
 欲裂	欲裂	0.01
-砸在	砸在	0.01
 一红	一紅	0.01
 怎会	怎會	0.01
 俯下	俯下	0.01
@@ -6299,7 +6267,6 @@
 寒光	寒光	0.01
 不安感	不安感	0.01
 绕上	繞上	0.01
-钉在	釘在	0.01
 移向	移向	0.01
 浅蓝色	淺藍色	0.01
 淡粉色	淡粉色	0.01
@@ -6329,7 +6296,6 @@
 扫向	掃向	0.01
 咔哒	咔噠	0.01
 沉入	沉入	0.01
-悬在	懸在	0.00
 静置	靜置	0.01
 充盈感	充盈感	0.01
 他物	他物	0.01
@@ -6396,7 +6362,6 @@
 通灵	通靈	0.01
 英文名	英文名	0.01
 中文名	中文名	0.01
-小众	小眾	0.01
 新问题	新問題	0.01
 泣别	泣別	0.01
 老马六	老馬六	0.01
@@ -6594,7 +6559,6 @@
 绑起来	綁起來	0.01
 缠满	纏滿	0.01
 能做	能做	0.00
-住在	住在	0.01
 陪吃	陪吃	0.01
 陪住	陪住	0.01
 周休日	週休日	0.01
@@ -6607,7 +6571,6 @@
 一米	一米	0.01
 第一道	第一道	0.01
 绳圈	繩圈	0.01
-套在	套在	0.01
 抓着	抓著	0.01
 穿过去	穿過去	0.01
 两只手	兩隻手	0.01
@@ -6666,7 +6629,6 @@
 更方便	更方便	0.01
 肚子饿	肚子餓	0.01
 两口	兩口	0.01
-抛在	拋在	0.01
 伸到	伸到	0.01
 弄了	弄了	0.01
 穿上衣服	穿上衣服	0.01
@@ -6786,7 +6748,6 @@
 呼了口气	呼了口氣	0.01
 摔去	摔去	0.01
 睁开双眼	睜開雙眼	0.01
-掉在	掉在	0.01
 撞开	撞開	0.01
 便池	便池	0.01
 捞起	撈起	0.01
@@ -6794,7 +6755,6 @@
 管壁	管壁	0.01
 捞到	撈到	0.01
 弯底	彎底	0.01
-浮在	浮在	0.01
 伸不进	伸不進	0.01
 条路	條路	0.01
 归想	歸想	0.01
@@ -6834,7 +6794,6 @@
 宠物市场	寵物市場	0.01
 瞧瞧	瞧瞧	0.01
 碰翻	碰翻	0.01
-小步	小步	0.01
 赤着	赤著	0.01
 踏遍	踏遍	0.01
 床底	床底	0.01
@@ -6900,7 +6859,6 @@
 素光同	素光同	0.01
 午夜梦回	午夜夢迴	0.01
 素描画	素描畫	0.01
-胜在	勝在	0.01
 爬满	爬滿	0.01
 古建筑	古建築	0.01
 画架	畫架	0.01
@@ -6943,7 +6901,6 @@
 易燃易爆	易燃易爆	0.01
 声源	聲源	0.01
 电棍	電棍	0.01
-立在	立在	0.01
 包装盒	包裝盒	0.01
 偏暗	偏暗	0.01
 沐浴液	沐浴液	0.01
@@ -6954,14 +6911,12 @@
 亮着	亮著	0.01
 摇着	搖著	0.01
 狗绳	狗繩	0.01
-守在	守在	0.01
 端着	端著	0.01
 年约	年約	0.01
 杯口	杯口	0.01
 往北	往北	0.01
 二十几	二十幾	0.01
 好闻	好聞	0.01
-附在	附在	0.01
 明码标价	明碼標價	0.01
 讲道理	講道理	0.01
 商业街	商業街	0.01
@@ -6977,7 +6932,6 @@
 紧按	緊按	0.01
 木桌	木桌	0.01
 送错	送錯	0.01
-绕在	繞在	0.01
 里屋	裏屋	0.01
 扑向	撲向	0.01
 真名	真名	0.01
@@ -30502,3 +30456,233 @@
 多箱	多箱	0.200	duoxiang	exact_rank
 多怪	多怪	0.200	duoguai	exact_rank
 剁馅	剁餡	0.082	duoxian	exact_rank
+# Everyday words, 2026-11-14, the more frequent ones: 核 as "check" before a verb (the user's 核验 and 核校 read hejiao; 核发, 核减, 核保, 核拨, 核载), a numeral before 选 (the user's 二选 and 三选; 二选一, 三选一, 七选五, 多选), 小 before a noun (the user's 小鱼 and 小园; 小草, 小兔, 小猪, 小碗, 小窝) and a verb before 在 (the user's 沉在, 吃在, 玩在, 爱在 and 偏在; 生在, 长在 read zhangzai, 记在, 刻在, 泡在), weighted by the general text as the batches before.
+核验	核驗	0.974	heyan	exact_rank_no_contains
+核校	核校	0.400	hejiao	exact_rank_no_contains
+核发	核發	0.486	hefa	exact_rank_no_contains
+核减	核減	0.444	hejian	exact_rank_no_contains
+核保	核保	0.770	hebao	exact_rank_no_contains
+核拨	核撥	0.400	hebo	exact_rank_no_contains
+核载	核載	0.400	hezai	exact_rank_no_contains
+二选	二選	0.400	erxuan	exact_rank_no_contains
+三选	三選	0.400	sanxuan	exact_rank_no_contains
+二选一	二選一	0.600	erxuanyi	exact_rank_no_contains
+三选一	三選一	0.400	sanxuanyi	exact_rank_no_contains
+七选五	七選五	0.400	qixuanwu	exact_rank_no_contains
+多选	多選	0.600	duoxuan	exact_rank_no_contains
+小鱼	小魚	0.601	xiaoyu	exact_rank_no_contains
+小园	小園	0.599	xiaoyuan	exact_rank_no_contains
+小草	小草	0.600	xiaocao	exact_rank_no_contains
+小兔	小兔	0.600	xiaotu	exact_rank_no_contains
+小块	小塊	0.600	xiaokuai	exact_rank_no_contains
+小猪	小豬	0.600	xiaozhu	exact_rank_no_contains
+小鸭	小鴨	0.252	xiaoya	exact_rank_no_contains
+小村	小村	0.600	xiaocun	exact_rank_no_contains
+小房	小房	0.279	xiaofang	exact_rank_no_contains
+小猴	小猴	0.600	xiaohou	exact_rank_no_contains
+小虫	小蟲	0.600	xiaochong	exact_rank_no_contains
+小鹿	小鹿	0.600	xiaolu	exact_rank_no_contains
+小脸	小臉	0.600	xiaolian	exact_rank_no_contains
+小嘴	小嘴	0.600	xiaozui	exact_rank_no_contains
+小兵	小兵	0.167	xiaobing	exact_rank_no_contains
+小池	小池	0.600	xiaochi	exact_rank_no_contains
+小灯	小燈	0.400	xiaodeng	exact_rank_no_contains
+小舟	小舟	0.279	xiaozhou	exact_rank_no_contains
+小虎	小虎	0.278	xiaohu	exact_rank_no_contains
+小碗	小碗	0.600	xiaowan	exact_rank_no_contains
+小县	小縣	0.400	xiaoxian	exact_rank_no_contains
+小洞	小洞	0.600	xiaodong	exact_rank_no_contains
+小枝	小枝	0.431	xiaozhi	exact_rank_no_contains
+小站	小站	0.600	xiaozhan	exact_rank_no_contains
+小勺	小勺	0.600	xiaoshao	exact_rank_no_contains
+小窗	小窗	0.600	xiaochuang	exact_rank_no_contains
+小象	小象	0.234	xiaoxiang	exact_rank_no_contains
+小果	小果	0.600	xiaoguo	exact_rank_no_contains
+小艇	小艇	0.600	xiaoting	exact_rank_no_contains
+小瓶	小瓶	0.600	xiaoping	exact_rank_no_contains
+小狼	小狼	0.600	xiaolang	exact_rank_no_contains
+小盆	小盆	0.400	xiaopen	exact_rank_no_contains
+小厂	小廠	0.600	xiaochang	exact_rank_no_contains
+小叔	小叔	0.600	xiaoshu	exact_rank_no_contains
+小杯	小杯	0.319	xiaobei	exact_rank_no_contains
+小湖	小湖	0.277	xiaohu	exact_rank_no_contains
+小锅	小鍋	0.279	xiaoguo	exact_rank_no_contains
+小窝	小窩	0.600	xiaowo	exact_rank_no_contains
+小床	小床	0.601	xiaochuang	exact_rank_no_contains
+小庙	小廟	0.400	xiaomiao	exact_rank_no_contains
+小亭	小亭	0.400	xiaoting	exact_rank_no_contains
+小饼	小餅	0.166	xiaobing	exact_rank_no_contains
+小鞋	小鞋	0.150	xiaoxie	exact_rank_no_contains
+小罐	小罐	0.399	xiaoguan	exact_rank_no_contains
+小鹰	小鷹	0.400	xiaoying	exact_rank_no_contains
+小蛇	小蛇	0.400	xiaoshe	exact_rank_no_contains
+小伞	小傘	0.400	xiaosan	exact_rank_no_contains
+小蜂	小蜂	0.160	xiaofeng	exact_rank_no_contains
+小铺	小鋪	0.400	xiaopu	exact_rank_no_contains
+小旗	小旗	0.278	xiaoqi	exact_rank_no_contains
+小桶	小桶	0.400	xiaotong	exact_rank_no_contains
+小枣	小棗	0.363	xiaozao	exact_rank_no_contains
+小菊	小菊	0.400	xiaoju	exact_rank_no_contains
+小针	小針	0.370	xiaozhen	exact_rank_no_contains
+小龟	小龜	0.150	xiaogui	exact_rank_no_contains
+小酒	小酒	0.600	xiaojiu	exact_rank_no_contains
+小聚	小聚	0.401	xiaoju	exact_rank_no_contains
+小住	小住	0.279	xiaozhu	exact_rank_no_contains
+小坐	小坐	0.400	xiaozuo	exact_rank_no_contains
+沉在	沉在	0.400	chenzai	exact_rank_no_contains
+吃在	吃在	0.400	chizai	exact_rank_no_contains
+玩在	玩在	0.400	wanzai	exact_rank_no_contains
+爱在	愛在	0.600	aizai	exact_rank_no_contains
+偏在	偏在	0.400	pianzai	exact_rank_no_contains
+生在	生在	0.601	shengzai	exact_rank_no_contains
+长在	長在	0.600	zhangzai	exact_rank_no_contains
+装在	裝在	0.281	zhuangzai	exact_rank_no_contains
+记在	記在	0.599	jizai	exact_rank_no_contains
+花在	花在	0.601	huazai	exact_rank_no_contains
+浸在	浸在	0.418	jinzai	exact_rank_no_contains
+死在	死在	0.600	sizai	exact_rank_no_contains
+刻在	刻在	0.520	kezai	exact_rank_no_contains
+握在	握在	0.500	wozai	exact_rank_no_contains
+含在	含在	0.600	hanzai	exact_rank_no_contains
+建在	建在	0.170	jianzai	exact_rank_no_contains
+映在	映在	0.598	yingzai	exact_rank_no_contains
+呆在	呆在	0.601	daizai	exact_rank_no_contains
+泡在	泡在	0.602	paozai	exact_rank_no_contains
+难在	難在	0.600	nanzai	exact_rank_no_contains
+贵在	貴在	0.601	guizai	exact_rank_no_contains
+画在	畫在	0.600	huazai	exact_rank_no_contains
+插在	插在	0.600	chazai	exact_rank_no_contains
+打在	打在	0.600	dazai	exact_rank_no_contains
+葬在	葬在	0.600	zangzai	exact_rank_no_contains
+照在	照在	0.600	zhaozai	exact_rank_no_contains
+扎在	扎在	0.600	zhazai	exact_rank_no_contains
+盖在	蓋在	0.600	gaizai	exact_rank_no_contains
+养在	養在	0.600	yangzai	exact_rank_no_contains
+嵌在	嵌在	0.600	qianzai	exact_rank_no_contains
+踩在	踩在	0.599	caizai	exact_rank_no_contains
+戴在	戴在	0.600	daizai	exact_rank_no_contains
+涂在	塗在	0.427	tuzai	exact_rank_no_contains
+穿在	穿在	0.600	chuanzai	exact_rank_no_contains
+粘在	粘在	0.600	zhanzai	exact_rank_no_contains
+铺在	鋪在	0.601	puzai	exact_rank_no_contains
+罩在	罩在	0.400	zhaozai	exact_rank_no_contains
+醉在	醉在	0.400	zuizai	exact_rank_no_contains
+撒在	撒在	0.600	sazai	exact_rank_no_contains
+抹在	抹在	0.600	mozai	exact_rank_no_contains
+陪在	陪在	0.600	peizai	exact_rank_no_contains
+卧在	臥在	0.499	wozai	exact_rank_no_contains
+赢在	贏在	0.599	yingzai	exact_rank_no_contains
+押在	押在	0.400	yazai	exact_rank_no_contains
+拿在	拿在	0.600	nazai	exact_rank_no_contains
+冲在	衝在	0.600	chongzai	exact_rank_no_contains
+输在	輸在	0.600	shuzai	exact_rank_no_contains
+裹在	裹在	0.400	guozai	exact_rank_no_contains
+陷在	陷在	0.599	xianzai	exact_rank_no_contains
+堵在	堵在	0.600	duzai	exact_rank_no_contains
+跑在	跑在	0.600	paozai	exact_rank_no_contains
+敷在	敷在	0.600	fuzai	exact_rank_no_contains
+堆在	堆在	0.600	duizai	exact_rank_no_contains
+扑在	撲在	0.600	puzai	exact_rank_no_contains
+败在	敗在	0.279	baizai	exact_rank_no_contains
+关在	關在	0.600	guanzai	exact_rank_no_contains
+# Everyday words, 2026-11-14, the less frequent ones (核批, 核审, 核稿, 四选, 五选一, 双选, 小扇, 小凳, 小别, 小镜), by the same weights; 核扣, 核付, 核账, 多选一 and 六选三, which the general text seldom writes as words, at 2.
+核批	核批	0.200	hepi	exact_rank_no_contains
+核报	核報	0.200	hebao	exact_rank_no_contains
+核审	核審	0.200	heshen	exact_rank_no_contains
+核计	核計	0.080	heji	exact_rank_no_contains
+核签	核籤	0.080	heqian	exact_rank_no_contains
+核检	核檢	0.200	hejian	exact_rank_no_contains
+核增	核增	0.200	hezeng	exact_rank_no_contains
+核收	核收	0.200	heshou	exact_rank_no_contains
+核稿	核稿	0.197	hegao	exact_rank_no_contains
+核价	核價	0.200	hejia	exact_rank_no_contains
+核编	核編	0.080	hebian	exact_rank_no_contains
+核退	核退	0.080	hetui	exact_rank_no_contains
+核赔	核賠	0.200	hepei	exact_rank_no_contains
+核扣	核扣	0.002	hekou	exact_rank_no_contains
+核付	核付	0.002	hefu	exact_rank_no_contains
+核账	核賬	0.002	hezhang	exact_rank_no_contains
+四选	四選	0.200	sixuan	exact_rank_no_contains
+五选	五選	0.080	wuxuan	exact_rank_no_contains
+四选一	四選一	0.200	sixuanyi	exact_rank_no_contains
+五选一	五選一	0.080	wuxuanyi	exact_rank_no_contains
+多选一	多選一	0.002	duoxuanyi	exact_rank_no_contains
+三选二	三選二	0.200	sanxuaner	exact_rank_no_contains
+六选三	六選三	0.002	liuxuansan	exact_rank_no_contains
+双选	雙選	0.200	shuangxuan	exact_rank_no_contains
+小扇	小扇	0.200	xiaoshan	exact_rank_no_contains
+小凳	小凳	0.200	xiaodeng	exact_rank_no_contains
+小轮	小輪	0.200	xiaolun	exact_rank_no_contains
+小镜	小鏡	0.200	xiaojing	exact_rank_no_contains
+小蟹	小蟹	0.149	xiaoxie	exact_rank_no_contains
+小别	小別	0.200	xiaobie	exact_rank_no_contains
+# Weighted anew on 2026-11-14: import-weight words of the families and of their keys that the general text holds far more often than their weights say (住在, 挂在, 躲在, 跟在, 贴在, 小船, 小岛, 小鼠, 小费, 肖像, 旱灾, 盆栽; 小羊, which only the traditional dictionary had).
+小羊	小羊	0.279	xiaoyang	exact_rank
+按在	按在	0.600	anzai	exact_rank
+抱在	抱在	0.600	baozai	exact_rank
+缠在	纏在	0.400	chanzai	exact_rank
+揣在	揣在	0.200	chuaizai	exact_rank
+凑在	湊在	0.200	couzai	exact_rank
+倒在	倒在	0.600	daozai	exact_rank
+垫在	墊在	0.400	dianzai	exact_rank
+掉在	掉在	0.600	diaozai	exact_rank
+钉在	釘在	0.599	dingzai	exact_rank
+顶在	頂在	0.400	dingzai	exact_rank
+滴在	滴在	0.126	dizai	exact_rank
+躲在	躲在	0.600	duozai	exact_rank
+赌在	賭在	0.200	duzai	exact_rank
+浮在	浮在	0.601	fuzai	exact_rank
+附在	附在	0.602	fuzai	exact_rank
+跟在	跟在	0.600	genzai	exact_rank
+挂在	掛在	0.803	guazai	exact_rank
+跪在	跪在	0.600	guizai	exact_rank
+焊在	焊在	0.200	hanzai	exact_rank
+活在	活在	0.268	huozai	exact_rank
+连在	連在	0.600	lianzai	exact_rank
+立在	立在	0.600	lizai	exact_rank
+埋在	埋在	0.600	maizai	exact_rank
+盘在	盤在	0.400	panzai	exact_rank
+抛在	拋在	0.601	paozai	exact_rank
+喷在	噴在	0.600	penzai	exact_rank
+漂在	漂在	0.400	piaozai	exact_rank
+泼在	潑在	0.200	pozai	exact_rank
+骑在	騎在	0.600	qizai	exact_rank
+蜷在	蜷在	0.200	quanzai	exact_rank
+绕在	繞在	0.400	raozai	exact_rank
+胜在	勝在	0.600	shengzai	exact_rank
+守在	守在	0.600	shouzai	exact_rank
+摔在	摔在	0.400	shuaizai	exact_rank
+套在	套在	0.600	taozai	exact_rank
+贴在	貼在	0.600	tiezai	exact_rank
+印在	印在	0.600	yinzai	exact_rank
+砸在	砸在	0.600	zazai	exact_rank
+撞在	撞在	0.280	zhuangzai	exact_rank
+住在	住在	0.999	zhuzai	exact_rank
+悬在	懸在	0.279	xuanzai	exact_rank
+扣在	扣在	0.600	kouzai	exact_rank
+小船	小船	0.439	xiaochuan	exact_rank
+小岛	小島	0.600	xiaodao	exact_rank
+小刀	小刀	0.296	xiaodao	exact_rank
+小树	小樹	0.602	xiaoshu	exact_rank
+小鼠	小鼠	0.100	xiaoshu	exact_rank
+小摊	小攤	0.956	xiaotan	exact_rank
+小街	小街	0.584	xiaojie	exact_rank
+小径	小徑	0.601	xiaojing	exact_rank
+小鼓	小鼓	0.134	xiaogu	exact_rank
+小火	小火	0.601	xiaohuo	exact_rank
+小伙	小夥	0.600	xiaohuo	exact_rank
+小步	小步	0.600	xiaobu	exact_rank
+小众	小眾	0.099	xiaozhong	exact_rank
+小钱	小錢	0.600	xiaoqian	exact_rank
+小费	小費	0.600	xiaofei	exact_rank
+肖像	肖像	0.600	xiaoxiang	exact_rank
+旱灾	旱災	0.601	hanzai	exact_rank
+盆栽	盆栽	0.601	penzai	exact_rank
+销户	銷戶	0.279	xiaohu	exact_rank
+消暑	消暑	0.601	xiaoshu	exact_rank
+孝经	孝經	0.600	xiaojing	exact_rank
+阖家	闔家	0.533	hejia	exact_rank
+消气	消氣	0.279	xiaoqi	exact_rank
+小项	小項	0.235	xiaoxiang	exact_rank
+和珅	和珅	0.600	heshen	exact_rank
+河神	河神	0.400	heshen	exact_rank

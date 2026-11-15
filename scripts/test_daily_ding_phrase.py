@@ -46,8 +46,9 @@ class DailyDingPhraseTests(unittest.TestCase):
                 self.assertEqual([suffix], matches)
             rows = load_merged_dict([ROOT / f"data/generated/dict_clean_{variant}.txt"])
             self.assertEqual([(word, 180)], rows[PINYIN])
-            expected = {("\u9489\u5728", 10), ("\u9876\u5728", 10)} if variant == "sc" else {
-                ("\u91d8\u5728", 10), ("\u9802\u5728", 10)}
+            # 钉在 and 顶在 were weighted anew on 2026-11-14 (import weights of 10 before).
+            expected = {("\u9489\u5728", 599), ("\u9876\u5728", 400)} if variant == "sc" else {
+                ("\u91d8\u5728", 599), ("\u9802\u5728", 400)}
             # The two keep their weights and the phrase adds no fragment of its own.
             self.assertLessEqual(expected, set(rows["dingzai"]))
             self.assertNotIn(word[:2], {text for text, _weight in rows["dingzai"]})
