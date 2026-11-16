@@ -915,9 +915,9 @@ chayixia	查一下	1
 chayixia	插一下	2
 chouyixia	抽一下	1
 xiyixia	吸一下	1
-caiyixia	踩一下	1
+caiyixia	踩一下	2
 bengyixia	蹦一下	1
-tiaoyixia	跳一下	1
+tiaoyixia	跳一下	2
 anyixia	按一下	1
 dianyixia	点一下	1
 tuiyixia	推一下	1
@@ -4264,3 +4264,19 @@ wanxin	玩心	1
 niguang	逆光	1
 zhiying	直营	1
 zhitao	指套	2
+
+# Words of 2026-11-16, the second batch of the day (东航 and the airlines, the words of a flight, 调一下 read tiao, X一下, 做吧 above 作罢) and the import words weighted anew: the rank each has by weight among the words of its key.
+donghang	东航	1
+dengji	登机	3
+cangwei	舱位	2
+hangbanhao	航班号	1
+anjiankou	安检口	1
+guojihangban	国际航班	1
+jieji	接机	3
+tiaoyixia	调一下	1
+huhang	沪杭	2
+liancheng	连城	2
+jieji	接济	4
+jieji	劫机	6
+baoji	暴击	4
+zuoba	作罢	3

@@ -4591,7 +4591,6 @@
 满地打滚	滿地打滾	0.01
 掐着	掐著	0.01
 印刻	印刻	0.01
-暴击	暴擊	0.01
 人满	人滿	0.01
 卡号	卡號	0.01
 精神头	精神頭	0.01
@@ -6055,7 +6054,6 @@
 取精	取精	0.01
 电刑	電刑	0.01
 各地区	各地區	0.01
-安检口	安檢口	0.01
 安检门	安檢門	0.01
 小圆台	小圓臺	0.01
 圆台	圓臺	0.01
@@ -9246,7 +9244,6 @@
 叫天天不应	叫天天不應	0.01
 叫地地不灵	叫地地不靈	0.01
 心路历程	心路歷程	0.01
-国际航班	國際航班	0.01
 印戳	印戳	0.01
 玫瑰香	玫瑰香	0.01
 结合体	結合體	0.01
@@ -10681,7 +10678,6 @@
 低眉垂眼	低眉垂眼	0.01
 羞羞答答	羞羞答答	0.01
 总结陈词	總結陳詞	0.01
-航班号	航班號	0.01
 棒呆	棒呆	0.01
 牛人辈出	牛人輩出	0.01
 好评率	好評率	0.01
@@ -31098,3 +31094,299 @@
 逆光	逆光	0.600	niguang	exact_rank
 直营	直營	0.600	zhiying	exact_rank
 指套	指套	0.601	zhitao	exact_rank
+# Everyday words, 2026-11-16, the more frequent ones: airlines by their short and full names (the user's 东航; 川航, 厦航, 深航, 新航, 美联航, 达美, 春秋航空, 国际航空, 新加坡航空, 香港航空), the words of a flight (选座, 退改签, 经停, 联程, 航班延误, 机上, 大飞机, 国内航班, 机组人员, 民航局, 机场大巴, 燃油附加费) and X一下 of an everyday verb (the user's 调一下, read tiao, above 跳一下; 说一下, 找一下, 聊一下, 提一下, 发一下, 用一下, 打一下 above 大一下) with the other common readings of their keys (注意下 above 煮一下, 及以下 above 记一下, 眨一下, 焯一下), weighted by the general text as the batches before.
+东航	東航	0.600	donghang	exact_rank_no_contains
+川航	川航	0.216	chuanhang	exact_rank_no_contains
+厦航	廈航	0.400	xiahang	exact_rank_no_contains
+深航	深航	0.600	shenhang	exact_rank_no_contains
+新航	新航	0.400	xinhang	exact_rank_no_contains
+美联航	美聯航	0.400	meilianhang	exact_rank_no_contains
+达美	達美	0.318	damei	exact_rank_no_contains
+星宇	星宇	0.400	xingyu	exact_rank_no_contains
+春秋航空	春秋航空	0.400	chunqiuhangkong	exact_rank_no_contains
+奥凯	奧凱	0.400	aokai	exact_rank_no_contains
+国际航空	國際航空	0.600	guojihangkong	exact_rank_no_contains
+新加坡航空	新加坡航空	0.400	xinjiapohangkong	exact_rank_no_contains
+香港航空	香港航空	0.400	xiangganghangkong	exact_rank_no_contains
+金鹏	金鵬	0.400	jinpeng	exact_rank_no_contains
+选座	選座	0.400	xuanzuo	exact_rank_no_contains
+退改	退改	0.400	tuigai	exact_rank_no_contains
+退改签	退改簽	0.400	tuigaiqian	exact_rank_no_contains
+航班延误	航班延誤	0.400	hangbanyanwu	exact_rank_no_contains
+经停	經停	0.279	jingting	exact_rank_no_contains
+联程	聯程	0.278	liancheng	exact_rank_no_contains
+燃油附加费	燃油附加費	0.400	ranyoufujiafei	exact_rank_no_contains
+机场大巴	機場大巴	0.400	jichangdaba	exact_rank_no_contains
+机上	機上	0.250	jishang	exact_rank_no_contains
+大飞机	大飛機	0.600	dafeiji	exact_rank_no_contains
+国内航班	國內航班	0.400	guoneihangban	exact_rank_no_contains
+机组人员	機組人員	0.600	jizurenyuan	exact_rank_no_contains
+国产大飞机	國產大飛機	0.400	guochandafeiji	exact_rank_no_contains
+民航局	民航局	0.600	minhangju	exact_rank_no_contains
+调一下	調一下	0.541	tiaoyixia	exact_rank_no_contains
+说一下	說一下	0.600	shuoyixia	exact_rank_no_contains
+找一下	找一下	0.400	zhaoyixia	exact_rank_no_contains
+玩一下	玩一下	0.600	wanyixia	exact_rank_no_contains
+发一下	發一下	0.400	fayixia	exact_rank_no_contains
+补一下	補一下	0.400	buyixia	exact_rank_no_contains
+用一下	用一下	0.600	yongyixia	exact_rank_no_contains
+过一下	過一下	0.400	guoyixia	exact_rank_no_contains
+尝一下	嘗一下	0.400	changyixia	exact_rank_no_contains
+睡一下	睡一下	0.400	shuiyixia	exact_rank_no_contains
+拍一下	拍一下	0.400	paiyixia	exact_rank_no_contains
+刷一下	刷一下	0.400	shuayixia	exact_rank_no_contains
+聊一下	聊一下	0.600	liaoyixia	exact_rank_no_contains
+转一下	轉一下	0.400	zhuanyixia	exact_rank_no_contains
+洗一下	洗一下	0.400	xiyixia	exact_rank_no_contains
+打一下	打一下	0.801	dayixia	exact_rank_no_contains
+学一下	學一下	0.400	xueyixia	exact_rank_no_contains
+读一下	讀一下	0.400	duyixia	exact_rank_no_contains
+回一下	回一下	0.400	huiyixia	exact_rank_no_contains
+练一下	練一下	0.400	lianyixia	exact_rank_no_contains
+烫一下	燙一下	0.400	tangyixia	exact_rank_no_contains
+收一下	收一下	0.600	shouyixia	exact_rank_no_contains
+记一下	記一下	0.400	jiyixia	exact_rank_no_contains
+扫一下	掃一下	0.400	saoyixia	exact_rank_no_contains
+翻一下	翻一下	0.400	fanyixia	exact_rank_no_contains
+冲一下	衝一下	0.400	chongyixia	exact_rank_no_contains
+擦一下	擦一下	0.400	cayixia	exact_rank_no_contains
+煮一下	煮一下	0.400	zhuyixia	exact_rank_no_contains
+炒一下	炒一下	0.400	chaoyixia	exact_rank_no_contains
+测一下	測一下	0.400	ceyixia	exact_rank_no_contains
+提一下	提一下	0.600	tiyixia	exact_rank_no_contains
+焯一下	焯一下	0.401	chaoyixia	exact_rank_no_contains
+及以下	及以下	0.600	jiyixia	exact_rank_no_contains
+眨一下	眨一下	0.400	zhayixia	exact_rank_no_contains
+注意下	注意下	0.401	zhuyixia	exact_rank_no_contains
+# Everyday words, 2026-11-16, the less frequent ones (山航, 澳航, 荷航, 亚航 and 捷星 above 牙行 and 戒行, 吉祥航空, 厦门航空, 东航物流, 商飞, 送机 above 松鸡, 值机柜台, 随身行李, 常旅客, 乘务长, 准点率, 贵宾厅, 猜一下 above 踩一下, 教一下, 抱一下, 借一下, 催一下, 见一下 and 剪一下 above 煎一下, 划一下, 撞一下, 跑一下, 歇一下), by the same weights; 中国南航, 网上值机, 电子登机牌, 行李转盘, 早班机, 航变, 窄体机, 认一下, 求一下, 喝一下, 请一下, 叫一下, 传一下, 待一下, 举一下, 躺一下 and other words the general text seldom writes as words, at 2.
+山航	山航	0.200	shanhang	exact_rank_no_contains
+上航	上航	0.089	shanghang	exact_rank_no_contains
+天航	天航	0.200	tianhang	exact_rank_no_contains
+成航	成航	0.002	chenghang	exact_rank_no_contains
+西航	西航	0.200	xihang	exact_rank_no_contains
+澳航	澳航	0.200	aohang	exact_rank_no_contains
+泰航	泰航	0.080	taihang	exact_rank_no_contains
+韩亚	韓亞	0.200	hanya	exact_rank_no_contains
+荷航	荷航	0.200	hehang	exact_rank_no_contains
+英航	英航	0.200	yinghang	exact_rank_no_contains
+美航	美航	0.200	meihang	exact_rank_no_contains
+俄航	俄航	0.200	ehang	exact_rank_no_contains
+土航	土航	0.002	tuhang	exact_rank_no_contains
+卡航	卡航	0.200	kahang	exact_rank_no_contains
+亚航	亞航	0.199	yahang	exact_rank_no_contains
+酷航	酷航	0.200	kuhang	exact_rank_no_contains
+捷星	捷星	0.199	jiexing	exact_rank_no_contains
+虎航	虎航	0.200	huhang	exact_rank_no_contains
+越航	越航	0.200	yuehang	exact_rank_no_contains
+立荣	立榮	0.200	lirong	exact_rank_no_contains
+港龙	港龍	0.200	ganglong	exact_rank_no_contains
+春航	春航	0.002	chunhang	exact_rank_no_contains
+吉祥航空	吉祥航空	0.200	jixianghangkong	exact_rank_no_contains
+祥鹏	祥鵬	0.080	xiangpeng	exact_rank_no_contains
+祥鹏航空	祥鵬航空	0.200	xiangpenghangkong	exact_rank_no_contains
+奥凯航空	奧凱航空	0.080	aokaihangkong	exact_rank_no_contains
+华夏航空	華夏航空	0.200	huaxiahangkong	exact_rank_no_contains
+长龙航空	長龍航空	0.080	changlonghangkong	exact_rank_no_contains
+东海航空	東海航空	0.080	donghaihangkong	exact_rank_no_contains
+西部航空	西部航空	0.200	xibuhangkong	exact_rank_no_contains
+首都航空	首都航空	0.200	shouduhangkong	exact_rank_no_contains
+天津航空	天津航空	0.200	tianjinhangkong	exact_rank_no_contains
+青岛航空	青島航空	0.080	qingdaohangkong	exact_rank_no_contains
+成都航空	成都航空	0.200	chengduhangkong	exact_rank_no_contains
+昆明航空	昆明航空	0.002	kunminghangkong	exact_rank_no_contains
+四川航空	四川航空	0.200	sichuanhangkong	exact_rank_no_contains
+厦门航空	廈門航空	0.200	xiamenhangkong	exact_rank_no_contains
+深圳航空	深圳航空	0.200	shenzhenhangkong	exact_rank_no_contains
+山东航空	山東航空	0.200	shandonghangkong	exact_rank_no_contains
+上海航空	上海航空	0.200	shanghaihangkong	exact_rank_no_contains
+中国国航	中國國航	0.200	zhongguoguohang	exact_rank_no_contains
+中国东航	中國東航	0.080	zhongguodonghang	exact_rank_no_contains
+中国南航	中國南航	0.002	zhongguonanhang	exact_rank_no_contains
+中国国际航空	中國國際航空	0.200	zhongguoguojihangkong	exact_rank_no_contains
+中国南方航空	中國南方航空	0.200	zhongguonanfanghangkong	exact_rank_no_contains
+中华航空	中華航空	0.080	zhonghuahangkong	exact_rank_no_contains
+泰国航空	泰國航空	0.002	taiguohangkong	exact_rank_no_contains
+马来西亚航空	馬來西亞航空	0.200	malaixiyahangkong	exact_rank_no_contains
+汉莎航空	漢莎航空	0.200	hanshahangkong	exact_rank_no_contains
+卡塔尔航空	卡塔爾航空	0.200	kataerhangkong	exact_rank_no_contains
+土耳其航空	土耳其航空	0.200	tuerqihangkong	exact_rank_no_contains
+俄罗斯航空	俄羅斯航空	0.200	eluosihangkong	exact_rank_no_contains
+亚洲航空	亞洲航空	0.200	yazhouhangkong	exact_rank_no_contains
+澳门航空	澳門航空	0.002	aomenhangkong	exact_rank_no_contains
+西藏航空	西藏航空	0.080	xizanghangkong	exact_rank_no_contains
+河北航空	河北航空	0.080	hebeihangkong	exact_rank_no_contains
+江西航空	江西航空	0.080	jiangxihangkong	exact_rank_no_contains
+福州航空	福州航空	0.200	fuzhouhangkong	exact_rank_no_contains
+乌鲁木齐航空	烏魯木齊航空	0.080	wulumuqihangkong	exact_rank_no_contains
+九元航空	九元航空	0.080	jiuyuanhangkong	exact_rank_no_contains
+瑞丽航空	瑞麗航空	0.002	ruilihangkong	exact_rank_no_contains
+幸福航空	幸福航空	0.080	xingfuhangkong	exact_rank_no_contains
+桂林航空	桂林航空	0.080	guilinhangkong	exact_rank_no_contains
+北部湾航空	北部灣航空	0.002	beibuwanhangkong	exact_rank_no_contains
+长安航空	長安航空	0.002	changanhangkong	exact_rank_no_contains
+顺丰航空	順豐航空	0.080	shunfenghangkong	exact_rank_no_contains
+圆通航空	圓通航空	0.002	yuantonghangkong	exact_rank_no_contains
+国货航	國貨航	0.002	guohuohang	exact_rank_no_contains
+东航物流	東航物流	0.200	donghangwuliu	exact_rank_no_contains
+南航物流	南航物流	0.002	nanhangwuliu	exact_rank_no_contains
+商飞	商飛	0.200	shangfei	exact_rank_no_contains
+网上值机	網上值機	0.002	wangshangzhiji	exact_rank_no_contains
+在线值机	在線值機	0.002	zaixianzhiji	exact_rank_no_contains
+自助值机	自助值機	0.200	zizhuzhiji	exact_rank_no_contains
+值机柜台	值機櫃臺	0.200	zhijiguitai	exact_rank_no_contains
+电子登机牌	電子登機牌	0.002	dianzidengjipai	exact_rank_no_contains
+免费行李额	免費行李額	0.200	mianfeixinglie	exact_rank_no_contains
+超重行李	超重行李	0.002	chaozhongxingli	exact_rank_no_contains
+随身行李	隨身行李	0.200	suishenxingli	exact_rank_no_contains
+行李转盘	行李轉盤	0.002	xinglizhuanpan	exact_rank_no_contains
+超级经济舱	超級經濟艙	0.002	chaojijingjicang	exact_rank_no_contains
+超经	超經	0.002	chaojing	exact_rank_no_contains
+在线选座	在線選座	0.080	zaixianxuanzuo	exact_rank_no_contains
+取消航班	取消航班	0.200	quxiaohangban	exact_rank_no_contains
+中转联程	中轉聯程	0.002	zhongzhuanliancheng	exact_rank_no_contains
+早班机	早班機	0.002	zaobanji	exact_rank_no_contains
+晚班机	晚班機	0.002	wanbanji	exact_rank_no_contains
+远机位	遠機位	0.080	yuanjiwei	exact_rank_no_contains
+近机位	近機位	0.080	jinjiwei	exact_rank_no_contains
+常旅客	常旅客	0.200	changlvke	exact_rank_no_contains
+全价票	全價票	0.200	quanjiapiao	exact_rank_no_contains
+燃油费	燃油費	0.200	ranyoufei	exact_rank_no_contains
+航变	航變	0.002	hangbian	exact_rank_no_contains
+代码共享	代碼共享	0.200	daimagongxiang	exact_rank_no_contains
+乘务长	乘務長	0.200	chengwuzhang	exact_rank_no_contains
+航延险	航延險	0.002	hangyanxian	exact_rank_no_contains
+航旅纵横	航旅縱橫	0.080	hanglvzongheng	exact_rank_no_contains
+贵宾厅	貴賓廳	0.200	guibinting	exact_rank_no_contains
+航班动态	航班動態	0.080	hangbandongtai	exact_rank_no_contains
+准点率	準點率	0.200	zhundianlv	exact_rank_no_contains
+凤凰知音	鳳凰知音	0.002	fenghuangzhiyin	exact_rank_no_contains
+东方万里行	東方萬里行	0.002	dongfangwanlixing	exact_rank_no_contains
+南航明珠	南航明珠	0.002	nanhangmingzhu	exact_rank_no_contains
+里程兑换	里程兌換	0.002	lichengduihuan	exact_rank_no_contains
+宽体机	寬體機	0.080	kuantiji	exact_rank_no_contains
+窄体机	窄體機	0.002	zhaitiji	exact_rank_no_contains
+行李牌	行李牌	0.080	xinglipai	exact_rank_no_contains
+送机	送機	0.225	songji	exact_rank_no_contains
+接送机	接送機	0.200	jiesongji	exact_rank_no_contains
+靠过道	靠過道	0.080	kaoguodao	exact_rank_no_contains
+教一下	教一下	0.200	jiaoyixia	exact_rank_no_contains
+抱一下	抱一下	0.200	baoyixia	exact_rank_no_contains
+量一下	量一下	0.200	liangyixia	exact_rank_no_contains
+装一下	裝一下	0.201	zhuangyixia	exact_rank_no_contains
+聚一下	聚一下	0.200	juyixia	exact_rank_no_contains
+笑一下	笑一下	0.200	xiaoyixia	exact_rank_no_contains
+认一下	認一下	0.002	renyixia	exact_rank_no_contains
+救一下	救一下	0.002	jiuyixia	exact_rank_no_contains
+秀一下	秀一下	0.199	xiuyixia	exact_rank_no_contains
+催一下	催一下	0.200	cuiyixia	exact_rank_no_contains
+变一下	變一下	0.080	bianyixia	exact_rank_no_contains
+亲一下	親一下	0.200	qinyixia	exact_rank_no_contains
+夸一下	誇一下	0.200	kuayixia	exact_rank_no_contains
+录一下	錄一下	0.002	luyixia	exact_rank_no_contains
+报一下	報一下	0.201	baoyixia	exact_rank_no_contains
+顶一下	頂一下	0.200	dingyixia	exact_rank_no_contains
+排一下	排一下	0.200	paiyixia	exact_rank_no_contains
+通一下	通一下	0.003	tongyixia	exact_rank_no_contains
+疼一下	疼一下	0.003	tengyixia	exact_rank_no_contains
+求一下	求一下	0.002	qiuyixia	exact_rank_no_contains
+猜一下	猜一下	0.501	caiyixia	exact_rank_no_contains
+晒一下	曬一下	0.200	shaiyixia	exact_rank_no_contains
+养一下	養一下	0.002	yangyixia	exact_rank_no_contains
+充一下	充一下	0.002	chongyixia	exact_rank_no_contains
+热一下	熱一下	0.200	reyixia	exact_rank_no_contains
+撩一下	撩一下	0.002	liaoyixia	exact_rank_no_contains
+拜一下	拜一下	0.002	baiyixia	exact_rank_no_contains
+照一下	照一下	0.200	zhaoyixia	exact_rank_no_contains
+取一下	取一下	0.080	quyixia	exact_rank_no_contains
+留一下	留一下	0.003	liuyixia	exact_rank_no_contains
+哭一下	哭一下	0.080	kuyixia	exact_rank_no_contains
+剪一下	剪一下	0.202	jianyixia	exact_rank_no_contains
+侃一下	侃一下	0.002	kanyixia	exact_rank_no_contains
+逛一下	逛一下	0.200	guangyixia	exact_rank_no_contains
+拼一下	拼一下	0.200	pinyixia	exact_rank_no_contains
+泡一下	泡一下	0.200	paoyixia	exact_rank_no_contains
+接一下	接一下	0.200	jieyixia	exact_rank_no_contains
+请一下	請一下	0.001	qingyixia	exact_rank_no_contains
+喝一下	喝一下	0.002	heyixia	exact_rank_no_contains
+买一下	買一下	0.200	maiyixia	exact_rank_no_contains
+借一下	借一下	0.201	jieyixia	exact_rank_no_contains
+捏一下	捏一下	0.200	nieyixia	exact_rank_no_contains
+蒸一下	蒸一下	0.081	zhengyixia	exact_rank_no_contains
+忍一下	忍一下	0.200	renyixia	exact_rank_no_contains
+唱一下	唱一下	0.002	changyixia	exact_rank_no_contains
+念一下	念一下	0.200	nianyixia	exact_rank_no_contains
+画一下	畫一下	0.201	huayixia	exact_rank_no_contains
+压一下	壓一下	0.200	yayixia	exact_rank_no_contains
+播一下	播一下	0.002	boyixia	exact_rank_no_contains
+穿一下	穿一下	0.001	chuanyixia	exact_rank_no_contains
+吹一下	吹一下	0.200	chuiyixia	exact_rank_no_contains
+谢一下	謝一下	0.002	xieyixia	exact_rank_no_contains
+定一下	定一下	0.202	dingyixia	exact_rank_no_contains
+约一下	約一下	0.002	yueyixia	exact_rank_no_contains
+醒一下	醒一下	0.002	xingyixia	exact_rank_no_contains
+带一下	帶一下	0.200	daiyixia	exact_rank_no_contains
+让一下	讓一下	0.200	rangyixia	exact_rank_no_contains
+缓一下	緩一下	0.002	huanyixia	exact_rank_no_contains
+藏一下	藏一下	0.002	cangyixia	exact_rank_no_contains
+晃一下	晃一下	0.200	huangyixia	exact_rank_no_contains
+蹭一下	蹭一下	0.080	cengyixia	exact_rank_no_contains
+理一下	理一下	0.200	liyixia	exact_rank_no_contains
+整一下	整一下	0.003	zhengyixia	exact_rank_no_contains
+称一下	稱一下	0.081	chengyixia	exact_rank_no_contains
+数一下	數一下	0.200	shuyixia	exact_rank_no_contains
+扎一下	扎一下	0.080	zhayixia	exact_rank_no_contains
+煎一下	煎一下	0.201	jianyixia	exact_rank_no_contains
+摆一下	擺一下	0.080	baiyixia	exact_rank_no_contains
+拨一下	撥一下	0.200	boyixia	exact_rank_no_contains
+抄一下	抄一下	0.200	chaoyixia	exact_rank_no_contains
+撑一下	撐一下	0.002	chengyixia	exact_rank_no_contains
+传一下	傳一下	0.003	chuanyixia	exact_rank_no_contains
+串一下	串一下	0.002	chuanyixia	exact_rank_no_contains
+待一下	待一下	0.001	daiyixia	exact_rank_no_contains
+戴一下	戴一下	0.002	daiyixia	exact_rank_no_contains
+搭一下	搭一下	0.002	dayixia	exact_rank_no_contains
+订一下	訂一下	0.002	dingyixia	exact_rank_no_contains
+赌一下	賭一下	0.002	duyixia	exact_rank_no_contains
+划一下	劃一下	0.202	huayixia	exact_rank_no_contains
+化一下	化一下	0.003	huayixia	exact_rank_no_contains
+滑一下	滑一下	0.002	huayixia	exact_rank_no_contains
+挥一下	揮一下	0.002	huiyixia	exact_rank_no_contains
+见一下	見一下	0.203	jianyixia	exact_rank_no_contains
+减一下	減一下	0.003	jianyixia	exact_rank_no_contains
+检一下	檢一下	0.001	jianyixia	exact_rank_no_contains
+捡一下	撿一下	0.002	jianyixia	exact_rank_no_contains
+叫一下	叫一下	0.003	jiaoyixia	exact_rank_no_contains
+交一下	交一下	0.002	jiaoyixia	exact_rank_no_contains
+挤一下	擠一下	0.200	jiyixia	exact_rank_no_contains
+举一下	舉一下	0.002	juyixia	exact_rank_no_contains
+亮一下	亮一下	0.003	liangyixia	exact_rank_no_contains
+晾一下	晾一下	0.082	liangyixia	exact_rank_no_contains
+凉一下	涼一下	0.002	liangyixia	exact_rank_no_contains
+溜一下	溜一下	0.002	liuyixia	exact_rank_no_contains
+跑一下	跑一下	0.201	paoyixia	exact_rank_no_contains
+抛一下	拋一下	0.002	paoyixia	exact_rank_no_contains
+清一下	清一下	0.002	qingyixia	exact_rank_no_contains
+耍一下	耍一下	0.002	shuayixia	exact_rank_no_contains
+躺一下	躺一下	0.002	tangyixia	exact_rank_no_contains
+腾一下	騰一下	0.002	tengyixia	exact_rank_no_contains
+挑一下	挑一下	0.002	tiaoyixia	exact_rank_no_contains
+统一下	統一下	0.001	tongyixia	exact_rank_no_contains
+痛一下	痛一下	0.002	tongyixia	exact_rank_no_contains
+歇一下	歇一下	0.200	xieyixia	exact_rank_no_contains
+炸一下	炸一下	0.200	zhayixia	exact_rank_no_contains
+争一下	爭一下	0.002	zhengyixia	exact_rank_no_contains
+撞一下	撞一下	0.200	zhuangyixia	exact_rank_no_contains
+住一下	住一下	0.002	zhuyixia	exact_rank_no_contains
+# Weighted anew on 2026-11-16: import-weight words of the families and of their keys that the general text holds far more often than their weights say (舱位, 航班号, 国际航班, 安检口, 沪杭, 连城, 劫机, 暴击); 登机 above 登基, 接机 and 接济 above 截击, by everyday use; 作罢 set just under 做吧 on the user's word.
+登机	登機	0.181	dengji	exact_rank
+舱位	艙位	0.600	cangwei	exact_rank
+航班号	航班號	0.400	hangbanhao	exact_rank
+安检口	安檢口	0.200	anjiankou	exact_rank
+国际航班	國際航班	0.600	guojihangban	exact_rank
+接机	接機	0.520	jieji	exact_rank
+沪杭	滬杭	0.600	huhang	exact_rank
+连城	連城	0.279	liancheng	exact_rank
+接济	接濟	0.515	jieji	exact_rank
+劫机	劫機	0.458	jieji	exact_rank
+暴击	暴擊	0.169	baoji	exact_rank
+作罢	作罷	0.279	zuoba	exact_rank

@@ -1599,7 +1599,7 @@ anjian	安檢	1009
 anjian	案件	1000
 anjian	按件	27
 anjian	暗箭	1
-anjiankou	安檢口	10
+anjiankou	安檢口	200
 anjianmen	安檢門	10
 anjiannanfang	暗箭難防	624
 anjianqudong	按鍵驅動	672
@@ -5701,7 +5701,7 @@ baohuzhuyizhe	保護主義者	406
 baoji	包機	464
 baoji	保級	217
 baoji	寶雞	170
-baoji	暴擊	10
+baoji	暴擊	169
 baojia	保駕	949
 baojia	報價	93
 baojia	保甲	1
@@ -27141,7 +27141,7 @@ denghuotongming	燈火通明	405
 dengji	登記	1000
 dengji	等級	761
 dengji	登基	180
-dengji	登機	1
+dengji	登機	181
 dengjia	等價	1000
 dengjiaguanxi	等價關係	478
 dengjiaguanxi	等價關系	389
@@ -49670,7 +49670,7 @@ guojiguanxixueyuan	國際關係學院	385
 guojiguanxixueyuan	國際關系學院	317
 guojihaishiweixingzuzhi	國際海事衛星組織	382
 guojihaishizuzhi	國際海事組織	322
-guojihangban	國際航班	10
+guojihangban	國際航班	600
 guojihangkonggongsi	國際航空公司	323
 guojihangkonglianhehui	國際航空聯合會	348
 guojihangkongyunshuxiehui	國際航空運輸協會	378
@@ -51567,7 +51567,7 @@ hangban	航班	485
 hangbanbiao	航班表	232
 hangbanchaxunjiekou	航班查詢接口	774
 hangbang	杭幫	700
-hangbanhao	航班號	10
+hangbanhao	航班號	400
 hangbei	行輩	355
 hangbiao	航標	482
 hangbiaodeng	航標燈	431
@@ -58096,7 +58096,7 @@ huhaifeng	胡海峰	1000
 huhaiya	胡海牙	470
 huhan	呼喊	463
 huhang	護航	1000
-huhang	滬杭	1
+huhang	滬杭	600
 huhangjian	護航艦	412
 huhao	呼號	560
 huhe	呼喝	454
@@ -65064,10 +65064,10 @@ jiehuo	結夥	1
 jieji	階級	1000
 jieji	截擊	511
 jieji	借機	600
-jieji	接濟	13
+jieji	接濟	515
 jieji	藉機	13
-jieji	劫機	1
-jieji	接機	1
+jieji	劫機	458
+jieji	接機	520
 jiejia	結痂	589
 jiejiaguitian	解甲歸田	272
 jiejian	接見	831
@@ -79949,7 +79949,7 @@ lianchandaohu	聯產到戶	140
 lianchandaolao	聯產到勞	260
 lianchaoshang	臉朝上	280
 liancheng	練成	280
-liancheng	連城	184
+liancheng	連城	279
 lianchengjue	連城訣	493
 lianchengxian	連城縣	165
 lianchengyipian	連成一片	280
@@ -181533,7 +181533,7 @@ zuoan	左岸	923
 zuoan	作案	1
 zuoba	做吧	280
 zuoba	坐吧	280
-zuoba	作罷	256
+zuoba	作罷	279
 zuoban	左半	1000
 zuoban	做伴	208
 zuoban	坐班	10
@@ -235785,7 +235785,7 @@ caizhengyi	蔡政宜	620
 cangjie	倉頡	398
 cangjieshurufa	倉頡輸入法	740
 cangshu	倉鼠	32
-cangwei	艙位	1
+cangwei	艙位	600
 cangyuan	滄源	181
 cangzheye	藏著掖	552
 cangzheyezhe	藏著掖著	597
@@ -243628,3 +243628,284 @@ zhujing	柱鏡	80	no_contains
 zimo	字末	2	no_contains
 ziwei	字尾	280	no_contains
 zuanjing	鑽晶	2	no_contains
+aohang	澳航	200	no_contains
+aokai	奧凱	400	no_contains
+aokaihangkong	奧凱航空	80	no_contains
+aomenhangkong	澳門航空	2	no_contains
+baiyixia	拜一下	2	no_contains
+baiyixia	擺一下	80	no_contains
+baoyixia	報一下	201	no_contains
+baoyixia	抱一下	200	no_contains
+beibuwanhangkong	北部灣航空	2	no_contains
+bianyixia	變一下	80	no_contains
+boyixia	撥一下	200	no_contains
+boyixia	播一下	2	no_contains
+buyixia	補一下	400	no_contains
+caiyixia	猜一下	501	no_contains
+cangyixia	藏一下	2	no_contains
+cayixia	擦一下	400	no_contains
+cengyixia	蹭一下	80	no_contains
+ceyixia	測一下	400	no_contains
+changanhangkong	長安航空	2	no_contains
+changlonghangkong	長龍航空	80	no_contains
+changlvke	常旅客	200	no_contains
+changyixia	唱一下	2	no_contains
+changyixia	嘗一下	400	no_contains
+chaojijingjicang	超級經濟艙	2	no_contains
+chaojing	超經	2	no_contains
+chaoyixia	抄一下	200	no_contains
+chaoyixia	炒一下	400	no_contains
+chaoyixia	焯一下	401	no_contains
+chaozhongxingli	超重行李	2	no_contains
+chengduhangkong	成都航空	200	no_contains
+chenghang	成航	2	no_contains
+chengwuzhang	乘務長	200	no_contains
+chengyixia	撐一下	2	no_contains
+chengyixia	稱一下	81	no_contains
+chongyixia	充一下	2	no_contains
+chongyixia	衝一下	400	no_contains
+chuanhang	川航	216	no_contains
+chuanyixia	串一下	2	no_contains
+chuanyixia	傳一下	3	no_contains
+chuanyixia	穿一下	1	no_contains
+chuiyixia	吹一下	200	no_contains
+chunhang	春航	2	no_contains
+chunqiuhangkong	春秋航空	400	no_contains
+cuiyixia	催一下	200	no_contains
+dafeiji	大飛機	600	no_contains
+daimagongxiang	代碼共享	200	no_contains
+daiyixia	帶一下	200	no_contains
+daiyixia	待一下	1	no_contains
+daiyixia	戴一下	2	no_contains
+damei	達美	318	no_contains
+dayixia	打一下	801	no_contains
+dayixia	搭一下	2	no_contains
+dianzidengjipai	電子登機牌	2	no_contains
+dingyixia	定一下	202	no_contains
+dingyixia	訂一下	2	no_contains
+dingyixia	頂一下	200	no_contains
+dongfangwanlixing	東方萬里行	2	no_contains
+donghaihangkong	東海航空	80	no_contains
+donghang	東航	600	no_contains
+donghangwuliu	東航物流	200	no_contains
+duyixia	讀一下	400	no_contains
+duyixia	賭一下	2	no_contains
+ehang	俄航	200	no_contains
+eluosihangkong	俄羅斯航空	200	no_contains
+fanyixia	翻一下	400	no_contains
+fayixia	發一下	400	no_contains
+fenghuangzhiyin	鳳凰知音	2	no_contains
+fuzhouhangkong	福州航空	200	no_contains
+ganglong	港龍	200	no_contains
+guangyixia	逛一下	200	no_contains
+guibinting	貴賓廳	200	no_contains
+guilinhangkong	桂林航空	80	no_contains
+guochandafeiji	國產大飛機	400	no_contains
+guohuohang	國貨航	2	no_contains
+guojihangkong	國際航空	600	no_contains
+guoneihangban	國內航班	400	no_contains
+guoyixia	過一下	400	no_contains
+hangbandongtai	航班動態	80	no_contains
+hangbanyanwu	航班延誤	400	no_contains
+hangbian	航變	2	no_contains
+hanglvzongheng	航旅縱橫	80	no_contains
+hangyanxian	航延險	2	no_contains
+hanshahangkong	漢莎航空	200	no_contains
+hanya	韓亞	200	no_contains
+hebeihangkong	河北航空	80	no_contains
+hehang	荷航	200	no_contains
+heyixia	喝一下	2	no_contains
+huangyixia	晃一下	200	no_contains
+huanyixia	緩一下	2	no_contains
+huaxiahangkong	華夏航空	200	no_contains
+huayixia	劃一下	202	no_contains
+huayixia	化一下	3	no_contains
+huayixia	滑一下	2	no_contains
+huayixia	畫一下	201	no_contains
+huhang	虎航	200	no_contains
+huiyixia	回一下	400	no_contains
+huiyixia	揮一下	2	no_contains
+jiangxihangkong	江西航空	80	no_contains
+jianyixia	剪一下	202	no_contains
+jianyixia	撿一下	2	no_contains
+jianyixia	檢一下	1	no_contains
+jianyixia	減一下	3	no_contains
+jianyixia	煎一下	201	no_contains
+jianyixia	見一下	203	no_contains
+jiaoyixia	交一下	2	no_contains
+jiaoyixia	叫一下	3	no_contains
+jiaoyixia	教一下	200	no_contains
+jichangdaba	機場大巴	400	no_contains
+jiesongji	接送機	200	no_contains
+jiexing	捷星	199	no_contains
+jieyixia	借一下	201	no_contains
+jieyixia	接一下	200	no_contains
+jingting	經停	279	no_contains
+jinjiwei	近機位	80	no_contains
+jinpeng	金鵬	400	no_contains
+jishang	機上	250	no_contains
+jiuyixia	救一下	2	no_contains
+jiuyuanhangkong	九元航空	80	no_contains
+jixianghangkong	吉祥航空	200	no_contains
+jiyixia	及以下	600	no_contains
+jiyixia	擠一下	200	no_contains
+jiyixia	記一下	400	no_contains
+jizurenyuan	機組人員	600	no_contains
+juyixia	聚一下	200	no_contains
+juyixia	舉一下	2	no_contains
+kahang	卡航	200	no_contains
+kanyixia	侃一下	2	no_contains
+kaoguodao	靠過道	80	no_contains
+kataerhangkong	卡塔爾航空	200	no_contains
+kuantiji	寬體機	80	no_contains
+kuayixia	誇一下	200	no_contains
+kuhang	酷航	200	no_contains
+kunminghangkong	昆明航空	2	no_contains
+kuyixia	哭一下	80	no_contains
+liancheng	聯程	278	no_contains
+liangyixia	亮一下	3	no_contains
+liangyixia	晾一下	82	no_contains
+liangyixia	涼一下	2	no_contains
+liangyixia	量一下	200	no_contains
+lianyixia	練一下	400	no_contains
+liaoyixia	撩一下	2	no_contains
+liaoyixia	聊一下	600	no_contains
+lichengduihuan	里程兌換	2	no_contains
+lirong	立榮	200	no_contains
+liuyixia	溜一下	2	no_contains
+liuyixia	留一下	3	no_contains
+liyixia	理一下	200	no_contains
+luyixia	錄一下	2	no_contains
+maiyixia	買一下	200	no_contains
+malaixiyahangkong	馬來西亞航空	200	no_contains
+meihang	美航	200	no_contains
+meilianhang	美聯航	400	no_contains
+mianfeixinglie	免費行李額	200	no_contains
+minhangju	民航局	600	no_contains
+nanhangmingzhu	南航明珠	2	no_contains
+nanhangwuliu	南航物流	2	no_contains
+nianyixia	念一下	200	no_contains
+nieyixia	捏一下	200	no_contains
+paiyixia	拍一下	400	no_contains
+paiyixia	排一下	200	no_contains
+paoyixia	拋一下	2	no_contains
+paoyixia	泡一下	200	no_contains
+paoyixia	跑一下	201	no_contains
+pinyixia	拼一下	200	no_contains
+qingdaohangkong	青島航空	80	no_contains
+qingyixia	清一下	2	no_contains
+qingyixia	請一下	1	no_contains
+qinyixia	親一下	200	no_contains
+qiuyixia	求一下	2	no_contains
+quanjiapiao	全價票	200	no_contains
+quxiaohangban	取消航班	200	no_contains
+quyixia	取一下	80	no_contains
+rangyixia	讓一下	200	no_contains
+ranyoufei	燃油費	200	no_contains
+ranyoufujiafei	燃油附加費	400	no_contains
+renyixia	忍一下	200	no_contains
+renyixia	認一下	2	no_contains
+reyixia	熱一下	200	no_contains
+ruilihangkong	瑞麗航空	2	no_contains
+saoyixia	掃一下	400	no_contains
+shaiyixia	曬一下	200	no_contains
+shandonghangkong	山東航空	200	no_contains
+shangfei	商飛	200	no_contains
+shanghaihangkong	上海航空	200	no_contains
+shanghang	上航	89	no_contains
+shanhang	山航	200	no_contains
+shenhang	深航	600	no_contains
+shenzhenhangkong	深圳航空	200	no_contains
+shouduhangkong	首都航空	200	no_contains
+shouyixia	收一下	600	no_contains
+shuayixia	刷一下	400	no_contains
+shuayixia	耍一下	2	no_contains
+shuiyixia	睡一下	400	no_contains
+shunfenghangkong	順豐航空	80	no_contains
+shuoyixia	說一下	600	no_contains
+shuyixia	數一下	200	no_contains
+sichuanhangkong	四川航空	200	no_contains
+songji	送機	225	no_contains
+suishenxingli	隨身行李	200	no_contains
+taiguohangkong	泰國航空	2	no_contains
+taihang	泰航	80	no_contains
+tangyixia	燙一下	400	no_contains
+tangyixia	躺一下	2	no_contains
+tengyixia	疼一下	3	no_contains
+tengyixia	騰一下	2	no_contains
+tianhang	天航	200	no_contains
+tianjinhangkong	天津航空	200	no_contains
+tiaoyixia	挑一下	2	no_contains
+tiaoyixia	調一下	541	no_contains
+tiyixia	提一下	600	no_contains
+tongyixia	痛一下	2	no_contains
+tongyixia	統一下	1	no_contains
+tongyixia	通一下	3	no_contains
+tuerqihangkong	土耳其航空	200	no_contains
+tuhang	土航	2	no_contains
+tuigai	退改	400	no_contains
+tuigaiqian	退改簽	400	no_contains
+wanbanji	晚班機	2	no_contains
+wangshangzhiji	網上值機	2	no_contains
+wanyixia	玩一下	600	no_contains
+wulumuqihangkong	烏魯木齊航空	80	no_contains
+xiahang	廈航	400	no_contains
+xiamenhangkong	廈門航空	200	no_contains
+xiangganghangkong	香港航空	400	no_contains
+xiangpeng	祥鵬	80	no_contains
+xiangpenghangkong	祥鵬航空	200	no_contains
+xiaoyixia	笑一下	200	no_contains
+xibuhangkong	西部航空	200	no_contains
+xieyixia	歇一下	200	no_contains
+xieyixia	謝一下	2	no_contains
+xihang	西航	200	no_contains
+xingfuhangkong	幸福航空	80	no_contains
+xinglipai	行李牌	80	no_contains
+xinglizhuanpan	行李轉盤	2	no_contains
+xingyixia	醒一下	2	no_contains
+xingyu	星宇	400	no_contains
+xinhang	新航	400	no_contains
+xinjiapohangkong	新加坡航空	400	no_contains
+xiuyixia	秀一下	199	no_contains
+xiyixia	洗一下	400	no_contains
+xizanghangkong	西藏航空	80	no_contains
+xuanzuo	選座	400	no_contains
+xueyixia	學一下	400	no_contains
+yahang	亞航	199	no_contains
+yangyixia	養一下	2	no_contains
+yayixia	壓一下	200	no_contains
+yazhouhangkong	亞洲航空	200	no_contains
+yinghang	英航	200	no_contains
+yongyixia	用一下	600	no_contains
+yuanjiwei	遠機位	80	no_contains
+yuantonghangkong	圓通航空	2	no_contains
+yuehang	越航	200	no_contains
+yueyixia	約一下	2	no_contains
+zaixianxuanzuo	在線選座	80	no_contains
+zaixianzhiji	在線值機	2	no_contains
+zaobanji	早班機	2	no_contains
+zhaitiji	窄體機	2	no_contains
+zhaoyixia	找一下	400	no_contains
+zhaoyixia	照一下	200	no_contains
+zhayixia	扎一下	80	no_contains
+zhayixia	炸一下	200	no_contains
+zhayixia	眨一下	400	no_contains
+zhengyixia	整一下	3	no_contains
+zhengyixia	爭一下	2	no_contains
+zhengyixia	蒸一下	81	no_contains
+zhijiguitai	值機櫃臺	200	no_contains
+zhongguodonghang	中國東航	80	no_contains
+zhongguoguohang	中國國航	200	no_contains
+zhongguoguojihangkong	中國國際航空	200	no_contains
+zhongguonanfanghangkong	中國南方航空	200	no_contains
+zhongguonanhang	中國南航	2	no_contains
+zhonghuahangkong	中華航空	80	no_contains
+zhongzhuanliancheng	中轉聯程	2	no_contains
+zhuangyixia	撞一下	200	no_contains
+zhuangyixia	裝一下	201	no_contains
+zhuanyixia	轉一下	400	no_contains
+zhundianlv	準點率	200	no_contains
+zhuyixia	住一下	2	no_contains
+zhuyixia	注意下	401	no_contains
+zhuyixia	煮一下	400	no_contains
+zizhuzhiji	自助值機	200	no_contains
