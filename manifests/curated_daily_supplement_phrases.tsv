@@ -4462,7 +4462,6 @@
 反扣	反扣	0.01
 抢着	搶著	0.01
 大事件	大事件	0.34
-之余	之餘	0.01
 挂满	掛滿	0.01
 红灯笼	紅燈籠	0.01
 约好	約好	0.36
@@ -4623,7 +4622,6 @@
 史老师	史老師	0.01
 史教授	史教授	0.01
 行输入	行輸入	0.01
-行末	行末	0.01
 平时分	平時分	0.01
 干嘛	幹嘛	0.01
 微信号	微信號	0.01
@@ -7365,7 +7363,6 @@
 不匀	不勻	0.01
 商务车	商務車	0.01
 叠嶂	疊嶂	0.01
-瞳距	瞳距	0.01
 视如己出	視如己出	0.01
 狸猫换太子	狸貓換太子	0.01
 细查	細查	0.01
@@ -8630,7 +8627,6 @@
 细思	細思	0.01
 岛亭	島亭	0.01
 上亿年	上億年	0.01
-短寿	短壽	0.01
 薪火	薪火	0.01
 功在万古千秋	功在萬古千秋	0.01
 千秋	千秋	0.01
@@ -9674,7 +9670,6 @@
 银铃	銀鈴	0.01
 圆睁	圓睜	0.01
 实验台	實驗臺	0.01
-眼镜布	眼鏡布	0.01
 风水宝地	風水寶地	0.01
 本征态	本徵態	0.01
 抗磁性	抗磁性	0.01
@@ -9918,7 +9913,6 @@
 达芬奇	達芬奇	0.01
 终身不娶	終身不娶	0.01
 软乎乎	軟乎乎	0.01
-玩心	玩心	0.01
 攀住	攀住	0.01
 拔苗	拔苗	0.01
 绵绵密密	綿綿密密	0.01
@@ -9973,7 +9967,6 @@
 高级定制	高級定製	0.01
 两小无嫌猜	兩小無嫌猜	0.01
 姻缘线	姻緣線	0.01
-指根	指根	0.01
 轻轻巧巧	輕輕巧巧	0.01
 利禄亨通	利祿亨通	0.01
 判词	判詞	0.01
@@ -10061,7 +10054,6 @@
 蜜汁	蜜汁	0.01
 赫然在列	赫然在列	0.01
 加厚	加厚	0.01
-镜腿	鏡腿	0.01
 润物无声	潤物無聲	0.01
 艺术感	藝術感	0.01
 吊桥效应	吊橋效應	0.01
@@ -10853,7 +10845,6 @@
 高氯酸	高氯酸	0.01
 颁奖典礼	頒獎典禮	0.01
 找罪受	找罪受	0.01
-框架眼镜	框架眼鏡	0.01
 药液	藥液	0.01
 带课	帶課	0.01
 烧柱香	燒柱香	0.01
@@ -10879,7 +10870,6 @@
 宜嫁娶	宜嫁娶	0.01
 宜出行	宜出行	0.01
 娇声娇气	嬌聲嬌氣	0.01
-止渴	止渴	0.01
 办公室恋情	辦公室戀情	0.01
 硬性规定	硬性規定	0.01
 抱孙子	抱孫子	0.01
@@ -11015,7 +11005,6 @@
 一例	一例	0.48	yili
 收放	收放	0.48	shoufang
 跪趴	跪趴	0.28	guipa
-指套	指套	0.48	zhitao
 小情绪	小情緒	0.50	xiaoqingxu
 金属链	金屬鏈	0.50	jinshulian
 硌着	硌著	0.48	gezhe
@@ -30686,3 +30675,426 @@
 小项	小項	0.235	xiaoxiang	exact_rank
 和珅	和珅	0.600	heshen	exact_rank
 河神	河神	0.400	heshen	exact_rank
+# Everyday words, 2026-11-16, the more frequent ones: 混 before a verb or noun, mixing (the user's 混输 and 混码; 混动, 混居, 混频, 混流, 混色), 只 as "only" before a verb (the user's 只提, 只换, 只跟, 只更, 只修, 只坐, 只上, 只下, 只报, 只保, 只包, 只泡, 只服 and more; 只待, 只配, 只图, 只闻) and the user's 只和 (only with), 止 before what it stops (the user's 止疼; 止泻, 止盈, 止呕, 止于), the user's 指交, and a unit of text before 首, 尾, 末 or 头 (the user's 句尾, 句末, 段首, 文末, 列首, 词头, and 行尾, 行末 and 行首 read hang; 卷尾, 卷末, 篇末, 字尾), eyewear (the user's 依视路, 蔡司 and 渐进片; 万新, 屈光, 视光, 膜层, 近视眼镜, 眼镜店, 防蓝光) and 你 before an adverb, a modal or a preposition (the user's 你又; 你都, 你别, 你得, 你跟, 你给; 你总 and 你只 at 2, where they turned benchmark cases), weighted by the general text as the batches before.
+混输	混輸	0.340	hunshu	exact_rank_no_contains
+混码	混碼	0.400	hunma	exact_rank_no_contains
+混动	混動	0.600	hundong	exact_rank_no_contains
+混居	混居	0.600	hunju	exact_rank_no_contains
+混炼	混煉	0.378	hunlian	exact_rank_no_contains
+混频	混頻	0.400	hunpin	exact_rank_no_contains
+混溶	混溶	0.400	hunrong	exact_rank_no_contains
+混料	混料	0.400	hunliao	exact_rank_no_contains
+混流	混流	0.400	hunliu	exact_rank_no_contains
+混配	混配	0.400	hunpei	exact_rank_no_contains
+混酿	混釀	0.400	hunniang	exact_rank_no_contains
+混色	混色	0.400	hunse	exact_rank_no_contains
+混声	混聲	0.400	hunsheng	exact_rank_no_contains
+混油	混油	0.400	hunyou	exact_rank_no_contains
+只提	只提	0.400	zhiti	exact_rank_no_contains
+只指	只指	0.144	zhizhi	exact_rank_no_contains
+只办	只辦	0.401	zhiban	exact_rank_no_contains
+只搬	只搬	0.400	zhiban	exact_rank_no_contains
+只换	只換	0.211	zhihuan	exact_rank_no_contains
+只跟	只跟	0.602	zhigen	exact_rank_no_contains
+只更	只更	0.400	zhigeng	exact_rank_no_contains
+只抄	只抄	0.291	zhichao	exact_rank_no_contains
+只吵	只吵	0.290	zhichao	exact_rank_no_contains
+只炒	只炒	0.292	zhichao	exact_rank_no_contains
+只摸	只摸	0.400	zhimo	exact_rank_no_contains
+只骗	只騙	0.400	zhipian	exact_rank_no_contains
+只贴	只貼	0.400	zhitie	exact_rank_no_contains
+只喜	只喜	0.115	zhixi	exact_rank_no_contains
+只吸	只吸	0.114	zhixi	exact_rank_no_contains
+只欠	只欠	0.275	zhiqian	exact_rank_no_contains
+只爬	只爬	0.400	zhipa	exact_rank_no_contains
+只热	只熱	0.274	zhire	exact_rank_no_contains
+只修	只修	0.400	zhixiu	exact_rank_no_contains
+只造	只造	0.175	zhizao	exact_rank_no_contains
+只坐	只坐	0.278	zhizuo	exact_rank_no_contains
+只上	只上	0.184	zhishang	exact_rank_no_contains
+只下	只下	0.138	zhixia	exact_rank_no_contains
+只疼	只疼	0.400	zhiteng	exact_rank_no_contains
+只报	只報	0.181	zhibao	exact_rank_no_contains
+只保	只保	0.182	zhibao	exact_rank_no_contains
+只包	只包	0.180	zhibao	exact_rank_no_contains
+只抱	只抱	0.179	zhibao	exact_rank_no_contains
+只泡	只泡	0.400	zhipao	exact_rank_no_contains
+只服	只服	0.197	zhifu	exact_rank_no_contains
+只待	只待	0.342	zhidai	exact_rank_no_contains
+只许	只許	0.279	zhixu	exact_rank_no_contains
+只算	只算	0.011	zhisuan	exact_rank_no_contains
+只敢	只敢	0.008	zhigan	exact_rank_no_contains
+只恐	只恐	0.400	zhikong	exact_rank_no_contains
+只缘	只緣	0.163	zhiyuan	exact_rank_no_contains
+只配	只配	0.401	zhipei	exact_rank_no_contains
+只按	只按	0.009	zhian	exact_rank_no_contains
+只图	只圖	0.401	zhitu	exact_rank_no_contains
+只消	只消	0.155	zhixiao	exact_rank_no_contains
+只涨	只漲	0.599	zhizhang	exact_rank_no_contains
+只闻	只聞	0.399	zhiwen	exact_rank_no_contains
+只减	只減	0.000	zhijian	exact_rank_no_contains
+只赔	只賠	0.400	zhipei	exact_rank_no_contains
+只和	只和	0.599	zhihe	exact_rank_no_contains
+止疼	止疼	0.401	zhiteng	exact_rank_no_contains
+指交	指交	0.122	zhijiao	exact_rank_no_contains
+止泻	止瀉	0.600	zhixie	exact_rank_no_contains
+止盈	止盈	0.599	zhiying	exact_rank_no_contains
+止呕	止嘔	0.600	zhiou	exact_rank_no_contains
+止汗	止汗	0.399	zhihan	exact_rank_no_contains
+止吐	止吐	0.400	zhitu	exact_rank_no_contains
+止痢	止痢	0.278	zhili	exact_rank_no_contains
+止付	止付	0.198	zhifu	exact_rank_no_contains
+止痉	止痙	0.400	zhijing	exact_rank_no_contains
+止于	止於	0.600	zhiyu	exact_rank_no_contains
+止水	止水	0.364	zhishui	exact_rank_no_contains
+止观	止觀	0.400	zhiguan	exact_rank_no_contains
+句尾	句尾	0.600	juwei	exact_rank_no_contains
+句末	句末	0.346	jumo	exact_rank_no_contains
+段尾	段尾	0.070	duanwei	exact_rank_no_contains
+段末	段末	0.400	duanmo	exact_rank_no_contains
+文尾	文尾	0.400	wenwei	exact_rank_no_contains
+文末	文末	0.600	wenmo	exact_rank_no_contains
+列尾	列尾	0.400	liewei	exact_rank_no_contains
+行尾	行尾	0.400	hangwei	exact_rank_no_contains
+列末	列末	0.400	liemo	exact_rank_no_contains
+话尾	話尾	0.400	huawei	exact_rank_no_contains
+话末	話末	0.400	huamo	exact_rank_no_contains
+词末	詞末	0.400	cimo	exact_rank_no_contains
+句首	句首	0.267	jushou	exact_rank_no_contains
+句头	句頭	0.213	jutou	exact_rank_no_contains
+段首	段首	0.401	duanshou	exact_rank_no_contains
+段头	段頭	0.400	duantou	exact_rank_no_contains
+文首	文首	0.400	wenshou	exact_rank_no_contains
+文头	文頭	0.400	wentou	exact_rank_no_contains
+列首	列首	0.396	lieshou	exact_rank_no_contains
+行首	行首	0.600	hangshou	exact_rank_no_contains
+话首	話首	0.400	huashou	exact_rank_no_contains
+词首	詞首	0.400	cishou	exact_rank_no_contains
+词头	詞頭	0.393	citou	exact_rank_no_contains
+字尾	字尾	0.280	ziwei	exact_rank_no_contains
+卷尾	卷尾	0.400	juanwei	exact_rank_no_contains
+卷末	卷末	0.400	juanmo	exact_rank_no_contains
+篇首	篇首	0.009	pianshou	exact_rank_no_contains
+篇末	篇末	0.400	pianmo	exact_rank_no_contains
+依视路	依視路	0.400	yishilu	exact_rank_no_contains
+蔡司	蔡司	0.600	caisi	exact_rank_no_contains
+渐进片	漸進片	0.400	jianjinpian	exact_rank_no_contains
+万新	萬新	0.400	wanxin	exact_rank_no_contains
+防蓝光	防藍光	0.400	fanglanguang	exact_rank_no_contains
+近视眼镜	近視眼鏡	0.400	jinshiyanjing	exact_rank_no_contains
+膜层	膜層	0.385	moceng	exact_rank_no_contains
+眼镜店	眼鏡店	0.600	yanjingdian	exact_rank_no_contains
+视光	視光	0.600	shiguang	exact_rank_no_contains
+屈光	屈光	0.520	quguang	exact_rank_no_contains
+防雾	防霧	0.400	fangwu	exact_rank_no_contains
+你又	你又	0.600	niyou	exact_rank_no_contains
+你都	你都	0.600	nidou	exact_rank_no_contains
+你可	你可	0.492	nike	exact_rank_no_contains
+你只	你只	0.002	nizhi	exact_rank_no_contains
+你别	你別	0.600	nibie	exact_rank_no_contains
+你最	你最	0.600	nizui	exact_rank_no_contains
+你很	你很	0.600	nihen	exact_rank_no_contains
+你更	你更	0.600	nigeng	exact_rank_no_contains
+你总	你總	0.002	nizong	exact_rank_no_contains
+你刚	你剛	0.600	nigang	exact_rank_no_contains
+你已	你已	0.600	niyi	exact_rank_no_contains
+你曾	你曾	0.600	niceng	exact_rank_no_contains
+你便	你便	0.403	nibian	exact_rank_no_contains
+你越	你越	0.600	niyue	exact_rank_no_contains
+你早	你早	0.400	nizao	exact_rank_no_contains
+你必	你必	0.400	nibi	exact_rank_no_contains
+你尽	你盡	0.385	nijin	exact_rank_no_contains
+你仍	你仍	0.400	nireng	exact_rank_no_contains
+你正	你正	0.600	nizheng	exact_rank_no_contains
+你常	你常	0.400	nichang	exact_rank_no_contains
+你多	你多	0.600	niduo	exact_rank_no_contains
+你少	你少	0.400	nishao	exact_rank_no_contains
+你得	你得	0.600	nidei	exact_rank_no_contains
+你敢	你敢	0.600	nigan	exact_rank_no_contains
+你肯	你肯	0.400	niken	exact_rank_no_contains
+你应	你應	0.279	niying	exact_rank_no_contains
+你不	你不	0.600	nibu	exact_rank_no_contains
+你从	你從	0.600	nicong	exact_rank_no_contains
+你跟	你跟	0.600	nigen	exact_rank_no_contains
+你给	你給	0.600	nigei	exact_rank_no_contains
+你被	你被	0.600	nibei	exact_rank_no_contains
+你让	你讓	0.600	nirang	exact_rank_no_contains
+你向	你向	0.305	nixiang	exact_rank_no_contains
+你比	你比	0.600	nibi	exact_rank_no_contains
+你到	你到	0.600	nidao	exact_rank_no_contains
+# Everyday words, 2026-11-16, the less frequent ones (混肥, 混业, 混检, 混群, 只送, 只抓, 只租, 只挂, 止滑, 止戈, 章末, 队首, 表尾, 豪雅, 非球面, 多焦点, 树脂镜片, 你挺, 你瞎), by the same weights; 混拼, 只登, 只烤, 只跳, 章首, 链头, 链尾, 帧首, 帧尾 and other words the general text seldom writes as words, at 2; 只讨 first on its key, on the user's word.
+混肥	混肥	0.200	hunfei	exact_rank_no_contains
+混砂	混砂	0.200	hunsha	exact_rank_no_contains
+混行	混行	0.200	hunxing	exact_rank_no_contains
+混运	混運	0.200	hunyun	exact_rank_no_contains
+混龄	混齡	0.000	hunling	exact_rank_no_contains
+混业	混業	0.200	hunye	exact_rank_no_contains
+混叠	混疊	0.200	hundie	exact_rank_no_contains
+混储	混儲	0.200	hunchu	exact_rank_no_contains
+混剂	混劑	0.200	hunji	exact_rank_no_contains
+混校	混校	0.200	hunxiao	exact_rank_no_contains
+混版	混版	0.080	hunban	exact_rank_no_contains
+混浴	混浴	0.200	hunyu	exact_rank_no_contains
+混联	混聯	0.200	hunlian	exact_rank_no_contains
+混群	混群	0.200	hunqun	exact_rank_no_contains
+混检	混檢	0.199	hunjian	exact_rank_no_contains
+混接	混接	0.009	hunjie	exact_rank_no_contains
+混施	混施	0.208	hunshi	exact_rank_no_contains
+混燃	混燃	0.080	hunran	exact_rank_no_contains
+混播	混播	0.200	hunbo	exact_rank_no_contains
+混拌	混拌	0.200	hunban	exact_rank_no_contains
+混饮	混飲	0.200	hunyin	exact_rank_no_contains
+混插	混插	0.200	huncha	exact_rank_no_contains
+混融	混融	0.200	hunrong	exact_rank_no_contains
+混制	混制	0.080	hunzhi	exact_rank_no_contains
+混洗	混洗	0.200	hunxi	exact_rank_no_contains
+混岗	混崗	0.080	hungang	exact_rank_no_contains
+混煤	混煤	0.200	hunmei	exact_rank_no_contains
+混缩	混縮	0.080	hunsuo	exact_rank_no_contains
+混采	混採	0.080	huncai	exact_rank_no_contains
+混饲	混飼	0.080	hunsi	exact_rank_no_contains
+混烧	混燒	0.080	hunshao	exact_rank_no_contains
+混录	混錄	0.080	hunlu	exact_rank_no_contains
+混栽	混栽	0.080	hunzai	exact_rank_no_contains
+混拼	混拼	0.002	hunpin	exact_rank_no_contains
+混部	混部	0.002	hunbu	exact_rank_no_contains
+只停	只停	0.200	zhiting	exact_rank_no_contains
+只接	只接	0.000	zhijie	exact_rank_no_contains
+只追	只追	0.200	zhizhui	exact_rank_no_contains
+只推	只推	0.080	zhitui	exact_rank_no_contains
+只采	只採	0.082	zhicai	exact_rank_no_contains
+只排	只排	0.199	zhipai	exact_rank_no_contains
+只练	只練	0.195	zhilian	exact_rank_no_contains
+只运	只運	0.002	zhiyun	exact_rank_no_contains
+只录	只錄	0.080	zhilu	exact_rank_no_contains
+只讨	只討	0.602	zhitao	exact_rank_no_contains
+只送	只送	0.200	zhisong	exact_rank_no_contains
+只抓	只抓	0.200	zhizhua	exact_rank_no_contains
+只租	只租	0.200	zhizu	exact_rank_no_contains
+只播	只播	0.009	zhibo	exact_rank_no_contains
+只休	只休	0.002	zhixiu	exact_rank_no_contains
+只售	只售	0.038	zhishou	exact_rank_no_contains
+只查	只查	0.080	zhicha	exact_rank_no_contains
+只测	只測	0.080	zhice	exact_rank_no_contains
+只补	只補	0.081	zhibu	exact_rank_no_contains
+只藏	只藏	0.080	zhicang	exact_rank_no_contains
+只养	只養	0.000	zhiyang	exact_rank_no_contains
+只挂	只掛	0.200	zhigua	exact_rank_no_contains
+只检	只檢	0.000	zhijian	exact_rank_no_contains
+只演	只演	0.000	zhiyan	exact_rank_no_contains
+只借	只借	0.000	zhijie	exact_rank_no_contains
+只抽	只抽	0.200	zhichou	exact_rank_no_contains
+只赢	只贏	0.200	zhiying	exact_rank_no_contains
+只翻	只翻	0.001	zhifan	exact_rank_no_contains
+只登	只登	0.002	zhideng	exact_rank_no_contains
+只烤	只烤	0.002	zhikao	exact_rank_no_contains
+只购	只購	0.002	zhigou	exact_rank_no_contains
+只授	只授	0.002	zhishou	exact_rank_no_contains
+只搭	只搭	0.002	zhida	exact_rank_no_contains
+只搞	只搞	0.200	zhigao	exact_rank_no_contains
+只探	只探	0.002	zhitan	exact_rank_no_contains
+只跳	只跳	0.002	zhitiao	exact_rank_no_contains
+只帮	只幫	0.002	zhibang	exact_rank_no_contains
+只戴	只戴	0.080	zhidai	exact_rank_no_contains
+只洗	只洗	0.080	zhixi	exact_rank_no_contains
+只烧	只燒	0.009	zhishao	exact_rank_no_contains
+只守	只守	0.037	zhishou	exact_rank_no_contains
+只聊	只聊	0.200	zhiliao	exact_rank_no_contains
+只喂	只喂	0.000	zhiwei	exact_rank_no_contains
+只治	只治	0.080	zhizhi	exact_rank_no_contains
+只印	只印	0.000	zhiyin	exact_rank_no_contains
+只请	只請	0.080	zhiqing	exact_rank_no_contains
+只截	只截	0.000	zhijie	exact_rank_no_contains
+只摆	只擺	0.003	zhibai	exact_rank_no_contains
+只挣	只掙	0.000	zhizheng	exact_rank_no_contains
+只缴	只繳	0.002	zhijiao	exact_rank_no_contains
+只寄	只寄	0.000	zhiji	exact_rank_no_contains
+只救	只救	0.002	zhijiu	exact_rank_no_contains
+只盖	只蓋	0.080	zhigai	exact_rank_no_contains
+只丢	只丟	0.002	zhidiu	exact_rank_no_contains
+只添	只添	0.002	zhitian	exact_rank_no_contains
+只陪	只陪	0.002	zhipei	exact_rank_no_contains
+只编	只編	0.002	zhibian	exact_rank_no_contains
+只罚	只罰	0.080	zhifa	exact_rank_no_contains
+只寻	只尋	0.003	zhixun	exact_rank_no_contains
+只躲	只躲	0.000	zhiduo	exact_rank_no_contains
+只偷	只偷	0.080	zhitou	exact_rank_no_contains
+只吹	只吹	0.080	zhichui	exact_rank_no_contains
+只拖	只拖	0.002	zhituo	exact_rank_no_contains
+只摘	只摘	0.002	zhizhai	exact_rank_no_contains
+只捕	只捕	0.002	zhibu	exact_rank_no_contains
+只笑	只笑	0.080	zhixiao	exact_rank_no_contains
+只扫	只掃	0.002	zhisao	exact_rank_no_contains
+只喊	只喊	0.002	zhihan	exact_rank_no_contains
+只咬	只咬	0.002	zhiyao	exact_rank_no_contains
+只挖	只挖	0.080	zhiwa	exact_rank_no_contains
+只抢	只搶	0.002	zhiqiang	exact_rank_no_contains
+只切	只切	0.002	zhiqie	exact_rank_no_contains
+只拦	只攔	0.002	zhilan	exact_rank_no_contains
+只训	只訓	0.002	zhixun	exact_rank_no_contains
+只钻	只鑽	0.002	zhizuan	exact_rank_no_contains
+只审	只審	0.002	zhishen	exact_rank_no_contains
+只尝	只嘗	0.002	zhichang	exact_rank_no_contains
+只捡	只撿	0.000	zhijian	exact_rank_no_contains
+只煮	只煮	0.002	zhizhu	exact_rank_no_contains
+只剪	只剪	0.000	zhijian	exact_rank_no_contains
+只拆	只拆	0.002	zhichai	exact_rank_no_contains
+只捐	只捐	0.002	zhijuan	exact_rank_no_contains
+只猜	只猜	0.003	zhicai	exact_rank_no_contains
+只握	只握	0.002	zhiwo	exact_rank_no_contains
+只钓	只釣	0.002	zhidiao	exact_rank_no_contains
+只擦	只擦	0.002	zhica	exact_rank_no_contains
+只踢	只踢	0.002	zhiti	exact_rank_no_contains
+只订	只訂	0.002	zhiding	exact_rank_no_contains
+只撞	只撞	0.002	zhizhuang	exact_rank_no_contains
+只删	只刪	0.002	zhishan	exact_rank_no_contains
+只递	只遞	0.002	zhidi	exact_rank_no_contains
+只拔	只拔	0.002	zhiba	exact_rank_no_contains
+只敲	只敲	0.002	zhiqiao	exact_rank_no_contains
+只拜	只拜	0.002	zhibai	exact_rank_no_contains
+只赶	只趕	0.002	zhigan	exact_rank_no_contains
+只躺	只躺	0.002	zhitang	exact_rank_no_contains
+只哭	只哭	0.002	zhiku	exact_rank_no_contains
+只赠	只贈	0.002	zhizeng	exact_rank_no_contains
+只捉	只捉	0.002	zhizhuo	exact_rank_no_contains
+只煎	只煎	0.000	zhijian	exact_rank_no_contains
+只骑	只騎	0.000	zhiqi	exact_rank_no_contains
+只踩	只踩	0.002	zhicai	exact_rank_no_contains
+只骂	只罵	0.000	zhima	exact_rank_no_contains
+只晒	只曬	0.002	zhishai	exact_rank_no_contains
+只挤	只擠	0.000	zhiji	exact_rank_no_contains
+只砍	只砍	0.002	zhikan	exact_rank_no_contains
+只催	只催	0.002	zhicui	exact_rank_no_contains
+只扔	只扔	0.002	zhireng	exact_rank_no_contains
+只闹	只鬧	0.002	zhinao	exact_rank_no_contains
+只炸	只炸	0.002	zhizha	exact_rank_no_contains
+止滑	止滑	0.200	zhihua	exact_rank_no_contains
+止嗽	止嗽	0.200	zhisou	exact_rank_no_contains
+止漏	止漏	0.009	zhilou	exact_rank_no_contains
+止戈	止戈	0.200	zhige	exact_rank_no_contains
+止语	止語	0.000	zhiyu	exact_rank_no_contains
+止鼾	止鼾	0.200	zhihan	exact_rank_no_contains
+止涨	止漲	0.063	zhizhang	exact_rank_no_contains
+止歇	止歇	0.080	zhixie	exact_rank_no_contains
+止赎	止贖	0.002	zhishu	exact_rank_no_contains
+队首	隊首	0.200	duishou	exact_rank_no_contains
+章末	章末	0.200	zhangmo	exact_rank_no_contains
+章首	章首	0.002	zhangshou	exact_rank_no_contains
+信头	信頭	0.080	xintou	exact_rank_no_contains
+节首	節首	0.000	jieshou	exact_rank_no_contains
+书末	書末	0.200	shumo	exact_rank_no_contains
+章尾	章尾	0.080	zhangwei	exact_rank_no_contains
+节末	節末	0.080	jiemo	exact_rank_no_contains
+队头	隊頭	0.200	duitou	exact_rank_no_contains
+卷头	卷頭	0.080	juantou	exact_rank_no_contains
+表尾	表尾	0.197	biaowei	exact_rank_no_contains
+链头	鏈頭	0.002	liantou	exact_rank_no_contains
+链首	鏈首	0.002	lianshou	exact_rank_no_contains
+链尾	鏈尾	0.002	lianwei	exact_rank_no_contains
+节尾	節尾	0.002	jiewei	exact_rank_no_contains
+信末	信末	0.002	xinmo	exact_rank_no_contains
+篇尾	篇尾	0.080	pianwei	exact_rank_no_contains
+章头	章頭	0.002	zhangtou	exact_rank_no_contains
+字末	字末	0.002	zimo	exact_rank_no_contains
+栏头	欄頭	0.002	lantou	exact_rank_no_contains
+表末	表末	0.002	biaomo	exact_rank_no_contains
+篇头	篇頭	0.002	piantou	exact_rank_no_contains
+书尾	書尾	0.002	shuwei	exact_rank_no_contains
+信尾	信尾	0.002	xinwei	exact_rank_no_contains
+帧首	幀首	0.002	zhenshou	exact_rank_no_contains
+帧尾	幀尾	0.002	zhenwei	exact_rank_no_contains
+豪雅	豪雅	0.200	haoya	exact_rank_no_contains
+凯米	凱米	0.080	kaimi	exact_rank_no_contains
+康耐特	康耐特	0.002	kangnaite	exact_rank_no_contains
+沙米尔	沙米爾	0.080	shamier	exact_rank_no_contains
+罗敦司得	羅敦司得	0.002	luodunside	exact_rank_no_contains
+明月镜片	明月鏡片	0.002	mingyuejingpian	exact_rank_no_contains
+宝岛眼镜	寶島眼鏡	0.080	baodaoyanjing	exact_rank_no_contains
+渐近片	漸近片	0.002	jianjinpian	exact_rank_no_contains
+渐进镜	漸進鏡	0.002	jianjinjing	exact_rank_no_contains
+渐进镜片	漸進鏡片	0.002	jianjinjingpian	exact_rank_no_contains
+渐进多焦点	漸進多焦點	0.002	jianjinduojiaodian	exact_rank_no_contains
+离焦镜	離焦鏡	0.002	lijiaojing	exact_rank_no_contains
+离焦片	離焦片	0.002	lijiaopian	exact_rank_no_contains
+离焦镜片	離焦鏡片	0.002	lijiaojingpian	exact_rank_no_contains
+非球面	非球面	0.200	feiqiumian	exact_rank_no_contains
+近视镜	近視鏡	0.200	jinshijing	exact_rank_no_contains
+变色片	變色片	0.002	biansepian	exact_rank_no_contains
+变色镜	變色鏡	0.002	biansejing	exact_rank_no_contains
+单光	單光	0.080	danguang	exact_rank_no_contains
+单光镜片	單光鏡片	0.002	danguangjingpian	exact_rank_no_contains
+双光	雙光	0.200	shuangguang	exact_rank_no_contains
+双光镜	雙光鏡	0.002	shuangguangjing	exact_rank_no_contains
+多焦点	多焦點	0.200	duojiaodian	exact_rank_no_contains
+树脂片	樹脂片	0.002	shuzhipian	exact_rank_no_contains
+树脂镜片	樹脂鏡片	0.200	shuzhijingpian	exact_rank_no_contains
+玻璃镜片	玻璃鏡片	0.200	bolijingpian	exact_rank_no_contains
+视光中心	視光中心	0.200	shiguangzhongxin	exact_rank_no_contains
+钻晶	鑽晶	0.002	zuanjing	exact_rank_no_contains
+验光单	驗光單	0.002	yanguangdan	exact_rank_no_contains
+老光	老光	0.080	laoguang	exact_rank_no_contains
+远视镜	遠視鏡	0.002	yuanshijing	exact_rank_no_contains
+镜圈	鏡圈	0.002	jingquan	exact_rank_no_contains
+眼镜框	眼鏡框	0.200	yanjingkuang	exact_rank_no_contains
+偏光片	偏光片	0.200	pianguangpian	exact_rank_no_contains
+现片	現片	0.002	xianpian	exact_rank_no_contains
+定制片	定製片	0.002	dingzhipian	exact_rank_no_contains
+减反射膜	減反射膜	0.002	jianfanshemo	exact_rank_no_contains
+阿贝数	阿貝數	0.200	abeishu	exact_rank_no_contains
+球镜	球鏡	0.200	qiujing	exact_rank_no_contains
+柱镜	柱鏡	0.080	zhujing	exact_rank_no_contains
+眼镜盒	眼鏡盒	0.200	yanjinghe	exact_rank_no_contains
+框架镜	框架鏡	0.002	kuangjiajing	exact_rank_no_contains
+全框	全框	0.080	quankuang	exact_rank_no_contains
+半框	半框	0.080	bankuang	exact_rank_no_contains
+验光配镜	驗光配鏡	0.200	yanguangpeijing	exact_rank_no_contains
+你竟	你竟	0.200	nijing	exact_rank_no_contains
+你倒	你倒	0.200	nidao	exact_rank_no_contains
+你偏	你偏	0.200	nipian	exact_rank_no_contains
+你挺	你挺	0.200	niting	exact_rank_no_contains
+你需	你需	0.200	nixu	exact_rank_no_contains
+你准	你準	0.080	nizhun	exact_rank_no_contains
+你光	你光	0.200	niguang	exact_rank_no_contains
+你瞎	你瞎	0.080	nixia	exact_rank_no_contains
+你乱	你亂	0.002	niluan	exact_rank_no_contains
+你莫	你莫	0.200	nimo	exact_rank_no_contains
+你替	你替	0.080	niti	exact_rank_no_contains
+# Weighted anew on 2026-11-16: import-weight words of the families and of their keys that the general text holds far more often than their weights say (混音, 止渴, 止境, 词尾, 字首, 居首, 断尾, 列位, 支座, 至宝, 之余, 芥末, 指路, 婚介, 度数, 读数, 镜框, 弱视, 弱势, 瞳距, 逆光); 直营 raised above 支应, which the general text writes a sixth as often; 指套 raised above 制陶 on the user's word, with 只讨 above both; 行末 reads hangmo, the end of a line, where an import had read it xingmo.
+行末	行末	0.331	hangmo	exact_rank
+度数	度數	0.600	dushu	exact_rank
+镜框	鏡框	0.600	jingkuang	exact_rank
+弱视	弱視	0.600	ruoshi	exact_rank
+框架眼镜	框架眼鏡	0.400	kuangjiayanjing	exact_rank
+瞳距	瞳距	0.200	tongju	exact_rank
+镜腿	鏡腿	0.200	jingtui	exact_rank
+眼镜布	眼鏡布	0.200	yanjingbu	exact_rank
+混音	混音	0.600	hunyin	exact_rank
+止渴	止渴	0.439	zhike	exact_rank
+止境	止境	0.401	zhijing	exact_rank
+词尾	詞尾	0.104	ciwei	exact_rank
+字首	字首	0.400	zishou	exact_rank
+居首	居首	0.266	jushou	exact_rank
+巨兽	巨獸	0.265	jushou	exact_rank
+断尾	斷尾	0.069	duanwei	exact_rank
+列位	列位	0.600	liewei	exact_rank
+支座	支座	0.279	zhizuo	exact_rank
+至宝	至寶	0.183	zhibao	exact_rank
+短寿	短壽	0.400	duanshou	exact_rank
+植根	植根	0.600	zhigen	exact_rank
+指根	指根	0.601	zhigen	exact_rank
+之余	之餘	0.601	zhiyu	exact_rank
+支书	支書	0.153	zhishu	exact_rank
+知青	知青	0.279	zhiqing	exact_rank
+芥末	芥末	0.439	jiemo	exact_rank
+指路	指路	0.279	zhilu	exact_rank
+质料	質料	0.328	zhiliao	exact_rank
+质粒	質粒	0.279	zhili	exact_rank
+职守	職守	0.277	zhishou	exact_rank
+职校	職校	0.156	zhixiao	exact_rank
+婚介	婚介	0.600	hunjie	exact_rank
+读数	讀數	0.601	dushu	exact_rank
+弱势	弱勢	0.601	ruoshi	exact_rank
+玩心	玩心	0.401	wanxin	exact_rank
+逆光	逆光	0.600	niguang	exact_rank
+直营	直營	0.600	zhiying	exact_rank
+指套	指套	0.601	zhitao	exact_rank
