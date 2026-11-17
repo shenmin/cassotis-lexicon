@@ -29,7 +29,7 @@ Cassotis IME（言泉输入法）的词库构建与发布仓库：输入法的�
 - 支持从外部来源可复现地重建（`external_broad`）。
 - 保持署名与许可文件和生成产物一致。
 
-## 当前词库快照（2026-11-16 构建）
+## 当前词库快照（2026-11-17 构建）
 
 | 文件 | 变体 | 词条数 |
 |------|------|--------|
@@ -264,7 +264,9 @@ v1.17.0 起，竞争先验与成对审计用于补全选择和弃权判断，独
 
 仅修改短语词库时，全量重建会保持现有 Unihan 单字权重稳定。只有明确需要重新校准单字排序层时，才使用 `-RefreshUnihanSingleCharWeights`。
 
-每个读音下的单字按现代文本的使用频率排序（`scripts/build_single_char_frequency.py`，2026-10-27）。原来的顺序来自 Unihan 的频率、上世纪八十年代的《现代汉语频率词典》计数和学段等级，一些读音下的生僻字排在常用字之前。这一步把一个读音原有的权重重新分给它的字，用得最多的字拿最大的权重：计数来自字级语言模型的通用语料，既算总出现次数，也算词典词以外单独出现的次数（`manifests/general_char_counts.tsv`，由 `scripts/count_general_char_frequency.py` 生成），另加聊天消息里单独打出的字，这部分计数不公开。一个字只在它的主读音下移动，经过审核的相对顺序和回归样例保持不变。全量重建会保留这些权重；使用 `-RefreshUnihanSingleCharWeights` 之后，需要重新运行这一步，再运行 `scripts/normalize_traditional_forms.py`。
+每个读音下的单字按现代文本的使用频率排序（`scripts/build_single_char_frequency.py`，2026-10-27）。原来的顺序来自 Unihan 的频率、上世纪八十年代的《现代汉语频率词典》计数和学段等级，一些读音下的生僻字排在常用字之前。这一步把一个读音原有的权重重新分给它的字，用得最多的字拿最大的权重：计数来自字级语言模型的通用语料，既算总出现次数，也算词典词以外单独出现的次数（`manifests/general_char_counts.tsv`，由 `scripts/count_general_char_frequency.py` 生成），另加聊天消息里单独打出的字，这部分计数不公开。一个字只在它的主读音下移动，经过审核的相对顺序和回归样例保持不变。
+
+繁体词库里共用一个简化字的单字，上面的计数和语言模型都分不开：语言模型读繁体时也是按简化字读。它们在主读音下按繁体文本的实际写法排序：把通用语料逐句用 OpenCC 转成繁体后统计（`manifests/traditional_char_shares.tsv`，由 `scripts/count_traditional_char_shares.py` 生成；排序由 `scripts/order_traditional_shared_chars.py` 完成）。台湾不使用的字形排在文本中出现过的字之后，少数几个各读音权重相当的字由人工排定。全量重建会保留这些权重；使用 `-RefreshUnihanSingleCharWeights` 之后，需要重新运行这两步，再运行 `scripts/normalize_traditional_forms.py`。
 
 `external_broad` 和 `external_cedict` 在存在
 `manifests/vertical_layers.public.json` 时会自动加载它。

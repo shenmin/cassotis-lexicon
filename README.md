@@ -29,7 +29,7 @@ Lexicon build and release repository for Cassotis IME (言泉输入法): its sim
 - Rebuilds reproducibly from the external sources (`external_broad`).
 - Keeps attribution and license files aligned with what is generated.
 
-## Current dictionary snapshot (2026-11-16 build)
+## Current dictionary snapshot (2026-11-17 build)
 
 | File | Variant | Entries |
 |------|---------|---------|
@@ -277,8 +277,19 @@ overall and standing alone outside dictionary words
 `scripts/count_general_char_frequency.py`), and standing alone in typed chat
 messages, whose counts are not published. A character moves only under its
 main reading, and the audited relative order and the regression samples
-hold. Full rebuilds keep these weights; after
-`-RefreshUnihanSingleCharWeights`, run the step again, then
+hold.
+
+In the traditional dictionary, single characters that share one simplified
+form are told apart neither by these counts nor by the language model, which
+reads the traditional variant through its simplified characters. Under their
+main reading they are ordered by how traditional text writes them: the
+general corpora converted sentence by sentence with OpenCC
+(`manifests/traditional_char_shares.tsv`, made by
+`scripts/count_traditional_char_shares.py`; the order is set by
+`scripts/order_traditional_shared_chars.py`). Forms that Taiwan's text does not
+write go below the characters the text holds, and a few characters whose
+readings weigh alike are placed by hand. Full rebuilds keep these weights;
+after `-RefreshUnihanSingleCharWeights`, run both steps again, then
 `scripts/normalize_traditional_forms.py`.
 
 `external_broad` and `external_cedict` automatically load
