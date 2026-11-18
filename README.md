@@ -21,13 +21,13 @@
 
 **[Website: www.yanquan.org](https://www.yanquan.org)** | English | [简体中文](README.zh-Hans.md) | [繁體中文](README.zh-Hant.md) | [Cassotis IME](https://github.com/shenmin/cassotis-ime)
 
-Lexicon build and release repository for Cassotis IME (言泉输入法): its simplified and traditional dictionaries and the statistical tables it ranks candidates with. Every installer of Cassotis IME includes them, so users need not download anything from here.
+Build and release repository for the simplified and traditional base dictionaries and candidate-ranking statistical tables used by Cassotis IME (言泉输入法). All dictionaries and tables are bundled in the Cassotis IME installer, so end users do not need to download anything from this repository.
 
 ## Repository role
-- Builds the simplified and traditional base dictionaries from open sources and project-maintained lists: the build scripts, the manifests and the generated files.
-- Publishes, with each version, the statistical tables Cassotis IME imports beside the dictionaries: path priors, word transitions, character n-grams, completion indexes, word frequencies of general text and of everyday conversation, and the short-word promotion table.
-- Rebuilds reproducibly from the external sources (`external_broad`).
-- Keeps attribution and license files aligned with what is generated.
+- Build the simplified and traditional base dictionaries from open lexical sources and project-maintained word lists (including build scripts, source manifests, and generated outputs).
+- Publish the statistical tables imported by Cassotis IME alongside each release: path priors, word transitions, character n-grams, completion indexes, general and conversational word frequencies, and short-word promotion tables.
+- Support reproducible rebuilds from external sources (`external_broad`).
+- Keep attribution and license files synchronized with the generated artifacts.
 
 ## Current dictionary snapshot (2026-11-18 build)
 
@@ -38,17 +38,17 @@ Lexicon build and release repository for Cassotis IME (言泉输入法): its sim
 | `data/generated/dict_unihan_sc.txt` | Simplified single-char (Unihan) | 23,917 |
 | `data/generated/dict_unihan_tc.txt` | Traditional single-char (Unihan) | 24,180 |
 
-The traditional dictionary writes Taiwan's character forms (為, 裡, 著, 群, 吃) in every word of two characters or more; single characters keep their variants, so that they can still be typed on purpose. See the [form list](manifests/traditional_taiwan_forms.tsv).
+Multi-character entries in the traditional dictionary use Taiwan standard character forms (為, 裡, 著, 群, 吃), while the single-character dictionary retains variant forms so they remain available when needed. See the [Taiwan form mapping](manifests/traditional_taiwan_forms.tsv).
 
-Specialist coverage is added at low weights without raising existing word or character weights. Complete Pinyin can select uncommon technical terms, but catalogue-only entries do not participate in short-prefix or Tab predictions. Reviewed general-use expressions remain eligible for completion. See the [admission records](manifests/vertical/thuocl_specialist_admissions.tsv) and the separate [familiarity review](manifests/specialist_common_terms.tsv).
+Specialist vocabulary is added only for missing entries at low weights, without boosting existing words or characters. Uncommon technical terms can be selected by typing their full Pinyin, but catalog-only entries are excluded from short-prefix completions and Tab predictions by default; reviewed general-use expressions remain eligible for completion. See the [specialist admission records](manifests/vertical/thuocl_specialist_admissions.tsv) and the [common-term completion list](manifests/specialist_common_terms.tsv).
 
-The dictionaries also hold 7,747 lines of classical verse: the school curriculum, 唐诗三百首, 千家诗 and 宋词三百首 (`manifests/curated_daily_supplement_phrases.tsv`). From two syllables on a line can be the one-key completion, typed in full it is the first candidate, and the continuation index then offers the next line (`manifests/classical_poetry_next_lines.tsv`).
+The dictionaries also include 7,747 lines of classical poetry drawn from school curricula, 唐诗三百首, 千家诗, and 宋词三百首 (`manifests/curated_daily_supplement_phrases.tsv`). Typing two or more leading syllables can trigger a full-line one-key completion; typing the full Pinyin places the line first among candidates, and the continuation index suggests the following line (`manifests/classical_poetry_next_lines.tsv`).
 
 ## Ranking data for Cassotis IME
 
-Beside the dictionaries, Cassotis Lexicon publishes the statistical tables that Cassotis IME imports into its local SQLite dictionaries. They are not directly inputable entries and are not counted in the snapshot above. They hold counts, word pairs and character n-grams, never sentences of the corpora, and the IME's benchmark cases are kept out of their sources. The IME's own models (its character language model, decision policies and structural rankers) are trained and shipped by the IME project and are described in its [Models and Ranking](https://github.com/shenmin/cassotis-ime#models-and-ranking).
+Alongside the dictionaries, Cassotis Lexicon publishes statistical tables that Cassotis IME imports into its local SQLite dictionary databases. Because these tables provide ranking and completion signals rather than selectable entries, they are not counted in the dictionary snapshot above. They store only frequency counts, word pairs, and character n-grams—never raw corpus sentences—and all IME benchmark sets are excluded from their sources. The IME's own models (its character language model, decision policies, and structural rankers) are trained and distributed in the main IME repository; see [Models and Ranking](https://github.com/shenmin/cassotis-ime#models-and-ranking).
 
-Version ranges indicate identical published artifacts in the listed categories. Counts exclude file headers.
+Version ranges below indicate identical published artifacts across those releases. Row counts exclude file headers.
 
 ### Path statistics
 
@@ -74,18 +74,18 @@ Version ranges indicate identical published artifacts in the listed categories. 
 | `v1.1.0` | 23,521 / 22,655 | 152,729 / 145,284 | 558,645 / 559,128 | — |
 | `v1.0.0` | 23,518 / 22,653 | — | — | — |
 
-The query-path priors and the word transitions (word bigrams and trigrams) are generated by the Lexicon build pipeline. Cassotis IME scores the word paths of long sentences with them, and its short-word and phrase paths read the transitions of a key. The forward and reverse smoothed character n-gram models were generated by the IME training tools and are versioned and distributed from this repository; the IME still imports them and reads them as statistical features beside its language model, for example in completion ranking and in the short-word promotion table.
+Query-path priors and word-level bigram/trigram transitions are built by the Lexicon pipeline. Cassotis IME uses them to score multi-word paths in long sentences, as well as word transitions for short words and out-of-vocabulary phrases. The smoothed forward and reverse character n-gram models are generated by the IME training tools and versioned in this repository; the IME imports them as auxiliary statistical features alongside its main language model (for example, in completion ranking and short-word promotion).
 
-How these tables grew:
-- **v1.1.0** published the first corpus-trained statistical language-model data: word transitions and forward character n-grams.
-- **v1.10.0** added conservative exact 1+2 and 2+1 word transitions backed by corpus evidence, improving three-syllable short-word continuation without admitting unsupported combinations.
-- **v1.11.0** kept all existing transition weights and expanded independently counted exact 1+2, 2+1, 2+2, 2+3 and 3+2 transitions from cleaned novel, chat and large-scale Chinese corpora. Source support, competing paths and observed homophones are checked before an addition is retained.
-- **v1.12.0** further expanded productive word transitions and added corpus-backed 1+1 relations between adjacent single-character segments. Existing exact two-character words are excluded; retained 1+1 relations require common readings and support from multiple independent sources.
-- **v1.13.0** added reverse character n-gram models for bidirectional path scoring.
-- **v1.14.0** refreshed the query-path priors for the exact-anchor and phrase-continuation paths of the IME.
-- **v2.3.0** rewrote the traditional tables in Taiwan's character forms; rows that met their twin were merged.
-- **v2.5.0** added pairs of words counted in 120 million characters of the general Chinese text the character model was trained on (FineWeb-Edu-Chinese, Ultra-FineWeb and Chinese Wikipedia; counts only), keeping every existing transition and its weight: 289,955 → 904,767 (SC) and 257,124 → 833,707 (TC). Only paths of two words of two characters or more were added, and six pairs of single characters. Added paths with a word of one character glued single characters to words as general text writes them and cost long-sentence first choices on fiction; most added pairs of single characters were fragments of general text that would have stood first on two-syllable keys; paths of three words changed almost nothing.
-- **v2.6.0** and **v2.7.0** changed a few rows, mostly traditional ones, with the corrections of readings and of traditional character forms.
+Notable changes across releases:
+- **v1.1.0**: Published the initial corpus-trained statistical tables (word transitions and forward character n-grams).
+- **v1.10.0**: Added strictly filtered 1+2 and 2+1 exact-word transitions backed by corpus counts, improving three-syllable phrase joins without introducing spurious combinations.
+- **v1.11.0**: Preserved all existing transition weights and expanded 1+2, 2+1, 2+2, 2+3, and 3+2 exact-word transitions using independent counts from cleaned fiction, chat, and web corpora, checking candidates against source support, competing paths, and homophone ambiguity.
+- **v1.12.0**: Expanded high-utility multi-character transitions and added corpus-backed 1+1 transitions between adjacent single characters (excluding existing two-character dictionary words and requiring common readings supported by multiple independent sources).
+- **v1.13.0**: Added reverse character n-gram models for bidirectional path scoring.
+- **v1.14.0**: Updated query-path priors for exact-word anchoring and phrase continuation in the IME.
+- **v2.3.0**: Converted traditional tables to Taiwan character forms and merged duplicate entries resulting from character normalization.
+- **v2.5.0**: Expanded word-pair transitions from 120 million characters of general Chinese corpora used for the character language model (FineWeb-Edu-Chinese, Ultra-FineWeb, and Chinese Wikipedia; counts only), while preserving all existing transitions and weights (289,955 → 904,767 SC; 257,124 → 833,707 TC). This expansion includes only two-word combinations where each word has at least two characters, plus six common single-character pairs—excluding single-character attachments that hurt long-sentence accuracy on fiction, noisy single-character fragments that would misrank two-syllable inputs, and three-word transitions with negligible benefit.
+- **v2.6.0** and **v2.7.0**: Updated a small number of rows (mostly in traditional tables) following pronunciation fixes and traditional form adjustments.
 
 ### Short-word promotion and word frequencies
 
@@ -101,13 +101,13 @@ How these tables grew:
 | `v2.1.0` | 1,466 / 2,002 | — | — |
 | `v2.0.0` | 1,454 / 1,989 | — | — |
 
-The short-word promotion table (`data/generated/dict_short_promotion_{sc,tc}.txt`) records, for queries of two to four syllables, which exact word goes above the dictionary's first when nothing but the dictionary decides. Cassotis IME writes it from each built dictionary with the one program that still carries the model it replaces (`out/rebuild_short_promotion.ps1` in the IME repository). A row records the words and weights it was decided among and applies only while they are unchanged, so a row left from an older dictionary is skipped, not wrong.
+The short-word promotion table (`data/generated/dict_short_promotion_{sc,tc}.txt`) precomputes, for two- to four-syllable queries, which exact-match word should be promoted above the dictionary's default top entry when ranking relies on the dictionary alone. Cassotis IME generates this table from each built dictionary (`out/rebuild_short_promotion.ps1` in the IME repository), replacing an earlier runtime residual model that is now compiled only into the offline builder. Each row stores the candidate set and weights it was computed from and applies only when they still match; stale rows from an older dictionary are safely ignored.
 
-A word-frequency table for each variant (`data/generated/dict_word_frequency_{sc,tc}.txt`) records how often general Chinese text holds each word of two characters or more as a word, as `100 * log10(1 + occurrences)`; a traditional word takes the count of its simplified form. The counts (`manifests/general_word_counts.tsv`, made by `scripts/count_general_word_frequency.py`) come from the general corpora of the Cassotis IME character language model; a word counts where the text is cut into the fewest dictionary words, so a word inside a longer dictionary word is not counted. Words added to the dictionary later are counted on their own, only where they stand as words, and the other words keep their counts. Cassotis IME uses the table when it chooses among the words of one reading without context.
+The general word-frequency table (`data/generated/dict_word_frequency_{sc,tc}.txt`) records standalone occurrences of multi-character words (two or more characters) in general Chinese text, scaled as `100 * log10(1 + occurrences)`; traditional entries use the counts of their simplified forms. Raw counts (`manifests/general_word_counts.tsv`, generated by `scripts/count_general_word_frequency.py`) are computed over the general corpora of the Cassotis IME character language model using minimum-word segmentation, so shorter words nested inside longer dictionary entries are not double-counted. Words added later are counted incrementally where they occur as standalone words, leaving existing counts unchanged. Cassotis IME consults this table when disambiguating homophone words without left context.
 
-A conversation frequency table for each variant (`data/generated/dict_conversation_frequency_{sc,tc}.txt`) is made the same way from everyday conversation: the utterances of LCCC-large (Wang et al., "A Large-Scale Chinese Short-Text Conversation Dataset", NLPCC 2020; MIT License), counted as the general text is (`manifests/conversation_word_counts.tsv`, counts only). Without context, Cassotis IME uses it to keep the dictionary's first word in place where conversation writes that word far more often and the general text prefers the other word only slightly. LCCC filtered sensitive words, so a word it lacks is no evidence.
+The conversation word-frequency table (`data/generated/dict_conversation_frequency_{sc,tc}.txt`) applies the same segmentation and scaling to everyday dialogue from LCCC-large (Wang et al., "A Large-Scale Chinese Short-Text Conversation Dataset", NLPCC 2020; MIT License; raw counts in `manifests/conversation_word_counts.tsv`). Without left context, Cassotis IME uses it to keep the dictionary's default top word when that word is far more common in conversation and general text only slightly favors a competing homophone. Because LCCC pre-filters sensitive words, absence from this table is treated as neutral rather than negative evidence.
 
-The IME's dictionary build fails on a database without any of these three tables: without them, short words would quietly be ranked worse.
+The IME dictionary build requires all three tables and fails immediately if any is missing, preventing silent regressions in short-word ranking.
 
 ### One-key completion data
 
@@ -138,11 +138,11 @@ The IME's dictionary build fails on a database without any of these three tables
 | `v1.16.0` | 188,983 / 191,875 | 255,129 / 270,714 | 102,449 / 96,718 |
 | `v1.15.0` | — | — | 54,305 / 51,875 |
 
-v1.16.0 added corpus-derived popularity priors and a precomputed Top-K prefix lookup index, allowing IME to distinguish popular completions from cold specialist terms without enumerating combinations at runtime. Popularity priors form an independently built snapshot, so their count need not match the current main dictionary. Prior records are not a count of eligible suggestions: rare specialist terms remain subject to separate short-prefix and Tab eligibility checks.
+v1.16.0 introduced corpus-derived popularity priors and a precomputed Top-K prefix lookup index, allowing the IME to separate common completions from rare technical terms without enumerating combinations at runtime. Because popularity priors are built as an independent snapshot, their row count need not match the main dictionary size, nor does it equal the number of active suggestions—rare specialist terms remain subject to separate short-prefix and Tab eligibility rules.
 
-The build also derives a separate offline transition-completion index from strongly supported exact-word paths. It retains up to six vetted alternatives for each typed prefix. User completions remain the first priority; base-dictionary and transition suggestions are compared using popularity, context, and corpus evidence.
+The build pipeline also generates an offline transition-completion index from well-attested exact-word paths, retaining up to six vetted candidates per input prefix. At runtime, user completions take top priority, while base-dictionary and transition completions are ranked using popularity, left context, and corpus evidence.
 
-Additional static data for completion ranking and local continuation:
+Additional static tables for completion ranking and local continuation:
 
 | Version | Completion competition priors (SC / TC) | Pairwise switch-audit records (SC / TC) | Long-sentence continuation index (SC / TC) |
 |---|---:|---:|---:|
@@ -151,7 +151,7 @@ Additional static data for completion ranking and local continuation:
 | `v1.18.0` - `v2.1.0` | 42,453 / 42,448 | 4,379 / 4,379 | 97,589 / 92,457 |
 | `v1.17.0` | 42,453 / 42,448 | 4,379 / 4,379 | 35,423 / 32,481 |
 
-Since v1.17.0, competition priors and pairwise audits have supported completion selection and abstention, while a separate index supplies short continuations after stable word anchors; since v2.2.0 it also holds which line of a poem follows which. These are static lookup records, not additional dictionary entries or neural-network parameter counts.
+Since v1.17.0, competition priors and pairwise switch-audit records have guided completion selection and confidence-based abstention, while the continuation index supplies short phrase continuations after stable word anchors; since v2.2.0, the continuation index also maps consecutive lines of classical poetry. All three are static lookup tables rather than dictionary entries or neural network parameters.
 
 ## External sources and project-maintained supplements (`external_broad`)
 
@@ -159,97 +159,93 @@ Since v1.17.0, competition priors and pairwise audits have supported completion 
 
 | Source | License | Usage |
 |--------|---------|-------|
-| Unicode Unihan | Unicode-3.0 | Character-level Mandarin fallback and single-char dictionaries |
-| CC-CEDICT | CC BY-SA 4.0 | Core dictionary entries and pinyin |
-| OpenCC STPhrases | Apache-2.0 | SC-TC phrase mapping |
-| THUOCL | THUOCL custom open terms | Broad coverage and DF statistics |
-| jieba `dict.txt` | MIT | Frequency ranking signal |
-| FineWeb-Edu-Chinese v2.1, Ultra-FineWeb (zh), Chinese Wikipedia | Each dataset's terms; counts only | Word occurrence counts for the word-frequency table; character counts for the single-character order; word-pair counts for the word transitions |
-| LCCC-large (Wang et al., NLPCC 2020) | MIT; counts only | Word occurrence counts for the conversation frequency table |
-| Wiktionary zh titles (ns0) | CC BY-SA 4.0 | Daily wording, colloquial phrases, and chat-style lexical seeds |
+| Unicode Unihan | Unicode-3.0 | Character-level Mandarin fallback readings and single-character dictionaries |
+| CC-CEDICT | CC BY-SA 4.0 | Core dictionary entries and Pinyin readings |
+| OpenCC STPhrases | Apache-2.0 | Simplified–traditional phrase mapping |
+| THUOCL | THUOCL custom open terms | Vocabulary coverage and document-frequency (DF) signals |
+| jieba `dict.txt` | MIT | Base frequency ranking signal |
+| FineWeb-Edu-Chinese v2.1, Ultra-FineWeb (zh), Chinese Wikipedia | Each dataset's terms; counts only | Word counts for the general word-frequency table, character counts for single-character ranking, and word-pair counts for transition tables |
+| LCCC-large (Wang et al., NLPCC 2020) | MIT; counts only | Word counts for the conversation word-frequency table |
+| Wiktionary zh titles (ns0) | CC BY-SA 4.0 | Everyday expressions, colloquial phrases, and conversational lexical seeds |
 | Wikipedia zh titles (ns0) | CC BY-SA 4.0 | Named-entity coverage and high-confidence proper-noun seeds |
-| Wikimedia Pageviews Top (zh.wikipedia) | CC BY-SA 4.0 | Real-world usage heat signal |
-| Wikidata zh historical people | CC0-1.0 | Conservative historical people-name supplements imported into the isolated people-name layer |
-| Filtered `THUOCL_IT` subset | THUOCL custom open terms | Computing vertical-layer candidate source, filtered before import so it does not behave like the everyday/chat phrase layer |
-| Filtered `THUOCL_chengyu` subset | THUOCL custom open terms | Idiom/allusion vertical-layer candidate source, filtered and weighted conservatively so idioms stay inputable without crowding everyday phrases |
-| Getty AAT zh architectural terms | ODC-By 1.0 | Official architecture-term source imported conservatively into the isolated architecture-terms layer |
-| Wikidata zh architectural elements / styles / landmarks | CC0-1.0 | Architecture-term and landmark-entity supplements imported into isolated architecture vertical layers |
-| Wikidata zh countries / major cities / administrative territories / tourist landmarks | CC0-1.0 | Conservative place-name supplements for countries, regions, world cities, administrative places, scenic spots, and landmarks |
-| Wikidata zh video games / series / genres / consoles | CC0-1.0 | Main gaming-title/entity sources imported into an isolated gaming vertical layer |
-| Filtered Wiktionary / Wikipedia zh gaming lexical titles | CC BY-SA 4.0 | Lightweight gaming-lexicon supplements imported conservatively into the gaming vertical layer |
-| Godot Docs zh-cn title index | CC BY 3.0 | Main game-development terminology source, filtered before import into the isolated game-development layer |
-| Wikidata zh game engines | CC0-1.0 | Game-engine entity supplement for the isolated game-development layer |
-| MeSH descriptor catalog | NLM MeSH terms and conditions | Medical descriptor whitelist used to keep the medical vertical layer tied to recognized MeSH concepts |
-| Wikidata zh medical entities (MeSH-linked) | CC0-1.0 | Chinese medical labels and aliases linked to MeSH descriptors, imported as the main medical-entity layer |
-| Filtered `THUOCL_medical` subset | THUOCL custom open terms | Medical vertical-layer candidate source, filtered and weighted more conservatively than the MeSH-linked medical layer |
+| Wikimedia Pageviews Top (zh.wikipedia) | CC BY-SA 4.0 | Wikipedia pageview popularity signal |
+| Wikidata zh historical people | CC0-1.0 | Historical person names imported at conservative weights into the isolated `people_names` layer |
+| Filtered `THUOCL_IT` subset | THUOCL custom open terms | Computing terminology candidates for the `computing` layer, filtered before import to stay separate from everyday/chat phrases |
+| Filtered `THUOCL_chengyu` subset | THUOCL custom open terms | Idiom and allusion candidates for the `idioms_allusions` layer, filtered and weighted conservatively so full idioms stay selectable without crowding everyday phrases |
+| Getty AAT zh architectural terms | ODC-By 1.0 | Authoritative architectural terminology imported conservatively into the `architecture_terms` layer |
+| Wikidata zh architectural elements / styles / landmarks | CC0-1.0 | Architectural element, style, and landmark supplements imported into the isolated architecture layers |
+| Wikidata zh countries / major cities / administrative territories / tourist landmarks | CC0-1.0 | Place-name supplements for countries, regions, major cities, administrative divisions, and landmarks at conservative weights |
+| Wikidata zh video games / series / genres / consoles | CC0-1.0 | Primary game-title and entity sources for the isolated `gaming` layer |
+| Filtered Wiktionary / Wikipedia zh gaming lexical titles | CC BY-SA 4.0 | Filtered gaming vocabulary supplements imported conservatively into the `gaming` layer |
+| Godot Docs zh-cn title index | CC BY 3.0 | Primary game-development terminology source, filtered before import into the `game_dev` layer |
+| Wikidata zh game engines | CC0-1.0 | Game-engine entity supplements for the `game_dev` layer |
+| MeSH descriptor catalog | NLM MeSH terms and conditions | MeSH concept whitelist anchoring the `medicine` layer to recognized medical descriptors |
+| Wikidata zh medical entities (MeSH-linked) | CC0-1.0 | MeSH-linked Chinese medical terms and aliases imported as the primary medical-entity source |
+| Filtered `THUOCL_medical` subset | THUOCL custom open terms | Supplementary medical vocabulary filtered and weighted more conservatively than MeSH-linked entries |
 
 ### Project-maintained supplements
 
 | Supplement | License | Usage |
 |-----------|---------|-------|
-| Cassotis curated daily/chat phrases | Repository license (project-authored) | High-value everyday/chat phrasing that is worth keeping stable even when open sources miss it |
-| Cassotis low-frequency daily supplements | Repository license (project-authored) | Useful exact-match daily-adjacent terms kept visible with a capped low-frequency weight so they do not crowd stronger common words |
-| Cassotis word-level pinyin overrides | Repository license (project-authored) | Project-maintained pronunciation overrides used after source fusion to suppress noisy character-level fallback readings for polyphonic words across all layers |
-| Cassotis curated fiction entities | Repository license (project-authored) | Project-maintained fiction entity list for novel characters, titles, and in-world named entities, kept separate from daily/chat phrasing and from general proper nouns |
-| Cassotis curated proper nouns | Repository license (project-authored) | Project-maintained general non-person proper-noun list for titles, organizations, brands, platforms, products, and other real-world named entities that should not share the daily/chat preferred-term path |
-| Cassotis curated people names | Repository license (project-authored) | Project-maintained contemporary public-figure and historical people-name list with explicit pinyin corrections, isolated from daily/chat phrasing and from non-person proper nouns |
-| Cassotis curated place names / countries / cities / landmarks | Repository license (project-authored) | Project-maintained low-priority place-name lists used by the isolated `place_names` vertical layer, with explicit pinyin corrections for ambiguous domestic and international locations, countries/regions, world cities, and landmarks |
-| Cassotis curated idioms and allusions | Repository license (project-authored) | Project-maintained high-value idiom and literary-allusion list kept separate from daily/chat phrase ranking |
-| Cassotis curated computing terms | Repository license (project-authored) | Project-maintained computing/domain term list used by the isolated computing vertical layer; does not share the daily/chat preferred-term path |
-| Cassotis curated civic terms | Repository license (project-authored) | Project-maintained civic/public-service terminology layer for taxation, housing, household-registration, and related administrative vocabulary, isolated from daily/chat preferred-term ranking |
-| Cassotis curated architecture terms | Repository license (project-authored) | Project-maintained architecture terminology supplement used by the isolated architecture-terms layer |
-| Cassotis curated architecture entities | Repository license (project-authored) | Project-maintained architecture entity supplement used by the isolated architecture-entity layer |
-| Cassotis curated gaming terms | Repository license (project-authored) | Project-maintained gaming terminology supplement used by the isolated gaming vertical layer |
-| Cassotis curated game development terms | Repository license (project-authored) | Project-maintained game-development terminology supplement used by the isolated game-development vertical layer |
-| Cassotis curated medical terms | Repository license (project-authored) | Project-maintained medical supplement used for high-value medical terms and explicit pinyin corrections that should remain isolated from the daily/chat preferred-term path |
+| Cassotis curated daily/chat phrases | Repository license (project-authored) | High-utility everyday and chat expressions missed by open lexical sources |
+| Cassotis low-frequency daily supplements | Repository license (project-authored) | Practical lower-frequency exact-match entries with capped weights so they do not crowd common words |
+| Cassotis word-level pinyin overrides | Repository license (project-authored) | Word-level pronunciation overrides applied after source merging to fix erroneous character-level fallback readings for polyphonic words |
+| Cassotis curated fiction entities | Repository license (project-authored) | Novel characters, work titles, and fictional entities kept separate from daily/chat phrases and general proper nouns |
+| Cassotis curated proper nouns | Repository license (project-authored) | Non-person proper nouns (titles, organizations, brands, platforms, products) isolated from daily/chat priority ranking |
+| Cassotis curated people names | Repository license (project-authored) | Contemporary public figures and historical names with verified Pinyin readings, isolated from daily phrases and non-person proper nouns |
+| Cassotis curated place names / countries / cities / landmarks | Repository license (project-authored) | Low-priority place-name lists for the isolated `place_names` layer, with verified Pinyin readings for polyphonic domestic and international locations, countries/regions, cities, and landmarks |
+| Cassotis curated idioms and allusions | Repository license (project-authored) | Common idioms and literary allusions kept separate from daily/chat phrase ranking |
+| Cassotis curated computing terms | Repository license (project-authored) | Computing and technical terminology for the isolated `computing` layer |
+| Cassotis curated civic terms | Repository license (project-authored) | Taxation, housing, household-registration, and public-service terminology in the isolated `civic` layer |
+| Cassotis curated architecture terms | Repository license (project-authored) | Architectural terminology supplement for the isolated `architecture_terms` layer |
+| Cassotis curated architecture entities | Repository license (project-authored) | Landmark buildings and architects supplement for the isolated `architecture_entities` layer |
+| Cassotis curated gaming terms | Repository license (project-authored) | Gaming vocabulary supplement for the isolated `gaming` layer |
+| Cassotis curated game development terms | Repository license (project-authored) | Game-development terminology supplement for the isolated `game_dev` layer |
+| Cassotis curated medical terms | Repository license (project-authored) | Common medical vocabulary and pronunciation overrides for the isolated `medicine` layer |
 
 See:
 - `manifests/sources.public.yml`
 - `attribution/ATTRIBUTION.md`
 
 ## Post-import optimization and filtering (external sources)
-- Normalize and de-duplicate imported entries across heterogeneous source formats.
-- Build weights from multiple signals (base frequency, DF/frequency side signals, and pageview heat) with balanced scaling.
-- Derive shorter daily/chat prefixes from already-supported longer colloquial expressions so phrases such as common sentence pivots surface earlier in IME use.
-- Damp low-signal named entities, likely personal names, and long-tail noise to reduce rare proper nouns crowding common phrases.
-- Apply IME-oriented validity filters (for example renderability and script constraints) to keep outputs practical on mainstream Windows clients.
-- Keep ranking behavior stable through rule-based corrections and regression sample checks.
+- Normalize and deduplicate entries imported from heterogeneous source formats.
+- Compute balanced entry weights from base frequency, document frequency (DF), and Wikipedia pageview signals.
+- Extract shorter colloquial prefixes from well-attested multi-word expressions so common sentence pivots and connectors surface earlier.
+- Downweight weakly supported named entities, suspected personal names, and long-tail noise so rare proper nouns do not crowd everyday words.
+- Apply IME-specific validity checks (such as glyph renderability and script constraints) for mainstream Windows applications.
+- Verify ranking stability across releases through rule-based overrides and regression test suites.
 
 ## Coverage focus
-- Prioritize everyday wording and conversational phrasing that improves fluent chat input, not only topical hotwords.
-- Use open lexical sources to recover common short expressions such as sentence pivots, mood particles, and colloquial transitions.
-- Keep a small project-maintained whitelist for high-value daily phrases when open lexical sources still miss them.
-- Keep named entities and bursty web terms as secondary signals instead of letting them dominate core daily typing paths.
+- Prioritize natural everyday wording and conversational input rather than transient web buzzwords.
+- Draw on open lexical sources to cover common short expressions, sentence pivots, modal particles, and spoken connectors.
+- Maintain a compact project whitelist for high-utility everyday phrases missing from open sources.
+- Treat named entities and pageview spikes as secondary signals so they do not dominate core typing paths.
 
 ## Layering policy
-- `manifests/curated_daily_phrases.tsv` is reserved for everyday/chat phrasing that should receive daily-use preference treatment.
-- `manifests/curated_daily_supplement_phrases.tsv` stores useful exact-match supplements with capped low-frequency weights; entries in this layer should remain selectable but should not inherit daily/chat priority.
-- Its optional fifth-column modes are applied after ranking and path statistics: `exact_zero` emits a true zero-weight exact row, `exact_rank` uses the non-negative manifest score as a fixed exact-candidate weight, `no_contains` leaves the word out of the runtime substring-popularity index, `exact_rank_no_contains` does both of the last two, and `exact_rank_exact_only` also gives the row no completions (it is found only when its whole reading is typed).
-- `manifests/vertical_layers.public.json` declares isolated vertical terminology layers.
-- `manifests/vertical/*.tsv` stores project-authored vertical term lists such as fiction entities, proper nouns, people names, place names, countries/regions, world cities, landmarks, idioms/allusions, computing vocabulary, civic/public-service terminology, architecture terminology/entities, gaming terminology, and game-development terminology.
-- Vertical layers can add domain vocabulary without inheriting the same preferred-term bias used for daily/chat phrases.
-- The fiction layer keeps novel characters, titles, and in-world named entities separate from everyday/chat phrasing and from general proper nouns.
-- The active project-maintained proper-noun layer keeps non-person titles, organizations, brands, platforms, products, and general real-world named entities separate from everyday/chat phrasing.
-- The people-name layer keeps public and historical human names separate from daily/chat phrasing, fiction entities, and non-person proper nouns; Wikidata-backed people-name entries are deliberately weighted conservatively so full-name input works without crowding common words.
-- The place-name layer keeps common domestic and international locations, countries/regions, world cities, scenic spots, and landmarks inputable with conservative weights, so complete place-name input works without crowding everyday candidates.
-- Wikidata-backed place supplements are intentionally weighted lower than curated entries; cold administrative places and landmarks should remain available on full input but should not dominate common words.
-- The idioms/allusions layer currently combines a filtered `THUOCL_chengyu` subset with project-curated idioms and literary allusions, using conservative ranking so full idiom input works without inheriting daily/chat phrase priority.
-- The computing layer currently combines a filtered `THUOCL_IT` subset with project-curated computing terminology.
-- The civic layer currently contains project-curated taxation, housing, household-registration, and other public-service terminology.
-- The architecture-terms layer currently combines project-curated terminology, Getty AAT architectural terms, and Wikidata architectural elements/styles.
-- The architecture-entities layer currently combines project-curated architecture entities with a conservative Wikidata architectural-landmark supplement.
-- The gaming layer currently combines project-curated gaming terms, Wikidata gaming entities, and filtered zhwiki/zhwiktionary gaming lexical titles.
-- The game-development layer currently combines project-curated game-development terms, filtered Godot docs titles, a Wikidata game-engine supplement, and filtered zhwiki/zhwiktionary game-development lexical titles.
-- The medicine layer currently combines project-curated medical terms, the MeSH descriptor catalog, MeSH-linked Wikidata entities, and a filtered `THUOCL_medical` subset while staying isolated from the daily/chat preferred-term path.
+- `manifests/curated_daily_phrases.tsv`: Reserved for everyday and chat expressions that receive priority weighting in daily typing.
+- `manifests/curated_daily_supplement_phrases.tsv`: Stores lower-frequency everyday supplements with capped weights so complete Pinyin matches remain selectable without inheriting daily/chat priority.
+- Optional fifth-column modes in `curated_daily_supplement_phrases.tsv` apply after standard ranking and path statistics: `exact_zero` emits a zero-weight exact-match entry; `exact_rank` uses the manifest's non-negative score directly as a fixed exact-candidate weight; `no_contains` excludes the entry from the runtime substring-popularity index; `exact_rank_no_contains` combines `exact_rank` and `no_contains`; and `exact_rank_exact_only` additionally disables prefix completion (matching only when the full Pinyin is typed).
+- `manifests/vertical_layers.public.json` declares isolated domain layers and their sources, while `manifests/vertical/*.tsv` stores project-maintained domain word lists. Vertical layers add domain vocabulary without inheriting daily/chat priority weighting:
+  - Fiction entities (`fiction_entities`): Novel characters, titles, and fictional terms kept separate from everyday phrases and general proper nouns.
+  - Proper nouns (`proper_nouns`): Non-person titles, organizations, brands, platforms, products, and other real-world named entities.
+  - People names (`people_names`): Public figures and historical names isolated from fiction entities and non-person proper nouns; Wikidata-sourced names use conservative weights so full-name input works without crowding common words.
+  - Place names (`place_names`): Domestic and international locations, countries/regions, major cities, scenic spots, and landmarks at conservative weights; Wikidata place supplements are weighted below curated entries so uncommon administrative divisions and landmarks appear on full input without displacing common words.
+  - Idioms and allusions (`idioms_allusions`): Filtered `THUOCL_chengyu` entries combined with curated idioms and literary allusions at conservative weights.
+  - Computing (`computing`): Filtered `THUOCL_IT` entries combined with curated computing terminology.
+  - Civic (`civic`): Curated taxation, housing, household-registration, and public-service terminology.
+  - Architecture (`architecture_terms` and `architecture_entities`): `architecture_terms` combines curated terminology, Getty AAT architectural terms, and Wikidata architectural elements/styles; `architecture_entities` combines curated landmarks/architects with conservatively weighted Wikidata landmarks.
+  - Gaming (`gaming`): Curated gaming terms, Wikidata game entities, and filtered Chinese Wikipedia/Wiktionary (`zhwiki`/`zhwiktionary`) gaming entries.
+  - Game development (`game_dev`): Curated game-development terms, filtered Chinese Godot documentation titles, Wikidata game engines, and filtered `zhwiki`/`zhwiktionary` entries.
+  - Medicine (`medicine`): Curated medical terms, the MeSH descriptor catalog, MeSH-linked Wikidata medical entities, and a filtered `THUOCL_medical` subset.
 
 ## Directory layout
-- `data/generated/`: generated lexicon files, versioned statistical tables, the completion indexes, and the short-word promotion tables written by Cassotis IME.
-- `manifests/`: source/license manifests and regression samples.
-- `manifests/pinyin_overrides.sc.tsv`, `manifests/pinyin_overrides.tc.tsv`: project-authored word-level pronunciation overrides, one file per variant; neither applies to the other's texts.
-- `manifests/vertical/`: project-authored isolated vertical term lists.
-- `scripts/`: build/validation/export helper scripts.
-- `reports/`: generated build reports.
-- `rules/`: export/release rules.
+- `data/generated/`: Generated dictionary files, versioned statistical tables, completion indexes, and short-word promotion tables produced by Cassotis IME.
+- `manifests/`: Source/license manifests and regression test samples.
+- `manifests/pinyin_overrides.sc.tsv`, `manifests/pinyin_overrides.tc.tsv`: Project-maintained word-level pronunciation overrides, maintained separately for simplified and traditional variants without cross-applying.
+- `manifests/vertical/`: Project-maintained isolated domain word lists.
+- `scripts/`: Build, validation, and export scripts.
+- `reports/`: Generated build reports.
+- `rules/`: Export and release policy rules.
 
 ## Build and validation
 
@@ -264,35 +260,10 @@ See:
 .\scripts\build_external_seed.ps1 -Profile external_broad
 ```
 
-Full rebuilds keep existing Unihan single-character weights stable when only
-phrase dictionaries change. Use `-RefreshUnihanSingleCharWeights` only when
-deliberately recalibrating the single-character ranking layer.
+Standard full rebuilds keep existing Unihan single-character weights unchanged when only multi-character dictionaries are updated. Pass `-RefreshUnihanSingleCharWeights` only when intentionally recalibrating single-character ordering.
 
-The single characters of each reading are ordered by how often modern text
-uses them (`scripts/build_single_char_frequency.py`, 2026-10-27). Unihan's
-frequencies, the Xiandai Hanyu Pinlu counts of the 1980s and school grades
-had put rare characters above common ones under some readings. The step gives the weights a
-reading already has to its characters again, the largest to the character
-used most: in the general corpora of the character language model, counted
-overall and standing alone outside dictionary words
-(`manifests/general_char_counts.tsv`, made by
-`scripts/count_general_char_frequency.py`), and standing alone in typed chat
-messages, whose counts are not published. A character moves only under its
-main reading, and the audited relative order and the regression samples
-hold.
+Single characters under each Pinyin reading are ordered by modern corpus frequency (`scripts/build_single_char_frequency.py`, 2026-10-27). Earlier ordering relied on Unihan frequency fields, 1980s frequency-dictionary counts, and school-grade lists, which placed rare characters ahead of everyday ones under several readings. The script redistributes each reading's existing weight pool across its characters in order of modern usage, combining total occurrences and standalone occurrences outside multi-character words in the general corpora of the character language model (`manifests/general_char_counts.tsv`, generated by `scripts/count_general_char_frequency.py`), together with private standalone character counts from chat messages. Each character is reordered only under its primary reading, preserving audited relative-order overrides and regression test constraints.
 
-In the traditional dictionary, single characters that share one simplified
-form are told apart neither by these counts nor by the language model, which
-reads the traditional variant through its simplified characters. Under their
-main reading they are ordered by how traditional text writes them: the
-general corpora converted sentence by sentence with OpenCC
-(`manifests/traditional_char_shares.tsv`, made by
-`scripts/count_traditional_char_shares.py`; the order is set by
-`scripts/order_traditional_shared_chars.py`). Forms that Taiwan's text does not
-write go below the characters the text holds, and a few characters whose
-readings weigh alike are placed by hand. Full rebuilds keep these weights;
-after `-RefreshUnihanSingleCharWeights`, run both steps again, then
-`scripts/normalize_traditional_forms.py`.
+In the traditional dictionary, single characters that map to the same simplified character share identical simplified-corpus counts, and the character language model also scores traditional text via simplified characters. Under their primary reading, these shared-form characters are ordered by their observed usage share in traditional text, measured after converting the general corpora sentence by sentence with OpenCC (`manifests/traditional_char_shares.tsv`, generated by `scripts/count_traditional_char_shares.py`, and applied by `scripts/order_traditional_shared_chars.py`). Variant forms unused in Taiwan text are placed below attested forms, and a few polyphonic characters with nearly tied reading weights have their primary reading assigned manually. Standard full rebuilds preserve these weights; after running `-RefreshUnihanSingleCharWeights`, re-run both single-character ordering scripts followed by `scripts/normalize_traditional_forms.py`.
 
-`external_broad` and `external_cedict` automatically load
-`manifests/vertical_layers.public.json` when present.
+`external_broad` and `external_cedict` automatically load `manifests/vertical_layers.public.json` when present.
