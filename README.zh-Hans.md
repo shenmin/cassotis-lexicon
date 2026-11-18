@@ -33,8 +33,8 @@ Cassotis IME（言泉输入法）的词库构建与发布仓库：输入法的�
 
 | 文件 | 变体 | 词条数 |
 |------|------|--------|
-| `data/generated/dict_clean_sc.txt` | 简体主词库 | 242,608 |
-| `data/generated/dict_clean_tc.txt` | 繁体主词库 | 245,436 |
+| `data/generated/dict_clean_sc.txt` | 简体主词库 | 242,922 |
+| `data/generated/dict_clean_tc.txt` | 繁体主词库 | 245,750 |
 | `data/generated/dict_unihan_sc.txt` | 简体单字（Unihan） | 23,917 |
 | `data/generated/dict_unihan_tc.txt` | 繁体单字（Unihan） | 24,180 |
 

@@ -995,7 +995,7 @@ jinhu	近乎	1
 chuhu	出户	3
 chuhu	储户	2
 chuhu	出乎	1
-haogao	好搞	1
+haogao	好搞	2
 qianpian	前篇	1
 houpian	后篇	2
 qianxu	前序	2
@@ -1617,7 +1617,7 @@ pingni	凭你	1
 pingsha	凭啥	1
 pingwo	凭我	1
 pingzhang	凭仗	2
-pingji	凭几	3
+pingji	凭几	4
 jiahui	加回	1
 jiahuiqu	加回去	1
 
@@ -2405,9 +2405,9 @@ chuzi	厨子	4
 chuzi	处子	5
 pipa	劈啪	4
 sousou	飕飕	3
-buji	簿记	13
-buji	簿籍	15
-buji	不吉	12
+buji	簿记	14
+buji	簿籍	16
+buji	不吉	13
 lizhuang	力壮	2
 wuwu	唔唔	6
 wuwu	无物	5
@@ -4473,3 +4473,27 @@ qijia	七家	4
 bajia	八家	1
 jiujia	九家	5
 shijia	十家	4
+
+# Words of 2026-11-18 (都已, 事后关怀, 我很, 他很, 她很, 来搞, 来弄, 去弄, 别搞, 还搞, 还弄, 好乱, 更顶, 平级, 还送, 来送, 去送, 别送, 一批词) and the import words weighted anew: the rank each has by weight among the words of its key.
+wohen	我很	1
+tahen	他很	1
+tahen	她很	2
+laigao	来搞	1
+biegao	别搞	1
+haigao	还搞	2
+lainong	来弄	1
+qunong	去弄	1
+hainong	还弄	1
+laisong	来送	1
+qusong	去送	1
+biesong	别送	1
+haisong	还送	1
+douyi	都已	1
+shihouguanhuai	事后关怀	1
+haoluan	好乱	1
+haochang	好长	1
+gengding	更顶	1
+gengcan	更惨	1
+pingji	平级	2
+yipici	一批词	2
+haoyang	好养	1
