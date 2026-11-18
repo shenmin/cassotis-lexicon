@@ -54,7 +54,7 @@ Version ranges indicate identical published artifacts in the listed categories. 
 
 | Version | Query-path priors (SC / TC) | Word-path transitions (SC / TC) | Forward character n-gram parameters (SC / TC) | Reverse character n-gram parameters (SC / TC) |
 |---|---:|---:|---:|---:|
-| `v2.7.0` | 23,603 / 22,749 | 904,762 / 833,694 | 698,694 / 697,033 | 2,538,336 / 2,538,261 |
+| `v2.7.0` - `v2.8.0` | 23,603 / 22,749 | 904,762 / 833,694 | 698,694 / 697,033 | 2,538,336 / 2,538,261 |
 | `v2.6.0` | 23,603 / 22,683 | 904,762 / 833,701 | 698,694 / 697,013 | 2,538,336 / 2,538,235 |
 | `v2.5.0` | 23,603 / 22,681 | 904,767 / 833,707 | 698,694 / 697,013 | 2,538,336 / 2,538,235 |
 | `v2.3.0` - `v2.4.0` | 23,603 / 22,681 | 289,955 / 257,124 | 698,694 / 697,013 | 2,538,336 / 2,538,235 |
@@ -91,6 +91,7 @@ How these tables grew:
 
 | Version | Short-word promotion (SC / TC) | Word frequency (SC / TC) | Conversation frequency (SC / TC) |
 |---|---:|---:|---:|
+| `v2.8.0` | 1,563 / 1,818 | 204,521 / 206,666 | 108,403 / 109,284 |
 | `v2.7.0` | 1,529 / 1,781 | 201,868 / 204,020 | 106,115 / 107,002 |
 | `v2.6.0` | 1,520 / 1,715 | 199,532 / 199,118 | — |
 | `v2.5.0` | 1,498 / 1,692 | 199,072 / 198,640 | — |
@@ -112,6 +113,7 @@ The IME's dictionary build fails on a database without any of these three tables
 
 | Version | Completion popularity priors (SC / TC) | Prefix lookup records (SC / TC) | Transition-completion index (SC / TC) |
 |---|---:|---:|---:|
+| `v2.8.0` | 242,697 / 245,524 | 236,052 / 246,782 | 102,449 / 96,718 |
 | `v2.7.0` | 240,025 / 242,859 | 235,393 / 246,144 | 102,449 / 96,718 |
 | `v2.6.0` | 237,667 / 238,280 | 234,746 / 247,842 | 102,449 / 96,718 |
 | `v2.5.0` | 237,008 / 237,623 | 234,723 / 247,814 | 102,449 / 96,718 |
@@ -144,7 +146,7 @@ Additional static data for completion ranking and local continuation:
 
 | Version | Completion competition priors (SC / TC) | Pairwise switch-audit records (SC / TC) | Long-sentence continuation index (SC / TC) |
 |---|---:|---:|---:|
-| `v2.3.0` - `v2.7.0` | 42,453 / 42,448 | 4,379 / 4,379 | 103,410 / 98,277 |
+| `v2.3.0` - `v2.8.0` | 42,453 / 42,448 | 4,379 / 4,379 | 103,410 / 98,277 |
 | `v2.2.0` | 42,453 / 42,448 | 4,379 / 4,379 | 103,410 / 98,278 |
 | `v1.18.0` - `v2.1.0` | 42,453 / 42,448 | 4,379 / 4,379 | 97,589 / 92,457 |
 | `v1.17.0` | 42,453 / 42,448 | 4,379 / 4,379 | 35,423 / 32,481 |
