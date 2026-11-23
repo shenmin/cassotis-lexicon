@@ -29,14 +29,14 @@ Build and release repository for the simplified and traditional base dictionarie
 - Support reproducible rebuilds from external sources (`external_broad`).
 - Keep attribution and license files synchronized with the generated artifacts.
 
-## Current dictionary snapshot (2026-11-18 build)
+## Current dictionary snapshot (2026-11-23 build)
 
 | File | Variant | Entries |
 |------|---------|---------|
-| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 242,922 |
-| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 245,750 |
-| `data/generated/dict_unihan_sc.txt` | Simplified single-char (Unihan) | 23,917 |
-| `data/generated/dict_unihan_tc.txt` | Traditional single-char (Unihan) | 24,180 |
+| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 245,607 |
+| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 248,174 |
+| `data/generated/dict_unihan_sc.txt` | Simplified single-char (Unihan) | 24,161 |
+| `data/generated/dict_unihan_tc.txt` | Traditional single-char (Unihan) | 24,351 |
 
 Multi-character entries in the traditional dictionary use Taiwan standard character forms (為, 裡, 著, 群, 吃), while the single-character dictionary retains variant forms so they remain available when needed. See the [Taiwan form mapping](manifests/traditional_taiwan_forms.tsv).
 

@@ -74,7 +74,7 @@ FORCED = {
     ("chepi", "扯皮"): 600,
     ("chiliu", "哧溜"): 441,
     ("chiyin", "齿印"): 216,
-    ("chongsheng", "重生"): 999,
+    ("chongsheng", "重生"): 1000,     # above 冲绳 since the gap batch of 2026-11-19 (the user)
     ("chouma", "筹码"): 777,
     ("choushi", "仇视"): 600,
     ("choushi", "丑事"): 399,
@@ -724,7 +724,7 @@ FORCED_TC = {
     ("chepi", "扯皮"): 600,
     ("chiliu", "哧溜"): 441,
     ("chiyin", "齒印"): 216,
-    ("chongsheng", "重生"): 999,
+    ("chongsheng", "重生"): 1000,     # above 冲绳 since the gap batch of 2026-11-19 (the user)
     ("chouma", "籌碼"): 777,
     ("choushi", "仇視"): 600,
     ("choushi", "醜事"): 399,

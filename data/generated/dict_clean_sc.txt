@@ -2055,9 +2055,9 @@ anxian	岸线	600
 anxiang	安详	764
 anxiang	安乡	109
 anxiang	按响	108
-anxiang	暗想	220
+anxiang	暗想	110
 anxiang	暗箱	58
-anxiang	暗香	110
+anxiang	暗香	111
 anxiangcaozuo	暗箱操作	260
 anxiangshuying	暗香疏影	412
 anxianguangpu	暗线光谱	260
@@ -5567,7 +5567,7 @@ baochengyituan	抱成一团	436
 baochengzhi	包乘制	198
 baochengzu	包乘组	422
 baochi	保持	1018
-baochi	抱持	1
+baochi	抱持	600
 baochibaozhu	包吃包住	387
 baochichenmo	保持沉默	280
 baochilengjing	保持冷静	800
@@ -5605,9 +5605,9 @@ baodaizhi	包待制	167
 baodan	保单	467
 baodannvhai	爆弹女孩	538
 baodao	报道	1000
-baodao	报导	20
-baodao	抱到	10
-baodao	报到	8
+baodao	报导	599
+baodao	抱到	400
+baodao	报到	600
 baodaobulao	宝刀不老	412
 baodaojiyin	报导基因	635
 baodaojiyin	报道基因	511
@@ -5711,7 +5711,7 @@ baogaoyuan	报告员	340
 baoge	饱嗝	10
 baoger	饱嗝儿	397
 baogong	包工	1000
-baogong	包公	1
+baogong	包公	600
 baogongtou	包工头	487
 baogu	保固	470
 baogu	包谷	166
@@ -9125,7 +9125,7 @@ bibeide'er	吡贝地尔	540
 bibeideer	吡贝地尔	540
 bibeidongmai	鼻背动脉	540
 bibi	逼逼	280
-bibi	比比	184
+bibi	比比	281
 bibibobo	毕毕剥剥	218
 bibie	币别	198
 bibijieshi	比比皆是	631
@@ -9803,7 +9803,7 @@ bingchang	冰场	359
 bingchen	丙辰	379
 bingcheng	并称	776
 bingcheng	病程	440
-bingcheng	秉承	388
+bingcheng	秉承	777
 bingcheng	槟城	321
 bingchengchuanqi	冰城传奇	538
 bingchenghu	冰成湖	640
@@ -9813,7 +9813,7 @@ bingchong	病虫	374
 bingchonghai	病虫害	510
 bingchonghailvsefangkong	病虫害绿色防控	348
 bingchu	并处	936
-bingchu	摒除	91
+bingchu	摒除	400
 bingchuan	冰川	624
 bingchuan	兵船	190
 bingchuang	病床	440
@@ -10519,7 +10519,7 @@ bishe	毕设	137
 bishenchu	蔽身处	232
 bisheng	必胜	1000
 bisheng	毕生	430
-bisheng	毕升	1
+bisheng	毕升	200
 bishengke	必胜客	411
 bishengyuan	碧生源	470
 bishenjingcong	臂神经丛	570
@@ -10575,9 +10575,9 @@ bisuozonghezheng	闭锁综合征	641
 bisuozonghezheng	闭锁综合症	639
 bita	逼他	280
 bita	逼她	280
-bita	比他	20
-bita	比她	20
-bita	比它	20
+bita	比他	283
+bita	比她	282
+bita	比它	281
 bitan	笔谈	1000
 bitan	壁毯	1
 bitandai	壁毯袋	600
@@ -12627,7 +12627,7 @@ buli	不利	899
 buli	不理	819
 buli	布里	570
 buli	不力	145
-bulian	布帘	10
+bulian	布帘	399
 bulian'aijiuwandanle	不恋爱就完蛋了	632
 buliang	不凉	700
 buliang	不晾	700
@@ -12935,7 +12935,7 @@ buqi	补齐	1000
 buqi	不期	580
 buqi	不齐	280
 buqi	不起	214
-buqi	补漆	70
+buqi	补漆	200
 buqi'an	不欺暗	556
 buqi'anshi	不欺暗室	597
 buqi'erran	不期而然	597
@@ -13241,7 +13241,7 @@ bushu	部属	302
 bushu	不熟	280
 bushu	步数	280
 bushu	不舒	131
-bushu	布署	10
+bushu	布署	130
 bushuai	不衰	450
 bushuang	不爽	834
 bushufu	不舒服	640
@@ -13459,7 +13459,7 @@ buxi	不息	520
 buxi	不细	280
 buxia	不下	1000
 buxia	部下	100
-buxia	布下	1
+buxia	布下	99
 buxian	不限	280
 buxian	布线	279
 buxianbudan	不咸不淡	634
@@ -13826,7 +13826,7 @@ buzhebu	不折不	556
 buzhebukou	不折不扣	605
 buzhen	不振	442
 buzheng	不正	280
-buzheng	不争	1
+buzheng	不争	279
 buzhengchang	不正常	778
 buzhengdang	不正当	232
 buzhengdangguanxi	不正当关系	289
@@ -13962,8 +13962,8 @@ buzhuyi	不注意	640
 buzhuzuo	不主做	556
 buzhuzuochang	不主做常	597
 buzi	不自	1000
-buzi	步子	13
-buzi	簿子	1
+buzi	步子	600
+buzi	簿子	200
 buzidu	不自度	640
 buzijin	不自禁	280
 buzijue	不自觉	640
@@ -14038,7 +14038,7 @@ cai'er	采耳	198
 caiaga	蔡阿嘎	773
 caiba	才把	280
 caiban	采办	982
-caiban	菜板	1
+caiban	菜板	983
 caibang	彩蚌	198
 caibao	财宝	560
 caibaolieren	财宝猎人	538
@@ -14198,7 +14198,7 @@ caihuilai	才回来	280
 caihuinvshi	彩绘女士	482
 caiji	采集	947
 caiji	猜忌	764
-caijia	菜价	10
+caijia	菜价	600
 caijian	裁减	771
 caijian	裁剪	675
 caijian	才兼	504
@@ -15274,7 +15274,7 @@ ceduo	测度	392
 ceer	侧耳	435
 ceerxiting	侧耳细听	10
 cefan	策反	635
-cefan	侧翻	218
+cefan	侧翻	698
 cefeng	册封	1000
 cefuyuangui	册府元龟	260
 cegen	侧根	257
@@ -16048,8 +16048,8 @@ changhaixian	长海县	182
 changhao	长号	391
 changhaoshi	常好是	640
 changhe	场合	1000
-changhe	唱和	1
-changhe	长河	1
+changhe	唱和	599
+changhe	长河	600
 changheilian	唱黑脸	232
 changhengzhi	常衡制	167
 changhong	长虹	373
@@ -16189,7 +16189,7 @@ changning	长宁	671
 changning	常宁	416
 changningqu	长宁区	190
 changningshi	常宁市	165
-changningxian	长宁县	92
+changningxian	长宁县	400
 changniujie	肠扭结	500
 changniuzhuan	肠扭转	500
 changnuo	唱喏	412
@@ -16236,7 +16236,7 @@ changqixing	长期性	492
 changqiyilai	长期以来	560
 changqu	场区	999
 changqu	厂区	1000
-changqu	唱曲	1
+changqu	唱曲	400
 changquan	长拳	394
 changqun	长裙	418
 changquyingji	场区应急	260
@@ -16455,7 +16455,7 @@ changyaxingnaojishui	常压型脑积水	700
 changyaxingshuinaozheng	常压性水脑症	701
 changyaxingshuinaozheng	常压型水脑症	699
 changye	肠液	280
-changye	长夜	184
+changye	长夜	281
 changye	长野	1
 changyemanman	长夜漫漫	124
 changyenanming	长夜难明	387
@@ -16813,7 +16813,7 @@ chaofuyouyaosai	超浮游要塞	613
 chaogaidejun	晁盖的军	527
 chaogaidejunshi	晁盖的军师	569
 chaogang	朝纲	16
-chaogang	超纲	10
+chaogang	超纲	26
 chaogangzhanjijijiewang	超刚战纪机界王	632
 chaogangzhanjijijiewang	超钢战纪机界王	632
 chaogangzhanshen	超钢战神	538
@@ -17072,8 +17072,8 @@ chaopiao	钞票	440
 chaopin	超频	358
 chaopingliang'ankuo	潮平两岸阔	397
 chaopingmian	超平面	340
-chaoqi	抄起	10
-chaoqi	潮气	1
+chaoqi	抄起	400
+chaoqi	潮气	599
 chaoqian	朝前	280
 chaoqian	超前	184
 chaoqiang	超强	10
@@ -17092,7 +17092,7 @@ chaorang	吵嚷	432
 chaoranshishi	超然世事	260
 chaoranwuwai	超然物外	630
 chaore	潮热	440
-chaore	炒热	1
+chaore	炒热	400
 chaoren	超人	1000
 chaorendiwa	超人迪瓦	538
 chaorenguaishounongchang	超人怪兽农场	648
@@ -18267,7 +18267,7 @@ chengxin	诚信	600
 chengxinchengyi	诚心诚意	472
 chengxing	成形	813
 chengxing	成行	760
-chengxing	成型	131
+chengxing	成型	872
 chengxing'erlai	乘兴而来	637
 chengxing'erlaibaixing'ergui	乘兴而来败兴而归	719
 chengxingerlai	乘兴而来	637
@@ -18464,7 +18464,7 @@ chengzhen	成真	10
 chengzhenhua	城镇化	481
 chengzhenhuashuiping	城镇化水平	289
 chengzhi	惩治	772
-chengzhi	诚挚	763
+chengzhi	诚挚	773
 chengzhi	城址	212
 chengzhi	橙汁	56
 chengzhichaose	澄之朝色	538
@@ -18958,8 +18958,8 @@ chichan	痴缠	10
 chichangxu	池昌旭	780
 chichao	赤潮	374
 chicheng	池晟	732
-chicheng	赤诚	636
-chicheng	驰骋	552
+chicheng	赤诚	733
+chicheng	驰骋	734
 chichengjiangchang	驰骋疆场	625
 chichengxian	赤城县	165
 chichengxiangdai	赤诚相待	387
@@ -19581,7 +19581,7 @@ chonghuangzao	虫黄藻	470
 chonghui	重回	953
 chonghui	冲回	10
 chonghun	重婚	860
-chonghun	冲昏	10
+chonghun	冲昏	400
 chonghuntounao	冲昏头脑	417
 chonghunzui	重婚罪	425
 chonghuo	重获	323
@@ -19599,7 +19599,7 @@ chongjili	冲击力	508
 chongjiliaofa	冲击疗法	570
 chongjin	冲劲	429
 chongjin	冲进	293
-chongjin	冲筋	97
+chongjin	冲筋	199
 chongjing	崇敬	771
 chongjing	憧憬	649
 chongjinzhaoping	冲筋找平	591
@@ -19668,7 +19668,7 @@ chongpo	冲破	474
 chongpohuowang	冲破火网	538
 chongpohuowangdianfeng	冲破火网巅峰	648
 chongqi	重启	950
-chongqi	充气	1
+chongqi	充气	600
 chongqichuan	充气船	167
 chongqie	宠妾	198
 chongqiemieqi	宠妾灭妻	258
@@ -19689,14 +19689,14 @@ chongrujiewang	宠辱皆忘	615
 chongse	充塞	426
 chongsha	冲杀	454
 chongshang	崇尚	373
-chongshang	冲上	10
+chongshang	冲上	600
 chongshanjunling	崇山峻岭	327
 chongshanzhuanfang	宠擅专房	260
 chongshe	重设	399
 chongshen	重申	1000
 chongshen	重审	47
-chongsheng	冲绳	1000
-chongsheng	重生	999
+chongsheng	冲绳	999
+chongsheng	重生	1000
 chongshengdao	冲绳岛	208
 chongshengqundao	冲绳群岛	226
 chongshengxian	冲绳县	189
@@ -19719,7 +19719,7 @@ chongtansuangai	重碳酸钙	260
 chongtansuanyan	重碳酸盐	260
 chongti	重提	436
 chongtian	充填	919
-chongtian	冲天	1
+chongtian	冲天	920
 chongtianpao	冲天炮	10
 chongtianwu	充填物	167
 chongtianyinshu	充填因数	218
@@ -19838,7 +19838,7 @@ chongzi	虫子	441
 chongzikuaicandian	虫子快餐店	613
 chongziya	虫子牙	232
 chongzou	冲走	925
-chongzou	重奏	1
+chongzou	重奏	600
 chongzu	充足	1000
 chongzu	重组	546
 chongzu'erli	重足而立	387
@@ -19847,7 +19847,7 @@ chongzujiating	重组家庭	260
 chongzuliyoulv	充足理由律	289
 chongzuo	重做	1000
 chongzuo	崇左	416
-chongzuo	充作	1
+chongzuo	充作	400
 chongzuoshi	崇左市	165
 chou'e	丑恶	449
 chouba	抽吧	700
@@ -21183,8 +21183,8 @@ chujizhaohuyisheng	初级照护医生	700
 chujizhaohuyishi	初级照护医师	700
 chujizhongxue	初级中学	431
 chuju	出具	970
-chuju	厨具	10
-chuju	出局	1
+chuju	厨具	599
+chuju	出局	600
 chujuan	出圈	39
 chujue	处决	952
 chujue	触觉	1
@@ -21808,7 +21808,7 @@ chushoukeji	触手可及	436
 chushoukuochuo	出手阔绰	535
 chushoushaonv	触手少女	538
 chushu	出书	964
-chushu	除数	1
+chushu	除数	599
 chushuang	除霜	194
 chushui	出水	1000
 chushui	储水	1
@@ -24943,7 +24943,7 @@ danbanhuaxue	单板滑雪	218
 danbanji	单板机	529
 danbanke	单班课	167
 danbao	担保	1000
-danbao	蛋包	1
+danbao	蛋包	200
 danbaofan	蛋包饭	529
 danbaoren	担保人	10
 danbaozao	单胞藻	375
@@ -25025,7 +25025,7 @@ dandanmian	担担面	388
 dandantang	弹弹堂	460
 dandanzhangmenrizhi	蛋蛋掌门日志	648
 dandao	弹道	1000
-dandao	胆道	1
+dandao	胆道	600
 dandao'ai	胆道癌	500
 dandaoai	胆道癌	500
 dandaobisuo	胆道闭锁	570
@@ -25410,7 +25410,7 @@ daniya	达尼亚	232
 danizhuomuniao	大拟啄木鸟	289
 danji	单机	700
 danji	淡季	35
-danji	单极	23
+danji	单极	33
 danji	单击	34
 danjia	担架	1000
 danjia	单价	999
@@ -25473,8 +25473,8 @@ dankai	单开	420
 dankang	单抗	307
 dankangjiaonang	胆康胶囊	540
 dankao	单靠	280
-danke	蛋壳	44
-danke	弹壳	1
+danke	蛋壳	599
+danke	弹壳	398
 dankelongkangti	单克隆抗体	640
 dankelongmianyiqiudanbaixuezheng	单克隆免疫球蛋白血症	700
 dankeng	弹坑	387
@@ -25507,7 +25507,7 @@ danlinsuanxiangan	单磷酸腺苷	640
 danlinsuanxianganhuohuadanbaizhijimei	单磷酸腺苷活化蛋白质激酶	700
 danlinsuanxianganhuohuadedanbaijimei	单磷酸腺苷活化的蛋白激酶	700
 danlizifanzhuan	单粒子翻转	740
-danlun	单论	10
+danlun	单论	400
 danlunche	单轮车	167
 danlutongdupian	丹鹿通督片	603
 danlve	胆略	392
@@ -26280,7 +26280,7 @@ daoshui	倒水	10
 daosou	盗薮	198
 daosuan	捣蒜	10
 daosui	稻穗	999
-daosui	捣碎	222
+daosui	捣碎	1000
 daosuo	倒锁	563
 daota	倒塌	1000
 daotabaye	刀塔霸业	538
@@ -26469,8 +26469,8 @@ daqian	打钱	700
 daqian	大钱	308
 daqian	打千	296
 daqiang	打墙	826
-daqiang	搭腔	147
-daqiang	打枪	36
+daqiang	搭腔	140
+daqiang	打枪	827
 daqiang	答腔	1
 daqiannian	大前年	391
 daqianpan	大浅盘	232
@@ -28410,8 +28410,8 @@ dianjiang	点将	480
 dianjiangtianwenwulixue	电浆天文物理学	724
 dianjiangwuli	电浆物理	680
 dianjiangxian	垫江县	169
-dianjiao	踮脚	10
-dianjiao	电教	1
+dianjiao	踮脚	599
+dianjiao	电教	600
 dianjiaojian	踮脚尖	228
 dianjiaolou	电教楼	10
 dianjiaoshi	垫脚石	436
@@ -31373,7 +31373,7 @@ diyun	底蕴	238
 diyuxiaohua	地狱笑话	260
 diyuyanziyuan	低语言资源	740
 dizai	地栽	127
-dizai	滴在	126
+dizai	滴在	281
 dizang	地藏	521
 dizangpusa	地藏菩萨	260
 dizangwangpusa	地藏王菩萨	289
@@ -32324,7 +32324,7 @@ doubaodamoxing	豆包大模型	650
 doubei	都被	280
 doubi	都比	700
 doubi	逗逼	280
-doubi	陡壁	85
+doubi	陡壁	279
 doubian	陡变	323
 doubing	斗柄	387
 doubingdu	痘病毒	470
@@ -32464,7 +32464,7 @@ doulasi	都拉斯	506
 doule	逗乐	408
 doulei	豆类	438
 douli	斗笠	1000
-douli	兜里	10
+douli	兜里	999
 douliangdiwan	都梁滴丸	536
 douliangruanjiaonang	都梁软胶囊	610
 douliangxiang	都梁香	640
@@ -32512,7 +32512,7 @@ douqing	逗情	198
 douqiudanbai	豆球蛋白	570
 douqiwan	都气丸	470
 douqu	都去	700
-douqu	逗趣	11
+douqu	逗趣	400
 douquan	斗拳	198
 douquanzi	兜圈子	500
 douqur	逗趣儿	546
@@ -32559,7 +32559,7 @@ dousou	抖擞	497
 dousoujingshen	抖擞精神	474
 dousuo	抖缩	198
 doutou	兜头	198
-doutu	斗图	10
+doutu	斗图	200
 doutui	抖腿	10
 douwei	窦唯	629
 douxian	窦腺	333
@@ -32578,7 +32578,7 @@ douxingxinlvshichang	窦性心律失常	700
 douxingxintiaoguosu	窦性心跳过速	700
 douxuehongdanbai	豆血红蛋白	640
 douya	豆芽	996
-douya	陡崖	1
+douya	陡崖	399
 douyacai	豆芽菜	419
 douyadeyi	豆芽的一	527
 douyadeyisheng	豆芽的一生	569
@@ -32589,12 +32589,12 @@ douyazuoguai	豆芽做拐	523
 douyazuoguaizhang	豆芽做拐杖	566
 douyijing	都已经	1000
 douyin	抖音	1000
-douyin	痘印	10
-douyin	逗引	1
+douyin	痘印	599
+douyin	逗引	200
 douyinggai	都应该	1000
 douyong	都用	1000
 douyou	都有	1000
-douyou	豆油	1
+douyou	豆油	599
 douyu	都与	280
 douyu	斗鱼	121
 douyushi	都御史	506
@@ -34260,7 +34260,7 @@ duowentian	多闻天	232
 duowukeduo	躲无可躲	692
 duowulichang	多物理场	680
 duowuliuqiandun	多五六千吨	371
-duoxia	夺下	10
+duoxia	夺下	400
 duoxian	剁馅	82
 duoxiancheng	多线程	688
 duoxiancheng'anquan	多线程安全	773
@@ -34332,7 +34332,7 @@ duoyaonaiyaoxing	多药耐药性	640
 duoyazheng	多牙症	500
 duoye	多叶	127
 duoyi	多疑	984
-duoyi	多义	1
+duoyi	多义	597
 duoyi'er	多伊尔	232
 duoyici	多义词	209
 duoyier	多伊尔	232
@@ -34350,7 +34350,7 @@ duoyonghu	多用户	443
 duoyongtu	多用途	425
 duoyu	多于	1000
 duoyu	多余	243
-duoyu	躲雨	1
+duoyu	躲雨	240
 duoyuan	多元	947
 duoyuan	多远	600
 duoyuanbubaohezhifangsuan	多元不饱和脂肪酸	378
@@ -34728,7 +34728,7 @@ edou	恶斗	479
 edouguzhe	额窦骨折	540
 edouyan	额窦炎	500
 edu	额度	700
-edu	恶毒	1
+edu	恶毒	600
 eduzi	饿肚子	379
 ee	皒皒	137
 eer	厄尔	745
@@ -37731,7 +37731,7 @@ fansu	泛素	440
 fansu	反诉	260
 fansu	凡俗	14
 fansuan	泛酸	440
-fansuan	反酸	115
+fansuan	反酸	441
 fansuangai	泛酸钙	470
 fansuanyanjihuojiaosuguanlianzhishenjingtuihuaxingjibing	泛酸盐激活酵素关联之神经退化性疾病	700
 fansumei	泛素酶	500
@@ -38124,7 +38124,7 @@ faxia	发下	10
 faxian	发现	1000
 faxian	法线	1
 faxiang	法向	900
-faxiang	发香	10
+faxiang	发香	8
 faxiangdi	发祥地	553
 faxiangli	法向力	640
 faxiangliang	法向量	640
@@ -39472,7 +39472,7 @@ fengcheng	奉承	993
 fengcheng	凤城	210
 fengcheng	封城	10
 fengchenghua	奉承话	10
-fengchengshi	凤城市	48
+fengchengshi	凤城市	200
 fengchengtaohao	奉承讨好	260
 fengchennvzi	风尘女子	630
 fengchenpupu	风尘仆仆	478
@@ -40151,7 +40151,7 @@ fengzhai	封斋	223
 fengzhaijie	封斋节	167
 fengzhang	疯长	10
 fengzhao	奉召	394
-fengzhao	凤爪	274
+fengzhao	凤爪	429
 fengzhen	风疹	440
 fengzhen	缝针	322
 fengzhen	丰镇	260
@@ -41953,7 +41953,7 @@ fusheluochen	辐射落尘	570
 fusheminganxing	辐射敏感性	289
 fushen	复审	1000
 fushen	俯身	870
-fushen	父神	10
+fushen	父神	400
 fusheneng	辐射能	482
 fusheng	复生	445
 fushengji	副省级	379
@@ -42693,7 +42693,7 @@ gaiexiangshan	改恶向善	387
 gaifa	该罚	10
 gaifan	盖饭	495
 gaifang	盖房	401
-gaifen	改分	10
+gaifen	改分	200
 gaigai	改改	700
 gaigai	该改	700
 gaigao	改稿	700
@@ -42704,7 +42704,7 @@ gaigekaifang	改革开放	249
 gaigepai	改革派	506
 gaigezhe	改革者	679
 gaiguan	改观	999
-gaiguan	概观	1
+gaiguan	概观	199
 gaiguandinglun	盖棺定论	249
 gaiguanlunding	盖棺论定	431
 gaiguo	改过	700
@@ -43651,7 +43651,7 @@ ganqiqiang	干砌墙	600
 ganqiyujie	肝气郁结	540
 ganqiyuzhi	肝气郁滞	540
 ganqu	赶去	280
-ganqu	干渠	1
+ganqu	干渠	279
 ganquan	甘泉	425
 ganquanxian	甘泉县	165
 ganqun	干群	400
@@ -44503,7 +44503,7 @@ gaoshikuobu	高视阔步	412
 gaoshipai	告示牌	388
 gaoshizaomiao	高市早苗	800
 gaoshou	高手	1000
-gaoshou	高瘦	10
+gaoshou	高瘦	200
 gaoshouruyun	高手如云	387
 gaoshu	高树	560
 gaoshua	高刷	10
@@ -45411,7 +45411,7 @@ gengshang	更上	1000
 gengshangyicenglou	更上一层楼	787
 gengshao	更少	1000
 gengshen	更深	1000
-gengshen	庚申	1
+gengshen	庚申	599
 gengsheng	更生	682
 gengshengyemingqiandeliulise	更胜夜明前的琉璃色	662
 gengshengyichou	更胜一筹	460
@@ -46092,7 +46092,7 @@ gongfa	攻伐	261
 gongfan	共犯	328
 gongfang	攻防	981
 gongfang	工坊	275
-gongfang	公房	1
+gongfang	公房	274
 gongfangzhan	攻防战	280
 gongfei	共匪	1000
 gongfei	公费	999
@@ -47142,7 +47142,7 @@ goupo	勾破	10
 goupo	钩破	1
 gouqi	枸杞	1000
 gouqi	勾起	1
-gouqian	勾芡	204
+gouqian	勾芡	281
 gouqiang	够呛	110
 gouqiang	够戗	422
 gouqiduotang	枸杞多糖	540
@@ -48695,7 +48695,7 @@ guanzheyunji	观者云集	649
 guanzhi	官职	1000
 guanzhi	管制	800
 guanzhi	官制	126
-guanzhi	观止	10
+guanzhi	观止	124
 guanzhibin	关智斌	620
 guanzhilin	关之琳	198
 guanzhiyongyao	管制用药	570
@@ -50502,7 +50502,7 @@ guokaizhai	国开债	421
 guokan	过刊	198
 guokao	国考	137
 guoke	果壳	10
-guoke	过客	6
+guoke	过客	11
 guokedawulixueyuan	国科大物理学院	724
 guokong	过孔	319
 guoku	国库	676
@@ -50843,8 +50843,8 @@ guowuyuanyanjiushi	国务院研究室	352
 guowuzhangguan	国务长官	98
 guowuzongli	国务总理	387
 guoxi	过细	184
-guoxi	国玺	88
-guoxi	过膝	10
+guoxi	国玺	183
+guoxi	过膝	400
 guoxianbing	果馅饼	228
 guoxiang	郭襄	241
 guoxianni	郭羡妮	620
@@ -51262,7 +51262,7 @@ guye	故业	360
 guyequ	古冶区	165
 guyewang	顾野王	27
 guyi	故意	1000
-guyi	古义	1
+guyi	古义	600
 guyin	古音	382
 guyinghua	骨硬化	500
 guyinghuabing	骨硬化病	540
@@ -51302,7 +51302,7 @@ guzao	鼓噪	765
 guzao	呱噪	280
 guzaowei	古早味	167
 guzhai	故宅	328
-guzhai	古宅	305
+guzhai	古宅	329
 guzhang	故障	700
 guzhang	鼓掌	520
 guzhang	股长	503
@@ -51854,7 +51854,7 @@ haiqunzhima	害群之马	450
 hair	孩儿	1000
 hairan	骇然	415
 hairen	害人	805
-hairen	骇人	25
+hairen	骇人	400
 hairenbuqian	害人不浅	433
 hairenchong	害人虫	404
 hairenjing	害人精	388
@@ -51979,7 +51979,7 @@ haixi	还细	700
 haixi	海西	604
 haixi	害喜	3
 haixia	海峡	699
-haixia	海虾	10
+haixia	海虾	399
 haixiajiaoliujijinhui	海峡交流基金会	348
 haixialiang'an	海峡两岸	602
 haixialiang'anguanxixiehui	海峡两岸关系协会	382
@@ -52905,7 +52905,7 @@ haodoudegongji	好斗的公鸡	569
 haodoudeshan	好斗的山	527
 haodoudeshanyang	好斗的山羊	569
 haodouhe	好都合	640
-haodu	好赌	10
+haodu	好赌	200
 haoduan	号段	280
 haoduan	好端	141
 haoduanduan	好端端	789
@@ -53044,7 +53044,7 @@ haolemei	好了没	280
 haoleng	好冷	280
 haoleshangbawangleteng	好了伤疤忘了疼	348
 haoli	好立	930
-haoli	耗力	1
+haoli	耗力	200
 haoliang	好凉	280
 haoliao	好料	438
 haolibushuang	毫厘不爽	387
@@ -53227,8 +53227,8 @@ haoweishi	好未是	664
 haoweishi	好味是	663
 haoweishi	好惟是	652
 haoweishihengjia	郝威式桁架	719
-haowen	好文	10
-haowen	好闻	10
+haowen	好文	600
+haowen	好闻	400
 haowu	毫无	1018
 haowu	好物	520	no_contains
 haowu	好恶	114
@@ -54708,7 +54708,7 @@ hengsaoqianjun	横扫千军	466
 hengsaoqianxing	横扫千星	538
 hengshan	横山	293
 hengshan	恒山	197
-hengshan	衡山	197
+hengshan	衡山	561
 hengshanqu	恒山区	165
 hengshanxian	衡山县	176
 hengshanxiang	横山乡	174
@@ -54818,7 +54818,7 @@ henhende	很很的	664
 henhende	狠狠地	652
 henhou	很厚	1000
 henhou	很后	1000
-henhua	狠话	10
+henhua	狠话	600
 henhuai	很坏	700
 henhui	很会	700
 heni	和你	700
@@ -54930,7 +54930,7 @@ henuan	和暖	285
 henuosanshi	何诺三世	507
 henwan	很晚	700
 henwu	恨恶	186
-henxi	很细	10
+henxi	很细	600
 henxia	很下	1000
 henxian	很闲	1000
 henxiang	很像	1009
@@ -55370,7 +55370,7 @@ hezhiping	何志平	360
 hezhiyuan	河智苑	781
 hezhizhang	贺知章	217
 hezhong	何种	280
-hezhong	合众	1
+hezhong	合众	279
 hezhongdai	盒中袋	232
 hezhongdefu	河中的浮	527
 hezhongdefuping	河中的浮萍	569
@@ -57037,7 +57037,7 @@ huanaxiongdiyouxi	华纳兄弟游戏	811
 huanayinyuejituan	华纳音乐集团	318
 huanayouxi	华纳游戏	740
 huanba	换吧	700
-huanban	缓办	51
+huanban	缓办	200
 huanbao	环保	1000
 huanbao	环抱	190
 huanbaodoushi	环保斗士	260
@@ -58176,7 +58176,7 @@ huanxin	焕新	280
 huanxin	换芯	10
 huanxing	环形	710
 huanxing	缓刑	477
-huanxing	唤醒	469
+huanxing	唤醒	711
 huanxinggongding	环形拱顶	669
 huanxinggonglu	环形公路	226
 huanxinghongban	环形红斑	540
@@ -59100,7 +59100,7 @@ huidiaomoshi	回调模式	673
 huidie	回跌	372
 huidong	挥动	1000
 huidong	会东	200
-huidongxian	会东县	93
+huidongxian	会东县	200
 huidu	灰度	1000
 huiduanjiaobei	灰短脚鹎	258
 huidui	汇兑	997
@@ -59146,7 +59146,7 @@ huifuzhengchang	恢复正常	1235
 huigai	悔改	422
 huigan	挥杆	378
 huige	回个	280
-huige	挥戈	1
+huige	挥戈	199
 huigedang	辉格党	232
 huigei	汇给	10
 huigen	慧根	10
@@ -59641,7 +59641,7 @@ huiyeyinhang	汇业银行	260
 huiyi	会议	1009
 huiyi	回忆	820
 huiyi	回以	280
-huiyi	悔意	10
+huiyi	悔意	400
 huiyi	会意	599
 huiyiderizi	回忆的日子	613
 huiyideyousidiya	秽翼的尤斯蒂娅	632
@@ -59775,7 +59775,7 @@ huju	沪剧	370
 hujulongpan	虎踞龙盘	637
 hujulongpan	虎踞龙蟠	65
 hujun	弧菌	440
-hujun	户均	85
+hujun	户均	441
 hujunbing	弧菌病	500
 hujuyiganjiaonang	虎驹乙肝胶囊	644
 huke	胡克	283
@@ -63601,7 +63601,7 @@ jiaodeng	脚蹬	519
 jiaodeng	脚凳	280
 jiaodi	较低	700
 jiaodi	较底	10
-jiaodi	脚底	1
+jiaodi	脚底	600
 jiaodian	焦点	923
 jiaodian	交点	157
 jiaodianpingguchuangshangchaoyinbo	焦点评估创伤超音波	700
@@ -64128,7 +64128,7 @@ jiaoti	交替	1000
 jiaoti	胶体	1
 jiaotiantianbuying	叫天天不应	10
 jiaotiao	胶条	359
-jiaotiao	教条	263
+jiaotiao	教条	421
 jiaotiaozhuyi	教条主义	612
 jiaotiaozhuyizhe	教条主义者	457
 jiaotie	角铁	324
@@ -64214,7 +64214,7 @@ jiaowuchu	教务处	10
 jiaowushi	教务室	232
 jiaowuzhang	教务长	487
 jiaoxi	礁溪	130
-jiaoxi	教习	10
+jiaoxi	教习	128
 jiaoxia	较下	1000
 jiaoxia	脚下	469
 jiaoxia	狡黠	468
@@ -68009,10 +68009,10 @@ jingji	经济	1000
 jingji	竞技	838
 jingji	径迹	350
 jingji	经纪	533
-jingji	经籍	13
+jingji	经籍	347
 jingji	荆棘	351
-jingji	惊悸	1
-jingji	静寂	1
+jingji	惊悸	348
+jingji	静寂	349
 jingji'anquan	经济安全	260
 jingjia	竞价	661
 jingjia	镜架	127
@@ -68818,7 +68818,7 @@ jingyu	境遇	109
 jingyu	鲸鱼	108
 jingyuan	警员	550
 jingyuanliu	精原瘤	500
-jingyuanxian	靖远县	94
+jingyuanxian	靖远县	400
 jingyuanxibao	精原细胞	570
 jingyuanxibaoliu	精原细胞瘤	640
 jingyucidao	精于此道	260
@@ -68852,7 +68852,7 @@ jingzhi	精致	825
 jingzhi	景致	811
 jingzhi	精制	153
 jingzhi	净值	152
-jingzhi	静置	10
+jingzhi	静置	150
 jingzhibianyuan	镜之边缘	538
 jingzhibianyuancuihuaji	镜之边缘催化剂	632
 jingzhibudong	静止不动	10
@@ -69182,7 +69182,7 @@ jinlierwei	尽力而为	477
 jinlihui	浸礼会	388
 jinlijiao	浸礼教	232
 jinlin	近邻	979
-jinlin	紧邻	32
+jinlin	紧邻	980
 jinling	金翎	1000
 jinling	禁令	705
 jinling	金铃	521
@@ -69291,7 +69291,7 @@ jinpingmiaoyaodaizuzizhixian	金平苗瑶傣族自治县	378
 jinpingmiaozuyaozudaizuzizhixian	金平苗族瑶族傣族自治县	376
 jinpingqu	金平区	165
 jinpingtang	金平糖	205
-jinpingxian	锦屏县	85
+jinpingxian	锦屏县	200
 jinpo	紧迫	483
 jinpodingren	紧迫盯人	260
 jinpucong	金溥聪	620
@@ -70630,7 +70630,7 @@ jiuchongzhe	就冲着	800
 jiuchou	酒筹	198
 jiuchouxinhen	旧愁新恨	387
 jiuchu	救出	1000
-jiuchu	揪出	40
+jiuchu	揪出	599
 jiuci	就此	1000
 jiucuo	纠错	416
 jiucuoma	纠错码	10
@@ -70672,7 +70672,7 @@ jiuer	九二	457
 jiuergongshi	九二共识	786
 jiuerjiuzhi	久而久之	510
 jiufa	就发	700
-jiufa	灸法	1
+jiufa	灸法	600
 jiufan	酒饭	1000
 jiufan	就范	445
 jiufang	九房	420
@@ -70855,7 +70855,7 @@ jiujixuanhua	究极喧哗	538
 jiujiyuan	救济院	500
 jiujizhanduidandandan	究极战队弹弹弹	632
 jiuju	酒具	1000
-jiuju	酒局	10
+jiuju	酒局	998
 jiuju	旧居	999
 jiukai	就开	700
 jiukan	就看	700
@@ -70949,7 +70949,7 @@ jiupa	就怕	700
 jiupai	旧派	198
 jiupei	久陪	198
 jiupian	纠偏	381
-jiupin	酒品	10
+jiupin	酒品	400
 jiuping	酒瓶	10
 jiupingxinjiu	旧瓶新酒	646
 jiupingzhuangxinjiu	旧瓶装新酒	289
@@ -70961,7 +70961,7 @@ jiuqi	究其	10
 jiuqi	酒气	10
 jiuqian	就签	700
 jiuqian	九千	472
-jiuqian	酒钱	36
+jiuqian	酒钱	400
 jiuqiangnaoliqing	久强脑立清	606
 jiuqianjiubaijiushijiujian	九千九百九十九间	490
 jiuqianjiubaisui	九千九百岁	406
@@ -71223,7 +71223,7 @@ jiuyi	久已	1000
 jiuyi	就医	732
 jiuyi	就义	720
 jiuyi	九亿	472
-jiuyi	酒意	16
+jiuyi	酒意	200
 jiuyiba	九一八	547
 jiuyibaqian'erbai'ershisanwanyuliang	九亿八千二百二十三万余两	455
 jiuyibaqian'erbaiduowanliang	九亿八千二百多万两	455
@@ -71241,7 +71241,7 @@ jiuyong	就用	700
 jiuyou	就有	1018
 jiuyou	就又	700
 jiuyou	旧有	450	no_contains
-jiuyou	旧友	1
+jiuyou	旧友	399
 jiuyouyingde	咎有应得	387
 jiuyouziqu	咎由自取	454
 jiuyu	旧雨	335
@@ -71369,16 +71369,16 @@ jiwuyuxuezhongdeshana	祭物与雪中的刹那	662
 jixi	积习	1000
 jixi	鸡西	416
 jixi	即席	104
-jixi	及膝	10
+jixi	及膝	102
 jixia	几下	700
 jixia	极下	504
 jixia	记下	280
 jixia	季夏	1
 jixiacunyin	急下存阴	540
 jixian	极限	1000
-jixian	基线	13
-jixian	脊线	1
-jixian	集贤	1
+jixian	基线	600
+jixian	脊线	200
+jixian	集贤	599
 jixianchihanteyidian	极限痴汉特异点	632
 jixianchongci	极限冲刺	538
 jixiandanbai	肌纤蛋白	260
@@ -73479,7 +73479,7 @@ kache	卡车	449
 kachemoni	卡车模拟	660
 kachi	卡池	1000
 kada	卡达	365
-kada	咔哒	10
+kada	咔哒	200
 kadai	卡带	293
 kadan	卡弹	198
 kadantan	卡丹毯	600
@@ -74015,7 +74015,7 @@ kaiyuande	开源的	280
 kaiyuanjieliu	开源节流	460
 kaiyuanjingxiangzhan	开源镜像站	740
 kaiyuanruanjian	开源软件	260
-kaiyuanshi	开远市	55
+kaiyuanshi	开远市	200
 kaiyuanxieyi	开源协议	698
 kaiyuanyouxi	开源游戏	740
 kaiyuanyouxiliebiao	开源游戏列表	811
@@ -76150,8 +76150,8 @@ kexin	可信	1000
 kexin	可心	1
 kexindu	可信度	644
 kexing	可行	1000
-kexing	颗星	10
-kexing	克星	1
+kexing	颗星	600
+kexing	克星	599
 kexingjia	苛性钾	371
 kexingna	苛性钠	337
 kexingxing	可行性	1000
@@ -76639,8 +76639,8 @@ kongwu	孔武	1
 kongwusuoyou	空无所有	429
 kongwuyiren	空无一人	479
 kongwuyouli	孔武有力	258
-kongxi	空袭	1000
-kongxi	空隙	69
+kongxi	空袭	999
+kongxi	空隙	1000
 kongxi	孔隙	1
 kongxia	空暇	332
 kongxialai	空下来	1000
@@ -77117,7 +77117,7 @@ kuahe	跨鹤	198
 kuahexiyou	跨鹤西游	405
 kuaheyangzhou	跨鹤扬州	226
 kuaiban	快板	927
-kuaiban	快班	1
+kuaiban	快班	200
 kuaibanr	快板儿	379
 kuaibao	快报	421
 kuaibu	快步	569
@@ -78693,7 +78693,7 @@ lamianqiao	拉面桥	453
 lamifuding	拉米夫定	471
 lamifudingpian	拉米夫定片	610
 lamo	蜡膜	329
-lamo	拉磨	147
+lamo	拉磨	330
 lamosanqinpian	拉莫三嗪片	606
 lamosi	拉莫斯	277
 lamu	拉姆	493
@@ -79581,8 +79581,8 @@ laojun	老君	442
 laojuncuo	老君厝	591
 laojunmei	老君眉	506
 laokao	牢靠	425
-laoke	唠嗑	1
-laoke	老客	1
+laoke	唠嗑	600
+laoke	老客	400
 laokehu	老客户	600
 laokela	老克拉	640
 laokenggong	老坑公	640
@@ -79801,7 +79801,7 @@ laopoxin	老婆心	510
 laopozi	老婆子	538
 laopu	老谱	198
 laopulinni	老普林尼	507
-laoqi	捞起	10
+laoqi	捞起	600
 laoqian	捞钱	1000
 laoqian	老钱	131
 laoqianggu	老枪谷	640
@@ -80083,7 +80083,7 @@ laoxiu	老朽	277
 laoxiu	老羞	195
 laoxiucheng	老羞成	556
 laoxiuchengnu	老羞成怒	600
-laoxu	老徐	10
+laoxu	老徐	400
 laoxuejiu	老学究	676
 laoyagao	老鸦高	556
 laoyagaoge	老鸦高歌	597
@@ -81245,7 +81245,7 @@ liangban	两半	13
 liangban	良伴	1
 liangbanhuanggua	凉拌黄瓜	10
 liangbanmian	凉拌面	375
-liangbao	凉薄	10
+liangbao	凉薄	400
 liangbashuazi	两把刷子	405
 liangbei	两杯	280
 liangbei	两倍	147
@@ -81409,9 +81409,9 @@ lianghuishi	两回事	438
 lianghuxiangdou	两虎相斗	387
 lianghuxiangzheng	两虎相争	387
 liangji	两极	1000
-liangji	良机	54
-liangji	两级	42
-liangji	量级	30
+liangji	良机	598
+liangji	两级	600
+liangji	量级	599
 liangjia	两家	280
 liangjia	梁家	184
 liangjia	良家	1
@@ -81427,8 +81427,8 @@ liangjiaojia	两脚架	232
 liangjiaoqi	量角器	379
 liangjiashengjin	两颊生津	260
 liangjie	谅解	798
-liangjie	两届	78
-liangjie	梁洁	56
+liangjie	两届	600
+liangjie	梁洁	200
 liangjiebeiwanglu	谅解备忘录	289
 liangjiegun	两节棍	232
 liangjifenhua	两极分化	405
@@ -81469,10 +81469,10 @@ liangli	靓丽	600
 liangli'erwei	量力而为	402
 liangli'erxing	量力而行	485
 liangliang	两辆	700
-liangliang	两两	10
-liangliang	亮亮	10
-liangliang	晾凉	10
-liangliang	凉凉	1
+liangliang	两两	600
+liangliang	亮亮	598
+liangliang	晾凉	597
+liangliang	凉凉	599
 liangliangqiangqiang	踉踉跄跄	639
 lianglierwei	量力而为	402
 lianglierxing	量力而行	485
@@ -81485,7 +81485,7 @@ lianglv	良率	198
 liangma	良马	388
 liangmashi	两码事	481
 liangmazishi	两码子事	260
-liangmei	两枚	10
+liangmei	两枚	600
 liangmi	两米	10
 liangmian	两面	986
 liangmianjiagong	两面夹攻	624
@@ -81515,7 +81515,7 @@ liangpang	两旁	435
 liangpeng	凉棚	370
 liangpengyiyou	良朋益友	405
 liangpi	凉皮	305
-liangpian	两片	10
+liangpian	两片	439
 liangpiao	粮票	639
 liangpin	良品	10
 liangping	亮屏	420	no_contains
@@ -81586,7 +81586,7 @@ liangshan	梁珊	765
 liangshan	梁山	653
 liangshan	良善	532
 liangshan	凉山	458
-liangshan	两扇	10
+liangshan	两扇	457
 liangshanbo	梁山伯	458
 liangshanboyuzhuyingtai	梁山伯与祝英台	348
 liangshandexiong	梁山的兄	527
@@ -81751,10 +81751,10 @@ liangyaokukou	良药苦口	369
 liangyaokukouliyubing	良药苦口利于病	451
 liangye	两页	10
 liangyi	两亿	490
-liangyi	凉意	46
-liangyi	两仪	10
-liangyi	晾衣	10
-liangyi	良医	1
+liangyi	凉意	489
+liangyi	两仪	488
+liangyi	晾衣	399
+liangyi	良医	400
 liangyibaqianbabai'ershi'erwanliang	两亿八千八百二十二万两	455
 liangyifu	晾衣服	800
 liangyijia	晾衣架	883
@@ -82967,7 +82967,7 @@ lieyin	列印	323
 lieying	猎鹰	727
 lieyu	烈屿	198
 lieyuxiang	烈屿乡	174
-liezhe	咧着	10
+liezhe	咧着	400
 liezhi	劣质	384
 liezhi	裂殖	288
 liezhidunshideng	列支敦士登	305
@@ -83604,7 +83604,7 @@ lingchengqu	陵城区	174
 lingchi	零吃	1000
 lingchuan	陵川	233
 lingchuang	灵床	1000
-lingchuanxian	灵川县	90
+lingchuanxian	灵川县	200
 lingchubixing	令出必行	621
 lingchurushan	令出如山	620
 lingci	令慈	194
@@ -85036,7 +85036,7 @@ liuhao	溜号	387
 liuhaocun	刘浩存	700
 liuhaoran	刘昊然	453
 liuhe	六合	933
-liuhe	刘贺	10
+liuhe	刘贺	399
 liuhebafa	六合八法	260
 liuhecai	六合彩	817
 liuhedingzhongwan	六合定中丸	606
@@ -85596,7 +85596,7 @@ liuyanfeiyu	流言飞语	631
 liuyanfeiyu	流言蜚语	496
 liuyang	浏阳	514
 liuyang	留样	394
-liuyang	刘洋	92
+liuyang	刘洋	513
 liuyanghuawu	硫氧化物	570
 liuyangshi	浏阳市	169
 liuyangxian	浏阳县	264
@@ -87947,7 +87947,7 @@ luxing	禄星	200
 luxingniaodasaiche	陆行鸟大赛车	648
 luxingniaoyumofahuiben	陆行鸟与魔法绘本	662
 luxiuyan	卢秀燕	620
-luxixian	泸西县	84
+luxixian	泸西县	200
 luxixing	陆西星	167
 luxu	陆续	520
 luxuesen	陆学森	620
@@ -88687,7 +88687,7 @@ mafen	玛芬	174
 mafen	马芬	170
 mafenduozhi	码分多址	420
 mafeng	麻风	440
-mafeng	蚂蜂	36
+mafeng	蚂蜂	200
 mafengbing	麻风病	470
 mafengdepi	马蜂的屁	527
 mafengdepigu	马蜂的屁股	569
@@ -90862,7 +90862,7 @@ meigancai	霉干菜	132
 meiganshi	煤矸石	403
 meigaotou	没搞头	232
 meige	每个	1018
-meige	每隔	1
+meige	每隔	600
 meigei	没给	1000
 meigen	每根	420
 meigeren	每个人	232
@@ -91406,7 +91406,7 @@ meimo	没墨	10
 meimu	眉目	433
 meimuchuanqing	眉目传情	439
 meina	没拿	1000
-meina	美娜	1
+meina	美娜	400
 meinade	梅纳德	193
 meinaiban	美耐板	232
 meinaimin	美耐皿	228
@@ -93122,7 +93122,7 @@ midaizi	米袋子	409
 midanbaimei	糜蛋白酶	455
 midanpingpian	米氮平片	540
 midao	密道	138
-midao	迷倒	10
+midao	迷倒	139
 midatui	蜜大腿	232
 midazuolun	咪达唑仑	540
 midazuolunzhusheye	咪达唑仑注射液	627
@@ -93615,7 +93615,7 @@ mingjie	冥界	287
 mingjiekuangxiangqu	冥界狂想曲	613
 mingjin	鸣金	384
 mingjing	明净	949
-mingjing	明镜	23
+mingjing	明镜	950
 mingjinggaoxuan	明镜高悬	256
 mingjinshoubing	鸣金收兵	462
 mingjinshoujun	鸣金收军	468
@@ -93839,7 +93839,7 @@ minguo	民国	504
 minguotongsuyanyi	民国通俗演义	318
 minguowushuang	民国无双	538
 mingwan	明晚	560
-mingwan	冥顽	349
+mingwan	冥顽	150
 mingwanbuhua	冥顽不化	535
 mingwanbuling	冥顽不灵	427
 mingwang	名望	1000
@@ -95444,7 +95444,7 @@ mu'ouren	木偶人	10
 mu'oushenqiangshou	木偶神枪手	613
 mu'ouxi	木偶戏	589
 mu'ouxiu	木偶秀	380
-muai	暮霭	4
+muai	暮霭	400
 muaiboduo	母爱剥夺	570
 mubabanei	姆巴巴内	140
 mubaitai	目白台	391
@@ -98050,7 +98050,7 @@ nengqu	能屈	473
 nengquneng	能屈能	556
 nengqunengshen	能屈能伸	600
 nengren	能人	101
-nengren	能忍	10
+nengren	能忍	100
 nengrongjie	能容解	640
 nengruonengqiang	能弱能强	218
 nengshang	能上	473
@@ -98618,7 +98618,7 @@ niaozuixianjiao	鸟嘴线脚	669
 niaozuizhuangshixianjiao	鸟嘴装饰线脚	760
 niba	你爸	1000
 niba	你把	700
-niba	泥巴	38
+niba	泥巴	600
 nibai	你白	280
 nibao	匿报	1
 nibaochun	倪葆春	470
@@ -98657,7 +98657,7 @@ nida	你大	280
 nidao	泥刀	198
 nidazhuque	拟大朱雀	260
 nide	你的	798
-nide	泥地	10
+nide	泥地	600
 nidehuoge	尼德霍格	538
 nideiyou	你得有	800
 nidelan	尼德兰	277
@@ -99046,7 +99046,7 @@ ningjin	拧紧	600
 ningjing	宁静	410
 ningjinghaojiediancang	宁静号节点舱	791
 ningjingzhiyuan	宁静致远	253
-ningjinxian	宁津县	86
+ningjinxian	宁津县	200
 ningjishiyan	凝集试验	570
 ningjisu	凝集素	744
 ningjiyuan	凝集原	470
@@ -102973,7 +102973,7 @@ pingdiguo	平底锅	400
 pingdiji	平地机	550
 pingdimu	平地木	167
 pingding	平定	782
-pingding	评定	602
+pingding	评定	802
 pingding	平顶	146
 pingdinggezha	平顶搁栅	665
 pingdingliangbiao	评定量表	540
@@ -103302,7 +103302,7 @@ pingxian	凭险	305
 pingxiang	凭祥	479
 pingxiang	平乡	445
 pingxiang	萍乡	416
-pingxiangshi	萍乡市	61
+pingxiangshi	萍乡市	600
 pingxiangxian	平乡县	165
 pingxiaojiaonang	平消胶囊	540
 pingxiaopian	平消片	470
@@ -105583,7 +105583,7 @@ qianseranhongdejiedao	茜色染红的街道	632
 qianshan	千山	723
 qianshan	潜山	1
 qianshanfengjingqu	千山风景区	253
-qianshang	签上	10
+qianshang	签上	21
 qianshang	前晌	1
 qianshanqu	千山区	165
 qianshanshi	潜山市	54
@@ -107555,7 +107555,7 @@ qinglizibangpuzuduanji	氢离子帮浦阻断剂	700
 qinglizibeng	氢离子泵	570
 qinglong	青龙	746
 qinglongmanzuzizhixian	青龙满族自治县	334
-qinglongxian	青龙县	97
+qinglongxian	青龙县	199
 qinglou	青楼	381
 qingluoyin	清络饮	470
 qinglusuan	氢卤酸	228
@@ -108100,9 +108100,9 @@ qingzhenglianming	清正廉明	260
 qingzhenshi	清镇市	388
 qingzhensi	清真寺	369
 qingzhenyiqie	情真意切	463
-qingzhi	情志	43
-qingzhi	情致	10
-qingzhi	轻质	10
+qingzhi	情志	600
+qingzhi	情致	598
+qingzhi	轻质	599
 qingzhiguzhe	青枝骨折	540
 qingzhilvye	青枝绿叶	523
 qingzhishiyou	轻质石油	260
@@ -110860,7 +110860,7 @@ quyanliu	鸲岩鹨	228
 quyao	取药	700
 quyi	曲艺	302
 quyi	驱役	229
-quyi	去意	10
+quyi	去意	228
 quyichengren	取义成仁	617
 quyifengying	曲意逢迎	402
 quyifujiu	曲意俯就	597
@@ -111920,8 +111920,8 @@ renpin	人品	475
 renping	任凭	348
 renpingfenglangqi	任凭风浪起	392
 renposhangfengmianyiqiudanbai	人破伤风免疫球蛋白	665
-renqi	任期	1000
-renqi	人气	74
+renqi	任期	999
+renqi	人气	1000
 renqi	任其	10
 renqian	人前	700
 renqianburenli	认钱不认理	546
@@ -112081,7 +112081,7 @@ renshilu	认识路	10
 renshilun	认识论	524
 renshitiefanshigang	人是铁饭是钢	318
 renshou	忍受	793
-renshou	人寿	556
+renshou	人寿	180
 renshou	人手	181
 renshoubaoxian	人寿保险	789
 renshoudiaoxiangzhuangshi	人兽雕像装饰	760
@@ -112090,7 +112090,7 @@ renshougongtongbing	人兽共通病	640
 renshounianfeng	人寿年丰	362
 renshouxian	仁寿县	165
 renshu	人数	1000
-renshu	认输	62
+renshu	认输	600
 rensikour	认死扣儿	260
 rensili	认死理	379
 rensilir	认死理儿	260
@@ -114224,7 +114224,7 @@ ruzhao	乳罩	386
 ruzhe	儒者	373
 ruzhi	乳汁	1000
 ruzhi	入职	280
-ruzhi	如织	10
+ruzhi	如织	279
 ruzhijuan	茹志鹃	167
 ruzhinaihe	如之奈何	619
 ruzhipin	乳制品	493
@@ -117346,8 +117346,8 @@ shangyoulaoxiayouxiao	上有老下有小	451
 shangyoutiantangxiayousuhang	上有天堂下有苏杭	720
 shangyouxian	上犹县	178
 shangyu	上谕	987
-shangyuan	上元	994
-shangyuan	伤员	50
+shangyuan	上元	999
+shangyuan	伤员	1000
 shangyuanjie	上元节	387
 shangyuanxiafangfen	上圆下方坟	731
 shangyuanzheyezhepengchuang	上缘折叶遮篷窗	724
@@ -118668,7 +118668,7 @@ shekougongyequ	蛇口工业区	406
 shelan	涉览	323
 sheli	设立	1000
 sheli	舍利	702
-sheli	猞猁	1
+sheli	猞猁	400
 shelie	涉猎	433
 sheliemeijiefushourongsuo	舍列梅捷夫收容所	660
 sheling	赦令	378
@@ -118982,9 +118982,9 @@ shengbu	省补	700
 shengbufengshi	生不逢时	450
 shengbujiaobaibunei	胜不骄败不馁	704
 shengburusi	生不如死	535
-shengcai	剩菜	1000
+shengcai	剩菜	999
 shengcai	生财	338
-shengcai	生菜	1
+shengcai	生菜	1000
 shengcaiyoudao	生财有道	396
 shengcaizhidao	生财之道	621
 shengcan	圣餐	382
@@ -120672,8 +120672,8 @@ shenmimiansha	神秘面纱	260
 shenmimoce	神秘莫测	474
 shenmin	申旻	135
 shenmin	神民	10
-shenming	申明	1000
-shenming	神明	834
+shenming	申明	999
+shenming	神明	1000
 shenmingdayi	深明大义	299
 shenmingji	申命记	167
 shenmingyumingyungemingdebeilun	神明与命运革命的悖论	662
@@ -121116,7 +121116,7 @@ shenye	深夜	430
 shenyehui	深夜回	460
 shenyi	审议	852
 shenyi	深意	280
-shenyi	神异	31
+shenyi	神异	278
 shenyijiaoqianyijiao	深一脚浅一脚	469
 shenyin	呻吟	1000
 shenyinbuzu	肾阴不足	540
@@ -125644,7 +125644,7 @@ shuangshijie	双十节	362
 shuangshiyi	双十一	167
 shuangshou	双手	487
 shuangshouheshi	双手合十	10
-shuangshu	双数	92
+shuangshu	双数	600
 shuangshuang	双双	419
 shuangshuangkuaikuai	爽爽快快	539
 shuangsi	爽死	700
@@ -126912,7 +126912,7 @@ shuluanguanyan	输卵管炎	570
 shuluanguanzhanlian	输卵管粘连	610
 shulun	数论	441
 shuluo	熟络	280
-shuluo	数落	1
+shuluo	数落	600
 shuluocheng	属罗成	556
 shuluochengde	属罗成的	597
 shulv	熟虑	418
@@ -127342,7 +127342,7 @@ shupo	叔婆	305
 shuputao	树葡萄	228
 shuqi	竖起	971
 shuqi	舒淇	749
-shuqi	暑期	560
+shuqi	暑期	972
 shuqi	暑气	559
 shuqi'erduo	竖起耳朵	260
 shuqian	书签	183
@@ -127570,7 +127570,7 @@ shuxiu	蜀绣	297
 shuxiu	束修	157
 shuxue	数学	963
 shuxue	输血	440
-shuxue	腧穴	2
+shuxue	腧穴	439
 shuxuefanying	输血反应	540
 shuxuefenxi	数学分析	387
 shuxuegainian	数学概念	570
@@ -128103,8 +128103,8 @@ siji	伺机	580
 siji	死寂	468
 siji	司机	422
 siji	四级	300
-siji	思及	10
-siji	死记	1
+siji	思及	298
+siji	死记	299
 sijia	私家	442
 sijiache	私家车	582
 sijiali	思嘉丽	232
@@ -130272,7 +130272,7 @@ suoxiangwudi	所向无敌	473
 suoxiao	缩小	499
 suoxiaomoxing	缩小模型	260
 suoxie	所写	700
-suoxie	缩写	520
+suoxie	缩写	701
 suoxie	琐屑	1
 suoxing	索性	713
 suoxing	所幸	219
@@ -130582,7 +130582,7 @@ tacheng	塔城	493
 tachengdao	塔城道	391
 tachengdiqu	塔城地区	241
 tachengshi	塔城市	172
-tachu	踏出	10
+tachu	踏出	600
 tachuang	榻床	198
 tachun	踏春	323
 tada	他大	280
@@ -131970,7 +131970,7 @@ tangzheshuo	躺着说	556
 tangzheshuohua	躺着说话	597
 tangzheyezhongqiang	躺着也中枪	289
 tangzhi	糖脂	440
-tangzhi	糖纸	10
+tangzhi	糖纸	441
 tangzhiningjiaonang	糖脂宁胶囊	610
 tangzhixinsheng	糖质新生	570
 tangzhixinshengzuoyong	糖质新生作用	700
@@ -132240,7 +132240,7 @@ tanwu	贪污	551
 tanwufubai	贪污腐败	387
 tanwufuhua	贪污腐化	467
 tanxi	叹息	1000
-tanxi	叹惜	1
+tanxi	叹惜	200
 tanxian	探险	536
 tanxiang	檀香	263
 tanxiangqi	探向器	640
@@ -134030,7 +134030,7 @@ tianzhumudan	天竺牡丹	260
 tianzhushengsanshengdian	天主圣三圣殿	660
 tianzhushengsantang	天主圣三堂	660
 tianzhushu	天竺鼠	198
-tianzhuxian	天柱县	97
+tianzhuxian	天柱县	400
 tianzhuxilie	天诛系列	538
 tianzhuxue	天柱穴	470
 tianzhuzangzuzizhixian	天祝藏族自治县	348
@@ -135000,7 +135000,7 @@ tingmei	听没	280
 tingming	听命	611
 tingmingxian	挺明显	800
 tingmingyu	听命于	280
-tingni	听你	20
+tingni	听你	600
 tingnile	听腻了	230
 tingpai	听牌	567
 tingpan	停盘	198
@@ -135165,7 +135165,7 @@ tingziqiao	亭仔骹	596
 tingziran	挺自然	800
 tini	踢你	280
 tinian	体念	595
-tipang	蹄髈	1
+tipang	蹄髈	200
 tipei	提赔	198
 tipen	嚏喷	313
 tipiqiu	踢皮球	390
@@ -138035,7 +138035,7 @@ tuwu	图五	280
 tuwu	涂污	34
 tuwutaifeng	土屋太凤	777
 tuxi	突袭	480
-tuxi	吐息	10
+tuxi	吐息	200
 tuxian	凸显	764
 tuxian	凸现	760
 tuxian	突显	490
@@ -141120,7 +141120,7 @@ weishouyingxiang	未受影响	260
 weishu	尾数	1000
 weishu	为数	310
 weishu	维数	241
-weishu	伪书	42
+weishu	伪书	200
 weishu	位数	999
 weishubuduo	为数不多	505
 weishui	尾水	342
@@ -141515,9 +141515,9 @@ weizhangqi	胃胀气	470
 weizhangzao	尾张造	600
 weizhangzhe	违章者	340
 weizhanmo	胃粘膜	500
-weizhe	为着	1000
+weizhe	为着	999
 weizhe	萎着	280
-weizhe	围着	21
+weizhe	围着	1000
 weizhe	违者	9
 weizhediedanbaifanying	未折叠蛋白反应	687
 weizhejia	魏哲家	786
@@ -142442,7 +142442,7 @@ wofu	窝夫	148
 wofupajinsenhuaiteshizheng	沃夫帕金森怀特氏症	700
 wofuyi	我附议	1018
 wogai	我该	700
-wogan	蜗杆	1
+wogan	蜗杆	400
 wogande	我干的	800
 woganfu	蜗杆副	228
 wogang	我刚	700
@@ -142478,7 +142478,7 @@ woheta	我和他	1000
 woheta	我和她	1000
 wohetadeshijiemori	我和她的世界末日	662
 wohu	卧虎	198
-wohua	我化	10
+wohua	我化	199
 wohuan	我换	1000
 wohucanglong	卧虎藏龙	250
 wohui	我会	1000
@@ -142761,7 +142761,7 @@ woyou	我有	700
 woyou	握有	359
 woyoushu	我有数	800
 wozai	我在	700
-wozai	窝在	700
+wozai	窝在	501
 wozainvzijianyukaihougong	我在女子监狱开后宫	662
 wozancheng	我赞成	1018
 wozantong	我赞同	1018
@@ -143243,12 +143243,12 @@ wugongxian	武功县	167
 wugongyaoshang	蜈蚣咬伤	540
 wugou	污垢	403
 wugoutaochong	无钩绦虫	258
-wugu	无故	1000
+wugu	无故	800
 wugu	屋谷	295
 wugu	五股	280
 wugu	无骨	261
 wugu	五谷	199
-wugu	无辜	131
+wugu	无辜	1000
 wuguai	无怪	430
 wuguaihu	无怪乎	503
 wuguaizhide	唔怪之得	597
@@ -145658,7 +145658,7 @@ xiangbala	香巴拉	165
 xiangbalao	乡巴佬	437
 xiangban	相伴	824
 xiangban	镶板	482
-xiangban	响板	1
+xiangban	响板	200
 xiangbanfa	想办法	800
 xiangbanfengge	镶板风格	674
 xiangbang	相帮	428
@@ -145719,7 +145719,7 @@ xiangchaxianweijing	相差显微镜	603
 xiangche	响彻	450
 xiangchebaoma	香车宝马	228
 xiangchen	相称	1000
-xiangchen	相衬	12
+xiangchen	相衬	400
 xiangcheng	相承	923
 xiangcheng	襄城	756
 xiangcheng	相乘	238
@@ -145974,7 +145974,7 @@ xianghaole	想好了	800
 xianghe	想喝	700
 xianghe	祥和	700
 xianghe	相合	520
-xianghe	香河	1
+xianghe	香河	400
 xianghechu	向何处	167
 xiangheli	向河里	501
 xianghelipo	向河里泼	527
@@ -146079,7 +146079,7 @@ xiangkoujiao	香口胶	400
 xiangkouzhu	香口珠	500
 xiangku	想哭	700
 xiangkuang	相框	343
-xiangla	香辣	10
+xiangla	香辣	600
 xianglai	向来	785
 xianglai	想来	739
 xianglaixiangqu	想来想去	10
@@ -146097,7 +146097,7 @@ xiangli	向例	622
 xianglian	相连	1000
 xianglian	相联	455
 xianglian	项链	456
-xianglian	相恋	1
+xianglian	相恋	454
 xiangliang	向量	827
 xiangliang	响亮	782
 xiangliangdaishu	向量代数	218
@@ -146233,7 +146233,7 @@ xiangqisai	象棋赛	340
 xiangqisiyi	香气四溢	10
 xiangqiukongfeiwudecaisezhixie	向秋空飞舞的彩色纸屑	662
 xiangqu	想去	700
-xiangqu	乡曲	1
+xiangqu	乡曲	200
 xiangquan	相劝	986
 xiangquan	项圈	1
 xiangquqian	相去千	556
@@ -146297,7 +146297,7 @@ xiangshaziwen	向傻子问	527
 xiangshaziwenlu	向傻子问路	569
 xiangshen	乡绅	419
 xiangsheng	相声	1000
-xiangsheng	响声	1
+xiangsheng	响声	600
 xiangshengci	象声词	401
 xiangshengxiangke	相生相克	531
 xiangshenme	想什么	800
@@ -146404,7 +146404,7 @@ xianguang	闲逛	433
 xiangui	显贵	437
 xianguorenzhe	鲜果忍者	538
 xiangwai	向外	137
-xiangwan	向晚	10
+xiangwan	向晚	399
 xiangwandou	香豌豆	371
 xiangwang	向往	835
 xiangwang	相望	792
@@ -146580,7 +146580,7 @@ xiangzhangzi	香獐子	339
 xiangzhe	向这	700
 xiangzhe	想着	700
 xiangzhe	向着	574
-xiangzhe	响着	10
+xiangzhe	响着	573
 xiangzhen	乡镇	536
 xiangzheng	象征	1000
 xiangzheng	相争	1
@@ -146600,8 +146600,8 @@ xiangzhouqu	香洲区	117
 xiangzhouxian	象州县	172
 xiangzhouzhanshenguanxueyuanbamingzhen	相州战神馆学园八命阵	662
 xiangzhu	相助	1000
-xiangzhu	襄助	1
-xiangzhu	香烛	1
+xiangzhu	襄助	399
+xiangzhu	香烛	400
 xiangzhuang	想装	700
 xiangzhuang	相撞	268
 xiangzhuangwujian	项庄舞剑	267
@@ -146625,8 +146625,8 @@ xianhai	陷害	1000
 xianhan	先汉	293
 xianhan	显焓	197
 xianhe	显赫	1000
-xianhe	先河	13
-xianhe	仙鹤	1
+xianhe	先河	600
+xianhe	仙鹤	599
 xianhecao	仙鹤草	470
 xianhen	嫌恨	305
 xianherenwu	显赫人物	260
@@ -146668,7 +146668,7 @@ xianjia	现价	1000
 xianjia	限价	108
 xianjian	显见	975
 xianjian	鲜见	666
-xianjian	先见	1
+xianjian	先见	976
 xianjiankezhan	仙剑客栈	538
 xianjianqixiachuan	仙剑奇侠传	613
 xianjianqixiachuan'er	仙剑奇侠传二	648
@@ -146765,7 +146765,7 @@ xianlao	显老	10
 xianlao	贤劳	1
 xianle	闲了	700
 xianli	献礼	937
-xianli	先例	1
+xianli	先例	938
 xianliang	贤良	805
 xianliang	鲜亮	529
 xianliang	限量	806
@@ -146872,8 +146872,8 @@ xianqi	限期	445
 xianqi	仙气	1
 xianqi	贤妻	1
 xianqian	先前	1000
-xianqian	现钱	1
-xianqian	闲钱	1
+xianqian	现钱	200
+xianqian	闲钱	600
 xianqiandui	先遣队	459
 xianqiangyanling	先强严灵	540
 xianqianzhanshi	先遣战士	538
@@ -147019,7 +147019,7 @@ xiantao	仙桃	513
 xiantaoshi	仙桃市	520
 xianteng	掀腾	311
 xianti	腺体	440
-xianti	舷梯	38
+xianti	舷梯	200
 xiantian	先天	739
 xiantianbu	先天不	556
 xiantianbuzu	先天不足	600
@@ -147220,7 +147220,7 @@ xianwuqiyue	先物契约	597
 xianwuwai	仙五外	460
 xianxi	纤细	700
 xianxi	先洗	280
-xianxi	嫌隙	1
+xianxi	嫌隙	279
 xianxia	线下	896
 xianxia	闲暇	206
 xianxia	先下	109
@@ -147331,7 +147331,7 @@ xianye	涎液	10
 xianyi	现役	321
 xianyi	线衣	280
 xianyi	嫌疑	184
-xianyi	闲逸	90
+xianyi	闲逸	182
 xianyicheng	先意承	556
 xianyichengzhi	先意承志	615
 xianyifan	嫌疑犯	450
@@ -149994,7 +149994,7 @@ xieyi	协议	905
 xieyi	写意	809
 xieyi	谢意	483
 xieyi	斜倚	364
-xieyi	谢伊	92
+xieyi	谢伊	200
 xieyiduan	写一段	800
 xieyifeng	谢衣鳯	620
 xieyifenxi	协议分析	697
@@ -150499,7 +150499,7 @@ ximengzi	西门子	458
 ximenqing	西门庆	289
 ximenzigongsi	西门子公司	326
 ximi	细密	765
-ximi	西米	10
+ximi	西米	600
 ximian	西面	912
 ximian	洗面	1
 ximiannai	洗面奶	218
@@ -154217,7 +154217,7 @@ xiyifen	洗衣粉	487
 xiyifu	洗衣服	10
 xiyiji	洗衣机	517
 xiyin	吸引	1000
-xiyin	玺印	1
+xiyin	玺印	400
 xiyinban	吸音板	600
 xiyindu	西印度	232
 xiyineikexue	西医内科学	610
@@ -156409,8 +156409,8 @@ yakaba	亚喀巴	183
 yakaidiyan	亚凯迪严	476
 yakaidiyanshi	亚凯迪严市	253
 yake	亚科	325
-yake	牙科	82
-yake	鸦科	10
+yake	牙科	600
+yake	鸦科	199
 yakebaoxian	牙科保险	570
 yakebi	雅可比	547
 yakebicaixiang	雅可比猜想	815
@@ -157484,7 +157484,7 @@ yangzhuoyongcuo	羊卓雍错	301
 yangzi	样子	891
 yangzi	杨紫	620
 yangzi	扬子	442
-yangzi	养子	42
+yangzi	养子	441
 yangzi'e	扬子鳄	479
 yangzie	扬子鳄	479
 yangzijiang	扬子江	370
@@ -158019,7 +158019,7 @@ yanshouxian	延寿县	160
 yanshouxian	岩手县	64
 yanshu	眼熟	773
 yanshu	鼹鼠	253
-yanshuang	眼霜	1
+yanshuang	眼霜	600
 yanshui	盐水	1000
 yanshui	淹水	1
 yanshuihur	砚水壶儿	260
@@ -158559,7 +158559,7 @@ yanzhuoshang	眼灼伤	500
 yanzhur	眼珠儿	409
 yanzhuzi	眼珠子	511
 yanzi	燕子	813
-yanzi	腌渍	53
+yanzi	腌渍	599
 yanzibao	燕子堡	590
 yanzichunqiu	晏子春秋	249
 yanzidewei	燕子的尾	527
@@ -158597,7 +158597,7 @@ yaobaidajingang	摇摆大金刚	613
 yaobaiwu	摇摆舞	332
 yaobaiyue	摇摆乐	230
 yaobaizhou	摇摆州	194
-yaoban	姚班	10
+yaoban	姚班	199
 yaoban	腰板	201
 yaoban	耀斑	202
 yaobao	腰包	420
@@ -158660,7 +158660,7 @@ yaodechide	要的吃的	597
 yaodi	要地	436
 yaodian	要点	700
 yaodian	药店	440
-yaodian	药典	1
+yaodian	药典	439
 yaodianhua	摇电话	382
 yaodiaodong	要调动	800
 yaoding	咬定	416
@@ -158703,7 +158703,7 @@ yaogaicheng	要改成	800
 yaogaidiao	要改掉	800
 yaogan	要干	1000
 yaogan	遥感	496
-yaogan	腰杆	1
+yaogan	腰杆	494
 yaoganzi	腰杆子	432
 yaogao	药膏	403
 yaogong	邀功	806
@@ -158743,7 +158743,7 @@ yaohe	要和	1000
 yaohe	要喝	1000
 yaohe	吆喝	603
 yaohe	咬合	173
-yaohe	药盒	38
+yaohe	药盒	172
 yaohebuzheng	咬合不正	570
 yaohen	要狠	1000
 yaohen	咬痕	198
@@ -158901,7 +158901,7 @@ yaorang	要让	1000
 yaorao	妖娆	416
 yaoren	要人	1000
 yaoren	咬人	600
-yaoren	妖人	1
+yaoren	妖人	199
 yaorendegoubulouchi	咬人的狗不露齿	348
 yaorengou	咬人狗	547
 yaorengourbuluchi	咬人狗儿不露齿	348
@@ -158955,8 +158955,8 @@ yaoshouzhanji	妖兽战记	571
 yaoshouzhanji	妖兽戦记	537
 yaoshouzhijia	咬手指甲	570
 yaoshu	要输	1000
-yaoshu	要数	10
-yaoshu	妖术	1
+yaoshu	要数	999
+yaoshu	妖术	200
 yaoshuang	要爽	1000
 yaoshui	要水	1000
 yaoshui	要睡	1000
@@ -159132,9 +159132,9 @@ yaoya	咬牙	465
 yaoyan	耀眼	1000
 yaoyan	谣言	706
 yaoyan	要言	395
-yaoyan	妖艳	15
-yaoyan	腰眼	10
-yaoyan	妖言	1
+yaoyan	妖艳	400
+yaoyan	腰眼	200
+yaoyan	妖言	198
 yaoyanbu	要言不	556
 yaoyanbufan	要言不烦	597
 yaoyangguan	腰阳关	470
@@ -159614,7 +159614,7 @@ yedaojizhanguixing	夜刀姬斩鬼行	648
 yedaoluguijiu	椰岛鹿龟酒	610
 yedaoyouxi	椰岛游戏	740
 yedaxue	夜大学	408
-yede	曳地	10
+yede	曳地	200
 yedeiyou	也得有	800
 yedeng	也等	700
 yedeng	夜灯	10
@@ -159698,7 +159698,7 @@ yeji	野鸡	194
 yejia	也加	280
 yejian	叶尖	280
 yejian	夜间	200
-yejian	也减	20
+yejian	也减	199
 yejianbiaoche	夜间飙车	538
 yejianbu	夜间部	379
 yejiang	椰浆	159
@@ -159776,7 +159776,7 @@ yelanshan	夜阑珊	353
 yelaqiqiaguangchang	耶拉其恰广场	579
 yeleng	液冷	341
 yeli	夜里	1000
-yeli	液力	1
+yeli	液力	600
 yelia	爷俩	332
 yelian	冶炼	497
 yelianghehuangnvheyemaozhixin	野良和皇女和野猫之心	662
@@ -159909,8 +159909,8 @@ yeqisunwulijiang	叶企孙物理奖	791
 yeqiuquan	野球拳	460
 yeqixiong	液气胸	470
 yequ	也去	700
-yequ	夜曲	1
-yequ	野趣	1
+yequ	夜曲	599
+yequ	野趣	600
 yequan	也全	700
 yerang	也让	280
 yeren	野人	462
@@ -159987,7 +159987,7 @@ yetaihuojian	液态活检	570
 yetainai	液态奶	510
 yetaishui	液态水	510
 yeti	液体	440
-yeti	夜啼	1
+yeti	夜啼	400
 yetian	冶天	198
 yetianjiayan	野田佳彦	776
 yetianshi	叶天士	469
@@ -160740,9 +160740,9 @@ yichengyi	一成一	556
 yichengyilv	一成一旅	597
 yichenyusheng	异尘余生	538
 yichenyushengxilie	异尘余生系列	648
-yichi	一尺	13
-yichi	一池	10
-yichi	义齿	1
+yichi	一尺	600
+yichi	一池	599
+yichi	义齿	400
 yichichunshui	一池春水	280
 yichixingkouyan	义齿性口炎	640
 yichong	益虫	231
@@ -161215,7 +161215,7 @@ yifeichongtian	一飞冲天	786
 yifeichongtian	翼飞冲天	432
 yifen	一份	1000
 yifen	一分	13
-yifen	义愤	1
+yifen	义愤	12
 yifeng	一封	1000
 yifeng	遗风	1
 yifengbuqian	以丰补歉	624
@@ -161580,11 +161580,11 @@ yiji	一级	731
 yiji	遗迹	434
 yiji	易记	360	no_contains
 yiji	一记	280
-yiji	异己	13
-yiji	疑忌	13
+yiji	异己	277
+yiji	疑忌	199
 yiji	一击	278
 yiji	一剂	279
-yiji	艺妓	1
+yiji	艺妓	276
 yijia	一家	615
 yijia	宜家	588
 yijia	已加	540
@@ -162042,8 +162042,8 @@ yili	仪礼	142
 yili	义理	110
 yili	迤逦	91
 yili	医理	79
-yili	一粒	174
-yili	毅力	177
+yili	一粒	281
+yili	毅力	282
 yili'aisiku	伊利埃斯库	274
 yili'anchaya	伊里安查亚	271
 yilian	一连	323
@@ -162949,7 +162949,7 @@ yinghan	硬汉	535
 yinghan	英汉	161
 yinghanduiyi	英汉对译	260
 yinghe	迎合	965
-yinghe	应和	10
+yinghe	应和	599
 yinghou	影后	1000
 yinghu	蝇虎	305
 yinghua	樱花	1000
@@ -163051,7 +163051,7 @@ yingju	影剧	516
 yingju	应举	125
 yingjuan	鹰鹃	198
 yingjun	英军	552
-yingjun	英俊	10
+yingjun	英俊	553
 yingjunbufan	英俊不凡	10
 yingjunxiaosa	英俊潇洒	446
 yingjuyuan	影剧院	483
@@ -163077,8 +163077,8 @@ yinglei	营垒	424
 yingli	盈利	452
 yingli	英里	409
 yingli	应力	372
-yingli	赢利	13
-yingli	营利	1
+yingli	赢利	370
+yingli	营利	371
 yinglian	楹联	380
 yinglianbang	英联邦	289
 yingliang	英两	198
@@ -164427,7 +164427,7 @@ yinyuexueyuan	音乐学院	402
 yinyuezhisheng	音乐之声	260
 yinyumianmian	阴雨绵绵	10
 yinyun	音韵	791
-yinyun	氤氲	1
+yinyun	氤氲	792
 yinyun'erhun	因孕而婚	260
 yinyunerhun	因孕而婚	260
 yinyunmibu	阴云密布	446
@@ -164552,8 +164552,8 @@ yiqi	以期	580
 yiqi	遗弃	405
 yiqi	一汽	360
 yiqi	仪器	161
-yiqi	意气	10
-yiqi	义气	1
+yiqi	意气	160
+yiqi	义气	159
 yiqi'anshen	益气安神	540
 yiqian	以前	512
 yiqian	一千	472
@@ -167013,8 +167013,8 @@ youdeyou	有得有	556
 youdeyoushi	有得有失	597
 youdi	邮递	360
 youdi	有底	280
-youdi	油滴	10
-youdi	幼弟	1
+youdi	油滴	279
+youdi	幼弟	200
 youdian	有点	700
 youdian	有电	700
 youdian	优点	119
@@ -167201,14 +167201,14 @@ youhuozhengduo	诱惑争夺	538
 youji	有机	904
 youji	游击	500
 youji	邮寄	320
-youji	游记	68
+youji	游记	319
 youjia	有加	580
 youjia	油价	121
 youjiale	优甲乐	134
 youjiali	有加利	669
 youjian	邮件	700
 youjian	右键	280
-youjian	右肩	10
+youjian	右肩	278
 youjianbang	有肩膀	232
 youjiancaidan	右键菜单	800
 youjiang	右江	264
@@ -167337,7 +167337,7 @@ youkounanbian	有口难辩	634
 youkounanyan	有口难言	629
 youkouwuxin	有口无心	412
 youku	优酷	1000
-youku	油库	18
+youku	油库	600
 youkua	右胯	10
 youkudexiaodaosudi	尤库的小岛速递	632
 youkui	有愧	10
@@ -167371,7 +167371,7 @@ youli	有理	620
 youli	游离	523
 youli	有力	349
 youli	游历	83
-youli	尤里	10
+youli	尤里	82
 youli'an	尤利安	794
 youli'annusi	尤利安努斯	587
 youli'eryanghuagui	游离二氧化硅	661
@@ -167485,7 +167485,7 @@ youmeishafenpian	右美沙芬片	610
 youmeiyou	有没有	1000
 youmeiyou	又没有	798
 youmen	幽门	657
-youmen	忧闷	60
+youmen	忧闷	199
 youmen	油门	658
 youmeng	优孟	347
 youmengengzu	幽门梗阻	540
@@ -167642,9 +167642,9 @@ youranshenghuozhiting	悠然生活之庭	648
 youranshenwang	悠然神往	260
 youranzide	悠然自得	644
 youren	有人	700
-youren	游人	13
-youren	友人	1
-youren	诱人	1
+youren	游人	598
+youren	友人	600
+youren	诱人	599
 yourenqing	有人情	640
 yourenqinwang	悠仁亲王	777
 yourenruzhi	游人如织	463
@@ -167886,7 +167886,7 @@ youxian	优先	914
 youxian	有限	494
 youxian	悠闲	161
 youxian	有线	135
-youxian	右舷	1
+youxian	右舷	133
 youxiancha	有限差	640
 youxianchafen	有限差分	527
 youxianchafenshi	有限差分式	569
@@ -168217,7 +168217,7 @@ youyi	有一	451
 youyi	有毅	436
 youyi	游移	152
 youyi	右翼	450
-youyi	有异	10
+youyi	有异	7
 youyi	游艺	9
 youyibuding	游移不定	627
 youyibuding	犹疑不定	10
@@ -168419,9 +168419,9 @@ youzhuyu	有助于	635
 youzi	游资	393
 youzi	有字	129
 youzi	幼子	130
-youzi	游子	144
+youzi	游子	394
 youzi	有子	132
-youzi	柚子	131
+youzi	柚子	395
 youzi	邮资	25
 youzi	油渍	10
 youzicun	有子存	556
@@ -168693,7 +168693,7 @@ yuanhang	远航	441
 yuanhanshu	原函数	384
 yuanhaowen	元好问	198
 yuanhe	原核	627
-yuanhe	缘何	487
+yuanhe	缘何	628
 yuanhen	怨恨	453
 yuanheping	袁和平	774
 yuanheshengwu	原核生物	260
@@ -169155,7 +169155,7 @@ yuanzhou	圆周	1000
 yuanzhoujie	元州街	540
 yuanzhoujietangloudahuo	元州街唐楼大火	571
 yuanzhoulv	圆周率	503
-yuanzhouqu	原州区	87
+yuanzhouqu	原州区	199
 yuanzhouzhuanqu	袁州专区	482
 yuanzhouzi	元洲仔	470
 yuanzhu	援助	1000
@@ -169418,7 +169418,7 @@ yuedongmen	月洞门	600
 yuedongrixi	月东日西	538
 yuedongxingzhengqu	粤东行政区	526
 yuedu	阅读	1000
-yuedu	月度	1
+yuedu	月度	600
 yueduchengxu	阅读程序	726
 yueduguangdu	阅读广度	260
 yuedui	乐队	453
@@ -169644,7 +169644,7 @@ yuepuhu	岳普湖	165
 yuepuhuxian	岳普湖县	228
 yueqi	乐器	779
 yueqi	约七	280
-yueqi	跃起	10
+yueqi	跃起	400
 yueqian	跃迁	1000
 yueqiang	越强	700
 yueqiao	越侨	137
@@ -169698,7 +169698,7 @@ yueshijianzhu	粤式建筑	674
 yueshou	乐手	389
 yueshouru	月收入	232
 yueshu	约束	1000
-yueshu	约数	1
+yueshu	约数	400
 yueshuai	越帅	280
 yueshuhanshu	约束函数	669
 yueshuli	约束力	507
@@ -170821,7 +170821,7 @@ yushiyongbie	与世永别	260
 yushizhi	鱼石脂	470
 yushizhiruangao	鱼石脂软膏	610
 yushou	预售	711
-yushou	御手	72
+yushou	御手	200
 yushoufei	预收费	340
 yushoushu	驭兽术	228
 yushu	玉树	821
@@ -171820,8 +171820,8 @@ zanzhu	暂住	788
 zanzhushang	赞助商	520
 zanzhuxue	攒竹穴	470
 zanzhuzheng	暂住证	491
-zanzi	錾子	89
-zanzi	簪子	10
+zanzi	錾子	200
+zanzi	簪子	400
 zanzu	攒足	10
 zao'an	早安	388
 zaoan	早安	388
@@ -174205,8 +174205,8 @@ zhekuan	这款	280
 zhelan	遮拦	280
 zhelei	这类	700
 zheli	这里	1018
-zheli	啫喱	10
-zheli	哲理	1
+zheli	啫喱	400
+zheli	哲理	600
 zheliangci	这两次	1018
 zheliangdian	这两点	280
 zheliangtian	这两天	640
@@ -174341,7 +174341,7 @@ zhendashenjing	枕大神经	540
 zhendashenjingtong	枕大神经痛	610
 zhende	真的	1000
 zhende	震得	280
-zhende	贞德	1
+zhende	贞德	279
 zhendehua	真的话	10
 zhendejiade	真的假的	800
 zhendema	真的吗	1000
@@ -174654,8 +174654,8 @@ zhenghao	正好	1000
 zhenghao	正号	1
 zhenghaojun	郑浩均	620
 zhenghe	整合	1000
-zhenghe	郑和	79
-zhenghe	政和	1
+zhenghe	郑和	600
+zhenghe	政和	598
 zhenghefenxi	整合分析	570
 zhenghehuizi	郑合惠子	783
 zhenghemeiyizhiji	整合酶抑制剂	700
@@ -174861,7 +174861,7 @@ zhengqiya	蒸气压	500
 zhengqiyaluji	蒸汽压路机	289
 zhengqiyu	蒸汽浴	500
 zhengqu	争取	1000
-zhengqu	政区	1
+zhengqu	政区	400
 zhengquan	证券	1000
 zhengquan	政权	514
 zhengquandaixiao	证券代销	260
@@ -175726,7 +175726,7 @@ zhenzhenyouci	振振有词	517
 zhenzhenyouci	振振有辞	424
 zhenzhenzhengzheng	真真正正	446
 zhenzhi	针织	344
-zhenzhi	真挚	280
+zhenzhi	真挚	345
 zhenzhi	诊治	280
 zhenzhi	真值	268
 zhenzhi	真知	1
@@ -177972,7 +177972,7 @@ zhongdongzhanzheng	中东战争	799
 zhongdoudedou	种豆得豆	660
 zhongdu	重度	509
 zhongdu	中毒	470
-zhongdu	重读	169
+zhongdu	重读	169	no_contains
 zhongdu	中都	122
 zhongduan	中断	1018
 zhongduan	终端	1009
@@ -178022,7 +178022,7 @@ zhongerjiezou	中二节奏	538
 zhongeryan	中耳炎	464
 zhongfa	重罚	674
 zhongfan	中饭	396
-zhongfan	重犯	379
+zhongfan	重犯	379	no_contains
 zhongfang	中方	478
 zhongfangxian	中方县	165
 zhongfaxinyue	中法新约	260
@@ -178742,7 +178742,7 @@ zhonghuayufangyixuehui	中华预防医学会	352
 zhonghuazhegu	中华鹧鸪	260
 zhonghuazihai	中华字海	260
 zhonghuilan	钟惠澜	470
-zhonghuo	重活	419
+zhonghuo	重活	419	no_contains
 zhonghuor	重活儿	379
 zhongji	中继	691
 zhongji	中级	569
@@ -178835,7 +178835,7 @@ zhongjizhizhuren	终极蜘蛛人	613
 zhongjizidingyiyewan	终极自定义夜晚	632
 zhongjiziliao	中继资料	260
 zhongju	终局	1000
-zhongju	中举	1
+zhongju	中举	600
 zhongjuan	中卷	458
 zhongjun	终军	10
 zhongjun'aiguo	忠君爱国	271
@@ -179232,7 +179232,7 @@ zhongtianzhihen	终天之恨	387
 zhongtieqi	重铁骑	460
 zhongtieziyuan	中铁资源	680
 zhongting	中庭	475
-zhongting	重听	156
+zhongting	重听	156	no_contains
 zhongting	中厅	116
 zhongtiqin	中提琴	446
 zhongtixiyong	中体西用	273
@@ -179598,7 +179598,7 @@ zhongyuanzhibazhe	中原之霸者	613
 zhongyue	中岳	292
 zhongyuezhanzheng	中越战争	789
 zhongyutaishan	重于泰山	444
-zhongzai	重载	966
+zhongzai	重载	966	no_contains
 zhongzai	重灾	1
 zhongzaicanyu	重在参与	10
 zhongzaihanshu	重载函数	705
@@ -181282,7 +181282,7 @@ zhukou	住口	436
 zhukuai	竹筷	10
 zhukuangtiao	主框条	600
 zhulalonggongdaxue	朱拉隆功大学	313
-zhulan	猪栏	1
+zhulan	猪栏	399
 zhulan'erbing	猪蓝耳病	570
 zhulandashui	竹篮打水	362
 zhulandashuiyichangkong	竹篮打水一场空	475
@@ -182344,7 +182344,7 @@ zifaxingnaojiyelou	自发性脑脊液漏	687
 zifaxingqixiong	自发性气胸	610
 zifaxingwei	自发行为	540
 zifei	资费	435
-zifei	自费	255
+zifei	自费	436
 zifen	自焚	435
 zifeng	自封	886
 zifeng	资俸	1
@@ -183421,7 +183421,7 @@ zongbeiheitoudong	棕背黑头鸫	288
 zongbeitianji	棕背田鸡	260
 zongbeixueque	棕背雪雀	258
 zongbeng	棕绷	545
-zongbi	纵笔	10
+zongbi	纵笔	200
 zongbian	总编	480
 zongbianji	总编辑	520
 zongbirufei	纵笔如飞	10
@@ -185316,7 +185316,7 @@ zuzu	足足	560
 zuzubeibei	祖祖辈辈	467
 buchao	不超	1
 bugai	不改	0
-buguan	不关	0
+buguan	不关	600
 bujian	不减	1
 bujie	不借	0
 bushao	不烧	0
@@ -185335,7 +185335,7 @@ fenle	分了	0
 gaian	改暗	0
 gaichang	改长	0
 gaicu	改粗	0
-gaida	改大	0
+gaida	改大	199
 gaidi	改低	0
 gaiduan	改短	0
 gaiduo	改多	0
@@ -185378,7 +185378,7 @@ jutou	剧透	289
 kaobei	靠背	600
 laigai	来改	0
 liangle	晾了	1
-meiban	美版	0
+meiban	美版	701
 meifu	美服	0
 meigan	没干	1
 meiqu	美区	0
@@ -185386,13 +185386,13 @@ meitian	没舔	1
 meixi	没洗	0
 mianrong	棉绒	200
 nengzuo	能做	1
-niban	你搬	1
+niban	你搬	199
 nibao	你饱	1
 nichao	你抄	1
 nichao	你炒	1
 nie	你饿	1
 nigan	你干	1
-niguan	你关	1
+niguan	你关	199
 niguang	你逛	1
 nihua	你画	1
 nihua	你花	1
@@ -185402,7 +185402,7 @@ nikao	你考	1
 niqiao	你敲	1
 niqiao	你瞧	1
 nishao	你烧	1
-nixi	你洗	1
+nixi	你洗	196
 nixia	你下	1
 nizhi	你指	1
 nizhu	你住	1
@@ -185422,16 +185422,16 @@ tachao	她抄	1
 tachao	她炒	1
 tae	他饿	1
 tae	她饿	1
-tagan	他干	1
-tagan	她干	1
+tagan	他干	400
+tagan	她干	200
 taguan	他关	1
 taguan	她关	1
 taguang	他逛	1
 taguang	她逛	1
-tahua	他画	1
-tahua	他花	1
-tahua	她画	1
-tahua	她花	1
+tahua	他画	600
+tahua	他花	400
+tahua	她画	200
+tahua	她花	198
 taiban	台版	0
 taifu	台服	0
 taiqu	台区	0
@@ -185463,27 +185463,27 @@ tazuo	他坐	1
 tazuo	她坐	1
 tingfei	挺费	0
 tishang	踢伤	200
-woban	我搬	1
+woban	我搬	200
 wobao	我饱	1
 wochao	我抄	1
 wochao	我炒	1
 woe	我饿	1
-wogan	我干	1
-woguan	我关	1
+wogan	我干	399
+woguan	我关	199
 woguang	我逛	1
-wohua	我画	1
-wohua	我花	1
+wohua	我画	600
+wohua	我花	400
 wojiang	我讲	1
 wojie	我借	1
 wokao	我考	1
 woqiao	我敲	1
 woqiao	我瞧	1
 woshao	我烧	1
-woxi	我洗	1
-woxia	我下	1
+woxi	我洗	200
+woxia	我下	400
 wozhi	我指	0
-wozhu	我住	0
-wozu	我租	1
+wozhu	我住	600
+wozu	我租	199
 wozuo	我坐	1
 xiamo	夏末	600
 xiaojie	小解	0
@@ -185492,10 +185492,10 @@ xiexiu	邪修	0
 xinpin	新聘	279
 xinwo	心窝	399
 xuanzai	悬在	279
-yichu	移出	0
+yichu	移出	305
 yifu	已付	400
 yigai	易改	0
-yijin	移进	0
+yijin	移进	199
 yinbi	荫庇	200
 yinhuan	阴环	1
 yinwei	淫猥	1
@@ -185524,7 +185524,7 @@ bianyiyunxing	编译运行	800
 biaotiziti	标题字体	728
 biele	憋了	20
 biele	瘪了	20
-biezhe	憋着	20
+biezhe	憋着	600
 biezhe	瘪着	20
 biezhu	憋住	20
 bikeng	避坑	280
@@ -185560,7 +185560,7 @@ dingxihuan	顶喜欢	20
 diuge	丢个	280
 diuzai	丢在	280
 dixiang	抵向	20
-dizai	抵在	280
+dizai	抵在	200
 dizhe	抵着	280
 dizhe	滴着	280
 dongfangyuhong	东方雨虹	579
@@ -185739,7 +185739,7 @@ tingji	挺急	280
 tingxiong	挺胸	280
 tingyang	挺痒	280
 tuijian	腿间	280
-tuochu	拖出	20
+tuochu	拖出	400
 tuohui	拖回	20
 tuole	拖了	280
 tuole	托了	280
@@ -185751,11 +185751,11 @@ wangli	往里	20
 wangshang	往上	700
 wangyou	往右	700
 wangzuo	往左	700
-wojin	握紧	20
+wojin	握紧	600
 wuchenxian	无衬线	800
 wuchenxianti	无衬线体	756
 wufajieshou	无法接受	800
-xiangli	向里	20
+xiangli	向里	623
 xiatan	下探	20
 xiawu	霞鹜	360
 xiawumanhei	霞鹜漫黑	524
@@ -185889,14 +185889,14 @@ zaikan	在看	1018
 zaiyong	在用	1000
 zaixie	在写	1
 zaixie	再写	1
-zaigan	在干	1
-zaigan	再干	1
+zaigan	在干	600
+zaigan	再干	400
 zaishui	在睡	1
 zaishui	再睡	1
 zaixiang	在想	1
 zaixiang	再想	1
-zaiqu	在去	1
-zaiqu	再去	1
+zaiqu	在去	599
+zaiqu	再去	600
 zailai	在来	1
 zaipao	在跑	1
 zaipao	再跑	1
@@ -185917,20 +185917,20 @@ zaila	在啦	1
 zaila	再拉	1
 zaitui	在推	1
 zaitui	再推	1
-zaijin	在进	1
-zaijin	再进	1
+zaijin	在进	600
+zaijin	再进	599
 zaipa	在爬	1
 zaipa	再爬	1
 zaijia	在加	1
 zaijia	再加	1
 zaisheng	在升	1
 zaijiang	在降	1
-zaihe	在喝	1
-zaihe	再喝	1
+zaihe	在喝	479
+zaihe	再喝	481
 zaisheng	在生	1
 zailiang	再亮	1
 zaian	再暗	1
-zaida	再大	1
+zaida	再大	600
 zaixiao	再小	1
 zaichang	再长	1
 zaiduan	再短	1
@@ -185943,7 +185943,7 @@ zaizhong	再重	1
 zaiqing	再轻	1
 zaiji	再急	1
 zaisong	再松	1
-zaijin	再紧	1
+zaijin	再紧	199
 buxian	不先	278
 caichu	才出	700
 caifa	才发	1
@@ -185966,7 +185966,7 @@ youfa	又发	700
 youxian	又先	134
 zhongchu	中出	280
 banjingdianwuli	半经典物理	740
-danye	但也	0
+danye	但也	600
 diansha	点刹	280
 dianwei	点位	700
 gennixing	跟你姓	635
@@ -186032,12 +186032,12 @@ yuanhao	原号	560
 yuanzhanghao	原账号	800
 duobei	多杯	10
 duoben	多本	280
-duobi	多笔	10
+duobi	多笔	600
 duobu	多部	627
 duochang	多场	280
 duoduan	多段	318
 duodun	多吨	10
-duogen	多根	10
+duogen	多根	600
 duohu	多户	10
 duojian	多间	280
 duojin	多斤	599
@@ -200878,7 +200878,7 @@ laogaozi	烙糕子	40	no_contains
 laohuaishushaobing	老槐树烧饼	20	no_contains
 laohuanggua	老黄瓜	40	no_contains
 laohuashiyan	老化试验	40	no_contains
-laohuojingtang	老火靓汤	40	no_contains
+laohuoliangtang	老火靓汤	40	no_contains
 laohuotang	老火汤	40	no_contains
 laojianggouqiyangroutang	老姜枸杞羊肉汤	20	no_contains
 laojiangtang	老姜汤	40	no_contains
@@ -234274,7 +234274,7 @@ shuipa	谁怕	400	no_contains
 shuiqu	谁去	2	no_contains
 shuirang	谁让	400	no_contains
 shuishi	谁是	2	no_contains
-shuishu	谁输	2	no_contains
+shuishu	谁输	306	no_contains
 shuixian	谁先	2	no_contains
 shuixiang	谁想	2	no_contains
 shuixin	谁信	200	no_contains
@@ -234977,7 +234977,7 @@ haoshu	好书	600	no_contains
 heidi	黑底	400	no_contains
 heihutao	黑胡桃	200	no_contains
 hekouhu	河口湖	200	no_contains
-hengping	横屏	248	no_contains
+hengping	横屏	250	no_contains
 hexinjiazhi	核心价值	600	no_contains
 hexinsixiang	核心思想	600	no_contains
 hezao	褐藻	400	no_contains
@@ -235005,7 +235005,7 @@ huti	护体	99	no_contains
 huwaiyundong	户外运动	600	no_contains
 huxiangmaodun	互相矛盾	400	no_contains
 huxideng	呼吸灯	200	no_contains
-jiabing	加冰	2	no_contains
+jiabing	加冰	441	no_contains
 jiagoutu	架构图	400	no_contains
 jiaming	佳明	400	no_contains
 jianchaqingdan	检查清单	200	no_contains
@@ -235078,7 +235078,7 @@ lijishengxiao	立即生效	200	no_contains
 lingdongdao	灵动岛	80	no_contains
 lingke	领克	600	no_contains
 lingyifang	另一方	2	no_contains
-liudang	留档	200	no_contains
+liudang	留档	662	no_contains
 liuliangka	流量卡	400	no_contains
 liushi	流式	239	no_contains
 liwang	离网	400	no_contains
@@ -235137,7 +235137,7 @@ peitu	配图	600	no_contains
 pidiao	皮雕	200	no_contains
 pingjingqi	瓶颈期	600	no_contains
 pingjunshuiping	平均水平	600	no_contains
-pinse	拼色	2	no_contains
+pinse	拼色	199	no_contains
 pipeidu	匹配度	600	no_contains
 pisheng	皮绳	200	no_contains
 piyi	皮艺	200	no_contains
@@ -235218,7 +235218,7 @@ shiliao	石料	390	no_contains
 shiyanpin	试验品	400	no_contains
 shouchi	手持	600	no_contains
 shouhang	首行	400	no_contains
-shouhou	售后	600	no_contains
+shouhou	售后	651	no_contains
 shouhuo	收货	600	no_contains
 shouhuodizhi	收货地址	400	no_contains
 shounadai	收纳袋	200	no_contains
@@ -235776,7 +235776,7 @@ xiela	写啦	213	no_contains
 xierudao	写入到	400	no_contains
 xieya	写呀	400	no_contains
 xingla	行啦	80	no_contains
-xingya	行呀	80	no_contains
+xingya	行呀	199	no_contains
 xiya	洗呀	80	no_contains
 xuanya	选呀	200	no_contains
 xueya	学呀	200	no_contains
@@ -237181,7 +237181,7 @@ zhidong	只懂	400	no_contains
 zhifang	只放	401	no_contains
 zhige	只隔	400	no_contains
 zhigou	只够	600	no_contains
-zhiguai	只怪	197	no_contains
+zhiguai	只怪	199	no_contains
 zhihan	只含	400	no_contains
 zhihen	只恨	400	no_contains
 zhihua	只画	397	no_contains
@@ -238440,8 +238440,8 @@ yaoting	要停	600	no_contains
 yaotinghua	要听话	200	no_contains
 yaotong	要痛	200	no_contains
 yaotou	要偷	200	no_contains
-yaotu	要吐	200	no_contains
-yaotu	要涂	2	no_contains
+yaotu	要吐	419	no_contains
+yaotu	要涂	418	no_contains
 yaotui	要退	259	no_contains
 yaotuo	要拖	400	no_contains
 yaotuo	要脱	2	no_contains
@@ -240409,7 +240409,7 @@ zhanzai	粘在	600	no_contains
 zhaozai	照在	600	no_contains
 zhaozai	罩在	400	no_contains
 zhazai	扎在	600	no_contains
-zhuangzai	装在	281	no_contains
+zhuangzai	装在	306	no_contains
 zuizai	醉在	400	no_contains
 abeishu	阿贝数	200	no_contains
 bankuang	半框	80	no_contains
@@ -242920,3 +242920,2688 @@ zhepiren	这批人	400	no_contains
 zijigao	自己搞	600	no_contains
 zijihen	自己很	600	no_contains
 zijinong	自己弄	600	no_contains
+bijiaoliang	比较靓	2	no_contains
+bijiaoxi	比较稀	200	no_contains
+chaocu	超粗	2	no_contains
+chaojicu	超级粗	2	no_contains
+chaojiliang	超级亮	2	no_contains
+chaojiliang	超级凉	0	no_contains
+chaojiliang	超级靓	1	no_contains
+chaojixi	超级细	2	no_contains
+chaoliang	超亮	2	no_contains
+chaoliang	超凉	0	no_contains
+chaoliang	超靓	1	no_contains
+chaoxi	超稀	2	no_contains
+chaoxi	超细	538	no_contains
+dajiazai	大家再	400	no_contains
+danba	单把	187	no_contains
+danbao	单包	2	no_contains
+danbei	单杯	197	no_contains
+danben	单本	200	no_contains
+danbi	单笔	600	no_contains
+danchang	单场	600	no_contains
+dandai	单袋	2	no_contains
+dandao	单道	200	no_contains
+dandong	单栋	200	no_contains
+dandui	单对	200	no_contains
+dandun	单顿	2	no_contains
+danfu	单副	2	no_contains
+dangen	单根	600	no_contains
+danhe	单盒	200	no_contains
+danji	单集	32	no_contains
+danjie	单节	400	no_contains
+danju	单局	2	no_contains
+danke	单科	600	no_contains
+danke	单课	200	no_contains
+danke	单颗	400	no_contains
+dankeli	单颗粒	200	no_contains
+dankuai	单块	400	no_contains
+dankuan	单款	200	no_contains
+danli	单粒	330	no_contains
+danliang	单辆	2	no_contains
+danlun	单轮	200	no_contains
+danmei	单枚	196	no_contains
+danmen	单门	400	no_contains
+danpan	单盘	200	no_contains
+danpi	单批	2	no_contains
+danpian	单片	600	no_contains
+danping	单瓶	200	no_contains
+danshou	单首	2	no_contains
+dantiao	单条	322	no_contains
+danwan	单碗	2	no_contains
+danxiang	单箱	200	no_contains
+danye	单页	123	no_contains
+danzhi	单只	146	no_contains
+danzhi	单支	145	no_contains
+danzhong	单种	200	no_contains
+danzhu	单株	304	no_contains
+danzu	单组	400	no_contains
+douan	都按	600	no_contains
+douchao	都朝	324	no_contains
+douchong	都冲	200	no_contains
+douping	都凭	2	no_contains
+douti	都替	200	no_contains
+douwang	都往	399	no_contains
+douwei	都为	630	no_contains
+douyi	都以	599	no_contains
+douyi	都依	200	no_contains
+douyin	都因	600	no_contains
+douyou	都由	600	no_contains
+douyu	都于	120	no_contains
+duoliang	多靓	1	no_contains
+duoxi	多稀	2	no_contains
+feichangcu	非常粗	2	no_contains
+feichangliang	非常亮	2	no_contains
+feichangliang	非常靓	1	no_contains
+feichangxi	非常稀	2	no_contains
+feichangxi	非常细	200	no_contains
+gengliang	更凉	1	no_contains
+gengliang	更靓	2	no_contains
+gengxi	更稀	2	no_contains
+gouliang	够凉	1	no_contains
+gouliang	够靓	2	no_contains
+gouxi	够稀	2	no_contains
+guocu	过粗	200	no_contains
+guoliang	过亮	200	no_contains
+guoliang	过凉	267	no_contains
+guoliang	过靓	2	no_contains
+guoxi	过稀	182	no_contains
+haobuxi	好不细	2	no_contains
+haocu	好粗	2	no_contains
+haoliang	好靓	199	no_contains
+haoliangnv	好靓女	2	no_contains
+haoliangzai	好靓仔	2	no_contains
+haoxi	好稀	1	no_contains
+haoxi	好细	2	no_contains
+henliang	很靓	200	no_contains
+henxi	很稀	200	no_contains
+jiaocu	较粗	600	no_contains
+jiaoxi	较稀	127	no_contains
+jiaoxi	较细	129	no_contains
+jicu	极粗	2	no_contains
+jiliang	几靓	0	no_contains
+jiliang	极亮	2	no_contains
+jiliang	极凉	1	no_contains
+jixi	极稀	2	no_contains
+jixi	极细	103	no_contains
+jucu	巨粗	2	no_contains
+juliang	巨亮	2	no_contains
+juliang	巨凉	1	no_contains
+liangbao	靓爆	2	no_contains
+liangche	靓车	2	no_contains
+liangdian	靓点	0	no_contains
+liangfang	靓房	2	no_contains
+liangge	靓歌	2	no_contains
+lianghao	靓号	400	no_contains
+lianghaoma	靓号码	2	no_contains
+lianghuo	靓货	2	no_contains
+liangji	靓机	2	no_contains
+liangjie	靓姐	2	no_contains
+liangjing	靓景	2	no_contains
+liangjue	靓绝	2	no_contains
+liangliang	靓靓	200	no_contains
+liangmei	靓妹	2	no_contains
+liangmeizai	靓妹仔	2	no_contains
+liangmo	靓模	2	no_contains
+liangnan	靓男	2	no_contains
+liangnv	靓女	400	no_contains
+liangnvzai	靓女仔	2	no_contains
+liangpian	靓片	2	no_contains
+liangse	靓色	2	no_contains
+liangshan	靓衫	2	no_contains
+liangsheng	靓声	2	no_contains
+liangtang	靓汤	200	no_contains
+liangtu	靓图	2	no_contains
+liangxie	靓鞋	2	no_contains
+liangyan	靓颜	2	no_contains
+liangyi	靓衣	2	no_contains
+liangying	靓影	2	no_contains
+liangzaizai	靓仔仔	2	no_contains
+liangzhao	靓照	200	no_contains
+liangzhuang	靓装	2	no_contains
+liedao	列到	200	no_contains
+liege	列个	400	no_contains
+lieguo	列过	2	no_contains
+liehao	列好	400	no_contains
+liejin	列进	200	no_contains
+liejinqu	列进去	2	no_contains
+liele	列了	600	no_contains
+lieqi	列齐	2	no_contains
+lieqing	列清	2	no_contains
+lieqingchu	列清楚	2	no_contains
+liequan	列全	11	no_contains
+lieshang	列上	400	no_contains
+lieshangqu	列上去	2	no_contains
+liewan	列完	2	no_contains
+liexia	列下	200	no_contains
+lieyilie	列一列	2	no_contains
+lieyixia	列一下	200	no_contains
+liezai	列在	600	no_contains
+liezhe	列着	200	no_contains
+lvecu	略粗	200	no_contains
+lveliang	略亮	2	no_contains
+lveliang	略凉	1	no_contains
+lvexi	略稀	2	no_contains
+lvexi	略细	200	no_contains
+mancu	蛮粗	2	no_contains
+manliang	蛮亮	2	no_contains
+manliang	蛮凉	0	no_contains
+manliang	蛮靓	1	no_contains
+manxi	蛮细	2	no_contains
+namecu	那么粗	200	no_contains
+nameliang	那么亮	200	no_contains
+nameliang	那么凉	2	no_contains
+nameliang	那么靓	1	no_contains
+namexi	那么稀	2	no_contains
+namexi	那么细	200	no_contains
+nimenzai	你们再	200	no_contains
+ninzai	您再	200	no_contains
+piancu	偏粗	2	no_contains
+pianliang	偏亮	2	no_contains
+pianliang	偏凉	400	no_contains
+pianliang	偏靓	1	no_contains
+pianxi	偏稀	1	no_contains
+pianxi	偏细	2	no_contains
+shaocu	稍粗	200	no_contains
+shaoliang	稍凉	322	no_contains
+shaoweicu	稍微粗	2	no_contains
+shaoweiliang	稍微亮	1	no_contains
+shaoweiliang	稍微凉	2	no_contains
+shaoweiliang	稍微靓	0	no_contains
+shaoweixi	稍微稀	2	no_contains
+shaoweixi	稍微细	1	no_contains
+shaoxi	稍稀	2	no_contains
+shaoxi	稍细	200	no_contains
+taicu	太粗	400	no_contains
+tailiang	太靓	2	no_contains
+taixi	太稀	164	no_contains
+taixi	太细	400	no_contains
+tamenzai	他们再	200	no_contains
+tamenzai	她们再	2	no_contains
+tazai	他再	4	no_contains
+tazai	她再	3	no_contains
+tazai	它再	2	no_contains
+tebiecu	特别粗	2	no_contains
+tebieliang	特别亮	200	no_contains
+tebieliang	特别凉	2	no_contains
+tebieliang	特别靓	1	no_contains
+tebiexi	特别稀	2	no_contains
+tebiexi	特别细	200	no_contains
+tecu	特粗	2	no_contains
+teliang	特亮	2	no_contains
+teliang	特凉	1	no_contains
+texi	特稀	1	no_contains
+texi	特细	2	no_contains
+tingcu	挺粗	2	no_contains
+tingliang	挺凉	1	no_contains
+tingliang	挺靓	2	no_contains
+tingxi	挺稀	2	no_contains
+tingxi	挺细	200	no_contains
+womenzai	我们再	600	no_contains
+wozai	我再	600	no_contains
+xiangdangcu	相当粗	2	no_contains
+xiangdangliang	相当亮	1	no_contains
+xiangdangliang	相当靓	2	no_contains
+xiangdangxi	相当稀	1	no_contains
+xiangdangxi	相当细	2	no_contains
+youdiancu	有点粗	2	no_contains
+youdianliang	有点亮	2	no_contains
+youdianliang	有点凉	200	no_contains
+youdianliang	有点靓	1	no_contains
+youdianxi	有点稀	1	no_contains
+youdianxi	有点细	2	no_contains
+youxiecu	有些粗	2	no_contains
+youxieliang	有些亮	1	no_contains
+youxieliang	有些凉	2	no_contains
+youxiexi	有些稀	1	no_contains
+youxiexi	有些细	2	no_contains
+yuecu	越粗	400	no_contains
+yueliang	越亮	400	no_contains
+yueliang	越凉	2	no_contains
+yueliang	越靓	1	no_contains
+yuexi	越稀	2	no_contains
+yuexi	越细	430	no_contains
+zanmenzai	咱们再	200	no_contains
+zanzai	咱再	2	no_contains
+zeiliang	贼靓	2	no_contains
+zhemecu	这么粗	2	no_contains
+zhemeliang	这么亮	2	no_contains
+zhemeliang	这么凉	1	no_contains
+zhemeliang	这么靓	0	no_contains
+zhemexi	这么稀	2	no_contains
+zhemexi	这么细	200	no_contains
+zhencu	真粗	2	no_contains
+zhenliang	真凉	2	no_contains
+zhenliang	真靓	1	no_contains
+zhenxi	真稀	1	no_contains
+zhenxi	真细	2	no_contains
+zuicu	最粗	200	no_contains
+zuiliang	最亮	400	no_contains
+zuiliang	最凉	2	no_contains
+zuiliang	最靓	1	no_contains
+zuiliangde	最靓的	400	no_contains
+zuixi	最稀	2	no_contains
+zuixi	最细	200	no_contains
+alanre	阿兰若	2
+ama	阿嬷	600
+aomiga	奥米伽	2
+asheli	阿阇梨	200
+asheli	阿阇黎	2
+baihu	白鹄	2
+bangu	班固	600
+baobidao	刨笔刀	2
+baobing	刨冰	231
+baochi	刨齿	2
+baodao	刨刀	200
+baogong	刨工	2
+baoguangbiao	曝光表	2
+baohupinghe	暴虎冯河	2
+baoma	宝妈	79
+baosiqi	刨丝器	2
+baotai	褒呔	2
+baoyin	爆音	200
+baozi	刨子	122
+beimiu	悖缪	2
+beiyi	背倚	211
+beiyuan	北苑	600
+bianjian	便笺	1
+bianniao	便溺	400
+bianqia	边卡	2
+bieban	别班	200	no_contains
+bieche	别扯	199	no_contains
+bieche	别车	200	no_contains
+biechu	别出	200	no_contains
+bieda	别大	200	no_contains
+biefan	别犯	79	no_contains
+biege	别个	200	no_contains
+biehe	别和	399	no_contains
+biehen	别恨	400	no_contains
+biejia	别加	200	no_contains
+biere	别惹	200	no_contains
+bietan	别谈	400	no_contains
+biexia	别瞎	200	no_contains
+bieyi	别一	199	no_contains
+bieyi	别以	200	no_contains
+biezhe	别着	200	no_contains
+bilin	贲临	2
+bingcheng	饼铛	320
+bingchu	屏除	2
+bingdu	冰毒	600
+binggao	冰糕	999
+binglangxishi	槟榔西施	2
+binglangyu	槟榔屿	200
+bingxiang	病象	200
+bingying	屏营	2
+bingzhou	槟州	200
+bisheng	毕昇	199
+bixin	比心	335
+bogengr	脖颈儿	2
+bogengzi	脖颈子	2
+boqingge	柏青哥	400
+buan	不按	600	no_contains
+buba	不拔	259	no_contains
+buban	不办	699	no_contains
+buche	不扯	701	no_contains
+buchen	不沉	400	no_contains
+buchen	不趁	200	no_contains
+buchu	不处	200	no_contains
+buchu	不除	400	no_contains
+buchuan	不串	200	no_contains
+buchuan	不传	599	no_contains
+buchuan	不喘	199	no_contains
+buchuan	不穿	600	no_contains
+buda	不答	8	no_contains
+budan	不弹	137	no_contains
+budu	不赌	200	no_contains
+bue	不恶	400	no_contains
+bufa	不罚	11	no_contains
+bufan	不反	398	no_contains
+bufan	不烦	400	no_contains
+bufan	不犯	484	no_contains
+bufan	不翻	399	no_contains
+bugan	不感	167	no_contains
+bugan	不赶	168	no_contains
+buge	不割	198	no_contains
+buge	不哥	199	no_contains
+buge	不隔	200	no_contains
+bugen	不跟	600	no_contains
+bugu	卜骨	200
+bugua	不刮	200	no_contains
+buguan	不惯	400	no_contains
+buhan	不喊	200	no_contains
+buhen	不狠	196	no_contains
+buhu	不护	200	no_contains
+buhua	不滑	279	no_contains
+buhuan	不欢	400	no_contains
+buhui	不讳	200
+bujia	卜甲	2
+bujin	不紧	236	no_contains
+bujin	不进	600	no_contains
+buju	不聚	198	no_contains
+buju	卜居	199
+buke	不克	337	no_contains
+buke	不刻	336	no_contains
+buke	卜课	2
+bukeshuoji	不可数集	2
+bukua	不垮	400	no_contains
+bukua	不夸	199	no_contains
+bukua	不跨	200	no_contains
+bule	不乐	419	no_contains
+buli	不离	600	no_contains
+buli	不立	144	no_contains
+bulian	不练	601	no_contains
+bulian	不连	400	no_contains
+bulu	不录	200	no_contains
+buma	不骂	199	no_contains
+buman	不瞒	598	no_contains
+bumen	不闷	200	no_contains
+bumi	不迷	200	no_contains
+bumo	不磨	400	no_contains
+buni	不腻	600	no_contains
+bunian	不念	600	no_contains
+bunian	不黏	406	no_contains
+bunu	不怒	400	no_contains
+bupan	不判	200	no_contains
+bupi	不批	422	no_contains
+bupin	不拼	395	no_contains
+bupin	不贫	200	no_contains
+buqi	不气	213	no_contains
+buqin	不侵	701	no_contains
+buqin	不勤	400	no_contains
+buran	不染	600	no_contains
+buran	不燃	400	no_contains
+bure	不惹	200	no_contains
+busa	不撒	200	no_contains
+busa	不洒	199	no_contains
+buse	不涩	200	no_contains
+bushan	不删	200	no_contains
+bushan	不擅	400	no_contains
+bushe	不设	417	no_contains
+bushen	不神	200	no_contains
+bushu	不属	2	no_contains
+bushu	不数	2	no_contains
+bushu	不输	2	no_contains
+bushua	不耍	200	no_contains
+bushuan	不拴	200	no_contains
+butan	不谈	600	no_contains
+butan	不贪	599	no_contains
+buti	不替	200	no_contains
+butu	不涂	132	no_contains
+buwa	不挖	200	no_contains
+buwen	不温	381	no_contains
+buwen	卜问	200
+buxi	不吸	278	no_contains
+buxi	不喜	519	no_contains
+buxi	不系	279	no_contains
+buxia	不瞎	98	no_contains
+buxian	不显	276	no_contains
+buxian	不现	199	no_contains
+buxian	不鲜	198	no_contains
+buxin	不心	200	no_contains
+buxin	不新	199	no_contains
+buxu	不续	789	no_contains
+buxu	不虚	790	no_contains
+buxu	不需	793	no_contains
+buxu	不须	791	no_contains
+buya	不压	298	no_contains
+buyan	不严	600	no_contains
+buyin	不因	600	no_contains
+buyu	不与	242	no_contains
+buza	不杂	400	no_contains
+buze	不择	400	no_contains
+buze	不责	399	no_contains
+buzha	不扎	200	no_contains
+buzhai	卜宅	2
+buzhan	不战	278	no_contains
+buzhan	不粘	279	no_contains
+buzhan	卜占	2
+buzhe	不遮	200	no_contains
+buzhen	不真	399	no_contains
+buzheng	卜征	2
+buzhoubuye	卜昼卜夜	2
+buzhua	不抓	400	no_contains
+buzhuan	不专	400	no_contains
+buzhuan	不转	601	no_contains
+buzi	堡子	400
+caiban	才办	200	no_contains
+caida	才大	200	no_contains
+caide	才得	999	no_contains
+caidu	才读	200	no_contains
+caiduo	裁度	2
+caifu	菜脯	200
+caigen	才跟	200	no_contains
+caihe	才喝	200	no_contains
+caihuan	才缓	200	no_contains
+caijia	才加	200	no_contains
+caijin	才进	200	no_contains
+cailu	才露	263	no_contains
+caiqi	才起	598	no_contains
+cairen	才人	600	no_contains
+cairu	才入	200	no_contains
+caitan	才谈	200	no_contains
+caixia	才下	281	no_contains
+caixian	才显	197	no_contains
+caiyi	才一	598	no_contains
+caizhen	才真	200	no_contains
+canghuang	苍黄	339
+cantou	孱头	2
+chachi	茶匙	600
+chanchan	啴啴	2
+changban	常伴	352	no_contains
+changchuan	常穿	261	no_contains
+changhe	常和	597	no_contains
+changhe	常喝	598	no_contains
+changhuan	常换	200	no_contains
+changkan	常看	400	no_contains
+changle	常乐	548	no_contains
+changmian	长眠	600
+changningxian	昌宁县	200
+changqu	常去	998	no_contains
+changxin	常新	600	no_contains
+changyang	倘佯	200
+chanhe	浐河	250
+chanyu	禅语	400
+chaocha	超差	370	no_contains
+chaodi	超低	600	no_contains
+chaohe	超和	400	no_contains
+chaonan	超难	200	no_contains
+chaoqi	超期	600	no_contains
+chaoran	超燃	388	no_contains
+chaore	超热	200	no_contains
+chaoshen	超神	400	no_contains
+chaoshuo	剿说	2
+chaowan	超玩	197	no_contains
+chaoxi	剿袭	3
+chaozan	超赞	400	no_contains
+cheji	车机	420
+chenhundingxing	晨昏定省	2
+chenjiu	陈酒	200
+chinaqiayao	吃拿卡要	400
+chongbo	重拨	200	no_contains
+chongcao	重操	200	no_contains
+chongce	重测	200	no_contains
+chongcha	重插	199	no_contains
+chongchu	重出	200	no_contains
+chongchuan	重传	199	no_contains
+chongchuan	重穿	197	no_contains
+chongda	重打	200	no_contains
+chongdai	重戴	200	no_contains
+chongdeng	重登	200	no_contains
+chongding	重订	200	no_contains
+chongdu	重读	600	no_contains
+chongduo	重夺	400	no_contains
+chongfan	重犯	400	no_contains
+chongfang	重放	400	no_contains
+chonggou	重购	200	no_contains
+chongguan	重关	200	no_contains
+chonggui	重归	600	no_contains
+chonghuan	重焕	200	no_contains
+chonghun	重混	200	no_contains
+chonghuo	重活	322	no_contains
+chongjian	重剪	200	no_contains
+chongjian	重见	400	no_contains
+chongjin	重进	200	no_contains
+chongkan	重看	200	no_contains
+chongkao	重考	400	no_contains
+chongke	重刻	400	no_contains
+chonglu	重录	200	no_contains
+chongmai	重买	200	no_contains
+chongpai	重拍	400	no_contains
+chongpei	重配	200	no_contains
+chongqi	重起	200	no_contains
+chongran	重燃	600	no_contains
+chongru	重入	200	no_contains
+chongshang	重上	372	no_contains
+chongshi	重施	279	no_contains
+chongshi	重释	200	no_contains
+chongshu	重树	200	no_contains
+chongshua	重刷	200	no_contains
+chongtian	重填	200	no_contains
+chongtiao	重挑	195	no_contains
+chongtiao	重调	197	no_contains
+chongtiao	重跳	196	no_contains
+chongting	重听	200	no_contains
+chongtou	重投	127	no_contains
+chongtu	重涂	200	no_contains
+chongxi	重洗	200	no_contains
+chongxia	重下	200	no_contains
+chongxuan	重选	400	no_contains
+chongxue	重学	200	no_contains
+chongxun	重寻	200	no_contains
+chongying	重映	400	no_contains
+chongzai	重载	599	no_contains
+chongzhang	重掌	312	no_contains
+chongzhu	重铸	304	no_contains
+chongzou	重走	599	no_contains
+chongzuo	重作	200	no_contains
+chuju	雏菊	598
+chunan	淳安	400
+chunelie	唇腭裂	400
+chunyin	纯银	602
+chushu	处暑	600
+cizu	磁阻	559
+congcu	匆卒	2
+cuancu	攒簇	2
+cuanji	攒集	2
+cuanju	攒聚	116
+cuzhong	卒中	600
+dabaizi	大伯子	2
+dalieqie	打趔趄	2
+dangdang	当当	600
+dangui	丹桂	325
+daochitaie	倒持太阿	1
+daochitaie	倒持泰阿	2
+dayibalang	大尾巴狼	2
+dayun	答允	200
+deian	得按	200	no_contains
+deiba	得把	400	no_contains
+deibi	得比	600	no_contains
+deicha	得差	200	no_contains
+deida	得大	400	no_contains
+deide	得得	400	no_contains
+deifa	得发	200	no_contains
+deigan	得干	200	no_contains
+deige	得个	400	no_contains
+deigen	得跟	400	no_contains
+deihe	得和	400	no_contains
+deihua	得花	399	no_contains
+deihua	得话	400	no_contains
+deihuan	得患	400	no_contains
+deihuan	得欢	200	no_contains
+deiji	得及	200	no_contains
+deijian	得见	600	no_contains
+deijin	得紧	400	no_contains
+deijin	得近	200	no_contains
+deijin	得进	399	no_contains
+deike	得可	200	no_contains
+deiku	得苦	200	no_contains
+deila	得拉	200	no_contains
+deile	得乐	400	no_contains
+deili	得理	199	no_contains
+deili	得离	200	no_contains
+deilian	得脸	200	no_contains
+deilian	得连	400	no_contains
+deilu	得路	200	no_contains
+deima	得吗	400	no_contains
+deiman	得慢	400	no_contains
+deiman	得满	200	no_contains
+deiman	得蛮	199	no_contains
+deina	得拿	199	no_contains
+deina	得那	200	no_contains
+deine	得呢	200	no_contains
+deini	得你	400	no_contains
+deinian	得年	400	no_contains
+deiqi	得起	600	no_contains
+deiqian	得钱	200	no_contains
+deiqu	得去	400	no_contains
+deir	得儿	200	no_contains
+deire	得热	200	no_contains
+deiren	得人	600	no_contains
+deisan	得三	400	no_contains
+deishen	得深	400	no_contains
+deita	得他	400	no_contains
+deita	得她	399	no_contains
+deita	得它	200	no_contains
+deiwan	得完	199	no_contains
+deiwan	得晚	200	no_contains
+deiwen	得稳	400	no_contains
+deiwen	得问	200	no_contains
+deixia	得下	600	no_contains
+deixian	得先	600	no_contains
+deixin	得信	200	no_contains
+deixin	得心	400	no_contains
+deiya	得牙	200	no_contains
+deiyan	得严	200	no_contains
+deiyi	得一	600	no_contains
+deiyu	得与	600	no_contains
+deiyu	得雨	200	no_contains
+deizhe	得这	200	no_contains
+deizhen	得真	400	no_contains
+deizhu	得住	600	no_contains
+deizhuan	得转	200	no_contains
+diangao	垫高	600
+dianjiao	垫脚	200
+dianzhi	典质	200
+diaobao	掉包	400
+diaoju	吊具	344
+diaoren	鸟人	400
+diliu	提溜	200
+dingchengyushi	鼎铛玉石	2
+dingding	丁丁	397
+dingshi	定食	0
+doubi	都避	200	no_contains
+doucha	都差	399	no_contains
+douchu	都处	200	no_contains
+douchuan	都传	200	no_contains
+douda	都搭	200	no_contains
+douda	都答	400	no_contains
+doude	都得	600	no_contains
+doude	都德	400	no_contains
+doudi	都低	349	no_contains
+doudi	都抵	200	no_contains
+doufen	都分	400	no_contains
+dougan	都赶	200	no_contains
+douge	都各	400	no_contains
+dougua	都刮	200	no_contains
+douguan	都管	399	no_contains
+douhan	都含	200	no_contains
+douhe	都合	200	no_contains
+douhua	都划	199	no_contains
+douhua	都化	200	no_contains
+douji	都及	198	no_contains
+douji	都记	199	no_contains
+douji	都集	197	no_contains
+doujian	都建	703	no_contains
+douju	都举	419	no_contains
+douka	都卡	200	no_contains
+doukan	都砍	200	no_contains
+douke	都克	388	no_contains
+douke	都刻	389	no_contains
+doulan	都拦	392	no_contains
+doule	都乐	200	no_contains
+douli	都理	200	no_contains
+douli	都离	399	no_contains
+douli	都立	400	no_contains
+doulian	都练	400	no_contains
+doulian	都连	200	no_contains
+doulu	都露	200	no_contains
+douma	都麻	199	no_contains
+douman	都蛮	399	no_contains
+doumo	都抹	200	no_contains
+doumo	都磨	400	no_contains
+dounian	都念	200	no_contains
+doupa	都爬	200	no_contains
+doupin	都拼	200	no_contains
+doupo	都破	200	no_contains
+douqi	都起	600	no_contains
+douqian	都欠	200	no_contains
+douqu	都取	399	no_contains
+douran	都染	200	no_contains
+douren	都人	389	no_contains
+douren	都认	388	no_contains
+douru	都入	546	no_contains
+douru	都如	600	no_contains
+dousa	都撒	200	no_contains
+dousan	都散	200	no_contains
+doushe	都设	400	no_contains
+doushen	都深	200	no_contains
+doushu	都属	199	no_contains
+doushu	都数	198	no_contains
+doutan	都谈	200	no_contains
+doute	都特	200	no_contains
+douti	都提	199	no_contains
+doutu	都涂	199	no_contains
+douwa	都挖	200	no_contains
+douwen	都闻	200	no_contains
+douxi	都吸	199	no_contains
+douxi	都喜	200	no_contains
+douxi	都系	399	no_contains
+douxia	都下	400	no_contains
+douxia	都吓	200	no_contains
+douxian	都先	400	no_contains
+douxian	都显	334	no_contains
+douxiao	窦骁	200
+douxu	都需	600	no_contains
+douya	都压	401	no_contains
+douyan	都演	437	no_contains
+douyi	都一	400	no_contains
+douyin	都印	199	no_contains
+douza	都砸	200	no_contains
+douzan	都攒	200	no_contains
+douzhan	都占	399	no_contains
+douzhan	都沾	199	no_contains
+douzhan	都粘	200	no_contains
+douzhe	都着	200	no_contains
+douzhua	都抓	400	no_contains
+douzu	都租	200	no_contains
+duiyao	对幺	2
+duoa	多啊	400	no_contains
+duoan	多安	399	no_contains
+duoan	多按	398	no_contains
+duoba	多把	279	no_contains
+duoban	多办	200	no_contains
+duobi	多必	200	no_contains
+duobi	多比	400	no_contains
+duoca	多擦	200	no_contains
+duocan	多餐	600	no_contains
+duoche	多车	400	no_contains
+duochu	多处	279	no_contains
+duochuan	多穿	400	no_contains
+duoda	多打	279	no_contains
+duodan	多但	200	no_contains
+duodan	多单	600	no_contains
+duodu	多度	599	no_contains
+duodu	多读	600	no_contains
+duofan	多翻	199	no_contains
+duofen	多分	197	no_contains
+duogen	多跟	400	no_contains
+duoguan	多管	462	no_contains
+duohe	多和	599	no_contains
+duohe	多喝	601	no_contains
+duohen	多恨	199	no_contains
+duohua	多画	199	no_contains
+duohua	多花	600	no_contains
+duohuan	多换	200	no_contains
+duoji	多几	79	no_contains
+duoji	多记	279	no_contains
+duoji	多集	278	no_contains
+duojian	多见	279	no_contains
+duojin	多进	199	no_contains
+duojin	多金	214	no_contains
+duoju	多句	200	no_contains
+duoju	多聚	400	no_contains
+duoka	多卡	400	no_contains
+duoke	多可	399	no_contains
+duoke	多颗	400	no_contains
+duola	多拉	598	no_contains
+duoli	多里	407	no_contains
+duolian	多练	600	no_contains
+duolun	多伦	400
+duomo	多磨	200	no_contains
+duona	多拿	400	no_contains
+duona	多那	200	no_contains
+duonan	多男	200	no_contains
+duone	多呢	400	no_contains
+duonian	多念	200	no_contains
+duonv	多女	200	no_contains
+duoo	多哦	200	no_contains
+duopin	多拼	200	no_contains
+duoqi	多气	400	no_contains
+duoqian	多前	400	no_contains
+duoqian	多钱	600	no_contains
+duoqianshangu	多钱善贾	2
+duoqu	多去	501	no_contains
+duoren	多认	200	no_contains
+duosan	多三	200	no_contains
+duosha	多杀	199	no_contains
+duoshan	多山	600	no_contains
+duoshen	多神	200	no_contains
+duoshu	多书	0	no_contains
+duotan	多谈	399	no_contains
+duote	多特	400	no_contains
+duotu	多涂	199	no_contains
+duowan	多万	600	no_contains
+duowan	多玩	399	no_contains
+duoxi	多吸	78	no_contains
+duoxi	多喜	400	no_contains
+duoxi	多洗	79	no_contains
+duoxia	多下	399	no_contains
+duoxian	多线	80	no_contains
+duoyan	多演	197	no_contains
+duoyi	多一	598	no_contains
+duoyi	多亿	599	no_contains
+duoyi	多以	600	no_contains
+duoyu	多与	242	no_contains
+duoyu	多雨	241	no_contains
+duozan	多攒	200	no_contains
+duozha	多扎	200	no_contains
+duozhen	多真	201	no_contains
+duozhu	多住	200	no_contains
+duozhua	多抓	200	no_contains
+duozhuan	多赚	600	no_contains
+duozhuan	多转	200	no_contains
+duozu	多足	200	no_contains
+dushen	渎神	200
+duyu	杜宇	609
+edu	阿堵	2
+eduwu	阿堵物	2
+efu	阿附	2
+epiao	饿莩	2
+epiaobianye	饿莩遍野	2
+eqisuohao	阿其所好	2
+fajiao	酦酵	2
+fanbai	梵呗	159
+fanchi	饭匙	2
+fangfu	彷佛	600
+fanqing	反清	398
+fanxian	范县	145
+faxiang	发祥	400
+feiwen	飞吻	200
+feizhua	飞挝	2
+fengchengshi	丰城市	400
+fengqiu	封丘	328
+fengshan	封禅	420
+fenzi	份子	600
+fudan	佛诞	200
+fudie	覆叠	200
+fuquan	复权	200
+fushen	附身	871
+fuxiang	浮想	460
+gaga	呷呷	200
+gaiba	该把	701	no_contains
+gaichuan	该穿	200	no_contains
+gaida	该打	200	no_contains
+gaide	该得	200	no_contains
+gaifen	该分	199	no_contains
+gaiguan	该管	200	no_contains
+gaihe	该和	200	no_contains
+gaihua	该花	400	no_contains
+gaijin	该进	200	no_contains
+gaiju	该剧	399	no_contains
+gaiku	该哭	200	no_contains
+gailan	芥兰	200
+gailan	芥蓝	400
+gaima	该骂	200	no_contains
+gaini	该你	200	no_contains
+gaisha	该杀	701	no_contains
+gaiwan	该玩	158	no_contains
+gaixian	该先	200	no_contains
+gaixin	该信	197	no_contains
+gaiyi	该以	400	no_contains
+gaiza	该咋	200	no_contains
+gaizen	该怎	200	no_contains
+gali	咖喱	600
+galifen	咖喱粉	200
+gama	伽玛	400
+ganba	敢把	200	no_contains
+ganda	敢打	441	no_contains
+ganfen	干粉	600
+gangba	刚把	400	no_contains
+gangchu	刚出	600	no_contains
+gangen	敢跟	200	no_contains
+ganggen	刚跟	200	no_contains
+ganghe	刚和	400	no_contains
+gangjian	刚建	461	no_contains
+gangjin	刚进	535	no_contains
+gangqi	刚起	200	no_contains
+gangqia	岗卡	2
+gangqu	刚去	400	no_contains
+gangru	刚入	600	no_contains
+ganhe	敢和	200	no_contains
+ganhen	敢恨	400	no_contains
+ganpin	敢拼	400	no_contains
+ganqu	敢去	278	no_contains
+ganre	敢惹	200	no_contains
+ganwen	敢问	601	no_contains
+ganyu	敢与	402	no_contains
+ganyue	干哕	2
+ganzhou	甘州	288
+gaoshou	高寿	600
+gaxia	噶厦	400
+gazhiwo	夹肢窝	2
+gebang	蛤蚌	2
+gecha	咯嚓	2
+geda	疙疸	2
+gejie	蛤蚧	400
+geli	蛤蛎	2
+geli	蛤蜊	599
+gengde	更得	400	no_contains
+genghe	更合	200	no_contains
+genghen	更恨	200	no_contains
+genghuan	更欢	200	no_contains
+gengjin	更尽	279	no_contains
+gengjin	更进	278	no_contains
+gengju	更具	600	no_contains
+gengke	更可	600	no_contains
+genglan	更蓝	400	no_contains
+gengna	更那	200	no_contains
+gengnian	更年	200	no_contains
+gengshen	更甚	600	no_contains
+gengwan	更晚	400	no_contains
+gengxian	更显	999	no_contains
+gengyan	更严	400	no_contains
+gengzan	更赞	200	no_contains
+gengzhen	更真	200	no_contains
+gengzu	更足	983	no_contains
+gexie	蛤蟹	2
+gezha	饹馇	2
+gongchepu	工尺谱	200
+gongdan	公石	146
+gongfang	工房	273
+gongge	公合	2
+gonghua	供花	199
+gongkuaimuchi	公筷母匙	2
+guangbo	广博	500
+guangzhui	光追	200
+guanzhi	管治	125
+guhuo	贾祸	2
+guixing	归省	200
+guiyuan	桂圆	468
+guke	贾客	2
+guoshen	过审	400
+guyi	估衣	200
+guzi	骨子	400
+haian	还按	200	no_contains
+haican	还惨	200	no_contains
+haiche	还车	400	no_contains
+haichuan	还穿	200	no_contains
+haida	还打	200	no_contains
+haida	还搭	199	no_contains
+haidu	还读	200	no_contains
+haigan	还敢	701	no_contains
+haigen	还跟	600	no_contains
+haigua	还挂	200	no_contains
+haiguan	还管	200	no_contains
+haihe	还和	702	no_contains
+haihua	还画	199	no_contains
+haihua	还花	200	no_contains
+haiji	还记	200	no_contains
+haijian	还见	200	no_contains
+haila	还拉	200	no_contains
+haili	还立	200	no_contains
+hailian	还连	200	no_contains
+hailv	还绿	200	no_contains
+haima	还吗	200	no_contains
+haima	还骂	199	no_contains
+haiman	还满	200	no_contains
+haiman	还蛮	701	no_contains
+hainian	还念	200	no_contains
+hainin	还您	200	no_contains
+haiqi	还起	200	no_contains
+haiqian	还欠	400	no_contains
+haire	还热	200	no_contains
+hairen	还人	200	no_contains
+hairu	还入	200	no_contains
+haisha	还杀	200	no_contains
+haishe	还设	200	no_contains
+haishu	还数	134	no_contains
+haitan	还谈	400	no_contains
+haite	还特	200	no_contains
+haiti	还提	199	no_contains
+haiti	还替	200	no_contains
+haiwan	还完	446	no_contains
+haixia	还下	400	no_contains
+haixian	还显	200	no_contains
+haixin	还心	200	no_contains
+haixu	还虚	200	no_contains
+haixu	还须	600	no_contains
+haiyi	还一	382	no_contains
+haiyi	还以	600	no_contains
+haiyin	还阴	200	no_contains
+haizhe	还着	200	no_contains
+haizhu	还住	200	no_contains
+hanchen	寒伧	2
+hangua	含括	200
+hanmei	韩媒	138
+haoan	好鞍	200	no_contains
+haoba	好把	200	no_contains
+haoban	好班	504	no_contains
+haoche	好车	437	no_contains
+haochi	蚝豉	200
+haochu	好出	200	no_contains
+haochuan	好穿	200	no_contains
+haoda	好打	200	no_contains
+haodan	好但	200	no_contains
+haode	好德	138	no_contains
+haodu	好度	399	no_contains
+haodu	好读	400	no_contains
+haofa	好法	200	no_contains
+haofan	好饭	399	no_contains
+haoge	好个	400	no_contains
+haoge	好歌	600	no_contains
+haoguan	好官	400	no_contains
+haohe	好合	200	no_contains
+haohe	好和	454	no_contains
+haohua	好画	399	no_contains
+haojia	好家	79	no_contains
+haojin	好进	199	no_contains
+haoju	好剧	400	no_contains
+haoju	好句	600	no_contains
+haoke	好可	200	no_contains
+haole	好乐	400	no_contains
+haoli	好利	931	no_contains
+haolian	好脸	200	no_contains
+haolu	好路	200	no_contains
+haome	好么	400	no_contains
+haomi	好米	200	no_contains
+haona	好拿	200	no_contains
+haoni	好你	400	no_contains
+haonian	好年	400	no_contains
+haonv	好女	200	no_contains
+haoo	好哦	200	no_contains
+haopi	好皮	200	no_contains
+haoqian	好钱	261	no_contains
+haoqin	好琴	200	no_contains
+haor	好儿	200	no_contains
+haosan	好三	200	no_contains
+haosan	好散	199	no_contains
+haosha	好杀	199	no_contains
+haoshan	好山	200	no_contains
+haota	好他	200	no_contains
+haota	好她	199	no_contains
+haota	好它	400	no_contains
+haotan	好谈	200	no_contains
+haotu	好图	199	no_contains
+haotu	好土	200	no_contains
+haowen	好稳	200	no_contains
+haoxian	好先	1	no_contains
+haoxin	好新	200	no_contains
+haoya	好牙	400	no_contains
+haoyan	好烟	118	no_contains
+haoyi	好一	880	no_contains
+haoyi	好易	878	no_contains
+haoyu	好与	601	no_contains
+haoyu	好雨	200	no_contains
+haoyu	好鱼	199	no_contains
+haozhe	好这	399	no_contains
+haozhu	好住	281	no_contains
+haozhu	好猪	279	no_contains
+haozhuan	好赚	200	no_contains
+hebo	河伯	399
+hechong	河涌	400
+hemenjian	核门槛	2
+henben	很笨	400	no_contains
+hencan	很惨	400	no_contains
+henchen	很沉	200	no_contains
+hendan	很淡	400	no_contains
+hende	很得	200	no_contains
+hendu	很毒	200	no_contains
+hengan	很干	200	no_contains
+henhe	很合	200	no_contains
+henhua	很滑	200	no_contains
+henjin	很紧	701	no_contains
+henke	很可	200	no_contains
+henlan	很懒	200	no_contains
+henlan	很蓝	400	no_contains
+henman	很满	200	no_contains
+henmen	很闷	200	no_contains
+henmi	很密	200	no_contains
+henpin	很拼	200	no_contains
+henqi	很气	200	no_contains
+henshu	很熟	400	no_contains
+hensu	很俗	200	no_contains
+hentu	很土	200	no_contains
+henwen	很稳	200	no_contains
+henxian	很显	200	no_contains
+henxu	很虚	200	no_contains
+henyan	很严	400	no_contains
+henyi	很易	398	no_contains
+henzan	很赞	400	no_contains
+henzhan	很粘	200	no_contains
+henzu	很足	600	no_contains
+hewan	河湾	279
+hexin	河心	200
+hezhong	荷重	278
+honghu	鸿鹄	400
+hongyanyan	红殷殷	2
+houji	猴急	200
+huaigu	怀古	600
+huamei	话梅	256
+huanban	换班	400
+huangdengdeng	黄澄澄	600
+huaquan	花拳	200
+huaquan	豁拳	2
+huhou	鹄候	2
+huian	会安	200	no_contains
+huicai	徽菜	400
+huican	会餐	200	no_contains
+huicha	会查	200	no_contains
+huidan	会弹	200	no_contains
+huidongxian	惠东县	400
+huifan	会反	79	no_contains
+huifan	会翻	78	no_contains
+huige	会歌	200	no_contains
+huimo	会磨	399	no_contains
+huinan	会难	166	no_contains
+huine	会呢	200	no_contains
+huinian	会念	200	no_contains
+huinong	溃脓	2
+huipa	会爬	200	no_contains
+huipin	会拼	200	no_contains
+huipo	会破	200	no_contains
+huire	会惹	200	no_contains
+huiru	会入	200	no_contains
+huisan	会三	200	no_contains
+huisan	会散	199	no_contains
+huixi	会吸	199	no_contains
+huixia	会下	400	no_contains
+huiya	会压	78	no_contains
+huiyan	会演	136	no_contains
+huiyi	会一	399	no_contains
+huiyin	会引	400	no_contains
+huizhan	会粘	199	no_contains
+huizhen	会真	200	no_contains
+hundingchenxing	昏定晨省	2
+hunhe	浑河	400
+husheng	互生	600
+huzhou	护肘	200
+jiali	加哩	2
+jianche	槛车	2
+jiangzui	强嘴	2
+jianhualonghe	槛花笼鹤	2
+jianzou	健走	290
+jiaochangxieduan	较长絜短	2
+jiaodi	交底	599
+jiaoling	蕉岭	376
+jiaoyao	僬侥	2
+jiaqiaor	家雀儿	2
+jiaxin	加薪	434
+jiegao	桔槔	2
+jiemi	解谜	400
+jieyuan	解元	286
+jifengjingcao	疾风劲草	200
+jihanshu	奇函数	200
+jijiguagua	咭咭呱呱	2
+jiliang	技俩	0
+jimao	己卯	560
+jingba	劲拔	200
+jingcao	劲草	400
+jingchui	劲吹	200
+jinggao	敬告	400
+jingji	劲急	2
+jinglie	劲烈	2
+jingningxian	景宁县	104
+jingqiao	劲峭	2
+jingting	劲挺	200
+jingwu	劲舞	200
+jingyu	敬语	106
+jingyuanxian	泾源县	200
+jingzhi	劲直	2
+jingzu	劲卒	2
+jinpingxian	金平县	199
+jiouxing	奇偶性	400
+jipa	鸡扒	2
+jitilei	奇蹄类	2
+jiuan	就安	534	no_contains
+jiuche	就撤	199	no_contains
+jiuchen	就趁	200	no_contains
+jiuchu	就处	200	no_contains
+jiuchuan	就传	200	no_contains
+jiuda	就答	199	no_contains
+jiudan	就单	199	no_contains
+jiudan	就弹	197	no_contains
+jiudan	就淡	200	no_contains
+jiufa	就罚	200	no_contains
+jiufan	就犯	199	no_contains
+jiugua	就刮	200	no_contains
+jiuguan	就管	200	no_contains
+jiuhe	就合	835	no_contains
+jiuhua	就划	199	no_contains
+jiuhua	就化	201	no_contains
+jiujian	就建	199	no_contains
+jiuju	就举	8	no_contains
+jiuka	就卡	201	no_contains
+jiukan	就砍	200	no_contains
+jiuken	就啃	200	no_contains
+jiukua	就垮	199	no_contains
+jiukua	就夸	198	no_contains
+jiukuan	就宽	200	no_contains
+jiuli	就理	655	no_contains
+jiuli	就立	656	no_contains
+jiulia	就俩	200	no_contains
+jiuman	就慢	199	no_contains
+jiuman	就蛮	198	no_contains
+jiumo	就磨	199	no_contains
+jiunin	就您	200	no_contains
+jiupin	就拼	200	no_contains
+jiupo	就破	400	no_contains
+jiuqian	就前	200	no_contains
+jiure	就热	200	no_contains
+jiuren	就人	199	no_contains
+jiuren	就认	200	no_contains
+jiusan	就三	200	no_contains
+jiushen	就深	200	no_contains
+jiushu	就数	198	no_contains
+jiuta	就它	201	no_contains
+jiute	就特	200	no_contains
+jiutu	就图	199	no_contains
+jiutu	就涂	198	no_contains
+jiuxi	就吸	252	no_contains
+jiuxi	就系	253	no_contains
+jiuxia	就瞎	200	no_contains
+jiuxian	就现	199	no_contains
+jiuxin	就心	200	no_contains
+jiuxin	就新	399	no_contains
+jiuxu	就虚	200	no_contains
+jiuyi	就一	678	no_contains
+jiuyin	就印	200	no_contains
+jiuyou	酒友	400
+jiuza	就砸	200	no_contains
+jiuzha	就扎	199	no_contains
+jiuzhuan	就专	1	no_contains
+jiuzu	就足	199	no_contains
+jiwu	祭物	200
+jixian	奇羡	2
+jizhouqu	冀州区	106
+jizong	鸡枞	400
+junyu	隽誉	2
+juyuan	枸橼	400
+kada	咔嗒	199
+kaerzayi	卡尔扎伊	200
+kailu	开炉	200
+kaiyuanshi	开原市	199
+kehuleiwu	刻鹄类鹜	2
+kexing	苛性	200
+kongtong	倥侗	2
+kuaiba	快吧	200	no_contains
+kuaiba	快把	600	no_contains
+kuaiban	快办	400	no_contains
+kuaiben	快本	200	no_contains
+kuaiche	快撤	200	no_contains
+kuaichu	快出	400	no_contains
+kuaichuan	快传	199	no_contains
+kuaichuan	快穿	200	no_contains
+kuaida	快打	400	no_contains
+kuaidu	快读	200	no_contains
+kuaige	快歌	400	no_contains
+kuaigen	快跟	200	no_contains
+kuaihe	快和	400	no_contains
+kuaikan	快看	600	no_contains
+kuaike	快客	200	no_contains
+kuaile	快楽	281	no_contains
+kuaima	快马	199	no_contains
+kuaiman	快满	200	no_contains
+kuaina	快拿	200	no_contains
+kuainan	快男	200	no_contains
+kuaine	快呢	200	no_contains
+kuainv	快女	200	no_contains
+kuaipo	快破	200	no_contains
+kuaiqu	快去	600	no_contains
+kuairen	快人	400	no_contains
+kuaishu	快熟	200	no_contains
+kuaiti	快题	600	no_contains
+kuaiwen	快问	200	no_contains
+kuaixia	快下	200	no_contains
+kuaixian	快线	600	no_contains
+kuaiyi	快一	200	no_contains
+kuaiyin	快银	200	no_contains
+kuaiyu	快与	400	no_contains
+lagua	啦呱	1
+lagua	拉呱	2
+lanquan	篮圈	200
+lanre	兰若	400
+lanshanqu	岚山区	123
+lansheng	揽胜	600
+laoan	老安	334	no_contains
+laoba	老巴	200	no_contains
+laoba	老把	199	no_contains
+laoban	老班	398	no_contains
+laocha	老茶	600	no_contains
+laoche	老车	400	no_contains
+laocu	老醋	200	no_contains
+laode	老得	400	no_contains
+laoe	老鹅	200	no_contains
+laofan	老范	161	no_contains
+laogen	老根	400	no_contains
+laogu	老顾	200	no_contains
+laoguan	老官	199	no_contains
+laoguan	老馆	200	no_contains
+laoha	老哈	200	no_contains
+laohan	老韩	200	no_contains
+laohan	落汗	2
+laohe	老何	522	no_contains
+laohe	老和	520	no_contains
+laohu	老胡	579	no_contains
+laojia	落价	2
+laojin	老金	400	no_contains
+laoka	老卡	200	no_contains
+laokang	落炕	2
+laoke	老科	399	no_contains
+laoli	老李	600	no_contains
+laolin	老林	400	no_contains
+laolu	老卢	200	no_contains
+laolu	老陆	198	no_contains
+laolu	老鹿	199	no_contains
+laolv	老吕	400	no_contains
+laomanyuan	落埋怨	2
+laome	老么	200	no_contains
+laomen	老门	200	no_contains
+laomi	老米	200	no_contains
+laomin	老闵	200	no_contains
+laomo	老莫	200	no_contains
+laopan	老潘	200	no_contains
+laopi	老皮	400	no_contains
+laopo	老破	400	no_contains
+laoqi	老气	400	no_contains
+laoqin	老秦	400	no_contains
+laoqu	老区	477	no_contains
+laoren	老任	200	no_contains
+laoren	落忍	2
+laosha	老沙	200	no_contains
+laoshai	落色	2
+laoshen	老沈	200	no_contains
+laoshen	老身	199	no_contains
+laoshu	老书	200	no_contains
+laosu	老苏	377	no_contains
+laotan	老坛	200	no_contains
+laotu	老图	200	no_contains
+laowan	老万	200	no_contains
+laowen	老文	200	no_contains
+laowen	老温	199	no_contains
+laoxi	老西	200	no_contains
+laoxin	老心	200	no_contains
+laoxu	老许	200	no_contains
+laoyan	老严	200	no_contains
+laoyao	老幺	200
+laoyu	老妪	479
+laoyu	老鱼	478	no_contains
+laozhan	老站	400	no_contains
+laozhen	落枕	600
+laozhu	老朱	400	no_contains
+laozhu	老猪	200	no_contains
+laozu	老祖	600	no_contains
+leiren	雷人	400
+lianggang	良港	336
+liangqi	量器	9
+liaoduo	料度	2
+liaowang	瞭望	445
+liaowu	寮屋	200
+lichanghao	李昌镐	200
+lilong	里弄	400
+lingchuanxian	陵川县	400
+lingkong	凌空	600
+lingming	令名	200
+linjiaofengzui	麟角凤觜	2
+linshu	林纾	140
+lintiao	檩条	400
+linwu	临武	200
+liuhe	柳河	400
+liujia	六甲	559
+liuxiang	刘翔	600
+liuyang	留洋	400
+liuyin	六淫	400
+longjian	笼槛	2
+longmenbao	龙门刨	2
+longniaojianyuan	笼鸟槛猿	2
+lulinhaoke	绿林豪客	2
+luokeke	洛可可	763
+luoshui	裸睡	400
+luquan	鹿泉	387
+luxixian	芦溪县	199
+lveshi	掠食	600
+mafeng	马蜂	600
+maibu	卖卜	2
+manda	蛮大	200	no_contains
+manpin	蛮拼	200	no_contains
+maoding	冒顶	400
+maosi	毛厕	2
+maosi	茅厕	200
+meian	没按	200	no_contains
+meiba	没把	600	no_contains
+meiban	没办	699	no_contains
+meiban	没半	698	no_contains
+meibu	枚卜	2
+meichu	没处	400	no_contains
+meichuan	没穿	999	no_contains
+meida	没答	200	no_contains
+meidu	没毒	199	no_contains
+meidu	没读	200	no_contains
+meifan	没饭	199	no_contains
+meige	没个	599	no_contains
+meigen	没跟	200	no_contains
+meiguan	没管	200	no_contains
+meihe	没和	400	no_contains
+meihe	没喝	320	no_contains
+meiji	没记	200	no_contains
+meijia	没加	180	no_contains
+meijin	没进	400	no_contains
+meike	没课	281	no_contains
+meiku	没哭	200	no_contains
+meili	没力	199	no_contains
+meili	没理	200	no_contains
+meilian	没练	200	no_contains
+meilu	没路	877	no_contains
+meiman	没满	200	no_contains
+meina	没那	200	no_contains
+meinian	没念	200	no_contains
+meipo	没破	200	no_contains
+meir	谜儿	2
+meiru	没入	400	no_contains
+meishu	没书	199	no_contains
+meishu	没熟	200	no_contains
+meita	没它	324	no_contains
+meitan	没谈	200	no_contains
+meiti	没提	200	no_contains
+meiwan	没玩	200	no_contains
+meiwen	没问	200	no_contains
+meizhe	没这	200	no_contains
+mengxing	猛省	2
+miandan	免单	400
+mianmao	棉毛	527
+mingji	名妓	400
+mingqu	明渠	600
+minjiang	岷江	302
+miuqiao	缪巧	2
+muai	母爱	600
+mujian	木剑	200
+muming	慕名	999
+namo	南无	600
+neixingxing	内省性	2
+nengan	能安	400	no_contains
+nengan	能按	600	no_contains
+nengba	能把	419	no_contains
+nengba	能拔	200	no_contains
+nengban	能办	400	no_contains
+nengce	能测	200	no_contains
+nengcha	能差	200	no_contains
+nengcha	能查	199	no_contains
+nengchu	能处	200	no_contains
+nengchuan	能传	200	no_contains
+nengchuan	能穿	400	no_contains
+nengda	能大	400	no_contains
+nengda	能答	200	no_contains
+nengda	能达	599	no_contains
+nengdan	能弹	200	no_contains
+nengde	能得	600	no_contains
+nengdi	能抵	200	no_contains
+nengfa	能发	400	no_contains
+nengfan	能翻	200	no_contains
+nengfen	能分	400	no_contains
+nenggen	能跟	600	no_contains
+nenggua	能挂	200	no_contains
+nengguan	能管	200	no_contains
+nenghe	能合	200	no_contains
+nenghe	能喝	600	no_contains
+nenghen	能很	400	no_contains
+nenghua	能画	400	no_contains
+nenghua	能花	200	no_contains
+nenghuan	能换	400	no_contains
+nenghuan	能缓	200	no_contains
+nengji	能及	400	no_contains
+nengji	能记	200	no_contains
+nengji	能集	199	no_contains
+nengjia	能加	200	no_contains
+nengjian	能减	200	no_contains
+nengjian	能建	400	no_contains
+nengjian	能见	600	no_contains
+nengju	能举	199	no_contains
+nengju	能聚	200	no_contains
+nengkan	能看	600	no_contains
+nengla	能拉	200	no_contains
+nengle	能乐	200	no_contains
+nengli	能离	200	no_contains
+nenglian	能练	200	no_contains
+nenglian	能连	199	no_contains
+nengmo	能磨	200	no_contains
+nengna	能拿	600	no_contains
+nengpa	能爬	200	no_contains
+nengpi	能辟	200	no_contains
+nengpin	能拼	200	no_contains
+nengpo	能破	400	no_contains
+nengqi	能起	400	no_contains
+nengqu	能去	600	no_contains
+nengqu	能取	474	no_contains
+nengren	能认	99	no_contains
+nengru	能入	400	no_contains
+nengsha	能杀	200	no_contains
+nengtan	能谈	200	no_contains
+nengti	能提	200	no_contains
+nengti	能替	199	no_contains
+nengtu	能吐	200	no_contains
+nengwan	能玩	400	no_contains
+nengwen	能问	200	no_contains
+nengxi	能吸	200	no_contains
+nengxi	能洗	199	no_contains
+nengxia	能下	400	no_contains
+nengxian	能先	400	no_contains
+nengxian	能显	399	no_contains
+nengxin	能信	200	no_contains
+nengya	能压	200	no_contains
+nengyan	能演	522	no_contains
+nengyi	能一	400	no_contains
+nengyi	能以	600	no_contains
+nengzhan	能占	400	no_contains
+nengzhan	能站	399	no_contains
+nengzhan	能粘	200	no_contains
+nengzhe	能遮	200	no_contains
+nengzhen	能真	200	no_contains
+nengzhu	能住	400	no_contains
+nengzhua	能抓	200	no_contains
+nengzhuan	能赚	600	no_contains
+nengzhuan	能转	400	no_contains
+nengzu	能租	200	no_contains
+nezha	哪吒	600
+nia	你啊	600	no_contains
+nianchan	粘缠	2
+nianchong	粘虫	200
+nianchoudu	粘稠度	406
+nianhuhu	粘乎乎	337
+nianju	粘聚	200
+niannuo	粘糯	2
+nianpidaigu	粘皮带骨	2
+nianpizhuogu	粘皮着骨	2
+nianya	辗轧	2
+nianyu	鲇鱼	400
+niaoge	鸟蛤	2
+niaoweige	鸟尾蛤	2
+niba	你吧	400	no_contains
+niban	你办	200	no_contains
+niben	你本	400	no_contains
+nicha	你查	200	no_contains
+niche	你车	200	no_contains
+nichu	你出	400	no_contains
+nichu	你处	200	no_contains
+nichuan	你穿	400	no_contains
+nida	你打	279	no_contains
+nida	你答	200	no_contains
+nidan	你弹	200	no_contains
+nide	你地	200	no_contains
+nidu	你读	400	no_contains
+nifan	你烦	512	no_contains
+nifen	你分	200	no_contains
+nige	你个	2	no_contains
+niguan	你管	200	no_contains
+nihan	你喊	200	no_contains
+nihe	你何	200	no_contains
+nihe	你喝	279	no_contains
+nihen	你恨	200	no_contains
+nihen	你狠	199	no_contains
+nihuan	你换	200	no_contains
+nijia	你加	200	no_contains
+nijian	你见	200	no_contains
+nijin	你进	384	no_contains
+niku	你哭	400	no_contains
+nila	你啦	400	no_contains
+nile	你了	999	no_contains
+nili	你离	400	no_contains
+nilian	你练	200	no_contains
+nilian	你脸	199	no_contains
+nilian	你连	600	no_contains
+nima	你吗	980	no_contains
+nima	你骂	200	no_contains
+niman	你慢	200	no_contains
+nime	你么	200	no_contains
+nina	你哪	200	no_contains
+nina	你拿	599	no_contains
+nina	你那	600	no_contains
+nine	你呢	600	no_contains
+ningjinxian	宁晋县	400
+nini	你你	380	no_contains
+ninian	你年	200	no_contains
+ninian	你念	400	no_contains
+nio	你哦	400	no_contains
+nipa	你怕	400	no_contains
+nipin	你品	200	no_contains
+nipin	你拼	199	no_contains
+niqi	你起	200	no_contains
+niqian	你前	199	no_contains
+niqian	你欠	200	no_contains
+niqian	你钱	400	no_contains
+niqin	你亲	600	no_contains
+nire	你惹	200	no_contains
+niren	你认	200	no_contains
+niru	你入	399	no_contains
+niru	你如	400	no_contains
+nisan	你三	200	no_contains
+nisha	你傻	228	no_contains
+nisha	你杀	229	no_contains
+nishen	你身	132	no_contains
+nishu	你输	200	no_contains
+nitan	你谈	200	no_contains
+niti	你提	200	no_contains
+niwan	你玩	400	no_contains
+niwen	你问	600	no_contains
+niwen	你闻	200	no_contains
+nixi	你喜	197	no_contains
+nixin	你信	400	no_contains
+niya	你丫	234	no_contains
+niya	你呀	600	no_contains
+niyan	你演	200	no_contains
+niyi	你一	786	no_contains
+niyi	你以	599	no_contains
+niyin	你因	400	no_contains
+niyo	你哟	200	no_contains
+niyu	你于	200	no_contains
+niza	你咋	200	no_contains
+nize	你则	200	no_contains
+nizen	你怎	200	no_contains
+nizhan	你站	200	no_contains
+nizhua	你抓	200	no_contains
+nizhuan	你赚	199	no_contains
+nizhuan	你转	200	no_contains
+nvshenge	女神蛤	2
+oumiga	欧米伽	400
+pacha	啪嚓	2
+pafen	扒粪	2
+pagao	扒糕	2
+pagaocaidi	扒高踩低	2
+pahui	扒灰	2
+paixi	拍戏	818
+pali	扒犁	2
+pangguangqihua	膀胱气化	200
+panghuang	彷徨	600
+pangyang	彷徉	2
+paofa	跑法	199
+paojiao	泡椒	211
+paqie	扒窃	400
+pasi	派司	2
+pengchi	榜笞	2
+pinglu	平鲁	200
+pingshanqu	坪山区	400
+pingxiangshi	凭祥市	400
+poxiao	朴硝	200
+pulu	曝露	400
+qiabozi	卡脖子	166
+qianchuan	钱串	200
+qiandao	纤道	2
+qiangbo	将伯	2
+qiangbozhizhu	将伯之助	2
+qianshengzhiguo	千乘之国	200
+qiantuweibu	前途未卜	400
+qianxin	虔信	200
+qiaocui	蕉萃	2
+qiaomangyan	雀盲眼	2
+qiaozi	雀子	199
+qiapan	卡盘	972
+qibu	齐步	400
+qimi	凄迷	400
+qingfengjingjie	清风劲节	2
+qinglongxian	晴隆县	200
+qingyuanqu	清苑区	110
+qingzhi	情知	200
+qisang	稽颡	2
+qiuyou	球友	440
+qumaicai	苣荬菜	2
+qunji	麇集	2
+ququr	屈戌儿	2
+quyi	曲意	230
+quyou	焌油	2
+ranshaochi	燃烧匙	2
+renshu	仁术	200
+roufu	肉脯	200
+rouqingmomo	柔情脉脉	2
+ruzhi	乳脂	278
+sailufen	赛璐玢	2
+sajia	萨迦	600
+sangshen	桑葚	829
+sangzhi	桑植	400
+sanjiao	三焦	483
+shaijiu	色酒	2
+shaizhong	色盅	2
+shaizi	色子	200
+shane	山阿	200
+shange	上腭	297
+shange	栅格	298
+shanji	栅极	152
+shanwei	禅位	400
+shanzha	山查	2
+shaoyi	稍一	400	no_contains
+shejubaoshuai	舍车保帅	2
+sheli	阇梨	1
+sheli	阇黎	2
+shemei	蛇莓	339
+shenchi	神池	200
+shenduoshishi	审度时势	2
+shengjin	生津	600
+shenlv	渗滤	377
+shenyi	申遗	279
+shoushan	受禅	200
+shouxun	授勋	400
+shouzhengbue	守正不阿	2
+shuanggui	双规	400
+shuangshu	双输	200
+shuluo	疏落	279
+shuxi	鼠蹊	2
+shuxue	俞穴	400
+shuzhou	枢轴	400
+sibo	丝柏	200
+sihou	俟候	2
+siji	俟机	2
+sisi	偲偲	2
+suantai	蒜薹	373
+suipao	尿脬	2
+suiyang	睢阳	104
+suochi	锁匙	199
+taa	他啊	200	no_contains
+taa	她啊	199	no_contains
+taa	它啊	198	no_contains
+taba	他吧	399	no_contains
+taba	她吧	200	no_contains
+taba	它吧	400	no_contains
+taba	它把	999	no_contains
+tabi	他比	599	no_contains
+tabi	她比	400	no_contains
+tabi	它比	600	no_contains
+tachu	他出	399	no_contains
+tachu	他处	400	no_contains
+tachuan	他穿	199	no_contains
+tachuan	她穿	200	no_contains
+tada	他打	279	no_contains
+tada	她打	199	no_contains
+tada	它大	200	no_contains
+tade	他得	400	no_contains
+tade	她得	200	no_contains
+tade	她的	598	no_contains
+tade	它得	199	no_contains
+tade	它的	599	no_contains
+tafa	他发	281	no_contains
+tafa	她发	279	no_contains
+tafan	他犯	200	no_contains
+tagan	他敢	399	no_contains
+tagan	她敢	199	no_contains
+tage	他个	371	no_contains
+tage	它个	370	no_contains
+tagen	他跟	600	no_contains
+tagen	她跟	599	no_contains
+tagen	它跟	598	no_contains
+taguan	他管	0	no_contains
+tahan	他喊	200	no_contains
+tahe	他喝	200	no_contains
+tahe	它和	600	no_contains
+tahen	他恨	200	no_contains
+tahua	他话	199	no_contains
+taiba	太巴	1	no_contains
+taiba	太把	200	no_contains
+taiben	太笨	400	no_contains
+taican	太惨	200	no_contains
+taichen	太沉	200	no_contains
+taidan	太淡	200	no_contains
+taigan	太干	999	no_contains
+taihan	太寒	200	no_contains
+taihe	太合	200	no_contains
+taihen	太狠	400	no_contains
+taijin	太紧	600	no_contains
+taiku	太苦	400	no_contains
+taiku	太酷	200	no_contains
+tailan	太懒	400	no_contains
+tailan	太烂	200	no_contains
+tailu	太露	200	no_contains
+taiman	太满	600	no_contains
+taimen	太闷	200	no_contains
+taimi	太密	200	no_contains
+taipin	太拼	200	no_contains
+taiqin	太勤	200	no_contains
+taishu	太熟	200	no_contains
+taisu	太俗	200	no_contains
+taisu	太素	400	no_contains
+taitan	太贪	160	no_contains
+taitu	太土	200	no_contains
+taixin	太信	200	no_contains
+taiza	太杂	400	no_contains
+taizan	太赞	200	no_contains
+taizhen	太真	400	no_contains
+taizu	太足	200	no_contains
+taji	他几	200	no_contains
+tajia	它家	401	no_contains
+tajian	他见	253	no_contains
+tajin	他进	200	no_contains
+tajin	她进	199	no_contains
+takan	他看	552	no_contains
+takan	她看	346	no_contains
+takan	它看	344	no_contains
+take	他可	400	no_contains
+take	她可	200	no_contains
+taken	他肯	200	no_contains
+taku	他哭	199	no_contains
+taku	她哭	200	no_contains
+tala	他拉	200	no_contains
+tale	他了	999	no_contains
+tale	她了	599	no_contains
+tale	它了	600	no_contains
+tali	他离	200	no_contains
+talia	它俩	400	no_contains
+talian	他练	199	no_contains
+talian	他连	600	no_contains
+talian	她连	400	no_contains
+talian	它连	200	no_contains
+talu	他路	200	no_contains
+tama	他吗	400	no_contains
+tama	他嘛	999	no_contains
+tama	她吗	398	no_contains
+tama	它吗	399	no_contains
+tame	他么	200	no_contains
+tana	他拿	463	no_contains
+tana	他那	600	no_contains
+tana	她拿	200	no_contains
+tana	她那	598	no_contains
+tana	它那	599	no_contains
+tane	他呢	599	no_contains
+tane	她呢	400	no_contains
+tane	它呢	600	no_contains
+tangjihua	糖基化	501
+tangzhi	糖汁	200
+tanian	他年	400	no_contains
+tanian	他念	200	no_contains
+tanqiu	贪求	400
+tanxi	袒裼	2
+tapa	他怕	400	no_contains
+tapa	她怕	399	no_contains
+taqi	他起	200	no_contains
+taqian	他前	199	no_contains
+taqian	他欠	197	no_contains
+taqian	他钱	200	no_contains
+taqu	她去	600	no_contains
+taqu	它去	599	no_contains
+tasan	他三	200	no_contains
+tata	他他	200	no_contains
+tata	他她	199	no_contains
+tata	它它	198	no_contains
+tatan	他谈	200	no_contains
+tati	他提	200	no_contains
+tawan	他玩	400	no_contains
+tawan	她玩	199	no_contains
+tawan	它玩	200	no_contains
+tawen	他问	600	no_contains
+tawen	她问	400	no_contains
+taxi	他喜	0	no_contains
+taxian	他先	433	no_contains
+taxian	她先	400	no_contains
+taxian	它先	200	no_contains
+taxin	他心	400	no_contains
+taxin	他新	197	no_contains
+taxin	她心	196	no_contains
+taya	他呀	200	no_contains
+taya	她呀	198	no_contains
+taya	它呀	199	no_contains
+tayan	他演	200	no_contains
+tayan	她演	199	no_contains
+tayi	他一	596	no_contains
+tayi	他以	600	no_contains
+tayi	他已	597	no_contains
+tayi	她一	400	no_contains
+tayi	她以	598	no_contains
+tayi	她已	594	no_contains
+tayi	它一	399	no_contains
+tayi	它以	599	no_contains
+tayi	它已	595	no_contains
+tayu	他与	600	no_contains
+tazhan	他站	200	no_contains
+tazhua	他抓	200	no_contains
+tazhuan	他转	200	no_contains
+tazhuan	她转	199	no_contains
+tehe	特和	600	no_contains
+teyin	特饮	200	no_contains
+tezhan	特战	599	no_contains
+tianzhuxian	天祝县	200
+tingde	挺得	677	no_contains
+tingnan	挺难	200	no_contains
+tingni	挺你	200	no_contains
+tingyi	挺一	200	no_contains
+tingzhu	挺住	400	no_contains
+tipang	蹄膀	2
+tiquan	踢拳	200
+tongjiang	铜匠	200
+tongxiuwei	铜臭味	200
+tuiduo	推度	2
+tunhuo	囤货	600
+tuochu	脱除	600
+tuxi	徒裼	2
+wangmu	亡母	200
+wanren	完人	213
+weijie	慰藉	281
+weishang	微商	600
+weishu	未熟	240
+weiyi	委蛇	200
+wengongwuhe	文攻武吓	2
+woa	我啊	600	no_contains
+woan	我按	400	no_contains
+woan	我暗	200	no_contains
+woba	我八	200	no_contains
+woba	我吧	601	no_contains
+woban	我办	599	no_contains
+woban	我半	199	no_contains
+woban	我班	600	no_contains
+wobi	我必	699	no_contains
+wobi	我比	701	no_contains
+wocha	我查	200	no_contains
+woche	我车	607	no_contains
+wochen	我趁	400	no_contains
+wochu	我出	399	no_contains
+wochu	我初	200	no_contains
+wochu	我处	400	no_contains
+wochuan	我穿	400	no_contains
+woda	我打	279	no_contains
+woda	我搭	200	no_contains
+woda	我答	278	no_contains
+wodan	我弹	200	no_contains
+wode	我地	400	no_contains
+wode	我得	600	no_contains
+wodi	我滴	200	no_contains
+wodi	我第	199	no_contains
+wodu	我独	600	no_contains
+wodu	我赌	200	no_contains
+wofan	我犯	400	no_contains
+wofan	我翻	200	no_contains
+wofen	我分	200	no_contains
+wogan	我敢	600	no_contains
+woge	我个	199	no_contains
+woge	我歌	200	no_contains
+wogen	我跟	600	no_contains
+woguan	我管	200	no_contains
+woguan	我观	198	no_contains
+woha	我哈	200	no_contains
+wohan	我喊	200	no_contains
+wohe	我何	400	no_contains
+wohe	我喝	399	no_contains
+wohen	我恨	400	no_contains
+wohua	我话	200	no_contains
+woji	我即	400	no_contains
+woji	我及	199	no_contains
+woji	我记	200	no_contains
+wojin	我仅	399	no_contains
+wojin	我今	599	no_contains
+wojin	我尽	200	no_contains
+wojin	我近	199	no_contains
+wojin	我进	400	no_contains
+woju	我举	323	no_contains
+woke	我克	200	no_contains
+woke	我科	400	no_contains
+woken	我肯	200	no_contains
+woku	我哭	400	no_contains
+woku	我苦	200	no_contains
+wola	我啦	400	no_contains
+wola	我拉	200	no_contains
+wolan	我懒	200	no_contains
+wole	我乐	200	no_contains
+woli	我离	400	no_contains
+woli	我立	193	no_contains
+wolian	我脸	998	no_contains
+wolian	我连	999	no_contains
+wolin	我临	200	no_contains
+woma	我吗	600	no_contains
+woma	我嘛	200	no_contains
+woma	我马	199	no_contains
+woman	我慢	400	no_contains
+woman	我满	200	no_contains
+woman	我蛮	199	no_contains
+wome	我么	400	no_contains
+women	我门	400	no_contains
+wona	我哪	200	no_contains
+wona	我拿	600	no_contains
+wonan	我难	200	no_contains
+wone	我呢	600	no_contains
+woni	我你	200	no_contains
+wonian	我年	200	no_contains
+woo	我哦	400	no_contains
+wopa	我爬	200	no_contains
+wopan	我盼	200	no_contains
+wopin	我拼	200	no_contains
+woqi	我气	2	no_contains
+woqi	我起	2	no_contains
+woqian	我前	199	no_contains
+woqian	我欠	200	no_contains
+woqian	我钱	198	no_contains
+woqin	我亲	200	no_contains
+woqu	我取	200	no_contains
+woren	我忍	199	no_contains
+woren	我认	200	no_contains
+woru	我入	399	no_contains
+woru	我如	400	no_contains
+wosan	我三	200	no_contains
+wosha	我傻	199	no_contains
+wosha	我杀	200	no_contains
+woshan	我山	200	no_contains
+woshen	我深	400	no_contains
+woshen	我甚	200	no_contains
+woshen	我神	199	no_contains
+woshen	我身	399	no_contains
+woshu	我书	200	no_contains
+woshu	我属	198	no_contains
+woshu	我数	400	no_contains
+woshu	我输	199	no_contains
+wota	我他	200	no_contains
+wotan	我谈	400	no_contains
+wote	我特	200	no_contains
+woti	我替	200	no_contains
+wowa	我娃	200	no_contains
+wowan	我玩	400	no_contains
+wowen	我问	600	no_contains
+wowen	我闻	400	no_contains
+woxi	我喜	198	no_contains
+woxi	我系	600	no_contains
+woxi	我西	199	no_contains
+woxia	我吓	200	no_contains
+woxian	我现	200	no_contains
+woxin	我信	400	no_contains
+woxin	我新	200	no_contains
+woxu	我许	200	no_contains
+woya	我呀	400	no_contains
+woyan	我演	200	no_contains
+woyan	我眼	199	no_contains
+woyan	我言	400	no_contains
+woyi	我亦	598	no_contains
+woyi	我以	599	no_contains
+woyi	我已	600	no_contains
+woyi	我意	400	no_contains
+woyin	我因	600	no_contains
+woyo	我哟	400	no_contains
+woyu	我于	600	no_contains
+woze	我则	600	no_contains
+wozen	我怎	200	no_contains
+wozhan	我站	400	no_contains
+wozhe	我着	200	no_contains
+wozhe	我者	279	no_contains
+wozhu	我主	400	no_contains
+wozhua	我抓	197	no_contains
+wozhuan	我转	200	no_contains
+wozu	我组	200	no_contains
+wujiangqu	吴江区	400
+wumei	寤寐	200
+xianan	先安	200	no_contains
+xianba	先拔	200	no_contains
+xianban	先办	200	no_contains
+xiancha	先查	200	no_contains
+xianda	先打	885	no_contains
+xiande	先得	254	no_contains
+xiandu	先读	600	no_contains
+xianfang	仙方	200
+xianfen	先分	400	no_contains
+xianga	想啊	400	no_contains
+xiangban	想办	483	no_contains
+xiangbi	想比	200	no_contains
+xiangchen	想趁	200	no_contains
+xiangchuan	想穿	200	no_contains
+xiangda	想打	400	no_contains
+xiangde	想得	675	no_contains
+xiangdu	想读	561	no_contains
+xiangen	先跟	400	no_contains
+xiangfa	想发	200	no_contains
+xiangfen	想分	200	no_contains
+xianghe	想和	699	no_contains
+xianghua	想化	198	no_contains
+xianghua	想画	200	no_contains
+xianghua	想花	199	no_contains
+xiangjin	想进	2	no_contains
+xiangkua	想跨	200	no_contains
+xiangla	想拉	79	no_contains
+xiangli	想离	621	no_contains
+xianglian	想练	200	no_contains
+xiangliang	箱梁	600
+xianglong	巷弄	400
+xiangna	想那	200	no_contains
+xiangne	想呢	400	no_contains
+xiangnin	想您	200	no_contains
+xiangpo	想破	200	no_contains
+xiangqu	想取	199	no_contains
+xiangsha	想杀	199	no_contains
+xiangsheng	相生	599
+xiangta	想它	200	no_contains
+xiangtan	想谈	183	no_contains
+xiangti	想提	200	no_contains
+xiangtu	想吐	404	no_contains
+xiangwan	想完	200	no_contains
+xiangwan	想玩	400	no_contains
+xiangxi	想西	200	no_contains
+xiangxia	想下	200	no_contains
+xiangxian	想先	220	no_contains
+xiangxun	香薰	600
+xiangyan	想演	200	no_contains
+xiangyi	想一	200	no_contains
+xiangyi	想以	598	no_contains
+xiangyu	想与	600	no_contains
+xiangyuan	襄垣	200
+xiangzhan	想占	200	no_contains
+xiangzhe	想这	200	no_contains
+xiangzhouqu	襄州区	116
+xiangzhu	想住	200	no_contains
+xiangzhua	想抓	200	no_contains
+xiangzhuan	想赚	400	no_contains
+xiangzhuan	想转	200	no_contains
+xiangzu	想租	200	no_contains
+xianhe	先和	400	no_contains
+xianhe	先喝	399	no_contains
+xianhua	先画	235	no_contains
+xianhua	先花	181	no_contains
+xianhuan	先换	306	no_contains
+xianjia	先加	106	no_contains
+xianjian	先减	200	no_contains
+xiankan	先看	600	no_contains
+xianku	先苦	400	no_contains
+xianli	先立	400	no_contains
+xianlian	先练	400	no_contains
+xianma	洗马	400
+xianna	先拿	400	no_contains
+xianpo	先破	200	no_contains
+xianqian	先签	199	no_contains
+xianre	先热	200	no_contains
+xianru	先入	400	no_contains
+xiansen	先森	200	no_contains
+xiansha	先杀	199	no_contains
+xiantan	先谈	200	no_contains
+xianti	先提	199	no_contains
+xiantie	铣铁	2
+xiantu	先涂	200	no_contains
+xianwan	先玩	200	no_contains
+xianwen	先问	400	no_contains
+xianxi	先吸	200	no_contains
+xianyi	先以	183	no_contains
+xianzhu	先住	118	no_contains
+xianzhua	先抓	200	no_contains
+xianzu	先租	200	no_contains
+xieji	斜肌	246
+xiejingji	解痉剂	2
+xiexian	谢贤	400
+xieyi	解㑊	2
+xieyun	叶韵	2
+xiezhi	解廌	2
+xigu	硒鼓	400
+ximi	菥蓂	2
+xinduqu	信都区	101
+xinfuqu	忻府区	200
+xinguangtipan	心广体胖	2
+xingzhuan	醒转	200
+xinling	信令	199
+xinshenbuzhu	心神不属	2
+xinzhong	心重	400
+xinzhuokouben	心拙口夯	362
+xixi	栖栖	2
+xixihuanghuang	栖栖遑遑	2
+xiyin	吸音	600
+xiyue	西岳	672
+xuanhu	玄乎	898
+xuanjian	轩槛	2
+xuezhang	雪仗	200
+xunyicao	薰衣草	809
+xuxu	蓄须	522
+yaguan	牙冠	600
+yake	崖刻	200
+yangjiegeng	洋桔梗	200
+yangsheng	扬声	200
+yangyuan	阳原	200
+yangzi	秧子	200
+yanhong	殷红	361
+yanling	严令	242
+yanshuang	严霜	400
+yanzi	验资	600
+yaoan	要安	217	no_contains
+yaoan	要按	600	no_contains
+yaoba	要拔	200	no_contains
+yaoban	要办	198	no_contains
+yaoce	要测	200	no_contains
+yaocha	要差	402	no_contains
+yaochen	要趁	200	no_contains
+yaoda	要大	600	no_contains
+yaoda	要搭	200	no_contains
+yaode	要得	400	no_contains
+yaodi	要低	435	no_contains
+yaodian	幺点	2
+yaoer	幺二	2
+yaoer	幺儿	200
+yaoezi	幺蛾子	400
+yaofan	要翻	270	no_contains
+yaogan	要敢	400	no_contains
+yaoge	要个	400	no_contains
+yaoge	要割	199	no_contains
+yaoge	要隔	200	no_contains
+yaogu	要顾	200	no_contains
+yaogua	要刮	200	no_contains
+yaohe	要合	171	no_contains
+yaohen	要很	400	no_contains
+yaohu	要互	324	no_contains
+yaohu	要护	322	no_contains
+yaohua	要划	197	no_contains
+yaohua	要化	198	no_contains
+yaohuan	要缓	200	no_contains
+yaoji	幺鸡	2
+yaoji	要集	199	no_contains
+yaojian	要建	113	no_contains
+yaojin	要尽	279	no_contains
+yaojin	要近	278	no_contains
+yaoju	要举	200	no_contains
+yaokan	要砍	200	no_contains
+yaokua	要跨	197	no_contains
+yaoli	要理	200	no_contains
+yaoli	要立	399	no_contains
+yaolian	要连	430	no_contains
+yaoma	要嘛	199	no_contains
+yaoman	要满	200	no_contains
+yaome	要末	2
+yaomo	要磨	200	no_contains
+yaomoxiaochou	幺麽小丑	2
+yaona	要那	200	no_contains
+yaonan	要难	400	no_contains
+yaonian	要念	400	no_contains
+yaonin	要您	200	no_contains
+yaonv	幺女	200
+yaopa	要爬	1	no_contains
+yaopo	要破	200	no_contains
+yaoqin	要勤	600	no_contains
+yaoren	要认	198	no_contains
+yaoru	要入	400	no_contains
+yaosan	要三	400	no_contains
+yaoshe	要设	400	no_contains
+yaoshen	要深	281	no_contains
+yaoshu	要熟	199	no_contains
+yaota	约塔	2
+yaota	要它	400	no_contains
+yaotan	要谈	400	no_contains
+yaoti	要替	399	no_contains
+yaowa	要挖	200	no_contains
+yaowan	要完	200	no_contains
+yaowan	要玩	399	no_contains
+yaoxi	要吸	502	no_contains
+yaoxi	要细	504	no_contains
+yaoxian	要先	600	no_contains
+yaoxian	要显	199	no_contains
+yaoxian	要现	200	no_contains
+yaoxin	要心	199	no_contains
+yaoxin	要新	198	no_contains
+yaoya	要压	200	no_contains
+yaoyan	要演	199	no_contains
+yaoyi	要一	400	no_contains
+yaoyu	要雨	196	no_contains
+yaoza	要砸	200	no_contains
+yaozha	要扎	200	no_contains
+yaozhan	要占	400	no_contains
+yaozhe	要这	9	no_contains
+yaozhen	要真	431	no_contains
+yaozhu	要注	200	no_contains
+yaozhuan	要转	401	no_contains
+yaozi	疟子	2
+yaozu	要足	199	no_contains
+yaren	雅人	600
+yashi	雅事	200
+yean	也安	200	no_contains
+yean	也按	400	no_contains
+yeba	也拔	200	no_contains
+yeban	也办	127	no_contains
+yebi	也必	400	no_contains
+yecha	也差	191	no_contains
+yechuan	也穿	200	no_contains
+yeda	也大	600	no_contains
+yeda	也搭	200	no_contains
+yedan	也淡	200	no_contains
+yede	也得	600	no_contains
+yedi	也低	439	no_contains
+yedi	也抵	438	no_contains
+yedu	也读	400	no_contains
+yefan	也翻	200	no_contains
+yegan	也敢	701	no_contains
+yegan	也赶	200	no_contains
+yegua	也刮	200	no_contains
+yeguan	也管	200	no_contains
+yehan	也喊	200	no_contains
+yehe	也合	0	no_contains
+yehen	也恨	200	no_contains
+yehua	也画	52	no_contains
+yehua	也花	51	no_contains
+yeji	也即	600	no_contains
+yeji	也记	193	no_contains
+yejian	也见	198	no_contains
+yejin	也近	200	no_contains
+yejin	也进	199	no_contains
+yeju	也举	200	no_contains
+yeku	也哭	200	no_contains
+yeku	也苦	199	no_contains
+yela	也拉	200	no_contains
+yelan	也拦	193	no_contains
+yele	也乐	200	no_contains
+yeli	也离	200	no_contains
+yelian	也练	200	no_contains
+yeman	也慢	200	no_contains
+yeman	也满	199	no_contains
+yemo	也抹	200	no_contains
+yemo	也磨	198	no_contains
+yemo	也莫	199	no_contains
+yenan	也难	600	no_contains
+yenian	也念	200	no_contains
+yepa	也怕	600	no_contains
+yepa	也爬	199	no_contains
+yepin	也拼	200	no_contains
+yequ	也取	200	no_contains
+yere	也热	200	no_contains
+yeren	也认	200	no_contains
+yeru	也入	200	no_contains
+yeru	也如	600	no_contains
+yesha	也杀	200	no_contains
+yeshe	也设	400	no_contains
+yeshen	也深	279	no_contains
+yeshu	也属	600	no_contains
+yeshu	也数	242	no_contains
+yetan	也谈	400	no_contains
+yete	也忒	199	no_contains
+yete	也特	200	no_contains
+yeti	也提	399	no_contains
+yewan	也晚	200	no_contains
+yewen	也闻	136	no_contains
+yexi	也洗	973	no_contains
+yexia	也下	200	no_contains
+yexian	也先	400	no_contains
+yexian	也显	267	no_contains
+yexin	也信	200	no_contains
+yexu	也需	600	no_contains
+yeyi	也一	400	no_contains
+yeyi	也以	489	no_contains
+yeyi	也易	488	no_contains
+yeyin	也因	600	no_contains
+yezhan	也占	400	no_contains
+yezhan	也站	200	no_contains
+yezhu	也住	200	no_contains
+yezhua	也抓	400	no_contains
+yezhuan	也赚	200	no_contains
+yezhuan	也转	199	no_contains
+yezu	也足	200	no_contains
+yibu	医卜	200
+yican	已残	200	no_contains
+yichi	一匙	399
+yichu	已出	119	no_contains
+yida	已大	398	no_contains
+yifen	已分	11	no_contains
+yihai	乙亥	419
+yihe	已和	598	no_contains
+yiji	已及	200	no_contains
+yijin	已尽	231	no_contains
+yijin	已进	200	no_contains
+yinchang	音长	200
+yingdan	英石	400
+yinghe	硬核	600
+yingli	英哩	369
+yingzhou	瀛洲	114
+yinhu	寅虎	400
+yinkuo	檃栝	2
+yinyun	阴云	600
+yinzhouqu	鄞州区	600
+yipo	已破	312	no_contains
+yipushihan	一暴十寒	2
+yiqi	已起	158	no_contains
+yirong	易溶	543
+yiru	已入	586	no_contains
+yisan	已散	360	no_contains
+yishen	已深	557	no_contains
+yiwan	已完	200	no_contains
+yiwan	已晚	467	no_contains
+yixia	已下	400	no_contains
+yizan	已赞	400	no_contains
+yizhuqianma	异株荨麻	2
+yongjiang	甬江	400
+yongyong	喁喁	200
+youan	又安	200	no_contains
+youan	又暗	199	no_contains
+youben	又笨	200	no_contains
+youbi	又比	998	no_contains
+youcha	又差	278	no_contains
+youchen	又沉	200	no_contains
+youcu	又粗	400	no_contains
+youda	又大	279	no_contains
+youda	又打	183	no_contains
+youdan	又弹	200	no_contains
+youde	又得	539	no_contains
+youdi	又低	278	no_contains
+youdu	又读	200	no_contains
+youfan	又犯	398	no_contains
+youfan	又翻	399	no_contains
+youfen	又分	318	no_contains
+yougen	又跟	400	no_contains
+yougua	又刮	200	no_contains
+youhan	又喊	200	no_contains
+youhe	又何	278	no_contains
+youhe	又合	120	no_contains
+youhe	又和	279	no_contains
+youhen	又恨	599	no_contains
+youhen	又狠	200	no_contains
+youhua	又滑	264	no_contains
+youhua	又画	198	no_contains
+youhua	又花	263	no_contains
+youhuan	又换	200	no_contains
+youji	幽寂	200
+youjian	又减	200	no_contains
+youjian	又见	279	no_contains
+youjie	有界	399
+youjin	又紧	200	no_contains
+youjin	又近	279	no_contains
+youjin	又进	210	no_contains
+youke	又可	600	no_contains
+youken	又肯	200	no_contains
+youku	又哭	399	no_contains
+youku	又苦	400	no_contains
+youku	又酷	200	no_contains
+youkuan	又宽	400	no_contains
+youla	又拉	199	no_contains
+youla	又辣	200	no_contains
+youlan	又懒	200	no_contains
+youli	又离	80	no_contains
+youli	又立	81	no_contains
+youlian	又练	195	no_contains
+youlian	又连	196	no_contains
+youlv	又绿	400	no_contains
+youma	又骂	392	no_contains
+youma	又麻	390	no_contains
+youman	又慢	200	no_contains
+youmen	又闷	200	no_contains
+youmi	又密	400	no_contains
+youna	又拿	400	no_contains
+younan	又难	400	no_contains
+younen	又嫩	400	no_contains
+younu	又怒	200	no_contains
+youpa	又爬	200	no_contains
+youpo	又破	400	no_contains
+youqi	又气	210	no_contains
+youqi	又起	211	no_contains
+youqin	又亲	200	no_contains
+youre	又惹	200	no_contains
+youre	又热	400	no_contains
+youren	又认	200	no_contains
+youru	又入	400	no_contains
+youru	又如	600	no_contains
+yousan	又三	200	no_contains
+youse	又涩	200	no_contains
+yousha	又傻	200	no_contains
+yousha	又杀	277	no_contains
+youshen	又深	400	no_contains
+youshuijituan	游说集团	2
+youshuituan	游说团	2
+youshuituanti	游说团体	200
+youtan	又谈	200	no_contains
+youti	又提	200	no_contains
+youtu	又吐	200	no_contains
+youtu	又土	199	no_contains
+youwan	又弯	200	no_contains
+youwen	又稳	200	no_contains
+youxi	又喜	441	no_contains
+youxi	又系	200	no_contains
+youxi	又细	531	no_contains
+youxia	又下	400	no_contains
+youxia	又瞎	200	no_contains
+youxian	又显	132	no_contains
+youxian	又现	131	no_contains
+youxian	又鲜	130	no_contains
+youxin	又新	151	no_contains
+youxu	又续	200	no_contains
+youyi	又一	448	no_contains
+youyi	又以	6	no_contains
+youyu	又与	0	no_contains
+youza	又杂	200	no_contains
+youzen	又怎	400	no_contains
+youzhan	又粘	396	no_contains
+youzhe	又折	400	no_contains
+youzhu	又住	200	no_contains
+youzhua	又抓	200	no_contains
+youzhuan	又转	304	no_contains
+yuanmou	远谋	200
+yuanzhouqu	袁州区	200
+yueban	越办	197	no_contains
+yuecan	越惨	200	no_contains
+yuechu	越出	200	no_contains
+yueda	越打	400	no_contains
+yuedan	越淡	200	no_contains
+yuedu	越读	400	no_contains
+yuegan	越干	371	no_contains
+yuegua	越刮	200	no_contains
+yuehe	越喝	400	no_contains
+yuehen	越狠	200	no_contains
+yuehua	越画	200	no_contains
+yuehua	越花	199	no_contains
+yuejian	越减	201	no_contains
+yuejin	越紧	400	no_contains
+yuejin	越近	2	no_contains
+yuekan	越看	436	no_contains
+yueku	越苦	200	no_contains
+yuekuan	越宽	600	no_contains
+yuelian	越练	200	no_contains
+yuemo	越磨	139	no_contains
+yuepa	越怕	200	no_contains
+yuepin	越品	197	no_contains
+yueqi	越气	399	no_contains
+yuere	越热	400	no_contains
+yueshen	越深	600	no_contains
+yueshu	越熟	200	no_contains
+yuewan	越晚	400	no_contains
+yuewan	越玩	399	no_contains
+yuexi	越洗	428	no_contains
+yuexian	越线	400	no_contains
+yuezhua	越抓	200	no_contains
+yumeng	愚氓	2
+yunji	晕机	200
+yuntou	韵头	200
+yushou	玉手	400
+yutianxian	于田县	106
+yuyongkegu	余勇可贾	2
+zaicha	再差	319	no_contains
+zaichu	再出	400	no_contains
+zaichuan	再穿	279	no_contains
+zaida	再搭	200	no_contains
+zaide	再得	601	no_contains
+zaidi	再低	197	no_contains
+zaifan	再烦	0	no_contains
+zaigan	再敢	200	no_contains
+zaige	再隔	200	no_contains
+zaigen	再跟	400	no_contains
+zaigua	再刮	200	no_contains
+zaihe	再和	480	no_contains
+zaihua	再画	118	no_contains
+zaihua	再花	117	no_contains
+zaijian	再建	239	no_contains
+zaijin	再近	200	no_contains
+zaiju	再举	437	no_contains
+zaiju	再聚	400	no_contains
+zaiku	再苦	259	no_contains
+zaili	再立	400	no_contains
+zailin	再淋	197	no_contains
+zaimo	再抹	200	no_contains
+zaimo	再磨	199	no_contains
+zainan	再难	535	no_contains
+zainian	再念	364	no_contains
+zainu	再努	200	no_contains
+zaipin	再拼	0	no_contains
+zaipo	再破	200	no_contains
+zaiqian	再签	200	no_contains
+zaiqu	再取	400	no_contains
+zaire	再热	400	no_contains
+zaisa	再撒	400	no_contains
+zaisha	再杀	200	no_contains
+zaishen	再深	400	no_contains
+zaishu	再数	200	no_contains
+zaishu	再输	199	no_contains
+zaiti	再提	447	no_contains
+zaitu	再涂	399	no_contains
+zaitu	在途	400
+zaiwa	再挖	200	no_contains
+zaixi	再吸	199	no_contains
+zaixi	再细	200	no_contains
+zaixu	再续	600	no_contains
+zaiya	再压	200	no_contains
+zaiyan	再演	200	no_contains
+zaiyi	再以	397	no_contains
+zaiyin	再印	200	no_contains
+zaizhu	再住	200	no_contains
+zaizhua	再抓	200	no_contains
+zanban	咱班	200	no_contains
+zanda	咱大	200	no_contains
+zande	咱得	200	no_contains
+zanxian	咱先	200	no_contains
+zanxing	拶刑	2
+zanzhe	咱这	200	no_contains
+zanzhi	拶指	2
+zanzi	拶子	2
+zeiren	贼人	400	no_contains
+zhagangchang	轧钢厂	200
+zhagangji	轧钢机	2
+zhagun	轧辊	400
+zhaibukai	择不开	2
+zhaicai	择菜	400
+zhairizi	择日子	2
+zhanyan	展颜	200
+zhaoqi	找齐	200
+zhaozha	嘲哳	2
+zheigada	这嘎达	2
+zheli	啫哩	0
+zheme	这末	2
+zhenba	真把	400	no_contains
+zhenben	真笨	200	no_contains
+zhenbi	真比	314	no_contains
+zhenche	真车	200	no_contains
+zhenda	真打	1	no_contains
+zhende	真得	600	no_contains
+zhendi	真滴	108	no_contains
+zhendu	真读	200	no_contains
+zhengan	真敢	514	no_contains
+zhengban	正班	200	no_contains
+zhengda	正大	600	no_contains
+zhengda	正答	200	no_contains
+zhengde	正得	199	no_contains
+zhenggen	正跟	200	no_contains
+zhenghe	正合	400	no_contains
+zhenghe	正和	599	no_contains
+zhenghua	正话	200	no_contains
+zhenghuan	正欢	200	no_contains
+zhengkan	正看	200	no_contains
+zhengke	正课	400	no_contains
+zhengqu	正去	200	no_contains
+zhengxia	正下	400	no_contains
+zhengyan	正严	140	no_contains
+zhengyi	正一	279	no_contains
+zhengyu	正与	600	no_contains
+zhengzhen	正真	200	no_contains
+zhengzhong	怔忪	2
+zhengzhu	正主	988	no_contains
+zhenhe	真和	474	no_contains
+zhenhua	真花	200	no_contains
+zhenjie	枕藉	200
+zhenkan	真看	200	no_contains
+zhenke	真可	197	no_contains
+zhenlv	真绿	197	no_contains
+zhenna	真拿	235	no_contains
+zhennan	真难	400	no_contains
+zhenpin	真品	600	no_contains
+zhenpin	真贫	200	no_contains
+zhenqi	真气	600	no_contains
+zhenqian	真钱	200	no_contains
+zhenqu	真去	216	no_contains
+zhenshen	真神	400	no_contains
+zhenxia	真下	200	no_contains
+zhenxin	真信	400	no_contains
+zhenye	枕叶	200
+zhidai	直待	79
+zhifazangpi	陟罚臧否	2
+zhigan	直感	7
+zhihao	治好	600
+zhishai	掷色	1
+zhongban	中板	400
+zhonghanliang	钟汉良	621
+zhongju	中局	400
+zhongxingcuanyue	众星攒月	2
+zhugeliang	猪哥亮	200
+zhuhuan	朱鹮	600
+zhuishi	追谥	400
+zhuiyu	赘余	203
+zhulan	竹篮	400
+zhuwen	属文	200
+zhuyu	茱萸	339
+zhuyunzhejian	朱云折槛	2
+ziya	呲牙	345
+ziyaliezui	呲牙咧嘴	200
+ziyizilian	自艾自怜	2
+zizigaga	吱吱嘎嘎	2
+zizisheng	吱吱声	200
+zongba	总把	600	no_contains
+zongbi	总比	600	no_contains
+zongfa	总发	201	no_contains
+zonggen	总跟	200	no_contains
+zongna	总拿	200	no_contains
+zongpa	总怕	400	no_contains
+zongqi	总起	200	no_contains
+zongqu	总去	200	no_contains
+zongyi	总以	400	no_contains
+zongzhu	总助	200	no_contains
+zuanqia	钻卡	2
+zuhe	阻吓	200
+zuian	最暗	200	no_contains
+zuiben	最笨	392	no_contains
+zuican	最惨	600	no_contains
+zuide	最得	200	no_contains
+zuidi	最底	400	no_contains
+zuidu	最毒	400	no_contains
+zuihe	最合	200	no_contains
+zuihen	最恨	399	no_contains
+zuihen	最狠	400	no_contains
+zuihuan	最欢	200	no_contains
+zuijin	最紧	200	no_contains
+zuike	最可	400	no_contains
+zuiku	最苦	399	no_contains
+zuiku	最酷	400	no_contains
+zuilan	最懒	200	no_contains
+zuilan	最烂	400	no_contains
+zuinan	最南	400	no_contains
+zuiqin	最勤	200	no_contains
+zuire	最热	600	no_contains
+zuishen	最深	600	no_contains
+zuiwen	最稳	200	no_contains
+zuixi	最喜	199	no_contains
+zuixian	最显	400	no_contains
+zuiyan	最严	600	no_contains
+zuiyi	最易	2	no_contains
+zuizan	最赞	200	no_contains
+zuizhen	最真	400	no_contains
+zuizu	最足	200	no_contains
+zuoli	柞栎	2
+zuzhai	祖宅	400
