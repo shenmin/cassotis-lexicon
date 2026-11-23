@@ -34842,7 +34842,7 @@ duanxiu	duanxiuzhipi	断袖之癖	405	137	40	0	1	0	0	0	1	0
 duanxiu	duanxiushan	短袖衫	10	216	105	0	2	0	0	0	1	1
 duanxiuzhi	duanxiuzhipi	断袖之癖	405	137	40	0	1	0	0	0	0	0
 duanxue	duanxueliu	断血流	470	1	40	0	1	0	247	3	0	1
-duanxun	duanxunban	短训班	409	155	80	0	1	0	0	0	0	0
+duanxun	duanxunban	短训班	409	155	80	0	1	0	0	0	1	0
 duanya	duanyashi	断崖式	232	80	0	0	0	0	0	0	1	0
 duanyang	duanyangjie	端阳节	448	208	201	0	1	0	0	0	1	0
 duanyao	duanyaojiu	断么九	712	283	0	0	3	0	27	1	0	0
@@ -64843,7 +64843,7 @@ jiada	jiadalidu	加大力度	228	128	40	0	1	0	0	0	1	3
 jiada	jiadayeda	家大业大	269	153	113	0	1	0	0	0	0	4
 jiada	jiadali	加达里	232	80	0	0	0	0	0	0	0	5
 jiadali	jiadalidu	加大力度	228	128	40	0	1	0	0	0	0	0
-jiadan	jiadanbaojun	假单胞菌	540	1	0	0	1	0	247	3	0	1
+jiadan	jiadanbaojun	假单胞菌	540	1	0	0	1	0	247	3	1	0
 jiadanbao	jiadanbaojun	假单胞菌	540	1	0	0	1	0	247	3	0	1
 jiadanu	jiadanuli	加大努力	260	80	0	0	0	0	0	0	0	0
 jiadao	jiadaohuanhu	夹道欢呼	620	166	0	0	1	0	92	1	1	0
@@ -181753,7 +181753,7 @@ yuxuechuan	yuxuechuanzhang	浴血船长	538	77	0	0	1	0	109	1	0	0
 yuxuefen	yuxuefenzhan	浴血奋战	653	264	223	0	1	0	84	1	0	0
 yuxuehei	yuxueheibang	浴血黑帮	788	386	0	463	3	0	0	0	0	0
 yuxueku	yuxuekuzhan	浴血苦战	387	137	40	0	1	0	0	0	0	0
-yuxun	yuxunlian	预训练	712	263	0	0	1	0	64	1	0	0
+yuxun	yuxunlian	预训练	712	263	0	0	1	0	64	1	1	0
 yuxun	yuxunqi	渔汛期	326	80	0	0	0	0	0	0	1	1
 yuyan	yuyanmoxing	语言模型	1000	540	0	0	4	0	0	0	1	0
 yuyan	yuyanxinhaochuli	语言信号处理	791	278	0	0	3	0	27	1	1	1
@@ -193818,7 +193818,7 @@ zicai	zicaishu	紫菜属	230	80	0	0	0	0	0	0	1	1
 zicai	zicaitai	紫菜苔	228	128	40	0	1	0	0	0	1	2
 zicai	zicaidan	子菜单	232	80	0	0	0	0	0	0	0	3
 zicaibao	zicaibaofan	紫菜包饭	260	80	0	0	0	0	0	0	0	0
-zican	zicanxinghui	自惭形秽	473	244	201	0	1	0	87	1	0	0
+zican	zicanxinghui	自惭形秽	473	244	201	0	1	0	87	1	1	0
 zicanxing	zicanxinghui	自惭形秽	473	244	201	0	1	0	87	1	0	0
 zicao	zicaoke	紫草科	232	80	0	0	0	0	0	0	1	0
 zice	ziceshi	自测试	635	213	40	0	1	0	82	1	1	0
@@ -194201,7 +194201,7 @@ zijin	zijinxionghou	资金雄厚	280	272	40	0	2	0	0	0	1	7
 zijin	zijinlian	资金链	711	202	0	0	2	0	0	0	1	0
 zijin	zijinniu	紫金牛	211	142	80	0	1	0	0	0	1	8
 zijing	zijingpi	紫荆皮	470	1	0	0	1	0	247	3	1	0
-zijing	zijingtuan	自警团	339	74	40	0	1	0	109	1	0	2
+zijing	zijingtuan	自警团	339	74	40	0	1	0	109	1	1	1
 zijingang	zijinganggan	资金杠杆	260	80	0	0	0	0	0	0	0	0
 zijinjin	zijinjinzhang	资金紧张	280	272	40	0	2	436	0	0	0	0
 zijinlai	zijinlaiyuan	资金来源	280	272	40	0	2	520	0	0	0	0
@@ -194230,8 +194230,8 @@ zike	ziketi	子课题	280	284	59	0	2	0	0	0	0	0
 zikong	zikongjian	子空间	232	80	0	0	0	0	0	0	0	0
 zikuan	zikuanzuidong	紫宽嘴鸫	258	80	0	0	0	0	0	0	0	0
 zikuanzui	zikuanzuidong	紫宽嘴鸫	258	80	0	0	0	0	0	0	0	0
-zikui	zikuiburu	自愧不如	523	232	160	0	1	0	87	1	0	0
-zikui	zikuifuru	自愧弗如	341	185	50	0	1	0	91	1	0	1
+zikui	zikuiburu	自愧不如	523	232	160	0	1	0	87	1	1	0
+zikui	zikuifuru	自愧弗如	341	185	50	0	1	0	91	1	1	1
 zikuibu	zikuiburu	自愧不如	523	232	160	0	1	0	87	1	0	0
 zikuifu	zikuifuru	自愧弗如	341	185	50	0	1	0	91	1	0	0
 zilai	zilaishui	自来水	795	307	273	0	1	0	0	0	1	0
@@ -226525,7 +226525,7 @@ zijiangmo	zijiangmoxirenqianchao	自将磨洗认前朝	360	80	0	0	0	0	0	0	0	0
 zijiangmoxi	zijiangmoxirenqianchao	自将磨洗认前朝	360	80	0	0	0	0	0	0	0	0
 zijiangmoxiren	zijiangmoxirenqianchao	自将磨洗认前朝	360	80	0	0	0	0	0	0	0	0
 zijiangmoxirenqian	zijiangmoxirenqianchao	自将磨洗认前朝	360	80	0	0	0	0	0	0	0	0
-zijing	zijingsangluanshaoshuimian	自经丧乱少睡眠	360	80	0	0	0	0	0	0	0	1
+zijing	zijingsangluanshaoshuimian	自经丧乱少睡眠	360	80	0	0	0	0	0	0	0	2
 zijingsang	zijingsangluanshaoshuimian	自经丧乱少睡眠	360	80	0	0	0	0	0	0	0	0
 zijingsangluan	zijingsangluanshaoshuimian	自经丧乱少睡眠	360	80	0	0	0	0	0	0	0	0
 zijingsangluanshao	zijingsangluanshaoshuimian	自经丧乱少睡眠	360	80	0	0	0	0	0	0	0	0
@@ -236252,3 +236252,4 @@ ziyalie	ziyaliezui	呲牙咧嘴	200	80	0	0	0	0	0	0	0	1
 ziyizi	ziyizilian	自艾自怜	2	80	0	0	0	0	0	0	0	0
 zizi	zizisheng	吱吱声	200	80	0	0	0	0	0	0	0	7
 ziziga	zizigaga	吱吱嘎嘎	2	80	0	0	0	0	0	0	0	0
+zuiji	zuijizhao	罪己诏	200	80	0	0	0	0	0	0	1	0

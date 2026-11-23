@@ -17238,7 +17238,7 @@ cheda	扯大	280
 chedai	車貸	856
 chedai	車帶	62
 chedan	扯淡	971
-chedan	扯蛋	43
+chedan	扯蛋	200
 chedao	車道	120
 chedao	扯到	10
 chedaoshanqianbiyoulu	車到山前必有路	491
@@ -29559,7 +29559,7 @@ dingchun	丁醇	380
 dingcun	定存	323
 dingdai	頂戴	323
 dingdan	訂單	1000
-dingdan	定單	1
+dingdan	定單	400
 dingdang	叮噹	1000
 dingdangdafuweng	叮噹大富翁	613
 dingdangluanxiang	叮噹亂響	10
@@ -36024,7 +36024,7 @@ fangdai	房貸	570
 fangdai	放貸	526
 fangdajing	放大鏡	452
 fangdan	防彈	1000
-fangdan	放膽	1
+fangdan	放膽	400
 fangdanbiaoshiwaishiyong	仿單標示外使用	700
 fangdanbuji	放誕不羈	387
 fangdanbuju	放誕不拘	387
@@ -37795,7 +37795,7 @@ feicuoshang	肺挫傷	470
 feida	肥大	1000
 feidajin	費大勁	10
 feidan	非但	1000
-feidan	飛彈	1
+feidan	飛彈	600
 feidang	非黨	198
 feidangrenshi	非黨人士	460
 feidanweitizhi	非單位體制	371
@@ -82367,7 +82367,7 @@ lingcun	另存	543
 lingcunwei	另存為	362
 lingdai	領帶	441
 lingdan	靈丹	881
-lingdan	零擔	1
+lingdan	零擔	400
 lingdancaokeli	靈丹草顆粒	610
 lingdang	鈴鐺	396
 lingdangbielun	另當別論	516
@@ -119903,7 +119903,7 @@ shidaiyushitiaoxianjiao	飾帶與飾條線腳	976
 shidajingmaiyaowu	施打靜脈藥物	897
 shidalinshidiguojianzhu	史達林式帝國建築	979
 shidalinshijianzhu	史達林式建築	979
-shidan	實彈	183
+shidan	實彈	900
 shidan	失單	133
 shidanbai	視蛋白	500
 shidandundao	史丹頓島	218
@@ -148666,7 +148666,7 @@ xinghuoliaoyuan	星火燎原	639
 xingji	性急	942
 xingji	星際	650
 xingji	星級	118
-xingji	形跡	1
+xingji	形跡	116
 xingjia	星家	198
 xingjiabi	性價比	500
 xingjian	興建	502
@@ -179130,7 +179130,7 @@ zibenzhuyi	資本主義	673
 zibenzhuyihua	資本主義化	397
 zibi	自閉	10
 zibian	自便	978
-zibian	自貶	10
+zibian	自貶	200
 zibianliang	自變量	436
 zibianma	自編碼	500
 zibianmaqi	自編碼器	570
@@ -179546,8 +179546,8 @@ zile	紫了	700
 zilei	子類別	730
 zili	自立	1000
 zili	自理	345
-zili	子粒	1
-zili	資歷	1
+zili	子粒	200
+zili	資歷	219
 zilian	自戀	409
 zilianxingrenge	自戀型人格	640
 zilianxingrengezhang'ai	自戀型人格障礙	700
@@ -179759,8 +179759,8 @@ zishayinian	自殺意念	570
 zishayitu	自殺意圖	570
 zishayufang	自殺預防	570
 zishen	自身	1000
-zishen	資深	21
-zishen	滋腎	1
+zishen	資深	600
+zishen	滋腎	599
 zisheng	滋生	978
 zisheng	孳生	115
 zishengtang	資生堂	394
@@ -237856,7 +237856,7 @@ liubian	溜邊	1
 liubie	流別	300
 liuchalian	柳茶憐	620
 liuchuan	留傳	1
-liudan	流彈	1
+liudan	流彈	200
 liufen	餾分	420
 liugongzhu	六公主	232
 liuhuahewu	鋶化合物	580
@@ -239733,7 +239733,7 @@ xingfa	興發	1000
 xinghao	星號	1
 xinghe	形核	115
 xinghui	興會	1
-xingji	行跡	5
+xingji	行跡	117
 xingjiao	行腳	1
 xingjifenziliebiao	星際分子列表	839
 xingkongxiadeheichaodaoyu	星空下的黑潮島嶼	599
@@ -248172,3 +248172,159 @@ zuizan	最贊	200	no_contains
 zuizhen	最真	400	no_contains
 zuizu	最足	200	no_contains
 zuoli	柞櫟	2
+badan	八單	200	no_contains
+baidan	百單	2	no_contains
+bandan	半單	2	no_contains
+baodan	爆單	400	no_contains
+budan	補單	136	no_contains
+canxun	參訓	600	no_contains
+chadan	查單	2	no_contains
+chaidan	拆單	200	no_contains
+changxun	長訓	200	no_contains
+chedan	撤單	400	no_contains
+chengdan	成單	400	no_contains
+chenxun	晨訓	2	no_contains
+chongdan	衝單	2	no_contains
+chongxun	重訓	199	no_contains
+chudan	出單	600	no_contains
+chunxun	春訓	200	no_contains
+cuidan	催單	200	no_contains
+dadan	大單	439	no_contains
+dadan	打單	400	no_contains
+daixun	帶訓	200	no_contains
+dengdan	等單	200	no_contains
+diaodan	掉單	2	no_contains
+dingdan	盯單	2	no_contains
+diudan	丟單	2	no_contains
+dongxun	冬訓	400	no_contains
+duandan	斷單	2	no_contains
+duanxun	短訓	2	no_contains
+duidan	對單	400	no_contains
+erdan	二單	200	no_contains
+fadan	發單	342	no_contains
+fandan	返單	2	no_contains
+fangdan	放單	200	no_contains
+feidan	廢單	2	no_contains
+feidan	飛單	200	no_contains
+fendan	分單	200	no_contains
+fuxun	復訓	400	no_contains
+gaidan	改單	2	no_contains
+gangxun	崗訓	2	no_contains
+gendan	跟單	600	no_contains
+hanxun	寒訓	2	no_contains
+haodan	好單	2	no_contains
+hedan	合單	2	no_contains
+hedan	核單	1	no_contains
+heidan	黑單	2	no_contains
+hexun	合訓	2	no_contains
+jiadan	假單	200	no_contains
+jiaodan	叫單	2	no_contains
+jiaxun	加訓	2	no_contains
+jidan	幾單	200	no_contains
+jidan	急單	199	no_contains
+jiedan	截單	200	no_contains
+jingxun	精訓	2	no_contains
+jiudan	九單	196	no_contains
+jixun	基訓	200	no_contains
+judan	拒單	2	no_contains
+kaixun	開訓	200	no_contains
+kandan	砍單	200	no_contains
+kuxun	苦訓	2	no_contains
+ladan	拉單	2	no_contains
+landan	攬單	2	no_contains
+laodan	老單	2	no_contains
+laxun	拉訓	2	no_contains
+liangdan	兩單	200	no_contains
+lianxun	聯訓	200	no_contains
+lingdan	零單	200	no_contains
+linxun	臨訓	2	no_contains
+liudan	六單	199	no_contains
+loudan	漏單	2	no_contains
+ludan	錄單	2	no_contains
+meidan	每單	400	no_contains
+meidan	沒單	199	no_contains
+modan	末單	2	no_contains
+neixun	內訓	600	no_contains
+nianxun	年訓	2	no_contains
+paidan	排單	197	no_contains
+paodan	跑單	400	no_contains
+peidan	配單	2	no_contains
+peixun	陪訓	2	no_contains
+qiandan	千單	2	no_contains
+qiandan	簽單	600	no_contains
+qiangdan	搶單	400	no_contains
+qiangxun	強訓	2	no_contains
+qidan	七單	199	no_contains
+qidan	棄單	2	no_contains
+qiuxun	秋訓	2	no_contains
+qudan	取單	2	no_contains
+quedan	缺單	2	no_contains
+rixun	日訓	2	no_contains
+sandan	三單	470	no_contains
+sandan	散單	2	no_contains
+shaidan	曬單	200	no_contains
+shidan	十單	899	no_contains
+shixun	實訓	600	no_contains
+shouxun	首訓	2	no_contains
+shuaidan	甩單	2	no_contains
+shuxun	暑訓	2	no_contains
+sidan	四單	200	no_contains
+songdan	送單	200	no_contains
+songxun	送訓	2	no_contains
+tandan	談單	200	no_contains
+tingdan	停單	2	no_contains
+tingxun	停訓	2	no_contains
+tuidan	退單	200	no_contains
+waixun	外訓	200	no_contains
+wandan	萬單	400	no_contains
+wenji	問己	2	no_contains
+wudan	五單	177	no_contains
+xiaodan	小單	400	no_contains
+xiaodan	銷單	2	no_contains
+xiaxun	夏訓	2	no_contains
+xindan	新單	379	no_contains
+xingji	省己	2	no_contains
+xuxun	續訓	2	no_contains
+yadan	壓單	2	no_contains
+yanxun	嚴訓	2	no_contains
+yexun	夜訓	2	no_contains
+yidan	一單	600	no_contains
+yuanji	怨己	2	no_contains
+yuexun	月訓	2	no_contains
+yuxun	預訓	2	no_contains
+zeji	責己	200	no_contains
+zhadan	炸單	2	no_contains
+zhendan	真單	2	no_contains
+zhengdan	整單	2	no_contains
+zhouxun	周訓	2	no_contains
+zhuandan	轉單	121	no_contains
+zhuanxun	專訓	200	no_contains
+ziban	自辦	304	no_contains
+zibao	自曝	161	no_contains
+zibian	自辯	199	no_contains
+zicai	自採	200	no_contains
+zicai	自裁	613	no_contains
+zican	自慚	200	no_contains
+zichan	自產	600	no_contains
+zichou	自籌	197	no_contains
+zihui	自悔	200	no_contains
+zijing	自警	369	no_contains
+zijiu	自咎	3	no_contains
+zijiu	自疚	1	no_contains
+zijiu	自究	2	no_contains
+zijiu	自糾	452	no_contains
+zikui	自愧	200	no_contains
+zili	自勵	218	no_contains
+zipei	自配	200	no_contains
+ziping	自評	600	no_contains
+ziqiang	自戕	200	no_contains
+zishang	自傷	600	no_contains
+zishen	自審	200	no_contains
+ziti	自惕	2	no_contains
+ziti	自提	600	no_contains
+zixun	自訓	2	no_contains
+ziyan	自研	600	no_contains
+zoudan	走單	400	no_contains
+zuiji	罪己	200	no_contains
+zuijizhao	罪己詔	200	no_contains
+zuodan	做單	400	no_contains

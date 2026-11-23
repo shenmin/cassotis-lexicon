@@ -33,8 +33,8 @@ Build and release repository for the simplified and traditional base dictionarie
 
 | File | Variant | Entries |
 |------|---------|---------|
-| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 245,607 |
-| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 248,174 |
+| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 245,763 |
+| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 248,330 |
 | `data/generated/dict_unihan_sc.txt` | Simplified single-char (Unihan) | 24,161 |
 | `data/generated/dict_unihan_tc.txt` | Traditional single-char (Unihan) | 24,351 |
 

@@ -33,8 +33,8 @@
 
 | 文件 | 变体 | 词条数 |
 |------|------|--------|
-| `data/generated/dict_clean_sc.txt` | 简体主词库 | 245,607 |
-| `data/generated/dict_clean_tc.txt` | 繁体主词库 | 248,174 |
+| `data/generated/dict_clean_sc.txt` | 简体主词库 | 245,763 |
+| `data/generated/dict_clean_tc.txt` | 繁体主词库 | 248,330 |
 | `data/generated/dict_unihan_sc.txt` | 简体单字（Unihan） | 24,161 |
 | `data/generated/dict_unihan_tc.txt` | 繁体单字（Unihan） | 24,351 |
 
