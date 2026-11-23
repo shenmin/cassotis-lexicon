@@ -36355,3 +36355,5 @@
 资历	資歷	0.219	zili	exact_rank
 滋肾	滋腎	0.599	zishen	exact_rank
 资深	資深	0.600	zishen	exact_rank
+# Reweighted 2026-11-23 (exact_rank, the weight / 1000): 事实 one above 实施 under shishi in both variants, where the short-word choice without a context of the distilled character LM (stage E2) put 实施 first by a hair (the user asked for 事实).
+事实	事實	0.629	shishi	exact_rank
