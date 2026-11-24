@@ -304,6 +304,23 @@ foreach ($variant in @("sc", "tc")) {
     Invoke-PythonScript -ScriptPath $wordFrequencyScript -ScriptArgs $conversationFrequencyArgs
 }
 
+# The code table of the IME's Wubi/pinyin mixed scheme: SUN Haifeng's Wubi 86
+# tables (downloaded at a fixed commit into data/cache and checked by their
+# SHA-256), with dictionary words of the general text on the codes the tables
+# leave empty. Nothing of the pinyin build reads it. Without the download the
+# committed table stays as it is.
+Write-Host "Writing the Wubi 86 code table..."
+try {
+    Invoke-PythonScript -ScriptPath (Join-Path $Root "scripts\build_wubi86_table.py") -ScriptArgs @(
+        "--counts", (Join-Path $Root "manifests\general_word_counts.tsv"),
+        "--dictionary", (Join-Path $Root "data\generated\dict_clean_sc.txt"),
+        "--output", (Join-Path $Root "data\generated\wubi86_table.txt")
+    )
+}
+catch {
+    Write-Warning ("The Wubi 86 code table was not rebuilt: " + $_.Exception.Message)
+}
+
 if (-not $SkipReadmeSnapshot) {
     Write-Host "Updating README dictionary snapshot from generated file row counts..."
     Invoke-PythonScript -ScriptPath $readmeSnapshotScript -ScriptArgs @(

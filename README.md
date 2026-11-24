@@ -29,7 +29,7 @@ Build and release repository for the simplified and traditional base dictionarie
 - Support reproducible rebuilds from external sources (`external_broad`).
 - Keep attribution and license files synchronized with the generated artifacts.
 
-## Current dictionary snapshot (2026-11-23 build)
+## Current dictionary snapshot (2026-11-24 build)
 
 | File | Variant | Entries |
 |------|---------|---------|
@@ -155,6 +155,10 @@ Additional static tables for completion ranking and local continuation:
 
 Since v1.17.0, competition priors and pairwise switch-audit records have guided completion selection and confidence-based abstention, while the continuation index supplies short phrase continuations after stable word anchors; since v2.2.0, the continuation index also maps consecutive lines of classical poetry. All three are static lookup tables rather than dictionary entries or neural network parameters.
 
+### Wubi 86 code table
+
+`data/generated/wubi86_table.txt` is the code table of the Wubi/Pinyin mixed input scheme of Cassotis IME, in which Wubi 86 codes and full Pinyin are typed side by side. `scripts/build_wubi86_table.py` builds it from SUN Haifeng's Wubi 86 character and word tables (BSD 3-Clause; see the [attribution](attribution/ATTRIBUTION.md)), downloaded at a fixed commit and checked against their SHA-256. It holds 129,839 entries on 107,199 codes: the characters' full and short codes and 65,166 words, in the original tables' order. Codes the tables leave empty take the characters' Wubi 86 tolerant codes and 38,567 frequent dictionary words coded by the Wubi 86 word-code rule; these fill empty codes only and never move an original entry. The table is kept apart from the Pinyin dictionaries: no Pinyin build step reads it, the entry counts above do not include it, and Cassotis IME loads it only in the mixed scheme.
+
 ## External sources and project-maintained supplements (`external_broad`)
 
 ### External sources
@@ -184,6 +188,7 @@ Since v1.17.0, competition priors and pairwise switch-audit records have guided 
 | MeSH descriptor catalog | NLM MeSH terms and conditions | MeSH concept whitelist anchoring the `medicine` layer to recognized medical descriptors |
 | Wikidata zh medical entities (MeSH-linked) | CC0-1.0 | MeSH-linked Chinese medical terms and aliases imported as the primary medical-entity source |
 | Filtered `THUOCL_medical` subset | THUOCL custom open terms | Supplementary medical vocabulary filtered and weighted more conservatively than MeSH-linked entries |
+| SUN Haifeng's Wubi 86 tables (ibus-table-chinese) | BSD-3-Clause | Character and word codes of the separate Wubi 86 code table |
 
 ### Project-maintained supplements
 

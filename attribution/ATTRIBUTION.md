@@ -247,3 +247,24 @@ Notes:
 - The dataset filtered sensitive words, so a word it does not hold is no
   evidence that the word is rare.
 - The raw dataset is not committed in this repository.
+
+## SUN Haifeng's Wubi 86 tables
+
+- Name: 海峰五笔 Wubi 86 character and word tables (`GBK.tab`, `Word.tab`)
+- Homepage: https://github.com/mike-fabian/ibus-table-chinese
+- Download: https://raw.githubusercontent.com/mike-fabian/ibus-table-chinese/e0dd8bfdff9e0d2194c8e57f1ded606fb53e29c1/tables/wubi-haifeng/
+- License: BSD 3-Clause (see [included notice](WUBI-HAIFENG-LICENSE.txt))
+- Copyright holder: SUN Haifeng
+
+Notes:
+
+- They give the code table of the IME's Wubi/pinyin mixed scheme,
+  `data/generated/wubi86_table.txt` (`scripts/build_wubi86_table.py`): the
+  characters under their Wubi 86 full and short codes and the words under
+  their codes, in the tables' order. Codes the tables leave empty take the
+  characters' tolerant codes and dictionary words coded by the Wubi 86
+  word-code rule.
+- The table is separate from the pinyin dictionaries: nothing of their build
+  reads it, and it is not counted in the lexicon's size.
+- The source files are downloaded at a fixed commit and checked against their
+  SHA-256; they are not committed in this repository.
