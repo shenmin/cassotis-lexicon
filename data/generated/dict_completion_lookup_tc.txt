@@ -1172,7 +1172,7 @@ ailukehuan	ailukehuanjiao	艾盧克環礁	635	12	0	0	1	0	174	2	0	0
 ailuo	ailuoxianke	愛羅先珂	260	80	0	0	0	0	0	0	0	0
 ailuoxian	ailuoxianke	愛羅先珂	260	80	0	0	0	0	0	0	0	0
 ailve	ailvete	艾略特	224	162	141	0	1	0	0	0	0	0
-aima	aimaniu'ai'er	艾瑪紐埃爾	289	80	0	0	0	0	0	0	0	1
+aima	aimaniu'ai'er	艾瑪紐埃爾	289	80	0	0	0	0	0	0	1	1
 aima	aimashi	愛馬仕	217	150	105	0	1	0	0	0	0	2
 aiman	aimanta	埃曼塔	233	80	0	0	0	0	0	0	0	0
 aimaniu	aimaniu'ai'er	艾瑪紐埃爾	289	80	0	0	0	0	0	0	0	0
@@ -13790,8 +13790,8 @@ bubaizhi	bubaizhiyuan	不白之冤	599	229	149	0	1	0	87	1	0	1
 bubaizhi	bubaizhidi	不敗之地	630	199	73	0	1	0	89	1	0	0
 bubao	bubaohezhifangsuan	不飽和脂肪酸	700	106	0	0	2	515	154	3	1	0
 bubao	bubaohezhifang	不飽和脂肪	640	102	0	0	2	390	154	3	1	1
-bubao	bubaohe	不飽和	506	307	273	0	1	0	0	0	1	2
-bubao	bubaoxiwang	不抱希望	555	151	0	0	2	0	68	1	0	3
+bubao	bubaohe	不飽和	506	307	273	0	1	0	0	0	1	3
+bubao	bubaoxiwang	不抱希望	555	151	0	0	2	0	68	1	1	2
 bubaohe	bubaohezhifangsuan	不飽和脂肪酸	700	106	0	0	2	515	154	3	1	0
 bubaohe	bubaohezhifang	不飽和脂肪	640	102	0	0	2	390	154	3	1	1
 bubaohezhi	bubaohezhifangsuan	不飽和脂肪酸	700	106	0	0	2	515	154	3	0	0
@@ -14522,10 +14522,10 @@ bujianyi	bujianyidianzongying	不見一點蹤影	318	80	0	0	0	0	0	0	0	0
 bujianyidian	bujianyidianzongying	不見一點蹤影	318	80	0	0	0	0	0	0	0	0
 bujianyidianzong	bujianyidianzongying	不見一點蹤影	318	80	0	0	0	0	0	0	0	0
 bujianzong	bujianzongying	不見蹤影	280	272	0	0	2	0	0	0	0	0
-bujiao	bujiaobuzao	不驕不躁	637	181	0	0	1	0	88	1	0	0
-bujiao	bujiaoerzhu	不教而誅	628	173	0	0	1	0	90	1	0	1
-bujiao	bujiaodegou	不叫的狗	597	197	0	0	1	0	0	0	0	2
-bujiao	bujiaozhijiao	不教之教	597	209	40	0	1	0	0	0	0	3
+bujiao	bujiaobuzao	不驕不躁	637	181	0	0	1	0	88	1	0	2
+bujiao	bujiaoerzhu	不教而誅	628	173	0	0	1	0	90	1	1	0
+bujiao	bujiaodegou	不叫的狗	597	197	0	0	1	0	0	0	0	3
+bujiao	bujiaozhijiao	不教之教	597	209	40	0	1	0	0	0	1	1
 bujiaobu	bujiaobuzao	不驕不躁	637	181	0	0	1	0	88	1	0	0
 bujiaode	bujiaodegou	不叫的狗	597	197	0	0	1	0	0	0	0	0
 bujiaoer	bujiaoerzhu	不教而誅	628	173	0	0	1	0	90	1	0	0
@@ -15249,7 +15249,7 @@ bumingyuanyin	bumingyuanyinfeiyan	不明原因肺炎	680	1	0	0	1	0	236	3	0	1
 bumingyuanyinfa	bumingyuanyinfare	不明原因發熱	700	102	0	0	2	0	154	3	0	0
 bumingyuanyinfei	bumingyuanyinfeiyan	不明原因肺炎	680	1	0	0	1	0	236	3	0	0
 bumingzhen	bumingzhenxiang	不明真相	280	272	40	0	2	489	0	0	0	0
-bumo	bumotou	不摸頭	372	80	0	0	0	0	0	0	0	0
+bumo	bumotou	不摸頭	372	80	0	0	0	0	0	0	1	0
 bumou	bumouqizheng	不謀其政	638	183	0	0	1	0	87	1	0	1
 bumou	bumouerhe	不謀而合	476	265	210	0	1	0	82	1	0	2
 bumouer	bumouerhe	不謀而合	476	265	210	0	1	0	82	1	0	0
@@ -16188,7 +16188,7 @@ buyuanqian	buyuanqianli	不遠千里	455	239	158	0	1	0	85	1	0	0
 buyuanwan	buyuanwanli	不遠萬里	649	234	136	0	1	0	84	1	0	0
 buyubo	buyubochu	不予播出	538	77	0	0	1	0	109	1	0	0
 buyue	buyuenian	不越年	640	223	0	0	1	0	0	0	1	0
-buyue	buyueertong	不約而同	542	314	355	0	1	0	81	1	0	1
+buyue	buyueertong	不約而同	542	314	355	0	1	0	81	1	1	1
 buyue	buyueleichi	不越雷池	405	191	40	0	1	0	88	1	1	2
 buyueer	buyueertong	不約而同	542	314	355	0	1	0	81	1	0	0
 buyuelei	buyueleichi	不越雷池	405	191	40	0	1	0	88	1	0	0
@@ -35649,7 +35649,7 @@ duobage	duobagedao	多巴哥島	587	17	0	0	1	0	174	2	0	0
 duobage	duobagegongheguo	多巴哥共和國	304	80	0	0	0	0	0	0	0	1
 duobagegong	duobagegongheguo	多巴哥共和國	304	80	0	0	0	0	0	0	0	0
 duobagegonghe	duobagegongheguo	多巴哥共和國	304	80	0	0	0	0	0	0	0	0
-duoban	duobanben	多版本	634	215	0	0	1	0	78	1	0	0
+duoban	duobanben	多版本	634	215	0	0	1	0	78	1	1	0
 duoban	duobangong	多瓣拱	600	168	0	0	1	0	91	1	0	1
 duoban	duobansuan	多瓣蒜	228	80	0	0	0	0	0	0	0	2
 duobao	duobaoti	多胞體	800	522	0	0	4	0	0	0	1	0
@@ -86584,7 +86584,7 @@ lianchandao	lianchandaolao	聯產到勞	260	80	0	0	0	0	0	0	0	0
 lianchandao	lianchandaohu	聯產到戶	140	80	0	0	0	0	0	0	0	1
 lianchao	lianchaoshang	臉朝上	280	288	0	0	2	0	0	0	0	0
 liancheng	lianchengjue	連城訣	493	53	0	0	1	0	170	2	1	0
-liancheng	lianchengyipian	連成一片	280	272	0	0	2	0	0	0	0	1
+liancheng	lianchengyipian	連成一片	280	272	0	0	2	0	0	0	1	1
 liancheng	lianchengxian	連城縣	165	128	40	0	1	0	0	0	1	2
 lianchengyi	lianchengyipian	連成一片	280	272	0	0	2	0	0	0	0	0
 lianchi	lianchiqu	蓮池區	228	80	0	0	0	0	0	0	1	0
@@ -137874,8 +137874,7 @@ sijiao	sijiaopaiqu	四教派區	587	80	0	0	0	0	0	0	0	3
 sijiao	sijiaohaoma	四角號碼	438	158	85	0	1	0	0	0	1	4
 sijiao	sijiaoxing	四角形	379	137	40	0	1	0	0	0	1	5
 sijiao	sijiaochaotian	四腳朝天	423	216	91	0	1	0	86	1	0	7
-sijiao	sijiaoku	四角褲	232	80	0	0	0	0	0	0	1	8
-sijiao	sijiaozhuti	四角柱體	260	80	0	0	0	0	0	0	1	9
+sijiao	sijiaoku	四角褲	232	80	0	0	0	0	0	0	1	9
 sijiaochao	sijiaochaotian	四腳朝天	423	216	91	0	1	0	86	1	0	0
 sijiaohao	sijiaohaoma	四角號碼	438	158	85	0	1	0	0	0	0	0
 sijiaopai	sijiaopaiqu	四教派區	587	80	0	0	0	0	0	0	0	0
@@ -138094,9 +138093,9 @@ silu	silucikaya	斯魯茨卡婭	283	80	0	0	0	0	0	0	0	3
 siluci	silucikaya	斯魯茨卡婭	283	80	0	0	0	0	0	0	0	0
 silucika	silucikaya	斯魯茨卡婭	283	80	0	0	0	0	0	0	0	0
 silumin	siluminjie	思路敏捷	260	80	0	0	0	0	0	0	0	0
-silun	silunqudong	四輪驅動	262	142	80	0	1	0	0	0	0	1
-silun	silundingwei	四輪定位	260	80	0	0	0	0	0	0	0	2
-silun	silunmache	四輪馬車	260	80	0	0	0	0	0	0	0	3
+silun	silunqudong	四輪驅動	262	142	80	0	1	0	0	0	1	0
+silun	silundingwei	四輪定位	260	80	0	0	0	0	0	0	1	1
+silun	silunmache	四輪馬車	260	80	0	0	0	0	0	0	1	2
 silunding	silundingwei	四輪定位	260	80	0	0	0	0	0	0	0	0
 silunma	silunmache	四輪馬車	260	80	0	0	0	0	0	0	0	0
 silunqu	silunqudong	四輪驅動	262	142	80	0	1	0	0	0	0	0
@@ -164911,7 +164910,7 @@ xiucainatiao	xiucainatiaozhou	秀才拿笤帚	529	160	0	0	1	0	0	0	1	0
 xiucaixing	xiucaixingxiong	秀才行兇	597	80	0	0	0	0	0	0	1	0
 xiucaizao	xiucaizaofan	秀才造反	616	177	40	0	1	0	92	1	0	0
 xiuche	xiuchepu	修車鋪	10	202	0	0	2	0	0	0	1	0
-xiucheng	xiuchengzhengguo	修成正果	260	80	0	0	0	0	0	0	0	0
+xiucheng	xiuchengzhengguo	修成正果	260	80	0	0	0	0	0	0	1	0
 xiuchengzheng	xiuchengzhengguo	修成正果	260	80	0	0	0	0	0	0	0	0
 xiuchi	xiuchigan	羞恥感	280	288	0	0	2	0	0	0	1	0
 xiuchi	xiuchixin	羞恥心	10	202	0	0	2	0	0	0	1	1
@@ -198212,7 +198211,7 @@ gaide	gaidediao	改得掉	300	80	0	0	0	0	0	0	1	1
 leisi	leisiren	累死人	500	80	0	0	0	0	0	0	1	1
 meilian	meilianwang	沒聯網	500	80	0	0	0	0	0	0	0	4
 nayao	nayaokan	那要看	480	80	0	0	0	0	0	0	0	0
-qianban	qianbanben	前版本	280	80	0	0	0	0	0	0	0	5
+qianban	qianbanben	前版本	280	80	0	0	0	0	0	0	1	5
 qiangzhuan	qiangzhuanyi	強轉移	240	80	0	0	0	0	0	0	0	0
 ruozhuan	ruozhuanyi	弱轉移	200	80	0	0	0	0	0	0	0	0
 songbu	songbudao	送不到	500	80	0	0	0	0	0	0	0	0
@@ -199605,8 +199604,8 @@ bujianyu	bujianyuyankongsichu	不見玉顏空死處	360	80	0	0	0	0	0	0	0	0
 bujianyuyan	bujianyuyankongsichu	不見玉顏空死處	360	80	0	0	0	0	0	0	0	0
 bujianyuyankong	bujianyuyankongsichu	不見玉顏空死處	360	80	0	0	0	0	0	0	0	0
 bujianyuyankongsi	bujianyuyankongsichu	不見玉顏空死處	360	80	0	0	0	0	0	0	0	0
-bujiao	bujiaohumaduyinshan	不教胡馬度陰山	300	80	0	0	0	0	0	0	0	4
-bujiao	bujiaohumaduyinshan	不教胡馬渡陰山	299	80	0	0	0	0	0	0	0	5
+bujiao	bujiaohumaduyinshan	不教胡馬度陰山	300	80	0	0	0	0	0	0	1	4
+bujiao	bujiaohumaduyinshan	不教胡馬渡陰山	299	80	0	0	0	0	0	0	1	5
 bujiaohu	bujiaohumaduyinshan	不教胡馬度陰山	300	80	0	0	0	0	0	0	0	0
 bujiaohu	bujiaohumaduyinshan	不教胡馬渡陰山	299	80	0	0	0	0	0	0	0	1
 bujiaohuma	bujiaohumaduyinshan	不教胡馬度陰山	300	80	0	0	0	0	0	0	0	0
@@ -203389,7 +203388,7 @@ eryueshan	eryueshanchengweijianhua	二月山城未見花	300	80	0	0	0	0	0	0	0	0
 eryueshancheng	eryueshanchengweijianhua	二月山城未見花	300	80	0	0	0	0	0	0	0	0
 eryueshanchengwei	eryueshanchengweijianhua	二月山城未見花	300	80	0	0	0	0	0	0	0	0
 eryueshanchengweijian	eryueshanchengweijianhua	二月山城未見花	300	80	0	0	0	0	0	0	0	0
-fancheng	fanchengyuhenyunchou	翻成雨恨雲愁	300	80	0	0	0	0	0	0	0	2
+fancheng	fanchengyuhenyunchou	翻成雨恨雲愁	300	80	0	0	0	0	0	0	1	2
 fanchengyu	fanchengyuhenyunchou	翻成雨恨雲愁	300	80	0	0	0	0	0	0	0	0
 fanchengyuhen	fanchengyuhenyunchou	翻成雨恨雲愁	300	80	0	0	0	0	0	0	0	0
 fanchengyuhenyun	fanchengyuhenyunchou	翻成雨恨雲愁	300	80	0	0	0	0	0	0	0	0
@@ -218099,7 +218098,7 @@ sijiuzhou	sijiuzhouzhibodaxi	思九州之博大兮	360	80	0	0	0	0	0	0	0	0
 sijiuzhouzhi	sijiuzhouzhibodaxi	思九州之博大兮	360	80	0	0	0	0	0	0	0	0
 sijiuzhouzhibo	sijiuzhouzhibodaxi	思九州之博大兮	360	80	0	0	0	0	0	0	0	0
 sijiuzhouzhiboda	sijiuzhouzhibodaxi	思九州之博大兮	360	80	0	0	0	0	0	0	0	0
-silun	silungexiawenzhangjing	絲綸閣下文章靜	300	80	0	0	0	0	0	0	0	0
+silun	silungexiawenzhangjing	絲綸閣下文章靜	300	80	0	0	0	0	0	0	0	3
 silunge	silungexiawenzhangjing	絲綸閣下文章靜	300	80	0	0	0	0	0	0	0	0
 silungexia	silungexiawenzhangjing	絲綸閣下文章靜	300	80	0	0	0	0	0	0	0	0
 silungexiawen	silungexiawenzhangjing	絲綸閣下文章靜	300	80	0	0	0	0	0	0	0	0
@@ -238551,7 +238550,7 @@ haidao	haidaoqibing	海島奇兵	538	77	0	0	1	0	109	1	1	6
 haidao	haidaoshi	海島市	94	80	0	0	0	0	0	0	1	9
 haidao	haidaowenming	海島文明	538	77	0	0	1	0	109	1	1	7
 haidao	haidaozhihun	海島之魂	538	77	0	0	1	0	109	1	1	4
-haifeng	haifengxian	海豐縣	169	80	0	0	0	0	0	0	1	1
+haifeng	haifengxian	海豐縣	169	80	0	0	0	0	0	0	1	2
 haijun	haijunjie	海俊傑	620	128	40	0	1	0	0	0	0	3
 haikun	haikunshenxijiaonang	海昆腎喜膠囊	673	1	0	0	1	0	247	3	0	0
 haikunshen	haikunshenxijiaonang	海昆腎喜膠囊	673	1	0	0	1	0	247	3	0	0
@@ -246937,3 +246936,10 @@ ziyizi	ziyizilian	自艾自憐	2	80	0	0	0	0	0	0	0	0
 zizi	zizisheng	吱吱聲	200	80	0	0	0	0	0	0	0	7
 ziziga	zizigaga	吱吱嘎嘎	2	80	0	0	0	0	0	0	0	0
 zuiji	zuijizhao	罪己詔	200	80	0	0	0	0	0	0	1	0
+haifeng	haifengbiao	海峰表	200	80	0	0	0	0	0	0	1	1
+haochu	haochulai	薅出來	200	80	0	0	0	0	0	0	1	0
+sijiao	sijiaoxing	四角星	200	80	0	0	0	0	0	0	1	8
+woben	wobenji	我本機	200	80	0	0	0	0	0	0	0	2
+yexia	yexiajia	也下架	200	80	0	0	0	0	0	0	1	3
+zhina	zhinadana	指哪打哪	200	80	0	0	0	0	0	0	0	6
+zhinada	zhinadana	指哪打哪	200	80	0	0	0	0	0	0	0	0

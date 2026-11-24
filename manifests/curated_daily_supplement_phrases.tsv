@@ -4122,7 +4122,6 @@
 局内人	局內人	0.01
 自以为	自以為	0.34
 时莹	時瑩	0.01
-本班	本班	0.01
 陪着	陪著	0.36
 横亘	橫亙	0.01
 保送生	保送生	0.01
@@ -4453,7 +4452,6 @@
 紧挨	緊挨	0.01
 爆发点	爆發點	0.01
 二模	二模	0.01
-不保	不保	0.01
 端持	端持	0.01
 十七分	十七分	0.01
 做对	做對	0.01
@@ -4536,7 +4534,6 @@
 已识乾坤大	已識乾坤大	0.01
 犹怜草木青	猶憐草木青	0.01
 常言道	常言道	0.01
-汇给	匯給	0.01
 称好	稱好	0.01
 驾龄	駕齡	0.01
 随车	隨車	0.01
@@ -5227,7 +5224,6 @@
 资产链	資產鏈	0.01
 男嘉宾	男嘉賓	0.01
 审美疲劳	審美疲勞	0.01
-补拍	補拍	0.01
 热搜榜	熱搜榜	0.01
 卖脸	賣臉	0.01
 剥橙子	剝橙子	0.01
@@ -5918,7 +5914,6 @@
 上百	上百	0.01
 瞪着	瞪著	0.01
 小动物	小動物	0.01
-搅成	攪成	0.01
 女记者	女記者	0.01
 土坡	土坡	0.01
 静卧	靜臥	0.01
@@ -6324,7 +6319,6 @@
 诗性	詩性	0.01
 一盏	一盞	0.01
 冷白	冷白	0.01
-两半	兩半	0.01
 轻舟	輕舟	0.01
 卷走	捲走	0.01
 递来	遞來	0.01
@@ -6942,7 +6936,6 @@
 掌中	掌中	0.01
 大儿子	大兒子	0.01
 话唠	話嘮	0.01
-不畅	不暢	0.01
 黑透	黑透	0.01
 暂代	暫代	0.01
 崩断	崩斷	0.01
@@ -7172,7 +7165,6 @@
 港剧	港劇	0.01
 佛语	佛語	0.01
 置气	置氣	0.01
-不薄	不薄	0.01
 旺相	旺相	0.01
 利禄	利祿	0.01
 寡欢	寡歡	0.01
@@ -9645,7 +9637,6 @@
 霍桑效应	霍桑效應	0.01
 如堕冰窖	如墮冰窖	0.01
 寒窑	寒窯	0.01
-绩点	績點	0.01
 应用型	應用型	0.01
 菜汤	菜湯	0.01
 一家四口	一家四口	0.01
@@ -10147,7 +10138,6 @@
 心理医生	心理醫生	0.01
 科研所	科研所	0.01
 私聊	私聊	0.01
-布包	布包	0.01
 灯台树	燈臺樹	0.01
 启动资金	啟動資金	0.01
 串供	串供	0.01
@@ -36357,3 +36347,572 @@
 资深	資深	0.600	zishen	exact_rank
 # Reweighted 2026-11-23 (exact_rank, the weight / 1000): 事实 one above 实施 under shishi in both variants, where the short-word choice without a context of the distilled character LM (stage E2) put 实施 first by a hair (the user asked for 事实).
 事实	事實	0.629	shishi	exact_rank
+# Everyday words, 2026-11-24, the more frequent ones: the user's 不选, 给点, 本版, 该版, 小曼, 海峰表, 也下架, 做一轮, 四轮, 改从, 我本机, 贴给, 才最, 在靠, 跑成, 四角星, 也怪, 指哪打哪, 薅出, 薅出来, 艾玛, 哎妈, 癌吗, 不帮, 不薅, 不肏, 不操, 前版, 上版, 下版, 后版, 发码, 收码 and their verbs and adjectives before 啊 and 嘛 (爽啊, 帅啊, 帮嘛, 是嘛), and their kinds the lexicon lacked: a verb or an adjective of one character before 啊 and 嘛 (爱啊, 大啊, 累啊, 找啊), a word of place or kind before 版 (此版, 两版, 整版), 不 before a verb (不抱, 不碰, 不抢, 不约), a numeral or a demonstrative before 轮 (本轮, 上轮, 五轮), a verb before 给 (写给, 寄给, 说给), before 成 (堆成, 剪成, 修成, 学成) and before 点 (吃点, 喝点, 带点, 赚点), a verb before 码, a code (验码, 亮码, 刷码, 赋码), weighted by the general text as the batches before; 不选, 不约, 带点, 讲给 and 慢啊 above a word of their key by everyday conversation, and a verb or an adjective before 啊 or 嘛 above a word conversation writes ten times as seldom, unless the general text writes that word thirty times as often (对嘛, 点嘛, 多嘛, 过嘛, 做嘛, 懒啊, 困啊, 近啊).
+爱啊	愛啊	0.400	aia	exact_rank_no_contains
+癌啊	癌啊	0.199	aia	exact_rank_no_contains
+矮啊	矮啊	0.200	aia	exact_rank_no_contains
+帮啊	幫啊	0.199	banga	exact_rank_no_contains
+棒啊	棒啊	0.200	banga	exact_rank_no_contains
+别啊	別啊	0.200	biea	exact_rank_no_contains
+操啊	操啊	0.200	caoa	exact_rank_no_contains
+肏啊	肏啊	0.199	caoa	exact_rank_no_contains
+艹啊	艹啊	0.198	caoa	exact_rank_no_contains
+唱啊	唱啊	0.200	changa	exact_rank_no_contains
+大啊	大啊	0.400	daa	exact_rank_no_contains
+点啊	點啊	0.200	diana	exact_rank_no_contains
+飞啊	飛啊	0.200	feia	exact_rank_no_contains
+干啊	幹啊	0.200	gana	exact_rank_no_contains
+高啊	高啊	0.301	gaoa	exact_rank_no_contains
+贵啊	貴啊	0.200	guia	exact_rank_no_contains
+滚啊	滾啊	0.200	guna	exact_rank_no_contains
+过啊	過啊	0.200	guoa	exact_rank_no_contains
+薅啊	薅啊	0.200	haoa	exact_rank_no_contains
+画啊	畫啊	0.200	huaa	exact_rank_no_contains
+讲啊	講啊	0.200	jianga	exact_rank_no_contains
+静啊	靜啊	0.200	jinga	exact_rank_no_contains
+考啊	考啊	0.200	kaoa	exact_rank_no_contains
+靠啊	靠啊	0.199	kaoa	exact_rank_no_contains
+拉啊	拉啊	0.200	laa	exact_rank_no_contains
+累啊	累啊	0.400	leia	exact_rank_no_contains
+靓啊	靚啊	0.200	lianga	exact_rank_no_contains
+忙啊	忙啊	0.200	manga	exact_rank_no_contains
+美啊	美啊	0.400	meia	exact_rank_no_contains
+难啊	難啊	0.226	nana	exact_rank_no_contains
+牛啊	牛啊	0.200	niua	exact_rank_no_contains
+强啊	強啊	0.200	qianga	exact_rank_no_contains
+穷啊	窮啊	0.200	qionga	exact_rank_no_contains
+热啊	熱啊	0.200	rea	exact_rank_no_contains
+少啊	少啊	0.200	shaoa	exact_rank_no_contains
+帅啊	帥啊	0.200	shuaia	exact_rank_no_contains
+爽啊	爽啊	0.200	shuanga	exact_rank_no_contains
+疼啊	疼啊	0.200	tenga	exact_rank_no_contains
+跳啊	跳啊	0.400	tiaoa	exact_rank_no_contains
+贴啊	貼啊	0.200	tiea	exact_rank_no_contains
+听啊	聽啊	0.200	tinga	exact_rank_no_contains
+痛啊	痛啊	0.200	tonga	exact_rank_no_contains
+下啊	下啊	0.200	xiaa	exact_rank_no_contains
+香啊	香啊	0.200	xianga	exact_rank_no_contains
+小啊	小啊	0.200	xiaoa	exact_rank_no_contains
+笑啊	笑啊	0.199	xiaoa	exact_rank_no_contains
+写啊	寫啊	0.200	xiea	exact_rank_no_contains
+学啊	學啊	0.200	xuea	exact_rank_no_contains
+早啊	早啊	0.200	zaoa	exact_rank_no_contains
+找啊	找啊	0.400	zhaoa	exact_rank_no_contains
+抓啊	抓啊	0.200	zhuaa	exact_rank_no_contains
+转啊	轉啊	0.200	zhuana	exact_rank_no_contains
+哎妈	哎媽	0.199	aima	exact_rank_no_contains
+艾玛	艾瑪	0.600	aima	exact_rank_no_contains
+半版	半版	0.200	banban	exact_rank_no_contains
+本版	本版	0.599	benban	exact_rank_no_contains
+此版	此版	0.200	ciban	exact_rank_no_contains
+该版	該版	0.200	gaiban	exact_rank_no_contains
+后版	後版	0.200	houban	exact_rank_no_contains
+两版	兩版	0.400	liangban	exact_rank_no_contains
+前版	前版	0.200	qianban	exact_rank_no_contains
+全版	全版	0.360	quanban	exact_rank_no_contains
+三版	三版	0.400	sanban	exact_rank_no_contains
+上版	上版	0.200	shangban	exact_rank_no_contains
+同版	同版	0.200	tongban	exact_rank_no_contains
+下版	下版	0.200	xiaban	exact_rank_no_contains
+整版	整版	0.400	zhengban	exact_rank_no_contains
+不帮	不幫	0.400	bubang	exact_rank_no_contains
+不抱	不抱	0.400	bubao	exact_rank_no_contains
+不补	不補	0.559	bubu	exact_rank_no_contains
+不操	不操	0.136	bucao	exact_rank_no_contains
+不肏	不肏	0.135	bucao	exact_rank_no_contains
+不唱	不唱	0.182	buchang	exact_rank_no_contains
+不薅	不薅	0.200	buhao	exact_rank_no_contains
+不教	不教	0.315	bujiao	exact_rank_no_contains
+不摸	不摸	0.200	bumo	exact_rank_no_contains
+不拍	不拍	0.400	bupai	exact_rank_no_contains
+不碰	不碰	0.600	bupeng	exact_rank_no_contains
+不抢	不搶	0.400	buqiang	exact_rank_no_contains
+不扔	不扔	0.200	bureng	exact_rank_no_contains
+不贴	不貼	0.400	butie	exact_rank_no_contains
+不投	不投	0.400	butou	exact_rank_no_contains
+不推	不推	0.400	butui	exact_rank_no_contains
+不拖	不拖	0.400	butuo	exact_rank_no_contains
+不选	不選	0.815	buxuan	exact_rank_no_contains
+不约	不約	0.896	buyue	exact_rank_no_contains
+熬成	熬成	0.600	aocheng	exact_rank_no_contains
+扮成	扮成	0.522	bancheng	exact_rank_no_contains
+唱成	唱成	0.200	changcheng	exact_rank_no_contains
+炒成	炒成	0.400	chaocheng	exact_rank_no_contains
+吃成	吃成	0.731	chicheng	exact_rank_no_contains
+串成	串成	0.400	chuancheng	exact_rank_no_contains
+穿成	穿成	0.399	chuancheng	exact_rank_no_contains
+搓成	搓成	0.400	cuocheng	exact_rank_no_contains
+搭成	搭成	0.332	dacheng	exact_rank_no_contains
+冻成	凍成	0.386	dongcheng	exact_rank_no_contains
+读成	讀成	0.467	ducheng	exact_rank_no_contains
+堆成	堆成	0.600	duicheng	exact_rank_no_contains
+剁成	剁成	0.600	duocheng	exact_rank_no_contains
+翻成	翻成	0.972	fancheng	exact_rank_no_contains
+盖成	蓋成	0.200	gaicheng	exact_rank_no_contains
+剪成	剪成	0.600	jiancheng	exact_rank_no_contains
+教成	教成	0.009	jiaocheng	exact_rank_no_contains
+截成	截成	0.200	jiecheng	exact_rank_no_contains
+烤成	烤成	0.199	kaocheng	exact_rank_no_contains
+考成	考成	0.200	kaocheng	exact_rank_no_contains
+连成	連成	0.277	liancheng	exact_rank_no_contains
+闹成	鬧成	0.200	naocheng	exact_rank_no_contains
+念成	念成	0.215	niancheng	exact_rank_no_contains
+捏成	捏成	0.400	niecheng	exact_rank_no_contains
+排成	排成	0.279	paicheng	exact_rank_no_contains
+跑成	跑成	0.200	paocheng	exact_rank_no_contains
+砌成	砌成	0.354	qicheng	exact_rank_no_contains
+揉成	揉成	0.600	roucheng	exact_rank_no_contains
+晒成	曬成	0.200	shaicheng	exact_rank_no_contains
+烧成	燒成	0.600	shaocheng	exact_rank_no_contains
+设成	設成	0.400	shecheng	exact_rank_no_contains
+谈成	談成	0.191	tancheng	exact_rank_no_contains
+调成	調成	0.600	tiaocheng	exact_rank_no_contains
+听成	聽成	0.200	tingcheng	exact_rank_no_contains
+拖成	拖成	0.200	tuocheng	exact_rank_no_contains
+玩成	玩成	0.200	wancheng	exact_rank_no_contains
+修成	修成	0.600	xiucheng	exact_rank_no_contains
+学成	學成	0.600	xuecheng	exact_rank_no_contains
+演成	演成	0.510	yancheng	exact_rank_no_contains
+印成	印成	0.400	yincheng	exact_rank_no_contains
+整成	整成	0.200	zhengcheng	exact_rank_no_contains
+煮成	煮成	0.415	zhucheng	exact_rank_no_contains
+补点	補點	0.200	budian	exact_rank_no_contains
+擦点	擦點	0.200	cadian	exact_rank_no_contains
+吃点	吃點	0.600	chidian	exact_rank_no_contains
+存点	存點	0.200	cundian	exact_rank_no_contains
+带点	帶點	0.600	daidian	exact_rank_no_contains
+倒点	倒點	0.200	daodian	exact_rank_no_contains
+发点	發點	0.268	fadian	exact_rank_no_contains
+放点	放點	0.468	fangdian	exact_rank_no_contains
+搞点	搞點	0.400	gaodian	exact_rank_no_contains
+给点	給點	0.600	geidian	exact_rank_no_contains
+喝点	喝點	0.600	hedian	exact_rank_no_contains
+换点	換點	0.200	huandian	exact_rank_no_contains
+留点	留點	0.600	liudian	exact_rank_no_contains
+抹点	抹點	0.200	modian	exact_rank_no_contains
+拿点	拿點	0.199	nadian	exact_rank_no_contains
+弄点	弄點	0.200	nongdian	exact_rank_no_contains
+喷点	噴點	0.200	pendian	exact_rank_no_contains
+求点	求點	0.200	qiudian	exact_rank_no_contains
+撒点	撒點	0.400	sadian	exact_rank_no_contains
+省点	省點	0.400	shengdian	exact_rank_no_contains
+送点	送點	0.400	songdian	exact_rank_no_contains
+攒点	攢點	0.200	zandian	exact_rank_no_contains
+蘸点	蘸點	0.200	zhandian	exact_rank_no_contains
+涨点	漲點	0.136	zhangdian	exact_rank_no_contains
+赚点	賺點	0.600	zhuandian	exact_rank_no_contains
+唱给	唱給	0.400	changgei	exact_rank_no_contains
+打给	打給	0.400	dagei	exact_rank_no_contains
+倒给	倒給	0.200	daogei	exact_rank_no_contains
+丢给	丟給	0.400	diugei	exact_rank_no_contains
+端给	端給	0.200	duangei	exact_rank_no_contains
+读给	讀給	0.400	dugei	exact_rank_no_contains
+回给	回給	0.199	huigei	exact_rank_no_contains
+讲给	講給	0.601	jianggei	exact_rank_no_contains
+寄给	寄給	0.600	jigei	exact_rank_no_contains
+拿给	拿給	0.600	nagei	exact_rank_no_contains
+念给	念給	0.200	niangei	exact_rank_no_contains
+拍给	拍給	0.200	paigei	exact_rank_no_contains
+派给	派給	0.199	paigei	exact_rank_no_contains
+抛给	拋給	0.400	paogei	exact_rank_no_contains
+赔给	賠給	0.200	peigei	exact_rank_no_contains
+说给	說給	0.600	shuogei	exact_rank_no_contains
+贴给	貼給	0.200	tiegei	exact_rank_no_contains
+踢给	踢給	0.200	tigei	exact_rank_no_contains
+投给	投給	0.600	tougei	exact_rank_no_contains
+退给	退給	0.279	tuigei	exact_rank_no_contains
+写给	寫給	0.600	xiegei	exact_rank_no_contains
+薅草	薅草	0.200	haocao	exact_rank_no_contains
+薅出	薅出	0.199	haochu	exact_rank_no_contains
+八轮	八輪	0.332	balun	exact_rank_no_contains
+本轮	本輪	0.600	benlun	exact_rank_no_contains
+次轮	次輪	0.200	cilun	exact_rank_no_contains
+六轮	六輪	0.200	liulun	exact_rank_no_contains
+末轮	末輪	0.200	molun	exact_rank_no_contains
+七轮	七輪	0.197	qilun	exact_rank_no_contains
+上轮	上輪	0.400	shanglun	exact_rank_no_contains
+十轮	十輪	0.200	shilun	exact_rank_no_contains
+四轮	四輪	0.600	silun	exact_rank_no_contains
+五轮	五輪	0.400	wulun	exact_rank_no_contains
+新轮	新輪	0.197	xinlun	exact_rank_no_contains
+发码	發碼	0.200	fama	exact_rank_no_contains
+赋码	賦碼	0.198	fuma	exact_rank_no_contains
+亮码	亮碼	0.200	liangma	exact_rank_no_contains
+收码	收碼	0.199	shouma	exact_rank_no_contains
+刷码	刷碼	0.079	shuama	exact_rank_no_contains
+验码	驗碼	0.200	yanma	exact_rank_no_contains
+癌吗	癌嗎	0.200	aima	exact_rank_no_contains
+帮嘛	幫嘛	0.200	bangma	exact_rank_no_contains
+别嘛	別嘛	0.200	biema	exact_rank_no_contains
+操嘛	操嘛	0.200	caoma	exact_rank_no_contains
+肏嘛	肏嘛	0.199	caoma	exact_rank_no_contains
+发嘛	發嘛	0.199	fama	exact_rank_no_contains
+薅嘛	薅嘛	0.079	haoma	exact_rank_no_contains
+考嘛	考嘛	0.200	kaoma	exact_rank_no_contains
+拉嘛	拉嘛	0.079	lama	exact_rank_no_contains
+跑嘛	跑嘛	0.079	paoma	exact_rank_no_contains
+上嘛	上嘛	0.279	shangma	exact_rank_no_contains
+是嘛	是嘛	0.281	shima	exact_rank_no_contains
+送嘛	送嘛	0.199	songma	exact_rank_no_contains
+跳嘛	跳嘛	0.200	tiaoma	exact_rank_no_contains
+贴嘛	貼嘛	0.200	tiema	exact_rank_no_contains
+听嘛	聽嘛	0.079	tingma	exact_rank_no_contains
+下嘛	下嘛	0.200	xiama	exact_rank_no_contains
+写嘛	寫嘛	0.279	xiema	exact_rank_no_contains
+抓嘛	抓嘛	0.197	zhuama	exact_rank_no_contains
+做嘛	做嘛	0.200	zuoma	exact_rank_no_contains
+才最	才最	0.600	caizui	exact_rank_no_contains
+改从	改從	0.200	gaicong	exact_rank_no_contains
+海峰表	海峰表	0.200	haifengbiao	exact_rank_no_contains
+薅出来	薅出來	0.200	haochulai	exact_rank_no_contains
+四角星	四角星	0.200	sijiaoxing	exact_rank_no_contains
+我本机	我本機	0.200	wobenji	exact_rank_no_contains
+小曼	小曼	0.197	xiaoman	exact_rank_no_contains
+也怪	也怪	0.400	yeguai	exact_rank_no_contains
+也下架	也下架	0.200	yexiajia	exact_rank_no_contains
+在靠	在靠	0.200	zaikao	exact_rank_no_contains
+指哪打哪	指哪打哪	0.200	zhinadana	exact_rank_no_contains
+做一轮	做一輪	0.200	zuoyilun	exact_rank_no_contains
+# Everyday words, 2026-11-24, the less frequent ones (verbs and adjectives before 啊 and 嘛, 不 before a verb, verbs before 给, 成, 点 and 码, 薅 before its complement, numerals before 轮 and words before 版 that the general text seldom writes), by the same weights; words the general text seldom writes as words at 2 or below.
+按啊	按啊	0.002	ana	exact_rank_no_contains
+白啊	白啊	0.002	baia	exact_rank_no_contains
+搬啊	搬啊	0.002	bana	exact_rank_no_contains
+抱啊	抱啊	0.002	baoa	exact_rank_no_contains
+笨啊	笨啊	0.002	bena	exact_rank_no_contains
+补啊	補啊	0.002	bua	exact_rank_no_contains
+猜啊	猜啊	0.002	caia	exact_rank_no_contains
+惨啊	慘啊	0.002	cana	exact_rank_no_contains
+吵啊	吵啊	0.002	chaoa	exact_rank_no_contains
+丑啊	醜啊	0.002	choua	exact_rank_no_contains
+臭啊	臭啊	0.001	choua	exact_rank_no_contains
+传啊	傳啊	0.002	chuana	exact_rank_no_contains
+蠢啊	蠢啊	0.002	chuna	exact_rank_no_contains
+粗啊	粗啊	0.002	cua	exact_rank_no_contains
+错啊	錯啊	0.002	cuoa	exact_rank_no_contains
+打啊	打啊	0.002	daa	exact_rank_no_contains
+呆啊	呆啊	0.002	daia	exact_rank_no_contains
+懂啊	懂啊	0.002	donga	exact_rank_no_contains
+读啊	讀啊	0.002	dua	exact_rank_no_contains
+赌啊	賭啊	0.001	dua	exact_rank_no_contains
+躲啊	躲啊	0.002	duoa	exact_rank_no_contains
+饿啊	餓啊	0.002	ea	exact_rank_no_contains
+烦啊	煩啊	0.002	fana	exact_rank_no_contains
+放啊	放啊	0.002	fanga	exact_rank_no_contains
+疯啊	瘋啊	0.002	fenga	exact_rank_no_contains
+富啊	富啊	0.002	fua	exact_rank_no_contains
+给啊	給啊	0.002	geia	exact_rank_no_contains
+跟啊	跟啊	0.002	gena	exact_rank_no_contains
+乖啊	乖啊	0.002	guaia	exact_rank_no_contains
+怪啊	怪啊	0.001	guaia	exact_rank_no_contains
+关啊	關啊	0.002	guana	exact_rank_no_contains
+喊啊	喊啊	0.002	hana	exact_rank_no_contains
+喝啊	喝啊	0.002	hea	exact_rank_no_contains
+黑啊	黑啊	0.002	heia	exact_rank_no_contains
+恨啊	恨啊	0.001	hena	exact_rank_no_contains
+狠啊	狠啊	0.002	hena	exact_rank_no_contains
+红啊	紅啊	0.002	honga	exact_rank_no_contains
+换啊	換啊	0.002	huana	exact_rank_no_contains
+慌啊	慌啊	0.002	huanga	exact_rank_no_contains
+回啊	回啊	0.002	huia	exact_rank_no_contains
+假啊	假啊	0.301	jiaa	exact_rank_no_contains
+剪啊	剪啊	0.002	jiana	exact_rank_no_contains
+叫啊	叫啊	0.002	jiaoa	exact_rank_no_contains
+教啊	教啊	0.001	jiaoa	exact_rank_no_contains
+借啊	借啊	0.002	jiea	exact_rank_no_contains
+近啊	近啊	0.569	jina	exact_rank_no_contains
+进啊	進啊	0.568	jina	exact_rank_no_contains
+开啊	開啊	0.002	kaia	exact_rank_no_contains
+宽啊	寬啊	0.002	kuana	exact_rank_no_contains
+困啊	困啊	0.221	kuna	exact_rank_no_contains
+辣啊	辣啊	0.002	laa	exact_rank_no_contains
+懒啊	懶啊	0.522	lana	exact_rank_no_contains
+老啊	老啊	0.002	laoa	exact_rank_no_contains
+冷啊	冷啊	0.002	lenga	exact_rank_no_contains
+练啊	練啊	0.002	liana	exact_rank_no_contains
+亮啊	亮啊	0.002	lianga	exact_rank_no_contains
+骂啊	罵啊	0.002	maa	exact_rank_no_contains
+卖啊	賣啊	0.002	maia	exact_rank_no_contains
+慢啊	慢啊	0.439	mana	exact_rank_no_contains
+萌啊	萌啊	0.002	menga	exact_rank_no_contains
+摸啊	摸啊	0.002	moa	exact_rank_no_contains
+拿啊	拿啊	0.002	naa	exact_rank_no_contains
+嫩啊	嫩啊	0.002	nena	exact_rank_no_contains
+怕啊	怕啊	0.002	paa	exact_rank_no_contains
+爬啊	爬啊	0.001	paa	exact_rank_no_contains
+拍啊	拍啊	0.002	paia	exact_rank_no_contains
+胖啊	胖啊	0.002	panga	exact_rank_no_contains
+拼啊	拼啊	0.002	pina	exact_rank_no_contains
+浅啊	淺啊	0.002	qiana	exact_rank_no_contains
+抢啊	搶啊	0.002	qianga	exact_rank_no_contains
+亲啊	親啊	0.002	qina	exact_rank_no_contains
+轻啊	輕啊	0.002	qinga	exact_rank_no_contains
+扔啊	扔啊	0.002	renga	exact_rank_no_contains
+弱啊	弱啊	0.002	ruoa	exact_rank_no_contains
+傻啊	傻啊	0.002	shaa	exact_rank_no_contains
+删啊	刪啊	0.002	shana	exact_rank_no_contains
+深啊	深啊	0.002	shena	exact_rank_no_contains
+试啊	試啊	0.002	shia	exact_rank_no_contains
+收啊	收啊	0.001	shoua	exact_rank_no_contains
+瘦啊	瘦啊	0.002	shoua	exact_rank_no_contains
+睡啊	睡啊	0.002	shuia	exact_rank_no_contains
+酸啊	酸啊	0.002	suana	exact_rank_no_contains
+烫啊	燙啊	0.002	tanga	exact_rank_no_contains
+躺啊	躺啊	0.001	tanga	exact_rank_no_contains
+逃啊	逃啊	0.002	taoa	exact_rank_no_contains
+踢啊	踢啊	0.002	tia	exact_rank_no_contains
+甜啊	甜啊	0.002	tiana	exact_rank_no_contains
+停啊	停啊	0.002	tinga	exact_rank_no_contains
+投啊	投啊	0.002	toua	exact_rank_no_contains
+退啊	退啊	0.002	tuia	exact_rank_no_contains
+拖啊	拖啊	0.002	tuoa	exact_rank_no_contains
+晚啊	晚啊	0.066	wana	exact_rank_no_contains
+忘啊	忘啊	0.002	wanga	exact_rank_no_contains
+稳啊	穩啊	0.001	wena	exact_rank_no_contains
+问啊	問啊	0.002	wena	exact_rank_no_contains
+闲啊	閒啊	0.002	xiana	exact_rank_no_contains
+响啊	響啊	0.002	xianga	exact_rank_no_contains
+信啊	信啊	0.002	xina	exact_rank_no_contains
+新啊	新啊	0.001	xina	exact_rank_no_contains
+凶啊	兇啊	0.002	xionga	exact_rank_no_contains
+修啊	修啊	0.002	xiua	exact_rank_no_contains
+选啊	選啊	0.002	xuana	exact_rank_no_contains
+痒啊	癢啊	0.002	yanga	exact_rank_no_contains
+咬啊	咬啊	0.002	yaoa	exact_rank_no_contains
+野啊	野啊	0.002	yea	exact_rank_no_contains
+远啊	遠啊	0.002	yuana	exact_rank_no_contains
+晕啊	暈啊	0.002	yuna	exact_rank_no_contains
+脏啊	髒啊	0.002	zanga	exact_rank_no_contains
+窄啊	窄啊	0.002	zhaia	exact_rank_no_contains
+站啊	站啊	0.002	zhana	exact_rank_no_contains
+真啊	真啊	0.002	zhena	exact_rank_no_contains
+追啊	追啊	0.002	zhuia	exact_rank_no_contains
+准啊	準啊	0.002	zhuna	exact_rank_no_contains
+租啊	租啊	0.002	zua	exact_rank_no_contains
+坐啊	坐啊	0.002	zuoa	exact_rank_no_contains
+次版	次版	0.002	ciban	exact_rank_no_contains
+多版	多版	0.002	duoban	exact_rank_no_contains
+每版	每版	0.002	meiban	exact_rank_no_contains
+末版	末版	0.002	moban	exact_rank_no_contains
+内版	內版	0.002	neiban	exact_rank_no_contains
+双版	雙版	0.002	shuangban	exact_rank_no_contains
+现版	現版	0.002	xianban	exact_rank_no_contains
+终版	終版	0.002	zhongban	exact_rank_no_contains
+不踢	不踢	0.199	buti	exact_rank_no_contains
+导成	導成	0.002	daocheng	exact_rank_no_contains
+喝成	喝成	0.002	hecheng	exact_rank_no_contains
+聊成	聊成	0.002	liaocheng	exact_rank_no_contains
+充点	充點	0.002	chongdian	exact_rank_no_contains
+凑点	湊點	0.002	coudian	exact_rank_no_contains
+降点	降點	0.002	jiangdian	exact_rank_no_contains
+寄点	寄點	0.001	jidian	exact_rank_no_contains
+挤点	擠點	0.002	jidian	exact_rank_no_contains
+剩点	剩點	0.002	shengdian	exact_rank_no_contains
+掏点	掏點	0.001	taodian	exact_rank_no_contains
+讨点	討點	0.002	taodian	exact_rank_no_contains
+退点	退點	0.002	tuidian	exact_rank_no_contains
+囤点	囤點	0.002	tundian	exact_rank_no_contains
+充给	充給	0.002	chonggei	exact_rank_no_contains
+导给	導給	0.002	daogei	exact_rank_no_contains
+截给	截給	0.002	jiegei	exact_rank_no_contains
+捎给	捎給	0.002	shaogei	exact_rank_no_contains
+薅到	薅到	0.002	haodao	exact_rank_no_contains
+薅来	薅來	0.002	haolai	exact_rank_no_contains
+薅下	薅下	0.002	haoxia	exact_rank_no_contains
+九轮	九輪	0.002	jiulun	exact_rank_no_contains
+头轮	頭輪	0.002	toulun	exact_rank_no_contains
+整轮	整輪	0.002	zhenglun	exact_rank_no_contains
+报码	報碼	0.002	baoma	exact_rank_no_contains
+查码	查碼	0.002	chama	exact_rank_no_contains
+传码	傳碼	0.001	chuanma	exact_rank_no_contains
+存码	存碼	0.002	cunma	exact_rank_no_contains
+改码	改碼	0.001	gaima	exact_rank_no_contains
+给码	給碼	0.001	geima	exact_rank_no_contains
+换码	換碼	0.001	huanma	exact_rank_no_contains
+接码	接碼	0.012	jiema	exact_rank_no_contains
+领码	領碼	0.002	lingma	exact_rank_no_contains
+拿码	拿碼	0.001	nama	exact_rank_no_contains
+抢码	搶碼	0.000	qiangma	exact_rank_no_contains
+输码	輸碼	0.002	shuma	exact_rank_no_contains
+送码	送碼	0.002	songma	exact_rank_no_contains
+贴码	貼碼	0.002	tiema	exact_rank_no_contains
+退码	退碼	0.001	tuima	exact_rank_no_contains
+要码	要碼	0.001	yaoma	exact_rank_no_contains
+爱嘛	愛嘛	0.002	aima	exact_rank_no_contains
+矮嘛	矮嘛	0.001	aima	exact_rank_no_contains
+白嘛	白嘛	0.002	baima	exact_rank_no_contains
+棒嘛	棒嘛	0.002	bangma	exact_rank_no_contains
+搬嘛	搬嘛	0.002	banma	exact_rank_no_contains
+抱嘛	抱嘛	0.001	baoma	exact_rank_no_contains
+笨嘛	笨嘛	0.002	benma	exact_rank_no_contains
+补嘛	補嘛	0.002	buma	exact_rank_no_contains
+猜嘛	猜嘛	0.002	caima	exact_rank_no_contains
+惨嘛	慘嘛	0.002	canma	exact_rank_no_contains
+唱嘛	唱嘛	0.002	changma	exact_rank_no_contains
+吵嘛	吵嘛	0.002	chaoma	exact_rank_no_contains
+冲嘛	衝嘛	0.002	chongma	exact_rank_no_contains
+丑嘛	醜嘛	0.002	chouma	exact_rank_no_contains
+臭嘛	臭嘛	0.001	chouma	exact_rank_no_contains
+传嘛	傳嘛	0.002	chuanma	exact_rank_no_contains
+出嘛	出嘛	0.002	chuma	exact_rank_no_contains
+蠢嘛	蠢嘛	0.002	chunma	exact_rank_no_contains
+粗嘛	粗嘛	0.002	cuma	exact_rank_no_contains
+错嘛	錯嘛	0.002	cuoma	exact_rank_no_contains
+呆嘛	呆嘛	0.002	daima	exact_rank_no_contains
+大嘛	大嘛	0.002	dama	exact_rank_no_contains
+打嘛	打嘛	0.001	dama	exact_rank_no_contains
+等嘛	等嘛	0.002	dengma	exact_rank_no_contains
+点嘛	點嘛	0.201	dianma	exact_rank_no_contains
+懂嘛	懂嘛	0.002	dongma	exact_rank_no_contains
+对嘛	對嘛	0.498	duima	exact_rank_no_contains
+读嘛	讀嘛	0.001	duma	exact_rank_no_contains
+多嘛	多嘛	0.263	duoma	exact_rank_no_contains
+饿嘛	餓嘛	0.002	ema	exact_rank_no_contains
+放嘛	放嘛	0.002	fangma	exact_rank_no_contains
+烦嘛	煩嘛	0.002	fanma	exact_rank_no_contains
+飞嘛	飛嘛	0.002	feima	exact_rank_no_contains
+疯嘛	瘋嘛	0.002	fengma	exact_rank_no_contains
+富嘛	富嘛	0.002	fuma	exact_rank_no_contains
+改嘛	改嘛	0.002	gaima	exact_rank_no_contains
+搞嘛	搞嘛	0.001	gaoma	exact_rank_no_contains
+高嘛	高嘛	0.002	gaoma	exact_rank_no_contains
+给嘛	給嘛	0.002	geima	exact_rank_no_contains
+跟嘛	跟嘛	0.002	genma	exact_rank_no_contains
+乖嘛	乖嘛	0.002	guaima	exact_rank_no_contains
+怪嘛	怪嘛	0.001	guaima	exact_rank_no_contains
+关嘛	關嘛	0.002	guanma	exact_rank_no_contains
+贵嘛	貴嘛	0.002	guima	exact_rank_no_contains
+过嘛	過嘛	0.360	guoma	exact_rank_no_contains
+喊嘛	喊嘛	0.002	hanma	exact_rank_no_contains
+黑嘛	黑嘛	0.002	heima	exact_rank_no_contains
+恨嘛	恨嘛	0.001	henma	exact_rank_no_contains
+狠嘛	狠嘛	0.002	henma	exact_rank_no_contains
+红嘛	紅嘛	0.002	hongma	exact_rank_no_contains
+画嘛	畫嘛	0.002	huama	exact_rank_no_contains
+慌嘛	慌嘛	0.002	huangma	exact_rank_no_contains
+换嘛	換嘛	0.002	huanma	exact_rank_no_contains
+回嘛	回嘛	0.002	huima	exact_rank_no_contains
+讲嘛	講嘛	0.002	jiangma	exact_rank_no_contains
+剪嘛	剪嘛	0.002	jianma	exact_rank_no_contains
+叫嘛	叫嘛	0.199	jiaoma	exact_rank_no_contains
+教嘛	教嘛	0.198	jiaoma	exact_rank_no_contains
+借嘛	借嘛	0.011	jiema	exact_rank_no_contains
+急嘛	急嘛	0.002	jima	exact_rank_no_contains
+记嘛	記嘛	0.001	jima	exact_rank_no_contains
+静嘛	靜嘛	0.002	jingma	exact_rank_no_contains
+近嘛	近嘛	0.002	jinma	exact_rank_no_contains
+进嘛	進嘛	0.001	jinma	exact_rank_no_contains
+开嘛	開嘛	0.002	kaima	exact_rank_no_contains
+快嘛	快嘛	0.002	kuaima	exact_rank_no_contains
+宽嘛	寬嘛	0.002	kuanma	exact_rank_no_contains
+哭嘛	哭嘛	0.002	kuma	exact_rank_no_contains
+苦嘛	苦嘛	0.000	kuma	exact_rank_no_contains
+酷嘛	酷嘛	0.001	kuma	exact_rank_no_contains
+困嘛	困嘛	0.002	kunma	exact_rank_no_contains
+辣嘛	辣嘛	0.002	lama	exact_rank_no_contains
+懒嘛	懶嘛	0.199	lanma	exact_rank_no_contains
+老嘛	老嘛	0.002	laoma	exact_rank_no_contains
+累嘛	累嘛	0.002	leima	exact_rank_no_contains
+冷嘛	冷嘛	0.002	lengma	exact_rank_no_contains
+亮嘛	亮嘛	0.002	liangma	exact_rank_no_contains
+练嘛	練嘛	0.002	lianma	exact_rank_no_contains
+卖嘛	賣嘛	0.002	maima	exact_rank_no_contains
+骂嘛	罵嘛	0.002	mama	exact_rank_no_contains
+忙嘛	忙嘛	0.002	mangma	exact_rank_no_contains
+慢嘛	慢嘛	0.002	manma	exact_rank_no_contains
+美嘛	美嘛	0.002	meima	exact_rank_no_contains
+萌嘛	萌嘛	0.002	mengma	exact_rank_no_contains
+摸嘛	摸嘛	0.002	moma	exact_rank_no_contains
+拿嘛	拿嘛	0.002	nama	exact_rank_no_contains
+难嘛	難嘛	0.002	nanma	exact_rank_no_contains
+嫩嘛	嫩嘛	0.002	nenma	exact_rank_no_contains
+牛嘛	牛嘛	0.002	niuma	exact_rank_no_contains
+弄嘛	弄嘛	0.002	nongma	exact_rank_no_contains
+拍嘛	拍嘛	0.002	paima	exact_rank_no_contains
+怕嘛	怕嘛	0.001	pama	exact_rank_no_contains
+爬嘛	爬嘛	0.002	pama	exact_rank_no_contains
+胖嘛	胖嘛	0.002	pangma	exact_rank_no_contains
+拼嘛	拼嘛	0.002	pinma	exact_rank_no_contains
+强嘛	強嘛	0.001	qiangma	exact_rank_no_contains
+抢嘛	搶嘛	0.002	qiangma	exact_rank_no_contains
+浅嘛	淺嘛	0.002	qianma	exact_rank_no_contains
+起嘛	起嘛	0.002	qima	exact_rank_no_contains
+轻嘛	輕嘛	0.002	qingma	exact_rank_no_contains
+亲嘛	親嘛	0.002	qinma	exact_rank_no_contains
+穷嘛	窮嘛	0.002	qiongma	exact_rank_no_contains
+热嘛	熱嘛	0.002	rema	exact_rank_no_contains
+弱嘛	弱嘛	0.002	ruoma	exact_rank_no_contains
+傻嘛	傻嘛	0.002	shama	exact_rank_no_contains
+少嘛	少嘛	0.002	shaoma	exact_rank_no_contains
+深嘛	深嘛	0.002	shenma	exact_rank_no_contains
+试嘛	試嘛	0.002	shima	exact_rank_no_contains
+收嘛	收嘛	0.001	shouma	exact_rank_no_contains
+瘦嘛	瘦嘛	0.002	shouma	exact_rank_no_contains
+帅嘛	帥嘛	0.399	shuaima	exact_rank_no_contains
+酸嘛	酸嘛	0.002	suanma	exact_rank_no_contains
+烫嘛	燙嘛	0.002	tangma	exact_rank_no_contains
+疼嘛	疼嘛	0.002	tengma	exact_rank_no_contains
+痛嘛	痛嘛	0.001	tongma	exact_rank_no_contains
+投嘛	投嘛	0.002	touma	exact_rank_no_contains
+退嘛	退嘛	0.002	tuima	exact_rank_no_contains
+忘嘛	忘嘛	0.002	wangma	exact_rank_no_contains
+晚嘛	晚嘛	0.002	wanma	exact_rank_no_contains
+稳嘛	穩嘛	0.001	wenma	exact_rank_no_contains
+问嘛	問嘛	0.002	wenma	exact_rank_no_contains
+响嘛	響嘛	0.000	xiangma	exact_rank_no_contains
+想嘛	想嘛	0.003	xiangma	exact_rank_no_contains
+香嘛	香嘛	0.002	xiangma	exact_rank_no_contains
+闲嘛	閒嘛	0.002	xianma	exact_rank_no_contains
+小嘛	小嘛	0.254	xiaoma	exact_rank_no_contains
+笑嘛	笑嘛	0.253	xiaoma	exact_rank_no_contains
+洗嘛	洗嘛	0.002	xima	exact_rank_no_contains
+细嘛	細嘛	0.001	xima	exact_rank_no_contains
+信嘛	信嘛	0.002	xinma	exact_rank_no_contains
+新嘛	新嘛	0.001	xinma	exact_rank_no_contains
+凶嘛	兇嘛	0.002	xiongma	exact_rank_no_contains
+修嘛	修嘛	0.002	xiuma	exact_rank_no_contains
+选嘛	選嘛	0.002	xuanma	exact_rank_no_contains
+学嘛	學嘛	0.002	xuema	exact_rank_no_contains
+痒嘛	癢嘛	0.002	yangma	exact_rank_no_contains
+咬嘛	咬嘛	0.002	yaoma	exact_rank_no_contains
+野嘛	野嘛	0.002	yema	exact_rank_no_contains
+用嘛	用嘛	0.002	yongma	exact_rank_no_contains
+远嘛	遠嘛	0.002	yuanma	exact_rank_no_contains
+晕嘛	暈嘛	0.002	yunma	exact_rank_no_contains
+脏嘛	髒嘛	0.002	zangma	exact_rank_no_contains
+早嘛	早嘛	0.304	zaoma	exact_rank_no_contains
+站嘛	站嘛	0.002	zhanma	exact_rank_no_contains
+找嘛	找嘛	0.002	zhaoma	exact_rank_no_contains
+真嘛	真嘛	0.002	zhenma	exact_rank_no_contains
+转嘛	轉嘛	0.002	zhuanma	exact_rank_no_contains
+追嘛	追嘛	0.002	zhuima	exact_rank_no_contains
+准嘛	準嘛	0.002	zhunma	exact_rank_no_contains
+租嘛	租嘛	0.000	zuma	exact_rank_no_contains
+坐嘛	坐嘛	0.139	zuoma	exact_rank_no_contains
+# Weighted anew on 2026-11-24: the words of the batch's keys at an import weight by the general text (本班, 补强, 两半, 牵绊, 政论, 页码, 对骂, 贺电, 汗马, 不保, 补报, 布包, 不薄, 绩点, 价码); 河马 above 荷马 and 盒马 by everyday conversation, and 同班 and 天马 right under the first word of their key (铜板, 天麻), which conversation would put them above.
+本班	本班	0.600	benban	exact_rank
+不保	不保	0.469	bubao	exact_rank
+不薄	不薄	0.399	bubao	exact_rank
+布包	布包	0.467	bubao	exact_rank
+补报	補報	0.468	bubao	exact_rank
+不畅	不暢	0.183	buchang	exact_rank
+补拍	補拍	0.200	bupai	exact_rank
+补强	補強	0.600	buqiang	exact_rank
+对骂	對罵	0.400	duima	exact_rank
+汗马	汗馬	0.351	hanma	exact_rank
+贺电	賀電	0.400	hedian	exact_rank
+河马	河馬	0.900	hema	exact_rank
+汇给	匯給	0.198	huigei	exact_rank
+价码	價碼	0.159	jiama	exact_rank
+迦纳	迦納	0.200	jiana	exact_rank
+搅成	攪成	0.151	jiaocheng	exact_rank
+绩点	績點	0.089	jidian	exact_rank
+开骂	開罵	0.200	kaima	exact_rank
+两半	兩半	0.600	liangban	exact_rank
+良伴	良伴	0.200	liangban	exact_rank
+漫骂	漫罵	0.199	manma	exact_rank
+牵绊	牽絆	0.600	qianban	exact_rank
+天马	天馬	0.999	tianma	exact_rank
+同班	同班	0.998	tongban	exact_rank
+铜版	銅版	0.400	tongban	exact_rank
+页码	頁碼	0.559	yema	exact_rank
+政论	政論	0.600	zhenglun	exact_rank

@@ -32,6 +32,18 @@ def syllables_of(text, reading):
     return syllables if len(syllables) == len(text) else None
 
 
+SYLLABLES = {initial + final for initial in builder._RUNTIME_PINYIN_INITIALS for final in builder._RUNTIME_PINYIN_FINALS
+             if builder._runtime_initial_final_compatible(initial, final)} | set(builder._RUNTIME_PINYIN_FINALS_NO_INITIAL)
+
+
+def every_split(reading, count):
+    """Every way to read a compact reading as count syllables."""
+    if count == 0:
+        return [[]] if not reading else []
+    return [[reading[:end]] + rest for end in range(1, min(len(reading), 6) + 1) if reading[:end] in SYLLABLES
+            for rest in every_split(reading[end:], count - 1)]
+
+
 class LiangReadingTests(unittest.TestCase):
     def test_overrides_give_the_single_character_liang_in_both_variants(self):
         for variant, char in CHARS.items():
@@ -61,6 +73,12 @@ class LiangReadingTests(unittest.TestCase):
                     syllables = syllables_of(text, reading)
                     self.assertIsNotNone(syllables, (name, text, reading))
                     readings = {syllables[i] for i, ch in enumerate(text) if ch == char}
+                    if readings != {'liang'} and "'" not in reading:
+                        # A key that reads two ways (靓啊 lianga: lian ga by the parser's best split, liang a as
+                        # typed) is read by the split that gives 靓 liang.
+                        if any({split[i] for i, ch in enumerate(text) if ch == char} == {'liang'}
+                               for split in every_split(reading, len(text))):
+                            readings = {'liang'}
                     self.assertEqual({'liang'}, readings, (name, variant, text, reading))
 
     def test_admission_reads_liang(self):
