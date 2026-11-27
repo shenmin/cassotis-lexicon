@@ -29,12 +29,12 @@
 - 支援從公開外部詞源可重現地重建完整詞庫（`external_broad`）。
 - 維護與生成產物一致的來源標示及授權條款檔案。
 
-## 目前詞庫快照（2026-11-24 建置）
+## 目前詞庫快照（2026-11-27 建置）
 
 | 檔案 | 變體 | 詞條數 |
 |------|------|--------|
-| `data/generated/dict_clean_sc.txt` | 簡體主詞庫 | 246,302 |
-| `data/generated/dict_clean_tc.txt` | 繁體主詞庫 | 248,869 |
+| `data/generated/dict_clean_sc.txt` | 簡體主詞庫 | 246,886 |
+| `data/generated/dict_clean_tc.txt` | 繁體主詞庫 | 249,453 |
 | `data/generated/dict_unihan_sc.txt` | 簡體單字（Unihan） | 24,161 |
 | `data/generated/dict_unihan_tc.txt` | 繁體單字（Unihan） | 24,351 |
 

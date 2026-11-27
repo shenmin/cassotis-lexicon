@@ -29,12 +29,12 @@
 - 支持从公开外部词源可复现地重建完整词库（`external_broad`）。
 - 维护与生成产物严格对应的来源署名及许可证文件。
 
-## 当前词库快照（2026-11-24 构建）
+## 当前词库快照（2026-11-27 构建）
 
 | 文件 | 变体 | 词条数 |
 |------|------|--------|
-| `data/generated/dict_clean_sc.txt` | 简体主词库 | 246,302 |
-| `data/generated/dict_clean_tc.txt` | 繁体主词库 | 248,869 |
+| `data/generated/dict_clean_sc.txt` | 简体主词库 | 246,886 |
+| `data/generated/dict_clean_tc.txt` | 繁体主词库 | 249,453 |
 | `data/generated/dict_unihan_sc.txt` | 简体单字（Unihan） | 24,161 |
 | `data/generated/dict_unihan_tc.txt` | 繁体单字（Unihan） | 24,351 |
 
