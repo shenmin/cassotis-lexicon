@@ -29,12 +29,12 @@ Build and release repository for the simplified and traditional base dictionarie
 - Support reproducible rebuilds from external sources (`external_broad`).
 - Keep attribution and license files synchronized with the generated artifacts.
 
-## Current dictionary snapshot (2026-11-27 build)
+## Current dictionary snapshot (2026-11-28 build)
 
 | File | Variant | Entries |
 |------|---------|---------|
-| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 246,886 |
-| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 249,453 |
+| `data/generated/dict_clean_sc.txt` | Simplified Chinese | 247,019 |
+| `data/generated/dict_clean_tc.txt` | Traditional Chinese | 249,586 |
 | `data/generated/dict_unihan_sc.txt` | Simplified single-char (Unihan) | 24,161 |
 | `data/generated/dict_unihan_tc.txt` | Traditional single-char (Unihan) | 24,351 |
 
